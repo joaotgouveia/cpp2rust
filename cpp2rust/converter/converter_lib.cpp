@@ -15,8 +15,50 @@
 #include "converter/lex.h"
 #include "converter/mapper.h"
 
-static std::array<const char *, 5> rust_keywords = {
-    "fn", "in", "mut", "vec", "ref",
+// https://doc.rust-lang.org/reference/keywords.html
+static const char *rust_keywords[] = {
+    // Strict keywords
+    "as",
+    "async",
+    "await",
+    "crate",
+    "dyn",
+    "fn",
+    "impl",
+    "in",
+    "let",
+    "loop",
+    "match",
+    "mod",
+    "move",
+    "mut",
+    "pub",
+    "ref",
+    "self",
+    "Self",
+    "super",
+    "trait",
+    "type",
+    "unsafe",
+    "use",
+    "where",
+    // Reserved keywords
+    "abstract",
+    "become",
+    "box",
+    "final",
+    "gen",
+    "macro",
+    "override",
+    "priv",
+    "unsized",
+    "yield",
+    // Weak keywords
+    "macro_rules",
+    "raw",
+    "safe",
+    // Standard library keywords
+    "vec",
 };
 
 namespace cpp2rust {
