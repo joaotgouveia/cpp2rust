@@ -60,6 +60,8 @@ pub mod iostream_tgt_refcount;
 pub mod iostream_tgt_unsafe;
 #[path = r#"../ip/tgt_unsafe.rs"#]
 pub mod ip_tgt_unsafe;
+#[path = r#"../json/tgt_unsafe.rs"#]
+pub mod json_tgt_unsafe;
 #[path = r#"../limits/tgt_unsafe.rs"#]
 pub mod limits_tgt_unsafe;
 #[path = r#"../locale/tgt_unsafe.rs"#]

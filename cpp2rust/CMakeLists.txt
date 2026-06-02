@@ -19,7 +19,9 @@ target_link_libraries(cpp2rust_core PUBLIC
 )
 target_include_directories(cpp2rust_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(cpp2rust_core SYSTEM PUBLIC ${CLANG_INCLUDE_DIRS} ${LLVM_INCLUDE_DIRS})
-target_compile_definitions(cpp2rust_core PUBLIC ${LLVM_DEFINITIONS})
+
+separate_arguments(LLVM_DEFINITIONS_LIST NATIVE_COMMAND ${LLVM_DEFINITIONS})
+target_compile_definitions(cpp2rust_core PUBLIC ${LLVM_DEFINITIONS_LIST})
 target_compile_definitions(cpp2rust_core PUBLIC "-DCLANG_C_COMPILER=\"${CMAKE_C_COMPILER}\"")
 target_compile_definitions(cpp2rust_core PUBLIC "-DCLANG_CXX_COMPILER=\"${CMAKE_CXX_COMPILER}\"")
 target_compile_definitions(cpp2rust_core PUBLIC "-DCLANG_RESOURCE_DIR=\"${LLVM_LIBRARY_DIR}/clang/${LLVM_VERSION_MAJOR}\"")
