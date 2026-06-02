@@ -637,20 +637,20 @@ bool Contains(clang::QualType qual_type) {
 
 bool Contains(const clang::Expr *expr) { return search(expr) != nullptr; }
 
-std::string MapToUid(const clang::Expr *expr) {
+std::pair<std::string, std::string> MapToUid(const clang::Expr *expr) {
   auto rule = search(expr);
   if (rule) {
     assert(!rule->uid.empty());
-    return rule->uid;
+    return {rule->uid, GetExprMapKey(ToString(expr))};
   }
   return {};
 }
 
-std::string MapToUid(clang::QualType type) {
+std::pair<std::string, std::string> MapToUid(clang::QualType type) {
   auto rule = search(type);
   if (rule) {
     assert(!rule->uid.empty());
-    return rule->uid;
+    return {rule->uid, GetTypeMapKey(ToString(type))};
   }
   return {};
 }
