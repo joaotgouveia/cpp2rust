@@ -376,4 +376,38 @@ std::pair<ExprRules, TypeRules> Load(const std::filesystem::path &dir,
   return {std::move(exprs), std::move(types)};
 }
 
+std::pair<ExprRules, TypeRules> LoadPartial(const std::filesystem::path &dir) {
+  ExprRules exprs;
+  TypeRules types;
+
+  auto buf = llvm::MemoryBuffer::getFile((dir / "ir_src.json").string());
+  assert(buf);
+  auto parsed = llvm::json::parse((*buf)->getBuffer());
+  assert(parsed);
+  auto *root = parsed->getAsObject();
+  assert(root);
+
+  const auto parent = dir.string();
+  for (auto &[entry_name, entry_val] : *root) {
+    auto name = entry_name.str();
+    auto val = entry_val.getAsString();
+    auto uid = parent + "::" + name;
+    if (name[0] == 'f') {
+      assert(!exprs.contains(name));
+      exprs[std::move(name)] = {
+          .uid = std::move(uid),
+          .src = val->str(),
+      };
+    } else if (name[0] == 't') {
+      assert(!types.contains(name));
+      types[std::move(name)] = {
+          .uid = std::move(uid),
+          .src = val->str(),
+      };
+    }
+  }
+
+  return {std::move(exprs), std::move(types)};
+}
+
 } // namespace cpp2rust::TranslationRule

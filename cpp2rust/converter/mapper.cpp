@@ -637,6 +637,24 @@ bool Contains(clang::QualType qual_type) {
 
 bool Contains(const clang::Expr *expr) { return search(expr) != nullptr; }
 
+std::string MapToUid(const clang::Expr *expr) {
+  auto rule = search(expr);
+  if (rule) {
+    assert(!rule->uid.empty());
+    return rule->uid;
+  }
+  return {};
+}
+
+std::string MapToUid(clang::QualType type) {
+  auto rule = search(type);
+  if (rule) {
+    assert(!rule->uid.empty());
+    return rule->uid;
+  }
+  return {};
+}
+
 const TranslationRule::ExprRule *GetExprRule(const clang::Expr *expr) {
   return search(expr);
 }
@@ -1050,6 +1068,25 @@ void LoadTranslationRules(Model model, clang::ASTContext &ctx,
     rule.dump();
   }
 #endif
+}
+
+void LoadPartialTranslationRules(const std::string &rules_dir) {
+  namespace fs = std::filesystem;
+  for (const auto &entry : fs::directory_iterator(rules_dir)) {
+    const auto &path = entry.path();
+    if (!fs::exists(path / "ir_src.json")) {
+      continue;
+    }
+
+    auto [expr_rules, type_rules] = TranslationRule::LoadPartial(path);
+    assert(!expr_rules.empty() || !type_rules.empty());
+    for (auto &[_, rule] : expr_rules) {
+      exprs_.emplace(GetExprMapKey(rule.src), std::move(rule));
+    }
+    for (auto &[_, rule] : type_rules) {
+      types_.emplace(GetTypeMapKey(rule.src), std::move(rule));
+    }
+  }
 }
 
 } // namespace cpp2rust::Mapper

@@ -27,6 +27,9 @@ private:
 bool Contains(clang::QualType qual_type);
 bool Contains(const clang::Expr *expr);
 
+std::string MapToUid(const clang::Expr *expr);
+std::string MapToUid(clang::QualType type);
+
 std::string Map(clang::QualType qual_type);
 std::string MapInitializer(clang::QualType qual_type);
 const TranslationRule::ExprRule *GetExprRule(const clang::Expr *expr);
@@ -54,5 +57,6 @@ std::string ToRustName(std::string name);
 
 void LoadTranslationRules(Model model, clang::ASTContext &ctx,
                           const std::string &rules_dir);
+void LoadPartialTranslationRules(const std::string &rules_dir);
 void AddRuleForUserDefinedType(clang::NamedDecl *decl);
 } // namespace cpp2rust::Mapper

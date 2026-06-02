@@ -65,6 +65,7 @@ struct TypeInfo {
 };
 
 struct ExprRule {
+  std::string uid;
   std::string src;
   std::vector<TypeInfo> params;
   TypeInfo return_type;
@@ -77,6 +78,7 @@ struct ExprRule {
 };
 
 struct TypeRule {
+  std::string uid;
   std::string src;
   std::string initializer; // Rust initializer expression
   TypeInfo type_info;
@@ -99,4 +101,6 @@ using TypeRules = std::unordered_map<std::string, TypeRule>;
 
 std::pair<ExprRules, TypeRules> Load(const std::filesystem::path &dir,
                                      Model model);
+
+std::pair<ExprRules, TypeRules> LoadPartial(const std::filesystem::path &dir);
 } // namespace cpp2rust::TranslationRule
