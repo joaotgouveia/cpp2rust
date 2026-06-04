@@ -39,10 +39,14 @@ fn f7(mut a0: Vec<serde_json::Value>, a1: serde_json::Value) {
     a0.push(a1)
 }
 
-fn f8(a0: Vec<serde_json::Value>) -> serde_json::Value {
+fn f8(mut a0: Vec<serde_json::Value>, a1: serde_json::Value) {
+    a0.push(a1)
+}
+
+fn f9(a0: Vec<serde_json::Value>) -> serde_json::Value {
     serde_json::Value::Array(a0)
 }
 
-fn f9(a0: serde_json::Value) -> Vec<u8> {
+fn f10(a0: serde_json::Value) -> Vec<u8> {
     serde_json::to_string(&a0).unwrap().into_bytes()
 }
