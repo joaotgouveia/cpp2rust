@@ -11,42 +11,32 @@ fn t2() -> Vec<serde_json::Value> {
     Vec::new()
 }
 
-fn f1(a0: i64) -> serde_json::Value {
-    serde_json::Value::from(a0)
+fn f1<T1: Into<serde_json::Value>>(a0: T1) -> serde_json::Value {
+    a0.into()
 }
 
-fn f2(a0: u64) -> serde_json::Value {
-    serde_json::Value::from(a0)
-}
-
-fn f3(a0: f64) -> serde_json::Value {
-    serde_json::Value::from(a0)
-}
-
-fn f4(a0: bool) -> serde_json::Value {
-    serde_json::Value::from(a0)
-}
-
-fn f5(a0: Ptr<u8>) -> serde_json::Value {
+fn f2(a0: Ptr<u8>) -> serde_json::Value {
     serde_json::Value::from(a0.to_rust_string())
 }
 
-fn f6() -> Vec<serde_json::Value> {
+fn f3() -> Vec<serde_json::Value> {
     Vec::new()
 }
 
-fn f7(mut a0: Vec<serde_json::Value>, a1: serde_json::Value) {
+fn f4(mut a0: Vec<serde_json::Value>, a1: serde_json::Value) {
     a0.push(a1)
 }
 
-fn f8(mut a0: Vec<serde_json::Value>, a1: serde_json::Value) {
+fn f5(mut a0: Vec<serde_json::Value>, a1: serde_json::Value) {
     a0.push(a1)
 }
 
-fn f9(a0: Vec<serde_json::Value>) -> serde_json::Value {
-    serde_json::Value::Array(a0)
+fn f6(a0: Vec<serde_json::Value>) -> serde_json::Value {
+    serde_json::Value::Array(a0.clone())
 }
 
-fn f10(a0: serde_json::Value) -> Vec<u8> {
-    serde_json::to_string(&a0).unwrap().into_bytes()
+fn f7(a0: serde_json::Value) -> Vec<u8> {
+    let mut str = serde_json::to_string(&a0).unwrap().into_bytes();
+    str.push(0);
+    str
 }
