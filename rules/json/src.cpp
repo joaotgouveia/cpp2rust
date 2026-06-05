@@ -8,6 +8,7 @@
 #include <string>
 #include <utility>
 
+using t1 = llvm::json::Value;
 using t2 = llvm::json::Array;
 
 llvm::json::Value f1(long a0) { return llvm::json::Value(a0); }
