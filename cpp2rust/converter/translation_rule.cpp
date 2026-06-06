@@ -395,14 +395,14 @@ std::pair<ExprRules, TypeRules> LoadPartial(const std::filesystem::path &dir) {
     if (name[0] == 'f') {
       assert(!exprs.contains(name));
       exprs[std::move(name)] = {
-          .uid = std::move(uid),
           .src = val->str(),
+          .uid = std::move(uid),
       };
     } else if (name[0] == 't') {
       assert(!types.contains(name));
       types[std::move(name)] = {
-          .uid = std::move(uid),
           .src = val->str(),
+          .uid = std::move(uid),
       };
     }
   }

@@ -65,23 +65,23 @@ struct TypeInfo {
 };
 
 struct ExprRule {
-  std::string uid;
   std::string src;
   std::vector<TypeInfo> params;
   TypeInfo return_type;
   std::vector<std::vector<std::string>> generics; // "T1" -> ["Ord", "Clone"]
   std::vector<BodyFragment> body;
   bool multi_statement = false;
+  std::string uid;
 
   void dump() const;
   void validate(const std::string &name) const;
 };
 
 struct TypeRule {
-  std::string uid;
   std::string src;
   std::string initializer; // Rust initializer expression
   TypeInfo type_info;
+  std::string uid;
 
   void dump() const;
 
