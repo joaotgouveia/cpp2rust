@@ -18,5 +18,6 @@ class Converter;
 
 std::unique_ptr<Converter> CreateConverter(std::string &rs_code,
                                            clang::ASTContext &ctx, Model model,
-                                           const std::string &rules_dir);
+                                           const std::string &rules_dir,
+                                           bool allow_partial_tgts);
 } // namespace cpp2rust

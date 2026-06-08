@@ -421,14 +421,16 @@ search(clang::QualType qual_type) {
   return res;
 }
 
-void addRulesFromDirectory(const std::filesystem::path &dir, Model model) {
+void addRulesFromDirectory(const std::filesystem::path &dir, Model model,
+                           bool allow_partial_tgts) {
   namespace fs = std::filesystem;
   for (const auto &entry : fs::directory_iterator(dir)) {
     const auto &path = entry.path();
     assert(fs::exists(path / "ir_src.json") &&
            (fs::exists(path / "ir_unsafe.json") ||
             fs::exists(path / "ir_refcount.json")));
-    auto [expr_rules, type_rules] = TranslationRule::Load(path, model);
+    auto [expr_rules, type_rules] =
+        TranslationRule::Load(path, model, allow_partial_tgts);
     if (expr_rules.empty() && type_rules.empty()) {
       log() << "No rules found in " << path << '\n';
       continue;
@@ -1046,7 +1048,8 @@ std::string ToString(const clang::Expr *expr) {
 }
 
 void LoadTranslationRules(Model model, clang::ASTContext &ctx,
-                          const std::string &rules_dir) {
+                          const std::string &rules_dir,
+                          bool allow_partial_tgts) {
   ctx_ = &ctx;
   model_ = model;
 
@@ -1056,7 +1059,7 @@ void LoadTranslationRules(Model model, clang::ASTContext &ctx,
   translation_rules_loaded_ = true;
 
   addBuiltinTypes(model);
-  addRulesFromDirectory(rules_dir, model);
+  addRulesFromDirectory(rules_dir, model, allow_partial_tgts);
 
 #if 0
   for (auto &[src, rule] : exprs_) {

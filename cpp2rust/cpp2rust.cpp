@@ -63,6 +63,12 @@ llvm::cl::list<std::string> CXXFlags("cxxflags",
                                      llvm::cl::ZeroOrMore,
                                      llvm::cl::cat(cpp2rust_cmdargs));
 
+llvm::cl::opt<bool> AllowPartialTgts(
+    "allow-partial-tgts",
+    llvm::cl::desc("Allow the tgt_*.rs rule files to not be fully specified"),
+    llvm::cl::value_desc("bool"), llvm::cl::init(false),
+    llvm::cl::cat(cpp2rust_cmdargs));
+
 } // namespace
 
 // Get the directory of the running executable
@@ -172,8 +178,9 @@ int main(int argc, char *argv[]) {
 
   auto rs_code =
       BuildDir.empty()
-          ? cpp2rust::TranspileSrc(cc_code, model, cxx_flags, RulesDir, CcFile)
-          : cpp2rust::TranspileDir(BuildDir, model, RulesDir);
+          ? cpp2rust::TranspileSrc(cc_code, model, cxx_flags, RulesDir, CcFile,
+                                   AllowPartialTgts)
+          : cpp2rust::TranspileDir(BuildDir, model, RulesDir, AllowPartialTgts);
 
   if (rs_code.empty()) {
     llvm::errs() << "ERROR: empty output file\n";

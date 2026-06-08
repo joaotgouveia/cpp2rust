@@ -173,7 +173,8 @@ void LoadTgtFromIR(ExprRules &exprs, TypeRules &types,
 }
 
 void LoadIrSrc(ExprRules &exprs, TypeRules &types,
-               const std::filesystem::path &json_path) {
+               const std::filesystem::path &json_path,
+               bool allow_partial_tgts) {
   auto buf = llvm::MemoryBuffer::getFile(json_path.string());
   if (!buf) {
     llvm::errs() << "Missing " << json_path << ", run cpp-rule-preprocessor\n";
@@ -200,6 +201,9 @@ void LoadIrSrc(ExprRules &exprs, TypeRules &types,
     if (name[0] == 'f') {
       auto it = exprs.find(name);
       if (it == exprs.end()) {
+        if (allow_partial_tgts) {
+          continue;
+        }
         llvm::errs() << name << '\n';
         assert(0 && "ir_src.json expr entry has no matching IR target rule");
       }
@@ -207,6 +211,9 @@ void LoadIrSrc(ExprRules &exprs, TypeRules &types,
     } else if (name[0] == 't') {
       auto it = types.find(name);
       if (it == types.end()) {
+        if (allow_partial_tgts) {
+          continue;
+        }
         llvm::errs() << name << '\n';
         assert(0 && "ir_src.json type entry has no matching IR target rule");
       }
@@ -349,7 +356,7 @@ void TypeRule::dump() const {
 }
 
 std::pair<ExprRules, TypeRules> Load(const std::filesystem::path &dir,
-                                     Model model) {
+                                     Model model, bool allow_partial_tgts) {
   ExprRules exprs;
   TypeRules types;
   LoadTgtFromIR(exprs, types, dir / "ir_unsafe.json");
@@ -361,7 +368,7 @@ std::pair<ExprRules, TypeRules> Load(const std::filesystem::path &dir,
     }
   }
 
-  LoadIrSrc(exprs, types, dir / "ir_src.json");
+  LoadIrSrc(exprs, types, dir / "ir_src.json", allow_partial_tgts);
 
   for (auto &[name, rule] : exprs) {
     rule.validate(name);

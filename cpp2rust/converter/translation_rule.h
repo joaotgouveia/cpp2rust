@@ -100,7 +100,7 @@ using ExprRules = std::unordered_map<std::string, ExprRule>;
 using TypeRules = std::unordered_map<std::string, TypeRule>;
 
 std::pair<ExprRules, TypeRules> Load(const std::filesystem::path &dir,
-                                     Model model);
+                                     Model model, bool allow_partial_tgts);
 
 std::pair<ExprRules, TypeRules> LoadPartial(const std::filesystem::path &dir);
 } // namespace cpp2rust::TranslationRule

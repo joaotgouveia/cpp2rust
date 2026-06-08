@@ -10,8 +10,9 @@ namespace cpp2rust {
 
 std::unique_ptr<Converter> CreateConverter(std::string &rs_code,
                                            clang::ASTContext &ctx, Model model,
-                                           const std::string &rules_dir) {
-  Mapper::LoadTranslationRules(model, ctx, rules_dir);
+                                           const std::string &rules_dir,
+                                           bool allow_partial_tgts) {
+  Mapper::LoadTranslationRules(model, ctx, rules_dir, allow_partial_tgts);
   switch (model) {
   case Model::kUnsafe:
     return std::make_unique<Converter>(rs_code, ctx);
