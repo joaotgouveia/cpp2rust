@@ -1048,7 +1048,7 @@ std::string ToString(const clang::Expr *expr) {
 }
 
 void LoadTranslationRules(Model model, clang::ASTContext &ctx,
-                          const std::string &rules_dir,
+                          const std::vector<std::string_view> &rule_dirs,
                           bool allow_partial_tgts) {
   ctx_ = &ctx;
   model_ = model;
@@ -1059,7 +1059,9 @@ void LoadTranslationRules(Model model, clang::ASTContext &ctx,
   translation_rules_loaded_ = true;
 
   addBuiltinTypes(model);
-  addRulesFromDirectory(rules_dir, model, allow_partial_tgts);
+  for (const auto &dir : rule_dirs) {
+    addRulesFromDirectory(dir, model, allow_partial_tgts);
+  }
 
 #if 0
   for (auto &[src, rule] : exprs_) {

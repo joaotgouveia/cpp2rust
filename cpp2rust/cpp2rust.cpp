@@ -52,10 +52,11 @@ llvm::cl::opt<std::string>
           llvm::cl::value_desc("model"), llvm::cl::init("refcount"),
           llvm::cl::cat(cpp2rust_cmdargs));
 
-llvm::cl::opt<std::string>
-    RulesDir("rules",
+llvm::cl::list<std::string>
+    RuleDirs("rules",
              llvm::cl::desc("Directory where translation rules are located"),
-             llvm::cl::value_desc("rules"), llvm::cl::cat(cpp2rust_cmdargs));
+             llvm::cl::value_desc("rules"), llvm::cl::ZeroOrMore,
+             llvm::cl::cat(cpp2rust_cmdargs));
 
 llvm::cl::list<std::string> CXXFlags("cxxflags",
                                      llvm::cl::desc("Additional CXXFLAGS"),
@@ -108,18 +109,18 @@ static bool HasIRFiles(const fs::path &dir) {
   return false;
 }
 
-static bool ResolveRulesDir() {
+static std::string ResolveRulesDir() {
   std::array<fs::path, 2> candidates = {
       fs::path("./rules"), GetExecutableDir().parent_path() / "rules"};
 
   for (const auto &dir : candidates) {
     if (fs::exists(dir) && fs::is_directory(dir) && HasIRFiles(dir)) {
-      RulesDir = fs::canonical(dir).string();
-      llvm::errs() << "Using rules directory: " << RulesDir << '\n';
-      return true;
+      auto resolved = fs::canonical(dir).string();
+      llvm::errs() << "Using rules directory: " << resolved << '\n';
+      return resolved;
     }
   }
-  return false;
+  return {};
 }
 
 int main(int argc, char *argv[]) {
@@ -170,17 +171,22 @@ int main(int argc, char *argv[]) {
 
   std::vector<std::string_view> cxx_flags(CXXFlags.begin(), CXXFlags.end());
 
-  if (RulesDir.empty() && !ResolveRulesDir()) {
-    llvm::errs() << "ERROR: rules directory not found. "
-                    "Please specify one with --rules\n";
+  std::vector<std::string_view> ruleDirs(RuleDirs.begin(), RuleDirs.end());
+  if (ruleDirs.empty()) {
+    auto resolved = ResolveRulesDir();
+    if (resolved.empty()) {
+      llvm::errs() << "ERROR: rules directory not found. "
+                      "Please specify one with --rules\n";
+    }
+    ruleDirs = {resolved};
     return EXIT_FAILURE;
   }
 
   auto rs_code =
       BuildDir.empty()
-          ? cpp2rust::TranspileSrc(cc_code, model, cxx_flags, RulesDir, CcFile,
+          ? cpp2rust::TranspileSrc(cc_code, model, cxx_flags, ruleDirs, CcFile,
                                    AllowPartialTgts)
-          : cpp2rust::TranspileDir(BuildDir, model, RulesDir, AllowPartialTgts);
+          : cpp2rust::TranspileDir(BuildDir, model, ruleDirs, AllowPartialTgts);
 
   if (rs_code.empty()) {
     llvm::errs() << "ERROR: empty output file\n";

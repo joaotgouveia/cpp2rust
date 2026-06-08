@@ -7,7 +7,8 @@
 
 namespace cpp2rust {
 void ASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
-  auto converter = CreateConverter(rs_code_, ctx, model_, rules_dir_, allow_partial_tgts_);
+  auto converter =
+      CreateConverter(rs_code_, ctx, model_, rule_dirs_, allow_partial_tgts_);
   converter->SetSema(CI_.getSema());
   if (first_) {
     converter->EmitFilePreamble();

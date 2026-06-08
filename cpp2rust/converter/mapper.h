@@ -56,7 +56,7 @@ std::string ToString(const clang::NamedDecl *decl);
 std::string ToRustName(std::string name);
 
 void LoadTranslationRules(Model model, clang::ASTContext &ctx,
-                          const std::string &rules_dir,
+                          const std::vector<std::string_view> &rule_dirs,
                           bool allow_partial_tgts);
 void LoadPartialTranslationRules(const std::string &rules_dir);
 void AddRuleForUserDefinedType(clang::NamedDecl *decl);

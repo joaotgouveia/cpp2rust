@@ -18,37 +18,38 @@ namespace cpp2rust {
 class FrontendAction : public clang::ASTFrontendAction {
 public:
   explicit FrontendAction(std::string &rs_code, Model model, bool first,
-                          const std::string &rules_dir, bool allow_partial_tgts)
-      : rs_code_(rs_code), model_(model), first_(first), rules_dir_(rules_dir),
+                          const std::vector<std::string_view> &rule_dirs,
+                          bool allow_partial_tgts)
+      : rs_code_(rs_code), model_(model), first_(first), rule_dirs_(rule_dirs),
         allow_partial_tgts_(allow_partial_tgts) {}
 
   std::unique_ptr<clang::ASTConsumer>
   CreateASTConsumer(clang::CompilerInstance &CI,
                     llvm::StringRef InFile) override {
     return std::make_unique<ASTConsumer>(rs_code_, model_, first_, CI,
-                                         rules_dir_, allow_partial_tgts_);
+                                         rule_dirs_, allow_partial_tgts_);
   }
 
 private:
   std::string &rs_code_;
   Model model_;
   bool first_;
-  const std::string &rules_dir_;
+  const std::vector<std::string_view> &rule_dirs_;
   bool allow_partial_tgts_;
 };
 
 class FrontendActionFactory : public clang::tooling::FrontendActionFactory {
 public:
   explicit FrontendActionFactory(std::string &rs_code, Model model,
-                                 const std::string &rules_dir,
+                                 const std::vector<std::string_view> &rule_dirs,
                                  bool allow_partial_rules)
-      : rs_code_(rs_code), model_(model), rules_dir_(rules_dir),
+      : rs_code_(rs_code), model_(model), rule_dirs_(rule_dirs),
         allow_partial_rules_(allow_partial_rules) {}
 
   std::unique_ptr<clang::FrontendAction> create() override {
     bool f = first_;
     first_ = false;
-    return std::make_unique<FrontendAction>(rs_code_, model_, f, rules_dir_,
+    return std::make_unique<FrontendAction>(rs_code_, model_, f, rule_dirs_,
                                             allow_partial_rules_);
   }
 
@@ -56,7 +57,7 @@ private:
   std::string &rs_code_;
   Model model_;
   bool first_ = true;
-  const std::string &rules_dir_;
+  const std::vector<std::string_view> &rule_dirs_;
   bool allow_partial_rules_;
 };
 } // namespace cpp2rust
