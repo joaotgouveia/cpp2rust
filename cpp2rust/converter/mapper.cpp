@@ -649,7 +649,7 @@ std::pair<std::string, std::string> MapToUid(const clang::Expr *expr) {
 }
 
 std::pair<std::string, std::string> MapToUid(clang::QualType type) {
-  auto rule = search(type);
+  auto rule = search(type).first;
   if (rule) {
     assert(!rule->uid.empty());
     return {rule->uid, GetTypeMapKey(ToString(type))};
