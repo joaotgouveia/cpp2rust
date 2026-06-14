@@ -440,16 +440,6 @@ void addRulesFromDirectory(const std::filesystem::path &dir, Model model,
     }
     for (auto &[_, rule] : type_rules) {
       auto key = GetTypeMapKey(rule.src);
-      auto [begin, end] = types_.equal_range(key);
-      for (auto it = begin; it != end; ++it) {
-        if (it->second.src == rule.src) {
-          llvm::errs() << "ERROR: duplicate type rule for C++ type '"
-                       << rule.src << "': maps to both '"
-                       << it->second.type_info.type << "' and '"
-                       << rule.type_info.type << "'\n";
-          std::exit(EXIT_FAILURE);
-        }
-      }
       types_.emplace(std::move(key), std::move(rule));
     }
   }
