@@ -172,14 +172,15 @@ int main(int argc, char *argv[]) {
   std::vector<std::string_view> cxx_flags(CXXFlags.begin(), CXXFlags.end());
 
   std::vector<std::string_view> ruleDirs(RuleDirs.begin(), RuleDirs.end());
+  std::string resolved;
   if (ruleDirs.empty()) {
-    auto resolved = ResolveRulesDir();
+    resolved = ResolveRulesDir();
     if (resolved.empty()) {
       llvm::errs() << "ERROR: rules directory not found. "
                       "Please specify one with --rules\n";
+      return EXIT_FAILURE;
     }
     ruleDirs = {resolved};
-    return EXIT_FAILURE;
   }
 
   auto rs_code =
