@@ -413,16 +413,24 @@ private:
                          clang::TemplateArgumentListInfo *explicitTArgs,
                          clang::DeclarationName &name,
                          clang::OverloadCandidateSet &candidates) {
-    clang::LookupResult decls(*sema_, name, loc_,
-                              clang::Sema::LookupOrdinaryName);
-    sema_->LookupQualifiedName(decls, sema_->getStdNamespace());
-    for (auto *ndecl : decls) {
-      if (auto *candidate = createCandidate(ndecl, callArgs, explicitTArgs)) {
-        sema_->AddOverloadCandidate(
-            candidate, clang::DeclAccessPair::make(candidate, clang::AS_public),
-            callArgs, candidates, false);
+    auto tryAddCandidates = [&](clang::DeclContext *dctx) {
+      if (!dctx) {
+        return;
       }
-    }
+      clang::LookupResult decls(*sema_, name, loc_,
+                                clang::Sema::LookupOrdinaryName);
+      sema_->LookupQualifiedName(decls, dctx);
+      for (auto *ndecl : decls) {
+        if (auto *candidate = createCandidate(ndecl, callArgs, explicitTArgs)) {
+          sema_->AddOverloadCandidate(
+              candidate,
+              clang::DeclAccessPair::make(candidate, clang::AS_public),
+              callArgs, candidates, false);
+        }
+      }
+    };
+    tryAddCandidates(sema_->getStdNamespace());
+    tryAddCandidates(sema_->Context.getTranslationUnitDecl());
 
     for (const auto *arg : callArgs) {
       if (auto *rdecl = resolveCXXRecordDecl(arg->getType())) {
