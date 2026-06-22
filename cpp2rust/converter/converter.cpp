@@ -316,6 +316,11 @@ bool Converter::VisitTranslationUnitDecl(clang::TranslationUnitDecl *decl) {
   return false;
 }
 
+bool Converter::VisitStaticAssertDecl(clang::StaticAssertDecl *) {
+  // TODO: const _: () = assert!(args)
+  return false;
+}
+
 bool Converter::VisitFunctionDecl(clang::FunctionDecl *decl) {
   if (auto method = clang::dyn_cast<clang::CXXMethodDecl>(decl)) {
     return VisitCXXMethodDecl(method);

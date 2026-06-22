@@ -129,6 +129,8 @@ public:
 
   virtual bool VisitTypedefDecl(clang::TypedefDecl *decl);
 
+  bool VisitStaticAssertDecl(clang::StaticAssertDecl *decl);
+
   virtual bool VisitCompoundStmt(clang::CompoundStmt *stmt);
 
   virtual bool VisitDeclStmt(clang::DeclStmt *stmt);
