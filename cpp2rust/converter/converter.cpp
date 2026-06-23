@@ -4126,22 +4126,24 @@ void Converter::PlaceholderCtx::dump() const {
                << ", declared_in_rule_as_rust_ptr: "
                << declared_in_rule_as_rust_ptr << ", access: "
                << (access == TranslationRule::Access::kRead ? "read" : "write")
-               << ", param_type: " << param_type
                << ", materialize_idx: " << materialize_idx << '\n';
 }
 
 std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
-                                          const PlaceholderCtx &ph_ctx) {
-  if (arg->getType()->isFunctionPointerType()) {
+                                          const PlaceholderCtx &ph_ctx,
+                                          unsigned arg_idx) {
+  if (arg->getType()->isFunctionPointerType() ||
+      llvm::isa<clang::LambdaExpr>(arg->IgnoreUnlessSpelledInSource())) {
     PushExprKind push(*this, ExprKind::Callee);
     Buffer buf(*this);
     Convert(arg);
     return std::move(buf).str();
   }
 
+  std::string param_type = Mapper::GetParamType(GetCalleeOrExpr(expr), arg_idx);
   if (ph_ctx.declared_in_rule_as_rust_ptr && arg->getType()->isArrayType()) {
     return std::format("({} as {})", ConvertFreshPointer(arg),
-                       ph_ctx.param_type);
+                       std::move(param_type));
   }
 
   if (ph_ctx.needs_materialization()) {
@@ -4157,7 +4159,7 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
 
   if (ph_ctx.needs_pointer_receiver()) {
     return std::format("({} as {})", ConvertFreshObject(arg),
-                       ph_ctx.param_type);
+                       std::move(param_type));
   }
 
   if (ph_ctx.needs_object_receiver()) {
@@ -4232,7 +4234,6 @@ std::string Converter::ConvertIRFragment(
       bool is_receiver = HasReceiver(expr) && arg_idx == 0;
 
       PlaceholderCtx ph_ctx{
-          .param_type = Mapper::GetParamType(GetCalleeOrExpr(expr), arg_idx),
           .implicit_convert_to = GetParamImplicitConvertTarget(expr, arg_idx),
           .materialize_ctx = ctx,
           .materialize_idx =
@@ -4245,7 +4246,7 @@ std::string Converter::ConvertIRFragment(
               Mapper::ParamIsPointer(GetCalleeOrExpr(expr), arg_idx),
           .is_index_base = ph->is_index_base,
       };
-      result += ConvertPlaceholder(expr, arg, ph_ctx);
+      result += ConvertPlaceholder(expr, arg, ph_ctx, arg_idx);
     } else if (auto *mc =
                    std::get_if<std::unique_ptr<MethodCallFragment>>(&frag)) {
       result += ConvertMappedMethodCall(expr, **mc, args, num_args, ctx);

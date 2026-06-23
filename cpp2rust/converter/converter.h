@@ -193,7 +193,6 @@ public:
   };
 
   struct PlaceholderCtx {
-    std::string param_type;
     std::optional<clang::QualType> implicit_convert_to;
     TempMaterializationCtx *materialize_ctx;
     int materialize_idx; // <0 = no idx, >=0 idx valid
@@ -577,7 +576,8 @@ protected:
                     TempMaterializationCtx *ctx);
 
   std::string ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
-                                 const PlaceholderCtx &ph_ctx);
+                                 const PlaceholderCtx &ph_ctx,
+                                 unsigned arg_idx);
 
   virtual std::string ConvertMappedMethodCall(
       clang::Expr *expr, const TranslationRule::MethodCallFragment &mc,
