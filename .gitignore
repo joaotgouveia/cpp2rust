@@ -17,6 +17,9 @@ __pycache__
 # Clangd
 .cache/
 
+# GDB
+.gdb_history
+
 tmp
 *.swp
 
