@@ -150,6 +150,7 @@ bool Converter::VisitBuiltinType(clang::BuiltinType *type) {
   default:
     // FIXME: improve error handling
     log() << "unsupported builtin type\n";
+    assert(0 && "unsupported builtin type\n");
     break;
   }
   return false;
