@@ -394,7 +394,7 @@ std::pair<ExprRules, TypeRules> LoadPartial(const std::filesystem::path &dir) {
   auto *root = parsed->getAsObject();
   assert(root);
 
-  const auto parent = std::filesystem::absolute(dir).string();
+  const auto parent = std::filesystem::absolute(dir).filename().string();
   for (auto &[entry_name, entry_val] : *root) {
     auto name = entry_name.str();
     auto val = entry_val.getAsString();
