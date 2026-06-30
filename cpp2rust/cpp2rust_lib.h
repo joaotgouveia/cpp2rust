@@ -15,6 +15,7 @@ std::string TranspileSrc(std::string_view cc_code, Model model,
                          const std::vector<std::string_view> &rule_dirs,
                          std::string_view filename, bool allow_partial_tgts);
 std::string TranspileDir(std::string_view build_dir, Model model,
-                         const std::vector<std::string_view> &rule_dirs, bool allow_partial_tgts);
+                         const std::vector<std::string_view> &rule_dirs,
+                         bool allow_partial_tgts);
 
 } // namespace cpp2rust
