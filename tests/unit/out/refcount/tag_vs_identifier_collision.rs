@@ -37,6 +37,14 @@ pub struct widget {
     pub id: Value<i32>,
     pub mode: Value<widget_enum>,
 }
+impl Clone for widget {
+    fn clone(&self) -> Self {
+        Self {
+            id: Rc::new(RefCell::new((*self.id.borrow()).clone())),
+            mode: Rc::new(RefCell::new((*self.mode.borrow()).clone())),
+        }
+    }
+}
 impl ByteRepr for widget {
     fn byte_size() -> usize {
         8
@@ -56,6 +64,14 @@ impl ByteRepr for widget {
 pub struct point_struct {
     pub x: Value<i32>,
     pub y: Value<i32>,
+}
+impl Clone for point_struct {
+    fn clone(&self) -> Self {
+        Self {
+            x: Rc::new(RefCell::new((*self.x.borrow()).clone())),
+            y: Rc::new(RefCell::new((*self.y.borrow()).clone())),
+        }
+    }
 }
 impl ByteRepr for point_struct {
     fn byte_size() -> usize {
@@ -176,6 +192,13 @@ impl ByteRepr for slot {
 pub struct Inner {
     pub tag_field: Value<i32>,
 }
+impl Clone for Inner {
+    fn clone(&self) -> Self {
+        Self {
+            tag_field: Rc::new(RefCell::new((*self.tag_field.borrow()).clone())),
+        }
+    }
+}
 impl ByteRepr for Inner {
     fn byte_size() -> usize {
         4
@@ -192,6 +215,13 @@ impl ByteRepr for Inner {
 #[derive(Default)]
 pub struct Outer {
     pub field: Value<Inner>,
+}
+impl Clone for Outer {
+    fn clone(&self) -> Self {
+        Self {
+            field: Rc::new(RefCell::new((*self.field.borrow()).clone())),
+        }
+    }
 }
 impl ByteRepr for Outer {
     fn byte_size() -> usize {
@@ -210,6 +240,13 @@ impl ByteRepr for Outer {
 pub struct Inner_struct {
     pub typedef_field: Value<i32>,
 }
+impl Clone for Inner_struct {
+    fn clone(&self) -> Self {
+        Self {
+            typedef_field: Rc::new(RefCell::new((*self.typedef_field.borrow()).clone())),
+        }
+    }
+}
 impl ByteRepr for Inner_struct {
     fn byte_size() -> usize {
         4
@@ -225,10 +262,8 @@ impl ByteRepr for Inner_struct {
 }
 pub fn is_active_0(w: Ptr<widget>) -> i32 {
     let w: Value<Ptr<widget>> = Rc::new(RefCell::new(w));
-    return (({
-        let _lhs = ((*(*(*w.borrow()).upgrade().deref()).mode.borrow()) as u32).clone();
-        _lhs == ((widget_enum::MODE_ACTIVE as i32) as u32)
-    }) as i32);
+    return ((((*(*(*w.borrow()).upgrade().deref()).mode.borrow()) as u32)
+        == ((widget_enum::MODE_ACTIVE as i32) as u32)) as i32);
 }
 pub fn main() {
     std::process::exit(main_0());

@@ -92,7 +92,32 @@ pub struct Entry {
     pub color: Value<Color>,
     pub opt: Value<Option>,
 }
-impl ByteRepr for Entry {}
+impl Clone for Entry {
+    fn clone(&self) -> Self {
+        Self {
+            name: Rc::new(RefCell::new((*self.name.borrow()).clone())),
+            color: Rc::new(RefCell::new((*self.color.borrow()).clone())),
+            opt: Rc::new(RefCell::new((*self.opt.borrow()).clone())),
+        }
+    }
+}
+impl ByteRepr for Entry {
+    fn byte_size() -> usize {
+        16
+    }
+    fn to_bytes(&self, buf: &mut [u8]) {
+        (*self.name.borrow()).to_bytes(&mut buf[0..8]);
+        (*self.color.borrow()).to_bytes(&mut buf[8..12]);
+        (*self.opt.borrow()).to_bytes(&mut buf[12..16]);
+    }
+    fn from_bytes(buf: &[u8]) -> Self {
+        Self {
+            name: Rc::new(RefCell::new(<Ptr<u8>>::from_bytes(&buf[0..8]))),
+            color: Rc::new(RefCell::new(<Color>::from_bytes(&buf[8..12]))),
+            opt: Rc::new(RefCell::new(<Option>::from_bytes(&buf[12..16]))),
+        }
+    }
+}
 thread_local!(
     pub static global_color_0: Value<Color> = Rc::new(RefCell::new(Color::GREEN));
 );
@@ -123,7 +148,7 @@ thread_local!(
 );
 pub fn as_int_4(c: Color) -> i32 {
     let c: Value<Color> = Rc::new(RefCell::new(c));
-    return ((*c.borrow()) as i32).clone();
+    return ((*c.borrow()) as i32);
 }
 pub fn classify_option_5(option: i32) -> i32 {
     let option: Value<i32> = Rc::new(RefCell::new(option));
@@ -181,7 +206,7 @@ fn main_0() -> i32 {
             }
         }
     };
-    let x: Value<i32> = Rc::new(RefCell::new(((*c.borrow()) as i32).clone()));
+    let x: Value<i32> = Rc::new(RefCell::new(((*c.borrow()) as i32)));
     assert!(((((*x.borrow()) == 0) as i32) != 0));
     let y: Value<i32> = Rc::new(RefCell::new(
         ((((*c.borrow()) as u32).wrapping_add(1_u32)) as i32),
@@ -199,12 +224,12 @@ fn main_0() -> i32 {
     let o: Value<Option> = Rc::new(RefCell::new(Option::OPT_A));
     assert!((((((*o.borrow()) as u32) == ((Option::OPT_A as i32) as u32)) as i32) != 0));
     assert!((((((*o.borrow()) as u32) == 10_u32) as i32) != 0));
-    let oi: Value<i32> = Rc::new(RefCell::new(((*o.borrow()) as i32).clone()));
+    let oi: Value<i32> = Rc::new(RefCell::new(((*o.borrow()) as i32)));
     assert!(((((*oi.borrow()) == 10) as i32) != 0));
     (*o.borrow_mut()) = Option::from(20);
     assert!((((((*o.borrow()) as u32) == ((Option::OPT_B as i32) as u32)) as i32) != 0));
     let rc: Value<i32> = Rc::new(RefCell::new(
-        ({ classify_option_5(((*o.borrow()) as i32).clone()) }),
+        ({ classify_option_5(((*o.borrow()) as i32)) }),
     ));
     assert!(((((*rc.borrow()) == 2) as i32) != 0));
     (*rc.borrow_mut()) = ({ classify_option_5(20) });
@@ -214,7 +239,7 @@ fn main_0() -> i32 {
     let t: Value<Tag_enum> = Rc::new(RefCell::new(Tag_enum::TAG_ONE));
     assert!((((((*t.borrow()) as u32) == 1_u32) as i32) != 0));
     assert!((((((*t.borrow()) as u32) == ((Tag_enum::TAG_ONE as i32) as u32)) as i32) != 0));
-    let ti: Value<i32> = Rc::new(RefCell::new(((*t.borrow()) as i32).clone()));
+    let ti: Value<i32> = Rc::new(RefCell::new(((*t.borrow()) as i32)));
     assert!(((((*ti.borrow()) == 1) as i32) != 0));
     (*t.borrow_mut()) = Tag_enum::from(2);
     assert!((((((*t.borrow()) as u32) == ((Tag_enum::TAG_TWO as i32) as u32)) as i32) != 0));
@@ -292,6 +317,49 @@ fn main_0() -> i32 {
             .opt
             .borrow()) as u32)
             == ((Option::OPT_C as i32) as u32)) as i32)
+            != 0)
+    );
+    let names: Value<Box<[Ptr<u8>]>> = Rc::new(RefCell::new(Box::new([
+        Ptr::from_string_literal(b"red"),
+        Ptr::from_string_literal(b"green"),
+        Ptr::from_string_literal(b"blue"),
+    ])));
+    let idx: Value<Color> = Rc::new(RefCell::new(Color::GREEN));
+    assert!(
+        ((((((*names.borrow())[(*idx.borrow()) as usize]
+            .offset((0) as isize)
+            .read()) as i32)
+            == ('g' as i32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*(*entries_3.with(Value::clone).borrow())[(*idx.borrow()) as usize]
+            .opt
+            .borrow()) as u32)
+            == ((Option::OPT_A as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        ((((((*names.borrow())[(*global_tag_2.with(Value::clone).borrow()) as usize]
+            .offset((0) as isize)
+            .read()) as i32)
+            == ('b' as i32)) as i32)
+            != 0)
+    );
+    let pp: Value<Ptr<Ptr<u8>>> = Rc::new(RefCell::new(
+        ((names.as_pointer() as Ptr<Ptr<u8>>).offset((*idx.borrow()) as isize)),
+    ));
+    assert!(
+        (((((((*pp.borrow()).read()).offset((0) as isize).read()) as i32) == ('g' as i32)) as i32)
+            != 0)
+    );
+    let pe: Value<Ptr<Entry>> = Rc::new(RefCell::new(
+        ((entries_3.with(Value::clone).as_pointer() as Ptr<Entry>)
+            .offset((*idx.borrow()) as isize)),
+    ));
+    assert!(
+        (((((*(*(*pe.borrow()).upgrade().deref()).opt.borrow()) as u32)
+            == ((Option::OPT_A as i32) as u32)) as i32)
             != 0)
     );
     return 0;

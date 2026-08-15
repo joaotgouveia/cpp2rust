@@ -60,6 +60,7 @@ add_custom_command(
     OUTPUT "${RUST_STAMP_FILE}"
     COMMAND rustup toolchain install ${RUST_STABLE_VERSION} --component clippy --component rustfmt
     COMMAND rustup toolchain install ${RUST_NIGHTLY_VERSION} --component rustc-dev --component llvm-tools --component clippy --component rustfmt
+    COMMAND rustup override set ${RUST_NIGHTLY_VERSION} --path ${PROJECT_SOURCE_DIR}/rule-preprocessor
     COMMAND ${CMAKE_COMMAND} -E touch "${RUST_STAMP_FILE}"
     DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/cmake/rust-toolchain.cmake"
     USES_TERMINAL
@@ -188,3 +189,12 @@ add_custom_command(
 
 add_custom_target("preprocess-rust-rules" ALL
                   DEPENDS ${rust_rules_ir_outputs})
+
+set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES
+  "${PROJECT_SOURCE_DIR}/libcc2rs/target"
+  "${PROJECT_SOURCE_DIR}/libcc2rs-macros/target"
+  "${PROJECT_SOURCE_DIR}/libc-dep/target"
+  "${PROJECT_SOURCE_DIR}/rules/target"
+  "${PROJECT_SOURCE_DIR}/rule-preprocessor/target"
+  "${CMAKE_BINARY_DIR}/target_preprocessor"
+)

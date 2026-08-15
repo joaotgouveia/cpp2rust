@@ -1,7 +1,9 @@
 // no-compile: refcount
 #include <assert.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/ioctl.h>
 #include <sys/types.h>
 #include <unistd.h>
 
@@ -15,7 +17,7 @@ static void test_close(void) {
 }
 
 static void test_lseek(void) {
-  const char *path = "/tmp/cpp2rust_lseek_test.tmp";
+  const char *path = "cpp2rust_lseek_test.tmp";
   FILE *fp = fopen(path, "wb");
   assert(fp != NULL);
   fputs("hello world", fp);
@@ -33,7 +35,7 @@ static void test_lseek(void) {
 }
 
 static void test_read(void) {
-  const char *path = "/tmp/cpp2rust_read_test.tmp";
+  const char *path = "cpp2rust_read_test.tmp";
   FILE *fp = fopen(path, "wb");
   assert(fp != NULL);
   fputs("hello world", fp);
@@ -49,7 +51,7 @@ static void test_read(void) {
 }
 
 static void test_unlink(void) {
-  const char *path = "/tmp/cpp2rust_unlink_test.tmp";
+  const char *path = "cpp2rust_unlink_test.tmp";
   FILE *fp = fopen(path, "wb");
   assert(fp != NULL);
   assert(fclose(fp) == 0);
@@ -71,7 +73,7 @@ static void test_pipe(void) {
 }
 
 static void test_ftruncate(void) {
-  const char *path = "/tmp/cpp2rust_ftruncate_test.tmp";
+  const char *path = "cpp2rust_ftruncate_test.tmp";
   FILE *fp = fopen(path, "wb");
   assert(fp != NULL);
   fputs("hello world", fp);
@@ -85,6 +87,33 @@ static void test_ftruncate(void) {
   assert(lseek(fd, 0, SEEK_END) == 5);
   assert(fclose(fp) == 0);
   unlink(path);
+}
+
+static void test_open(void) {
+  int fd = open("/dev/null", 0, 0644);
+  assert(fd >= -1);
+  if (fd >= 0) {
+    close(fd);
+  }
+  fd = open("/dev/null", 0);
+  assert(fd >= -1);
+  if (fd >= 0) {
+    close(fd);
+  }
+}
+
+static void test_fcntl(void) {
+  assert(fcntl(0, 1) >= -1);
+  int duped = fcntl(0, 0, 100);
+  assert(duped >= -1);
+  if (duped >= 0) {
+    close(duped);
+  }
+}
+
+static void test_ioctl(void) {
+  int arg = 0;
+  assert(ioctl(0, 0, &arg) >= -1);
 }
 
 static void test_isatty(void) { printf("%d\n", isatty(0)); }
@@ -104,6 +133,9 @@ int main(void) {
   test_unlink();
   test_pipe();
   test_ftruncate();
+  test_open();
+  test_fcntl();
+  test_ioctl();
   test_isatty();
   test_geteuid();
   test_gethostname();

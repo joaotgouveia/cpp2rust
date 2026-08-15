@@ -28,9 +28,13 @@ public:
 
   bool VisitCXXRecordDecl(clang::CXXRecordDecl *decl) override;
 
+  bool VisitOffsetOfExpr(clang::OffsetOfExpr *expr) override;
+
   void EmitRustUnion(clang::RecordDecl *decl) override;
 
   bool EmitsReprCForRecords() const override { return false; }
+
+  const char *CharRustType() const override { return "u8"; }
 
   void ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
                                      const clang::FunctionDecl *op) override;
@@ -165,6 +169,8 @@ public:
 
   void ConvertVarInit(clang::QualType qual_type, clang::Expr *expr) override;
 
+  std::string ConvertVarInitValue(clang::QualType qual_type, clang::Expr *expr);
+
   void ConvertAssignment(clang::Expr *lhs, clang::Expr *rhs,
                          std::string_view assign_operator) override;
 
@@ -239,6 +245,10 @@ private:
 
   std::string ConvertPtrType(clang::QualType type);
   std::string ConvertPointeeType(clang::QualType ptr_type) override;
+
+  std::string ConvertSubscriptIndex(clang::Expr *idx);
+
+  std::string GetSafeTypeAsString(clang::QualType qual_type) const;
 
   /// The kind of conversion that should be performed.
   enum class ConversionKind : uint8_t {

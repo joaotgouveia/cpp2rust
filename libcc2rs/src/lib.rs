@@ -7,6 +7,9 @@ pub use reinterpret::ByteRepr;
 mod rc;
 pub use rc::*;
 
+mod libc_shims;
+pub use libc_shims::*;
+
 mod fn_ptr;
 pub use fn_ptr::FnPtr;
 
@@ -33,5 +36,11 @@ pub use compat::*;
 
 mod va_args;
 pub use va_args::*;
+
+mod fd;
+pub use fd::*;
+
+mod format;
+pub use format::*;
 
 pub use libcc2rs_macros::{goto, goto_block, switch};

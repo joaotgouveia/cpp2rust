@@ -40,6 +40,20 @@ fn pointer_flags(ty: &ast::Type) -> (bool, bool) {
     flags
 }
 
+fn is_va_args_type(ty: &ast::Type) -> bool {
+    if let ast::Type::RefType(r) = ty
+        && let Some(ast::Type::SliceType(slice)) = r.ty()
+    {
+        return matches!(slice.ty(), Some(ast::Type::PathType(path))
+                if path
+                    .path()
+                    .and_then(|p| p.segment())
+                    .and_then(|s| s.name_ref())
+                    .is_some_and(|name| name.text() == "VaArg"));
+    }
+    false
+}
+
 fn cfg_matches_host(fn_item: &ast::Fn) -> bool {
     for attr in fn_item.attrs() {
         let Some(meta) = attr.meta() else { continue };
@@ -121,6 +135,10 @@ impl SyntacticAnalysis {
         let mut file_ir = FileIr::new();
 
         for fn_item in source_file.syntax().descendants().filter_map(ast::Fn::cast) {
+            if !cfg_matches_host(&fn_item) {
+                continue;
+            }
+
             let Some(name) = fn_item.name() else { continue };
             let fn_name = name.text().to_string();
 
@@ -130,9 +148,6 @@ impl SyntacticAnalysis {
                     RuleIr::Type(TypeIrBuilder::new(&fn_item).build()),
                 );
             } else if fn_name.starts_with('f') {
-                if !cfg_matches_host(&fn_item) {
-                    continue;
-                }
                 file_ir.insert(
                     fn_name.clone(),
                     RuleIr::Fn(FnIrBuilder::new(&fn_item).build(path)),
@@ -205,6 +220,13 @@ impl<'a> FragmentCtx<'a> {
         }
         if token.kind() == SyntaxKind::IDENT {
             if let Some(param) = self.params.iter().find(|p| p.name == token.text()) {
+                if param.is_va_args {
+                    self.flush_text();
+                    self.fragments.push(BodyFragment::VaArgs {
+                        va_args: std::marker::PhantomData,
+                    });
+                    return;
+                }
                 let mut access = self.builder.classify_access(token);
                 if param.is_mut_ref && self.text_buf.ends_with('*') {
                     self.text_buf.pop();
@@ -272,6 +294,7 @@ struct ParamInfo {
     is_refcount_pointer: bool,
     is_unsafe_pointer: bool,
     is_mut_ref: bool,
+    is_va_args: bool,
 }
 
 struct FnIrBuilder<'a> {
@@ -297,15 +320,22 @@ impl<'a> FnIrBuilder<'a> {
             };
 
             let (is_refcount_pointer, is_unsafe_pointer) = pointer_flags(&ty);
+            let name = ident
+                .name()
+                .map(|n| n.text().to_string())
+                .unwrap_or_default();
+            let is_va_args = is_va_args_type(&ty);
+            assert!(
+                !is_va_args || name == "va",
+                "variadic argument parameter must be named `va`, found `{name}`"
+            );
             params.push(ParamInfo {
-                name: ident
-                    .name()
-                    .map(|n| n.text().to_string())
-                    .unwrap_or_default(),
+                name,
                 ty: ty.syntax().text().to_string(),
                 is_refcount_pointer,
                 is_unsafe_pointer,
                 is_mut_ref: matches!(&ty, ast::Type::RefType(r) if r.mut_token().is_some()),
+                is_va_args,
             });
         }
         params
@@ -351,11 +381,9 @@ impl<'a> FnIrBuilder<'a> {
             for pred in wc.predicates() {
                 let Some(ty) = pred.ty() else { continue };
                 let name = ty.syntax().text().to_string();
-                let bounds = extract_bounds(pred.type_bound_list());
-                generics
-                    .entry(name)
-                    .and_modify(|existing| existing.extend(bounds.clone()))
-                    .or_insert(bounds);
+                if let Some(generic) = generics.get_mut(&name) {
+                    generic.extend(extract_bounds(pred.type_bound_list()));
+                }
             }
         }
 
@@ -417,6 +445,13 @@ impl<'a> FnIrBuilder<'a> {
             .unwrap_or(Access::Read)
     }
 
+    fn is_extern(&self) -> bool {
+        self.fn_item
+            .syntax()
+            .ancestors()
+            .any(|a| a.kind() == SyntaxKind::EXTERN_BLOCK)
+    }
+
     fn returns_mut_ref(&self) -> bool {
         self.fn_item
             .ret_type()
@@ -476,6 +511,7 @@ impl<'a> FnIrBuilder<'a> {
 
         let params_map: BTreeMap<String, TypeInfo> = params
             .iter()
+            .filter(|p| !p.is_va_args)
             .map(|p| {
                 (
                     p.name.clone(),
@@ -519,6 +555,7 @@ impl<'a> FnIrBuilder<'a> {
             },
             multi_statement,
             body,
+            is_extern: self.is_extern().then_some(true),
         };
         ir.validate(&format!("{}:{}", path.display(), fn_name));
         ir

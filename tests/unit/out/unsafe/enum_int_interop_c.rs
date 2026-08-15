@@ -65,7 +65,7 @@ libcc2rs::impl_enum_inc_dec!(Tag_enum);
 #[repr(C)]
 #[derive(Copy, Clone, Default)]
 pub struct Entry {
-    pub name: *const u8,
+    pub name: *const libc::c_char,
     pub color: Color,
     pub opt: Option,
 }
@@ -75,17 +75,17 @@ pub static mut global_tag_2: Tag_enum = unsafe { Tag_enum::TAG_TWO };
 pub static mut entries_3: [Entry; 3] = unsafe {
     [
         Entry {
-            name: (b"first\0".as_ptr().cast_mut()).cast_const(),
+            name: (c"first".as_ptr().cast_mut()).cast_const(),
             color: Color::RED,
             opt: Option::OPT_NONE,
         },
         Entry {
-            name: (b"second\0".as_ptr().cast_mut()).cast_const(),
+            name: (c"second".as_ptr().cast_mut()).cast_const(),
             color: Color::GREEN,
             opt: Option::OPT_A,
         },
         Entry {
-            name: (b"third\0".as_ptr().cast_mut()).cast_const(),
+            name: (c"third".as_ptr().cast_mut()).cast_const(),
             color: Color::BLUE,
             opt: Option::OPT_C,
         },
@@ -220,5 +220,26 @@ unsafe fn main_0() -> i32 {
     assert!(
         ((((entries_3[(2) as usize].opt as u32) == ((Option::OPT_C as i32) as u32)) as i32) != 0)
     );
+    let mut names: [*const libc::c_char; 3] = [
+        (c"red".as_ptr().cast_mut()).cast_const(),
+        (c"green".as_ptr().cast_mut()).cast_const(),
+        (c"blue".as_ptr().cast_mut()).cast_const(),
+    ];
+    let mut idx: Color = Color::GREEN;
+    assert!(
+        (((((*names[(idx) as usize].offset((0) as isize)) as i32) == ('g' as i32)) as i32) != 0)
+    );
+    assert!(
+        ((((entries_3[(idx) as usize].opt as u32) == ((Option::OPT_A as i32) as u32)) as i32) != 0)
+    );
+    assert!(
+        (((((*names[(global_tag_2) as usize].offset((0) as isize)) as i32) == ('b' as i32))
+            as i32)
+            != 0)
+    );
+    let mut pp: *mut *const libc::c_char = (&mut names[(idx) as usize] as *mut *const libc::c_char);
+    assert!((((((*(*pp).offset((0) as isize)) as i32) == ('g' as i32)) as i32) != 0));
+    let mut pe: *mut Entry = (&mut entries_3[(idx) as usize] as *mut Entry);
+    assert!((((((*pe).opt as u32) == ((Option::OPT_A as i32) as u32)) as i32) != 0));
     return 0;
 }

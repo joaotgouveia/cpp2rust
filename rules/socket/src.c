@@ -1,8 +1,11 @@
 #define _GNU_SOURCE
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <sys/un.h>
 
 typedef struct sockaddr t1;
+typedef struct sockaddr_storage t2;
+typedef struct sockaddr_un t3;
 
 int f1() {
   return MSG_NOSIGNAL;
@@ -84,4 +87,24 @@ ssize_t f18(int sockfd, void *buf, size_t len, int flags,
 ssize_t f19(int sockfd, const void *buf, size_t len, int flags,
             const struct sockaddr *dest_addr, socklen_t addrlen) {
   return sendto(sockfd, buf, len, flags, dest_addr, addrlen);
+}
+
+int f20() {
+  return AF_INET;
+}
+
+int f21() {
+  return AF_INET6;
+}
+
+int f22() {
+  return SOL_SOCKET;
+}
+
+int f23() {
+  return SO_KEEPALIVE;
+}
+
+int f24() {
+  return SO_ERROR;
 }

@@ -46,7 +46,16 @@ fn build_rustc_args(crate_root: &Path) -> Vec<String> {
     args.push("-L".to_string());
     args.push(format!("dependency={}", deps.display()));
 
-    for dep in &["libcc2rs", "libc", "brotli_sys", "rustls_ffi", "serde_json"] {
+    for dep in &[
+        "libcc2rs",
+        "libc",
+        "brotli_sys",
+        "rustls_ffi",
+        "serde_json",
+        "nix",
+        "jiff",
+        "xattr",
+    ] {
         if let Some(rlib) = find_rlib(deps.as_path(), dep) {
             args.push("--extern".to_string());
             args.push(format!("{}={}", dep, rlib.display()));
@@ -399,10 +408,10 @@ impl<'a, 'tcx> AstVisitor<'a, 'tcx> {
             rustc_hir::ExprKind::Lit(_)
             | rustc_hir::ExprKind::Path(_)
             | rustc_hir::ExprKind::Ret(None)
-            | rustc_hir::ExprKind::Break(_, _)
+            | rustc_hir::ExprKind::Break(_, None)
             | rustc_hir::ExprKind::Continue(_) => {}
 
-            rustc_hir::ExprKind::Ret(Some(e)) => {
+            rustc_hir::ExprKind::Ret(Some(e)) | rustc_hir::ExprKind::Break(_, Some(e)) => {
                 self.visit_expr(e, Access::Read);
             }
 

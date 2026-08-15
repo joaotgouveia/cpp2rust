@@ -57,6 +57,11 @@ int f19(FILE *stream, off_t offset, int whence) {
 
 FILE *f20(int fd, const char *mode) { return fdopen(fd, mode); }
 
+template <typename... Args>
+int f21(char *a0, size_t a1, const char *a2, Args... args) {
+  return snprintf(a0, a1, a2, args...);
+}
+
 int f22(const char *a0, const char *a1) {
   return rename(a0, a1);
 }
@@ -66,3 +71,9 @@ int f23(FILE *stream) { return getc(stream); }
 int f24(FILE *stream, char *buf, int mode, size_t size) {
   return setvbuf(stream, buf, mode, size);
 }
+
+int f25(void) { return SEEK_SET; }
+
+int f26(void) { return SEEK_CUR; }
+
+int f27(void) { return SEEK_END; }

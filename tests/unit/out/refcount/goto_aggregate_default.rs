@@ -11,6 +11,14 @@ pub struct Point {
     pub x: Value<i32>,
     pub y: Value<i32>,
 }
+impl Clone for Point {
+    fn clone(&self) -> Self {
+        Self {
+            x: Rc::new(RefCell::new((*self.x.borrow()).clone())),
+            y: Rc::new(RefCell::new((*self.y.borrow()).clone())),
+        }
+    }
+}
 impl ByteRepr for Point {
     fn byte_size() -> usize {
         8
@@ -43,7 +51,7 @@ pub fn agg_0(n: i32) -> i32 {
     let p: Value<Point> = <Value<Point>>::default();
     let ptr: Value<Ptr<i32>> = Rc::new(RefCell::new(Ptr::<i32>::null()));
     let fp: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(FnPtr::null()));
-    let file: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::null()));
+    let file: Value<Ptr<CFile>> = Rc::new(RefCell::new(Ptr::null()));
     let total: Value<i32> = <Value<i32>>::default();
     goto_block!({
         '__entry: {

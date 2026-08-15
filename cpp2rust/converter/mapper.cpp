@@ -4,6 +4,7 @@
 #include "converter/mapper.h"
 
 #include <clang/AST/ExprCXX.h>
+#include <clang/Basic/OperatorKinds.h>
 #include <clang/Basic/SourceManager.h>
 #include <clang/Lex/Lexer.h>
 #include <llvm/Support/ThreadPool.h>
@@ -40,6 +41,7 @@ clang::PrintingPolicy getPrintPolicy() {
   policy.SuppressScope = false;
   policy.FullyQualifiedName = true;
   policy.SuppressUnwrittenScope = true;
+  policy.UsePreferredNames = true;
   return policy;
 }
 
@@ -522,7 +524,14 @@ void addBuiltinTypes(Model model) {
   }
 
   // Char
-  add_builtin_rule(ctx_->CharTy, "u8");
+  switch (model) {
+  case Model::kUnsafe:
+    add_builtin_rule(ctx_->CharTy, "libc::c_char");
+    break;
+  case Model::kRefCount:
+    add_builtin_rule(ctx_->CharTy, "u8");
+    break;
+  }
   add_builtin_rule(ctx_->SignedCharTy, "i8");
   add_builtin_rule(ctx_->UnsignedCharTy, "u8");
 
@@ -542,7 +551,8 @@ void addBuiltinTypes(Model model) {
   add_size_rules(ctx_->getSignedSizeType(), {"ssize_t"}, "isize");
 }
 
-clang::QualType normalizeQualType(clang::QualType qual_type) {
+clang::QualType normalizeQualType(clang::QualType qual_type,
+                                  const clang::DeclContext *dctx) {
   assert(ctx_);
 
   bool isLRef = qual_type->isLValueReferenceType();
@@ -568,6 +578,22 @@ clang::QualType normalizeQualType(clang::QualType qual_type) {
     qual_type = qual_type.getCanonicalType();
   }
 
+  bool sugared = false;
+  if (dctx && llvm::isa<clang::SubstTemplateTypeParmType>(qual_type)) {
+    const auto match = llvm::find_if(dctx->decls(), [&](const auto *d) {
+      const auto *td = llvm::dyn_cast<clang::TypedefNameDecl>(d);
+      return td && (td->getUnderlyingType().getCanonicalType() ==
+                    qual_type.getCanonicalType());
+    });
+
+    if (match != dctx->decls().end()) {
+      qual_type =
+          ctx_->getTypedefType(clang::ElaboratedTypeKeyword::None, std::nullopt,
+                               llvm::cast<clang::TypedefNameDecl>(*match));
+      sugared = true;
+    }
+  }
+
   qual_type = qual_type.withFastQualifiers(qualifiers.getFastQualifiers());
   if (qualifiers.hasNonFastQualifiers()) {
     qual_type = ctx_->getQualifiedType(qual_type, qualifiers);
@@ -581,6 +607,9 @@ clang::QualType normalizeQualType(clang::QualType qual_type) {
     qual_type = ctx_->getRValueReferenceType(qual_type);
   }
 
+  if (sugared) {
+    return qual_type;
+  }
   return qual_type.getCanonicalType().getUnqualifiedType().getDesugaredType(
       *ctx_);
 }
@@ -649,6 +678,19 @@ std::pair<std::string, std::string> MapToUid(clang::QualType type) {
 
 const TranslationRule::ExprRule *GetExprRule(const clang::Expr *expr) {
   return search(expr);
+}
+
+bool IsLibcPassthrough(const clang::Expr *expr) {
+  const auto *tgt_ir = GetExprRule(expr);
+  if (tgt_ir == nullptr || !tgt_ir->body.empty() || !tgt_ir->is_extern) {
+    return false;
+  }
+  const auto *ref =
+      clang::dyn_cast<clang::DeclRefExpr>(expr->IgnoreParenImpCasts());
+  const auto *decl = ref != nullptr ? ref->getDecl() : nullptr;
+  return decl != nullptr &&
+         decl->getASTContext().getSourceManager().isInSystemHeader(
+             decl->getLocation());
 }
 
 std::string MapFunctionName(const clang::FunctionDecl *decl) {
@@ -823,7 +865,8 @@ std::string ToRustName(std::string name) {
   return ReplaceAll(name, "::", "_");
 }
 
-std::string ToString(clang::QualType qual_type, ScalarSugar sugar) {
+std::string ToString(clang::QualType qual_type, ScalarSugar sugar,
+                     const clang::DeclContext *dctx) {
   assert(ctx_);
 
   if (sugar == ScalarSugar::kPreserve) {
@@ -853,7 +896,7 @@ std::string ToString(clang::QualType qual_type, ScalarSugar sugar) {
 
   if (auto cxx_record_decl = qual_type->getAsCXXRecordDecl()) {
     if (cxx_record_decl->isLambda()) {
-      return ToString(cxx_record_decl->getLambdaCallOperator());
+      return ToString(cxx_record_decl->getLambdaCallOperator(), dctx);
     }
   }
 
@@ -869,11 +912,12 @@ std::string ToString(clang::QualType qual_type, ScalarSugar sugar) {
 
   std::string type;
   llvm::raw_string_ostream os(type);
-  normalizeQualType(qual_type).print(os, getPrintPolicy());
+  normalizeQualType(qual_type, dctx).print(os, getPrintPolicy());
   return normalizeTranslationRule(std::move(type));
 }
 
-std::string ToString(const clang::NamedDecl *decl) {
+std::string ToString(const clang::NamedDecl *decl,
+                     const clang::DeclContext *dctx) {
   if (auto *record = clang::dyn_cast<clang::RecordDecl>(decl);
       record && !record->getIdentifier()) {
     if (auto renamed = DisambiguateAnonymousTag(record); !renamed.empty()) {
@@ -910,9 +954,32 @@ std::string ToString(const clang::NamedDecl *decl) {
     return normalizeTranslationRule(std::move(out));
   }
 
-  os << ToString(func_decl->getReturnType()) << ' ';
-  if (const auto *method_decl =
-          llvm::dyn_cast<clang::CXXMethodDecl>(func_decl)) {
+  os << ToString(func_decl->getReturnType(), ScalarSugar::kDesugar, dctx)
+     << ' ';
+  if (const auto op = func_decl->getOverloadedOperator();
+      op >= clang::OverloadedOperatorKind::OO_LessLess &&
+      op <= clang::OverloadedOperatorKind::OO_GreaterGreaterEqual) {
+    // ensure matchTemplate does not consider these operator names when matching
+    func_decl->getQualifier().print(os, getPrintPolicy());
+    os << "operator ";
+    switch (op) {
+    case clang::OverloadedOperatorKind::OO_LessLess:
+      os << "shl";
+      break;
+    case clang::OverloadedOperatorKind::OO_GreaterGreater:
+      os << "shr";
+      break;
+    case clang::OverloadedOperatorKind::OO_LessLessEqual:
+      os << "shleq";
+      break;
+    case clang::OverloadedOperatorKind::OO_GreaterGreaterEqual:
+      os << "shreq";
+      break;
+    default:
+      std::unreachable();
+    }
+  } else if (const auto *method_decl =
+                 llvm::dyn_cast<clang::CXXMethodDecl>(func_decl)) {
     if (method_decl->getParent()->isLambda() &&
         method_decl->getOverloadedOperator() == clang::OO_Call) {
       func_decl->printName(os, getPrintPolicy());
@@ -928,7 +995,14 @@ std::string ToString(const clang::NamedDecl *decl) {
     if (i) {
       os << ", ";
     }
-    os << ToString(func_decl->getParamDecl(i)->getType());
+    os << ToString(func_decl->getParamDecl(i)->getType(), ScalarSugar::kDesugar,
+                   dctx);
+  }
+  if (func_decl->isVariadic()) {
+    if (func_decl->getNumParams()) {
+      os << ", ";
+    }
+    os << "...";
   }
   os << ')';
 
@@ -955,7 +1029,7 @@ std::string ToString(const clang::NamedDecl *decl) {
   return normalizeTranslationRule(std::move(out));
 }
 
-std::string ToString(const clang::Expr *expr) {
+std::string ToString(const clang::Expr *expr, const clang::DeclContext *dctx) {
   if (!expr) {
     assert(0 && "!expr");
   }
@@ -974,13 +1048,13 @@ std::string ToString(const clang::Expr *expr) {
 
   if (const auto *CE = llvm::dyn_cast<clang::CallExpr>(expr)) {
     if (const auto *decl = CE->getDirectCallee()) {
-      return ToString(decl);
+      return ToString(decl, dctx);
     }
   }
 
   if (const auto *ctor = llvm::dyn_cast<clang::CXXConstructExpr>(expr)) {
     if (const auto *ctor_decl = ctor->getConstructor()) {
-      return ToString(ctor_decl);
+      return ToString(ctor_decl, dctx);
     }
     assert(0 && "expr is a CXXConstructExpr but could not get constructor");
   }
@@ -990,14 +1064,15 @@ std::string ToString(const clang::Expr *expr) {
             llvm::dyn_cast<clang::NamedDecl>(ME->getMemberDecl())) {
       if (const auto *method_decl =
               llvm::dyn_cast<clang::CXXMethodDecl>(member_decl)) {
-        return ToString(method_decl);
+        return ToString(method_decl, dctx);
       }
       if (ME->isArrow()) {
         auto *base = ME->getBase()->IgnoreParenImpCasts();
         if (auto *op = llvm::dyn_cast<clang::CXXOperatorCallExpr>(base)) {
           if (op->getOperator() == clang::OO_Arrow) {
-            return ToString(op->getArg(0)->getType()) + "->" +
-                   ToString(member_decl);
+            return ToString(op->getArg(0)->getType(), ScalarSugar::kDesugar,
+                            dctx) +
+                   "->" + ToString(member_decl, dctx);
           }
         }
       } else if (auto for_range = GetParentForRange(*ctx_, ME)) {
@@ -1009,7 +1084,7 @@ std::string ToString(const clang::Expr *expr) {
           }
         }
       }
-      return ToString(member_decl);
+      return ToString(member_decl, dctx);
     }
     assert(0 && "expr is a MemberExpr but could not get named decl");
   }
@@ -1019,15 +1094,15 @@ std::string ToString(const clang::Expr *expr) {
             llvm::dyn_cast<clang::NamedDecl>(decl_ref->getDecl())) {
       if (const auto *tmpl_decl =
               llvm::dyn_cast<clang::FunctionTemplateDecl>(named_decl)) {
-        return ToString(tmpl_decl->getTemplatedDecl());
+        return ToString(tmpl_decl->getTemplatedDecl(), dctx);
       }
-      return ToString(named_decl);
+      return ToString(named_decl, dctx);
     }
     return "";
   }
 
   if (const auto *uop = llvm::dyn_cast<clang::UnaryOperator>(expr)) {
-    auto sub = ToString(uop->getSubExpr());
+    auto sub = ToString(uop->getSubExpr(), dctx);
     std::string_view opcode =
         clang::UnaryOperator::getOpcodeStr(uop->getOpcode());
     return uop->isPostfix() ? std::format("{}{}", sub, opcode)

@@ -116,6 +116,8 @@ public:
 
   virtual bool EmitsReprCForRecords() const { return true; }
 
+  virtual const char *CharRustType() const { return "libc::c_char"; }
+
   virtual bool VisitCXXMethodDecl(clang::CXXMethodDecl *decl);
   virtual std::string GetSelfMaybeWithMut(const clang::CXXMethodDecl *decl);
 
@@ -248,9 +250,10 @@ public:
   struct CallInfo {
     std::vector<CallArg> args;
     std::vector<clang::Expr *> variadic_args;
-    clang::Expr *callee;
+    clang::CallExpr *expr;
     bool is_variadic;
     bool is_fn_ptr_call;
+    bool is_libc_passthrough;
   };
 
   CallInfo CollectCallInfo(clang::CallExpr *expr);
@@ -272,6 +275,19 @@ public:
 
   // Option<fn> implements Copy
   virtual bool FunctionPointerImplementsCopy() const { return true; }
+
+  bool TypeIsCopyable(clang::QualType ty) const {
+    if (ty->isFunctionPointerType() || ty->isFunctionType()) {
+      return FunctionPointerImplementsCopy();
+    }
+    if (ty->isBuiltinType() || ty->isEnumeralType()) {
+      return true;
+    }
+    if (auto *record = ty->getAsRecordDecl()) {
+      return RecordDerivesCopy(record);
+    }
+    return false;
+  }
 
   virtual void ConvertPrintf(clang::CallExpr *expr);
 
@@ -579,6 +595,9 @@ protected:
                                  const PlaceholderCtx &ph_ctx,
                                  unsigned arg_idx);
 
+  std::string ConvertVariadicTail(clang::Expr *expr,
+                                  const std::vector<clang::Expr *> &all_args);
+
   virtual std::string ConvertMappedMethodCall(
       clang::Expr *expr, const TranslationRule::MethodCallFragment &mc,
       clang::Expr **args, unsigned num_args, TempMaterializationCtx *ctx);
@@ -591,7 +610,7 @@ protected:
 
   virtual bool RecordDerivesDefault(const clang::RecordDecl *decl);
 
-  bool RecordDerivesCopy(const clang::RecordDecl *decl);
+  bool RecordDerivesCopy(const clang::RecordDecl *decl) const;
 
   bool RecordHasCopyableFields(const clang::RecordDecl *decl);
 

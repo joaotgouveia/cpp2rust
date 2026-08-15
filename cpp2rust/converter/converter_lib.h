@@ -40,9 +40,9 @@ bool IsComparisonWithNullOp(const clang::BinaryOperator *expr);
 
 bool IsInMainFile(const clang::Decl *decl);
 
-bool IsCharPointerFieldFromLibc(const clang::ValueDecl *decl);
+bool IsUnionArrayMember(const clang::Expr *base);
 
-bool IsCharArrayFieldFromLibc(const clang::ValueDecl *decl);
+bool IsStringLiteralExpr(const clang::Expr *expr);
 
 bool IsUserDefinedDecl(const clang::Decl *decl);
 
@@ -144,6 +144,8 @@ void ForEachTemplateArgument(
 
 clang::Expr *GetCallObject(clang::CallExpr *expr);
 
+clang::Expr *GetCallee(clang::CallExpr *expr);
+
 std::unordered_set<const clang::ValueDecl *>
 GetAllVars(const clang::Stmt *stmt);
 
@@ -224,7 +226,5 @@ enum class ConstCastType {
 };
 
 ConstCastType GetConstCastType(clang::QualType to, clang::QualType from);
-
-bool TypeIsCopyable(clang::QualType ty);
 
 } // namespace cpp2rust

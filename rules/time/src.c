@@ -4,6 +4,10 @@
 #include <sys/time.h>
 #include <time.h>
 
+typedef struct tm t1;
+typedef struct timeval t2;
+typedef struct timespec t3;
+
 time_t f1(time_t *t) { return time(t); }
 
 int f2(clockid_t clk_id, struct timespec *tp) {
@@ -36,4 +40,14 @@ int f8(struct timeval *tv, void *tz) {
 }
 #else
 #error "Unsupported platform for gettimeofday"
+#endif
+
+clockid_t f9() {
+  return CLOCK_REALTIME;
+}
+
+clockid_t f10() { return CLOCK_MONOTONIC; }
+
+#ifdef __linux__
+clockid_t f11() { return CLOCK_MONOTONIC_RAW; }
 #endif

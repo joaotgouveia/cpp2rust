@@ -130,24 +130,20 @@ bool IsInMainFile(const clang::Decl *decl) {
   return src_mgr.isInMainFile(src_mgr.getExpansionLoc(loc));
 }
 
-bool IsCharPointerFieldFromLibc(const clang::ValueDecl *decl) {
-  auto field = clang::dyn_cast<clang::FieldDecl>(decl);
-  if (!field || !field->getType()->isPointerType() ||
-      !field->getType()->getPointeeType()->isCharType()) {
-    return false;
+bool IsUnionArrayMember(const clang::Expr *base) {
+  if (auto *me =
+          clang::dyn_cast<clang::MemberExpr>(base->IgnoreParenImpCasts())) {
+    if (auto *fd = clang::dyn_cast<clang::FieldDecl>(me->getMemberDecl())) {
+      return fd->getParent()->isUnion() && fd->getType()->isArrayType();
+    }
   }
-  return field->getASTContext().getSourceManager().isInSystemHeader(
-      field->getParent()->getLocation());
+  return false;
 }
 
-bool IsCharArrayFieldFromLibc(const clang::ValueDecl *decl) {
-  auto field = clang::dyn_cast<clang::FieldDecl>(decl);
-  if (!field || !field->getType()->isArrayType() ||
-      !field->getType()->getArrayElementTypeNoTypeQual()->isCharType()) {
-    return false;
-  }
-  return field->getASTContext().getSourceManager().isInSystemHeader(
-      field->getParent()->getLocation());
+bool IsStringLiteralExpr(const clang::Expr *expr) {
+  const auto *stripped = expr->IgnoreParens()->IgnoreImplicit();
+  return clang::isa<clang::StringLiteral>(stripped) ||
+         clang::isa<clang::PredefinedExpr>(stripped);
 }
 
 bool IsUserDefinedDecl(const clang::Decl *decl) {
@@ -202,6 +198,9 @@ bool IsMut(clang::QualType qual_type) {
 
 bool TypeImplementsByteRepr(clang::QualType qt) {
   if (qt->isIntegerType() || qt->isFloatingType() || qt->isEnumeralType()) {
+    return true;
+  }
+  if (qt->isPointerType()) {
     return true;
   }
   if (const auto *arr = qt->getAsArrayTypeUnsafe()) {
@@ -688,7 +687,9 @@ static void GetAllVarsImpl(const clang::Stmt *stmt,
   }
 
   if (auto *decl_ref = clang::dyn_cast<clang::DeclRefExpr>(stmt)) {
-    vars.insert(decl_ref->getDecl());
+    if (!clang::isa<clang::EnumConstantDecl>(decl_ref->getDecl())) {
+      vars.insert(decl_ref->getDecl());
+    }
   } else if (auto *member = clang::dyn_cast<clang::MemberExpr>(stmt)) {
     vars.insert(member->getMemberDecl());
     GetAllVarsImpl(member->getBase(), vars);
@@ -765,6 +766,15 @@ BuildUnifiedArgs(clang::Expr *expr, clang::Expr **args, unsigned num_args) {
     all_args.push_back(args[i]);
   }
   return all_args;
+}
+
+clang::Expr *GetCallee(clang::CallExpr *expr) {
+  if (auto op_call = clang::dyn_cast<clang::CXXOperatorCallExpr>(expr)) {
+    if (op_call->getOperator() == clang::OO_Call) {
+      return op_call->getArg(0);
+    }
+  }
+  return expr->getCallee();
 }
 
 clang::Expr *GetCalleeOrExpr(clang::Expr *expr) {
@@ -1109,11 +1119,6 @@ ConstCastType GetConstCastType(clang::QualType to, clang::QualType from) {
   } else {
     return ConstCastType::MutableToMutable;
   }
-}
-
-bool TypeIsCopyable(clang::QualType ty) {
-  return ty->isIntegerType() || ty->isFunctionPointerType() ||
-         ty->isFunctionType();
 }
 
 } // namespace cpp2rust

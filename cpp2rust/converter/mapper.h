@@ -33,6 +33,7 @@ std::pair<std::string, std::string> MapToUid(clang::QualType type);
 std::string Map(clang::QualType qual_type);
 std::string MapInitializer(clang::QualType qual_type);
 const TranslationRule::ExprRule *GetExprRule(const clang::Expr *expr);
+bool IsLibcPassthrough(const clang::Expr *expr);
 std::string MapFunctionName(const clang::FunctionDecl *decl);
 std::string InstantiateTemplate(const clang::Expr *expr, unsigned n);
 bool ReturnsPointer(const clang::Expr *expr);
@@ -50,9 +51,12 @@ enum class ScalarSugar {
 
 clang::QualType GetTypeForDecl(const clang::NamedDecl *decl);
 std::string ToString(clang::QualType qual_type,
-                     ScalarSugar sugar = ScalarSugar::kDesugar);
-std::string ToString(const clang::Expr *expr);
-std::string ToString(const clang::NamedDecl *decl);
+                     ScalarSugar sugar = ScalarSugar::kDesugar,
+                     const clang::DeclContext *dctx = nullptr);
+std::string ToString(const clang::Expr *expr,
+                     const clang::DeclContext *dctx = nullptr);
+std::string ToString(const clang::NamedDecl *decl,
+                     const clang::DeclContext *dctx = nullptr);
 std::string ToRustName(std::string name);
 
 void LoadTranslationRules(Model model, clang::ASTContext &ctx,

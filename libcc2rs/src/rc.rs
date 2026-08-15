@@ -210,32 +210,38 @@ impl<T> Ptr<T> {
 
     #[inline]
     pub fn delete(&self) {
-        assert_eq!(self.offset, 0, "ub: invalid delete");
-        let weak = match self.kind {
-            PtrKind::HeapSingle(ref weak) => weak,
+        match &self.kind {
+            PtrKind::HeapSingle(weak) => {
+                assert_eq!(self.offset, 0, "ub: invalid delete");
+                assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
+                unsafe {
+                    let strong = weak.upgrade().expect("ub: dangling pointer");
+                    Rc::from_raw(Rc::as_ptr(&strong));
+                }
+                assert_eq!(Weak::strong_count(weak), 0, "ub: double free");
+            }
+            PtrKind::Reinterpreted(data) => data.alloc.delete(),
+            PtrKind::Null => {}
             _ => panic!("ub: invalid delete"),
-        };
-        assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
-        unsafe {
-            let strong = weak.upgrade().expect("ub: dangling pointer");
-            Rc::from_raw(Rc::as_ptr(&strong));
         }
-        assert_eq!(Weak::strong_count(weak), 0, "ub: strong count is not zero");
     }
 
     #[inline]
     pub fn delete_array(&self) {
-        assert_eq!(self.offset, 0, "ub: invalid delete");
-        let weak = match self.kind {
-            PtrKind::HeapArray(ref weak) => weak,
+        match &self.kind {
+            PtrKind::HeapArray(weak) => {
+                assert_eq!(self.offset, 0, "ub: invalid delete");
+                assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
+                unsafe {
+                    let strong = weak.upgrade().expect("ub: dangling pointer");
+                    Rc::from_raw(Rc::as_ptr(&strong));
+                }
+                assert_eq!(Weak::strong_count(weak), 0, "ub: double free");
+            }
+            PtrKind::Reinterpreted(data) => data.alloc.delete(),
+            PtrKind::Null => {}
             _ => panic!("ub: invalid delete"),
-        };
-        assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
-        unsafe {
-            let strong = weak.upgrade().expect("ub: dangling pointer");
-            Rc::from_raw(Rc::as_ptr(&strong));
         }
-        assert_eq!(Weak::strong_count(weak), 0, "ub: strong count is not zero");
     }
 
     #[inline]
@@ -296,7 +302,11 @@ impl<T> Ptr<T> {
     }
 
     #[inline]
-    pub fn offset(&self, offset: isize) -> Self {
+    pub fn offset(&self, offset: impl TryInto<isize>) -> Self {
+        let offset = offset
+            .try_into()
+            .ok()
+            .expect("the offset must fit in a isize");
         let step = self.elem_step();
         Self {
             kind: self.kind.clone(),
@@ -358,26 +368,7 @@ impl<T> Ptr<T> {
     where
         T: ByteRepr,
     {
-        match &self.kind {
-            PtrKind::Null => panic!("ub: null pointer"),
-            PtrKind::StackSingle(weak) | PtrKind::HeapSingle(weak) => {
-                let rc = weak.upgrade().expect("ub: dangling pointer");
-                *rc.borrow_mut() = value;
-            }
-            PtrKind::Vec(weak) => {
-                let rc = weak.upgrade().expect("ub: dangling pointer");
-                rc.borrow_mut()[self.offset] = value;
-            }
-            PtrKind::StackArray(weak) | PtrKind::HeapArray(weak) => {
-                let rc = weak.upgrade().expect("ub: dangling pointer");
-                rc.borrow_mut()[self.offset] = value;
-            }
-            PtrKind::Reinterpreted(data) => {
-                let mut buf = vec![0u8; T::byte_size()];
-                value.to_bytes(&mut buf);
-                data.alloc.write_bytes(self.offset, &buf);
-            }
-        }
+        self.with_mut(|v| *v = value);
     }
 
     pub fn to_strong(&self) -> Value<T> {
@@ -438,6 +429,7 @@ impl<T> Ptr<T> {
         match &self.kind {
             PtrKind::Null => panic!("ub: null pointer"),
             PtrKind::StackSingle(weak) | PtrKind::HeapSingle(weak) => {
+                assert_eq!(self.offset, 0, "ub: invalid offset");
                 let rc = weak.upgrade().expect("ub: dangling pointer");
                 let mut borrow = rc.borrow_mut();
                 f(&mut *borrow)
@@ -471,6 +463,7 @@ impl<T> Ptr<T> {
         match &self.kind {
             PtrKind::Null => panic!("ub: null pointer"),
             PtrKind::StackSingle(weak) | PtrKind::HeapSingle(weak) => {
+                assert_eq!(self.offset, 0, "ub: invalid offset");
                 let rc = weak.upgrade().expect("ub: dangling pointer");
                 let borrow = rc.borrow();
                 f(&*borrow)
@@ -497,27 +490,7 @@ impl<T> Ptr<T> {
 
 impl<T: Clone + ByteRepr> Ptr<T> {
     pub fn read(&self) -> T {
-        match self.kind {
-            PtrKind::Null => panic!("ub: null pointer"),
-            PtrKind::StackSingle(ref weak) | PtrKind::HeapSingle(ref weak) => {
-                assert_eq!(self.offset, 0, "ub: invalid offset");
-                weak.upgrade()
-                    .expect("ub: dangling pointer")
-                    .borrow()
-                    .clone()
-            }
-            PtrKind::Vec(ref weak) => {
-                weak.upgrade().expect("ub: dangling pointer").borrow()[self.offset].clone()
-            }
-            PtrKind::StackArray(ref weak) | PtrKind::HeapArray(ref weak) => {
-                weak.upgrade().expect("ub: dangling pointer").borrow()[self.offset].clone()
-            }
-            PtrKind::Reinterpreted(ref data) => {
-                let mut buf = vec![0u8; T::byte_size()];
-                data.alloc.read_bytes(self.offset, &mut buf);
-                T::from_bytes(&buf)
-            }
-        }
+        self.with(|v| v.clone())
     }
 }
 
@@ -726,7 +699,7 @@ macro_rules! impl_ptr_add_sub_assign {
         }
     )+ }
 }
-impl_ptr_add_sub_assign!(i32, u32, u64, isize, usize);
+impl_ptr_add_sub_assign!(i32, u32, i64, u64, isize, usize);
 
 macro_rules! impl_ptr_add_sub {
     ($($rhs:ty),+) => { $(
@@ -940,8 +913,76 @@ thread_local! {
 }
 
 impl Ptr<u8> {
+    pub fn with_slice_mut<R>(&self, len: usize, f: impl FnOnce(&mut [u8]) -> R) -> R {
+        let off = self.offset;
+        match &self.kind {
+            PtrKind::Null => panic!("ub: null pointer"),
+            PtrKind::StackSingle(weak) | PtrKind::HeapSingle(weak) => {
+                assert!(off == 0 && len <= 1, "ub: with_slice_mut out of bounds");
+                let rc = weak.upgrade().expect("ub: dangling pointer");
+                let mut b = rc.borrow_mut();
+                f(&mut std::slice::from_mut(&mut *b)[..len])
+            }
+            PtrKind::StackArray(weak) | PtrKind::HeapArray(weak) => {
+                let rc = weak.upgrade().expect("ub: dangling pointer");
+                let mut b = rc.borrow_mut();
+                f(&mut b[off..off + len])
+            }
+            PtrKind::Vec(weak) => {
+                let rc = weak.upgrade().expect("ub: dangling pointer");
+                let mut b = rc.borrow_mut();
+                f(&mut b[off..off + len])
+            }
+            PtrKind::Reinterpreted(data) => {
+                let mut buf = vec![0u8; len];
+                data.alloc.read_bytes(off, &mut buf);
+                let r = f(&mut buf);
+                data.alloc.write_bytes(off, &buf);
+                r
+            }
+        }
+    }
+
+    pub fn with_slice<R>(&self, len: usize, f: impl FnOnce(&[u8]) -> R) -> R {
+        let off = self.offset;
+        match &self.kind {
+            PtrKind::Null => panic!("ub: null pointer"),
+            PtrKind::StackSingle(weak) | PtrKind::HeapSingle(weak) => {
+                assert!(off == 0 && len <= 1, "ub: with_slice out of bounds");
+                let rc = weak.upgrade().expect("ub: dangling pointer");
+                let b = rc.borrow();
+                f(&std::slice::from_ref(&*b)[..len])
+            }
+            PtrKind::StackArray(weak) | PtrKind::HeapArray(weak) => {
+                let rc = weak.upgrade().expect("ub: dangling pointer");
+                let b = rc.borrow();
+                f(&b[off..off + len])
+            }
+            PtrKind::Vec(weak) => {
+                let rc = weak.upgrade().expect("ub: dangling pointer");
+                let b = rc.borrow();
+                f(&b[off..off + len])
+            }
+            PtrKind::Reinterpreted(data) => {
+                let mut buf = vec![0u8; len];
+                data.alloc.read_bytes(off, &mut buf);
+                f(&buf)
+            }
+        }
+    }
+
     #[allow(clippy::explicit_counter_loop)]
     pub fn memcpy(&self, src: &Self, len: usize) {
+        if *self > *src {
+            let mut dst = self.offset(len);
+            let mut s = src.offset(len);
+            for _ in 0..len {
+                dst -= 1;
+                s -= 1;
+                dst.write(s.read());
+            }
+            return;
+        }
         let mut dst = self.clone();
         let mut i: usize = 0;
         for value in src {
@@ -1042,11 +1083,16 @@ impl Ptr<u8> {
 }
 
 pub(crate) trait ErasedPtr: std::any::Any {
-    fn pointee_type_id(&self) -> std::any::TypeId;
-    fn memcpy(&self, src: &dyn ErasedPtr, len: usize);
+    fn as_bytes(&self) -> Ptr<u8>;
     fn as_any(&self) -> &dyn std::any::Any;
-    fn equals(&self, other: &dyn ErasedPtr) -> Option<bool>;
+    fn equals(&self, other: &dyn ErasedPtr) -> bool;
     fn is_null(&self) -> bool;
+}
+
+impl PartialEq for dyn ErasedPtr {
+    fn eq(&self, other: &Self) -> bool {
+        self.equals(other)
+    }
 }
 
 impl<T> ErasedPtr for Ptr<T>
@@ -1054,37 +1100,16 @@ where
     T: ByteRepr + 'static,
     Ptr<T>: PartialEq,
 {
-    fn pointee_type_id(&self) -> std::any::TypeId {
-        std::any::TypeId::of::<T>()
-    }
-
-    fn memcpy(&self, src: &dyn ErasedPtr, len: usize) {
-        if self.pointee_type_id() != src.pointee_type_id() {
-            panic!("memcpy: type mismatch");
-        }
-        let src_ptr = src
-            .as_any()
-            .downcast_ref::<Ptr<T>>()
-            .expect("memcpy: downcast to Ptr<T> failed");
-        let dst_bytes: Ptr<u8> = self.reinterpret_cast();
-        let src_bytes: Ptr<u8> = src_ptr.reinterpret_cast();
-        dst_bytes.memcpy(&src_bytes, len);
+    fn as_bytes(&self) -> Ptr<u8> {
+        self.reinterpret_cast::<u8>()
     }
 
     fn as_any(&self) -> &dyn std::any::Any {
         self
     }
 
-    fn equals(&self, other: &dyn ErasedPtr) -> Option<bool> {
-        if self.pointee_type_id() != other.pointee_type_id() {
-            return None;
-        }
-
-        if let Some(other_ptr) = other.as_any().downcast_ref::<Ptr<T>>() {
-            return Some(self == other_ptr);
-        }
-
-        None
+    fn equals(&self, other: &dyn ErasedPtr) -> bool {
+        other.as_any().downcast_ref::<Ptr<T>>() == Some(self)
     }
 
     fn is_null(&self) -> bool {
@@ -1112,72 +1137,41 @@ impl Default for AnyPtr {
 }
 
 impl AnyPtr {
-    pub fn cast<T: 'static>(&self) -> Option<Ptr<T>> {
+    pub fn reinterpret_cast<T: ByteRepr>(&self) -> Ptr<T> {
         if self.ptr.is_null() {
-            return Some(Ptr::<T>::null());
+            return Ptr::<T>::null();
         }
-        self.ptr.as_any().downcast_ref::<Ptr<T>>().cloned()
+        if let Some(p) = self.ptr.as_any().downcast_ref::<Ptr<T>>() {
+            return p.clone();
+        }
+        self.ptr.as_bytes().reinterpret_cast::<T>()
     }
 
-    pub fn reinterpret_cast<T: ByteRepr>(&self) -> Ptr<T> {
-        macro_rules! try_src {
-            ($ty:ty) => {{
-                if let Some(p) = self.cast::<$ty>() {
-                    return p.reinterpret_cast::<T>();
-                }
-                if let Some(pv) = self.cast::<Vec<$ty>>() {
-                    return pv.reinterpret_cast::<T>();
-                }
-            }};
-        }
-
-        try_src!(u8);
-        try_src!(i8);
-        try_src!(u16);
-        try_src!(i16);
-        try_src!(u32);
-        try_src!(i32);
-        try_src!(u64);
-        try_src!(i64);
-        try_src!(usize);
-        try_src!(isize);
-
-        panic!("reinterpret_cast: unsupported AnyPtr source");
+    pub fn is_null(&self) -> bool {
+        self.ptr.is_null()
     }
 }
 
 impl PartialEq for AnyPtr {
     fn eq(&self, other: &Self) -> bool {
-        let lhs: &dyn ErasedPtr = self.ptr.as_ref();
-        let rhs: &dyn ErasedPtr = other.ptr.as_ref();
-
-        lhs.equals(rhs).unwrap_or_default()
+        *self.ptr == *other.ptr
     }
 }
 
 impl AnyPtr {
     pub fn memcpy(&self, src: &AnyPtr, len: usize) {
-        let dst_erased = &*self.ptr;
-        let src_erased = &*src.ptr;
-
-        if dst_erased.pointee_type_id() == src_erased.pointee_type_id() {
-            dst_erased.memcpy(src_erased, len);
-            return;
-        }
-
-        let dst_u8: Ptr<u8> = self.reinterpret_cast();
-        let src_u8: Ptr<u8> = src.reinterpret_cast();
+        let dst_u8 = self.ptr.as_bytes();
+        let src_u8 = src.ptr.as_bytes();
         dst_u8.memcpy(&src_u8, len);
     }
 
     pub fn memset(&self, value: u8, num: usize) {
-        let dst_u8: Ptr<u8> = self.reinterpret_cast();
-        dst_u8.memset(value, num);
+        self.ptr.as_bytes().memset(value, num);
     }
 
     pub fn memcmp(&self, other: &AnyPtr, len: usize) -> i32 {
-        let a: Ptr<u8> = self.reinterpret_cast();
-        let b: Ptr<u8> = other.reinterpret_cast();
+        let a = self.ptr.as_bytes();
+        let b = other.ptr.as_bytes();
         a.memcmp(&b, len)
     }
 }
@@ -1256,6 +1250,31 @@ impl<T: ?Sized> AsPointerDyn<T> for Rc<RefCell<T>> {
 }
 
 impl<T: 'static> ByteRepr for Ptr<T> {}
+impl ByteRepr for AnyPtr {}
+
+impl<T: 'static> Ptr<T> {
+    pub fn to_int(&self) -> usize {
+        let mut buf = vec![0u8; Self::byte_size()];
+        self.to_bytes(&mut buf);
+        usize::from_bytes(&buf[..std::mem::size_of::<usize>()])
+    }
+
+    pub fn from_int(value: usize) -> Self {
+        let mut buf = vec![0u8; Self::byte_size()];
+        value.to_bytes(&mut buf[..std::mem::size_of::<usize>()]);
+        Self::from_bytes(&buf)
+    }
+}
+
+impl AnyPtr {
+    pub fn to_int(&self) -> usize {
+        self.reinterpret_cast::<u8>().to_int()
+    }
+
+    pub fn from_int(value: usize) -> Self {
+        Ptr::<u8>::from_int(value).to_any()
+    }
+}
 
 #[cfg(test)]
 mod tests {
@@ -1314,27 +1333,23 @@ mod tests {
     fn anyptr_null_cast() {
         // void* nullptr
         let any = Ptr::<()>::null().to_any();
-        let p: Option<Ptr<u32>> = any.cast::<u32>();
-        assert!(p.is_some());
-        assert!(p.unwrap().is_null());
+        let p = any.reinterpret_cast::<u32>();
+        assert!(p.is_null());
 
-        let p2: Option<Ptr<u8>> = any.cast::<u8>();
-        assert!(p2.is_some());
-        assert!(p2.unwrap().is_null());
+        let p2 = any.reinterpret_cast::<u8>();
+        assert!(p2.is_null());
 
         // int* nullptr
         let any2 = Ptr::<i32>::null().to_any();
-        let p3: Option<Ptr<f32>> = any2.cast::<f32>();
-        assert!(p3.is_some());
-        assert!(p3.unwrap().is_null());
+        let p3 = any2.reinterpret_cast::<f32>();
+        assert!(p3.is_null());
     }
 
     #[test]
     fn to_any_without_clone() {
         let p: Ptr<std::fs::File> = Ptr::null(); // std::fs::File is not Clone
         let any = p.to_any();
-        let recovered = any.cast::<std::fs::File>();
-        assert!(recovered.is_some());
-        assert!(recovered.unwrap().is_null());
+        let recovered = any.reinterpret_cast::<std::fs::File>();
+        assert!(recovered.is_null());
     }
 }

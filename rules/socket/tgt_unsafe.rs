@@ -2,6 +2,14 @@ fn t1() -> libc::sockaddr {
     unsafe { std::mem::zeroed() }
 }
 
+fn t2() -> libc::sockaddr_storage {
+    unsafe { std::mem::zeroed() }
+}
+
+fn t3() -> libc::sockaddr_un {
+    unsafe { std::mem::zeroed() }
+}
+
 unsafe fn f1() -> i32 {
     libc::MSG_NOSIGNAL
 }
@@ -93,4 +101,24 @@ unsafe fn f19(
     a5: u32,
 ) -> isize {
     libc::sendto(a0, a1, a2, a3, a4, a5)
+}
+
+unsafe fn f20() -> i32 {
+    libc::AF_INET
+}
+
+unsafe fn f21() -> i32 {
+    libc::AF_INET6
+}
+
+unsafe fn f22() -> i32 {
+    libc::SOL_SOCKET
+}
+
+unsafe fn f23() -> i32 {
+    libc::SO_KEEPALIVE
+}
+
+unsafe fn f24() -> i32 {
+    libc::SO_ERROR
 }
