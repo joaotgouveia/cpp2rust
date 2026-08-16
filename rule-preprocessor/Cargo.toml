@@ -12,6 +12,7 @@ serde_json = "1"
 libc = { version = "0.2", optional = true }
 brotli-sys = { version = "0.3", optional = true }
 rustls-ffi = { version = "0.15.3", optional = true, default-features = false }
+xattr = { version = "1", optional = true }
 
 [features]
-default = ["libc", "brotli-sys", "rustls-ffi"]
+default = ["libc", "brotli-sys", "rustls-ffi", "xattr"]

@@ -378,9 +378,9 @@ def read_rust_version():
 
 
 def get_temp_dir():
-    shm = Path("/dev/shm")
-    if shm.exists() and os.access(shm, os.W_OK):
-        return shm / "cpp2rust-tests"
+    # shm = Path("/dev/shm")
+    # if shm.exists() and os.access(shm, os.W_OK):
+    #     return shm / "cpp2rust-tests"
     return Path("/tmp/cpp2rust-tests")
 
 

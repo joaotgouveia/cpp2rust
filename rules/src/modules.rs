@@ -88,12 +88,10 @@ pub mod iostream_tgt_unsafe;
 pub mod ip_tgt_refcount;
 #[path = r#"../ip/tgt_unsafe.rs"#]
 pub mod ip_tgt_unsafe;
-#[path = r#"../libcxx_test/tgt_unsafe.rs"#]
-pub mod libcxx_test_tgt_unsafe;
-#[path = r#"../libstdcxx_test/tgt_unsafe.rs"#]
-pub mod libstdcxx_test_tgt_unsafe;
 #[path = r#"../iterator/tgt_unsafe.rs"#]
 pub mod iterator_tgt_unsafe;
+#[path = r#"../libcxx_test/tgt_unsafe.rs"#]
+pub mod libcxx_test_tgt_unsafe;
 #[path = r#"../limits/tgt_unsafe.rs"#]
 pub mod limits_tgt_unsafe;
 #[path = r#"../locale/tgt_refcount.rs"#]
