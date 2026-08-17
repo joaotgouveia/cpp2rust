@@ -19,6 +19,12 @@ using BindExisting = void;
 using BindAny = void *;
 } // namespace Synthesis
 
+#define MARK_INVALID_ALLOCATOR                                                 \
+  template <typename RebindT> struct rebind {                                  \
+    static_assert(!std::is_same_v<RebindT, RebindT>);                          \
+    using other = void;                                                        \
+  };
+
 #define ARG(...) __VA_ARGS__
 
 #define DECLARE_HINT(name) template <int = 0> struct name
@@ -135,6 +141,8 @@ template <typename InnerT = Synthesis::Slot<
               ImplicitlyConvertible<>, MoveAssignable<>>,
           typename DiffT = Synthesis::Slot<Long>>
 DECLARE_PARAMETERIZABLE_HINT(Iterator) {
+  MARK_INVALID_ALLOCATOR
+
   using value_type = InnerT;
   using difference_type = DiffT;
   using pointer = value_type *;
@@ -218,6 +226,8 @@ template <typename InnerT = Synthesis::Slot<
               ImplicitlyConvertible<>, MoveAssignable<>>,
           typename DiffT = Synthesis::Slot<Long>>
 DECLARE_PARAMETERIZABLE_HINT(InputIterator) {
+  MARK_INVALID_ALLOCATOR
+
   using value_type = InnerT;
   using difference_type = DiffT;
   using pointer = const value_type *;
@@ -316,6 +326,8 @@ template <typename InnerT = Synthesis::Slot<
           typename SizeT = Synthesis::Slot<Long>,
           typename DiffT = Synthesis::Slot<Long>>
 DECLARE_PARAMETERIZABLE_HINT(Container) {
+  MARK_INVALID_ALLOCATOR
+
   using value_type = InnerT;
   using size_type = SizeT;
   using difference_type = DiffT;
