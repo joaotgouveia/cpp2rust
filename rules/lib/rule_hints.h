@@ -284,17 +284,26 @@ DECLARE_PARAMETERIZABLE_HINT(InputIterator) {
   operator InputIterator<OInnerT, ODiffT>() const;
 };
 
+template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(UnaryCallable) {
+  int operator()(const A &) const noexcept;
+};
+
+template <typename K = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(Hasher) {
+  std::size_t operator()(const K &) const noexcept;
+};
+
+template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(BinaryPredicate) {
+  bool operator()(const A &, const A &) const noexcept;
+};
+
 DECLARE_HINT(Callable) {
   using is_transparent = void;
 
   template <typename... Args> int operator()(Args...) noexcept;
   template <typename... Args> int operator()(Args...) const noexcept;
-
-  template <typename Return, typename... Args>
-  Return operator()(Args...) noexcept;
-
-  template <typename Return, typename... Args>
-  Return operator()(Args...) const noexcept;
 
   template <typename T> operator std::default_delete<T>() const;
 };
