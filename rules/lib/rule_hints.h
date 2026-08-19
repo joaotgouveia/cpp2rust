@@ -87,10 +87,17 @@ DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) : Plain<> {
   operator T() const;
 };
 
+DECLARE_HINT(ConstAssignable) : Plain<> {
+  const ConstAssignable &operator=(const ConstAssignable &) const;
+  const ConstAssignable &operator=(ConstAssignable &&) const;
+};
+
 template <typename U = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_HINT(AssignableFrom) : Plain<> {
   AssignableFrom &operator=(const U &);
   AssignableFrom &operator=(U &&);
+  const AssignableFrom &operator=(const U &) const;
+  const AssignableFrom &operator=(U &&) const;
 };
 
 DECLARE_HINT(NonConvertibleComparable) : Comparable<> {
@@ -488,6 +495,7 @@ DECLARE_NON_TYPE_HINT(NonNullInteger, int, 1)
 #define Plain Plain<__COUNTER__>
 #define Comparable Comparable<__COUNTER__>
 #define MoveAssignable MoveAssignable<__COUNTER__>
+#define ConstAssignable ConstAssignable<__COUNTER__>
 #define NonConvertibleComparable NonConvertibleComparable<__COUNTER__>
 #define ExplicitlyConvertible ExplicitlyConvertible<__COUNTER__>
 #define ImplicitlyConvertible ImplicitlyConvertible<__COUNTER__>
