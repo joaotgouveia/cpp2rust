@@ -75,8 +75,22 @@ DECLARE_HINT(Comparable) {
 };
 
 DECLARE_HINT(MoveAssignable) {
-  template <typename Other> MoveAssignable &operator=(Other &&);
-  template <typename Other> MoveAssignable &operator=(Other &&) const;
+  MoveAssignable() = default;
+  MoveAssignable(MoveAssignable &&) noexcept;
+  MoveAssignable(const MoveAssignable &) = delete;
+  MoveAssignable &operator=(MoveAssignable &&) noexcept;
+  MoveAssignable &operator=(const MoveAssignable &) = delete;
+};
+
+template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) {
+  operator T() const;
+};
+
+template <typename U = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(AssignableFrom) {
+  AssignableFrom &operator=(const U &);
+  AssignableFrom &operator=(U &&);
 };
 
 DECLARE_HINT(NonConvertibleComparable) {
