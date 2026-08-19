@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <cstdint>
 #include <execution>
 #include <locale>
 #include <memory>
@@ -179,7 +180,7 @@ using enable_any_convertible_t =
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>>,
+              ImplicitlyConvertible<>, MoveAssignable<>, UnsignedInteger>,
           typename DiffT = Synthesis::Slot<Long>>
 DECLARE_PARAMETERIZABLE_HINT(InputIterator) : private Plain<> {
   MARK_INVALID_ALLOCATOR
@@ -489,12 +490,23 @@ template <typename InternT = Synthesis::Slot<Char, WChar>,
 DECLARE_PARAMETERIZABLE_HINT(Facet)
     : public std::codecvt<InternT, ExternT, std::mbstate_t>{};
 
+DECLARE_HINT(SeedSequence) : private Plain<> {
+  using result_type = std::uint_least32_t;
+  template <typename RandomIt> void generate(RandomIt, RandomIt);
+};
+
 template <typename T = Synthesis::Slot<UnsignedInteger>>
 DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : private Plain<> {
   using result_type = T;
   static constexpr result_type min() { return T{}; }
   static constexpr result_type max() { return T{}; }
   result_type operator()();
+  void seed();
+  void seed(result_type);
+  template <typename Sseq> void seed(Sseq &);
+  void discard(unsigned long long);
+  bool operator==(const NumberGenerator &) const;
+  bool operator!=(const NumberGenerator &) const;
 };
 
 template <typename T =
@@ -511,6 +523,7 @@ template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(DefaultDelete, std::default_delete<T>)
 
 DECLARE_NON_TYPE_HINT(NonNullInteger, int, 1)
+DECLARE_NON_TYPE_HINT(LargeInteger, int, 64)
 
 #if __cplusplus >= 202002L
     DECLARE_NON_TYPE_HINT(SizedSubRangeKind, std::ranges::subrange_kind,
@@ -531,3 +544,4 @@ DECLARE_NON_TYPE_HINT(NonNullInteger, int, 1)
 #define BoolConstant BoolConstant<__COUNTER__>
 #define Mutex Mutex<__COUNTER__>
 #define OutputStream OutputStream<__COUNTER__>
+#define SeedSequence SeedSequence<__COUNTER__>
