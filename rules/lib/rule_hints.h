@@ -27,19 +27,24 @@ using BindAny = void *;
 
 #define ARG(...) __VA_ARGS__
 
-#define DECLARE_HINT(name) template <int = 0> struct name
+#define DECLARE_HINT(name)                                                     \
+  template <int = 0> struct [[clang::annotate(CPP2RUST_RULE_HINT_TAG)]] name
 
 #define DECLARE_PARAMETERIZABLE_HINT(name)                                     \
-  struct [[clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] name
+  struct [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                            \
+           clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] name
 
 #define DECLARE_BUILTIN_HINT(name, type)                                       \
-  using name [[clang::annotate(CPP2RUST_BUILTIN_RULE_TAG)]] = type;
+  using name [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                        \
+               clang::annotate(CPP2RUST_BUILTIN_RULE_TAG)]] = type;
 
 #define DECLARE_PARAMETERIZABLE_BUILTIN_HINT(name, type)                       \
-  using name [[clang::annotate(CPP2RUST_BUILTIN_RULE_TAG),                     \
+  using name [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                        \
+               clang::annotate(CPP2RUST_BUILTIN_RULE_TAG),                     \
                clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] = type;
 
-#define DECLARE_NON_TYPE_HINT(name, type, expr) constexpr type name = expr;
+#define DECLARE_NON_TYPE_HINT(name, type, expr)                                \
+  [[clang::annotate(CPP2RUST_RULE_HINT_TAG)]] constexpr type name = expr;
 
 DECLARE_BUILTIN_HINT(Integer, int)
 
