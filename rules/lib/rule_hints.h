@@ -97,6 +97,11 @@ DECLARE_HINT(ConstAssignable) : Plain<> {
   const ConstAssignable &operator=(ConstAssignable &&) const;
 };
 
+DECLARE_HINT(ConstSwappable) : Plain<> {
+  void swap(const ConstSwappable &) const noexcept;
+  friend void swap(const ConstSwappable &, const ConstSwappable &) noexcept;
+};
+
 template <typename U = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_HINT(AssignableFrom) : Plain<> {
   AssignableFrom &operator=(const U &);
@@ -501,6 +506,7 @@ DECLARE_NON_TYPE_HINT(NonNullInteger, int, 1)
 #define Comparable Comparable<__COUNTER__>
 #define MoveAssignable MoveAssignable<__COUNTER__>
 #define ConstAssignable ConstAssignable<__COUNTER__>
+#define ConstSwappable ConstSwappable<__COUNTER__>
 #define NonConvertibleComparable NonConvertibleComparable<__COUNTER__>
 #define ExplicitlyConvertible ExplicitlyConvertible<__COUNTER__>
 #define ImplicitlyConvertible ImplicitlyConvertible<__COUNTER__>
