@@ -92,6 +92,15 @@ DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) : private Plain<> {
   operator T() const;
 };
 
+DECLARE_HINT(Hashable) : private Plain<> {
+  template <typename Other> bool operator==(const Other &) const;
+  template <typename Other> bool operator!=(const Other &) const;
+};
+
+template <int N> struct std::hash<Hashable<N>> {
+  std::size_t operator()(const Hashable<N> &) const noexcept;
+};
+
 DECLARE_HINT(ConstAssignable) : private Plain<> {
   const ConstAssignable &operator=(const ConstAssignable &) const;
   const ConstAssignable &operator=(ConstAssignable &&) const;
@@ -506,6 +515,7 @@ DECLARE_NON_TYPE_HINT(NonNullInteger, int, 1)
 #define Comparable Comparable<__COUNTER__>
 #define MoveAssignable MoveAssignable<__COUNTER__>
 #define ConstAssignable ConstAssignable<__COUNTER__>
+#define Hashable Hashable<__COUNTER__>
 #define ConstSwappable ConstSwappable<__COUNTER__>
 #define NonConvertibleComparable NonConvertibleComparable<__COUNTER__>
 #define ExplicitlyConvertible ExplicitlyConvertible<__COUNTER__>
