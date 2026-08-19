@@ -61,7 +61,7 @@ DECLARE_BUILTIN_HINT(ExecutionPolicy, std::execution::parallel_policy)
 
 DECLARE_HINT(Plain){};
 
-DECLARE_HINT(Comparable) {
+DECLARE_HINT(Comparable) : Plain<> {
   template <typename Other> bool operator==(const Other &) const;
   template <typename Other> bool operator!=(const Other &) const;
   template <typename Other> bool operator<(const Other &) const;
@@ -83,17 +83,17 @@ DECLARE_HINT(MoveAssignable) {
 };
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) {
+DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) : Plain<> {
   operator T() const;
 };
 
 template <typename U = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(AssignableFrom) {
+DECLARE_PARAMETERIZABLE_HINT(AssignableFrom) : Plain<> {
   AssignableFrom &operator=(const U &);
   AssignableFrom &operator=(U &&);
 };
 
-DECLARE_HINT(NonConvertibleComparable) {
+DECLARE_HINT(NonConvertibleComparable) : Comparable<> {
   template <typename Other> bool operator==(const Other &) const;
   template <typename Other> bool operator!=(const Other &) const;
   template <typename Other> bool operator<(const Other &) const;
@@ -118,12 +118,12 @@ template <typename T>
 using enable_unless_non_convertible_t = std::enable_if_t<!is_non_convertible_v<
     std::remove_cv_t<std::remove_pointer_t<std::remove_reference_t<T>>>>>;
 
-DECLARE_HINT(ExplicitlyConvertible) {
+DECLARE_HINT(ExplicitlyConvertible) : Plain<> {
   template <typename Other, typename = enable_unless_non_convertible_t<Other>>
   explicit operator Other() const;
 };
 
-DECLARE_HINT(ImplicitlyConvertible) {
+DECLARE_HINT(ImplicitlyConvertible) : ExplicitlyConvertible<> {
   template <typename Other, typename = enable_unless_non_convertible_t<Other>>
   operator Other() const;
 };
@@ -135,7 +135,7 @@ template <typename T1 = Synthesis::Slot<ImplicitlyConvertible<>>,
           typename T2 = Synthesis::Slot<ImplicitlyConvertible<>>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(TupleLike, ARG(std::tuple<T1, T2>))
 
-DECLARE_HINT(StringLike) {
+DECLARE_HINT(StringLike) : Plain<> {
   template <typename CharT, typename Traits,
             typename = enable_unless_non_convertible_t<CharT>>
   operator std::basic_string<CharT, Traits>() const;
@@ -154,7 +154,70 @@ template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
               ImplicitlyConvertible<>, MoveAssignable<>>,
           typename DiffT = Synthesis::Slot<Long>>
-DECLARE_PARAMETERIZABLE_HINT(Iterator) {
+DECLARE_PARAMETERIZABLE_HINT(InputIterator) : Plain<> {
+  MARK_INVALID_ALLOCATOR
+
+  using value_type = InnerT;
+  using difference_type = DiffT;
+  using pointer = const value_type *;
+  using reference = const value_type &;
+  using iterator_concept = std::input_iterator_tag;
+  using iterator_category = std::input_iterator_tag;
+
+  reference operator*() const;
+  pointer operator->() const;
+  InputIterator &operator++();
+  InputIterator operator++(int);
+
+  template <typename OInnerT, typename ODiffT,
+            typename = enable_any_convertible_t<OInnerT, InnerT>,
+            typename = enable_any_convertible_t<ODiffT, DiffT>>
+  bool operator==(const InputIterator<OInnerT, ODiffT> &) const;
+
+  template <typename OInnerT, typename ODiffT,
+            typename = enable_any_convertible_t<OInnerT, InnerT>,
+            typename = enable_any_convertible_t<ODiffT, DiffT>>
+  bool operator!=(const InputIterator<OInnerT, ODiffT> &) const;
+
+  template <typename OInnerT, typename ODiffT,
+            typename = enable_any_convertible_t<OInnerT, InnerT>,
+            typename = enable_any_convertible_t<ODiffT, DiffT>>
+  bool operator<(const InputIterator<OInnerT, ODiffT> &) const;
+
+  template <typename OInnerT, typename ODiffT,
+            typename = enable_any_convertible_t<OInnerT, InnerT>,
+            typename = enable_any_convertible_t<ODiffT, DiffT>>
+  bool operator>(const InputIterator<OInnerT, ODiffT> &) const;
+
+  template <typename OInnerT, typename ODiffT,
+            typename = enable_any_convertible_t<OInnerT, InnerT>,
+            typename = enable_any_convertible_t<ODiffT, DiffT>>
+  bool operator<=(const InputIterator<OInnerT, ODiffT> &) const;
+
+  template <typename OInnerT, typename ODiffT,
+            typename = enable_any_convertible_t<OInnerT, InnerT>,
+            typename = enable_any_convertible_t<ODiffT, DiffT>>
+  bool operator>=(const InputIterator<OInnerT, ODiffT> &) const;
+
+#if __cplusplus >= 202002L
+  template <typename OInnerT, typename ODiffT,
+            typename = enable_any_convertible_t<OInnerT, InnerT>,
+            typename = enable_any_convertible_t<ODiffT, DiffT>>
+  std::strong_ordering operator<=>(const InputIterator<OInnerT, ODiffT> &)
+      const;
+#endif
+
+  template <typename OInnerT, typename ODiffT,
+            typename = enable_any_convertible_t<OInnerT, InnerT>,
+            typename = enable_any_convertible_t<ODiffT, DiffT>>
+  operator InputIterator<OInnerT, ODiffT>() const;
+};
+
+template <typename InnerT = Synthesis::Slot<
+              Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
+              ImplicitlyConvertible<>, MoveAssignable<>>,
+          typename DiffT = Synthesis::Slot<Long>>
+DECLARE_PARAMETERIZABLE_HINT(Iterator) : InputIterator<InnerT, DiffT> {
   MARK_INVALID_ALLOCATOR
 
   using value_type = InnerT;
@@ -235,85 +298,22 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) {
   operator Iterator<OInnerT, ODiffT>() const;
 };
 
-template <typename InnerT = Synthesis::Slot<
-              Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>>,
-          typename DiffT = Synthesis::Slot<Long>>
-DECLARE_PARAMETERIZABLE_HINT(InputIterator) {
-  MARK_INVALID_ALLOCATOR
-
-  using value_type = InnerT;
-  using difference_type = DiffT;
-  using pointer = const value_type *;
-  using reference = const value_type &;
-  using iterator_concept = std::input_iterator_tag;
-  using iterator_category = std::input_iterator_tag;
-
-  reference operator*() const;
-  pointer operator->() const;
-  InputIterator &operator++();
-  InputIterator operator++(int);
-
-  template <typename OInnerT, typename ODiffT,
-            typename = enable_any_convertible_t<OInnerT, InnerT>,
-            typename = enable_any_convertible_t<ODiffT, DiffT>>
-  bool operator==(const InputIterator<OInnerT, ODiffT> &) const;
-
-  template <typename OInnerT, typename ODiffT,
-            typename = enable_any_convertible_t<OInnerT, InnerT>,
-            typename = enable_any_convertible_t<ODiffT, DiffT>>
-  bool operator!=(const InputIterator<OInnerT, ODiffT> &) const;
-
-  template <typename OInnerT, typename ODiffT,
-            typename = enable_any_convertible_t<OInnerT, InnerT>,
-            typename = enable_any_convertible_t<ODiffT, DiffT>>
-  bool operator<(const InputIterator<OInnerT, ODiffT> &) const;
-
-  template <typename OInnerT, typename ODiffT,
-            typename = enable_any_convertible_t<OInnerT, InnerT>,
-            typename = enable_any_convertible_t<ODiffT, DiffT>>
-  bool operator>(const InputIterator<OInnerT, ODiffT> &) const;
-
-  template <typename OInnerT, typename ODiffT,
-            typename = enable_any_convertible_t<OInnerT, InnerT>,
-            typename = enable_any_convertible_t<ODiffT, DiffT>>
-  bool operator<=(const InputIterator<OInnerT, ODiffT> &) const;
-
-  template <typename OInnerT, typename ODiffT,
-            typename = enable_any_convertible_t<OInnerT, InnerT>,
-            typename = enable_any_convertible_t<ODiffT, DiffT>>
-  bool operator>=(const InputIterator<OInnerT, ODiffT> &) const;
-
-#if __cplusplus >= 202002L
-  template <typename OInnerT, typename ODiffT,
-            typename = enable_any_convertible_t<OInnerT, InnerT>,
-            typename = enable_any_convertible_t<ODiffT, DiffT>>
-  std::strong_ordering operator<=>(const InputIterator<OInnerT, ODiffT> &)
-      const;
-#endif
-
-  template <typename OInnerT, typename ODiffT,
-            typename = enable_any_convertible_t<OInnerT, InnerT>,
-            typename = enable_any_convertible_t<ODiffT, DiffT>>
-  operator InputIterator<OInnerT, ODiffT>() const;
-};
-
 template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(UnaryCallable) {
+DECLARE_PARAMETERIZABLE_HINT(UnaryCallable) : Plain<> {
   int operator()(const A &) const noexcept;
 };
 
 template <typename K = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(Hasher) {
+DECLARE_PARAMETERIZABLE_HINT(Hasher) : Plain<> {
   std::size_t operator()(const K &) const noexcept;
 };
 
 template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(BinaryPredicate) {
+DECLARE_PARAMETERIZABLE_HINT(BinaryPredicate) : Plain<> {
   bool operator()(const A &, const A &) const noexcept;
 };
 
-DECLARE_HINT(Callable) {
+DECLARE_HINT(Callable) : Plain<> {
   using is_transparent = void;
 
   template <typename... Args> int operator()(Args...) noexcept;
@@ -323,7 +323,7 @@ DECLARE_HINT(Callable) {
 };
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
-DECLARE_PARAMETERIZABLE_HINT(Allocator) {
+DECLARE_PARAMETERIZABLE_HINT(Allocator) : Plain<> {
   using value_type = T;
 
   Allocator() noexcept;
@@ -336,11 +336,20 @@ DECLARE_PARAMETERIZABLE_HINT(Allocator) {
   template <typename U> bool operator!=(const Allocator<U> &) const noexcept;
 };
 
-DECLARE_HINT(BoolConstant) {
+DECLARE_HINT(BoolConstant) : Plain<> {
   static constexpr bool value = false;
   using value_type = bool;
   constexpr operator value_type() const noexcept { return value; }
   constexpr value_type operator()() const noexcept { return value; }
+};
+
+template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(Range) : Plain<> {
+  T *begin();
+  T *end();
+
+  const T *begin() const;
+  const T *end() const;
 };
 
 template <typename InnerT = Synthesis::Slot<
@@ -348,7 +357,7 @@ template <typename InnerT = Synthesis::Slot<
               ImplicitlyConvertible<>, MoveAssignable<>>,
           typename SizeT = Synthesis::Slot<Long>,
           typename DiffT = Synthesis::Slot<Long>>
-DECLARE_PARAMETERIZABLE_HINT(Container) {
+DECLARE_PARAMETERIZABLE_HINT(Container) : Range<InnerT> {
   MARK_INVALID_ALLOCATOR
 
   using value_type = InnerT;
@@ -401,7 +410,7 @@ DECLARE_PARAMETERIZABLE_HINT(Container) {
 
 template <typename CharT = Synthesis::Slot<Synthesis::BindExisting>,
           typename IntT = Synthesis::Slot<Integer>>
-DECLARE_PARAMETERIZABLE_HINT(CharTraits) {
+DECLARE_PARAMETERIZABLE_HINT(CharTraits) : Plain<> {
   using char_type = CharT;
   using int_type = IntT;
   using off_type = std::streamoff;
@@ -432,18 +441,9 @@ DECLARE_PARAMETERIZABLE_HINT(CharTraits) {
 };
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(Range) {
-  T *begin();
-  T *end();
-
-  const T *begin() const;
-  const T *end() const;
-};
-
-template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_HINT(Derived) : T{};
 
-DECLARE_HINT(Mutex) {
+DECLARE_HINT(Mutex) : Plain<> {
   void lock();
   void unlock();
 
@@ -458,7 +458,7 @@ DECLARE_PARAMETERIZABLE_HINT(Facet)
     : public std::codecvt<InternT, ExternT, std::mbstate_t>{};
 
 template <typename T = Synthesis::Slot<UnsignedInteger>>
-DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) {
+DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : Plain<> {
   using result_type = T;
   static constexpr result_type min() { return T{}; }
   static constexpr result_type max() { return T{}; }
