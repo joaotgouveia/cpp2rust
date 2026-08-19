@@ -6,6 +6,7 @@
 #include <execution>
 #include <locale>
 #include <memory>
+#include <ostream>
 #include <string>
 #include <type_traits>
 #include <variant>
@@ -478,6 +479,11 @@ DECLARE_HINT(Mutex) : private Plain<> {
   template <typename Duration> bool try_lock_until(Duration);
 };
 
+DECLARE_HINT(OutputStream) : public std::ostream {
+  OutputStream();
+  template <typename T> OutputStream &operator<<(const T &);
+};
+
 template <typename InternT = Synthesis::Slot<Char, WChar>,
           typename ExternT = Synthesis::Slot<Char>>
 DECLARE_PARAMETERIZABLE_HINT(Facet)
@@ -524,3 +530,4 @@ DECLARE_NON_TYPE_HINT(NonNullInteger, int, 1)
 #define Callable Callable<__COUNTER__>
 #define BoolConstant BoolConstant<__COUNTER__>
 #define Mutex Mutex<__COUNTER__>
+#define OutputStream OutputStream<__COUNTER__>
