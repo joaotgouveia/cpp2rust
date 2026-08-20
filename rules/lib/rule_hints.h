@@ -68,6 +68,10 @@ DECLARE_BUILTIN_HINT(ExecutionPolicy, std::execution::parallel_policy)
 
 DECLARE_HINT(Plain){};
 
+DECLARE_HINT(Role) : private Plain<>{};
+
+DECLARE_HINT(Assignable) : private Plain<>{};
+
 DECLARE_HINT(Comparable) : private Plain<> {
   template <typename Other> bool operator==(const Other &) const;
   template <typename Other> bool operator!=(const Other &) const;
@@ -81,7 +85,7 @@ DECLARE_HINT(Comparable) : private Plain<> {
 #endif
 };
 
-DECLARE_HINT(MoveAssignable) {
+DECLARE_HINT(MoveAssignable) : private Assignable<> {
   MoveAssignable() = default;
   MoveAssignable(MoveAssignable &&) noexcept;
   MoveAssignable(const MoveAssignable &) = delete;
@@ -89,10 +93,6 @@ DECLARE_HINT(MoveAssignable) {
   MoveAssignable &operator=(const MoveAssignable &) = delete;
 };
 
-template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) : private Plain<> {
-  operator T() const;
-};
 
 DECLARE_HINT(Hashable) : private Plain<> {
   template <typename Other> bool operator==(const Other &) const;
@@ -103,18 +103,18 @@ template <int N> struct std::hash<Hashable<N>> {
   std::size_t operator()(const Hashable<N> &) const noexcept;
 };
 
-DECLARE_HINT(ConstAssignable) : private Plain<> {
+DECLARE_HINT(ConstAssignable) : private Assignable<> {
   const ConstAssignable &operator=(const ConstAssignable &) const;
   const ConstAssignable &operator=(ConstAssignable &&) const;
 };
 
-DECLARE_HINT(ConstSwappable) : private Plain<> {
+DECLARE_HINT(ConstSwappable) : private Assignable<> {
   void swap(const ConstSwappable &) const noexcept;
   friend void swap(const ConstSwappable &, const ConstSwappable &) noexcept;
 };
 
 template <typename U = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(AssignableFrom) : private Plain<> {
+DECLARE_PARAMETERIZABLE_HINT(AssignableFrom) : private Assignable<> {
   AssignableFrom &operator=(const U &);
   AssignableFrom &operator=(U &&);
   const AssignableFrom &operator=(const U &) const;
@@ -149,6 +149,11 @@ using enable_unless_non_convertible_t = std::enable_if_t<!is_non_convertible_v<
 DECLARE_HINT(ExplicitlyConvertible) : private Plain<> {
   template <typename Other, typename = enable_unless_non_convertible_t<Other>>
   explicit operator Other() const;
+};
+
+template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) : private ExplicitlyConvertible<> {
+  operator T() const;
 };
 
 DECLARE_HINT(ImplicitlyConvertible) : private ExplicitlyConvertible<> {
@@ -326,21 +331,6 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
   operator Iterator<OInnerT, ODiffT>() const;
 };
 
-template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(UnaryCallable) : private Plain<> {
-  int operator()(const A &) const noexcept;
-};
-
-template <typename K = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(Hasher) : private Plain<> {
-  std::size_t operator()(const K &) const noexcept;
-};
-
-template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
-DECLARE_PARAMETERIZABLE_HINT(BinaryPredicate) : private Plain<> {
-  bool operator()(const A &, const A &) const noexcept;
-};
-
 DECLARE_HINT(Callable) : private Plain<> {
   using is_transparent = void;
 
@@ -350,8 +340,24 @@ DECLARE_HINT(Callable) : private Plain<> {
   template <typename T> operator std::default_delete<T>() const;
 };
 
+template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(UnaryCallable) : private Callable<> {
+  int operator()(const A &) const noexcept;
+};
+
+template <typename K = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(Hasher) : private UnaryCallable<> {
+  std::size_t operator()(const K &) const noexcept;
+};
+
+template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
+DECLARE_PARAMETERIZABLE_HINT(BinaryPredicate) : private Callable<> {
+  bool operator()(const A &, const A &) const noexcept;
+};
+
+
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
-DECLARE_PARAMETERIZABLE_HINT(Allocator) : private Plain<> {
+DECLARE_PARAMETERIZABLE_HINT(Allocator) : private Role<> {
   using value_type = T;
 
   Allocator() noexcept;
@@ -364,7 +370,7 @@ DECLARE_PARAMETERIZABLE_HINT(Allocator) : private Plain<> {
   template <typename U> bool operator!=(const Allocator<U> &) const noexcept;
 };
 
-DECLARE_HINT(BoolConstant) : private Plain<> {
+DECLARE_HINT(BoolConstant) : private Role<> {
   static constexpr bool value = false;
   using value_type = bool;
   constexpr operator value_type() const noexcept { return value; }
@@ -438,7 +444,7 @@ DECLARE_PARAMETERIZABLE_HINT(Container) : private Range<InnerT> {
 
 template <typename CharT = Synthesis::Slot<Synthesis::BindExisting>,
           typename IntT = Synthesis::Slot<Integer>>
-DECLARE_PARAMETERIZABLE_HINT(CharTraits) : private Plain<> {
+DECLARE_PARAMETERIZABLE_HINT(CharTraits) : private Role<> {
   using char_type = CharT;
   using int_type = IntT;
   using off_type = std::streamoff;
@@ -471,7 +477,7 @@ DECLARE_PARAMETERIZABLE_HINT(CharTraits) : private Plain<> {
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_HINT(Derived) : T{};
 
-DECLARE_HINT(Mutex) : private Plain<> {
+DECLARE_HINT(Mutex) : private Role<> {
   void lock();
   void unlock();
 
@@ -480,7 +486,7 @@ DECLARE_HINT(Mutex) : private Plain<> {
   template <typename Duration> bool try_lock_until(Duration);
 };
 
-DECLARE_HINT(OutputStream) : public std::ostream {
+DECLARE_HINT(OutputStream) : private Role<>, public std::ostream {
   OutputStream();
   template <typename T> OutputStream &operator<<(const T &);
 };
@@ -488,15 +494,16 @@ DECLARE_HINT(OutputStream) : public std::ostream {
 template <typename InternT = Synthesis::Slot<Char, WChar>,
           typename ExternT = Synthesis::Slot<Char>>
 DECLARE_PARAMETERIZABLE_HINT(Facet)
-    : public std::codecvt<InternT, ExternT, std::mbstate_t>{};
+    : private Role<>,
+      public std::codecvt<InternT, ExternT, std::mbstate_t>{};
 
-DECLARE_HINT(SeedSequence) : private Plain<> {
+DECLARE_HINT(SeedSequence) : private Role<> {
   using result_type = std::uint_least32_t;
   template <typename RandomIt> void generate(RandomIt, RandomIt);
 };
 
 template <typename T = Synthesis::Slot<UnsignedInteger>>
-DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : private Plain<> {
+DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : private Role<> {
   using result_type = T;
   static constexpr result_type min() { return T{}; }
   static constexpr result_type max() { return T{}; }
