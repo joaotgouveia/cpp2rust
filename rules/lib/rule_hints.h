@@ -524,7 +524,7 @@ template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Pointer, T *)
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
-DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Array, T[])
+DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Array, T[1])
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(DefaultDelete, std::default_delete<T>)
