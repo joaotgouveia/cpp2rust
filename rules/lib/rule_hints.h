@@ -3,7 +3,11 @@
 
 #pragma once
 
+#include <chrono>
 #include <cstdint>
+#include <cwchar>
+#include <filesystem>
+#include <ratio>
 #include <execution>
 #include <locale>
 #include <memory>
@@ -61,6 +65,18 @@ DECLARE_BUILTIN_HINT(UnsignedInteger, unsigned)
 DECLARE_BUILTIN_HINT(ErrorCodeEnum, std::io_errc)
 
 DECLARE_BUILTIN_HINT(ErrorConditionEnum, std::errc)
+
+DECLARE_BUILTIN_HINT(Double, double)
+
+DECLARE_BUILTIN_HINT(Ratio, std::ratio<1>)
+
+DECLARE_BUILTIN_HINT(Duration, std::chrono::seconds)
+
+DECLARE_BUILTIN_HINT(Clock, std::chrono::system_clock)
+
+DECLARE_BUILTIN_HINT(Path, std::filesystem::path)
+
+DECLARE_BUILTIN_HINT(MbState, std::mbstate_t)
 
 #if defined(__linux__)
 DECLARE_BUILTIN_HINT(ExecutionPolicy, std::execution::parallel_policy)
