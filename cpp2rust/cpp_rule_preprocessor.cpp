@@ -176,11 +176,11 @@ private:
     clang::QualType alias_t = ctx.getTypedefType(
         clang::ElaboratedTypeKeyword::None, std::nullopt, alias);
 
-    if (auto *hdecl = hint->getAsCXXRecordDecl()) {
-      hdecl->dropAttr<clang::PreferredNameAttr>();
-      hdecl->addAttr(clang::PreferredNameAttr::CreateImplicit(
-          ctx, ctx.getTrivialTypeSourceInfo(alias_t, loc_)));
-    }
+    auto *hdecl = hint->getAsCXXRecordDecl();
+    assert(hdecl && "Hints must resolve to a RecordDecl");
+    hdecl->dropAttr<clang::PreferredNameAttr>();
+    hdecl->addAttr(clang::PreferredNameAttr::CreateImplicit(
+        ctx, ctx.getTrivialTypeSourceInfo(alias_t, loc_)));
     return hint;
   }
 
@@ -231,12 +231,6 @@ private:
     const clang::DeclarationNameInfo nameInfo(decl->getDeclName(), loc_);
     return sema_->BuildDeclRefExpr(decl, decl->getType(), clang::VK_LValue,
                                    nameInfo, decl->getQualifierLoc());
-  }
-
-  clang::OpaqueValueExpr *createOpaqueValueExpr(clang::QualType type) {
-    return new (sema_->Context) clang::OpaqueValueExpr(
-        loc_, type.getNonReferenceType(),
-        type->isRValueReferenceType() ? clang::VK_XValue : clang::VK_LValue);
   }
 
   void

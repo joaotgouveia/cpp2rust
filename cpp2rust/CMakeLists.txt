@@ -7,6 +7,8 @@ list(REMOVE_ITEM CORE_SOURCES
 add_library(cpp2rust_core STATIC ${CORE_SOURCES})
 llvm_update_compile_flags(cpp2rust_core)
 
+set(RULES_LIB_PATH "${PROJECT_SOURCE_DIR}/rules/lib")
+
 target_link_libraries(cpp2rust_core PUBLIC
     clangAST
     clangASTMatchers
@@ -17,7 +19,7 @@ target_link_libraries(cpp2rust_core PUBLIC
     clangSerialization
     clangTooling
 )
-target_include_directories(cpp2rust_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(cpp2rust_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${RULES_LIB_PATH})
 target_include_directories(cpp2rust_core SYSTEM PUBLIC ${CLANG_INCLUDE_DIRS} ${LLVM_INCLUDE_DIRS})
 
 target_compile_definitions(cpp2rust_core PUBLIC ${LLVM_DEFINITIONS})
@@ -45,4 +47,4 @@ target_link_libraries(cpp2rust PRIVATE cpp2rust_core)
 add_clang_executable(cpp-rule-preprocessor PARTIAL_SOURCES_INTENDED cpp_rule_preprocessor.cpp)
 target_link_libraries(cpp-rule-preprocessor PRIVATE cpp2rust_core)
 target_compile_definitions(cpp-rule-preprocessor PRIVATE
-  "-DRULES_LIB_INCLUDE_DIR=\"${PROJECT_SOURCE_DIR}/rules/lib\"")
+  "-DRULES_LIB_INCLUDE_DIR=\"${RULES_LIB_PATH}\"")

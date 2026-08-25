@@ -3,6 +3,7 @@
 
 #include "converter/mapper.h"
 
+#include <clang/AST/Attr.h>
 #include <clang/AST/ExprCXX.h>
 #include <clang/Basic/OperatorKinds.h>
 #include <clang/Basic/SourceManager.h>
@@ -19,6 +20,7 @@
 
 #include "converter/converter_lib.h"
 #include "converter/translation_rule.h"
+#include "rule_tags.h"
 
 namespace cpp2rust::Mapper {
 
@@ -625,6 +627,24 @@ std::string normalizeTranslationRule(std::string rule) {
   return rule;
 }
 
+bool keepTypedefSugar(clang::QualType type) {
+  if (type->isBuiltinType()) {
+    return true;
+  }
+
+  // keep sugar if this type resolves to an hint
+  const auto *decl =
+      llvm::dyn_cast_or_null<clang::ClassTemplateSpecializationDecl>(
+          type->getAsCXXRecordDecl());
+  return decl &&
+         llvm::any_of(decl->getSpecializedTemplate()
+                          ->getTemplatedDecl()
+                          ->specific_attrs<clang::AnnotateAttr>(),
+                      [&](const auto *attr) {
+                        return attr->getAnnotation() == CPP2RUST_RULE_HINT_TAG;
+                      });
+}
+
 } // namespace
 
 PushASTContext::PushASTContext(clang::ASTContext &ctx) : prev_(ctx_) {
@@ -855,7 +875,7 @@ std::string ToString(clang::QualType qual_type, ScalarSugar sugar) {
       t = decltype_type->getUnderlyingType();
     }
     if (const auto *typedef_type = t->getAs<clang::TypedefType>()) {
-      if (t.getCanonicalType()->isBuiltinType()) {
+      if (keepTypedefSugar(t.getCanonicalType())) {
         return typedef_type->getDecl()->getNameAsString();
       }
     } else if (const auto *predef = t->getAs<clang::PredefinedSugarType>()) {
