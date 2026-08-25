@@ -80,8 +80,8 @@ public:
 
       auto *body = llvm::cast<clang::CompoundStmt>(rule->getBody());
       auto *ret = llvm::cast<clang::ReturnStmt>(*body->body_begin());
-      auto src = Mapper::ToString(
-          ret->getRetValue()->IgnoreUnlessSpelledInSource(), sema_->CurContext);
+      auto src =
+          Mapper::ToString(ret->getRetValue()->IgnoreUnlessSpelledInSource());
       assert(src != "Unhandled case in ToString");
       out_.try_emplace(rule->getQualifiedNameAsString(), std::move(src));
       return;
@@ -94,8 +94,7 @@ public:
           type = instantiateTypeRule(tdecl);
         }
       }
-      auto src = Mapper::ToString(type, Mapper::ScalarSugar::kPreserve,
-                                  sema_->CurContext);
+      auto src = Mapper::ToString(type, Mapper::ScalarSugar::kPreserve);
       assert(src != "Unhandled case in ToString");
       out_.try_emplace(var->getQualifiedNameAsString(), std::move(src));
       return;
