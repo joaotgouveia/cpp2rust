@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <cwchar>
 #include <filesystem>
+#include <limits>
 #include <ratio>
 #include <execution>
 #include <locale>
@@ -562,6 +563,15 @@ DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Const, const T)
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Pointer, T *)
+
+template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
+DECLARE_PARAMETERIZABLE_HINT(SmartPointer) : private Role<> {
+  using element_type = T;
+  using pointer = T *;
+  pointer get() const noexcept;
+  pointer release() noexcept;
+  void reset(pointer = nullptr) noexcept;
+};
 
 DECLARE_BUILTIN_HINT(CString, const char *)
 
