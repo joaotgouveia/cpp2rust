@@ -85,7 +85,7 @@ DECLARE_BUILTIN_HINT(Void, void)
 
 DECLARE_BUILTIN_HINT(Ratio, std::ratio<1>)
 
-DECLARE_BUILTIN_HINT(Duration, std::chrono::seconds)
+DECLARE_BUILTIN_HINT(Duration, std::chrono::nanoseconds)
 
 DECLARE_BUILTIN_HINT(Clock, std::chrono::system_clock)
 
