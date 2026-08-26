@@ -585,6 +585,10 @@ template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(DefaultDelete, std::default_delete<T>)
 
 DECLARE_NON_TYPE_HINT(NonNullInteger, int, 1)
+
+DECLARE_NON_TYPE_HINT(IndexInteger, std::size_t, 0)
+
+DECLARE_NON_TYPE_HINT(TrueValue, bool, true)
 DECLARE_NON_TYPE_HINT(LargeInteger, int, 64)
 
 #if __cplusplus >= 202002L
