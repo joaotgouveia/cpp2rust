@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <cwchar>
 #include <filesystem>
+#include <format>
 #include <limits>
 #include <ratio>
 #include <execution>
@@ -89,6 +90,8 @@ DECLARE_BUILTIN_HINT(Duration, std::chrono::seconds)
 DECLARE_BUILTIN_HINT(Clock, std::chrono::system_clock)
 
 DECLARE_BUILTIN_HINT(Path, std::filesystem::path)
+
+DECLARE_BUILTIN_HINT(FormatContext, std::format_context)
 
 DECLARE_BUILTIN_HINT(MbState, std::mbstate_t)
 
