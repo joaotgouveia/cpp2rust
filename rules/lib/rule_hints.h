@@ -66,6 +66,12 @@ DECLARE_BUILTIN_HINT(Char, char)
 
 DECLARE_BUILTIN_HINT(WChar, wchar_t)
 
+DECLARE_BUILTIN_HINT(Char8, char8_t)
+
+DECLARE_BUILTIN_HINT(Char16, char16_t)
+
+DECLARE_BUILTIN_HINT(Char32, char32_t)
+
 DECLARE_BUILTIN_HINT(UnsignedInteger, unsigned)
 
 DECLARE_BUILTIN_HINT(ErrorCodeEnum, std::io_errc)
