@@ -563,6 +563,21 @@ DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Const, const T)
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Pointer, T *)
 
+DECLARE_BUILTIN_HINT(CString, const char *)
+
+template <typename T = Synthesis::Slot<Synthesis::BindExisting, Char>>
+DECLARE_PARAMETERIZABLE_HINT(OutputIterator) : private Plain<> {
+  using value_type = T;
+  using difference_type = long;
+  using pointer = T *;
+  using reference = T &;
+  using iterator_category = std::output_iterator_tag;
+
+  reference operator*() const;
+  OutputIterator &operator++();
+  OutputIterator operator++(int);
+};
+
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Array, T[1])
 
