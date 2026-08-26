@@ -87,6 +87,8 @@ DECLARE_BUILTIN_HINT(Ratio, std::ratio<1>)
 
 DECLARE_BUILTIN_HINT(Duration, std::chrono::nanoseconds)
 
+DECLARE_BUILTIN_HINT(CoarseDuration, std::chrono::seconds)
+
 DECLARE_BUILTIN_HINT(Clock, std::chrono::system_clock)
 
 DECLARE_BUILTIN_HINT(Path, std::filesystem::path)
