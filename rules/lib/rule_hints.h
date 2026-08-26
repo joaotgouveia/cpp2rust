@@ -12,8 +12,12 @@
 #include <locale>
 #include <memory>
 #include <ostream>
+#if __cplusplus >= 202002L
+#include <ranges>
+#endif
 #include <string>
 #include <type_traits>
+#include <utility>
 #include <variant>
 #include <vector>
 
@@ -405,6 +409,22 @@ DECLARE_PARAMETERIZABLE_HINT(Range) : private Plain<> {
   const T *begin() const;
   const T *end() const;
 };
+
+#if __cplusplus >= 202002L
+template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
+DECLARE_PARAMETERIZABLE_HINT(View)
+    : public std::ranges::view_interface<View<T>> {
+  T *begin();
+  T *end();
+
+  const T *begin() const;
+  const T *end() const;
+};
+#endif
+
+template <typename T1 = Synthesis::Slot<ImplicitlyConvertible<>>,
+          typename T2 = Synthesis::Slot<ImplicitlyConvertible<>>>
+DECLARE_PARAMETERIZABLE_BUILTIN_HINT(PairOf, ARG(std::pair<T1, T2>))
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
