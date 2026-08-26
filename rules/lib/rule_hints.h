@@ -364,6 +364,35 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
   operator Iterator<OInnerT, ODiffT>() const;
 };
 
+template <typename InnerT = Synthesis::Slot<
+              Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
+              ImplicitlyConvertible<>, MoveAssignable<>>,
+          typename DiffT = Synthesis::Slot<Long>>
+DECLARE_PARAMETERIZABLE_HINT(BidirectionalIterator)
+    : private InputIterator<InnerT, DiffT> {
+  MARK_INVALID_ALLOCATOR
+
+  using value_type = InnerT;
+  using difference_type = DiffT;
+  using pointer = value_type *;
+  using reference = value_type &;
+  using iterator_category = std::bidirectional_iterator_tag;
+#if __cplusplus >= 202002L
+  using iterator_concept = std::bidirectional_iterator_tag;
+#endif
+
+  reference operator*() const;
+  pointer operator->() const;
+
+  BidirectionalIterator &operator++();
+  BidirectionalIterator operator++(int);
+  BidirectionalIterator &operator--();
+  BidirectionalIterator operator--(int);
+
+  bool operator==(const BidirectionalIterator &) const;
+  bool operator!=(const BidirectionalIterator &) const;
+};
+
 template <typename R = Synthesis::Slot<Integer, Synthesis::BindSelf>>
 DECLARE_PARAMETERIZABLE_HINT(Callable) : private Plain<> {
   using is_transparent = void;
