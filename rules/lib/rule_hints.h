@@ -23,6 +23,7 @@ namespace Synthesis {
 template <typename...> struct Slot;
 using BindExisting = void;
 using BindAny = void *;
+using BindSelf = const void *;
 } // namespace Synthesis
 
 #define MARK_INVALID_ALLOCATOR                                                 \
@@ -67,6 +68,8 @@ DECLARE_BUILTIN_HINT(ErrorCodeEnum, std::io_errc)
 DECLARE_BUILTIN_HINT(ErrorConditionEnum, std::errc)
 
 DECLARE_BUILTIN_HINT(Double, double)
+
+DECLARE_BUILTIN_HINT(Void, void)
 
 DECLARE_BUILTIN_HINT(Ratio, std::ratio<1>)
 
@@ -347,11 +350,12 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
   operator Iterator<OInnerT, ODiffT>() const;
 };
 
-DECLARE_HINT(Callable) : private Plain<> {
+template <typename R = Synthesis::Slot<Integer, Synthesis::BindSelf>>
+DECLARE_PARAMETERIZABLE_HINT(Callable) : private Plain<> {
   using is_transparent = void;
 
-  template <typename... Args> int operator()(Args...) noexcept;
-  template <typename... Args> int operator()(Args...) const noexcept;
+  template <typename... Args> R operator()(Args...) noexcept;
+  template <typename... Args> R operator()(Args...) const noexcept;
 
   template <typename T> operator std::default_delete<T>() const;
 };
@@ -563,7 +567,6 @@ DECLARE_NON_TYPE_HINT(LargeInteger, int, 64)
 #define ExplicitlyConvertible ExplicitlyConvertible<__COUNTER__>
 #define ImplicitlyConvertible ImplicitlyConvertible<__COUNTER__>
 #define StringLike StringLike<__COUNTER__>
-#define Callable Callable<__COUNTER__>
 #define BoolConstant BoolConstant<__COUNTER__>
 #define Mutex Mutex<__COUNTER__>
 #define OutputStream OutputStream<__COUNTER__>
