@@ -372,11 +372,13 @@ DECLARE_PARAMETERIZABLE_HINT(UnaryCallable) : private Callable<> {
 
 template <typename K = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_HINT(Hasher) : private UnaryCallable<> {
+  using is_transparent = void;
   std::size_t operator()(const K &) const noexcept;
 };
 
 template <typename A = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_HINT(BinaryPredicate) : private Callable<> {
+  using is_transparent = void;
   bool operator()(const A &, const A &) const noexcept;
 };
 
