@@ -4,6 +4,7 @@
 #pragma once
 
 #include <chrono>
+#include <cstddef>
 #include <cstdint>
 #include <cwchar>
 #include <filesystem>
@@ -47,33 +48,34 @@ using BindSelf = const void *;
   struct [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                            \
            clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] name
 
-#define DECLARE_BUILTIN_HINT(name, type)                                       \
-  using name [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                        \
-               clang::annotate(CPP2RUST_BUILTIN_RULE_TAG)]] = type;
-
-#define DECLARE_PARAMETERIZABLE_BUILTIN_HINT(name, type)                       \
-  using name [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                        \
-               clang::annotate(CPP2RUST_BUILTIN_RULE_TAG),                     \
-               clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] = type;
-
 #define DECLARE_NON_TYPE_HINT(name, type, expr)                                \
   [[clang::annotate(CPP2RUST_RULE_HINT_TAG)]] constexpr type name = expr;
 
-DECLARE_BUILTIN_HINT(Integer, int)
+DECLARE_HINT(Integer) {
+  operator int() const;
+  template <int Id> operator Integer<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Long, long)
+DECLARE_HINT(Long) {
+  operator long() const;
+  template <int Id> operator Long<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Char, char)
+DECLARE_HINT(Char) {
+  operator char() const;
+  template <int Id> operator Char<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(WChar, wchar_t)
+DECLARE_HINT(WChar) {
+  operator wchar_t() const;
+  template <int Id> operator WChar<Id>() const;
+};
 
 DECLARE_BUILTIN_HINT(Char8, char8_t)
 
 DECLARE_BUILTIN_HINT(Char16, char16_t)
 
 DECLARE_BUILTIN_HINT(Char32, char32_t)
-
-DECLARE_BUILTIN_HINT(UnsignedInteger, unsigned)
 
 DECLARE_BUILTIN_HINT(ErrorCodeEnum, std::io_errc)
 
@@ -101,6 +103,11 @@ DECLARE_BUILTIN_HINT(MbState, std::mbstate_t)
 DECLARE_BUILTIN_HINT(ExecutionPolicy, std::execution::parallel_policy)
 #endif
 
+DECLARE_HINT(UnsignedInteger) {
+  operator unsigned() const;
+  template <int Id> operator UnsignedInteger<Id>() const;
+};
+
 DECLARE_HINT(Plain){};
 
 DECLARE_HINT(Role) : private Plain<>{};
@@ -127,7 +134,6 @@ DECLARE_HINT(MoveAssignable) : private Assignable<> {
   MoveAssignable &operator=(MoveAssignable &&) noexcept;
   MoveAssignable &operator=(const MoveAssignable &) = delete;
 };
-
 
 DECLARE_HINT(Hashable) : private Plain<> {
   template <typename Other> bool operator==(const Other &) const;
@@ -196,13 +202,6 @@ DECLARE_HINT(ImplicitlyConvertible) : private ExplicitlyConvertible<> {
   operator Other() const;
 };
 
-template <typename T = Synthesis::Slot<ImplicitlyConvertible<>>>
-DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Variant, std::variant<T>)
-
-template <typename T1 = Synthesis::Slot<ImplicitlyConvertible<>>,
-          typename T2 = Synthesis::Slot<ImplicitlyConvertible<>>>
-DECLARE_PARAMETERIZABLE_BUILTIN_HINT(TupleLike, ARG(std::tuple<T1, T2>))
-
 DECLARE_HINT(StringLike) : private Plain<> {
   template <typename CharT, typename Traits,
             typename = enable_unless_non_convertible_t<CharT>>
@@ -220,8 +219,8 @@ using enable_any_convertible_t =
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>, UnsignedInteger>,
-          typename DiffT = Synthesis::Slot<Long>>
+              ImplicitlyConvertible<>, MoveAssignable<>, UnsignedInteger<>>,
+          typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(InputIterator) : private Plain<> {
   MARK_INVALID_ALLOCATOR
 
@@ -284,7 +283,7 @@ DECLARE_PARAMETERIZABLE_HINT(InputIterator) : private Plain<> {
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
               ImplicitlyConvertible<>, MoveAssignable<>>,
-          typename DiffT = Synthesis::Slot<Long>>
+          typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
   MARK_INVALID_ALLOCATOR
 
@@ -422,7 +421,6 @@ DECLARE_PARAMETERIZABLE_HINT(BinaryPredicate) : private Callable<> {
   bool operator()(const A &, const A &) const noexcept;
 };
 
-
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
 DECLARE_PARAMETERIZABLE_HINT(Allocator) : private Role<> {
   using value_type = T;
@@ -472,8 +470,8 @@ DECLARE_PARAMETERIZABLE_BUILTIN_HINT(PairOf, ARG(std::pair<T1, T2>))
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
               ImplicitlyConvertible<>, MoveAssignable<>>,
-          typename SizeT = Synthesis::Slot<Long>,
-          typename DiffT = Synthesis::Slot<Long>>
+          typename SizeT = Synthesis::Slot<Long<>>,
+          typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(Container) : private Range<InnerT> {
   MARK_INVALID_ALLOCATOR
 
@@ -526,7 +524,7 @@ DECLARE_PARAMETERIZABLE_HINT(Container) : private Range<InnerT> {
 };
 
 template <typename CharT = Synthesis::Slot<Synthesis::BindExisting>,
-          typename IntT = Synthesis::Slot<Integer>>
+          typename IntT = Synthesis::Slot<Integer<>>>
 DECLARE_PARAMETERIZABLE_HINT(CharTraits) : private Role<> {
   using char_type = CharT;
   using int_type = IntT;
@@ -574,18 +572,17 @@ DECLARE_HINT(OutputStream) : private Role<>, public std::ostream {
   template <typename T> OutputStream &operator<<(const T &);
 };
 
-template <typename InternT = Synthesis::Slot<Char, WChar>,
-          typename ExternT = Synthesis::Slot<Char>>
+template <typename InternT = Synthesis::Slot<Char<>, WChar<>>,
+          typename ExternT = Synthesis::Slot<Char<>>>
 DECLARE_PARAMETERIZABLE_HINT(Facet)
-    : private Role<>,
-      public std::codecvt<InternT, ExternT, std::mbstate_t>{};
+    : private Role<>, public std::codecvt<InternT, ExternT, std::mbstate_t>{};
 
 DECLARE_HINT(SeedSequence) : private Role<> {
   using result_type = std::uint_least32_t;
   template <typename RandomIt> void generate(RandomIt, RandomIt);
 };
 
-template <typename T = Synthesis::Slot<UnsignedInteger>>
+template <typename T = Synthesis::Slot<UnsignedInteger<>>>
 DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : private Role<> {
   using result_type = T;
   static constexpr result_type min() { return T{}; }
@@ -644,9 +641,28 @@ DECLARE_NON_TYPE_HINT(TrueValue, bool, true)
 DECLARE_NON_TYPE_HINT(LargeInteger, int, 64)
 
 #if __cplusplus >= 202002L
-    DECLARE_NON_TYPE_HINT(SizedSubRangeKind, std::ranges::subrange_kind,
-                          std::ranges::subrange_kind::sized)
+DECLARE_NON_TYPE_HINT(SizedSubRangeKind, std::ranges::subrange_kind,
+                      std::ranges::subrange_kind::sized)
 #endif
+
+namespace std {
+
+template <int N> struct is_integral<Integer<N>> : true_type {};
+template <int N> struct is_integral<Long<N>> : true_type {};
+template <int N> struct is_integral<Char<N>> : true_type {};
+template <int N> struct is_integral<WChar<N>> : true_type {};
+template <int N> struct is_integral<UnsignedInteger<N>> : true_type {};
+template <int N> struct is_signed<Integer<N>> : true_type {};
+template <int N> struct is_signed<Long<N>> : true_type {};
+template <int N> struct is_signed<Char<N>> : true_type {};
+template <int N> struct is_signed<WChar<N>> : true_type {};
+template <int N> struct is_unsigned<UnsignedInteger<N>> : true_type {};
+
+template <int N> struct __byte_operand<Integer<N>> {
+  using __type = byte;
+};
+
+} // namespace std
 
 #define Plain Plain<__COUNTER__>
 #define Comparable Comparable<__COUNTER__>
@@ -662,3 +678,8 @@ DECLARE_NON_TYPE_HINT(LargeInteger, int, 64)
 #define Mutex Mutex<__COUNTER__>
 #define OutputStream OutputStream<__COUNTER__>
 #define SeedSequence SeedSequence<__COUNTER__>
+#define Integer Integer<__COUNTER__>
+#define Long Long<__COUNTER__>
+#define Char Char<__COUNTER__>
+#define WChar WChar<__COUNTER__>
+#define UnsignedInteger UnsignedInteger<__COUNTER__>
