@@ -546,7 +546,7 @@ template <typename T = Synthesis::Slot<UnsignedInteger>>
 DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : private Role<> {
   using result_type = T;
   static constexpr result_type min() { return T{}; }
-  static constexpr result_type max() { return T{}; }
+  static constexpr result_type max() { return std::numeric_limits<T>::max(); }
   result_type operator()();
   void seed();
   void seed(result_type);
