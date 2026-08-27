@@ -48,62 +48,128 @@ using BindSelf = const void *;
   struct [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                            \
            clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] name
 
+#define DECLARE_PARAMETERIZABLE_BUILTIN_HINT(name, type)                       \
+  using name [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                        \
+               clang::annotate(CPP2RUST_BUILTIN_RULE_TAG),                     \
+               clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] = type;
+
 #define DECLARE_NON_TYPE_HINT(name, type, expr)                                \
   [[clang::annotate(CPP2RUST_RULE_HINT_TAG)]] constexpr type name = expr;
 
 DECLARE_HINT(Integer) {
+  using probe_type = int;
   operator int() const;
   template <int Id> operator Integer<Id>() const;
 };
 
 DECLARE_HINT(Long) {
+  using probe_type = long;
   operator long() const;
   template <int Id> operator Long<Id>() const;
 };
 
 DECLARE_HINT(Char) {
+  using probe_type = char;
   operator char() const;
   template <int Id> operator Char<Id>() const;
 };
 
 DECLARE_HINT(WChar) {
+  using probe_type = wchar_t;
   operator wchar_t() const;
   template <int Id> operator WChar<Id>() const;
 };
 
-DECLARE_BUILTIN_HINT(Char8, char8_t)
+DECLARE_HINT(Char8) {
+  using probe_type = char8_t;
+  operator char8_t() const;
+  template <int Id> operator Char8<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Char16, char16_t)
+DECLARE_HINT(Char16) {
+  using probe_type = char16_t;
+  operator char16_t() const;
+  template <int Id> operator Char16<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Char32, char32_t)
+DECLARE_HINT(Char32) {
+  using probe_type = char32_t;
+  operator char32_t() const;
+  template <int Id> operator Char32<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(ErrorCodeEnum, std::io_errc)
+DECLARE_HINT(ErrorCodeEnum) {
+  using probe_type = std::io_errc;
+  operator std::io_errc() const;
+  template <int Id> operator ErrorCodeEnum<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(ErrorConditionEnum, std::errc)
+DECLARE_HINT(ErrorConditionEnum) {
+  using probe_type = std::errc;
+  operator std::errc() const;
+  template <int Id> operator ErrorConditionEnum<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Double, double)
+DECLARE_HINT(Double) {
+  using probe_type = double;
+  operator double() const;
+  template <int Id> operator Double<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Void, void)
+DECLARE_HINT(Void){};
 
-DECLARE_BUILTIN_HINT(Ratio, std::ratio<1>)
+DECLARE_HINT(Ratio) {
+  using probe_type = std::ratio<1>;
+  operator std::ratio<1>() const;
+  template <int Id> operator Ratio<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Duration, std::chrono::nanoseconds)
+DECLARE_HINT(Duration) {
+  using probe_type = std::chrono::nanoseconds;
+  operator std::chrono::nanoseconds() const;
+  template <int Id> operator Duration<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(CoarseDuration, std::chrono::seconds)
+DECLARE_HINT(CoarseDuration) {
+  using probe_type = std::chrono::seconds;
+  operator std::chrono::seconds() const;
+  template <int Id> operator CoarseDuration<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Clock, std::chrono::system_clock)
+DECLARE_HINT(Clock) {
+  using probe_type = std::chrono::system_clock;
+  operator std::chrono::system_clock() const;
+  template <int Id> operator Clock<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(Path, std::filesystem::path)
+DECLARE_HINT(Path) {
+  using probe_type = std::filesystem::path;
+  operator std::filesystem::path() const;
+  template <int Id> operator Path<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(FormatContext, std::format_context)
+DECLARE_HINT(FormatContext) {
+  using probe_type = std::format_context;
+  operator std::format_context() const;
+  template <int Id> operator FormatContext<Id>() const;
+};
 
-DECLARE_BUILTIN_HINT(MbState, std::mbstate_t)
+DECLARE_HINT(MbState) {
+  using probe_type = std::mbstate_t;
+  operator std::mbstate_t() const;
+  template <int Id> operator MbState<Id>() const;
+};
 
 #if defined(__linux__)
-DECLARE_BUILTIN_HINT(ExecutionPolicy, std::execution::parallel_policy)
+DECLARE_HINT(ExecutionPolicy) {
+  using probe_type = std::execution::parallel_policy;
+  operator std::execution::parallel_policy() const;
+  template <int Id> operator ExecutionPolicy<Id>() const;
+};
 #endif
 
 DECLARE_HINT(UnsignedInteger) {
+  using probe_type = unsigned;
   operator unsigned() const;
   template <int Id> operator UnsignedInteger<Id>() const;
 };
@@ -368,7 +434,7 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
               ImplicitlyConvertible<>, MoveAssignable<>>,
-          typename DiffT = Synthesis::Slot<Long>>
+          typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(BidirectionalIterator)
     : private InputIterator<InnerT, DiffT> {
   MARK_INVALID_ALLOCATOR
@@ -394,7 +460,7 @@ DECLARE_PARAMETERIZABLE_HINT(BidirectionalIterator)
   bool operator!=(const BidirectionalIterator &) const;
 };
 
-template <typename R = Synthesis::Slot<Integer, Synthesis::BindSelf>>
+template <typename R = Synthesis::Slot<Integer<>, Synthesis::BindSelf>>
 DECLARE_PARAMETERIZABLE_HINT(Callable) : private Plain<> {
   using is_transparent = void;
 
@@ -612,9 +678,13 @@ DECLARE_PARAMETERIZABLE_HINT(SmartPointer) : private Role<> {
   void reset(pointer = nullptr) noexcept;
 };
 
-DECLARE_BUILTIN_HINT(CString, const char *)
+DECLARE_HINT(CString) {
+  using probe_type = const char *;
+  operator const char *() const;
+  template <int Id> operator CString<Id>() const;
+};
 
-template <typename T = Synthesis::Slot<Synthesis::BindExisting, Char>>
+template <typename T = Synthesis::Slot<Synthesis::BindExisting, Char<>>>
 DECLARE_PARAMETERIZABLE_HINT(OutputIterator) : private Plain<> {
   using value_type = T;
   using difference_type = long;
@@ -652,6 +722,9 @@ template <int N> struct is_integral<Long<N>> : true_type {};
 template <int N> struct is_integral<Char<N>> : true_type {};
 template <int N> struct is_integral<WChar<N>> : true_type {};
 template <int N> struct is_integral<UnsignedInteger<N>> : true_type {};
+template <int N> struct is_void<Void<N>> : true_type {};
+template <int N> struct __is_ratio<Ratio<N>> : true_type {};
+template <int N> inline constexpr bool __is_ratio_v<Ratio<N>> = true;
 template <int N> struct is_signed<Integer<N>> : true_type {};
 template <int N> struct is_signed<Long<N>> : true_type {};
 template <int N> struct is_signed<Char<N>> : true_type {};
@@ -683,3 +756,19 @@ template <int N> struct __byte_operand<Integer<N>> {
 #define Char Char<__COUNTER__>
 #define WChar WChar<__COUNTER__>
 #define UnsignedInteger UnsignedInteger<__COUNTER__>
+#define Char8 Char8<__COUNTER__>
+#define Char16 Char16<__COUNTER__>
+#define Char32 Char32<__COUNTER__>
+#define Double Double<__COUNTER__>
+#define ErrorCodeEnum ErrorCodeEnum<__COUNTER__>
+#define ErrorConditionEnum ErrorConditionEnum<__COUNTER__>
+#define Void Void<__COUNTER__>
+#define Ratio Ratio<__COUNTER__>
+#define Duration Duration<__COUNTER__>
+#define CoarseDuration CoarseDuration<__COUNTER__>
+#define Clock Clock<__COUNTER__>
+#define Path Path<__COUNTER__>
+#define FormatContext FormatContext<__COUNTER__>
+#define MbState MbState<__COUNTER__>
+#define ExecutionPolicy ExecutionPolicy<__COUNTER__>
+#define CString CString<__COUNTER__>
