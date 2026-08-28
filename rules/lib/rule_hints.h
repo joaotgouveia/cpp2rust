@@ -60,48 +60,50 @@ using BindSelf = const void *;
 #define DECLARE_NON_TYPE_HINT(name, type, expr)                                \
   [[clang::annotate(CPP2RUST_RULE_HINT_TAG)]] constexpr type name = expr;
 
+#define PROBE_ONLY [[clang::annotate(CPP2RUST_PROBE_ONLY_TAG)]]
+
 #define DECLARE_SCALAR_HINT_BODY(name, builtin)                                \
-  builtin value = builtin();                                                   \
-  constexpr name() = default;                                                  \
-  constexpr name(builtin initial) : value(initial) {}                          \
-  constexpr operator builtin() const { return value; }                         \
-  template <int Id> constexpr operator name<Id>() const {                      \
+  builtin value;                                                               \
+  name() = default;                                                            \
+  PROBE_ONLY constexpr name(builtin initial) : value(initial) {}               \
+  PROBE_ONLY constexpr operator builtin() const { return value; }              \
+  template <int Id> PROBE_ONLY constexpr operator name<Id>() const {           \
     return name<Id>(value);                                                    \
   }                                                                            \
-  constexpr name &operator=(builtin other) {                                   \
+  PROBE_ONLY constexpr name &operator=(builtin other) {                        \
     value = other;                                                             \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator+=(builtin other) {                                  \
+  PROBE_ONLY constexpr name &operator+=(builtin other) {                       \
     value = static_cast<builtin>(value + other);                               \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator-=(builtin other) {                                  \
+  PROBE_ONLY constexpr name &operator-=(builtin other) {                       \
     value = static_cast<builtin>(value - other);                               \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator*=(builtin other) {                                  \
+  PROBE_ONLY constexpr name &operator*=(builtin other) {                       \
     value = static_cast<builtin>(value * other);                               \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator/=(builtin other) {                                  \
+  PROBE_ONLY constexpr name &operator/=(builtin other) {                       \
     value = static_cast<builtin>(value / other);                               \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator++() {                                               \
+  PROBE_ONLY constexpr name &operator++() {                                    \
     ++value;                                                                   \
     return *this;                                                              \
   }                                                                            \
-  constexpr name operator++(int) {                                             \
+  PROBE_ONLY constexpr name operator++(int) {                                  \
     const name previous = *this;                                               \
     ++value;                                                                   \
     return previous;                                                           \
   }                                                                            \
-  constexpr name &operator--() {                                               \
+  PROBE_ONLY constexpr name &operator--() {                                    \
     --value;                                                                   \
     return *this;                                                              \
   }                                                                            \
-  constexpr name operator--(int) {                                             \
+  PROBE_ONLY constexpr name operator--(int) {                                  \
     const name previous = *this;                                               \
     --value;                                                                   \
     return previous;                                                           \
@@ -109,37 +111,37 @@ using BindSelf = const void *;
 
 #define DECLARE_INTEGRAL_HINT_BODY(name, builtin)                              \
   DECLARE_SCALAR_HINT_BODY(name, builtin)                                      \
-  constexpr name &operator%=(builtin other) {                                  \
+  PROBE_ONLY constexpr name &operator%=(builtin other) {                       \
     value = static_cast<builtin>(value % other);                               \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator&=(builtin other) {                                  \
+  PROBE_ONLY constexpr name &operator&=(builtin other) {                       \
     value = static_cast<builtin>(value & other);                               \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator|=(builtin other) {                                  \
+  PROBE_ONLY constexpr name &operator|=(builtin other) {                       \
     value = static_cast<builtin>(value | other);                               \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator^=(builtin other) {                                  \
+  PROBE_ONLY constexpr name &operator^=(builtin other) {                       \
     value = static_cast<builtin>(value ^ other);                               \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator<<=(int other) {                                     \
+  PROBE_ONLY constexpr name &operator<<=(int other) {                          \
     value = static_cast<builtin>(value << other);                              \
     return *this;                                                              \
   }                                                                            \
-  constexpr name &operator>>=(int other) {                                     \
+  PROBE_ONLY constexpr name &operator>>=(int other) {                          \
     value = static_cast<builtin>(value >> other);                              \
     return *this;                                                              \
   }
 
 #define DECLARE_ENUM_HINT_BODY(name, builtin)                                  \
-  builtin value = builtin();                                                   \
-  constexpr name() = default;                                                  \
-  constexpr name(builtin initial) : value(initial) {}                          \
-  constexpr operator builtin() const { return value; }                         \
-  template <int Id> constexpr operator name<Id>() const {                      \
+  builtin value;                                                               \
+  name() = default;                                                            \
+  PROBE_ONLY constexpr name(builtin initial) : value(initial) {}               \
+  PROBE_ONLY constexpr operator builtin() const { return value; }              \
+  template <int Id> PROBE_ONLY constexpr operator name<Id>() const {           \
     return name<Id>(value);                                                    \
   }
 
@@ -170,17 +172,17 @@ DECLARE_HINT(Double) { DECLARE_SCALAR_HINT_BODY(Double, double) };
 DECLARE_HINT(Void){};
 
 DECLARE_HINT(Ratio) : public std::ratio<1> {
-  template <int Id> operator Ratio<Id>() const;
+  template <int Id> PROBE_ONLY operator Ratio<Id>() const;
 };
 
 DECLARE_HINT(Duration) : public std::chrono::nanoseconds {
   using std::chrono::nanoseconds::duration;
-  template <int Id> operator Duration<Id>() const;
+  template <int Id> PROBE_ONLY operator Duration<Id>() const;
 };
 
 DECLARE_HINT(CoarseDuration) : public std::chrono::seconds {
   using std::chrono::seconds::duration;
-  template <int Id> operator CoarseDuration<Id>() const;
+  template <int Id> PROBE_ONLY operator CoarseDuration<Id>() const;
 };
 
 DECLARE_HINT(Clock) : public std::chrono::system_clock {
@@ -192,25 +194,25 @@ DECLARE_HINT(Clock) : public std::chrono::system_clock {
   static constexpr bool is_steady = false;
   static time_point now() noexcept;
 
-  template <int Id> operator Clock<Id>() const;
+  template <int Id> PROBE_ONLY operator Clock<Id>() const;
 };
 
 DECLARE_HINT(Path) : public std::filesystem::path {
   using std::filesystem::path::path;
-  template <int Id> operator Path<Id>() const;
+  template <int Id> PROBE_ONLY operator Path<Id>() const;
 };
 
 DECLARE_HINT(FormatContext) : public std::format_context {
-  template <int Id> operator FormatContext<Id>() const;
+  template <int Id> PROBE_ONLY operator FormatContext<Id>() const;
 };
 
 DECLARE_HINT(MbState) : public std::mbstate_t {
-  template <int Id> operator MbState<Id>() const;
+  template <int Id> PROBE_ONLY operator MbState<Id>() const;
 };
 
 #if defined(__linux__)
 DECLARE_HINT(ExecutionPolicy) : public std::execution::parallel_policy {
-  template <int Id> operator ExecutionPolicy<Id>() const;
+  template <int Id> PROBE_ONLY operator ExecutionPolicy<Id>() const;
 };
 #endif
 
