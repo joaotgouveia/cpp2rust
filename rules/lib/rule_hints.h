@@ -53,125 +53,171 @@ using BindSelf = const void *;
                clang::annotate(CPP2RUST_BUILTIN_RULE_TAG),                     \
                clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] = type;
 
+#define DECLARE_BUILTIN_HINT(name, type)                                       \
+  using name [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                        \
+               clang::annotate(CPP2RUST_BUILTIN_RULE_TAG)]] = type;
+
 #define DECLARE_NON_TYPE_HINT(name, type, expr)                                \
   [[clang::annotate(CPP2RUST_RULE_HINT_TAG)]] constexpr type name = expr;
 
-DECLARE_HINT(Integer) {
-  using probe_type = int;
-  operator int() const;
-  template <int Id> operator Integer<Id>() const;
-};
+#define PROBE_ONLY [[clang::annotate(CPP2RUST_PROBE_ONLY_TAG)]]
 
-DECLARE_HINT(Long) {
-  using probe_type = long;
-  operator long() const;
-  template <int Id> operator Long<Id>() const;
-};
+#define DECLARE_SCALAR_HINT_BODY(name, builtin)                                \
+  builtin value;                                                               \
+  name() = default;                                                            \
+  PROBE_ONLY constexpr name(builtin initial) : value(initial) {}               \
+  PROBE_ONLY constexpr operator builtin() const { return value; }              \
+  template <int Id> PROBE_ONLY constexpr operator name<Id>() const {           \
+    return name<Id>(value);                                                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator=(builtin other) {                        \
+    value = other;                                                             \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator+=(builtin other) {                       \
+    value = static_cast<builtin>(value + other);                               \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator-=(builtin other) {                       \
+    value = static_cast<builtin>(value - other);                               \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator*=(builtin other) {                       \
+    value = static_cast<builtin>(value * other);                               \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator/=(builtin other) {                       \
+    value = static_cast<builtin>(value / other);                               \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator++() {                                    \
+    ++value;                                                                   \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator++(int) {                                  \
+    const name previous = *this;                                               \
+    ++value;                                                                   \
+    return previous;                                                           \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator--() {                                    \
+    --value;                                                                   \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator--(int) {                                  \
+    const name previous = *this;                                               \
+    --value;                                                                   \
+    return previous;                                                           \
+  }
 
-DECLARE_HINT(Char) {
-  using probe_type = char;
-  operator char() const;
-  template <int Id> operator Char<Id>() const;
-};
+#define DECLARE_INTEGRAL_HINT_BODY(name, builtin)                              \
+  DECLARE_SCALAR_HINT_BODY(name, builtin)                                      \
+  PROBE_ONLY constexpr name &operator%=(builtin other) {                       \
+    value = static_cast<builtin>(value % other);                               \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator&=(builtin other) {                       \
+    value = static_cast<builtin>(value & other);                               \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator|=(builtin other) {                       \
+    value = static_cast<builtin>(value | other);                               \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator^=(builtin other) {                       \
+    value = static_cast<builtin>(value ^ other);                               \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator<<=(int other) {                          \
+    value = static_cast<builtin>(value << other);                              \
+    return *this;                                                              \
+  }                                                                            \
+  PROBE_ONLY constexpr name &operator>>=(int other) {                          \
+    value = static_cast<builtin>(value >> other);                              \
+    return *this;                                                              \
+  }
 
-DECLARE_HINT(WChar) {
-  using probe_type = wchar_t;
-  operator wchar_t() const;
-  template <int Id> operator WChar<Id>() const;
-};
+#define DECLARE_ENUM_HINT_BODY(name, builtin)                                  \
+  builtin value;                                                               \
+  name() = default;                                                            \
+  PROBE_ONLY constexpr name(builtin initial) : value(initial) {}               \
+  PROBE_ONLY constexpr operator builtin() const { return value; }              \
+  template <int Id> PROBE_ONLY constexpr operator name<Id>() const {           \
+    return name<Id>(value);                                                    \
+  }
 
-DECLARE_HINT(Char8) {
-  using probe_type = char8_t;
-  operator char8_t() const;
-  template <int Id> operator Char8<Id>() const;
-};
+DECLARE_HINT(Integer) { DECLARE_INTEGRAL_HINT_BODY(Integer, int) };
 
-DECLARE_HINT(Char16) {
-  using probe_type = char16_t;
-  operator char16_t() const;
-  template <int Id> operator Char16<Id>() const;
-};
+DECLARE_HINT(Long) { DECLARE_INTEGRAL_HINT_BODY(Long, long) };
 
-DECLARE_HINT(Char32) {
-  using probe_type = char32_t;
-  operator char32_t() const;
-  template <int Id> operator Char32<Id>() const;
-};
+DECLARE_HINT(Char) { DECLARE_INTEGRAL_HINT_BODY(Char, char) };
+
+DECLARE_HINT(WChar) { DECLARE_INTEGRAL_HINT_BODY(WChar, wchar_t) };
+
+DECLARE_HINT(Char8) { DECLARE_INTEGRAL_HINT_BODY(Char8, char8_t) };
+
+DECLARE_HINT(Char16) { DECLARE_INTEGRAL_HINT_BODY(Char16, char16_t) };
+
+DECLARE_HINT(Char32) { DECLARE_INTEGRAL_HINT_BODY(Char32, char32_t) };
 
 DECLARE_HINT(ErrorCodeEnum) {
-  using probe_type = std::io_errc;
-  operator std::io_errc() const;
-  template <int Id> operator ErrorCodeEnum<Id>() const;
+  DECLARE_ENUM_HINT_BODY(ErrorCodeEnum, std::io_errc)
 };
 
 DECLARE_HINT(ErrorConditionEnum) {
-  using probe_type = std::errc;
-  operator std::errc() const;
-  template <int Id> operator ErrorConditionEnum<Id>() const;
+  DECLARE_ENUM_HINT_BODY(ErrorConditionEnum, std::errc)
 };
 
-DECLARE_HINT(Double) {
-  using probe_type = double;
-  operator double() const;
-  template <int Id> operator Double<Id>() const;
-};
+DECLARE_HINT(Double) { DECLARE_SCALAR_HINT_BODY(Double, double) };
 
 DECLARE_HINT(Void){};
 
-DECLARE_HINT(Ratio) {
-  using probe_type = std::ratio<1>;
-  operator std::ratio<1>() const;
-  template <int Id> operator Ratio<Id>() const;
+DECLARE_HINT(Ratio) : public std::ratio<1> {
+  template <int Id> PROBE_ONLY operator Ratio<Id>() const;
 };
 
-DECLARE_HINT(Duration) {
-  using probe_type = std::chrono::nanoseconds;
-  operator std::chrono::nanoseconds() const;
-  template <int Id> operator Duration<Id>() const;
+DECLARE_HINT(Duration) : public std::chrono::nanoseconds {
+  using std::chrono::nanoseconds::duration;
+  template <int Id> PROBE_ONLY operator Duration<Id>() const;
 };
 
-DECLARE_HINT(CoarseDuration) {
-  using probe_type = std::chrono::seconds;
-  operator std::chrono::seconds() const;
-  template <int Id> operator CoarseDuration<Id>() const;
+DECLARE_HINT(CoarseDuration) : public std::chrono::seconds {
+  using std::chrono::seconds::duration;
+  template <int Id> PROBE_ONLY operator CoarseDuration<Id>() const;
 };
 
-DECLARE_HINT(Clock) {
-  using probe_type = std::chrono::system_clock;
-  operator std::chrono::system_clock() const;
-  template <int Id> operator Clock<Id>() const;
+DECLARE_HINT(Clock) : public std::chrono::system_clock {
+  using duration = std::chrono::system_clock::duration;
+  using rep = duration::rep;
+  using period = duration::period;
+  using time_point = std::chrono::time_point<Clock, duration>;
+
+  static constexpr bool is_steady = false;
+  static time_point now() noexcept;
+
+  template <int Id> PROBE_ONLY operator Clock<Id>() const;
 };
 
-DECLARE_HINT(Path) {
-  using probe_type = std::filesystem::path;
-  operator std::filesystem::path() const;
-  template <int Id> operator Path<Id>() const;
+DECLARE_HINT(Path) : public std::filesystem::path {
+  using std::filesystem::path::path;
+  template <int Id> PROBE_ONLY operator Path<Id>() const;
 };
 
-DECLARE_HINT(FormatContext) {
-  using probe_type = std::format_context;
-  operator std::format_context() const;
-  template <int Id> operator FormatContext<Id>() const;
+DECLARE_HINT(FormatContext) : public std::format_context {
+  template <int Id> PROBE_ONLY operator FormatContext<Id>() const;
 };
 
-DECLARE_HINT(MbState) {
-  using probe_type = std::mbstate_t;
-  operator std::mbstate_t() const;
-  template <int Id> operator MbState<Id>() const;
+DECLARE_HINT(MbState) : public std::mbstate_t {
+  template <int Id> PROBE_ONLY operator MbState<Id>() const;
 };
 
 #if defined(__linux__)
-DECLARE_HINT(ExecutionPolicy) {
-  using probe_type = std::execution::parallel_policy;
-  operator std::execution::parallel_policy() const;
-  template <int Id> operator ExecutionPolicy<Id>() const;
+DECLARE_HINT(ExecutionPolicy) : public std::execution::parallel_policy {
+  template <int Id> PROBE_ONLY operator ExecutionPolicy<Id>() const;
 };
 #endif
 
 DECLARE_HINT(UnsignedInteger) {
-  using probe_type = unsigned;
-  operator unsigned() const;
-  template <int Id> operator UnsignedInteger<Id>() const;
+  DECLARE_INTEGRAL_HINT_BODY(UnsignedInteger, unsigned)
 };
 
 DECLARE_HINT(Plain){};
@@ -678,11 +724,7 @@ DECLARE_PARAMETERIZABLE_HINT(SmartPointer) : private Role<> {
   void reset(pointer = nullptr) noexcept;
 };
 
-DECLARE_HINT(CString) {
-  using probe_type = const char *;
-  operator const char *() const;
-  template <int Id> operator CString<Id>() const;
-};
+DECLARE_BUILTIN_HINT(CString, const char *)
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Char<>>>
 DECLARE_PARAMETERIZABLE_HINT(OutputIterator) : private Plain<> {
@@ -717,25 +759,234 @@ DECLARE_NON_TYPE_HINT(SizedSubRangeKind, std::ranges::subrange_kind,
 
 namespace std {
 
+template <int N> struct __is_integral_helper<Integer<N>> : true_type {};
+template <int N> struct __is_integral_helper<Long<N>> : true_type {};
+template <int N> struct __is_integral_helper<Char<N>> : true_type {};
+template <int N> struct __is_integral_helper<WChar<N>> : true_type {};
+template <int N> struct __is_integral_helper<Char8<N>> : true_type {};
+template <int N> struct __is_integral_helper<Char16<N>> : true_type {};
+template <int N> struct __is_integral_helper<Char32<N>> : true_type {};
+template <int N> struct __is_integral_helper<UnsignedInteger<N>> : true_type {};
+template <int N> struct __is_floating_point_helper<Double<N>> : true_type {};
+
 template <int N> struct is_integral<Integer<N>> : true_type {};
 template <int N> struct is_integral<Long<N>> : true_type {};
 template <int N> struct is_integral<Char<N>> : true_type {};
 template <int N> struct is_integral<WChar<N>> : true_type {};
+template <int N> struct is_integral<Char8<N>> : true_type {};
+template <int N> struct is_integral<Char16<N>> : true_type {};
+template <int N> struct is_integral<Char32<N>> : true_type {};
 template <int N> struct is_integral<UnsignedInteger<N>> : true_type {};
+template <int N> struct is_floating_point<Double<N>> : true_type {};
 template <int N> struct is_void<Void<N>> : true_type {};
 template <int N> struct __is_ratio<Ratio<N>> : true_type {};
 template <int N> inline constexpr bool __is_ratio_v<Ratio<N>> = true;
+
 template <int N> struct is_signed<Integer<N>> : true_type {};
 template <int N> struct is_signed<Long<N>> : true_type {};
 template <int N> struct is_signed<Char<N>> : true_type {};
 template <int N> struct is_signed<WChar<N>> : true_type {};
+template <int N> struct is_signed<Double<N>> : true_type {};
+template <int N> struct is_unsigned<Char8<N>> : true_type {};
+template <int N> struct is_unsigned<Char16<N>> : true_type {};
+template <int N> struct is_unsigned<Char32<N>> : true_type {};
 template <int N> struct is_unsigned<UnsignedInteger<N>> : true_type {};
+
+template <int N> struct numeric_limits<Integer<N>> : numeric_limits<int> {};
+template <int N> struct numeric_limits<Long<N>> : numeric_limits<long> {};
+template <int N> struct numeric_limits<Char<N>> : numeric_limits<char> {};
+template <int N> struct numeric_limits<WChar<N>> : numeric_limits<wchar_t> {};
+template <int N> struct numeric_limits<Char8<N>> : numeric_limits<char8_t> {};
+template <int N>
+struct numeric_limits<Char16<N>> : numeric_limits<char16_t> {};
+template <int N>
+struct numeric_limits<Char32<N>> : numeric_limits<char32_t> {};
+template <int N>
+struct numeric_limits<UnsignedInteger<N>> : numeric_limits<unsigned> {};
+template <int N> struct numeric_limits<Double<N>> : numeric_limits<double> {};
+
+template <int N> struct hash<Integer<N>> {
+  std::size_t operator()(const Integer<N> &) const noexcept;
+};
+template <int N> struct hash<Long<N>> {
+  std::size_t operator()(const Long<N> &) const noexcept;
+};
+template <int N> struct hash<Char<N>> {
+  std::size_t operator()(const Char<N> &) const noexcept;
+};
+template <int N> struct hash<WChar<N>> {
+  std::size_t operator()(const WChar<N> &) const noexcept;
+};
+template <int N> struct hash<Char8<N>> {
+  std::size_t operator()(const Char8<N> &) const noexcept;
+};
+template <int N> struct hash<Char16<N>> {
+  std::size_t operator()(const Char16<N> &) const noexcept;
+};
+template <int N> struct hash<Char32<N>> {
+  std::size_t operator()(const Char32<N> &) const noexcept;
+};
+template <int N> struct hash<UnsignedInteger<N>> {
+  std::size_t operator()(const UnsignedInteger<N> &) const noexcept;
+};
+template <int N> struct hash<Double<N>> {
+  std::size_t operator()(const Double<N> &) const noexcept;
+};
+
+template <int N> struct is_same<Char<N>, char> : true_type {};
+template <int N> struct is_same<char, Char<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<Char<N>, char> = true;
+template <int N> inline constexpr bool is_same_v<char, Char<N>> = true;
+template <int N> struct is_same<WChar<N>, wchar_t> : true_type {};
+template <int N> struct is_same<wchar_t, WChar<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<WChar<N>, wchar_t> = true;
+template <int N> inline constexpr bool is_same_v<wchar_t, WChar<N>> = true;
+template <int N> struct is_same<Char8<N>, char8_t> : true_type {};
+template <int N> struct is_same<char8_t, Char8<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<Char8<N>, char8_t> = true;
+template <int N> inline constexpr bool is_same_v<char8_t, Char8<N>> = true;
+template <int N> struct is_same<Char16<N>, char16_t> : true_type {};
+template <int N> struct is_same<char16_t, Char16<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<Char16<N>, char16_t> = true;
+template <int N> inline constexpr bool is_same_v<char16_t, Char16<N>> = true;
+template <int N> struct is_same<Char32<N>, char32_t> : true_type {};
+template <int N> struct is_same<char32_t, Char32<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<Char32<N>, char32_t> = true;
+template <int N> inline constexpr bool is_same_v<char32_t, Char32<N>> = true;
+
+template <int N> struct make_signed<Integer<N>> {
+  using type = Integer<N>;
+};
+template <int N> struct make_signed<Long<N>> {
+  using type = Long<N>;
+};
+template <int N> struct make_signed<Char<N>> {
+  using type = Char<N>;
+};
+template <int N> struct make_signed<WChar<N>> {
+  using type = WChar<N>;
+};
+template <int N> struct make_signed<UnsignedInteger<N>> {
+  using type = Integer<N>;
+};
+template <int N> struct make_unsigned<Char<N>> {
+  using type = Char<N>;
+};
+template <int N> struct make_unsigned<WChar<N>> {
+  using type = WChar<N>;
+};
+template <int N> struct make_unsigned<Char8<N>> {
+  using type = Char8<N>;
+};
+template <int N> struct make_unsigned<Char16<N>> {
+  using type = Char16<N>;
+};
+template <int N> struct make_unsigned<Char32<N>> {
+  using type = Char32<N>;
+};
+template <int N> struct make_unsigned<Integer<N>> {
+  using type = UnsignedInteger<N>;
+};
+template <int N> struct make_unsigned<Long<N>> {
+  using type = UnsignedInteger<N>;
+};
+template <int N> struct make_unsigned<UnsignedInteger<N>> {
+  using type = UnsignedInteger<N>;
+};
+
+template <int N> struct is_error_code_enum<ErrorCodeEnum<N>> : true_type {};
+template <int N>
+struct is_error_condition_enum<ErrorConditionEnum<N>> : true_type {};
 
 template <int N> struct __byte_operand<Integer<N>> {
   using __type = byte;
 };
+template <int N> struct __byte_operand<Long<N>> {
+  using __type = byte;
+};
+template <int N> struct __byte_operand<Char<N>> {
+  using __type = byte;
+};
+template <int N> struct __byte_operand<WChar<N>> {
+  using __type = byte;
+};
+template <int N> struct __byte_operand<Char8<N>> {
+  using __type = byte;
+};
+template <int N> struct __byte_operand<Char16<N>> {
+  using __type = byte;
+};
+template <int N> struct __byte_operand<Char32<N>> {
+  using __type = byte;
+};
+template <int N> struct __byte_operand<UnsignedInteger<N>> {
+  using __type = byte;
+};
 
+template <int N> struct __is_integer<Integer<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Long<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Char<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<WChar<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Char8<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Char16<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Char32<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<UnsignedInteger<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
 } // namespace std
+
+namespace std::chrono {
+
+template <int N> struct __is_duration<Duration<N>> : true_type {};
+template <int N> struct __is_duration<CoarseDuration<N>> : true_type {};
+
+} // namespace std::chrono
+
+namespace __gnu_cxx {
+
+template <int N> struct __promote<Double<N>, false> {
+  typedef double __type;
+};
+
+} // namespace __gnu_cxx
+
+#if defined(__linux__)
+namespace __pstl::execution {
+
+template <int N>
+struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
+
+} // namespace __pstl::execution
+#endif
 
 #define Plain Plain<__COUNTER__>
 #define Comparable Comparable<__COUNTER__>
@@ -771,4 +1022,3 @@ template <int N> struct __byte_operand<Integer<N>> {
 #define FormatContext FormatContext<__COUNTER__>
 #define MbState MbState<__COUNTER__>
 #define ExecutionPolicy ExecutionPolicy<__COUNTER__>
-#define CString CString<__COUNTER__>
