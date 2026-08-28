@@ -7,7 +7,7 @@ list(REMOVE_ITEM CORE_SOURCES
 add_library(cpp2rust_core STATIC ${CORE_SOURCES})
 llvm_update_compile_flags(cpp2rust_core)
 
-set(RULES_LIB_PATH "${PROJECT_SOURCE_DIR}/rules/lib")
+set(RULES_LIB_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../rules/lib")
 
 target_link_libraries(cpp2rust_core PUBLIC
     clangAST
