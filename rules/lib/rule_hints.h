@@ -833,6 +833,67 @@ template <int N> struct hash<Double<N>> {
   std::size_t operator()(const Double<N> &) const noexcept;
 };
 
+template <int N> struct is_same<Char<N>, char> : true_type {};
+template <int N> struct is_same<char, Char<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<Char<N>, char> = true;
+template <int N> inline constexpr bool is_same_v<char, Char<N>> = true;
+template <int N> struct is_same<WChar<N>, wchar_t> : true_type {};
+template <int N> struct is_same<wchar_t, WChar<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<WChar<N>, wchar_t> = true;
+template <int N> inline constexpr bool is_same_v<wchar_t, WChar<N>> = true;
+template <int N> struct is_same<Char8<N>, char8_t> : true_type {};
+template <int N> struct is_same<char8_t, Char8<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<Char8<N>, char8_t> = true;
+template <int N> inline constexpr bool is_same_v<char8_t, Char8<N>> = true;
+template <int N> struct is_same<Char16<N>, char16_t> : true_type {};
+template <int N> struct is_same<char16_t, Char16<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<Char16<N>, char16_t> = true;
+template <int N> inline constexpr bool is_same_v<char16_t, Char16<N>> = true;
+template <int N> struct is_same<Char32<N>, char32_t> : true_type {};
+template <int N> struct is_same<char32_t, Char32<N>> : true_type {};
+template <int N> inline constexpr bool is_same_v<Char32<N>, char32_t> = true;
+template <int N> inline constexpr bool is_same_v<char32_t, Char32<N>> = true;
+
+template <int N> struct make_signed<Integer<N>> {
+  using type = Integer<N>;
+};
+template <int N> struct make_signed<Long<N>> {
+  using type = Long<N>;
+};
+template <int N> struct make_signed<Char<N>> {
+  using type = Char<N>;
+};
+template <int N> struct make_signed<WChar<N>> {
+  using type = WChar<N>;
+};
+template <int N> struct make_signed<UnsignedInteger<N>> {
+  using type = Integer<N>;
+};
+template <int N> struct make_unsigned<Char<N>> {
+  using type = Char<N>;
+};
+template <int N> struct make_unsigned<WChar<N>> {
+  using type = WChar<N>;
+};
+template <int N> struct make_unsigned<Char8<N>> {
+  using type = Char8<N>;
+};
+template <int N> struct make_unsigned<Char16<N>> {
+  using type = Char16<N>;
+};
+template <int N> struct make_unsigned<Char32<N>> {
+  using type = Char32<N>;
+};
+template <int N> struct make_unsigned<Integer<N>> {
+  using type = UnsignedInteger<N>;
+};
+template <int N> struct make_unsigned<Long<N>> {
+  using type = UnsignedInteger<N>;
+};
+template <int N> struct make_unsigned<UnsignedInteger<N>> {
+  using type = UnsignedInteger<N>;
+};
+
 template <int N> struct is_error_code_enum<ErrorCodeEnum<N>> : true_type {};
 template <int N>
 struct is_error_condition_enum<ErrorConditionEnum<N>> : true_type {};
@@ -862,6 +923,45 @@ template <int N> struct __byte_operand<UnsignedInteger<N>> {
   using __type = byte;
 };
 
+template <int N> struct __is_integer<Integer<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Long<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Char<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<WChar<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Char8<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Char16<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<Char32<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
+
+template <int N> struct __is_integer<UnsignedInteger<N>> {
+  enum { __value = 1 };
+  typedef __true_type __type;
+};
 } // namespace std
 
 namespace std::chrono {
@@ -870,6 +970,14 @@ template <int N> struct __is_duration<Duration<N>> : true_type {};
 template <int N> struct __is_duration<CoarseDuration<N>> : true_type {};
 
 } // namespace std::chrono
+
+namespace __gnu_cxx {
+
+template <int N> struct __promote<Double<N>, false> {
+  typedef double __type;
+};
+
+} // namespace __gnu_cxx
 
 #if defined(__linux__)
 namespace __pstl::execution {
