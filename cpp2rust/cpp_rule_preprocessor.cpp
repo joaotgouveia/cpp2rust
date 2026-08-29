@@ -45,6 +45,10 @@ public:
     sema_ = &sema;
     clang::SourceManager &sm = sema.Context.getSourceManager();
     loc_ = sm.getLocForStartOfFile(sm.getMainFileID());
+    scope_ = std::make_unique<clang::Scope>(nullptr, clang::Scope::DeclScope,
+                                            sema_->getDiagnostics());
+    scope_->setEntity(sema_->Context.getTranslationUnitDecl());
+    sema_->TUScope = scope_.get();
   }
 
   void run(const clang::ast_matchers::MatchFinder::MatchResult &R) override {
@@ -105,6 +109,7 @@ private:
   llvm::json::Object &out_;
   clang::Sema *sema_ = nullptr;
   clang::SourceLocation loc_;
+  std::unique_ptr<clang::Scope> scope_;
 
   clang::NamespaceDecl *createNamespaceDecl() {
     auto &ctx = sema_->getASTContext();
