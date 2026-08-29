@@ -153,7 +153,9 @@ DECLARE_HINT(Char) { DECLARE_INTEGRAL_HINT_BODY(Char, char) };
 
 DECLARE_HINT(WChar) { DECLARE_INTEGRAL_HINT_BODY(WChar, wchar_t) };
 
+#if __cplusplus >= 202002L
 DECLARE_HINT(Char8) { DECLARE_INTEGRAL_HINT_BODY(Char8, char8_t) };
+#endif
 
 DECLARE_HINT(Char16) { DECLARE_INTEGRAL_HINT_BODY(Char16, char16_t) };
 
@@ -202,9 +204,11 @@ DECLARE_HINT(Path) : public std::filesystem::path {
   template <int Id> PROBE_ONLY operator Path<Id>() const;
 };
 
+#if __cplusplus >= 202002L
 DECLARE_HINT(FormatContext) : public std::format_context {
   template <int Id> PROBE_ONLY operator FormatContext<Id>() const;
 };
+#endif
 
 DECLARE_HINT(MbState) : public std::mbstate_t {
   template <int Id> PROBE_ONLY operator MbState<Id>() const;
@@ -763,7 +767,9 @@ template <int N> struct __is_integral_helper<Integer<N>> : true_type {};
 template <int N> struct __is_integral_helper<Long<N>> : true_type {};
 template <int N> struct __is_integral_helper<Char<N>> : true_type {};
 template <int N> struct __is_integral_helper<WChar<N>> : true_type {};
+#if __cplusplus >= 202002L
 template <int N> struct __is_integral_helper<Char8<N>> : true_type {};
+#endif
 template <int N> struct __is_integral_helper<Char16<N>> : true_type {};
 template <int N> struct __is_integral_helper<Char32<N>> : true_type {};
 template <int N> struct __is_integral_helper<UnsignedInteger<N>> : true_type {};
@@ -773,7 +779,9 @@ template <int N> struct is_integral<Integer<N>> : true_type {};
 template <int N> struct is_integral<Long<N>> : true_type {};
 template <int N> struct is_integral<Char<N>> : true_type {};
 template <int N> struct is_integral<WChar<N>> : true_type {};
+#if __cplusplus >= 202002L
 template <int N> struct is_integral<Char8<N>> : true_type {};
+#endif
 template <int N> struct is_integral<Char16<N>> : true_type {};
 template <int N> struct is_integral<Char32<N>> : true_type {};
 template <int N> struct is_integral<UnsignedInteger<N>> : true_type {};
@@ -787,7 +795,9 @@ template <int N> struct is_signed<Long<N>> : true_type {};
 template <int N> struct is_signed<Char<N>> : true_type {};
 template <int N> struct is_signed<WChar<N>> : true_type {};
 template <int N> struct is_signed<Double<N>> : true_type {};
+#if __cplusplus >= 202002L
 template <int N> struct is_unsigned<Char8<N>> : true_type {};
+#endif
 template <int N> struct is_unsigned<Char16<N>> : true_type {};
 template <int N> struct is_unsigned<Char32<N>> : true_type {};
 template <int N> struct is_unsigned<UnsignedInteger<N>> : true_type {};
@@ -796,7 +806,9 @@ template <int N> struct numeric_limits<Integer<N>> : numeric_limits<int> {};
 template <int N> struct numeric_limits<Long<N>> : numeric_limits<long> {};
 template <int N> struct numeric_limits<Char<N>> : numeric_limits<char> {};
 template <int N> struct numeric_limits<WChar<N>> : numeric_limits<wchar_t> {};
+#if __cplusplus >= 202002L
 template <int N> struct numeric_limits<Char8<N>> : numeric_limits<char8_t> {};
+#endif
 template <int N>
 struct numeric_limits<Char16<N>> : numeric_limits<char16_t> {};
 template <int N>
@@ -817,9 +829,11 @@ template <int N> struct hash<Char<N>> {
 template <int N> struct hash<WChar<N>> {
   std::size_t operator()(const WChar<N> &) const noexcept;
 };
+#if __cplusplus >= 202002L
 template <int N> struct hash<Char8<N>> {
   std::size_t operator()(const Char8<N> &) const noexcept;
 };
+#endif
 template <int N> struct hash<Char16<N>> {
   std::size_t operator()(const Char16<N> &) const noexcept;
 };
@@ -841,10 +855,12 @@ template <int N> struct is_same<WChar<N>, wchar_t> : true_type {};
 template <int N> struct is_same<wchar_t, WChar<N>> : true_type {};
 template <int N> inline constexpr bool is_same_v<WChar<N>, wchar_t> = true;
 template <int N> inline constexpr bool is_same_v<wchar_t, WChar<N>> = true;
+#if __cplusplus >= 202002L
 template <int N> struct is_same<Char8<N>, char8_t> : true_type {};
 template <int N> struct is_same<char8_t, Char8<N>> : true_type {};
 template <int N> inline constexpr bool is_same_v<Char8<N>, char8_t> = true;
 template <int N> inline constexpr bool is_same_v<char8_t, Char8<N>> = true;
+#endif
 template <int N> struct is_same<Char16<N>, char16_t> : true_type {};
 template <int N> struct is_same<char16_t, Char16<N>> : true_type {};
 template <int N> inline constexpr bool is_same_v<Char16<N>, char16_t> = true;
@@ -875,9 +891,11 @@ template <int N> struct make_unsigned<Char<N>> {
 template <int N> struct make_unsigned<WChar<N>> {
   using type = WChar<N>;
 };
+#if __cplusplus >= 202002L
 template <int N> struct make_unsigned<Char8<N>> {
   using type = Char8<N>;
 };
+#endif
 template <int N> struct make_unsigned<Char16<N>> {
   using type = Char16<N>;
 };
@@ -910,9 +928,11 @@ template <int N> struct __byte_operand<Char<N>> {
 template <int N> struct __byte_operand<WChar<N>> {
   using __type = byte;
 };
+#if __cplusplus >= 202002L
 template <int N> struct __byte_operand<Char8<N>> {
   using __type = byte;
 };
+#endif
 template <int N> struct __byte_operand<Char16<N>> {
   using __type = byte;
 };
@@ -943,10 +963,12 @@ template <int N> struct __is_integer<WChar<N>> {
   typedef __true_type __type;
 };
 
+#if __cplusplus >= 202002L
 template <int N> struct __is_integer<Char8<N>> {
   enum { __value = 1 };
   typedef __true_type __type;
 };
+#endif
 
 template <int N> struct __is_integer<Char16<N>> {
   enum { __value = 1 };
@@ -1007,7 +1029,9 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #define Char Char<__COUNTER__>
 #define WChar WChar<__COUNTER__>
 #define UnsignedInteger UnsignedInteger<__COUNTER__>
+#if __cplusplus >= 202002L
 #define Char8 Char8<__COUNTER__>
+#endif
 #define Char16 Char16<__COUNTER__>
 #define Char32 Char32<__COUNTER__>
 #define Double Double<__COUNTER__>
@@ -1019,6 +1043,8 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #define CoarseDuration CoarseDuration<__COUNTER__>
 #define Clock Clock<__COUNTER__>
 #define Path Path<__COUNTER__>
+#if __cplusplus >= 202002L
 #define FormatContext FormatContext<__COUNTER__>
+#endif
 #define MbState MbState<__COUNTER__>
 #define ExecutionPolicy ExecutionPolicy<__COUNTER__>
