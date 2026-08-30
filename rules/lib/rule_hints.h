@@ -313,11 +313,6 @@ DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) : private ExplicitlyConvertible<> {
   operator T() const;
 };
 
-DECLARE_HINT(ImplicitlyConvertible) : private ExplicitlyConvertible<> {
-  template <typename Other, typename = enable_unless_non_convertible_t<Other>>
-  operator Other() const;
-};
-
 DECLARE_HINT(StringLike) : private Plain<> {
   template <typename CharT, typename Traits,
             typename = enable_unless_non_convertible_t<CharT>>
@@ -335,7 +330,7 @@ using enable_any_convertible_t =
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>, UnsignedInteger<>>,
+              MoveAssignable<>, UnsignedInteger<>>,
           typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(InputIterator) : private Plain<> {
   MARK_INVALID_ALLOCATOR
@@ -398,7 +393,7 @@ DECLARE_PARAMETERIZABLE_HINT(InputIterator) : private Plain<> {
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>>,
+              MoveAssignable<>>,
           typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
   MARK_INVALID_ALLOCATOR
@@ -483,7 +478,7 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>>,
+              MoveAssignable<>>,
           typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(BidirectionalIterator)
     : private InputIterator<InnerT, DiffT> {
@@ -549,6 +544,8 @@ DECLARE_PARAMETERIZABLE_HINT(Allocator) : private Role<> {
 
   template <typename U> bool operator==(const Allocator<U> &) const noexcept;
   template <typename U> bool operator!=(const Allocator<U> &) const noexcept;
+
+  template <typename U> operator std::allocator<U>() const noexcept;
 };
 
 DECLARE_HINT(BoolConstant) : private Role<> {
@@ -579,13 +576,13 @@ DECLARE_PARAMETERIZABLE_HINT(View)
 };
 #endif
 
-template <typename T1 = Synthesis::Slot<Synthesis::BindExisting, ImplicitlyConvertible<>>,
-          typename T2 = Synthesis::Slot<ImplicitlyConvertible<>>>
+template <typename T1 = Synthesis::Slot<Synthesis::BindExisting, Plain<>>,
+          typename T2 = Synthesis::Slot<Plain<>>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(PairOf, ARG(std::pair<T1, T2>))
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>>,
+              MoveAssignable<>>,
           typename SizeT = Synthesis::Slot<Long<>>,
           typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(Container) : private Range<InnerT> {
@@ -712,8 +709,7 @@ DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : private Role<> {
   bool operator!=(const NumberGenerator &) const;
 };
 
-template <typename T =
-              Synthesis::Slot<Synthesis::BindExisting, ImplicitlyConvertible<>>>
+template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Const, const T)
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
@@ -1018,7 +1014,6 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #define ConstSwappable ConstSwappable<__COUNTER__>
 #define NonConvertibleComparable NonConvertibleComparable<__COUNTER__>
 #define ExplicitlyConvertible ExplicitlyConvertible<__COUNTER__>
-#define ImplicitlyConvertible ImplicitlyConvertible<__COUNTER__>
 #define StringLike StringLike<__COUNTER__>
 #define BoolConstant BoolConstant<__COUNTER__>
 #define Mutex Mutex<__COUNTER__>
