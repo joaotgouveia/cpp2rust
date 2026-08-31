@@ -999,6 +999,30 @@ template <int N> struct __promote<Double<N>, false> {
   typedef double __type;
 };
 
+template <int N>
+struct __numeric_traits_integer<Integer<N>> : __numeric_traits_integer<int> {};
+template <int N>
+struct __numeric_traits_integer<Long<N>> : __numeric_traits_integer<long> {};
+template <int N>
+struct __numeric_traits_integer<Char<N>> : __numeric_traits_integer<char> {};
+template <int N>
+struct __numeric_traits_integer<WChar<N>>
+    : __numeric_traits_integer<wchar_t> {};
+#if __cplusplus >= 202002L
+template <int N>
+struct __numeric_traits_integer<Char8<N>>
+    : __numeric_traits_integer<char8_t> {};
+#endif
+template <int N>
+struct __numeric_traits_integer<Char16<N>>
+    : __numeric_traits_integer<char16_t> {};
+template <int N>
+struct __numeric_traits_integer<Char32<N>>
+    : __numeric_traits_integer<char32_t> {};
+template <int N>
+struct __numeric_traits_integer<UnsignedInteger<N>>
+    : __numeric_traits_integer<unsigned> {};
+
 } // namespace __gnu_cxx
 
 #if defined(__linux__)
