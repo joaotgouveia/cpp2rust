@@ -62,6 +62,15 @@ using BindSelf = const void *;
 
 #define PROBE_ONLY [[clang::annotate(CPP2RUST_PROBE_ONLY_TAG)]]
 
+#if __cplusplus >= 202002L
+#define DECLARE_SPACESHIP_HINT_BODY(name, builtin)                             \
+  PROBE_ONLY constexpr auto operator<=>(builtin other) const {                 \
+    return value <=> other;                                                    \
+  }
+#else
+#define DECLARE_SPACESHIP_HINT_BODY(name, builtin)
+#endif
+
 #define DECLARE_SCALAR_HINT_BODY(name, builtin)                                \
   builtin value;                                                               \
   name() = default;                                                            \
@@ -107,7 +116,26 @@ using BindSelf = const void *;
     const name previous = *this;                                               \
     --value;                                                                   \
     return previous;                                                           \
-  }
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator==(builtin other) const {                  \
+    return value == other;                                                     \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator!=(builtin other) const {                  \
+    return value != other;                                                     \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator<(builtin other) const {                   \
+    return value < other;                                                      \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator>(builtin other) const {                   \
+    return value > other;                                                      \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator<=(builtin other) const {                  \
+    return value <= other;                                                     \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator>=(builtin other) const {                  \
+    return value >= other;                                                     \
+  }                                                                            \
+  DECLARE_SPACESHIP_HINT_BODY(name, builtin)
 
 #define DECLARE_INTEGRAL_HINT_BODY(name, builtin)                              \
   DECLARE_SCALAR_HINT_BODY(name, builtin)                                      \
@@ -143,33 +171,83 @@ using BindSelf = const void *;
   PROBE_ONLY constexpr operator builtin() const { return value; }              \
   template <int Id> PROBE_ONLY constexpr operator name<Id>() const {           \
     return name<Id>(value);                                                    \
-  }
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator==(builtin other) const {                  \
+    return value == other;                                                     \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator!=(builtin other) const {                  \
+    return value != other;                                                     \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator<(builtin other) const {                   \
+    return value < other;                                                      \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator>(builtin other) const {                   \
+    return value > other;                                                      \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator<=(builtin other) const {                  \
+    return value <= other;                                                     \
+  }                                                                            \
+  PROBE_ONLY constexpr bool operator>=(builtin other) const {                  \
+    return value >= other;                                                     \
+  }                                                                            \
+  DECLARE_SPACESHIP_HINT_BODY(name, builtin)
 
-DECLARE_HINT(Integer) { DECLARE_INTEGRAL_HINT_BODY(Integer, int) };
+DECLARE_HINT(Plain){};
 
-DECLARE_HINT(Long) { DECLARE_INTEGRAL_HINT_BODY(Long, long) };
+DECLARE_HINT(Comparable) : private Plain<> {
+  template <typename Other> bool operator==(const Other &) const;
+  template <typename Other> bool operator!=(const Other &) const;
+  template <typename Other> bool operator<(const Other &) const;
+  template <typename Other> bool operator>(const Other &) const;
+  template <typename Other> bool operator<=(const Other &) const;
+  template <typename Other> bool operator>=(const Other &) const;
+#if __cplusplus >= 202002L
+  template <typename Other>
+  std::strong_ordering operator<=>(const Other &) const;
+#endif
+};
 
-DECLARE_HINT(Char) { DECLARE_INTEGRAL_HINT_BODY(Char, char) };
+DECLARE_HINT(Integer) : private Comparable<> {
+  DECLARE_INTEGRAL_HINT_BODY(Integer, int)
+};
 
-DECLARE_HINT(WChar) { DECLARE_INTEGRAL_HINT_BODY(WChar, wchar_t) };
+DECLARE_HINT(Long) : private Comparable<> {
+  DECLARE_INTEGRAL_HINT_BODY(Long, long)
+};
+
+DECLARE_HINT(Char) : private Comparable<> {
+  DECLARE_INTEGRAL_HINT_BODY(Char, char)
+};
+
+DECLARE_HINT(WChar) : private Comparable<> {
+  DECLARE_INTEGRAL_HINT_BODY(WChar, wchar_t)
+};
 
 #if __cplusplus >= 202002L
-DECLARE_HINT(Char8) { DECLARE_INTEGRAL_HINT_BODY(Char8, char8_t) };
+DECLARE_HINT(Char8) : private Comparable<> {
+  DECLARE_INTEGRAL_HINT_BODY(Char8, char8_t)
+};
 #endif
 
-DECLARE_HINT(Char16) { DECLARE_INTEGRAL_HINT_BODY(Char16, char16_t) };
+DECLARE_HINT(Char16) : private Comparable<> {
+  DECLARE_INTEGRAL_HINT_BODY(Char16, char16_t)
+};
 
-DECLARE_HINT(Char32) { DECLARE_INTEGRAL_HINT_BODY(Char32, char32_t) };
+DECLARE_HINT(Char32) : private Comparable<> {
+  DECLARE_INTEGRAL_HINT_BODY(Char32, char32_t)
+};
 
-DECLARE_HINT(ErrorCodeEnum) {
+DECLARE_HINT(ErrorCodeEnum) : private Comparable<> {
   DECLARE_ENUM_HINT_BODY(ErrorCodeEnum, std::io_errc)
 };
 
-DECLARE_HINT(ErrorConditionEnum) {
+DECLARE_HINT(ErrorConditionEnum) : private Comparable<> {
   DECLARE_ENUM_HINT_BODY(ErrorConditionEnum, std::errc)
 };
 
-DECLARE_HINT(Double) { DECLARE_SCALAR_HINT_BODY(Double, double) };
+DECLARE_HINT(Double) : private Comparable<> {
+  DECLARE_SCALAR_HINT_BODY(Double, double)
+};
 
 DECLARE_HINT(Void){};
 
@@ -220,28 +298,13 @@ DECLARE_HINT(ExecutionPolicy) : public std::execution::parallel_policy {
 };
 #endif
 
-DECLARE_HINT(UnsignedInteger) {
+DECLARE_HINT(UnsignedInteger) : private Comparable<> {
   DECLARE_INTEGRAL_HINT_BODY(UnsignedInteger, unsigned)
 };
-
-DECLARE_HINT(Plain){};
 
 DECLARE_HINT(Role) : private Plain<>{};
 
 DECLARE_HINT(Assignable) : private Plain<>{};
-
-DECLARE_HINT(Comparable) : private Plain<> {
-  template <typename Other> bool operator==(const Other &) const;
-  template <typename Other> bool operator!=(const Other &) const;
-  template <typename Other> bool operator<(const Other &) const;
-  template <typename Other> bool operator>(const Other &) const;
-  template <typename Other> bool operator<=(const Other &) const;
-  template <typename Other> bool operator>=(const Other &) const;
-#if __cplusplus >= 202002L
-  template <typename Other>
-  std::strong_ordering operator<=>(const Other &) const;
-#endif
-};
 
 DECLARE_HINT(MoveAssignable) : private Assignable<> {
   MoveAssignable() = default;
