@@ -194,6 +194,8 @@ using BindSelf = const void *;
 
 DECLARE_HINT(Plain){};
 
+DECLARE_HINT(Role) : private Plain<>{};
+
 DECLARE_HINT(Comparable) : private Plain<> {
   template <typename Other> bool operator==(const Other &) const;
   template <typename Other> bool operator!=(const Other &) const;
@@ -251,21 +253,21 @@ DECLARE_HINT(Double) : private Comparable<> {
 
 DECLARE_HINT(Void){};
 
-DECLARE_HINT(Ratio) : public std::ratio<1> {
+DECLARE_HINT(Ratio) : private Role<>, public std::ratio<1> {
   template <int Id> PROBE_ONLY operator Ratio<Id>() const;
 };
 
-DECLARE_HINT(Duration) : public std::chrono::nanoseconds {
+DECLARE_HINT(Duration) : private Role<>, public std::chrono::nanoseconds {
   using std::chrono::nanoseconds::duration;
   template <int Id> PROBE_ONLY operator Duration<Id>() const;
 };
 
-DECLARE_HINT(CoarseDuration) : public std::chrono::seconds {
+DECLARE_HINT(CoarseDuration) : private Role<>, public std::chrono::seconds {
   using std::chrono::seconds::duration;
   template <int Id> PROBE_ONLY operator CoarseDuration<Id>() const;
 };
 
-DECLARE_HINT(Clock) : public std::chrono::system_clock {
+DECLARE_HINT(Clock) : private Role<>, public std::chrono::system_clock {
   using duration = std::chrono::system_clock::duration;
   using rep = duration::rep;
   using period = duration::period;
@@ -277,23 +279,24 @@ DECLARE_HINT(Clock) : public std::chrono::system_clock {
   template <int Id> PROBE_ONLY operator Clock<Id>() const;
 };
 
-DECLARE_HINT(Path) : public std::filesystem::path {
+DECLARE_HINT(Path) : private Role<>, public std::filesystem::path {
   using std::filesystem::path::path;
   template <int Id> PROBE_ONLY operator Path<Id>() const;
 };
 
 #if __cplusplus >= 202002L
-DECLARE_HINT(FormatContext) : public std::format_context {
+DECLARE_HINT(FormatContext) : private Role<>, public std::format_context {
   template <int Id> PROBE_ONLY operator FormatContext<Id>() const;
 };
 #endif
 
-DECLARE_HINT(MbState) : public std::mbstate_t {
+DECLARE_HINT(MbState) : private Role<>, public std::mbstate_t {
   template <int Id> PROBE_ONLY operator MbState<Id>() const;
 };
 
 #if defined(__linux__)
-DECLARE_HINT(ExecutionPolicy) : public std::execution::parallel_policy {
+DECLARE_HINT(ExecutionPolicy) : private Role<>,
+                                public std::execution::parallel_policy {
   template <int Id> PROBE_ONLY operator ExecutionPolicy<Id>() const;
 };
 #endif
@@ -302,9 +305,9 @@ DECLARE_HINT(UnsignedInteger) : private Comparable<> {
   DECLARE_INTEGRAL_HINT_BODY(UnsignedInteger, unsigned)
 };
 
-DECLARE_HINT(Role) : private Plain<>{};
-
-DECLARE_HINT(Assignable) : private Plain<>{};
+DECLARE_HINT(Assignable) : private Plain<> {
+  template <typename Other> Assignable &operator=(const Other &);
+};
 
 DECLARE_HINT(MoveAssignable) : private Assignable<> {
   MoveAssignable() = default;
@@ -1070,7 +1073,9 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #endif
 
 #define Plain Plain<__COUNTER__>
+#define Role Role<__COUNTER__>
 #define Comparable Comparable<__COUNTER__>
+#define Assignable Assignable<__COUNTER__>
 #define MoveAssignable MoveAssignable<__COUNTER__>
 #define ConstAssignable ConstAssignable<__COUNTER__>
 #define Hashable Hashable<__COUNTER__>
