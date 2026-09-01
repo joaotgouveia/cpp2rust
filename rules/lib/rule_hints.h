@@ -579,7 +579,7 @@ DECLARE_PARAMETERIZABLE_HINT(View)
 };
 #endif
 
-template <typename T1 = Synthesis::Slot<ImplicitlyConvertible<>>,
+template <typename T1 = Synthesis::Slot<Synthesis::BindExisting, ImplicitlyConvertible<>>,
           typename T2 = Synthesis::Slot<ImplicitlyConvertible<>>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(PairOf, ARG(std::pair<T1, T2>))
 
@@ -688,7 +688,7 @@ DECLARE_HINT(OutputStream) : private Role<>, public std::ostream {
   template <typename T> OutputStream &operator<<(const T &);
 };
 
-template <typename InternT = Synthesis::Slot<Char<>, WChar<>>,
+template <typename InternT = Synthesis::Slot<Synthesis::BindExisting, Char<>, WChar<>>,
           typename ExternT = Synthesis::Slot<Char<>>>
 DECLARE_PARAMETERIZABLE_HINT(Facet)
     : private Role<>, public std::codecvt<InternT, ExternT, std::mbstate_t>{};
@@ -698,7 +698,7 @@ DECLARE_HINT(SeedSequence) : private Role<> {
   template <typename RandomIt> void generate(RandomIt, RandomIt);
 };
 
-template <typename T = Synthesis::Slot<UnsignedInteger<>>>
+template <typename T = Synthesis::Slot<Synthesis::BindExisting, UnsignedInteger<>>>
 DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : private Role<> {
   using result_type = T;
   static constexpr result_type min() { return T{}; }
