@@ -716,7 +716,7 @@ DECLARE_PARAMETERIZABLE_HINT(Allocator) : private Role<> {
 DECLARE_HINT(BoolConstant) : private Role<> {
   static constexpr bool value = false;
   using value_type = bool;
-  constexpr operator value_type() const noexcept { return value; }
+  explicit constexpr operator value_type() const noexcept { return value; }
   constexpr value_type operator()() const noexcept { return value; }
 };
 
