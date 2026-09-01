@@ -14,6 +14,7 @@
 #include <execution>
 #include <locale>
 #include <memory>
+#include <istream>
 #include <ostream>
 #if __cplusplus >= 202002L
 #include <ranges>
@@ -62,6 +63,17 @@ using BindSelf = const void *;
 
 #define PROBE_ONLY [[clang::annotate(CPP2RUST_PROBE_ONLY_TAG)]]
 
+#if __cplusplus >= 202002L
+#define DECLARE_SPACESHIP_HINT_BODY(name, builtin)                             \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<=>(const OtherT &other) const             \
+      -> decltype(value <=> other) {                                           \
+    return value <=> other;                                                    \
+  }
+#else
+#define DECLARE_SPACESHIP_HINT_BODY(name, builtin)
+#endif
+
 #define DECLARE_SCALAR_HINT_BODY(name, builtin)                                \
   builtin value;                                                               \
   name() = default;                                                            \
@@ -90,6 +102,42 @@ using BindSelf = const void *;
     value = static_cast<builtin>(value / other);                               \
     return *this;                                                              \
   }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator+(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value + other))) {                 \
+    return name(static_cast<builtin>(value + other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator-(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value - other))) {                 \
+    return name(static_cast<builtin>(value - other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator*(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value * other))) {                 \
+    return name(static_cast<builtin>(value * other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator/(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value / other))) {                 \
+    return name(static_cast<builtin>(value / other));                          \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator+(name other) const {                      \
+    return name(static_cast<builtin>(value + other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator-(name other) const {                      \
+    return name(static_cast<builtin>(value - other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator*(name other) const {                      \
+    return name(static_cast<builtin>(value * other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator/(name other) const {                      \
+    return name(static_cast<builtin>(value / other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator+() const { return *this; }                \
+  PROBE_ONLY constexpr name operator-() const {                                \
+    return name(static_cast<builtin>(-value));                                 \
+  }                                                                            \
   PROBE_ONLY constexpr name &operator++() {                                    \
     ++value;                                                                   \
     return *this;                                                              \
@@ -107,7 +155,38 @@ using BindSelf = const void *;
     const name previous = *this;                                               \
     --value;                                                                   \
     return previous;                                                           \
-  }
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator==(const OtherT &other) const              \
+      -> decltype(value == other) {                                            \
+    return value == other;                                                     \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator!=(const OtherT &other) const              \
+      -> decltype(value != other) {                                            \
+    return value != other;                                                     \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<(const OtherT &other) const               \
+      -> decltype(value < other) {                                             \
+    return value < other;                                                      \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>(const OtherT &other) const               \
+      -> decltype(value > other) {                                             \
+    return value > other;                                                      \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<=(const OtherT &other) const              \
+      -> decltype(value <= other) {                                            \
+    return value <= other;                                                     \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>=(const OtherT &other) const              \
+      -> decltype(value >= other) {                                            \
+    return value >= other;                                                     \
+  }                                                                            \
+  DECLARE_SPACESHIP_HINT_BODY(name, builtin)
 
 #define DECLARE_INTEGRAL_HINT_BODY(name, builtin)                              \
   DECLARE_SCALAR_HINT_BODY(name, builtin)                                      \
@@ -134,6 +213,57 @@ using BindSelf = const void *;
   PROBE_ONLY constexpr name &operator>>=(int other) {                          \
     value = static_cast<builtin>(value >> other);                              \
     return *this;                                                              \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator%(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value % other))) {                 \
+    return name(static_cast<builtin>(value % other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator&(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value & other))) {                 \
+    return name(static_cast<builtin>(value & other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator|(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value | other))) {                 \
+    return name(static_cast<builtin>(value | other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator^(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value ^ other))) {                 \
+    return name(static_cast<builtin>(value ^ other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<<(const OtherT &other) const              \
+      -> decltype(name(static_cast<builtin>(value << other))) {                \
+    return name(static_cast<builtin>(value << other));                         \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>>(const OtherT &other) const              \
+      -> decltype(name(static_cast<builtin>(value >> other))) {                \
+    return name(static_cast<builtin>(value >> other));                         \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator%(name other) const {                      \
+    return name(static_cast<builtin>(value % other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator&(name other) const {                      \
+    return name(static_cast<builtin>(value & other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator|(name other) const {                      \
+    return name(static_cast<builtin>(value | other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator^(name other) const {                      \
+    return name(static_cast<builtin>(value ^ other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator<<(name other) const {                     \
+    return name(static_cast<builtin>(value << other.value));                   \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator>>(name other) const {                     \
+    return name(static_cast<builtin>(value >> other.value));                   \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator~() const {                                \
+    return name(static_cast<builtin>(~value));                                 \
   }
 
 #define DECLARE_ENUM_HINT_BODY(name, builtin)                                  \
@@ -143,92 +273,42 @@ using BindSelf = const void *;
   PROBE_ONLY constexpr operator builtin() const { return value; }              \
   template <int Id> PROBE_ONLY constexpr operator name<Id>() const {           \
     return name<Id>(value);                                                    \
-  }
-
-DECLARE_HINT(Integer) { DECLARE_INTEGRAL_HINT_BODY(Integer, int) };
-
-DECLARE_HINT(Long) { DECLARE_INTEGRAL_HINT_BODY(Long, long) };
-
-DECLARE_HINT(Char) { DECLARE_INTEGRAL_HINT_BODY(Char, char) };
-
-DECLARE_HINT(WChar) { DECLARE_INTEGRAL_HINT_BODY(WChar, wchar_t) };
-
-#if __cplusplus >= 202002L
-DECLARE_HINT(Char8) { DECLARE_INTEGRAL_HINT_BODY(Char8, char8_t) };
-#endif
-
-DECLARE_HINT(Char16) { DECLARE_INTEGRAL_HINT_BODY(Char16, char16_t) };
-
-DECLARE_HINT(Char32) { DECLARE_INTEGRAL_HINT_BODY(Char32, char32_t) };
-
-DECLARE_HINT(ErrorCodeEnum) {
-  DECLARE_ENUM_HINT_BODY(ErrorCodeEnum, std::io_errc)
-};
-
-DECLARE_HINT(ErrorConditionEnum) {
-  DECLARE_ENUM_HINT_BODY(ErrorConditionEnum, std::errc)
-};
-
-DECLARE_HINT(Double) { DECLARE_SCALAR_HINT_BODY(Double, double) };
-
-DECLARE_HINT(Void){};
-
-DECLARE_HINT(Ratio) : public std::ratio<1> {
-  template <int Id> PROBE_ONLY operator Ratio<Id>() const;
-};
-
-DECLARE_HINT(Duration) : public std::chrono::nanoseconds {
-  using std::chrono::nanoseconds::duration;
-  template <int Id> PROBE_ONLY operator Duration<Id>() const;
-};
-
-DECLARE_HINT(CoarseDuration) : public std::chrono::seconds {
-  using std::chrono::seconds::duration;
-  template <int Id> PROBE_ONLY operator CoarseDuration<Id>() const;
-};
-
-DECLARE_HINT(Clock) : public std::chrono::system_clock {
-  using duration = std::chrono::system_clock::duration;
-  using rep = duration::rep;
-  using period = duration::period;
-  using time_point = std::chrono::time_point<Clock, duration>;
-
-  static constexpr bool is_steady = false;
-  static time_point now() noexcept;
-
-  template <int Id> PROBE_ONLY operator Clock<Id>() const;
-};
-
-DECLARE_HINT(Path) : public std::filesystem::path {
-  using std::filesystem::path::path;
-  template <int Id> PROBE_ONLY operator Path<Id>() const;
-};
-
-#if __cplusplus >= 202002L
-DECLARE_HINT(FormatContext) : public std::format_context {
-  template <int Id> PROBE_ONLY operator FormatContext<Id>() const;
-};
-#endif
-
-DECLARE_HINT(MbState) : public std::mbstate_t {
-  template <int Id> PROBE_ONLY operator MbState<Id>() const;
-};
-
-#if defined(__linux__)
-DECLARE_HINT(ExecutionPolicy) : public std::execution::parallel_policy {
-  template <int Id> PROBE_ONLY operator ExecutionPolicy<Id>() const;
-};
-#endif
-
-DECLARE_HINT(UnsignedInteger) {
-  DECLARE_INTEGRAL_HINT_BODY(UnsignedInteger, unsigned)
-};
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator==(const OtherT &other) const              \
+      -> decltype(value == other) {                                            \
+    return value == other;                                                     \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator!=(const OtherT &other) const              \
+      -> decltype(value != other) {                                            \
+    return value != other;                                                     \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<(const OtherT &other) const               \
+      -> decltype(value < other) {                                             \
+    return value < other;                                                      \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>(const OtherT &other) const               \
+      -> decltype(value > other) {                                             \
+    return value > other;                                                      \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<=(const OtherT &other) const              \
+      -> decltype(value <= other) {                                            \
+    return value <= other;                                                     \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>=(const OtherT &other) const              \
+      -> decltype(value >= other) {                                            \
+    return value >= other;                                                     \
+  }                                                                            \
+  DECLARE_SPACESHIP_HINT_BODY(name, builtin)
 
 DECLARE_HINT(Plain){};
 
 DECLARE_HINT(Role) : private Plain<>{};
-
-DECLARE_HINT(Assignable) : private Plain<>{};
 
 DECLARE_HINT(Comparable) : private Plain<> {
   template <typename Other> bool operator==(const Other &) const;
@@ -241,6 +321,130 @@ DECLARE_HINT(Comparable) : private Plain<> {
   template <typename Other>
   std::strong_ordering operator<=>(const Other &) const;
 #endif
+};
+
+DECLARE_HINT(Arithmetic) : private Comparable<> {
+  template <typename Other> bool operator==(const Other &) const;
+  template <typename Other> bool operator!=(const Other &) const;
+  template <typename Other> bool operator<(const Other &) const;
+  template <typename Other> bool operator>(const Other &) const;
+  template <typename Other> bool operator<=(const Other &) const;
+  template <typename Other> bool operator>=(const Other &) const;
+#if __cplusplus >= 202002L
+  template <typename Other>
+  std::strong_ordering operator<=>(const Other &) const;
+#endif
+  template <typename Other> Arithmetic &operator=(const Other &);
+  template <typename Other> Arithmetic operator+(const Other &) const;
+  template <typename Other> Arithmetic operator-(const Other &) const;
+  template <typename Other> Arithmetic operator*(const Other &) const;
+  template <typename Other> Arithmetic operator/(const Other &) const;
+  template <typename Other> Arithmetic &operator+=(const Other &);
+  template <typename Other> Arithmetic &operator-=(const Other &);
+  template <typename Other> Arithmetic &operator*=(const Other &);
+  template <typename Other> Arithmetic &operator/=(const Other &);
+  Arithmetic operator+() const;
+  Arithmetic operator-() const;
+};
+
+DECLARE_HINT(Integer) : private Arithmetic<> {
+  DECLARE_INTEGRAL_HINT_BODY(Integer, int)
+};
+
+DECLARE_HINT(Long) : private Arithmetic<> {
+  DECLARE_INTEGRAL_HINT_BODY(Long, long)
+};
+
+DECLARE_HINT(Char) : private Arithmetic<> {
+  DECLARE_INTEGRAL_HINT_BODY(Char, char)
+};
+
+DECLARE_HINT(WChar) : private Arithmetic<> {
+  DECLARE_INTEGRAL_HINT_BODY(WChar, wchar_t)
+};
+
+#if __cplusplus >= 202002L
+DECLARE_HINT(Char8) : private Arithmetic<> {
+  DECLARE_INTEGRAL_HINT_BODY(Char8, char8_t)
+};
+#endif
+
+DECLARE_HINT(Char16) : private Arithmetic<> {
+  DECLARE_INTEGRAL_HINT_BODY(Char16, char16_t)
+};
+
+DECLARE_HINT(Char32) : private Arithmetic<> {
+  DECLARE_INTEGRAL_HINT_BODY(Char32, char32_t)
+};
+
+DECLARE_HINT(ErrorCodeEnum) : private Comparable<> {
+  DECLARE_ENUM_HINT_BODY(ErrorCodeEnum, std::io_errc)
+};
+
+DECLARE_HINT(ErrorConditionEnum) : private Comparable<> {
+  DECLARE_ENUM_HINT_BODY(ErrorConditionEnum, std::errc)
+};
+
+DECLARE_HINT(Double) : private Arithmetic<> {
+  DECLARE_SCALAR_HINT_BODY(Double, double)
+};
+
+DECLARE_HINT(Void){};
+
+DECLARE_HINT(Ratio) : private Role<>, public std::ratio<1> {
+  template <int Id> PROBE_ONLY operator Ratio<Id>() const;
+};
+
+DECLARE_HINT(Duration) : private Role<>, public std::chrono::nanoseconds {
+  using std::chrono::nanoseconds::duration;
+  template <int Id> PROBE_ONLY operator Duration<Id>() const;
+};
+
+DECLARE_HINT(CoarseDuration) : private Role<>, public std::chrono::seconds {
+  using std::chrono::seconds::duration;
+  template <int Id> PROBE_ONLY operator CoarseDuration<Id>() const;
+};
+
+DECLARE_HINT(Clock) : private Role<>, public std::chrono::system_clock {
+  using duration = std::chrono::system_clock::duration;
+  using rep = duration::rep;
+  using period = duration::period;
+  using time_point = std::chrono::time_point<Clock, duration>;
+
+  static constexpr bool is_steady = false;
+  static time_point now() noexcept;
+
+  template <int Id> PROBE_ONLY operator Clock<Id>() const;
+};
+
+DECLARE_HINT(Path) : private Role<>, public std::filesystem::path {
+  using std::filesystem::path::path;
+  template <int Id> PROBE_ONLY operator Path<Id>() const;
+};
+
+#if __cplusplus >= 202002L
+DECLARE_HINT(FormatContext) : private Role<>, public std::format_context {
+  template <int Id> PROBE_ONLY operator FormatContext<Id>() const;
+};
+#endif
+
+DECLARE_HINT(MbState) : private Role<>, public std::mbstate_t {
+  template <int Id> PROBE_ONLY operator MbState<Id>() const;
+};
+
+#if defined(__linux__)
+DECLARE_HINT(ExecutionPolicy) : private Role<>,
+                                public std::execution::parallel_policy {
+  template <int Id> PROBE_ONLY operator ExecutionPolicy<Id>() const;
+};
+#endif
+
+DECLARE_HINT(UnsignedInteger) : private Arithmetic<> {
+  DECLARE_INTEGRAL_HINT_BODY(UnsignedInteger, unsigned)
+};
+
+DECLARE_HINT(Assignable) : private Plain<> {
+  template <typename Other> Assignable &operator=(const Other &);
 };
 
 DECLARE_HINT(MoveAssignable) : private Assignable<> {
@@ -313,9 +517,10 @@ DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) : private ExplicitlyConvertible<> {
   operator T() const;
 };
 
-DECLARE_HINT(ImplicitlyConvertible) : private ExplicitlyConvertible<> {
-  template <typename Other, typename = enable_unless_non_convertible_t<Other>>
-  operator Other() const;
+DECLARE_HINT(StreamExtractable) : private Plain<> {
+  template <typename CharT, typename Traits>
+  friend std::basic_istream<CharT, Traits> &
+  operator>>(std::basic_istream<CharT, Traits> &, StreamExtractable &);
 };
 
 DECLARE_HINT(StringLike) : private Plain<> {
@@ -335,7 +540,7 @@ using enable_any_convertible_t =
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>, UnsignedInteger<>>,
+              MoveAssignable<>, UnsignedInteger<>>,
           typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(InputIterator) : private Plain<> {
   MARK_INVALID_ALLOCATOR
@@ -398,7 +603,7 @@ DECLARE_PARAMETERIZABLE_HINT(InputIterator) : private Plain<> {
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>>,
+              MoveAssignable<>>,
           typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
   MARK_INVALID_ALLOCATOR
@@ -483,7 +688,7 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>>,
+              MoveAssignable<>>,
           typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(BidirectionalIterator)
     : private InputIterator<InnerT, DiffT> {
@@ -549,12 +754,14 @@ DECLARE_PARAMETERIZABLE_HINT(Allocator) : private Role<> {
 
   template <typename U> bool operator==(const Allocator<U> &) const noexcept;
   template <typename U> bool operator!=(const Allocator<U> &) const noexcept;
+
+  template <typename U> operator std::allocator<U>() const noexcept;
 };
 
 DECLARE_HINT(BoolConstant) : private Role<> {
   static constexpr bool value = false;
   using value_type = bool;
-  constexpr operator value_type() const noexcept { return value; }
+  explicit constexpr operator value_type() const noexcept { return value; }
   constexpr value_type operator()() const noexcept { return value; }
 };
 
@@ -579,13 +786,13 @@ DECLARE_PARAMETERIZABLE_HINT(View)
 };
 #endif
 
-template <typename T1 = Synthesis::Slot<Synthesis::BindExisting, ImplicitlyConvertible<>>,
-          typename T2 = Synthesis::Slot<ImplicitlyConvertible<>>>
+template <typename T1 = Synthesis::Slot<Synthesis::BindExisting, Plain<>>,
+          typename T2 = Synthesis::Slot<Plain<>>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(PairOf, ARG(std::pair<T1, T2>))
 
 template <typename InnerT = Synthesis::Slot<
               Synthesis::BindExisting, Comparable<>, ExplicitlyConvertible<>,
-              ImplicitlyConvertible<>, MoveAssignable<>>,
+              MoveAssignable<>>,
           typename SizeT = Synthesis::Slot<Long<>>,
           typename DiffT = Synthesis::Slot<Long<>>>
 DECLARE_PARAMETERIZABLE_HINT(Container) : private Range<InnerT> {
@@ -637,6 +844,16 @@ DECLARE_PARAMETERIZABLE_HINT(Container) : private Range<InnerT> {
   template <typename... Args> reference emplace_back(Args && ...);
   iterator erase(const_iterator);
   void resize(size_type);
+
+  bool operator==(const Container &) const;
+  bool operator!=(const Container &) const;
+  bool operator<(const Container &) const;
+  bool operator>(const Container &) const;
+  bool operator<=(const Container &) const;
+  bool operator>=(const Container &) const;
+#if __cplusplus >= 202002L
+  std::strong_ordering operator<=>(const Container &) const;
+#endif
 };
 
 template <typename CharT = Synthesis::Slot<Synthesis::BindExisting>,
@@ -669,6 +886,33 @@ DECLARE_PARAMETERIZABLE_HINT(CharTraits) : private Role<> {
 
   static int_type eof();
   static int_type not_eof(int_type);
+};
+
+template <typename CharT = Synthesis::Slot<Synthesis::BindExisting, Char<>>>
+DECLARE_PARAMETERIZABLE_HINT(RegexTraits) : private Role<> {
+  using char_type = CharT;
+  using string_type = std::basic_string<CharT>;
+  using locale_type = std::locale;
+  using char_class_type = unsigned;
+
+  static std::size_t length(const char_type *);
+
+  char_type translate(char_type) const;
+  char_type translate_nocase(char_type) const;
+
+  template <typename ForwardIt> string_type transform(ForwardIt, ForwardIt) const;
+  template <typename ForwardIt>
+  string_type transform_primary(ForwardIt, ForwardIt) const;
+  template <typename ForwardIt>
+  string_type lookup_collatename(ForwardIt, ForwardIt) const;
+  template <typename ForwardIt>
+  char_class_type lookup_classname(ForwardIt, ForwardIt, bool = false) const;
+
+  bool isctype(char_type, char_class_type) const;
+  int value(char_type, int) const;
+
+  locale_type imbue(locale_type);
+  locale_type getloc() const;
 };
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
@@ -712,8 +956,7 @@ DECLARE_PARAMETERIZABLE_HINT(NumberGenerator) : private Role<> {
   bool operator!=(const NumberGenerator &) const;
 };
 
-template <typename T =
-              Synthesis::Slot<Synthesis::BindExisting, ImplicitlyConvertible<>>>
+template <typename T = Synthesis::Slot<Synthesis::BindExisting, Plain<>>>
 DECLARE_PARAMETERIZABLE_BUILTIN_HINT(Const, const T)
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
@@ -1035,14 +1278,17 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #endif
 
 #define Plain Plain<__COUNTER__>
+#define Role Role<__COUNTER__>
 #define Comparable Comparable<__COUNTER__>
+#define Assignable Assignable<__COUNTER__>
+#define Arithmetic Arithmetic<__COUNTER__>
+#define StreamExtractable StreamExtractable<__COUNTER__>
 #define MoveAssignable MoveAssignable<__COUNTER__>
 #define ConstAssignable ConstAssignable<__COUNTER__>
 #define Hashable Hashable<__COUNTER__>
 #define ConstSwappable ConstSwappable<__COUNTER__>
 #define NonConvertibleComparable NonConvertibleComparable<__COUNTER__>
 #define ExplicitlyConvertible ExplicitlyConvertible<__COUNTER__>
-#define ImplicitlyConvertible ImplicitlyConvertible<__COUNTER__>
 #define StringLike StringLike<__COUNTER__>
 #define BoolConstant BoolConstant<__COUNTER__>
 #define Mutex Mutex<__COUNTER__>
