@@ -52,7 +52,7 @@ typename std::vector<T1>::iterator f10(typename std::vector<T1>::iterator a0,
   return std::unique(a0, a1);
 }
 
-template <typename T1, typename T2 = ImplicitlyConvertible>
+template <typename T1, typename T2 = ConvertibleTo<T1>>
 void f12(typename std::vector<T1>::iterator a0,
          typename std::vector<T1>::iterator a1, const T2 &a2) {
   return std::fill(a0, a1, a2);
@@ -71,7 +71,7 @@ void f14(T1 *first, T1 *last, decltype(lambda_nref) comp) {
   return std::stable_sort(first, last, comp);
 }
 
-template <typename T2, typename T1 = ImplicitlyConvertible>
+template <typename T2, typename T1 = ConvertibleTo<T2>>
 void f15(T1 *first, T1 *last, bool (*comp)(T2, T2)) {
   return std::stable_sort(first, last, comp);
 }

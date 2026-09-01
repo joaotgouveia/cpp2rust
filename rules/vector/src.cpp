@@ -183,7 +183,7 @@ std::vector<T1> f36(const std::initializer_list<T1> &a0) {
   return std::vector<T1>(a0);
 }
 
-template <typename T1, typename T2 = ImplicitlyConvertible>
+template <typename T1, typename T2 = ConvertibleTo<T1>>
 std::vector<T1> f37(T2 *first, T2 *last) {
   return std::vector<T1>(first, last);
 }
@@ -451,7 +451,7 @@ std::vector<T1, T2> f91(const std::initializer_list<T1> &a0) {
 }
 
 template <typename T1, typename T2 = Allocator<T1>,
-          typename T3 = ImplicitlyConvertible>
+          typename T3 = ConvertibleTo<T1>>
 std::vector<T1, T2> f92(T3 *first, T3 *last) {
   return std::vector<T1, T2>(first, last);
 }
