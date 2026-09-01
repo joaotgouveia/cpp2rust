@@ -102,6 +102,22 @@ using BindSelf = const void *;
     value = static_cast<builtin>(value / other);                               \
     return *this;                                                              \
   }                                                                            \
+  PROBE_ONLY constexpr name operator+(builtin other) const {                   \
+    return name(static_cast<builtin>(value + other));                          \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator-(builtin other) const {                   \
+    return name(static_cast<builtin>(value - other));                          \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator*(builtin other) const {                   \
+    return name(static_cast<builtin>(value * other));                          \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator/(builtin other) const {                   \
+    return name(static_cast<builtin>(value / other));                          \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator+() const { return *this; }                \
+  PROBE_ONLY constexpr name operator-() const {                                \
+    return name(static_cast<builtin>(-value));                                 \
+  }                                                                            \
   PROBE_ONLY constexpr name &operator++() {                                    \
     ++value;                                                                   \
     return *this;                                                              \
@@ -260,75 +276,33 @@ DECLARE_HINT(Arithmetic) : private Comparable<> {
   Arithmetic operator-() const;
 };
 
-DECLARE_HINT(ArithmeticInteger) : private Arithmetic<> {
-  template <typename Other> bool operator==(const Other &) const;
-  template <typename Other> bool operator!=(const Other &) const;
-  template <typename Other> bool operator<(const Other &) const;
-  template <typename Other> bool operator>(const Other &) const;
-  template <typename Other> bool operator<=(const Other &) const;
-  template <typename Other> bool operator>=(const Other &) const;
-#if __cplusplus >= 202002L
-  template <typename Other>
-  std::strong_ordering operator<=>(const Other &) const;
-#endif
-  template <typename Other> ArithmeticInteger &operator=(const Other &);
-  template <typename Other> ArithmeticInteger operator+(const Other &) const;
-  template <typename Other> ArithmeticInteger operator-(const Other &) const;
-  template <typename Other> ArithmeticInteger operator*(const Other &) const;
-  template <typename Other> ArithmeticInteger operator/(const Other &) const;
-  template <typename Other> ArithmeticInteger &operator+=(const Other &);
-  template <typename Other> ArithmeticInteger &operator-=(const Other &);
-  template <typename Other> ArithmeticInteger &operator*=(const Other &);
-  template <typename Other> ArithmeticInteger &operator/=(const Other &);
-  ArithmeticInteger operator+() const;
-  ArithmeticInteger operator-() const;
-  template <typename Other> ArithmeticInteger operator%(const Other &) const;
-  template <typename Other> ArithmeticInteger operator&(const Other &) const;
-  template <typename Other> ArithmeticInteger operator|(const Other &) const;
-  template <typename Other> ArithmeticInteger operator^(const Other &) const;
-  template <typename Other> ArithmeticInteger operator<<(const Other &) const;
-  template <typename Other> ArithmeticInteger operator>>(const Other &) const;
-  template <typename Other> ArithmeticInteger &operator%=(const Other &);
-  template <typename Other> ArithmeticInteger &operator&=(const Other &);
-  template <typename Other> ArithmeticInteger &operator|=(const Other &);
-  template <typename Other> ArithmeticInteger &operator^=(const Other &);
-  template <typename Other> ArithmeticInteger &operator<<=(const Other &);
-  template <typename Other> ArithmeticInteger &operator>>=(const Other &);
-  ArithmeticInteger operator~() const;
-  ArithmeticInteger &operator++();
-  ArithmeticInteger operator++(int);
-  ArithmeticInteger &operator--();
-  ArithmeticInteger operator--(int);
-  explicit operator bool() const;
-};
-
-DECLARE_HINT(Integer) : private ArithmeticInteger<> {
+DECLARE_HINT(Integer) : private Arithmetic<> {
   DECLARE_INTEGRAL_HINT_BODY(Integer, int)
 };
 
-DECLARE_HINT(Long) : private ArithmeticInteger<> {
+DECLARE_HINT(Long) : private Arithmetic<> {
   DECLARE_INTEGRAL_HINT_BODY(Long, long)
 };
 
-DECLARE_HINT(Char) : private ArithmeticInteger<> {
+DECLARE_HINT(Char) : private Arithmetic<> {
   DECLARE_INTEGRAL_HINT_BODY(Char, char)
 };
 
-DECLARE_HINT(WChar) : private ArithmeticInteger<> {
+DECLARE_HINT(WChar) : private Arithmetic<> {
   DECLARE_INTEGRAL_HINT_BODY(WChar, wchar_t)
 };
 
 #if __cplusplus >= 202002L
-DECLARE_HINT(Char8) : private ArithmeticInteger<> {
+DECLARE_HINT(Char8) : private Arithmetic<> {
   DECLARE_INTEGRAL_HINT_BODY(Char8, char8_t)
 };
 #endif
 
-DECLARE_HINT(Char16) : private ArithmeticInteger<> {
+DECLARE_HINT(Char16) : private Arithmetic<> {
   DECLARE_INTEGRAL_HINT_BODY(Char16, char16_t)
 };
 
-DECLARE_HINT(Char32) : private ArithmeticInteger<> {
+DECLARE_HINT(Char32) : private Arithmetic<> {
   DECLARE_INTEGRAL_HINT_BODY(Char32, char32_t)
 };
 
@@ -394,7 +368,7 @@ DECLARE_HINT(ExecutionPolicy) : private Role<>,
 };
 #endif
 
-DECLARE_HINT(UnsignedInteger) : private ArithmeticInteger<> {
+DECLARE_HINT(UnsignedInteger) : private Arithmetic<> {
   DECLARE_INTEGRAL_HINT_BODY(UnsignedInteger, unsigned)
 };
 
@@ -1176,7 +1150,6 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #define Comparable Comparable<__COUNTER__>
 #define Assignable Assignable<__COUNTER__>
 #define Arithmetic Arithmetic<__COUNTER__>
-#define ArithmeticInteger ArithmeticInteger<__COUNTER__>
 #define StreamExtractable StreamExtractable<__COUNTER__>
 #define MoveAssignable MoveAssignable<__COUNTER__>
 #define ConstAssignable ConstAssignable<__COUNTER__>
