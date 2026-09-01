@@ -102,17 +102,37 @@ using BindSelf = const void *;
     value = static_cast<builtin>(value / other);                               \
     return *this;                                                              \
   }                                                                            \
-  PROBE_ONLY constexpr name operator+(builtin other) const {                   \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator+(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value + other))) {                 \
     return name(static_cast<builtin>(value + other));                          \
   }                                                                            \
-  PROBE_ONLY constexpr name operator-(builtin other) const {                   \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator-(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value - other))) {                 \
     return name(static_cast<builtin>(value - other));                          \
   }                                                                            \
-  PROBE_ONLY constexpr name operator*(builtin other) const {                   \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator*(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value * other))) {                 \
     return name(static_cast<builtin>(value * other));                          \
   }                                                                            \
-  PROBE_ONLY constexpr name operator/(builtin other) const {                   \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator/(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value / other))) {                 \
     return name(static_cast<builtin>(value / other));                          \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator+(name other) const {                      \
+    return name(static_cast<builtin>(value + other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator-(name other) const {                      \
+    return name(static_cast<builtin>(value - other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator*(name other) const {                      \
+    return name(static_cast<builtin>(value * other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator/(name other) const {                      \
+    return name(static_cast<builtin>(value / other.value));                    \
   }                                                                            \
   PROBE_ONLY constexpr name operator+() const { return *this; }                \
   PROBE_ONLY constexpr name operator-() const {                                \
@@ -193,6 +213,57 @@ using BindSelf = const void *;
   PROBE_ONLY constexpr name &operator>>=(int other) {                          \
     value = static_cast<builtin>(value >> other);                              \
     return *this;                                                              \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator%(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value % other))) {                 \
+    return name(static_cast<builtin>(value % other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator&(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value & other))) {                 \
+    return name(static_cast<builtin>(value & other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator|(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value | other))) {                 \
+    return name(static_cast<builtin>(value | other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator^(const OtherT &other) const               \
+      -> decltype(name(static_cast<builtin>(value ^ other))) {                 \
+    return name(static_cast<builtin>(value ^ other));                          \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<<(const OtherT &other) const              \
+      -> decltype(name(static_cast<builtin>(value << other))) {                \
+    return name(static_cast<builtin>(value << other));                         \
+  }                                                                            \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>>(const OtherT &other) const              \
+      -> decltype(name(static_cast<builtin>(value >> other))) {                \
+    return name(static_cast<builtin>(value >> other));                         \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator%(name other) const {                      \
+    return name(static_cast<builtin>(value % other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator&(name other) const {                      \
+    return name(static_cast<builtin>(value & other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator|(name other) const {                      \
+    return name(static_cast<builtin>(value | other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator^(name other) const {                      \
+    return name(static_cast<builtin>(value ^ other.value));                    \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator<<(name other) const {                     \
+    return name(static_cast<builtin>(value << other.value));                   \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator>>(name other) const {                     \
+    return name(static_cast<builtin>(value >> other.value));                   \
+  }                                                                            \
+  PROBE_ONLY constexpr name operator~() const {                                \
+    return name(static_cast<builtin>(~value));                                 \
   }
 
 #define DECLARE_ENUM_HINT_BODY(name, builtin)                                  \
