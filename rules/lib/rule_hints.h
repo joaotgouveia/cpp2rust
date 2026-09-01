@@ -432,7 +432,7 @@ DECLARE_HINT(MbState) : private Role<>, public std::mbstate_t {
   template <int Id> PROBE_ONLY operator MbState<Id>() const;
 };
 
-#if defined(__linux__)
+#if defined(__GLIBCXX__)
 DECLARE_HINT(ExecutionPolicy) : private Role<>,
                                 public std::execution::parallel_policy {
   template <int Id> PROBE_ONLY operator ExecutionPolicy<Id>() const;
@@ -1177,4 +1177,6 @@ struct is_error_condition_enum<ErrorConditionEnum<N>> : true_type {};
 #define FormatContext FormatContext<__COUNTER__>
 #endif
 #define MbState MbState<__COUNTER__>
+#if defined(__GLIBCXX__)
 #define ExecutionPolicy ExecutionPolicy<__COUNTER__>
+#endif
