@@ -670,16 +670,6 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
   std::strong_ordering operator<=>(const Iterator<OInnerT, ODiffT> &) const;
 #endif
 
-#if defined(__linux__)
-  template <typename Other = InnerT,
-            typename = std::enable_if_t<std::is_same_v<Other, bool>>>
-  operator std::_Bit_const_iterator() const;
-
-  template <typename Other = InnerT,
-            typename = std::enable_if_t<std::is_same_v<Other, bool>>>
-  operator std::_Bit_iterator() const;
-#endif
-
   template <typename OInnerT, typename ODiffT,
             typename = enable_any_convertible_t<OInnerT, InnerT>,
             typename = enable_any_convertible_t<ODiffT, DiffT>>
@@ -1006,18 +996,6 @@ DECLARE_NON_TYPE_HINT(SizedSubRangeKind, std::ranges::subrange_kind,
 
 namespace std {
 
-template <int N> struct __is_integral_helper<Integer<N>> : true_type {};
-template <int N> struct __is_integral_helper<Long<N>> : true_type {};
-template <int N> struct __is_integral_helper<Char<N>> : true_type {};
-template <int N> struct __is_integral_helper<WChar<N>> : true_type {};
-#if __cplusplus >= 202002L
-template <int N> struct __is_integral_helper<Char8<N>> : true_type {};
-#endif
-template <int N> struct __is_integral_helper<Char16<N>> : true_type {};
-template <int N> struct __is_integral_helper<Char32<N>> : true_type {};
-template <int N> struct __is_integral_helper<UnsignedInteger<N>> : true_type {};
-template <int N> struct __is_floating_point_helper<Double<N>> : true_type {};
-
 template <int N> struct is_integral<Integer<N>> : true_type {};
 template <int N> struct is_integral<Long<N>> : true_type {};
 template <int N> struct is_integral<Char<N>> : true_type {};
@@ -1030,8 +1008,6 @@ template <int N> struct is_integral<Char32<N>> : true_type {};
 template <int N> struct is_integral<UnsignedInteger<N>> : true_type {};
 template <int N> struct is_floating_point<Double<N>> : true_type {};
 template <int N> struct is_void<Void<N>> : true_type {};
-template <int N> struct __is_ratio<Ratio<N>> : true_type {};
-template <int N> inline constexpr bool __is_ratio_v<Ratio<N>> = true;
 
 template <int N> struct is_signed<Integer<N>> : true_type {};
 template <int N> struct is_signed<Long<N>> : true_type {};
@@ -1159,99 +1135,7 @@ template <int N> struct is_error_code_enum<ErrorCodeEnum<N>> : true_type {};
 template <int N>
 struct is_error_condition_enum<ErrorConditionEnum<N>> : true_type {};
 
-template <int N> struct __byte_operand<Integer<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<Long<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<Char<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<WChar<N>> {
-  using __type = byte;
-};
-#if __cplusplus >= 202002L
-template <int N> struct __byte_operand<Char8<N>> {
-  using __type = byte;
-};
-#endif
-template <int N> struct __byte_operand<Char16<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<Char32<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<UnsignedInteger<N>> {
-  using __type = byte;
-};
-
-template <int N> struct __is_integer<Integer<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<Long<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<Char<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<WChar<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-#if __cplusplus >= 202002L
-template <int N> struct __is_integer<Char8<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-#endif
-
-template <int N> struct __is_integer<Char16<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<Char32<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<UnsignedInteger<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
 } // namespace std
-
-namespace std::chrono {
-
-template <int N> struct __is_duration<Duration<N>> : true_type {};
-template <int N> struct __is_duration<CoarseDuration<N>> : true_type {};
-
-} // namespace std::chrono
-
-namespace __gnu_cxx {
-
-template <int N> struct __promote<Double<N>, false> {
-  typedef double __type;
-};
-
-} // namespace __gnu_cxx
-
-#if defined(__linux__)
-namespace __pstl::execution {
-
-template <int N>
-struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
-
-} // namespace __pstl::execution
-#endif
 
 #define Plain Plain<__COUNTER__>
 #define Role Role<__COUNTER__>
