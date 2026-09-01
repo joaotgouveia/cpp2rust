@@ -844,6 +844,16 @@ DECLARE_PARAMETERIZABLE_HINT(Container) : private Range<InnerT> {
   template <typename... Args> reference emplace_back(Args && ...);
   iterator erase(const_iterator);
   void resize(size_type);
+
+  bool operator==(const Container &) const;
+  bool operator!=(const Container &) const;
+  bool operator<(const Container &) const;
+  bool operator>(const Container &) const;
+  bool operator<=(const Container &) const;
+  bool operator>=(const Container &) const;
+#if __cplusplus >= 202002L
+  std::strong_ordering operator<=>(const Container &) const;
+#endif
 };
 
 template <typename CharT = Synthesis::Slot<Synthesis::BindExisting>,
