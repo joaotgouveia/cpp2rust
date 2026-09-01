@@ -878,6 +878,33 @@ DECLARE_PARAMETERIZABLE_HINT(CharTraits) : private Role<> {
   static int_type not_eof(int_type);
 };
 
+template <typename CharT = Synthesis::Slot<Synthesis::BindExisting, Char<>>>
+DECLARE_PARAMETERIZABLE_HINT(RegexTraits) : private Role<> {
+  using char_type = CharT;
+  using string_type = std::basic_string<CharT>;
+  using locale_type = std::locale;
+  using char_class_type = unsigned;
+
+  static std::size_t length(const char_type *);
+
+  char_type translate(char_type) const;
+  char_type translate_nocase(char_type) const;
+
+  template <typename ForwardIt> string_type transform(ForwardIt, ForwardIt) const;
+  template <typename ForwardIt>
+  string_type transform_primary(ForwardIt, ForwardIt) const;
+  template <typename ForwardIt>
+  string_type lookup_collatename(ForwardIt, ForwardIt) const;
+  template <typename ForwardIt>
+  char_class_type lookup_classname(ForwardIt, ForwardIt, bool = false) const;
+
+  bool isctype(char_type, char_class_type) const;
+  int value(char_type, int) const;
+
+  locale_type imbue(locale_type);
+  locale_type getloc() const;
+};
+
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_HINT(Derived) : T{};
 
