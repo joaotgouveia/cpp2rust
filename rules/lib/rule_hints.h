@@ -14,6 +14,7 @@
 #include <execution>
 #include <locale>
 #include <memory>
+#include <istream>
 #include <ostream>
 #if __cplusplus >= 202002L
 #include <ranges>
@@ -64,7 +65,9 @@ using BindSelf = const void *;
 
 #if __cplusplus >= 202002L
 #define DECLARE_SPACESHIP_HINT_BODY(name, builtin)                             \
-  PROBE_ONLY constexpr auto operator<=>(builtin other) const {                 \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<=>(const OtherT &other) const             \
+      -> decltype(value <=> other) {                                           \
     return value <=> other;                                                    \
   }
 #else
@@ -117,22 +120,34 @@ using BindSelf = const void *;
     --value;                                                                   \
     return previous;                                                           \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator==(builtin other) const {                  \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator==(const OtherT &other) const              \
+      -> decltype(value == other) {                                            \
     return value == other;                                                     \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator!=(builtin other) const {                  \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator!=(const OtherT &other) const              \
+      -> decltype(value != other) {                                            \
     return value != other;                                                     \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator<(builtin other) const {                   \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<(const OtherT &other) const               \
+      -> decltype(value < other) {                                             \
     return value < other;                                                      \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator>(builtin other) const {                   \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>(const OtherT &other) const               \
+      -> decltype(value > other) {                                             \
     return value > other;                                                      \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator<=(builtin other) const {                  \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<=(const OtherT &other) const              \
+      -> decltype(value <= other) {                                            \
     return value <= other;                                                     \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator>=(builtin other) const {                  \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>=(const OtherT &other) const              \
+      -> decltype(value >= other) {                                            \
     return value >= other;                                                     \
   }                                                                            \
   DECLARE_SPACESHIP_HINT_BODY(name, builtin)
@@ -172,22 +187,34 @@ using BindSelf = const void *;
   template <int Id> PROBE_ONLY constexpr operator name<Id>() const {           \
     return name<Id>(value);                                                    \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator==(builtin other) const {                  \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator==(const OtherT &other) const              \
+      -> decltype(value == other) {                                            \
     return value == other;                                                     \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator!=(builtin other) const {                  \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator!=(const OtherT &other) const              \
+      -> decltype(value != other) {                                            \
     return value != other;                                                     \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator<(builtin other) const {                   \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<(const OtherT &other) const               \
+      -> decltype(value < other) {                                             \
     return value < other;                                                      \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator>(builtin other) const {                   \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>(const OtherT &other) const               \
+      -> decltype(value > other) {                                             \
     return value > other;                                                      \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator<=(builtin other) const {                  \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator<=(const OtherT &other) const              \
+      -> decltype(value <= other) {                                            \
     return value <= other;                                                     \
   }                                                                            \
-  PROBE_ONLY constexpr bool operator>=(builtin other) const {                  \
+  template <typename OtherT>                                                   \
+  PROBE_ONLY constexpr auto operator>=(const OtherT &other) const              \
+      -> decltype(value >= other) {                                            \
     return value >= other;                                                     \
   }                                                                            \
   DECLARE_SPACESHIP_HINT_BODY(name, builtin)
@@ -209,33 +236,99 @@ DECLARE_HINT(Comparable) : private Plain<> {
 #endif
 };
 
-DECLARE_HINT(Integer) : private Comparable<> {
+DECLARE_HINT(Arithmetic) : private Comparable<> {
+  template <typename Other> bool operator==(const Other &) const;
+  template <typename Other> bool operator!=(const Other &) const;
+  template <typename Other> bool operator<(const Other &) const;
+  template <typename Other> bool operator>(const Other &) const;
+  template <typename Other> bool operator<=(const Other &) const;
+  template <typename Other> bool operator>=(const Other &) const;
+#if __cplusplus >= 202002L
+  template <typename Other>
+  std::strong_ordering operator<=>(const Other &) const;
+#endif
+  template <typename Other> Arithmetic &operator=(const Other &);
+  template <typename Other> Arithmetic operator+(const Other &) const;
+  template <typename Other> Arithmetic operator-(const Other &) const;
+  template <typename Other> Arithmetic operator*(const Other &) const;
+  template <typename Other> Arithmetic operator/(const Other &) const;
+  template <typename Other> Arithmetic &operator+=(const Other &);
+  template <typename Other> Arithmetic &operator-=(const Other &);
+  template <typename Other> Arithmetic &operator*=(const Other &);
+  template <typename Other> Arithmetic &operator/=(const Other &);
+  Arithmetic operator+() const;
+  Arithmetic operator-() const;
+};
+
+DECLARE_HINT(ArithmeticInteger) : private Arithmetic<> {
+  template <typename Other> bool operator==(const Other &) const;
+  template <typename Other> bool operator!=(const Other &) const;
+  template <typename Other> bool operator<(const Other &) const;
+  template <typename Other> bool operator>(const Other &) const;
+  template <typename Other> bool operator<=(const Other &) const;
+  template <typename Other> bool operator>=(const Other &) const;
+#if __cplusplus >= 202002L
+  template <typename Other>
+  std::strong_ordering operator<=>(const Other &) const;
+#endif
+  template <typename Other> ArithmeticInteger &operator=(const Other &);
+  template <typename Other> ArithmeticInteger operator+(const Other &) const;
+  template <typename Other> ArithmeticInteger operator-(const Other &) const;
+  template <typename Other> ArithmeticInteger operator*(const Other &) const;
+  template <typename Other> ArithmeticInteger operator/(const Other &) const;
+  template <typename Other> ArithmeticInteger &operator+=(const Other &);
+  template <typename Other> ArithmeticInteger &operator-=(const Other &);
+  template <typename Other> ArithmeticInteger &operator*=(const Other &);
+  template <typename Other> ArithmeticInteger &operator/=(const Other &);
+  ArithmeticInteger operator+() const;
+  ArithmeticInteger operator-() const;
+  template <typename Other> ArithmeticInteger operator%(const Other &) const;
+  template <typename Other> ArithmeticInteger operator&(const Other &) const;
+  template <typename Other> ArithmeticInteger operator|(const Other &) const;
+  template <typename Other> ArithmeticInteger operator^(const Other &) const;
+  template <typename Other> ArithmeticInteger operator<<(const Other &) const;
+  template <typename Other> ArithmeticInteger operator>>(const Other &) const;
+  template <typename Other> ArithmeticInteger &operator%=(const Other &);
+  template <typename Other> ArithmeticInteger &operator&=(const Other &);
+  template <typename Other> ArithmeticInteger &operator|=(const Other &);
+  template <typename Other> ArithmeticInteger &operator^=(const Other &);
+  template <typename Other> ArithmeticInteger &operator<<=(const Other &);
+  template <typename Other> ArithmeticInteger &operator>>=(const Other &);
+  ArithmeticInteger operator~() const;
+  ArithmeticInteger &operator++();
+  ArithmeticInteger operator++(int);
+  ArithmeticInteger &operator--();
+  ArithmeticInteger operator--(int);
+  explicit operator bool() const;
+};
+
+DECLARE_HINT(Integer) : private ArithmeticInteger<> {
   DECLARE_INTEGRAL_HINT_BODY(Integer, int)
 };
 
-DECLARE_HINT(Long) : private Comparable<> {
+DECLARE_HINT(Long) : private ArithmeticInteger<> {
   DECLARE_INTEGRAL_HINT_BODY(Long, long)
 };
 
-DECLARE_HINT(Char) : private Comparable<> {
+DECLARE_HINT(Char) : private ArithmeticInteger<> {
   DECLARE_INTEGRAL_HINT_BODY(Char, char)
 };
 
-DECLARE_HINT(WChar) : private Comparable<> {
+DECLARE_HINT(WChar) : private ArithmeticInteger<> {
   DECLARE_INTEGRAL_HINT_BODY(WChar, wchar_t)
 };
 
 #if __cplusplus >= 202002L
-DECLARE_HINT(Char8) : private Comparable<> {
+DECLARE_HINT(Char8) : private ArithmeticInteger<> {
   DECLARE_INTEGRAL_HINT_BODY(Char8, char8_t)
 };
 #endif
 
-DECLARE_HINT(Char16) : private Comparable<> {
+DECLARE_HINT(Char16) : private ArithmeticInteger<> {
   DECLARE_INTEGRAL_HINT_BODY(Char16, char16_t)
 };
 
-DECLARE_HINT(Char32) : private Comparable<> {
+DECLARE_HINT(Char32) : private ArithmeticInteger<> {
   DECLARE_INTEGRAL_HINT_BODY(Char32, char32_t)
 };
 
@@ -247,7 +340,7 @@ DECLARE_HINT(ErrorConditionEnum) : private Comparable<> {
   DECLARE_ENUM_HINT_BODY(ErrorConditionEnum, std::errc)
 };
 
-DECLARE_HINT(Double) : private Comparable<> {
+DECLARE_HINT(Double) : private Arithmetic<> {
   DECLARE_SCALAR_HINT_BODY(Double, double)
 };
 
@@ -301,7 +394,7 @@ DECLARE_HINT(ExecutionPolicy) : private Role<>,
 };
 #endif
 
-DECLARE_HINT(UnsignedInteger) : private Comparable<> {
+DECLARE_HINT(UnsignedInteger) : private ArithmeticInteger<> {
   DECLARE_INTEGRAL_HINT_BODY(UnsignedInteger, unsigned)
 };
 
@@ -377,6 +470,12 @@ DECLARE_HINT(ExplicitlyConvertible) : private Plain<> {
 template <typename T = Synthesis::Slot<Synthesis::BindExisting>>
 DECLARE_PARAMETERIZABLE_HINT(ConvertibleTo) : private ExplicitlyConvertible<> {
   operator T() const;
+};
+
+DECLARE_HINT(StreamExtractable) : private Plain<> {
+  template <typename CharT, typename Traits>
+  friend std::basic_istream<CharT, Traits> &
+  operator>>(std::basic_istream<CharT, Traits> &, StreamExtractable &);
 };
 
 DECLARE_HINT(StringLike) : private Plain<> {
@@ -1076,6 +1175,9 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #define Role Role<__COUNTER__>
 #define Comparable Comparable<__COUNTER__>
 #define Assignable Assignable<__COUNTER__>
+#define Arithmetic Arithmetic<__COUNTER__>
+#define ArithmeticInteger ArithmeticInteger<__COUNTER__>
+#define StreamExtractable StreamExtractable<__COUNTER__>
 #define MoveAssignable MoveAssignable<__COUNTER__>
 #define ConstAssignable ConstAssignable<__COUNTER__>
 #define Hashable Hashable<__COUNTER__>
