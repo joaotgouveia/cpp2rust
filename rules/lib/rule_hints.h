@@ -1136,6 +1136,48 @@ template <int N> struct is_error_code_enum<ErrorCodeEnum<N>> : true_type {};
 template <int N>
 struct is_error_condition_enum<ErrorConditionEnum<N>> : true_type {};
 
+#ifdef _LIBCPP_VERSION
+#define DECLARE_CHAR_TRAITS(hint)                                              \
+  template <int N> struct char_traits<hint<N>> {                               \
+    using char_type = hint<N>;                                                 \
+    using int_type = int;                                                      \
+    using off_type = streamoff;                                                \
+    using pos_type = streampos;                                                \
+    using state_type = mbstate_t;                                              \
+                                                                               \
+    static void assign(char_type &, const char_type &);                        \
+    static char_type *assign(char_type *, size_t, char_type);                  \
+                                                                               \
+    static bool eq(char_type, char_type);                                      \
+    static bool lt(char_type, char_type);                                      \
+    static int compare(const char_type *, const char_type *, size_t);          \
+                                                                               \
+    static char_type *move(char_type *, const char_type *, size_t);            \
+    static char_type *copy(char_type *, const char_type *, size_t);            \
+                                                                               \
+    static size_t length(const char_type *);                                   \
+                                                                               \
+    static const char_type *find(const char_type *, size_t,                    \
+                                 const char_type &);                           \
+                                                                               \
+    static char_type to_char_type(int_type);                                   \
+    static int_type to_int_type(char_type);                                    \
+    static bool eq_int_type(int_type, int_type);                               \
+                                                                               \
+    static int_type eof();                                                     \
+    static int_type not_eof(int_type);                                         \
+  };
+
+DECLARE_CHAR_TRAITS(Char)
+DECLARE_CHAR_TRAITS(WChar)
+#if __cplusplus >= 202002L
+DECLARE_CHAR_TRAITS(Char8)
+#endif
+DECLARE_CHAR_TRAITS(Char16)
+DECLARE_CHAR_TRAITS(Char32)
+#undef DECLARE_CHAR_TRAITS
+#endif
+
 } // namespace std
 
 #define Plain Plain<__COUNTER__>
