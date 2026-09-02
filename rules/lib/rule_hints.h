@@ -1008,6 +1008,15 @@ DECLARE_HINT(CString) : private Iterator<Char<>, Long<>> {
   operator std::basic_string_view<CharT, Traits>() const;
 };
 
+#if __cplusplus >= 202002L
+template <int N> struct std::formatter<CString<N>, char> {
+  constexpr std::basic_format_parse_context<char>::iterator
+  parse(std::basic_format_parse_context<char> &);
+  template <typename OutT>
+  OutT format(const CString<N> &, std::basic_format_context<OutT, char> &) const;
+};
+#endif
+
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Char<>>>
 DECLARE_PARAMETERIZABLE_HINT(OutputIterator) : private Plain<> {
   using value_type = T;
