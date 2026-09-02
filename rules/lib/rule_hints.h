@@ -54,10 +54,6 @@ using BindSelf = const void *;
                clang::annotate(CPP2RUST_BUILTIN_RULE_TAG),                     \
                clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] = type;
 
-#define DECLARE_BUILTIN_HINT(name, type)                                       \
-  using name [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                        \
-               clang::annotate(CPP2RUST_BUILTIN_RULE_TAG)]] = type;
-
 #define DECLARE_NON_TYPE_HINT(name, type, expr)                                \
   [[clang::annotate(CPP2RUST_RULE_HINT_TAG)]] constexpr type name = expr;
 
@@ -432,7 +428,8 @@ DECLARE_HINT(MbState) : private Role<>, public std::mbstate_t {
   template <int Id> PROBE_ONLY operator MbState<Id>() const;
 };
 
-#if defined(__linux__)
+#if defined(__cpp_lib_execution) ||                                            \
+    (defined(_LIBCPP_HAS_EXPERIMENTAL_PSTL) && _LIBCPP_HAS_EXPERIMENTAL_PSTL)
 DECLARE_HINT(ExecutionPolicy) : private Role<>,
                                 public std::execution::parallel_policy {
   template <int Id> PROBE_ONLY operator ExecutionPolicy<Id>() const;
@@ -668,16 +665,6 @@ DECLARE_PARAMETERIZABLE_HINT(Iterator) : private InputIterator<InnerT, DiffT> {
             typename = enable_any_convertible_t<OInnerT, InnerT>,
             typename = enable_any_convertible_t<ODiffT, DiffT>>
   std::strong_ordering operator<=>(const Iterator<OInnerT, ODiffT> &) const;
-#endif
-
-#if defined(__linux__)
-  template <typename Other = InnerT,
-            typename = std::enable_if_t<std::is_same_v<Other, bool>>>
-  operator std::_Bit_const_iterator() const;
-
-  template <typename Other = InnerT,
-            typename = std::enable_if_t<std::is_same_v<Other, bool>>>
-  operator std::_Bit_iterator() const;
 #endif
 
   template <typename OInnerT, typename ODiffT,
@@ -971,7 +958,64 @@ DECLARE_PARAMETERIZABLE_HINT(SmartPointer) : private Role<> {
   void reset(pointer = nullptr) noexcept;
 };
 
-DECLARE_BUILTIN_HINT(CString, const char *)
+DECLARE_HINT(CString) : private Iterator<Char<>, Long<>> {
+  MARK_INVALID_ALLOCATOR
+
+  using value_type = char;
+  using difference_type = long;
+  using pointer = const char *;
+  using reference = const char &;
+  using iterator_category = std::random_access_iterator_tag;
+#if __cplusplus >= 202002L
+  using iterator_concept = std::contiguous_iterator_tag;
+#endif
+
+  reference operator*() const;
+  pointer operator->() const;
+  reference operator[](difference_type) const;
+
+  CString &operator++();
+  CString operator++(int) const;
+  CString &operator--();
+  CString operator--(int) const;
+
+  CString &operator+=(difference_type);
+  CString &operator-=(difference_type);
+  CString operator+(difference_type) const;
+  CString operator-(difference_type) const;
+  difference_type operator-(const CString &) const;
+  friend CString operator+(difference_type, const CString &);
+
+  template <int OId> bool operator==(const CString<OId> &) const;
+  template <int OId> bool operator!=(const CString<OId> &) const;
+  template <int OId> bool operator<(const CString<OId> &) const;
+  template <int OId> bool operator>(const CString<OId> &) const;
+  template <int OId> bool operator<=(const CString<OId> &) const;
+  template <int OId> bool operator>=(const CString<OId> &) const;
+#if __cplusplus >= 202002L
+  template <int OId> std::strong_ordering operator<=>(const CString<OId> &)
+      const;
+#endif
+
+  template <int OId> operator CString<OId>() const;
+
+  template <typename CharT, typename Traits,
+            typename = enable_unless_non_convertible_t<CharT>>
+  operator std::basic_string<CharT, Traits>() const;
+
+  template <typename CharT, typename Traits,
+            typename = enable_unless_non_convertible_t<CharT>>
+  operator std::basic_string_view<CharT, Traits>() const;
+};
+
+#if __cplusplus >= 202002L
+template <int N> struct std::formatter<CString<N>, char> {
+  constexpr std::basic_format_parse_context<char>::iterator
+  parse(std::basic_format_parse_context<char> &);
+  template <typename OutT>
+  OutT format(const CString<N> &, std::basic_format_context<OutT, char> &) const;
+};
+#endif
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Char<>>>
 DECLARE_PARAMETERIZABLE_HINT(OutputIterator) : private Plain<> {
@@ -1006,18 +1050,6 @@ DECLARE_NON_TYPE_HINT(SizedSubRangeKind, std::ranges::subrange_kind,
 
 namespace std {
 
-template <int N> struct __is_integral_helper<Integer<N>> : true_type {};
-template <int N> struct __is_integral_helper<Long<N>> : true_type {};
-template <int N> struct __is_integral_helper<Char<N>> : true_type {};
-template <int N> struct __is_integral_helper<WChar<N>> : true_type {};
-#if __cplusplus >= 202002L
-template <int N> struct __is_integral_helper<Char8<N>> : true_type {};
-#endif
-template <int N> struct __is_integral_helper<Char16<N>> : true_type {};
-template <int N> struct __is_integral_helper<Char32<N>> : true_type {};
-template <int N> struct __is_integral_helper<UnsignedInteger<N>> : true_type {};
-template <int N> struct __is_floating_point_helper<Double<N>> : true_type {};
-
 template <int N> struct is_integral<Integer<N>> : true_type {};
 template <int N> struct is_integral<Long<N>> : true_type {};
 template <int N> struct is_integral<Char<N>> : true_type {};
@@ -1030,8 +1062,6 @@ template <int N> struct is_integral<Char32<N>> : true_type {};
 template <int N> struct is_integral<UnsignedInteger<N>> : true_type {};
 template <int N> struct is_floating_point<Double<N>> : true_type {};
 template <int N> struct is_void<Void<N>> : true_type {};
-template <int N> struct __is_ratio<Ratio<N>> : true_type {};
-template <int N> inline constexpr bool __is_ratio_v<Ratio<N>> = true;
 
 template <int N> struct is_signed<Integer<N>> : true_type {};
 template <int N> struct is_signed<Long<N>> : true_type {};
@@ -1159,123 +1189,49 @@ template <int N> struct is_error_code_enum<ErrorCodeEnum<N>> : true_type {};
 template <int N>
 struct is_error_condition_enum<ErrorConditionEnum<N>> : true_type {};
 
-template <int N> struct __byte_operand<Integer<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<Long<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<Char<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<WChar<N>> {
-  using __type = byte;
-};
+#ifdef _LIBCPP_VERSION
+#define DECLARE_CHAR_TRAITS(hint)                                              \
+  template <int N> struct char_traits<hint<N>> {                               \
+    using char_type = hint<N>;                                                 \
+    using int_type = int;                                                      \
+    using off_type = streamoff;                                                \
+    using pos_type = streampos;                                                \
+    using state_type = mbstate_t;                                              \
+                                                                               \
+    static void assign(char_type &, const char_type &);                        \
+    static char_type *assign(char_type *, size_t, char_type);                  \
+                                                                               \
+    static bool eq(char_type, char_type);                                      \
+    static bool lt(char_type, char_type);                                      \
+    static int compare(const char_type *, const char_type *, size_t);          \
+                                                                               \
+    static char_type *move(char_type *, const char_type *, size_t);            \
+    static char_type *copy(char_type *, const char_type *, size_t);            \
+                                                                               \
+    static size_t length(const char_type *);                                   \
+                                                                               \
+    static const char_type *find(const char_type *, size_t,                    \
+                                 const char_type &);                           \
+                                                                               \
+    static char_type to_char_type(int_type);                                   \
+    static int_type to_int_type(char_type);                                    \
+    static bool eq_int_type(int_type, int_type);                               \
+                                                                               \
+    static int_type eof();                                                     \
+    static int_type not_eof(int_type);                                         \
+  };
+
+DECLARE_CHAR_TRAITS(Char)
+DECLARE_CHAR_TRAITS(WChar)
 #if __cplusplus >= 202002L
-template <int N> struct __byte_operand<Char8<N>> {
-  using __type = byte;
-};
+DECLARE_CHAR_TRAITS(Char8)
 #endif
-template <int N> struct __byte_operand<Char16<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<Char32<N>> {
-  using __type = byte;
-};
-template <int N> struct __byte_operand<UnsignedInteger<N>> {
-  using __type = byte;
-};
-
-template <int N> struct __is_integer<Integer<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<Long<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<Char<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<WChar<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-#if __cplusplus >= 202002L
-template <int N> struct __is_integer<Char8<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
+DECLARE_CHAR_TRAITS(Char16)
+DECLARE_CHAR_TRAITS(Char32)
+#undef DECLARE_CHAR_TRAITS
 #endif
 
-template <int N> struct __is_integer<Char16<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<Char32<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
-
-template <int N> struct __is_integer<UnsignedInteger<N>> {
-  enum { __value = 1 };
-  typedef __true_type __type;
-};
 } // namespace std
-
-namespace std::chrono {
-
-template <int N> struct __is_duration<Duration<N>> : true_type {};
-template <int N> struct __is_duration<CoarseDuration<N>> : true_type {};
-
-} // namespace std::chrono
-
-namespace __gnu_cxx {
-
-template <int N> struct __promote<Double<N>, false> {
-  typedef double __type;
-};
-
-template <int N>
-struct __numeric_traits_integer<Integer<N>> : __numeric_traits_integer<int> {};
-template <int N>
-struct __numeric_traits_integer<Long<N>> : __numeric_traits_integer<long> {};
-template <int N>
-struct __numeric_traits_integer<Char<N>> : __numeric_traits_integer<char> {};
-template <int N>
-struct __numeric_traits_integer<WChar<N>>
-    : __numeric_traits_integer<wchar_t> {};
-#if __cplusplus >= 202002L
-template <int N>
-struct __numeric_traits_integer<Char8<N>>
-    : __numeric_traits_integer<char8_t> {};
-#endif
-template <int N>
-struct __numeric_traits_integer<Char16<N>>
-    : __numeric_traits_integer<char16_t> {};
-template <int N>
-struct __numeric_traits_integer<Char32<N>>
-    : __numeric_traits_integer<char32_t> {};
-template <int N>
-struct __numeric_traits_integer<UnsignedInteger<N>>
-    : __numeric_traits_integer<unsigned> {};
-
-} // namespace __gnu_cxx
-
-#if defined(__linux__)
-namespace __pstl::execution {
-
-template <int N>
-struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
-
-} // namespace __pstl::execution
-#endif
 
 #define Plain Plain<__COUNTER__>
 #define Role Role<__COUNTER__>
@@ -1296,6 +1252,7 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #define SeedSequence SeedSequence<__COUNTER__>
 #define Integer Integer<__COUNTER__>
 #define Long Long<__COUNTER__>
+#define CString CString<__COUNTER__>
 #define Char Char<__COUNTER__>
 #define WChar WChar<__COUNTER__>
 #define UnsignedInteger UnsignedInteger<__COUNTER__>
@@ -1317,4 +1274,7 @@ struct is_execution_policy<ExecutionPolicy<N>> : std::true_type {};
 #define FormatContext FormatContext<__COUNTER__>
 #endif
 #define MbState MbState<__COUNTER__>
+#if defined(__cpp_lib_execution) ||                                            \
+    (defined(_LIBCPP_HAS_EXPERIMENTAL_PSTL) && _LIBCPP_HAS_EXPERIMENTAL_PSTL)
 #define ExecutionPolicy ExecutionPolicy<__COUNTER__>
+#endif
