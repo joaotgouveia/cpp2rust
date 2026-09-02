@@ -54,10 +54,6 @@ using BindSelf = const void *;
                clang::annotate(CPP2RUST_BUILTIN_RULE_TAG),                     \
                clang::annotate(CPP2RUST_PARAMETERIZABLE_RULE_TAG)]] = type;
 
-#define DECLARE_BUILTIN_HINT(name, type)                                       \
-  using name [[clang::annotate(CPP2RUST_RULE_HINT_TAG),                        \
-               clang::annotate(CPP2RUST_BUILTIN_RULE_TAG)]] = type;
-
 #define DECLARE_NON_TYPE_HINT(name, type, expr)                                \
   [[clang::annotate(CPP2RUST_RULE_HINT_TAG)]] constexpr type name = expr;
 
@@ -962,7 +958,55 @@ DECLARE_PARAMETERIZABLE_HINT(SmartPointer) : private Role<> {
   void reset(pointer = nullptr) noexcept;
 };
 
-DECLARE_BUILTIN_HINT(CString, const char *)
+DECLARE_HINT(CString) : private Iterator<Char<>, Long<>> {
+  MARK_INVALID_ALLOCATOR
+
+  using value_type = char;
+  using difference_type = long;
+  using pointer = const char *;
+  using reference = const char &;
+  using iterator_category = std::random_access_iterator_tag;
+#if __cplusplus >= 202002L
+  using iterator_concept = std::contiguous_iterator_tag;
+#endif
+
+  reference operator*() const;
+  pointer operator->() const;
+  reference operator[](difference_type) const;
+
+  CString &operator++();
+  CString operator++(int) const;
+  CString &operator--();
+  CString operator--(int) const;
+
+  CString &operator+=(difference_type);
+  CString &operator-=(difference_type);
+  CString operator+(difference_type) const;
+  CString operator-(difference_type) const;
+  difference_type operator-(const CString &) const;
+  friend CString operator+(difference_type, const CString &);
+
+  template <int OId> bool operator==(const CString<OId> &) const;
+  template <int OId> bool operator!=(const CString<OId> &) const;
+  template <int OId> bool operator<(const CString<OId> &) const;
+  template <int OId> bool operator>(const CString<OId> &) const;
+  template <int OId> bool operator<=(const CString<OId> &) const;
+  template <int OId> bool operator>=(const CString<OId> &) const;
+#if __cplusplus >= 202002L
+  template <int OId> std::strong_ordering operator<=>(const CString<OId> &)
+      const;
+#endif
+
+  template <int OId> operator CString<OId>() const;
+
+  template <typename CharT, typename Traits,
+            typename = enable_unless_non_convertible_t<CharT>>
+  operator std::basic_string<CharT, Traits>() const;
+
+  template <typename CharT, typename Traits,
+            typename = enable_unless_non_convertible_t<CharT>>
+  operator std::basic_string_view<CharT, Traits>() const;
+};
 
 template <typename T = Synthesis::Slot<Synthesis::BindExisting, Char<>>>
 DECLARE_PARAMETERIZABLE_HINT(OutputIterator) : private Plain<> {
@@ -1199,6 +1243,7 @@ DECLARE_CHAR_TRAITS(Char32)
 #define SeedSequence SeedSequence<__COUNTER__>
 #define Integer Integer<__COUNTER__>
 #define Long Long<__COUNTER__>
+#define CString CString<__COUNTER__>
 #define Char Char<__COUNTER__>
 #define WChar WChar<__COUNTER__>
 #define UnsignedInteger UnsignedInteger<__COUNTER__>
