@@ -63,8 +63,8 @@ f9(const std::reverse_iterator<T1> &a0,
   return a0.operator-(a1);
 }
 
-template <typename T1 = Iterator<Plain, Long>,
-          typename T2 = Iterator<ImplicitlyConvertible, Long>>
+template <typename T3, typename T1 = Iterator<T3, Long>,
+          typename T2 = Iterator<ConvertibleTo<T3>, Long>>
 bool f10(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
   return operator==(a0, a1);
