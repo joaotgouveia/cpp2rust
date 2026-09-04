@@ -234,3 +234,9 @@ pub trait UnsafeIterator:
 {
     fn offset(&self, n: isize) -> Self;
 }
+
+pub trait RefcountIterator:
+    PrefixInc + PostfixInc + PrefixDec + PostfixDec + Default + PartialEq
+{
+    fn offset(&self, n: isize) -> Self;
+}
