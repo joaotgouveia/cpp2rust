@@ -27,8 +27,8 @@ private:
 bool Contains(clang::QualType qual_type);
 bool Contains(const clang::Expr *expr);
 
-std::string MapToIR(const clang::Expr *expr);
-std::string MapToIR(clang::QualType type);
+std::pair<std::string, std::string> MapToIR(const clang::Expr *expr);
+std::pair<std::string, std::string> MapToIR(clang::QualType type);
 
 std::string Map(clang::QualType qual_type);
 std::string MapInitializer(clang::QualType qual_type);
