@@ -585,9 +585,8 @@ void ConverterRefCount::AddDropTrait(const clang::CXXRecordDecl *decl) {
   auto record_name = GetRecordName(decl);
 
   StrCat(keyword::kImpl, "Drop for", record_name, '{');
-  StrCat("fn drop(&mut self) {");
-  Convert(body);
-  StrCat('}');
+  StrCat("fn drop(&mut self)");
+  ConvertBody(body);
   StrCat('}');
 }
 
@@ -652,17 +651,6 @@ void ConverterRefCount::AddByteReprTrait(const clang::RecordDecl *decl) {
       ++idx;
     }
   }
-}
-
-void ConverterRefCount::AddByteReprTrait(const clang::EnumDecl *decl) {
-  auto name = GetRecordName(decl);
-  StrCat(std::format("impl ByteRepr for {}", name));
-  PushBrace impl_brace(*this);
-  StrCat(
-      "fn to_bytes(&self, buf: &mut [u8]) { (*self as i32).to_bytes(buf); }");
-  StrCat(std::format("fn from_bytes(buf: &[u8]) -> Self {{ "
-                     "<{}>::from(i32::from_bytes(buf)) }}",
-                     name));
 }
 
 std::string
@@ -1341,11 +1329,10 @@ bool ConverterRefCount::VisitFunctionPointerCast(
 
 bool ConverterRefCount::VisitExplicitCastExpr(clang::ExplicitCastExpr *expr) {
   if (expr->getTypeAsWritten()->isVoidType()) {
+    StrCat(token::kRef);
+    PushParen paren(*this);
     PushExprKind push(*this, ExprKind::Void);
     Convert(expr->getSubExpr());
-    if (!TypeIsCopyable(expr->getSubExpr()->getType()) && !isFresh()) {
-      StrCat(".clone()");
-    }
     return false;
   }
   if (expr->getCastKind() == clang::CK_NullToPointer) {

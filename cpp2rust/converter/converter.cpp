@@ -441,25 +441,17 @@ void Converter::ConvertGotoBlock(clang::CompoundStmt *body) {
 }
 
 void Converter::ConvertFunctionBody(clang::FunctionDecl *decl) {
-  if (auto compound = clang::dyn_cast<clang::CompoundStmt>(decl->getBody())) {
-    if (CompoundHasTopLevelLabel(compound)) {
-      ConvertGotoBlock(compound);
-      if (!decl->getReturnType()->isVoidType()) {
-        StrCat(R"(panic!("ub: non-void function does not return a value"))");
-      }
-      return;
-    }
+  ConvertBodyStmts(decl->getBody());
+  if (decl->getReturnType()->isVoidType()) {
+    return;
   }
-
-  Convert(decl->getBody());
-  if (!decl->getReturnType()->isVoidType()) {
-    if (auto compound = clang::dyn_cast<clang::CompoundStmt>(decl->getBody())) {
-      if (!compound->body_empty()) {
-        if (!clang::isa<clang::ReturnStmt>(compound->body_back())) {
-          StrCat(R"(panic!("ub: non-void function does not return a value"))");
-        }
-      }
-    }
+  auto compound = clang::dyn_cast<clang::CompoundStmt>(decl->getBody());
+  if (!compound || compound->body_empty()) {
+    return;
+  }
+  if (CompoundHasTopLevelLabel(compound) ||
+      !clang::isa<clang::ReturnStmt>(compound->body_back())) {
+    StrCat(R"(panic!("ub: non-void function does not return a value"))");
   }
 }
 
@@ -640,22 +632,6 @@ static bool hasUserDefinedNonDefaultCopyOrMoveCtor(clang::CXXRecordDecl *decl) {
   return false;
 }
 
-void Converter::materializeTemplateSpecialization(clang::CXXRecordDecl *decl) {
-  for (auto method : decl->methods()) {
-    const clang::FunctionDecl *definition = nullptr;
-    if (method->isDefined(definition)) {
-      continue;
-    }
-
-    if (auto pattern = method->getTemplateInstantiationPattern()) {
-      if (pattern->doesThisDeclarationHaveABody()) {
-        sema_->InstantiateFunctionDefinition(method->getLocation(), method,
-                                             /*Recursive=*/true);
-      }
-    }
-  }
-}
-
 bool IsPointerType(clang::QualType qual_type) {
   return qual_type->isPointerType() ||
          (qual_type->isArrayType() &&
@@ -764,6 +740,23 @@ bool Converter::VisitRecordDecl(clang::RecordDecl *decl) {
   return false;
 }
 
+static bool IsEmittableMethod(clang::CXXMethodDecl *method) {
+  // Virtual methods go into the base trait impl, destructors into Drop
+  if (method->isVirtual() || clang::isa<clang::CXXDestructorDecl>(method)) {
+    return false;
+  }
+  // Compiler-generated members are covered by derived traits
+  if (method->isImplicit()) {
+    return false;
+  }
+  if (auto *definition = method->getDefinition();
+      definition && definition->isDefaulted()) {
+    return false;
+  }
+  return method->isThisDeclarationADefinition() ||
+         clang::isa<clang::CXXConstructorDecl>(method);
+}
+
 void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
   // Enums and static variables. In rust they live outside the record
   for (auto *d : decl->decls()) {
@@ -823,17 +816,9 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
   if (auto *cxx = clang::dyn_cast<clang::CXXRecordDecl>(decl)) {
     auto struct_name = GetRecordName(cxx);
 
-    ConvertCXXMethodDecls(
-        cxx, std::format("{} {}", keyword::kImpl, struct_name),
-        [](auto *method) {
-          return !method->isImplicit() &&
-                 !(method->getDefinition() &&
-                   method->getDefinition()->isDefaulted()) &&
-                 (method->isThisDeclarationADefinition() ||
-                  clang::isa<clang::CXXConstructorDecl>(method)) &&
-                 !method->isVirtual() &&
-                 !clang::isa<clang::CXXDestructorDecl>(method);
-        });
+    ConvertCXXMethodDecls(cxx,
+                          std::format("{} {}", keyword::kImpl, struct_name),
+                          IsEmittableMethod);
 
     if (cxx->bases_begin() != cxx->bases_end()) {
       ConvertCXXMethodDecls(
@@ -881,10 +866,6 @@ void Converter::EmitRustUnion(clang::RecordDecl *decl) {
 }
 
 bool Converter::VisitCXXRecordDecl(clang::CXXRecordDecl *decl) {
-  if (clang::isa<clang::ClassTemplateSpecializationDecl>(decl)) {
-    materializeTemplateSpecialization(decl);
-  }
-
   decl->dump(log());
 
   Mapper::AddRuleForUserDefinedType(decl);
@@ -902,6 +883,15 @@ bool Converter::VisitCXXRecordDecl(clang::CXXRecordDecl *decl) {
     }
 
     if (!record_decls_.MarkDefined(GetRecordName(decl))) {
+      // Other translation units may instantiate members this one did not.
+      if (clang::isa<clang::ClassTemplateSpecializationDecl>(decl)) {
+        ConvertCXXMethodDecls(
+            decl, std::format("{} {}", keyword::kImpl, GetRecordName(decl)),
+            [](auto *method) {
+              return IsEmittableMethod(method) && method->hasBody() &&
+                     !decl_ids_.contains(GetMethodID(method));
+            });
+      }
       return false;
     }
 
@@ -939,6 +929,12 @@ bool Converter::VisitCXXRecordDecl(clang::CXXRecordDecl *decl) {
 bool Converter::VisitCXXMethodDecl(clang::CXXMethodDecl *decl) {
   decl->dump(log());
   if (!IsConvertibleCXXMethodDecl(decl)) {
+    return false;
+  }
+  if (!decl->isPureVirtual() && !decl->hasBody()) {
+    return false;
+  }
+  if (!decl_ids_.insert(GetMethodID(decl)).second) {
     return false;
   }
   curr_function_ = decl;
@@ -1063,7 +1059,7 @@ void Converter::ConvertCXXConstructorBody(clang::CXXConstructorDecl *decl) {
   }
 
   StrCat(token::kSemiColon);
-  Convert(decl->getBody());
+  ConvertBodyStmts(decl->getBody());
   StrCat("this");
 }
 
@@ -1133,14 +1129,28 @@ bool Converter::Convert(clang::Stmt *stmt) {
   return exited_visit;
 }
 
-bool Converter::VisitCompoundStmt(clang::CompoundStmt *stmt) {
-  if (CompoundHasTopLevelLabel(stmt)) {
-    ConvertGotoBlock(stmt);
-    return false;
+void Converter::ConvertBody(clang::Stmt *body) {
+  PushBrace brace(*this);
+  ConvertBodyStmts(body);
+}
+
+void Converter::ConvertBodyStmts(clang::Stmt *body) {
+  auto *compound = clang::dyn_cast_or_null<clang::CompoundStmt>(body);
+  if (!compound) {
+    Convert(body);
+    return;
   }
-  for (auto *child : stmt->body()) {
+  if (CompoundHasTopLevelLabel(compound)) {
+    ConvertGotoBlock(compound);
+    return;
+  }
+  for (auto *child : compound->body()) {
     Convert(child);
   }
+}
+
+bool Converter::VisitCompoundStmt(clang::CompoundStmt *stmt) {
+  ConvertBody(stmt);
   return false;
 }
 
@@ -1178,17 +1188,13 @@ void Converter::ConvertCondition(clang::Expr *cond) {
 bool Converter::VisitIfStmt(clang::IfStmt *stmt) {
   StrCat(keyword::kIf);
   ConvertCondition(stmt->getCond());
-  {
-    PushBrace brace(*this);
-    Convert(stmt->getThen());
-  }
+  ConvertBody(stmt->getThen());
   if (stmt->hasElseStorage()) {
     StrCat(keyword::kElse);
     if (clang::isa<clang::IfStmt>(stmt->getElse())) {
       Convert(stmt->getElse());
     } else {
-      PushBrace brace(*this);
-      Convert(stmt->getElse());
+      ConvertBody(stmt->getElse());
     }
   }
   return false;
@@ -1199,12 +1205,9 @@ bool Converter::VisitWhileStmt(clang::WhileStmt *stmt) {
   StrCat("'loop_:");
   StrCat(keyword::kWhile);
   ConvertCondition(stmt->getCond());
-  {
-    PushBrace brace(*this);
-    curr_for_inc_.emplace_back(nullptr);
-    Convert(stmt->getBody());
-    curr_for_inc_.pop_back();
-  }
+  curr_for_inc_.emplace_back(nullptr);
+  ConvertBody(stmt->getBody());
+  curr_for_inc_.pop_back();
   return false;
 }
 
@@ -1222,7 +1225,7 @@ bool Converter::VisitDoStmt(clang::DoStmt *stmt) {
     PushBrace loop_brace(*this);
     StrCat(control_var, token::kAssign, keyword::kFalse, token::kSemiColon);
     curr_for_inc_.emplace_back(nullptr);
-    Convert(stmt->getBody());
+    ConvertBodyStmts(stmt->getBody());
     curr_for_inc_.pop_back();
   }
   return false;
@@ -1241,7 +1244,7 @@ bool Converter::VisitForStmt(clang::ForStmt *stmt) {
   {
     PushBrace brace(*this);
     curr_for_inc_.emplace_back(stmt->getInc());
-    Convert(stmt->getBody());
+    ConvertBodyStmts(stmt->getBody());
     curr_for_inc_.pop_back();
     Convert(stmt->getInc());
     StrCat(token::kSemiColon);
@@ -1279,7 +1282,7 @@ void Converter::ConvertForRangeBody(clang::CXXForRangeStmt *stmt,
   if (map_iter_decl)
     skip.emplace(*this, map_iter_decl);
   curr_for_inc_.emplace_back(nullptr);
-  Convert(stmt->getBody());
+  ConvertBodyStmts(stmt->getBody());
   curr_for_inc_.pop_back();
 }
 
@@ -2076,25 +2079,24 @@ bool Converter::VisitCXXBoolLiteralExpr(clang::CXXBoolLiteralExpr *expr) {
 
 void Converter::ConvertIntegerToEnumeralCast(clang::Expr *to,
                                              clang::Expr *from) {
-  // Short circuit `Enum::from(X as i32)` to `X`
+  // Short circuit `(X as i32) as Enum` to `X`
   if (auto ref =
           clang::dyn_cast<clang::DeclRefExpr>(from->IgnoreParenImpCasts())) {
     if (auto ec = clang::dyn_cast<clang::EnumConstantDecl>(ref->getDecl())) {
       auto src_enum = clang::dyn_cast<clang::EnumDecl>(ec->getDeclContext());
       auto dst_enum = to->getType()->getAs<clang::EnumType>();
       if (src_enum && dst_enum && dst_enum->getDecl() == src_enum) {
-        StrCat(std::format("{}::{}", GetRecordName(src_enum),
-                           std::string_view(ec->getName())));
+        StrCat(EnumeratorName(ec));
         return;
       }
     }
   }
-  StrCat(GetUnsafeTypeAsString(to->getType()), "::from");
   PushParen paren(*this);
-  Convert(from);
-  if (!from->getType()->isSpecificBuiltinType(clang::BuiltinType::Int)) {
-    StrCat(keyword::kAs, "i32");
+  {
+    PushParen inner(*this);
+    Convert(from);
   }
+  StrCat(keyword::kAs, GetUnsafeTypeAsString(to->getType()));
 }
 
 void Converter::ConvertIntegralToBooleanCast(clang::ImplicitCastExpr *expr) {
@@ -2113,11 +2115,7 @@ void Converter::ConvertIntegralToBooleanCast(clang::ImplicitCastExpr *expr) {
   PushParen paren(*this);
   Convert(sub_expr);
   StrCat(token::kDiff);
-  if (sub_expr->getType()->isEnumeralType()) {
-    StrCat(GetUnsafeTypeAsString(sub_expr->getType()), "::from(0)");
-  } else /* sub_expr->getType()->isIntegerType() */ {
-    StrCat(token::kZero);
-  }
+  StrCat(token::kZero);
 }
 
 bool Converter::IsCastRedundantInRust(clang::Expr *expr,
@@ -2663,14 +2661,11 @@ std::string Converter::ConvertDeclRefExpr(clang::DeclRefExpr *expr) {
   }
 
   if (auto enum_constant = clang::dyn_cast<clang::EnumConstantDecl>(decl)) {
-    auto qualified = std::format("{}::{}",
-                                 GetRecordName(clang::dyn_cast<clang::EnumDecl>(
-                                     enum_constant->getDeclContext())),
-                                 std::string_view(enum_constant->getName()));
+    auto name = EnumeratorName(enum_constant);
     if (!expr->getType()->isEnumeralType()) {
-      return std::format("({} as i32)", qualified);
+      return std::format("({} as i32)", name);
     }
-    return qualified;
+    return name;
   }
 
   if (IsGlobalVar(expr)) {
@@ -3219,6 +3214,14 @@ bool Converter::VisitTypeTraitExpr(clang::TypeTraitExpr *expr) {
   return false;
 }
 
+bool Converter::VisitSizeOfPackExpr(clang::SizeOfPackExpr *expr) {
+  clang::Expr::EvalResult result;
+  ENSURE(expr->EvaluateAsInt(result, ctx_));
+  StrCat(std::to_string(result.Val.getInt().getExtValue()));
+  computed_expr_type_ = ComputedExprType::FreshValue;
+  return false;
+}
+
 bool Converter::VisitOffsetOfExpr(clang::OffsetOfExpr *expr) {
   std::string member_path;
   for (unsigned i = 0; i < expr->getNumComponents(); ++i) {
@@ -3243,50 +3246,23 @@ bool Converter::VisitEnumDecl(clang::EnumDecl *decl) {
     return false;
   }
   Mapper::AddRuleForUserDefinedType(decl);
-  Mapper::SetDerives(ctx_.getCanonicalTagType(decl),
-                     {"Clone", "Copy", "PartialEq", "Debug", "Default"});
-  StrCat("#[derive(Clone, Copy, PartialEq, Debug, Default)]");
-  StrCat(std::format("enum {}", GetRecordName(decl)));
-  StrCat('{');
-  bool first_enumerator = true;
+  auto name = GetRecordName(decl);
+  StrCat(std::format("pub type {} = {};", name,
+                     GetUnsafeTypeAsString(decl->getIntegerType())));
   for (auto e : decl->enumerators()) {
     llvm::SmallVector<char, 32> init;
     e->getInitVal().toString(init, 10);
-    if (first_enumerator) {
-      StrCat("#[default]");
-      first_enumerator = false;
-    }
-    StrCat(std::format("{} = {},", std::string_view(e->getName()),
+    StrCat(std::format("pub const {}: {} = {};", EnumeratorName(e), name,
                        std::string_view(init.data(), init.size())));
   }
-  StrCat('}');
-
-  AddFromImpl(decl);
-  AddIncDecImpls(decl);
-  AddByteReprTrait(decl);
   return false;
 }
 
-void Converter::AddFromImpl(clang::EnumDecl *decl) {
-  auto name = GetRecordName(decl);
-  StrCat(std::format("impl From<i32> for {}", name));
-  PushBrace impl(*this);
-  StrCat(std::format("fn from(n: i32) -> {}", name));
-  PushBrace fn(*this);
-  StrCat("match n");
-  PushBrace match(*this);
-  for (auto e : decl->enumerators()) {
-    llvm::SmallVector<char, 32> init;
-    e->getInitVal().toString(init, 10);
-    StrCat(std::format("{} => {}::{},",
-                       std::string_view(init.data(), init.size()), name,
-                       std::string_view(e->getName())));
-  }
-  StrCat(std::format("_ => panic!(\"invalid {} value: {{}}\", n),", name));
-}
-
-void Converter::AddIncDecImpls(clang::EnumDecl *decl) {
-  StrCat(std::format("libcc2rs::impl_enum_inc_dec!({});", GetRecordName(decl)));
+std::string
+Converter::EnumeratorName(const clang::EnumConstantDecl *decl) const {
+  auto *enum_decl = clang::cast<clang::EnumDecl>(decl->getDeclContext());
+  return std::format("{}_{}", GetRecordName(enum_decl),
+                     std::string_view(decl->getName()));
 }
 
 bool Converter::VisitCXXDefaultArgExpr(clang::CXXDefaultArgExpr *expr) {
@@ -3576,9 +3552,10 @@ std::string Converter::GetDefaultAsStringFallback(clang::QualType qual_type) {
 
   if (qual_type->isEnumeralType()) {
     auto enum_decl = qual_type->castAs<clang::EnumType>()->getDecl();
-    return std::format(
-        "{}::{}", GetRecordName(enum_decl),
-        std::string_view(enum_decl->enumerator_begin()->getName()));
+    if (enum_decl->enumerators().empty()) {
+      return std::string(1, token::kZero);
+    }
+    return EnumeratorName(*enum_decl->enumerator_begin());
   }
 
   return std::format("<{}>::default()", ToString(qual_type));
@@ -4054,8 +4031,6 @@ void Converter::EmitDefaultStructLiteral(const clang::RecordDecl *decl) {
 }
 
 void Converter::AddByteReprTrait(const clang::RecordDecl *decl) {}
-
-void Converter::AddByteReprTrait(const clang::EnumDecl *decl) {}
 
 void Converter::ConvertUnsignedArithBinaryOperator(clang::BinaryOperator *op,
                                                    clang::Expr *expr) {

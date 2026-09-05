@@ -86,6 +86,10 @@ public:
 
   void ConvertGotoBlock(clang::CompoundStmt *body);
 
+  void ConvertBody(clang::Stmt *body);
+
+  void ConvertBodyStmts(clang::Stmt *body);
+
   void EmitHoistedDecls(clang::CompoundStmt *body);
 
   virtual bool VisitFunctionTemplateDecl(clang::FunctionTemplateDecl *decl);
@@ -370,14 +374,13 @@ public:
   VisitUnaryExprOrTypeTraitExpr(clang::UnaryExprOrTypeTraitExpr *expr);
 
   virtual bool VisitTypeTraitExpr(clang::TypeTraitExpr *expr);
+  virtual bool VisitSizeOfPackExpr(clang::SizeOfPackExpr *expr);
 
   virtual bool VisitOffsetOfExpr(clang::OffsetOfExpr *expr);
 
   virtual bool VisitEnumDecl(clang::EnumDecl *decl);
 
-  virtual void AddFromImpl(clang::EnumDecl *decl);
-
-  virtual void AddIncDecImpls(clang::EnumDecl *decl);
+  virtual std::string EnumeratorName(const clang::EnumConstantDecl *decl) const;
 
   virtual bool VisitCXXDefaultArgExpr(clang::CXXDefaultArgExpr *expr);
 
@@ -560,8 +563,6 @@ protected:
   void EmitDefaultStructLiteral(const clang::RecordDecl *decl);
 
   virtual void AddByteReprTrait(const clang::RecordDecl *decl);
-
-  virtual void AddByteReprTrait(const clang::EnumDecl *decl);
 
   virtual void
   ConvertUnsignedArithBinaryOperator(clang::BinaryOperator *binary_operator,
@@ -932,8 +933,6 @@ protected:
   bool IsCastRedundantInRust(clang::Expr *expr, clang::QualType target_type);
 
 private:
-  void materializeTemplateSpecialization(clang::CXXRecordDecl *decl);
-
   std::string getIntegerLiteral(clang::IntegerLiteral *expr, bool incl_type,
                                 const clang::QualType *type = nullptr);
   const char *keyword_unsafe_;

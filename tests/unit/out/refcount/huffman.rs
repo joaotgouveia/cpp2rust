@@ -218,7 +218,31 @@ impl MinHeap {
         }
     }
 }
-impl ByteRepr for MinHeap {}
+impl ByteRepr for MinHeap {
+    fn byte_size() -> usize {
+        32
+    }
+    fn to_bytes(&self, buf: &mut [u8]) {
+        (*self.size.borrow()).to_bytes(&mut buf[0..4]);
+        (*self.capacity.borrow()).to_bytes(&mut buf[4..8]);
+        (*self.arr.borrow()).to_bytes(&mut buf[8..16]);
+        (*self.next.borrow()).to_bytes(&mut buf[16..20]);
+        (*self.alloc.borrow()).to_bytes(&mut buf[24..32]);
+    }
+    fn from_bytes(buf: &[u8]) -> Self {
+        Self {
+            size: Rc::new(RefCell::new(<i32>::from_bytes(&buf[0..4]))),
+            capacity: Rc::new(RefCell::new(<i32>::from_bytes(&buf[4..8]))),
+            arr: Rc::new(RefCell::new(
+                <Option<Value<Box<[Ptr<MinHeapNode>]>>>>::from_bytes(&buf[8..16]),
+            )),
+            next: Rc::new(RefCell::new(<i32>::from_bytes(&buf[16..20]))),
+            alloc: Rc::new(RefCell::new(
+                <Option<Value<Box<[MinHeapNode]>>>>::from_bytes(&buf[24..32]),
+            )),
+        }
+    }
+}
 pub fn AllocMinHeap_1(capacity: i32) -> Option<Value<MinHeap>> {
     let capacity: Value<i32> = Rc::new(RefCell::new(capacity));
     let minHeap: Value<Option<Value<MinHeap>>> =
@@ -426,11 +450,13 @@ fn main_0() -> i32 {
     let out: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(
         ({ HuffmanCodes_5(data.as_pointer(), freq.as_pointer(), (*size.borrow())) }),
     ));
-    return ((((((((*out.borrow()).as_ref().unwrap().borrow()[(0_usize) as usize] == 0)
-        && ((*out.borrow()).as_ref().unwrap().borrow()[(1_usize) as usize] == 100))
-        && ((*out.borrow()).as_ref().unwrap().borrow()[(2_usize) as usize] == 101))
-        && ((*out.borrow()).as_ref().unwrap().borrow()[(3_usize) as usize] == 1100))
-        && ((*out.borrow()).as_ref().unwrap().borrow()[(4_usize) as usize] == 1101))
-        && ((*out.borrow()).as_ref().unwrap().borrow()[(5_usize) as usize] == 111))
-        as i32);
+    assert!(
+        ((((((*out.borrow()).as_ref().unwrap().borrow()[(0_usize) as usize] == 0)
+            && ((*out.borrow()).as_ref().unwrap().borrow()[(1_usize) as usize] == 100))
+            && ((*out.borrow()).as_ref().unwrap().borrow()[(2_usize) as usize] == 101))
+            && ((*out.borrow()).as_ref().unwrap().borrow()[(3_usize) as usize] == 1100))
+            && ((*out.borrow()).as_ref().unwrap().borrow()[(4_usize) as usize] == 1101))
+            && ((*out.borrow()).as_ref().unwrap().borrow()[(5_usize) as usize] == 111)
+    );
+    return 0;
 }
