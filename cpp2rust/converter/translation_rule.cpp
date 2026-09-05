@@ -410,19 +410,12 @@ std::pair<ExprRules, TypeRules> LoadPartial(const std::filesystem::path &dir) {
   for (auto &[entry_name, entry_val] : *root) {
     auto name = entry_name.str();
     auto val = entry_val.getAsString();
-    auto uid = parent + "::" + name;
     if (name[0] == 'f') {
       assert(!exprs.contains(name));
-      exprs[std::move(name)] = {
-          .src = val->str(),
-          .uid = std::move(uid),
-      };
+      exprs[std::move(name)] = {.src = val->str()};
     } else if (name[0] == 't') {
       assert(!types.contains(name));
-      types[std::move(name)] = {
-          .src = val->str(),
-          .uid = std::move(uid),
-      };
+      types[std::move(name)] = {.src = val->str()};
     }
   }
 

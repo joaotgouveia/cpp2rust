@@ -76,7 +76,6 @@ struct ExprRule {
   std::vector<BodyFragment> body;
   bool multi_statement = false;
   bool is_extern = false;
-  std::string uid;
 
   void dump() const;
   void validate(const std::string &name) const;
@@ -86,7 +85,6 @@ struct TypeRule {
   std::string src;
   std::string initializer; // Rust initializer expression
   TypeInfo type_info;
-  std::string uid;
 
   void dump() const;
 
