@@ -659,18 +659,18 @@ bool Contains(clang::QualType qual_type) {
 
 bool Contains(const clang::Expr *expr) { return search(expr) != nullptr; }
 
-std::pair<std::string, std::string> MapToIR(const clang::Expr *expr) {
+std::string MapToIR(const clang::Expr *expr) {
   auto rule = search(expr);
   if (rule) {
-    return {rule->src, GetExprMapKey(ToString(expr))};
+    return rule->src;
   }
   return {};
 }
 
-std::pair<std::string, std::string> MapToIR(clang::QualType type) {
+std::string MapToIR(clang::QualType type) {
   auto rule = search(type).first;
   if (rule && !rule->builtin) {
-    return {rule->src, GetTypeMapKey(ToString(type))};
+    return rule->src;
   }
   return {};
 }
@@ -953,10 +953,15 @@ std::string ToString(const clang::NamedDecl *decl) {
 
   os << ToString(func_decl->getReturnType()) << ' ';
   if (const auto op = func_decl->getOverloadedOperator();
-      op >= clang::OverloadedOperatorKind::OO_LessLess &&
-      op <= clang::OverloadedOperatorKind::OO_GreaterGreaterEqual) {
+      (op >= clang::OverloadedOperatorKind::OO_LessLess &&
+       op <= clang::OverloadedOperatorKind::OO_GreaterGreaterEqual) ||
+      (op >= clang::OverloadedOperatorKind::OO_LessEqual &&
+       op <= clang::OverloadedOperatorKind::OO_Spaceship) ||
+      op == clang::OverloadedOperatorKind::OO_Less ||
+      op == clang::OverloadedOperatorKind::OO_Greater ||
+      op == clang::OverloadedOperatorKind::OO_Arrow) {
     // ensure matchTemplate does not consider these operator names when matching
-    func_decl->getQualifier().print(os, getPrintPolicy());
+    func_decl->printNestedNameSpecifier(os, getPrintPolicy());
     os << "operator ";
     switch (op) {
     case clang::OverloadedOperatorKind::OO_LessLess:
@@ -970,6 +975,24 @@ std::string ToString(const clang::NamedDecl *decl) {
       break;
     case clang::OverloadedOperatorKind::OO_GreaterGreaterEqual:
       os << "shreq";
+      break;
+    case clang::OverloadedOperatorKind::OO_LessEqual:
+      os << "less_equal";
+      break;
+    case clang::OverloadedOperatorKind::OO_GreaterEqual:
+      os << "great_equal";
+      break;
+    case clang::OverloadedOperatorKind::OO_Spaceship:
+      os << "spaceship";
+      break;
+    case clang::OverloadedOperatorKind::OO_Less:
+      os << "less";
+      break;
+    case clang::OverloadedOperatorKind::OO_Greater:
+      os << "greater";
+      break;
+    case clang::OverloadedOperatorKind::OO_Arrow:
+      os << "arrow";
       break;
     default:
       assert(0 && "Unexpected overloaded operator kind");
