@@ -197,6 +197,10 @@ llvm::cl::list<std::string> CXXFlags("cxxflags",
                                      llvm::cl::value_desc("cxxflags"),
                                      llvm::cl::ZeroOrMore, llvm::cl::cat(cat));
 
+llvm::cl::opt<bool> CppOnly("cpp-only",
+                            llvm::cl::desc("Preprocess only C++ files"),
+                            llvm::cl::init(false), llvm::cl::cat(cat));
+
 } // namespace
 
 int main(int argc, char *argv[]) {
@@ -212,7 +216,7 @@ int main(int argc, char *argv[]) {
 
   fs::path dir = SrcDir.getValue();
   llvm::json::Object root;
-  for (const char *name : {"src.c", "src.cpp"}) {
+  for (const auto *name : {"src.cpp", "src.c"}) {
     auto path = dir / name;
     if (!fs::exists(path)) {
       continue;
@@ -227,6 +231,10 @@ int main(int argc, char *argv[]) {
                      << '\n';
         return EXIT_FAILURE;
       }
+    }
+
+    if (CppOnly) {
+      break;
     }
   }
 
