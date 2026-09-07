@@ -85,6 +85,7 @@ struct TypeRule {
   std::string src;
   std::string initializer; // Rust initializer expression
   TypeInfo type_info;
+  bool builtin = false;
 
   void dump() const;
 

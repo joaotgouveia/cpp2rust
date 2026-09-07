@@ -87,6 +87,7 @@ std::string GetTypeMapKey(const std::string &str) {
 void AddTypeRule(std::string src, TranslationRule::TypeRule &&rule) {
   auto key = GetTypeMapKey(src);
   rule.src = std::move(src);
+  rule.builtin = true;
   types_.emplace(std::move(key), std::move(rule));
 }
 
@@ -668,7 +669,7 @@ std::pair<std::string, std::string> MapToIR(const clang::Expr *expr) {
 
 std::pair<std::string, std::string> MapToIR(clang::QualType type) {
   auto rule = search(type).first;
-  if (rule) {
+  if (rule && !rule->builtin) {
     return {rule->src, GetTypeMapKey(ToString(type))};
   }
   return {};
@@ -1135,6 +1136,7 @@ void LoadTranslationRules(Model model, clang::ASTContext &ctx,
 
 void LoadPartialTranslationRules(const std::string &rules_dir) {
   namespace fs = std::filesystem;
+  addBuiltinTypes(Model::kRefCount); // model is irrelevant here
   for (const auto &entry : fs::directory_iterator(rules_dir)) {
     const auto &path = entry.path();
     if (!fs::exists(path / "ir_src.json")) {
