@@ -5,6 +5,7 @@
 
 #include <clang/AST/ASTContext.h>
 #include <clang/AST/Decl.h>
+#include <clang/AST/DeclCXX.h>
 #include <clang/AST/Expr.h>
 #include <clang/AST/StmtCXX.h>
 #include <clang/AST/Type.h>
@@ -66,6 +67,10 @@ bool IsConvertibleCXXRecordDecl(const clang::CXXRecordDecl *decl);
 
 bool IsConvertibleCXXMethodDecl(const clang::CXXMethodDecl *decl);
 
+bool IsEmittableMethod(clang::CXXMethodDecl *method);
+
+bool IsMethodOnPtr(const clang::CXXMethodDecl *method);
+
 bool IsConvertibleFunctionDecl(const clang::FunctionDecl *decl);
 
 bool IsUniquePtr(clang::QualType type);
@@ -118,6 +123,15 @@ clang::QualType GetReturnTypeOfFunction(const clang::CallExpr *expr);
 const char *GetOverloadedOperator(const clang::FunctionDecl *decl);
 
 bool IsOverloadedComparisonOperator(const clang::CXXMethodDecl *decl);
+
+clang::CXXDestructorDecl *
+GetUserDefinedDestructor(const clang::CXXRecordDecl *decl);
+
+bool TypeNeedsDestruction(clang::QualType type);
+
+bool HasFieldsNeedingDestruction(const clang::CXXRecordDecl *decl);
+
+bool RecordNeedsDestruction(const clang::CXXRecordDecl *decl);
 
 clang::Expr *ToAddrOf(clang::ASTContext &ctx, clang::Expr *expr);
 
@@ -216,8 +230,7 @@ std::string_view Trim(std::string_view s);
 
 void Unwrap(std::string &s, std::string_view prefix, std::string_view suffix);
 
-std::string ReplaceAll(std::string str, std::string_view from,
-                       std::string_view to);
+void ReplaceAll(std::string &str, std::string_view from, std::string_view to);
 
 enum class ConstCastType {
   ConstToConst,

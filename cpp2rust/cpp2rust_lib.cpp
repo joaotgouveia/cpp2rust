@@ -31,6 +31,7 @@ std::string TranspileSrc(std::string_view cc_code, Model model,
       cc_code, tool_args, std::filesystem::path(filename).filename().string(),
       filename.ends_with(".c") ? CLANG_C_COMPILER : CLANG_CXX_COMPILER);
   rs_code += Converter::EmitOpaqueRecords();
+  rs_code += Converter::EmitMethodsOnPtr();
   return rs_code;
 }
 
@@ -72,6 +73,7 @@ std::string TranspileDir(std::string_view build_dir, Model model,
   FrontendActionFactory factory(rs_code, model, rule_dirs, allow_partial_tgts);
   Tool.run(&factory);
   rs_code += Converter::EmitOpaqueRecords();
+  rs_code += Converter::EmitMethodsOnPtr();
   return rs_code;
 }
 } // namespace cpp2rust
