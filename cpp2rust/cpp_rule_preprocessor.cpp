@@ -163,9 +163,9 @@ private:
 };
 
 void Extract(const std::filesystem::path &src_path, llvm::json::Object &out,
-             llvm::ArrayRef<llvm::StringRef> cxx_flags) {
+             llvm::ArrayRef<llvm::StringRef> extra_flags) {
   auto flags = getPlatformClangBeginFlags();
-  flags.insert(flags.end(), cxx_flags.begin(), cxx_flags.end());
+  flags.insert(flags.end(), extra_flags.begin(), extra_flags.end());
   auto end_flags = getPlatformClangEndFlags();
   flags.insert(flags.end(), end_flags.begin(), end_flags.end());
   clang::tooling::FixedCompilationDatabase compilations(".", flags);
@@ -197,9 +197,10 @@ llvm::cl::list<std::string> CXXFlags("cxxflags",
                                      llvm::cl::value_desc("cxxflags"),
                                      llvm::cl::ZeroOrMore, llvm::cl::cat(cat));
 
-llvm::cl::opt<bool> CppOnly("cpp-only",
-                            llvm::cl::desc("Preprocess only C++ files"),
-                            llvm::cl::init(false), llvm::cl::cat(cat));
+llvm::cl::list<std::string> CFlags("cflags",
+                                   llvm::cl::desc("Additional CFLAGS"),
+                                   llvm::cl::value_desc("cflags"),
+                                   llvm::cl::ZeroOrMore, llvm::cl::cat(cat));
 
 } // namespace
 
@@ -207,23 +208,36 @@ int main(int argc, char *argv[]) {
   llvm::cl::HideUnrelatedOptions(cat);
   llvm::cl::ParseCommandLineOptions(argc, argv);
 
-  llvm::SmallVector<llvm::StringRef, 4> cxx_flags = {
+  llvm::SmallVector<llvm::StringRef, 8> cxx_flags = {
       "-Wno-everything",
       "-I",
       RULES_LIB_INCLUDE_DIR,
   };
   cxx_flags.append(CXXFlags.begin(), CXXFlags.end());
 
+  llvm::SmallVector<llvm::StringRef, 8> c_flags = {
+      "-Wno-everything",
+      "-I",
+      RULES_LIB_INCLUDE_DIR,
+  };
+  c_flags.append(CFlags.begin(), CFlags.end());
+
   fs::path dir = SrcDir.getValue();
   llvm::json::Object root;
-  for (const auto *name : {"src.cpp", "src.c"}) {
+  std::array<std::pair<std::string, llvm::SmallVector<llvm::StringRef, 8>>, 2>
+      sources = {
+          std::pair("src.cpp", std::move(cxx_flags)),
+          std::pair("src.c", std::move(c_flags)),
+      };
+
+  for (const auto &[name, flags] : sources) {
     auto path = dir / name;
     if (!fs::exists(path)) {
       continue;
     }
     llvm::errs() << "Preprocessing " << path.string() << '\n';
     llvm::json::Object file_root;
-    cpp2rust::Extract(path, file_root, cxx_flags);
+    cpp2rust::Extract(path, file_root, flags);
     for (auto &[k, v] : file_root) {
       if (!root.try_emplace(k, std::move(v)).second) {
         llvm::errs() << "ERROR: rule name " << k.str()
@@ -231,10 +245,6 @@ int main(int argc, char *argv[]) {
                      << '\n';
         return EXIT_FAILURE;
       }
-    }
-
-    if (CppOnly) {
-      break;
     }
   }
 
