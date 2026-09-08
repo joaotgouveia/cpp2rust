@@ -10,17 +10,13 @@ use std::rc::{Rc, Weak};
 pub struct Foo {
     pub v: Value<i32>,
 }
-impl Foo {
-    pub fn get(&self) -> i32 {
-        return (*self.v.borrow());
-    }
-}
 impl Clone for Foo {
     fn clone(&self) -> Self {
-        let mut this = Self {
+        let __this: Value<Foo> = Rc::new(RefCell::new(Self {
             v: Rc::new(RefCell::new((*self.v.borrow()))),
-        };
-        this
+        }));
+        let this: Ptr<Foo> = __this.as_pointer();
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl ByteRepr for Foo {
@@ -63,22 +59,30 @@ fn main_0() -> i32 {
     ));
     assert!(((*first.borrow()) == (a1.as_pointer() as Ptr<Foo>).offset((5) as isize)));
     let ref_: Ptr<Foo> = (*first.borrow()).offset(-1);
-    assert!((({ (*ref_.upgrade().deref()).get() }) == 50));
-    assert!((({ (*(*first.borrow()).offset(-1).upgrade().deref()).get() }) == 50));
+    assert!((({ FooImpl::get(&ref_,) }) == 50));
+    assert!((({ FooImpl::get(&(*first.borrow()).offset(-1),) }) == 50));
     (*first.borrow_mut()).prefix_dec();
-    assert!((({ (*(*first.borrow()).offset(-1).upgrade().deref()).get() }) == 40));
+    assert!((({ FooImpl::get(&(*first.borrow()).offset(-1),) }) == 40));
     let inc: Value<Ptr<Foo>> = Rc::new(RefCell::new((*first.borrow_mut()).postfix_dec()));
-    assert!((({ (*(*inc.borrow()).offset(-1).upgrade().deref()).get() }) == 40));
-    assert!((({ (*(*first.borrow()).offset(-1).upgrade().deref()).get() }) == 30));
+    assert!((({ FooImpl::get(&(*inc.borrow()).offset(-1),) }) == 40));
+    assert!((({ FooImpl::get(&(*first.borrow()).offset(-1),) }) == 30));
     let n: Value<isize> = Rc::new(RefCell::new(2_isize));
     let plus: Value<Ptr<Foo>> = Rc::new(RefCell::new(
         (*first.borrow()).offset(Into::<isize>::into(-(*n.borrow()))),
     ));
-    assert!((({ (*(*plus.borrow()).offset(-1).upgrade().deref()).get() }) == 10));
+    assert!((({ FooImpl::get(&(*plus.borrow()).offset(-1),) }) == 10));
     let minus: Value<Ptr<Foo>> = Rc::new(RefCell::new(
         (*plus.borrow()).offset(Into::<isize>::into((*n.borrow()))),
     ));
-    assert!((({ (*(*minus.borrow()).offset(-1).upgrade().deref()).get() }) == 30));
+    assert!((({ FooImpl::get(&(*minus.borrow()).offset(-1),) }) == 30));
     assert!((*minus.borrow()) == (*first.borrow()));
     return 0;
+}
+pub trait FooImpl {
+    fn get(&self) -> i32;
+}
+impl FooImpl for Ptr<Foo> {
+    fn get(&self) -> i32 {
+        return (*(*(*self).upgrade().deref()).v.borrow());
+    }
 }

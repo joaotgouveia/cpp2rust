@@ -33,18 +33,18 @@ unsafe fn main_0() -> i32 {
     let mut first: *mut Foo = a1.as_mut_ptr().offset((5) as isize);
     assert!(((first) == (a1.as_mut_ptr().offset((5) as isize))));
     let ref_: *mut Foo = &mut (*first.offset(-1)) as *mut Foo;
-    assert!(((unsafe { (*ref_).get() }) == (50)));
-    assert!(((unsafe { (*(first.offset(-1)).cast_const()).get() }) == (50)));
+    assert!(((unsafe { Foo::get(&(*ref_),) }) == (50)));
+    assert!(((unsafe { Foo::get(&(*(first.offset(-1)).cast_const()),) }) == (50)));
     first.prefix_dec();
-    assert!(((unsafe { (*(first.offset(-1)).cast_const()).get() }) == (40)));
+    assert!(((unsafe { Foo::get(&(*(first.offset(-1)).cast_const()),) }) == (40)));
     let mut inc: *mut Foo = first.postfix_dec();
-    assert!(((unsafe { (*(inc.offset(-1)).cast_const()).get() }) == (40)));
-    assert!(((unsafe { (*(first.offset(-1)).cast_const()).get() }) == (30)));
+    assert!(((unsafe { Foo::get(&(*(inc.offset(-1)).cast_const()),) }) == (40)));
+    assert!(((unsafe { Foo::get(&(*(first.offset(-1)).cast_const()),) }) == (30)));
     let mut n: isize = 2_isize;
     let mut plus: *mut Foo = first.offset(Into::<isize>::into(-n));
-    assert!(((unsafe { (*(plus.offset(-1)).cast_const()).get() }) == (10)));
+    assert!(((unsafe { Foo::get(&(*(plus.offset(-1)).cast_const()),) }) == (10)));
     let mut minus: *mut Foo = plus.offset(Into::<isize>::into(n));
-    assert!(((unsafe { (*(minus.offset(-1)).cast_const()).get() }) == (30)));
+    assert!(((unsafe { Foo::get(&(*(minus.offset(-1)).cast_const()),) }) == (30)));
     assert!(minus == first);
     return 0;
 }
