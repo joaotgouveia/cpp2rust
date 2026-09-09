@@ -17,7 +17,7 @@ namespace cpp2rust {
 
 class RuleInstantiator {
 public:
-  void init(clang::Sema &sema);
+  void init(clang::Sema &sema, bool strict = true);
 
   // clang::Sema &sema() { return *sema_; }
 
@@ -52,13 +52,14 @@ private:
                                                  clang::Expr *init,
                                                  llvm::StringRef name);
 
-  void
+  bool
   createTemplateArguments(clang::TemplateDecl *decl,
                           llvm::SmallVectorImpl<clang::TemplateArgument> &out);
 
   clang::Sema *sema_ = nullptr;
   clang::SourceLocation loc_;
   std::unique_ptr<clang::Scope> scope_;
+  bool strict_ = true;
 };
 
 } // namespace cpp2rust

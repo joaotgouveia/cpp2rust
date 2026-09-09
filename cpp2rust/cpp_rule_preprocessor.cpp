@@ -41,9 +41,9 @@ namespace cpp2rust {
 
 class Callback : public clang::ast_matchers::MatchFinder::MatchCallback {
 public:
-  explicit Callback(llvm::json::Object &out) : out_(out) {}
+  Callback(llvm::json::Object &out, bool strict) : out_(out), strict_(strict) {}
 
-  void init(clang::Sema &sema) { inst_.init(sema); }
+  void init(clang::Sema &sema) { inst_.init(sema, strict_); }
 
   void run(const clang::ast_matchers::MatchFinder::MatchResult &R) override {
     Mapper::PushASTContext scoped(*R.Context);
@@ -69,14 +69,30 @@ public:
       auto *rule = func;
       if (auto *tdecl = func->getDescribedFunctionTemplate()) {
         rule = inst_.instantiateFunctionRule(tdecl);
-        assert(rule && "Instantiation failed");
+        if (!rule || !rule->getBody()) {
+          assert(!strict_ && "Rule instantiation failed");
+          return;
+        }
       }
 
-      auto *body = llvm::cast<clang::CompoundStmt>(rule->getBody());
-      auto *ret = llvm::cast<clang::ReturnStmt>(*body->body_begin());
+      auto *body = llvm::dyn_cast<clang::CompoundStmt>(rule->getBody());
+      if (!body || body->size() != 1) {
+        assert(!strict_ && "Rule instantiation failed");
+        return;
+      }
+
+      auto *ret = llvm::dyn_cast<clang::ReturnStmt>(*body->body_begin());
+      if (!ret) {
+        assert(!strict_ && "Rule instantiation failed");
+        return;
+      }
+
       auto src =
           Mapper::ToString(ret->getRetValue()->IgnoreUnlessSpelledInSource());
-      assert(src != "Unhandled case in ToString");
+      if (src == "Unhandled case in ToString") {
+        assert(!strict_ && "Unhandled case in ToString");
+        return;
+      }
       out_.try_emplace(rule->getQualifiedNameAsString(), std::move(src));
       return;
     }
@@ -86,10 +102,16 @@ public:
       if (auto *alias = llvm::dyn_cast<clang::TypeAliasDecl>(var)) {
         if (auto *tdecl = alias->getDescribedAliasTemplate()) {
           type = inst_.instantiateTypeRule(tdecl);
+          if (type.isNull()) {
+            return;
+          }
         }
       }
       auto src = Mapper::ToString(type, Mapper::ScalarSugar::kPreserve);
-      assert(src != "Unhandled case in ToString");
+      if (src == "Unhandled case in ToString") {
+        assert(!strict_ && "Unhandled case in ToString");
+        return;
+      }
       out_.try_emplace(var->getQualifiedNameAsString(), std::move(src));
       return;
     }
@@ -97,12 +119,13 @@ public:
 
 private:
   llvm::json::Object &out_;
+  bool strict_;
   RuleInstantiator inst_;
 };
 
 class ActionFactory : public clang::tooling::FrontendActionFactory {
 public:
-  explicit ActionFactory(llvm::json::Object &out) : cb_(out) {
+  ActionFactory(llvm::json::Object &out, bool strict) : cb_(out, strict) {
     using namespace clang::ast_matchers;
     finder_.addMatcher(
         typedefNameDecl(matchesName("(^|::)t[0-9]+$"), isExpansionInMainFile())
@@ -128,11 +151,11 @@ public:
         if (DE.hasErrorOccurred()) {
           std::exit(EXIT_FAILURE);
         }
+        DE.setSuppressAllDiagnostics(true);
+        DE.setClient(new clang::IgnoringDiagConsumer(), true);
+
         CB_->init(CI_->getSema());
         AC_->HandleTranslationUnit(ctx);
-        if (DE.hasErrorOccurred()) {
-          std::exit(EXIT_FAILURE);
-        }
       }
 
     private:
@@ -146,7 +169,7 @@ public:
       Callback *CB_;
 
     public:
-      explicit Wrapped(clang::ast_matchers::MatchFinder &MF, Callback &CB)
+      Wrapped(clang::ast_matchers::MatchFinder &MF, Callback &CB)
           : F_(MF), CB_(&CB) {}
 
       std::unique_ptr<clang::ASTConsumer>
@@ -163,13 +186,13 @@ private:
 };
 
 void Extract(const std::filesystem::path &src_path, llvm::json::Object &out,
-             llvm::ArrayRef<llvm::StringRef> extra_flags) {
+             llvm::ArrayRef<llvm::StringRef> extra_flags, bool strict) {
   auto flags = getPlatformClangBeginFlags();
   flags.insert(flags.end(), extra_flags.begin(), extra_flags.end());
   auto end_flags = getPlatformClangEndFlags();
   flags.insert(flags.end(), end_flags.begin(), end_flags.end());
   clang::tooling::FixedCompilationDatabase compilations(".", flags);
-  ActionFactory factory(out);
+  ActionFactory factory(out, strict);
   clang::tooling::ClangTool tool(compilations, {src_path.string()});
   tool.run(&factory);
 }
@@ -201,6 +224,11 @@ llvm::cl::list<std::string> CFlags("cflags",
                                    llvm::cl::desc("Additional CFLAGS"),
                                    llvm::cl::value_desc("cflags"),
                                    llvm::cl::ZeroOrMore, llvm::cl::cat(cat));
+
+llvm::cl::opt<bool>
+    NonStrict("non-strict",
+              llvm::cl::desc("Skip rules that fail to instantiate"),
+              llvm::cl::init(false), llvm::cl::cat(cat));
 
 } // namespace
 
@@ -237,7 +265,7 @@ int main(int argc, char *argv[]) {
     }
     llvm::errs() << "Preprocessing " << path.string() << '\n';
     llvm::json::Object file_root;
-    cpp2rust::Extract(path, file_root, flags);
+    cpp2rust::Extract(path, file_root, flags, !NonStrict);
     for (auto &[k, v] : file_root) {
       if (!root.try_emplace(k, std::move(v)).second) {
         llvm::errs() << "ERROR: rule name " << k.str()

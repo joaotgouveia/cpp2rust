@@ -11,8 +11,9 @@
 
 namespace cpp2rust {
 
-void RuleInstantiator::init(clang::Sema &sema) {
+void RuleInstantiator::init(clang::Sema &sema, bool strict) {
   sema_ = &sema;
+  strict_ = strict;
   clang::SourceManager &sm = sema.Context.getSourceManager();
   loc_ = sm.getLocForStartOfFile(sm.getMainFileID());
   scope_ = std::make_unique<clang::Scope>(nullptr, clang::Scope::DeclScope,
@@ -41,7 +42,10 @@ clang::RecordDecl *RuleInstantiator::createRecordDecl(llvm::StringRef name) {
       &sema_->Context.Idents.get(name), loc_, clang::ParsedAttributesView(),
       clang::AS_none, loc_, args, owned, dependent, loc_, false,
       clang::TypeResult(), false, false, clang::OffsetOfKind::Outside);
-  assert(decl.isUsable() && "Record decl creation failed");
+  if (!decl.isUsable()) {
+    assert(!strict_ && "Record decl creation failed");
+    return nullptr;
+  }
   auto *rdecl = decl.getAs<clang::RecordDecl>();
 
   rdecl->startDefinition();
@@ -69,7 +73,10 @@ clang::QualType RuleInstantiator::getTemplateIdType(
     clang::TemplateDecl *decl, llvm::ArrayRef<clang::TemplateArgument> args) {
   clang::TemplateArgumentListInfo info(loc_, loc_);
   for (const auto &arg : args) {
-    assert(!arg.getIsDefaulted());
+    if (arg.getIsDefaulted()) {
+      assert(!strict_ && "Unexpected defaulted template argument");
+      return {};
+    }
     info.addArgument(
         sema_->getTrivialTemplateArgumentLoc(arg, getNTTPType(arg), loc_));
   }
@@ -93,7 +100,10 @@ clang::QualType RuleInstantiator::createAliasType(llvm::StringRef name,
       clang::ElaboratedTypeKeyword::None, std::nullopt, alias);
 
   auto *hdecl = hint->getAsCXXRecordDecl();
-  assert(hdecl && "Hints must resolve to a RecordDecl");
+  if (!hdecl) {
+    assert(!strict_ && "Hints must resolve to a RecordDecl");
+    return {};
+  }
   hdecl->dropAttr<clang::PreferredNameAttr>();
   hdecl->addAttr(clang::PreferredNameAttr::CreateImplicit(
       ctx, ctx.getTrivialTypeSourceInfo(alias_t, loc_)));
@@ -104,7 +114,10 @@ clang::QualType
 RuleInstantiator::getSubstType(const clang::Sema::InstantiatingTemplate &Inst,
                                clang::QualType type,
                                llvm::ArrayRef<clang::TemplateArgument> args) {
-  assert(!Inst.isInvalid() && "Invalid instantiation context");
+  if (Inst.isInvalid()) {
+    assert(!strict_ && "Invalid instantiation context");
+    return {};
+  }
   clang::MultiLevelTemplateArgumentList mtal;
   mtal.setKind(clang::TemplateSubstitutionKind::Rewrite);
   mtal.addOuterTemplateArguments(args);
@@ -112,7 +125,10 @@ RuleInstantiator::getSubstType(const clang::Sema::InstantiatingTemplate &Inst,
   clang::TypeSourceInfo *tsi =
       sema_->SubstType(sema_->Context.getTrivialTypeSourceInfo(type), mtal,
                        loc_, clang::DeclarationName());
-  assert(tsi && "Template argument type instantiation failed");
+  if (!tsi) {
+    assert(!strict_ && "Template argument type instantiation failed");
+    return {};
+  }
   return tsi->getType();
 }
 
@@ -148,10 +164,10 @@ clang::DeclRefExpr *RuleInstantiator::createConstexprDeclRefExpr(
                                  nameInfo, decl->getQualifierLoc());
 }
 
-void RuleInstantiator::createTemplateArguments(
+bool RuleInstantiator::createTemplateArguments(
     clang::TemplateDecl *decl,
     llvm::SmallVectorImpl<clang::TemplateArgument> &out) {
-  for (clang::NamedDecl *param : *decl->getTemplateParameters()) {
+  for (auto *param : *decl->getTemplateParameters()) {
     if (const auto *ttp = llvm::dyn_cast<clang::TemplateTypeParmDecl>(param)) {
       clang::QualType type;
       if (param->isTemplateParameterPack()) {
@@ -160,18 +176,31 @@ void RuleInstantiator::createTemplateArguments(
       }
       if (ttp->hasDefaultArgument()) {
         clang::QualType hint = getDefaultArg(decl, ttp, out);
-        assert(!hint.isNull() && "Failed retrieving type hint");
+        if (hint.isNull()) {
+          assert(!strict_ && "Failed retrieving type hint");
+          return false;
+        }
         type = createAliasType(param->getName(), hint);
       } else {
         clang::RecordDecl *rdecl = createRecordDecl(param->getName());
+        if (!rdecl) {
+          return false;
+        }
         type = sema_->Context.getTagType(clang::ElaboratedTypeKeyword::None,
                                          rdecl->getQualifier(), rdecl, false);
       }
-      assert(!type.isNull() && "Template type argument creation failed");
+      if (type.isNull()) {
+        assert(!strict_ && "Template type argument creation failed");
+        return false;
+      }
       out.emplace_back(type);
     } else if (const auto *nttp =
                    llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
       clang::QualType type = nttp->getType();
+      if (param->isTemplateParameterPack()) {
+        assert(!strict_ && "Unsupported template param kind");
+        return false;
+      }
       if (type->isDependentType()) {
         const clang::Sema::InstantiatingTemplate Inst(*sema_, loc_, decl);
         type = getSubstType(Inst, type, out);
@@ -184,13 +213,21 @@ void RuleInstantiator::createTemplateArguments(
           type = hint->getType();
         }
       }
+      if (type.isNull()) {
+        return false;
+      }
       clang::DeclRefExpr *var =
           createConstexprDeclRefExpr(type, hint, param->getName());
+      if (!var) {
+        return false;
+      }
       out.emplace_back(var, true);
     } else {
-      assert(0 && "Unsupported template param kind");
+      assert(!strict_ && "Unsupported template param kind");
+      return false;
     }
   }
+  return true;
 }
 
 clang::FunctionDecl *
@@ -199,11 +236,16 @@ RuleInstantiator::instantiateFunctionRule(clang::FunctionTemplateDecl *decl) {
   const clang::Sema::ContextRAII savedContext(*sema_, ns);
 
   llvm::SmallVector<clang::TemplateArgument, 8> args;
-  createTemplateArguments(decl, args);
+  if (!createTemplateArguments(decl, args)) {
+    return nullptr;
+  }
   auto *inst = sema_->InstantiateFunctionDeclaration(
       decl, clang::TemplateArgumentList::CreateCopy(sema_->Context, args),
       loc_);
-  assert(inst && "Function rule instantiation failed");
+  if (!inst) {
+    assert(!strict_ && "Function rule instantiation failed");
+    return nullptr;
+  }
   sema_->InstantiateFunctionDefinition(loc_, inst);
   return inst;
 }
@@ -214,13 +256,21 @@ RuleInstantiator::instantiateTypeRule(clang::TypeAliasTemplateDecl *decl) {
   const clang::Sema::ContextRAII savedContext(*sema_, ns);
 
   llvm::SmallVector<clang::TemplateArgument, 8> args;
-  createTemplateArguments(decl, args);
+  if (!createTemplateArguments(decl, args)) {
+    return {};
+  }
 
   const auto type = getTemplateIdType(decl, args);
-  assert(!type.isNull() && "Type rule instantiation failed");
+  if (type.isNull()) {
+    assert(!strict_ && "Type rule instantiation failed");
+    return {};
+  }
 
   const auto *tst = type->getAs<clang::TemplateSpecializationType>();
-  assert(tst && tst->isTypeAlias());
+  if (!tst || !tst->isTypeAlias()) {
+    assert(!strict_ && "Type rule did not resolve to a type alias");
+    return {};
+  }
   return tst->getAliasedType();
 }
 
