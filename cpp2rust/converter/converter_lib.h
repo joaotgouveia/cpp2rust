@@ -63,6 +63,19 @@ bool IsOverloadedFunction(const clang::FunctionDecl *decl);
 
 bool IsOverloadedMethod(const clang::CXXMethodDecl *decl);
 
+bool IsUserDefinedCopyConstructor(const clang::CXXConstructorDecl *ctor);
+
+clang::CXXConstructorDecl *
+GetUserDefinedCopyConstructor(const clang::RecordDecl *decl);
+
+bool HasUserDefinedCopyConstructor(const clang::RecordDecl *decl);
+
+bool IsCopyConstructible(const clang::RecordDecl *decl);
+
+bool IsRValueConvertingConstructor(const clang::CXXConstructorDecl *ctor);
+
+bool IsPassThroughConstructor(const clang::CXXConstructorDecl *ctor);
+
 bool IsConvertibleCXXRecordDecl(const clang::CXXRecordDecl *decl);
 
 bool IsConvertibleCXXMethodDecl(const clang::CXXMethodDecl *decl);
@@ -122,7 +135,12 @@ clang::QualType GetReturnTypeOfFunction(const clang::CallExpr *expr);
 
 const char *GetOverloadedOperator(const clang::FunctionDecl *decl);
 
-bool IsOverloadedComparisonOperator(const clang::CXXMethodDecl *decl);
+std::string GetFunctionBaseName(const clang::FunctionDecl *decl);
+
+bool IsUserOperatorCall(const clang::CXXOperatorCallExpr *expr);
+
+bool IsSameTypeComparison(const clang::FunctionDecl *fn,
+                          const clang::CXXRecordDecl *record);
 
 clang::CXXDestructorDecl *
 GetUserDefinedDestructor(const clang::CXXRecordDecl *decl);

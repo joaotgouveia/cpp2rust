@@ -434,38 +434,32 @@ bool ConverterRefCount::VisitOffsetOfExpr(clang::OffsetOfExpr *expr) {
   return false;
 }
 
-void ConverterRefCount::ConvertOrdAndPartialOrdTraits(
-    const clang::CXXRecordDecl *decl, const clang::FunctionDecl *op) {
-  std::string first_branch, second_branch, first_return, second_return;
-
-  switch (op->getOverloadedOperator()) {
-  case clang::OO_Less:
-    if (clang::isa<clang::CXXMethodDecl>(op)) {
-      first_branch = std::format(
-          "self.{}(Rc::new(RefCell::new(other.clone())).as_pointer())",
-          GetOverloadedOperator(op));
-      second_branch = std::format(
-          "other.{}(Rc::new(RefCell::new(self.clone())).as_pointer())",
-          GetOverloadedOperator(op));
-    } else {
-      first_branch =
-          std::format("{}(Rc::new(RefCell::new(self.clone())).as_pointer(), "
-                      "Rc::new(RefCell::new(other.clone())).as_pointer())",
-                      GetOverloadedOperator(op));
-      second_branch =
-          std::format("{}(Rc::new(RefCell::new(other.clone())).as_pointer(), "
-                      "Rc::new(RefCell::new(self.clone())).as_pointer())",
-                      GetOverloadedOperator(op));
-    }
-    first_return = "std::cmp::Ordering::Less";
-    second_return = "std::cmp::Ordering::Greater";
-    break;
-  default:
-    assert(0 && "Currently only supporting operator<");
+std::string ConverterRefCount::GetComparisonCall(
+    const clang::FunctionDecl *op, const clang::CXXRecordDecl *decl,
+    std::string_view lhs, std::string_view rhs) {
+  auto lhs_ptr =
+      std::format("Rc::new(RefCell::new({}.clone())).as_pointer()", lhs);
+  auto rhs_ptr =
+      std::format("Rc::new(RefCell::new({}.clone())).as_pointer()", rhs);
+  if (const auto *method = clang::dyn_cast<clang::CXXMethodDecl>(op)) {
+    return std::format("{}::{}(&{}, {})", GetUFCSName(method),
+                       GetMethodName(method), lhs_ptr, rhs_ptr);
   }
+  return std::format("{}({}, {})", GetNamedDeclAsString(op->getCanonicalDecl()),
+                     lhs_ptr, rhs_ptr);
+}
 
-  ConvertOrdAndPartialOrdTraitsBase(first_branch, second_branch, first_return,
-                                    second_return, GetRecordName(decl));
+void ConverterRefCount::EmitShallowCopy(const clang::RecordDecl *decl) {
+  StrCat("Rc::new");
+  PushParen rc_paren(*this);
+  StrCat("RefCell::new");
+  PushParen cell_paren(*this);
+  StrCat(GetRecordName(decl));
+  PushBrace init_brace(*this);
+  for (auto *field : decl->fields()) {
+    auto name = GetNamedDeclAsString(field);
+    StrCat(std::format("{0}: self.{0}.clone(),", name));
+  }
 }
 
 void ConverterRefCount::AddCloneTrait(const clang::RecordDecl *decl) {
@@ -497,18 +491,26 @@ void ConverterRefCount::AddCloneTrait(const clang::RecordDecl *decl) {
     return;
   }
 
-  if (cxx->defaultedCopyConstructorIsDeleted()) {
+  if (!IsCopyConstructible(cxx)) {
     return;
   }
 
   StrCat(keyword::kImpl, "Clone for", record_name, '{');
   StrCat("fn clone(&self) -> Self {");
 
-  for (auto ctor : cxx->ctors()) {
-    if (ctor->isCopyConstructor()) {
-      PushConversionKind push(*this, ConversionKind::FullRefCount);
-      ConvertCXXConstructorBody(ctor);
-      break;
+  if (auto *ctor = GetUserDefinedCopyConstructor(cxx)) {
+    StrCat(std::format("let __src: Value<{}> =", record_name));
+    EmitShallowCopy(decl);
+    StrCat(token::kSemiColon);
+    StrCat(std::format("{}::{}(__src.as_pointer())", record_name,
+                       GetCtorName(ctor)));
+  } else {
+    for (auto ctor : cxx->ctors()) {
+      if (ctor->isCopyConstructor()) {
+        PushConversionKind push(*this, ConversionKind::FullRefCount);
+        ConvertCXXConstructorBody(ctor);
+        break;
+      }
     }
   }
 
@@ -1049,17 +1051,12 @@ bool ConverterRefCount::VisitCallExpr(clang::CallExpr *expr) {
   }
 
   if (expr->isCallToStdMove()) {
-    if (IsUniquePtr(expr->getArg(0)->getType())) {
-      StrCat(std::format("{}.take()", ConvertLValue(expr->getArg(0))));
-    } else {
-      Convert(expr->getArg(0));
-    }
-    computed_expr_type_ = ComputedExprType::FreshValue;
-    return false;
+    return Converter::VisitCallExpr(expr);
   }
 
   if (auto *opcall = clang::dyn_cast<clang::CXXOperatorCallExpr>(expr);
-      opcall && !Mapper::Contains(expr->getCallee())) {
+      opcall && !IsUserOperatorCall(opcall) &&
+      !Mapper::Contains(expr->getCallee())) {
     return ConvertCXXOperatorCallExpr(opcall);
   }
 
@@ -1241,6 +1238,16 @@ bool ConverterRefCount::VisitImplicitCastExpr(clang::ImplicitCastExpr *expr) {
 
   if (expr->getCastKind() == clang::CastKind::CK_NoOp) {
     Convert(sub_expr);
+
+    if (expr->getType()->isPointerType() &&
+        sub_expr->getType()->isPointerType()) {
+      auto dest_type = ConvertPointeeType(expr->getType());
+      if (dest_type != ConvertPointeeType(sub_expr->getType())) {
+        StrCat(std::format(".reinterpret_cast::<{}>()", dest_type));
+        computed_expr_type_ = ComputedExprType::FreshPointer;
+        return false;
+      }
+    }
     return false;
   }
 
@@ -1523,12 +1530,12 @@ bool ConverterRefCount::VisitInitListExpr(clang::InitListExpr *expr) {
   if (qual_type->isRecordType()) {
     const auto *record = qual_type->getAsRecordDecl();
     if (record->getQualifiedNameAsString() == "std::array") {
-      StrCat("vec!");
       if (auto init = clang::dyn_cast<clang::InitListExpr>(expr->getInit(0))) {
+        StrCat("vec!");
         PushConversionKind push(*this, ConversionKind::Unboxed);
         ConverterRefCount::VisitInitListExpr(init);
       } else {
-        StrCat("[]");
+        StrCat(GetArrayDefaultAsString(qual_type));
       }
       computed_expr_type_ = ComputedExprType::FreshValue;
       return false;
@@ -1617,25 +1624,7 @@ bool ConverterRefCount::VisitMemberExpr(clang::MemberExpr *expr) {
   if (auto *method = clang::dyn_cast<clang::CXXMethodDecl>(member);
       method && !known) {
     if (IsMethodOnPtr(method)) {
-      auto *base = expr->getBase();
-      bool base_is_pointer =
-          expr->isArrow() &&
-          !clang::isa<clang::CXXOperatorCallExpr>(base->IgnoreParenImpCasts());
-      if (clang::isa<clang::CXXThisExpr>(base->IgnoreParenImpCasts())) {
-        bool in_ctor = curr_function_ &&
-                       clang::isa<clang::CXXConstructorDecl>(curr_function_);
-        if (in_ctor) {
-          method_receiver_ = "&this";
-        } else if (ThisIsRustPtr()) {
-          method_receiver_ = keyword::kSelfValue;
-        } else {
-          method_receiver_ = token::kRef + ConvertPointer(base);
-        }
-      } else {
-        method_receiver_ =
-            token::kRef +
-            (base_is_pointer ? ConvertRValue(base) : ConvertPointer(base));
-      }
+      SetUFCSReceiver(expr->getBase(), expr->isArrow(), method);
       StrCat(TraitName(method->getParent()), token::kDoubleColon,
              GetMethodName(method));
       return false;
@@ -1877,14 +1866,12 @@ bool ConverterRefCount::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
   }
 
   auto *ctor = expr->getConstructor();
-  if (ctor->isMoveConstructor() ||
-      (ctor->isConvertingConstructor(false) && ctor->getNumParams() == 1 &&
-       ctor->getParamDecl(0)->getType()->isRValueReferenceType())) {
+  if (ctor->isMoveConstructor() || IsRValueConvertingConstructor(ctor)) {
     StrCat(ConvertLValue(expr->getArg(0)));
     return false;
   }
 
-  if (ctor->isCopyConstructor()) {
+  if (ctor->isCopyConstructor() && !IsUserDefinedCopyConstructor(ctor)) {
     StrCat(PushSuppressIteratorClone::take(*this)
                ? ConvertRValue(expr->getArg(0))
                : ConvertFreshRValue(expr->getArg(0)));
@@ -2440,7 +2427,7 @@ void ConverterRefCount::ConvertArrow(clang::Expr *expr) {
   bool is_overloaded_arrow =
       op && op->getOperator() == clang::OverloadedOperatorKind::OO_Arrow;
 
-  if (!is_overloaded_arrow) {
+  if (!is_overloaded_arrow || IsUserOperatorCall(op)) {
     auto ptr = ToString(expr);
     StrCat(DerefPtrExpr(ptr, expr->getType()->getPointeeType()));
     SetValueFreshness(expr->getType()->getPointeeType());
@@ -2574,7 +2561,7 @@ std::string ConverterRefCount::ConvertPointeeType(clang::QualType ptr_type) {
   PushConversionKind push(*this, ConversionKind::Unboxed);
   auto pointee = ptr_type->getPointeeType();
   if (!pointee->isRecordType()) {
-    return ToString(pointee);
+    return std::string(Trim(ToString(pointee)));
   }
 
   // Pointee of a pointer to incomplete type is an incomplete type that does
@@ -2583,7 +2570,19 @@ std::string ConverterRefCount::ConvertPointeeType(clang::QualType ptr_type) {
   auto str = ToString(ptr_type);
   Unwrap(str, "PtrDyn<", ">");
   Unwrap(str, "Ptr<", ">");
-  return str;
+  return std::string(Trim(str));
+}
+
+void ConverterRefCount::ConvertParamTyPointerCastIfNeeded(
+    clang::QualType param_type, clang::Expr *expr) {
+  if (!param_type->isPointerType() || !expr->getType()->isPointerType() ||
+      IsVaListType(param_type) || IsVaListType(expr->getType())) {
+    return;
+  }
+  auto dest_type = ConvertPointeeType(param_type);
+  if (dest_type != ConvertPointeeType(expr->getType())) {
+    StrCat(std::format(".reinterpret_cast::<{}>()", dest_type));
+  }
 }
 
 bool ConverterRefCount::ShouldConvertMethod(const clang::CXXMethodDecl *decl) {
@@ -2597,6 +2596,42 @@ bool ConverterRefCount::ThisIsRustPtr() const {
   auto *method = clang::dyn_cast_or_null<clang::CXXMethodDecl>(curr_function_);
   return method && (IsMethodOnPtr(method) ||
                     clang::isa<clang::CXXConstructorDecl>(method));
+}
+
+void ConverterRefCount::SetUFCSReceiver(clang::Expr *base, bool is_arrow,
+                                        const clang::CXXMethodDecl *method) {
+  if (!IsMethodOnPtr(method)) {
+    Converter::SetUFCSReceiver(base, is_arrow, method);
+    return;
+  }
+  bool base_is_pointer = is_arrow && !clang::isa<clang::CXXOperatorCallExpr>(
+                                         base->IgnoreParenImpCasts());
+  if (clang::isa<clang::CXXThisExpr>(base->IgnoreParenImpCasts())) {
+    bool in_ctor =
+        curr_function_ && clang::isa<clang::CXXConstructorDecl>(curr_function_);
+    if (in_ctor) {
+      ufcs_receiver_ = "&this";
+    } else if (ThisIsRustPtr()) {
+      ufcs_receiver_ = keyword::kSelfValue;
+    } else {
+      ufcs_receiver_ = token::kRef + ConvertPointer(base);
+    }
+    return;
+  }
+  if (!base->isLValue() && base->getType()->isRecordType()) {
+    PushConversionKind push(*this, ConversionKind::FullRefCount);
+    ufcs_receiver_ =
+        token::kRef + BoxValue(ConvertRValue(base)) + ".as_pointer()";
+    return;
+  }
+  ufcs_receiver_ = token::kRef + (base_is_pointer ? ConvertRValue(base)
+                                                  : ConvertPointer(base));
+}
+
+std::string
+ConverterRefCount::GetUFCSName(const clang::CXXMethodDecl *method) const {
+  return IsMethodOnPtr(method) ? TraitName(method->getParent())
+                               : GetRecordName(method->getParent());
 }
 
 std::string
