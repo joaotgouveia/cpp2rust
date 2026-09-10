@@ -125,7 +125,8 @@ private:
 
 class ActionFactory : public clang::tooling::FrontendActionFactory {
 public:
-  ActionFactory(llvm::json::Object &out, bool strict) : cb_(out, strict) {
+  ActionFactory(llvm::json::Object &out, bool strict)
+      : cb_(out, strict), strict_(strict) {
     using namespace clang::ast_matchers;
     finder_.addMatcher(
         typedefNameDecl(matchesName("(^|::)t[0-9]+$"), isExpansionInMainFile())
@@ -143,46 +144,56 @@ public:
     class ASTConsumer : public clang::ASTConsumer {
     public:
       explicit ASTConsumer(std::unique_ptr<clang::ASTConsumer> AC,
-                           clang::CompilerInstance &CI, Callback *CB)
-          : AC_(std::move(AC)), CI_(&CI), CB_(CB) {}
+                           clang::CompilerInstance &CI, Callback *CB,
+                           bool strict)
+          : AC_(std::move(AC)), CI_(&CI), CB_(CB), strict_(strict) {}
 
       void HandleTranslationUnit(clang::ASTContext &ctx) override {
         auto &DE = CI_->getDiagnostics();
         if (DE.hasErrorOccurred()) {
           std::exit(EXIT_FAILURE);
         }
-        DE.setSuppressAllDiagnostics(true);
-        DE.setClient(new clang::IgnoringDiagConsumer(), true);
+        if (!strict_) {
+          DE.setSuppressAllDiagnostics(true);
+          DE.setClient(new clang::IgnoringDiagConsumer(), true);
+        }
 
         CB_->init(CI_->getSema());
         AC_->HandleTranslationUnit(ctx);
+        if (strict_ && DE.hasErrorOccurred()) {
+          std::exit(EXIT_FAILURE);
+        }
       }
 
     private:
       std::unique_ptr<clang::ASTConsumer> AC_;
       clang::CompilerInstance *CI_;
       Callback *CB_;
+      bool strict_;
     };
 
     class Wrapped : public clang::ASTFrontendAction {
       clang::ast_matchers::MatchFinder &F_;
       Callback *CB_;
+      bool strict_;
 
     public:
-      Wrapped(clang::ast_matchers::MatchFinder &MF, Callback &CB)
-          : F_(MF), CB_(&CB) {}
+      Wrapped(clang::ast_matchers::MatchFinder &MF, Callback &CB, bool strict)
+          : F_(MF), CB_(&CB), strict_(strict) {}
 
       std::unique_ptr<clang::ASTConsumer>
       CreateASTConsumer(clang::CompilerInstance &CI, llvm::StringRef) override {
-        return std::make_unique<ASTConsumer>(F_.newASTConsumer(), CI, CB_);
+        return std::make_unique<ASTConsumer>(F_.newASTConsumer(), CI, CB_,
+                                             strict_);
       }
     };
-    return std::make_unique<Wrapped>(finder_, cb_);
+    return std::make_unique<Wrapped>(finder_, cb_, strict_);
   }
 
 private:
   clang::ast_matchers::MatchFinder finder_;
   Callback cb_;
+  bool strict_;
 };
 
 void Extract(const std::filesystem::path &src_path, llvm::json::Object &out,
