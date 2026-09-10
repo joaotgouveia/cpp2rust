@@ -1231,6 +1231,26 @@ DECLARE_CHAR_TRAITS(Char32)
 #undef DECLARE_CHAR_TRAITS
 #endif
 
+#ifdef __GLIBCXX__
+#define DECLARE_BYTE_SHIFT(hint)                                               \
+  template <int N> std::byte operator<<(std::byte, hint<N>) noexcept;          \
+  template <int N> std::byte operator>>(std::byte, hint<N>) noexcept;          \
+  template <int N> std::byte &operator<<=(std::byte &, hint<N>) noexcept;      \
+  template <int N> std::byte &operator>>=(std::byte &, hint<N>) noexcept;
+
+DECLARE_BYTE_SHIFT(Integer)
+DECLARE_BYTE_SHIFT(Long)
+DECLARE_BYTE_SHIFT(Char)
+DECLARE_BYTE_SHIFT(WChar)
+#if __cplusplus >= 202002L
+DECLARE_BYTE_SHIFT(Char8)
+#endif
+DECLARE_BYTE_SHIFT(Char16)
+DECLARE_BYTE_SHIFT(Char32)
+DECLARE_BYTE_SHIFT(UnsignedInteger)
+#undef DECLARE_BYTE_SHIFT
+#endif
+
 } // namespace std
 
 #define Plain Plain<__COUNTER__>
