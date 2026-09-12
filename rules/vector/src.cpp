@@ -219,7 +219,7 @@ typename std::vector<T1>::const_iterator f44(const std::vector<T1> &o) {
 }
 
 bool f47(std::vector<bool> &a0, std::vector<bool>::size_type a1) {
-  return a0[a1].operator bool();
+  return static_cast<bool>(a0[a1]);
 }
 
 template <typename T1> void f48(std::vector<T1> &o, std::vector<T1> &a0) {

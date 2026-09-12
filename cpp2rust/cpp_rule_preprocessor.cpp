@@ -87,8 +87,12 @@ public:
         return;
       }
 
-      auto src =
-          Mapper::ToString(ret->getRetValue()->IgnoreUnlessSpelledInSource());
+      auto *retExpr = ret->getRetValue()->IgnoreUnlessSpelledInSource();
+      if (auto *cast = llvm::dyn_cast<clang::CXXStaticCastExpr>(retExpr)) {
+        retExpr = cast->getSubExpr()->IgnoreImplicit();
+      }
+
+      auto src = Mapper::ToString(retExpr);
       if (src == "Unhandled case in ToString") {
         assert(!strict_ && "Unhandled case in ToString");
         return;
