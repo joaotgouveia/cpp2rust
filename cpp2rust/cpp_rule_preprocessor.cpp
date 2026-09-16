@@ -212,7 +212,8 @@ void Extract(const std::filesystem::path &src_path, llvm::json::Object &out,
     llvm::errs() << "ERROR: cannot read " << src_path.string() << '\n';
     std::exit(EXIT_FAILURE);
   }
-  ActionFactory factory(out);
+
+  ActionFactory factory(out, strict);
   clang::tooling::runToolOnCodeWithArgs(
       factory.create(), (*code)->getBuffer(), flags, src_path.string(),
       src_path.extension() == ".c" ? CLANG_C_COMPILER : CLANG_CXX_COMPILER);

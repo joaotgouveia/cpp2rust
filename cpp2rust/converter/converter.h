@@ -223,6 +223,7 @@ public:
   };
 
   struct PlaceholderCtx {
+    std::string param_type;
     std::optional<clang::QualType> implicit_convert_to;
     TempMaterializationCtx *materialize_ctx;
     int materialize_idx; // <0 = no idx, >=0 idx valid
