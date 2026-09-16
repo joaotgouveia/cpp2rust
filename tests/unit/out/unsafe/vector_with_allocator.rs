@@ -13,7 +13,7 @@ impl TestAllocator_int_ {
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut i32 {
         return Box::leak((0..n).map(|_| 0_i32).collect::<Box<[i32]>>()).as_mut_ptr();
     }
-    pub unsafe fn deallocate(&mut self, mut p: *mut i32, _: usize) {
+    pub unsafe fn deallocate(&mut self, mut p: *mut i32, mut _a1: usize) {
         ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
             p,
             libcc2rs::malloc_usable_size(p as *mut ::libc::c_void) / ::std::mem::size_of::<i32>(),
@@ -27,7 +27,7 @@ impl TestAllocator_double_ {
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut f64 {
         return Box::leak((0..n).map(|_| 0.0_f64).collect::<Box<[f64]>>()).as_mut_ptr();
     }
-    pub unsafe fn deallocate(&mut self, mut p: *mut f64, _: usize) {
+    pub unsafe fn deallocate(&mut self, mut p: *mut f64, mut _a1: usize) {
         ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
             p,
             libcc2rs::malloc_usable_size(p as *mut ::libc::c_void) / ::std::mem::size_of::<f64>(),
@@ -66,7 +66,7 @@ unsafe fn main_0() -> i32 {
     assert!(((v1.len()) == (0_usize)));
     assert!(v1.is_empty());
     v1.push(1);
-    assert!(!v1.is_empty());
+    assert!(!(v1.is_empty()));
     v1.pop();
     assert!(v1.is_empty());
     let mut s1: usize = v1.len();
@@ -185,7 +185,7 @@ unsafe fn main_0() -> i32 {
     v7.push(6);
     v8.push(8);
     v8.push(9);
-    (unsafe { fn_1(&mut v7 as *mut Vec<i32>, v8.clone()) });
+    (unsafe { fn_1(&mut v7, v8.clone()) });
     let mut src: [u32; 3] = [1_u32, 2_u32, 3_u32];
     let mut v9: Vec<u32> = core::slice::from_raw_parts(
         src.as_mut_ptr(),

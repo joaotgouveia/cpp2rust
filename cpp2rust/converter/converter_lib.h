@@ -9,6 +9,7 @@
 #include <clang/AST/Expr.h>
 #include <clang/AST/StmtCXX.h>
 #include <clang/AST/Type.h>
+#include <llvm/ADT/STLFunctionalExtras.h>
 
 #include <optional>
 #include <string>
@@ -61,16 +62,26 @@ bool IsMutatingCall(const clang::CallExpr *expr);
 
 bool IsOverloadedFunction(const clang::FunctionDecl *decl);
 
+void ForEachTemplateInstantiatedMethod(
+    const clang::CXXRecordDecl *decl,
+    llvm::function_ref<void(clang::CXXMethodDecl *)> fn);
+
 bool IsOverloadedMethod(const clang::CXXMethodDecl *decl);
 
 bool IsUserDefinedCopyConstructor(const clang::CXXConstructorDecl *ctor);
 
+bool IsUserDefinedMoveConstructor(const clang::CXXConstructorDecl *ctor);
+
+bool IsUserDefinedCopyOrMoveConstructor(const clang::CXXConstructorDecl *ctor);
+
+bool IsDefaultedMoveConstructor(const clang::CXXConstructorDecl *ctor);
+
 clang::CXXConstructorDecl *
 GetUserDefinedCopyConstructor(const clang::RecordDecl *decl);
 
-bool HasUserDefinedCopyConstructor(const clang::RecordDecl *decl);
+bool HasCallableCopyConstructor(const clang::RecordDecl *decl);
 
-bool IsCopyConstructible(const clang::RecordDecl *decl);
+bool HasDefaultedCopyConstructor(const clang::RecordDecl *decl);
 
 bool IsRValueConvertingConstructor(const clang::CXXConstructorDecl *ctor);
 
@@ -80,6 +91,7 @@ bool IsConvertibleCXXRecordDecl(const clang::CXXRecordDecl *decl);
 
 bool IsConvertibleCXXMethodDecl(const clang::CXXMethodDecl *decl);
 
+bool IsComparisonOperator(const clang::FunctionDecl *fn);
 bool IsEmittableMethod(clang::CXXMethodDecl *method);
 
 bool IsMethodOnPtr(const clang::CXXMethodDecl *method);

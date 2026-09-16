@@ -3,11 +3,13 @@
 
 #include "converter/converter_lib.h"
 
+#include <clang/AST/DeclTemplate.h>
 #include <clang/AST/ExprCXX.h>
 #include <clang/AST/Mangle.h>
 #include <clang/AST/ParentMapContext.h>
 #include <clang/Basic/SourceManager.h>
 #include <llvm/Support/Path.h>
+#include <llvm/Support/raw_ostream.h>
 
 #include <algorithm>
 #include <array>
@@ -249,7 +251,28 @@ bool IsOverloadedFunction(const clang::FunctionDecl *decl) {
   return !lookup_result.isSingleResult();
 }
 
+void ForEachTemplateInstantiatedMethod(
+    const clang::CXXRecordDecl *decl,
+    llvm::function_ref<void(clang::CXXMethodDecl *)> fn) {
+  for (auto d : decl->decls()) {
+    if (auto function_template_decl =
+            llvm::dyn_cast<clang::FunctionTemplateDecl>(d)) {
+      for (auto s : function_template_decl->specializations()) {
+        if (auto m = clang::dyn_cast<clang::CXXMethodDecl>(s);
+            m && !clang::isa<clang::CXXConstructorDecl>(m) &&
+            m->getDefinition()) {
+          fn(m);
+        }
+      }
+    }
+  }
+}
+
 bool IsOverloadedMethod(const clang::CXXMethodDecl *decl) {
+  if (decl->getTemplateSpecializationArgs() != nullptr &&
+      IsUserDefinedDecl(decl)) {
+    return true;
+  }
   const auto method_name = decl->getNameAsString();
   const auto *record = decl->getParent();
   return std::count_if(record->method_begin(), record->method_end(),
@@ -261,6 +284,21 @@ bool IsOverloadedMethod(const clang::CXXMethodDecl *decl) {
 bool IsUserDefinedCopyConstructor(const clang::CXXConstructorDecl *ctor) {
   return ctor->isCopyConstructor() && ctor->isUserProvided() &&
          IsUserDefinedDecl(ctor);
+}
+
+bool IsUserDefinedMoveConstructor(const clang::CXXConstructorDecl *ctor) {
+  return ctor->isMoveConstructor() && ctor->isUserProvided() &&
+         IsUserDefinedDecl(ctor);
+}
+
+bool IsUserDefinedCopyOrMoveConstructor(const clang::CXXConstructorDecl *ctor) {
+  return IsUserDefinedCopyConstructor(ctor) ||
+         IsUserDefinedMoveConstructor(ctor);
+}
+
+bool IsDefaultedMoveConstructor(const clang::CXXConstructorDecl *ctor) {
+  return ctor->isMoveConstructor() && !ctor->isUserProvided() &&
+         IsUserDefinedDecl(ctor->getParent());
 }
 
 clang::CXXConstructorDecl *
@@ -277,11 +315,20 @@ GetUserDefinedCopyConstructor(const clang::RecordDecl *decl) {
   return nullptr;
 }
 
-bool HasUserDefinedCopyConstructor(const clang::RecordDecl *decl) {
-  return GetUserDefinedCopyConstructor(decl) != nullptr;
+bool HasDefaultedCopyConstructor(const clang::RecordDecl *decl) {
+  auto *cxx = clang::dyn_cast<clang::CXXRecordDecl>(decl);
+  if (!cxx) {
+    return true;
+  }
+  for (const auto *ctor : cxx->ctors()) {
+    if (ctor->isCopyConstructor()) {
+      return !ctor->isUserProvided() && !ctor->isDeleted();
+    }
+  }
+  return !cxx->defaultedCopyConstructorIsDeleted();
 }
 
-bool IsCopyConstructible(const clang::RecordDecl *decl) {
+bool HasCallableCopyConstructor(const clang::RecordDecl *decl) {
   auto *cxx = clang::dyn_cast<clang::CXXRecordDecl>(decl);
   if (!cxx) {
     return true;
@@ -299,12 +346,13 @@ bool IsCopyConstructible(const clang::RecordDecl *decl) {
 }
 
 bool IsRValueConvertingConstructor(const clang::CXXConstructorDecl *ctor) {
-  return ctor->isConvertingConstructor(false) && ctor->getNumParams() == 1 &&
+  return !ctor->isCopyOrMoveConstructor() &&
+         ctor->isConvertingConstructor(false) && ctor->getNumParams() == 1 &&
          ctor->getParamDecl(0)->getType()->isRValueReferenceType();
 }
 
 bool IsPassThroughConstructor(const clang::CXXConstructorDecl *ctor) {
-  return !IsUserDefinedCopyConstructor(ctor) &&
+  return !IsUserDefinedCopyOrMoveConstructor(ctor) &&
          (ctor->isCopyOrMoveConstructor() ||
           IsRValueConvertingConstructor(ctor));
 }
@@ -313,9 +361,13 @@ bool IsConvertibleCXXRecordDecl(const clang::CXXRecordDecl *decl) {
   return decl->isThisDeclarationADefinition() &&
          std::all_of(
              decl->method_begin(), decl->method_end(), [](auto *method) {
+               auto *ctor = clang::dyn_cast<clang::CXXConstructorDecl>(method);
                return method->getDefinition() || method->isPureVirtual() ||
                       method->getTemplateInstantiationPattern() ||
-                      method->getDescribedFunctionTemplate();
+                      method->getDescribedFunctionTemplate() ||
+                      (ctor ? ctor->isCopyOrMoveConstructor()
+                            : method->isCopyAssignmentOperator() ||
+                                  method->isMoveAssignmentOperator());
              });
 }
 
@@ -323,7 +375,7 @@ bool IsConvertibleCXXMethodDecl(const clang::CXXMethodDecl *decl) {
   if (llvm::isa<clang::CXXDestructorDecl>(decl)) {
     return GetUserDefinedDestructor(decl->getParent()) != nullptr;
   }
-  return !decl->isImplicit();
+  return !decl->isImplicit() || IsComparisonOperator(decl);
 }
 
 bool IsConvertibleFunctionDecl(const clang::FunctionDecl *decl) {
@@ -473,13 +525,29 @@ static std::string GetParamSignature(const clang::Decl *decl) {
     for (unsigned i = 0; i < fdecl->getNumParams(); ++i) {
       args += fdecl->getParamDecl(i)->getType().getAsString();
     }
+    if (const auto *targs = fdecl->getTemplateSpecializationArgs()) {
+      llvm::raw_string_ostream os(args);
+      clang::printTemplateArgumentList(
+          os, targs->asArray(), fdecl->getASTContext().getPrintingPolicy());
+    }
   }
   return args;
 }
 
+static std::string GetLexicalSpecializationID(const clang::Decl *decl) {
+  if (const auto *spec =
+          clang::dyn_cast<clang::ClassTemplateSpecializationDecl>(
+              decl->getLexicalDeclContext());
+      spec && decl->getLexicalDeclContext() != decl->getDeclContext()) {
+    return Mapper::ToString(Mapper::GetTypeForDecl(spec));
+  }
+  return {};
+}
+
 std::string GetID(const clang::Decl *decl) {
   assert(decl);
-  return GetLocationID(decl) + GetParamSignature(decl);
+  return GetLexicalSpecializationID(decl) + GetLocationID(decl) +
+         GetParamSignature(decl);
 }
 
 std::string GetMethodID(const clang::CXXMethodDecl *decl) {
@@ -580,12 +648,15 @@ std::string GetNamedDeclAsString(const clang::NamedDecl *decl) {
     auto *pdecl = llvm::dyn_cast<clang::ParmVarDecl>(decl);
     assert(pdecl && "Unexpected unnamed construct");
 
-    const auto *ctor =
-        llvm::dyn_cast<clang::CXXConstructorDecl>(pdecl->getDeclContext());
-    name = (pdecl->isExplicitObjectParameter() ||
-            (ctor && ctor->isCopyOrMoveConstructor()))
-               ? "self"
-               : "_";
+    const auto *fn =
+        llvm::dyn_cast<clang::FunctionDecl>(pdecl->getDeclContext());
+    const auto *ctor = llvm::dyn_cast_or_null<clang::CXXConstructorDecl>(fn);
+    if (pdecl->isExplicitObjectParameter() ||
+        (ctor && ctor->isCopyConstructor())) {
+      name = "self";
+    } else {
+      name = std::format("_a{}", pdecl->getFunctionScopeIndex());
+    }
   } else if (auto *pdecl = llvm::dyn_cast<clang::ParmVarDecl>(decl)) {
     // Expanded parameter packs share one name across the expansion
     if (auto *fn = llvm::dyn_cast_or_null<clang::FunctionDecl>(
@@ -736,7 +807,14 @@ bool IsSameTypeComparison(const clang::FunctionDecl *fn,
 
 bool IsUserOperatorCall(const clang::CXXOperatorCallExpr *expr) {
   const auto *callee = expr->getDirectCallee();
-  if (!callee || !callee->isUserProvided() || !IsUserDefinedDecl(callee)) {
+  if (!callee) {
+    return false;
+  }
+  if (const auto *method = clang::dyn_cast<clang::CXXMethodDecl>(callee);
+      method && method->isDefaulted() && IsComparisonOperator(method)) {
+    return IsUserDefinedDecl(method->getParent());
+  }
+  if (!callee->isUserProvided() || !IsUserDefinedDecl(callee)) {
     return false;
   }
   if (const auto *method = clang::dyn_cast<clang::CXXMethodDecl>(callee)) {
@@ -796,6 +874,21 @@ bool RecordNeedsDestruction(const clang::CXXRecordDecl *decl) {
   return GetUserDefinedDestructor(decl) || HasFieldsNeedingDestruction(decl);
 }
 
+bool IsComparisonOperator(const clang::FunctionDecl *fn) {
+  switch (fn->getOverloadedOperator()) {
+  case clang::OO_EqualEqual:
+  case clang::OO_ExclaimEqual:
+  case clang::OO_Less:
+  case clang::OO_LessEqual:
+  case clang::OO_Greater:
+  case clang::OO_GreaterEqual:
+  case clang::OO_Spaceship:
+    return true;
+  default:
+    return false;
+  }
+}
+
 bool IsEmittableMethod(clang::CXXMethodDecl *method) {
   if (method->isDeleted()) {
     return false;
@@ -807,6 +900,9 @@ bool IsEmittableMethod(clang::CXXMethodDecl *method) {
   // Virtual methods go into the base trait impl
   if (method->isVirtual()) {
     return false;
+  }
+  if (IsComparisonOperator(method)) {
+    return method->hasBody();
   }
   // Compiler-generated members are covered by derived traits
   if (method->isImplicit()) {
@@ -821,8 +917,11 @@ bool IsEmittableMethod(clang::CXXMethodDecl *method) {
 }
 
 bool IsMethodOnPtr(const clang::CXXMethodDecl *method) {
-  if (method->isImplicit() || method->isDeleted() || method->isStatic() ||
-      method->isVirtual() || clang::isa<clang::CXXConstructorDecl>(method)) {
+  if (method->isDeleted() || method->isStatic() || method->isVirtual() ||
+      clang::isa<clang::CXXConstructorDecl>(method)) {
+    return false;
+  }
+  if (method->isImplicit() && !IsComparisonOperator(method)) {
     return false;
   }
   if (!IsUserDefinedDecl(method->getParent()) ||
@@ -830,7 +929,8 @@ bool IsMethodOnPtr(const clang::CXXMethodDecl *method) {
     return false;
   }
   if (auto *definition = method->getDefinition();
-      definition && definition->isDefaulted()) {
+      definition && definition->isDefaulted() &&
+      !IsComparisonOperator(method)) {
     return false;
   }
   if (clang::isa<clang::CXXDestructorDecl>(method)) {

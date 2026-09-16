@@ -29,10 +29,9 @@ class Converter : public clang::RecursiveASTVisitor<Converter> {
 public:
   explicit Converter(std::string &rs_code, clang::ASTContext &ctx,
                      const char *keyword_unsafe = "unsafe",
-                     const char *keyword_mut = keyword::kMut,
-                     const char *keyword_const_fn = keyword::kConst)
+                     const char *keyword_mut = keyword::kMut)
       : rs_code_(&rs_code), ctx_(ctx), keyword_unsafe_(keyword_unsafe),
-        keyword_mut_(keyword_mut), keyword_const_fn_(keyword_const_fn) {}
+        keyword_mut_(keyword_mut) {}
 
   virtual ~Converter() = default;
 
@@ -120,6 +119,7 @@ public:
 
   virtual void EmitRustStructOrUnion(clang::RecordDecl *decl);
 
+  void EmitReprC(clang::RecordDecl *decl);
   virtual void EmitRustUnion(clang::RecordDecl *decl);
 
   virtual bool EmitsReprCForRecords() const { return true; }
@@ -156,6 +156,8 @@ public:
   virtual bool VisitNamespaceDecl(clang::NamespaceDecl *decl);
 
   virtual bool VisitTypedefDecl(clang::TypedefDecl *decl);
+  virtual bool VisitTypeAliasDecl(clang::TypeAliasDecl *decl);
+  virtual bool VisitTypeAliasTemplateDecl(clang::TypeAliasTemplateDecl *decl);
 
   bool VisitStaticAssertDecl(clang::StaticAssertDecl *decl);
 
@@ -250,7 +252,7 @@ public:
     }
 
     bool needs_lvalue() const {
-      return access == TranslationRule::Access::kWrite;
+      return access == TranslationRule::Access::kBorrowMut;
     }
 
     void dump() const;
@@ -415,10 +417,12 @@ public:
   virtual std::string EnumeratorName(const clang::EnumConstantDecl *decl) const;
 
   virtual bool VisitCXXDefaultArgExpr(clang::CXXDefaultArgExpr *expr);
+  virtual bool VisitConstantExpr(clang::ConstantExpr *expr);
 
   virtual bool VisitLambdaExpr(clang::LambdaExpr *expr);
 
   virtual bool VisitImplicitValueInitExpr(clang::ImplicitValueInitExpr *expr);
+  virtual bool VisitCXXScalarValueInitExpr(clang::CXXScalarValueInitExpr *expr);
 
   virtual bool VisitSwitchStmt(clang::SwitchStmt *stmt);
 
@@ -439,7 +443,6 @@ public:
 
 protected:
   const clang::Expr *GetParentExpr(const clang::Expr *expr);
-  bool IsSubExprOf(const clang::Expr *sub_expr, const clang::Expr *parent_expr);
 
 #define StrCat(...) _StrCat(__FUNCTION__, __LINE__, __VA_ARGS__)
 
@@ -650,6 +653,8 @@ protected:
   virtual bool RecordDerivesDefault(const clang::RecordDecl *decl);
 
   bool RecordDerivesCopy(const clang::RecordDecl *decl) const;
+
+  bool IsPassThroughRule(clang::Expr *expr) const;
 
   bool RecordHasCopyableFields(const clang::RecordDecl *decl);
 
@@ -950,10 +955,14 @@ protected:
     FreshValue,
     Pointer,
     FreshPointer,
+    Unknown,
+    Pending,
   };
-  ComputedExprType computed_expr_type_ = ComputedExprType::FreshValue;
+  ComputedExprType computed_expr_type_ = ComputedExprType::Unknown;
 
   bool isFresh() const {
+    assert(computed_expr_type_ != ComputedExprType::Unknown);
+    assert(computed_expr_type_ != ComputedExprType::Pending);
     return computed_expr_type_ == ComputedExprType::FreshValue ||
            computed_expr_type_ == ComputedExprType::FreshPointer;
   }
@@ -1009,7 +1018,6 @@ private:
                                 const clang::QualType *type = nullptr);
   const char *keyword_unsafe_;
   const char *keyword_mut_;
-  const char *keyword_const_fn_;
   std::vector<ExprKind> curr_expr_kind_;
   static std::unordered_map<std::string, std::string> inner_structs_;
   static std::unordered_set<std::string> globals_;
