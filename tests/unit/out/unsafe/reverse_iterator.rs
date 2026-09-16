@@ -32,7 +32,7 @@ unsafe fn main_0() -> i32 {
     let mut def: *mut Foo = Default::default();
     let mut first: *mut Foo = a1.as_mut_ptr().offset((5) as isize);
     assert!(((first) == (a1.as_mut_ptr().offset((5) as isize))));
-    let ref_: *mut Foo = &mut (*first.offset(-1)) as *mut Foo;
+    let ref_: *mut Foo = &mut (*first.offset(-1));
     assert!(((unsafe { Foo::get(&(*ref_),) }) == (50)));
     assert!(((unsafe { Foo::get(&(*(first.offset(-1)).cast_const()),) }) == (50)));
     first.prefix_dec();
