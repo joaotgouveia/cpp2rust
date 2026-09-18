@@ -1175,7 +1175,9 @@ void LoadPartialTranslationRules(const std::string &rules_dir) {
     }
 
     auto [expr_rules, type_rules] = TranslationRule::LoadPartial(path);
-    assert(!expr_rules.empty() || !type_rules.empty());
+    if (expr_rules.empty() && type_rules.empty()) {
+      continue;
+    }
     for (auto &[_, rule] : expr_rules) {
       exprs_.emplace(GetExprMapKey(rule.src), std::move(rule));
     }
