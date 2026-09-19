@@ -658,8 +658,7 @@ protected:
                     TempMaterializationCtx *ctx);
 
   std::string ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
-                                 const PlaceholderCtx &ph_ctx,
-                                 unsigned arg_idx);
+                                 const PlaceholderCtx &ph_ctx);
 
   std::string ConvertVariadicTail(clang::Expr *expr,
                                   const std::vector<clang::Expr *> &all_args);
