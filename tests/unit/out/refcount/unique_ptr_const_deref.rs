@@ -10,6 +10,17 @@ use std::rc::{Rc, Weak};
 pub struct Holder {
     pub val: Value<Option<Value<i32>>>,
 }
+impl Holder {
+    pub fn Holder_pmutHolder(_a0: Ptr<Holder>) -> Self {
+        let __this: Value<Holder> = Rc::new(RefCell::new(Self {
+            val: Rc::new(RefCell::new(
+                (*(*_a0.upgrade().deref()).val.borrow_mut()).take(),
+            )),
+        }));
+        let this: Ptr<Holder> = __this.as_pointer();
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
 impl ByteRepr for Holder {
     fn byte_size() -> usize {
         8
@@ -39,6 +50,7 @@ pub fn write_val_1(h: Ptr<Holder>, v: i32) {
         .borrow_mut()) = (*v.borrow());
 }
 pub fn main() {
+    __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
@@ -49,3 +61,14 @@ fn main_0() -> i32 {
     assert!((({ read_val_0((h.as_pointer()),) }) == 42));
     return 0;
 }
+pub trait HolderImpl {
+    fn operator_assign_pmutHolder(&self, _a0: Ptr<Holder>) -> Ptr<Holder>;
+}
+impl HolderImpl for Ptr<Holder> {
+    fn operator_assign_pmutHolder(&self, _a0: Ptr<Holder>) -> Ptr<Holder> {
+        ((*(*self).upgrade().deref()).val.as_pointer() as Ptr<Option<Value<i32>>>)
+            .write((*(*_a0.upgrade().deref()).val.borrow_mut()).take());
+        return (*self).clone();
+    }
+}
+pub fn __cpp2rust_init_globals() {}

@@ -26,6 +26,7 @@ namespace cpp2rust {
 std::unordered_map<std::string, std::string> Converter::inner_structs_;
 std::unordered_set<std::string> Converter::decl_ids_;
 std::unordered_set<std::string> Converter::globals_;
+std::vector<std::string> Converter::global_inits_;
 std::unordered_set<std::string> Converter::abstract_structs_;
 Converter::RecordIndex Converter::record_decls_;
 std::map<std::string, Converter::MethodsOnPtr> Converter::methods_on_ptr_;
@@ -59,8 +60,7 @@ use std::rc::Rc;
 )");
 }
 
-std::string Converter::EmitMethodsOnPtr() {
-  std::string out;
+void Converter::EmitMethodsOnPtr(std::string &out) {
   for (const auto &[name, methods] : methods_on_ptr_) {
     out += methods.trait_header;
     out += " {\n";
@@ -71,18 +71,30 @@ std::string Converter::EmitMethodsOnPtr() {
     out += methods.impl_body;
     out += "}\n";
   }
-  return out;
 }
 
-std::string Converter::EmitOpaqueRecords() {
-  std::string out;
+std::string Converter::ForceGlobalInit(const clang::VarDecl *decl) {
+  return std::format("std::cell::LazyCell::force(&*&raw const {});",
+                     GetNamedDeclAsString(decl));
+}
+
+void Converter::EmitGlobalInits(Model model, std::string &out) {
+  out += model == Model::kUnsafe ? "pub unsafe fn __cpp2rust_init_globals() {\n"
+                                 : "pub fn __cpp2rust_init_globals() {\n";
+  for (const auto &line : global_inits_) {
+    out += line;
+    out += '\n';
+  }
+  out += "}\n";
+}
+
+void Converter::EmitOpaqueRecords(std::string &out) {
   record_decls_.ForEachUndefined([&](const std::string &name) {
     out += "#[derive(Clone, Copy, Default, ByteRepr)]";
     out += "pub struct ";
     out += name;
     out += ";\n";
   });
-  return out;
 }
 
 bool Converter::VisitRecoveryExpr(clang::RecoveryExpr *expr) {
@@ -272,7 +284,9 @@ Converter::MaterializeTemp(const std::string &binding_name,
 
   auto binding =
       std::format("{} mut {} : {} = {};", decl, binding_name, type_str, value);
-  auto ref = std::format("& mut {}", binding_name);
+  auto ref = in_const_initializer_
+                 ? std::format("& mut *& raw mut {}", binding_name)
+                 : std::format("& mut {}", binding_name);
   return {binding, ref};
 }
 
@@ -363,6 +377,10 @@ bool Converter::VisitTranslationUnitDecl(clang::TranslationUnitDecl *decl) {
     if (IsUserDefinedDecl(child) &&
         (IsInMainFile(child) || !decl_ids_.contains(GetID(child)))) {
       Convert(child);
+      if (!hoisted_records_.empty()) {
+        StrCat(hoisted_records_);
+        hoisted_records_.clear();
+      }
     }
   }
   return false;
@@ -500,13 +518,12 @@ bool Converter::NeedsMut(const clang::VarDecl *decl, clang::QualType type,
 
 bool Converter::ConvertVarDeclSkipInit(clang::VarDecl *decl) {
   auto qual_type = decl->getType();
-  auto name = GetNamedDeclAsString(decl);
-
   if (IsVaListType(qual_type) && decl->isLocalVarDecl()) {
     ConvertVaListVarDecl(decl);
     return true;
   }
 
+  auto name = GetNamedDeclAsString(decl);
   if (decl->isFileVarDecl()) {
     if ((decl->isThisDeclarationADefinition() ==
              clang::VarDecl::DeclarationOnly &&
@@ -517,6 +534,7 @@ bool Converter::ConvertVarDeclSkipInit(clang::VarDecl *decl) {
     StrCat(AccessSpecifierAsString(decl->getAccess()), keyword::kStatic,
            keyword_mut_);
     ENSURE(decl_ids_.insert(GetID(decl)).second);
+    global_inits_.push_back(ForceGlobalInit(decl));
   } else if (decl->isStaticLocal()) {
     StrCat(keyword::kStatic, keyword_mut_);
   } else if (decl->isLocalVarDecl()) {
@@ -537,7 +555,10 @@ bool Converter::ConvertVarDeclSkipInit(clang::VarDecl *decl) {
   if (is_parm_with_default_value) {
     StrCat("Option<");
   }
-  Convert(qual_type);
+  {
+    PushLazyType lazy(*this, IsGlobalVar(decl) && LazyStaticInit());
+    Convert(qual_type);
+  }
   if (is_parm_with_default_value) {
     StrCat('>');
   }
@@ -602,8 +623,9 @@ void Converter::ConvertGlobalVarDecl(clang::VarDecl *decl) {
   PushConstInitializer static_init(*this, decl->isFileVarDecl() ||
                                               decl->isStaticLocal());
   StrCat(token::kAssign);
-  StrCat(keyword_unsafe_);
   {
+    PushLazyInit lazy(*this, LazyStaticInit());
+    StrCat(keyword_unsafe_);
     PushBrace push(*this);
     ConvertVarDeclInitializer(decl);
   }
@@ -961,7 +983,7 @@ bool Converter::VisitCXXRecordDecl(clang::CXXRecordDecl *decl) {
 
     if (!record_decls_.MarkDefined(GetRecordName(decl))) {
       // Other translation units may instantiate members this one did not.
-      if (clang::isa<clang::ClassTemplateSpecializationDecl>(decl)) {
+      if (!decl->isAbstract()) {
         ConvertLateInstantiatedMethods(decl);
       }
       return false;
@@ -972,25 +994,7 @@ bool Converter::VisitCXXRecordDecl(clang::CXXRecordDecl *decl) {
       return false;
     }
 
-    sema_->ForceDeclarationOfImplicitMembers(decl);
-    for (auto ctor : decl->ctors()) {
-      if (ctor->isCopyConstructor() && ctor->isImplicit() &&
-          !ctor->doesThisDeclarationHaveABody() && !ctor->isDeleted()) {
-        sema_->DefineImplicitCopyConstructor(decl->getLocation(), ctor);
-      }
-    }
-    for (auto *method : decl->methods()) {
-      if (IsComparisonOperator(method) && method->isDefaulted() &&
-          !method->doesThisDeclarationHaveABody()) {
-#if CLANG_VERSION_MAJOR >= 24
-        auto kind = method->getDefaultedComparisonKind();
-#else
-        auto kind = sema_->getDefaultedComparisonKind(method);
-#endif
-        sema_->DefineDefaultedComparison(decl->getLocation(), method, kind);
-      }
-    }
-
+    DefineImplicitMembers(decl);
     EmitRustStructOrUnion(decl);
   } else if (decl->isUnion()) {
     if (!record_decls_.MarkDefined(GetRecordName(decl))) {
@@ -1003,6 +1007,44 @@ bool Converter::VisitCXXRecordDecl(clang::CXXRecordDecl *decl) {
   }
 
   return false;
+}
+
+void Converter::DefineImplicitMembers(clang::CXXRecordDecl *decl) {
+  clang::Scope tu_scope(nullptr, clang::Scope::DeclScope,
+                        sema_->getDiagnostics());
+  tu_scope.setEntity(ctx_.getTranslationUnitDecl());
+  auto *saved_tu_scope = std::exchange(sema_->TUScope, &tu_scope);
+  sema_->ForceDeclarationOfImplicitMembers(decl);
+  for (auto ctor : decl->ctors()) {
+    if (ctor->isCopyConstructor() && ctor->isImplicit() &&
+        !ctor->doesThisDeclarationHaveABody() && !ctor->isDeleted()) {
+      sema_->DefineImplicitCopyConstructor(decl->getLocation(), ctor);
+    }
+    if (ctor->isMoveConstructor() && !ctor->isUserProvided() &&
+        !ctor->doesThisDeclarationHaveABody() && !ctor->isDeleted() &&
+        !HasDefaultedCopyConstructor(decl)) {
+      sema_->DefineImplicitMoveConstructor(decl->getLocation(), ctor);
+    }
+  }
+  for (auto *method : decl->methods()) {
+    if (method->isMoveAssignmentOperator() && !method->isUserProvided() &&
+        !method->doesThisDeclarationHaveABody() && !method->isDeleted() &&
+        !HasDefaultedCopyAssignment(decl)) {
+      sema_->DefineImplicitMoveAssignment(decl->getLocation(), method);
+    }
+  }
+  for (auto *method : decl->methods()) {
+    if (IsComparisonOperator(method) && method->isDefaulted() &&
+        !method->doesThisDeclarationHaveABody()) {
+#if CLANG_VERSION_MAJOR >= 24
+      auto kind = method->getDefaultedComparisonKind();
+#else
+      auto kind = sema_->getDefaultedComparisonKind(method);
+#endif
+      sema_->DefineDefaultedComparison(decl->getLocation(), method, kind);
+    }
+  }
+  sema_->TUScope = saved_tu_scope;
 }
 
 bool Converter::VisitCXXMethodDecl(clang::CXXMethodDecl *decl) {
@@ -1092,7 +1134,8 @@ std::string Converter::GetCtorName(clang::CXXConstructorDecl *decl) {
 }
 
 bool Converter::VisitCXXConstructorDecl(clang::CXXConstructorDecl *decl) {
-  if (decl->isOutOfLine() || decl->isImplicit()) {
+  if (decl->isOutOfLine() ||
+      (decl->isImplicit() && !IsConvertibleImplicitMember(decl))) {
     return false;
   }
   PushCurrFunction push_fn(*this, decl);
@@ -1262,6 +1305,12 @@ bool Converter::VisitCompoundStmt(clang::CompoundStmt *stmt) {
 
 bool Converter::VisitDeclStmt(clang::DeclStmt *stmt) {
   for (auto *decl : stmt->decls()) {
+    if (clang::isa<clang::TagDecl>(decl)) {
+      Buffer buf(*this);
+      Convert(decl);
+      hoisted_records_ += std::move(buf).str();
+      continue;
+    }
     Convert(decl);
     StrCat(token::kSemiColon);
   }
@@ -1731,6 +1780,12 @@ bool Converter::VisitCallExpr(clang::CallExpr *expr) {
     return false;
   }
 
+  if (IsImplicitAssignmentCall(expr) && !Mapper::Contains(expr->getCallee())) {
+    auto *call = clang::cast<clang::CXXMemberCallExpr>(expr);
+    ConvertAssignment(call->getImplicitObjectArgument(), call->getArg(0), "=");
+    return false;
+  }
+
   if (auto plugin_str = TryPluginConvert(expr)) {
     StrCat(*plugin_str);
     SetFreshType(expr->getType());
@@ -1819,6 +1874,20 @@ void Converter::ConvertFunctionToFunctionPointer(
     const clang::FunctionDecl *fn_decl) {
   StrCat(std::format("Some({})", Mapper::MapFunctionName(fn_decl)));
   computed_expr_type_ = ComputedExprType::FreshPointer;
+}
+
+std::string Converter::ConvertFnPtrCallee(clang::Expr *arg) {
+  PushExprKind push(*this, ExprKind::Callee);
+  Buffer buf(*this);
+  Convert(arg);
+  return std::move(buf).str();
+}
+
+std::string Converter::ConvertFnPtrPlaceholder(clang::Expr *arg) {
+  auto proto =
+      arg->getType()->getPointeeType()->getAs<clang::FunctionProtoType>();
+  return std::format("({} as {} {})", ConvertFnPtrCallee(arg), keyword_unsafe_,
+                     ConvertFunctionPointerType(proto));
 }
 
 Converter::CallInfo Converter::CollectCallInfo(clang::CallExpr *expr) {
@@ -2678,7 +2747,7 @@ void Converter::ConvertGenericBinaryOperator(clang::BinaryOperator *expr) {
 }
 
 bool Converter::IsReferenceType(const clang::Expr *expr) const {
-  const auto *e = expr->IgnoreCasts();
+  const auto *e = IgnoreStdMove(expr->IgnoreCasts())->IgnoreCasts();
   if (const auto *call = clang::dyn_cast<clang::CallExpr>(e)) {
     return !clang::isa<clang::CXXOperatorCallExpr>(call) &&
            GetReturnTypeOfFunction(call)->isReferenceType();
@@ -2880,7 +2949,11 @@ std::string Converter::ConvertDeclRefExpr(clang::DeclRefExpr *expr) {
   }
 
   if (IsGlobalVar(expr)) {
-    return GetNamedDeclAsString(expr->getDecl());
+    if (LazyStaticInit()) {
+      return std::format("(*std::cell::LazyCell::force_mut(&mut *&raw mut {}))",
+                         GetNamedDeclAsString(decl));
+    }
+    return GetNamedDeclAsString(decl);
   }
 
   return GetNamedDeclAsString(decl);
@@ -3185,6 +3258,27 @@ bool Converter::VisitCXXThisExpr(clang::CXXThisExpr *expr) {
   return false;
 }
 
+bool Converter::VisitOpaqueValueExpr(clang::OpaqueValueExpr *expr) {
+  Convert(expr->getSourceExpr());
+  return false;
+}
+
+bool Converter::VisitArrayInitIndexExpr(clang::ArrayInitIndexExpr *expr) {
+  StrCat("__i");
+  computed_expr_type_ = ComputedExprType::FreshValue;
+  return false;
+}
+
+bool Converter::VisitArrayInitLoopExpr(clang::ArrayInitLoopExpr *expr) {
+  StrCat(std::format("std::array::from_fn::<_, {}, _>",
+                     GetArraySize(expr->getType())));
+  PushParen paren(*this);
+  StrCat("|__i: usize|");
+  ConvertVarInit(expr->getSubExpr()->getType(), expr->getSubExpr());
+  computed_expr_type_ = ComputedExprType::FreshValue;
+  return false;
+}
+
 bool Converter::VisitInitListExpr(clang::InitListExpr *expr) {
   if (auto form = expr->getSemanticForm())
     expr = form;
@@ -3454,16 +3548,6 @@ bool Converter::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
   }
 
   auto *ctor = expr->getConstructor();
-  // Default move is translated using a bitwise .clone() implementation.
-  // Bitwise clone is only satisfied by default copy constructor. If the copy
-  // constructor is user defined, then default move calls copy constructor,
-  // which is wrong.
-  if (IsDefaultedMoveConstructor(ctor) &&
-      !HasDefaultedCopyConstructor(ctor->getParent())) {
-    llvm::report_fatal_error("defaulted move constructor without a fieldwise "
-                             "copy constructor is not supported");
-  }
-
   if (IsPassThroughConstructor(ctor)) {
     // Take suppress before recursing into the child.
     bool suppress = PushSuppressIteratorClone::take(*this);
@@ -3483,7 +3567,6 @@ bool Converter::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
     return false;
   }
 
-  assert(ctor->isUserProvided());
   if (expr->getType()->isArrayType()) {
     ConvertArrayCXXConstructExpr(expr);
   } else {
@@ -3895,6 +3978,10 @@ std::string Converter::ConvertVarDefaultInit(clang::QualType qual_type) {
 std::string
 Converter::GetOverloadedFunctionName(const clang::FunctionDecl *decl) {
   auto name = GetFunctionBaseName(decl);
+  if (auto *ctor = clang::dyn_cast<clang::CXXConstructorDecl>(decl);
+      ctor && !ctor->getParent()->getIdentifier()) {
+    name = GetRecordName(ctor->getParent());
+  }
 
   if (decl->getNumParams() != 0U) {
     name += '_';
@@ -4220,14 +4307,15 @@ pub fn main() {{
     let mut argv: Vec<*mut libc::c_char> = args.iter().map(|arg| arg.as_ptr() as *mut libc::c_char).collect();
     argv.push(::std::ptr::null_mut());
     unsafe {{
+        __cpp2rust_init_globals();
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }}
 }})",
                        main_function_name));
   } else {
-    StrCat(std::format(
-        "pub fn main() {{ unsafe {{ std::process::exit({}() as i32); }} }}",
-        main_function_name));
+    StrCat(std::format("pub fn main() {{ unsafe {{ __cpp2rust_init_globals(); "
+                       "std::process::exit({}() as i32); }} }}",
+                       main_function_name));
   }
 }
 
@@ -4427,15 +4515,8 @@ void Converter::AddDefaultTrait(const clang::RecordDecl *decl) {
     if (auto *default_ctor = GetUserDefinedDefaultConstructor(cxx)) {
       StrCat(keyword_unsafe_);
       PushBrace unsafe_brace(*this);
-      Convert(clang::CXXConstructExpr::Create(
-          ctx_, ctx_.getCanonicalTagType(decl), clang::SourceLocation(),
-          default_ctor,
-          /*Elidable=*/false, llvm::ArrayRef<clang::Expr *>(),
-          /*HadMultipleCandidates=*/false,
-          /*ListInitialization=*/false,
-          /*StdInitListInitialization=*/false,
-          /*ZeroInitialization=*/false, clang::CXXConstructionKind::Complete,
-          clang::SourceRange()));
+      Convert(MakeConstructExpr(ctx_, ctx_.getCanonicalTagType(decl),
+                                default_ctor, {}));
       return;
     }
   }
@@ -4612,25 +4693,20 @@ void Converter::PlaceholderCtx::dump() const {
                << ", declared_in_rule_as_rust_ptr: "
                << declared_in_rule_as_rust_ptr
                << ", access: " << static_cast<int>(access)
-               << ", param_type: " << param_type
+               << ", arg_idx: " << arg_idx
                << ", materialize_idx: " << materialize_idx << '\n';
 }
 
 std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
-                                          const PlaceholderCtx &ph_ctx,
-                                          unsigned arg_idx) {
-  if (arg->getType()->isFunctionPointerType() ||
-      llvm::isa<clang::LambdaExpr>(arg->IgnoreUnlessSpelledInSource())) {
-    PushExprKind push(*this, ExprKind::Callee);
-    Buffer buf(*this);
-    Convert(arg);
-    return std::move(buf).str();
+                                          const PlaceholderCtx &ph_ctx) {
+  if (arg->getType()->isFunctionPointerType()) {
+    return ConvertFnPtrPlaceholder(arg);
   }
 
-  std::string param_type = Mapper::GetParamType(GetCalleeOrExpr(expr), arg_idx);
   if (ph_ctx.declared_in_rule_as_rust_ptr && arg->getType()->isArrayType()) {
-    return std::format("({} as {})", ConvertFreshPointer(arg),
-                       std::move(param_type));
+    return std::format(
+        "({} as {})", ConvertFreshPointer(arg),
+        Mapper::GetParamType(GetCalleeOrExpr(expr), ph_ctx.arg_idx));
   }
 
   if (ph_ctx.needs_materialization()) {
@@ -4645,8 +4721,9 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
   }
 
   if (ph_ctx.needs_pointer_receiver()) {
-    return std::format("({} as {})", ConvertFreshObject(arg),
-                       std::move(param_type));
+    return std::format(
+        "({} as {})", ConvertFreshObject(arg),
+        Mapper::GetParamType(GetCalleeOrExpr(expr), ph_ctx.arg_idx));
   }
 
   if (ph_ctx.needs_object_receiver()) {
@@ -4673,7 +4750,24 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
     if (clang::isa<clang::MaterializeTemporaryExpr>(arg)) {
       return ConvertRValue(arg);
     }
-    return std::format("std::mem::take(&mut {})", ConvertLValue(arg));
+    if (auto *record = arg->getType()->getAsCXXRecordDecl();
+        record && IsUserDefinedDecl(record)) {
+      for (auto *ctor : record->ctors()) {
+        if (!IsConvertibleMoveConstructor(ctor)) {
+          continue;
+        }
+        Buffer buf(*this);
+        Convert(MakeConstructExpr(ctx_, arg->getType(), ctor, arg));
+        return std::move(buf).str();
+      }
+      if (TypeIsCopyable(arg->getType())) {
+        return ConvertRValue(arg);
+      }
+      return ConvertFreshRValue(arg);
+    }
+    auto lvalue = ConvertLValue(arg);
+    SetFresh();
+    return std::format("std::mem::take(&mut {})", std::move(lvalue));
   }
 
   if (ph_ctx.access == TranslationRule::Access::kMove) {
@@ -4725,6 +4819,7 @@ std::string Converter::ConvertIRFragment(
       bool is_receiver = HasReceiver(expr) && arg_idx == 0;
 
       PlaceholderCtx ph_ctx{
+          .arg_idx = arg_idx,
           .implicit_convert_to = GetParamImplicitConvertTarget(expr, arg_idx),
           .materialize_ctx = ctx,
           .materialize_idx =

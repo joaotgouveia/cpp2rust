@@ -35,16 +35,16 @@ impl Chain {
     }
     pub unsafe fn add_i32_rref(&mut self, mut n: i32) -> *mut Chain {
         self.v += n;
-        return (self as *mut Chain);
+        return &mut (*(self as *mut Chain));
     }
     pub unsafe fn take(&mut self) -> Chain {
-        return Chain::Chain_pmutChain({ (self as *mut Chain) });
+        return Chain::Chain_pmutChain({ &mut (*(self as *mut Chain)) });
     }
     pub unsafe fn copy(&self) -> Chain {
         return Chain::Chain_pconstChain({ &(*(self as *const Chain)) });
     }
     pub unsafe fn self_(&mut self) -> *mut Chain {
-        return (self as *mut Chain);
+        return &mut (*(self as *mut Chain));
     }
 }
 impl Clone for Chain {
@@ -57,6 +57,7 @@ pub unsafe fn consume_0(mut c: Chain) -> i32 {
 }
 pub fn main() {
     unsafe {
+        __cpp2rust_init_globals();
         std::process::exit(main_0() as i32);
     }
 }
@@ -86,3 +87,4 @@ unsafe fn main_0() -> i32 {
     assert!(((f.v) == (31)) && ((e.v) == (0)));
     return 0;
 }
+pub unsafe fn __cpp2rust_init_globals() {}

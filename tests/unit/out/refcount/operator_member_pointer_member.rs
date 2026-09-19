@@ -32,13 +32,12 @@ impl ByteRepr for Inner {
         }
     }
 }
-thread_local!();
 #[derive(Default)]
 pub struct Table {}
 impl Table {
     pub fn operator_index(i: i32) -> Ptr<i32> {
         let i: Value<i32> = Rc::new(RefCell::new(i));
-        return (table_0.with(Value::clone).as_pointer() as Ptr<i32>).offset((*i.borrow()));
+        return (table_0.with(|v| v.as_pointer()) as Ptr<i32>).offset((*i.borrow()));
     }
 }
 impl Clone for Table {
@@ -68,7 +67,9 @@ pub struct S {
 impl Clone for S {
     fn clone(&self) -> Self {
         let __this: Value<S> = Rc::new(RefCell::new(Self {
-            data: Rc::new(RefCell::new((*self.data.borrow()).clone())),
+            data: Rc::new(RefCell::new(Box::new(std::array::from_fn::<_, 3, _>(
+                |__i: usize| (*self.data.borrow())[(__i) as usize],
+            )))),
             inner: Rc::new(RefCell::new((*self.inner.borrow()).clone())),
         }));
         let this: Ptr<S> = __this.as_pointer();
@@ -101,6 +102,7 @@ impl ByteRepr for S {
     }
 }
 pub fn main() {
+    __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
@@ -149,7 +151,7 @@ fn main_0() -> i32 {
     let t: Value<Table> = Rc::new(RefCell::new(<Table>::default()));
     assert!(((({ Table::operator_index(1,) }).read()) == 8));
     ({ Table::operator_index(1) }).write(80);
-    assert!(((*table_0.with(Value::clone).borrow())[(1) as usize] == 80));
+    assert!((table_0.with(|rc| rc.borrow().clone())[(1) as usize] == 80));
     return 0;
 }
 pub trait SImpl {
@@ -177,4 +179,7 @@ impl SImpl for Ptr<S> {
     fn operator_addr(&self) -> Ptr<i32> {
         return (((*(*self).upgrade().deref()).data.as_pointer() as Ptr<i32>).offset(0));
     }
+}
+pub fn __cpp2rust_init_globals() {
+    let _ = table_0.with(|_| ());
 }

@@ -13,7 +13,9 @@ pub struct StackArray {
 impl Clone for StackArray {
     fn clone(&self) -> Self {
         let __this: Value<StackArray> = Rc::new(RefCell::new(Self {
-            arr: Rc::new(RefCell::new((*self.arr.borrow()).clone())),
+            arr: Rc::new(RefCell::new(Box::new(std::array::from_fn::<_, 3, _>(
+                |__i: usize| ((*self.arr.borrow())[(__i) as usize]).clone(),
+            )))),
         }));
         let this: Ptr<StackArray> = __this.as_pointer();
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -54,6 +56,7 @@ pub fn IncrementAll_0(s: Ptr<StackArray>) {
     }
 }
 pub fn main() {
+    __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
@@ -69,3 +72,4 @@ fn main_0() -> i32 {
     assert!(((*x.borrow()) == 3));
     return 0;
 }
+pub fn __cpp2rust_init_globals() {}

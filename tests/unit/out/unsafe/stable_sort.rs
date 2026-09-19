@@ -8,6 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub fn main() {
     unsafe {
+        __cpp2rust_init_globals();
         std::process::exit(main_0() as i32);
     }
 }
@@ -21,12 +22,14 @@ unsafe fn main_0() -> i32 {
         ::std::slice::from_raw_parts_mut(arr1.as_mut_ptr(), len).sort_by(|x, y| {
             if (|x: i32, y: i32| {
                 return ((x) < (y));
-            })(*x, *y)
+            })
+            .call(*x, *y)
             {
                 std::cmp::Ordering::Less
             } else if (|x: i32, y: i32| {
                 return ((x) < (y));
-            })(*y, *x)
+            })
+            .call(*y, *x)
             {
                 std::cmp::Ordering::Greater
             } else {
@@ -36,3 +39,4 @@ unsafe fn main_0() -> i32 {
     };
     return 0;
 }
+pub unsafe fn __cpp2rust_init_globals() {}

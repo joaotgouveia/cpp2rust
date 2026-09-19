@@ -46,7 +46,9 @@ impl Clone for Foo {
             x: Rc::new(RefCell::new((*self.x.borrow()))),
             y: (self.y).clone(),
             z: Rc::new(RefCell::new((*self.z.borrow()).clone())),
-            a: Rc::new(RefCell::new((*self.a.borrow()).clone())),
+            a: Rc::new(RefCell::new(Box::new(std::array::from_fn::<_, 3, _>(
+                |__i: usize| (*self.a.borrow())[(__i) as usize],
+            )))),
             bar: Rc::new(RefCell::new((*self.bar.borrow()).clone())),
         }));
         let this: Ptr<Foo> = __this.as_pointer();
@@ -68,6 +70,7 @@ impl Default for Foo {
 }
 impl ByteRepr for Foo {}
 pub fn main() {
+    __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
@@ -506,3 +509,4 @@ fn main_0() -> i32 {
     }
     return 0;
 }
+pub fn __cpp2rust_init_globals() {}

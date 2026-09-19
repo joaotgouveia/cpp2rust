@@ -19,8 +19,12 @@ impl Clone for Pointers {
         let __this: Value<Pointers> = Rc::new(RefCell::new(Self {
             x1: Rc::new(RefCell::new((*self.x1.borrow()).clone())),
             x2: Rc::new(RefCell::new((*self.x2.borrow()).clone())),
-            x3: Rc::new(RefCell::new((*self.x3.borrow()).clone())),
-            x4: Rc::new(RefCell::new((*self.x4.borrow()).clone())),
+            x3: Rc::new(RefCell::new(Box::new(std::array::from_fn::<_, 5, _>(
+                |__i: usize| ((*self.x3.borrow())[(__i) as usize]).clone(),
+            )))),
+            x4: Rc::new(RefCell::new(Box::new(std::array::from_fn::<_, 10, _>(
+                |__i: usize| ((*self.x4.borrow())[(__i) as usize]).clone(),
+            )))),
             x5: Rc::new(RefCell::new((*self.x5.borrow()))),
         }));
         let this: Ptr<Pointers> = __this.as_pointer();
@@ -68,6 +72,7 @@ impl ByteRepr for Pointers {
     }
 }
 pub fn main() {
+    __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
@@ -79,3 +84,4 @@ fn main_0() -> i32 {
     (*default_pointers.borrow()).delete_array();
     return 0;
 }
+pub fn __cpp2rust_init_globals() {}

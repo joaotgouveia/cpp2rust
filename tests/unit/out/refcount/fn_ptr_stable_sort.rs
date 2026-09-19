@@ -43,6 +43,7 @@ pub fn Compare_0(a: Ptr<Item>, b: Ptr<Item>) -> bool {
     };
 }
 pub fn main() {
+    __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
@@ -61,7 +62,7 @@ fn main_0() -> i32 {
     });
     (v.as_pointer() as Ptr<Item>).sort_with_cmp(
         (v.as_pointer() as Ptr<Item>).to_end().get_offset(),
-        Compare_0,
+        |x, y| Compare_0.call(x, y),
     );
     assert!(
         ((*(*(v.as_pointer() as Ptr<Item>)
@@ -92,3 +93,4 @@ fn main_0() -> i32 {
     );
     return 0;
 }
+pub fn __cpp2rust_init_globals() {}

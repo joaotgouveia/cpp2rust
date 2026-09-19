@@ -18,6 +18,7 @@
 #include <vector>
 
 #include "converter/converter_lib.h"
+#include "converter/factory.h"
 #include "converter/lex.h"
 #include "converter/translation_rule.h"
 #include "logging.h"
@@ -51,9 +52,10 @@ public:
 
   virtual void EmitFilePreamble();
 
-  static std::string EmitOpaqueRecords();
+  static void EmitOpaqueRecords(std::string &out);
+  static void EmitGlobalInits(Model model, std::string &out);
 
-  static std::string EmitMethodsOnPtr();
+  static void EmitMethodsOnPtr(std::string &out);
 
   virtual bool VisitBuiltinType(clang::BuiltinType *type);
 
@@ -98,6 +100,8 @@ public:
   virtual bool VisitFunctionTemplateDecl(clang::FunctionTemplateDecl *decl);
 
   virtual bool VisitVarDecl(clang::VarDecl *decl);
+  virtual bool LazyStaticInit() const { return true; }
+  virtual std::string ForceGlobalInit(const clang::VarDecl *decl);
 
   void ConvertVarDecl(clang::VarDecl *decl);
 
@@ -223,7 +227,7 @@ public:
   };
 
   struct PlaceholderCtx {
-    std::string param_type;
+    unsigned arg_idx;
     std::optional<clang::QualType> implicit_convert_to;
     TempMaterializationCtx *materialize_ctx;
     int materialize_idx; // <0 = no idx, >=0 idx valid
@@ -311,6 +315,9 @@ public:
   virtual void
   ConvertFunctionToFunctionPointer(const clang::FunctionDecl *fn_decl);
 
+  std::string ConvertFnPtrCallee(clang::Expr *arg);
+  virtual std::string ConvertFnPtrPlaceholder(clang::Expr *arg);
+
   // Option<fn> implements Copy
   virtual bool FunctionPointerImplementsCopy() const { return true; }
 
@@ -332,6 +339,8 @@ public:
   void ConvertVAArgCall(clang::CallExpr *expr);
 
   virtual void ConvertVariadicArg(clang::Expr *arg);
+
+  void DefineImplicitMembers(clang::CXXRecordDecl *decl);
 
   virtual bool VisitCallExpr(clang::CallExpr *expr);
 
@@ -386,6 +395,9 @@ public:
   virtual bool VisitCXXThisExpr(clang::CXXThisExpr *expr);
 
   virtual bool VisitInitListExpr(clang::InitListExpr *expr);
+  bool VisitOpaqueValueExpr(clang::OpaqueValueExpr *expr);
+  bool VisitArrayInitIndexExpr(clang::ArrayInitIndexExpr *expr);
+  virtual bool VisitArrayInitLoopExpr(clang::ArrayInitLoopExpr *expr);
 
   virtual bool VisitCompoundLiteralExpr(clang::CompoundLiteralExpr *expr);
 
@@ -447,10 +459,19 @@ protected:
 
 #define StrCat(...) _StrCat(__FUNCTION__, __LINE__, __VA_ARGS__)
 
+  inline bool is_empty(char c) { return false; }
+  inline bool is_empty(const char *s) { return s == nullptr || *s == '\0'; }
+  template <size_t N> inline bool is_empty(const char (&s)[N]) {
+    return s[0] == '\0';
+  }
+  template <typename T> inline bool is_empty(const T &s) { return s.empty(); }
+
   template <typename... Ts>
   inline void _StrCat(const char *func, int line, const Ts &...vals) {
     log() << '[' << func << ':' << line << "] ";
-    ((log() << vals << '\n', *rs_code_ += vals, *rs_code_ += ' '), ...);
+    ((log() << vals << '\n', *rs_code_ += vals,
+      (is_empty(vals) ? void() : void(*rs_code_ += ' '))),
+     ...);
   }
 
   class Buffer {
@@ -466,7 +487,7 @@ protected:
     std::string str() && { return std::move(partial_code); }
   };
 
-  template <char kOpen, char kClose> class PushDelim {
+  template <auto kOpen, auto kClose> class PushDelim {
     Converter &c;
     bool enabled;
 
@@ -491,6 +512,8 @@ protected:
       PushDelim<token::kOpenCurlyBracket, token::kCloseCurlyBracket>;
   using PushParen = PushDelim<token::kOpenParen, token::kCloseParen>;
   using PushBracket = PushDelim<token::kOpenBracket, token::kCloseBracket>;
+  using PushLazyType = PushDelim<token::kLazyCellType, token::kGt>;
+  using PushLazyInit = PushDelim<token::kLazyCellNew, token::kCloseParen>;
 
   template <typename T>
   inline std::string
@@ -883,6 +906,8 @@ protected:
   // translation units.
   static std::map<std::string, MethodsOnPtr> methods_on_ptr_;
 
+  std::string hoisted_records_;
+
   enum class ExprKind : uint8_t {
     Callee,
     LValue,
@@ -1005,8 +1030,8 @@ protected:
   virtual bool emplace_back_plugin_convert(clang::CallExpr *call);
   virtual void emplace_back_plugin_construct_arg(clang::QualType elem_type,
                                                  clang::CXXConstructExpr *ctor);
-  virtual void emplace_back_emit_push_open(clang::CXXMemberCallExpr *call);
-  virtual void emplace_back_emit_push_close(clang::CXXMemberCallExpr *call);
+  virtual void emplace_back_emit_push(clang::CXXMemberCallExpr *call,
+                                      std::string_view arg);
 
   virtual const char *GetPointerDerefPrefix(clang::QualType pointee_type);
 
@@ -1022,6 +1047,7 @@ private:
   std::vector<ExprKind> curr_expr_kind_;
   static std::unordered_map<std::string, std::string> inner_structs_;
   static std::unordered_set<std::string> globals_;
+  static std::vector<std::string> global_inits_;
   clang::Sema *sema_ = nullptr;
 };
 } // namespace cpp2rust

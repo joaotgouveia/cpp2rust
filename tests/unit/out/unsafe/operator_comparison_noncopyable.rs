@@ -22,6 +22,12 @@ impl S {
         let mut this = Self { data_: data };
         this
     }
+    pub unsafe fn S_pmutS(_a0: *mut S) -> Self {
+        let mut this = Self {
+            data_: (*_a0).data_,
+        };
+        this
+    }
 }
 impl std::cmp::Ord for S {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -49,6 +55,7 @@ impl std::cmp::PartialEq for S {
 impl std::cmp::Eq for S {}
 pub fn main() {
     unsafe {
+        __cpp2rust_init_globals();
         std::process::exit(main_0() as i32);
     }
 }
@@ -76,3 +83,4 @@ unsafe fn main_0() -> i32 {
     );
     return 0;
 }
+pub unsafe fn __cpp2rust_init_globals() {}

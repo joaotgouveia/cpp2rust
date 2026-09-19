@@ -138,6 +138,23 @@ impl DisjointSet {
                 ((self.rank.as_mut().unwrap()[(xset as usize)]) + (1));
         }
     }
+    pub unsafe fn DisjointSet_pmutDisjointSet(_a0: *mut DisjointSet) -> Self {
+        let mut this = Self {
+            rank: (*_a0).rank.take(),
+            parent: (*_a0).parent.take(),
+            n: (*_a0).n,
+        };
+        this
+    }
+    pub unsafe fn operator_assign_pmutDisjointSet(
+        &mut self,
+        _a0: *mut DisjointSet,
+    ) -> *mut DisjointSet {
+        self.rank = (*_a0).rank.take();
+        self.parent = (*_a0).parent.take();
+        self.n = (*_a0).n;
+        return &mut (*(self as *mut DisjointSet));
+    }
 }
 #[repr(C)]
 #[derive(Default)]
@@ -145,6 +162,22 @@ pub struct Graph {
     pub edges: Option<Box<[Edge]>>,
     pub V: i32,
     pub E: i32,
+}
+impl Graph {
+    pub unsafe fn Graph_pmutGraph(_a0: *mut Graph) -> Self {
+        let mut this = Self {
+            edges: (*_a0).edges.take(),
+            V: (*_a0).V,
+            E: (*_a0).E,
+        };
+        this
+    }
+    pub unsafe fn operator_assign_pmutGraph(&mut self, _a0: *mut Graph) -> *mut Graph {
+        self.edges = (*_a0).edges.take();
+        self.V = (*_a0).V;
+        self.E = (*_a0).E;
+        return &mut (*(self as *mut Graph));
+    }
 }
 pub unsafe fn MSTKruskal_2(graph: *mut Graph) -> f64 {
     (unsafe {
@@ -184,6 +217,7 @@ pub unsafe fn MSTKruskal_2(graph: *mut Graph) -> f64 {
 }
 pub fn main() {
     unsafe {
+        __cpp2rust_init_globals();
         std::process::exit(main_0() as i32);
     }
 }
@@ -228,3 +262,4 @@ unsafe fn main_0() -> i32 {
     assert!(((total_weight) == (19_f64)));
     return 0;
 }
+pub unsafe fn __cpp2rust_init_globals() {}

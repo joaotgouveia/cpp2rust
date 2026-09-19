@@ -48,7 +48,7 @@ pub unsafe fn shrink_through_ptr_2(mut comps: *mut Vec<Chunk>) {
     (*comps).shrink_to_fit();
 }
 pub unsafe fn nested_push_move_3(mut bw: *mut Writer) {
-    (*(*bw).output).push(std::mem::take(&mut (*bw).chunk));
+    (*(*bw).output).push((*bw).chunk);
 }
 pub unsafe fn emplace_local_from_field_4(mut jpg: *mut JPEGData, mut cond: bool) {
     let mut head: [u8; 3] = [1_u8, 2_u8, 3_u8];
@@ -69,7 +69,10 @@ pub unsafe fn emplace_local_from_field_4(mut jpg: *mut JPEGData, mut cond: bool)
     );
 }
 pub unsafe fn nested_emplace_move_5(mut bw: *mut Writer) {
-    (*(*bw).output).push(std::mem::take(&mut (*bw).chunk));
+    {
+        let __arg = (*bw).chunk;
+        (*(*bw).output).push(__arg)
+    };
 }
 pub unsafe fn self_ref_push_6(mut comps: *mut Vec<Chunk>) {
     {
@@ -79,6 +82,7 @@ pub unsafe fn self_ref_push_6(mut comps: *mut Vec<Chunk>) {
 }
 pub fn main() {
     unsafe {
+        __cpp2rust_init_globals();
         std::process::exit(main_0() as i32);
     }
 }
@@ -120,3 +124,4 @@ unsafe fn main_0() -> i32 {
     assert!(((chunks[(2_usize)].data) == (42)));
     return 0;
 }
+pub unsafe fn __cpp2rust_init_globals() {}

@@ -31,6 +31,13 @@ impl S {
         let this: Ptr<S> = __this.as_pointer();
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
+    pub fn S_pmutS(_a0: Ptr<S>) -> Self {
+        let __this: Value<S> = Rc::new(RefCell::new(Self {
+            data_: Rc::new(RefCell::new((*(*_a0.upgrade().deref()).data_.borrow()))),
+        }));
+        let this: Ptr<S> = __this.as_pointer();
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
 }
 impl std::cmp::Ord for S {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -99,6 +106,7 @@ impl ByteRepr for S {
     }
 }
 pub fn main() {
+    __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
@@ -125,3 +133,4 @@ fn main_0() -> i32 {
     );
     return 0;
 }
+pub fn __cpp2rust_init_globals() {}

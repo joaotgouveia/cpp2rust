@@ -11,6 +11,7 @@
 
 struct T2 {
   friend bool operator<(T2 a, T2 b) { return false; }
+  bool operator()(const T2 &, const T2 &) const;
 };
 
 template <typename T1 = Iterator<Comparable, Long>> void f1(T1 first, T1 last) {
@@ -28,15 +29,8 @@ T1 f3(T1 first, T1 last, const T2 &value) {
   return std::find(first, last, value);
 }
 
-// TODO
-auto lambda = [](const T2 &a, const T2 &b) { return false; };
-template <typename T1 = Iterator<Plain, Long>>
-void f6(T1 first, T1 last, decltype(lambda) comp) {
-  return std::stable_sort(first, last, comp);
-}
-
 template <typename T2, typename T1 = Iterator<T2, Long>>
-void f7(T1 first, T1 last, bool (*comp)(const T2 &, const T2 &)) {
+void f6(T1 first, T1 last, T2 comp) {
   return std::stable_sort(first, last, comp);
 }
 
@@ -64,15 +58,8 @@ std::ostream_iterator<char> f13(std::string::iterator a0,
   return std::copy(a0, a1, a2);
 }
 
-// TODO
-auto lambda_nref = [](T2 a, T2 b) { return false; };
-template <typename T1 = Iterator<Plain, Long>>
-void f14(T1 *first, T1 *last, decltype(lambda_nref) comp) {
-  return std::stable_sort(first, last, comp);
-}
-
 template <typename T2, typename T1 = ConvertibleTo<T2>>
-void f15(T1 *first, T1 *last, bool (*comp)(T2, T2)) {
+void f14(T1 *first, T1 *last, T2 comp) {
   return std::stable_sort(first, last, comp);
 }
 

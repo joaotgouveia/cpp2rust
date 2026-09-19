@@ -11,6 +11,18 @@ use std::rc::Rc;
 pub struct Holder {
     pub val: Option<Box<i32>>,
 }
+impl Holder {
+    pub unsafe fn Holder_pmutHolder(_a0: *mut Holder) -> Self {
+        let mut this = Self {
+            val: (*_a0).val.take(),
+        };
+        this
+    }
+    pub unsafe fn operator_assign_pmutHolder(&mut self, _a0: *mut Holder) -> *mut Holder {
+        self.val = (*_a0).val.take();
+        return &mut (*(self as *mut Holder));
+    }
+}
 pub unsafe fn read_val_0(mut h: *const Holder) -> i32 {
     return (*(*(std::ptr::addr_of!((*h).val).cast_mut()))
         .as_deref_mut()
@@ -23,6 +35,7 @@ pub unsafe fn write_val_1(mut h: *const Holder, mut v: i32) {
 }
 pub fn main() {
     unsafe {
+        __cpp2rust_init_globals();
         std::process::exit(main_0() as i32);
     }
 }
@@ -33,3 +46,4 @@ unsafe fn main_0() -> i32 {
     assert!(((unsafe { read_val_0((&mut h as *mut Holder).cast_const(),) }) == (42)));
     return 0;
 }
+pub unsafe fn __cpp2rust_init_globals() {}
