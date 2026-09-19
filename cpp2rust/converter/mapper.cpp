@@ -451,6 +451,37 @@ void addRulesFromDirectory(const std::filesystem::path &dir, Model model,
   }
 }
 
+void addPartialBuiltinReferenceTypes() {
+  assert(ctx_);
+  std::array<clang::QualType, 12> builtins = {
+      ctx_->BoolTy,         ctx_->FloatTy,       ctx_->DoubleTy,
+      ctx_->CharTy,         ctx_->ShortTy,       ctx_->UnsignedShortTy,
+      ctx_->IntTy,          ctx_->UnsignedIntTy, ctx_->LongTy,
+      ctx_->UnsignedLongTy, ctx_->LongLongTy,    ctx_->UnsignedLongLongTy,
+
+  };
+
+  const auto add_partial = [](const std::string &tp) { AddTypeRule(tp, {}); };
+  for (auto bt : builtins) {
+    add_partial(ToString(ctx_->getLValueReferenceType(bt)));
+    add_partial(ToString(ctx_->getRValueReferenceType(bt)));
+  }
+
+  for (auto st : {ctx_->getSizeType(), ctx_->getSignedSizeType()}) {
+    if (const auto *ps = llvm::dyn_cast<clang::PredefinedSugarType>(st)) {
+      auto sugared = ps->getIdentifier()->getName().str();
+      add_partial(sugared + " &");
+      add_partial(std::move(sugared) + " &&");
+    }
+  }
+
+  for (const auto *alias : {"size_t", "size_type", "ssize_t"}) {
+    std::string str = alias;
+    add_partial(str + " &");
+    add_partial(std::move(str) + " &&");
+  }
+}
+
 void addBuiltinTypes(Model model) {
   assert(ctx_);
 
@@ -1168,6 +1199,8 @@ void LoadTranslationRules(Model model, clang::ASTContext &ctx,
 void LoadPartialTranslationRules(const std::string &rules_dir) {
   namespace fs = std::filesystem;
   addBuiltinTypes(Model::kRefCount); // model is irrelevant here
+  addPartialBuiltinReferenceTypes();
+
   for (const auto &entry : fs::directory_iterator(rules_dir)) {
     const auto &path = entry.path();
     if (!fs::exists(path / "ir_src.json")) {
