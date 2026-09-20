@@ -2882,6 +2882,7 @@ bool Converter::VisitUnaryOperator(clang::UnaryOperator *expr) {
   }
   switch (opcode) {
   case clang::UO_Extension:
+  case clang::UO_Plus:
     Convert(sub_expr);
     break;
   case clang::UO_AddrOf: {
