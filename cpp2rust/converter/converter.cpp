@@ -1059,7 +1059,8 @@ bool Converter::VisitCXXMethodDecl(clang::CXXMethodDecl *decl) {
   if (!ShouldConvertMethod(decl)) {
     return false;
   }
-  if (!decl->isPureVirtual() && !decl->hasBody()) {
+  if (decl->getDescribedFunctionTemplate() || decl->isDependentContext() ||
+      (!decl->isPureVirtual() && !decl->hasBody())) {
     return false;
   }
   if (!decl_ids_.insert(GetMethodID(decl)).second) {
@@ -1070,7 +1071,7 @@ bool Converter::VisitCXXMethodDecl(clang::CXXMethodDecl *decl) {
   if (decl->isOutOfLine() && !decl->overridden_methods().empty()) {
     return false;
   }
-  if (decl->isOutOfLine()) {
+  if (decl->isOutOfLine() && !decl->isTemplateInstantiation()) {
     return ConvertOutOfLineMethod(decl);
   }
   return ConvertCXXMethodDecl(decl);
