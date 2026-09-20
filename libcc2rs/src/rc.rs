@@ -234,7 +234,22 @@ impl<T> Ptr<T> {
     pub fn delete(&self) {
         match &self.kind {
             PtrKind::HeapSingle(weak) => {
-                assert_eq!(self.offset, 0, "ub: invalid delete");
+                assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
+                unsafe {
+                    let strong = weak.upgrade().expect("ub: dangling pointer");
+                    Rc::from_raw(Rc::as_ptr(&strong));
+                }
+                assert_eq!(Weak::strong_count(weak), 0, "ub: double free");
+            }
+            PtrKind::HeapArray(weak) => {
+                assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
+                unsafe {
+                    let strong = weak.upgrade().expect("ub: dangling pointer");
+                    Rc::from_raw(Rc::as_ptr(&strong));
+                }
+                assert_eq!(Weak::strong_count(weak), 0, "ub: double free");
+            }
+            PtrKind::HeapVec(weak) => {
                 assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
                 unsafe {
                     let strong = weak.upgrade().expect("ub: dangling pointer");
@@ -245,34 +260,6 @@ impl<T> Ptr<T> {
             PtrKind::Reinterpreted(data) => data.alloc.delete(),
             PtrKind::Null => {}
             PtrKind::Seam(s) => s.delete(self.offset),
-            _ => panic!("ub: invalid delete"),
-        }
-    }
-
-    #[inline]
-    pub fn delete_array(&self) {
-        match &self.kind {
-            PtrKind::HeapArray(weak) => {
-                assert_eq!(self.offset, 0, "ub: invalid delete");
-                assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
-                unsafe {
-                    let strong = weak.upgrade().expect("ub: dangling pointer");
-                    Rc::from_raw(Rc::as_ptr(&strong));
-                }
-                assert_eq!(Weak::strong_count(weak), 0, "ub: double free");
-            }
-            PtrKind::HeapVec(weak) => {
-                assert_eq!(self.offset, 0, "ub: invalid delete");
-                assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
-                unsafe {
-                    let strong = weak.upgrade().expect("ub: dangling pointer");
-                    Rc::from_raw(Rc::as_ptr(&strong));
-                }
-                assert_eq!(Weak::strong_count(weak), 0, "ub: double free");
-            }
-            PtrKind::Reinterpreted(data) => data.alloc.delete(),
-            PtrKind::Null => {}
-            PtrKind::Seam(s) => s.delete_array(self.offset),
             _ => panic!("ub: invalid delete"),
         }
     }
@@ -1075,7 +1062,7 @@ mod tests {
         let p: Ptr<Vec<i32>> = Ptr::alloc(vec![1, 2, 3]);
         let q = p.decay();
         assert_eq!(q.offset(2).read(), 3);
-        q.delete_array();
+        q.delete();
     }
 
     #[test]
@@ -1083,7 +1070,7 @@ mod tests {
         let p: Ptr<Box<[i32]>> = Ptr::alloc(vec![1, 2, 3].into_boxed_slice());
         let q = p.decay();
         assert_eq!(q.offset(2).read(), 3);
-        q.delete_array();
+        q.delete();
     }
 
     #[test]
@@ -1091,7 +1078,7 @@ mod tests {
     fn decay_stack_vec_cannot_be_freed() {
         let v: Value<Vec<i32>> = Rc::new(RefCell::new(vec![1, 2, 3]));
         let p: Ptr<Vec<i32>> = v.as_pointer();
-        p.decay().delete_array();
+        p.decay().delete();
     }
 
     #[test]
@@ -1099,7 +1086,7 @@ mod tests {
     fn decay_stack_array_cannot_be_freed() {
         let v: Value<Box<[i32]>> = Rc::new(RefCell::new(vec![1, 2, 3].into_boxed_slice()));
         let p: Ptr<Box<[i32]>> = (&v as &dyn AsPointer<Box<[i32]>>).as_pointer();
-        p.decay().delete_array();
+        p.decay().delete();
     }
 
     #[test]

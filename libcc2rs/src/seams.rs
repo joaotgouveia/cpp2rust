@@ -51,11 +51,6 @@ pub trait PtrSeam<T> {
         panic!("delete is not supported by this seam")
     }
 
-    /// Opt-in, enables Ptr::delete_array.
-    fn delete_array(&self, _offset: usize) {
-        panic!("delete_array is not supported by this seam")
-    }
-
     /// Opt-in, enables Ptr::to_strong.
     fn to_strong(&self, _offset: usize) -> Value<T> {
         panic!("to_strong is not supported by this seam")
