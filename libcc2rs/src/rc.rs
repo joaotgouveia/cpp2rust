@@ -30,7 +30,8 @@ pub(crate) enum PtrKind<T> {
     StackArray(Weak<RefCell<Box<[T]>>>),
     HeapSingle(Weak<RefCell<T>>),
     HeapArray(Weak<RefCell<Box<[T]>>>),
-    Vec(Weak<RefCell<Vec<T>>>),
+    StackVec(Weak<RefCell<Vec<T>>>),
+    HeapVec(Weak<RefCell<Vec<T>>>),
     Reinterpreted(Rc<ReinterpretedView>),
     Seam(Rc<dyn PtrSeam<T>>),
 }
@@ -81,7 +82,8 @@ impl<T> fmt::Debug for PtrKind<T> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             PtrKind::Null => write!(f, "Null"),
-            PtrKind::Vec(w) => write!(f, "Vec({:?})", w.as_ptr()),
+            PtrKind::StackVec(w) => write!(f, "StackVec({:?})", w.as_ptr()),
+            PtrKind::HeapVec(w) => write!(f, "HeapVec({:?})", w.as_ptr()),
             PtrKind::StackSingle(w) => write!(f, "StackSingle({:?})", w.as_ptr()),
             PtrKind::HeapSingle(w) => write!(f, "HeapSingle({:?})", w.as_ptr()),
             PtrKind::StackArray(w) => write!(f, "StackArray({:?})", w.as_ptr()),
@@ -98,7 +100,8 @@ impl<T> Clone for PtrKind<T> {
     fn clone(&self) -> Self {
         match self {
             PtrKind::Null => PtrKind::Null,
-            PtrKind::Vec(weak) => PtrKind::Vec(weak.clone()),
+            PtrKind::StackVec(weak) => PtrKind::StackVec(weak.clone()),
+            PtrKind::HeapVec(weak) => PtrKind::HeapVec(weak.clone()),
             PtrKind::StackSingle(weak) => PtrKind::StackSingle(weak.clone()),
             PtrKind::HeapSingle(weak) => PtrKind::HeapSingle(weak.clone()),
             PtrKind::StackArray(weak) => PtrKind::StackArray(weak.clone()),
@@ -114,7 +117,7 @@ impl<T> PtrKind<T> {
         match self {
             PtrKind::Null => 0,
             PtrKind::StackSingle(w) | PtrKind::HeapSingle(w) => w.as_ptr() as usize,
-            PtrKind::Vec(w) => w.as_ptr() as usize,
+            PtrKind::StackVec(w) | PtrKind::HeapVec(w) => w.as_ptr() as usize,
             PtrKind::StackArray(w) | PtrKind::HeapArray(w) => w.as_ptr() as usize,
             PtrKind::Reinterpreted(data) => data.alloc.address(),
             PtrKind::Seam(s) => s.address(),
@@ -258,6 +261,15 @@ impl<T> Ptr<T> {
                 }
                 assert_eq!(Weak::strong_count(weak), 0, "ub: double free");
             }
+            PtrKind::HeapVec(weak) => {
+                assert_eq!(self.offset, 0, "ub: invalid delete");
+                assert_eq!(Weak::strong_count(weak), 1, "ub: invalid delete");
+                unsafe {
+                    let strong = weak.upgrade().expect("ub: dangling pointer");
+                    Rc::from_raw(Rc::as_ptr(&strong));
+                }
+                assert_eq!(Weak::strong_count(weak), 0, "ub: double free");
+            }
             PtrKind::Reinterpreted(data) => data.alloc.delete(),
             PtrKind::Null => {}
             PtrKind::Seam(s) => s.delete_array(self.offset),
@@ -295,7 +307,9 @@ impl<T> Ptr<T> {
         match &self.kind {
             PtrKind::Null => 0,
             PtrKind::StackSingle(_) | PtrKind::HeapSingle(_) => 1,
-            PtrKind::Vec(weak) => weak.upgrade().expect("ub: dangling pointer").borrow().len(),
+            PtrKind::StackVec(weak) | PtrKind::HeapVec(weak) => {
+                weak.upgrade().expect("ub: dangling pointer").borrow().len()
+            }
             PtrKind::StackArray(weak) | PtrKind::HeapArray(weak) => {
                 weak.upgrade().expect("ub: dangling pointer").borrow().len()
             }
@@ -309,7 +323,7 @@ impl<T> Ptr<T> {
         match &self.kind {
             PtrKind::Null => true,
             PtrKind::StackSingle(_) | PtrKind::HeapSingle(_) => false,
-            PtrKind::Vec(weak) => weak
+            PtrKind::StackVec(weak) | PtrKind::HeapVec(weak) => weak
                 .upgrade()
                 .expect("ub: dangling pointer")
                 .borrow()
@@ -367,7 +381,7 @@ impl<T> Ptr<T> {
                 assert_eq!(self.offset, 0, "ub: invalid offset");
                 StrongPtr::StackSingle(weak.upgrade().expect("ub: dangling pointer"))
             }
-            PtrKind::Vec(weak) => StrongPtr::Vec {
+            PtrKind::StackVec(weak) | PtrKind::HeapVec(weak) => StrongPtr::Vec {
                 rc: weak.upgrade().expect("ub: dangling pointer"),
                 offset: self.offset,
             },
@@ -391,16 +405,6 @@ impl<T> Ptr<T> {
         self.with_mut(|v| *v = value);
     }
 
-    pub fn to_strong(&self) -> Value<T> {
-        match &self.kind {
-            PtrKind::StackSingle(weak) | PtrKind::HeapSingle(weak) => {
-                weak.upgrade().expect("ub: dangling pointer")
-            }
-            PtrKind::Seam(s) => s.to_strong(self.offset),
-            _ => panic!("Only StackSingle and HeapSingle implement to_strong"),
-        }
-    }
-
     pub fn reinterpret_cast<U: ByteRepr>(&self) -> Ptr<U>
     where
         T: ByteRepr,
@@ -421,7 +425,7 @@ impl<T> Ptr<T> {
                 Rc::new(SingleOriginalAlloc { weak: weak.clone() }),
                 src_byte_off,
             ),
-            PtrKind::Vec(weak) => (
+            PtrKind::StackVec(weak) | PtrKind::HeapVec(weak) => (
                 Rc::new(SliceOriginalAlloc { weak: weak.clone() }),
                 src_byte_off,
             ),
@@ -456,7 +460,7 @@ impl<T> Ptr<T> {
                 let mut borrow = rc.borrow_mut();
                 f(&mut *borrow)
             }
-            PtrKind::Vec(weak) => {
+            PtrKind::StackVec(weak) | PtrKind::HeapVec(weak) => {
                 let rc = weak.upgrade().expect("ub: dangling pointer");
                 let mut borrow = rc.borrow_mut();
                 f(&mut borrow[self.offset])
@@ -494,7 +498,7 @@ impl<T> Ptr<T> {
                 let borrow = rc.borrow();
                 f(&*borrow)
             }
-            PtrKind::Vec(weak) => {
+            PtrKind::StackVec(weak) | PtrKind::HeapVec(weak) => {
                 let rc = weak.upgrade().expect("ub: dangling pointer");
                 let borrow = rc.borrow();
                 f(&borrow[self.offset])
@@ -534,7 +538,7 @@ impl Ptr<u8> {
                 let mut b = rc.borrow_mut();
                 f(&mut b[off..off + len])
             }
-            PtrKind::Vec(weak) => {
+            PtrKind::StackVec(weak) | PtrKind::HeapVec(weak) => {
                 let rc = weak.upgrade().expect("ub: dangling pointer");
                 let mut b = rc.borrow_mut();
                 f(&mut b[off..off + len])
@@ -572,7 +576,7 @@ impl Ptr<u8> {
                 let b = rc.borrow();
                 f(&b[off..off + len])
             }
-            PtrKind::Vec(weak) => {
+            PtrKind::StackVec(weak) | PtrKind::HeapVec(weak) => {
                 let rc = weak.upgrade().expect("ub: dangling pointer");
                 let b = rc.borrow();
                 f(&b[off..off + len])
@@ -624,7 +628,7 @@ impl<T: std::cmp::Ord> Ptr<T> {
             PtrKind::StackSingle(_) | PtrKind::HeapSingle(_) => {
                 panic!("only vecs and arrays can be sorted")
             }
-            PtrKind::Vec(ref weak) => {
+            PtrKind::StackVec(ref weak) | PtrKind::HeapVec(ref weak) => {
                 let strong = weak.upgrade().expect("ub: dangling pointer");
                 (*strong.borrow_mut())[self.get_offset()..last].sort();
             }
@@ -669,7 +673,7 @@ impl<T: Clone> Ptr<T> {
             PtrKind::StackSingle(_) | PtrKind::HeapSingle(_) => {
                 panic!("only vecs and arrays can be sorted")
             }
-            PtrKind::Vec(ref weak) => {
+            PtrKind::StackVec(ref weak) | PtrKind::HeapVec(ref weak) => {
                 let strong = weak.upgrade().expect("ub: dangling pointer");
                 let mut borrow = strong.borrow_mut();
                 sort(&mut borrow, self.get_offset(), last, &mut cmp);
@@ -927,7 +931,43 @@ impl<T> AsPointer<T> for Rc<RefCell<Vec<T>>> {
     fn as_pointer(&self) -> Ptr<T> {
         Ptr {
             offset: 0,
-            kind: PtrKind::Vec(Rc::downgrade(self)),
+            kind: PtrKind::StackVec(Rc::downgrade(self)),
+        }
+    }
+}
+
+impl<T> Ptr<Vec<T>> {
+    #[inline]
+    pub fn decay(&self) -> Ptr<T> {
+        match &self.kind {
+            PtrKind::Null => Ptr::null(),
+            PtrKind::StackSingle(weak) => Ptr {
+                offset: self.offset,
+                kind: PtrKind::StackVec(weak.clone()),
+            },
+            PtrKind::HeapSingle(weak) => Ptr {
+                offset: self.offset,
+                kind: PtrKind::HeapVec(weak.clone()),
+            },
+            _ => panic!("ub: invalid decay"),
+        }
+    }
+}
+
+impl<T> Ptr<Box<[T]>> {
+    #[inline]
+    pub fn decay(&self) -> Ptr<T> {
+        match &self.kind {
+            PtrKind::Null => Ptr::null(),
+            PtrKind::StackSingle(weak) => Ptr {
+                offset: self.offset,
+                kind: PtrKind::StackArray(weak.clone()),
+            },
+            PtrKind::HeapSingle(weak) => Ptr {
+                offset: self.offset,
+                kind: PtrKind::HeapArray(weak.clone()),
+            },
+            _ => panic!("ub: invalid decay"),
         }
     }
 }
@@ -955,7 +995,7 @@ impl<T> ToOwnedOption<T, T> for Ptr<T> {
             PtrKind::StackSingle(_) | PtrKind::StackArray(_) => {
                 panic!("Can't own a stack variable")
             }
-            PtrKind::Vec(_) => panic!("Can't own a vector"),
+            PtrKind::StackVec(_) | PtrKind::HeapVec(_) => panic!("Can't own a vector"),
             PtrKind::HeapArray(_) => panic!("Can't own an array variable as single"),
             PtrKind::Reinterpreted(_) => panic!("Can't own a reinterpreted pointer"),
             PtrKind::Seam(ref s) => s.to_owned_single(self.offset),
@@ -982,7 +1022,7 @@ impl<T> ToOwnedOption<T, Box<[T]>> for Ptr<T> {
             PtrKind::StackSingle(_) | PtrKind::StackArray(_) => {
                 panic!("Can't own a stack variable")
             }
-            PtrKind::Vec(_) => panic!("Can't own a vector"),
+            PtrKind::StackVec(_) | PtrKind::HeapVec(_) => panic!("Can't own a vector"),
             PtrKind::HeapSingle(_) => panic!("Can't own a single variable as an array"),
             PtrKind::Reinterpreted(_) => panic!("Can't own a reinterpreted pointer"),
             PtrKind::Seam(ref s) => s.to_owned_array(self.offset),
@@ -1000,7 +1040,9 @@ impl<T> fmt::Debug for Ptr<T> {
             PtrKind::StackArray(w) | PtrKind::HeapArray(w) => {
                 (Weak::as_ptr(w) as usize).wrapping_add(self.byte_offset())
             }
-            PtrKind::Vec(w) => (Weak::as_ptr(w) as usize).wrapping_add(self.byte_offset()),
+            PtrKind::StackVec(w) | PtrKind::HeapVec(w) => {
+                (Weak::as_ptr(w) as usize).wrapping_add(self.byte_offset())
+            }
             PtrKind::Reinterpreted(data) => data.alloc.address().wrapping_add(self.byte_offset()),
             PtrKind::Seam(s) => s.address().wrapping_add(self.byte_offset()),
         };
@@ -1027,6 +1069,38 @@ impl<T: 'static> Ptr<T> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn decay_heap_vec_can_be_freed() {
+        let p: Ptr<Vec<i32>> = Ptr::alloc(vec![1, 2, 3]);
+        let q = p.decay();
+        assert_eq!(q.offset(2).read(), 3);
+        q.delete_array();
+    }
+
+    #[test]
+    fn decay_heap_array_can_be_freed() {
+        let p: Ptr<Box<[i32]>> = Ptr::alloc(vec![1, 2, 3].into_boxed_slice());
+        let q = p.decay();
+        assert_eq!(q.offset(2).read(), 3);
+        q.delete_array();
+    }
+
+    #[test]
+    #[should_panic(expected = "ub: invalid delete")]
+    fn decay_stack_vec_cannot_be_freed() {
+        let v: Value<Vec<i32>> = Rc::new(RefCell::new(vec![1, 2, 3]));
+        let p: Ptr<Vec<i32>> = v.as_pointer();
+        p.decay().delete_array();
+    }
+
+    #[test]
+    #[should_panic(expected = "ub: invalid delete")]
+    fn decay_stack_array_cannot_be_freed() {
+        let v: Value<Box<[i32]>> = Rc::new(RefCell::new(vec![1, 2, 3].into_boxed_slice()));
+        let p: Ptr<Box<[i32]>> = (&v as &dyn AsPointer<Box<[i32]>>).as_pointer();
+        p.decay().delete_array();
+    }
 
     #[test]
     fn reinterpreted_cast() {
