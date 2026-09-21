@@ -55,7 +55,7 @@ public:
   static void EmitOpaqueRecords(std::string &out);
   static void EmitGlobalInits(Model model, std::string &out);
 
-  static void EmitMethodsOnPtr(std::string &out);
+  static void EmitVirtualMethods(std::string &out);
 
   virtual bool VisitBuiltinType(clang::BuiltinType *type);
 
@@ -605,6 +605,10 @@ protected:
                              const std::string_view signature,
                              bool (*predicate)(clang::CXXMethodDecl *));
 
+  void ConvertVirtualMethods(clang::CXXRecordDecl *decl);
+
+  bool ConvertOutOfLineVirtualMethod(clang::CXXMethodDecl *decl);
+
   void AddOrdTrait(const clang::CXXRecordDecl *decl);
 
   void ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
@@ -908,15 +912,15 @@ protected:
     std::unordered_map<std::string, bool> entries_;
   };
   static RecordIndex record_decls_;
-  struct MethodsOnPtr {
-    std::string trait_header;
-    std::string trait_body;
-    std::string impl_header;
-    std::string impl_body;
+  struct DeferredBlock {
+    std::string header;
+    std::string body;
   };
-  // record name -> trait and impl for Ptr<record>, emitted after all
-  // translation units.
-  static std::map<std::string, MethodsOnPtr> methods_on_ptr_;
+  static std::map<std::string, DeferredBlock> virtual_methods_;
+
+  static void EmitDeferredBlock(const DeferredBlock &block, std::string &out);
+
+  DeferredBlock &VirtualMethodsFor(const clang::CXXRecordDecl *decl);
 
   std::string hoisted_records_;
 
