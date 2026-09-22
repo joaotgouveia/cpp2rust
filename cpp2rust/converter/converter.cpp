@@ -1855,7 +1855,7 @@ bool Converter::VisitCallExpr(clang::CallExpr *expr) {
     return false;
   }
 
-  if (expr->isCallToStdMove() || IsCallToStdForward(expr)) {
+  if (IsTransparentStdCall(expr)) {
     Convert(expr->getArg(0));
     return false;
   }
@@ -2179,7 +2179,7 @@ Converter::ConvertCallExpr(clang::CallExpr *expr) {
   if (auto fn = Mapper::ToString(callee);
       fn.starts_with("int printf") || fn.starts_with("int fprintf")) {
     ConvertPrintf(expr);
-  } else if (expr->isCallToStdMove() || IsCallToStdForward(expr)) {
+  } else if (IsTransparentStdCall(expr)) {
     Convert(expr->getArg(0));
   } else if (IsBuiltinConstantP(callee)) {
     StrCat(expr->getArg(0)->isCXX11ConstantExpr(ctx_) ? token::kOne
@@ -2840,7 +2840,7 @@ void Converter::ConvertGenericBinaryOperator(clang::BinaryOperator *expr) {
 }
 
 bool Converter::IsReferenceType(const clang::Expr *expr) const {
-  const auto *e = IgnoreStdMoveAndForward(expr->IgnoreCasts())->IgnoreCasts();
+  const auto *e = IgnoreTransparentStdCall(expr->IgnoreCasts())->IgnoreCasts();
   if (const auto *call = clang::dyn_cast<clang::CallExpr>(e)) {
     return !clang::isa<clang::CXXOperatorCallExpr>(call) &&
            GetReturnTypeOfFunction(call)->isReferenceType();
