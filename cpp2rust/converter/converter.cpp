@@ -1855,7 +1855,7 @@ bool Converter::VisitCallExpr(clang::CallExpr *expr) {
     return false;
   }
 
-  if (expr->isCallToStdMove()) {
+  if (expr->isCallToStdMove() || IsCallToStdForward(expr)) {
     Convert(expr->getArg(0));
     return false;
   }
@@ -1963,9 +1963,10 @@ Converter::CallInfo Converter::CollectCallInfo(clang::CallExpr *expr) {
   for (unsigned i = 0; i < num_named_params && i < num_args; ++i) {
     auto *arg = expr->getArg(i + arg_begin);
     CallArg ca{
-        .param_name = function && !function->getParamDecl(i)->getName().empty()
-                          ? ("_" + function->getParamDecl(i)->getNameAsString())
-                          : ("_arg" + std::to_string(i)),
+        .param_name =
+            function && !function->getParamDecl(i)->getName().empty()
+                ? ("_" + GetNamedDeclAsString(function->getParamDecl(i)))
+                : ("_arg" + std::to_string(i)),
         .param_type = function ? function->getParamDecl(i)->getType()
                                : proto->getParamType(i),
         .expr = arg,
@@ -2178,7 +2179,7 @@ Converter::ConvertCallExpr(clang::CallExpr *expr) {
   if (auto fn = Mapper::ToString(callee);
       fn.starts_with("int printf") || fn.starts_with("int fprintf")) {
     ConvertPrintf(expr);
-  } else if (expr->isCallToStdMove()) {
+  } else if (expr->isCallToStdMove() || IsCallToStdForward(expr)) {
     Convert(expr->getArg(0));
   } else if (IsBuiltinConstantP(callee)) {
     StrCat(expr->getArg(0)->isCXX11ConstantExpr(ctx_) ? token::kOne
@@ -2734,6 +2735,7 @@ void Converter::ConvertBinaryOperator(clang::BinaryOperator *expr) {
       ConvertCast(lhs_type);
     }
   } else if (expr->isCommaOp()) {
+    PushBrace brace(*this);
     {
       PushExprKind push(*this, ExprKind::Void);
       Convert(lhs);
@@ -2838,7 +2840,7 @@ void Converter::ConvertGenericBinaryOperator(clang::BinaryOperator *expr) {
 }
 
 bool Converter::IsReferenceType(const clang::Expr *expr) const {
-  const auto *e = IgnoreStdMove(expr->IgnoreCasts())->IgnoreCasts();
+  const auto *e = IgnoreStdMoveAndForward(expr->IgnoreCasts())->IgnoreCasts();
   if (const auto *call = clang::dyn_cast<clang::CallExpr>(e)) {
     return !clang::isa<clang::CXXOperatorCallExpr>(call) &&
            GetReturnTypeOfFunction(call)->isReferenceType();
@@ -3103,13 +3105,10 @@ bool Converter::VisitDeclRefExpr(clang::DeclRefExpr *expr) {
 }
 
 bool Converter::VisitParenExpr(clang::ParenExpr *expr) {
-  // Comma operator becomes (A, B, C) -> { A; B; C }
-  if (auto *bin = clang::dyn_cast<clang::BinaryOperator>(expr->getSubExpr())) {
-    if (bin->isCommaOp()) {
-      PushBrace push(*this);
-      Convert(expr->getSubExpr());
-      return false;
-    }
+  if (auto *bin = clang::dyn_cast<clang::BinaryOperator>(expr->getSubExpr());
+      bin && (bin->isCommaOp() || (bin->isAssignmentOp() && isVoid()))) {
+    Convert(expr->getSubExpr());
+    return false;
   }
 
   {
@@ -4002,6 +4001,10 @@ std::string Converter::GetArrayDefaultAsString(clang::QualType qual_type) {
 }
 
 std::string Converter::GetDefaultAsString(clang::QualType qual_type) {
+  if (qual_type->isVoidType()) {
+    return "()";
+  }
+
   if (IsVaListType(qual_type)) {
     computed_expr_type_ = ComputedExprType::FreshValue;
     return "VaList::default()";
