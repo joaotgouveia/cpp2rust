@@ -84,6 +84,7 @@ fn build_rustc_args(crate_root: &Path) -> Vec<String> {
         "nix",
         "jiff",
         "xattr",
+        "num_traits",
     ] {
         if let Some(lib) = find_artifact(&build_dir, dep) {
             args.push("--extern".to_string());
