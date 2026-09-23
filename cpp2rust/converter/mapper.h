@@ -24,6 +24,9 @@ private:
   clang::ASTContext *prev_;
 };
 
+std::optional<std::vector<std::optional<std::string>>>
+MatchTemplate(const std::string &template_str, const std::string &instantiated);
+
 bool Contains(clang::QualType qual_type);
 bool Contains(const clang::Expr *expr);
 
