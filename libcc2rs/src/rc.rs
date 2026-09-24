@@ -1,7 +1,7 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
-use crate::{PostfixDec, PostfixInc, PrefixDec, PrefixInc};
+use crate::{PostfixDec, PostfixInc, PrefixDec, PrefixInc, PtrSeam, StrongPtrSeam};
 use std::any::{Any, TypeId};
 
 use std::{
@@ -32,6 +32,7 @@ pub(crate) enum PtrKind<T> {
     HeapArray(Weak<RefCell<Box<[T]>>>),
     Vec(Weak<RefCell<Vec<T>>>),
     Reinterpreted(Rc<ReinterpretedView>),
+    Seam(Rc<dyn PtrSeam<T>>),
 }
 
 pub enum StrongPtr<T> {
@@ -51,6 +52,7 @@ pub enum StrongPtr<T> {
         // Read-through: refreshed from alloc on every deref() call.
         cell: RefCell<Option<T>>,
     },
+    Seam(Box<dyn StrongPtrSeam<T>>),
 }
 
 impl<T: ByteRepr> StrongPtr<T> {
@@ -70,6 +72,7 @@ impl<T: ByteRepr> StrongPtr<T> {
                 *cell.borrow_mut() = Some(T::from_bytes(&buf));
                 Ref::map(cell.borrow(), |opt| opt.as_ref().unwrap())
             }
+            StrongPtr::Seam(s) => s.deref(),
         }
     }
 }
@@ -86,6 +89,7 @@ impl<T> fmt::Debug for PtrKind<T> {
             PtrKind::Reinterpreted(data) => {
                 write!(f, "Reinterpreted(0x{:x})", data.alloc.address())
             }
+            PtrKind::Seam(s) => write!(f, "Seam(0x{:x})", s.address()),
         }
     }
 }
@@ -100,6 +104,7 @@ impl<T> Clone for PtrKind<T> {
             PtrKind::StackArray(weak) => PtrKind::StackArray(weak.clone()),
             PtrKind::HeapArray(weak) => PtrKind::HeapArray(weak.clone()),
             PtrKind::Reinterpreted(data) => PtrKind::Reinterpreted(Rc::clone(data)),
+            PtrKind::Seam(s) => PtrKind::Seam(Rc::clone(s)),
         }
     }
 }
@@ -112,6 +117,7 @@ impl<T> PtrKind<T> {
             PtrKind::Vec(w) => w.as_ptr() as usize,
             PtrKind::StackArray(w) | PtrKind::HeapArray(w) => w.as_ptr() as usize,
             PtrKind::Reinterpreted(data) => data.alloc.address(),
+            PtrKind::Seam(s) => s.address(),
         }
     }
 }
@@ -186,6 +192,14 @@ impl<T> Ptr<T> {
     }
 
     #[inline]
+    pub fn seam(s: Rc<dyn PtrSeam<T>>) -> Self {
+        Self {
+            offset: 0,
+            kind: PtrKind::Seam(s),
+        }
+    }
+
+    #[inline]
     pub fn alloc(value: T) -> Self {
         let owner = Rc::new(RefCell::new(value));
         let weak = Rc::downgrade(&owner);
@@ -221,6 +235,7 @@ impl<T> Ptr<T> {
             }
             PtrKind::Reinterpreted(data) => data.alloc.delete(),
             PtrKind::Null => {}
+            PtrKind::Seam(s) => s.delete(self.offset),
             _ => panic!("ub: invalid delete"),
         }
     }
@@ -239,6 +254,7 @@ impl<T> Ptr<T> {
             }
             PtrKind::Reinterpreted(data) => data.alloc.delete(),
             PtrKind::Null => {}
+            PtrKind::Seam(s) => s.delete_array(self.offset),
             _ => panic!("ub: invalid delete"),
         }
     }
@@ -278,6 +294,7 @@ impl<T> Ptr<T> {
                 weak.upgrade().expect("ub: dangling pointer").borrow().len()
             }
             PtrKind::Reinterpreted(data) => data.alloc.total_byte_len() / data.elem_byte_size,
+            PtrKind::Seam(s) => s.len(),
         }
     }
 
@@ -297,6 +314,7 @@ impl<T> Ptr<T> {
                 .borrow()
                 .is_empty(),
             PtrKind::Reinterpreted(data) => self.offset >= data.alloc.total_byte_len(),
+            PtrKind::Seam(s) => s.is_empty(),
         }
     }
 
@@ -356,6 +374,7 @@ impl<T> Ptr<T> {
                 byte_offset: self.offset,
                 cell: RefCell::new(None),
             },
+            PtrKind::Seam(s) => StrongPtr::Seam(s.upgrade(self.offset)),
         }
     }
 
@@ -371,6 +390,7 @@ impl<T> Ptr<T> {
             PtrKind::StackSingle(weak) | PtrKind::HeapSingle(weak) => {
                 weak.upgrade().expect("ub: dangling pointer")
             }
+            PtrKind::Seam(s) => s.to_strong(self.offset),
             _ => panic!("Only StackSingle and HeapSingle implement to_strong"),
         }
     }
@@ -404,6 +424,7 @@ impl<T> Ptr<T> {
                 src_byte_off,
             ),
             PtrKind::Reinterpreted(data) => (Rc::clone(&data.alloc), self.offset),
+            PtrKind::Seam(s) => (s.as_original_alloc(self.offset), src_byte_off),
         };
 
         Ptr {
@@ -448,6 +469,10 @@ impl<T> Ptr<T> {
                 data.alloc.write_bytes(self.offset, &buf);
                 ret
             }
+            PtrKind::Seam(s) => {
+                let strong = s.upgrade(self.offset);
+                f(&mut *strong.deref_mut())
+            }
         }
     }
 
@@ -478,6 +503,10 @@ impl<T> Ptr<T> {
                 data.alloc.read_bytes(self.offset, &mut buf);
                 let val = T::from_bytes(&buf);
                 f(&val)
+            }
+            PtrKind::Seam(s) => {
+                let strong = s.upgrade(self.offset);
+                f(&*strong.deref())
             }
         }
     }
@@ -511,6 +540,14 @@ impl Ptr<u8> {
                 data.alloc.write_bytes(off, &buf);
                 r
             }
+            PtrKind::Seam(s) => {
+                let mut f = Some(f);
+                let mut out: Option<R> = None;
+                s.with_slice_mut(off, len, &mut |bytes| {
+                    out = Some((f.take().expect("f called more than once"))(bytes));
+                });
+                out.expect("seam with_slice_mut did not call its callback")
+            }
         }
     }
 
@@ -538,6 +575,14 @@ impl Ptr<u8> {
                 let mut buf = vec![0u8; len];
                 data.alloc.read_bytes(off, &mut buf);
                 f(&buf)
+            }
+            PtrKind::Seam(s) => {
+                let mut f = Some(f);
+                let mut out: Option<R> = None;
+                s.with_slice(off, len, &mut |bytes| {
+                    out = Some((f.take().expect("f called more than once"))(bytes));
+                });
+                out.expect("seam with_slice did not call its callback")
             }
         }
     }
@@ -584,6 +629,7 @@ impl<T: std::cmp::Ord> Ptr<T> {
             PtrKind::Reinterpreted(_) => {
                 panic!("sorting not supported for reinterpreted pointers")
             }
+            PtrKind::Seam(ref s) => s.sort(self.get_offset(), last),
         }
     }
 }
@@ -611,6 +657,7 @@ impl<T: Clone> Ptr<T> {
                 }
             });
         }
+
         match self.kind {
             PtrKind::Null => panic!("ub: dereference of null pointer"),
             PtrKind::StackSingle(_) | PtrKind::HeapSingle(_) => {
@@ -629,6 +676,7 @@ impl<T: Clone> Ptr<T> {
             PtrKind::Reinterpreted(_) => {
                 panic!("sorting not supported for reinterpreted pointers")
             }
+            PtrKind::Seam(ref s) => s.sort_with_cmp(self.get_offset(), last, &mut cmp),
         }
     }
 }
@@ -904,6 +952,7 @@ impl<T> ToOwnedOption<T, T> for Ptr<T> {
             PtrKind::Vec(_) => panic!("Can't own a vector"),
             PtrKind::HeapArray(_) => panic!("Can't own an array variable as single"),
             PtrKind::Reinterpreted(_) => panic!("Can't own a reinterpreted pointer"),
+            PtrKind::Seam(ref s) => s.to_owned_single(self.offset),
         }
     }
 }
@@ -930,6 +979,7 @@ impl<T> ToOwnedOption<T, Box<[T]>> for Ptr<T> {
             PtrKind::Vec(_) => panic!("Can't own a vector"),
             PtrKind::HeapSingle(_) => panic!("Can't own a single variable as an array"),
             PtrKind::Reinterpreted(_) => panic!("Can't own a reinterpreted pointer"),
+            PtrKind::Seam(ref s) => s.to_owned_array(self.offset),
         }
     }
 }
@@ -946,6 +996,7 @@ impl<T> fmt::Debug for Ptr<T> {
             }
             PtrKind::Vec(w) => (Weak::as_ptr(w) as usize).wrapping_add(self.byte_offset()),
             PtrKind::Reinterpreted(data) => data.alloc.address().wrapping_add(self.byte_offset()),
+            PtrKind::Seam(s) => s.address().wrapping_add(self.byte_offset()),
         };
         write!(f, "0x{:x}", addr)
     }
