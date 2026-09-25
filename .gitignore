@@ -2,9 +2,6 @@
 build/
 _buildconfig.py
 
-# Cargo
-target/
-Cargo.lock
 rules/rustls/rustls.h
 rules/brotli/brotli/
 
@@ -23,10 +20,3 @@ __pycache__
 
 tmp
 *.swp
-
-# Merge/rebase conflict artifacts
-*.orig
-*.BACKUP.*
-*.BASE.*
-*.LOCAL.*
-*.REMOTE.*
