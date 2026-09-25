@@ -179,6 +179,7 @@ public:
   virtual bool VisitTypeAliasTemplateDecl(clang::TypeAliasTemplateDecl *decl);
 
   bool VisitStaticAssertDecl(clang::StaticAssertDecl *decl);
+  bool VisitConceptDecl(clang::ConceptDecl *decl);
 
   virtual bool VisitCompoundStmt(clang::CompoundStmt *stmt);
 
@@ -367,7 +368,6 @@ public:
 
   virtual bool VisitCharacterLiteral(clang::CharacterLiteral *expr);
 
-  std::string GetEscapedCharLiteral(char character) const;
   std::string GetCodeUnitArrayLiteral(const clang::StringLiteral *expr);
   bool IsArrayInitContext() const;
 
@@ -442,6 +442,10 @@ public:
   virtual bool VisitTypeTraitExpr(clang::TypeTraitExpr *expr);
 
   virtual bool VisitSizeOfPackExpr(clang::SizeOfPackExpr *expr);
+
+  virtual bool
+  VisitConceptSpecializationExpr(clang::ConceptSpecializationExpr *expr);
+  virtual bool VisitRequiresExpr(clang::RequiresExpr *expr);
 
   virtual bool VisitOffsetOfExpr(clang::OffsetOfExpr *expr);
 
