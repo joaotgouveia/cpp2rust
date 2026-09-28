@@ -605,17 +605,27 @@ clang::QualType normalizeQualType(clang::QualType qual_type) {
       *ctx_);
 }
 
+std::string mapTypeStringRecursive(const std::string &cpp_type);
+
+void mapAndBox(std::optional<std::string> &ty) {
+  if (!ty) {
+    return;
+  }
+
+  ty = mapTypeStringRecursive(*ty);
+  if (model_ == Model::kRefCount && IsBoxedType(*ty)) {
+    ty = "Value<" + *ty + '>';
+  }
+}
+
 std::string mapTypeStringRecursive(const std::string &cpp_type) {
   auto [rule, subs] = search(types_, cpp_type, GetTypeMapKey(cpp_type));
   if (!rule) {
     llvm::errs() << "cpp_type: " << cpp_type << '\n';
     assert(0 && "Type is not present in types_");
   }
-  for (auto &ty : subs) {
-    if (ty) {
-      ty = mapTypeStringRecursive(*ty);
-    }
-  }
+
+  llvm::for_each(subs, mapAndBox);
   return instantiateTgt(subs, rule->type_info.type);
 }
 
@@ -667,6 +677,14 @@ bool IsLibcPassthrough(const clang::Expr *expr) {
              decl->getLocation());
 }
 
+bool IsBoxedType(std::string_view type) {
+  return type.starts_with("Vec<") || type.starts_with("Box<");
+}
+
+bool IsBoxedType(clang::QualType type) {
+  return IsBoxedType(Map(type.getUnqualifiedType()));
+}
+
 std::string MapFunctionName(const clang::FunctionDecl *decl) {
   assert(decl);
   if (!IsUserDefinedDecl(decl) &&
@@ -684,21 +702,15 @@ std::string InstantiateTemplate(const clang::Expr *expr, unsigned n) {
   if (!rule) {
     return text;
   }
-  auto &ty = subs.at(n - 1);
-  if (ty) {
-    ty = mapTypeStringRecursive(*ty);
-  }
+
+  mapAndBox(subs.at(n - 1));
   return instantiateTgt(subs, text);
 }
 
 std::string Map(clang::QualType qual_type) {
   auto [rule, subs] = search(qual_type);
   if (rule) {
-    for (auto &ty : subs) {
-      if (ty) {
-        ty = mapTypeStringRecursive(*ty);
-      }
-    }
+    llvm::for_each(subs, mapAndBox);
     return instantiateTgt(subs, rule->type_info.type);
   }
   return {};
@@ -752,11 +764,7 @@ const TranslationRule::TypeInfo &GetParamInfo(const clang::Expr *expr,
 std::string GetParamType(const clang::Expr *expr, unsigned index) {
   auto expr_str = ToString(expr);
   auto [rule, subs] = search(exprs_, expr_str, GetExprMapKey(expr_str));
-  for (auto &ty : subs) {
-    if (ty) {
-      ty = mapTypeStringRecursive(*ty);
-    }
-  }
+  llvm::for_each(subs, mapAndBox);
   return instantiateTgt(subs, rule->params.at(index).type);
 }
 

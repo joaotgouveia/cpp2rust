@@ -27,6 +27,9 @@ private:
 bool Contains(clang::QualType qual_type);
 bool Contains(const clang::Expr *expr);
 
+bool IsBoxedType(std::string_view type);
+bool IsBoxedType(clang::QualType type);
+
 std::string Map(clang::QualType qual_type);
 std::string MapInitializer(clang::QualType qual_type);
 const TranslationRule::ExprRule *GetExprRule(const clang::Expr *expr);
