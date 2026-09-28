@@ -6,8 +6,8 @@ use std::collections::HashMap;
 use std::fmt;
 use std::rc::Rc;
 
-use crate::CStringIterator;
 use crate::rc::{Ptr, PtrKind};
+use crate::CStringIterator;
 
 impl fmt::Display for Ptr<u8> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -145,6 +145,15 @@ impl Ptr<u8> {
                 f(until_nul(&b[self.offset..]))
             }
             PtrKind::Reinterpreted(_) => f(&self.to_c_string_iterator().collect::<Vec<u8>>()),
+            PtrKind::Seam(seam) => {
+                let mut out = None;
+                let mut f = Some(f);
+                if seam.with_c_str(self.offset, &mut |b| out = Some((f.take().unwrap())(b))) {
+                    out.expect("seam with_c_str did not call its callback")
+                } else {
+                    (f.take().unwrap())(&self.to_c_string_iterator().collect::<Vec<u8>>())
+                }
+            }
         }
     }
 

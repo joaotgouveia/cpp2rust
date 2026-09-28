@@ -444,7 +444,10 @@ impl<T> Ptr<T> {
                 self.offset.wrapping_mul(T::byte_size()),
             ),
             PtrKind::Reinterpreted(data) => (data.alloc.clone(), self.offset),
-            PtrKind::Seam(s) => (s.as_original_alloc(self.offset), src_byte_off),
+            PtrKind::Seam(s) => (
+                s.as_original_alloc(self.offset),
+                self.offset.wrapping_mul(T::byte_size()),
+            ),
         })
     }
 
@@ -1006,6 +1009,7 @@ impl<T> Ptr<Vec<T>> {
                 offset: self.offset,
                 kind: PtrKind::HeapVec(weak.clone()),
             },
+            PtrKind::Seam(seam) => seam.decay(self.offset),
             _ => panic!("ub: invalid decay"),
         }
     }
@@ -1024,6 +1028,7 @@ impl<T> Ptr<Box<[T]>> {
                 offset: self.offset,
                 kind: PtrKind::HeapArray(weak.clone()),
             },
+            PtrKind::Seam(seam) => seam.decay(self.offset),
             _ => panic!("ub: invalid decay"),
         }
     }
