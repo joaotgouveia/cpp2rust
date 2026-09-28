@@ -7,21 +7,21 @@ use std::cell::{Ref, RefCell, RefMut};
 use std::rc::{Rc, Weak};
 
 pub enum StrongPtrDyn<T: ?Sized> {
-    StackSingle(Rc<RefCell<T>>),
+    Single(Rc<RefCell<T>>),
     Seam(Box<dyn StrongPtrDynSeam<T>>),
 }
 
 impl<T: ?Sized> StrongPtrDyn<T> {
     pub fn deref(&self) -> Ref<'_, T> {
         match self {
-            Self::StackSingle(rc) => rc.borrow(),
+            Self::Single(rc) => rc.borrow(),
             Self::Seam(s) => s.deref(),
         }
     }
 
     pub fn deref_mut(&self) -> RefMut<'_, T> {
         match self {
-            Self::StackSingle(rc) => rc.borrow_mut(),
+            Self::Single(rc) => rc.borrow_mut(),
             Self::Seam(s) => s.deref_mut(),
         }
     }
@@ -66,7 +66,7 @@ impl<T: ?Sized> PtrDyn<T> {
             PtrKindDyn::Null => panic!("ub: dereference of null pointer"),
             PtrKindDyn::StackSingle(weak) | PtrKindDyn::HeapSingle(weak) => {
                 assert_eq!(self.offset, 0, "ub: invalid offset");
-                StrongPtrDyn::StackSingle(weak.upgrade().expect("ub: dangling pointer"))
+                StrongPtrDyn::Single(weak.upgrade().expect("ub: dangling pointer"))
             }
             PtrKindDyn::Seam(seam) => StrongPtrDyn::Seam(seam.upgrade(self.offset)),
         }
