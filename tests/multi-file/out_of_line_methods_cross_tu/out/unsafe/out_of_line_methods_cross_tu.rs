@@ -42,85 +42,19 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     let mut s: S = S::new({ 1 });
-    (if ((unsafe { S::get(&s) }) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.get() == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { S::get(&s,) }) == (1)));
     (unsafe { S::set(&mut s, 4) });
-    (if ((unsafe { S::get(&s) }) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.get() == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { S::add(&mut s, 2) }) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.add(2) == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { S::get(&s,) }) == (4)));
+    assert!(((unsafe { S::add(&mut s, 2,) }) == (6)));
     let mut derived: Derived = Derived::new({ 3 });
     let mut base: *mut dyn Base = (&mut derived as *mut Derived);
-    (if ((unsafe { (*base).apply(5) }) == (15)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"base->apply(5) == 15".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { (*base).apply(5,) }) == (15)));
     let mut pair: Pair = Pair {
         first: 7,
         second: 3,
     };
-    (if ((unsafe { pair_sum_2((&mut pair as *mut Pair).cast_const()) }) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"pair_sum(&pair) == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { pair_diff_0((&mut pair as *mut Pair).cast_const()) }) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"pair_diff(&pair) == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { pair_sum_1((&mut pair as *mut Pair).cast_const(),) }) == (10)));
+    assert!(((unsafe { pair_diff_0((&mut pair as *mut Pair).cast_const(),) }) == (4)));
     return 0;
 }
 impl S {
@@ -151,16 +85,8 @@ impl S {
     }
 }
 impl Derived {}
-pub unsafe fn pair_sum_2(mut p: *const Pair) -> i32 {
+pub unsafe fn pair_sum_1(mut p: *const Pair) -> i32 {
     return (((*p).first) + ((*p).second));
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 unsafe impl Base for Derived {
     unsafe fn apply(&mut self, x: i32) -> i32 {

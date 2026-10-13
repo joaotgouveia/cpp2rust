@@ -11,7 +11,7 @@ use std::rc::{Rc, Weak};
 pub struct Probe {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct Wrapper_0 {
+pub struct Wrapper_Probe_ {
     #[offset(0)]
     #[byte_size(1)]
     pub base_: Probe,
@@ -23,30 +23,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut a: Wrapper_0 = <Wrapper_0>::default();
+    let mut a: Wrapper_Probe_ = <Wrapper_Probe_>::default();
     a.tag = 3;
-    let mut b: Wrapper_0 = (a).clone();
-    (if (b.tag == 3) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"b.tag == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    let mut b: Wrapper_Probe_ = (a).clone();
+    assert!((b.tag == 3));
     return 0;
-}
-pub fn __assert_fail_1(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait ProbeImpl {
     fn operator_inc(&self) -> Ptr<Probe> {

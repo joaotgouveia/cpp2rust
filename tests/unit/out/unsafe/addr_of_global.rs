@@ -41,86 +41,27 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut items_3))[(0) as usize]).value) == (1))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"items[0]->value == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut items_3))[(1) as usize]).value) == (2))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"items[1]->value == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut obj_4)).p).value) == (42)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"obj.p->value == 42".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut cache_6))[(0) as usize]).value) == (1))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"cache[0]->value == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut cache_6))[(1) as usize]).value) == (2))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"cache[1]->value == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(
+        (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut items_3))[(0) as usize]).value) == (1))
+    );
+    assert!(
+        (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut items_3))[(1) as usize]).value) == (2))
+    );
+    assert!((((*(*std::cell::LazyCell::force_mut(&mut *&raw mut obj_4)).p).value) == (42)));
+    assert!(
+        (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut cache_5))[(0) as usize]).value) == (1))
+    );
+    assert!(
+        (((*(*std::cell::LazyCell::force_mut(&mut *&raw mut cache_5))[(1) as usize]).value) == (2))
+    );
     return 0;
 }
-static mut cache_6: std::cell::LazyCell<[*mut Inner; 2]> = std::cell::LazyCell::new(|| unsafe {
+static mut cache_5: std::cell::LazyCell<[*mut Inner; 2]> = std::cell::LazyCell::new(|| unsafe {
     [
         (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut alpha_0)) as *mut Inner),
         (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut beta_1)) as *mut Inner),
     ]
 });
-pub unsafe fn __assert_fail_5(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
-}
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const alpha_0);
     std::cell::LazyCell::force(&*&raw const beta_1);

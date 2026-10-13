@@ -35,74 +35,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if ((unsafe { mixed_literal_cases_0(-1_i32) }) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"mixed_literal_cases(-1) == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { mixed_literal_cases_0(16) }) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"mixed_literal_cases(0x10) == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { mixed_literal_cases_0(65152) }) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"mixed_literal_cases(0xFE80) == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { mixed_literal_cases_0(-255_i32) }) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"mixed_literal_cases(-0xFF) == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { mixed_literal_cases_0(7) }) == (0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"mixed_literal_cases(7) == 0".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { mixed_literal_cases_0(-1_i32,) }) == (1)));
+    assert!(((unsafe { mixed_literal_cases_0(16,) }) == (2)));
+    assert!(((unsafe { mixed_literal_cases_0(65152,) }) == (3)));
+    assert!(((unsafe { mixed_literal_cases_0(-255_i32,) }) == (4)));
+    assert!(((unsafe { mixed_literal_cases_0(7,) }) == (0)));
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

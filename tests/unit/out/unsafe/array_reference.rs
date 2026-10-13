@@ -81,325 +81,56 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if ((unsafe { len_0(&std::mem::transmute(*b"beta\0")) }) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"len(\"beta\") == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { len_0(&std::mem::transmute(*b"beta\0"),) }) == (4)));
     let mut buf: [libc::c_char; 5] = std::mem::transmute(*b"abcd\0");
-    (if ((unsafe { len_0(&buf) }) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"len(buf) == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { len_0(&buf,) }) == (4)));
     let mut arr: [i32; 3] = [1, 2, 3];
-    (if ((unsafe { sum_2(&arr) }) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum(arr) == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe {
-        let mut _a: [i32; 3] = [1, 2, 3];
-        sum_2(&mut _a)
-    }) == (6))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum({1, 2, 3}) == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { sum_2(&arr,) }) == (6)));
+    assert!(
+        ((unsafe {
+            let mut _a: [i32; 3] = [1, 2, 3];
+            sum_2(&mut _a)
+        }) == (6))
+    );
     (unsafe { fill_3(&mut arr, 7) });
-    (if ((unsafe { sum_2(&arr) }) == (21)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum(arr) == 21".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { sum_twice_4(&arr) }) == (42)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum_twice(arr) == 42".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { sum_2(&arr,) }) == (21)));
+    assert!(((unsafe { sum_twice_4(&arr,) }) == (42)));
     let mut out: i32 = 0;
     (unsafe { fill_and_sum_9(&mut arr, 2, &mut out) });
-    (if ((out) == (12)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"out == 12".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((arr[(0) as usize]) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"arr[0] == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((out) == (12)));
+    assert!(((arr[(0) as usize]) == (2)));
     let lit: *const [libc::c_char; 5] = &std::mem::transmute(*b"beta\0");
-    (if ((unsafe { len_0(lit) }) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"len(lit) == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*(unsafe { pick_10(&std::mem::transmute(*b"beta\0")) }))[(0) as usize] as i32)
-        == (('b' as libc::c_char) as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"pick(\"beta\")[0] == \'b\'".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { len_0((unsafe { pick_10(&buf) })) }) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"len(pick(buf)) == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { len_0(lit,) }) == (4)));
+    assert!(
+        (((*(unsafe { pick_10(&std::mem::transmute(*b"beta\0"),) }))[(0) as usize] as i32)
+            == (('b' as libc::c_char) as i32))
+    );
+    assert!(((unsafe { len_0((unsafe { pick_10(&buf,) }),) }) == (4)));
     let mut pts: [Point; 2] = [Point { x: 1, y: 2 }, Point { x: 3, y: 4 }];
-    (if ((unsafe { sum_points_11(&pts) }) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum_points(pts) == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { sum_points_11(&pts,) }) == (10)));
     (unsafe { shift_points_12(&mut pts, 10) });
-    (if ((pts[(0) as usize].x) == (11)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"pts[0].x == 11".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((pts[(1) as usize].y) == (14)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"pts[1].y == 14".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { sum_points_11(&pts) }) == (30)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum_points(pts) == 30".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { sum_decayed_6(&arr) }) == (unsafe { sum_2(&arr) })) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum_decayed(arr) == sum(arr)".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((pts[(0) as usize].x) == (11)));
+    assert!(((pts[(1) as usize].y) == (14)));
+    assert!(((unsafe { sum_points_11(&pts,) }) == (30)));
+    assert!(((unsafe { sum_decayed_6(&arr,) }) == (unsafe { sum_2(&arr,) })));
     (unsafe { bump_decayed_8(&mut arr) });
-    (if ((arr[(0) as usize]) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"arr[0] == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((arr[(0) as usize]) == (3)));
     let mut names: [*const libc::c_char; 2] = [c"ab".as_ptr(), c"cde".as_ptr()];
-    (if ((unsafe { total_len_13(&mut names) }) == (5)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"total_len(names) == 5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { total_len_13(&mut names,) }) == (5)));
     let mut rows: [[i32; 3]; 2] = [[1, 2, 3], [4, 5, 6]];
     let mut p: *mut [i32; 3] = rows.as_mut_ptr();
     p.prefix_inc();
-    (if (((*p).as_mut_ptr()) == (&mut rows[(1) as usize][(0) as usize] as *mut i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"*p == &rows[1][0]".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((*p).as_mut_ptr()) == (&mut rows[(1) as usize][(0) as usize] as *mut i32)));
     let r: *mut [i32; 3] = &mut (*p);
-    (if (((*r)[(0) as usize]) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"r[0] == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { sum_2(r) }) == (15)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum(r) == 15".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { sum_2(&(*p)) }) == (15)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum(*p) == 15".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((*r)[(0) as usize]) == (4)));
+    assert!(((unsafe { sum_2(r,) }) == (15)));
+    assert!(((unsafe { sum_2(&(*p),) }) == (15)));
     let mut q: *mut [i32; 3] = rows.as_mut_ptr();
-    (if ((unsafe { sum_2(&(*q.offset((1) as isize))) }) == (15)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"sum(q[1]) == 15".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*q.offset((1) as isize)).as_mut_ptr())
-        == (&mut rows[(1) as usize][(0) as usize] as *mut i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_14(
-                c"q[1] == &rows[1][0]".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { sum_2(&(*q.offset((1) as isize)),) }) == (15)));
+    assert!(
+        (((*q.offset((1) as isize)).as_mut_ptr())
+            == (&mut rows[(1) as usize][(0) as usize] as *mut i32))
+    );
     return 0;
-}
-pub unsafe fn __assert_fail_14(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

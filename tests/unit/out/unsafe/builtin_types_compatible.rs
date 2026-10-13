@@ -13,41 +13,17 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    {
-        &(::std::mem::size_of::<i32>());
-        { {} }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        { {} }
-    };
+    assert!(((((1) == (1)) as i32) != 0));
+    assert!(((((0) == (0)) as i32) != 0));
     let mut x: i32 = 0;
-    {
-        &(::std::mem::size_of::<i32>());
-        { {} }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        { {} }
-    };
+    assert!(((((1) == (1)) as i32) != 0));
+    assert!(((((0) == (0)) as i32) != 0));
     let mut p: *mut i32 = std::ptr::null_mut();
-    {
-        &(::std::mem::size_of::<i32>());
-        { {} }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        { {} }
-    };
+    assert!(((((1) == (1)) as i32) != 0));
+    assert!(((((0) == (0)) as i32) != 0));
     let mut ul: u64 = 0_u64;
-    {
-        &(::std::mem::size_of::<i32>());
-        { {} }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        { {} }
-    };
+    assert!(((((1) == (1)) as i32) != 0));
+    assert!(((((0) == (0)) as i32) != 0));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

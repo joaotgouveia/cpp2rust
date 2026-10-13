@@ -6,25 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
-#[byte_size(32)]
-pub struct max_align_t {
-    #[offset(0)]
-    pub __clang_max_align_nonce1: i64,
-    #[offset(16)]
-    #[byte_size(16)]
-    pub __clang_max_align_nonce2: f64,
-}
-impl Clone for max_align_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for max_align_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -34,50 +15,16 @@ fn main_0() -> i32 {
     let mut p: Ptr<i32> = (storage.as_pointer());
     let mut np: Ptr<i32> = Ptr::<i32>::null();
     if !(p).is_null() {
-        {
-            &(4usize);
-            { {} }
-        };
+        assert!((1 != 0));
     }
     if !(!(p).is_null()) {
-        {
-            &(4usize);
-            {
-                {
-                    ({
-                        __assert_fail_0(
-                            Ptr::<i8>::from_string_literal(b"false"),
-                            Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                            14_u32,
-                            Ptr::<i8>::from_string_literal(b"int main()"),
-                        )
-                    });
-                }
-            }
-        };
+        assert!((0 != 0));
     }
     if !(np).is_null() {
-        {
-            &(4usize);
-            {
-                {
-                    ({
-                        __assert_fail_0(
-                            Ptr::<i8>::from_string_literal(b"false"),
-                            Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                            17_u32,
-                            Ptr::<i8>::from_string_literal(b"int main()"),
-                        )
-                    });
-                }
-            }
-        };
+        assert!((0 != 0));
     }
     if !(!(np).is_null()) {
-        {
-            &(4usize);
-            { {} }
-        };
+        assert!((1 != 0));
     }
     let mut iter: Ptr<i32> = (p).clone();
     let mut iters: i32 = 0;
@@ -85,132 +32,19 @@ fn main_0() -> i32 {
         iters.prefix_inc();
         iter = Ptr::<i32>::null();
     }
-    {
-        &(4usize);
-        {
-            if (((iters == 1) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"iters == 1"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                        29_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((iters == 1) as i32) != 0));
     let mut t3: i32 = if !(p).is_null() { 1 } else { 0 };
-    {
-        &(4usize);
-        {
-            if (((t3 == 1) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"t3 == 1"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                        32_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((t3 == 1) as i32) != 0));
     let mut t4: i32 = if !(np).is_null() { 1 } else { 0 };
-    {
-        &(4usize);
-        {
-            if (((t4 == 0) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"t4 == 0"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                        34_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((t4 == 0) as i32) != 0));
     let mut t5: i32 = (!(!(p).is_null()) as i32);
-    {
-        &(4usize);
-        {
-            if (((t5 == 0) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"t5 == 0"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                        36_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((t5 == 0) as i32) != 0));
     let mut t6: i32 = (!(!(np).is_null()) as i32);
-    {
-        &(4usize);
-        {
-            if (((t6 == 1) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"t6 == 1"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                        38_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((t6 == 1) as i32) != 0));
     let mut b2: bool = !(p).is_null();
     let mut b3: bool = !(np).is_null();
-    {
-        &(4usize);
-        {
-            if b2 {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"b2"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                        42_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if !(b3) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"!b3"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_ptr_c.c"),
-                        43_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(b2);
+    assert!(((!(b3) as i32) != 0));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

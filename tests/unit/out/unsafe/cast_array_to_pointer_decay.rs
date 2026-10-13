@@ -30,26 +30,9 @@ unsafe fn main_0() -> i32 {
         ('c' as libc::c_char),
         ('\0' as libc::c_char),
     ];
-    (if (((unsafe { deref_0(a.as_mut_ptr()) }) + (unsafe { strlen_1(s.as_mut_ptr()) })) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_2(
-                c"deref(a) + strlen(s) == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(
+        (((unsafe { deref_0(a.as_mut_ptr(),) }) + (unsafe { strlen_1(s.as_mut_ptr(),) })) == (4))
+    );
     return 0;
-}
-pub unsafe fn __assert_fail_2(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -6,26 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
-#[byte_size(32)]
-pub struct max_align_t {
-    #[offset(0)]
-    pub __clang_max_align_nonce1: i64,
-    #[offset(16)]
-    #[byte_size(16)]
-    pub __clang_max_align_nonce2: f64,
-}
-impl Clone for max_align_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for max_align_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
-pub type std_byte = u8;
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -39,26 +19,7 @@ fn main_0() -> i32 {
     (*b_ptr.borrow()).write({ ((b_ptr_ptr.read()).read()) });
     let mut offset: usize =
         ((((*b_ptr.borrow()).clone() - (*b_ptr.borrow()).clone()) as i64) as usize);
-    (if ((*b.borrow()) == 4) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"b == 4"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!(((*b.borrow()) == 4));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

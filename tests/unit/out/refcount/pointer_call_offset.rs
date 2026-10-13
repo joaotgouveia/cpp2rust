@@ -22,26 +22,7 @@ fn main_0() -> i32 {
     }
     let mut out: i32 = (elem!(({ foo_0((p1.offset((1) as isize)),) }), 3).read());
     p1.delete();
-    (if (out == 9) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"out == 9"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((out == 9));
     return 0;
-}
-pub fn __assert_fail_1(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

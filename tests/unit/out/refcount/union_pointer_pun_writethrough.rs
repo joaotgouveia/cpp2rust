@@ -15,22 +15,7 @@ fn main_0() -> i32 {
     let pp: Value<anon_0> = <Value<anon_0>>::default();
     anon_0::as_signed(pp.as_pointer()).write((x.as_pointer()));
     (anon_0::as_unsigned(pp.as_pointer()).read()).write(42_u64);
-    {
-        &(4usize);
-        {
-            if ((((*x.borrow()) == 42_i64) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"x == 42"),
-                        Ptr::<i8>::from_string_literal(b"union_pointer_pun_writethrough.c"),
-                        15_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((*x.borrow()) == 42_i64) as i32) != 0));
     return 0;
 }
 #[derive(VaArg, FnPtrArg, ByteRepr, DeepClone)]
@@ -54,13 +39,5 @@ impl Default for anon_0 {
             __bytes: Rc::new(RefCell::new(Box::from([0u8; 8]))),
         }
     }
-}
-pub fn __assert_fail_1(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

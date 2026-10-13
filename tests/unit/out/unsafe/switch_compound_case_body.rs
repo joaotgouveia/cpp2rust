@@ -36,50 +36,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if ((unsafe { compound_case_body_0(1) }) == (30)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"compound_case_body(1) == 30".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { compound_case_body_0(2) }) == (99)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"compound_case_body(2) == 99".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { compound_case_body_0(9) }) == (-1_i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"compound_case_body(9) == -1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { compound_case_body_0(1,) }) == (30)));
+    assert!(((unsafe { compound_case_body_0(2,) }) == (99)));
+    assert!(((unsafe { compound_case_body_0(9,) }) == (-1_i32)));
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

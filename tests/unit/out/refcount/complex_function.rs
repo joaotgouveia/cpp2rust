@@ -226,45 +226,32 @@ fn main_0() -> i32 {
         ))
     })
     .with_mut(|__v| __v.postfix_inc());
-    (if ((((({
-        ptr_1(
-            (field_ptr!(
-                ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer(),) }),) }),) }),
-                v
-            )),
-        )
-    })
-    .read())
-        + (({
-            bar_2(field_ptr!(
-                ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer(),) }),) }),) }),
-                v
-            ))
-        })
-        .read()))
-        + ({
-            foo_0(
-                ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer()) })) })) })
-                    .with(|__s| __s.v),
+    assert!(
+        ((((({
+            ptr_1(
+                (field_ptr!(
+                    ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer(),) }),) }),) }),
+                    v
+                )),
             )
-        }))
-        == 54)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3 ( Ptr::<i8 >::from_string_literal(b"*ptr(&d.get().get()->get().v) + bar(d.get().get()->get().v) + foo(d.get().get()->get().v) == 54" )  , Ptr::<i8 >::from_string_literal(file!().as_bytes())  , line!() as u32    , Ptr::<i8 >::from_string_literal(b"int main()" )  , )
-        });
-    });
+        })
+        .read())
+            + (({
+                bar_2(field_ptr!(
+                    ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer(),) }),) }),) }),
+                    v
+                ))
+            })
+            .read()))
+            + ({
+                foo_0(
+                    ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer()) })) })) })
+                        .with(|__s| __s.v),
+                )
+            }))
+            == 54)
+    );
     return 0;
-}
-pub fn __assert_fail_3(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait X2Impl {
     fn get(&self) -> Ptr<X1>;

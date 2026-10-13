@@ -13,40 +13,40 @@ pub struct Point {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Box_0 {
+pub struct Box_int_ {
     pub val: i32,
 }
-impl Box_0 {
+impl Box_int_ {
     pub unsafe fn twice(&mut self) -> i32 {
         return ((self.val) + (self.val));
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Box_1 {
+pub struct Box_Point_ {
     pub val: Point,
 }
-impl Box_1 {
+impl Box_Point_ {
     pub unsafe fn get(&mut self) -> Point {
         return self.val;
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Deduced_2 {
+pub struct Deduced_int_ {
     pub val: i32,
 }
-impl Deduced_2 {
+impl Deduced_int_ {
     pub unsafe fn twice(&mut self) -> i32 {
         return ((self.val) + (self.val));
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Deduced_3 {
+pub struct Deduced_Point_ {
     pub val: Point,
 }
-impl Deduced_3 {
+impl Deduced_Point_ {
     pub unsafe fn get(&mut self) -> Point {
         return self.val;
     }
@@ -58,70 +58,18 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut i: Box_0 = Box_0 { val: 3 };
-    (if ((unsafe { Box_0::twice(&mut i) }) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"i.twice() == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    let mut p: Box_1 = Box_1 {
+    let mut i: Box_int_ = Box_int_ { val: 3 };
+    assert!(((unsafe { Box_int_::twice(&mut i,) }) == (6)));
+    let mut p: Box_Point_ = Box_Point_ {
         val: Point { x: 4 },
     };
-    (if (((unsafe { Box_1::get(&mut p) }).x) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"p.get().x == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    let mut d: Deduced_2 = Deduced_2 { val: 5 };
-    (if ((unsafe { Deduced_2::twice(&mut d) }) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"d.twice() == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    let mut dp: Deduced_3 = Deduced_3 {
+    assert!((((unsafe { Box_Point_::get(&mut p,) }).x) == (4)));
+    let mut d: Deduced_int_ = Deduced_int_ { val: 5 };
+    assert!(((unsafe { Deduced_int_::twice(&mut d,) }) == (10)));
+    let mut dp: Deduced_Point_ = Deduced_Point_ {
         val: Point { x: 6 },
     };
-    (if (((unsafe { Deduced_3::get(&mut dp) }).x) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"dp.get().x == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((unsafe { Deduced_Point_::get(&mut dp,) }).x) == (6)));
     return 0;
-}
-pub unsafe fn __assert_fail_4(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

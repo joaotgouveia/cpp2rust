@@ -6,35 +6,6 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-#[derive(VaArg, FnPtrArg)]
-pub struct max_align_t {
-    pub __clang_max_align_nonce1: i64,
-    pub __clang_max_align_nonce2: f64,
-}
-impl Clone for max_align_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for max_align_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
-#[derive(VaArg, FnPtrArg)]
-pub struct __fsid_t {
-    pub __val: [i32; 2],
-}
-impl Clone for __fsid_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for __fsid_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
 pub type Width_enum = u32;
 pub const Width_enum_W_64: Width_enum = 0;
 pub const Width_enum_W_32: Width_enum = 1;
@@ -91,68 +62,15 @@ unsafe fn main_0() -> i32 {
     s.width = Width_enum_W_64;
     s.out.handle = ((&mut buf64 as *mut i64) as *mut ::libc::c_void);
     (unsafe { write_count_1((&mut s as *mut Sink), 1234605616436508552_i64) });
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((buf64) == (1234605616436508552_i64)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_2(
-                        (c"buf64 == 0x1122334455667788LL".as_ptr().cast_mut()).cast_const(),
-                        (c"union_void_ptr_sized_deref.c".as_ptr().cast_mut()).cast_const(),
-                        46_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((buf64) == (1234605616436508552_i64)) as i32) != 0));
     s.width = Width_enum_W_32;
     s.out.handle = ((&mut buf32 as *mut i32) as *mut ::libc::c_void);
     (unsafe { write_count_1((&mut s as *mut Sink), 305419896_i64) });
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((buf32) == (305419896)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_2(
-                        (c"buf32 == 0x12345678".as_ptr().cast_mut()).cast_const(),
-                        (c"union_void_ptr_sized_deref.c".as_ptr().cast_mut()).cast_const(),
-                        51_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((buf32) == (305419896)) as i32) != 0));
     s.width = Width_enum_W_16;
     s.out.handle = ((&mut buf16 as *mut i16) as *mut ::libc::c_void);
     (unsafe { write_count_1((&mut s as *mut Sink), 4660_i64) });
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((buf16 as i32) == (4660)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_2(
-                        (c"buf16 == 0x1234".as_ptr().cast_mut()).cast_const(),
-                        (c"union_void_ptr_sized_deref.c".as_ptr().cast_mut()).cast_const(),
-                        56_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((buf16 as i32) == (4660)) as i32) != 0));
     return 0;
-}
-pub unsafe fn __assert_fail_2(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

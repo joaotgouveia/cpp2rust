@@ -62,86 +62,12 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     let mut s: S = S { n: 1 };
-    (if ((unsafe { S::modify_copy(&mut s) }) == (1101)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"s.modify_copy() == 1101".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((s.n) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"s.n == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { S::snapshot(&mut s) }) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"s.snapshot() == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((s.n) == (99)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"s.n == 99".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { S::mixed(&mut s, 1) }) == (100)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"s.mixed(1) == 100".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((s.n) == (0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"s.n == 0".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { S::modify_copy(&mut s,) }) == (1101)));
+    assert!(((s.n) == (1)));
+    assert!(((unsafe { S::snapshot(&mut s,) }) == (2)));
+    assert!(((s.n) == (99)));
+    assert!(((unsafe { S::mixed(&mut s, 1,) }) == (100)));
+    assert!(((s.n) == (0)));
     return 0;
-}
-pub unsafe fn __assert_fail_3(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

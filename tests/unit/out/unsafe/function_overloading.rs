@@ -69,26 +69,7 @@ unsafe fn main_0() -> i32 {
     (unsafe { Foo::method_3(&mut foo1, 1) });
     (unsafe { Foo::foo_1(&foo2) });
     (unsafe { Foo::method_4(&foo2, 2) });
-    (if ((out) == (13)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"out == 13".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((out) == (13)));
     return 0;
-}
-pub unsafe fn __assert_fail_7(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

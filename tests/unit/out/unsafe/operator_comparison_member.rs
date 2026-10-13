@@ -68,110 +68,14 @@ unsafe fn main_0() -> i32 {
     let mut a: S = S { v: 1 };
     let mut b: S = S { v: 2 };
     let mut c: S = S { v: 1 };
-    (if (unsafe { S::operator_eq(&a, &c) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"a == c".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (unsafe { S::operator_ne(&a, &b) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"a != b".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (unsafe { S::operator_lt_3(&a, &b) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"a < b".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (unsafe { S::operator_gt(&b, &a) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"b > a".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (unsafe { S::operator_le(&a, &c) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"a <= c".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (unsafe { S::operator_ge(&a, &c) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"a >= c".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if !(unsafe { S::operator_lt_3(&b, &a) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"!(b < a)".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (unsafe { S::operator_lt_7(&a, 5) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"a < 5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((unsafe { S::operator_eq(&a, &c,) }));
+    assert!((unsafe { S::operator_ne(&a, &b,) }));
+    assert!((unsafe { S::operator_lt_3(&a, &b,) }));
+    assert!((unsafe { S::operator_gt(&b, &a,) }));
+    assert!((unsafe { S::operator_le(&a, &c,) }));
+    assert!((unsafe { S::operator_ge(&a, &c,) }));
+    assert!(!(unsafe { S::operator_lt_3(&b, &a,) }));
+    assert!((unsafe { S::operator_lt_7(&a, 5,) }));
     return 0;
-}
-pub unsafe fn __assert_fail_0(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

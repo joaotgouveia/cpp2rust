@@ -34,100 +34,23 @@ unsafe fn main_0() -> i32 {
             ::std::mem::drop(Box::from_raw(__p))
         }
     };
-    (if ((out) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"out == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((out) == (3)));
     let mut t: Triple = Triple {
         a: 1,
         b: 0_i32,
         p: <Pair>::default(),
     };
-    (if ((t.a) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"t.a == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((t.b) == (0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"t.b == 0".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((t.p.x) == (0)) && ((t.p.y) == (0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"t.p.x == 0 && t.p.y == 0".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((t.a) == (1)));
+    assert!(((t.b) == (0)));
+    assert!(((t.p.x) == (0)) && ((t.p.y) == (0)));
     let mut q: *mut Triple = (Box::leak(Box::new(Triple {
         a: 2,
         b: 3,
         p: <Pair>::default(),
     })) as *mut Triple);
-    (if (((*q).a) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"q->a == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*q).b) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"q->b == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*q).p.x) == (0)) && (((*q).p.y) == (0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"q->p.x == 0 && q->p.y == 0".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((*q).a) == (2)));
+    assert!((((*q).b) == (3)));
+    assert!((((*q).p.x) == (0)) && (((*q).p.y) == (0)));
     {
         let __p = q;
         if !__p.is_null() {
@@ -135,13 +58,5 @@ unsafe fn main_0() -> i32 {
         }
     };
     return 0;
-}
-pub unsafe fn __assert_fail_0(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

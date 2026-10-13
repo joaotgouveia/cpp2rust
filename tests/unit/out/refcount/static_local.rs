@@ -41,51 +41,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    (if (((({ foo_0() }) + ({ foo_0() })) + ({ foo_0() })) == 15) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_9(
-                Ptr::<i8>::from_string_literal(b"foo() + foo() + foo() == 15"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ from_local_class_6() }) == 9) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_9(
-                Ptr::<i8>::from_string_literal(b"from_local_class() == 9"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ from_local_class_6() }) == 13) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_9(
-                Ptr::<i8>::from_string_literal(b"from_local_class() == 13"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((((({ foo_0() }) + ({ foo_0() })) + ({ foo_0() })) == 15));
+    assert!((({ from_local_class_6() }) == 9));
+    assert!((({ from_local_class_6() }) == 13));
     return 0;
-}
-pub fn __assert_fail_9(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait S_8Impl {
     fn get(&self) -> i32;

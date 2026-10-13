@@ -103,192 +103,34 @@ fn main_0() -> i32 {
     let w: Value<widget> = <Value<widget>>::default();
     (*w.borrow_mut()).id = 7;
     (*w.borrow_mut()).mode = widget_enum_MODE_ACTIVE;
-    {
-        &(4usize);
-        {
-            if (({ is_active_0((w.as_pointer())) }) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"is_active(&w)"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        43_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((({ is_active_0((w.as_pointer()),) }) != 0));
     (*w.borrow_mut()).mode = widget_enum_MODE_DONE;
-    {
-        &(4usize);
-        {
-            if (((({ (*w.borrow()).mode } as u32) == ((widget_enum_MODE_DONE as i32) as u32))
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"w.mode == MODE_DONE"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        45_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        (((({ (*w.borrow()).mode } as u32) == ((widget_enum_MODE_DONE as i32) as u32)) as i32)
+            != 0)
+    );
     let mut p: point_struct = <point_struct>::default();
     p.x = 3;
     p.y = 4;
-    {
-        &(4usize);
-        {
-            if ((((p.x + p.y) == 7) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"p.x + p.y == 7"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        50_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((p.x + p.y) == 7) as i32) != 0));
     let up: Value<point> = <Value<point>>::default();
     point::whole(up.as_pointer()).write(5);
-    {
-        &(4usize);
-        {
-            if ((((point::whole(up.as_pointer()).read()) == 5) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"up.whole == 5"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        54_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((point::whole(up.as_pointer()).read()) == 5) as i32) != 0));
     let b: Value<slot_union> = <Value<slot_union>>::default();
     slot_union::i(b.as_pointer()).write(9);
-    {
-        &(4usize);
-        {
-            if ((((slot_union::i(b.as_pointer()).read()) == 9) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"b.i == 9"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        58_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((slot_union::i(b.as_pointer()).read()) == 9) as i32) != 0));
     let mut e: slot = slot_SLOT_B;
-    {
-        &(4usize);
-        {
-            if ((((e as u32) == ((slot_SLOT_B as i32) as u32)) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"e == SLOT_B"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        61_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((e as u32) == ((slot_SLOT_B as i32) as u32)) as i32) != 0));
     let mut inner_tag: Inner = <Inner>::default();
     inner_tag.tag_field = 11;
-    {
-        &(4usize);
-        {
-            if (((inner_tag.tag_field == 11) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"inner_tag.tag_field == 11"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        65_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((inner_tag.tag_field == 11) as i32) != 0));
     let mut inner_typedef: Inner_struct = <Inner_struct>::default();
     inner_typedef.typedef_field = 22;
-    {
-        &(4usize);
-        {
-            if (((inner_typedef.typedef_field == 22) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"inner_typedef.typedef_field == 22"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        69_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((inner_typedef.typedef_field == 22) as i32) != 0));
     let mut o: Outer = <Outer>::default();
     o.field.tag_field = 33;
-    {
-        &(4usize);
-        {
-            if (((o.field.tag_field == 33) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"o.field.tag_field == 33"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        73_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if ((({ (*w.borrow()).id } == 7) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"w.id == 7"),
-                        Ptr::<i8>::from_string_literal(b"tag_vs_identifier_collision.c"),
-                        75_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((o.field.tag_field == 33) as i32) != 0));
+    assert!(((({ (*w.borrow()).id } == 7) as i32) != 0));
     return 0;
-}
-pub fn __assert_fail_1(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

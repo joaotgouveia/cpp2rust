@@ -30,114 +30,18 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if ((unsafe { call_op_4(5) }) == (5)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"call_op(5) == 5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { call_op_4(5,) }) == (5)));
     (unsafe { set_op_3(Some(double_it_0)) });
-    (if !((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)).is_none()) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"g_op != nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)) == (Some(double_it_0))) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"g_op == double_it".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { call_op_4(5) }) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"call_op(5) == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(!((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)).is_none()));
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)) == (Some(double_it_0))));
+    assert!(((unsafe { call_op_4(5,) }) == (10)));
     (unsafe { set_op_3(Some(triple_it_1)) });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)) == (Some(triple_it_1))) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"g_op == triple_it".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { call_op_4(5) }) == (15)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"call_op(5) == 15".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)) == (Some(triple_it_1))));
+    assert!(((unsafe { call_op_4(5,) }) == (15)));
     (unsafe { set_op_3(None) });
-    (if (*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)).is_none() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"g_op == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { call_op_4(5) }) == (5)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"call_op(5) == 5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)).is_none());
+    assert!(((unsafe { call_op_4(5,) }) == (5)));
     return 0;
-}
-pub unsafe fn __assert_fail_5(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const g_op_2);

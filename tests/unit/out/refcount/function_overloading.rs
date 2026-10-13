@@ -59,27 +59,8 @@ fn main_0() -> i32 {
     ({ FooImpl::method_3(&foo1.as_pointer(), 1) });
     ({ FooImpl::foo_1(&foo2.as_pointer()) });
     ({ FooImpl::method_4(&foo2.as_pointer(), 2) });
-    (if (out == 13) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_7(
-                Ptr::<i8>::from_string_literal(b"out == 13"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((out == 13));
     return 0;
-}
-pub fn __assert_fail_7(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait FooImpl {
     fn foo_1(&self);

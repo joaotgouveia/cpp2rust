@@ -18,87 +18,13 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S { n: 1 }));
-    (if (({ SImpl::modify_copy(&s.as_pointer()) }) == 1101) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3(
-                Ptr::<i8>::from_string_literal(b"s.modify_copy() == 1101"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ (*s.borrow()).n } == 1) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3(
-                Ptr::<i8>::from_string_literal(b"s.n == 1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::snapshot(&s.as_pointer()) }) == 2) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3(
-                Ptr::<i8>::from_string_literal(b"s.snapshot() == 2"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ (*s.borrow()).n } == 99) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3(
-                Ptr::<i8>::from_string_literal(b"s.n == 99"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::mixed(&s.as_pointer(), 1) }) == 100) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3(
-                Ptr::<i8>::from_string_literal(b"s.mixed(1) == 100"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ (*s.borrow()).n } == 0) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3(
-                Ptr::<i8>::from_string_literal(b"s.n == 0"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ SImpl::modify_copy(&s.as_pointer(),) }) == 1101));
+    assert!(({ (*s.borrow()).n } == 1));
+    assert!((({ SImpl::snapshot(&s.as_pointer(),) }) == 2));
+    assert!(({ (*s.borrow()).n } == 99));
+    assert!((({ SImpl::mixed(&s.as_pointer(), 1,) }) == 100));
+    assert!(({ (*s.borrow()).n } == 0));
     return 0;
-}
-pub fn __assert_fail_3(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait SImpl {
     fn twice(&self) -> i32;

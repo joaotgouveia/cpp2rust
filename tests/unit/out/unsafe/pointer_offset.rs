@@ -46,53 +46,12 @@ unsafe fn main_0() -> i32 {
         out += (*ptr.offset((i) as isize));
         i.prefix_inc();
     }
-    (if ((out) == (51)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"out == 51".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((out) == (51)));
     let mut step: i64 = 2_i64;
     let mut offset: *mut i32 = arr.as_mut_ptr().offset((step) as isize);
-    (if ((*offset) == (arr[(2) as usize])) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"*offset == arr[2]".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*offset) == (arr[(2) as usize])));
     offset = offset.offset(-((step) as isize));
-    (if ((offset) == (&mut arr[(0) as usize] as *mut i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"offset == &arr[0]".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((offset) == (&mut arr[(0) as usize] as *mut i32)));
     return 0;
-}
-pub unsafe fn __assert_fail_0(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

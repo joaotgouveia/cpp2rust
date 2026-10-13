@@ -33,27 +33,8 @@ unsafe fn main_0() -> i32 {
     let mut cat: Cat = <Cat>::default();
     animal = (&mut cat as *mut Cat);
     let mut eat2: bool = (unsafe { (*(animal).cast_const()).bark() });
-    (if (eat1) && (!(eat2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"eat1 && !eat2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((eat1) && (!(eat2)));
     return 0;
-}
-pub unsafe fn __assert_fail_0(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 unsafe impl Animal for Cat {
     unsafe fn bark(&self) -> bool {

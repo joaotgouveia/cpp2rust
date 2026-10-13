@@ -18,93 +18,21 @@ fn main_0() -> i32 {
     let mut code: Code = Code_CODE_OK;
     let mut err: Code = Code_CODE_ERR;
     if (code != 0) {
-        {
-            &(4usize);
-            {
-                {
-                    ({
-                        __assert_fail_0(
-                            Ptr::<i8>::from_string_literal(b"false"),
-                            Ptr::<i8>::from_string_literal(b"bool_condition_enum_c.c"),
-                            11_u32,
-                            Ptr::<i8>::from_string_literal(b"int main()"),
-                        )
-                    });
-                }
-            }
-        };
+        assert!((0 != 0));
     }
     if !(code != 0) {
-        {
-            &(4usize);
-            { {} }
-        };
+        assert!((1 != 0));
     }
     if (err != 0) {
-        {
-            &(4usize);
-            { {} }
-        };
+        assert!((1 != 0));
     }
     if !(err != 0) {
-        {
-            &(4usize);
-            {
-                {
-                    ({
-                        __assert_fail_0(
-                            Ptr::<i8>::from_string_literal(b"false"),
-                            Ptr::<i8>::from_string_literal(b"bool_condition_enum_c.c"),
-                            20_u32,
-                            Ptr::<i8>::from_string_literal(b"int main()"),
-                        )
-                    });
-                }
-            }
-        };
+        assert!((0 != 0));
     }
     let mut t9: i32 = (!(code != 0) as i32);
-    {
-        &(4usize);
-        {
-            if (((t9 == 1) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"t9 == 1"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_enum_c.c"),
-                        24_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((t9 == 1) as i32) != 0));
     let mut b4: bool = (code != 0);
-    {
-        &(4usize);
-        {
-            if !(b4) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"!b4"),
-                        Ptr::<i8>::from_string_literal(b"bool_condition_enum_c.c"),
-                        27_u32,
-                        Ptr::<i8>::from_string_literal(b"int main()"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((!(b4) as i32) != 0));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

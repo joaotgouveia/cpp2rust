@@ -59,27 +59,8 @@ fn main_0() -> i32 {
     field!(p3.with(|__s| __s.p.clone()), x).write(100);
     field!(({ YImpl::ptr(&y.as_pointer(),) }), x).write(1);
     field!(({ YImpl::ptr(&y.as_pointer(),) }), x).write(50);
-    (if ({ (*x.borrow()).x } == 100) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"x.x == 100"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!(({ (*x.borrow()).x } == 100));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait YImpl {
     fn foo(&self) -> Ptr<X>;

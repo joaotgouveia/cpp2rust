@@ -20,135 +20,21 @@ fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S { v: 10 }));
     let cs: Value<S> = Rc::new(RefCell::new(S { v: 10 }));
     let vs: Value<S> = Rc::new(RefCell::new(S { v: 10 }));
-    (if (({ SImpl::operator_add_1(&s.as_pointer(), 1) }) == 11) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"s + 1 == 11"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_add_2(&cs.as_pointer(), 1) }) == 12) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"cs + 1 == 12"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_add_3(&vs.as_pointer(), 1) }) == 13) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"vs + 1 == 13"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_sub_4(&s.as_pointer(), 1) }) == 9) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"s - 1 == 9"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_sub_5(&Rc::new(RefCell::new(S { v: 10 })).as_pointer(), 1) }) == 8) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"S{10} - 1 == 8"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_mul_6(&s.as_pointer(), 3) }) == 30) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"s * 3 == 30"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_mul_6(&cs.as_pointer(), 3) }) == 30) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"cs * 3 == 30"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_mul_7(&Rc::new(RefCell::new(S { v: 10 })).as_pointer(), 3) }) == 60) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"S{10} * 3 == 60"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_index_8(&s.as_pointer(), 2) }) == 12) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"s[2] == 12"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::operator_index_9(&cs.as_pointer(), 2) }) == 112) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"cs[2] == 112"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ SImpl::operator_add_1(&s.as_pointer(), 1,) }) == 11));
+    assert!((({ SImpl::operator_add_2(&cs.as_pointer(), 1,) }) == 12));
+    assert!((({ SImpl::operator_add_3(&vs.as_pointer(), 1,) }) == 13));
+    assert!((({ SImpl::operator_sub_4(&s.as_pointer(), 1,) }) == 9));
+    assert!(
+        (({ SImpl::operator_sub_5(&Rc::new(RefCell::new(S { v: 10 })).as_pointer(), 1,) }) == 8)
+    );
+    assert!((({ SImpl::operator_mul_6(&s.as_pointer(), 3,) }) == 30));
+    assert!((({ SImpl::operator_mul_6(&cs.as_pointer(), 3,) }) == 30));
+    assert!(
+        (({ SImpl::operator_mul_7(&Rc::new(RefCell::new(S { v: 10 })).as_pointer(), 3,) }) == 60)
+    );
+    assert!((({ SImpl::operator_index_8(&s.as_pointer(), 2,) }) == 12));
+    assert!((({ SImpl::operator_index_9(&cs.as_pointer(), 2,) }) == 112));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait SImpl {
     fn operator_add_1(&self, a: i32) -> i32;

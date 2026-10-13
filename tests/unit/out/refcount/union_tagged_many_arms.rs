@@ -6,23 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
-#[byte_size(8)]
-pub struct __fsid_t {
-    #[offset(0)]
-    #[byte_size(8)]
-    pub __val: Value<Box<[i32]>>,
-}
-impl Clone for __fsid_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for __fsid_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
 pub type Tag_enum = u32;
 pub const Tag_enum_T_NUM_S: Tag_enum = 0;
 pub const Tag_enum_T_NUM_U: Tag_enum = 1;
@@ -77,126 +60,47 @@ fn main_0() -> i32 {
     let a: Value<Slot> = <Value<Slot>>::default();
     (*a.borrow_mut()).tag = Tag_enum_T_NUM_S;
     anon_0::signed_n(field_ptr!(a.as_pointer(), payload)).write((-7_i32 as i64));
-    {
-        &(4usize);
-        {
-            if ((((anon_0::signed_n(field_ptr!(a.as_pointer(), payload)).read()) == (-7_i32 as i64))
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"a.payload.signed_n == -7"),
-                        Ptr::<i8>::from_string_literal(b"union_tagged_many_arms.c"),
-                        28_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((((anon_0::signed_n(field_ptr!(a.as_pointer(), payload)).read()) == (-7_i32 as i64))
+            as i32)
+            != 0)
+    );
     let b: Value<Slot> = <Value<Slot>>::default();
     (*b.borrow_mut()).tag = Tag_enum_T_NUM_U;
     anon_0::unsigned_n(field_ptr!(b.as_pointer(), payload)).write(3735928559_u64);
-    {
-        &(4usize);
-        {
-            if ((((anon_0::unsigned_n(field_ptr!(b.as_pointer(), payload)).read())
-                == 3735928559_u64) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"b.payload.unsigned_n == 0xDEADBEEFu"),
-                        Ptr::<i8>::from_string_literal(b"union_tagged_many_arms.c"),
-                        33_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((((anon_0::unsigned_n(field_ptr!(b.as_pointer(), payload)).read()) == 3735928559_u64)
+            as i32)
+            != 0)
+    );
     let c: Value<Slot> = <Value<Slot>>::default();
     (*c.borrow_mut()).tag = Tag_enum_T_TEXT;
     anon_0::text(field_ptr!(c.as_pointer(), payload))
         .write(Ptr::<i8>::from_string_literal(b"hello"));
-    {
-        &(4usize);
-        {
-            if (((((elem!(
-                (anon_0::text(field_ptr!(c.as_pointer(), payload)).read()),
-                0
-            )
-            .read()) as i32)
-                == ('h' as i32)) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"c.payload.text[0] == \'h\'"),
-                        Ptr::<i8>::from_string_literal(b"union_tagged_many_arms.c"),
-                        38_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        (((((elem!(
+            (anon_0::text(field_ptr!(c.as_pointer(), payload)).read()),
+            0
+        )
+        .read()) as i32)
+            == ('h' as i32)) as i32)
+            != 0)
+    );
     let d: Value<Slot> = <Value<Slot>>::default();
     (*d.borrow_mut()).tag = Tag_enum_T_FLOAT;
-    anon_0::f(field_ptr!(d.as_pointer(), payload)).write(1.5E+0);
-    {
-        &(4usize);
-        {
-            if ((((anon_0::f(field_ptr!(d.as_pointer(), payload)).read()) == 1.5E+0) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"d.payload.f == 1.5"),
-                        Ptr::<i8>::from_string_literal(b"union_tagged_many_arms.c"),
-                        43_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    anon_0::f(field_ptr!(d.as_pointer(), payload)).write(1.5_f64);
+    assert!(((((anon_0::f(field_ptr!(d.as_pointer(), payload)).read()) == 1.5_f64) as i32) != 0));
     let x: Value<i32> = Rc::new(RefCell::new(0));
     let e: Value<Slot> = <Value<Slot>>::default();
     (*e.borrow_mut()).tag = Tag_enum_T_REF;
     anon_0::handle(field_ptr!(e.as_pointer(), payload))
         .write(((x.as_pointer()) as Ptr<i32>).to_any());
-    {
-        &(4usize);
-        {
-            if ((({ (anon_0::handle(field_ptr!(e.as_pointer(), payload)).read()) } == {
-                ((x.as_pointer()) as Ptr<i32>).to_any()
-            }) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_1(
-                        Ptr::<i8>::from_string_literal(b"e.payload.handle == &x"),
-                        Ptr::<i8>::from_string_literal(b"union_tagged_many_arms.c"),
-                        49_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((({ (anon_0::handle(field_ptr!(e.as_pointer(), payload)).read()) } == {
+            ((x.as_pointer()) as Ptr<i32>).to_any()
+        }) as i32)
+            != 0)
+    );
     return 0;
-}
-pub fn __assert_fail_1(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

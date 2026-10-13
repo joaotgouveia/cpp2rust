@@ -40,85 +40,19 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-    (if (({ SImpl::get(&s.as_pointer()) }) == 1) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"s.get() == 1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ SImpl::get(&s.as_pointer(),) }) == 1));
     ({ SImpl::set(&s.as_pointer(), 4) });
-    (if (({ SImpl::get(&s.as_pointer()) }) == 4) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"s.get() == 4"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ SImpl::add(&s.as_pointer(), 2) }) == 6) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"s.add(2) == 6"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ SImpl::get(&s.as_pointer(),) }) == 4));
+    assert!((({ SImpl::add(&s.as_pointer(), 2,) }) == 6));
     let derived: Value<Derived> = Rc::new(RefCell::new(Derived::new({ 3 })));
     let mut base: PtrDyn<dyn Base> = (derived.as_pointer()).to_dyn::<dyn Base>(|w| w);
-    (if (({ (*base.upgrade().deref_mut()).apply(5) }) == 15) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"base->apply(5) == 15"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ (*base.upgrade().deref_mut()).apply(5,) }) == 15));
     let pair: Value<Pair> = Rc::new(RefCell::new(Pair {
         first: 7,
         second: 3,
     }));
-    (if (({ pair_sum_2((pair.as_pointer())) }) == 10) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"pair_sum(&pair) == 10"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ pair_diff_0((pair.as_pointer())) }) == 4) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"pair_diff(&pair) == 4"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ pair_sum_1((pair.as_pointer()),) }) == 10));
+    assert!((({ pair_diff_0((pair.as_pointer()),) }) == 4));
     return 0;
 }
 impl S {
@@ -133,16 +67,8 @@ impl Derived {
 }
 impl S {}
 impl Derived {}
-pub fn pair_sum_2(mut p: Ptr<Pair>) -> i32 {
+pub fn pair_sum_1(mut p: Ptr<Pair>) -> i32 {
     return ({ p.with(|__s| __s.first) } + { p.with(|__s| __s.second) });
-}
-pub fn __assert_fail_1(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 impl Base for Derived {
     fn apply(&mut self, mut x: i32) -> i32 {

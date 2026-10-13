@@ -12,38 +12,8 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut x: i32 = 0;
-    (if (1 != 0) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"__builtin_constant_p(x)"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ((1 + 2) == 3) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"__builtin_constant_p(3) + 2 == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((1 != 0));
+    assert!(((1 + 2) == 3));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

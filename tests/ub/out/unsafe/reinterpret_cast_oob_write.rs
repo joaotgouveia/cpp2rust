@@ -6,20 +6,6 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-#[derive(VaArg, FnPtrArg)]
-pub struct __fsid_t {
-    pub __val: [i32; 2],
-}
-impl Clone for __fsid_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for __fsid_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();

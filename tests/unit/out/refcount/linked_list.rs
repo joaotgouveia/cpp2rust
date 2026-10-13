@@ -127,28 +127,15 @@ fn main_0() -> i32 {
     head = __rhs;
     let __rhs = ({ Delete_2((head).clone(), -2_i32) });
     head = __rhs;
-    (if (((((({ Find_0((head).clone(), 0) }).with(|__s| __s.val) == 4)
-        && (({ Find_0((head).clone(), 1) }).with(|__s| __s.val) == 3))
-        && (({ Find_0((head).clone(), 2) }).with(|__s| __s.val) == 2))
-        && (({ Find_0((head).clone(), 3) }).with(|__s| __s.val) == 1))
-        && (({ Find_0((head).clone(), 4) }).with(|__s| __s.val) == -1_i32))
-        && (({ Find_0((head).clone(), 5) }).is_null())
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3 ( Ptr::<i8 >::from_string_literal(b"Find(head, 0)->val == 4 && Find(head, 1)->val == 3 && Find(head, 2)->val == 2 && Find(head, 3)->val == 1 && Find(head, 4)->val == -1 && Find(head, 5) == nullptr" )  , Ptr::<i8 >::from_string_literal(file!().as_bytes())  , line!() as u32    , Ptr::<i8 >::from_string_literal(b"int main()" )  , )
-        });
-    });
+    assert!(
+        (((((({ Find_0((head).clone(), 0,) }).with(|__s| __s.val) == 4)
+            && (({ Find_0((head).clone(), 1,) }).with(|__s| __s.val) == 3))
+            && (({ Find_0((head).clone(), 2,) }).with(|__s| __s.val) == 2))
+            && (({ Find_0((head).clone(), 3,) }).with(|__s| __s.val) == 1))
+            && (({ Find_0((head).clone(), 4,) }).with(|__s| __s.val) == -1_i32))
+            && (({ Find_0((head).clone(), 5,) }).is_null())
+    );
     return 0;
-}
-pub fn __assert_fail_3(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait NodeImpl {
     fn SetNext(&self, next: Ptr<Node>);

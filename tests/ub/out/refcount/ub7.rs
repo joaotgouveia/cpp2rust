@@ -6,26 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
-#[byte_size(32)]
-pub struct max_align_t {
-    #[offset(0)]
-    pub __clang_max_align_nonce1: i64,
-    #[offset(16)]
-    #[byte_size(16)]
-    pub __clang_max_align_nonce2: f64,
-}
-impl Clone for max_align_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for max_align_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
-pub type std_byte = u8;
 pub fn strlen_0(mut s: Ptr<i8>) -> usize {
     let mut begin: Ptr<i8> = (s).clone();
     'loop_: while ((s.read()) != 0) {

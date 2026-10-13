@@ -23,26 +23,7 @@ unsafe fn main_0() -> i32 {
     let mut p1: *mut i32 = (&mut arr[(1) as usize].x1 as *mut i32);
     let mut a: i32 = (*p1);
     let mut p2: *mut Foo = (&mut arr[(0) as usize] as *mut Foo);
-    (if (((a) + ((*p2).x2)) == (5)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"a + p2->x2 == 5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((a) + ((*p2).x2)) == (5)));
     return 0;
-}
-pub unsafe fn __assert_fail_0(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -1,5 +1,5 @@
 // ADDITIONAL_COMPILE_FLAGS: -std=c++23
-// no-compile
+// translation-fail
 #include <assert.h>
 #include <stdarg.h>
 

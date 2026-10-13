@@ -75,189 +75,31 @@ unsafe fn main_0() -> i32 {
     let mut w: widget = <widget>::default();
     w.id = 7;
     w.mode = widget_enum_MODE_ACTIVE;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((unsafe { is_active_0((&mut w as *mut widget)) }) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"is_active(&w)".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        43_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((unsafe { is_active_0((&mut w as *mut widget),) }) != 0));
     w.mode = widget_enum_MODE_DONE;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((w.mode as u32) == ((widget_enum_MODE_DONE as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"w.mode == MODE_DONE".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        45_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((w.mode as u32) == ((widget_enum_MODE_DONE as i32) as u32)) as i32) != 0));
     let mut p: point_struct = <point_struct>::default();
     p.x = 3;
     p.y = 4;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((p.x) + (p.y)) == (7)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"p.x + p.y == 7".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        50_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((((p.x) + (p.y)) == (7)) as i32) != 0));
     let mut up: point = <point>::default();
     up.whole = 5;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((up.whole) == (5)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"up.whole == 5".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        54_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((up.whole) == (5)) as i32) != 0));
     let mut b: slot_union = <slot_union>::default();
     b.i = 9;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((b.i) == (9)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"b.i == 9".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        58_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((b.i) == (9)) as i32) != 0));
     let mut e: slot = slot_SLOT_B;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((e as u32) == ((slot_SLOT_B as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"e == SLOT_B".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        61_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((e as u32) == ((slot_SLOT_B as i32) as u32)) as i32) != 0));
     let mut inner_tag: Inner = <Inner>::default();
     inner_tag.tag_field = 11;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((inner_tag.tag_field) == (11)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"inner_tag.tag_field == 11".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        65_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((inner_tag.tag_field) == (11)) as i32) != 0));
     let mut inner_typedef: Inner_struct = <Inner_struct>::default();
     inner_typedef.typedef_field = 22;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((inner_typedef.typedef_field) == (22)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"inner_typedef.typedef_field == 22".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        69_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((inner_typedef.typedef_field) == (22)) as i32) != 0));
     let mut o: Outer = <Outer>::default();
     o.field.tag_field = 33;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((o.field.tag_field) == (33)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"o.field.tag_field == 33".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        73_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((w.id) == (7)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"w.id == 7".as_ptr().cast_mut()).cast_const(),
-                        (c"tag_vs_identifier_collision.c".as_ptr().cast_mut()).cast_const(),
-                        75_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((o.field.tag_field) == (33)) as i32) != 0));
+    assert!(((((w.id) == (7)) as i32) != 0));
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -37,38 +37,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if ((unsafe { for_in_switch_continue_0(0) }) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"for_in_switch_continue(0) == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { for_in_switch_continue_0(99) }) == (-1_i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"for_in_switch_continue(99) == -1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { for_in_switch_continue_0(0,) }) == (4)));
+    assert!(((unsafe { for_in_switch_continue_0(99,) }) == (-1_i32)));
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

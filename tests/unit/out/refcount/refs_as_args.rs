@@ -48,18 +48,7 @@ fn main_0() -> i32 {
     let x1: Value<i32> = Rc::new(RefCell::new(1));
     let x2: Value<i32> = Rc::new(RefCell::new(2));
     ({ more_refs_0(3, 4, x1.as_pointer(), x2.as_pointer()) });
-    (if (((*x1.borrow()) + (*x2.borrow())) == 21) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_2(
-                Ptr::<i8>::from_string_literal(b"x1 + x2 == 21"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((((*x1.borrow()) + (*x2.borrow())) == 21));
     let v: Value<Val> = Rc::new(RefCell::new(Val { x: 5 }));
     let mut acc: i32 = ({
         let _a: Val = (*v.borrow()).clone();
@@ -81,26 +70,7 @@ fn main_0() -> i32 {
         let _b: Val = (*v.borrow()).clone();
         sum_1(_a, _b)
     });
-    (if (acc == 40) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_2(
-                Ptr::<i8>::from_string_literal(b"acc == 40"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((acc == 40));
     return 0;
-}
-pub fn __assert_fail_2(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

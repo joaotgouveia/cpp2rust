@@ -6,20 +6,6 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-#[derive(VaArg, FnPtrArg)]
-pub struct __fsid_t {
-    pub __val: [i32; 2],
-}
-impl Clone for __fsid_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for __fsid_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();
@@ -29,65 +15,13 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut original: i32 = 67305985;
     let mut halves: *mut i16 = ((&mut original as *mut i32) as *mut i16);
-    (if (((*halves.offset((0) as isize)) as i32) == (513)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"halves[0] == 0x0201".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*halves.offset((1) as isize)) as i32) == (1027)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"halves[1] == 0x0403".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((*halves.offset((0) as isize)) as i32) == (513)));
+    assert!((((*halves.offset((1) as isize)) as i32) == (1027)));
     (*halves.offset((0) as isize)) = 4112_i16;
-    (if ((original) == (67309584)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"original == 0x04031010".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((original) == (67309584)));
     let mut arr: [i16; 2] = [513_i16, 1027_i16];
     let mut as_int: *mut i32 = (arr.as_mut_ptr() as *mut i32);
-    (if ((*as_int) == (67305985)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_0(
-                c"*as_int == 0x04030201".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*as_int) == (67305985)));
     return 0;
-}
-pub unsafe fn __assert_fail_0(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

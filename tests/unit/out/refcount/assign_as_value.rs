@@ -18,25 +18,10 @@ fn main_0() -> i32 {
         p += 1;
         (p).clone()
     };
-    {
-        &(4usize);
-        {
-            if ((({ (q).clone() } == { (buf.as_pointer() as Ptr<i8>).offset((1) as isize) })
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"q == buf + 1"),
-                        Ptr::<i8>::from_string_literal(b"assign_as_value.c"),
-                        7_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((({ (q).clone() } == { (buf.as_pointer() as Ptr::<i8>).offset((1) as isize) }) as i32)
+            != 0)
+    );
     let mut out: i8 = 0_i8;
     'switch: {
         match {
@@ -46,56 +31,16 @@ fn main_0() -> i32 {
             }) as i32)
         } {
             __v if __v == ('x' as i32) => {
-                {
-                    &(4usize);
-                    { {} }
-                };
+                assert!((1 != 0));
                 break 'switch;
             }
             _ => {
-                {
-                    &(4usize);
-                    {
-                        {
-                            ({
-                                __assert_fail_0(
-                                    Ptr::<i8>::from_string_literal(b"0"),
-                                    Ptr::<i8>::from_string_literal(b"assign_as_value.c"),
-                                    15_u32,
-                                    Ptr::<i8>::from_string_literal(b"int main(void)"),
-                                )
-                            });
-                        }
-                    }
-                };
+                assert!((0 != 0));
                 break 'switch;
             }
         }
     };
-    {
-        &(4usize);
-        {
-            if ((((out as i32) == ('x' as i32)) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"out == \'x\'"),
-                        Ptr::<i8>::from_string_literal(b"assign_as_value.c"),
-                        18_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((out as i32) == ('x' as i32)) as i32) != 0));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

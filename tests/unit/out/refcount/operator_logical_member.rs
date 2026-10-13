@@ -19,93 +19,23 @@ pub fn main() {
 fn main_0() -> i32 {
     let t: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
     let f: Value<S> = Rc::new(RefCell::new(S { v: 0 }));
-    (if ({ SImpl::operator_not(&f.as_pointer()) }) {
-        &(0);
-    } else {
+    assert!(({ SImpl::operator_not(&f.as_pointer(),) }));
+    assert!(!({ SImpl::operator_not(&t.as_pointer(),) }));
+    assert!(
         ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"!f"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if !({ SImpl::operator_not(&t.as_pointer()) }) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"!!t"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        let _o: Ptr<S> = t.as_pointer();
-        SImpl::operator_and(&t.as_pointer(), _o)
-    }) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"t && t"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if !({ SImpl::operator_and(&t.as_pointer(), f.as_pointer()) }) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"!(t && f)"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ SImpl::operator_or(&t.as_pointer(), f.as_pointer()) }) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"t || f"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if !({
-        let _o: Ptr<S> = f.as_pointer();
-        SImpl::operator_or(&f.as_pointer(), _o)
-    }) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"!(f || f)"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+            let _o: Ptr<S> = t.as_pointer();
+            SImpl::operator_and(&t.as_pointer(), _o)
+        })
+    );
+    assert!(!({ SImpl::operator_and(&t.as_pointer(), f.as_pointer(),) }));
+    assert!(({ SImpl::operator_or(&t.as_pointer(), f.as_pointer(),) }));
+    assert!(
+        !({
+            let _o: Ptr<S> = f.as_pointer();
+            SImpl::operator_or(&f.as_pointer(), _o)
+        })
+    );
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait SImpl {
     fn operator_not(&self) -> bool;

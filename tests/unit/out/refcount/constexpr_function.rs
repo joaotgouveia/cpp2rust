@@ -19,7 +19,7 @@ pub fn scaled_2(mut x: i32) -> i32 {
     return x;
 }
 pub fn half_3(mut x: f64) -> f64 {
-    return (x / 2.0E+0);
+    return (x / 2_f64);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -29,36 +29,14 @@ pub struct Flag {
 }
 pub fn use_4(f: Flag) -> i32 {
     let f: Value<Flag> = Rc::new(RefCell::new(f));
-    (if ({ FlagImpl::to_bool(&f.as_pointer()) }) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"f"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int use(Flag)"),
-            )
-        });
-    });
+    assert!(({ FlagImpl::to_bool(&f.as_pointer(),) }));
     return { (*f.borrow()).v };
 }
-pub fn checked_6(mut x: i32) -> i32 {
-    (if (x > 0) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"x > 0"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int checked(int)"),
-            )
-        });
-    });
+pub fn checked_5(mut x: i32) -> i32 {
+    assert!((x > 0));
     return (x + 1);
 }
-pub fn in_constant_context_7() -> bool {
+pub fn in_constant_context_6() -> bool {
     {}
     return (({ runtime_only_0(1) }) == 0);
 }
@@ -74,178 +52,27 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut runtime_context: bool = ({ in_constant_context_7() });
-    (if !(runtime_context) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"!runtime_context"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    let mut runtime_context: bool = ({ in_constant_context_6() });
+    assert!(!(runtime_context));
     let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([7, 8])));
-    (if (({ first_1((arr.as_pointer() as Ptr<i32>)) }) == 7) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"first(arr) == 7"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ first_1((arr.as_pointer() as Ptr<i32>).offset((1) as isize)) }) == 8) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"first(arr + 1) == 8"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ scaled_2(3) }) == 3) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"scaled(3) == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ scaled_2(-3_i32) }) == 6) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"scaled(-3) == 6"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ half_3(5.0E+0) }) == 2.5E+0) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"half(5.0) == 2.5"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ checked_6(1) }) == 2) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"checked(1) == 2"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    let mut c: i32 = ({ checked_6(4) });
-    (if (c == 5) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"c == 5"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ use_4(Flag { v: 2 }) }) == 2) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"use(Flag{2}) == 2"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ first_1((arr.as_pointer() as Ptr::<i32>),) }) == 7));
+    assert!((({ first_1((arr.as_pointer() as Ptr::<i32>).offset((1) as isize),) }) == 8));
+    assert!((({ scaled_2(3,) }) == 3));
+    assert!((({ scaled_2(-3_i32,) }) == 6));
+    assert!((({ half_3(5_f64,) }) == 2.5_f64));
+    assert!((({ checked_5(1,) }) == 2));
+    let mut c: i32 = ({ checked_5(4) });
+    assert!((c == 5));
+    assert!((({ use_4(Flag { v: 2 },) }) == 2));
     let mut u: i32 = ({ use_4(Flag { v: 3 }) });
-    (if (u == 3) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"u == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((u == 3));
     let mut ptr: Ptr<i32> = (arr.as_pointer() as Ptr<i32>);
-    (if !(ptr).is_null() {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"ptr"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!(!(ptr).is_null());
     let p: Value<P> = Rc::new(RefCell::new(P { v: 9 }));
-    (if (({ PImpl::get(&p.as_pointer()) }) == 9) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"p.get() == 9"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ PImpl::get(&p.as_pointer(),) }) == 9));
     let mut k: i32 = ({ scaled_2(4) });
-    (if (k == 4) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"k == 4"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((k == 4));
     return 0;
-}
-pub fn __assert_fail_5(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait FlagImpl {
     fn to_bool(&self) -> bool;

@@ -14,26 +14,26 @@ pub struct Point {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct Box_0 {
+pub struct Box_int_ {
     #[offset(0)]
     pub val: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct Box_1 {
+pub struct Box_Point_ {
     #[offset(0)]
     #[byte_size(4)]
     pub val: Point,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct Deduced_2 {
+pub struct Deduced_int_ {
     #[offset(0)]
     pub val: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct Deduced_3 {
+pub struct Deduced_Point_ {
     #[offset(0)]
     #[byte_size(4)]
     pub val: Point,
@@ -43,108 +43,56 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let i: Value<Box_0> = Rc::new(RefCell::new(Box_0 { val: 3 }));
-    (if (({ Box_0Impl::twice(&i.as_pointer()) }) == 6) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_4(
-                Ptr::<i8>::from_string_literal(b"i.twice() == 6"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    let p: Value<Box_1> = Rc::new(RefCell::new(Box_1 {
+    let i: Value<Box_int_> = Rc::new(RefCell::new(Box_int_ { val: 3 }));
+    assert!((({ Box_int_Impl::twice(&i.as_pointer(),) }) == 6));
+    let p: Value<Box_Point_> = Rc::new(RefCell::new(Box_Point_ {
         val: Point { x: 4 },
     }));
-    (if ({ ({ Box_1Impl::get(&p.as_pointer()) }).x } == 4) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_4(
-                Ptr::<i8>::from_string_literal(b"p.get().x == 4"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    let d: Value<Deduced_2> = Rc::new(RefCell::new(Deduced_2 { val: 5 }));
-    (if (({ Deduced_2Impl::twice(&d.as_pointer()) }) == 10) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_4(
-                Ptr::<i8>::from_string_literal(b"d.twice() == 10"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    let dp: Value<Deduced_3> = Rc::new(RefCell::new(Deduced_3 {
+    assert!(({ ({ Box_Point_Impl::get(&p.as_pointer(),) }).x } == 4));
+    let d: Value<Deduced_int_> = Rc::new(RefCell::new(Deduced_int_ { val: 5 }));
+    assert!((({ Deduced_int_Impl::twice(&d.as_pointer(),) }) == 10));
+    let dp: Value<Deduced_Point_> = Rc::new(RefCell::new(Deduced_Point_ {
         val: Point { x: 6 },
     }));
-    (if ({ ({ Deduced_3Impl::get(&dp.as_pointer()) }).x } == 6) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_4(
-                Ptr::<i8>::from_string_literal(b"dp.get().x == 6"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!(({ ({ Deduced_Point_Impl::get(&dp.as_pointer(),) }).x } == 6));
     return 0;
 }
-pub fn __assert_fail_4(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
-}
-pub trait Box_0Impl {
-    fn get(&self) -> i32 {
-        unimplemented!()
-    }
-    fn twice(&self) -> i32;
-}
-impl Box_0Impl for Ptr<Box_0> {
-    fn twice(&self) -> i32 {
-        return ((*self).with(|__s| __s.val) + (*self).with(|__s| __s.val));
-    }
-}
-pub trait Box_1Impl {
+pub trait Box_Point_Impl {
     fn get(&self) -> Point;
     fn twice(&self) -> Point {
         unimplemented!()
     }
 }
-impl Box_1Impl for Ptr<Box_1> {
+impl Box_Point_Impl for Ptr<Box_Point_> {
     fn get(&self) -> Point {
         return (*self).with(|__s| __s.val.clone());
     }
 }
-pub trait Deduced_2Impl {
+pub trait Box_int_Impl {
+    fn get(&self) -> i32 {
+        unimplemented!()
+    }
     fn twice(&self) -> i32;
 }
-impl Deduced_2Impl for Ptr<Deduced_2> {
+impl Box_int_Impl for Ptr<Box_int_> {
     fn twice(&self) -> i32 {
         return ((*self).with(|__s| __s.val) + (*self).with(|__s| __s.val));
     }
 }
-pub trait Deduced_3Impl {
+pub trait Deduced_Point_Impl {
     fn get(&self) -> Point;
 }
-impl Deduced_3Impl for Ptr<Deduced_3> {
+impl Deduced_Point_Impl for Ptr<Deduced_Point_> {
     fn get(&self) -> Point {
         return (*self).with(|__s| __s.val.clone());
+    }
+}
+pub trait Deduced_int_Impl {
+    fn twice(&self) -> i32;
+}
+impl Deduced_int_Impl for Ptr<Deduced_int_> {
+    fn twice(&self) -> i32 {
+        return ((*self).with(|__s| __s.val) + (*self).with(|__s| __s.val));
     }
 }
 pub fn __cpp2rust_init_globals() {}

@@ -29,7 +29,6 @@ int main() {
   } else {
     assert(false);
   }
-  assert(s);
   S z{0};
   assert(s);
   assert(!z);

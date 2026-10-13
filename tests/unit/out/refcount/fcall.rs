@@ -38,26 +38,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    (if (({ f1_2(1.0E+0, 2.0E+0) }) == (-6_i32 as f64)) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_3(
-                Ptr::<i8>::from_string_literal(b"f1(1.0, 2.0) == -6"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ f1_2(1_f64, 2_f64,) }) == (-6_i32 as f64)));
     return 0;
-}
-pub fn __assert_fail_3(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

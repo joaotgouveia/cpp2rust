@@ -31,88 +31,27 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut s: S = S { v: 3 };
     let mut t: S = S { v: 4 };
-    (if (((unsafe {
-        let _a: *const S = &s;
-        operator_comma_0(_a, &t)
-    })
-    .v) == (34))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"(s, t).v == 34".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((unsafe {
-        let mut _a: S = (unsafe {
+    assert!(
+        (((unsafe {
             let _a: *const S = &s;
             operator_comma_0(_a, &t)
-        });
-        let _b: *const S = &s;
-        operator_comma_0(&mut _a, _b)
-    })
-    .v) == (343))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"(s, t, s).v == 343".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { operator_literal__k_1(2_u64) }) == (2000_i64)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"2_k == 2000".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { operator_literal__half_2(3.0E+0) }) == (1.5E+0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"3.0_half == 1.5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { operator_literal__k_1(4_u64) }) == (4000_i64)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_3(
-                c"operator\"\"_k(4) == 4000".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+        })
+        .v) == (34))
+    );
+    assert!(
+        (((unsafe {
+            let mut _a: S = (unsafe {
+                let _a: *const S = &s;
+                operator_comma_0(_a, &t)
+            });
+            let _b: *const S = &s;
+            operator_comma_0(&mut _a, _b)
+        })
+        .v) == (343))
+    );
+    assert!(((unsafe { operator_literal__k_1(2_u64,) }) == (2000_i64)));
+    assert!(((unsafe { operator_literal__half_2(3_f64,) }) == (1.5_f64)));
+    assert!(((unsafe { operator_literal__k_1(4_u64,) }) == (4000_i64)));
     return 0;
-}
-pub unsafe fn __assert_fail_3(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

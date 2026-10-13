@@ -22,30 +22,12 @@ unsafe fn main_0() -> i32 {
     let mut x: i32 = 5;
     let mut y: i32 = (*(unsafe { foo_1(&mut x) }));
     let z: *mut i32 = (unsafe { foo_1(&mut x) });
-    (if (((((*(unsafe { foo_1(&mut x) })) + (*(unsafe { foo_1(&mut y) })))
-        + (*(unsafe { foo_1(z) })))
-        + (unsafe { bar_0() }))
-        == (16))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_2(
-                c"foo(x) + foo(y) + foo(z) + bar() == 16".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(
+        (((((*(unsafe { foo_1(&mut x,) })) + (*(unsafe { foo_1(&mut y,) })))
+            + (*(unsafe { foo_1(z,) })))
+            + (unsafe { bar_0() }))
+            == (16))
+    );
     return 0;
-}
-pub unsafe fn __assert_fail_2(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

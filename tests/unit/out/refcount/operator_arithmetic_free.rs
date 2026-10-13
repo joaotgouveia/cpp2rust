@@ -82,276 +82,115 @@ pub fn main() {
 fn main_0() -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S { v: 7 }));
     let b: Value<S> = Rc::new(RefCell::new(S { v: 2 }));
-    (if ({
+    assert!(
         ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_add_0(_a, b.as_pointer())
+            })
+            .v
+        } == 9)
+    );
+    assert!(
+        ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_sub_1(_a, b.as_pointer())
+            })
+            .v
+        } == 5)
+    );
+    assert!(
+        ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_mul_2(_a, b.as_pointer())
+            })
+            .v
+        } == 14)
+    );
+    assert!(
+        ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_div_3(_a, b.as_pointer())
+            })
+            .v
+        } == 3)
+    );
+    assert!(
+        ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_rem_4(_a, b.as_pointer())
+            })
+            .v
+        } == 1)
+    );
+    assert!(
+        ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_pos_5(_a)
+            })
+            .v
+        } == 7)
+    );
+    assert!(
+        ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_neg_6(_a)
+            })
+            .v
+        } == -7_i32)
+    );
+    assert!(
+        (({
             let _a: Ptr<S> = a.as_pointer();
-            operator_add_0(_a, b.as_pointer())
+            operator_inc_7(_a)
         })
-        .v
-    } == 9)
-    {
-        &(0);
-    } else {
+        .with(|__s| (__s).v)
+            == 8)
+    );
+    assert!(
         ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(a + b).v == 9"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_post_inc_8(_a, 0)
+            })
+            .v
+        } == 8)
+    );
+    assert!(({ (*a.borrow()).v } == 9));
+    assert!(
+        (({
             let _a: Ptr<S> = a.as_pointer();
-            operator_sub_1(_a, b.as_pointer())
+            operator_dec_9(_a)
         })
-        .v
-    } == 5)
-    {
-        &(0);
-    } else {
+        .with(|__s| (__s).v)
+            == 8)
+    );
+    assert!(
         ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(a - b).v == 5"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_post_dec_10(_a, 0)
+            })
+            .v
+        } == 8)
+    );
+    assert!(({ (*a.borrow()).v } == 7));
+    assert!(
         ({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_mul_2(_a, b.as_pointer())
-        })
-        .v
-    } == 14)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(a * b).v == 14"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_div_3(_a, b.as_pointer())
-        })
-        .v
-    } == 3)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(a / b).v == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_rem_4(_a, b.as_pointer())
-        })
-        .v
-    } == 1)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(a % b).v == 1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_pos_5(_a)
-        })
-        .v
-    } == 7)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(+a).v == 7"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_neg_6(_a)
-        })
-        .v
-    } == -7_i32)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(-a).v == -7"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({
-        let _a: Ptr<S> = a.as_pointer();
-        operator_inc_7(_a)
-    })
-    .with(|__s| (__s).v)
-        == 8)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(++a).v == 8"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_post_inc_8(_a, 0)
-        })
-        .v
-    } == 8)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(a++).v == 8"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ (*a.borrow()).v } == 9) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"a.v == 9"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({
-        let _a: Ptr<S> = a.as_pointer();
-        operator_dec_9(_a)
-    })
-    .with(|__s| (__s).v)
-        == 8)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(--a).v == 8"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_post_dec_10(_a, 0)
-        })
-        .v
-    } == 8)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(a--).v == 8"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ (*a.borrow()).v } == 7) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"a.v == 7"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_add_11(_a, 1)
-        })
-        .v
-    } == 8)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(a + 1).v == 8"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ ({ operator_add_12(1, a.as_pointer()) }).v } == 8) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_13(
-                Ptr::<i8>::from_string_literal(b"(1 + a).v == 8"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+            ({
+                let _a: Ptr<S> = a.as_pointer();
+                operator_add_11(_a, 1)
+            })
+            .v
+        } == 8)
+    );
+    assert!(({ ({ operator_add_12(1, a.as_pointer(),) }).v } == 8));
     return 0;
-}
-pub fn __assert_fail_13(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

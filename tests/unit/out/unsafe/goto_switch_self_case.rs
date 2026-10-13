@@ -31,62 +31,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { sm_0(0) }) == (1)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"sm(0) == 1".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_switch_self_case.c".as_ptr().cast_mut()).cast_const(),
-                        21_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { sm_0(1) }) == (11)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"sm(1) == 11".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_switch_self_case.c".as_ptr().cast_mut()).cast_const(),
-                        22_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { sm_0(7) }) == (-1_i32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_1(
-                        (c"sm(7) == -1".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_switch_self_case.c".as_ptr().cast_mut()).cast_const(),
-                        23_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((unsafe { sm_0(0,) }) == (1)) as i32) != 0));
+    assert!(((((unsafe { sm_0(1,) }) == (11)) as i32) != 0));
+    assert!(((((unsafe { sm_0(7,) }) == (-1_i32)) as i32) != 0));
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

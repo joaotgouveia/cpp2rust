@@ -87,54 +87,9 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     let mut c: Color = Color_RED;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((c as u32) == ((Color_RED as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"c == RED".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        56_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((c as u32) == (0_u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"c == 0".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        57_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((c as u32) != (1_u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"c != 1".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        58_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((c as u32) == ((Color_RED as i32) as u32)) as i32) != 0));
+    assert!(((((c as u32) == (0_u32)) as i32) != 0));
+    assert!(((((c as u32) != (1_u32)) as i32) != 0));
     if ((((c as u32) == ((Color_GREEN as i32) as u32)) as i32) != 0) {
         return 1;
     }
@@ -155,291 +110,36 @@ unsafe fn main_0() -> i32 {
         }
     };
     let mut x: i32 = (c as i32);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((x) == (0)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"x == 0".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        76_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((x) == (0)) as i32) != 0));
     let mut y: i32 = (((c as u32).wrapping_add(1_u32)) as i32);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((y) == (1)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"y == 1".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        79_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((y) == (1)) as i32) != 0));
     c = ((2) as Color);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((c as u32) == ((Color_BLUE as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"c == BLUE".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        82_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((c as u32) == (2_u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"c == 2".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        83_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((c as u32) == ((Color_BLUE as i32) as u32)) as i32) != 0));
+    assert!(((((c as u32) == (2_u32)) as i32) != 0));
     c = (unsafe { make_color_6(1) });
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((c as u32) == ((Color_GREEN as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"c == GREEN".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        86_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((c as u32) == ((Color_GREEN as i32) as u32)) as i32) != 0));
     let mut cmp: Color = (((c as u32).wrapping_add(1_u32)) as Color);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((cmp as u32) == ((Color_BLUE as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"cmp == BLUE".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        89_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((cmp as u32) == ((Color_BLUE as i32) as u32)) as i32) != 0));
     let mut o: Option = Option_OPT_A;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((o as u32) == ((Option_OPT_A as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"o == OPT_A".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        92_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((o as u32) == (10_u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"o == 10".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        93_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((o as u32) == ((Option_OPT_A as i32) as u32)) as i32) != 0));
+    assert!(((((o as u32) == (10_u32)) as i32) != 0));
     let mut oi: i32 = (o as i32);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((oi) == (10)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"oi == 10".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        96_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((oi) == (10)) as i32) != 0));
     o = ((20) as Option);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((o as u32) == ((Option_OPT_B as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"o == OPT_B".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        99_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((o as u32) == ((Option_OPT_B as i32) as u32)) as i32) != 0));
     let mut rc: i32 = (unsafe { classify_option_5((o as i32)) });
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((rc) == (2)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"rc == 2".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        102_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((rc) == (2)) as i32) != 0));
     rc = (unsafe { classify_option_5(20) });
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((rc) == (2)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"rc == 2".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        105_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((rc) == (2)) as i32) != 0));
     rc = (unsafe { classify_option_5((Option_OPT_C as i32)) });
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((rc) == (3)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"rc == 3".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        108_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((rc) == (3)) as i32) != 0));
     let mut t: Tag_enum = Tag_enum_TAG_ONE;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((t as u32) == (1_u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"t == 1".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        111_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((t as u32) == ((Tag_enum_TAG_ONE as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"t == TAG_ONE".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        112_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((t as u32) == (1_u32)) as i32) != 0));
+    assert!(((((t as u32) == ((Tag_enum_TAG_ONE as i32) as u32)) as i32) != 0));
     let mut ti: i32 = (t as i32);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((ti) == (1)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"ti == 1".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        115_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((ti) == (1)) as i32) != 0));
     t = ((2) as Tag_enum);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((t as u32) == ((Tag_enum_TAG_TWO as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"t == TAG_TWO".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        118_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((t as u32) == ((Tag_enum_TAG_TWO as i32) as u32)) as i32) != 0));
     'switch: {
         match { (t as u32) } {
             __v if __v == ((Tag_enum_TAG_ZERO as i32) as u32) => {
@@ -455,307 +155,78 @@ unsafe fn main_0() -> i32 {
         }
     };
     let mut extra: i32 = (((Color_RED as i32) + (Color_GREEN as i32)) + (Color_BLUE as i32));
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((extra) == (((0) + (1)) + (2))) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"extra == 0 + 1 + 2".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        130_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_color_0)) as u32)
-                == ((Color_GREEN as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"global_color == GREEN".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        132_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_opt_1)) as u32)
-                == ((Option_OPT_B as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"global_opt == OPT_B".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        133_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_tag_2)) as u32)
-                == ((Tag_enum_TAG_TWO as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"global_tag == TAG_TWO".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        134_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].color
-                as u32)
-                == ((Color_RED as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"entries[0].color == RED".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        136_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].opt
-                as u32)
-                == ((Option_OPT_NONE as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"entries[0].opt == OPT_NONE".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        137_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].color
-                as u32)
-                == ((Color_GREEN as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"entries[1].color == GREEN".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        138_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].opt
-                as u32)
-                == ((Option_OPT_A as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"entries[1].opt == OPT_A".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        139_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].color
-                as u32)
-                == ((Color_BLUE as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"entries[2].color == BLUE".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        140_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].opt
-                as u32)
-                == ((Option_OPT_C as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"entries[2].opt == OPT_C".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        141_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((extra) == (((0) + (1)) + (2))) as i32) != 0));
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_color_0)) as u32)
+            == ((Color_GREEN as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_opt_1)) as u32)
+            == ((Option_OPT_B as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_tag_2)) as u32)
+            == ((Tag_enum_TAG_TWO as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].color as u32)
+            == ((Color_RED as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].opt as u32)
+            == ((Option_OPT_NONE as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].color as u32)
+            == ((Color_GREEN as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].opt as u32)
+            == ((Option_OPT_A as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].color as u32)
+            == ((Color_BLUE as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].opt as u32)
+            == ((Option_OPT_C as i32) as u32)) as i32)
+            != 0)
+    );
     let mut names: [*const libc::c_char; 3] = [
         (c"red".as_ptr().cast_mut()).cast_const(),
         (c"green".as_ptr().cast_mut()).cast_const(),
         (c"blue".as_ptr().cast_mut()).cast_const(),
     ];
     let mut idx: Color = Color_GREEN;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*names[(idx) as usize].offset((0) as isize)) as i32) == ('g' as i32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"names[idx][0] == \'g\'".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        145_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(idx) as usize].opt
-                as u32)
-                == ((Option_OPT_A as i32) as u32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"entries[idx].opt == OPT_A".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        146_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*names[(*std::cell::LazyCell::force_mut(&mut *&raw mut global_tag_2)) as usize]
-                .offset((0) as isize)) as i32)
-                == ('b' as i32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"names[global_tag][0] == \'b\'".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        147_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        (((((*names[(idx) as usize].offset((0) as isize)) as i32) == ('g' as i32)) as i32) != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(idx) as usize].opt as u32)
+            == ((Option_OPT_A as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*names[(*std::cell::LazyCell::force_mut(&mut *&raw mut global_tag_2)) as usize]
+            .offset((0) as isize)) as i32)
+            == ('b' as i32)) as i32)
+            != 0)
+    );
     let mut pp: *mut *const libc::c_char = (&mut names[(idx) as usize] as *mut *const libc::c_char);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*(*pp).offset((0) as isize)) as i32) == ('g' as i32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"(*pp)[0] == \'g\'".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        150_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((((*(*pp).offset((0) as isize)) as i32) == ('g' as i32)) as i32) != 0));
     let mut pe: *mut Entry = (&mut (*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))
         [(idx) as usize] as *mut Entry);
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*pe).opt as u32) == ((Option_OPT_A as i32) as u32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_7(
-                        (c"pe->opt == OPT_A".as_ptr().cast_mut()).cast_const(),
-                        (c"enum_int_interop_c.c".as_ptr().cast_mut()).cast_const(),
-                        152_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((((*pe).opt as u32) == ((Option_OPT_A as i32) as u32)) as i32) != 0));
     return 0;
-}
-pub unsafe fn __assert_fail_7(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const global_color_0);

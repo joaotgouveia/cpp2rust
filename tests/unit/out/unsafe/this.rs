@@ -126,178 +126,37 @@ unsafe fn main_0() -> i32 {
     let mut s: S = S::new_1({ 1 });
     let ref_: *mut S = (unsafe { S::returns_this_reference(&mut s) });
     (*ref_).a_.postfix_inc();
-    (if ((s.a_) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.a_ == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.a_) == (2)));
     let mut ptr: *mut S = (unsafe { S::returns_this_pointer(&mut s) });
     (*ptr).a_.postfix_inc();
-    (if ((s.a_) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.a_ == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.a_) == (3)));
     (unsafe { S::inc(&mut (*(unsafe { S::inc(&mut (*(unsafe { S::inc(&mut s) }))) }))) });
-    (if ((s.a_) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.a_ == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.a_) == (6)));
     (unsafe { S::set_from_this(&mut s) });
-    (if ((s.a_) == (7)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.a_ == 7".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { S::twice(&mut s) }) == (14)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.twice() == 14".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.a_) == (7)));
+    assert!(((unsafe { S::twice(&mut s,) }) == (14)));
     (unsafe { S::link(&mut s) });
-    (if ((s.self__) == (&mut s as *mut S)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.self_ == &s".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.self__) == (&mut s as *mut S)));
     (*s.self__).a_.postfix_inc();
-    (if ((s.a_) == (8)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.a_ == 8".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.a_) == (8)));
     (unsafe { S::bump_me(&mut s) });
-    (if ((s.a_) == (9)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.a_ == 9".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.a_) == (9)));
     let mut d: D = D::new({ 3 });
-    (if ((d.a_) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"d.a_ == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((d.a_) == (6)));
     let cr: *const S = (unsafe { S::cref(&s) });
-    (if (((*cr).a_) == (9)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"cr.a_ == 9".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((*cr).a_) == (9)));
     let mut t: S = S::new_1({ 0 });
-    (if (unsafe {
-        let _o: *const S = (&mut s as *mut S).cast_const();
-        S::is(&s, _o)
-    }) {
-        &(0);
-    } else {
+    assert!(
         (unsafe {
-            __assert_fail_1(
-                c"s.is(&s)".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if !(unsafe { S::is(&s, (&mut t as *mut S).cast_const()) }) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"!s.is(&t)".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+            let _o: *const S = (&mut s as *mut S).cast_const();
+            S::is(&s, _o)
+        })
+    );
+    assert!(!(unsafe { S::is(&s, (&mut t as *mut S).cast_const(),) }));
     let mut p: *mut S = (Box::leak(Box::new(S::new_1({ 1 }))) as *mut S);
     let mut q: *mut S = (unsafe { S::returns_this_pointer(&mut (*p)) });
     (*q).a_.postfix_inc();
-    (if (((*p).a_) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"p->a_ == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((*p).a_) == (2)));
     {
         let __p = p;
         if !__p.is_null() {
@@ -307,138 +166,34 @@ unsafe fn main_0() -> i32 {
     let mut h: *mut S = (Box::leak(Box::new(S::new_1({ 5 }))) as *mut S);
     (unsafe { S::destroy(&mut (*h)) });
     (unsafe { S::reset(&mut s) });
-    (if ((s.a_) == (0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.a_ == 0".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (s.self__).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.self_ == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((unsafe {
-        let _other: *mut S = (&mut s as *mut S);
-        S::copy_if_different(&mut s, _other)
-    }) as i32)
-        == (false as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.copy_if_different(&s) == false".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((unsafe {
-        let _other: *const S = (&mut s as *mut S).cast_const();
-        S::copy_if_different_const(&mut s, _other)
-    }) as i32)
-        == (false as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.copy_if_different_const(&s) == false".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.a_) == (0)));
+    assert!((s.self__).is_null());
+    assert!(
+        (((unsafe {
+            let _other: *mut S = (&mut s as *mut S);
+            S::copy_if_different(&mut s, _other)
+        }) as i32)
+            == (false as i32))
+    );
+    assert!(
+        (((unsafe {
+            let _other: *const S = (&mut s as *mut S).cast_const();
+            S::copy_if_different_const(&mut s, _other)
+        }) as i32)
+            == (false as i32))
+    );
     let mut other: S = S::new_1({ 22 });
-    (if (((unsafe { S::copy_if_different(&mut s, (&mut other as *mut S)) }) as i32)
-        == (true as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.copy_if_different(&other) == true".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((s.a_) == (other.a_)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.a_ == other.a_".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((s.self__) == (other.self__)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.self_ == other.self_".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(
+        (((unsafe { S::copy_if_different(&mut s, (&mut other as *mut S),) }) as i32)
+            == (true as i32))
+    );
+    assert!(((s.a_) == (other.a_)));
+    assert!(((s.self__) == (other.self__)));
     let mut u: S = S::new_2({ 1 }, { (&mut s as *mut S) });
-    (if ((u.self__) == (&mut s as *mut S)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"u.self_ == &s".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((u.self__) == (&mut s as *mut S)));
     let s_const: S = S::new_1({ 100 });
     let mut u1: S = S::new_3({ 1 }, { (&s_const as *const S) });
-    (if (u1.self__).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"u1.self_ == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((u1.self__).is_null());
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

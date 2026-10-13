@@ -100,241 +100,57 @@ unsafe fn main_0() -> i32 {
     let mut b: Partial = Partial::new({ 2 }, { 200 });
     let mut c: Partial = Partial::new({ 3 }, { 300 });
     (unsafe { Partial::copy_assign(&mut a, &b) });
-    (if ((a.v) == (2)) && ((a.keep) == (100)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"a.v == 2 && a.keep == 100".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"assigns == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((a.v) == (2)) && ((a.keep) == (100)));
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (1)));
     (unsafe { Partial::copy_assign(&mut c, &(*(unsafe { Partial::copy_assign(&mut a, &b) }))) });
-    (if ((c.v) == (2)) && ((c.keep) == (300)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"c.v == 2 && c.keep == 300".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"assigns == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((c.v) == (2)) && ((c.keep) == (300)));
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (3)));
     (unsafe {
         let _o: *const Partial = &a;
         Partial::copy_assign(&mut a, _o)
     });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"assigns == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (3)));
     (unsafe {
         let mut _o: Partial = Partial::new({ 9 }, { 900 });
         Partial::copy_assign(&mut a, &mut _o)
     });
-    (if ((a.v) == (9)) && ((a.keep) == (100)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"a.v == 9 && a.keep == 100".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (4)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"assigns == 4".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((a.v) == (9)) && ((a.keep) == (100)));
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (4)));
     let ra: *mut Partial = &mut a;
     (unsafe {
         let _o: *const Partial = &c;
         Partial::copy_assign(&mut (*ra), _o)
     });
-    (if ((a.v) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"a.v == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((a.v) == (2)));
     let mut pa: *mut Partial = (&mut a as *mut Partial);
     (unsafe {
         let _o: *const Partial = &b;
         Partial::copy_assign(&mut (*pa), _o)
     });
-    (if ((a.v) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"a.v == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"assigns == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((a.v) == (2)));
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (6)));
     let mut h: Holder = Holder {
         p: Partial::new({ 4 }, { 40 }),
         arr: [Partial::new({ 5 }, { 50 }), Partial::new({ 6 }, { 60 })],
     };
     (unsafe { Partial::copy_assign(&mut h.p, &b) });
     (unsafe { Partial::copy_assign(&mut h.arr[(1) as usize], &c) });
-    (if ((h.p.v) == (2)) && ((h.p.keep) == (40)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"h.p.v == 2 && h.p.keep == 40".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((h.arr[(1) as usize].v) == (2)) && ((h.arr[(1) as usize].keep) == (60)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"h.arr[1].v == 2 && h.arr[1].keep == 60".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (8)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"assigns == 8".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((h.p.v) == (2)) && ((h.p.keep) == (40)));
+    assert!(((h.arr[(1) as usize].v) == (2)) && ((h.arr[(1) as usize].keep) == (60)));
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut assigns_0)) == (8)));
     let mut n: NonConstAssign = NonConstAssign::new();
     let mut n1: NonConstAssign = NonConstAssign::new();
     let mut n2: NonConstAssign = NonConstAssign::new();
     let cn: NonConstAssign = NonConstAssign::new();
     (unsafe { NonConstAssign::operator_assign_2(&mut n1, &mut n) });
     (unsafe { NonConstAssign::operator_assign_3(&mut n2, &cn) });
-    (if ((n1.mark) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"n1.mark == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((n2.mark) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"n2.mark == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((n1.mark) == (1)));
+    assert!(((n2.mark) == (10)));
     let mut r: RefQualified = RefQualified::new();
     let mut r1: RefQualified = RefQualified::new();
     (unsafe { RefQualified::copy_assign(&mut r1, &r) });
-    (if ((r1.mark) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"r1.mark == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((r1.mark) == (1)));
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const assigns_0);

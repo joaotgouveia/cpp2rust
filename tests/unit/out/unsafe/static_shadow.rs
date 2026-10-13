@@ -24,63 +24,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { param_shadow_1(10) }) == (11)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_4(
-                        (c"param_shadow(10) == 11".as_ptr().cast_mut()).cast_const(),
-                        (c"static_shadow.c".as_ptr().cast_mut()).cast_const(),
-                        15_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { local_shadow_2() }) == (99)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_4(
-                        (c"local_shadow() == 99".as_ptr().cast_mut()).cast_const(),
-                        (c"static_shadow.c".as_ptr().cast_mut()).cast_const(),
-                        16_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { read_global_3() }) == (5)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_4(
-                        (c"read_global() == 5".as_ptr().cast_mut()).cast_const(),
-                        (c"static_shadow.c".as_ptr().cast_mut()).cast_const(),
-                        17_u32,
-                        c"int main()".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((unsafe { param_shadow_1(10,) }) == (11)) as i32) != 0));
+    assert!(((((unsafe { local_shadow_2() }) == (99)) as i32) != 0));
+    assert!(((((unsafe { read_global_3() }) == (5)) as i32) != 0));
     return 0;
-}
-pub unsafe fn __assert_fail_4(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const value_0);

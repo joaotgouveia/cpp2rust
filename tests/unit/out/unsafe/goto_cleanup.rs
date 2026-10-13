@@ -127,179 +127,20 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { early_0(-1_i32) }) == (-1_i32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"early(-1) == -1".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        75_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { early_0(5) }) == (100)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"early(5) == 100".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        76_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { from_loop_1(2) }) == (999)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"from_loop(2) == 999".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        77_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { from_loop_1(10) }) == (7)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"from_loop(10) == 7".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        78_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { from_switch_2(1) }) == (10)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"from_switch(1) == 10".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        79_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { from_switch_2(2) }) == (999)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"from_switch(2) == 999".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        80_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((unsafe { early_0(-1_i32,) }) == (-1_i32)) as i32) != 0));
+    assert!(((((unsafe { early_0(5,) }) == (100)) as i32) != 0));
+    assert!(((((unsafe { from_loop_1(2,) }) == (999)) as i32) != 0));
+    assert!(((((unsafe { from_loop_1(10,) }) == (7)) as i32) != 0));
+    assert!(((((unsafe { from_switch_2(1,) }) == (10)) as i32) != 0));
+    assert!(((((unsafe { from_switch_2(2,) }) == (999)) as i32) != 0));
     let mut value: i32 = 42;
     let mut w: wrapper = wrapper {
         item: (&mut value as *mut i32),
     };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { via_pointer_3((&mut w as *mut wrapper), 0) }) == (42)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"via_pointer(&w, 0) == 42".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        83_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { via_pointer_3((&mut w as *mut wrapper), 1) }) == (-1_i32)) as i32) != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"via_pointer(&w, 1) == -1".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        84_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { via_arrays_4(0) }) == (11)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"via_arrays(0) == 11".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        85_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((unsafe { via_arrays_4(1) }) == (-1_i32)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"via_arrays(1) == -1".as_ptr().cast_mut()).cast_const(),
-                        (c"goto_cleanup.c".as_ptr().cast_mut()).cast_const(),
-                        86_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((unsafe { via_pointer_3((&mut w as *mut wrapper), 0,) }) == (42)) as i32) != 0));
+    assert!(((((unsafe { via_pointer_3((&mut w as *mut wrapper), 1,) }) == (-1_i32)) as i32) != 0));
+    assert!(((((unsafe { via_arrays_4(0,) }) == (11)) as i32) != 0));
+    assert!(((((unsafe { via_arrays_4(1,) }) == (-1_i32)) as i32) != 0));
     return 0;
-}
-pub unsafe fn __assert_fail_5(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

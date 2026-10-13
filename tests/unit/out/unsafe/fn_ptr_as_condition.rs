@@ -23,32 +23,10 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut a: i32 = 5;
     (unsafe { maybe_call_1(Some(double_it_0), (&mut a as *mut i32)) });
-    (if ((a) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_2(
-                c"a == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((a) == (10)));
     let mut b: i32 = 5;
     (unsafe { maybe_call_1(None, (&mut b as *mut i32)) });
-    (if ((b) == (5)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_2(
-                c"b == 5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((b) == (5)));
     let mut fn_: Option<unsafe fn(*mut i32)> = None;
     if !(!(fn_).is_none()) {
         fn_ = Some(double_it_0);
@@ -57,26 +35,7 @@ unsafe fn main_0() -> i32 {
     if !(fn_).is_none() {
         (unsafe { (fn_).unwrap()((&mut c as *mut i32)) });
     }
-    (if ((c) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_2(
-                c"c == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((c) == (6)));
     return 0;
-}
-pub unsafe fn __assert_fail_2(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

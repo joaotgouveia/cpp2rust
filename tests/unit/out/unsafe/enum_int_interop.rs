@@ -87,42 +87,9 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     let mut c: Color = Color_RED;
-    (if ((c as i32) == (Color_RED as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"c == RED".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((c as i32) == (0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"c == 0".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((c as i32) != (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"c != 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((c as i32) == (Color_RED as i32)));
+    assert!(((c as i32) == (0)));
+    assert!(((c as i32) != (1)));
     if ((c as i32) == (Color_GREEN as i32)) {
         return 1;
     }
@@ -143,223 +110,36 @@ unsafe fn main_0() -> i32 {
         }
     };
     let mut x: i32 = (c as i32);
-    (if ((x) == (0)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"x == 0".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((x) == (0)));
     let mut y: i32 = ((c as i32) + (1));
-    (if ((y) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"y == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((y) == (1)));
     c = ((2) as Color);
-    (if ((c as i32) == (Color_BLUE as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"c == BLUE".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((c as i32) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"c == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((c as i32) == (Color_BLUE as i32)));
+    assert!(((c as i32) == (2)));
     c = (unsafe { make_color_6(1) });
-    (if ((c as i32) == (Color_GREEN as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"c == GREEN".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((c as i32) == (Color_GREEN as i32)));
     let mut cmp: Color = (((c as i32) + (1)) as Color);
-    (if ((cmp as i32) == (Color_BLUE as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"cmp == BLUE".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((cmp as i32) == (Color_BLUE as i32)));
     let mut o: Option = Option_OPT_A;
-    (if ((o as i32) == (Option_OPT_A as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"o == OPT_A".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((o as i32) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"o == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((o as i32) == (Option_OPT_A as i32)));
+    assert!(((o as i32) == (10)));
     let mut oi: i32 = (o as i32);
-    (if ((oi) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"oi == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((oi) == (10)));
     o = ((20) as Option);
-    (if ((o as i32) == (Option_OPT_B as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"o == OPT_B".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((o as i32) == (Option_OPT_B as i32)));
     let mut rc: i32 = (unsafe { classify_option_5((o as i32)) });
-    (if ((rc) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"rc == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((rc) == (2)));
     rc = (unsafe { classify_option_5(20) });
-    (if ((rc) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"rc == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((rc) == (2)));
     rc = (unsafe { classify_option_5((Option_OPT_C as i32)) });
-    (if ((rc) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"rc == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((rc) == (3)));
     let mut t: Tag = Tag_TAG_ONE;
-    (if ((t as i32) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"t == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((t as i32) == (Tag_TAG_ONE as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"t == TAG_ONE".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((t as i32) == (1)));
+    assert!(((t as i32) == (Tag_TAG_ONE as i32)));
     let mut ti: i32 = (t as i32);
-    (if ((ti) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"ti == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((ti) == (1)));
     t = ((2) as Tag);
-    (if ((t as i32) == (Tag_TAG_TWO as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"t == TAG_TWO".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((t as i32) == (Tag_TAG_TWO as i32)));
     'switch: {
         match { (t as i32) } {
             __v if __v == (Tag_TAG_ZERO as i32) => {
@@ -375,153 +155,44 @@ unsafe fn main_0() -> i32 {
         }
     };
     let mut extra: i32 = (((Color_RED as i32) + (Color_GREEN as i32)) + (Color_BLUE as i32));
-    (if ((extra) == (((0) + (1)) + (2))) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"extra == 0 + 1 + 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut global_color_0)) as i32)
-        == (Color_GREEN as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"global_color == GREEN".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut global_opt_1)) as i32)
-        == (Option_OPT_B as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"global_opt == OPT_B".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut global_tag_2)) as i32)
-        == (Tag_TAG_TWO as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"global_tag == TAG_TWO".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].color as i32)
-        == (Color_RED as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"entries[0].color == RED".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].opt as i32)
-        == (Option_OPT_NONE as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"entries[0].opt == OPT_NONE".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].color as i32)
-        == (Color_GREEN as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"entries[1].color == GREEN".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].opt as i32)
-        == (Option_OPT_A as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"entries[1].opt == OPT_A".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].color as i32)
-        == (Color_BLUE as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"entries[2].color == BLUE".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].opt as i32)
-        == (Option_OPT_C as i32))
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_7(
-                c"entries[2].opt == OPT_C".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((extra) == (((0) + (1)) + (2))));
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut global_color_0)) as i32)
+            == (Color_GREEN as i32))
+    );
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut global_opt_1)) as i32)
+            == (Option_OPT_B as i32))
+    );
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut global_tag_2)) as i32)
+            == (Tag_TAG_TWO as i32))
+    );
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].color as i32)
+            == (Color_RED as i32))
+    );
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].opt as i32)
+            == (Option_OPT_NONE as i32))
+    );
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].color as i32)
+            == (Color_GREEN as i32))
+    );
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].opt as i32)
+            == (Option_OPT_A as i32))
+    );
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].color as i32)
+            == (Color_BLUE as i32))
+    );
+    assert!(
+        (((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].opt as i32)
+            == (Option_OPT_C as i32))
+    );
     return 0;
-}
-pub unsafe fn __assert_fail_7(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const global_color_0);

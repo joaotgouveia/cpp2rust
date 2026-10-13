@@ -6,22 +6,6 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-#[derive(VaArg, FnPtrArg)]
-pub struct max_align_t {
-    pub __clang_max_align_nonce1: i64,
-    pub __clang_max_align_nonce2: f64,
-}
-impl Clone for max_align_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for max_align_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
-pub type std_byte = u8;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Inner {
@@ -84,54 +68,10 @@ pub static mut static_foo_array_4: std::cell::LazyCell<[Foo; 2]> =
         ]
     });
 pub unsafe fn check_local_static_5() {
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut local_outer_6)).p1).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"local_outer.p1 == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"void check_local_static()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut local_outer_6)).fn_).is_none() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"local_outer.fn == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"void check_local_static()".as_ptr(),
-            )
-        });
-    });
-    (if (*std::cell::LazyCell::force_mut(&mut *&raw mut local_fn_7)).is_none() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"local_fn == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"void check_local_static()".as_ptr(),
-            )
-        });
-    });
-    (if (*std::cell::LazyCell::force_mut(&mut *&raw mut local_p_8)).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"local_p == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"void check_local_static()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut local_outer_6)).p1).is_null());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut local_outer_6)).fn_).is_none());
+    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut local_fn_7)).is_none());
+    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut local_p_8)).is_null());
 }
 static mut local_outer_6: std::cell::LazyCell<Outer> =
     std::cell::LazyCell::new(|| unsafe { <Outer>::default() });
@@ -146,235 +86,59 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if (*std::cell::LazyCell::force_mut(&mut *&raw mut static_fn_0)).is_none() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_fn == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).p1).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_outer.p1 == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).p2).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_outer.p2 == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).cp).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_outer.cp == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).pp).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_outer.pp == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).fn_).is_none() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_outer.fn == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut static_fn_0)).is_none());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).p1).is_null());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).p2).is_null());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).cp).is_null());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).pp).is_null());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).fn_).is_none());
     let mut i: i32 = 0;
     'loop_: while ((i) < (3)) {
-        (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).arr[(i) as usize])
-            .is_null()
-        {
-            &(0);
-        } else {
-            (unsafe {
-                __assert_fail_9(
-                    c"static_outer.arr[i] == nullptr".as_ptr(),
-                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                    line!() as u32,
-                    c"int main()".as_ptr(),
-                )
-            });
-        });
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1)).arr[(i) as usize])
+                .is_null()
+        );
         i.prefix_inc();
     }
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1))
-        .inner
-        .name)
-        .is_null()
-    {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_outer.inner.name == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (2)) {
-        (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_inner_array_2))[(i) as usize]
+    assert!(
+        ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_outer_1))
+            .inner
             .name)
             .is_null()
-        {
-            &(0);
-        } else {
-            (unsafe {
-                __assert_fail_9(
-                    c"static_inner_array[i].name == nullptr".as_ptr(),
-                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                    line!() as u32,
-                    c"int main()".as_ptr(),
-                )
-            });
-        });
-        i.prefix_inc();
-    }
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_3)).s2).is_null() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_foo.s2 == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_3)).fn1).is_none() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_foo.fn1 == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_3)).fn2).is_none() {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_foo.fn2 == nullptr".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_3)).n) == (42)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"static_foo.n == 42".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    );
     let mut i: i32 = 0;
     'loop_: while ((i) < (2)) {
-        (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_array_4))[(i) as usize].s2)
-            .is_null()
-        {
-            &(0);
-        } else {
-            (unsafe {
-                __assert_fail_9(
-                    c"static_foo_array[i].s2 == nullptr".as_ptr(),
-                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                    line!() as u32,
-                    c"int main()".as_ptr(),
-                )
-            });
-        });
-        (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_array_4))[(i) as usize].fn1)
-            .is_none()
-        {
-            &(0);
-        } else {
-            (unsafe {
-                __assert_fail_9(
-                    c"static_foo_array[i].fn1 == nullptr".as_ptr(),
-                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                    line!() as u32,
-                    c"int main()".as_ptr(),
-                )
-            });
-        });
-        (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_array_4))[(i) as usize].fn2)
-            .is_none()
-        {
-            &(0);
-        } else {
-            (unsafe {
-                __assert_fail_9(
-                    c"static_foo_array[i].fn2 == nullptr".as_ptr(),
-                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                    line!() as u32,
-                    c"int main()".as_ptr(),
-                )
-            });
-        });
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_inner_array_2))[(i) as usize]
+                .name)
+                .is_null()
+        );
+        i.prefix_inc();
+    }
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_3)).s2).is_null());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_3)).fn1).is_none());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_3)).fn2).is_none());
+    assert!((((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_3)).n) == (42)));
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (2)) {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_array_4))[(i) as usize].s2)
+                .is_null()
+        );
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_array_4))[(i) as usize]
+                .fn1)
+                .is_none()
+        );
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut static_foo_array_4))[(i) as usize]
+                .fn2)
+                .is_none()
+        );
         i.prefix_inc();
     }
     (unsafe { check_local_static_5() });
     return 0;
-}
-pub unsafe fn __assert_fail_9(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const static_fn_0);

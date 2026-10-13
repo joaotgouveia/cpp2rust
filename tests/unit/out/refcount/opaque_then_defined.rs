@@ -37,46 +37,8 @@ fn main_0() -> i32 {
         head: (n.as_pointer()),
         size: 1,
     };
-    {
-        &(4usize);
-        {
-            if (((l.head.with(|__s| __s.value) == 42) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"l.head->value == 42"),
-                        Ptr::<i8>::from_string_literal(b"opaque_then_defined.c"),
-                        18_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((l.size == 1) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_0(
-                        Ptr::<i8>::from_string_literal(b"l.size == 1"),
-                        Ptr::<i8>::from_string_literal(b"opaque_then_defined.c"),
-                        19_u32,
-                        Ptr::<i8>::from_string_literal(b"int main(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((l.head.with(|__s| __s.value) == 42) as i32) != 0));
+    assert!((((l.size == 1) as i32) != 0));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

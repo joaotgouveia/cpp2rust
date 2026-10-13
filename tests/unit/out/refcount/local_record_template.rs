@@ -59,66 +59,11 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut l: Local_3 = Local_3 { x: 7 };
-    (if (({ get_2((l).clone()) }) == 7) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_12(
-                Ptr::<i8>::from_string_literal(b"get(l) == 7"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ twice_8((l).clone()) }) == 14) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_12(
-                Ptr::<i8>::from_string_literal(b"ns::twice(l) == 14"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ other_11() }) == 7) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_12(
-                Ptr::<i8>::from_string_literal(b"other() == 7"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ wrap_9(5) }) == 5) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_12(
-                Ptr::<i8>::from_string_literal(b"wrap(5) == 5"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ wrap_10(6_i64) }) == 6) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_12(
-                Ptr::<i8>::from_string_literal(b"wrap(6L) == 6"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ get_2((l).clone(),) }) == 7));
+    assert!((({ twice_8((l).clone(),) }) == 14));
+    assert!((({ other_11() }) == 7));
+    assert!((({ wrap_9(5,) }) == 5));
+    assert!((({ wrap_10(6_i64,) }) == 6));
     return 0;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -126,13 +71,5 @@ fn main_0() -> i32 {
 pub struct Local_3 {
     #[offset(0)]
     pub x: i32,
-}
-pub fn __assert_fail_12(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,184 +6,101 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
-#[byte_size(232)]
-pub struct __locale_struct {
-    #[offset(0)]
-    #[byte_size(104)]
-    pub __locales: Value<Box<[Ptr<__locale_data>]>>,
-    #[offset(104)]
-    #[byte_size(8)]
-    pub __ctype_b: Ptr<u16>,
-    #[offset(112)]
-    #[byte_size(8)]
-    pub __ctype_tolower: Ptr<i32>,
-    #[offset(120)]
-    #[byte_size(8)]
-    pub __ctype_toupper: Ptr<i32>,
-    #[offset(128)]
-    #[byte_size(104)]
-    pub __names: Value<Box<[Ptr<i8>]>>,
-}
-impl Clone for __locale_struct {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for __locale_struct {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
 pub fn test_memcpy_0() {
     let src: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"hello\0")));
     let dst: Value<Box<[i8]>> =
         Rc::new(RefCell::new(Box::new([0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8])));
-    let mut r: AnyPtr = ({
-        memcpy_1(
-            ((dst.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
-            ((src.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
-            6_usize,
-        )
-    });
-    {
-        &(4usize);
-        {
-            if ((({ (r).clone() } == { ((dst.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() })
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r == dst"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        10_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memcpy(void)"),
-                    )
-                });
-            }
-        }
+    let mut r: AnyPtr = {
+        ((dst.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any().memcpy(
+            &((src.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
+            6_usize as usize,
+        );
+        ((dst.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
     };
-    {
-        &(4usize);
-        {
-            if (((((((((((*dst.borrow())[(0) as usize] as i32) == ('h' as i32)) as i32) != 0)
-                && (((((*dst.borrow())[(1) as usize] as i32) == ('e' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-                && (((((*dst.borrow())[(2) as usize] as i32) == ('l' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(
-                            b"dst[0] == \'h\' && dst[1] == \'e\' && dst[2] == \'l\'",
-                        ),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        11_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memcpy(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((((((((((*dst.borrow())[(3) as usize] as i32) == ('l' as i32)) as i32) != 0)
-                && (((((*dst.borrow())[(4) as usize] as i32) == ('o' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-                && (((((*dst.borrow())[(5) as usize] as i32) == ('\0' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(
-                            b"dst[3] == \'l\' && dst[4] == \'o\' && dst[5] == \'\\0\'",
-                        ),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        12_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memcpy(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((({ (r).clone() } == { ((dst.as_pointer() as Ptr::<i8>) as Ptr::<i8>).to_any() }) as i32)
+            != 0)
+    );
+    assert!(
+        (((((((((((*dst.borrow())[(0) as usize] as i32) == ('h' as i32)) as i32) != 0)
+            && (((((*dst.borrow())[(1) as usize] as i32) == ('e' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+            && (((((*dst.borrow())[(2) as usize] as i32) == ('l' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+    );
+    assert!(
+        (((((((((((*dst.borrow())[(3) as usize] as i32) == ('l' as i32)) as i32) != 0)
+            && (((((*dst.borrow())[(4) as usize] as i32) == ('o' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+            && (((((*dst.borrow())[(5) as usize] as i32) == ('\0' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+    );
 }
-pub fn test_memset_3() {
+pub fn test_memset_1() {
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new((0..4).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    let mut r: AnyPtr = ({
-        memset_4(
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
-            ('x' as i32),
-            4_usize,
-        )
-    });
-    {
-        &(4usize);
-        {
-            if ((({ (r).clone() } == { ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() })
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r == buf"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        18_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memset(void)"),
-                    )
-                });
-            }
-        }
+    let mut r: AnyPtr = {
+        ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>)
+            .to_any()
+            .memset(('x' as i32) as u8, 4_usize as usize);
+        ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
     };
-    {
-        &(4usize);
-        {
-            if ((((((((((((((*buf.borrow())[(0) as usize] as i32) == ('x' as i32)) as i32) != 0)
-                && (((((*buf.borrow())[(1) as usize] as i32) == ('x' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-                && (((((*buf.borrow())[(2) as usize] as i32) == ('x' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-                && (((((*buf.borrow())[(3) as usize] as i32) == ('x' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2 ( Ptr::<i8 >::from_string_literal(b"buf[0] == \'x\' && buf[1] == \'x\' && buf[2] == \'x\' && buf[3] == \'x\'" )  , Ptr::<i8 >::from_string_literal(b"string_h.c" )  , 19_u32  , Ptr::<i8 >::from_string_literal(b"void test_memset(void)" )  , )
-                });
-            }
-        }
-    };
+    assert!(
+        ((({ (r).clone() } == { ((buf.as_pointer() as Ptr::<i8>) as Ptr::<i8>).to_any() }) as i32)
+            != 0)
+    );
+    assert!(
+        ((((((((((((((*buf.borrow())[(0) as usize] as i32) == ('x' as i32)) as i32) != 0)
+            && (((((*buf.borrow())[(1) as usize] as i32) == ('x' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+            && (((((*buf.borrow())[(2) as usize] as i32) == ('x' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+            && (((((*buf.borrow())[(3) as usize] as i32) == ('x' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+    );
 }
-pub fn test_memcmp_5() {
+pub fn test_memcmp_2() {
     let a: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
     let b: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
     let c: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 9_i8, 4_i8])));
-    {
-        &(4usize);
-        { {} }
-    };
-    {
-        &(4usize);
-        { {} }
-    };
-    {
-        &(4usize);
-        { {} }
-    };
+    assert!(
+        (((((a.as_pointer() as Ptr::<i8>) as Ptr::<i8>)
+            .to_any()
+            .memcmp(
+                &((b.as_pointer() as Ptr::<i8>) as Ptr::<i8>).to_any(),
+                4_usize
+            )
+            == 0) as i32)
+            != 0)
+    );
+    assert!(
+        (((((a.as_pointer() as Ptr::<i8>) as Ptr::<i8>)
+            .to_any()
+            .memcmp(
+                &((c.as_pointer() as Ptr::<i8>) as Ptr::<i8>).to_any(),
+                4_usize
+            )
+            < 0) as i32)
+            != 0)
+    );
+    assert!(
+        (((((c.as_pointer() as Ptr::<i8>) as Ptr::<i8>)
+            .to_any()
+            .memcmp(
+                &((a.as_pointer() as Ptr::<i8>) as Ptr::<i8>).to_any(),
+                4_usize
+            )
+            > 0) as i32)
+            != 0)
+    );
 }
-pub fn test_memmove_6() {
+pub fn test_memmove_3() {
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
         (('a' as i32) as i8),
         (('b' as i32) as i8),
@@ -192,221 +109,190 @@ pub fn test_memmove_6() {
         (('e' as i32) as i8),
         (('\0' as i32) as i8),
     ])));
-    let mut r: AnyPtr = ({
-        let ___dest: AnyPtr =
-            ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>).to_any();
-        let ___src: AnyPtr = ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
-        memmove_7(___dest, ___src, 4_usize)
-    });
-    {
-        &(4usize);
-        {
-            if ((({ (r).clone() } == {
-                ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>).to_any()
-            }) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r == buf + 1"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        34_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memmove(void)"),
-                    )
-                });
-            }
-        }
+    let mut r: AnyPtr = {
+        ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>)
+            .to_any()
+            .memcpy(
+                &((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
+                4_usize as usize,
+            );
+        ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>).to_any()
     };
-    {
-        &(4usize);
-        {
-            if (((((((((((*buf.borrow())[(0) as usize] as i32) == ('a' as i32)) as i32) != 0)
-                && (((((*buf.borrow())[(1) as usize] as i32) == ('a' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-                && (((((*buf.borrow())[(2) as usize] as i32) == ('b' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(
-                            b"buf[0] == \'a\' && buf[1] == \'a\' && buf[2] == \'b\'",
-                        ),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        35_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memmove(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((((((((((*buf.borrow())[(3) as usize] as i32) == ('c' as i32)) as i32) != 0)
-                && (((((*buf.borrow())[(4) as usize] as i32) == ('d' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-                && (((((*buf.borrow())[(5) as usize] as i32) == ('\0' as i32)) as i32) != 0))
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(
-                            b"buf[3] == \'c\' && buf[4] == \'d\' && buf[5] == \'\\0\'",
-                        ),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        36_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memmove(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((({ (r).clone() } == {
+            ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>).to_any()
+        }) as i32)
+            != 0)
+    );
+    assert!(
+        (((((((((((*buf.borrow())[(0) as usize] as i32) == ('a' as i32)) as i32) != 0)
+            && (((((*buf.borrow())[(1) as usize] as i32) == ('a' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+            && (((((*buf.borrow())[(2) as usize] as i32) == ('b' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+    );
+    assert!(
+        (((((((((((*buf.borrow())[(3) as usize] as i32) == ('c' as i32)) as i32) != 0)
+            && (((((*buf.borrow())[(4) as usize] as i32) == ('d' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+            && (((((*buf.borrow())[(5) as usize] as i32) == ('\0' as i32)) as i32) != 0))
+            as i32)
+            != 0)
+    );
 }
-pub fn test_strchr_8() {
+pub fn test_strchr_4() {
     let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello world");
-    let mut r: Ptr<i8> = ({ strchr_9(s.reinterpret_cast::<i8>(), ('w' as i32)) });
-    {
-        &(4usize);
-        {
-            if (((!((r).is_null())) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r != NULL"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        42_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strchr(void)"),
-                    )
-                });
+    let mut r: Ptr<i8> = {
+        let __s = s.reinterpret_cast::<i8>();
+        let __t = ('w' as i32) as i8;
+        match __s.to_c_string_iterator().position(|__c| __c == __t) {
+            Some(__i) => __s.offset(__i),
+            None => {
+                if __t == 0 {
+                    __s.offset(__s.to_c_string_iterator().count())
+                } else {
+                    Ptr::null()
+                }
             }
         }
     };
-    {
-        &(4usize);
-        {
-            if (((((r.read()) as i32) == ('w' as i32)) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"*r == \'w\'"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        43_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strchr(void)"),
-                    )
-                });
+    assert!((((!((r).is_null())) as i32) != 0));
+    assert!((((((r.read()) as i32) == ('w' as i32)) as i32) != 0));
+    assert!(
+        (((({
+            let __s = s.reinterpret_cast::<i8>();
+            let __t = ('z' as i32) as i8;
+            match __s.to_c_string_iterator().position(|__c| __c == __t) {
+                Some(__i) => __s.offset(__i),
+                None => {
+                    if __t == 0 {
+                        __s.offset(__s.to_c_string_iterator().count())
+                    } else {
+                        Ptr::null()
+                    }
+                }
             }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({ strchr_9(s.reinterpret_cast::<i8>(), ('z' as i32)) }).is_null()) as i32) != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strchr((char *)s, \'z\') == NULL"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        44_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strchr(void)"),
-                    )
-                });
-            }
-        }
-    };
+        })
+        .is_null()) as i32)
+            != 0)
+    );
 }
-pub fn test_strlen_10() {
-    {
-        &(4usize);
-        { {} }
-    };
-    {
-        &(4usize);
-        { {} }
-    };
-    {
-        &(4usize);
-        { {} }
-    };
+pub fn test_strlen_5() {
+    assert!(
+        (((Ptr::<i8>::from_string_literal(b"")
+            .to_c_string_iterator()
+            .count()
+            == 0_usize) as i32)
+            != 0)
+    );
+    assert!(
+        (((Ptr::<i8>::from_string_literal(b"hello")
+            .to_c_string_iterator()
+            .count()
+            == 5_usize) as i32)
+            != 0)
+    );
+    assert!(
+        (((Ptr::<i8>::from_string_literal(b"hello world")
+            .to_c_string_iterator()
+            .count()
+            == 11_usize) as i32)
+            != 0)
+    );
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"one\0two\0")));
     let mut first: Ptr<i8> = (buf.as_pointer() as Ptr<i8>);
     let mut second: Ptr<i8> = ((buf.as_pointer() as Ptr<i8>)
-        .offset(({ strlen_11((first).clone()) }).wrapping_add(1_usize)));
-    {
-        &(4usize);
-        {
-            if (((({ strcmp_12((second).clone(), Ptr::<i8>::from_string_literal(b"two")) }) == 0)
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcmp(second, \"two\") == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        54_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strlen(void)"),
-                    )
-                });
+        .offset((first.to_c_string_iterator().count()).wrapping_add(1_usize)));
+    assert!(
+        ((({
+            let mut __it1 = second.to_c_string_iterator();
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"two").to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
+        } == 0) as i32)
+            != 0)
+    );
     let big : Value<Box<[ i8  ]> > = Rc::new(RefCell::new(i8::array_from_literal(b"hi\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0") )) ;
-    {
-        &(4usize);
-        {
-            if (((({ strlen_11((big.as_pointer() as Ptr<i8>)) }) == 2_usize) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strlen(big) == 2"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        56_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strlen(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((((big.as_pointer() as Ptr::<i8>)
+            .to_c_string_iterator()
+            .count()
+            == 2_usize) as i32)
+            != 0)
+    );
     (*big.borrow_mut())[(2) as usize] = (('x' as i32) as i8);
     (*big.borrow_mut())[(3) as usize] = (('\0' as i32) as i8);
-    {
-        &(4usize);
-        {
-            if (((({ strlen_11((big.as_pointer() as Ptr<i8>)) }) == 3_usize) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strlen(big) == 3"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        59_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strlen(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((((big.as_pointer() as Ptr::<i8>)
+            .to_c_string_iterator()
+            .count()
+            == 3_usize) as i32)
+            != 0)
+    );
 }
-pub fn test_strcmp_13() {
-    {
-        &(4usize);
-        { {} }
-    };
-    {
-        &(4usize);
-        { {} }
-    };
-    {
-        &(4usize);
-        { {} }
-    };
+pub fn test_strcmp_6() {
+    assert!(
+        ((({
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"abc").to_c_string_iterator();
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"abc").to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } == 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"abc").to_c_string_iterator();
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"abd").to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } < 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"abd").to_c_string_iterator();
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"abc").to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } > 0) as i32)
+            != 0)
+    );
     let mut p: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abc");
     let mut q: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abd");
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
@@ -415,74 +301,125 @@ pub fn test_strcmp_13() {
         (('c' as i32) as i8),
         (('\0' as i32) as i8),
     ])));
-    {
-        &(4usize);
-        {
-            if (((({
-                let ___s1: Ptr<i8> = (p).clone();
-                let ___s2: Ptr<i8> = (p).clone();
-                strcmp_12(___s1, ___s2)
-            }) == 0) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcmp(p, p) == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        69_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcmp(void)"),
-                    )
-                });
+    assert!(
+        ((({
+            let mut __it1 = p.to_c_string_iterator();
+            let mut __it2 = p.to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({ strcmp_12((p).clone(), (q).clone()) }) < 0) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcmp(p, q) < 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        70_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcmp(void)"),
-                    )
-                });
+        } == 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let mut __it1 = p.to_c_string_iterator();
+            let mut __it2 = q.to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({ strcmp_12((buf.as_pointer() as Ptr<i8>), (p).clone()) }) == 0) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcmp(buf, p) == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        71_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcmp(void)"),
-                    )
-                });
+        } < 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let mut __it1 = (buf.as_pointer() as Ptr<i8>).to_c_string_iterator();
+            let mut __it2 = p.to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
+        } == 0) as i32)
+            != 0)
+    );
 }
-pub fn test_strncmp_14() {
-    {
-        &(4usize);
-        { {} }
-    };
-    {
-        &(4usize);
-        { {} }
-    };
-    {
-        &(4usize);
-        { {} }
-    };
+pub fn test_strncmp_7() {
+    assert!(
+        ((({
+            let __n = 3_usize;
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"abcdef")
+                .to_c_string_iterator()
+                .take(__n);
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"abcxyz")
+                .to_c_string_iterator()
+                .take(__n);
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } == 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let __n = 4_usize;
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"abcdef")
+                .to_c_string_iterator()
+                .take(__n);
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"abcxyz")
+                .to_c_string_iterator()
+                .take(__n);
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } < 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let __n = 4_usize;
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"abcxyz")
+                .to_c_string_iterator()
+                .take(__n);
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"abcdef")
+                .to_c_string_iterator()
+                .take(__n);
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } > 0) as i32)
+            != 0)
+    );
     let mut p: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcdef");
     let mut q: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcxyz");
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
@@ -495,450 +432,333 @@ pub fn test_strncmp_14() {
         (('\0' as i32) as i8),
     ])));
     let mut n: usize = 3_usize;
-    {
-        &(4usize);
-        {
-            if (((({ strncmp_15((p).clone(), (q).clone(), n) }) == 0) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strncmp(p, q, n) == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        82_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strncmp(void)"),
-                    )
-                });
+    assert!(
+        ((({
+            let __n = n;
+            let mut __it1 = p.to_c_string_iterator().take(__n);
+            let mut __it2 = q.to_c_string_iterator().take(__n);
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({ strncmp_15((p).clone(), (q).clone(), (n).wrapping_add(1_usize)) }) < 0)
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strncmp(p, q, n + 1) < 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        83_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strncmp(void)"),
-                    )
-                });
+        } == 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let __n = (n).wrapping_add(1_usize);
+            let mut __it1 = p.to_c_string_iterator().take(__n);
+            let mut __it2 = q.to_c_string_iterator().take(__n);
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({ strncmp_15((buf.as_pointer() as Ptr<i8>), (p).clone(), 6_usize) }) == 0)
-                as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strncmp(buf, p, 6) == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        84_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strncmp(void)"),
-                    )
-                });
+        } < 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let __n = 6_usize;
+            let mut __it1 = (buf.as_pointer() as Ptr<i8>)
+                .to_c_string_iterator()
+                .take(__n);
+            let mut __it2 = p.to_c_string_iterator().take(__n);
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
+        } == 0) as i32)
+            != 0)
+    );
 }
-pub fn test_memchr_16() {
+pub fn test_memchr_8() {
     let data: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([16_i8, 32_i8, 48_i8, 64_i8])));
-    let mut r: AnyPtr = ({
-        memchr_17(
-            ((data.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
-            48,
-            4_usize,
-        )
-    });
-    {
-        &(4usize);
-        {
-            if ((({ (r).clone() } == {
-                (((data.as_pointer() as Ptr<i8>).offset(2)) as Ptr<i8>).to_any()
-            }) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r == &data[2]"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        90_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memchr(void)"),
-                    )
-                });
+    let mut r: AnyPtr = {
+        let mut __p = ((data.as_pointer() as Ptr<i8>) as Ptr<i8>)
+            .to_any()
+            .reinterpret_cast::<u8>();
+        let mut __i: usize = 0;
+        loop {
+            if __i == 4_usize {
+                break Ptr::<u8>::null().to_any();
             }
+            if __p.read() == 48 as u8 {
+                break __p.to_any();
+            }
+            __p += 1;
+            __i += 1;
         }
     };
-    {
-        &(4usize);
-        { {} }
-    };
+    assert!(
+        ((({ (r).clone() } == {
+            (((data.as_pointer() as Ptr<i8>).offset(2)) as Ptr<i8>).to_any()
+        }) as i32)
+            != 0)
+    );
+    assert!(
+        (((({
+            let mut __p = ((data.as_pointer() as Ptr<i8>) as Ptr<i8>)
+                .to_any()
+                .reinterpret_cast::<u8>();
+            let mut __i: usize = 0;
+            loop {
+                if __i == 4_usize {
+                    break Ptr::<u8>::null().to_any();
+                }
+                if __p.read() == 153 as u8 {
+                    break __p.to_any();
+                }
+                __p += 1;
+                __i += 1;
+            }
+        })
+        .is_null()) as i32)
+            != 0)
+    );
     let mut p: AnyPtr = ((data.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
     let mut n: usize = 4_usize;
-    {
-        &(4usize);
-        {
-            if ((({ ({ memchr_17((p).clone(), 16, n) }) } == { (p).clone() }) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"memchr(p, 0x10, n) == p"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        94_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_memchr(void)"),
-                    )
-                });
-            }
-        }
-    };
-}
-pub fn test_strrchr_18() {
-    let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello world");
-    let mut r: Ptr<i8> = ({ strrchr_19(s.reinterpret_cast::<i8>(), ('l' as i32)) });
-    {
-        &(4usize);
-        {
-            if (((!((r).is_null())) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r != NULL"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        100_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strrchr(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((((r.read()) as i32) == ('l' as i32)) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"*r == \'l\'"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        101_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strrchr(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if ((({ (r).clone() } == { s.offset((9) as isize) }) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r == s + 9"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        102_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strrchr(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({ strrchr_19(s.reinterpret_cast::<i8>(), ('z' as i32)) }).is_null()) as i32)
-                != 0)
+    assert!(
+        ((({
             {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strrchr((char *)s, \'z\') == NULL"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        103_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strrchr(void)"),
-                    )
-                });
+                let mut __p = p.reinterpret_cast::<u8>();
+                let mut __i: usize = 0;
+                loop {
+                    if __i == n {
+                        break Ptr::<u8>::null().to_any();
+                    }
+                    if __p.read() == 16 as u8 {
+                        break __p.to_any();
+                    }
+                    __p += 1;
+                    __i += 1;
+                }
+            }
+        } == { (p).clone() }) as i32)
+            != 0)
+    );
+}
+pub fn test_strrchr_9() {
+    let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello world");
+    let mut r: Ptr<i8> = {
+        let __s = s.reinterpret_cast::<i8>();
+        let __t = ('l' as i32) as i8;
+        match __s
+            .to_c_string_iterator()
+            .enumerate()
+            .filter(|__e| __e.1 == __t)
+            .last()
+        {
+            Some((__i, _)) => __s.offset(__i),
+            None => {
+                if __t == 0 {
+                    __s.offset(__s.to_c_string_iterator().count())
+                } else {
+                    Ptr::null()
+                }
             }
         }
     };
+    assert!((((!((r).is_null())) as i32) != 0));
+    assert!((((((r.read()) as i32) == ('l' as i32)) as i32) != 0));
+    assert!(((({ (r).clone() } == { s.offset((9) as isize) }) as i32) != 0));
+    assert!(
+        (((({
+            let __s = s.reinterpret_cast::<i8>();
+            let __t = ('z' as i32) as i8;
+            match __s
+                .to_c_string_iterator()
+                .enumerate()
+                .filter(|__e| __e.1 == __t)
+                .last()
+            {
+                Some((__i, _)) => __s.offset(__i),
+                None => {
+                    if __t == 0 {
+                        __s.offset(__s.to_c_string_iterator().count())
+                    } else {
+                        Ptr::null()
+                    }
+                }
+            }
+        })
+        .is_null()) as i32)
+            != 0)
+    );
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
         (('a' as i32) as i8),
         (('b' as i32) as i8),
         (('a' as i32) as i8),
         (('\0' as i32) as i8),
     ])));
-    {
-        &(4usize);
-        {
-            if (((({ strrchr_19((buf.as_pointer() as Ptr<i8>), ('a' as i32)) })
-                == ((buf.as_pointer() as Ptr<i8>).offset(2))) as i32)
-                != 0)
+    assert!(
+        ((({
+            let __s = (buf.as_pointer() as Ptr<i8>);
+            let __t = ('a' as i32) as i8;
+            match __s
+                .to_c_string_iterator()
+                .enumerate()
+                .filter(|__e| __e.1 == __t)
+                .last()
             {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strrchr(buf, \'a\') == &buf[2]"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        105_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strrchr(void)"),
-                    )
-                });
+                Some((__i, _)) => __s.offset(__i),
+                None => {
+                    if __t == 0 {
+                        __s.offset(__s.to_c_string_iterator().count())
+                    } else {
+                        Ptr::null()
+                    }
+                }
             }
-        }
-    };
+        } == ((buf.as_pointer() as Ptr<i8>).offset(2))) as i32)
+            != 0)
+    );
 }
-pub fn test_strcspn_20() {
-    {
-        &(4usize);
-        {
-            if (((({
-                strcspn_21(
-                    Ptr::<i8>::from_string_literal(b"hello"),
-                    Ptr::<i8>::from_string_literal(b"el"),
-                )
-            }) == 1_usize) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcspn(\"hello\", \"el\") == 1"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        109_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcspn(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({
-                strcspn_21(
-                    Ptr::<i8>::from_string_literal(b"abc"),
-                    Ptr::<i8>::from_string_literal(b"xyz"),
-                )
-            }) == 3_usize) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcspn(\"abc\", \"xyz\") == 3"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        110_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcspn(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({
-                strcspn_21(
-                    Ptr::<i8>::from_string_literal(b""),
-                    Ptr::<i8>::from_string_literal(b"abc"),
-                )
-            }) == 0_usize) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcspn(\"\", \"abc\") == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        111_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcspn(void)"),
-                    )
-                });
-            }
-        }
-    };
+pub fn test_strcspn_10() {
+    assert!(
+        ((({
+            let __set = Ptr::<i8>::from_string_literal(b"el");
+            Ptr::<i8>::from_string_literal(b"hello")
+                .to_c_string_iterator()
+                .take_while(|__c| !__set.to_c_string_iterator().any(|__r| __r == *__c))
+                .count()
+        } == 1_usize) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let __set = Ptr::<i8>::from_string_literal(b"xyz");
+            Ptr::<i8>::from_string_literal(b"abc")
+                .to_c_string_iterator()
+                .take_while(|__c| !__set.to_c_string_iterator().any(|__r| __r == *__c))
+                .count()
+        } == 3_usize) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let __set = Ptr::<i8>::from_string_literal(b"abc");
+            Ptr::<i8>::from_string_literal(b"")
+                .to_c_string_iterator()
+                .take_while(|__c| !__set.to_c_string_iterator().any(|__r| __r == *__c))
+                .count()
+        } == 0_usize) as i32)
+            != 0)
+    );
     let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello");
     let mut rej: Ptr<i8> = Ptr::<i8>::from_string_literal(b"el");
-    {
-        &(4usize);
-        {
-            if (((({ strcspn_21((s).clone(), (rej).clone()) }) == 1_usize) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcspn(s, rej) == 1"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        114_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcspn(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((({
+            let __set = (rej).clone();
+            s.to_c_string_iterator()
+                .take_while(|__c| !__set.to_c_string_iterator().any(|__r| __r == *__c))
+                .count()
+        } == 1_usize) as i32)
+            != 0)
+    );
 }
-pub fn test_strspn_22() {
-    {
-        &(4usize);
-        {
-            if (((({
-                strspn_23(
-                    Ptr::<i8>::from_string_literal(b"hello"),
-                    Ptr::<i8>::from_string_literal(b"hel"),
-                )
-            }) == 4_usize) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strspn(\"hello\", \"hel\") == 4"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        118_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strspn(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({
-                strspn_23(
-                    Ptr::<i8>::from_string_literal(b"abc"),
-                    Ptr::<i8>::from_string_literal(b"xyz"),
-                )
-            }) == 0_usize) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strspn(\"abc\", \"xyz\") == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        119_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strspn(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({
-                strspn_23(
-                    Ptr::<i8>::from_string_literal(b"aaa"),
-                    Ptr::<i8>::from_string_literal(b"a"),
-                )
-            }) == 3_usize) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strspn(\"aaa\", \"a\") == 3"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        120_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strspn(void)"),
-                    )
-                });
-            }
-        }
-    };
+pub fn test_strspn_11() {
+    assert!(
+        ((({
+            let __set = Ptr::<i8>::from_string_literal(b"hel");
+            Ptr::<i8>::from_string_literal(b"hello")
+                .to_c_string_iterator()
+                .take_while(|__c| __set.to_c_string_iterator().any(|__r| __r == *__c))
+                .count()
+        } == 4_usize) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let __set = Ptr::<i8>::from_string_literal(b"xyz");
+            Ptr::<i8>::from_string_literal(b"abc")
+                .to_c_string_iterator()
+                .take_while(|__c| __set.to_c_string_iterator().any(|__r| __r == *__c))
+                .count()
+        } == 0_usize) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let __set = Ptr::<i8>::from_string_literal(b"a");
+            Ptr::<i8>::from_string_literal(b"aaa")
+                .to_c_string_iterator()
+                .take_while(|__c| __set.to_c_string_iterator().any(|__r| __r == *__c))
+                .count()
+        } == 3_usize) as i32)
+            != 0)
+    );
     let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello");
     let mut acc: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hel");
-    {
-        &(4usize);
-        {
-            if (((({ strspn_23((s).clone(), (acc).clone()) }) == 4_usize) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strspn(s, acc) == 4"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        123_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strspn(void)"),
-                    )
-                });
-            }
-        }
-    };
+    assert!(
+        ((({
+            let __set = (acc).clone();
+            s.to_c_string_iterator()
+                .take_while(|__c| __set.to_c_string_iterator().any(|__r| __r == *__c))
+                .count()
+        } == 4_usize) as i32)
+            != 0)
+    );
 }
-pub fn test_strstr_24() {
+pub fn test_strstr_12() {
     let mut h: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello world");
-    let mut r: Ptr<i8> = ({
-        strstr_25(
-            h.reinterpret_cast::<i8>(),
-            Ptr::<i8>::from_string_literal(b"world"),
-        )
-    });
-    {
-        &(4usize);
-        {
-            if (((!((r).is_null())) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r != NULL"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        129_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strstr(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if ((({ (r).clone() } == { h.offset((6) as isize) }) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r == h + 6"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        130_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strstr(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({
-                strstr_25(
-                    h.reinterpret_cast::<i8>(),
-                    Ptr::<i8>::from_string_literal(b"xyz"),
-                )
-            })
-            .is_null()) as i32)
-                != 0)
+    let mut r: Ptr<i8> = {
+        let __needle = Ptr::<i8>::from_string_literal(b"world");
+        let mut __p = h.reinterpret_cast::<i8>();
+        loop {
+            let mut __h = __p.to_c_string_iterator();
+            if __needle
+                .to_c_string_iterator()
+                .all(|__c| __h.next() == Some(__c))
             {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strstr((char *)h, \"xyz\") == NULL"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        131_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strstr(void)"),
-                    )
-                });
+                break __p;
             }
+            if __p.read() == 0 {
+                break Ptr::null();
+            }
+            __p += 1;
         }
     };
+    assert!((((!((r).is_null())) as i32) != 0));
+    assert!(((({ (r).clone() } == { h.offset((6) as isize) }) as i32) != 0));
+    assert!(
+        (((({
+            let __needle = Ptr::<i8>::from_string_literal(b"xyz");
+            let mut __p = h.reinterpret_cast::<i8>();
+            loop {
+                let mut __h = __p.to_c_string_iterator();
+                if __needle
+                    .to_c_string_iterator()
+                    .all(|__c| __h.next() == Some(__c))
+                {
+                    break __p;
+                }
+                if __p.read() == 0 {
+                    break Ptr::null();
+                }
+                __p += 1;
+            }
+        })
+        .is_null()) as i32)
+            != 0)
+    );
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
         (('h' as i32) as i8),
         (('e' as i32) as i8),
@@ -947,212 +767,165 @@ pub fn test_strstr_24() {
         (('o' as i32) as i8),
         (('\0' as i32) as i8),
     ])));
-    {
-        &(4usize);
-        {
-            if (((({
-                strstr_25(
-                    (buf.as_pointer() as Ptr<i8>),
-                    Ptr::<i8>::from_string_literal(b"ll"),
-                )
-            }) == ((buf.as_pointer() as Ptr<i8>).offset(2))) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strstr(buf, \"ll\") == &buf[2]"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        133_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strstr(void)"),
-                    )
-                });
+    assert!(
+        ((({
+            let __needle = Ptr::<i8>::from_string_literal(b"ll");
+            let mut __p = (buf.as_pointer() as Ptr<i8>);
+            loop {
+                let mut __h = __p.to_c_string_iterator();
+                if __needle
+                    .to_c_string_iterator()
+                    .all(|__c| __h.next() == Some(__c))
+                {
+                    break __p;
+                }
+                if __p.read() == 0 {
+                    break Ptr::null();
+                }
+                __p += 1;
             }
-        }
-    };
+        } == ((buf.as_pointer() as Ptr<i8>).offset(2))) as i32)
+            != 0)
+    );
 }
-pub fn test_strpbrk_26() {
+pub fn test_strpbrk_13() {
     let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello world");
-    let mut r: Ptr<i8> = ({
-        strpbrk_27(
-            s.reinterpret_cast::<i8>(),
-            Ptr::<i8>::from_string_literal(b"wo"),
-        )
-    });
-    {
-        &(4usize);
+    let mut r: Ptr<i8> = {
+        let __s = s.reinterpret_cast::<i8>();
+        let __set = Ptr::<i8>::from_string_literal(b"wo");
+        match __s
+            .to_c_string_iterator()
+            .position(|__c| __set.to_c_string_iterator().any(|__r| __r == __c))
         {
-            if (((!((r).is_null())) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r != NULL"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        139_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strpbrk(void)"),
-                    )
-                });
-            }
+            Some(__i) => __s.offset(__i),
+            None => Ptr::null(),
         }
     };
-    {
-        &(4usize);
-        {
-            if ((({ (r).clone() } == { s.offset((4) as isize) }) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"r == s + 4"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        140_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strpbrk(void)"),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({
-                strpbrk_27(
-                    s.reinterpret_cast::<i8>(),
-                    Ptr::<i8>::from_string_literal(b"xyz"),
-                )
-            })
-            .is_null()) as i32)
-                != 0)
+    assert!((((!((r).is_null())) as i32) != 0));
+    assert!(((({ (r).clone() } == { s.offset((4) as isize) }) as i32) != 0));
+    assert!(
+        (((({
+            let __s = s.reinterpret_cast::<i8>();
+            let __set = Ptr::<i8>::from_string_literal(b"xyz");
+            match __s
+                .to_c_string_iterator()
+                .position(|__c| __set.to_c_string_iterator().any(|__r| __r == __c))
             {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strpbrk((char *)s, \"xyz\") == NULL"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        141_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strpbrk(void)"),
-                    )
-                });
+                Some(__i) => __s.offset(__i),
+                None => Ptr::null(),
             }
-        }
-    };
+        })
+        .is_null()) as i32)
+            != 0)
+    );
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
         (('a' as i32) as i8),
         (('b' as i32) as i8),
         (('c' as i32) as i8),
         (('\0' as i32) as i8),
     ])));
-    {
-        &(4usize);
-        {
-            if (((({
-                strpbrk_27(
-                    (buf.as_pointer() as Ptr<i8>),
-                    Ptr::<i8>::from_string_literal(b"b"),
-                )
-            }) == ((buf.as_pointer() as Ptr<i8>).offset(1))) as i32)
-                != 0)
+    assert!(
+        ((({
+            let __s = (buf.as_pointer() as Ptr<i8>);
+            let __set = Ptr::<i8>::from_string_literal(b"b");
+            match __s
+                .to_c_string_iterator()
+                .position(|__c| __set.to_c_string_iterator().any(|__r| __r == __c))
             {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strpbrk(buf, \"b\") == &buf[1]"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        143_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strpbrk(void)"),
-                    )
-                });
+                Some(__i) => __s.offset(__i),
+                None => Ptr::null(),
             }
-        }
-    };
+        } == ((buf.as_pointer() as Ptr<i8>).offset(1))) as i32)
+            != 0)
+    );
 }
-pub fn test_strcasecmp_28() {
-    {
-        &(4usize);
-        {
-            if (((({
-                strcasecmp_29(
-                    Ptr::<i8>::from_string_literal(b"HELLO"),
-                    Ptr::<i8>::from_string_literal(b"hello"),
-                )
-            }) == 0) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcasecmp(\"HELLO\", \"hello\") == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        147_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcasecmp(void)"),
-                    )
-                });
+pub fn test_strcasecmp_14() {
+    assert!(
+        ((({
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"HELLO")
+                .to_c_string_iterator()
+                .map(|__c| (__c as u8).to_ascii_lowercase());
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"hello")
+                .to_c_string_iterator()
+                .map(|__c| (__c as u8).to_ascii_lowercase());
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({
-                strcasecmp_29(
-                    Ptr::<i8>::from_string_literal(b"abc"),
-                    Ptr::<i8>::from_string_literal(b"abd"),
-                )
-            }) < 0) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcasecmp(\"abc\", \"abd\") < 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        148_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcasecmp(void)"),
-                    )
-                });
+        } == 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"abc")
+                .to_c_string_iterator()
+                .map(|__c| (__c as u8).to_ascii_lowercase());
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"abd")
+                .to_c_string_iterator()
+                .map(|__c| (__c as u8).to_ascii_lowercase());
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
-    {
-        &(4usize);
-        {
-            if (((({
-                strcasecmp_29(
-                    Ptr::<i8>::from_string_literal(b"abd"),
-                    Ptr::<i8>::from_string_literal(b"abc"),
-                )
-            }) > 0) as i32)
-                != 0)
-            {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcasecmp(\"abd\", \"abc\") > 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        149_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcasecmp(void)"),
-                    )
-                });
+        } < 0) as i32)
+            != 0)
+    );
+    assert!(
+        ((({
+            let mut __it1 = Ptr::<i8>::from_string_literal(b"abd")
+                .to_c_string_iterator()
+                .map(|__c| (__c as u8).to_ascii_lowercase());
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"abc")
+                .to_c_string_iterator()
+                .map(|__c| (__c as u8).to_ascii_lowercase());
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
+        } > 0) as i32)
+            != 0)
+    );
     let mut p: Ptr<i8> = Ptr::<i8>::from_string_literal(b"FOO");
     let mut q: Ptr<i8> = Ptr::<i8>::from_string_literal(b"foo");
-    {
-        &(4usize);
-        {
-            if (((({ strcasecmp_29((p).clone(), (q).clone()) }) == 0) as i32) != 0) {
-            } else {
-                ({
-                    __assert_fail_2(
-                        Ptr::<i8>::from_string_literal(b"strcasecmp(p, q) == 0"),
-                        Ptr::<i8>::from_string_literal(b"string_h.c"),
-                        152_u32,
-                        Ptr::<i8>::from_string_literal(b"void test_strcasecmp(void)"),
-                    )
-                });
+    assert!(
+        ((({
+            let mut __it1 = p
+                .to_c_string_iterator()
+                .map(|__c| (__c as u8).to_ascii_lowercase());
+            let mut __it2 = q
+                .to_c_string_iterator()
+                .map(|__c| (__c as u8).to_ascii_lowercase());
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
             }
-        }
-    };
+        } == 0) as i32)
+            != 0)
+    );
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -1160,73 +933,20 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     ({ test_memcpy_0() });
-    ({ test_memset_3() });
-    ({ test_memcmp_5() });
-    ({ test_memmove_6() });
-    ({ test_strchr_8() });
-    ({ test_strlen_10() });
-    ({ test_strcmp_13() });
-    ({ test_strncmp_14() });
-    ({ test_memchr_16() });
-    ({ test_strrchr_18() });
-    ({ test_strcspn_20() });
-    ({ test_strspn_22() });
-    ({ test_strstr_24() });
-    ({ test_strpbrk_26() });
-    ({ test_strcasecmp_28() });
+    ({ test_memset_1() });
+    ({ test_memcmp_2() });
+    ({ test_memmove_3() });
+    ({ test_strchr_4() });
+    ({ test_strlen_5() });
+    ({ test_strcmp_6() });
+    ({ test_strncmp_7() });
+    ({ test_memchr_8() });
+    ({ test_strrchr_9() });
+    ({ test_strcspn_10() });
+    ({ test_strspn_11() });
+    ({ test_strstr_12() });
+    ({ test_strpbrk_13() });
+    ({ test_strcasecmp_14() });
     return 0;
-}
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct __locale_data;
-pub fn memcpy_1(mut __dest: AnyPtr, mut __src: AnyPtr, mut __n: usize) -> AnyPtr {
-    unimplemented!()
-}
-pub fn __assert_fail_2(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
-}
-pub fn memset_4(mut __s: AnyPtr, mut __c: i32, mut __n: usize) -> AnyPtr {
-    unimplemented!()
-}
-pub fn memmove_7(mut __dest: AnyPtr, mut __src: AnyPtr, mut __n: usize) -> AnyPtr {
-    unimplemented!()
-}
-pub fn strchr_9(mut __s: Ptr<i8>, mut __c: i32) -> Ptr<i8> {
-    unimplemented!()
-}
-pub fn strlen_11(mut __s: Ptr<i8>) -> usize {
-    unimplemented!()
-}
-pub fn strcmp_12(mut __s1: Ptr<i8>, mut __s2: Ptr<i8>) -> i32 {
-    unimplemented!()
-}
-pub fn strncmp_15(mut __s1: Ptr<i8>, mut __s2: Ptr<i8>, mut __n: usize) -> i32 {
-    unimplemented!()
-}
-pub fn memchr_17(mut __s: AnyPtr, mut __c: i32, mut __n: usize) -> AnyPtr {
-    unimplemented!()
-}
-pub fn strrchr_19(mut __s: Ptr<i8>, mut __c: i32) -> Ptr<i8> {
-    unimplemented!()
-}
-pub fn strcspn_21(mut __s: Ptr<i8>, mut __reject: Ptr<i8>) -> usize {
-    unimplemented!()
-}
-pub fn strspn_23(mut __s: Ptr<i8>, mut __accept: Ptr<i8>) -> usize {
-    unimplemented!()
-}
-pub fn strstr_25(mut __haystack: Ptr<i8>, mut __needle: Ptr<i8>) -> Ptr<i8> {
-    unimplemented!()
-}
-pub fn strpbrk_27(mut __s: Ptr<i8>, mut __accept: Ptr<i8>) -> Ptr<i8> {
-    unimplemented!()
-}
-pub fn strcasecmp_29(mut __s1: Ptr<i8>, mut __s2: Ptr<i8>) -> i32 {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

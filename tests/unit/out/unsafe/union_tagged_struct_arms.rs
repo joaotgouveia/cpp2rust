@@ -6,20 +6,6 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-#[derive(VaArg, FnPtrArg)]
-pub struct __fsid_t {
-    pub __val: [i32; 2],
-}
-impl Clone for __fsid_t {
-    fn clone(&self) -> Self {
-        unimplemented!()
-    }
-}
-impl Default for __fsid_t {
-    fn default() -> Self {
-        unimplemented!()
-    }
-}
 pub type Choice_enum = u32;
 pub const Choice_enum_C_LIST: Choice_enum = 1;
 pub const Choice_enum_C_LETTERS: Choice_enum = 2;
@@ -80,41 +66,12 @@ unsafe fn main_0() -> i32 {
     p_list.v.list.items = (*std::cell::LazyCell::force_mut(&mut *&raw mut items_4)).as_mut_ptr();
     p_list.v.list.count = 3_i64;
     p_list.v.list.cursor = 1_i64;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((p_list.v.list.count) == (3_i64)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"p_list.v.list.count == 3".as_ptr().cast_mut()).cast_const(),
-                        (c"union_tagged_struct_arms.c".as_ptr().cast_mut()).cast_const(),
-                        45_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((*(*p_list.v.list.items.offset((1) as isize)).offset((0) as isize)) as i32)
-                == ('b' as i32)) as i32)
-                != 0)
-            {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"p_list.v.list.items[1][0] == \'b\'".as_ptr().cast_mut()).cast_const(),
-                        (c"union_tagged_struct_arms.c".as_ptr().cast_mut()).cast_const(),
-                        46_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((p_list.v.list.count) == (3_i64)) as i32) != 0));
+    assert!(
+        (((((*(*p_list.v.list.items.offset((1) as isize)).offset((0) as isize)) as i32)
+            == ('b' as i32)) as i32)
+            != 0)
+    );
     let mut p_letters: Branch = <Branch>::default();
     p_letters.choice = Choice_enum_C_LETTERS;
     p_letters.index = 1;
@@ -122,25 +79,7 @@ unsafe fn main_0() -> i32 {
     p_letters.v.letters.hi = ('z' as i32);
     p_letters.v.letters.curr = ('m' as i32);
     p_letters.v.letters.step = 1_u8;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if (((((p_letters.v.letters.hi) - (p_letters.v.letters.lo)) == (25)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"p_letters.v.letters.hi - p_letters.v.letters.lo == 25"
-                            .as_ptr()
-                            .cast_mut())
-                        .cast_const(),
-                        (c"union_tagged_struct_arms.c".as_ptr().cast_mut()).cast_const(),
-                        55_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!((((((p_letters.v.letters.hi) - (p_letters.v.letters.lo)) == (25)) as i32) != 0));
     let mut p_integers: Branch = <Branch>::default();
     p_integers.choice = Choice_enum_C_INTEGERS;
     p_integers.index = 2;
@@ -149,38 +88,8 @@ unsafe fn main_0() -> i32 {
     p_integers.v.integers.curr = 1_i64;
     p_integers.v.integers.step = 1_i64;
     p_integers.v.integers.width = 3;
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((p_integers.v.integers.hi) == (100_i64)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"p_integers.v.integers.hi == 100".as_ptr().cast_mut()).cast_const(),
-                        (c"union_tagged_struct_arms.c".as_ptr().cast_mut()).cast_const(),
-                        65_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
-    {
-        &(::std::mem::size_of::<i32>());
-        {
-            if ((((p_integers.v.integers.width) == (3)) as i32) != 0) {
-            } else {
-                (unsafe {
-                    __assert_fail_5(
-                        (c"p_integers.v.integers.width == 3".as_ptr().cast_mut()).cast_const(),
-                        (c"union_tagged_struct_arms.c".as_ptr().cast_mut()).cast_const(),
-                        66_u32,
-                        c"int main(void)".as_ptr(),
-                    )
-                });
-            }
-        }
-    };
+    assert!(((((p_integers.v.integers.hi) == (100_i64)) as i32) != 0));
+    assert!(((((p_integers.v.integers.width) == (3)) as i32) != 0));
     return 0;
 }
 static mut items_4: std::cell::LazyCell<[*mut libc::c_char; 3]> =
@@ -191,12 +100,4 @@ static mut items_4: std::cell::LazyCell<[*mut libc::c_char; 3]> =
             c"c".as_ptr().cast_mut(),
         ]
     });
-pub unsafe fn __assert_fail_5(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
-}
 pub unsafe fn __cpp2rust_init_globals() {}

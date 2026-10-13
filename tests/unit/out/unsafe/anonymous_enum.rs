@@ -36,106 +36,21 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if ((anon_0_FIRST_A as i32) != (anon_0_FIRST_B as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"FIRST_A != FIRST_B".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((anon_1_SECOND_A as i32) != (anon_1_SECOND_B as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"S::SECOND_A != S::SECOND_B".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((anon_3_THIRD_A as i32) != (anon_3_THIRD_B as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"THIRD_A != THIRD_B".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((anon_0_FIRST_A as i32) != (anon_0_FIRST_B as i32)));
+    assert!(((anon_1_SECOND_A as i32) != (anon_1_SECOND_B as i32)));
+    assert!(((anon_3_THIRD_A as i32) != (anon_3_THIRD_B as i32)));
     let mut td: TdEnum = TdEnum_TD_A;
-    (if ((td as i32) == (TdEnum_TD_A as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"td == TD_A".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((td as i32) == (TdEnum_TD_A as i32)));
     td = TdEnum_TD_B;
-    (if ((td as i32) == (TdEnum_TD_B as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"td == TD_B".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((td as i32) == (TdEnum_TD_B as i32)));
     let mut w: WithAnonField = <WithAnonField>::default();
     w.field = anon_2_FIELD_A;
-    (if ((w.field as i32) == (anon_2_FIELD_A as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"w.field == WithAnonField::FIELD_A".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((w.field as i32) == (anon_2_FIELD_A as i32)));
     w.field = anon_2_FIELD_B;
-    (if ((w.field as i32) == (anon_2_FIELD_B as i32)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_4(
-                c"w.field == WithAnonField::FIELD_B".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((w.field as i32) == (anon_2_FIELD_B as i32)));
     return 0;
 }
 pub type anon_3 = u32;
 pub const anon_3_THIRD_A: anon_3 = 0;
 pub const anon_3_THIRD_B: anon_3 = 1;
-pub unsafe fn __assert_fail_4(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
-}
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -12,7 +12,7 @@ pub fn operator_eq_0(x: Ptr<S>, y: Ptr<S>) -> bool {
 pub fn operator_lt_1(x: Ptr<S>, y: Ptr<S>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-#[derive(Record, ByteRepr, MoveCtor, FnPtrArg, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
@@ -89,59 +89,24 @@ fn main_0() -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
     let b: Value<S> = Rc::new(RefCell::new(S::new({ 2 })));
     let c: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-    (if ({
-        let _x: Ptr<S> = a.as_pointer();
-        operator_eq_0(_x, c.as_pointer())
-    }) {
-        &(0);
-    } else {
+    assert!(
         ({
-            __assert_fail_2(
-                Ptr::<i8>::from_string_literal(b"a == c"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        let _x: Ptr<S> = a.as_pointer();
-        operator_lt_1(_x, b.as_pointer())
-    }) {
-        &(0);
-    } else {
+            let _x: Ptr<S> = a.as_pointer();
+            operator_eq_0(_x, c.as_pointer())
+        })
+    );
+    assert!(
         ({
-            __assert_fail_2(
-                Ptr::<i8>::from_string_literal(b"a < b"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if !({
-        let _x: Ptr<S> = b.as_pointer();
-        operator_lt_1(_x, a.as_pointer())
-    }) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_2(
-                Ptr::<i8>::from_string_literal(b"!(b < a)"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+            let _x: Ptr<S> = a.as_pointer();
+            operator_lt_1(_x, b.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let _x: Ptr<S> = b.as_pointer();
+            operator_lt_1(_x, a.as_pointer())
+        })
+    );
     return 0;
-}
-pub fn __assert_fail_2(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

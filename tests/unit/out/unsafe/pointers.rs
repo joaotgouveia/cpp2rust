@@ -52,26 +52,7 @@ unsafe fn main_0() -> i32 {
     t3 = t2;
     (*t3).x = 15;
     (*(unsafe { Test::as_ptr(&mut (*t3)) })) += 10;
-    (if (((((*t3).x) + ((*t2).x)) + (t1.x)) == (75)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"t3->x + t2->x + t1.x == 75".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((((*t3).x) + ((*t2).x)) + (t1.x)) == (75)));
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

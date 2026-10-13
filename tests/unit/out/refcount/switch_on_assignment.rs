@@ -37,50 +37,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    (if (({ switch_on_assignment_0(0) }) == 10) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"switch_on_assignment(0) == 10"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ switch_on_assignment_0(1) }) == 20) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"switch_on_assignment(1) == 20"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ switch_on_assignment_0(9) }) == 10) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_1(
-                Ptr::<i8>::from_string_literal(b"switch_on_assignment(9) == 10"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ switch_on_assignment_0(0,) }) == 10));
+    assert!((({ switch_on_assignment_0(1,) }) == 20));
+    assert!((({ switch_on_assignment_0(9,) }) == 10));
     return 0;
-}
-pub fn __assert_fail_1(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

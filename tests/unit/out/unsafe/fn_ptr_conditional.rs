@@ -41,74 +41,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if ((unsafe { (unsafe { pick_3(1) }).unwrap()(10) }) == (11)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"pick(1)(10) == 11".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { (unsafe { pick_3(-1_i32) }).unwrap()(10) }) == (9)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"pick(-1)(10) == 9".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { (unsafe { pick_3(0) }).unwrap()(10) }) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"pick(0)(10) == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { apply_4(Some(inc_0), 5) }) == (6)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"apply(inc, 5) == 6".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { apply_4(None, 5) }) == (5)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_5(
-                c"apply(nullptr, 5) == 5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((unsafe { (unsafe { pick_3(1,) }).unwrap()(10,) }) == (11)));
+    assert!(((unsafe { (unsafe { pick_3(-1_i32,) }).unwrap()(10,) }) == (9)));
+    assert!(((unsafe { (unsafe { pick_3(0,) }).unwrap()(10,) }) == (10)));
+    assert!(((unsafe { apply_4(Some(inc_0), 5,) }) == (6)));
+    assert!(((unsafe { apply_4(None, 5,) }) == (5)));
     return 0;
-}
-pub unsafe fn __assert_fail_5(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

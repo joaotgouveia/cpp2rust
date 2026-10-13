@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub static mut total_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
-#[derive(Clone, VaArg, DestructorUnsafe, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct S {
     pub v: i32,
 }
@@ -69,102 +69,17 @@ unsafe fn main_0() -> i32 {
     {
         let mut s: S = S::new({ 3 });
         let _dtor_s = ScopedDestructorUnsafe::new(&raw mut s, S::destructor);
-        (if ((s.v) == (4)) {
-            &(0);
-        } else {
-            (unsafe {
-                __assert_fail_1(
-                    c"s.v == 4".as_ptr(),
-                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                    line!() as u32,
-                    c"int main()".as_ptr(),
-                )
-            });
-        });
-        (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut total_0)) == (8)) {
-            &(0);
-        } else {
-            (unsafe {
-                __assert_fail_1(
-                    c"total == 8".as_ptr(),
-                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                    line!() as u32,
-                    c"int main()".as_ptr(),
-                )
-            });
-        });
+        assert!(((s.v) == (4)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut total_0)) == (8)));
     }
-    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut total_0)) == (18)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"total == 18".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut total_0)) == (18)));
     let mut p: Point = Point::new_3();
-    (if ((p.x) == (104)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"p.x == 104".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((p.y) == (50)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"p.y == 50".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((p.x) == (104)));
+    assert!(((p.y) == (50)));
     let mut q: Point = Point::new_2({ 7 });
-    (if ((q.x) == (7)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"q.x == 7".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((q.y) == (80)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"q.y == 80".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((q.x) == (7)));
+    assert!(((q.y) == (80)));
     return 0;
-}
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const total_0);

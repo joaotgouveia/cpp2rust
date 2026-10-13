@@ -36,50 +36,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    (if ((((unsafe { foo_0() }) + (unsafe { foo_0() })) + (unsafe { foo_0() })) == (15)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"foo() + foo() + foo() == 15".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { from_local_class_6() }) == (9)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"from_local_class() == 9".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if ((unsafe { from_local_class_6() }) == (13)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_9(
-                c"from_local_class() == 13".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((((unsafe { foo_0() }) + (unsafe { foo_0() })) + (unsafe { foo_0() })) == (15)));
+    assert!(((unsafe { from_local_class_6() }) == (9)));
+    assert!(((unsafe { from_local_class_6() }) == (13)));
     return 0;
-}
-pub unsafe fn __assert_fail_9(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

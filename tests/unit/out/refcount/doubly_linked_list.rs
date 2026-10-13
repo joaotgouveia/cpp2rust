@@ -164,245 +164,51 @@ fn main_0() -> i32 {
     let __rhs = ({ Delete_3((head).clone(), -2_i32) });
     head = __rhs;
     let mut tail: Ptr<Node> = ({ Tail_4((head).clone()) });
-    (if (({ Find_0((head).clone(), 0) }).with(|__s| __s.val) == 4) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 0)->val == 4"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ Find_0((head).clone(), 1) }).with(|__s| __s.val) == 3) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 1)->val == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ Find_0((head).clone(), 2) }).with(|__s| __s.val) == 2) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 2)->val == 2"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ Find_0((head).clone(), 3) }).with(|__s| __s.val) == 1) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 3)->val == 1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ Find_0((head).clone(), 4) }).with(|__s| __s.val) == -1_i32) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 4)->val == -1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ Find_0((head).clone(), 5) }).is_null() {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 5) == nullptr"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ FindBack_1((tail).clone(), 0) }).with(|__s| __s.val) == -1_i32) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"FindBack(tail, 0)->val == -1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ FindBack_1((tail).clone(), 1) }).with(|__s| __s.val) == 1) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"FindBack(tail, 1)->val == 1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ FindBack_1((tail).clone(), 2) }).with(|__s| __s.val) == 2) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"FindBack(tail, 2)->val == 2"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ FindBack_1((tail).clone(), 3) }).with(|__s| __s.val) == 3) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"FindBack(tail, 3)->val == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.val) == 4) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"FindBack(tail, 4)->val == 4"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.prev.clone())).is_null() {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"FindBack(tail, 4)->prev == nullptr"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ Find_0((head).clone(), 0) })
-        .with(|__s| __s.next.clone())
-        .with(|__s| __s.val)
-        == 3)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 0)->next->val == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ Find_0((head).clone(), 1) })
-        .with(|__s| __s.next.clone())
-        .with(|__s| __s.next.clone())
-        .with(|__s| __s.val)
-        == 1)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 1)->next->next->val == 1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ Find_0((head).clone(), 2) })
-        .with(|__s| __s.prev.clone())
-        .with(|__s| __s.val)
-        == 3)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 2)->prev->val == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ Find_0((head).clone(), 4) }).with(|__s| __s.next.clone())).is_null() {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 4)->next == nullptr"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ FindBack_1((tail).clone(), 1) })
-        .with(|__s| __s.prev.clone())
-        .with(|__s| __s.prev.clone())
-        .with(|__s| __s.val)
-        == 3)
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"FindBack(tail, 1)->prev->prev->val == 3"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ Find_0((head).clone(), 0,) }).with(|__s| __s.val) == 4));
+    assert!((({ Find_0((head).clone(), 1,) }).with(|__s| __s.val) == 3));
+    assert!((({ Find_0((head).clone(), 2,) }).with(|__s| __s.val) == 2));
+    assert!((({ Find_0((head).clone(), 3,) }).with(|__s| __s.val) == 1));
+    assert!((({ Find_0((head).clone(), 4,) }).with(|__s| __s.val) == -1_i32));
+    assert!(({ Find_0((head).clone(), 5,) }).is_null());
+    assert!((({ FindBack_1((tail).clone(), 0,) }).with(|__s| __s.val) == -1_i32));
+    assert!((({ FindBack_1((tail).clone(), 1,) }).with(|__s| __s.val) == 1));
+    assert!((({ FindBack_1((tail).clone(), 2,) }).with(|__s| __s.val) == 2));
+    assert!((({ FindBack_1((tail).clone(), 3,) }).with(|__s| __s.val) == 3));
+    assert!((({ FindBack_1((tail).clone(), 4,) }).with(|__s| __s.val) == 4));
+    assert!((({ FindBack_1((tail).clone(), 4,) }).with(|__s| __s.prev.clone())).is_null());
+    assert!(
+        (({ Find_0((head).clone(), 0,) })
+            .with(|__s| __s.next.clone())
+            .with(|__s| __s.val)
+            == 3)
+    );
+    assert!(
+        (({ Find_0((head).clone(), 1,) })
+            .with(|__s| __s.next.clone())
+            .with(|__s| __s.next.clone())
+            .with(|__s| __s.val)
+            == 1)
+    );
+    assert!(
+        (({ Find_0((head).clone(), 2,) })
+            .with(|__s| __s.prev.clone())
+            .with(|__s| __s.val)
+            == 3)
+    );
+    assert!((({ Find_0((head).clone(), 4,) }).with(|__s| __s.next.clone())).is_null());
+    assert!(
+        (({ FindBack_1((tail).clone(), 1,) })
+            .with(|__s| __s.prev.clone())
+            .with(|__s| __s.prev.clone())
+            .with(|__s| __s.val)
+            == 3)
+    );
     field!(
         ({ Find_0((head).clone(), 0,) }).with(|__s| __s.next.clone()),
         val
     )
     .write(30);
-    (if (({ Find_0((head).clone(), 1) }).with(|__s| __s.val) == 30) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 1)->val == 30"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ Find_0((head).clone(), 1,) }).with(|__s| __s.val) == 30));
     let __rhs = (({ Find_0((head).clone(), 0) }).with(|__s| __s.val)
         + ({ Find_0((head).clone(), 3) }).with(|__s| __s.val));
     field!(
@@ -410,94 +216,31 @@ fn main_0() -> i32 {
         val
     )
     .write(__rhs);
-    (if (({ Find_0((head).clone(), 2) }).with(|__s| __s.val) == (4 + 1)) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 2)->val == 4 + 1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ Find_0((head).clone(), 2,) }).with(|__s| __s.val) == (4 + 1)));
     let mut sum: i32 = ((((({ Find_0((head).clone(), 0) }).with(|__s| __s.val)
         + ({ Find_0((head).clone(), 1) }).with(|__s| __s.val))
         + ({ Find_0((head).clone(), 2) }).with(|__s| __s.val))
         + ({ Find_0((head).clone(), 3) }).with(|__s| __s.val))
         + ({ Find_0((head).clone(), 4) }).with(|__s| __s.val));
-    (if (sum == ((((4 + 30) + 5) + 1) + -1_i32)) {
-        &(0);
-    } else {
+    assert!((sum == ((((4 + 30) + 5) + 1) + -1_i32)));
+    assert!(
+        (({ ({ Find_0((head).clone(), 0,) }).with(|__s| __s.val) } + {
+            ({ FindBack_1((tail).clone(), 0) }).with(|__s| __s.val)
+        }) == (4 + -1_i32))
+    );
+    assert!(
         ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"sum == 4 + 30 + 5 + 1 + -1"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if (({ ({ Find_0((head).clone(), 0) }).with(|__s| __s.val) } + {
-        ({ FindBack_1((tail).clone(), 0) }).with(|__s| __s.val)
-    }) == (4 + -1_i32))
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(
-                    b"Find(head, 0)->val + FindBack(tail, 0)->val == 4 + -1",
-                ),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({
-        ({ Find_0((head).clone(), 2) })
-            .with(|__s| __s.next.clone())
-            .with(|__s| __s.val)
-    } == { ({ FindBack_1((tail).clone(), 1) }).with(|__s| __s.val) })
-    {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(
-                    b"Find(head, 2)->next->val == FindBack(tail, 1)->val",
-                ),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
-    (if ({ ({ Find_0((head).clone(), 0) }).with(|__s| __s.prev.clone()) } == {
-        ({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.prev.clone())
-    }) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_5(
-                Ptr::<i8>::from_string_literal(b"Find(head, 0)->prev == FindBack(tail, 4)->prev"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+            ({ Find_0((head).clone(), 2) })
+                .with(|__s| __s.next.clone())
+                .with(|__s| __s.val)
+        } == { ({ FindBack_1((tail).clone(), 1,) }).with(|__s| __s.val) })
+    );
+    assert!(
+        ({ ({ Find_0((head).clone(), 0,) }).with(|__s| __s.prev.clone()) } == {
+            ({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.prev.clone())
+        })
+    );
     return 0;
-}
-pub fn __assert_fail_5(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait NodeImpl {
     fn SetNext(&self, n: Ptr<Node>);

@@ -16,10 +16,10 @@ pub struct Inner {
 pub struct Table {}
 impl Table {
     pub unsafe fn operator_index(mut i: i32) -> *mut i32 {
-        return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut Table_table_0))[(i) as usize];
+        return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut table_0))[(i) as usize];
     }
 }
-pub static mut Table_table_0: std::cell::LazyCell<[i32; 3]> =
+pub static mut table_0: std::cell::LazyCell<[i32; 3]> =
     std::cell::LazyCell::new(|| unsafe { [7, 8, 9] });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -55,144 +55,26 @@ unsafe fn main_0() -> i32 {
         data: [1, 2, 3],
         inner: Inner { x: 9 },
     };
-    (if ((*(unsafe { S::operator_index_1(&mut s, 1) })) == (2)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s[1] == 2".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*(unsafe { S::operator_index_1(&mut s, 1,) })) == (2)));
     (*(unsafe { S::operator_index_1(&mut s, 1) })) = 20;
-    (if ((*(unsafe { S::operator_index_1(&mut s, 1) })) == (20)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s[1] == 20".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*(unsafe { S::operator_index_1(&mut s, 1,) })) == (20)));
     let cs: *const S = &s;
-    (if ((*(unsafe { S::operator_index_2(&(*cs), 2) })) == (3)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"cs[2] == 3".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
-    (if (((*(unsafe { S::operator_deref(&mut s) })).x) == (9)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"(*s).x == 9".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*(unsafe { S::operator_index_2(&(*cs), 2,) })) == (3)));
+    assert!((((*(unsafe { S::operator_deref(&mut s,) })).x) == (9)));
     (*(unsafe { S::operator_deref(&mut s) })).x = 10;
-    (if (((*(unsafe { S::operator_arrow(&mut s) })).x) == (10)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s->x == 10".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((*(unsafe { S::operator_arrow(&mut s,) })).x) == (10)));
     (*(unsafe { S::operator_arrow(&mut s) })).x = 11;
-    (if ((s.inner.x) == (11)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.inner.x == 11".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.inner.x) == (11)));
     let mut p: *mut i32 = (unsafe { S::operator_addr(&mut s) });
-    (if ((*p) == (1)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"*p == 1".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*p) == (1)));
     (*p) = 5;
-    (if ((s.data[(0) as usize]) == (5)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"s.data[0] == 5".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((s.data[(0) as usize]) == (5)));
     let mut t: Table = <Table>::default();
-    (if ((*(unsafe { Table::operator_index(1) })) == (8)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"t[1] == 8".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!(((*(unsafe { Table::operator_index(1,) })) == (8)));
     (*(unsafe { Table::operator_index(1) })) = 80;
-    (if (((*std::cell::LazyCell::force_mut(&mut *&raw mut Table_table_0))[(1) as usize]) == (80)) {
-        &(0);
-    } else {
-        (unsafe {
-            __assert_fail_1(
-                c"Table::table[1] == 80".as_ptr(),
-                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
-                line!() as u32,
-                c"int main()".as_ptr(),
-            )
-        });
-    });
+    assert!((((*std::cell::LazyCell::force_mut(&mut *&raw mut table_0))[(1) as usize]) == (80)));
     return 0;
 }
-pub unsafe fn __assert_fail_1(
-    mut __assertion: *const libc::c_char,
-    mut __file: *const libc::c_char,
-    mut __line: u32,
-    mut __function: *const libc::c_char,
-) {
-    unimplemented!()
-}
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const Table_table_0);
+    std::cell::LazyCell::force(&*&raw const table_0);
 }

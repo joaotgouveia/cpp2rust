@@ -26,26 +26,7 @@ fn main_0() -> i32 {
     let mut p1: Ptr<i32> = (field_ptr!((arr.as_pointer() as Ptr<Foo>).offset(1), x1));
     let mut a: i32 = (p1.read());
     let mut p2: Ptr<Foo> = ((arr.as_pointer() as Ptr<Foo>).offset(0));
-    (if (({ a } + { p2.with(|__s| __s.x2) }) == 5) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"a + p2->x2 == 5"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((({ a } + { p2.with(|__s| __s.x2) }) == 5));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

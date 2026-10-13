@@ -32,27 +32,8 @@ fn main_0() -> i32 {
         (*elem!(arr, 1).upgrade().deref()).value
     });
     arr.delete();
-    (if (result == 11) {
-        &(0);
-    } else {
-        ({
-            __assert_fail_0(
-                Ptr::<i8>::from_string_literal(b"result == 11"),
-                Ptr::<i8>::from_string_literal(file!().as_bytes()),
-                line!() as u32,
-                Ptr::<i8>::from_string_literal(b"int main()"),
-            )
-        });
-    });
+    assert!((result == 11));
     return 0;
-}
-pub fn __assert_fail_0(
-    mut __assertion: Ptr<i8>,
-    mut __file: Ptr<i8>,
-    mut __line: u32,
-    mut __function: Ptr<i8>,
-) {
-    unimplemented!()
 }
 pub trait ItemImpl {
     fn foo(&self, other: Ptr<Item>);
