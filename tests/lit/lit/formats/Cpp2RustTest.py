@@ -176,9 +176,7 @@ class TestContext:
                 return (exp.fail_code, err)
             self.build_dir = build_dir
         elif self.support_sources:
-            build_dir, err = setup_build_dir(
-                self.tmp_dir, self.write_support_project()
-            )
+            build_dir, err = setup_build_dir(self.tmp_dir, self.write_support_project())
             if err is not None:
                 return (exp.fail_code, err)
             self.build_dir = build_dir
@@ -233,8 +231,8 @@ class TestContext:
             f"target_compile_options(app PRIVATE {cmake_list(flags)})\n"
             f"target_link_options(app PRIVATE {cmake_list(self.extra_cxxflags)} -latomic)\n"
             + "".join(
-                f"set_source_files_properties(\"{src}\" PROPERTIES COMPILE_OPTIONS "
-                f"\"-Wno-builtin-macro-redefined;-D__FILE__=\\\"{src.name}\\\"\")\n"
+                f'set_source_files_properties("{src}" PROPERTIES COMPILE_OPTIONS '
+                f'"-Wno-builtin-macro-redefined;-D__FILE__=\\"{src.name}\\"")\n'
                 for src in sources
             )
         )
