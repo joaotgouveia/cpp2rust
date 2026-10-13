@@ -6,6 +6,22 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
+#[derive(VaArg, FnPtrArg)]
+pub struct max_align_t {
+    pub __clang_max_align_nonce1: i64,
+    pub __clang_max_align_nonce2: f64,
+}
+impl Clone for max_align_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for max_align_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub type std_byte = u8;
 pub unsafe fn strlen_0(mut s: *const libc::c_char) -> usize {
     let mut count: usize = 0_usize;
     'loop_: while ((*s.postfix_inc()) != 0) {

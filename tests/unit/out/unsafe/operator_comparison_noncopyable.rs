@@ -13,7 +13,7 @@ pub unsafe fn operator_lt_1(x: *const S, y: *const S) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(MoveCtorUnsafe, FnPtrArg, Default)]
 pub struct S {
     data_: i32,
 }
@@ -63,24 +63,59 @@ unsafe fn main_0() -> i32 {
     let mut a: S = S::new({ 1 });
     let mut b: S = S::new({ 2 });
     let mut c: S = S::new({ 1 });
-    assert!(
+    (if (unsafe {
+        let _x: *const S = &a;
+        operator_eq_0(_x, &c)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _x: *const S = &a;
-            operator_eq_0(_x, &c)
-        })
-    );
-    assert!(
+            __assert_fail_2(
+                c"a == c".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _x: *const S = &a;
+        operator_lt_1(_x, &b)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _x: *const S = &a;
-            operator_lt_1(_x, &b)
-        })
-    );
-    assert!(
-        !(unsafe {
-            let _x: *const S = &b;
-            operator_lt_1(_x, &a)
-        })
-    );
+            __assert_fail_2(
+                c"a < b".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if !(unsafe {
+        let _x: *const S = &b;
+        operator_lt_1(_x, &a)
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"!(b < a)".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_2(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

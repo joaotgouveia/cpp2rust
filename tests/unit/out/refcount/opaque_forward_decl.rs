@@ -6,6 +6,25 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
+#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
+#[byte_size(32)]
+pub struct max_align_t {
+    #[offset(0)]
+    pub __clang_max_align_nonce1: i64,
+    #[offset(16)]
+    #[byte_size(16)]
+    pub __clang_max_align_nonce2: f64,
+}
+impl Clone for max_align_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for max_align_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct container {

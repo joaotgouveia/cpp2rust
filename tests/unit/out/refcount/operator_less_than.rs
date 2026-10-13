@@ -91,8 +91,27 @@ pub fn main() {
 fn main_0() -> i32 {
     let pair1: Value<Pair> = Rc::new(RefCell::new(Pair { x: 1, y: 2 }));
     let pair2: Value<Pair> = Rc::new(RefCell::new(Pair { x: 1, y: 3 }));
-    assert!(({ PairImpl::operator_lt(&pair1.as_pointer(), pair2.as_pointer(),) }));
+    (if ({ PairImpl::operator_lt(&pair1.as_pointer(), pair2.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"pair1 < pair2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_0(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub trait PairImpl {
     fn operator_lt(&self, other: Ptr<Pair>) -> bool;

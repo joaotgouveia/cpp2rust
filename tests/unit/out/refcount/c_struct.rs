@@ -62,19 +62,124 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut p: Point = Point { x: 10, y: 20 };
-    assert!((((p.x == 10) as i32) != 0));
-    assert!((((p.y == 20) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((p.x == 10) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"p.x == 10"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        29_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((p.y == 20) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"p.y == 20"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        30_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
     let mut q: Point = (p).clone();
     q.x = 99;
-    assert!((((p.x == 10) as i32) != 0));
-    assert!((((q.x == 99) as i32) != 0));
-    assert!((((q.y == 20) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((p.x == 10) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"p.x == 10"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        34_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((q.x == 99) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"q.x == 99"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        35_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((q.y == 20) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"q.y == 20"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        36_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
     let mut l: Line = Line {
         start: Point { x: 1, y: 2 },
         end: Point { x: 3, y: 4 },
     };
-    assert!((((l.start.x == 1) as i32) != 0));
-    assert!((((l.end.y == 4) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((l.start.x == 1) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"l.start.x == 1"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        39_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((l.end.y == 4) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"l.end.y == 4"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        40_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
     let a: Value<Node> = Rc::new(RefCell::new(Node {
         value: 1,
         next: Ptr::<Node>::null(),
@@ -83,19 +188,117 @@ fn main_0() -> i32 {
         value: 2,
         next: (a.as_pointer()),
     };
-    assert!((((b.next.with(|__s| __s.value) == 1) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((b.next.with(|__s| __s.value) == 1) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"b.next->value == 1"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        44_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
     let mut c: Container = Container {
         inner: Inner { a: 5, b: 6 },
         color: Color_GREEN,
         count: 42,
     };
-    assert!((((c.inner.a == 5) as i32) != 0));
-    assert!((((c.inner.b == 6) as i32) != 0));
-    assert!(((((c.color as u32) == ((Color_GREEN as i32) as u32)) as i32) != 0));
-    assert!((((c.count == 42) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((c.inner.a == 5) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"c.inner.a == 5"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        47_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((c.inner.b == 6) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"c.inner.b == 6"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        48_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if ((((c.color as u32) == ((Color_GREEN as i32) as u32)) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"c.color == GREEN"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        49_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((c.count == 42) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"c.count == 42"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        50_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
     let mut c2: Container = <Container>::default();
     c2.color = Color_BLUE;
-    assert!(((((c2.color as u32) == 2_u32) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if ((((c2.color as u32) == 2_u32) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"c2.color == 2"),
+                        Ptr::<i8>::from_string_literal(b"c_struct.c"),
+                        54_u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub fn __assert_fail_0(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

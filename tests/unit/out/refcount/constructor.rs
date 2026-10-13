@@ -9,7 +9,7 @@ use std::rc::{Rc, Weak};
 thread_local!(
     pub static total_0: Value<i32> = Rc::new(RefCell::new(0));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, Destructor, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
@@ -66,17 +66,102 @@ fn main_0() -> i32 {
     {
         let s: Value<S> = Rc::new(RefCell::new(S::new({ 3 })));
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
-        assert!(({ (*s.borrow()).v } == 4));
-        assert!((total_0.with(|rc| *rc.borrow()) == 8));
+        (if ({ (*s.borrow()).v } == 4) {
+            &(0);
+        } else {
+            ({
+                __assert_fail_1(
+                    Ptr::<i8>::from_string_literal(b"s.v == 4"),
+                    Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                    line!() as u32,
+                    Ptr::<i8>::from_string_literal(b"int main()"),
+                )
+            });
+        });
+        (if (total_0.with(|rc| *rc.borrow()) == 8) {
+            &(0);
+        } else {
+            ({
+                __assert_fail_1(
+                    Ptr::<i8>::from_string_literal(b"total == 8"),
+                    Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                    line!() as u32,
+                    Ptr::<i8>::from_string_literal(b"int main()"),
+                )
+            });
+        });
     }
-    assert!((total_0.with(|rc| *rc.borrow()) == 18));
+    (if (total_0.with(|rc| *rc.borrow()) == 18) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"total == 18"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut p: Point = Point::new_3();
-    assert!((p.x == 104));
-    assert!((p.y == 50));
+    (if (p.x == 104) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"p.x == 104"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (p.y == 50) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"p.y == 50"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut q: Point = Point::new_2({ 7 });
-    assert!((q.x == 7));
-    assert!((q.y == 80));
+    (if (q.x == 7) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"q.x == 7"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (q.y == 80) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"q.y == 80"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub trait SImpl {
     fn const_method(&self) -> i32;

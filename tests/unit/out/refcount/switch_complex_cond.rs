@@ -31,10 +31,62 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let p_val: Value<i32> = Rc::new(RefCell::new(5));
-    assert!((({ switch_complex_cond_0((p_val.as_pointer()), 0,) }) == 2));
-    assert!((({ switch_complex_cond_0((p_val.as_pointer()), 5,) }) == 3));
-    assert!((({ switch_complex_cond_0((p_val.as_pointer()), -5_i32,) }) == 1));
-    assert!((({ switch_complex_cond_0((p_val.as_pointer()), 99,) }) == 0));
+    (if (({ switch_complex_cond_0((p_val.as_pointer()), 0) }) == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"switch_complex_cond(&p_val, 0) == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ switch_complex_cond_0((p_val.as_pointer()), 5) }) == 3) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"switch_complex_cond(&p_val, 5) == 3"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ switch_complex_cond_0((p_val.as_pointer()), -5_i32) }) == 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"switch_complex_cond(&p_val, -5) == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ switch_complex_cond_0((p_val.as_pointer()), 99) }) == 0) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"switch_complex_cond(&p_val, 99) == 0"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

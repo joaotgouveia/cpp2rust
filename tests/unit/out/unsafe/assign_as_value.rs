@@ -20,7 +20,22 @@ unsafe fn main_0() -> i32 {
         p = (p).wrapping_add((1 as i32) as usize);
         p
     };
-    assert!(((((q) == (buf.as_mut_ptr().offset((1) as isize))) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((q) == (buf.as_mut_ptr().offset((1) as isize))) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_0(
+                        (c"q == buf + 1".as_ptr().cast_mut()).cast_const(),
+                        (c"assign_as_value.c".as_ptr().cast_mut()).cast_const(),
+                        7_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     let mut out: libc::c_char = (0 as libc::c_char);
     'switch: {
         match {
@@ -30,16 +45,56 @@ unsafe fn main_0() -> i32 {
             }) as i32)
         } {
             __v if __v == ('x' as i32) => {
-                assert!((1 != 0));
+                {
+                    &(::std::mem::size_of::<i32>());
+                    { {} }
+                };
                 break 'switch;
             }
             _ => {
-                assert!((0 != 0));
+                {
+                    &(::std::mem::size_of::<i32>());
+                    {
+                        {
+                            (unsafe {
+                                __assert_fail_0(
+                                    (c"0".as_ptr().cast_mut()).cast_const(),
+                                    (c"assign_as_value.c".as_ptr().cast_mut()).cast_const(),
+                                    15_u32,
+                                    c"int main(void)".as_ptr(),
+                                )
+                            });
+                        }
+                    }
+                };
                 break 'switch;
             }
         }
     };
-    assert!(((((out as i32) == ('x' as i32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((out as i32) == ('x' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_0(
+                        (c"out == \'x\'".as_ptr().cast_mut()).cast_const(),
+                        (c"assign_as_value.c".as_ptr().cast_mut()).cast_const(),
+                        18_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub unsafe fn __assert_fail_0(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

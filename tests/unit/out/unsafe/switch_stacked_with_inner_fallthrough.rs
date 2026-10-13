@@ -29,9 +29,50 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((unsafe { stacked_with_inner_fallthrough_0(1, 0,) }) == (50)));
-    assert!(((unsafe { stacked_with_inner_fallthrough_0(2, 1,) }) == (999)));
-    assert!(((unsafe { stacked_with_inner_fallthrough_0(99, 0,) }) == (999)));
+    (if ((unsafe { stacked_with_inner_fallthrough_0(1, 0) }) == (50)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"stacked_with_inner_fallthrough(1, 0) == 50".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { stacked_with_inner_fallthrough_0(2, 1) }) == (999)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"stacked_with_inner_fallthrough(2, 1) == 999".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { stacked_with_inner_fallthrough_0(99, 0) }) == (999)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"stacked_with_inner_fallthrough(99, 0) == 999".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

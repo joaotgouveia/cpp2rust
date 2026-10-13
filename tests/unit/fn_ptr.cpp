@@ -28,6 +28,16 @@ template <class H> struct HashHolder {
   HashHolder(const H &h) : h(h) {}
 };
 
+template <class T> static std::size_t hash_identity(T v) { return v; }
+
+template <class T> static std::size_t hash_identity(T *v) { return *v; }
+
+template <class T> static void test_hash(T v) {
+  using Hash = std::size_t (*)(T);
+  HashHolder<Hash> hh(hash_identity);
+  assert(hh.h(v) == 7);
+}
+
 int main() {
   foo_t fn = nullptr;
   assert(fn == nullptr);
@@ -55,5 +65,7 @@ int main() {
 
   HashHolder<std::size_t (*)(bool)> hh(identity_hash<bool>);
   assert(hh.h(true) == 1);
+
+  test_hash<std::size_t>(7);
   return 0;
 }

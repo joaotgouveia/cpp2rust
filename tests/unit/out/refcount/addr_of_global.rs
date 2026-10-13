@@ -44,47 +44,106 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!(
-        (({
-            let __idx = (0) as usize;
-            items_3.with(|rc| rc.borrow()[__idx].clone())
-        })
-        .with(|__s| __s.value)
-            == 1)
-    );
-    assert!(
-        (({
-            let __idx = (1) as usize;
-            items_3.with(|rc| rc.borrow()[__idx].clone())
-        })
-        .with(|__s| __s.value)
-            == 2)
-    );
-    assert!(({ (*obj_4.with(Value::clone).borrow()).p.clone() }.with(|__s| __s.value) == 42));
-    assert!(
-        (({
-            let __idx = (0) as usize;
-            cache_5.with(|rc| rc.borrow()[__idx].clone())
-        })
-        .with(|__s| __s.value)
-            == 1)
-    );
-    assert!(
-        (({
-            let __idx = (1) as usize;
-            cache_5.with(|rc| rc.borrow()[__idx].clone())
-        })
-        .with(|__s| __s.value)
-            == 2)
-    );
+    (if (({
+        let __idx = (0) as usize;
+        items_3.with(|rc| rc.borrow()[__idx].clone())
+    })
+    .with(|__s| __s.value)
+        == 1)
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"items[0]->value == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({
+        let __idx = (1) as usize;
+        items_3.with(|rc| rc.borrow()[__idx].clone())
+    })
+    .with(|__s| __s.value)
+        == 2)
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"items[1]->value == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ (*obj_4.with(Value::clone).borrow()).p.clone() }.with(|__s| __s.value) == 42) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"obj.p->value == 42"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({
+        let __idx = (0) as usize;
+        cache_6.with(|rc| rc.borrow()[__idx].clone())
+    })
+    .with(|__s| __s.value)
+        == 1)
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"cache[0]->value == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({
+        let __idx = (1) as usize;
+        cache_6.with(|rc| rc.borrow()[__idx].clone())
+    })
+    .with(|__s| __s.value)
+        == 2)
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"cache[1]->value == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
 }
 thread_local!(
-    static cache_5: Value<Box<[Ptr<Inner>]>> = Rc::new(RefCell::new(Box::new([
+    static cache_6: Value<Box<[Ptr<Inner>]>> = Rc::new(RefCell::new(Box::new([
         (alpha_0.with(|v| v.as_pointer())),
         (beta_1.with(|v| v.as_pointer())),
     ])));
 );
+pub fn __assert_fail_5(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
+}
 pub fn __cpp2rust_init_globals() {
     let _ = alpha_0.with(|_| ());
     let _ = beta_1.with(|_| ());

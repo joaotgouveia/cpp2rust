@@ -17,7 +17,26 @@ fn main_0() -> i32 {
     let a: Value<i32> = Rc::new(RefCell::new(1));
     let mut pa: Ptr<i32> = (a.as_pointer());
     let b: Ptr<i32> = ({ foo_0((pa).clone()) });
-    assert!(((b.read()) == 1));
+    (if ((b.read()) == 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"b == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

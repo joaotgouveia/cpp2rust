@@ -15,7 +15,26 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut v: i32 = 1;
     let mut ptr: *mut i32 = (&mut v as *mut i32);
-    assert!(((*ptr) == (1)));
+    (if ((*ptr) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"*ptr == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_0(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

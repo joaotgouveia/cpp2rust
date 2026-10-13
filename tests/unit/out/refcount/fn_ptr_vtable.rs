@@ -42,16 +42,90 @@ fn main_0() -> i32 {
         get: FnPtr::<fn(AnyPtr) -> i32>::new(int_get_2),
         destroy: FnPtr::<fn(AnyPtr)>::new(int_destroy_3),
     };
-    assert!(!((vt.create).is_null()));
-    assert!(!((vt.get).is_null()));
-    assert!(!((vt.destroy).is_null()));
+    (if !((vt.create).is_null()) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"vt.create != nullptr"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if !((vt.get).is_null()) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"vt.get != nullptr"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if !((vt.destroy).is_null()) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"vt.destroy != nullptr"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut obj: AnyPtr = ({ vt.create.call(42) });
-    assert!((({ vt.get.call((obj).clone(),) }) == 42));
+    (if (({ vt.get.call((obj).clone()) }) == 42) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"vt.get(obj) == 42"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     ({ vt.destroy.call((obj).clone()) });
-    assert!((storage_0.with(|rc| *rc.borrow()) == 0));
+    (if (storage_0.with(|rc| *rc.borrow()) == 0) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"storage == 0"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     vt.get = FnPtr::<fn(AnyPtr) -> i32>::null();
-    assert!((vt.get).is_null());
+    (if (vt.get).is_null() {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"vt.get == nullptr"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_4(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {
     let _ = storage_0.with(|_| ());

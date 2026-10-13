@@ -40,7 +40,26 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((unsafe { f1_2(1_f64, 2_f64,) }) == (-6_i32 as f64)));
+    (if ((unsafe { f1_2(1.0E+0, 2.0E+0) }) == (-6_i32 as f64)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"f1(1.0, 2.0) == -6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -49,10 +49,62 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((unsafe { nested_0(1, 10,) }) == (12)));
-    assert!(((unsafe { nested_0(1, 99,) }) == (14)));
-    assert!(((unsafe { nested_0(2, 0,) }) == (2)));
-    assert!(((unsafe { nested_0(3, 3,) }) == (-1_i32)));
+    (if ((unsafe { nested_0(1, 10) }) == (12)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"nested(1, 10) == 12".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { nested_0(1, 99) }) == (14)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"nested(1, 99) == 14".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { nested_0(2, 0) }) == (2)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"nested(2, 0) == 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { nested_0(3, 3) }) == (-1_i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"nested(3, 3) == -1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

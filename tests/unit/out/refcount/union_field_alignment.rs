@@ -6,6 +6,42 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
+#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
+#[byte_size(32)]
+pub struct max_align_t {
+    #[offset(0)]
+    pub __clang_max_align_nonce1: i64,
+    #[offset(16)]
+    #[byte_size(16)]
+    pub __clang_max_align_nonce2: f64,
+}
+impl Clone for max_align_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for max_align_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
+#[byte_size(8)]
+pub struct __fsid_t {
+    #[offset(0)]
+    #[byte_size(8)]
+    pub __val: Value<Box<[i32]>>,
+}
+impl Clone for __fsid_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __fsid_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 #[derive(VaArg, FnPtrArg, ByteRepr, DeepClone)]
 #[byte_size(8)]
 pub struct anon_0 {
@@ -50,15 +86,38 @@ fn main_0() -> i32 {
         0
     )
     .write(171_u8);
-    assert!(
-        (((((elem!(
-            (anon_0::bytes(field_ptr!(n.as_pointer(), x)).reinterpret_cast::<u8>() as Ptr::<u8>),
-            0
-        )
-        .read()) as i32)
-            == 171) as i32)
-            != 0)
-    );
+    {
+        &(4usize);
+        {
+            if (((((elem!(
+                (anon_0::bytes(field_ptr!(n.as_pointer(), x)).reinterpret_cast::<u8>()
+                    as Ptr::<u8>),
+                0
+            )
+            .read()) as i32)
+                == 171) as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"n.x.bytes[0] == 0xAB"),
+                        Ptr::<i8>::from_string_literal(b"union_field_alignment.c"),
+                        19_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

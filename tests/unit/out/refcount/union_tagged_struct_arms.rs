@@ -6,6 +6,23 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
+#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
+#[byte_size(8)]
+pub struct __fsid_t {
+    #[offset(0)]
+    #[byte_size(8)]
+    pub __val: Value<Box<[i32]>>,
+}
+impl Clone for __fsid_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __fsid_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 pub type Choice_enum = u32;
 pub const Choice_enum_C_LIST: Choice_enum = 1;
 pub const Choice_enum_C_LETTERS: Choice_enum = 2;
@@ -95,24 +112,52 @@ fn main_0() -> i32 {
         .write((items_4.with(|v| v.as_pointer()) as Ptr<Ptr<i8>>));
     field!(anon_0::list(field_ptr!(p_list.as_pointer(), v)), count).write(3_i64);
     field!(anon_0::list(field_ptr!(p_list.as_pointer(), v)), cursor).write(1_i64);
-    assert!(
-        (((anon_0::list(field_ptr!(p_list.as_pointer(), v)).with(|__s| __s.count) == 3_i64)
-            as i32)
-            != 0)
-    );
-    assert!(
-        (((((elem!(
-            (elem!(
-                anon_0::list(field_ptr!(p_list.as_pointer(), v)).with(|__s| __s.items.clone()),
-                1
+    {
+        &(4usize);
+        {
+            if (((anon_0::list(field_ptr!(p_list.as_pointer(), v)).with(|__s| __s.count) == 3_i64)
+                as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"p_list.v.list.count == 3"),
+                        Ptr::<i8>::from_string_literal(b"union_tagged_struct_arms.c"),
+                        45_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((((elem!(
+                (elem!(
+                    anon_0::list(field_ptr!(p_list.as_pointer(), v)).with(|__s| __s.items.clone()),
+                    1
+                )
+                .read()),
+                0
             )
-            .read()),
-            0
-        )
-        .read()) as i32)
-            == ('b' as i32)) as i32)
-            != 0)
-    );
+            .read()) as i32)
+                == ('b' as i32)) as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"p_list.v.list.items[1][0] == \'b\'"),
+                        Ptr::<i8>::from_string_literal(b"union_tagged_struct_arms.c"),
+                        46_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     let p_letters: Value<Branch> = <Value<Branch>>::default();
     (*p_letters.borrow_mut()).choice = Choice_enum_C_LETTERS;
     (*p_letters.borrow_mut()).index = 1;
@@ -120,12 +165,28 @@ fn main_0() -> i32 {
     field!(anon_0::letters(field_ptr!(p_letters.as_pointer(), v)), hi).write(('z' as i32));
     field!(anon_0::letters(field_ptr!(p_letters.as_pointer(), v)), curr).write(('m' as i32));
     field!(anon_0::letters(field_ptr!(p_letters.as_pointer(), v)), step).write(1_u8);
-    assert!(
-        ((((anon_0::letters(field_ptr!(p_letters.as_pointer(), v)).with(|__s| __s.hi)
-            - anon_0::letters(field_ptr!(p_letters.as_pointer(), v)).with(|__s| __s.lo))
-            == 25) as i32)
-            != 0)
-    );
+    {
+        &(4usize);
+        {
+            if ((((anon_0::letters(field_ptr!(p_letters.as_pointer(), v)).with(|__s| __s.hi)
+                - anon_0::letters(field_ptr!(p_letters.as_pointer(), v)).with(|__s| __s.lo))
+                == 25) as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(
+                            b"p_letters.v.letters.hi - p_letters.v.letters.lo == 25",
+                        ),
+                        Ptr::<i8>::from_string_literal(b"union_tagged_struct_arms.c"),
+                        55_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     let p_integers: Value<Branch> = <Value<Branch>>::default();
     (*p_integers.borrow_mut()).choice = Choice_enum_C_INTEGERS;
     (*p_integers.borrow_mut()).index = 2;
@@ -146,16 +207,44 @@ fn main_0() -> i32 {
         width
     )
     .write(3);
-    assert!(
-        (((anon_0::integers(field_ptr!(p_integers.as_pointer(), v)).with(|__s| __s.hi) == 100_i64)
-            as i32)
-            != 0)
-    );
-    assert!(
-        (((anon_0::integers(field_ptr!(p_integers.as_pointer(), v)).with(|__s| __s.width) == 3)
-            as i32)
-            != 0)
-    );
+    {
+        &(4usize);
+        {
+            if (((anon_0::integers(field_ptr!(p_integers.as_pointer(), v)).with(|__s| __s.hi)
+                == 100_i64) as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"p_integers.v.integers.hi == 100"),
+                        Ptr::<i8>::from_string_literal(b"union_tagged_struct_arms.c"),
+                        65_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((anon_0::integers(field_ptr!(p_integers.as_pointer(), v)).with(|__s| __s.width)
+                == 3) as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"p_integers.v.integers.width == 3"),
+                        Ptr::<i8>::from_string_literal(b"union_tagged_struct_arms.c"),
+                        66_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
 }
 thread_local!(
@@ -165,4 +254,12 @@ thread_local!(
         Ptr::<i8>::from_string_literal(b"c"),
     ])));
 );
+pub fn __assert_fail_5(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
+}
 pub fn __cpp2rust_init_globals() {}

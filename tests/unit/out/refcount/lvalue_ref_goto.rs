@@ -19,10 +19,29 @@ fn main_0() -> i32 {
             goto!('body);
         }
         'body: {
-            assert!(((r.read()) == 5));
+            (if ((r.read()) == 5) {
+                &(0);
+            } else {
+                ({
+                    __assert_fail_0(
+                        Ptr::<i8>::from_string_literal(b"r == 5"),
+                        Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                        line!() as u32,
+                        Ptr::<i8>::from_string_literal(b"int main()"),
+                    )
+                });
+            });
             return 0;
         }
     });
     panic!("ub: non-void function does not return a value")
+}
+pub fn __assert_fail_0(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

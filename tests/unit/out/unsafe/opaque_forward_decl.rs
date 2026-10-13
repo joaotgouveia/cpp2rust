@@ -6,6 +6,21 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
+#[derive(VaArg, FnPtrArg)]
+pub struct max_align_t {
+    pub __clang_max_align_nonce1: i64,
+    pub __clang_max_align_nonce2: f64,
+}
+impl Clone for max_align_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for max_align_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct container {

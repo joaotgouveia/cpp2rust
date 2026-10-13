@@ -41,15 +41,122 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ sum_0(1, 2, 3,) }) == 6));
-    assert!((({ sum_1(4, 5,) }) == 9));
-    assert!((({ first_3(10, 1, 2,) }) == 13));
-    assert!((({ first_4(10, 0,) }) == 10));
-    assert!((({ sizeof_pack_5() }) == 0));
-    assert!((({ sizeof_pack_6(1,) }) == 1));
-    assert!((({ sizeof_pack_7(1, 2,) }) == 2));
-    assert!((({ sizeof_pack_8(1, 2, 3,) }) == 3));
-    assert!((({ sizeof_pack_9(1, 2, 3, 4,) }) == 4));
+    (if (({ sum_0(1, 2, 3) }) == 6) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"sum(1, 2, 3) == 6"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ sum_1(4, 5) }) == 9) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"sum(4, 5) == 9"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ first_3(10, 1, 2) }) == 13) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"first(10, 1, 2) == 13"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ first_4(10, 0) }) == 10) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"first(10, 0) == 10"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ sizeof_pack_5() }) == 0) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"sizeof_pack() == 0"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ sizeof_pack_6(1) }) == 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"sizeof_pack(1) == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ sizeof_pack_7(1, 2) }) == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"sizeof_pack(1, 2) == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ sizeof_pack_8(1, 2, 3) }) == 3) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"sizeof_pack(1, 2, 3) == 3"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ sizeof_pack_9(1, 2, 3, 4) }) == 4) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_10(
+                Ptr::<i8>::from_string_literal(b"sizeof_pack(1, 2, 3, 4) == 4"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_10(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

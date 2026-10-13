@@ -34,26 +34,77 @@ unsafe fn main_0() -> i32 {
         data: [1, 2, 3],
         inner: Inner { x: 9 },
     };
-    assert!(
-        (((*(unsafe {
-            let _s: *mut S = &mut s;
-            operator_deref_0(_s)
-        }))
-        .x) == (9))
-    );
+    (if (((*(unsafe {
+        let _s: *mut S = &mut s;
+        operator_deref_0(_s)
+    }))
+    .x) == (9))
+    {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"(*s).x == 9".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (*(unsafe {
         let _s: *mut S = &mut s;
         operator_deref_0(_s)
     }))
     .x = 10;
-    assert!(((s.inner.x) == (10)));
+    (if ((s.inner.x) == (10)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"s.inner.x == 10".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut p: *mut i32 = (unsafe {
         let _s: *mut S = &mut s;
         operator_addr_1(_s)
     });
-    assert!(((*p) == (1)));
+    (if ((*p) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"*p == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (*p) = 5;
-    assert!(((s.data[(0) as usize]) == (5)));
+    (if ((s.data[(0) as usize]) == (5)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"s.data[0] == 5".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_2(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

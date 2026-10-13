@@ -29,9 +29,62 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((((({ sm_0(0,) }) == 1) as i32) != 0));
-    assert!((((({ sm_0(1,) }) == 11) as i32) != 0));
-    assert!((((({ sm_0(7,) }) == -1_i32) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((({ sm_0(0) }) == 1) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"sm(0) == 1"),
+                        Ptr::<i8>::from_string_literal(b"goto_switch_self_case.c"),
+                        21_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ sm_0(1) }) == 11) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"sm(1) == 11"),
+                        Ptr::<i8>::from_string_literal(b"goto_switch_self_case.c"),
+                        22_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ sm_0(7) }) == -1_i32) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"sm(7) == -1"),
+                        Ptr::<i8>::from_string_literal(b"goto_switch_self_case.c"),
+                        23_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

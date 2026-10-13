@@ -75,38 +75,187 @@ unsafe fn main_0() -> i32 {
     o.anon_3.i = 9;
     o.anon_3.inner_named.j = 10;
     o.anon_3.anon_5.k = 11;
-    assert!(((o.named.a) == (1)));
-    assert!(((o.named.b) == (2)));
-    assert!(((o.anonymous_named_0.c) == (3)));
-    assert!(((o.anonymous_named_0.d) == (4)));
-    assert!(((o.anonymous_named_1.g) == (5)));
-    assert!(((o.anonymous_named_1.h) == (6)));
-    assert!(((o.anon_2.e) == (7)));
-    assert!(((o.anon_2.f) == (8)));
-    assert!(((o.anon_3.i) == (9)));
-    assert!(((o.anon_3.inner_named.j) == (10)));
-    assert!(((o.anon_3.anon_5.k) == (11)));
-    let mut s: anon_6 = <anon_6>::default();
+    (if ((o.named.a) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.named.a == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.named.b) == (2)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.named.b == 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anonymous_named_0.c) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.anonymous_named_0.c == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anonymous_named_0.d) == (4)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.anonymous_named_0.d == 4".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anonymous_named_1.g) == (5)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.anonymous_named_1.g == 5".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anonymous_named_1.h) == (6)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.anonymous_named_1.h == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anon_2.e) == (7)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.e == 7".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anon_2.f) == (8)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.f == 8".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anon_3.i) == (9)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.i == 9".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anon_3.inner_named.j) == (10)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.inner_named.j == 10".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((o.anon_3.anon_5.k) == (11)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"o.k == 11".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    let mut s: anon_7 = <anon_7>::default();
     s.x = 1;
     s.z = 2;
-    assert!(
-        ({
-            s.x = 1;
-            s.x
-        } != 0)
-    );
-    assert!(
-        ({
-            s.z = 2;
-            s.z
-        } != 0)
-    );
+    (if ({
+        s.x = 1;
+        s.x
+    } != 0)
+    {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"s.x = 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ({
+        s.z = 2;
+        s.z
+    } != 0)
+    {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_6(
+                c"s.z = 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_6 {
+pub struct anon_7 {
     pub x: i32,
     pub z: i32,
+}
+pub unsafe fn __assert_fail_6(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

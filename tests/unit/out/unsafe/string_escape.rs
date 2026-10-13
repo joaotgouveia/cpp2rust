@@ -6,6 +6,24 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
+#[derive(VaArg, FnPtrArg)]
+pub struct __locale_struct {
+    pub __locales: [*mut __locale_data; 13],
+    pub __ctype_b: *const u16,
+    pub __ctype_tolower: *const i32,
+    pub __ctype_toupper: *const i32,
+    pub __names: [*const libc::c_char; 13],
+}
+impl Clone for __locale_struct {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __locale_struct {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();
@@ -20,11 +38,20 @@ unsafe fn main_0() -> i32 {
         < (((::std::mem::size_of::<[libc::c_char; 41]>() as usize)
             .wrapping_div((::std::mem::size_of::<libc::c_char>() as usize))) as i32))
     {
-        assert!(
-            (((*special.offset((i) as isize)) as i32)
-                == ((*std::cell::LazyCell::force_mut(&mut *&raw mut expected_0))[(i) as usize]
-                    as i32))
-        );
+        (if (((*special.offset((i) as isize)) as i32)
+            == ((*std::cell::LazyCell::force_mut(&mut *&raw mut expected_0))[(i) as usize] as i32))
+        {
+            &(0);
+        } else {
+            (unsafe {
+                __assert_fail_1(
+                    c"special[i] == expected[i]".as_ptr(),
+                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                    line!() as u32,
+                    c"int main()".as_ptr(),
+                )
+            });
+        });
         i.postfix_inc();
     }
     return 0;
@@ -75,4 +102,14 @@ static mut expected_0: std::cell::LazyCell<[libc::c_char; 41]> =
             (b'\xff' as libc::c_char),
         ]
     });
+#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
+pub struct __locale_data;
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
+}
 pub unsafe fn __cpp2rust_init_globals() {}

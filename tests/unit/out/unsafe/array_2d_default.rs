@@ -27,12 +27,95 @@ unsafe fn main_0() -> i32 {
         });
         i.postfix_inc();
     }
-    assert!(((((grid[(0) as usize][(0) as usize] as i32) == ('a' as i32)) as i32) != 0));
-    assert!(((((grid[(1) as usize][(0) as usize] as i32) == ('b' as i32)) as i32) != 0));
-    assert!(((((grid[(2) as usize][(0) as usize] as i32) == ('c' as i32)) as i32) != 0));
-    assert!(((((grid[(1) as usize][(1) as usize] as i32) == ('\0' as i32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((grid[(0) as usize][(0) as usize] as i32) == ('a' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_1(
+                        (c"grid[0][0] == \'a\'".as_ptr().cast_mut()).cast_const(),
+                        (c"array_2d_default.c".as_ptr().cast_mut()).cast_const(),
+                        13_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((grid[(1) as usize][(0) as usize] as i32) == ('b' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_1(
+                        (c"grid[1][0] == \'b\'".as_ptr().cast_mut()).cast_const(),
+                        (c"array_2d_default.c".as_ptr().cast_mut()).cast_const(),
+                        14_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((grid[(2) as usize][(0) as usize] as i32) == ('c' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_1(
+                        (c"grid[2][0] == \'c\'".as_ptr().cast_mut()).cast_const(),
+                        (c"array_2d_default.c".as_ptr().cast_mut()).cast_const(),
+                        15_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((grid[(1) as usize][(1) as usize] as i32) == ('\0' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_1(
+                        (c"grid[1][1] == \'\\0\'".as_ptr().cast_mut()).cast_const(),
+                        (c"array_2d_default.c".as_ptr().cast_mut()).cast_const(),
+                        16_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     grid[(2) as usize][(5) as usize] = (('z' as i32) as libc::c_char);
-    assert!(((((grid[(2) as usize][(5) as usize] as i32) == ('z' as i32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((grid[(2) as usize][(5) as usize] as i32) == ('z' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_1(
+                        (c"grid[2][5] == \'z\'".as_ptr().cast_mut()).cast_const(),
+                        (c"array_2d_default.c".as_ptr().cast_mut()).cast_const(),
+                        18_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

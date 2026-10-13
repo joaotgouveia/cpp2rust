@@ -36,11 +36,74 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((unsafe { fallthrough_chain_0(1,) }) == (15)));
-    assert!(((unsafe { fallthrough_chain_0(2,) }) == (14)));
-    assert!(((unsafe { fallthrough_chain_0(3,) }) == (12)));
-    assert!(((unsafe { fallthrough_chain_0(4,) }) == (8)));
-    assert!(((unsafe { fallthrough_chain_0(99,) }) == (-1_i32)));
+    (if ((unsafe { fallthrough_chain_0(1) }) == (15)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"fallthrough_chain(1) == 15".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { fallthrough_chain_0(2) }) == (14)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"fallthrough_chain(2) == 14".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { fallthrough_chain_0(3) }) == (12)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"fallthrough_chain(3) == 12".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { fallthrough_chain_0(4) }) == (8)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"fallthrough_chain(4) == 8".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { fallthrough_chain_0(99) }) == (-1_i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"fallthrough_chain(99) == -1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

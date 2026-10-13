@@ -30,26 +30,118 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ call_op_4(5,) }) == 5));
+    (if (({ call_op_4(5) }) == 5) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"call_op(5) == 5"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     ({ set_op_3(FnPtr::<fn(i32) -> i32>::new(double_it_0)) });
-    assert!(!((*g_op_2.with(Value::clone).borrow()).is_null()));
-    assert!(
-        ({ (*g_op_2.with(Value::clone).borrow()).clone() } == {
-            FnPtr::<fn(i32) -> i32>::new(double_it_0)
-        })
-    );
-    assert!((({ call_op_4(5,) }) == 10));
+    (if !((*g_op_2.with(Value::clone).borrow()).is_null()) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"g_op != nullptr"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ (*g_op_2.with(Value::clone).borrow()).clone() } == {
+        FnPtr::<fn(i32) -> i32>::new(double_it_0)
+    }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"g_op == double_it"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ call_op_4(5) }) == 10) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"call_op(5) == 10"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     ({ set_op_3(FnPtr::<fn(i32) -> i32>::new(triple_it_1)) });
-    assert!(
-        ({ (*g_op_2.with(Value::clone).borrow()).clone() } == {
-            FnPtr::<fn(i32) -> i32>::new(triple_it_1)
-        })
-    );
-    assert!((({ call_op_4(5,) }) == 15));
+    (if ({ (*g_op_2.with(Value::clone).borrow()).clone() } == {
+        FnPtr::<fn(i32) -> i32>::new(triple_it_1)
+    }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"g_op == triple_it"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ call_op_4(5) }) == 15) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"call_op(5) == 15"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     ({ set_op_3(FnPtr::<fn(i32) -> i32>::null()) });
-    assert!((*g_op_2.with(Value::clone).borrow()).is_null());
-    assert!((({ call_op_4(5,) }) == 5));
+    (if (*g_op_2.with(Value::clone).borrow()).is_null() {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"g_op == nullptr"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ call_op_4(5) }) == 5) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"call_op(5) == 5"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_5(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {
     let _ = g_op_2.with(|_| ());

@@ -32,28 +32,110 @@ fn main_0() -> i32 {
         });
         i.postfix_inc();
     }
-    assert!(
-        (((((*grid.borrow())[(0) as usize].borrow()[(0) as usize] as i32) == ('a' as i32)) as i32)
-            != 0)
-    );
-    assert!(
-        (((((*grid.borrow())[(1) as usize].borrow()[(0) as usize] as i32) == ('b' as i32)) as i32)
-            != 0)
-    );
-    assert!(
-        (((((*grid.borrow())[(2) as usize].borrow()[(0) as usize] as i32) == ('c' as i32)) as i32)
-            != 0)
-    );
-    assert!(
-        (((((*grid.borrow())[(1) as usize].borrow()[(1) as usize] as i32) == ('\0' as i32))
-            as i32)
-            != 0)
-    );
+    {
+        &(4usize);
+        {
+            if (((((*grid.borrow())[(0) as usize].borrow()[(0) as usize] as i32) == ('a' as i32))
+                as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"grid[0][0] == \'a\'"),
+                        Ptr::<i8>::from_string_literal(b"array_2d_default.c"),
+                        13_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((((*grid.borrow())[(1) as usize].borrow()[(0) as usize] as i32) == ('b' as i32))
+                as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"grid[1][0] == \'b\'"),
+                        Ptr::<i8>::from_string_literal(b"array_2d_default.c"),
+                        14_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((((*grid.borrow())[(2) as usize].borrow()[(0) as usize] as i32) == ('c' as i32))
+                as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"grid[2][0] == \'c\'"),
+                        Ptr::<i8>::from_string_literal(b"array_2d_default.c"),
+                        15_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((((*grid.borrow())[(1) as usize].borrow()[(1) as usize] as i32) == ('\0' as i32))
+                as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"grid[1][1] == \'\\0\'"),
+                        Ptr::<i8>::from_string_literal(b"array_2d_default.c"),
+                        16_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     (*grid.borrow())[(2) as usize].borrow_mut()[(5) as usize] = (('z' as i32) as i8);
-    assert!(
-        (((((*grid.borrow())[(2) as usize].borrow()[(5) as usize] as i32) == ('z' as i32)) as i32)
-            != 0)
-    );
+    {
+        &(4usize);
+        {
+            if (((((*grid.borrow())[(2) as usize].borrow()[(5) as usize] as i32) == ('z' as i32))
+                as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"grid[2][5] == \'z\'"),
+                        Ptr::<i8>::from_string_literal(b"array_2d_default.c"),
+                        18_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

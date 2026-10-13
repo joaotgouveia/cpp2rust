@@ -127,20 +127,178 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((((({ early_0(-1_i32,) }) == -1_i32) as i32) != 0));
-    assert!((((({ early_0(5,) }) == 100) as i32) != 0));
-    assert!((((({ from_loop_1(2,) }) == 999) as i32) != 0));
-    assert!((((({ from_loop_1(10,) }) == 7) as i32) != 0));
-    assert!((((({ from_switch_2(1,) }) == 10) as i32) != 0));
-    assert!((((({ from_switch_2(2,) }) == 999) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((({ early_0(-1_i32) }) == -1_i32) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"early(-1) == -1"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        75_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ early_0(5) }) == 100) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"early(5) == 100"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        76_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ from_loop_1(2) }) == 999) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"from_loop(2) == 999"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        77_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ from_loop_1(10) }) == 7) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"from_loop(10) == 7"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        78_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ from_switch_2(1) }) == 10) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"from_switch(1) == 10"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        79_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ from_switch_2(2) }) == 999) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"from_switch(2) == 999"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        80_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     let value: Value<i32> = Rc::new(RefCell::new(42));
     let w: Value<wrapper> = Rc::new(RefCell::new(wrapper {
         item: (value.as_pointer()),
     }));
-    assert!((((({ via_pointer_3((w.as_pointer()), 0,) }) == 42) as i32) != 0));
-    assert!((((({ via_pointer_3((w.as_pointer()), 1,) }) == -1_i32) as i32) != 0));
-    assert!((((({ via_arrays_4(0,) }) == 11) as i32) != 0));
-    assert!((((({ via_arrays_4(1,) }) == -1_i32) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((({ via_pointer_3((w.as_pointer()), 0) }) == 42) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"via_pointer(&w, 0) == 42"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        83_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ via_pointer_3((w.as_pointer()), 1) }) == -1_i32) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"via_pointer(&w, 1) == -1"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        84_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ via_arrays_4(0) }) == 11) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"via_arrays(0) == 11"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        85_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ via_arrays_4(1) }) == -1_i32) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_5(
+                        Ptr::<i8>::from_string_literal(b"via_arrays(1) == -1"),
+                        Ptr::<i8>::from_string_literal(b"goto_cleanup.c"),
+                        86_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub fn __assert_fail_5(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

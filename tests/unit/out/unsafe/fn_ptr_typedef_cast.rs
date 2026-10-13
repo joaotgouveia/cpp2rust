@@ -6,6 +6,21 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
+#[derive(VaArg, FnPtrArg)]
+pub struct max_align_t {
+    pub __clang_max_align_nonce1: i64,
+    pub __clang_max_align_nonce2: f64,
+}
+impl Clone for max_align_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for max_align_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 pub unsafe fn call_with_ulong_0(mut g: Option<unsafe fn(u64) -> u64>) -> u64 {
     return (unsafe { (g).unwrap()(3_u64) }).wrapping_add(1_u64);
 }
@@ -41,25 +56,66 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((((unsafe { call_with_ulong_0(Some(same_type_1),) }) == (4_u64)) as i32) != 0));
-    assert!(
-        ((((unsafe {
-            call_with_ulong_0(std::mem::transmute::<
-                Option<unsafe fn(usize) -> u64>,
-                Option<unsafe fn(u64) -> u64>,
-            >(Some(via_size_t_param_2)))
-        }) == (4_u64)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe {
-            call_with_ulong_0(std::mem::transmute::<
-                Option<unsafe fn(u64) -> usize>,
-                Option<unsafe fn(u64) -> u64>,
-            >(Some(via_size_t_return_3)))
-        }) == (4_u64)) as i32)
-            != 0)
-    );
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { call_with_ulong_0(Some(same_type_1)) }) == (4_u64)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"call_with_ulong(same_type) == 4".as_ptr().cast_mut()).cast_const(),
+                        (c"fn_ptr_typedef_cast.c".as_ptr().cast_mut()).cast_const(),
+                        24_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe {
+                call_with_ulong_0(std::mem::transmute::<
+                    Option<unsafe fn(usize) -> u64>,
+                    Option<unsafe fn(u64) -> u64>,
+                >(Some(via_size_t_param_2)))
+            }) == (4_u64)) as i32)
+                != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"call_with_ulong(via_size_t_param) == 4"
+                            .as_ptr()
+                            .cast_mut())
+                        .cast_const(),
+                        (c"fn_ptr_typedef_cast.c".as_ptr().cast_mut()).cast_const(),
+                        25_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe {
+                call_with_ulong_0(std::mem::transmute::<
+                    Option<unsafe fn(u64) -> usize>,
+                    Option<unsafe fn(u64) -> u64>,
+                >(Some(via_size_t_return_3)))
+            }) == (4_u64)) as i32)
+                != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_6 ( ( c"call_with_ulong((unsigned long (*)(unsigned long))via_size_t_return) == 4" .as_ptr() .cast_mut() ) .cast_const() , ( c"fn_ptr_typedef_cast.c" .as_ptr() .cast_mut() ) .cast_const() , 27_u32 , c"int main()" .as_ptr() , )
+                });
+            }
+        }
+    };
     let mut original: Option<unsafe fn(usize) -> u64> = Some(via_size_t_param_2);
     let mut adapted: Option<unsafe fn(u64) -> u64> = std::mem::transmute::<
         Option<unsafe fn(usize) -> u64>,
@@ -69,21 +125,104 @@ unsafe fn main_0() -> i32 {
         Option<unsafe fn(u64) -> u64>,
         Option<unsafe fn(usize) -> u64>,
     >(adapted);
-    assert!(((((back) == (original)) as i32) != 0));
-    assert!(((((unsafe { (back).unwrap()(5_usize,) }) == (5_u64)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((back) == (original)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"back == original".as_ptr().cast_mut()).cast_const(),
+                        (c"fn_ptr_typedef_cast.c".as_ptr().cast_mut()).cast_const(),
+                        34_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { (back).unwrap()(5_usize) }) == (5_u64)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"back(5) == 5".as_ptr().cast_mut()).cast_const(),
+                        (c"fn_ptr_typedef_cast.c".as_ptr().cast_mut()).cast_const(),
+                        35_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     let mut scaled: Option<unsafe fn(pair, u64) -> u64> = std::mem::transmute::<
         Option<unsafe fn(pair, usize) -> u64>,
         Option<unsafe fn(pair, u64) -> u64>,
     >(Some(pair_scaled_4));
     let mut p: pair = pair { a: 3, b: 4 };
-    assert!(((((unsafe { (scaled).unwrap()(p, 10_u64,) }) == (34_u64)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { (scaled).unwrap()(p, 10_u64) }) == (34_u64)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"scaled(p, 10) == 34".as_ptr().cast_mut()).cast_const(),
+                        (c"fn_ptr_typedef_cast.c".as_ptr().cast_mut()).cast_const(),
+                        40_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     let mut make: Option<unsafe fn(u64) -> pair> = std::mem::transmute::<
         Option<unsafe fn(usize) -> pair>,
         Option<unsafe fn(u64) -> pair>,
     >(Some(make_pair_5));
     let mut q: pair = (unsafe { (make).unwrap()(5_u64) });
-    assert!(((((q.a) == (5)) as i32) != 0));
-    assert!(((((q.b) == (10)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((q.a) == (5)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"q.a == 5".as_ptr().cast_mut()).cast_const(),
+                        (c"fn_ptr_typedef_cast.c".as_ptr().cast_mut()).cast_const(),
+                        45_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((q.b) == (10)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"q.b == 10".as_ptr().cast_mut()).cast_const(),
+                        (c"fn_ptr_typedef_cast.c".as_ptr().cast_mut()).cast_const(),
+                        46_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub unsafe fn __assert_fail_6(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

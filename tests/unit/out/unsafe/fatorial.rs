@@ -41,7 +41,26 @@ unsafe fn main_0() -> i32 {
     (unsafe { fatorial_by_ptr_2((&mut n1 as *mut i32)) });
     let mut n: i32 = ((n1) + (1));
     (unsafe { fatorial_by_ref_1(&mut n) });
-    assert!(((unsafe { fatorial_0(n,) }) == (720)));
+    (if ((unsafe { fatorial_0(n) }) == (720)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"fatorial(n) == 720".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

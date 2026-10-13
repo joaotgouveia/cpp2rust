@@ -28,7 +28,7 @@ pub fn by_value_4() -> i32 {
     ();
     return ({ (*f.borrow()).call() }).clone();
 }
-pub fn by_value_5(t_0: i32, t_1: i32, t_2: i32) -> i32 {
+pub fn by_value_6(t_0: i32, t_1: i32, t_2: i32) -> i32 {
     let t_0: Value<i32> = Rc::new(RefCell::new(t_0));
     let t_1: Value<i32> = Rc::new(RefCell::new(t_1));
     let t_2: Value<i32> = Rc::new(RefCell::new(t_2));
@@ -51,7 +51,7 @@ pub fn by_value_5(t_0: i32, t_1: i32, t_2: i32) -> i32 {
     };
     return ({ (*f.borrow()).call() }).clone();
 }
-pub fn by_ref_6(t_0: i32, t_1: i32, t_2: i32) -> i32 {
+pub fn by_ref_8(t_0: i32, t_1: i32, t_2: i32) -> i32 {
     let t_0: Value<i32> = Rc::new(RefCell::new(t_0));
     let t_1: Value<i32> = Rc::new(RefCell::new(t_1));
     let t_2: Value<i32> = Rc::new(RefCell::new(t_2));
@@ -78,7 +78,7 @@ pub fn by_ref_6(t_0: i32, t_1: i32, t_2: i32) -> i32 {
     ({ (*f.borrow()).call() });
     return ({ sum_1((*t_0.borrow()), (*t_1.borrow()), (*t_2.borrow())) });
 }
-pub fn init_pack_7(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
+pub fn init_pack_10(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
     let f: Value<FnPtr<fn() -> i32>> = Rc::new(RefCell::new(lambda!(
         {
             let xs_0: Value<i32> = Rc::new(RefCell::new((t_0 + 1)));
@@ -91,7 +91,7 @@ pub fn init_pack_7(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
     )));
     return ({ (*f.borrow()).call() }).clone();
 }
-pub fn implicit_8(t_0: i32, t_1: i32) -> i32 {
+pub fn implicit_12(t_0: i32, t_1: i32) -> i32 {
     let t_0: Value<i32> = Rc::new(RefCell::new(t_0));
     let t_1: Value<i32> = Rc::new(RefCell::new(t_1));
     return ({
@@ -112,11 +112,74 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ by_value_4() }) == 0));
-    assert!((({ by_value_5(1, 2, 3,) }) == 6));
-    assert!((({ by_ref_6(1, 2, 3,) }) == 12));
-    assert!((({ init_pack_7(1, 2, 3,) }) == 9));
-    assert!((({ implicit_8(4, 5,) }) == 9));
+    (if (({ by_value_4() }) == 0) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_13(
+                Ptr::<i8>::from_string_literal(b"by_value() == 0"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ by_value_6(1, 2, 3) }) == 6) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_13(
+                Ptr::<i8>::from_string_literal(b"by_value(1, 2, 3) == 6"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ by_ref_8(1, 2, 3) }) == 12) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_13(
+                Ptr::<i8>::from_string_literal(b"by_ref(1, 2, 3) == 12"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ init_pack_10(1, 2, 3) }) == 9) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_13(
+                Ptr::<i8>::from_string_literal(b"init_pack(1, 2, 3) == 9"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ implicit_12(4, 5) }) == 9) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_13(
+                Ptr::<i8>::from_string_literal(b"implicit(4, 5) == 9"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_13(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

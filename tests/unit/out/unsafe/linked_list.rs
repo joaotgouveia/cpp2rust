@@ -128,14 +128,27 @@ unsafe fn main_0() -> i32 {
     head = (unsafe { Delete_2(head, 5) });
     head = (unsafe { Delete_2(head, 0) });
     head = (unsafe { Delete_2(head, -2_i32) });
-    assert!(
-        (((((((*(unsafe { Find_0(head, 0,) })).val) == (4))
-            && (((*(unsafe { Find_0(head, 1,) })).val) == (3)))
-            && (((*(unsafe { Find_0(head, 2,) })).val) == (2)))
-            && (((*(unsafe { Find_0(head, 3,) })).val) == (1)))
-            && (((*(unsafe { Find_0(head, 4,) })).val) == (-1_i32)))
-            && ((unsafe { Find_0(head, 5,) }).is_null())
-    );
+    (if (((((((*(unsafe { Find_0(head, 0) })).val) == (4))
+        && (((*(unsafe { Find_0(head, 1) })).val) == (3)))
+        && (((*(unsafe { Find_0(head, 2) })).val) == (2)))
+        && (((*(unsafe { Find_0(head, 3) })).val) == (1)))
+        && (((*(unsafe { Find_0(head, 4) })).val) == (-1_i32)))
+        && ((unsafe { Find_0(head, 5) }).is_null())
+    {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3 ( c"Find(head, 0)->val == 4 && Find(head, 1)->val == 3 && Find(head, 2)->val == 2 && Find(head, 3)->val == 1 && Find(head, 4)->val == -1 && Find(head, 5) == nullptr" .as_ptr() , concat!(file!(), "\0").as_ptr() as *const libc::c_char  , line!() as u32  , c"int main()" .as_ptr() , )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

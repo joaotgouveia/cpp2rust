@@ -26,8 +26,27 @@ fn main_0() -> i32 {
     let cat: Value<Cat> = Rc::new(RefCell::new(<Cat>::default()));
     animal = (cat.as_pointer()).to_dyn::<dyn Animal>(|w| w);
     let mut eat2: bool = ({ (*animal.upgrade().deref()).bark() });
-    assert!((eat1) && (!(eat2)));
+    (if (eat1) && (!(eat2)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"eat1 && !eat2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_0(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 impl Animal for Cat {
     fn bark(&self) -> bool {

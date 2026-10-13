@@ -43,7 +43,26 @@ fn main_0() -> i32 {
         x3: p1.x3,
     }));
     ({ PODIncrement_0(p2.as_pointer()) });
-    assert!(((({ (*p2.borrow()).x1 } + { (*p2.borrow()).x2 }) + { (*p2.borrow()).x3 }) == 39));
+    (if ((({ (*p2.borrow()).x1 } + { (*p2.borrow()).x2 }) + { (*p2.borrow()).x3 }) == 39) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"p2.x1 + p2.x2 + p2.x3 == 39"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

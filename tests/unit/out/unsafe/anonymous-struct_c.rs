@@ -81,38 +81,239 @@ unsafe fn main_0() -> i32 {
     o.anon_3.i = 9;
     o.anon_3.inner_named.j = 10;
     o.anon_3.anon_5.k = 11;
-    assert!(((((o.named.a) == (1)) as i32) != 0));
-    assert!(((((o.named.b) == (2)) as i32) != 0));
-    assert!(((((o.anon0.c) == (3)) as i32) != 0));
-    assert!(((((o.anon0.d) == (4)) as i32) != 0));
-    assert!(((((o.anon1.g) == (5)) as i32) != 0));
-    assert!(((((o.anon1.h) == (6)) as i32) != 0));
-    assert!(((((o.anon_2.e) == (7)) as i32) != 0));
-    assert!(((((o.anon_2.f) == (8)) as i32) != 0));
-    assert!(((((o.anon_3.i) == (9)) as i32) != 0));
-    assert!(((((o.anon_3.inner_named.j) == (10)) as i32) != 0));
-    assert!(((((o.anon_3.anon_5.k) == (11)) as i32) != 0));
-    let mut s: anon_6 = <anon_6>::default();
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.named.a) == (1)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.named.a == 1".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        50_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.named.b) == (2)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.named.b == 2".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        51_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon0.c) == (3)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.anon0.c == 3".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        52_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon0.d) == (4)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.anon0.d == 4".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        53_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon1.g) == (5)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.anon1.g == 5".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        54_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon1.h) == (6)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.anon1.h == 6".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        55_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon_2.e) == (7)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.e == 7".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        56_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon_2.f) == (8)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.f == 8".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        57_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon_3.i) == (9)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.i == 9".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        58_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon_3.inner_named.j) == (10)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.inner_named.j == 10".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        59_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((o.anon_3.anon_5.k) == (11)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"o.k == 11".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        60_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    let mut s: anon_7 = <anon_7>::default();
     s.x = 1;
     s.z = 2;
-    assert!(
-        ({
-            s.x = 1;
-            s.x
-        } != 0)
-    );
-    assert!(
-        ({
-            s.z = 2;
-            s.z
-        } != 0)
-    );
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ({
+                s.x = 1;
+                s.x
+            } != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"s.x = 1".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        70_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ({
+                s.z = 2;
+                s.z
+            } != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_6(
+                        (c"s.z = 2".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous-struct_c.c".as_ptr().cast_mut()).cast_const(),
+                        71_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_6 {
+pub struct anon_7 {
     pub x: i32,
     pub z: i32,
+}
+pub unsafe fn __assert_fail_6(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

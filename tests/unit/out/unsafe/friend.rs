@@ -29,20 +29,20 @@ impl std::cmp::PartialEq for V {
     }
 }
 impl std::cmp::Eq for V {}
-pub unsafe fn get_4(w: *const W_int_) -> i32 {
+pub unsafe fn get_5(w: *const W_4) -> i32 {
     return (*w).x;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct W_int_ {
+pub struct W_4 {
     pub x: i32,
 }
-pub unsafe fn get_5(w: *const W_long_) -> i64 {
+pub unsafe fn get_7(w: *const W_6) -> i64 {
     return (*w).x;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct W_long_ {
+pub struct W_6 {
     pub x: i64,
 }
 #[repr(C)]
@@ -50,7 +50,7 @@ pub struct W_long_ {
 pub struct D {
     pub x: i32,
 }
-pub unsafe fn declared_then_defined_6(d: *const D) -> i32 {
+pub unsafe fn declared_then_defined_8(d: *const D) -> i32 {
     return (((*d).x) + (1));
 }
 pub fn main() {
@@ -63,27 +63,119 @@ unsafe fn main_0() -> i32 {
     let mut a: V = V { x: 3 };
     let mut b: V = V { x: 3 };
     let mut c: V = V { x: 4 };
-    assert!(((unsafe { get_0(&a,) }) == (3)));
-    assert!(
+    (if ((unsafe { get_0(&a) }) == (3)) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: *const V = &a;
-            operator_eq_1(_a, &b)
-        })
-    );
-    assert!(
-        !(unsafe {
-            let _a: *const V = &a;
-            operator_eq_1(_a, &c)
-        })
-    );
-    assert!(((unsafe { scaled_2(&c, 2,) }) == (8)));
-    assert!(((unsafe { scaled_3(&c, 1.5_f64,) }) == (6_f64)));
-    let mut wi: W_int_ = W_int_ { x: 5 };
-    let mut wl: W_long_ = W_long_ { x: 6_i64 };
-    assert!(((unsafe { get_4(&wi,) }) == (5)));
-    assert!(((unsafe { get_5(&wl,) }) == (6_i64)));
+            __assert_fail_9(
+                c"get(a) == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: *const V = &a;
+        operator_eq_1(_a, &b)
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_9(
+                c"a == b".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if !(unsafe {
+        let _a: *const V = &a;
+        operator_eq_1(_a, &c)
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_9(
+                c"!(a == c)".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { scaled_2(&c, 2) }) == (8)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_9(
+                c"scaled(c, 2) == 8".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { scaled_3(&c, 1.5E+0) }) == (6.0E+0)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_9(
+                c"scaled(c, 1.5) == 6.0".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    let mut wi: W_4 = W_4 { x: 5 };
+    let mut wl: W_6 = W_6 { x: 6_i64 };
+    (if ((unsafe { get_5(&wi) }) == (5)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_9(
+                c"get(wi) == 5".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { get_7(&wl) }) == (6_i64)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_9(
+                c"get(wl) == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut d: D = D { x: 7 };
-    assert!(((unsafe { declared_then_defined_6(&d,) }) == (8)));
+    (if ((unsafe { declared_then_defined_8(&d) }) == (8)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_9(
+                c"declared_then_defined(d) == 8".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_9(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

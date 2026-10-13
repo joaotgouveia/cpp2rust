@@ -27,7 +27,7 @@ pub unsafe fn by_value_4() -> i32 {
     ();
     return (unsafe { f.call() });
 }
-pub unsafe fn by_value_5(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
+pub unsafe fn by_value_6(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
     let mut f: FnPtr<fn() -> i32> = lambda_unsafe!(
         {
             let t_0: i32 = t_0;
@@ -47,7 +47,7 @@ pub unsafe fn by_value_5(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
     };
     return (unsafe { f.call() });
 }
-pub unsafe fn by_ref_6(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
+pub unsafe fn by_ref_8(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
     let mut f: FnPtr<fn()> = lambda_unsafe!(
         {
             let t_0: *mut i32 = &mut t_0;
@@ -67,7 +67,7 @@ pub unsafe fn by_ref_6(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
     (unsafe { f.call() });
     return (unsafe { sum_1(t_0, t_1, t_2) });
 }
-pub unsafe fn init_pack_7(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
+pub unsafe fn init_pack_10(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
     let mut f: FnPtr<fn() -> i32> = lambda_unsafe!(
         {
             let xs_0: i32 = ((t_0) + (1));
@@ -80,7 +80,7 @@ pub unsafe fn init_pack_7(mut t_0: i32, mut t_1: i32, mut t_2: i32) -> i32 {
     );
     return (unsafe { f.call() });
 }
-pub unsafe fn implicit_8(mut t_0: i32, mut t_1: i32) -> i32 {
+pub unsafe fn implicit_12(mut t_0: i32, mut t_1: i32) -> i32 {
     return (unsafe {
         lambda_unsafe!(
             {
@@ -101,11 +101,74 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((unsafe { by_value_4() }) == (0)));
-    assert!(((unsafe { by_value_5(1, 2, 3,) }) == (6)));
-    assert!(((unsafe { by_ref_6(1, 2, 3,) }) == (12)));
-    assert!(((unsafe { init_pack_7(1, 2, 3,) }) == (9)));
-    assert!(((unsafe { implicit_8(4, 5,) }) == (9)));
+    (if ((unsafe { by_value_4() }) == (0)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_13(
+                c"by_value() == 0".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { by_value_6(1, 2, 3) }) == (6)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_13(
+                c"by_value(1, 2, 3) == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { by_ref_8(1, 2, 3) }) == (12)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_13(
+                c"by_ref(1, 2, 3) == 12".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { init_pack_10(1, 2, 3) }) == (9)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_13(
+                c"init_pack(1, 2, 3) == 9".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { implicit_12(4, 5) }) == (9)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_13(
+                c"implicit(4, 5) == 9".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_13(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

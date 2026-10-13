@@ -27,6 +27,12 @@ struct Free {
 bool operator<(const Free &a, const Free &b) { return a.v < b.v; }
 bool operator==(const Free &a, const Free &b) { return a.v == b.v; }
 
+struct ByValue {
+  int v;
+  friend bool operator==(ByValue a, ByValue b) { return a.v == b.v; }
+  friend bool operator<(ByValue a, ByValue b) { return a.v < b.v; }
+};
+
 template <class T> struct Wrapped {
   T v;
   friend bool operator==(const Wrapped &a, const Wrapped &b) {
@@ -40,6 +46,11 @@ template <class T> struct Wrapped {
 int main() {
   Wrapped<int> w{2};
   assert(w.v == 2);
+  std::vector<ByValue> bvs{{3}, {1}, {2}};
+  std::sort(bvs.begin(), bvs.end());
+  assert(bvs[0].v == 1 && bvs[2].v == 3);
+  ByValue bone{1};
+  assert(std::find(bvs.begin(), bvs.end(), bone)->v == 1);
 
   std::vector<Lt> lts{{3}, {1}, {2}};
   std::sort(lts.begin(), lts.end());

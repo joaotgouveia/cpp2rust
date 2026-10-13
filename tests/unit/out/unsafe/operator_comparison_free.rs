@@ -110,88 +110,224 @@ unsafe fn main_0() -> i32 {
     let mut x: V = V { v: 1 };
     let mut y: V = V { v: 2 };
     let mut z: V = V { v: 1 };
-    assert!(
+    (if (unsafe {
+        let _a: V = x;
+        operator_eq_9(_a, z)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: V = x;
-            operator_eq_9(_a, z)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"x == z".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: V = x;
+        operator_ne_10(_a, y)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: V = x;
-            operator_ne_10(_a, y)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"x != y".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: V = x;
+        operator_lt_8(_a, y)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: V = x;
-            operator_lt_8(_a, y)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"x < y".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: V = y;
+        operator_gt_11(_a, x)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: V = y;
-            operator_gt_11(_a, x)
-        })
-    );
-    assert!(
-        !(unsafe {
-            let _a: V = y;
-            operator_lt_8(_a, x)
-        })
-    );
+            __assert_fail_12(
+                c"y > x".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if !(unsafe {
+        let _a: V = y;
+        operator_lt_8(_a, x)
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_12(
+                c"!(y < x)".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut a: S = S { v: 1 };
     let mut b: S = S { v: 2 };
     let mut c: S = S { v: 1 };
-    assert!(
+    (if (unsafe {
+        let _a: *const S = &a;
+        operator_eq_1(_a, &c)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: *const S = &a;
-            operator_eq_1(_a, &c)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"a == c".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: *const S = &a;
+        operator_ne_2(_a, &b)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: *const S = &a;
-            operator_ne_2(_a, &b)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"a != b".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: *const S = &a;
+        operator_lt_0(_a, &b)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: *const S = &a;
-            operator_lt_0(_a, &b)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"a < b".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: *const S = &b;
+        operator_gt_3(_a, &a)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: *const S = &b;
-            operator_gt_3(_a, &a)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"b > a".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: *const S = &a;
+        operator_le_4(_a, &c)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: *const S = &a;
-            operator_le_4(_a, &c)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"a <= c".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: *const S = &a;
+        operator_ge_5(_a, &c)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: *const S = &a;
-            operator_ge_5(_a, &c)
-        })
-    );
-    assert!(
-        !(unsafe {
-            let _a: *const S = &b;
-            operator_lt_0(_a, &a)
-        })
-    );
-    assert!(
+            __assert_fail_12(
+                c"a >= c".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if !(unsafe {
+        let _a: *const S = &b;
+        operator_lt_0(_a, &a)
+    }) {
+        &(0);
+    } else {
         (unsafe {
-            let _a: *const S = &a;
-            operator_lt_6(_a, 5)
-        })
-    );
-    assert!((unsafe { operator_lt_7(0, &a,) }));
+            __assert_fail_12(
+                c"!(b < a)".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _a: *const S = &a;
+        operator_lt_6(_a, 5)
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_12(
+                c"a < 5".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe { operator_lt_7(0, &a) }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_12(
+                c"0 < a".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_12(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

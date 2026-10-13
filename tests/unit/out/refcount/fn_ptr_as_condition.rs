@@ -23,10 +23,32 @@ pub fn main() {
 fn main_0() -> i32 {
     let a: Value<i32> = Rc::new(RefCell::new(5));
     ({ maybe_call_1(FnPtr::<fn(Ptr<i32>)>::new(double_it_0), (a.as_pointer())) });
-    assert!(((*a.borrow()) == 10));
+    (if ((*a.borrow()) == 10) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_2(
+                Ptr::<i8>::from_string_literal(b"a == 10"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let b: Value<i32> = Rc::new(RefCell::new(5));
     ({ maybe_call_1(FnPtr::<fn(Ptr<i32>)>::null(), (b.as_pointer())) });
-    assert!(((*b.borrow()) == 5));
+    (if ((*b.borrow()) == 5) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_2(
+                Ptr::<i8>::from_string_literal(b"b == 5"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut fn_: FnPtr<fn(Ptr<i32>)> = FnPtr::<fn(Ptr<i32>)>::null();
     if !(!(fn_).is_null()) {
         fn_ = FnPtr::<fn(Ptr<i32>)>::new(double_it_0);
@@ -35,7 +57,26 @@ fn main_0() -> i32 {
     if !(fn_).is_null() {
         ({ fn_.call((c.as_pointer())) });
     }
-    assert!(((*c.borrow()) == 6));
+    (if ((*c.borrow()) == 6) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_2(
+                Ptr::<i8>::from_string_literal(b"c == 6"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_2(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

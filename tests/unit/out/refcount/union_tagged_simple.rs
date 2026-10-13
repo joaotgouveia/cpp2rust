@@ -53,21 +53,74 @@ fn main_0() -> i32 {
     (*m1.borrow_mut()).kind = Kind_enum_KIND_DONE;
     (*m1.borrow_mut()).handle = ((dummy.as_pointer()) as Ptr<i32>).to_any();
     anon_0::code(field_ptr!(m1.as_pointer(), payload)).write(42);
-    assert!(
-        (((({ (*m1.borrow()).kind } as u32) == ((Kind_enum_KIND_DONE as i32) as u32)) as i32) != 0)
-    );
-    assert!(((((anon_0::code(field_ptr!(m1.as_pointer(), payload)).read()) == 42) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((({ (*m1.borrow()).kind } as u32) == ((Kind_enum_KIND_DONE as i32) as u32))
+                as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"m1.kind == KIND_DONE"),
+                        Ptr::<i8>::from_string_literal(b"union_tagged_simple.c"),
+                        25_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if ((((anon_0::code(field_ptr!(m1.as_pointer(), payload)).read()) == 42) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"m1.payload.code == 42"),
+                        Ptr::<i8>::from_string_literal(b"union_tagged_simple.c"),
+                        26_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     let m2: Value<Event> = <Value<Event>>::default();
     (*m2.borrow_mut()).kind = Kind_enum_KIND_NONE;
     (*m2.borrow_mut()).handle = ((dummy.as_pointer()) as Ptr<i32>).to_any();
     anon_0::obj(field_ptr!(m2.as_pointer(), payload))
         .write(((dummy.as_pointer()) as Ptr<i32>).to_any());
-    assert!(
-        ((({ (anon_0::obj(field_ptr!(m2.as_pointer(), payload)).read()) } == {
-            ((dummy.as_pointer()) as Ptr<i32>).to_any()
-        }) as i32)
-            != 0)
-    );
+    {
+        &(4usize);
+        {
+            if ((({ (anon_0::obj(field_ptr!(m2.as_pointer(), payload)).read()) } == {
+                ((dummy.as_pointer()) as Ptr<i32>).to_any()
+            }) as i32)
+                != 0)
+            {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"m2.payload.obj == &dummy"),
+                        Ptr::<i8>::from_string_literal(b"union_tagged_simple.c"),
+                        32_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

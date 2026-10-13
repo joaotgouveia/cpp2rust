@@ -27,10 +27,32 @@ unsafe fn main_0() -> i32 {
             ::std::mem::drop(Box::from_raw(__p))
         }
     };
-    assert!(((out) == (5)));
+    (if ((out) == (5)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"out == 5".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut y: *mut i32 = (Box::leak(Box::new(0_i32)) as *mut i32);
     (*y) = 9;
-    assert!(((*y) == (9)));
+    (if ((*y) == (9)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"*y == 9".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     {
         let __p = y;
         if !__p.is_null() {
@@ -40,7 +62,18 @@ unsafe fn main_0() -> i32 {
     let mut p: *mut Pair = (Box::leak(Box::new(<Pair>::default())) as *mut Pair);
     (*p).x = 1;
     (*p).y = 2;
-    assert!(((((*p).x) + ((*p).y)) == (3)));
+    (if ((((*p).x) + ((*p).y)) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"p->x + p->y == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     {
         let __p = p;
         if !__p.is_null() {
@@ -55,5 +88,13 @@ unsafe fn main_0() -> i32 {
         }
     };
     return 0;
+}
+pub unsafe fn __assert_fail_0(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

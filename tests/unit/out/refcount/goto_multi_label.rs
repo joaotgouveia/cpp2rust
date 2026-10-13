@@ -34,9 +34,62 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((((({ classify_0(5,) }) == 5) as i32) != 0));
-    assert!((((({ classify_0(0,) }) == 0) as i32) != 0));
-    assert!((((({ classify_0(-2_i32,) }) == -1_i32) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((({ classify_0(5) }) == 5) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"classify(5) == 5"),
+                        Ptr::<i8>::from_string_literal(b"goto_multi_label.c"),
+                        20_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ classify_0(0) }) == 0) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"classify(0) == 0"),
+                        Ptr::<i8>::from_string_literal(b"goto_multi_label.c"),
+                        21_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(4usize);
+        {
+            if (((({ classify_0(-2_i32) }) == -1_i32) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_1(
+                        Ptr::<i8>::from_string_literal(b"classify(-2) == -1"),
+                        Ptr::<i8>::from_string_literal(b"goto_multi_label.c"),
+                        22_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

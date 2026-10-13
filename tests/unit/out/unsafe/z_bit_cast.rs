@@ -22,8 +22,38 @@ unsafe fn main_0() -> i32 {
     (unsafe { bit_cast_1(((&mut a1[(0) as usize] as *mut u32) as *const ::libc::c_void)) });
     (unsafe { bit_cast_1(((&mut a1 as *mut [u32; 3]) as *const ::libc::c_void)) });
     let mut ptr: *mut ::libc::c_void = (a1.as_mut_ptr() as *mut ::libc::c_void);
-    assert!(((ptr) == (a1.as_mut_ptr() as *mut ::libc::c_void)));
-    assert!(((*(ptr as *mut u32).offset((0) as isize)) == (a1[(0) as usize])));
+    (if ((ptr) == (a1.as_mut_ptr() as *mut ::libc::c_void)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"ptr == a1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((*(ptr as *mut u32).offset((0) as isize)) == (a1[(0) as usize])) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"((unsigned int *)ptr)[0] == a1[0]".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_2(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

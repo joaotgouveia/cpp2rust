@@ -69,11 +69,11 @@ pub fn always_given_3(mut x: NoDefault) -> i32 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct S_NoDefault_ {
+pub struct S_4 {
     #[offset(0)]
     pub v: i32,
 }
-impl S_NoDefault_ {
+impl S_4 {
     pub fn new(mut v: i32) -> Self {
         Self { v: v }
     }
@@ -83,20 +83,105 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ used_0(None,) }) == 1));
-    assert!((({ used_0(Some(A::new_2({ 5 },)),) }) == 5));
-    assert!((({ used_1(None,) }) == 2));
-    assert!((({ scaled_2(A::new_2({ 3 },), None,) }) == (3 * (4usize as i32))));
-    assert!((({ scaled_2(A::new_2({ 3 },), Some(2),) }) == 6));
-    assert!((({ always_given_3(NoDefault::new({ 3 },),) }) == 3));
-    let s: Value<S_NoDefault_> = Rc::new(RefCell::new(S_NoDefault_::new({ 1 })));
-    assert!((({ S_NoDefault_Impl::get(&s.as_pointer(), NoDefault::new({ 4 },),) }) == 5));
+    (if (({ used_0(None) }) == 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"used<A>() == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ used_0(Some(A::new_2({ 5 }))) }) == 5) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"used(A(5)) == 5"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ used_1(None) }) == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"used<B>() == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ scaled_2(A::new_2({ 3 }), None) }) == (3 * (4usize as i32))) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"scaled(A(3)) == 3 * (int)sizeof(A)"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ scaled_2(A::new_2({ 3 }), Some(2)) }) == 6) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"scaled(A(3), 2) == 6"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ always_given_3(NoDefault::new({ 3 })) }) == 3) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"always_given(NoDefault(3)) == 3"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    let s: Value<S_4> = Rc::new(RefCell::new(S_4::new({ 1 })));
+    (if (({ S_4Impl::get(&s.as_pointer(), NoDefault::new({ 4 })) }) == 5) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_5(
+                Ptr::<i8>::from_string_literal(b"s.get(NoDefault(4)) == 5"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
 }
-pub trait S_NoDefault_Impl {
+pub fn __assert_fail_5(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
+}
+pub trait S_4Impl {
     fn get(&self, t: NoDefault) -> i32;
 }
-impl S_NoDefault_Impl for Ptr<S_NoDefault_> {
+impl S_4Impl for Ptr<S_4> {
     fn get(&self, mut t: NoDefault) -> i32 {
         return ((*self).with(|__s| __s.v) + t.v);
     }

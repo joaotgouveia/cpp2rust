@@ -37,8 +37,46 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((((unsafe { first_0() }) == (3)) as i32) != 0));
-    assert!(((((unsafe { second_2() }) == (30)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { first_0() }) == (3)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_4(
+                        (c"first() == 3".as_ptr().cast_mut()).cast_const(),
+                        (c"local_anon_struct_collision.c".as_ptr().cast_mut()).cast_const(),
+                        24_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { second_2() }) == (30)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_4(
+                        (c"second() == 30".as_ptr().cast_mut()).cast_const(),
+                        (c"local_anon_struct_collision.c".as_ptr().cast_mut()).cast_const(),
+                        25_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub unsafe fn __assert_fail_4(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

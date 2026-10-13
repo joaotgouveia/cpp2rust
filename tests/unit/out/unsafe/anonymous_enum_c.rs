@@ -36,21 +36,98 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((((anon_0_FIRST_A as i32) != (anon_0_FIRST_B as i32)) as i32) != 0));
-    assert!(((((anon_1_SECOND_A as i32) != (anon_1_SECOND_B as i32)) as i32) != 0));
-    assert!(((((anon_3_THIRD_A as i32) != (anon_3_THIRD_B as i32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
     let mut td: TdEnum_enum = TdEnum_enum_TD_A;
-    assert!(((((td as u32) == ((TdEnum_enum_TD_A as i32) as u32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((td as u32) == ((TdEnum_enum_TD_A as i32) as u32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_4(
+                        (c"td == TD_A".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous_enum_c.c".as_ptr().cast_mut()).cast_const(),
+                        41_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     td = TdEnum_enum_TD_B;
-    assert!(((((td as u32) == ((TdEnum_enum_TD_B as i32) as u32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((td as u32) == ((TdEnum_enum_TD_B as i32) as u32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_4(
+                        (c"td == TD_B".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous_enum_c.c".as_ptr().cast_mut()).cast_const(),
+                        43_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     let mut w: WithAnonField = <WithAnonField>::default();
     w.field = anon_2_FIELD_A;
-    assert!(((((w.field as u32) == ((anon_2_FIELD_A as i32) as u32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((w.field as u32) == ((anon_2_FIELD_A as i32) as u32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_4(
+                        (c"w.field == FIELD_A".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous_enum_c.c".as_ptr().cast_mut()).cast_const(),
+                        47_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     w.field = anon_2_FIELD_B;
-    assert!(((((w.field as u32) == ((anon_2_FIELD_B as i32) as u32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((w.field as u32) == ((anon_2_FIELD_B as i32) as u32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_4(
+                        (c"w.field == FIELD_B".as_ptr().cast_mut()).cast_const(),
+                        (c"anonymous_enum_c.c".as_ptr().cast_mut()).cast_const(),
+                        49_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
 }
 pub type anon_3 = u32;
 pub const anon_3_THIRD_A: anon_3 = 0;
 pub const anon_3_THIRD_B: anon_3 = 1;
+pub unsafe fn __assert_fail_4(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
+}
 pub unsafe fn __cpp2rust_init_globals() {}

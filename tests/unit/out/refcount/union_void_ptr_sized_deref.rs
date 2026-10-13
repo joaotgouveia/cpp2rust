@@ -6,6 +6,42 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
+#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
+#[byte_size(32)]
+pub struct max_align_t {
+    #[offset(0)]
+    pub __clang_max_align_nonce1: i64,
+    #[offset(16)]
+    #[byte_size(16)]
+    pub __clang_max_align_nonce2: f64,
+}
+impl Clone for max_align_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for max_align_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
+#[byte_size(8)]
+pub struct __fsid_t {
+    #[offset(0)]
+    #[byte_size(8)]
+    pub __val: Value<Box<[i32]>>,
+}
+impl Clone for __fsid_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __fsid_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 pub type Width_enum = u32;
 pub const Width_enum_W_64: Width_enum = 0;
 pub const Width_enum_W_32: Width_enum = 1;
@@ -85,17 +121,70 @@ fn main_0() -> i32 {
     anon_0::handle(field_ptr!(s.as_pointer(), out))
         .write(((buf64.as_pointer()) as Ptr<i64>).to_any());
     ({ write_count_1((s.as_pointer()), 1234605616436508552_i64) });
-    assert!(((((*buf64.borrow()) == 1234605616436508552_i64) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if ((((*buf64.borrow()) == 1234605616436508552_i64) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_2(
+                        Ptr::<i8>::from_string_literal(b"buf64 == 0x1122334455667788LL"),
+                        Ptr::<i8>::from_string_literal(b"union_void_ptr_sized_deref.c"),
+                        46_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     (*s.borrow_mut()).width = Width_enum_W_32;
     anon_0::handle(field_ptr!(s.as_pointer(), out))
         .write(((buf32.as_pointer()) as Ptr<i32>).to_any());
     ({ write_count_1((s.as_pointer()), 305419896_i64) });
-    assert!(((((*buf32.borrow()) == 305419896) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if ((((*buf32.borrow()) == 305419896) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_2(
+                        Ptr::<i8>::from_string_literal(b"buf32 == 0x12345678"),
+                        Ptr::<i8>::from_string_literal(b"union_void_ptr_sized_deref.c"),
+                        51_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     (*s.borrow_mut()).width = Width_enum_W_16;
     anon_0::handle(field_ptr!(s.as_pointer(), out))
         .write(((buf16.as_pointer()) as Ptr<i16>).to_any());
     ({ write_count_1((s.as_pointer()), 4660_i64) });
-    assert!((((((*buf16.borrow()) as i32) == 4660) as i32) != 0));
+    {
+        &(4usize);
+        {
+            if (((((*buf16.borrow()) as i32) == 4660) as i32) != 0) {
+            } else {
+                ({
+                    __assert_fail_2(
+                        Ptr::<i8>::from_string_literal(b"buf16 == 0x1234"),
+                        Ptr::<i8>::from_string_literal(b"union_void_ptr_sized_deref.c"),
+                        56_u32,
+                        Ptr::<i8>::from_string_literal(b"int main(void)"),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub fn __assert_fail_2(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

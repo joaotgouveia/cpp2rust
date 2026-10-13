@@ -69,14 +69,54 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut struct_with_ctor: StructWithCtor = StructWithCtor::new({ 1 }, { 2 });
     let mut x: i32 = 3;
-    assert!(
-        (((*(unsafe { foo_0(&mut x,) })) == (3))
-            && ((*(unsafe { StructWithCtor::x1(&struct_with_ctor,) })) == (2)))
-            && ((*(unsafe { StructWithCtor::x2(&struct_with_ctor,) })) == (1))
-    );
+    (if (((*(unsafe { foo_0(&mut x) })) == (3))
+        && ((*(unsafe { StructWithCtor::x1(&struct_with_ctor) })) == (2)))
+        && ((*(unsafe { StructWithCtor::x2(&struct_with_ctor) })) == (1))
+    {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"foo(x) == 3 && struct_with_ctor.x1() == 2 && struct_with_ctor.x2() == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut p: Ptr_ = Ptr_::new();
-    assert!(((p.v1.v) == (11)));
-    assert!(((p.v2.v) == (22)));
+    (if ((p.v1.v) == (11)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"p.v1.v == 11".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((p.v2.v) == (22)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"p.v2.v == 22".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

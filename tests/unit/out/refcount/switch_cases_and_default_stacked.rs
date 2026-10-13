@@ -27,10 +27,62 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ cases_and_default_stacked_0(1,) }) == 42));
-    assert!((({ cases_and_default_stacked_0(2,) }) == 42));
-    assert!((({ cases_and_default_stacked_0(3,) }) == 3));
-    assert!((({ cases_and_default_stacked_0(99,) }) == 42));
+    (if (({ cases_and_default_stacked_0(1) }) == 42) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"cases_and_default_stacked(1) == 42"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ cases_and_default_stacked_0(2) }) == 42) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"cases_and_default_stacked(2) == 42"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ cases_and_default_stacked_0(3) }) == 3) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"cases_and_default_stacked(3) == 3"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ cases_and_default_stacked_0(99) }) == 42) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"cases_and_default_stacked(99) == 42"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

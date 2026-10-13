@@ -6,6 +6,23 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
+#[derive(VaArg, FnPtrArg, Record, ByteRepr)]
+#[byte_size(8)]
+pub struct __fsid_t {
+    #[offset(0)]
+    #[byte_size(8)]
+    pub __val: Value<Box<[i32]>>,
+}
+impl Clone for __fsid_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __fsid_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

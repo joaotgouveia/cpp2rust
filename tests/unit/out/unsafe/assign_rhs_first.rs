@@ -31,30 +31,126 @@ unsafe fn main_0() -> i32 {
     let mut q: *mut i32 = a.as_mut_ptr();
     (*std::cell::LazyCell::force_mut(&mut *&raw mut g_cursor_0)) = (&mut q as *mut *mut i32);
     (*q.offset((1) as isize)) = (unsafe { advance_1() });
-    assert!(((q) == (a.as_mut_ptr().offset((1) as isize))) && ((a[(2) as usize]) == (10)));
+    (if ((q) == (a.as_mut_ptr().offset((1) as isize))) && ((a[(2) as usize]) == (10)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"q == a + 1 && a[2] == 10".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (*q.offset((1) as isize)) += (unsafe { advance_1() });
-    assert!(((q) == (a.as_mut_ptr().offset((2) as isize))) && ((a[(3) as usize]) == (14)));
+    (if ((q) == (a.as_mut_ptr().offset((2) as isize))) && ((a[(3) as usize]) == (14)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"q == a + 2 && a[3] == 14".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut pq: *mut *mut i32 = (&mut q as *mut *mut i32);
     (*(*pq).offset((1) as isize)) += (unsafe { advance_1() });
-    assert!(((q) == (a.as_mut_ptr().offset((3) as isize))) && ((a[(4) as usize]) == (15)));
+    (if ((q) == (a.as_mut_ptr().offset((3) as isize))) && ((a[(4) as usize]) == (15)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"q == a + 3 && a[4] == 15".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (*(*pq).offset((1) as isize)) = (unsafe { advance_1() });
-    assert!(((q) == (a.as_mut_ptr().offset((4) as isize))) && ((a[(5) as usize]) == (10)));
+    (if ((q) == (a.as_mut_ptr().offset((4) as isize))) && ((a[(5) as usize]) == (10)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"q == a + 4 && a[5] == 10".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe { by_ref_2(&mut q) });
-    assert!(((q) == (a.as_mut_ptr().offset((5) as isize))) && ((a[(6) as usize]) == (17)));
+    (if ((q) == (a.as_mut_ptr().offset((5) as isize))) && ((a[(6) as usize]) == (17)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"q == a + 5 && a[6] == 17".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut s: S = S {
         ptr: a.as_mut_ptr(),
     };
     (*std::cell::LazyCell::force_mut(&mut *&raw mut g_cursor_0)) = (&mut s.ptr as *mut *mut i32);
     (*s.ptr.offset((1) as isize)) += (unsafe { advance_1() });
-    assert!(((s.ptr) == (a.as_mut_ptr().offset((1) as isize))) && ((a[(2) as usize]) == (20)));
+    (if ((s.ptr) == (a.as_mut_ptr().offset((1) as isize))) && ((a[(2) as usize]) == (20)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"s.ptr == a + 1 && a[2] == 20".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut sp: *mut S = (&mut s as *mut S);
     (*(*sp).ptr.offset((1) as isize)) += (unsafe { advance_1() });
-    assert!(((s.ptr) == (a.as_mut_ptr().offset((2) as isize))) && ((a[(3) as usize]) == (24)));
+    (if ((s.ptr) == (a.as_mut_ptr().offset((2) as isize))) && ((a[(3) as usize]) == (24)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"s.ptr == a + 2 && a[3] == 24".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut b: *mut u8 = (a.as_mut_ptr() as *mut u8);
     (*b.offset((0) as isize)) = 7_u8;
     (*b.offset((4) as isize)) = (((*b.offset((4) as isize)) as i32) + 1) as u8;
-    assert!(((a[(0) as usize]) == (7)) && ((a[(1) as usize]) == (3)));
+    (if ((a[(0) as usize]) == (7)) && ((a[(1) as usize]) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"a[0] == 7 && a[1] == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const g_cursor_0);

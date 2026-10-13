@@ -55,15 +55,111 @@ fn main_0() -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
     let b: Value<S> = Rc::new(RefCell::new(S { v: 2 }));
     let c: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
-    assert!(({ SImpl::operator_eq(&a.as_pointer(), c.as_pointer(),) }));
-    assert!(({ SImpl::operator_ne(&a.as_pointer(), b.as_pointer(),) }));
-    assert!(({ SImpl::operator_lt_3(&a.as_pointer(), b.as_pointer(),) }));
-    assert!(({ SImpl::operator_gt(&b.as_pointer(), a.as_pointer(),) }));
-    assert!(({ SImpl::operator_le(&a.as_pointer(), c.as_pointer(),) }));
-    assert!(({ SImpl::operator_ge(&a.as_pointer(), c.as_pointer(),) }));
-    assert!(!({ SImpl::operator_lt_3(&b.as_pointer(), a.as_pointer(),) }));
-    assert!(({ SImpl::operator_lt_7(&a.as_pointer(), 5,) }));
+    (if ({ SImpl::operator_eq(&a.as_pointer(), c.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"a == c"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ SImpl::operator_ne(&a.as_pointer(), b.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"a != b"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ SImpl::operator_lt_3(&a.as_pointer(), b.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"a < b"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ SImpl::operator_gt(&b.as_pointer(), a.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"b > a"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ SImpl::operator_le(&a.as_pointer(), c.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"a <= c"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ SImpl::operator_ge(&a.as_pointer(), c.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"a >= c"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if !({ SImpl::operator_lt_3(&b.as_pointer(), a.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"!(b < a)"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ SImpl::operator_lt_7(&a.as_pointer(), 5) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"a < 5"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_0(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub trait SImpl {
     fn operator_eq(&self, o: Ptr<S>) -> bool;

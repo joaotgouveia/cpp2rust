@@ -48,15 +48,122 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((unsafe { sum_0(1, 2, 3,) }) == (6)));
-    assert!(((unsafe { sum_1(4, 5,) }) == (9)));
-    assert!(((unsafe { first_3(10, 1, 2,) }) == (13)));
-    assert!(((unsafe { first_4(10, 0,) }) == (10)));
-    assert!(((unsafe { sizeof_pack_5() }) == (0)));
-    assert!(((unsafe { sizeof_pack_6(1,) }) == (1)));
-    assert!(((unsafe { sizeof_pack_7(1, 2,) }) == (2)));
-    assert!(((unsafe { sizeof_pack_8(1, 2, 3,) }) == (3)));
-    assert!(((unsafe { sizeof_pack_9(1, 2, 3, 4,) }) == (4)));
+    (if ((unsafe { sum_0(1, 2, 3) }) == (6)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"sum(1, 2, 3) == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { sum_1(4, 5) }) == (9)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"sum(4, 5) == 9".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { first_3(10, 1, 2) }) == (13)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"first(10, 1, 2) == 13".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { first_4(10, 0) }) == (10)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"first(10, 0) == 10".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { sizeof_pack_5() }) == (0)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"sizeof_pack() == 0".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { sizeof_pack_6(1) }) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"sizeof_pack(1) == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { sizeof_pack_7(1, 2) }) == (2)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"sizeof_pack(1, 2) == 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { sizeof_pack_8(1, 2, 3) }) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"sizeof_pack(1, 2, 3) == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { sizeof_pack_9(1, 2, 3, 4) }) == (4)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"sizeof_pack(1, 2, 3, 4) == 4".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_10(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

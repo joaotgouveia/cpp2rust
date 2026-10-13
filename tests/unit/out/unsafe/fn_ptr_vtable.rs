@@ -37,16 +37,90 @@ unsafe fn main_0() -> i32 {
         get: Some(int_get_2),
         destroy: Some(int_destroy_3),
     };
-    assert!(!((vt.create).is_none()));
-    assert!(!((vt.get).is_none()));
-    assert!(!((vt.destroy).is_none()));
+    (if !((vt.create).is_none()) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_4(
+                c"vt.create != nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if !((vt.get).is_none()) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_4(
+                c"vt.get != nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if !((vt.destroy).is_none()) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_4(
+                c"vt.destroy != nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut obj: *mut ::libc::c_void = (unsafe { (vt.create).unwrap()(42) });
-    assert!(((unsafe { (vt.get).unwrap()(obj,) }) == (42)));
+    (if ((unsafe { (vt.get).unwrap()(obj) }) == (42)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_4(
+                c"vt.get(obj) == 42".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe { (vt.destroy).unwrap()(obj) });
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut storage_0)) == (0)));
+    (if ((*std::cell::LazyCell::force_mut(&mut *&raw mut storage_0)) == (0)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_4(
+                c"storage == 0".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (vt.get) = None;
-    assert!((vt.get).is_none());
+    (if (vt.get).is_none() {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_4(
+                c"vt.get == nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_4(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const storage_0);

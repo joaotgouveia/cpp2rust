@@ -37,21 +37,106 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!(((anon_0_FIRST_A as i32) != (anon_0_FIRST_B as i32)));
-    assert!(((anon_1_SECOND_A as i32) != (anon_1_SECOND_B as i32)));
-    assert!(((anon_3_THIRD_A as i32) != (anon_3_THIRD_B as i32)));
+    (if ((anon_0_FIRST_A as i32) != (anon_0_FIRST_B as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"FIRST_A != FIRST_B"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((anon_1_SECOND_A as i32) != (anon_1_SECOND_B as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"S::SECOND_A != S::SECOND_B"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((anon_3_THIRD_A as i32) != (anon_3_THIRD_B as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"THIRD_A != THIRD_B"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut td: TdEnum = TdEnum_TD_A;
-    assert!(((td as i32) == (TdEnum_TD_A as i32)));
+    (if ((td as i32) == (TdEnum_TD_A as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"td == TD_A"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     td = TdEnum_TD_B;
-    assert!(((td as i32) == (TdEnum_TD_B as i32)));
+    (if ((td as i32) == (TdEnum_TD_B as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"td == TD_B"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut w: WithAnonField = <WithAnonField>::default();
     w.field = anon_2_FIELD_A;
-    assert!(((w.field as i32) == (anon_2_FIELD_A as i32)));
+    (if ((w.field as i32) == (anon_2_FIELD_A as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"w.field == WithAnonField::FIELD_A"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     w.field = anon_2_FIELD_B;
-    assert!(((w.field as i32) == (anon_2_FIELD_B as i32)));
+    (if ((w.field as i32) == (anon_2_FIELD_B as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_4(
+                Ptr::<i8>::from_string_literal(b"w.field == WithAnonField::FIELD_B"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
 }
 pub type anon_3 = u32;
 pub const anon_3_THIRD_A: anon_3 = 0;
 pub const anon_3_THIRD_B: anon_3 = 1;
+pub fn __assert_fail_4(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
+}
 pub fn __cpp2rust_init_globals() {}

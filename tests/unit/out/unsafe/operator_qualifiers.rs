@@ -50,16 +50,134 @@ unsafe fn main_0() -> i32 {
     let mut s: S = S { v: 10 };
     let cs: S = S { v: 10 };
     let mut vs: S = S { v: 10 };
-    assert!(((unsafe { S::operator_add_1(&mut s, 1,) }) == (11)));
-    assert!(((unsafe { S::operator_add_2(&cs, 1,) }) == (12)));
-    assert!(((unsafe { S::operator_add_3(&mut vs, 1,) }) == (13)));
-    assert!(((unsafe { S::operator_sub_4(&mut s, 1,) }) == (9)));
-    assert!(((unsafe { S::operator_sub_5(&mut S { v: 10 }, 1,) }) == (8)));
-    assert!(((unsafe { S::operator_mul_6(&s, 3,) }) == (30)));
-    assert!(((unsafe { S::operator_mul_6(&cs, 3,) }) == (30)));
-    assert!(((unsafe { S::operator_mul_7(&S { v: 10 }, 3,) }) == (60)));
-    assert!(((unsafe { S::operator_index_8(&mut s, 2,) }) == (12)));
-    assert!(((unsafe { S::operator_index_9(&cs, 2,) }) == (112)));
+    (if ((unsafe { S::operator_add_1(&mut s, 1) }) == (11)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"s + 1 == 11".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_add_2(&cs, 1) }) == (12)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"cs + 1 == 12".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_add_3(&mut vs, 1) }) == (13)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"vs + 1 == 13".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_sub_4(&mut s, 1) }) == (9)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"s - 1 == 9".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_sub_5(&mut S { v: 10 }, 1) }) == (8)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"S{10} - 1 == 8".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_mul_6(&s, 3) }) == (30)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"s * 3 == 30".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_mul_6(&cs, 3) }) == (30)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"cs * 3 == 30".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_mul_7(&S { v: 10 }, 3) }) == (60)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"S{10} * 3 == 60".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_index_8(&mut s, 2) }) == (12)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"s[2] == 12".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { S::operator_index_9(&cs, 2) }) == (112)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"cs[2] == 112".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_0(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

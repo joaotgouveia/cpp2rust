@@ -38,7 +38,30 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((((unsafe { scan_0(2,) }) == (2010)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { scan_0(2) }) == (2010)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_1(
+                        (c"scan(2) == 2010".as_ptr().cast_mut()).cast_const(),
+                        (c"goto_nested_label.c".as_ptr().cast_mut()).cast_const(),
+                        22_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

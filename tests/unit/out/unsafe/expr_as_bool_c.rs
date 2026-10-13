@@ -6,6 +6,21 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
+#[derive(VaArg, FnPtrArg)]
+pub struct max_align_t {
+    pub __clang_max_align_nonce1: i64,
+    pub __clang_max_align_nonce2: f64,
+}
+impl Clone for max_align_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for max_align_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
 pub unsafe fn cmp_eq_0(mut rc: i32) -> i32 {
     return (((rc) == (-1_i32)) as i32);
 }
@@ -38,14 +53,42 @@ unsafe fn main_0() -> i32 {
     if (a != 0) {}
     if ((((a) == (b)) as i32) != 0) {}
     if ((((a) < (b)) as i32) != 0) {}
-    assert!(((((a) == (b)) as i32) != 0));
-    assert!(
-        ((!(({
-            a = b;
-            a
-        }) != 0) as i32)
-            != 0)
-    );
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((a) == (b)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"a == b".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        26_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if !(({
+                a = b;
+                a
+            }) != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"!(a = b)".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        27_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     let mut c: bool = false;
     c = ({
         a = b;
@@ -64,23 +107,197 @@ unsafe fn main_0() -> i32 {
     let mut eq: i32 = (((x) == (y)) as i32);
     let mut lt: i32 = (((x) < (y)) as i32);
     let mut neq: i32 = (((x) != (y)) as i32);
-    assert!(((((eq) == (1)) as i32) != 0));
-    assert!(((((lt) == (0)) as i32) != 0));
-    assert!(((((neq) == (0)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((eq) == (1)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"eq == 1".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        40_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((lt) == (0)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"lt == 0".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        41_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((neq) == (0)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"neq == 0".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        42_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     let mut p1: *const libc::c_char = (c"hi".as_ptr().cast_mut()).cast_const();
     let mut p2: *const libc::c_char = std::ptr::null();
     let mut either: i32 = (((!(p1).is_null()) || (!(p2).is_null())) as i32);
     let mut both: i32 = (((!(p1).is_null()) && (!(p2).is_null())) as i32);
-    assert!(((((either) == (1)) as i32) != 0));
-    assert!(((((both) == (0)) as i32) != 0));
-    assert!(((((unsafe { cmp_eq_0(-1_i32,) }) == (1)) as i32) != 0));
-    assert!(((((unsafe { cmp_eq_0(0,) }) == (0)) as i32) != 0));
-    assert!(((((unsafe { cmp_or_ptr_1(p1, p2,) }) == (1)) as i32) != 0));
-    assert!(
-        ((((unsafe { cmp_or_ptr_1(std::ptr::null(), std::ptr::null(),) }) == (0)) as i32) != 0)
-    );
-    assert!(((((unsafe { both_null_2(std::ptr::null(), std::ptr::null(),) }) == (1)) as i32) != 0));
-    assert!(((((unsafe { both_null_2(p1, std::ptr::null(),) }) == (0)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((either) == (1)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"either == 1".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        48_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((both) == (0)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"both == 0".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        49_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { cmp_eq_0(-1_i32) }) == (1)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"cmp_eq(-1) == 1".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        51_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { cmp_eq_0(0) }) == (0)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"cmp_eq(0) == 0".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        52_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { cmp_or_ptr_1(p1, p2) }) == (1)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"cmp_or_ptr(p1, p2) == 1".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        53_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { cmp_or_ptr_1(std::ptr::null(), std::ptr::null()) }) == (0)) as i32)
+                != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"cmp_or_ptr(NULL, NULL) == 0".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        54_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { both_null_2(std::ptr::null(), std::ptr::null()) }) == (1)) as i32) != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"both_null(NULL, NULL) == 1".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        55_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { both_null_2(p1, std::ptr::null()) }) == (0)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_3(
+                        (c"both_null(p1, NULL) == 0".as_ptr().cast_mut()).cast_const(),
+                        (c"expr_as_bool_c.c".as_ptr().cast_mut()).cast_const(),
+                        56_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

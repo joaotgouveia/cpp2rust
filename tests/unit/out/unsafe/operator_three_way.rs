@@ -6,20 +6,1606 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct integral_constant_0 {}
+impl Clone for integral_constant_0 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for integral_constant_0 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut std_integral_constant_bool__true__value_1: std::cell::LazyCell<bool> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct integral_constant_2 {}
+impl Clone for integral_constant_2 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for integral_constant_2 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut std_integral_constant_bool__false__value_3: std::cell::LazyCell<bool> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct integral_constant_4 {}
+impl Clone for integral_constant_4 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for integral_constant_4 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_void_5 {}
+impl Clone for is_void_5 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_void_5 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct remove_cv_6 {}
+impl Clone for remove_cv_6 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for remove_cv_6 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct remove_cv_7 {}
+impl Clone for remove_cv_7 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for remove_cv_7 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct remove_cv_8 {}
+impl Clone for remove_cv_8 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for remove_cv_8 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct remove_cv_9 {}
+impl Clone for remove_cv_9 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for remove_cv_9 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct remove_cv_10 {}
+impl Clone for remove_cv_10 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for remove_cv_10 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct remove_cv_11 {}
+impl Clone for remove_cv_11 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for remove_cv_11 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct remove_cv_12 {}
+impl Clone for remove_cv_12 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for remove_cv_12 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_const_13 {}
+impl Clone for is_const_13 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_const_13 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_const_14 {}
+impl Clone for is_const_14 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_const_14 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_const_15 {}
+impl Clone for is_const_15 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_const_15 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_const_16 {}
+impl Clone for is_const_16 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_const_16 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_const_17 {}
+impl Clone for is_const_17 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_const_17 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_const_18 {}
+impl Clone for is_const_18 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_const_18 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_const_19 {}
+impl Clone for is_const_19 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_const_19 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __is_integral_helper_20 {}
+impl Clone for __is_integral_helper_20 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __is_integral_helper_20 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __is_integral_helper_21 {}
+impl Clone for __is_integral_helper_21 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __is_integral_helper_21 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __is_integral_helper_22 {}
+impl Clone for __is_integral_helper_22 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __is_integral_helper_22 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __is_integral_helper_23 {}
+impl Clone for __is_integral_helper_23 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __is_integral_helper_23 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __is_integral_helper_24 {}
+impl Clone for __is_integral_helper_24 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __is_integral_helper_24 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __is_integral_helper_25 {}
+impl Clone for __is_integral_helper_25 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __is_integral_helper_25 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __is_integral_helper_26 {}
+impl Clone for __is_integral_helper_26 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __is_integral_helper_26 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_integral_27 {}
+impl Clone for is_integral_27 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_integral_27 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_integral_28 {}
+impl Clone for is_integral_28 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_integral_28 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_integral_29 {}
+impl Clone for is_integral_29 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_integral_29 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_integral_30 {}
+impl Clone for is_integral_30 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_integral_30 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_integral_31 {}
+impl Clone for is_integral_31 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_integral_31 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_integral_32 {}
+impl Clone for is_integral_32 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_integral_32 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_integral_33 {}
+impl Clone for is_integral_33 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_integral_33 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_volatile_34 {}
+impl Clone for is_volatile_34 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_volatile_34 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_volatile_35 {}
+impl Clone for is_volatile_35 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_volatile_35 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_volatile_36 {}
+impl Clone for is_volatile_36 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_volatile_36 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_volatile_37 {}
+impl Clone for is_volatile_37 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_volatile_37 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_volatile_38 {}
+impl Clone for is_volatile_38 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_volatile_38 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_volatile_39 {}
+impl Clone for is_volatile_39 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_volatile_39 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct is_volatile_40 {}
+impl Clone for is_volatile_40 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for is_volatile_40 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___do_is_destructible_impl {}
+impl Clone for std___do_is_destructible_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___do_is_destructible_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___do_is_nt_destructible_impl {}
+impl Clone for std___do_is_nt_destructible_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___do_is_nt_destructible_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __cv_selector_41 {}
+impl Clone for __cv_selector_41 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __cv_selector_41 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __cv_selector_42 {}
+impl Clone for __cv_selector_42 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __cv_selector_42 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __cv_selector_43 {}
+impl Clone for __cv_selector_43 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __cv_selector_43 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __cv_selector_44 {}
+impl Clone for __cv_selector_44 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __cv_selector_44 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __cv_selector_45 {}
+impl Clone for __cv_selector_45 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __cv_selector_45 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __cv_selector_46 {}
+impl Clone for __cv_selector_46 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __cv_selector_46 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __match_cv_qualifiers_47 {}
+impl Clone for __match_cv_qualifiers_47 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __match_cv_qualifiers_47 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __match_cv_qualifiers_48 {}
+impl Clone for __match_cv_qualifiers_48 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __match_cv_qualifiers_48 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __match_cv_qualifiers_49 {}
+impl Clone for __match_cv_qualifiers_49 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __match_cv_qualifiers_49 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __match_cv_qualifiers_50 {}
+impl Clone for __match_cv_qualifiers_50 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __match_cv_qualifiers_50 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __match_cv_qualifiers_51 {}
+impl Clone for __match_cv_qualifiers_51 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __match_cv_qualifiers_51 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __match_cv_qualifiers_52 {}
+impl Clone for __match_cv_qualifiers_52 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __match_cv_qualifiers_52 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __match_cv_qualifiers_53 {}
+impl Clone for __match_cv_qualifiers_53 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __match_cv_qualifiers_53 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_54 {}
+impl Clone for __make_unsigned_54 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_54 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_55 {}
+impl Clone for __make_unsigned_55 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_55 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_56 {}
+impl Clone for __make_unsigned_56 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_56 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_57 {}
+impl Clone for __make_unsigned_57 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_57 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_selector_58 {}
+impl Clone for __make_unsigned_selector_58 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_selector_58 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_selector_59 {}
+impl Clone for __make_unsigned_selector_59 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_selector_59 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_selector_60 {}
+impl Clone for __make_unsigned_selector_60 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_selector_60 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_selector_61 {}
+impl Clone for __make_unsigned_selector_61 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_selector_61 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_selector_62 {}
+impl Clone for __make_unsigned_selector_62 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_selector_62 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_selector_63 {}
+impl Clone for __make_unsigned_selector_63 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_selector_63 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_selector_64 {}
+impl Clone for __make_unsigned_selector_64 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_selector_64 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_unsigned_selector_65 {}
+impl Clone for __make_unsigned_selector_65 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_unsigned_selector_65 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___make_unsigned_selector_base {}
+impl Clone for std___make_unsigned_selector_base {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___make_unsigned_selector_base {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct _List_69 {}
+impl Clone for _List_69 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _List_69 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut std___make_unsigned_selector_base__List_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long____size_70 : std::cell::LazyCell< usize > = std::cell::LazyCell::new(|| unsafe { unimplemented!() } ) ;
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct _List_71 {}
+impl Clone for _List_71 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _List_71 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut std___make_unsigned_selector_base__List_unsigned_short__unsigned_int__unsigned_long__unsigned_long_long____size_72 : std::cell::LazyCell< usize > = std::cell::LazyCell::new(|| unsafe { unimplemented!() } ) ;
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct _List_73 {}
+impl Clone for _List_73 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _List_73 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut std___make_unsigned_selector_base__List_unsigned_int__unsigned_long__unsigned_long_long____size_74 : std::cell::LazyCell< usize > = std::cell::LazyCell::new(|| unsafe { unimplemented!() } ) ;
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct _List_75 {}
+impl Clone for _List_75 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _List_75 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct _List_76 {}
+impl Clone for _List_76 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _List_76 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct _List_77 {}
+impl Clone for _List_77 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _List_77 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __select_78 {}
+impl Clone for __select_78 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __select_78 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __select_79 {}
+impl Clone for __select_79 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __select_79 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __select_80 {}
+impl Clone for __select_80 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __select_80 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __select_81 {}
+impl Clone for __select_81 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __select_81 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __select_82 {}
+impl Clone for __select_82 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __select_82 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __select_83 {}
+impl Clone for __select_83 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __select_83 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_84 {}
+impl Clone for __make_signed_84 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_84 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_85 {}
+impl Clone for __make_signed_85 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_85 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_86 {}
+impl Clone for __make_signed_86 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_86 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_selector_87 {}
+impl Clone for __make_signed_selector_87 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_selector_87 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_selector_88 {}
+impl Clone for __make_signed_selector_88 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_selector_88 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_selector_89 {}
+impl Clone for __make_signed_selector_89 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_selector_89 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_selector_90 {}
+impl Clone for __make_signed_selector_90 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_selector_90 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_selector_91 {}
+impl Clone for __make_signed_selector_91 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_selector_91 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_selector_92 {}
+impl Clone for __make_signed_selector_92 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_selector_92 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct __make_signed_selector_93 {}
+impl Clone for __make_signed_selector_93 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for __make_signed_selector_93 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___aligned_storage_max_align_t {}
+impl Clone for std___aligned_storage_max_align_t {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___aligned_storage_max_align_t {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct common_type_94 {}
+impl Clone for common_type_94 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for common_type_94 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___failure_type {}
+impl Clone for std___failure_type {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___failure_type {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___do_common_type_impl {}
+impl Clone for std___do_common_type_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___do_common_type_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___invoke_memfun_ref {}
+impl Clone for std___invoke_memfun_ref {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___invoke_memfun_ref {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___invoke_memfun_deref {}
+impl Clone for std___invoke_memfun_deref {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___invoke_memfun_deref {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___invoke_memobj_ref {}
+impl Clone for std___invoke_memobj_ref {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___invoke_memobj_ref {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___invoke_memobj_deref {}
+impl Clone for std___invoke_memobj_deref {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___invoke_memobj_deref {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___invoke_other {}
+impl Clone for std___invoke_other {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___invoke_other {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___result_of_memfun_ref_impl {}
+impl Clone for std___result_of_memfun_ref_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___result_of_memfun_ref_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___result_of_memfun_deref_impl {}
+impl Clone for std___result_of_memfun_deref_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___result_of_memfun_deref_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___result_of_memobj_ref_impl {}
+impl Clone for std___result_of_memobj_ref_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___result_of_memobj_ref_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___result_of_memobj_deref_impl {}
+impl Clone for std___result_of_memobj_deref_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___result_of_memobj_deref_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___result_of_other_impl {}
+impl Clone for std___result_of_other_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___result_of_other_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___swappable_details___do_is_swappable_impl {}
+impl Clone for std___swappable_details___do_is_swappable_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___swappable_details___do_is_swappable_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___swappable_details___do_is_nothrow_swappable_impl {}
+impl Clone for std___swappable_details___do_is_nothrow_swappable_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___swappable_details___do_is_nothrow_swappable_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___swappable_with_details___do_is_swappable_with_impl {}
+impl Clone for std___swappable_with_details___do_is_swappable_with_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___swappable_with_details___do_is_swappable_with_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___swappable_with_details___do_is_nothrow_swappable_with_impl {}
+impl Clone for std___swappable_with_details___do_is_nothrow_swappable_with_impl {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___swappable_with_details___do_is_nothrow_swappable_with_impl {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___nonesuchbase {}
+impl Clone for std___nonesuchbase {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___nonesuchbase {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+impl std___nonesuchbase {}
+impl std___nonesuchbase {}
+impl std___nonesuchbase {
+    pub unsafe fn copy_assign(
+        &mut self,
+        _a0: *const std___nonesuchbase,
+    ) -> *mut std___nonesuchbase {
+        unimplemented!()
+    }
+}
+impl std___nonesuchbase {
+    pub unsafe fn move_assign(&mut self, _a0: *mut std___nonesuchbase) -> *mut std___nonesuchbase {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct common_reference_95 {}
+impl Clone for common_reference_95 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for common_reference_95 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std_ranges___swap__Swap {}
+impl Clone for std_ranges___swap__Swap {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std_ranges___swap__Swap {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut swap_96: std::cell::LazyCell<std_ranges___swap__Swap> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub type std___cmp_cat__Ord = i8;
+pub const std___cmp_cat__Ord_equivalent: std___cmp_cat__Ord = 0;
+pub const std___cmp_cat__Ord_less: std___cmp_cat__Ord = -1;
+pub const std___cmp_cat__Ord_greater: std___cmp_cat__Ord = 1;
+pub type std___cmp_cat__Ncmp = i8;
+pub const std___cmp_cat__Ncmp__Unordered: std___cmp_cat__Ncmp = 2;
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___cmp_cat___unspec {}
+impl Clone for std___cmp_cat___unspec {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___cmp_cat___unspec {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+impl std___cmp_cat___unspec {
+    pub unsafe fn new(mut _a0: *mut std___cmp_cat___unspec) -> Self {
+        unimplemented!()
+    }
+}
+impl std___cmp_cat___unspec {}
+impl std___cmp_cat___unspec {}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std_partial_ordering {}
+impl Clone for std_partial_ordering {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std_partial_ordering {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut std_partial_ordering_less_97: std::cell::LazyCell<std_partial_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut std_partial_ordering_equivalent_98: std::cell::LazyCell<std_partial_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut std_partial_ordering_greater_99: std::cell::LazyCell<std_partial_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut std_partial_ordering_unordered_100: std::cell::LazyCell<std_partial_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+impl std_partial_ordering {}
+impl std_partial_ordering {}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std_weak_ordering {}
+impl Clone for std_weak_ordering {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std_weak_ordering {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut std_weak_ordering_less_101: std::cell::LazyCell<std_weak_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut std_weak_ordering_equivalent_102: std::cell::LazyCell<std_weak_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut std_weak_ordering_greater_103: std::cell::LazyCell<std_weak_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+impl std_weak_ordering {}
+impl std_weak_ordering {}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std_strong_ordering {}
+impl Clone for std_strong_ordering {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std_strong_ordering {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut std_strong_ordering_less_104: std::cell::LazyCell<std_strong_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut std_strong_ordering_equal_105: std::cell::LazyCell<std_strong_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut std_strong_ordering_equivalent_106: std::cell::LazyCell<std_strong_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut std_strong_ordering_greater_107: std::cell::LazyCell<std_strong_ordering> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+impl std_strong_ordering {}
+impl std_strong_ordering {}
+pub static mut __cmp_cat_id_108: std::cell::LazyCell<u32> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut __cmp_cat_id_109: std::cell::LazyCell<u32> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std_compare_three_way {}
+impl Clone for std_compare_three_way {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std_compare_three_way {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+impl std_compare_three_way {}
+impl std_compare_three_way {}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___compare__Strong_order {}
+impl Clone for std___compare__Strong_order {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___compare__Strong_order {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub type std___compare__Strong_order__Fp_fmt = i32;
+pub const std___compare__Strong_order__Fp_fmt__Binary16: std___compare__Strong_order__Fp_fmt = 0;
+pub const std___compare__Strong_order__Fp_fmt__Binary32: std___compare__Strong_order__Fp_fmt = 1;
+pub const std___compare__Strong_order__Fp_fmt__Binary64: std___compare__Strong_order__Fp_fmt = 2;
+pub const std___compare__Strong_order__Fp_fmt__Binary128: std___compare__Strong_order__Fp_fmt = 3;
+pub const std___compare__Strong_order__Fp_fmt__X86_80bit: std___compare__Strong_order__Fp_fmt = 4;
+pub const std___compare__Strong_order__Fp_fmt__M68k_80bit: std___compare__Strong_order__Fp_fmt = 5;
+pub const std___compare__Strong_order__Fp_fmt__Dbldbl: std___compare__Strong_order__Fp_fmt = 6;
+pub const std___compare__Strong_order__Fp_fmt__Bfloat16: std___compare__Strong_order__Fp_fmt = 7;
+#[derive(VaArg, FnPtrArg)]
+pub struct _Int_110 {
+    pub _M_lo: u64,
+    pub _M_hi: i32,
+}
+impl Clone for _Int_110 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _Int_110 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg)]
+pub struct _Int_111 {
+    pub _M_lo: u64,
+    pub _M_hi: i16,
+}
+impl Clone for _Int_111 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _Int_111 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+impl _Int_111 {}
+impl _Int_111 {}
+#[derive(VaArg, FnPtrArg)]
+pub struct _Int_112 {
+    pub _M_lo: u64,
+    pub _M_hi: i64,
+}
+impl Clone for _Int_112 {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for _Int_112 {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___compare__Weak_order {}
+impl Clone for std___compare__Weak_order {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___compare__Weak_order {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___compare__Partial_order {}
+impl Clone for std___compare__Partial_order {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___compare__Partial_order {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___compare__Strong_fallback {}
+impl Clone for std___compare__Strong_fallback {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___compare__Strong_fallback {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___compare__Weak_fallback {}
+impl Clone for std___compare__Weak_fallback {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___compare__Weak_fallback {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+#[derive(VaArg, FnPtrArg, Copy)]
+pub struct std___compare__Partial_fallback {}
+impl Clone for std___compare__Partial_fallback {
+    fn clone(&self) -> Self {
+        unimplemented!()
+    }
+}
+impl Default for std___compare__Partial_fallback {
+    fn default() -> Self {
+        unimplemented!()
+    }
+}
+pub static mut __synth3way_113: std::cell::LazyCell<std___detail__Synth3way> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
     pub v: i32,
 }
 impl S {
-    pub unsafe fn operator_cmp(&self, o: *const S) -> std::cmp::Ordering {
+    pub unsafe fn operator_cmp(&self, o: *const S) -> std_strong_ordering {
         if ((self.v) < ((*o).v)) {
-            return std::cmp::Ordering::Less;
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut std_strong_ordering_less_104))
+                .clone();
         }
         if ((self.v) > ((*o).v)) {
-            return std::cmp::Ordering::Greater;
+            return (*std::cell::LazyCell::force_mut(
+                &mut *&raw mut std_strong_ordering_greater_107,
+            ))
+            .clone();
         }
-        return std::cmp::Ordering::Equal;
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut std_strong_ordering_equal_105))
+            .clone();
     }
     pub unsafe fn operator_eq(&self, o: *const S) -> bool {
         return ((self.v) == ((*o).v));
@@ -27,7 +1613,7 @@ impl S {
 }
 impl std::cmp::Ord for S {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { S::operator_cmp(self, other as *const S) }
+        unsafe { unimplemented!() }
     }
 }
 impl std::cmp::PartialOrd for S {
@@ -50,12 +1636,133 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut a: S = S { v: 1 };
     let mut b: S = S { v: 2 };
-    assert!((unsafe { S::operator_cmp(&a, &b,) }) == std::cmp::Ordering::Less);
-    assert!((unsafe { S::operator_cmp(&b, &a,) }) == std::cmp::Ordering::Greater);
-    assert!((unsafe { S::operator_cmp(&a, &b,) }) != std::cmp::Ordering::Greater);
-    assert!((unsafe { S::operator_cmp(&b, &a,) }) != std::cmp::Ordering::Less);
-    assert!(!(unsafe { S::operator_eq(&a, &b,) }));
-    assert!((unsafe { S::operator_cmp(&a, &b,) }) == std::cmp::Ordering::Less);
+    (if (unsafe {
+        let ___v: std_strong_ordering = (unsafe { S::operator_cmp(&a, &b) });
+        operator_lt_114(___v, std___cmp_cat___unspec::new({ std::ptr::null_mut() }))
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_115(
+                c"a < b".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let ___v: std_strong_ordering = (unsafe { S::operator_cmp(&b, &a) });
+        operator_gt_116(___v, std___cmp_cat___unspec::new({ std::ptr::null_mut() }))
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_115(
+                c"b > a".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let ___v: std_strong_ordering = (unsafe { S::operator_cmp(&a, &b) });
+        operator_le_117(___v, std___cmp_cat___unspec::new({ std::ptr::null_mut() }))
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_115(
+                c"a <= b".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let ___v: std_strong_ordering = (unsafe { S::operator_cmp(&b, &a) });
+        operator_ge_118(___v, std___cmp_cat___unspec::new({ std::ptr::null_mut() }))
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_115(
+                c"b >= a".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if !(unsafe { S::operator_eq(&a, &b) }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_115(
+                c"a != b".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe {
+        let _arg0: std_strong_ordering = (unsafe { S::operator_cmp(&a, &b) });
+        operator_eq_119(
+            _arg0,
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut std_strong_ordering_less_104)).clone(),
+        )
+    }) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_115(
+                c"(a <=> b) == std::strong_ordering::less".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
+pub struct std___detail__Synth3way;
+pub unsafe fn operator_lt_114(
+    mut __v: std_strong_ordering,
+    mut _a1: std___cmp_cat___unspec,
+) -> bool {
+    unimplemented!()
+}
+pub unsafe fn __assert_fail_115(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
+}
+pub unsafe fn operator_gt_116(
+    mut __v: std_strong_ordering,
+    mut _a1: std___cmp_cat___unspec,
+) -> bool {
+    unimplemented!()
+}
+pub unsafe fn operator_le_117(
+    mut __v: std_strong_ordering,
+    mut _a1: std___cmp_cat___unspec,
+) -> bool {
+    unimplemented!()
+}
+pub unsafe fn operator_ge_118(
+    mut __v: std_strong_ordering,
+    mut _a1: std___cmp_cat___unspec,
+) -> bool {
+    unimplemented!()
+}
+pub unsafe fn operator_eq_119(mut _a0: std_strong_ordering, mut _a1: std_strong_ordering) -> bool {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

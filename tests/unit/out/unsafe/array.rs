@@ -27,7 +27,26 @@ unsafe fn main_0() -> i32 {
         fatorial *= arr1[(i) as usize];
         i.prefix_inc();
     }
-    assert!(((fatorial) == (120)));
+    (if ((fatorial) == (120)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"fatorial == 120".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_0(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

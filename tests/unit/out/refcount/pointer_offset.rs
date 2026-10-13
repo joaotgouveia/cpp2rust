@@ -44,12 +44,53 @@ fn main_0() -> i32 {
         out += { (elem!(ptr, i).read()) };
         i.prefix_inc();
     }
-    assert!((out == 51));
+    (if (out == 51) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"out == 51"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut step: i64 = 2_i64;
     let mut offset: Ptr<i32> = (arr.as_pointer() as Ptr<i32>).offset((step) as isize);
-    assert!(({ (offset.read()) } == { (*arr.borrow())[(2) as usize] }));
+    (if ({ (offset.read()) } == { (*arr.borrow())[(2) as usize] }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"*offset == arr[2]"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     offset = { offset.offset(-((step) as isize)) };
-    assert!(({ (offset).clone() } == { ((arr.as_pointer() as Ptr<i32>).offset(0)) }));
+    (if ({ (offset).clone() } == { ((arr.as_pointer() as Ptr<i32>).offset(0)) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_0(
+                Ptr::<i8>::from_string_literal(b"offset == &arr[0]"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_0(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

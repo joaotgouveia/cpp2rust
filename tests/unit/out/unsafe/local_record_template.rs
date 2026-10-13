@@ -57,16 +57,79 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     let mut l: Local_3 = Local_3 { x: 7 };
-    assert!(((unsafe { get_2(l,) }) == (7)));
-    assert!(((unsafe { twice_8(l,) }) == (14)));
-    assert!(((unsafe { other_11() }) == (7)));
-    assert!(((unsafe { wrap_9(5,) }) == (5)));
-    assert!(((unsafe { wrap_10(6_i64,) }) == (6)));
+    (if ((unsafe { get_2(l) }) == (7)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_12(
+                c"get(l) == 7".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { twice_8(l) }) == (14)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_12(
+                c"ns::twice(l) == 14".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { other_11() }) == (7)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_12(
+                c"other() == 7".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { wrap_9(5) }) == (5)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_12(
+                c"wrap(5) == 5".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { wrap_10(6_i64) }) == (6)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_12(
+                c"wrap(6L) == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Local_3 {
     pub x: i32,
+}
+pub unsafe fn __assert_fail_12(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

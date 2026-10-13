@@ -33,7 +33,26 @@ fn main_0() -> i32 {
     p = (a.as_pointer());
     ({ swap_by_ptr_1((p).clone(), (b.as_pointer())) });
     ({ swap_by_ref_2(a.as_pointer(), c.as_pointer()) });
-    assert!(((*c.borrow()) == 2));
+    (if ((*c.borrow()) == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_3(
+                Ptr::<i8>::from_string_literal(b"c == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_3(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

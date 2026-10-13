@@ -17,7 +17,22 @@ unsafe fn main_0() -> i32 {
     let mut pp: anon_0 = <anon_0>::default();
     pp.as_signed = (&mut x as *mut i64);
     (*pp.as_unsigned) = 42_u64;
-    assert!(((((x) == (42_i64)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((x) == (42_i64)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_1(
+                        (c"x == 42".as_ptr().cast_mut()).cast_const(),
+                        (c"union_pointer_pun_writethrough.c".as_ptr().cast_mut()).cast_const(),
+                        15_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
 }
 #[repr(C)]
@@ -30,5 +45,13 @@ impl Default for anon_0 {
     fn default() -> Self {
         unsafe { std::mem::zeroed() }
     }
+}
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

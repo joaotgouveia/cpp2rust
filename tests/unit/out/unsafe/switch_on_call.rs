@@ -35,10 +35,62 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((unsafe { switch_on_call_1(0,) }) == (100)));
-    assert!(((unsafe { switch_on_call_1(1,) }) == (200)));
-    assert!(((unsafe { switch_on_call_1(2,) }) == (400)));
-    assert!(((unsafe { switch_on_call_1(99,) }) == (-1_i32)));
+    (if ((unsafe { switch_on_call_1(0) }) == (100)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"switch_on_call(0) == 100".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { switch_on_call_1(1) }) == (200)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"switch_on_call(1) == 200".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { switch_on_call_1(2) }) == (400)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"switch_on_call(2) == 400".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { switch_on_call_1(99) }) == (-1_i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_2(
+                c"switch_on_call(99) == -1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_2(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

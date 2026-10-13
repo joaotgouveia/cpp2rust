@@ -75,7 +75,26 @@ unsafe fn main_0() -> i32 {
         && (((*(unsafe { find_0(root, 4) })).value) == (4)))
         && ((unsafe { find_0(root, 5) }).is_null());
     (unsafe { del_2(root) });
-    assert!(out);
+    (if out {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"out".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

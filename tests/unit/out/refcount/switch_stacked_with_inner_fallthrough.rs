@@ -27,9 +27,50 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ stacked_with_inner_fallthrough_0(1, 0,) }) == 50));
-    assert!((({ stacked_with_inner_fallthrough_0(2, 1,) }) == 999));
-    assert!((({ stacked_with_inner_fallthrough_0(99, 0,) }) == 999));
+    (if (({ stacked_with_inner_fallthrough_0(1, 0) }) == 50) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"stacked_with_inner_fallthrough(1, 0) == 50"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ stacked_with_inner_fallthrough_0(2, 1) }) == 999) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"stacked_with_inner_fallthrough(2, 1) == 999"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ stacked_with_inner_fallthrough_0(99, 0) }) == 999) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"stacked_with_inner_fallthrough(99, 0) == 999"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

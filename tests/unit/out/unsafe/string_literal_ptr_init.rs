@@ -37,55 +37,102 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(
-        (((((*(*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize]
-            .name
-            .offset((0) as isize)) as i32)
-            == ('f' as i32)) as i32)
-            != 0)
-    );
-    assert!(
-        (((((*(*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize]
-            .name
-            .offset((4) as isize)) as i32)
-            == ('t' as i32)) as i32)
-            != 0)
-    );
-    assert!(
-        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize].probe)
-            .is_none()) as i32)
-            != 0)
-    );
-    assert!(
-        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize].mask) == (16))
-            as i32)
-            != 0)
-    );
-    assert!(
-        (((((*(*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(1) as usize]
-            .name
-            .offset((0) as isize)) as i32)
-            == ('s' as i32)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe {
-            ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(1) as usize].probe).unwrap()(
-            )
-        }) == (1)) as i32)
-            != 0)
-    );
-    assert!(
-        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(1) as usize].mask) == (32))
-            as i32)
-            != 0)
-    );
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe {
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(1) as usize].probe)
+                    .unwrap()()
+            }) == (1)) as i32)
+                != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_2(
+                        (c"table[1].probe() == 1".as_ptr().cast_mut()).cast_const(),
+                        (c"string_literal_ptr_init.c".as_ptr().cast_mut()).cast_const(),
+                        26_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        { {} }
+    };
     let mut tail: *const libc::c_char = (&mut (*c"ab.cd".as_ptr().cast_mut().offset((2) as isize))
         as *mut libc::c_char)
         .cast_const();
-    assert!((((((*tail.offset((0) as isize)) as i32) == ('.' as i32)) as i32) != 0));
-    assert!((((((*tail.offset((1) as isize)) as i32) == ('c' as i32)) as i32) != 0));
-    assert!((((((*tail.offset((2) as isize)) as i32) == ('d' as i32)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if (((((*tail.offset((0) as isize)) as i32) == ('.' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_2(
+                        (c"tail[0] == \'.\'".as_ptr().cast_mut()).cast_const(),
+                        (c"string_literal_ptr_init.c".as_ptr().cast_mut()).cast_const(),
+                        30_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if (((((*tail.offset((1) as isize)) as i32) == ('c' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_2(
+                        (c"tail[1] == \'c\'".as_ptr().cast_mut()).cast_const(),
+                        (c"string_literal_ptr_init.c".as_ptr().cast_mut()).cast_const(),
+                        31_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if (((((*tail.offset((2) as isize)) as i32) == ('d' as i32)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_2(
+                        (c"tail[2] == \'d\'".as_ptr().cast_mut()).cast_const(),
+                        (c"string_literal_ptr_init.c".as_ptr().cast_mut()).cast_const(),
+                        32_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     let mut have: i32 = 0;
     let mut p: *mut ::libc::c_void = if (have != 0) {
         ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize].name
@@ -93,10 +140,25 @@ unsafe fn main_0() -> i32 {
     } else {
         (c"".as_ptr().cast_mut() as *mut ::libc::c_void)
     };
-    assert!(
-        (((((*(p as *const libc::c_char).offset((0) as isize)) as i32) == ('\0' as i32)) as i32)
-            != 0)
-    );
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if (((((*(p as *const libc::c_char).offset((0) as isize)) as i32) == ('\0' as i32))
+                as i32)
+                != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_2(
+                        (c"((const char *)p)[0] == \'\\0\'".as_ptr().cast_mut()).cast_const(),
+                        (c"string_literal_ptr_init.c".as_ptr().cast_mut()).cast_const(),
+                        36_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     have = 1;
     p = if (have != 0) {
         ((*std::cell::LazyCell::force_mut(&mut *&raw mut table_1))[(0) as usize].name
@@ -104,11 +166,34 @@ unsafe fn main_0() -> i32 {
     } else {
         (c"".as_ptr().cast_mut() as *mut ::libc::c_void)
     };
-    assert!(
-        (((((*(p as *const libc::c_char).offset((0) as isize)) as i32) == ('f' as i32)) as i32)
-            != 0)
-    );
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if (((((*(p as *const libc::c_char).offset((0) as isize)) as i32) == ('f' as i32))
+                as i32)
+                != 0)
+            {
+            } else {
+                (unsafe {
+                    __assert_fail_2(
+                        (c"((const char *)p)[0] == \'f\'".as_ptr().cast_mut()).cast_const(),
+                        (c"string_literal_ptr_init.c".as_ptr().cast_mut()).cast_const(),
+                        39_u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub unsafe fn __assert_fail_2(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const table_1);

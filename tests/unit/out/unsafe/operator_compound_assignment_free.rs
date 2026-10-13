@@ -64,53 +64,163 @@ unsafe fn main_0() -> i32 {
         let _a: *mut S = &mut a;
         operator_add_assign_0(_a, &b)
     });
-    assert!(((a.v) == (10_u32)));
+    (if ((a.v) == (10_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 10".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut a;
         operator_sub_assign_1(_a, &b)
     });
-    assert!(((a.v) == (6_u32)));
+    (if ((a.v) == (6_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut a;
         operator_mul_assign_2(_a, &b)
     });
-    assert!(((a.v) == (24_u32)));
+    (if ((a.v) == (24_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 24".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut a;
         operator_div_assign_3(_a, &b)
     });
-    assert!(((a.v) == (6_u32)));
+    (if ((a.v) == (6_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut a;
         operator_rem_assign_4(_a, &b)
     });
-    assert!(((a.v) == (2_u32)));
+    (if ((a.v) == (2_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut a;
         operator_bitor_assign_6(_a, &b)
     });
-    assert!(((a.v) == (6_u32)));
+    (if ((a.v) == (6_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut a;
         operator_bitand_assign_5(_a, &b)
     });
-    assert!(((a.v) == (4_u32)));
+    (if ((a.v) == (4_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 4".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut a;
         operator_bitxor_assign_7(_a, &b)
     });
-    assert!(((a.v) == (0_u32)));
+    (if ((a.v) == (0_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 0".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     a.v = 3_u32;
     (unsafe {
         let _a: *mut S = &mut a;
         operator_shl_assign_8(_a, 2)
     });
-    assert!(((a.v) == (12_u32)));
+    (if ((a.v) == (12_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 12".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut a;
         operator_shr_assign_9(_a, 1)
     });
-    assert!(((a.v) == (6_u32)));
+    (if ((a.v) == (6_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe {
         let _a: *mut S = &mut (*(unsafe {
             let _a: *mut S = &mut a;
@@ -119,7 +229,26 @@ unsafe fn main_0() -> i32 {
         let _b: *const S = &b;
         operator_add_assign_0(_a, _b)
     });
-    assert!(((a.v) == (14_u32)));
+    (if ((a.v) == (14_u32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_10(
+                c"a.v == 14".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_10(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

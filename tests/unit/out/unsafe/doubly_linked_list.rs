@@ -166,45 +166,301 @@ unsafe fn main_0() -> i32 {
     head = (unsafe { Delete_3(head, 0) });
     head = (unsafe { Delete_3(head, -2_i32) });
     let mut tail: *mut Node = (unsafe { Tail_4(head) });
-    assert!((((*(unsafe { Find_0(head, 0,) })).val) == (4)));
-    assert!((((*(unsafe { Find_0(head, 1,) })).val) == (3)));
-    assert!((((*(unsafe { Find_0(head, 2,) })).val) == (2)));
-    assert!((((*(unsafe { Find_0(head, 3,) })).val) == (1)));
-    assert!((((*(unsafe { Find_0(head, 4,) })).val) == (-1_i32)));
-    assert!((unsafe { Find_0(head, 5,) }).is_null());
-    assert!((((*(unsafe { FindBack_1(tail, 0,) })).val) == (-1_i32)));
-    assert!((((*(unsafe { FindBack_1(tail, 1,) })).val) == (1)));
-    assert!((((*(unsafe { FindBack_1(tail, 2,) })).val) == (2)));
-    assert!((((*(unsafe { FindBack_1(tail, 3,) })).val) == (3)));
-    assert!((((*(unsafe { FindBack_1(tail, 4,) })).val) == (4)));
-    assert!(((*(unsafe { FindBack_1(tail, 4,) })).prev).is_null());
-    assert!((((*(*(unsafe { Find_0(head, 0,) })).next).val) == (3)));
-    assert!((((*(*(*(unsafe { Find_0(head, 1,) })).next).next).val) == (1)));
-    assert!((((*(*(unsafe { Find_0(head, 2,) })).prev).val) == (3)));
-    assert!(((*(unsafe { Find_0(head, 4,) })).next).is_null());
-    assert!((((*(*(*(unsafe { FindBack_1(tail, 1,) })).prev).prev).val) == (3)));
+    (if (((*(unsafe { Find_0(head, 0) })).val) == (4)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 0)->val == 4".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { Find_0(head, 1) })).val) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 1)->val == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { Find_0(head, 2) })).val) == (2)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 2)->val == 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { Find_0(head, 3) })).val) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 3)->val == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { Find_0(head, 4) })).val) == (-1_i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 4)->val == -1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (unsafe { Find_0(head, 5) }).is_null() {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 5) == nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { FindBack_1(tail, 0) })).val) == (-1_i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"FindBack(tail, 0)->val == -1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { FindBack_1(tail, 1) })).val) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"FindBack(tail, 1)->val == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { FindBack_1(tail, 2) })).val) == (2)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"FindBack(tail, 2)->val == 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { FindBack_1(tail, 3) })).val) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"FindBack(tail, 3)->val == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { FindBack_1(tail, 4) })).val) == (4)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"FindBack(tail, 4)->val == 4".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((*(unsafe { FindBack_1(tail, 4) })).prev).is_null() {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"FindBack(tail, 4)->prev == nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(*(unsafe { Find_0(head, 0) })).next).val) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 0)->next->val == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(*(*(unsafe { Find_0(head, 1) })).next).next).val) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 1)->next->next->val == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(*(unsafe { Find_0(head, 2) })).prev).val) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 2)->prev->val == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((*(unsafe { Find_0(head, 4) })).next).is_null() {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 4)->next == nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(*(*(unsafe { FindBack_1(tail, 1) })).prev).prev).val) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"FindBack(tail, 1)->prev->prev->val == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (*(*(unsafe { Find_0(head, 0) })).next).val = 30;
-    assert!((((*(unsafe { Find_0(head, 1,) })).val) == (30)));
+    (if (((*(unsafe { Find_0(head, 1) })).val) == (30)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 1)->val == 30".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (*(*(unsafe { Find_0(head, 1) })).next).val =
         (((*(unsafe { Find_0(head, 0) })).val) + ((*(unsafe { Find_0(head, 3) })).val));
-    assert!((((*(unsafe { Find_0(head, 2,) })).val) == ((4) + (1))));
+    (if (((*(unsafe { Find_0(head, 2) })).val) == ((4) + (1))) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 2)->val == 4 + 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut sum: i32 = ((((((*(unsafe { Find_0(head, 0) })).val)
         + ((*(unsafe { Find_0(head, 1) })).val))
         + ((*(unsafe { Find_0(head, 2) })).val))
         + ((*(unsafe { Find_0(head, 3) })).val))
         + ((*(unsafe { Find_0(head, 4) })).val));
-    assert!(((sum) == (((((4) + (30)) + (5)) + (1)) + (-1_i32))));
-    assert!(
-        ((((*(unsafe { Find_0(head, 0,) })).val) + ((*(unsafe { FindBack_1(tail, 0,) })).val))
-            == ((4) + (-1_i32)))
-    );
-    assert!(
-        (((*(*(unsafe { Find_0(head, 2,) })).next).val)
-            == ((*(unsafe { FindBack_1(tail, 1,) })).val))
-    );
-    assert!(
-        (((*(unsafe { Find_0(head, 0,) })).prev) == ((*(unsafe { FindBack_1(tail, 4,) })).prev))
-    );
+    (if ((sum) == (((((4) + (30)) + (5)) + (1)) + (-1_i32))) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"sum == 4 + 30 + 5 + 1 + -1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((((*(unsafe { Find_0(head, 0) })).val) + ((*(unsafe { FindBack_1(tail, 0) })).val))
+        == ((4) + (-1_i32)))
+    {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 0)->val + FindBack(tail, 0)->val == 4 + -1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(*(unsafe { Find_0(head, 2) })).next).val) == ((*(unsafe { FindBack_1(tail, 1) })).val))
+    {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 2)->next->val == FindBack(tail, 1)->val".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*(unsafe { Find_0(head, 0) })).prev) == ((*(unsafe { FindBack_1(tail, 4) })).prev)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"Find(head, 0)->prev == FindBack(tail, 4)->prev".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_5(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

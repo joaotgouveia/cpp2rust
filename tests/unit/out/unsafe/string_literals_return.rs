@@ -26,19 +26,137 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     let mut a: *const libc::c_char = (unsafe { get_greeting_0() });
-    assert!((((*a.offset((0) as isize)) as i32) == (('h' as libc::c_char) as i32)));
-    assert!((((*a.offset((4) as isize)) as i32) == (('o' as libc::c_char) as i32)));
-    assert!((((*a.offset((5) as isize)) as i32) == (('\0' as libc::c_char) as i32)));
+    (if (((*a.offset((0) as isize)) as i32) == (('h' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"a[0] == \'h\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*a.offset((4) as isize)) as i32) == (('o' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"a[4] == \'o\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*a.offset((5) as isize)) as i32) == (('\0' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"a[5] == \'\\0\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut b: *const libc::c_char = (unsafe { get_empty_1() });
-    assert!((((*b.offset((0) as isize)) as i32) == (('\0' as libc::c_char) as i32)));
+    (if (((*b.offset((0) as isize)) as i32) == (('\0' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"b[0] == \'\\0\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut c: *const libc::c_char = (unsafe { get_branch_2(1) });
-    assert!((((*c.offset((0) as isize)) as i32) == (('p' as libc::c_char) as i32)));
-    assert!((((*c.offset((7) as isize)) as i32) == (('e' as libc::c_char) as i32)));
-    assert!((((*c.offset((8) as isize)) as i32) == (('\0' as libc::c_char) as i32)));
+    (if (((*c.offset((0) as isize)) as i32) == (('p' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"c[0] == \'p\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*c.offset((7) as isize)) as i32) == (('e' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"c[7] == \'e\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*c.offset((8) as isize)) as i32) == (('\0' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"c[8] == \'\\0\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut d: *const libc::c_char = (unsafe { get_branch_2(-1_i32) });
-    assert!((((*d.offset((0) as isize)) as i32) == (('n' as libc::c_char) as i32)));
-    assert!((((*d.offset((11) as isize)) as i32) == (('e' as libc::c_char) as i32)));
-    assert!((((*d.offset((12) as isize)) as i32) == (('\0' as libc::c_char) as i32)));
+    (if (((*d.offset((0) as isize)) as i32) == (('n' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"d[0] == \'n\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*d.offset((11) as isize)) as i32) == (('e' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"d[11] == \'e\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if (((*d.offset((12) as isize)) as i32) == (('\0' as libc::c_char) as i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"d[12] == \'\\0\'".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

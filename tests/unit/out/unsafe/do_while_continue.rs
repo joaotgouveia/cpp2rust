@@ -47,8 +47,46 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((((unsafe { run_0() }) == (4)) as i32) != 0));
-    assert!(((((unsafe { nested_1() }) == (6)) as i32) != 0));
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { run_0() }) == (4)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_2(
+                        (c"run() == 4".as_ptr().cast_mut()).cast_const(),
+                        (c"do_while_continue.c".as_ptr().cast_mut()).cast_const(),
+                        34_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
+    {
+        &(::std::mem::size_of::<i32>());
+        {
+            if ((((unsafe { nested_1() }) == (6)) as i32) != 0) {
+            } else {
+                (unsafe {
+                    __assert_fail_2(
+                        (c"nested() == 6".as_ptr().cast_mut()).cast_const(),
+                        (c"do_while_continue.c".as_ptr().cast_mut()).cast_const(),
+                        35_u32,
+                        c"int main(void)".as_ptr(),
+                    )
+                });
+            }
+        }
+    };
     return 0;
+}
+pub unsafe fn __assert_fail_2(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

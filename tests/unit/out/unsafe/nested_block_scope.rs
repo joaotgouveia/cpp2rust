@@ -16,14 +16,58 @@ unsafe fn main_0() -> i32 {
     let mut x: i32 = 1;
     {
         let mut x: i32 = 2;
-        assert!(((x) == (2)));
+        (if ((x) == (2)) {
+            &(0);
+        } else {
+            (unsafe {
+                __assert_fail_0(
+                    c"x == 2".as_ptr(),
+                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                    line!() as u32,
+                    c"int main()".as_ptr(),
+                )
+            });
+        });
         {
             let mut x: i32 = 3;
-            assert!(((x) == (3)));
+            (if ((x) == (3)) {
+                &(0);
+            } else {
+                (unsafe {
+                    __assert_fail_0(
+                        c"x == 3".as_ptr(),
+                        concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                        line!() as u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            });
         }
-        assert!(((x) == (2)));
+        (if ((x) == (2)) {
+            &(0);
+        } else {
+            (unsafe {
+                __assert_fail_0(
+                    c"x == 2".as_ptr(),
+                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                    line!() as u32,
+                    c"int main()".as_ptr(),
+                )
+            });
+        });
     }
-    assert!(((x) == (1)));
+    (if ((x) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"x == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut sum: i32 = 0;
     let mut i: i32 = 0;
     'loop_: while ((i) < (3)) {
@@ -35,16 +79,68 @@ unsafe fn main_0() -> i32 {
         sum += y;
         i.postfix_inc();
     }
-    assert!(((sum) == (33)));
+    (if ((sum) == (33)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"sum == 33".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     if ((x) == (1)) {
         let mut x: i32 = 5;
         {
             let mut x: i32 = 6;
-            assert!(((x) == (6)));
+            (if ((x) == (6)) {
+                &(0);
+            } else {
+                (unsafe {
+                    __assert_fail_0(
+                        c"x == 6".as_ptr(),
+                        concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                        line!() as u32,
+                        c"int main()".as_ptr(),
+                    )
+                });
+            });
         }
-        assert!(((x) == (5)));
+        (if ((x) == (5)) {
+            &(0);
+        } else {
+            (unsafe {
+                __assert_fail_0(
+                    c"x == 5".as_ptr(),
+                    concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                    line!() as u32,
+                    c"int main()".as_ptr(),
+                )
+            });
+        });
     }
-    assert!(((x) == (1)));
+    (if ((x) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_0(
+                c"x == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_0(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

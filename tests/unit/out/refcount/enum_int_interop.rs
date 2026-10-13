@@ -92,9 +92,42 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut c: Color = Color_RED;
-    assert!(((c as i32) == (Color_RED as i32)));
-    assert!(((c as i32) == 0));
-    assert!(((c as i32) != 1));
+    (if ((c as i32) == (Color_RED as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"c == RED"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((c as i32) == 0) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"c == 0"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((c as i32) != 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"c != 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     if ((c as i32) == (Color_GREEN as i32)) {
         return 1;
     }
@@ -115,36 +148,223 @@ fn main_0() -> i32 {
         }
     };
     let mut x: i32 = (c as i32);
-    assert!((x == 0));
+    (if (x == 0) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"x == 0"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut y: i32 = ((c as i32) + 1);
-    assert!((y == 1));
+    (if (y == 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"y == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     c = ((2) as Color);
-    assert!(((c as i32) == (Color_BLUE as i32)));
-    assert!(((c as i32) == 2));
+    (if ((c as i32) == (Color_BLUE as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"c == BLUE"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((c as i32) == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"c == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     c = ({ make_color_6(1) });
-    assert!(((c as i32) == (Color_GREEN as i32)));
+    (if ((c as i32) == (Color_GREEN as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"c == GREEN"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut cmp: Color = (((c as i32) + 1) as Color);
-    assert!(((cmp as i32) == (Color_BLUE as i32)));
+    (if ((cmp as i32) == (Color_BLUE as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"cmp == BLUE"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut o: Option = Option_OPT_A;
-    assert!(((o as i32) == (Option_OPT_A as i32)));
-    assert!(((o as i32) == 10));
+    (if ((o as i32) == (Option_OPT_A as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"o == OPT_A"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((o as i32) == 10) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"o == 10"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut oi: i32 = (o as i32);
-    assert!((oi == 10));
+    (if (oi == 10) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"oi == 10"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     o = ((20) as Option);
-    assert!(((o as i32) == (Option_OPT_B as i32)));
+    (if ((o as i32) == (Option_OPT_B as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"o == OPT_B"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut rc: i32 = ({ classify_option_5((o as i32)) });
-    assert!((rc == 2));
+    (if (rc == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"rc == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     rc = ({ classify_option_5(20) });
-    assert!((rc == 2));
+    (if (rc == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"rc == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     rc = ({ classify_option_5((Option_OPT_C as i32)) });
-    assert!((rc == 3));
+    (if (rc == 3) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"rc == 3"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut t: Tag = Tag_TAG_ONE;
-    assert!(((t as i32) == 1));
-    assert!(((t as i32) == (Tag_TAG_ONE as i32)));
+    (if ((t as i32) == 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"t == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((t as i32) == (Tag_TAG_ONE as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"t == TAG_ONE"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut ti: i32 = (t as i32);
-    assert!((ti == 1));
+    (if (ti == 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"ti == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     t = ((2) as Tag);
-    assert!(((t as i32) == (Tag_TAG_TWO as i32)));
+    (if ((t as i32) == (Tag_TAG_TWO as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"t == TAG_TWO"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     'switch: {
         match { (t as i32) } {
             __v if __v == (Tag_TAG_ZERO as i32) => {
@@ -160,35 +380,147 @@ fn main_0() -> i32 {
         }
     };
     let mut extra: i32 = (((Color_RED as i32) + (Color_GREEN as i32)) + (Color_BLUE as i32));
-    assert!((extra == ((0 + 1) + 2)));
-    assert!(((global_color_0.with(|rc| *rc.borrow()) as i32) == (Color_GREEN as i32)));
-    assert!(((global_opt_1.with(|rc| *rc.borrow()) as i32) == (Option_OPT_B as i32)));
-    assert!(((global_tag_2.with(|rc| *rc.borrow()) as i32) == (Tag_TAG_TWO as i32)));
-    assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(0) as usize].color } as i32)
-            == (Color_RED as i32))
-    );
-    assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(0) as usize].opt } as i32)
-            == (Option_OPT_NONE as i32))
-    );
-    assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(1) as usize].color } as i32)
-            == (Color_GREEN as i32))
-    );
-    assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(1) as usize].opt } as i32)
-            == (Option_OPT_A as i32))
-    );
-    assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(2) as usize].color } as i32)
-            == (Color_BLUE as i32))
-    );
-    assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(2) as usize].opt } as i32)
-            == (Option_OPT_C as i32))
-    );
+    (if (extra == ((0 + 1) + 2)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"extra == 0 + 1 + 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((global_color_0.with(|rc| *rc.borrow()) as i32) == (Color_GREEN as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"global_color == GREEN"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((global_opt_1.with(|rc| *rc.borrow()) as i32) == (Option_OPT_B as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"global_opt == OPT_B"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((global_tag_2.with(|rc| *rc.borrow()) as i32) == (Tag_TAG_TWO as i32)) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"global_tag == TAG_TWO"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ (*entries_3.with(Value::clone).borrow())[(0) as usize].color } as i32)
+        == (Color_RED as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"entries[0].color == RED"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ (*entries_3.with(Value::clone).borrow())[(0) as usize].opt } as i32)
+        == (Option_OPT_NONE as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"entries[0].opt == OPT_NONE"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ (*entries_3.with(Value::clone).borrow())[(1) as usize].color } as i32)
+        == (Color_GREEN as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"entries[1].color == GREEN"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ (*entries_3.with(Value::clone).borrow())[(1) as usize].opt } as i32)
+        == (Option_OPT_A as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"entries[1].opt == OPT_A"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ (*entries_3.with(Value::clone).borrow())[(2) as usize].color } as i32)
+        == (Color_BLUE as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"entries[2].color == BLUE"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ (*entries_3.with(Value::clone).borrow())[(2) as usize].opt } as i32)
+        == (Option_OPT_C as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_7(
+                Ptr::<i8>::from_string_literal(b"entries[2].opt == OPT_C"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_7(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {
     let _ = global_color_0.with(|_| ());

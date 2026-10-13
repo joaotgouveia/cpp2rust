@@ -70,10 +70,10 @@ pub unsafe fn always_given_3(mut x: NoDefault) -> i32 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct S_NoDefault_ {
+pub struct S_4 {
     pub v: i32,
 }
-impl S_NoDefault_ {
+impl S_4 {
     pub unsafe fn new(mut v: i32) -> Self {
         let mut this = Self { v: v };
         this
@@ -89,17 +89,101 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!(((unsafe { used_0(None,) }) == (1)));
-    assert!(((unsafe { used_0(Some(A::new_2({ 5 },)),) }) == (5)));
-    assert!(((unsafe { used_1(None,) }) == (2)));
-    assert!(
-        ((unsafe { scaled_2(A::new_2({ 3 },), None,) })
-            == ((3) * (::std::mem::size_of::<A>() as i32)))
-    );
-    assert!(((unsafe { scaled_2(A::new_2({ 3 },), Some(2),) }) == (6)));
-    assert!(((unsafe { always_given_3(NoDefault::new({ 3 },),) }) == (3)));
-    let mut s: S_NoDefault_ = S_NoDefault_::new({ 1 });
-    assert!(((unsafe { S_NoDefault_::get(&s, NoDefault::new({ 4 },),) }) == (5)));
+    (if ((unsafe { used_0(None) }) == (1)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"used<A>() == 1".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { used_0(Some(A::new_2({ 5 }))) }) == (5)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"used(A(5)) == 5".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { used_1(None) }) == (2)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"used<B>() == 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { scaled_2(A::new_2({ 3 }), None) })
+        == ((3) * (::std::mem::size_of::<A>() as i32)))
+    {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"scaled(A(3)) == 3 * (int)sizeof(A)".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { scaled_2(A::new_2({ 3 }), Some(2)) }) == (6)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"scaled(A(3), 2) == 6".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { always_given_3(NoDefault::new({ 3 })) }) == (3)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"always_given(NoDefault(3)) == 3".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    let mut s: S_4 = S_4::new({ 1 });
+    (if ((unsafe { S_4::get(&s, NoDefault::new({ 4 })) }) == (5)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_5(
+                c"s.get(NoDefault(4)) == 5".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_5(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

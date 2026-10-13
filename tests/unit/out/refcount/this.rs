@@ -74,70 +74,315 @@ fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S::new_1({ 1 })));
     let ref_: Ptr<S> = ({ SImpl::returns_this_reference(&s.as_pointer()) });
     field!(ref_, a_).with_mut(|__v| __v.postfix_inc());
-    assert!(({ (*s.borrow()).a_ } == 2));
+    (if ({ (*s.borrow()).a_ } == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.a_ == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut ptr: Ptr<S> = ({ SImpl::returns_this_pointer(&s.as_pointer()) });
     field!(ptr, a_).with_mut(|__v| __v.postfix_inc());
-    assert!(({ (*s.borrow()).a_ } == 3));
-    ({ SImpl::inc(&({ SImpl::inc(&({ SImpl::inc(&s.as_pointer()) })) })) });
-    assert!(({ (*s.borrow()).a_ } == 6));
-    ({ SImpl::set_from_this(&s.as_pointer()) });
-    assert!(({ (*s.borrow()).a_ } == 7));
-    assert!((({ SImpl::twice(&s.as_pointer(),) }) == 14));
-    ({ SImpl::link(&s.as_pointer()) });
-    assert!(({ { (*s.borrow()).self__.clone() } } == { (s.as_pointer()) }));
-    field!({ (*s.borrow()).self__.clone() }, a_).with_mut(|__v| __v.postfix_inc());
-    assert!(({ (*s.borrow()).a_ } == 8));
-    ({ SImpl::bump_me(&s.as_pointer()) });
-    assert!(({ (*s.borrow()).a_ } == 9));
-    let mut d: D = D::new({ 3 });
-    assert!((d.a_ == 6));
-    let cr: Ptr<S> = ({ SImpl::cref(&s.as_pointer()) });
-    assert!((cr.with(|__s| __s.a_) == 9));
-    let t: Value<S> = Rc::new(RefCell::new(S::new_1({ 0 })));
-    assert!(
+    (if ({ (*s.borrow()).a_ } == 3) {
+        &(0);
+    } else {
         ({
-            let _o: Ptr<S> = (s.as_pointer());
-            SImpl::is(&s.as_pointer(), _o)
-        })
-    );
-    assert!(!({ SImpl::is(&s.as_pointer(), (t.as_pointer()),) }));
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.a_ == 3"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    ({ SImpl::inc(&({ SImpl::inc(&({ SImpl::inc(&s.as_pointer()) })) })) });
+    (if ({ (*s.borrow()).a_ } == 6) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.a_ == 6"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    ({ SImpl::set_from_this(&s.as_pointer()) });
+    (if ({ (*s.borrow()).a_ } == 7) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.a_ == 7"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ SImpl::twice(&s.as_pointer()) }) == 14) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.twice() == 14"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    ({ SImpl::link(&s.as_pointer()) });
+    (if ({ { (*s.borrow()).self__.clone() } } == { (s.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.self_ == &s"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    field!({ (*s.borrow()).self__.clone() }, a_).with_mut(|__v| __v.postfix_inc());
+    (if ({ (*s.borrow()).a_ } == 8) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.a_ == 8"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    ({ SImpl::bump_me(&s.as_pointer()) });
+    (if ({ (*s.borrow()).a_ } == 9) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.a_ == 9"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    let mut d: D = D::new({ 3 });
+    (if (d.a_ == 6) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"d.a_ == 6"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    let cr: Ptr<S> = ({ SImpl::cref(&s.as_pointer()) });
+    (if (cr.with(|__s| __s.a_) == 9) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"cr.a_ == 9"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    let t: Value<S> = Rc::new(RefCell::new(S::new_1({ 0 })));
+    (if ({
+        let _o: Ptr<S> = (s.as_pointer());
+        SImpl::is(&s.as_pointer(), _o)
+    }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.is(&s)"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if !({ SImpl::is(&s.as_pointer(), (t.as_pointer())) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"!s.is(&t)"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut p: Ptr<S> = Ptr::alloc(S::new_1({ 1 }));
     let mut q: Ptr<S> = ({ SImpl::returns_this_pointer(&p) });
     field!(q, a_).with_mut(|__v| __v.postfix_inc());
-    assert!((p.with(|__s| __s.a_) == 2));
+    (if (p.with(|__s| __s.a_) == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"p->a_ == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     p.delete();
     let mut h: Ptr<S> = Ptr::alloc(S::new_1({ 5 }));
     ({ SImpl::destroy(&h) });
     ({ SImpl::reset(&s.as_pointer()) });
-    assert!(({ (*s.borrow()).a_ } == 0));
-    assert!(({ (*s.borrow()).self__.clone() }).is_null());
-    assert!(
-        ((({
-            let _other: Ptr<S> = (s.as_pointer());
-            SImpl::copy_if_different(&s.as_pointer(), _other)
-        }) as i32)
-            == (false as i32))
-    );
-    assert!(
-        ((({
-            let _other: Ptr<S> = (s.as_pointer());
-            SImpl::copy_if_different_const(&s.as_pointer(), _other)
-        }) as i32)
-            == (false as i32))
-    );
+    (if ({ (*s.borrow()).a_ } == 0) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.a_ == 0"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ (*s.borrow()).self__.clone() }).is_null() {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.self_ == nullptr"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((({
+        let _other: Ptr<S> = (s.as_pointer());
+        SImpl::copy_if_different(&s.as_pointer(), _other)
+    }) as i32)
+        == (false as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.copy_if_different(&s) == false"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ((({
+        let _other: Ptr<S> = (s.as_pointer());
+        SImpl::copy_if_different_const(&s.as_pointer(), _other)
+    }) as i32)
+        == (false as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.copy_if_different_const(&s) == false"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let other: Value<S> = Rc::new(RefCell::new(S::new_1({ 22 })));
-    assert!(
-        ((({ SImpl::copy_if_different(&s.as_pointer(), (other.as_pointer()),) }) as i32)
-            == (true as i32))
-    );
-    assert!(({ (*s.borrow()).a_ } == { (*other.borrow()).a_ }));
-    assert!(({ { (*s.borrow()).self__.clone() } } == { { (*other.borrow()).self__.clone() } }));
+    (if ((({ SImpl::copy_if_different(&s.as_pointer(), (other.as_pointer())) }) as i32)
+        == (true as i32))
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.copy_if_different(&other) == true"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ (*s.borrow()).a_ } == { (*other.borrow()).a_ }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.a_ == other.a_"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({ { (*s.borrow()).self__.clone() } } == { { (*other.borrow()).self__.clone() } }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"s.self_ == other.self_"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut u: S = S::new_2({ 1 }, { (s.as_pointer()) });
-    assert!(({ (u.self__).clone() } == { (s.as_pointer()) }));
+    (if ({ (u.self__).clone() } == { (s.as_pointer()) }) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"u.self_ == &s"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let s_const: Value<S> = Rc::new(RefCell::new(S::new_1({ 100 })));
     let mut u1: S = S::new_3({ 1 }, { (s_const.as_pointer()) });
-    assert!((u1.self__).is_null());
+    (if (u1.self__).is_null() {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"u1.self_ == nullptr"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub trait SImpl {
     fn returns_this_reference(&self) -> Ptr<S>;

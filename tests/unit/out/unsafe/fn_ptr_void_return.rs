@@ -24,14 +24,66 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut a: i32 = 42;
     (unsafe { run_2(Some(negate_0), (&mut a as *mut i32)) });
-    assert!(((a) == (-42_i32)));
+    (if ((a) == (-42_i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"a == -42".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     (unsafe { run_2(Some(zero_out_1), (&mut a as *mut i32)) });
-    assert!(((a) == (0)));
+    (if ((a) == (0)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"a == 0".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut fn_: Option<unsafe fn(*mut i32)> = Some(negate_0);
-    assert!(!((fn_).is_none()));
+    (if !((fn_).is_none()) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"fn != nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     let mut b: i32 = 10;
     (unsafe { (fn_).unwrap()((&mut b as *mut i32)) });
-    assert!(((b) == (-10_i32)));
+    (if ((b) == (-10_i32)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"b == -10".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

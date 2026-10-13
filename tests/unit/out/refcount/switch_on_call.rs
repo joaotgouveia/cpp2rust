@@ -33,10 +33,62 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ switch_on_call_1(0,) }) == 100));
-    assert!((({ switch_on_call_1(1,) }) == 200));
-    assert!((({ switch_on_call_1(2,) }) == 400));
-    assert!((({ switch_on_call_1(99,) }) == -1_i32));
+    (if (({ switch_on_call_1(0) }) == 100) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_2(
+                Ptr::<i8>::from_string_literal(b"switch_on_call(0) == 100"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ switch_on_call_1(1) }) == 200) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_2(
+                Ptr::<i8>::from_string_literal(b"switch_on_call(1) == 200"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ switch_on_call_1(2) }) == 400) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_2(
+                Ptr::<i8>::from_string_literal(b"switch_on_call(2) == 400"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (({ switch_on_call_1(99) }) == -1_i32) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_2(
+                Ptr::<i8>::from_string_literal(b"switch_on_call(99) == -1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_2(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

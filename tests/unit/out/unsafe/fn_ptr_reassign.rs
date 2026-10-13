@@ -23,16 +23,90 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     let mut fn_: Option<unsafe fn(i32, i32) -> i32> = Some(add_0);
-    assert!(((unsafe { (fn_).unwrap()(3, 4,) }) == (7)));
+    (if ((unsafe { (fn_).unwrap()(3, 4) }) == (7)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"fn(3, 4) == 7".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     fn_ = Some(sub_1);
-    assert!(((unsafe { (fn_).unwrap()(10, 3,) }) == (7)));
+    (if ((unsafe { (fn_).unwrap()(10, 3) }) == (7)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"fn(10, 3) == 7".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     fn_ = Some(mul_2);
-    assert!(((unsafe { (fn_).unwrap()(6, 7,) }) == (42)));
+    (if ((unsafe { (fn_).unwrap()(6, 7) }) == (42)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"fn(6, 7) == 42".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     fn_ = None;
-    assert!((fn_).is_none());
+    (if (fn_).is_none() {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"fn == nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     fn_ = Some(add_0);
-    assert!(!((fn_).is_none()));
-    assert!(((unsafe { (fn_).unwrap()(1, 1,) }) == (2)));
+    (if !((fn_).is_none()) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"fn != nullptr".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
+    (if ((unsafe { (fn_).unwrap()(1, 1) }) == (2)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_3(
+                c"fn(1, 1) == 2".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_3(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}

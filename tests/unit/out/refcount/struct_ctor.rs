@@ -68,15 +68,57 @@ fn main_0() -> i32 {
     let struct_with_ctor: Value<StructWithCtor> =
         Rc::new(RefCell::new(StructWithCtor::new({ 1 }, { 2 })));
     let x: Value<i32> = Rc::new(RefCell::new(3));
-    assert!(
-        (((({ foo_0(x.as_pointer(),) }).read()) == 3)
-            && ((({ StructWithCtorImpl::x1(&struct_with_ctor.as_pointer(),) }).read()) == 2))
-            && ((({ StructWithCtorImpl::x2(&struct_with_ctor.as_pointer(),) }).read()) == 1)
-    );
+    (if (((({ foo_0(x.as_pointer()) }).read()) == 3)
+        && ((({ StructWithCtorImpl::x1(&struct_with_ctor.as_pointer()) }).read()) == 2))
+        && ((({ StructWithCtorImpl::x2(&struct_with_ctor.as_pointer()) }).read()) == 1)
+    {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(
+                    b"foo(x) == 3 && struct_with_ctor.x1() == 2 && struct_with_ctor.x2() == 1",
+                ),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     let mut p: Ptr_ = Ptr_::new();
-    assert!((p.v1.v == 11));
-    assert!((p.v2.v == 22));
+    (if (p.v1.v == 11) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"p.v1.v == 11"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (p.v2.v == 22) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_1(
+                Ptr::<i8>::from_string_literal(b"p.v2.v == 22"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
+}
+pub fn __assert_fail_1(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub trait StructWithCtorImpl {
     fn x1(&self) -> Ptr<i32>;

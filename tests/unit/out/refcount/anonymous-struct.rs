@@ -98,40 +98,189 @@ fn main_0() -> i32 {
     o.anon_3.i = 9;
     o.anon_3.inner_named.j = 10;
     o.anon_3.anon_5.k = 11;
-    assert!((o.named.a == 1));
-    assert!((o.named.b == 2));
-    assert!((o.anonymous_named_0.c == 3));
-    assert!((o.anonymous_named_0.d == 4));
-    assert!((o.anonymous_named_1.g == 5));
-    assert!((o.anonymous_named_1.h == 6));
-    assert!((o.anon_2.e == 7));
-    assert!((o.anon_2.f == 8));
-    assert!((o.anon_3.i == 9));
-    assert!((o.anon_3.inner_named.j == 10));
-    assert!((o.anon_3.anon_5.k == 11));
-    let mut s: anon_6 = <anon_6>::default();
+    (if (o.named.a == 1) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.named.a == 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.named.b == 2) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.named.b == 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anonymous_named_0.c == 3) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.anonymous_named_0.c == 3"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anonymous_named_0.d == 4) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.anonymous_named_0.d == 4"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anonymous_named_1.g == 5) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.anonymous_named_1.g == 5"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anonymous_named_1.h == 6) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.anonymous_named_1.h == 6"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anon_2.e == 7) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.e == 7"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anon_2.f == 8) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.f == 8"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anon_3.i == 9) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.i == 9"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anon_3.inner_named.j == 10) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.inner_named.j == 10"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if (o.anon_3.anon_5.k == 11) {
+        &(0);
+    } else {
+        ({
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"o.k == 11"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    let mut s: anon_7 = <anon_7>::default();
     s.x = 1;
     s.z = 2;
-    assert!(
+    (if ({
+        s.x = 1;
+        s.x
+    } != 0)
+    {
+        &(0);
+    } else {
         ({
-            s.x = 1;
-            s.x
-        } != 0)
-    );
-    assert!(
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"s.x = 1"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
+    (if ({
+        s.z = 2;
+        s.z
+    } != 0)
+    {
+        &(0);
+    } else {
         ({
-            s.z = 2;
-            s.z
-        } != 0)
-    );
+            __assert_fail_6(
+                Ptr::<i8>::from_string_literal(b"s.z = 2"),
+                Ptr::<i8>::from_string_literal(file!().as_bytes()),
+                line!() as u32,
+                Ptr::<i8>::from_string_literal(b"int main()"),
+            )
+        });
+    });
     return 0;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct anon_6 {
+pub struct anon_7 {
     #[offset(0)]
     pub x: i32,
     #[offset(4)]
     pub z: i32,
+}
+pub fn __assert_fail_6(
+    mut __assertion: Ptr<i8>,
+    mut __file: Ptr<i8>,
+    mut __line: u32,
+    mut __function: Ptr<i8>,
+) {
+    unimplemented!()
 }
 pub fn __cpp2rust_init_globals() {}

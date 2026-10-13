@@ -36,7 +36,26 @@ unsafe fn main_0() -> i32 {
         x3: p1.x3,
     };
     (unsafe { PODIncrement_0(&mut p2) });
-    assert!(((((p2.x1) + (p2.x2)) + (p2.x3)) == (39)));
+    (if ((((p2.x1) + (p2.x2)) + (p2.x3)) == (39)) {
+        &(0);
+    } else {
+        (unsafe {
+            __assert_fail_1(
+                c"p2.x1 + p2.x2 + p2.x3 == 39".as_ptr(),
+                concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+                line!() as u32,
+                c"int main()".as_ptr(),
+            )
+        });
+    });
     return 0;
+}
+pub unsafe fn __assert_fail_1(
+    mut __assertion: *const libc::c_char,
+    mut __file: *const libc::c_char,
+    mut __line: u32,
+    mut __function: *const libc::c_char,
+) {
+    unimplemented!()
 }
 pub unsafe fn __cpp2rust_init_globals() {}
