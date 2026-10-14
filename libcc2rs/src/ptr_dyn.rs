@@ -5,18 +5,26 @@ use std::cell::{Ref, RefCell, RefMut};
 use std::rc::{Rc, Weak};
 
 use crate::rc::{Ptr, PtrKind};
+use crate::seams::{PtrDynSeam, StrongPtrDynSeam};
 
-pub struct StrongPtrDyn<T: ?Sized> {
-    rc: Rc<RefCell<T>>,
+pub enum StrongPtrDyn<T: ?Sized> {
+    Single(Rc<RefCell<T>>),
+    Seam(Box<dyn StrongPtrDynSeam<T>>),
 }
 
 impl<T: ?Sized> StrongPtrDyn<T> {
     pub fn deref(&self) -> Ref<'_, T> {
-        self.rc.borrow()
+        match self {
+            Self::Single(rc) => rc.borrow(),
+            Self::Seam(s) => s.deref(),
+        }
     }
 
     pub fn deref_mut(&self) -> RefMut<'_, T> {
-        self.rc.borrow_mut()
+        match self {
+            Self::Single(rc) => rc.borrow_mut(),
+            Self::Seam(s) => s.deref_mut(),
+        }
     }
 }
 
@@ -26,6 +34,7 @@ enum PtrKindDyn<T: ?Sized> {
     Null, // TODO: is this useful?
     StackSingle(Weak<RefCell<T>>),
     HeapSingle(Weak<RefCell<T>>),
+    Seam(Rc<dyn PtrDynSeam<T>>),
 }
 
 impl<T: ?Sized> Clone for PtrKindDyn<T> {
@@ -34,6 +43,7 @@ impl<T: ?Sized> Clone for PtrKindDyn<T> {
             PtrKindDyn::Null => PtrKindDyn::Null,
             PtrKindDyn::StackSingle(weak) => PtrKindDyn::StackSingle(weak.clone()),
             PtrKindDyn::HeapSingle(weak) => PtrKindDyn::HeapSingle(weak.clone()),
+            PtrKindDyn::Seam(seam) => PtrKindDyn::Seam(Rc::clone(seam)),
         }
     }
 }
@@ -45,15 +55,21 @@ pub struct PtrDyn<T: ?Sized> {
 }
 
 impl<T: ?Sized> PtrDyn<T> {
+    pub fn seam(s: Rc<dyn PtrDynSeam<T>>) -> Self {
+        Self {
+            offset: 0,
+            kind: PtrKindDyn::Seam(s),
+        }
+    }
+
     pub fn upgrade(&self) -> StrongPtrDyn<T> {
         match &self.kind {
             PtrKindDyn::Null => panic!("ub: dereference of null pointer"),
             PtrKindDyn::StackSingle(weak) | PtrKindDyn::HeapSingle(weak) => {
                 assert_eq!(self.offset, 0, "ub: invalid offset");
-                StrongPtrDyn {
-                    rc: weak.upgrade().expect("ub: dangling pointer"),
-                }
+                StrongPtrDyn::Single(weak.upgrade().expect("ub: dangling pointer"))
             }
+            PtrKindDyn::Seam(seam) => StrongPtrDyn::Seam(seam.upgrade(self.offset)),
         }
     }
 }

@@ -23,8 +23,8 @@ use std::marker::PhantomData;
 use std::rc::{Rc, Weak};
 
 use crate::rc::{
-    AsPointer, FieldShape, Ptr, PtrKind, SliceParent, SliceRoot, StrongPtr, Value, dangling,
-    null_deref,
+    dangling, null_deref, AsPointer, FieldShape, Ptr, PtrKind, SliceParent, SliceRoot, StrongPtr,
+    Value,
 };
 use crate::reinterpret::ByteRepr;
 
@@ -243,6 +243,7 @@ impl<S: Record> FieldPtr<S> for Ptr<S> {
                     ))),
                 };
             }
+            PtrKind::Seam(s) => (s.field_root(), start()),
             PtrKind::Reinterpreted(_) => {
                 let (alloc, byte_offset) = self.original_alloc().unwrap();
                 return Ptr::from_original_alloc(alloc, byte_offset.wrapping_add(offset));
