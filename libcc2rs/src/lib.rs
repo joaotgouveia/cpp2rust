@@ -11,14 +11,14 @@ pub use rc::*;
 
 mod field;
 pub use field::{
-    ArrayElem, ElemPlace, FieldPlace, FieldPtr, IndexPlace, Place, Record, Seq, VecElem,
+    ArrayElem, ElemPlace, FieldPlace, FieldPtr, IndexPlace, Place, Record, Root, Seq, VecElem,
 };
 // Used by #[derive(Record)] and size_of_field!.
 #[doc(hidden)]
 pub mod __field {
     pub use crate::field::{
-        LenLeaf, LenOf, LenRecord, LenSlice, Locate, LocateLeaf, LocateLeafMut, LocateMut,
-        LocateRecord, LocateRecordMut, min_offset, size_of_pointee,
+        min_offset, size_of_pointee, LenLeaf, LenOf, LenRecord, LenSlice, Locate, LocateLeaf,
+        LocateLeafMut, LocateMut, LocateRecord, LocateRecordMut,
     };
 }
 
@@ -34,7 +34,7 @@ pub use ptr_dyn::*;
 include!(concat!(env!("OUT_DIR"), "/rule_shims.rs"));
 
 mod fn_ptr_arg;
-pub use fn_ptr_arg::{ArgRepr, FnPtrArg, record_from_repr};
+pub use fn_ptr_arg::{record_from_repr, ArgRepr, FnPtrArg};
 
 mod fn_ptr;
 pub use fn_ptr::{FnPtr, Generic};
@@ -98,8 +98,11 @@ pub use fd::*;
 mod format;
 pub use format::*;
 
+mod seams;
+pub use seams::*;
+
 pub use libcc2rs_macros::{
-    ByteRepr, CopyAssign, CopyAssignUnsafe, Destructor, DestructorUnsafe, FnPtrArg, MoveAssign,
-    MoveAssignUnsafe, MoveCtor, MoveCtorUnsafe, Record, VaArg, goto, goto_block, lambda,
-    lambda_unsafe, switch,
+    goto, goto_block, lambda, lambda_unsafe, switch, ByteRepr, CopyAssign, CopyAssignUnsafe,
+    Destructor, DestructorUnsafe, FnPtrArg, MoveAssign, MoveAssignUnsafe, MoveCtor, MoveCtorUnsafe,
+    Record, VaArg,
 };
