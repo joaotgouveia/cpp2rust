@@ -17,7 +17,7 @@ use std::any::{Any, TypeId};
 use std::cell::{Cell, Ref, RefCell, RefMut};
 use std::rc::{Rc, Weak};
 
-use crate::rc::{AsPointer, Ptr, PtrKind, StrongPtr, Value, null_deref};
+use crate::rc::{null_deref, AsPointer, Ptr, PtrKind, StrongPtr, Value};
 use crate::reinterpret::ByteRepr;
 
 // A struct whose fields can be pointed to. Implemented by #[derive(Record)],
@@ -155,6 +155,7 @@ impl<S: Record> FieldPtr<S> for Ptr<S> {
             PtrKind::Nested(_) => {
                 panic!("pointers to fields of elements of nested containers are not supported")
             }
+            PtrKind::Seam(s) => (s.field_root(), start()),
             PtrKind::Reinterpreted(_) => {
                 let (alloc, byte_offset) = self.original_alloc().unwrap();
                 return Ptr::from_original_alloc(alloc, byte_offset.wrapping_add(offset));

@@ -10,7 +10,7 @@ mod rc;
 pub use rc::*;
 
 mod field;
-pub use field::{ElemPlace, FieldPlace, FieldPtr, Place, Record};
+pub use field::{ElemPlace, FieldPlace, FieldPtr, Place, Record, Root};
 // Used by #[derive(Record)] and size_of_field!.
 #[doc(hidden)]
 pub mod __field {
@@ -82,6 +82,9 @@ pub use fd::*;
 
 mod format;
 pub use format::*;
+
+mod seams;
+pub use seams::*;
 
 pub use libcc2rs_macros::{
     ByteRepr, DeepClone, Destructor, DestructorUnsafe, FnPtrArg, MoveCtor, MoveCtorUnsafe, Record,

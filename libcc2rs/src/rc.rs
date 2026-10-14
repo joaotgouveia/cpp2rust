@@ -1,7 +1,7 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
-use crate::{CChar, PostfixDec, PostfixInc, PrefixDec, PrefixInc};
+use crate::{CChar, PostfixDec, PostfixInc, PrefixDec, PrefixInc, PtrSeam, StrongPtrSeam};
 use std::any::{Any, TypeId};
 
 use std::{
@@ -11,8 +11,8 @@ use std::{
     rc::{Rc, Weak},
 };
 
-use crate::field::{Root, upgrade as upgrade_root};
-use crate::reinterpret::{ByteRepr, OriginalAlloc, with_scratch};
+use crate::field::{upgrade as upgrade_root, Root};
+use crate::reinterpret::{with_scratch, ByteRepr, OriginalAlloc};
 
 pub type Value<T> = Rc<RefCell<T>>;
 
@@ -116,6 +116,7 @@ pub(crate) enum PtrKind<T> {
     Nested(Rc<dyn SliceParent<T>>),
     Field(Weak<dyn Root>),
     Reinterpreted(Rc<ReinterpretedView>),
+    Seam(Rc<dyn PtrSeam<T>>),
 }
 
 pub enum StrongPtr<T> {
@@ -144,6 +145,7 @@ pub enum StrongPtr<T> {
         // Read-through: refreshed from alloc on every deref() call.
         cell: RefCell<Option<T>>,
     },
+    Seam(Box<dyn StrongPtrSeam<T>>),
 }
 
 impl<T: ByteRepr> StrongPtr<T> {
@@ -166,6 +168,7 @@ impl<T: ByteRepr> StrongPtr<T> {
                 byte_offset,
                 cell,
             } => Self::deref_reinterpreted(alloc, *byte_offset, cell),
+            StrongPtr::Seam(s) => s.deref(),
         }
     }
 
@@ -199,6 +202,7 @@ impl<T> fmt::Debug for PtrKind<T> {
             PtrKind::Reinterpreted(data) => {
                 write!(f, "Reinterpreted(0x{:x})", data.alloc.address())
             }
+            PtrKind::Seam(s) => write!(f, "Seam(0x{:x})", s.address()),
         }
     }
 }
@@ -217,6 +221,7 @@ impl<T> Clone for PtrKind<T> {
             PtrKind::HeapArray(weak) => PtrKind::HeapArray(weak.clone()),
             PtrKind::Field(root) => PtrKind::Field(root.clone()),
             PtrKind::Reinterpreted(data) => PtrKind::Reinterpreted(Rc::clone(data)),
+            PtrKind::Seam(s) => PtrKind::Seam(Rc::clone(s)),
         }
     }
 }
@@ -231,6 +236,7 @@ impl<T> PtrKind<T> {
             PtrKind::StackArray(w) | PtrKind::HeapArray(w) => w.as_ptr() as usize,
             PtrKind::Field(root) => root.as_ptr() as *const () as usize,
             PtrKind::Reinterpreted(data) => data.alloc.address(),
+            PtrKind::Seam(s) => s.address(),
         }
     }
 }
@@ -312,6 +318,14 @@ impl<T> Ptr<T> {
     }
 
     #[inline]
+    pub fn seam(s: Rc<dyn PtrSeam<T>>) -> Self {
+        Self {
+            offset: 0,
+            kind: PtrKind::Seam(s),
+        }
+    }
+
+    #[inline]
     pub fn alloc(value: T) -> Self {
         let owner = Rc::new(RefCell::new(value));
         let weak = Rc::downgrade(&owner);
@@ -362,6 +376,7 @@ impl<T> Ptr<T> {
             }
             PtrKind::Reinterpreted(data) => data.alloc.delete(),
             PtrKind::Null => {}
+            PtrKind::Seam(s) => s.delete(self.offset),
             _ => panic!("ub: invalid delete"),
         }
     }
@@ -405,6 +420,7 @@ impl<T> Ptr<T> {
                 weak.upgrade().expect("ub: dangling pointer").borrow().len()
             }
             PtrKind::Reinterpreted(data) => data.alloc.total_byte_len() / data.elem_byte_size,
+            PtrKind::Seam(s) => s.len(),
         }
     }
 
@@ -425,6 +441,7 @@ impl<T> Ptr<T> {
                 .borrow()
                 .is_empty(),
             PtrKind::Reinterpreted(data) => self.offset >= data.alloc.total_byte_len(),
+            PtrKind::Seam(s) => s.is_empty(),
         }
     }
 
@@ -493,6 +510,7 @@ impl<T> Ptr<T> {
                 byte_offset: self.offset,
                 cell: RefCell::new(None),
             },
+            PtrKind::Seam(s) => StrongPtr::Seam(s.upgrade(self.offset)),
         }
     }
 
@@ -545,6 +563,10 @@ impl<T> Ptr<T> {
             ),
             PtrKind::Field(root) => (OriginalAlloc::field::<T>(root, self.offset), 0),
             PtrKind::Reinterpreted(data) => (data.alloc.clone(), self.offset),
+            PtrKind::Seam(s) => (
+                s.as_original_alloc(self.offset),
+                self.offset.wrapping_mul(T::byte_size()),
+            ),
         })
     }
 
@@ -631,6 +653,10 @@ impl<T> Ptr<T> {
                 f(&mut Self::borrow_field_mut(&*root, offset))
             }
             PtrKind::Reinterpreted(data) => Self::with_mut_reinterpreted(data, offset, f),
+            PtrKind::Seam(s) => {
+                let strong = s.upgrade(offset);
+                f(&mut *strong.deref_mut())
+            }
             PtrKind::Null => null_deref(),
         }
     }
@@ -701,6 +727,10 @@ impl<T> Ptr<T> {
                 f(&Self::borrow_field(&*root, offset))
             }
             PtrKind::Reinterpreted(data) => Self::with_reinterpreted(data, offset, f),
+            PtrKind::Seam(s) => {
+                let strong = s.upgrade(offset);
+                f(&*strong.deref())
+            }
             PtrKind::Null => null_deref(),
         }
     }
@@ -768,6 +798,14 @@ impl<T: CChar> Ptr<T> {
                 data.alloc.write_bytes(off, buf);
                 r
             }),
+            PtrKind::Seam(s) => {
+                let mut f = Some(f);
+                let mut out: Option<R> = None;
+                s.with_slice_mut(off, len, &mut |bytes| {
+                    out = Some((f.take().expect("f called more than once"))(bytes));
+                });
+                out.expect("seam with_slice_mut did not call its callback")
+            }
         }
     }
 
@@ -805,6 +843,14 @@ impl<T: CChar> Ptr<T> {
                 data.alloc.read_bytes(off, buf);
                 T::with_bytes_mut(buf, |s| f(s))
             }),
+            PtrKind::Seam(s) => {
+                let mut f = Some(f);
+                let mut out: Option<R> = None;
+                s.with_slice(off, len, &mut |bytes| {
+                    out = Some((f.take().expect("f called more than once"))(bytes));
+                });
+                out.expect("seam with_slice did not call its callback")
+            }
         }
     }
 
@@ -861,6 +907,7 @@ impl<T: std::cmp::Ord> Ptr<T> {
             PtrKind::Reinterpreted(_) => {
                 panic!("sorting not supported for reinterpreted pointers")
             }
+            PtrKind::Seam(ref s) => s.sort(self.get_offset(), last),
         }
     }
 }
@@ -911,6 +958,7 @@ impl<T: Clone> Ptr<T> {
             PtrKind::Reinterpreted(_) => {
                 panic!("sorting not supported for reinterpreted pointers")
             }
+            PtrKind::Seam(ref s) => s.sort_with_cmp(self.get_offset(), last, &mut cmp),
         }
     }
 }
@@ -1202,6 +1250,7 @@ impl<T: 'static> Ptr<Vec<T>> {
                 offset: 0,
                 kind: PtrKind::Nested(Rc::new(self.clone())),
             },
+            PtrKind::Seam(seam) => seam.decay(self.offset),
             _ => panic!("ub: invalid decay"),
         }
     }
@@ -1242,6 +1291,7 @@ impl<T: 'static> Ptr<Box<[T]>> {
                 offset: 0,
                 kind: PtrKind::Nested(Rc::new(self.clone())),
             },
+            PtrKind::Seam(seam) => seam.decay(self.offset),
             _ => panic!("ub: invalid decay"),
         }
     }
@@ -1276,6 +1326,7 @@ impl<T> ToOwnedOption<T, T> for Ptr<T> {
             PtrKind::Field(..) => panic!("Can't own a field"),
             PtrKind::HeapArray(_) => panic!("Can't own an array variable as single"),
             PtrKind::Reinterpreted(_) => panic!("Can't own a reinterpreted pointer"),
+            PtrKind::Seam(ref s) => s.to_owned_single(self.offset),
         }
     }
 }
@@ -1305,6 +1356,7 @@ impl<T> ToOwnedOption<T, Box<[T]>> for Ptr<T> {
             PtrKind::Field(..) => panic!("Can't own a field"),
             PtrKind::HeapSingle(_) => panic!("Can't own a single variable as an array"),
             PtrKind::Reinterpreted(_) => panic!("Can't own a reinterpreted pointer"),
+            PtrKind::Seam(ref s) => s.to_owned_array(self.offset),
         }
     }
 }
@@ -1326,6 +1378,7 @@ impl<T> fmt::Debug for Ptr<T> {
                 self.kind.address().wrapping_add(self.byte_offset())
             }
             PtrKind::Reinterpreted(data) => data.alloc.address().wrapping_add(self.byte_offset()),
+            PtrKind::Seam(s) => s.address().wrapping_add(self.byte_offset()),
         };
         write!(f, "0x{:x}", addr)
     }

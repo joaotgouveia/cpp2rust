@@ -6,9 +6,9 @@ use std::collections::HashMap;
 use std::fmt;
 use std::rc::Rc;
 
-use crate::CStringIterator;
 use crate::rc::{Ptr, PtrKind};
-use crate::reinterpret::{ByteRepr, with_scratch};
+use crate::reinterpret::{with_scratch, ByteRepr};
+use crate::CStringIterator;
 
 // The element types of C strings: `char` and `signed char` map to `i8`,
 // `unsigned char` to `u8`.
@@ -271,6 +271,15 @@ impl<T: CChar> Ptr<T> {
                 f(until_nul(std::slice::from_ref(&*b)))
             }
             PtrKind::Reinterpreted(_) => f(&self.to_c_string_iterator().collect::<Vec<T>>()),
+            PtrKind::Seam(seam) => {
+                let mut out = None;
+                let mut f = Some(f);
+                if seam.with_c_str(self.offset, &mut |b| out = Some((f.take().unwrap())(b))) {
+                    out.expect("seam with_c_str did not call its callback")
+                } else {
+                    (f.take().unwrap())(&self.to_c_string_iterator().collect::<Vec<T>>())
+                }
+            }
         }
     }
 
