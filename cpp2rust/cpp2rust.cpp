@@ -1,27 +1,18 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
-#include <algorithm>
-#include <array>
-#include <cstdlib>
-#include <filesystem>
-#include <fstream>
-#include <vector>
-#if defined(_WIN32)
-#include <windows.h>
-#elif defined(__linux__)
-#include <limits.h>
-#include <unistd.h>
-#elif defined(__APPLE__)
-#include <mach-o/dyld.h>
-#endif
-
+#include <llvm/ADT/ArrayRef.h>
 #include <llvm/Support/CommandLine.h>
 
+#include <array>
+#include <cstdlib>
+#include <fstream>
+#include <vector>
+
+#include "converter/rules/registry.h"
+#include "converter/rules/rules_loader.h"
 #include "cpp2rust_lib.h"
 #include "logging.h"
-
-namespace fs = std::filesystem;
 
 namespace {
 llvm::cl::OptionCategory cpp2rust_cmdargs("Cpp2Rust options");
@@ -53,9 +44,21 @@ llvm::cl::opt<std::string>
           llvm::cl::cat(cpp2rust_cmdargs));
 
 llvm::cl::opt<std::string>
-    RulesDir("rules",
-             llvm::cl::desc("Directory where translation rules are located"),
-             llvm::cl::value_desc("rules"), llvm::cl::cat(cpp2rust_cmdargs));
+    RulesIndexDir("rules-index-dir",
+                  llvm::cl::desc("Directory where the {c, cpp}.json "
+                                 "translation rule index files are located"),
+                  llvm::cl::value_desc("dir"), llvm::cl::init(RULES_INDEX_DIR),
+                  llvm::cl::cat(cpp2rust_cmdargs));
+
+const std::array<std::string, 1> default_ir_dirs_ = {RULES_IR_DIR};
+
+llvm::cl::list<std::string> RulesIRDirs(
+    "rules-ir-dirs",
+    llvm::cl::desc(
+        "Directories where the ir_{refcount, unsafe}.json files are located"),
+    llvm::cl::value_desc("dir"), llvm::cl::ZeroOrMore,
+    llvm::cl::list_init(llvm::ArrayRef<std::string>(default_ir_dirs_)),
+    llvm::cl::cat(cpp2rust_cmdargs));
 
 llvm::cl::list<std::string> CXXFlags("cxxflags",
                                      llvm::cl::desc("Additional CXXFLAGS"),
@@ -65,62 +68,13 @@ llvm::cl::list<std::string> CXXFlags("cxxflags",
 
 } // namespace
 
-// Get the directory of the running executable
-static fs::path GetExecutableDir() {
-#if defined(_WIN32)
-  char path[MAX_PATH];
-  GetModuleFileNameA(NULL, path, MAX_PATH);
-  return fs::path(path).parent_path();
-#elif defined(__linux__)
-  char path[PATH_MAX];
-  ssize_t count = readlink("/proc/self/exe", path, PATH_MAX);
-  return fs::path(std::string_view(path, std::max((ssize_t)0, count)))
-      .parent_path();
-#elif defined(__APPLE__)
-  uint32_t size = 0;
-  _NSGetExecutablePath(nullptr, &size); // get path length
-  std::vector<char> buffer(size);
-  _NSGetExecutablePath(buffer.data(), &size);
-  return fs::path(buffer.data()).parent_path();
-#endif
-  return ".";
-}
-
-static bool HasIRFiles(const fs::path &dir) {
-  std::error_code ec;
-  for (auto it = fs::recursive_directory_iterator(dir, ec);
-       !ec && it != fs::recursive_directory_iterator(); it.increment(ec)) {
-    if (!it->is_directory()) {
-      continue;
-    }
-    const auto &p = it->path();
-    if (fs::exists(p / "ir_unsafe.json") ||
-        fs::exists(p / "ir_refcount.json")) {
-      return true;
-    }
-  }
-  return false;
-}
-
-static bool ResolveRulesDir() {
-  std::array<fs::path, 2> candidates = {
-      fs::path("./rules"), GetExecutableDir().parent_path() / "rules"};
-
-  for (const auto &dir : candidates) {
-    if (fs::exists(dir) && fs::is_directory(dir) && HasIRFiles(dir)) {
-      RulesDir = fs::canonical(dir).string();
-      llvm::errs() << "Using rules directory: " << RulesDir << '\n';
-      return true;
-    }
-  }
-  return false;
-}
-
 int main(int argc, char *argv[]) {
   llvm::cl::HideUnrelatedOptions(cpp2rust_cmdargs);
   llvm::cl::ParseCommandLineOptions(argc, argv);
 
   cpp2rust::SetVerbose(Verbose);
+  cpp2rust::RulesLoader::SetIndexDir(RulesIndexDir.c_str());
+  cpp2rust::RuleRegistry::SetIRDirs(RulesIRDirs);
 
   if (CcFile.empty() && BuildDir.empty()) {
     llvm::errs() << "ERROR: please provide either --file or --dir\n";
@@ -163,15 +117,9 @@ int main(int argc, char *argv[]) {
   }
 
   std::vector<std::string_view> cxx_flags(CXXFlags.begin(), CXXFlags.end());
-
-  if (RulesDir.empty()) {
-    ResolveRulesDir();
-  }
-
-  auto rs_code =
-      BuildDir.empty()
-          ? cpp2rust::TranspileSrc(cc_code, model, cxx_flags, RulesDir, CcFile)
-          : cpp2rust::TranspileDir(BuildDir, model, RulesDir);
+  auto rs_code = BuildDir.empty()
+                     ? cpp2rust::TranspileSrc(cc_code, model, cxx_flags, CcFile)
+                     : cpp2rust::TranspileDir(BuildDir, model);
 
   if (rs_code.empty()) {
     llvm::errs() << "ERROR: empty output file\n";

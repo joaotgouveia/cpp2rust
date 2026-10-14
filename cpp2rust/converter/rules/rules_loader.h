@@ -23,6 +23,8 @@ inline constexpr const char *kAnyClassKey = "*";
 
 inline constexpr const char *kAnyIteratorKey = "std/iterator_traits";
 
+void SetIndexDir(const char *rules_index_dir);
+
 std::string ClassKey(const clang::NamedDecl *decl);
 
 std::string MemberName(clang::DeclarationName name);

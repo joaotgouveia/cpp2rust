@@ -9,6 +9,7 @@
 #include <clang/Basic/SourceManager.h>
 #include <clang/Sema/Sema.h>
 #include <clang/Sema/Template.h>
+#include <llvm/ADT/ArrayRef.h>
 #include <llvm/ADT/STLExtras.h>
 #include <llvm/ADT/StringExtras.h>
 
@@ -35,21 +36,32 @@ namespace {
 
 Model model_ = Model::kUnsafe;
 clang::Sema *sema_ = nullptr;
+llvm::ArrayRef<std::string> rules_ir_dirs_;
 
 std::unordered_multimap<RuleKeys::ExprKey, ExprRuleDecl> exprs_;
 std::unordered_multimap<RuleKeys::TypeKey, TypeRuleDecl> types_;
 
 const llvm::json::Object *findRule(Model model, const std::string &dir,
                                    const std::string &name) {
+  assert(!rules_ir_dirs_.empty());
   static std::unordered_map<std::string, llvm::json::Object> indexes;
-  auto path =
-      std::filesystem::path(RULES_IR_DIR) / dir /
-      (model == Model::kRefCount ? "ir_refcount.json" : "ir_unsafe.json");
-  auto [it, inserted] = indexes.try_emplace(path.string());
-  if (inserted && std::filesystem::exists(path)) {
-    it->second = RulesLoader::ReadIndex(path);
+
+  for (const auto &ir_dir : rules_ir_dirs_) {
+    auto prefix = std::filesystem::path(ir_dir) / dir;
+    if (!std::filesystem::exists(prefix)) {
+      continue;
+    }
+
+    auto path = prefix / (model == Model::kRefCount ? "ir_refcount.json"
+                                                    : "ir_unsafe.json");
+    auto [it, inserted] = indexes.try_emplace(path.string());
+    if (inserted && std::filesystem::exists(path)) {
+      it->second = RulesLoader::ReadIndex(path);
+    }
+    return it->second.getObject(name);
   }
-  return it->second.getObject(name);
+
+  return nullptr;
 }
 
 bool pointsToUserType(clang::QualType type) {
@@ -344,6 +356,10 @@ Matcher::Bindings getBindings(const clang::NamedDecl *rule,
 }
 
 } // namespace
+
+void SetIRDirs(llvm::ArrayRef<std::string> rules_ir_dirs) {
+  rules_ir_dirs_ = rules_ir_dirs;
+}
 
 void Load(clang::Sema &sema, Model model) {
   auto &ctx = sema.Context;

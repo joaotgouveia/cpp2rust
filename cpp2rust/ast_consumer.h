@@ -15,10 +15,8 @@ namespace cpp2rust {
 class ASTConsumer : public clang::ASTConsumer {
 public:
   explicit ASTConsumer(std::string &rs_code, Model model, bool first,
-                       clang::CompilerInstance &CI,
-                       const std::string &rules_dir)
-      : rs_code_(rs_code), model_(model), first_(first), CI_(CI),
-        rules_dir_(rules_dir) {}
+                       clang::CompilerInstance &CI)
+      : rs_code_(rs_code), model_(model), first_(first), CI_(CI) {}
 
   void HandleTranslationUnit(clang::ASTContext &ctx) override;
 
@@ -27,6 +25,5 @@ private:
   Model model_;
   bool first_;
   clang::CompilerInstance &CI_;
-  const std::string &rules_dir_;
 };
 } // namespace cpp2rust
