@@ -7,9 +7,8 @@
 
 namespace cpp2rust {
 
-std::unique_ptr<Converter> CreateConverter(std::string &rs_code,
-                                           clang::ASTContext &ctx, Model model,
-                                           const std::string &rules_dir) {
+std::unique_ptr<Converter>
+CreateConverter(std::string &rs_code, clang::ASTContext &ctx, Model model) {
   switch (model) {
   case Model::kUnsafe:
     return std::make_unique<Converter>(rs_code, ctx);

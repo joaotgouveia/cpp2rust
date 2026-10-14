@@ -33,6 +33,8 @@ namespace cpp2rust::RulesLoader {
 
 namespace {
 
+const char *rules_index_dir_ = nullptr;
+
 class RuleUsageCollector
     : public clang::RecursiveASTVisitor<RuleUsageCollector> {
 public:
@@ -299,14 +301,16 @@ private:
 };
 
 const llvm::json::Object &CIndex() {
+  assert(rules_index_dir_);
   static const llvm::json::Object index =
-      ReadIndex(std::filesystem::path(RULES_INDEX_DIR) / "c.json");
+      ReadIndex(std::filesystem::path(rules_index_dir_) / "c.json");
   return index;
 }
 
 const llvm::json::Object &CxxIndex() {
+  assert(rules_index_dir_);
   static const llvm::json::Object index =
-      ReadIndex(std::filesystem::path(RULES_INDEX_DIR) / "cpp.json");
+      ReadIndex(std::filesystem::path(rules_index_dir_) / "cpp.json");
   return index;
 }
 
@@ -381,6 +385,10 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
 }
 
 } // namespace
+
+void SetIndexDir(const char *rules_index_dir) {
+  rules_index_dir_ = rules_index_dir;
+}
 
 static std::string NameKey(const clang::NamedDecl *decl) {
   std::vector<std::string> scopes;

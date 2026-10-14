@@ -17,7 +17,6 @@
 namespace cpp2rust {
 std::string TranspileSrc(std::string_view cc_code, Model model,
                          const std::vector<std::string_view> &cxx_flags,
-                         const std::string &rules_dir,
                          std::string_view filename) {
   auto tool_args = getPlatformClangBeginFlags();
   tool_args.push_back("-fparse-all-comments");
@@ -27,9 +26,8 @@ std::string TranspileSrc(std::string_view cc_code, Model model,
 
   std::string rs_code;
   clang::tooling::runToolOnCodeWithArgs(
-      std::make_unique<FrontendAction>(rs_code, model, /*first=*/true,
-                                       rules_dir),
-      cc_code, tool_args, std::filesystem::path(filename).filename().string(),
+      std::make_unique<FrontendAction>(rs_code, model, /*first=*/true), cc_code,
+      tool_args, std::filesystem::path(filename).filename().string(),
       filename.ends_with(".c") ? CLANG_C_COMPILER : CLANG_CXX_COMPILER);
   Converter::EmitOpaqueRecords(model, rs_code);
   Converter::EmitVirtualMethods(rs_code);
@@ -40,8 +38,7 @@ std::string TranspileSrc(std::string_view cc_code, Model model,
   return rs_code;
 }
 
-std::string TranspileDir(std::string_view build_dir, Model model,
-                         const std::string &rules_dir) {
+std::string TranspileDir(std::string_view build_dir, Model model) {
   std::string error_message;
   auto compile_dbase = clang::tooling::CompilationDatabase::loadFromDirectory(
       build_dir, error_message);
@@ -74,7 +71,7 @@ std::string TranspileDir(std::string_view build_dir, Model model,
       });
 
   std::string rs_code;
-  FrontendActionFactory factory(rs_code, model, rules_dir);
+  FrontendActionFactory factory(rs_code, model);
   Tool.run(&factory);
   Converter::EmitOpaqueRecords(model, rs_code);
   Converter::EmitVirtualMethods(rs_code);
