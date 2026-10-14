@@ -15,7 +15,7 @@ void ASTConsumer::HandleTranslationUnit(clang::ASTContext &ctx) {
         "the translation unit and its loaded rules do not compile");
   }
   RuleRegistry::Load(CI_.getSema(), model_);
-  auto converter = CreateConverter(rs_code_, ctx, model_, rules_dir_);
+  auto converter = CreateConverter(rs_code_, ctx, model_);
   converter->SetSema(CI_.getSema());
   if (first_) {
     converter->EmitFilePreamble();

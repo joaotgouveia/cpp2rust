@@ -19,6 +19,8 @@ namespace cpp2rust::RulesLoader {
 
 inline constexpr const char *kPragmaName = "cpp2rust_rules";
 
+void SetIndexDir(const char *rules_index_dir);
+
 std::string ClassKey(const clang::NamedDecl *decl);
 
 std::string MemberName(clang::DeclarationName name);
