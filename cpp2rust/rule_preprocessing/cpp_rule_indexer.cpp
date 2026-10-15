@@ -354,7 +354,8 @@ void MergeRules(llvm::json::Object &into, llvm::json::Object &&from) {
   }
 }
 
-void IndexDir(const fs::path &rule_dir, const fs::path &out) {
+void IndexDir(const fs::path &rule_dir, const fs::path &out,
+              const std::vector<std::string> &cxx_flags) {
   auto dir_name = rule_dir.filename().string();
   llvm::json::Object c_rules;
   if (fs::exists(rule_dir / "src.c")) {
@@ -373,8 +374,9 @@ void IndexDir(const fs::path &rule_dir, const fs::path &out) {
   for (const auto &src_path : cxx_srcs) {
     auto standard = SinceStandard(src_path);
     llvm::json::Object rules;
-    Index(src_path, /*is_c=*/false, dir_name,
-          {std::format("-std=c++{}", standard)}, rules);
+    std::vector<std::string> flags = {std::format("-std=c++{}", standard)};
+    flags.insert(flags.end(), cxx_flags.begin(), cxx_flags.end());
+    Index(src_path, /*is_c=*/false, dir_name, flags, rules);
     for (auto &[key, entries] : rules) {
       for (auto &entry : *entries.getAsArray()) {
         (*entry.getAsObject())["since"] = standard;
@@ -426,6 +428,12 @@ llvm::cl::list<std::string> CommonHeaders(
     "common-header", llvm::cl::desc("Header the C++ rules depend on"),
     llvm::cl::value_desc("header"), llvm::cl::ZeroOrMore, llvm::cl::cat(cat));
 
+llvm::cl::list<std::string>
+    CXXFlags("cxxflags",
+             llvm::cl::desc("Additional CXXFLAGS used to index the C++ rules"),
+             llvm::cl::value_desc("flag"), llvm::cl::ZeroOrMore,
+             llvm::cl::cat(cat));
+
 llvm::cl::opt<std::string>
     Out("o",
         llvm::cl::desc("Output part of a rule directory, or index directory"),
@@ -438,7 +446,8 @@ int main(int argc, char *argv[]) {
   llvm::cl::ParseCommandLineOptions(argc, argv);
 
   if (!Dir.empty()) {
-    cpp2rust::IndexDir(Dir.getValue(), Out.getValue());
+    cpp2rust::IndexDir(Dir.getValue(), Out.getValue(),
+                       {CXXFlags.begin(), CXXFlags.end()});
   } else {
     cpp2rust::MergeIndexes({Parts.begin(), Parts.end()},
                            {CommonHeaders.begin(), CommonHeaders.end()},
