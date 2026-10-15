@@ -37,6 +37,7 @@ namespace {
 Model model_ = Model::kUnsafe;
 clang::Sema *sema_ = nullptr;
 llvm::ArrayRef<std::string> rules_ir_dirs_;
+bool partial_ = false;
 
 std::unordered_multimap<RuleKeys::ExprKey, ExprRuleDecl> exprs_;
 std::unordered_multimap<RuleKeys::TypeKey, TypeRuleDecl> types_;
@@ -159,34 +160,44 @@ void checkGenerics(const std::string &dir, const std::string &name,
 
 void addRule(clang::ASTContext &ctx, const std::string &dir,
              const std::string &name, const clang::NamedDecl *decl) {
-  auto rule = findRule(Model::kUnsafe, dir, name);
-  if (model_ == Model::kRefCount) {
-    if (auto refcount_rule = findRule(model_, dir, name)) {
-      rule = refcount_rule;
+  const llvm::json::Object *rule = nullptr;
+  if (!partial_) {
+    rule = findRule(Model::kUnsafe, dir, name);
+    if (model_ == Model::kRefCount) {
+      if (auto refcount_rule = findRule(model_, dir, name)) {
+        rule = refcount_rule;
+      }
     }
+    assert(rule && "rule has no target");
   }
-  assert(rule && "rule has no target");
+
   if (!name.starts_with('f')) {
     auto keys = RuleKeys::GetTypeKeys(decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
       types_.emplace(
-          key, TypeRuleDecl{decl, TranslationRule::ParseTypeRuleJSON(*rule)});
+          key,
+          TypeRuleDecl{decl, rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                                  : TranslationRule::TypeRule()});
     }
     return;
   }
-  auto expr_rule = TranslationRule::ParseExprRuleJSON(*rule);
-  if (auto function = decl->getAsFunction()) {
-    checkGenerics(dir, name, function, expr_rule);
-  } else {
-    assert(llvm::isa<clang::VarDecl>(decl) &&
-           "expression rule is neither a function nor a variable");
+
+  if (rule) {
+    auto expr_rule = TranslationRule::ParseExprRuleJSON(*rule);
+    if (auto function = decl->getAsFunction()) {
+      checkGenerics(dir, name, function, expr_rule);
+    } else {
+      assert(llvm::isa<clang::VarDecl>(decl) &&
+             "expression rule is neither a function nor a variable");
+    }
   }
   auto keys = RuleKeys::GetExprKeys(*sema_, decl);
   assert(!keys.empty() && "expression rule has no key");
   for (const auto &key : keys) {
     exprs_.emplace(
-        key, ExprRuleDecl{decl, TranslationRule::ParseExprRuleJSON(*rule)});
+        key, ExprRuleDecl{decl, rule ? TranslationRule::ParseExprRuleJSON(*rule)
+                                     : TranslationRule::ExprRule()});
   }
 }
 
@@ -355,16 +366,31 @@ Matcher::Bindings getBindings(const clang::NamedDecl *rule,
   return bindings;
 }
 
+std::string ruleUID(const clang::NamedDecl *decl) {
+  llvm::StringRef name = decl->getName();
+  if (const auto *ns =
+          llvm::dyn_cast<clang::NamespaceDecl>(decl->getDeclContext())) {
+    llvm::StringRef dir = ns->getName();
+    dir.consume_front("cpp2rust_rules_");
+    return dir.str() + "/" + name.str();
+  }
+
+  name.consume_front("cpp2rust_rules_");
+  const auto [dir, rule_name] = name.rsplit('_');
+  return dir.str() + "/" + rule_name.str();
+}
+
 } // namespace
 
 void SetIRDirs(llvm::ArrayRef<std::string> rules_ir_dirs) {
   rules_ir_dirs_ = rules_ir_dirs;
 }
 
-void Load(clang::Sema &sema, Model model) {
+void Load(clang::Sema &sema, Model model, bool partial) {
   auto &ctx = sema.Context;
   sema_ = &sema;
   model_ = model;
+  partial_ = partial;
   exprs_.clear();
   types_.clear();
   for (auto decl : ctx.getTranslationUnitDecl()->decls()) {
@@ -392,6 +418,19 @@ Matcher::Match<TranslationRule::ExprRule> Search(clang::ASTContext &ctx,
   }
   return {&match.rule_decl->rule,
           getBindings(match.rule_decl->decl, match.args)};
+}
+
+std::string SearchUID(clang::ASTContext &ctx, const clang::Expr *expr) {
+  if (ExprHasUserDefinedDecl(expr)) {
+    return {};
+  }
+  auto match = findExpr(expr);
+  return match.rule_decl ? ruleUID(match.rule_decl->decl) : std::string();
+}
+
+std::string SearchUID(clang::ASTContext &ctx, clang::QualType qual_type) {
+  auto match = findType(qual_type);
+  return match.rule_decl ? ruleUID(match.rule_decl->decl) : std::string();
 }
 
 clang::QualType GetInitType(const clang::Expr *expr) {
