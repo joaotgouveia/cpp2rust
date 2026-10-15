@@ -30,12 +30,15 @@ struct TypeRuleDecl {
 
 void SetIRDirs(llvm::ArrayRef<std::string> rules_ir_dirs);
 
-void Load(clang::Sema &sema, Model model);
+void Load(clang::Sema &sema, Model model, bool partial = false);
 
 Matcher::Match<TranslationRule::ExprRule> Search(clang::ASTContext &ctx,
                                                  const clang::Expr *expr);
 Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
                                                  clang::QualType qual_type);
+
+std::string SearchUID(clang::ASTContext &ctx, const clang::Expr *expr);
+std::string SearchUID(clang::ASTContext &ctx, clang::QualType qual_type);
 
 const TranslationRule::ExprRule *GetExprRule(clang::ASTContext &ctx,
                                              const clang::Expr *expr);
