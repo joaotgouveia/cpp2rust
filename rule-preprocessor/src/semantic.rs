@@ -82,6 +82,7 @@ fn build_rustc_args(crate_root: &Path) -> Vec<String> {
         "nix",
         "jiff",
         "xattr",
+        "num_traits",
     ] {
         let lib = match artifacts.get(*dep).map(Vec::as_slice) {
             Some([lib]) => lib,
