@@ -43,14 +43,16 @@ llvm::cl::opt<std::string>
           llvm::cl::value_desc("model"), llvm::cl::init("refcount"),
           llvm::cl::cat(cpp2rust_cmdargs));
 
-llvm::cl::opt<std::string>
-    RulesIndexDir("rules-index-dir",
-                  llvm::cl::desc("Directory where the {c, cpp}.json "
-                                 "translation rule index files are located"),
-                  llvm::cl::value_desc("dir"), llvm::cl::init(RULES_INDEX_DIR),
-                  llvm::cl::cat(cpp2rust_cmdargs));
-
 const std::array<std::string, 1> default_ir_dirs_ = {RULES_IR_DIR};
+const std::array<std::string, 1> default_index_dirs_ = {RULES_INDEX_DIR};
+
+llvm::cl::list<std::string> RulesIndexDirs(
+    "rules-index-dirs",
+    llvm::cl::desc("Directories where the {c, cpp}.json "
+                   "translation rule index files are located"),
+    llvm::cl::value_desc("dir"),
+    llvm::cl::list_init(llvm::ArrayRef<std::string>(default_index_dirs_)),
+    llvm::cl::cat(cpp2rust_cmdargs));
 
 llvm::cl::list<std::string> RulesIRDirs(
     "rules-ir-dirs",
@@ -73,7 +75,7 @@ int main(int argc, char *argv[]) {
   llvm::cl::ParseCommandLineOptions(argc, argv);
 
   cpp2rust::SetVerbose(Verbose);
-  cpp2rust::RulesLoader::SetIndexDir(RulesIndexDir.c_str());
+  cpp2rust::RulesLoader::SetIndexDirs(RulesIndexDirs);
   cpp2rust::RuleRegistry::SetIRDirs(RulesIRDirs);
 
   if (CcFile.empty() && BuildDir.empty()) {
