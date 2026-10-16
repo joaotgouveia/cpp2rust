@@ -238,15 +238,6 @@ std::string TypeKey(const clang::TypedefNameDecl *rule) {
   return ClassOf(type);
 }
 
-void AddRule(llvm::json::Object &rules, std::string key,
-             llvm::json::Value rule) {
-  auto &slot = rules[llvm::json::ObjectKey(std::move(key))];
-  if (!slot.getAsArray()) {
-    slot = llvm::json::Array();
-  }
-  slot.getAsArray()->push_back(std::move(rule));
-}
-
 void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
                    llvm::json::Object &rules) {
   auto &sm = ctx.getSourceManager();
@@ -292,7 +283,7 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
                !required.empty()) {
       rule["requires"] = llvm::json::Array(required);
     }
-    AddRule(rules, key, std::move(rule));
+    RulesLoader::AddRule(rules, key, std::move(rule));
   }
 }
 
@@ -370,14 +361,6 @@ StandardRange RuleFileStandards(const fs::path &src_path) {
   return range;
 }
 
-void MergeRules(llvm::json::Object &into, llvm::json::Object &&from) {
-  for (auto &[key, entries] : from) {
-    for (auto &entry : *entries.getAsArray()) {
-      AddRule(into, key.str(), std::move(entry));
-    }
-  }
-}
-
 void IndexDir(const fs::path &rule_dir, const fs::path &out,
               const std::vector<std::string> &cxx_flags) {
   auto dir_name = rule_dir.filename().string();
@@ -410,7 +393,7 @@ void IndexDir(const fs::path &rule_dir, const fs::path &out,
         }
       }
     }
-    MergeRules(cxx_rules, std::move(rules));
+    RulesLoader::MergeRules(cxx_rules, std::move(rules));
   }
   WriteJson(out, llvm::json::Object{{"c", std::move(c_rules)},
                                     {"cpp", std::move(cxx_rules)}});
@@ -423,8 +406,8 @@ void MergeIndexes(const std::vector<std::string> &parts,
   llvm::json::Object cxx_rules;
   for (const auto &part : parts) {
     auto json = ReadJson(part);
-    MergeRules(c_rules, std::move(*json.getObject("c")));
-    MergeRules(cxx_rules, std::move(*json.getObject("cpp")));
+    RulesLoader::MergeRules(c_rules, std::move(*json.getObject("c")));
+    RulesLoader::MergeRules(cxx_rules, std::move(*json.getObject("cpp")));
   }
   std::string common;
   for (const auto &header : common_headers) {
