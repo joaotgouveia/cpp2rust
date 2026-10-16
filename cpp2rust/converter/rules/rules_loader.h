@@ -10,6 +10,7 @@
 #include <clang/Basic/SourceLocation.h>
 #include <clang/Frontend/CompilerInstance.h>
 #include <clang/Lex/Pragma.h>
+#include <llvm/ADT/ArrayRef.h>
 #include <llvm/Support/JSON.h>
 
 #include <filesystem>
@@ -23,7 +24,12 @@ inline constexpr const char *kAnyClassKey = "*";
 
 inline constexpr const char *kAnyIteratorKey = "std/iterator_traits";
 
-void SetIndexDir(const char *rules_index_dir);
+void SetIndexDirs(llvm::ArrayRef<std::string> rules_index_dir);
+
+void AddRule(llvm::json::Object &rules, std::string key,
+             llvm::json::Value rule);
+
+void MergeRules(llvm::json::Object &into, llvm::json::Object &&from);
 
 std::string ClassKey(const clang::NamedDecl *decl);
 
