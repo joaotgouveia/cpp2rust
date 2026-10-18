@@ -53,7 +53,8 @@ use std::rc::{Rc, Weak};
 }
 
 static bool IsBoxedType(std::string_view type) {
-  return type.starts_with("Vec<") || type.starts_with("Box<");
+  return type.starts_with("Vec<") || type.starts_with("Box<") ||
+         type.starts_with("VecDeque<");
 }
 
 static bool IsBoxedType(clang::ASTContext &ctx, clang::QualType type) {
