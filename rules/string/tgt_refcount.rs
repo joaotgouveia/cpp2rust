@@ -32,6 +32,10 @@ fn f1(a0: Vec<i8>, a1: usize, a2: usize) -> Vec<i8> {
     __tmp1
 }
 
+fn f2(a0: Vec<i8>) -> usize {
+    (a0.len() - 1)
+}
+
 fn f3(a0: Vec<i8>, a1: Ptr<i8>) -> Vec<i8> {
     let mut r = a0;
     r.pop();
@@ -64,6 +68,24 @@ fn f7(a0: Ptr<i8>, a1: usize) -> Vec<i8> {
     __v
 }
 
+fn f8(a0: std::fs::File, a1: std::fs::File) -> Vec<i8> {
+    use std::io::Read;
+    let mut __bytes: Vec<u8> = Vec::new();
+    let mut __f = &a0;
+    __f.read_to_end(&mut __bytes)
+        .expect("couldn't read the file");
+    __bytes.push(0);
+    CChar::from_byte_vec(__bytes)
+}
+
+fn f9(a0: usize, a1: i8) -> Vec<i8> {
+    vec![a1; (a0) as usize]
+        .iter()
+        .cloned()
+        .chain(std::iter::once(0))
+        .collect()
+}
+
 fn f10(a0: Ptr<i8>) -> Vec<i8> {
     let mut __bytes = a0.to_c_bytes();
     __bytes.push(0);
@@ -76,6 +98,12 @@ fn f11(a0: Ptr<i8>) -> Ptr<i8> {
 
 fn f12(a0: Ptr<i8>) -> RandomAccessIterator<i8> {
     RandomAccessIterator::Vec(a0)
+}
+
+fn f13(a0: &mut Vec<i8>, a1: usize) {
+    a0.pop();
+    a0.resize((a1) as usize, 0);
+    a0.push(0)
 }
 
 fn f14(a0: Ptr<Vec<i8>>, a1: usize, a2: usize, a3: Ptr<i8>, a4: usize) -> Ptr<Vec<i8>> {
@@ -118,52 +146,20 @@ fn f18(a0: Vec<i8>, a1: Ptr<i8>) -> bool {
     a1.with_c_str(|__s| a0[..a0.len().saturating_sub(1)] == *__s)
 }
 
+fn f19(a0: Vec<i8>) -> usize {
+    (a0.len() - 1)
+}
+
+fn f20(a0: Ptr<i8>, a1: usize) -> Ptr<i8> {
+    a0.offset(a1 as isize)
+}
+
 // TODO: This should return a0
 fn f21(a0: &mut Vec<i8>, a1: usize, a2: i8) -> Vec<i8> {
     a0.pop();
     a0.resize(a0.len() + (a1) as usize, a2);
     a0.push(0);
     a0.clone()
-}
-
-fn f26(a0: Ptr<Vec<i8>>, a1: usize) -> Ptr<i8> {
-    if a1 as usize >= (*a0.upgrade().deref()).len().saturating_sub(1) {
-        panic!("out of bounds access")
-    } else {
-        a0.decay().offset(a1 as isize)
-    }
-}
-
-fn f2(a0: Vec<i8>) -> usize {
-    (a0.len() - 1)
-}
-
-fn f8(a0: std::fs::File, a1: std::fs::File) -> Vec<i8> {
-    use std::io::Read;
-    let mut __bytes: Vec<u8> = Vec::new();
-    let mut __f = &a0;
-    __f.read_to_end(&mut __bytes)
-        .expect("couldn't read the file");
-    __bytes.push(0);
-    CChar::from_byte_vec(__bytes)
-}
-
-fn f9(a0: usize, a1: i8) -> Vec<i8> {
-    vec![a1; (a0) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0))
-        .collect()
-}
-
-fn f13(a0: &mut Vec<i8>, a1: usize) {
-    a0.pop();
-    a0.resize((a1) as usize, 0);
-    a0.push(0)
-}
-
-fn f19(a0: Vec<i8>) -> usize {
-    (a0.len() - 1)
 }
 
 fn f22(a0: Vec<i8>) -> bool {
@@ -181,6 +177,14 @@ fn f24(a0: &mut Vec<i8>) {
 
 fn f25(a0: &mut Vec<i8>) {
     a0.shrink_to_fit()
+}
+
+fn f26(a0: Ptr<Vec<i8>>, a1: usize) -> Ptr<i8> {
+    if a1 as usize >= (*a0.upgrade().deref()).len().saturating_sub(1) {
+        panic!("out of bounds access")
+    } else {
+        a0.decay().offset(a1 as isize)
+    }
 }
 
 fn f27(a0: Vec<i8>) -> Vec<i8> {

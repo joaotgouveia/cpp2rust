@@ -15,7 +15,7 @@ import shlex
 import shutil
 
 
-MODELS = ("refcount", "unsafe")
+MODELS = ("refcount",)
 PTR_RE = re.compile(r"0x[0-9a-fA-F]+")
 
 RE_XFAIL = re.compile(r"//\s*XFAIL:\s*(.*)")

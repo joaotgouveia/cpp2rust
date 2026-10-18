@@ -3,7 +3,10 @@
 
 use libcc2rs::*;
 
-// TODO: t2 and t3 should be translated to Ptr<dyn Traits>
+fn t1() -> std::fs::File {
+    std::fs::File::open("").unwrap()
+}
+
 fn t2() -> Ptr<std::fs::File> {
     Ptr::null()
 }

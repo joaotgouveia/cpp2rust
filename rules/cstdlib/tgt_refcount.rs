@@ -3,6 +3,10 @@
 
 use libcc2rs::*;
 
+fn f1() {
+    std::process::abort();
+}
+
 fn f2(a0: AnyPtr) {
     libcc2rs::free_refcount(a0)
 }
@@ -21,30 +25,8 @@ fn f5(a0: usize, a1: usize) -> AnyPtr {
 
 fn f6(a0: Ptr<i8>) -> Ptr<i8> {
     match ::std::env::var(a0.to_rust_string()) {
-        Ok(__val) => {
-            Ptr::alloc_c_str(__val.as_bytes())
-        }
+        Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
-    }
-}
-
-fn f10(a0: Ptr<i8>, a1: Ptr<i8>) -> Ptr<i8> {
-    let __resolved = a1;
-    match ::std::fs::canonicalize(a0.to_rust_string()) {
-        Ok(__p) => {
-            let mut __bytes = __p.into_os_string().into_encoded_bytes();
-            __bytes.push(0);
-            if __resolved.is_null() {
-                Ptr::alloc_array(CChar::from_byte_vec(__bytes).into_boxed_slice())
-            } else {
-                __resolved.write_c_bytes(&__bytes);
-                __resolved
-            }
-        }
-        Err(__e) => {
-            libcc2rs::cpp2rust_errno().write(__e.raw_os_error().unwrap_or(::libc::EIO));
-            Ptr::null()
-        }
     }
 }
 
@@ -88,6 +70,26 @@ fn f9(a0: AnyPtr, a1: usize, a2: usize, a3: fn(AnyPtr, AnyPtr) -> i32) {
                 elem!(__base, __i * a2 + __b).write(__y);
                 elem!(__base, __min * a2 + __b).write(__x);
             }
+        }
+    }
+}
+
+fn f10(a0: Ptr<i8>, a1: Ptr<i8>) -> Ptr<i8> {
+    let __resolved = a1;
+    match ::std::fs::canonicalize(a0.to_rust_string()) {
+        Ok(__p) => {
+            let mut __bytes = __p.into_os_string().into_encoded_bytes();
+            __bytes.push(0);
+            if __resolved.is_null() {
+                Ptr::alloc_array(CChar::from_byte_vec(__bytes).into_boxed_slice())
+            } else {
+                __resolved.write_c_bytes(&__bytes);
+                __resolved
+            }
+        }
+        Err(__e) => {
+            libcc2rs::cpp2rust_errno().write(__e.raw_os_error().unwrap_or(::libc::EIO));
+            Ptr::null()
         }
     }
 }
