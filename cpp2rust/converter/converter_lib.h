@@ -221,6 +221,8 @@ clang::QualType GetReturnTypeOfFunction(const clang::CallExpr *expr);
 
 const char *GetOverloadedOperator(const clang::FunctionDecl *decl);
 
+bool UnsupportedOperator(clang::OverloadedOperatorKind op);
+
 std::string GetFunctionBaseName(const clang::FunctionDecl *decl);
 
 void ToIdentifier(std::string &name);
