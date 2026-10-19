@@ -1208,7 +1208,7 @@ const char *GetOverloadedOperator(const clang::FunctionDecl *decl) {
   }
 }
 
-bool UnsupportedOperator(clang::OverloadedOperatorKind op) {
+bool IsSupportedOperator(clang::OverloadedOperatorKind op) {
   switch (op) {
   case clang::OO_None:
   case clang::OO_New:
