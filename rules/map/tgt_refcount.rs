@@ -9,6 +9,10 @@ fn t1<T1, T2>() -> Map<T1, (Value<T1>, Value<T2>)> {
     Map::new()
 }
 
+fn t4() -> usize {
+    0_usize
+}
+
 fn f1<T1: Ord + Clone + ByteRepr + 'static, T2: Default + ByteRepr + 'static>(
     a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
     a1: T1,
