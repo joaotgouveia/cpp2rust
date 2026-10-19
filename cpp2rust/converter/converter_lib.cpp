@@ -1208,6 +1208,22 @@ const char *GetOverloadedOperator(const clang::FunctionDecl *decl) {
   }
 }
 
+bool UnsupportedOperator(clang::OverloadedOperatorKind op) {
+  switch (op) {
+  case clang::OO_None:
+  case clang::OO_New:
+  case clang::OO_Delete:
+  case clang::OO_Array_New:
+  case clang::OO_Array_Delete:
+  case clang::OO_ArrowStar:
+  case clang::OO_Conditional:
+  case clang::OO_Coawait:
+    return false;
+  default:
+    return true;
+  }
+}
+
 bool IsSameTypeComparison(const clang::FunctionDecl *fn,
                           const clang::CXXRecordDecl *record) {
   auto record_type = fn->getASTContext().getCanonicalTagType(record);
