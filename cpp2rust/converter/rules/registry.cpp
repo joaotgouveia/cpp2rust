@@ -212,17 +212,18 @@ void addCxxRules(clang::ASTContext &ctx, const clang::NamespaceDecl *rules) {
     if (!ns) {
       continue;
     }
-    auto dir = ns->getName();
-    bool is_rule_dir = dir.consume_front("cpp2rust_rules_");
+    auto identifier = ns->getName();
+    bool is_rule_dir = identifier.consume_front("cpp2rust_rules_");
     if (!is_rule_dir) {
       llvm::report_fatal_error("rule namespace is not named after a rule dir");
     }
+    auto dir = RulesLoader::DirName(identifier);
     for (auto decl : ns->decls()) {
       auto named = llvm::cast<clang::NamedDecl>(decl);
       if (!isRuleName(named->getName())) {
         llvm::report_fatal_error("declaration is not a rule");
       }
-      addRule(ctx, dir.str(), named->getName().str(), named);
+      addRule(ctx, dir, named->getName().str(), named);
     }
   }
 }
@@ -236,7 +237,7 @@ void addCRule(clang::ASTContext &ctx, const clang::NamedDecl *decl) {
   if (!isRuleName(name)) {
     llvm::report_fatal_error("declaration is not a rule");
   }
-  addRule(ctx, dir.str(), name.str(), decl);
+  addRule(ctx, RulesLoader::DirName(dir), name.str(), decl);
 }
 
 struct ExprMatch {
