@@ -204,6 +204,11 @@ std::vector<ExprKey> GetExprKeys(clang::ASTContext &ctx,
                                  const clang::NamedDecl *rule) {
   if (auto var = llvm::dyn_cast<clang::VarDecl>(rule)) {
     auto key = getExprKey(ctx, var->getInit());
+    if (!key) {
+      llvm::errs() << "expression rule " << rule->getQualifiedNameAsString()
+                   << " has no key: initializer\n";
+      var->getInit()->dump(llvm::errs(), ctx);
+    }
     assert(key && "expression rule has no key");
     return {*key};
   }
@@ -220,6 +225,14 @@ std::vector<ExprKey> GetExprKeys(clang::ASTContext &ctx,
         continue;
       }
       auto key = getConstructorKey(getParent(type));
+      if (!key) {
+        llvm::errs() << "expression rule " << rule->getQualifiedNameAsString()
+                     << " has no key: constructed member type "
+                     << type.getAsString() << " of "
+                     << construct->getTypeAsWritten().getAsString()
+                     << " has no class\n";
+        rule->dump(llvm::errs());
+      }
       assert(key && "expression rule has no key");
       if (!llvm::is_contained(keys, *key)) {
         keys.push_back(*key);
@@ -228,6 +241,11 @@ std::vector<ExprKey> GetExprKeys(clang::ASTContext &ctx,
     return keys;
   }
   auto key = getExprKey(ctx, returned);
+  if (!key) {
+    llvm::errs() << "expression rule " << rule->getQualifiedNameAsString()
+                 << " has no key: returned expression\n";
+    returned->dump(llvm::errs(), ctx);
+  }
   assert(key && "expression rule has no key");
   return {*key};
 }
