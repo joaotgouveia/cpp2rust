@@ -143,7 +143,8 @@ clang::Expr *getObject(clang::ASTContext &ctx, clang::Expr *object) {
 }
 
 std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
-                                       const clang::Expr *use) {
+                                       const clang::Expr *use,
+                                       bool strip_defaults = true) {
   auto expr = const_cast<clang::Expr *>(RuleDecls::SkipImplicit(use));
   while (auto cast = llvm::dyn_cast<clang::ExplicitCastExpr>(expr)) {
     expr =
@@ -182,7 +183,7 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
             ->IgnoreParenImpCasts();
     operands.push_back(getObject(ctx, base));
   }
-  while (!operands.empty() &&
+  while (strip_defaults && !operands.empty() &&
          llvm::isa<clang::CXXDefaultArgExpr>(operands.back())) {
     operands.pop_back();
   }
@@ -298,7 +299,12 @@ void checkCallable(clang::Sema &sema, const clang::Expr *use,
   }
   RuleDecls::Trial trial(sema);
   auto loc = use->getBeginLoc();
-  auto operands = getOperands(sema.Context, use);
+  auto operands = getOperands(sema.Context, use, /*strip_defaults=*/false);
+  while (operands.size() > rule->getNumParams() &&
+         llvm::isa<clang::CXXDefaultArgExpr>(operands.back())) {
+    operands.pop_back();
+  }
+
   clang::OverloadCandidateSet set(loc, clang::OverloadCandidateSet::CSK_Normal);
   auto found = clang::DeclAccessPair::make(rule, clang::AS_public);
   if (auto tmpl = rule->getDescribedFunctionTemplate()) {
