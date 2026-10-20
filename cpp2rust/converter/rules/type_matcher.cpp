@@ -86,6 +86,10 @@ bool isInternal(const clang::NamedDecl *decl) {
   if (decl->isReserved(opts) != clang::ReservedIdentifierStatus::NotReserved) {
     return true;
   }
+  if (decl->getAccess() == clang::AS_private ||
+      decl->getAccess() == clang::AS_protected) {
+    return true;
+  }
   for (auto context = decl->getDeclContext(); context;
        context = context->getParent()) {
     if (context->isInlineNamespace()) {
