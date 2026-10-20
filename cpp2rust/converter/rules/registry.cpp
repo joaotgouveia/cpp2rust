@@ -161,6 +161,9 @@ TranslationRule::TypeRule placeholderTypeRule() {
 
 TranslationRule::ExprRule placeholderExprRule(const clang::NamedDecl *decl) {
   auto function = decl->getAsFunction();
+  if (!function) {
+    decl->dump(llvm::errs());
+  }
   assert(function && "placeholder expression rule is not a function");
   TranslationRule::ExprRule rule;
   rule.params.resize(function->getNumParams());
@@ -201,6 +204,9 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
            "expression rule is neither a function nor a variable");
   }
   auto keys = RuleKeys::GetExprKeys(*sema_, decl);
+  if (keys.empty()) {
+    decl->dump(llvm::errs());
+  }
   assert(!keys.empty() && "expression rule has no key");
   for (const auto &key : keys) {
     exprs_.emplace(key, ExprRuleDecl{decl, make_expr_rule()});
