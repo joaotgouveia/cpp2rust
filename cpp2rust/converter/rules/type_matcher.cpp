@@ -63,9 +63,18 @@ bool satisfiesConstraints(clang::Sema &sema,
          !trial.failed();
 }
 
+const clang::TypeAliasTemplateDecl *aliasTemplateOf(clang::QualType type) {
+  auto spec = llvm::dyn_cast<clang::TemplateSpecializationType>(type.getTypePtr());
+  auto alias = spec ? llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(
+                          spec->getTemplateName().getAsTemplateDecl())
+                    : nullptr;
+  return alias ? alias->getCanonicalDecl() : nullptr;
+}
+
 clang::QualType peelSugar(clang::ASTContext &ctx, clang::QualType type) {
   while (!llvm::isa<clang::TypedefType, clang::PredefinedSugarType>(
              type.getTypePtr()) &&
+         !aliasTemplateOf(type) &&
          type != type.getSingleStepDesugaredType(ctx)) {
     type = type.getSingleStepDesugaredType(ctx);
   }
@@ -125,6 +134,10 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
   auto alias = tmpl ? tmpl->getTemplatedDecl()
                     : llvm::cast<clang::TypedefNameDecl>(rule);
   auto pattern = alias->getUnderlyingType();
+  if (aliasTemplateOf(pattern) != aliasTemplateOf(spelled) &&
+      !pattern->getAs<clang::TemplateTypeParmType>()) {
+    return std::nullopt;
+  }
   if (!tmpl) {
     if (auto sugar = getSugar(pattern)) {
       if (!isSameSugar(spelled.getTypePtr(), sugar)) {
