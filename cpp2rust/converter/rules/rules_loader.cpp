@@ -166,6 +166,11 @@ private:
         AddKey(ClassKey(record));
       }
     }
+    if (const auto *spec = llvm::dyn_cast<clang::TemplateSpecializationType>(
+            type.getTypePtr());
+        spec && spec->isTypeAlias()) {
+      AddKey(DeclKey(spec->getTemplateName().getAsTemplateDecl()));
+    }
     if (auto desugared = type.getSingleStepDesugaredType(ctx_);
         desugared != type) {
       if (const auto *spec = llvm::dyn_cast<clang::TemplateSpecializationType>(

@@ -38,6 +38,12 @@ std::string ClassOf(clang::QualType type) {
   }
   if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
     auto decl = spec->getTemplateName().getAsTemplateDecl();
+    if (auto alias = llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(decl)) {
+      auto key = ClassOf(spec->isTypeAlias()
+                             ? spec->getAliasedType()
+                             : alias->getTemplatedDecl()->getUnderlyingType());
+      return key.empty() ? RulesLoader::DeclKey(alias) : key;
+    }
     if (decl && llvm::isa<clang::ClassTemplateDecl>(decl)) {
       return RulesLoader::ClassKey(decl);
     }
@@ -48,6 +54,9 @@ std::string ClassOf(clang::QualType type) {
     if (qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type) {
       return ClassOf(clang::QualType(qualifier.getAsType(), 0));
     }
+  }
+  if (auto tag = type->getAsTagDecl()) {
+    return RulesLoader::ClassKey(tag);
   }
   return {};
 }
@@ -179,8 +188,7 @@ std::string DependentExprKey(const clang::Expr *expr) {
       }
     }
     if (auto lookup = llvm::dyn_cast<clang::UnresolvedLookupExpr>(callee);
-        lookup && lookup->getQualifier() &&
-        !llvm::isa<clang::CXXOperatorCallExpr>(call) &&
+        lookup && !llvm::isa<clang::CXXOperatorCallExpr>(call) &&
         lookup->decls_begin() != lookup->decls_end()) {
       return RulesLoader::DeclKey(
           (*lookup->decls_begin())->getUnderlyingDecl());
@@ -197,6 +205,14 @@ std::string DependentExprKey(const clang::Expr *expr) {
           llvm::dyn_cast<clang::CXXUnresolvedConstructExpr>(expr)) {
     auto class_key = ClassOf(construct->getTypeAsWritten());
     return RulesLoader::ConstructorKey(class_key);
+  }
+  if (auto ref = llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(expr)) {
+    auto qualifier = ref->getQualifier();
+    if (qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type) {
+      return RulesLoader::MemberKey(
+          ClassOf(clang::QualType(qualifier.getAsType(), 0)),
+          RulesLoader::MemberName(ref->getDeclName()));
+    }
   }
   return {};
 }
@@ -262,6 +278,9 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
     auto key = alias ? TypeKey(alias) : ExprKey(ctx, decl);
     if (key.empty()) {
       key = ClassOfParameters(decl);
+    }
+    if (auto fn = decl->getAsFunction(); key.empty() && fn) {
+      key = ClassOf(fn->getReturnType());
     }
     bool any_class = key.empty() && llvm::isa<clang::TemplateDecl>(decl);
     if (any_class) {
