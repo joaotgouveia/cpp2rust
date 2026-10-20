@@ -59,18 +59,6 @@ using t4 = T1;
 
 template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-T1 &f9(T1 &a0, T1 &&a1) {
-  return a0 = static_cast<T1 &&>(a1);
-}
-
-template <typename T1>
-  requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-auto f10(T1 &a0, T1 &a1) -> decltype(std::ranges::swap(a0, a1)) {
-  return std::ranges::swap(a0, a1);
-}
-
-template <typename T1>
-  requires std::forward_iterator<T1> && (std::is_class<T1>::value)
 T1 &f11(T1 &a0, T1 &a1) {
   return a0 = static_cast<T1 &>(a1);
 }
@@ -97,12 +85,6 @@ template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
 auto f15(const T1 &a0, const T1 &a1) -> decltype(a0 != a1) {
   return a0 != a1;
-}
-
-template <typename T1>
-  requires std::forward_iterator<T1> && (std::is_class<T1>::value)
-T1 &f16(T1 &a0) {
-  return ++a0;
 }
 
 template <typename T1>
@@ -212,18 +194,6 @@ template <typename T1>
   requires std::random_access_iterator<T1> && (!std::contiguous_iterator<T1>) &&
                (std::is_class<T1>::value)
 using t14 = T1;
-
-template <typename T1>
-  requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-auto f28(const T1 &a0, const T1 &a1) -> decltype(a0 == a1) {
-  return a0 == a1;
-}
-
-template <typename T1>
-  requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
-auto f29(const T1 &a0, const T1 &a1) -> decltype(a0 != a1) {
-  return a0 != a1;
-}
 
 template <typename T1>
   requires std::random_access_iterator<T1> && (std::is_class<T1>::value)
