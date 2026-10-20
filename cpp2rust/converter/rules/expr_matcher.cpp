@@ -207,16 +207,18 @@ clang::FunctionDecl *deduce(clang::Sema &sema,
                             clang::TemplateArgumentListInfo &explicit_args,
                             llvm::ArrayRef<clang::Expr *> operands) {
   RuleDecls::Trial trial(sema);
-  clang::FunctionDecl *specialization = nullptr;
-  clang::sema::TemplateDeductionInfo info(rule->getLocation());
-  auto result = sema.DeduceTemplateArguments(
-      rule, explicit_args.size() ? &explicit_args : nullptr, operands,
-      specialization, info, false, false, false, clang::QualType(),
-      clang::Expr::Classification(), false,
-      [](llvm::ArrayRef<clang::QualType>, bool) { return false; });
-  return result == clang::TemplateDeductionResult::Success && !trial.failed()
-             ? specialization
-             : nullptr;
+  auto loc = rule->getLocation();
+  clang::OverloadCandidateSet set(loc, clang::OverloadCandidateSet::CSK_Normal);
+  auto found = clang::DeclAccessPair::make(rule, clang::AS_public);
+  sema.AddTemplateOverloadCandidate(
+      rule, found, explicit_args.size() ? &explicit_args : nullptr, operands,
+      set);
+  clang::OverloadCandidateSet::iterator best;
+  if (set.BestViableFunction(sema, loc, best) != clang::OR_Success ||
+      trial.failed()) {
+    return nullptr;
+  }
+  return best->Function;
 }
 
 const clang::Expr *

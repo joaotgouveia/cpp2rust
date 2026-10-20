@@ -45,6 +45,21 @@ completeArgs(clang::Sema &sema, const clang::TypeAliasTemplateDecl *tmpl,
                                               info.CanonicalConverted.end());
 }
 
+bool satisfiesConstraints(clang::Sema &sema,
+                          const clang::TypeAliasTemplateDecl *tmpl,
+                          llvm::ArrayRef<clang::TemplateArgument> args) {
+  if (!tmpl->hasAssociatedConstraints()) {
+    return true;
+  }
+  auto mutable_tmpl = const_cast<clang::TypeAliasTemplateDecl *>(tmpl);
+  RuleDecls::Trial trial(sema);
+  clang::MultiLevelTemplateArgumentList arg_lists(mutable_tmpl, args,
+                                                  /*Final=*/true);
+  return !sema.EnsureTemplateArgumentListConstraints(
+             mutable_tmpl, arg_lists, tmpl->getSourceRange()) &&
+         !trial.failed();
+}
+
 std::vector<clang::QualType> getSugarChain(clang::ASTContext &ctx,
                                            clang::QualType type) {
   std::vector<clang::QualType> chain{type};
@@ -124,14 +139,16 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
       auto args =
           RuleDecls::DeduceFromType(sema, params, clang::QualType(qualifier, 0),
                                     ctx.getCanonicalTagType(owner));
-      if (args && (args = completeArgs(sema, tmpl, *std::move(args)))) {
+      if (args && (args = completeArgs(sema, tmpl, *std::move(args))) &&
+          satisfiesConstraints(sema, tmpl, *args)) {
         return TypeMatch{*std::move(args), depth};
       }
     }
     return std::nullopt;
   }
   auto args = RuleDecls::DeduceFromType(sema, params, pattern, canonical);
-  if (args && (args = completeArgs(sema, tmpl, *std::move(args)))) {
+  if (args && (args = completeArgs(sema, tmpl, *std::move(args))) &&
+      satisfiesConstraints(sema, tmpl, *args)) {
     return TypeMatch{*std::move(args), kCanonicalDepth};
   }
   return std::nullopt;
