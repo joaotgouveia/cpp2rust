@@ -151,6 +151,26 @@ void checkGenerics(const std::string &dir, const std::string &name,
   }
 }
 
+TranslationRule::TypeRule placeholderTypeRule() {
+  TranslationRule::TypeRule rule;
+  rule.initializer = "unimplemented!()";
+  rule.type_info.type = "()";
+  return rule;
+}
+
+TranslationRule::ExprRule placeholderExprRule(const clang::NamedDecl *decl) {
+  auto function = decl->getAsFunction();
+  assert(function && "placeholder expression rule is not a function");
+  TranslationRule::ExprRule rule;
+  rule.params.resize(function->getNumParams());
+  for (auto &param : rule.params) {
+    param.type = "()";
+  }
+  rule.return_type.type = "()";
+  rule.body.emplace_back(TranslationRule::TextFragment{"unimplemented!()"});
+  return rule;
+}
+
 void addRule(clang::ASTContext &ctx, const std::string &dir,
              const std::string &name, const clang::NamedDecl *decl) {
   auto rule = findRule(Model::kUnsafe, dir, name);
@@ -159,19 +179,22 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
       rule = refcount_rule;
     }
   }
-  assert(rule && "rule has no target");
   if (!name.starts_with('f')) {
+    auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                          : placeholderTypeRule();
     auto keys = RuleKeys::GetTypeKeys(decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
-      types_.emplace(
-          key, TypeRuleDecl{decl, TranslationRule::ParseTypeRuleJSON(*rule)});
+      types_.emplace(key, TypeRuleDecl{decl, type_rule});
     }
     return;
   }
-  auto expr_rule = TranslationRule::ParseExprRuleJSON(*rule);
+  auto make_expr_rule = [&] {
+    return rule ? TranslationRule::ParseExprRuleJSON(*rule)
+                : placeholderExprRule(decl);
+  };
   if (auto function = decl->getAsFunction()) {
-    checkGenerics(dir, name, function, expr_rule);
+    checkGenerics(dir, name, function, make_expr_rule());
   } else {
     assert(llvm::isa<clang::VarDecl>(decl) &&
            "expression rule is neither a function nor a variable");
@@ -179,8 +202,7 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
   auto keys = RuleKeys::GetExprKeys(ctx, decl);
   assert(!keys.empty() && "expression rule has no key");
   for (const auto &key : keys) {
-    exprs_.emplace(
-        key, ExprRuleDecl{decl, TranslationRule::ParseExprRuleJSON(*rule)});
+    exprs_.emplace(key, ExprRuleDecl{decl, make_expr_rule()});
   }
 }
 
