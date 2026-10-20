@@ -1,8 +1,7 @@
-// Copyright (c) 2022-present INESC-ID.
-// Distributed under the MIT license that can be found in the LICENSE file.
-
+#include "../common/init.h"
+#include "../common/traits.h"
 #include <cstddef>
+#include <exception>
+#include <utility>
 
-typedef std::ptrdiff_t t4;
-
-typedef std::size_t t9;
+using t1 = max_align_t;

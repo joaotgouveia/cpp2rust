@@ -1,17 +1,13 @@
-// Copyright (c) 2022-present INESC-ID.
-// Distributed under the MIT license that can be found in the LICENSE file.
-
-#include <cstddef>
-#include <memory>
+#include "../common/init.h"
+#include "../common/traits.h"
+#include <algorithm>
+#include <condition_variable>
 #include <utility>
 
-#include "../common/init.h"
-
-template <typename T1> std::unique_ptr<T1[]> f1(std::size_t n) {
-  return std::make_unique<T1[]>(n);
+template <typename T1> auto f59(std::size_t a0) {
+  return std::make_unique<T1>(a0);
 }
 
-template <typename T1, typename... Args>
-std::unique_ptr<T1> f8(Init<T1, Args> &&...args) {
-  return std::make_unique<T1>(std::forward<Args>(args)...);
+template <typename T1, typename... T2> std::unique_ptr<T1> f60(T2 &&...a0) {
+  return std::make_unique<T1, T2...>(std::forward<T2>(a0)...);
 }

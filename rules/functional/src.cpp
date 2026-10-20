@@ -1,18 +1,24 @@
-// Copyright (c) 2022-present INESC-ID.
-// Distributed under the MIT license that can be found in the LICENSE file.
-
+#include "../common/init.h"
+#include "../common/traits.h"
 #include <functional>
+#include <utility>
 
-template <typename T1> using t1 = std::reference_wrapper<T1>;
-
-template <typename T1> std::reference_wrapper<T1> f1(T1 &a0) {
-  return std::reference_wrapper<T1>(a0);
+template <typename T1, typename... T2>
+auto f1(T1 &&a0, T2 &&...a1)
+    -> decltype(std::bind<T1, T2...>(std::forward<T1>(a0),
+                                     std::forward<T2>(a1)...)) {
+  return std::bind<T1, T2...>(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
-template <typename T1> T1 &f2(const std::reference_wrapper<T1> &a0) {
-  return a0.operator T1 &();
+template <typename T1, typename T2, typename... T3>
+auto f2(T2 &&a0, T3 &&...a1)
+    -> decltype(std::bind<T1, T2, T3...>(std::forward<T2>(a0),
+                                         std::forward<T3>(a1)...)) {
+  return std::bind<T1, T2, T3...>(std::forward<T2>(a0),
+                                  std::forward<T3>(a1)...);
 }
 
-template <typename T1> T1 &f3(const std::reference_wrapper<T1> &a0) {
-  return a0.get();
+template <typename T1, typename T2>
+auto f3(T1 T2::*a0) -> decltype(std::mem_fn<T1, T2>(a0)) {
+  return std::mem_fn<T1, T2>(a0);
 }

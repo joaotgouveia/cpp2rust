@@ -1,6 +1,14 @@
-// Copyright (c) 2022-present INESC-ID.
-// Distributed under the MIT license that can be found in the LICENSE file.
-
+#include "../common/init.h"
+#include "../common/traits.h"
 #include <string>
+#include <utility>
 
-auto f6(std::string &s) -> decltype(s.data()) { return s.data(); }
+template <typename T1, typename T2> using t1 = std::pmr::basic_string<T1, T2>;
+
+using t2 = std::pmr::string;
+
+using t3 = std::pmr::u16string;
+
+using t4 = std::pmr::u32string;
+
+using t5 = std::pmr::wstring;
