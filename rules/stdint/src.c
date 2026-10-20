@@ -14,3 +14,37 @@ typedef uintptr_t t8;
 typedef int8_t t9;
 typedef uintmax_t t10;
 typedef intmax_t t11;
+
+typedef int_fast16_t t12;
+
+typedef int_fast32_t t13;
+
+typedef int_fast64_t t14;
+
+typedef int_fast8_t t15;
+
+typedef int_least16_t t16;
+
+typedef int_least32_t t17;
+
+typedef int_least64_t t18;
+
+typedef int_least8_t t19;
+
+typedef intptr_t t20;
+
+typedef uint_fast16_t t21;
+
+typedef uint_fast32_t t22;
+
+typedef uint_fast64_t t23;
+
+typedef uint_fast8_t t24;
+
+typedef uint_least16_t t25;
+
+typedef uint_least32_t t26;
+
+typedef uint_least64_t t27;
+
+typedef uint_least8_t t28;
