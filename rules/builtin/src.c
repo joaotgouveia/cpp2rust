@@ -31,14 +31,14 @@ int f13(long long a, long long b, long long *r) {
 void f11(void) { return __builtin_ia32_pause(); }
 #endif
 
-void *f14(void *dst, const void *src, size_t n) {
+void *f14(void *dst, const void *src, __SIZE_TYPE__ n) {
   return __builtin_memcpy(dst, src, n);
 }
 
-void f15() { return __builtin_abort(); }
+void f15(void) { return __builtin_abort(); }
 
 int f16(unsigned long x) { return __builtin_clzl(x); }
 
-float f17() { return __builtin_inff(); }
+float f17(void) { return __builtin_inff(); }
 
 float f18(const char *tagp) { return __builtin_nanf(tagp); }

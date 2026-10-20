@@ -5,8 +5,10 @@
 
 #include <clang/AST/ASTContext.h>
 #include <clang/AST/RecursiveASTVisitor.h>
+#include <clang/Basic/LangOptions.h>
 #include <clang/Lex/Lexer.h>
 #include <clang/Lex/Preprocessor.h>
+#include <clang/Sema/Lookup.h>
 #include <clang/Sema/Sema.h>
 #include <llvm/ADT/DenseSet.h>
 #include <llvm/ADT/STLExtras.h>
@@ -24,6 +26,7 @@
 #include <vector>
 
 #include "converter/converter_lib.h"
+#include "converter/rules/decls.h"
 #include "logging.h"
 
 namespace cpp2rust::RulesLoader {
@@ -201,6 +204,7 @@ private:
           AddTemplateArgs(spec->getTemplateArgs().asArray());
         }
         AddSpecialMembers(record);
+        AddIterator(type, record);
       }
       return;
     }
@@ -224,6 +228,46 @@ private:
     }
   }
 
+  void AddIterator(clang::QualType type, const clang::CXXRecordDecl *record) {
+    auto *std_namespace = sema_.getStdNamespace();
+    if (!std_namespace ||
+        !ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
+      return;
+    }
+    clang::ClassTemplateDecl *traits = nullptr;
+    for (auto *decl :
+         std_namespace->lookup(&ctx_.Idents.get("iterator_traits"))) {
+      if ((traits = llvm::dyn_cast<clang::ClassTemplateDecl>(decl))) {
+        break;
+      }
+    }
+    if (!traits) {
+      return;
+    }
+    auto loc = record->getLocation();
+    RuleDecls::Trial trial(sema_);
+    clang::TemplateArgumentListInfo args(loc, loc);
+    args.addArgument(
+        clang::TemplateArgumentLoc(clang::TemplateArgument(type),
+                                   ctx_.getTrivialTypeSourceInfo(type, loc)));
+    auto instance = sema_.CheckTemplateIdType(
+        clang::ElaboratedTypeKeyword::None, clang::TemplateName(traits), loc,
+        args, /*Scope=*/nullptr, /*ForNestedNameSpecifier=*/false);
+    if (instance.isNull() || !sema_.isCompleteType(loc, instance) ||
+        trial.failed()) {
+      return;
+    }
+    auto *instance_record = instance->getAsCXXRecordDecl();
+    if (!instance_record) {
+      return;
+    }
+    clang::LookupResult category(sema_, &ctx_.Idents.get("iterator_category"),
+                                 loc, clang::Sema::LookupMemberName);
+    if (sema_.LookupQualifiedName(category, instance_record)) {
+      AddKey(kAnyIteratorKey);
+    }
+  }
+
   void AddTemplateArgs(llvm::ArrayRef<clang::TemplateArgument> args) {
     for (const auto &arg : args) {
       switch (arg.getKind()) {
@@ -236,6 +280,8 @@ private:
       case clang::TemplateArgument::Null:
       case clang::TemplateArgument::Integral:
       case clang::TemplateArgument::NullPtr:
+      case clang::TemplateArgument::Declaration:
+      case clang::TemplateArgument::StructuralValue:
       case clang::TemplateArgument::Expression:
       case clang::TemplateArgument::Template:
         break;
@@ -251,26 +297,6 @@ private:
   std::unordered_set<std::string> &keys_;
   llvm::DenseSet<const void *> seen_;
 };
-
-llvm::json::Object ReadIndex(const std::filesystem::path &path) {
-  auto buf = llvm::MemoryBuffer::getFile(path.string());
-  if (!buf) {
-    llvm::errs() << "Missing " << path.string() << ", run cpp-rule-indexer\n";
-    llvm::report_fatal_error("cannot read the rule index");
-  }
-  auto parsed = llvm::json::parse((*buf)->getBuffer());
-  if (!parsed) {
-    llvm::errs() << "Failed to parse rule index: " << path.string() << ": "
-                 << llvm::toString(parsed.takeError()) << '\n';
-    llvm::report_fatal_error("cannot parse the rule index");
-  }
-  auto index = parsed->getAsObject();
-  if (!index) {
-    llvm::errs() << "Rule index is not an object: " << path.string() << '\n';
-    llvm::report_fatal_error("cannot parse the rule index");
-  }
-  return std::move(*index);
-}
 
 const llvm::json::Object &CIndex() {
   static const llvm::json::Object index =
@@ -296,22 +322,51 @@ std::string WrapRule(const llvm::json::Object &rule, bool is_cxx) {
       dir, text);
 }
 
+unsigned CxxStandard(const clang::LangOptions &opts) {
+  if (opts.CPlusPlus26) {
+    return 26;
+  }
+  if (opts.CPlusPlus23) {
+    return 23;
+  }
+  if (opts.CPlusPlus20) {
+    return 20;
+  }
+  if (opts.CPlusPlus17) {
+    return 17;
+  }
+  if (opts.CPlusPlus14) {
+    return 14;
+  }
+  return 11;
+}
+
 std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
-                               bool is_cxx) {
+                               const clang::LangOptions &opts) {
+  bool is_cxx = opts.CPlusPlus;
   const auto &index = is_cxx ? CxxIndex() : CIndex();
+  unsigned standard = is_cxx ? CxxStandard(opts) : 0;
   auto common = index.getString("common");
   std::string out;
   if (!common->empty()) {
     out += "namespace cpp2rust_rules {\n" + common->str() + "}\n";
   }
   auto rules = index.getObject("rules");
-  for (const auto &key : keys) {
+  std::vector<std::string> candidates(keys.begin(), keys.end());
+  candidates.push_back(kAnyClassKey);
+  for (const auto &key : candidates) {
     auto entries = rules->getArray(key);
     if (!entries) {
       continue;
     }
     for (const auto &entry : *entries) {
       auto rule = entry.getAsObject();
+      if (auto since = rule->getInteger("since"); since && *since > standard) {
+        continue;
+      }
+      if (auto until = rule->getInteger("until"); until && *until <= standard) {
+        continue;
+      }
       if (auto required = rule->getArray("requires");
           required &&
           !llvm::all_of(*required, [&](const llvm::json::Value &key) {
@@ -389,10 +444,7 @@ std::string ConstructorKey(const std::string &class_key) {
 }
 
 std::string FunctionKey(const clang::FunctionDecl *decl) {
-  if (const clang::FunctionDecl *definition = nullptr;
-      decl->isDefined(definition) &&
-      !decl->getASTContext().getSourceManager().isInSystemHeader(
-          definition->getLocation())) {
+  if (decl->isDefined() && IsUserDefinedDecl(decl)) {
     return {};
   }
   if (auto method = llvm::dyn_cast<clang::CXXMethodDecl>(decl)) {
@@ -408,6 +460,11 @@ std::string FunctionKey(const clang::FunctionDecl *decl) {
 std::string DeclKey(const clang::NamedDecl *decl) {
   if (auto fn = decl->getAsFunction()) {
     return FunctionKey(fn);
+  }
+  if (auto var = llvm::dyn_cast<clang::VarDecl>(decl);
+      var && var->hasDefinition() != clang::VarDecl::DeclarationOnly &&
+      IsUserDefinedDecl(var)) {
+    return {};
   }
   if (auto record = llvm::dyn_cast<clang::RecordDecl>(decl->getDeclContext())) {
     return MemberKey(ClassKey(record), MemberName(decl->getDeclName()));
@@ -432,7 +489,20 @@ std::string ExprKey(clang::ASTContext &ctx, const clang::Expr *expr) {
   if (auto construct = llvm::dyn_cast<clang::CXXConstructExpr>(expr)) {
     return FunctionKey(construct->getConstructor());
   }
+  if (llvm::isa<clang::InitListExpr, clang::CXXStdInitializerListExpr>(expr)) {
+    if (auto record = expr->getType()->getAsRecordDecl();
+        record && !IsUserDefinedDecl(record)) {
+      return ConstructorKey(ClassKey(record));
+    }
+    return {};
+  }
   if (auto member = llvm::dyn_cast<clang::MemberExpr>(expr)) {
+    if (RuleDecls::GetMacroMemberBase(ctx.getSourceManager(), member)) {
+      return clang::Lexer::getImmediateMacroName(member->getMemberLoc(),
+                                                 ctx.getSourceManager(),
+                                                 ctx.getLangOpts())
+          .str();
+    }
     return DeclKey(member->getMemberDecl());
   }
   if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(expr)) {
@@ -460,10 +530,33 @@ std::string TypeKey(clang::QualType type) {
   if (auto sugar = type->getAs<clang::PredefinedSugarType>()) {
     return sugar->getIdentifier()->getName().str();
   }
+  if (auto builtin = type->getAs<clang::BuiltinType>()) {
+    return builtin->getName(clang::PrintingPolicy(clang::LangOptions())).str();
+  }
   if (auto tag = type->getAsTagDecl()) {
     return ClassKey(tag);
   }
   return {};
+}
+
+llvm::json::Object ReadIndex(const std::filesystem::path &path) {
+  auto buf = llvm::MemoryBuffer::getFile(path.string());
+  if (!buf) {
+    llvm::errs() << "Missing rule index " << path.string() << '\n';
+    llvm::report_fatal_error("cannot read the rule index");
+  }
+  auto parsed = llvm::json::parse((*buf)->getBuffer());
+  if (!parsed) {
+    llvm::errs() << "Failed to parse rule index: " << path.string() << ": "
+                 << llvm::toString(parsed.takeError()) << '\n';
+    llvm::report_fatal_error("cannot parse the rule index");
+  }
+  auto index = parsed->getAsObject();
+  if (!index) {
+    llvm::errs() << "Rule index is not an object: " << path.string() << '\n';
+    llvm::report_fatal_error("cannot parse the rule index");
+  }
+  return std::move(*index);
 }
 
 void PragmaHandler::HandlePragma(clang::Preprocessor &PP,
@@ -482,7 +575,7 @@ void PragmaHandler::HandlePragma(clang::Preprocessor &PP,
   RuleUsageCollector collector(CI_.getSema(), keys);
   collector.TraverseDecl(ctx.getTranslationUnitDecl());
 
-  auto text = BuildRulesEpilogue(keys, ctx.getLangOpts().CPlusPlus);
+  auto text = BuildRulesEpilogue(keys, ctx.getLangOpts());
   log() << "rules loaded for this translation unit:\n" << text;
   auto rules_file = src_mgr.createFileID(
       llvm::MemoryBuffer::getMemBufferCopy(text, "<cpp2rust-rules>"),

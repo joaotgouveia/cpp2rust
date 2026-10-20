@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub static mut copies_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, Default)]
+#[derive(VaArg, FnPtrArg, CopyAssignUnsafe, Default)]
 pub struct Counted {
     pub v: i32,
 }
@@ -22,6 +22,10 @@ impl Counted {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)).prefix_inc();
         this
     }
+    pub unsafe fn copy_assign(&mut self, _a0: *const Counted) -> *mut Counted {
+        self.v = (*_a0).v;
+        return &mut (*(self as *mut Counted));
+    }
 }
 impl Clone for Counted {
     fn clone(&self) -> Self {
@@ -29,7 +33,7 @@ impl Clone for Counted {
     }
 }
 #[repr(C)]
-#[derive(VaArg, FnPtrArg)]
+#[derive(VaArg, FnPtrArg, CopyAssignUnsafe)]
 pub struct NonConst {
     pub mark: i32,
 }
@@ -50,6 +54,10 @@ impl NonConst {
         };
         this
     }
+    pub unsafe fn copy_assign(&mut self, _a0: *const NonConst) -> *mut NonConst {
+        self.mark = (*_a0).mark;
+        return &mut (*(self as *mut NonConst));
+    }
 }
 impl Clone for NonConst {
     fn clone(&self) -> Self {
@@ -62,7 +70,7 @@ impl Default for NonConst {
     }
 }
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, Default)]
+#[derive(VaArg, FnPtrArg, CopyAssignUnsafe, Default)]
 pub struct Ignored {
     pub v: i32,
 }
@@ -76,6 +84,10 @@ impl Ignored {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)).prefix_inc();
         this
     }
+    pub unsafe fn copy_assign(&mut self, _a0: *const Ignored) -> *mut Ignored {
+        self.v = (*_a0).v;
+        return &mut (*(self as *mut Ignored));
+    }
 }
 impl Clone for Ignored {
     fn clone(&self) -> Self {
@@ -83,10 +95,29 @@ impl Clone for Ignored {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, CopyAssignUnsafe, Default)]
 pub struct Holder {
     pub c: Counted,
     pub arr: [Counted; 2],
+}
+impl Holder {
+    pub unsafe fn copy_assign(&mut self, _a0: *const Holder) -> *mut Holder {
+        (unsafe {
+            let _arg0: *const Counted = &(*_a0).c;
+            Counted::copy_assign(&mut self.c, _arg0)
+        });
+        {
+            if 8_usize != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    ((&(*_a0).arr as *const [Counted; 2]) as *const ::libc::c_void),
+                    ((&mut self.arr as *mut [Counted; 2]) as *mut ::libc::c_void),
+                    8_usize as usize,
+                )
+            }
+            ((&mut self.arr as *mut [Counted; 2]) as *mut ::libc::c_void)
+        };
+        return &mut (*(self as *mut Holder));
+    }
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
@@ -113,12 +144,20 @@ impl Clone for Box_int_ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct Owner {
     pub box_: Box_int_,
 }
+impl Owner {
+    pub unsafe fn move_from(_a0: *mut Owner) -> Self {
+        let mut this = Self {
+            box_: Box_int_::move_from({ &mut (*_a0).box_ }),
+        };
+        this
+    }
+}
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, Default)]
+#[derive(VaArg, FnPtrArg, CopyAssignUnsafe, Default)]
 pub struct OutOfLine {
     pub v: i32,
 }
@@ -134,6 +173,10 @@ impl OutOfLine {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)).prefix_inc();
         this
     }
+    pub unsafe fn copy_assign(&mut self, _a0: *const OutOfLine) -> *mut OutOfLine {
+        self.v = (*_a0).v;
+        return &mut (*(self as *mut OutOfLine));
+    }
 }
 impl Clone for OutOfLine {
     fn clone(&self) -> Self {
@@ -142,7 +185,7 @@ impl Clone for OutOfLine {
 }
 impl OutOfLine {}
 #[repr(C)]
-#[derive(VaArg, FnPtrArg)]
+#[derive(VaArg, FnPtrArg, CopyAssignUnsafe)]
 pub struct Tracked {
     pub copied_from: i32,
 }
@@ -226,7 +269,7 @@ unsafe fn main_0() -> i32 {
     let mut o: Owner = Owner {
         box_: Box_int_::new({ 3 }),
     };
-    let mut o2: Owner = o.clone();
+    let mut o2: Owner = Owner::move_from({ &mut o });
     assert!(((o2.box_.val) == (3)));
     let mut ol1: OutOfLine = OutOfLine::new({ 5 });
     let mut ol2: OutOfLine = OutOfLine::copy_from({ &ol1 });

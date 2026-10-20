@@ -3,14 +3,14 @@
 
 use cfg_expr::Expression;
 use cfg_expr::expr::{Predicate, TargetPredicate};
-use ra_ap_syntax::ast::{HasAttrs, HasGenericParams, HasName, HasTypeBounds};
+use ra_ap_syntax::ast::{HasAttrs, HasGenericArgs, HasGenericParams, HasName, HasTypeBounds};
 use ra_ap_syntax::{AstNode, SyntaxKind, ast, match_ast};
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 
 use crate::ir::{
-    Access, BodyFragment, FileIr, FnIr, MethodCallInner, Model, PlaceholderInner, RuleIr, RulesIR,
-    TypeInfo, TypeIr,
+    Access, BodyFragment, FileIr, FnIr, MethodCallInner, Model, PlaceholderInner, RefExprInner,
+    RuleIr, RulesIR, TypeInfo, TypeIr,
 };
 
 /// Classify a type AST node as refcount pointer (`Ptr<T>`), unsafe pointer
@@ -41,8 +41,13 @@ fn pointer_flags(ty: &ast::Type) -> (bool, bool) {
 }
 
 fn is_va_args_type(ty: &ast::Type) -> bool {
-    if let ast::Type::RefType(r) = ty
-        && let Some(ast::Type::SliceType(slice)) = r.ty()
+    if let ast::Type::PathType(boxed) = ty
+        && let Some(segment) = boxed.path().and_then(|p| p.segment())
+        && segment.name_ref().is_some_and(|name| name.text() == "Box")
+        && let Some(ast::GenericArg::TypeArg(arg)) = segment
+            .generic_arg_list()
+            .and_then(|args| args.generic_args().next())
+        && let Some(ast::Type::SliceType(slice)) = arg.ty()
     {
         return matches!(slice.ty(), Some(ast::Type::PathType(path))
                 if path
@@ -484,6 +489,30 @@ impl<'a> FnIrBuilder<'a> {
             return Vec::new();
         };
         let stmt_list = body.stmt_list().unwrap();
+
+        if stmt_list.statements().next().is_none()
+            && let Some(ast::Expr::RefExpr(ref_expr)) = stmt_list.tail_expr()
+        {
+            let mut prefix = String::from("&");
+            if ref_expr.raw_token().is_some() {
+                prefix.push_str("raw ");
+            }
+            if ref_expr.mut_token().is_some() {
+                prefix.push_str("mut");
+            } else if ref_expr.const_token().is_some() {
+                prefix.push_str("const");
+            }
+            let mut inner_ctx = FragmentCtx::new(self, params, generic_names);
+            inner_ctx.visit(ra_ap_syntax::NodeOrToken::Node(
+                ref_expr.expr().unwrap().syntax().clone(),
+            ));
+            return vec![BodyFragment::RefExpr {
+                ref_expr: RefExprInner {
+                    prefix: prefix.trim_end().to_string(),
+                    inner: inner_ctx.finish(),
+                },
+            }];
+        }
 
         let mut ctx = FragmentCtx::new(self, params, generic_names);
         for child in stmt_list.syntax().children_with_tokens() {

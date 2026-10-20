@@ -4,7 +4,6 @@
 #include "converter/translation_rule.h"
 
 #include <llvm/Support/JSON.h>
-#include <llvm/Support/MemoryBuffer.h>
 
 #include <algorithm>
 #include <string>
@@ -73,6 +72,15 @@ MethodCallFragment ParseMethodCallFragmentJSON(const llvm::json::Object &obj) {
   return mc;
 }
 
+RefExprFragment ParseRefExprFragmentJSON(const llvm::json::Object &obj) {
+  RefExprFragment re;
+  re.prefix = obj.getString("prefix").value_or("").str();
+  if (auto *inner = obj.getArray("inner")) {
+    re.inner = ParseBodyFragmentsJSON(*inner);
+  }
+  return re;
+}
+
 std::vector<BodyFragment> ParseBodyFragmentsJSON(const llvm::json::Array &arr) {
   std::vector<BodyFragment> result;
   for (auto &frag : arr) {
@@ -88,6 +96,9 @@ std::vector<BodyFragment> ParseBodyFragmentsJSON(const llvm::json::Array &arr) {
     } else if (auto *mc = frag_obj->getObject("method_call")) {
       result.push_back(std::make_unique<MethodCallFragment>(
           ParseMethodCallFragmentJSON(*mc)));
+    } else if (auto *re = frag_obj->getObject("ref_expr")) {
+      result.push_back(
+          std::make_unique<RefExprFragment>(ParseRefExprFragmentJSON(*re)));
     } else if (frag_obj->get("va_args")) {
       result.push_back(VaArgsFragment{});
     } else if (frag_obj->get("init")) {
@@ -95,6 +106,147 @@ std::vector<BodyFragment> ParseBodyFragmentsJSON(const llvm::json::Array &arr) {
     }
   }
   return result;
+}
+
+void BodyFragmentDump(const BodyFragment &frag) {
+  if (auto *t = std::get_if<TextFragment>(&frag)) {
+    t->dump();
+  } else if (auto *p = std::get_if<PlaceholderFragment>(&frag)) {
+    p->dump();
+  } else if (auto *g = std::get_if<GenericFragment>(&frag)) {
+    g->dump();
+  } else if (auto *v = std::get_if<VaArgsFragment>(&frag)) {
+    v->dump();
+  } else if (auto *i = std::get_if<InitFragment>(&frag)) {
+    i->dump();
+  } else if (auto *mc =
+                 std::get_if<std::unique_ptr<MethodCallFragment>>(&frag)) {
+    (*mc)->dump();
+  } else if (auto *re = std::get_if<std::unique_ptr<RefExprFragment>>(&frag)) {
+    (*re)->dump();
+  }
+}
+
+bool HasInitFragment(const std::vector<BodyFragment> &body) {
+  return std::any_of(body.begin(), body.end(), [](const BodyFragment &frag) {
+    if (auto *mc = std::get_if<std::unique_ptr<MethodCallFragment>>(&frag)) {
+      return HasInitFragment((*mc)->receiver) || HasInitFragment((*mc)->body);
+    }
+    if (auto *re = std::get_if<std::unique_ptr<RefExprFragment>>(&frag)) {
+      return HasInitFragment((*re)->inner);
+    }
+    return std::holds_alternative<InitFragment>(frag);
+  });
+}
+
+} // namespace
+
+void TextFragment::dump() const { log() << "  text: \"" << text << "\"\n"; }
+
+void VaArgsFragment::dump() const { log() << "  va_args\n"; }
+
+void InitFragment::dump() const { log() << "  init\n"; }
+
+void PlaceholderFragment::dump() const {
+  log() << "  placeholder: " << n;
+  switch (access) {
+  case Access::kBorrow:
+    log() << " (borrow)\n";
+    break;
+  case Access::kBorrowMut:
+    log() << " (borrow_mut)\n";
+    break;
+  case Access::kMove:
+    log() << " (move)\n";
+    break;
+  case Access::kTake:
+    log() << " (take)\n";
+    break;
+  }
+}
+
+const PlaceholderFragment *MethodCallFragment::getReceiverPlaceholder() const {
+  for (auto &frag : receiver) {
+    if (auto *ph = std::get_if<PlaceholderFragment>(&frag)) {
+      return ph;
+    }
+  }
+  return nullptr;
+}
+
+void MethodCallFragment::dump() const {
+  log() << "  method_call:\n"
+           "    receiver:\n";
+  for (const auto &frag : receiver) {
+    BodyFragmentDump(frag);
+  }
+  log() << "    body:\n";
+  for (const auto &frag : body) {
+    BodyFragmentDump(frag);
+  }
+}
+
+void ExprRule::dump() const {
+  unsigned i = 0;
+  for (auto &info : params) {
+    log() << "  param a" << i++ << ": ";
+    info.dump();
+    log() << '\n';
+  }
+  if (!return_type.type.empty()) {
+    log() << "  return: ";
+    return_type.dump();
+    log() << '\n';
+  }
+  i = 0;
+  for (auto &bounds : generics) {
+    log() << "  generic T" << ++i << ':';
+    for (auto &b : bounds) {
+      log() << ' ' << b;
+    }
+    log() << '\n';
+  }
+  for (const auto &frag : body) {
+    BodyFragmentDump(frag);
+  }
+}
+
+bool ExprRule::usesInit() const { return HasInitFragment(body); }
+
+const std::vector<BodyFragment> *ExprRule::refExprOperand() const {
+  if (body.size() != 1) {
+    return nullptr;
+  }
+  auto *re = std::get_if<std::unique_ptr<RefExprFragment>>(&body[0]);
+  return re ? &(*re)->inner : nullptr;
+}
+
+void RefExprFragment::dump() const {
+  log() << "  ref_expr: " << prefix << '\n';
+  for (auto &frag : inner) {
+    BodyFragmentDump(frag);
+  }
+}
+
+void GenericFragment::dump() const { log() << "  generic: " << n << '\n'; }
+
+void TypeInfo::dump() const {
+  log() << type;
+  if (is_refcount_pointer)
+    log() << " [rc_ptr]";
+  if (is_unsafe_pointer)
+    log() << " [unsafe_ptr]";
+  for (const auto &d : derives)
+    log() << " +" << d;
+}
+
+void TypeRule::dump() const {
+  log() << "Rust type: ";
+  type_info.dump();
+  log() << '\n';
+  if (!initializer.empty()) {
+    log() << "  init: " << initializer << '\n';
+  }
 }
 
 ExprRule ParseExprRuleJSON(const llvm::json::Object &obj) {
@@ -150,284 +302,6 @@ TypeRule ParseTypeRuleJSON(const llvm::json::Object &obj) {
     rule.initializer = init->str();
   rule.type_info = ParseTypeInfoJSON(obj);
   return rule;
-}
-
-void LoadTgtFromIR(ExprRules &exprs, TypeRules &types,
-                   const std::filesystem::path &json_path) {
-  auto buf = llvm::MemoryBuffer::getFile(json_path.string());
-  if (!buf)
-    return;
-
-  auto parsed = llvm::json::parse((*buf)->getBuffer());
-  if (!parsed) {
-    llvm::errs() << "Failed to parse IR JSON: " << json_path << ": "
-                 << llvm::toString(parsed.takeError()) << '\n';
-    assert(0);
-    return;
-  }
-
-  auto *root = parsed->getAsObject();
-  if (!root)
-    return;
-
-  for (auto &[entry_name, entry_val] : *root) {
-    auto *obj = entry_val.getAsObject();
-    if (!obj)
-      continue;
-
-    auto name = entry_name.str();
-    if (name[0] == 'f') {
-      exprs[std::move(name)] = ParseExprRuleJSON(*obj);
-    } else if (name[0] == 't') {
-      types[std::move(name)] = ParseTypeRuleJSON(*obj);
-    }
-  }
-}
-
-void LoadIrSrc(ExprRules &exprs, TypeRules &types,
-               const std::filesystem::path &json_path) {
-  auto buf = llvm::MemoryBuffer::getFile(json_path.string());
-  if (!buf) {
-    llvm::errs() << "Missing " << json_path << ", run cpp-rule-preprocessor\n";
-    assert(0);
-    return;
-  }
-
-  auto parsed = llvm::json::parse((*buf)->getBuffer());
-  if (!parsed) {
-    llvm::errs() << "Failed to parse IR src JSON: " << json_path << ": "
-                 << llvm::toString(parsed.takeError()) << '\n';
-    assert(0);
-    return;
-  }
-
-  auto *root = parsed->getAsObject();
-  if (!root) {
-    return;
-  }
-
-  for (auto &[entry_name, entry_val] : *root) {
-    auto name = entry_name.str();
-    auto val = entry_val.getAsString();
-    if (name[0] == 'f') {
-      auto it = exprs.find(name);
-      if (it == exprs.end()) {
-        llvm::errs() << name << '\n';
-        assert(0 && "ir_src.json expr entry has no matching IR target rule");
-      }
-      if (auto *obj = entry_val.getAsObject()) {
-        it->second.src = obj->getString("key")->str();
-        auto *init_type = obj->getObject("init_type");
-        assert(init_type && "ir_src.json expr entry object without init_type");
-        it->second.init_type = InitTypeLocation{
-            (unsigned)*init_type->getInteger("depth"),
-            (unsigned)*init_type->getInteger("index"),
-        };
-        continue;
-      }
-      it->second.src = val->str();
-    } else if (name[0] == 't') {
-      auto it = types.find(name);
-      if (it == types.end()) {
-        llvm::errs() << name << '\n';
-        assert(0 && "ir_src.json type entry has no matching IR target rule");
-      }
-      it->second.src = val->str();
-    }
-  }
-}
-
-void BodyFragmentDump(const BodyFragment &frag) {
-  if (auto *t = std::get_if<TextFragment>(&frag)) {
-    t->dump();
-  } else if (auto *p = std::get_if<PlaceholderFragment>(&frag)) {
-    p->dump();
-  } else if (auto *g = std::get_if<GenericFragment>(&frag)) {
-    g->dump();
-  } else if (auto *v = std::get_if<VaArgsFragment>(&frag)) {
-    v->dump();
-  } else if (auto *i = std::get_if<InitFragment>(&frag)) {
-    i->dump();
-  } else if (auto *mc =
-                 std::get_if<std::unique_ptr<MethodCallFragment>>(&frag)) {
-    (*mc)->dump();
-  }
-}
-
-bool HasInitFragment(const std::vector<BodyFragment> &body) {
-  return std::any_of(body.begin(), body.end(), [](const BodyFragment &frag) {
-    if (auto *mc = std::get_if<std::unique_ptr<MethodCallFragment>>(&frag)) {
-      return HasInitFragment((*mc)->receiver) || HasInitFragment((*mc)->body);
-    }
-    return std::holds_alternative<InitFragment>(frag);
-  });
-}
-
-} // namespace
-
-void TextFragment::dump() const { log() << "  text: \"" << text << "\"\n"; }
-
-void VaArgsFragment::dump() const { log() << "  va_args\n"; }
-
-void InitFragment::dump() const { log() << "  init\n"; }
-
-void PlaceholderFragment::dump() const {
-  log() << "  placeholder: " << n;
-  switch (access) {
-  case Access::kBorrow:
-    log() << " (borrow)\n";
-    break;
-  case Access::kBorrowMut:
-    log() << " (borrow_mut)\n";
-    break;
-  case Access::kMove:
-    log() << " (move)\n";
-    break;
-  case Access::kTake:
-    log() << " (take)\n";
-    break;
-  }
-}
-
-const PlaceholderFragment *MethodCallFragment::getReceiverPlaceholder() const {
-  for (auto &frag : receiver) {
-    if (auto *ph = std::get_if<PlaceholderFragment>(&frag)) {
-      return ph;
-    }
-  }
-  return nullptr;
-}
-
-void MethodCallFragment::dump() const {
-  log() << "  method_call:\n"
-           "    receiver:\n";
-  for (const auto &frag : receiver) {
-    BodyFragmentDump(frag);
-  }
-  log() << "    body:\n";
-  for (const auto &frag : body) {
-    BodyFragmentDump(frag);
-  }
-}
-
-void ExprRule::dump() const {
-  log() << "Matching: " << src << '\n';
-  if (init_type.valid()) {
-    log() << "  init type: depth " << init_type.depth << ", index "
-          << init_type.index << '\n';
-  }
-  unsigned i = 0;
-  for (auto &info : params) {
-    log() << "  param a" << i++ << ": ";
-    info.dump();
-    log() << '\n';
-  }
-  if (!return_type.type.empty()) {
-    log() << "  return: ";
-    return_type.dump();
-    log() << '\n';
-  }
-  i = 0;
-  for (auto &bounds : generics) {
-    log() << "  generic T" << ++i << ':';
-    for (auto &b : bounds) {
-      log() << ' ' << b;
-    }
-    log() << '\n';
-  }
-  for (const auto &frag : body) {
-    BodyFragmentDump(frag);
-  }
-}
-
-void ExprRule::validate(const std::string &name) const {
-  if (src.empty()) {
-    llvm::errs() << name << '\n';
-    dump();
-    llvm::report_fatal_error("Expr rule loaded from IR but has no src");
-  }
-
-  if (HasInitFragment(body) && !init_type.valid()) {
-    llvm::errs() << name << '\n';
-    dump();
-    llvm::report_fatal_error(
-        "Expr rule uses init but its src pack is not declared as Init<T, "
-        "Args>");
-  }
-
-  if (generics.empty())
-    return;
-
-  bool has_generic[kMaxGenerics] = {false};
-  for (size_t i = 0, e = src.size(); i < e; ++i) {
-    auto pos = src.find('T', i);
-    if (pos == std::string::npos)
-      break;
-    auto ch = pos + 1 < e ? src[pos + 1] : '\0';
-    if (ch >= '1' && ch <= '9') {
-      has_generic[ch - '1'] = true;
-      i = pos + 1;
-    }
-  }
-
-  for (size_t i = 0, e = generics.size(); i < e; ++i) {
-    if (!has_generic[i]) {
-      llvm::errs() << name << '\n';
-      dump();
-      llvm::errs() << "generic T" << (i + 1)
-                   << " declared but missing from src: " << src << '\n';
-      llvm::report_fatal_error("Absent generic from src");
-    }
-  }
-}
-
-void GenericFragment::dump() const { log() << "  generic: " << n << '\n'; }
-
-void TypeInfo::dump() const {
-  log() << type;
-  if (is_refcount_pointer)
-    log() << " [rc_ptr]";
-  if (is_unsafe_pointer)
-    log() << " [unsafe_ptr]";
-  for (const auto &d : derives)
-    log() << " +" << d;
-}
-
-void TypeRule::dump() const {
-  log() << "name: " << src << "\n  Rust type: ";
-  type_info.dump();
-  log() << '\n';
-  if (!initializer.empty()) {
-    log() << "  init: " << initializer << '\n';
-  }
-}
-
-std::pair<ExprRules, TypeRules> Load(const std::filesystem::path &dir,
-                                     Model model) {
-  ExprRules exprs;
-  TypeRules types;
-  LoadTgtFromIR(exprs, types, dir / "ir_unsafe.json");
-
-  if (model == Model::kRefCount) {
-    auto refcount_ir_path = dir / "ir_refcount.json";
-    if (std::filesystem::exists(refcount_ir_path)) {
-      LoadTgtFromIR(exprs, types, refcount_ir_path);
-    }
-  }
-
-  LoadIrSrc(exprs, types, dir / "ir_src.json");
-
-  for (auto &[name, rule] : exprs) {
-    rule.validate(name);
-  }
-  for (auto &[name, rule] : types) {
-    if (rule.src.empty()) {
-      llvm::errs() << name << '\n';
-      rule.dump();
-      assert(0 && "Type rule loaded from IR but has no src");
-    }
-  }
-  return {std::move(exprs), std::move(types)};
 }
 
 } // namespace cpp2rust::TranslationRule

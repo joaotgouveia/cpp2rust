@@ -37,7 +37,7 @@ pub struct Implicit {
     pub arr: [i32; 2],
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct DefaultCopyUserMove {
     pub v: i32,
 }
@@ -58,7 +58,7 @@ impl DefaultCopyUserMove {
     }
 }
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
 pub struct UserCopyDefaultMove {
     pub v: i32,
 }
@@ -98,7 +98,7 @@ impl Clone for UserCopyDefaultMove {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Buffer {
     pub data: Vec<i32>,
     pub rows: Vec<Vec<i32>>,
@@ -113,7 +113,10 @@ impl Buffer {
             n: n,
             arr: [n, ((n) + (1))],
         };
-        this.rows.push(this.data.clone());
+        {
+            let a0_clone = this.data.clone();
+            this.rows.push(a0_clone)
+        };
         this
     }
     pub unsafe fn move_from(_a0: *mut Buffer) -> Self {
@@ -143,7 +146,7 @@ impl Buffer {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Owner {
     pub data: Vec<i32>,
     pub n: i32,
@@ -178,7 +181,7 @@ impl Owner {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, DestructorUnsafe, Default)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, DestructorUnsafe, Default)]
 pub struct Holder {
     pub inner: Inner,
     pub e: Explicit,
@@ -343,7 +346,11 @@ unsafe fn main_0() -> i32 {
     let mut o2: Owner = Owner::move_from({ &mut o1 });
     assert!(
         ((((o2.n) == (5)) && ((o2.data.len()) == (1_usize))) && ((o2.arr[(1) as usize]) == (6)))
-            && ((*o2.p.as_deref_mut().unwrap()) == (7))
+            && ((*o2
+                .p
+                .as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+                == (7))
     );
     assert!(
         (o1.data.is_empty())
@@ -357,7 +364,11 @@ unsafe fn main_0() -> i32 {
     (unsafe { Owner::move_assign(&mut o3, &mut o2) });
     assert!(
         ((((o3.n) == (5)) && ((o3.data[(0_usize)]) == (5))) && ((o3.arr[(0) as usize]) == (5)))
-            && ((*o3.p.as_deref_mut().unwrap()) == (7))
+            && ((*o3
+                .p
+                .as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+                == (7))
     );
     assert!(
         (o2.data.is_empty())
@@ -380,7 +391,12 @@ unsafe fn main_0() -> i32 {
     let mut h2: Holder = Holder::move_from({ &mut h1 });
     let _dtor_h2 = ScopedDestructorUnsafe::new(&raw mut h2, Holder::destructor);
     assert!(
-        ((((h2.inner.x) == (4)) && ((h2.e.v) == (4))) && ((*h2.p.as_deref_mut().unwrap()) == (9)))
+        ((((h2.inner.x) == (4)) && ((h2.e.v) == (4)))
+            && ((*h2
+                .p
+                .as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+                == (9)))
             && ((h1
                 .p
                 .as_deref_mut()
@@ -392,7 +408,11 @@ unsafe fn main_0() -> i32 {
     (unsafe { Holder::move_assign(&mut h3, &mut h2) });
     assert!(
         ((((h3.inner.x) == (4)) && ((h3.e.arr[(1) as usize]) == (5)))
-            && ((*h3.p.as_deref_mut().unwrap()) == (9)))
+            && ((*h3
+                .p
+                .as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+                == (9)))
             && ((h2
                 .p
                 .as_deref_mut()

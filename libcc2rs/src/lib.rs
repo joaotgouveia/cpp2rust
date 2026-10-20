@@ -10,13 +10,15 @@ mod rc;
 pub use rc::*;
 
 mod field;
-pub use field::{ElemPlace, FieldPlace, FieldPtr, Place, Record};
+pub use field::{
+    ArrayElem, ElemPlace, FieldPlace, FieldPtr, IndexPlace, Place, Record, Seq, VecElem,
+};
 // Used by #[derive(Record)] and size_of_field!.
 #[doc(hidden)]
 pub mod __field {
     pub use crate::field::{
-        Locate, LocateLeaf, LocateLeafMut, LocateMut, LocateRecord, LocateRecordMut,
-        size_of_pointee,
+        LenLeaf, LenOf, LenRecord, LenSlice, Locate, LocateLeaf, LocateLeafMut, LocateMut,
+        LocateRecord, LocateRecordMut, size_of_pointee,
     };
 }
 
@@ -38,7 +40,17 @@ mod fn_ptr;
 pub use fn_ptr::{FnPtr, Generic};
 
 mod capture;
-pub use capture::{Destructor, DestructorUnsafe, MoveCtor, MoveCtorUnsafe};
+pub use capture::{
+    CopyAssign, CopyAssignUnsafe, Destructor, DestructorUnsafe, MoveAssign, MoveAssignUnsafe,
+    MoveCtor, MoveCtorUnsafe,
+};
+
+mod swap;
+// Used by cpp_swap! and cpp_swap_unsafe!.
+#[doc(hidden)]
+pub mod __swap {
+    pub use crate::swap::*;
+}
 // Used by lambda! and lambda_unsafe!.
 #[doc(hidden)]
 pub mod __capture {
@@ -84,6 +96,7 @@ mod format;
 pub use format::*;
 
 pub use libcc2rs_macros::{
-    ByteRepr, DeepClone, Destructor, DestructorUnsafe, FnPtrArg, MoveCtor, MoveCtorUnsafe, Record,
-    VaArg, goto, goto_block, lambda, lambda_unsafe, switch,
+    ByteRepr, CopyAssign, CopyAssignUnsafe, Destructor, DestructorUnsafe, FnPtrArg, MoveAssign,
+    MoveAssignUnsafe, MoveCtor, MoveCtorUnsafe, Record, VaArg, goto, goto_block, lambda,
+    lambda_unsafe, switch,
 };

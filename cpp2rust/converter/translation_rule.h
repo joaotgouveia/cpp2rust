@@ -4,6 +4,7 @@
 // Distributed under the MIT license that can be found in the LICENSE file.
 
 #include <clang/AST/Expr.h>
+#include <llvm/Support/JSON.h>
 
 #include <filesystem>
 #include <string>
@@ -48,16 +49,25 @@ struct InitFragment {
 };
 
 struct MethodCallFragment; // forward declaration
+struct RefExprFragment;
 
 using BodyFragment = std::variant<TextFragment, PlaceholderFragment,
                                   GenericFragment, VaArgsFragment, InitFragment,
-                                  std::unique_ptr<MethodCallFragment>>;
+                                  std::unique_ptr<MethodCallFragment>,
+                                  std::unique_ptr<RefExprFragment>>;
 
 struct MethodCallFragment {
   std::vector<BodyFragment> receiver;
   std::vector<BodyFragment> body;
 
   const PlaceholderFragment *getReceiverPlaceholder() const;
+  void dump() const;
+};
+
+struct RefExprFragment {
+  std::string prefix;
+  std::vector<BodyFragment> inner;
+
   void dump() const;
 };
 
@@ -72,16 +82,7 @@ struct TypeInfo {
   void dump() const;
 };
 
-struct InitTypeLocation {
-  unsigned depth = -1u;
-  unsigned index = -1u;
-
-  bool valid() const { return depth != -1u; }
-};
-
 struct ExprRule {
-  std::string src;
-  InitTypeLocation init_type;
   std::vector<TypeInfo> params;
   TypeInfo return_type;
   std::vector<std::vector<std::string>> generics; // "T1" -> ["Ord", "Clone"]
@@ -90,30 +91,18 @@ struct ExprRule {
   bool is_extern = false;
 
   void dump() const;
-  void validate(const std::string &name) const;
+  bool usesInit() const;
+  const std::vector<BodyFragment> *refExprOperand() const;
 };
 
 struct TypeRule {
-  std::string src;
   std::string initializer; // Rust initializer expression
   TypeInfo type_info;
 
   void dump() const;
-
-  static TypeRule Plain(std::string type) {
-    return {{}, {}, {{}, std::move(type), false, false}};
-  }
-  static TypeRule RefcountPtr(std::string type) {
-    return {{}, {}, {{}, std::move(type), true, false}};
-  }
-  static TypeRule UnsafePtr(std::string type) {
-    return {{}, {}, {{}, std::move(type), false, true}};
-  }
 };
 
-using ExprRules = std::unordered_map<std::string, ExprRule>;
-using TypeRules = std::unordered_map<std::string, TypeRule>;
+ExprRule ParseExprRuleJSON(const llvm::json::Object &obj);
 
-std::pair<ExprRules, TypeRules> Load(const std::filesystem::path &dir,
-                                     Model model);
+TypeRule ParseTypeRuleJSON(const llvm::json::Object &obj);
 } // namespace cpp2rust::TranslationRule

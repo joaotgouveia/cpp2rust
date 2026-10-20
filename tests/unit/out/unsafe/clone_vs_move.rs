@@ -124,11 +124,12 @@ unsafe fn main_0() -> i32 {
     let mut m1: Vec<Vec<i32>> = Vec::new();
     let mut i: i32 = 0;
     'loop_: while ((i) < (N)) {
-        m1.push(
-            (0..(10_usize) as usize)
+        {
+            let __a1 = (0..(10_usize) as usize)
                 .map(|_| <i32>::default())
-                .collect::<Vec<_>>(),
-        );
+                .collect::<Vec<_>>();
+            m1.push(__a1)
+        };
         i.prefix_inc();
     }
     let mut m2: Vec<Vec<i32>> = m1.clone();
@@ -165,47 +166,26 @@ unsafe fn main_0() -> i32 {
         }
         i.prefix_inc();
     }
-    let mut map1: BTreeMap<i32, Box<(i32, i32)>> = BTreeMap::new();
+    let mut map1: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
     let mut i: i32 = 0;
     'loop_: while ((i) < (N)) {
-        (*&mut map1
-            .entry(i.clone())
-            .or_insert_with(|| Box::new((i, <i32>::default())))
-            .1) = i;
+        (*map1.get_or_insert_with(i.clone(), || (i, <i32>::default()))).1 = i;
         i.prefix_inc();
     }
-    let mut map2: BTreeMap<i32, Box<(i32, i32)>> = map1.clone();
+    let mut map2: UnsafeMap<i32, (i32, i32)> = map1.clone();
     let mut i: i32 = 0;
     'loop_: while ((i) < (N)) {
-        assert!(
-            ((*&mut map2
-                .entry(i.clone())
-                .or_insert_with(|| Box::new((i, <i32>::default())))
-                .1)
-                == (i))
-        );
-        (*&mut map2
-            .entry(i.clone())
-            .or_insert_with(|| Box::new((i, <i32>::default())))
-            .1)
+        assert!((((*map2.get_or_insert_with(i.clone(), || (i, <i32>::default()))).1) == (i)));
+        (*map2.get_or_insert_with(i.clone(), || (i, <i32>::default())))
+            .1
             .prefix_inc();
         i.prefix_inc();
     }
     let mut i: i32 = 0;
     'loop_: while ((i) < (N)) {
+        assert!((((*map1.get_or_insert_with(i.clone(), || (i, <i32>::default()))).1) == (i)));
         assert!(
-            ((*&mut map1
-                .entry(i.clone())
-                .or_insert_with(|| Box::new((i, <i32>::default())))
-                .1)
-                == (i))
-        );
-        assert!(
-            ((*&mut map2
-                .entry(i.clone())
-                .or_insert_with(|| Box::new((i, <i32>::default())))
-                .1)
-                == ((i) + (1)))
+            (((*map2.get_or_insert_with(i.clone(), || (i, <i32>::default()))).1) == ((i) + (1)))
         );
         i.prefix_inc();
     }

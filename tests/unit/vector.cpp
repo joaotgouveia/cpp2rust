@@ -1,4 +1,3 @@
-// translation-fail
 #include <assert.h>
 #include <vector>
 
@@ -36,6 +35,40 @@ int main() {
   assert(v2[1] == 3);
   v2.insert(v2.begin(), 100);
   copy(v2);
+  assert(v2.size() == 3);
+  assert(v2[0] == 100);
+  assert(v2[1] == 2);
+  assert(v2[2] == 3);
+  int x = 7;
+  v2.insert(v2.begin() + 1, x);
+  assert(v2.size() == 4);
+  assert(v2[0] == 100);
+  assert(v2[1] == 7);
+  assert(v2[2] == 2);
+  v2.insert(v2.end(), 2, 9);
+  assert(v2.size() == 6);
+  assert(v2[4] == 9);
+  assert(v2[5] == 9);
+  v2.insert(v2.begin() + 2, {11, 12, 13});
+  assert(v2.size() == 9);
+  assert(v2[1] == 7);
+  assert(v2[2] == 11);
+  assert(v2[3] == 12);
+  assert(v2[4] == 13);
+  assert(v2[5] == 2);
+  assert(v2[8] == 9);
+  std::vector<int> src{21, 22};
+  v2.insert(v2.begin(), src.begin(), src.end());
+  assert(v2.size() == 11);
+  assert(v2[0] == 21);
+  assert(v2[1] == 22);
+  assert(v2[2] == 100);
+  v2.erase(v2.begin());
+  v2.erase(v2.begin());
+  for (int i = 0; i < 4; ++i)
+    v2.erase(v2.begin() + 1);
+  v2.pop_back();
+  v2.pop_back();
   assert(v2.size() == 3);
   assert(v2[0] == 100);
   assert(v2[1] == 2);

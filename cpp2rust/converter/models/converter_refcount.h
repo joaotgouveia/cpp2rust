@@ -17,6 +17,8 @@ public:
 
   void EmitFilePreamble() override;
 
+  std::string GetUnboxedTypeAsString(clang::QualType qual_type) override;
+
   static void EmitMethodsOnPtr(std::string &out);
 
   bool VisitRecordType(clang::RecordType *type) override;
@@ -45,6 +47,10 @@ public:
   std::string GetComparisonReferenceArg(const clang::CXXRecordDecl *decl,
                                         std::string_view value) override;
 
+  std::string GetComparisonReferenceReceiver(const clang::CXXMethodDecl *method,
+                                             const clang::CXXRecordDecl *decl,
+                                             std::string_view ptr) override;
+
   std::string GetComparisonReceiver(const clang::CXXMethodDecl *method,
                                     const clang::CXXRecordDecl *decl,
                                     std::string_view lhs) override;
@@ -56,8 +62,6 @@ public:
   bool RecordImplementsClone(const clang::RecordDecl *decl) override;
 
   bool RecordDerivesClone(const clang::RecordDecl *decl);
-
-  bool RecordDerivesDeepClone(const clang::RecordDecl *decl);
 
   void EmitByteSizeAttr(const clang::RecordDecl *decl) override;
 
@@ -210,15 +214,6 @@ public:
 
   bool VisitCXXDeleteExpr(clang::CXXDeleteExpr *expr) override;
 
-  bool VisitCXXForRangeStmtMap(clang::CXXForRangeStmt *stmt) override;
-
-  bool VisitCXXForRangeStmtVector(clang::CXXForRangeStmt *stmt) override;
-
-  bool VisitCXXForRangeStmtString(clang::CXXForRangeStmt *stmt) override;
-
-  void EmitByValueShadow(const clang::VarDecl *loop_var, std::string box_expr,
-                         const std::string &type_override = "");
-
   std::string ConvertStream(clang::Expr *expr) override;
 
   bool VisitCXXConstructExpr(clang::CXXConstructExpr *expr) override;
@@ -281,8 +276,6 @@ public:
   void ConvertAssignment(clang::Expr *lhs, clang::Expr *rhs,
                          std::string_view assign_operator) override;
 
-  void ConvertUniquePtrDeref(clang::CXXOperatorCallExpr *expr) override;
-
   bool ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) override;
 
   void ConvertFunctionParameters(clang::FunctionDecl *decl) override;
@@ -293,6 +286,8 @@ public:
   // an rvalue and can be copied out of the array, or nullptr otherwise.
   clang::DeclRefExpr *GetGlobalArrayRValue(clang::Expr *base);
   void ConvertPointerSubscript(clang::ArraySubscriptExpr *expr) override;
+
+  bool IsPointerSubscript(const clang::ArraySubscriptExpr *expr) const;
 
   void ConvertFunctionMain(const clang::FunctionDecl *decl,
                            const std::string_view main_function_name) override;
@@ -308,6 +303,14 @@ public:
   void ConvertGenericBinaryOperator(clang::BinaryOperator *expr) override;
 
   bool IsReferenceType(const clang::Expr *expr) const override;
+
+  std::string ConvertTake(clang::Expr *arg) override;
+
+  std::string ConvertBorrowMut(clang::Expr *arg) override;
+
+  // Whether the receiver of a method call translated by a rule is being
+  // converted.
+  bool in_receiver_ = false;
 
   std::string
   ConvertMappedMethodCall(clang::Expr *expr,
@@ -417,6 +420,13 @@ private:
   // Element `idx` of pointer `base`, accessed without creating a pointer to it.
   void ConvertPointerElem(clang::Expr *base, clang::Expr *idx);
 
+  // The place of element `idx` of the container `container`, e.g., a
+  // std::vector.
+  std::string ConvertElemPlace(clang::Expr *container, clang::Expr *idx);
+
+  // The place of `expr`, which is reached through a pointer.
+  std::string ConvertPlace(clang::Expr *expr);
+
   std::string GetSafeTypeAsString(clang::QualType qual_type) const;
 
   bool NeedsMut(const clang::VarDecl *decl, clang::QualType type,
@@ -494,14 +504,6 @@ private:
     }
   };
 
-  struct PushUnboxedIfSimple {
-    ConverterRefCount &c;
-    PushUnboxedIfSimple(ConverterRefCount &c, std::string_view outer_type,
-                        clang::QualType inner_type);
-
-    ~PushUnboxedIfSimple() { c.conversion_kind_.pop_back(); }
-  };
-
   std::string BoxType(std::string &&str) const;
   std::string BoxValue(std::string &&str) const;
 
@@ -514,32 +516,25 @@ private:
   // emit ptr.write(rhs), or by ConvertMappedMethodCall to emit
   // ptr.with_mut(...).
   struct PendingDeref {
-    PendingDeref(ComputedExprType &type, clang::ASTContext &ctx)
-        : type(type), ctx(ctx) {}
-    void set(std::string str, bool fresh, clang::Expr *expr = nullptr);
-    void set_unchecked(std::string str, bool fresh,
-                       clang::Expr *expr = nullptr);
+    PendingDeref(ComputedExprType &type) : type(type) {}
+    void set(std::string str, bool fresh);
+    void set_unchecked(std::string str, bool fresh);
     std::string take() {
       auto result = std::move(value);
       value.clear();
-      pointee_is_boxed = false;
       ptr_is_fresh = false;
       return result;
     }
     bool empty() const { return value.empty(); }
-    bool is_boxed() const { return pointee_is_boxed; }
     bool is_fresh() const { return ptr_is_fresh; }
     void assert_consumed() const {
       assert(value.empty() && "pending_deref_ not consumed");
     }
 
   private:
-    bool compute_inner_boxed(clang::Expr *expr) const;
     ComputedExprType &type;
-    clang::ASTContext &ctx;
     std::string value;
-    bool pointee_is_boxed = false;
     bool ptr_is_fresh = false;
-  } pending_deref_{computed_expr_type_, ctx_};
+  } pending_deref_{computed_expr_type_};
 };
 } // namespace cpp2rust

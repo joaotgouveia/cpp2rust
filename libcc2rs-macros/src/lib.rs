@@ -3,8 +3,8 @@
 
 use proc_macro::TokenStream;
 
+mod assign;
 mod byte_repr;
-mod deep_clone;
 mod destructor;
 mod fn_ptr_arg;
 mod goto;
@@ -105,7 +105,7 @@ pub fn goto(_input: TokenStream) -> TokenStream {
 //         pub x: i32,
 //         #[offset(4)]
 //         #[byte_size(12)]
-//         pub a: Value<Box<[i32]>>,
+//         pub a: Box<[i32]>,
 //         ...
 //     }
 //
@@ -146,21 +146,6 @@ pub fn derive_record(input: TokenStream) -> TokenStream {
     record::expand(input)
 }
 
-//     #[derive(DeepClone)]
-//     pub struct S {
-//         pub x: Value<T>,
-//         pub y: U,
-//     }
-//
-// Implements Clone for S, copying the Value fields with
-// libcc2rs::DeepClone, such that the copy of S doesn't share them with S,
-// and the other fields with Clone.
-
-#[proc_macro_derive(DeepClone)]
-pub fn derive_deep_clone(input: TokenStream) -> TokenStream {
-    deep_clone::expand(input)
-}
-
 //     #[derive(MoveCtor)]
 //     pub struct S { ... }
 //     impl S {
@@ -179,6 +164,38 @@ pub fn derive_move_ctor(input: TokenStream) -> TokenStream {
 #[proc_macro_derive(MoveCtorUnsafe)]
 pub fn derive_move_ctor_unsafe(input: TokenStream) -> TokenStream {
     move_ctor::expand(input, true)
+}
+
+//     #[derive(CopyAssign, MoveAssign)]
+//     pub struct S { ... }
+//     impl SImpl for Ptr<S> {
+//         fn copy_assign(&self, o: Ptr<S>) -> Ptr<S> { ... }
+//         fn move_assign(&self, o: Ptr<S>) -> Ptr<S> { ... }
+//     }
+//
+// Implements libcc2rs::CopyAssign and MoveAssign for S with its copy and move
+// assignment operators, such that std::swap assigns the values of type S
+// with them, as C++ does. CopyAssignUnsafe and MoveAssignUnsafe are the same
+// for the unsafe model, whose copy_assign and move_assign are methods of S.
+
+#[proc_macro_derive(CopyAssign)]
+pub fn derive_copy_assign(input: TokenStream) -> TokenStream {
+    assign::expand(input, "copy", false)
+}
+
+#[proc_macro_derive(CopyAssignUnsafe)]
+pub fn derive_copy_assign_unsafe(input: TokenStream) -> TokenStream {
+    assign::expand(input, "copy", true)
+}
+
+#[proc_macro_derive(MoveAssign)]
+pub fn derive_move_assign(input: TokenStream) -> TokenStream {
+    assign::expand(input, "move", false)
+}
+
+#[proc_macro_derive(MoveAssignUnsafe)]
+pub fn derive_move_assign_unsafe(input: TokenStream) -> TokenStream {
+    assign::expand(input, "move", true)
 }
 
 //     #[derive(Destructor)]

@@ -32,7 +32,7 @@ pub struct Holder {
     pub field: i32,
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct NonCopyable {
     pub value: Option<Box<i32>>,
 }
@@ -125,7 +125,12 @@ unsafe fn main_0() -> i32 {
     (&(g));
     &(g);
     (unsafe { unused_noncopyable_param_5(&g) });
-    assert!(((*g.value.as_deref_mut().unwrap()) == (9)));
+    assert!(
+        ((*g.value
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+            == (9))
+    );
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {

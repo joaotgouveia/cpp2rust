@@ -1,22 +1,18 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
+#include <iterator>
 #include <map>
+#include <type_traits>
 #include <utility>
 
 template <typename T1, typename T2> using t1 = std::map<T1, T2>;
 
 template <typename T1, typename T2>
-using t2 = typename std::map<T1, T2>::const_iterator;
-
-template <typename T1, typename T2>
-using t3 = typename std::map<T1, T2>::iterator;
-
-template <typename T1, typename T2>
 using t4 = typename std::map<T1, T2>::size_type;
 
 template <typename T1, typename T2> T2 &f1(std::map<T1, T2> &o, const T1 &key) {
-  return o.operator[](key);
+  return o[key];
 }
 
 template <typename T1, typename T2> std::size_t f2(const std::map<T1, T2> &o) {
@@ -34,8 +30,8 @@ template <typename T1, typename T2> std::map<T1, T2> f5() {
 }
 
 template <typename T1, typename T2>
-std::map<T1, T2> f6(const std::map<T1, T2> &&o) {
-  return std::map<T1, T2>(std::move(o));
+std::map<T1, T2> f6(const std::map<T1, T2> &o) {
+  return std::map<T1, T2>(o);
 }
 
 template <typename T1, typename T2> T2 &f7(std::map<T1, T2> &o, const T1 &key) {
@@ -43,7 +39,7 @@ template <typename T1, typename T2> T2 &f7(std::map<T1, T2> &o, const T1 &key) {
 }
 
 template <typename T1, typename T2> T2 &f8(std::map<T1, T2> &o, T1 &&key) {
-  return o.operator[](std::move(key));
+  return o[std::move(key)];
 }
 
 template <typename T1, typename T2>
@@ -57,20 +53,8 @@ typename std::map<T1, T2>::iterator f10(std::map<T1, T2> &o, const T1 &key) {
 }
 
 template <typename T1, typename T2>
-bool f11(typename std::map<T1, T2>::iterator a,
-         typename std::map<T1, T2>::iterator b) {
-  return operator!=(a, b);
-}
-
-template <typename T1, typename T2>
 typename std::map<T1, T2>::iterator f12(std::map<T1, T2> &o) {
   return o.begin();
-}
-
-template <typename T1, typename T2>
-bool f13(typename std::map<T1, T2>::const_iterator a,
-         typename std::map<T1, T2>::const_iterator b) {
-  return operator==(a, b);
 }
 
 template <typename T1, typename T2>
@@ -84,41 +68,9 @@ const T2 &f15(const std::map<T1, T2> &o, const T1 &key) {
 }
 
 template <typename T1, typename T2>
-bool f16(typename std::map<T1, T2>::iterator a,
-         typename std::map<T1, T2>::iterator b) {
-  return operator==(a, b);
-}
-
-template <typename T1, typename T2>
 typename std::map<T1, T2>::const_iterator f17(const std::map<T1, T2> &o,
                                               const T1 &key) {
   return o.find(key);
-}
-
-template <typename T1, typename T2>
-typename std::map<T1, T2>::const_iterator
-f19(const typename std::map<T1, T2>::iterator &it) {
-  return typename std::map<T1, T2>::const_iterator(it);
-}
-
-template <typename T1, typename T2>
-const T1 &f20(typename std::map<T1, T2>::const_iterator it) {
-  return it->first;
-}
-
-template <typename T1, typename T2>
-const T2 &f21(typename std::map<T1, T2>::const_iterator it) {
-  return it->second;
-}
-
-template <typename T1, typename T2>
-const T1 &f22(typename std::map<T1, T2>::iterator it) {
-  return it->first;
-}
-
-template <typename T1, typename T2>
-T2 &f23(typename std::map<T1, T2>::iterator it) {
-  return it->second;
 }
 
 template <typename T1, typename T2> std::map<T1, T2> f24(std::map<T1, T2> &&o) {
@@ -127,21 +79,27 @@ template <typename T1, typename T2> std::map<T1, T2> f24(std::map<T1, T2> &&o) {
 
 template <typename T1, typename T2>
 std::map<T1, T2> &f25(std::map<T1, T2> &dst, std::map<T1, T2> &&src) {
-  return dst.operator=(std::move(src));
+  return dst = std::move(src);
 }
 
 template <typename T1, typename T2>
 std::map<T1, T2> &f26(std::map<T1, T2> &dst, const std::map<T1, T2> &src) {
-  return dst.operator=(src);
+  return dst = src;
 }
 
 template <typename T1, typename T2>
-std::pair<const T1, T2> &f27(typename std::map<T1, T2>::iterator it) {
-  return it.operator*();
+typename std::map<T1, T2>::iterator
+f27(std::map<T1, T2> &o, typename std::map<T1, T2>::const_iterator it) {
+  return o.erase(it);
 }
 
 template <typename T1, typename T2>
-const std::pair<const T1, T2> &
-f28(typename std::map<T1, T2>::const_iterator it) {
-  return it.operator*();
+std::size_t f28(std::map<T1, T2> &o,
+                const typename std::map<T1, T2>::key_type &key) {
+  return o.erase(key);
+}
+
+template <typename T1, typename T2>
+typename std::map<T1, T2>::const_iterator f29(const std::map<T1, T2> &o) {
+  return o.begin();
 }

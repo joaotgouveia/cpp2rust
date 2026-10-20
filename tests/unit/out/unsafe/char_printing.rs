@@ -13,31 +13,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut vec_: Vec<u8> = vec![195_u8, 167_u8];
+    let mut vec_: Vec<u8> = Vec::from([195_u8, 167_u8]);
     let mut i: i32 = 27;
     let mut str: Vec<libc::c_char> = {
         let s = c"foo.".as_ptr();
         std::slice::from_raw_parts(s, (0..).take_while(|&i| *s.add(i) != 0).count() + 1).to_vec()
     };
-    write!(
-        std::fs::File::from_raw_fd(
-            std::io::stdout()
-                .as_fd()
-                .try_clone_to_owned()
-                .unwrap()
-                .into_raw_fd(),
-        ),
-        "{:} a",
-        i,
-    );
-    std::fs::File::from_raw_fd(
-        std::io::stdout()
-            .as_fd()
-            .try_clone_to_owned()
-            .unwrap()
-            .into_raw_fd(),
-    )
-    .write_all(
+    write!((*libcc2rs::cout_unsafe()), "{:} a", i,);
+    (*libcc2rs::cout_unsafe()).write_all(
         &([
             (&[vec_[(0_usize)] as u8] as &[u8]),
             (&[vec_[(1_usize)] as u8] as &[u8]),
@@ -51,25 +34,8 @@ unsafe fn main_0() -> i32 {
         ]
         .concat()),
     );
-    write!(
-        std::fs::File::from_raw_fd(
-            std::io::stdout()
-                .as_fd()
-                .try_clone_to_owned()
-                .unwrap()
-                .into_raw_fd(),
-        ),
-        "0x{:x}",
-        27,
-    );
-    std::fs::File::from_raw_fd(
-        std::io::stdout()
-            .as_fd()
-            .try_clone_to_owned()
-            .unwrap()
-            .into_raw_fd(),
-    )
-    .write_all(
+    write!((*libcc2rs::cout_unsafe()), "0x{:x}", 27,);
+    (*libcc2rs::cout_unsafe()).write_all(
         &([
             (b" a\xc3\xa7ordas?" as &[u8]),
             (&[('\n' as libc::c_char) as u8] as &[u8]),
@@ -77,35 +43,9 @@ unsafe fn main_0() -> i32 {
         ]
         .concat()),
     );
-    write!(
-        std::fs::File::from_raw_fd(
-            std::io::stdout()
-                .as_fd()
-                .try_clone_to_owned()
-                .unwrap()
-                .into_raw_fd(),
-        ),
-        "{:x}.\n",
-        i,
-    );
-    write!(
-        std::fs::File::from_raw_fd(
-            std::io::stdout()
-                .as_fd()
-                .try_clone_to_owned()
-                .unwrap()
-                .into_raw_fd(),
-        ),
-        "Hello, World!\n",
-    );
-    std::fs::File::from_raw_fd(
-        std::io::stdout()
-            .as_fd()
-            .try_clone_to_owned()
-            .unwrap()
-            .into_raw_fd(),
-    )
-    .write_all(
+    write!((*libcc2rs::cout_unsafe()), "{:x}.\n", i,);
+    write!((*libcc2rs::cout_unsafe()), "Hello, World!\n",);
+    (*libcc2rs::cout_unsafe()).write_all(
         &([
             (&[vec_[(0_usize)] as u8] as &[u8]),
             (&[('\n' as libc::c_char) as u8] as &[u8]),

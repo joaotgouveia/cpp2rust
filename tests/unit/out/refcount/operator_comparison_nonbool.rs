@@ -182,6 +182,40 @@ pub fn operator_eq_7(mut a: Boolish, mut b: Boolish) -> MyBool {
 pub fn operator_lt_6(mut a: Boolish, mut b: Boolish) -> MyBool {
     return MyBool::new({ (a.v < b.v) });
 }
+#[derive(Record, ByteRepr, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct RefBool {
+    #[offset(0)]
+    pub value: bool,
+}
+impl RefBool {
+    pub fn new(mut v: bool) -> Self {
+        Self { value: v }
+    }
+}
+thread_local!(
+    pub static ref_true_8: Value<RefBool> = Rc::new(RefCell::new(RefBool::new({ true })));
+);
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(4)]
+pub struct RefInt {
+    #[offset(0)]
+    pub v: i32,
+}
+impl std::cmp::PartialEq for RefInt {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            {
+                let __cmp = RefIntImpl::operator_eq(
+                    &Rc::new(RefCell::new(RefInt { v: self.v.clone() })).as_pointer(),
+                    Rc::new(RefCell::new(RefInt { v: other.v.clone() })).as_pointer(),
+                );
+                RefBoolImpl::to_bool(&__cmp)
+            }
+        }
+    }
+}
+impl std::cmp::Eq for RefInt {}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -233,11 +267,20 @@ fn main_0() -> i32 {
         }) == 7)
     );
     let xs: Value<Box<[X]>> = Rc::new(RefCell::new(Box::new([X { v: 3 }, X { v: 1 }, X { v: 2 }])));
-    (xs.as_pointer() as Ptr<X>).sort(
-        (xs.as_pointer() as Ptr<X>)
+    {
+        let __n = (xs.as_pointer() as Ptr<X>)
             .offset((3) as isize)
-            .get_offset(),
-    );
+            .iter_distance(&(xs.as_pointer() as Ptr<X>));
+        let mut __order: Vec<isize> = (0..__n).collect();
+        __order.sort_by(|&__x, &__y| {
+            (xs.as_pointer() as Ptr<X>).iter_at(__x).with(|__a| {
+                (xs.as_pointer() as Ptr<X>)
+                    .iter_at(__y)
+                    .with(|__b| __a.cmp(__b))
+            })
+        });
+        reorder(__order, |__i| (xs.as_pointer() as Ptr<X>).iter_at(__i));
+    };
     assert!(
         (({ (*xs.borrow())[(0) as usize].v } == 1) && ({ (*xs.borrow())[(1) as usize].v } == 2))
             && ({ (*xs.borrow())[(2) as usize].v } == 3)
@@ -255,11 +298,20 @@ fn main_0() -> i32 {
         Mixed { v: 4 },
         Mixed { v: 5 },
     ])));
-    (ms.as_pointer() as Ptr<Mixed>).sort(
-        (ms.as_pointer() as Ptr<Mixed>)
+    {
+        let __n = (ms.as_pointer() as Ptr<Mixed>)
             .offset((3) as isize)
-            .get_offset(),
-    );
+            .iter_distance(&(ms.as_pointer() as Ptr<Mixed>));
+        let mut __order: Vec<isize> = (0..__n).collect();
+        __order.sort_by(|&__x, &__y| {
+            (ms.as_pointer() as Ptr<Mixed>).iter_at(__x).with(|__a| {
+                (ms.as_pointer() as Ptr<Mixed>)
+                    .iter_at(__y)
+                    .with(|__b| __a.cmp(__b))
+            })
+        });
+        reorder(__order, |__i| (ms.as_pointer() as Ptr<Mixed>).iter_at(__i));
+    };
     assert!(
         (({ (*ms.borrow())[(0) as usize].v } == 4) && ({ (*ms.borrow())[(1) as usize].v } == 5))
             && ({ (*ms.borrow())[(2) as usize].v } == 6)
@@ -308,14 +360,47 @@ fn main_0() -> i32 {
         Boolish { v: 1 },
         Boolish { v: 2 },
     ])));
-    (bs.as_pointer() as Ptr<Boolish>).sort(
-        (bs.as_pointer() as Ptr<Boolish>)
+    {
+        let __n = (bs.as_pointer() as Ptr<Boolish>)
             .offset((3) as isize)
-            .get_offset(),
-    );
+            .iter_distance(&(bs.as_pointer() as Ptr<Boolish>));
+        let mut __order: Vec<isize> = (0..__n).collect();
+        __order.sort_by(|&__x, &__y| {
+            (bs.as_pointer() as Ptr<Boolish>).iter_at(__x).with(|__a| {
+                (bs.as_pointer() as Ptr<Boolish>)
+                    .iter_at(__y)
+                    .with(|__b| __a.cmp(__b))
+            })
+        });
+        reorder(__order, |__i| {
+            (bs.as_pointer() as Ptr<Boolish>).iter_at(__i)
+        });
+    };
     assert!(
         (({ (*bs.borrow())[(0) as usize].v } == 1) && ({ (*bs.borrow())[(1) as usize].v } == 2))
             && ({ (*bs.borrow())[(2) as usize].v } == 3)
+    );
+    let ri1: Value<RefInt> = Rc::new(RefCell::new(RefInt { v: 1 }));
+    let ri2: Value<RefInt> = Rc::new(RefCell::new(RefInt { v: 2 }));
+    assert!(
+        ({
+            RefBoolImpl::to_bool(
+                &({ RefIntImpl::operator_eq(&ri1.as_pointer(), ri2.as_pointer()) }),
+            )
+        })
+    );
+    let ris: Value<Box<[RefInt]>> =
+        Rc::new(RefCell::new(Box::new([RefInt { v: 1 }, RefInt { v: 2 }])));
+    assert!(
+        ({
+            let mut __it = (ris.as_pointer() as Ptr<RefInt>);
+            while __it != (ris.as_pointer() as Ptr<RefInt>).offset((2) as isize)
+                && __it.iter_deref().with(|__v| *__v != (*ri2.borrow()))
+            {
+                __it.iter_inc();
+            }
+            __it
+        } == (ris.as_pointer() as Ptr<RefInt>))
     );
     return 0;
 }
@@ -363,4 +448,22 @@ impl MyBoolImpl for Ptr<MyBool> {
         return (*self).with(|__s| __s.value);
     }
 }
-pub fn __cpp2rust_init_globals() {}
+pub trait RefBoolImpl {
+    fn to_bool(&self) -> bool;
+}
+impl RefBoolImpl for Ptr<RefBool> {
+    fn to_bool(&self) -> bool {
+        return (*self).with(|__s| __s.value);
+    }
+}
+pub trait RefIntImpl {
+    fn operator_eq(&self, _a0: Ptr<RefInt>) -> Ptr<RefBool>;
+}
+impl RefIntImpl for Ptr<RefInt> {
+    fn operator_eq(&self, _a0: Ptr<RefInt>) -> Ptr<RefBool> {
+        return ref_true_8.with(|v| v.as_pointer());
+    }
+}
+pub fn __cpp2rust_init_globals() {
+    let _ = ref_true_8.with(|_| ());
+}

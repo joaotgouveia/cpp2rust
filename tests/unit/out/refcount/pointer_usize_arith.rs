@@ -19,8 +19,8 @@ fn main_0() -> i32 {
     assert!(((r.read()) == 13));
     let mut s: Ptr<i32> = r.offset(-((2) as isize));
     assert!(((s.read()) == 11));
-    let mut diff: i64 = ((r).clone() - (p).clone()) as i64;
-    assert!((diff == 3_i64));
+    let mut diff: isize = (((r).clone() - (p).clone()) as i64 as isize);
+    assert!((diff == 3_isize));
     let mut idx: usize = ((((r).clone() - (p).clone()) as i64) as usize);
     assert!((idx == 3_usize));
     let mut q2: Ptr<i32> = (p).clone();
@@ -62,26 +62,25 @@ fn main_0() -> i32 {
     let mut bp: Ptr<u8> = (bytes.as_pointer() as Ptr<u8>);
     let mut bq: Ptr<u8> = bp.offset((4) as isize);
     assert!((((bq.read()) as i32) == 4));
-    let mut bdiff: i64 = ((bq).clone() - (bp).clone()) as i64;
-    assert!((bdiff == 4_i64));
+    let mut bdiff: isize = (((bq).clone() - (bp).clone()) as i64 as isize);
+    assert!((bdiff == 4_isize));
     let mut cp: Ptr<i32> = (arr.as_pointer() as Ptr<i32>);
     let mut cq: Ptr<i32> = cp.offset((2) as isize);
     assert!(((cq.read()) == 12));
-    let mut cdiff: i64 = ((cq).clone() - (cp).clone()) as i64;
-    assert!((cdiff == 2_i64));
+    let mut cdiff: isize = (((cq).clone() - (cp).clone()) as i64 as isize);
+    assert!((cdiff == 2_isize));
     let mut n: usize = 3_usize;
     let mut q5: Ptr<i32> = (arr.as_pointer() as Ptr<i32>).offset((n) as isize);
     assert!(((q5.read()) == 13));
     let mut q6: Ptr<i32> = ((arr.as_pointer() as Ptr<i32>).offset(n));
     assert!(({ (q6).clone() } == { (q5).clone() }));
-    let matrix: Value<Box<[Value<Box<[i32]>>]>> = Rc::new(RefCell::new(Box::new([
-        Rc::new(RefCell::new(Box::new([0, 1, 2, 3]))),
-        Rc::new(RefCell::new(Box::new([4, 5, 6, 7]))),
-        Rc::new(RefCell::new(Box::new([8, 9, 10, 11]))),
+    let matrix: Value<Box<[Box<[i32]>]>> = Rc::new(RefCell::new(Box::new([
+        Box::new([0, 1, 2, 3]),
+        Box::new([4, 5, 6, 7]),
+        Box::new([8, 9, 10, 11]),
     ])));
-    let mut row1: Ptr<i32> = ((((matrix.as_pointer() as Ptr<Value<Box<[i32]>>>)
+    let mut row1: Ptr<i32> = ((((matrix.as_pointer() as Ptr<Box<[i32]>>)
         .offset(1)
-        .read()
         .as_pointer()) as Ptr<i32>)
         .offset(0));
     assert!(((elem!(row1, 2).read()) == 6));

@@ -22,8 +22,7 @@ template <typename T1> void f4(std::deque<T1> &o, T1 &&value) {
 
 template <typename T1> void f5(std::deque<T1> &o) { return o.pop_front(); }
 
-template <typename T1>
-void f7(std::deque<std::vector<T1>> &o, const std::vector<T1> &value) {
+template <typename T1> void f7(std::deque<T1> &o, const T1 &value) {
   return o.push_back(value);
 }
 
@@ -37,22 +36,17 @@ template <typename T1> std::deque<T1> f9(std::deque<T1> &&o) {
 
 template <typename T1>
 std::deque<T1> &f10(std::deque<T1> &dst, const std::deque<T1> &src) {
-  return dst.operator=(src);
+  return dst = src;
 }
 
 template <typename T1>
 std::deque<T1> &f11(std::deque<T1> &dst, std::deque<T1> &&src) {
-  return dst.operator=(std::move(src));
+  return dst = std::move(src);
 }
 
 template <typename T1, typename... Args>
-T1 &f12(std::deque<T1> &o, Init<T1, Args> &&...args) {
-  return o.emplace_back(std::forward<Args>(args)...);
-}
-
-template <typename T1, typename... Args>
-std::vector<T1> &f13(std::deque<std::vector<T1>> &o,
-                     Init<std::vector<T1>, Args> &&...args) {
+auto f12(std::deque<T1> &o, Init<T1, Args> &&...args)
+    -> decltype(o.emplace_back(std::forward<Args>(args)...)) {
   return o.emplace_back(std::forward<Args>(args)...);
 }
 

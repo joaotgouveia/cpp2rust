@@ -14,7 +14,7 @@ pub struct context {
     #[offset(4)]
     pub last_error: i32,
 }
-pub fn set_error_0(mut ctx: Ptr<context>, fmt: Ptr<i8>, __args: &[VaArg]) {
+pub fn set_error_0(mut ctx: Ptr<context>, fmt: Ptr<i8>, __args: Box<[VaArg]>) {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
     let fmt: Value<Ptr<i8>> = Rc::new(RefCell::new(fmt));
     if (ctx.with(|__s| __s.verbose) != 0) {
@@ -24,12 +24,12 @@ pub fn set_error_0(mut ctx: Ptr<context>, fmt: Ptr<i8>, __args: &[VaArg]) {
         field!(ctx, last_error).write(__rhs);
     }
 }
-#[derive(VaArg, FnPtrArg, ByteRepr, DeepClone)]
+#[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
 pub struct value {
     #[offset(0)]
     #[byte_size(8)]
-    __bytes: Value<Box<[u8]>>,
+    __bytes: Box<[u8]>,
 }
 impl value {
     pub fn i(this: Ptr<Self>) -> Ptr<i32> {
@@ -42,11 +42,11 @@ impl value {
 impl Default for value {
     fn default() -> Self {
         value {
-            __bytes: Rc::new(RefCell::new(Box::from([0u8; 8]))),
+            __bytes: Box::from([0u8; 8]),
         }
     }
 }
-pub fn pick_1(use_long: i32, __args: &[VaArg]) -> i64 {
+pub fn pick_1(use_long: i32, __args: Box<[VaArg]>) -> i64 {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
     let use_long: Value<i32> = Rc::new(RefCell::new(use_long));
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
@@ -69,7 +69,7 @@ fn main_0() -> i32 {
         set_error_0(
             (ctx.as_pointer()),
             Ptr::<i8>::from_string_literal(b"error %d"),
-            &[(42).into()],
+            Box::new([(42).into()]),
         )
     });
     assert!(((({ (*ctx.borrow()).last_error } == 42) as i32) != 0));
@@ -78,15 +78,20 @@ fn main_0() -> i32 {
         set_error_0(
             (ctx.as_pointer()),
             Ptr::<i8>::from_string_literal(b"error %d"),
-            &[(99).into()],
+            Box::new([(99).into()]),
         )
     });
     assert!(((({ (*ctx.borrow()).last_error } == 42) as i32) != 0));
     let v: Value<value> = <Value<value>>::default();
     value::l(v.as_pointer()).write((1_i64 << 40));
-    assert!((((({ pick_1(1, &[((*v.borrow()).clone()).into(),]) }) == (1_i64 << 40)) as i32) != 0));
+    assert!(
+        (((({ pick_1(1, Box::new([((*v.borrow()).clone()).into(),])) }) == (1_i64 << 40)) as i32)
+            != 0)
+    );
     value::i(v.as_pointer()).write(7);
-    assert!((((({ pick_1(0, &[((*v.borrow()).clone()).into(),]) }) == 7_i64) as i32) != 0));
+    assert!(
+        (((({ pick_1(0, Box::new([((*v.borrow()).clone()).into(),])) }) == 7_i64) as i32) != 0)
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

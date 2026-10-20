@@ -6,16 +6,21 @@ typedef struct in_addr t2;
 typedef struct sockaddr_in6 t3;
 typedef struct in6_addr t4;
 
-int f1() { return IPPROTO_TCP; }
+int f1(void) { return IPPROTO_TCP; }
 
-int f2() { return IPPROTO_UDP; }
+int f2(void) { return IPPROTO_UDP; }
 
-int f3() { return IPPROTO_IP; }
+int f3(void) { return IPPROTO_IP; }
 
-int f4() { return IPPROTO_IPV6; }
+int f4(void) { return IPPROTO_IPV6; }
 
 #if defined(__linux__)
-int f5() { return IPPROTO_MPTCP; }
+int f5(void) { return IPPROTO_MPTCP; }
 #endif
 
-int f6() { return TCP_NODELAY; }
+int f6(void) { return TCP_NODELAY; }
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreturn-stack-address"
+uint8_t *f7(struct in6_addr a0) { return a0.s6_addr; }
+#pragma clang diagnostic pop

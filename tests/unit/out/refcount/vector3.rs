@@ -11,69 +11,61 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let v: Value<Vec<Value<Vec<i32>>>> = Rc::new(RefCell::new(Vec::new()));
+    let v: Value<Vec<Vec<i32>>> = Rc::new(RefCell::new(Vec::new()));
     {
-        let _a0 = 2_usize as usize;
-        (v.as_pointer() as Ptr<Vec<Value<Vec<i32>>>>).with_mut(|__v: &mut Vec<Value<Vec<i32>>>| {
-            __v.resize_with(_a0, <Value<Vec<i32>>>::default)
-        })
+        let __a0 = 2_usize as usize;
+        (*v.borrow_mut()).resize_with(__a0, || <Vec<i32>>::default())
     };
     {
         let __a0 = 2_usize as usize;
-        elem!((v.as_pointer() as Ptr<Value<Vec<i32>>>), 0_usize).with_mut(
-            |__v: &mut Value<Vec<i32>>| (*__v.borrow_mut()).resize_with(__a0, || <i32>::default()),
-        )
+        elem!((v.as_pointer() as Ptr<Vec<i32>>), 0_usize)
+            .with_mut(|__v: &mut Vec<i32>| __v.resize_with(__a0, || <i32>::default()))
     };
     {
         let __a0 = 1_usize as usize;
-        elem!((v.as_pointer() as Ptr<Value<Vec<i32>>>), 1_usize).with_mut(
-            |__v: &mut Value<Vec<i32>>| (*__v.borrow_mut()).resize_with(__a0, || <i32>::default()),
-        )
+        elem!((v.as_pointer() as Ptr<Vec<i32>>), 1_usize)
+            .with_mut(|__v: &mut Vec<i32>| __v.resize_with(__a0, || <i32>::default()))
     };
-    elem!(
-        ((v.as_pointer() as Ptr<Value<Vec<i32>>>)
-            .offset(0_usize)
-            .upgrade()
-            .deref()
-            .as_pointer() as Ptr<i32>),
-        0_usize
-    )
-    .write(1);
-    elem!(
-        ((v.as_pointer() as Ptr<Value<Vec<i32>>>)
-            .offset(0_usize)
-            .upgrade()
-            .deref()
-            .as_pointer() as Ptr<i32>),
-        1_usize
-    )
-    .write(5);
-    elem!(
-        ((v.as_pointer() as Ptr<Value<Vec<i32>>>)
-            .offset(1_usize)
-            .upgrade()
-            .deref()
-            .as_pointer() as Ptr<i32>),
-        0_usize
-    )
-    .write(6);
-    'loop_: for mut v2 in v.as_pointer() as Ptr<Value<Vec<i32>>> {
-        let v2: Ptr<Vec<i32>> = v2.upgrade().deref().as_pointer();
-        'loop_: for mut i in Ptr::<Vec<i32>>::decay(&(v2)) as Ptr<i32> {
+    index!(elem!((v.as_pointer() as Ptr<Vec<i32>>), 0_usize), 0_usize).write(1);
+    index!(elem!((v.as_pointer() as Ptr<Vec<i32>>), 0_usize), 1_usize).write(5);
+    index!(elem!((v.as_pointer() as Ptr<Vec<i32>>), 1_usize), 0_usize).write(6);
+    'loop_: for v2 in IterRange::new(
+        (v.as_pointer() as Ptr<Vec<i32>>).begin(),
+        (v.as_pointer() as Ptr<Vec<i32>>).end(),
+    ) {
+        let v2: Ptr<Vec<i32>> = v2.iter_deref();
+        'loop_: for i in IterRange::new(
+            (Ptr::<Vec<i32>>::decay(&(v2)) as Ptr<i32>).begin(),
+            (Ptr::<Vec<i32>>::decay(&(v2)) as Ptr<i32>).end(),
+        ) {
+            let i: Ptr<i32> = i.iter_deref();
             i.with_mut(|__v| __v.prefix_inc());
         }
     }
-    'loop_: for mut v2 in v.as_pointer() as Ptr<Value<Vec<i32>>> {
-        let v2: Ptr<Vec<i32>> = v2.upgrade().deref().as_pointer();
-        'loop_: for mut i in Ptr::<Vec<i32>>::decay(&(v2)) as Ptr<i32> {
-            let mut i: i32 = i.read();
+    'loop_: for v2 in IterRange::new(
+        (v.as_pointer() as Ptr<Vec<i32>>).begin(),
+        (v.as_pointer() as Ptr<Vec<i32>>).end(),
+    ) {
+        let v2: Ptr<Vec<i32>> = v2.iter_deref();
+        'loop_: for i in IterRange::new(
+            (Ptr::<Vec<i32>>::decay(&(v2)) as Ptr<i32>).begin(),
+            (Ptr::<Vec<i32>>::decay(&(v2)) as Ptr<i32>).end(),
+        ) {
+            let mut i: i32 = (i.iter_deref().read());
             println!("{}", (i + 3));
         }
     }
-    'loop_: for mut v2 in v.as_pointer() as Ptr<Value<Vec<i32>>> {
-        let v2: Value<Vec<i32>> = Rc::new(RefCell::new(v2.upgrade().deref().borrow().clone()));
-        'loop_: for mut i in v2.as_pointer() as Ptr<i32> {
-            let mut i: i32 = i.read();
+    'loop_: for v2 in IterRange::new(
+        (v.as_pointer() as Ptr<Vec<i32>>).begin(),
+        (v.as_pointer() as Ptr<Vec<i32>>).end(),
+    ) {
+        let v2: Value<Vec<i32>> =
+            Rc::new(RefCell::new((*v2.iter_deref().upgrade().deref()).clone()));
+        'loop_: for i in IterRange::new(
+            (v2.as_pointer() as Ptr<i32>).begin(),
+            (v2.as_pointer() as Ptr<i32>).end(),
+        ) {
+            let mut i: i32 = (i.iter_deref().read());
             println!("{}", i);
         }
     }

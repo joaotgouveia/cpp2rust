@@ -4,11 +4,13 @@
 // Distributed under the MIT license that can be found in the LICENSE file.
 
 #include <clang/AST/ASTContext.h>
+#include <clang/AST/Mangle.h>
 #include <clang/AST/RecursiveASTVisitor.h>
 #include <clang/Sema/Sema.h>
 
 #include <functional>
 #include <map>
+#include <memory>
 #include <optional>
 #include <string>
 #include <type_traits>
@@ -32,9 +34,18 @@ public:
                      const char *keyword_unsafe = "unsafe",
                      const char *keyword_mut = keyword::kMut)
       : rs_code_(&rs_code), ctx_(ctx), keyword_unsafe_(keyword_unsafe),
-        keyword_mut_(keyword_mut) {}
+        keyword_mut_(keyword_mut) {
+    if (!GetMangleContext()) {
+      mangle_context_.reset(ctx.createMangleContext());
+      SetMangleContext(mangle_context_.get());
+    }
+  }
 
-  virtual ~Converter() = default;
+  virtual ~Converter() {
+    if (mangle_context_) {
+      SetMangleContext(nullptr);
+    }
+  }
 
   Converter(const Converter &) = delete;
   Converter &operator=(const Converter &) = delete;
@@ -50,6 +61,10 @@ public:
 
   clang::ASTContext &GetASTContext() { return ctx_; }
 
+  virtual std::string GetUnboxedTypeAsString(clang::QualType qual_type);
+
+  std::string GetTemplateArgumentAsString(const clang::TemplateArgument &arg);
+
   bool VisitRecoveryExpr(clang::RecoveryExpr *expr);
 
   virtual void EmitFilePreamble();
@@ -62,6 +77,8 @@ public:
   virtual bool VisitBuiltinType(clang::BuiltinType *type);
 
   virtual bool VisitRecordType(clang::RecordType *type);
+
+  bool VisitEnumType(clang::EnumType *type);
 
   virtual bool VisitConstantArrayType(clang::ConstantArrayType *type);
 
@@ -206,17 +223,6 @@ public:
 
   virtual bool VisitCXXForRangeStmt(clang::CXXForRangeStmt *stmt);
 
-  virtual bool VisitCXXForRangeStmtMap(clang::CXXForRangeStmt *stmt);
-
-  virtual bool VisitCXXForRangeStmtVector(clang::CXXForRangeStmt *stmt);
-
-  virtual bool VisitCXXForRangeStmtString(clang::CXXForRangeStmt *stmt);
-
-  bool VisitCXXForRangeStmtIndexBased(clang::CXXForRangeStmt *stmt,
-                                      const char *len_suffix);
-
-  void ConvertForRangeBody(clang::CXXForRangeStmt *stmt);
-
   virtual bool VisitBreakStmt(clang::BreakStmt *stmt);
 
   virtual bool VisitContinueStmt(clang::ContinueStmt *stmt);
@@ -352,7 +358,7 @@ public:
   // Option<fn> implements Copy
   virtual bool FunctionPointerImplementsCopy() const { return true; }
 
-  bool TypeIsCopyable(clang::QualType ty) const {
+  bool TypeIsCopyable(clang::QualType ty) {
     if (ty->isFunctionPointerType() || ty->isFunctionType()) {
       return FunctionPointerImplementsCopy();
     }
@@ -697,6 +703,11 @@ protected:
   GetComparisonReferenceArg(const clang::CXXRecordDecl *decl,
                             std::string_view value);
 
+  virtual std::string
+  GetComparisonReferenceReceiver(const clang::CXXMethodDecl *method,
+                                 const clang::CXXRecordDecl *decl,
+                                 std::string_view ptr);
+
   virtual std::string GetComparisonReceiver(const clang::CXXMethodDecl *method,
                                             const clang::CXXRecordDecl *decl,
                                             std::string_view lhs);
@@ -728,11 +739,6 @@ protected:
   virtual void ConvertCast(clang::QualType qual_type,
                            int line = __builtin_LINE());
 
-  virtual void ConvertLoopVariable(clang::VarDecl *decl,
-                                   clang::Expr *range_init);
-
-  virtual void ConvertUniquePtrDeref(clang::CXXOperatorCallExpr *expr);
-
   virtual bool ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr);
 
   std::string GetMappedAsString(clang::Expr *expr, clang::Expr **args = nullptr,
@@ -746,6 +752,17 @@ protected:
 
   std::string ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
                                  const PlaceholderCtx &ph_ctx);
+
+  // Moves the value out of `arg`, leaving a default value behind.
+  virtual std::string ConvertTake(clang::Expr *arg);
+
+  // The place of `arg`, which is borrowed mutably by a rule.
+  virtual std::string ConvertBorrowMut(clang::Expr *arg);
+
+  // The places that the arguments of the rule being converted are borrowed
+  // through, with the names they are borrowed as, e.g., a pointer and the
+  // closure parameter of its with_mut.
+  std::vector<std::pair<std::string, std::string>> mut_borrows_;
 
   std::string ConvertVariadicTail(clang::Expr *expr,
                                   const std::vector<clang::Expr *> &all_args);
@@ -774,7 +791,7 @@ protected:
 
   virtual bool TypeDerivesDefault(clang::QualType qual_type);
 
-  bool RecordDerivesCopy(const clang::RecordDecl *decl) const;
+  bool RecordDerivesCopy(const clang::RecordDecl *decl);
 
   bool IsPassThroughRule(clang::Expr *expr) const;
 
@@ -784,6 +801,7 @@ protected:
 
   std::string *rs_code_;
   clang::ASTContext &ctx_;
+  std::unique_ptr<clang::MangleContext> mangle_context_;
   clang::FunctionDecl *curr_function_ = nullptr;
   bool in_function_formals_ = false;
   enum class MethodTarget : uint8_t {
@@ -807,7 +825,6 @@ protected:
   std::string ufcs_receiver_;
   bool in_const_initializer_ = false;
   std::optional<bool> autoref_mut_;
-  bool suppress_iterator_clone_ = false;
 
   struct PushExplicitAutoref {
     Converter &c;
@@ -817,41 +834,6 @@ protected:
       c.autoref_mut_ = v;
     }
     ~PushExplicitAutoref() { c.autoref_mut_ = prev; }
-  };
-
-  struct PushSuppressIteratorClone {
-    Converter &c;
-    bool prev;
-    PushSuppressIteratorClone(Converter &c, clang::CXXConstructExpr *expr)
-        : c(c), prev(c.suppress_iterator_clone_) {
-      auto *ctor = expr->getConstructor();
-      if (!ctor->isCopyOrMoveConstructor() &&
-          ctor->isConvertingConstructor(/*AllowExplicit=*/false) &&
-          ctor->getNumParams() == 1 && IsIteratorType(expr->getType())) {
-        c.suppress_iterator_clone_ = true;
-      }
-    }
-    ~PushSuppressIteratorClone() { c.suppress_iterator_clone_ = prev; }
-    PushSuppressIteratorClone(const PushSuppressIteratorClone &) = delete;
-    PushSuppressIteratorClone &
-    operator=(const PushSuppressIteratorClone &) = delete;
-
-    static bool take(Converter &c) {
-      return std::exchange(c.suppress_iterator_clone_, false);
-    }
-
-  private:
-    static bool IsIteratorType(clang::QualType qt) {
-      if (auto *record = qt->getAsCXXRecordDecl()) {
-        for (auto *d : record->decls()) {
-          if (auto *tnd = llvm::dyn_cast<clang::TypedefNameDecl>(d)) {
-            if (tnd->getName() == "iterator_category")
-              return true;
-          }
-        }
-      }
-      return false;
-    }
   };
 
   struct PushConstInitializer {

@@ -12,9 +12,9 @@ that owns the type pushes one before printing it:
 
 - `FullRefCount`: pushed by variable declarations; `Convert(QualType)` wraps the
   result in `Value<...>`.
-- `Pointee`: pushed by field declarations; the bare type is printed. Fields that
-  are arrays, or whose type maps to a `Vec` or a `Box` (`std::vector`,
-  `std::string`, `std::array`), push `FullRefCount` instead (see below).
+- `Pointee`: pushed by field declarations; the bare type is printed, also for
+  arrays and types that map to a `Vec` or a `Box` (`std::vector`, `std::string`,
+  `std::array`) (see below).
 - `Unboxed`: pushed by parameter lists, return types, and record names; the bare
   type is printed.
 - `Ptr`: pushed by a pointer type for its pointee; also printed bare.
@@ -25,7 +25,7 @@ The result by position:
 | ------------------------------------------- | ------------ | ------------- | -------------------- |
 | local variable, global                      | `Value<i32>` | `Value<Item>` | `Value<Box<[i32]>>`  |
 | function parameter, return type             | `i32`        | `Item`        | decays to `Ptr<i32>` |
-| struct field                                | `i32`        | `Item`        | `Value<Box<[i32]>>`  |
+| struct field                                | `i32`        | `Item`        | `Box<[i32]>`         |
 | pointee of `Ptr<T>`, element of a container | `i32`        | `Item`        | `Box<[i32]>`         |
 
 Parameters arrive unboxed and are re-boxed by the function preamble; return
@@ -48,37 +48,43 @@ the copy on entry then lets the body treat parameters exactly like local
 variables. The preamble skips reference parameters, which are a `Ptr<T>` and
 never boxed.
 
-Nested containers, library ones and arrays alike, box each level except the
-innermost, so that every inner container can be borrowed and mutated on its own,
-and a pointer can be taken to it. The boxing is written into the type rules
-themselves: `std::vector<std::vector<int>>` maps to `Vec<Value<Vec<i32>>>`, and
-the `carray` rules map `int a[2][2]` to `Box<[Value<Box<[i32]>>]>`, both before
-the outer `Value<...>` of the declaration is added.
+Nested containers, library ones and arrays alike, store their inner levels
+inline: `std::vector<std::vector<int>>` maps to `Vec<Vec<i32>>`, and
+`int a[2][2]` to `Box<[Box<[i32]>]>`, both inside the outer `Value<...>` of the
+declaration. Copying a nested container with `clone` hence copies every level,
+as C++ does. A pointer into an inner container is a `Nested` pointer (see
+[Pointer kinds](../../runtime/rc.md#pointer-kinds)), which reaches the inner
+container through the outer one.
 
-Struct fields are stored inline, so that a whole struct is a single allocation,
-and a pointer to a field records the struct's allocation and the field's byte
-offset (see [Pointers](pointers.md)). Arrays and vectors are the exception: an
-array field is a `Value<Box<[T]>>` of its own, and a vector field a
-`Value<Vec<T>>`. A pointer to an element, or to a field of an element, then has
-the array or the vector as its allocation instead of the struct, and pointer
-arithmetic moves between elements as for any other array:
+Struct fields are stored inline, arrays and vectors included, so that a whole
+struct is a single allocation, and a pointer to a field records the struct's
+allocation and the field's byte offset (see [Pointers](pointers.md)). A pointer
+to an element of an array or vector field, or to a field of such an element,
+reaches it through the struct (see
+[Pointers into array and vector fields](../../runtime/rc.md#pointers-into-array-and-vector-fields)),
+and pointer arithmetic moves between the elements as for any other array:
 
 ```cpp
 struct Holder { std::vector<Point> points; int n; };
 h.points[0].y = 5;
+p->points[1].y = 6;
 ```
 
 ```rust
 pub struct Holder {
     #[offset(0)]
-    pub points: Value<Vec<Point>>,
+    #[byte_size(24)]
+    pub points: Vec<Point>,
     #[offset(24)]
     pub n: i32,
 }
-(*(*h.borrow()).points.borrow_mut())[(0_usize) as usize].y = 5;
+(*h.borrow_mut()).points[(0_usize) as usize].y = 5;
+field!(vec_elem!(p, points, 1_usize), y).write(6);
 ```
 
-An array or vector field is accessed like a local one, through its own
-`borrow()` or `borrow_mut()`, and the struct is only borrowed immutably to reach
-it. As `Value` is shared on `clone()`, structs with such fields implement
-`Clone` by copying the arrays and vectors, instead of deriving it.
+An array or vector field of a struct in a `Value` is accessed through the
+struct's own `borrow()` or `borrow_mut()`. Through a pointer, `vec_elem!` and
+`array_elem!` are the places of its elements, which are read and written in a
+closure that borrows the struct, without making a pointer to the element. As
+nothing in a struct is a `Value`, structs derive `Clone`, which copies their
+arrays and vectors.

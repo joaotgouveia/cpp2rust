@@ -7,6 +7,7 @@
 #include <clang/AST/Decl.h>
 #include <clang/AST/DeclCXX.h>
 #include <clang/AST/Expr.h>
+#include <clang/AST/Mangle.h>
 #include <clang/AST/StmtCXX.h>
 #include <clang/AST/Type.h>
 #include <llvm/ADT/APSInt.h>
@@ -27,17 +28,6 @@ class Sema;
 
 namespace cpp2rust {
 
-// Order matters: each category is a superset of the previous one.
-// Use >= to check "at least this capable".
-enum class IteratorCategory {
-  Forward,
-  Bidirectional,
-  RandomAccess,
-  Contiguous,
-};
-
-std::optional<IteratorCategory>
-GetStrongestIteratorCategory(clang::ASTContext &ctx, clang::QualType type);
 bool IsBuiltinConstantP(const clang::Expr *expr);
 
 bool IsGlobalVar(const clang::VarDecl *decl);
@@ -57,8 +47,7 @@ bool IsInMainFile(const clang::Decl *decl);
 
 bool IsUnionArrayMember(const clang::Expr *base);
 
-std::tuple<clang::MemberExpr *, clang::RecordDecl *, std::string>
-ReplaceNonUniformLibcField(clang::MemberExpr *expr);
+clang::Expr *SubscriptedArray(clang::Expr *base);
 
 bool IsStringLiteralExpr(const clang::Expr *expr);
 
@@ -68,7 +57,7 @@ bool IsUserDefinedDecl(const clang::Decl *decl);
 
 bool IsAbstractUserClass(const clang::RecordDecl *decl);
 
-bool RefersToUserDefinedDecl(const clang::Expr *expr);
+bool ExprHasUserDefinedDecl(const clang::Expr *expr);
 
 bool IsUnsignedArithOp(const clang::BinaryOperator *expr);
 
@@ -111,6 +100,16 @@ bool HasMoveFromConstructor(const clang::RecordDecl *decl);
 
 bool IsConvertibleMoveAssignment(const clang::CXXMethodDecl *method);
 
+bool IsConvertibleCopyAssignment(const clang::CXXMethodDecl *method);
+
+// Whether decl has a copy assignment operator converted to a copy_assign
+// method.
+bool HasCopyAssignOperator(const clang::RecordDecl *decl);
+
+// Whether decl has a move assignment operator converted to a move_assign
+// method.
+bool HasMoveAssignOperator(const clang::RecordDecl *decl);
+
 bool IsConvertibleImplicitMember(const clang::CXXMethodDecl *method);
 
 clang::CXXConstructorDecl *
@@ -144,9 +143,15 @@ bool IsMethodOnPtr(const clang::CXXMethodDecl *method);
 
 bool IsConvertibleFunctionDecl(const clang::FunctionDecl *decl);
 
+bool IsStdDecl(const clang::NamedDecl *decl, llvm::StringRef name);
+
 bool IsUniquePtr(clang::QualType type);
 
 bool IsCallToOstream(clang::CallExpr *expr);
+
+bool IsCDecl(const clang::NamedDecl *decl, llvm::StringRef name);
+
+bool IsStdFunction(const clang::Expr *expr, llvm::StringRef name);
 
 bool IsAsciiStringLiteral(const clang::StringLiteral *str);
 
@@ -178,6 +183,10 @@ unsigned GetLineNumber(const clang::Decl *decl);
 unsigned GetColumnNumber(const clang::Decl *decl);
 
 unsigned GetArraySize(clang::QualType array_type);
+
+void SetMangleContext(clang::MangleContext *context);
+
+clang::MangleContext *GetMangleContext();
 
 std::string GetID(const clang::Decl *decl);
 std::string GetMethodID(const clang::CXXMethodDecl *decl);
@@ -245,8 +254,6 @@ clang::QualType GetDeclRefType(const clang::FunctionDecl *fn,
                                const clang::Expr *expr,
                                const clang::ValueDecl *decl);
 
-bool HasStaticLocal(const clang::Stmt *stmt);
-
 bool IsSameTypeComparison(const clang::FunctionDecl *fn,
                           const clang::CXXRecordDecl *record);
 
@@ -268,9 +275,6 @@ clang::CXXConstructExpr *MakeConstructExpr(clang::ASTContext &ctx,
                                            clang::QualType type,
                                            clang::CXXConstructorDecl *ctor,
                                            llvm::ArrayRef<clang::Expr *> args);
-
-std::vector<clang::CXXRecordDecl *>
-GetNestedStructs(const clang::CXXRecordDecl *decl);
 
 std::optional<clang::ArrayRef<clang::TemplateArgument>>
 GetTemplateArgs(clang::QualType qual_type, clang::Expr *expr = nullptr);
@@ -327,9 +331,9 @@ clang::Expr *BuildInitExpr(clang::Sema &sema, clang::QualType type,
                            llvm::ArrayRef<clang::Expr *> args,
                            clang::SourceLocation loc);
 
-std::string GetClassName(clang::QualType type);
-
 bool IsVaListType(clang::QualType type);
+
+bool IsAliasOfInit(clang::ASTContext &ctx, const clang::VarDecl *var);
 
 bool NeedsImplicitScalarCast(clang::ASTContext &ctx, clang::QualType from,
                              clang::QualType to);
