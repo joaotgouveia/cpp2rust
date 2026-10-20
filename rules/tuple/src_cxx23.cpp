@@ -1,0 +1,116 @@
+#include "../common/init.h"
+#include "../common/traits.h"
+#include <algorithm>
+#include <tuple>
+#include <utility>
+
+template <typename... T1>
+void f93(const std::tuple<T1...> &a0, const std::tuple<T1...> &a1) {
+  return std::swap<T1...>(a0, a1);
+}
+
+void f94(const std::tuple<> &a0, const std::tuple<> &a1) { return a0.swap(a1); }
+
+template <typename... T1>
+const std::tuple<T1...> &f95(const std::tuple<T1...> &a0,
+                             const std::tuple<T1...> &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename... T1>
+const std::tuple<T1...> &f96(const std::tuple<T1...> &a0,
+                             std::tuple<T1...> &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename... T1>
+void f97(const std::tuple<T1...> &a0, const std::tuple<T1...> &a1) {
+  return a0.swap(a1);
+}
+
+template <typename... T1, typename... T2>
+std::tuple<T1...> f98(std::tuple<T2...> &a0) {
+  return std::tuple<T1...>(a0);
+}
+
+template <typename... T1, typename... T2>
+std::tuple<T1...> f99(const std::tuple<T2...> &&a0) {
+  return std::tuple<T1...>(std::move(a0));
+}
+
+template <typename... T1, typename T2, typename T3>
+std::tuple<T1...> f100(std::pair<T2, T3> &a0) {
+  return std::tuple<T1...>(a0);
+}
+
+template <typename... T1, typename T2, typename T3>
+std::tuple<T1...> f101(const std::pair<T2, T3> &&a0) {
+  return std::tuple<T1...>(std::move(a0));
+}
+
+template <typename... T1, typename T2> std::tuple<T1...> f102(T2 &&a0) {
+  return std::tuple<T1...>(std::forward<T2>(a0));
+}
+
+template <typename... T1, typename T2, typename... T3>
+std::tuple<T1...> f103(std::allocator_arg_t a0, const T2 &a1,
+                       std::tuple<T3...> &a2) {
+  return std::tuple<T1...>(std::move(a0), a1, a2);
+}
+
+template <typename... T1, typename T2, typename... T3>
+std::tuple<T1...> f104(std::allocator_arg_t a0, const T2 &a1,
+                       const std::tuple<T3...> &&a2) {
+  return std::tuple<T1...>(std::move(a0), a1, std::move(a2));
+}
+
+template <typename... T1, typename T2, typename T3, typename T4>
+std::tuple<T1...> f105(std::allocator_arg_t a0, const T2 &a1,
+                       std::pair<T3, T4> &a2) {
+  return std::tuple<T1...>(std::move(a0), a1, a2);
+}
+
+template <typename... T1, typename T2, typename T3, typename T4>
+std::tuple<T1...> f106(std::allocator_arg_t a0, const T2 &a1,
+                       const std::pair<T3, T4> &&a2) {
+  return std::tuple<T1...>(std::move(a0), a1, std::move(a2));
+}
+
+template <typename... T1, typename T2, typename T3>
+std::tuple<T1...> f107(std::allocator_arg_t a0, const T2 &a1, T3 &&a2) {
+  return std::tuple<T1...>(std::move(a0), a1, std::forward<T3>(a2));
+}
+
+template <typename... T1, typename... T2>
+const std::tuple<T1...> &f108(const std::tuple<T1...> &a0,
+                              const std::tuple<T2...> &a1) {
+  return a0.template operator= <T2...>(a1);
+}
+
+template <typename... T1, typename... T2>
+const std::tuple<T1...> &f109(const std::tuple<T1...> &a0,
+                              std::tuple<T2...> &&a1) {
+  return a0.template operator= <T2...>(std::move(a1));
+}
+
+template <typename... T1, typename T2, typename T3>
+const std::tuple<T1...> &f110(const std::tuple<T1...> &a0,
+                              const std::pair<T2, T3> &a1) {
+  return a0.template operator= <T2, T3>(a1);
+}
+
+template <typename... T1, typename T2, typename T3>
+const std::tuple<T1...> &f111(const std::tuple<T1...> &a0,
+                              std::pair<T2, T3> &&a1) {
+  return a0.template operator= <T2, T3>(std::move(a1));
+}
+
+template <typename... T1, typename T2>
+std::tuple<T1...> &f112(std::tuple<T1...> &a0, T2 &&a1) {
+  return a0.template operator= <T2>(std::forward<T2>(a1));
+}
+
+template <typename... T1, typename T2>
+const std::tuple<T1...> &f113(const std::tuple<T1...> &a0, T2 &&a1) {
+  return a0.template operator= <T2>(std::forward<T2>(a1));
+}
