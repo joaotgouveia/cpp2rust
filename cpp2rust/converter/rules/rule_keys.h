@@ -15,6 +15,10 @@
 #include <variant>
 #include <vector>
 
+namespace clang {
+class Sema;
+}
+
 namespace cpp2rust::RuleKeys {
 struct Member {
   const clang::Decl *parent;
@@ -46,7 +50,7 @@ inline const Constructor kAnyConstructor{nullptr};
 std::optional<ExprKey> GetExprKey(clang::ASTContext &ctx,
                                   const clang::Expr *use);
 
-std::vector<ExprKey> GetExprKeys(clang::ASTContext &ctx,
+std::vector<ExprKey> GetExprKeys(clang::Sema &sema,
                                  const clang::NamedDecl *rule);
 
 std::optional<ExprKey> GetDeclKey(const clang::NamedDecl *decl);

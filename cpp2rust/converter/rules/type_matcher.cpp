@@ -5,6 +5,8 @@
 
 #include <clang/AST/DeclCXX.h>
 #include <clang/AST/DeclTemplate.h>
+#include <clang/Sema/Sema.h>
+#include <clang/Sema/Template.h>
 #include <llvm/ADT/STLExtras.h>
 
 #include <optional>
@@ -94,6 +96,24 @@ bool isSameSugar(const clang::Type *a, const clang::Type *b) {
   return a == b;
 }
 
+unsigned spelledDepth(const std::vector<clang::QualType> &chain,
+                      clang::QualType pattern) {
+  auto spec = pattern->getAs<clang::TemplateSpecializationType>();
+  auto tmpl = spec ? spec->getTemplateName().getAsTemplateDecl() : nullptr;
+  if (!tmpl) {
+    return kCanonicalDepth;
+  }
+  for (unsigned depth = 0; depth < chain.size(); ++depth) {
+    auto use = llvm::dyn_cast<clang::TemplateSpecializationType>(
+        chain[depth].getTypePtr());
+    auto use_tmpl = use ? use->getTemplateName().getAsTemplateDecl() : nullptr;
+    if (use_tmpl && use_tmpl->getCanonicalDecl() == tmpl->getCanonicalDecl()) {
+      return depth;
+    }
+  }
+  return kCanonicalDepth;
+}
+
 } // namespace
 
 std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
@@ -149,7 +169,7 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
   auto args = RuleDecls::DeduceFromType(sema, params, pattern, canonical);
   if (args && (args = completeArgs(sema, tmpl, *std::move(args))) &&
       satisfiesConstraints(sema, tmpl, *args)) {
-    return TypeMatch{*std::move(args), kCanonicalDepth};
+    return TypeMatch{*std::move(args), spelledDepth(chain, pattern)};
   }
   return std::nullopt;
 }

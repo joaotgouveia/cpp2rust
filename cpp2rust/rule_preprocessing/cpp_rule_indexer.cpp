@@ -39,10 +39,7 @@ std::string ClassOf(clang::QualType type) {
   if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
     auto decl = spec->getTemplateName().getAsTemplateDecl();
     if (auto alias = llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(decl)) {
-      auto key = ClassOf(spec->isTypeAlias()
-                             ? spec->getAliasedType()
-                             : alias->getTemplatedDecl()->getUnderlyingType());
-      return key.empty() ? RulesLoader::DeclKey(alias) : key;
+      return RulesLoader::DeclKey(alias);
     }
     if (decl && llvm::isa<clang::ClassTemplateDecl>(decl)) {
       return RulesLoader::ClassKey(decl);
@@ -106,6 +103,10 @@ void AddRequiredClasses(clang::QualType type,
     if (auto tmpl = spec->getTemplateName().getAsTemplateDecl();
         tmpl && llvm::isa<clang::ClassTemplateDecl>(tmpl)) {
       decl = tmpl;
+    } else if (auto alias =
+                   llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(tmpl)) {
+      required.insert(RulesLoader::DeclKey(alias));
+      return;
     }
   }
   if (!decl) {
