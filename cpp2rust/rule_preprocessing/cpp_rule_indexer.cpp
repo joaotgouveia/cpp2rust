@@ -92,6 +92,7 @@ void AddRequiredClasses(clang::QualType type,
         required.insert(key);
       }
     }
+    return;
   }
   const clang::NamedDecl *decl = type->getAsTagDecl();
   if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
