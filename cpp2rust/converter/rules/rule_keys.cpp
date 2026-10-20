@@ -264,6 +264,16 @@ std::optional<TypeKey> GetTypeKey(clang::QualType type) {
   return type.getTypePtr();
 }
 
+const clang::Decl *getAliasTemplate(clang::QualType type) {
+  auto spec = type->getAs<clang::TemplateSpecializationType>();
+  if (!spec) {
+    return nullptr;
+  }
+  auto alias = llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(
+      spec->getTemplateName().getAsTemplateDecl());
+  return alias ? alias->getCanonicalDecl() : nullptr;
+}
+
 std::vector<TypeKey> GetTypeKeys(const clang::NamedDecl *rule) {
   auto alias = llvm::dyn_cast<clang::TypedefNameDecl>(rule);
   if (auto tmpl = llvm::dyn_cast<clang::TypeAliasTemplateDecl>(rule)) {
@@ -321,6 +331,10 @@ std::vector<TypeKey> GetTypeKeys(clang::ASTContext &ctx, clang::QualType use) {
     keys.push_back(kAnyClass);
   }
   for (auto type = use;; type = type.getSingleStepDesugaredType(ctx)) {
+    if (auto alias = getAliasTemplate(type);
+        alias && !llvm::is_contained(keys, TypeKey{alias})) {
+      keys.push_back(alias);
+    }
     if (auto typedef_type =
             llvm::dyn_cast<clang::TypedefType>(type.getTypePtr())) {
       if (auto owner = llvm::dyn_cast<clang::CXXRecordDecl>(
