@@ -12,6 +12,7 @@
 #include <optional>
 #include <vector>
 
+#include "converter/converter_lib.h"
 #include "converter/rules/decls.h"
 
 namespace cpp2rust::AstMatcher {
@@ -62,15 +63,33 @@ bool satisfiesConstraints(clang::Sema &sema,
          !trial.failed();
 }
 
-std::vector<clang::QualType> getSugarChain(clang::ASTContext &ctx,
-                                           clang::QualType type) {
-  std::vector<clang::QualType> chain{type};
-  for (auto next = type.getSingleStepDesugaredType(ctx); next != type;
-       next = type.getSingleStepDesugaredType(ctx)) {
-    type = next;
-    chain.push_back(type);
+clang::QualType peelSugar(clang::ASTContext &ctx, clang::QualType type) {
+  while (!llvm::isa<clang::TypedefType, clang::PredefinedSugarType>(
+             type.getTypePtr()) &&
+         type != type.getSingleStepDesugaredType(ctx)) {
+    type = type.getSingleStepDesugaredType(ctx);
   }
-  return chain;
+  return type;
+}
+
+bool isInternal(const clang::NamedDecl *decl) {
+  auto &opts = decl->getASTContext().getLangOpts();
+  if (decl->isReserved(opts) != clang::ReservedIdentifierStatus::NotReserved) {
+    return true;
+  }
+  for (auto context = decl->getDeclContext(); context;
+       context = context->getParent()) {
+    if (context->isInlineNamespace()) {
+      continue;
+    }
+    auto named = llvm::dyn_cast<clang::NamedDecl>(context);
+    if (named && named->getIdentifier() &&
+        named->isReserved(opts) !=
+            clang::ReservedIdentifierStatus::NotReserved) {
+      return true;
+    }
+  }
+  return false;
 }
 
 const clang::Type *getSugar(clang::QualType type) {
@@ -96,82 +115,83 @@ bool isSameSugar(const clang::Type *a, const clang::Type *b) {
   return a == b;
 }
 
-unsigned spelledDepth(const std::vector<clang::QualType> &chain,
-                      clang::QualType pattern) {
-  auto spec = pattern->getAs<clang::TemplateSpecializationType>();
-  auto tmpl = spec ? spec->getTemplateName().getAsTemplateDecl() : nullptr;
-  if (!tmpl) {
-    return kCanonicalDepth;
-  }
-  for (unsigned depth = 0; depth < chain.size(); ++depth) {
-    auto use = llvm::dyn_cast<clang::TemplateSpecializationType>(
-        chain[depth].getTypePtr());
-    auto use_tmpl = use ? use->getTemplateName().getAsTemplateDecl() : nullptr;
-    if (use_tmpl && use_tmpl->getCanonicalDecl() == tmpl->getCanonicalDecl()) {
-      return depth;
-    }
-  }
-  return kCanonicalDepth;
-}
-
 } // namespace
 
 std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
                                    const clang::NamedDecl *rule) {
   auto &ctx = sema.Context;
-  auto canonical = use.getCanonicalType().getUnqualifiedType();
+  auto spelled = peelSugar(ctx, use).getUnqualifiedType();
   auto tmpl = llvm::dyn_cast<clang::TypeAliasTemplateDecl>(rule);
   auto alias = tmpl ? tmpl->getTemplatedDecl()
                     : llvm::cast<clang::TypedefNameDecl>(rule);
   auto pattern = alias->getUnderlyingType();
-  auto chain = getSugarChain(ctx, use);
   if (!tmpl) {
     if (auto sugar = getSugar(pattern)) {
-      for (unsigned depth = 0; depth < chain.size(); ++depth) {
-        if (isSameSugar(chain[depth].getTypePtr(), sugar)) {
-          return TypeMatch{{}, depth};
-        }
-      }
-      if (pattern->isBuiltinType()) {
+      if (!isSameSugar(spelled.getTypePtr(), sugar)) {
         return std::nullopt;
       }
+      return TypeMatch{};
     }
-    if (pattern.getCanonicalType().getUnqualifiedType() != canonical) {
+    if (getSugar(spelled) || !ctx.hasSameUnqualifiedType(pattern, spelled)) {
       return std::nullopt;
     }
-    return TypeMatch{{}, kCanonicalDepth};
+    return TypeMatch{};
   }
   auto params = tmpl->getTemplateParameters();
   if (auto member = pattern->getAs<clang::DependentNameType>()) {
     auto qualifier = member->getQualifier().getAsType();
-    for (unsigned depth = 0; depth < chain.size() && qualifier; ++depth) {
-      auto typedef_type =
-          llvm::dyn_cast<clang::TypedefType>(chain[depth].getTypePtr());
-      if (!typedef_type ||
-          typedef_type->getDecl()->getIdentifier() != member->getIdentifier()) {
-        continue;
-      }
-      auto owner = llvm::dyn_cast<clang::CXXRecordDecl>(
-          typedef_type->getDecl()->getDeclContext());
-      if (!owner) {
-        continue;
-      }
-      auto args =
-          RuleDecls::DeduceFromType(sema, params, clang::QualType(qualifier, 0),
-                                    ctx.getCanonicalTagType(owner));
-      if (args && (args = completeArgs(sema, tmpl, *std::move(args))) &&
-          satisfiesConstraints(sema, tmpl, *args)) {
-        return TypeMatch{*std::move(args), depth};
-      }
+    auto typedef_type =
+        llvm::dyn_cast<clang::TypedefType>(spelled.getTypePtr());
+    if (!qualifier || !typedef_type ||
+        typedef_type->getDecl()->getIdentifier() != member->getIdentifier()) {
+      return std::nullopt;
+    }
+    auto owner = llvm::dyn_cast<clang::CXXRecordDecl>(
+        typedef_type->getDecl()->getDeclContext());
+    if (!owner) {
+      return std::nullopt;
+    }
+    auto args =
+        RuleDecls::DeduceFromType(sema, params, clang::QualType(qualifier, 0),
+                                  ctx.getCanonicalTagType(owner));
+    if (args && (args = completeArgs(sema, tmpl, *std::move(args))) &&
+        satisfiesConstraints(sema, tmpl, *args)) {
+      return TypeMatch{*std::move(args)};
     }
     return std::nullopt;
   }
-  auto args = RuleDecls::DeduceFromType(sema, params, pattern, canonical);
+  if (getSugar(spelled) && !pattern->getAs<clang::TemplateTypeParmType>()) {
+    return std::nullopt;
+  }
+  auto args = RuleDecls::DeduceFromType(sema, params, pattern, spelled);
   if (args && (args = completeArgs(sema, tmpl, *std::move(args))) &&
       satisfiesConstraints(sema, tmpl, *args)) {
-    return TypeMatch{*std::move(args), spelledDepth(chain, pattern)};
+    return TypeMatch{*std::move(args)};
   }
   return std::nullopt;
+}
+
+clang::QualType SkipInternalTypedefs(clang::ASTContext &ctx,
+                                     clang::QualType use) {
+  auto cvr = use.getLocalCVRQualifiers();
+  auto type = peelSugar(ctx, use);
+  while (auto typedef_type =
+             llvm::dyn_cast<clang::TypedefType>(type.getTypePtr())) {
+    auto decl = typedef_type->getDecl();
+    if (!isInternal(decl) && !IsUserDefinedDecl(decl)) {
+      break;
+    }
+    type = peelSugar(ctx, typedef_type->desugar());
+    cvr |= type.getLocalCVRQualifiers();
+  }
+  return type.withCVRQualifiers(cvr);
+}
+
+const clang::TypedefNameDecl *SpelledTypedef(clang::ASTContext &ctx,
+                                             clang::QualType use) {
+  auto sugar = getSugar(peelSugar(ctx, use));
+  auto typedef_type = llvm::dyn_cast_or_null<clang::TypedefType>(sugar);
+  return typedef_type ? typedef_type->getDecl() : nullptr;
 }
 
 const clang::NamedDecl *MoreSpecializedType(clang::Sema &sema,
@@ -188,12 +208,18 @@ const clang::NamedDecl *MoreSpecializedType(clang::Sema &sema,
   auto a_alias = llvm::dyn_cast<clang::TypeAliasTemplateDecl>(a);
   auto b_alias = llvm::dyn_cast<clang::TypeAliasTemplateDecl>(b);
   if (a_alias && b_alias) {
+    auto ordered = [](const clang::TypeAliasTemplateDecl *alias) {
+      auto type = alias->getTemplatedDecl()->getUnderlyingType();
+      if (auto member = type->getAs<clang::DependentNameType>()) {
+        return clang::QualType(member->getQualifier().getAsType(), 0);
+      }
+      return type;
+    };
     auto instance_of = [&](const clang::TypeAliasTemplateDecl *x,
                            const clang::TypeAliasTemplateDecl *y) {
-      return RuleDecls::DeduceFromType(
-                 sema, y->getTemplateParameters(),
-                 y->getTemplatedDecl()->getUnderlyingType(),
-                 x->getTemplatedDecl()->getUnderlyingType().getCanonicalType())
+      return RuleDecls::DeduceFromType(sema, y->getTemplateParameters(),
+                                       ordered(y),
+                                       ordered(x).getCanonicalType())
           .has_value();
     };
     bool a_of_b = instance_of(a_alias, b_alias);

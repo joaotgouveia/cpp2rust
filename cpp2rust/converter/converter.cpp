@@ -219,8 +219,13 @@ std::string Converter::ConvertFreshPointer(
   return str;
 }
 
-std::string Converter::ConvertFreshObject(clang::Expr *expr, std::string_view) {
+std::string Converter::ConvertFreshObject(clang::Expr *expr) {
   return ConvertFreshPointer(expr);
+}
+
+std::string Converter::ConvertPointerReceiver(clang::Expr *arg,
+                                              std::string_view param_type) {
+  return std::format("({} as {})", ConvertFreshObject(arg), param_type);
 }
 
 std::string Converter::ConvertLValue(clang::Expr *expr) {
@@ -760,13 +765,13 @@ bool Converter::IsPassThroughRule(clang::Expr *expr) const {
              rule->body[0]);
 }
 
-bool Converter::RecordDerivesCopy(const clang::RecordDecl *decl) {
+bool Converter::RecordDerivesCopy(clang::QualType type) {
+  auto decl = type->getAsRecordDecl();
   if (auto cxx = llvm::dyn_cast<clang::CXXRecordDecl>(decl);
       cxx && cxx->isLambda()) {
     return false;
   }
-  if (auto rule =
-          RuleRegistry::Search(ctx_, ctx_.getCanonicalTagType(decl)).first) {
+  if (auto rule = RuleRegistry::Search(ctx_, type).first) {
     auto &derives = rule->type_info.derives;
     return std::find(derives.begin(), derives.end(), "Copy") != derives.end();
   }
@@ -794,9 +799,9 @@ bool Converter::RecordHasCopyableFields(const clang::RecordDecl *decl) {
     }
 
     // Look recursively into fields that are RecordDecl, or arrays of them
-    if (auto field_record =
-            ctx_.getBaseElementType(f->getType())->getAsRecordDecl()) {
-      if (!RecordDerivesCopy(field_record)) {
+    if (auto field_type = ctx_.getBaseElementType(f->getType());
+        field_type->getAsRecordDecl()) {
+      if (!RecordDerivesCopy(field_type)) {
         return false;
       }
     }
@@ -4215,8 +4220,8 @@ std::string Converter::GetArrayDefaultAsString(clang::QualType qual_type) {
     auto size_as_string = GetNumAsString(array_type->getSize());
     auto element_type = array_type->getElementType();
     auto element_type_as_string = GetDefaultAsString(element_type);
-    if (auto *rec = element_type->getAsRecordDecl()) {
-      if (!RecordDerivesCopy(rec)) {
+    if (element_type->getAsRecordDecl()) {
+      if (!RecordDerivesCopy(element_type)) {
         return std::format("std::array::from_fn::<_, {}, _>(|_| {})",
                            size_as_string.c_str(), element_type_as_string);
       }
@@ -5135,8 +5140,10 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
 
   if (ph_ctx.needs_pointer_receiver()) {
     auto param_type = Mapper::GetParamType(*this, expr, ph_ctx.arg_idx);
-    return std::format("({} as {})", ConvertFreshObject(arg, param_type),
-                       param_type);
+    bool borrowed = ph_ctx.access == TranslationRule::Access::kBorrow ||
+                    ph_ctx.access == TranslationRule::Access::kBorrowMut;
+    PushExprKind push(*this, borrowed ? ExprKind::Object : ExprKind::XValue);
+    return ConvertPointerReceiver(arg, param_type);
   }
 
   if (ph_ctx.needs_object_receiver()) {

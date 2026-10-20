@@ -365,8 +365,8 @@ public:
     if (ty->isBuiltinType() || ty->isEnumeralType()) {
       return true;
     }
-    if (auto *record = ty->getAsRecordDecl()) {
-      return RecordDerivesCopy(record);
+    if (ty->getAsRecordDecl()) {
+      return RecordDerivesCopy(ty);
     }
     return false;
   }
@@ -791,7 +791,7 @@ protected:
 
   virtual bool TypeDerivesDefault(clang::QualType qual_type);
 
-  bool RecordDerivesCopy(const clang::RecordDecl *decl);
+  bool RecordDerivesCopy(clang::QualType type);
 
   bool IsPassThroughRule(clang::Expr *expr) const;
 
@@ -1076,10 +1076,10 @@ protected:
   virtual std::string
   ConvertFreshPointer(clang::Expr *expr,
                       std::optional<clang::QualType> implicit_convert_to = {});
-  // target_ptr_type, when known (e.g. a translation rule's parameter type),
-  // is the Rust pointer type the result will be used as.
-  virtual std::string ConvertFreshObject(clang::Expr *expr,
-                                         std::string_view target_ptr_type = {});
+  virtual std::string ConvertFreshObject(clang::Expr *expr);
+
+  virtual std::string ConvertPointerReceiver(clang::Expr *arg,
+                                             std::string_view param_type);
   std::string
   ConvertPointer(clang::Expr *expr,
                  std::optional<clang::QualType> implicit_convert_to = {},

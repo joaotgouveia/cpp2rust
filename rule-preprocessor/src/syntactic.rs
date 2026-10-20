@@ -216,7 +216,9 @@ impl<'a> FragmentCtx<'a> {
                     });
                     return;
                 }
-                let mut access = self.builder.classify_access(token);
+                let mut access = self
+                    .builder
+                    .classify_access(token, param.is_refcount_pointer);
                 if param.is_mut_ref && self.text_buf.ends_with('*') {
                     self.text_buf.pop();
                 }
@@ -392,7 +394,7 @@ impl<'a> FnIrBuilder<'a> {
         generics
     }
 
-    fn classify_rw_from_name_ref(&self, name_ref: &ast::NameRef) -> Access {
+    fn classify_rw_from_name_ref(&self, name_ref: &ast::NameRef, is_ptr: bool) -> Access {
         name_ref
             .syntax()
             .ancestors()
@@ -425,7 +427,8 @@ impl<'a> FnIrBuilder<'a> {
                                 {
                                     return None;
                                 }
-                            Some(Access::Unknown)
+                            // Every Ptr method takes &self.
+                            Some(if is_ptr { Access::Borrow } else { Access::Unknown })
                         },
                         ast::ReturnExpr(_) => {
                             panic!("return statements are not supported in rule bodies");
@@ -461,12 +464,12 @@ impl<'a> FnIrBuilder<'a> {
             .is_some_and(|ty| matches!(ty, ast::Type::RefType(r) if r.mut_token().is_some()))
     }
 
-    fn classify_access(&self, token: &ra_ap_syntax::SyntaxToken) -> Access {
+    fn classify_access(&self, token: &ra_ap_syntax::SyntaxToken, is_ptr: bool) -> Access {
         let Some(name_ref) = token.parent().and_then(ast::NameRef::cast) else {
             // Inside a macro invocation. Phase 2 will resolve this.
             return Access::Unknown;
         };
-        self.classify_rw_from_name_ref(&name_ref)
+        self.classify_rw_from_name_ref(&name_ref, is_ptr)
     }
 
     fn trim_whitespaces(fragments: &mut Vec<BodyFragment>) {
@@ -619,8 +622,22 @@ impl<'a> TypeIrBuilder<'a> {
             .tail_expr()
             .expect("Type rules must yield an initializer");
 
+        let ty_text = ty.syntax().text().to_string();
+        let generic = self
+            .fn_item
+            .generic_param_list()
+            .into_iter()
+            .flat_map(|gpl| gpl.generic_params())
+            .filter_map(|param| match param {
+                ast::GenericParam::TypeParam(tp) => tp.name(),
+                _ => None,
+            })
+            .find(|name| name.text() == ty_text)
+            .map(|name| name.text()[1..].parse().expect("generic name is T<n>"));
+
         TypeIr {
             init: init.syntax().text().to_string(),
+            generic,
             type_info: TypeInfo {
                 ty: ty.syntax().text().to_string(),
                 is_refcount_pointer,
