@@ -3577,6 +3577,9 @@ bool Converter::VisitInitListExpr(clang::InitListExpr *expr) {
       SetFreshType(qual_type);
       return false;
     }
+    if (!IsUserDefinedDecl(record)) {
+      expr->dump();
+    }
     assert(IsUserDefinedDecl(record) && "aggregate list without a rule");
 
     StrCat(GetUnsafeTypeAsString(qual_type));

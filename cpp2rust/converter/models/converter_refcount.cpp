@@ -1895,6 +1895,9 @@ bool ConverterRefCount::VisitInitListExpr(clang::InitListExpr *expr) {
         return false;
       }
     }
+    if (!IsUserDefinedDecl(record)) {
+      expr->dump();
+    }
     assert(IsUserDefinedDecl(record) && "aggregate list without a rule");
 
     if (record->isUnion()) {
