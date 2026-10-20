@@ -480,7 +480,7 @@ std::string ExprKey(clang::ASTContext &ctx, const clang::Expr *expr) {
   if (auto cast = llvm::dyn_cast<clang::ExplicitCastExpr>(expr)) {
     return ExprKey(ctx, cast->getSubExpr());
   }
-  if (llvm::isa<clang::IntegerLiteral>(expr) &&
+  if (llvm::isa<clang::IntegerLiteral, clang::AtomicExpr>(expr) &&
       expr->getBeginLoc().isMacroID()) {
     return clang::Lexer::getImmediateMacroName(
                expr->getBeginLoc(), ctx.getSourceManager(), ctx.getLangOpts())
