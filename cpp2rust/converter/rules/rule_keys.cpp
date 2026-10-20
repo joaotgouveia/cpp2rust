@@ -260,10 +260,35 @@ std::vector<TypeKey> GetTypeKeys(const clang::NamedDecl *rule) {
     auto qualifier = member->getQualifier().getAsType();
     assert(qualifier && "member type is not qualified by a type");
     auto parent = getParent(clang::QualType(qualifier, 0));
+    if (!parent) {
+      parent = getAliasTemplate(clang::QualType(qualifier, 0));
+    }
+    if (!parent) {
+      llvm::errs() << "type rule " << rule->getQualifiedNameAsString()
+                   << " has no key: qualifier "
+                   << clang::QualType(qualifier, 0).getAsString()
+                   << " of member " << member->getIdentifier()->getName()
+                   << " is neither a class nor an alias template\n";
+      rule->dump(llvm::errs());
+    }
     assert(parent && "type rule has no key");
     return {parent};
   }
   auto key = GetTypeKey(pattern);
+  if (!key) {
+    if (auto alias = getAliasTemplate(pattern)) {
+      key = alias;
+    }
+  }
+  if (!key) {
+    llvm::errs() << "type rule " << rule->getQualifiedNameAsString()
+                 << " has no key: pattern " << pattern.getAsString()
+                 << " (canonical "
+                 << pattern.getCanonicalType().getAsString()
+                 << ") is neither a class, a member type, nor an alias "
+                    "template\n";
+    rule->dump(llvm::errs());
+  }
   assert(key && "type rule has no key");
   return {*key};
 }
