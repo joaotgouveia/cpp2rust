@@ -267,6 +267,9 @@ std::vector<ExprKey> GetExprKeys(clang::Sema &sema,
     return keys;
   }
   auto key = getExprKey(ctx, returned);
+  if (!key && llvm::isa<clang::InitListExpr>(returned)) {
+    key = getConstructorKey(getParent(rule->getAsFunction()->getReturnType()));
+  }
   if (!key) {
     llvm::errs() << "expression rule " << rule->getQualifiedNameAsString()
                  << " has no key: returned expression\n";
