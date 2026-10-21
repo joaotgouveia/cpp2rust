@@ -113,6 +113,7 @@ impl<T: 'static> Ptr<T> {
             PtrKind::Nested(parent) => parent.root(),
             PtrKind::Null => null_deref(),
             PtrKind::Reinterpreted(_) => panic!("reinterpreted memory has no nested objects"),
+            PtrKind::Seam(_) => panic!("seam has no nested objects"),
         }
     }
 
@@ -136,7 +137,7 @@ impl<T: 'static> Ptr<T> {
                 Self::borrow_field_elem(root.field(), *field, *shape, offset)
             }
             PtrKind::Nested(parent) => Ref::map(parent.borrow_slice(root), |s| &s[offset]),
-            PtrKind::Null | PtrKind::Reinterpreted(_) => unreachable!(),
+            PtrKind::Null | PtrKind::Reinterpreted(_) | PtrKind::Seam(_) => unreachable!(),
         }
     }
 
@@ -160,7 +161,7 @@ impl<T: 'static> Ptr<T> {
             PtrKind::Nested(parent) => {
                 RefMut::map(parent.borrow_slice_mut(root), |s| &mut s[offset])
             }
-            PtrKind::Null | PtrKind::Reinterpreted(_) => unreachable!(),
+            PtrKind::Null | PtrKind::Reinterpreted(_) | PtrKind::Seam(_) => unreachable!(),
         }
     }
 }
