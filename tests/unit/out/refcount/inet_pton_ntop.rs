@@ -7,439 +7,117 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_s6_addr_access_0() {
-    let loopback: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([
-        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
-        1_u8,
+    let loopback: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        1_(),
     ])));
-    let addr: Value<libcc2rs::In6Addr> = Rc::new(RefCell::new(Default::default()));
-    let mut ap: Ptr<libcc2rs::In6Addr> = (addr.as_pointer());
-    {
-        ((In6Addr::s6_addr(addr.as_pointer()) as Ptr<u8>) as Ptr<u8>)
-            .to_any()
-            .memcpy(
-                &((loopback.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any(),
-                16_usize as usize,
-            );
-        ((In6Addr::s6_addr(addr.as_pointer()) as Ptr<u8>) as Ptr<u8>).to_any()
-    };
-    assert!(
-        (((((In6Addr::s6_addr((ap).clone()) as Ptr::<u8>) as Ptr<u8>)
-            .to_any()
-            .memcmp(
-                &((loopback.as_pointer() as Ptr::<u8>) as Ptr<u8>).to_any(),
-                16_usize
-            )
-            == 0) as i32)
-            != 0)
-    );
-    elem!((In6Addr::s6_addr(addr.as_pointer()) as Ptr::<u8>), 0).write(32_u8);
-    elem!((In6Addr::s6_addr((ap).clone()) as Ptr::<u8>), 1).write(1_u8);
-    assert!(
-        ((((((((elem!((In6Addr::s6_addr(addr.as_pointer()) as Ptr::<u8>), 0).read()) as i32) == 32)
-            as i32)
-            != 0)
-            && (((((elem!((In6Addr::s6_addr((ap).clone()) as Ptr::<u8>), 1).read()) as i32) == 1)
-                as i32)
-                != 0)) as i32)
-            != 0)
-    );
-    elem!((In6Addr::s6_addr(addr.as_pointer()) as Ptr::<u8>), 15).write({
-        (((elem!((In6Addr::s6_addr(addr.as_pointer()) as Ptr::<u8>), 15).read()) as i32) + 4) as u8
+    let addr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut ap: Ptr<()> = (addr.as_pointer());
+    ({
+        memcpy_1 ( (( anon_2::__u6_addr8(unimplemented!() .as_pointer() ).reinterpret_cast::<()  >()  as Ptr::<()> )  as Ptr< ()  >  ).to_any()  , (( loopback .as_pointer()  as Ptr::<()> )  as Ptr< ()  >  ).to_any()  , 16_()  , )
     });
-    elem!((In6Addr::s6_addr((ap).clone()) as Ptr::<u8>), 15).with_mut(|__v| __v.postfix_inc());
-    assert!(
-        (((((elem!((In6Addr::s6_addr(addr.as_pointer()) as Ptr::<u8>), 15).read()) as i32) == 6)
-            as i32)
-            != 0)
-    );
-    let mut bytes: Ptr<u8> = (In6Addr::s6_addr(addr.as_pointer()) as Ptr<u8>);
-    elem!(bytes, 2).write(7_u8);
-    assert!(
-        (((((elem!((In6Addr::s6_addr((ap).clone()) as Ptr::<u8>), 2).read()) as i32) == 7) as i32)
-            != 0)
-    );
-    let mut fourth: Ptr<u8> = ((In6Addr::s6_addr((ap).clone()) as Ptr<u8>).offset((3) as isize));
-    fourth.write(8_u8);
-    assert!(
-        (((((elem!((In6Addr::s6_addr(addr.as_pointer()) as Ptr::<u8>), 3).read()) as i32) == 8)
-            as i32)
-            != 0)
-    );
+    unimplemented!();
+    elem!(
+        (anon_2::__u6_addr8(unimplemented!().as_pointer()).reinterpret_cast::<()>() as Ptr::<()>),
+        unimplemented!()
+    )
+    .write(32_());
+    elem!(
+        (anon_2::__u6_addr8(unimplemented!().as_pointer()).reinterpret_cast::<()>() as Ptr::<()>),
+        1_()
+    )
+    .write(1_());
+    unimplemented!();
     {
-        ((In6Addr::s6_addr((ap).clone()) as Ptr<u8>) as Ptr<u8>)
-            .to_any()
-            .memcpy(
-                &((loopback.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any(),
-                16_usize as usize,
-            );
-        ((In6Addr::s6_addr((ap).clone()) as Ptr<u8>) as Ptr<u8>).to_any()
+        elem!(
+            (anon_2::__u6_addr8(unimplemented!().as_pointer()).reinterpret_cast::<()>()
+                as Ptr::<()>),
+            15_()
+        )
+        .with_mut(|__v| *__v = *__v + 4_())
     };
-    assert!(
-        (((((In6Addr::s6_addr(addr.as_pointer()) as Ptr::<u8>) as Ptr<u8>)
-            .to_any()
-            .memcmp(
-                &((loopback.as_pointer() as Ptr::<u8>) as Ptr<u8>).to_any(),
-                16_usize
-            )
-            == 0) as i32)
-            != 0)
-    );
+    elem!(
+        (anon_2::__u6_addr8(unimplemented!().as_pointer()).reinterpret_cast::<()>() as Ptr::<()>),
+        15_()
+    )
+    .with_mut(|__v| __v.postfix_inc());
+    unimplemented!();
+    let mut bytes: Ptr<()> =
+        (anon_2::__u6_addr8(unimplemented!().as_pointer()).reinterpret_cast::<()>() as Ptr<()>);
+    elem!(bytes, 2_()).write(7_());
+    unimplemented!();
+    let mut fourth: Ptr<()> = ((anon_2::__u6_addr8(unimplemented!().as_pointer())
+        .reinterpret_cast::<()>() as Ptr<()>)
+        .offset((3_()) as isize));
+    fourth.write(8_());
+    unimplemented!();
+    ({
+        memcpy_1 ( (( anon_2::__u6_addr8(unimplemented!() .as_pointer() ).reinterpret_cast::<()  >()  as Ptr::<()> )  as Ptr< ()  >  ).to_any()  , (( loopback .as_pointer()  as Ptr::<()> )  as Ptr< ()  >  ).to_any()  , 16_()  , )
+    });
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     ({ test_s6_addr_access_0() });
-    let buf: Value<Box<[u8]>> = Rc::new(RefCell::new((0..16).map(|_| 0_u8).collect::<Box<[u8]>>()));
-    assert!(
-        (((if libc::AF_INET == libc::AF_INET {
-            match Ptr::<i8>::from_string_literal(b"1.2.3.4")
-                .to_rust_string()
-                .parse::<std::net::Ipv4Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(4, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else if libc::AF_INET == libc::AF_INET6 {
-            match Ptr::<i8>::from_string_literal(b"1.2.3.4")
-                .to_rust_string()
-                .parse::<std::net::Ipv6Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(16, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else {
-            libcc2rs::cpp2rust_errno().write(::libc::EAFNOSUPPORT);
-            -1
-        } == 1) as i32)
-            != 0)
-    );
-    assert!(
-        ((((((((((((((*buf.borrow())[(0) as usize] as i32) == 1) as i32) != 0)
-            && (((((*buf.borrow())[(1) as usize] as i32) == 2) as i32) != 0))
-            as i32)
-            != 0)
-            && (((((*buf.borrow())[(2) as usize] as i32) == 3) as i32) != 0)) as i32)
-            != 0)
-            && (((((*buf.borrow())[(3) as usize] as i32) == 4) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!(
-        (((if libc::AF_INET == libc::AF_INET {
-            match Ptr::<i8>::from_string_literal(b"999.1.1.1")
-                .to_rust_string()
-                .parse::<std::net::Ipv4Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(4, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else if libc::AF_INET == libc::AF_INET6 {
-            match Ptr::<i8>::from_string_literal(b"999.1.1.1")
-                .to_rust_string()
-                .parse::<std::net::Ipv6Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(16, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else {
-            libcc2rs::cpp2rust_errno().write(::libc::EAFNOSUPPORT);
-            -1
-        } == 0) as i32)
-            != 0)
-    );
-    assert!(
-        (((if libc::AF_INET == libc::AF_INET {
-            match Ptr::<i8>::from_string_literal(b"not an ip")
-                .to_rust_string()
-                .parse::<std::net::Ipv4Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(4, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else if libc::AF_INET == libc::AF_INET6 {
-            match Ptr::<i8>::from_string_literal(b"not an ip")
-                .to_rust_string()
-                .parse::<std::net::Ipv6Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(16, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else {
-            libcc2rs::cpp2rust_errno().write(::libc::EAFNOSUPPORT);
-            -1
-        } == 0) as i32)
-            != 0)
-    );
-    assert!(
-        (((if libc::AF_INET6 == libc::AF_INET {
-            match Ptr::<i8>::from_string_literal(b"::1")
-                .to_rust_string()
-                .parse::<std::net::Ipv4Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(4, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else if libc::AF_INET6 == libc::AF_INET6 {
-            match Ptr::<i8>::from_string_literal(b"::1")
-                .to_rust_string()
-                .parse::<std::net::Ipv6Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(16, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else {
-            libcc2rs::cpp2rust_errno().write(::libc::EAFNOSUPPORT);
-            -1
-        } == 1) as i32)
-            != 0)
-    );
-    assert!(
-        ((((((((*buf.borrow())[(0) as usize] as i32) == 0) as i32) != 0)
-            && (((((*buf.borrow())[(15) as usize] as i32) == 1) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!(
-        (((if libc::AF_INET6 == libc::AF_INET {
-            match Ptr::<i8>::from_string_literal(b"2001:db8::5")
-                .to_rust_string()
-                .parse::<std::net::Ipv4Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(4, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else if libc::AF_INET6 == libc::AF_INET6 {
-            match Ptr::<i8>::from_string_literal(b"2001:db8::5")
-                .to_rust_string()
-                .parse::<std::net::Ipv6Addr>()
-            {
-                Ok(__ip) => {
-                    ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice_mut(16, |__s| __s.copy_from_slice(&__ip.octets()));
-                    1
-                }
-                Err(_) => 0,
-            }
-        } else {
-            libcc2rs::cpp2rust_errno().write(::libc::EAFNOSUPPORT);
-            -1
-        } == 1) as i32)
-            != 0)
-    );
-    assert!(
-        (((((((((((*buf.borrow())[(0) as usize] as i32) == 32) as i32) != 0)
-            && (((((*buf.borrow())[(1) as usize] as i32) == 1) as i32) != 0)) as i32)
-            != 0)
-            && (((((*buf.borrow())[(15) as usize] as i32) == 5) as i32) != 0)) as i32)
-            != 0)
-    );
-    let text: Value<Box<[i8]>> =
-        Rc::new(RefCell::new((0..64).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    let four: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([10_u8, 0_u8, 0_u8, 1_u8])));
-    assert!(
-        ((({
-            let mut __it1 = {
-                let __text = if libc::AF_INET == libc::AF_INET {
-                    let __b: [u8; 4] = ((four.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice(4, |__s| __s.try_into().unwrap());
-                    Some(std::net::Ipv4Addr::from(__b).to_string())
-                } else if libc::AF_INET == libc::AF_INET6 {
-                    let __b: [u8; 16] = ((four.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice(16, |__s| __s.try_into().unwrap());
-                    Some(std::net::Ipv6Addr::from(__b).to_string())
-                } else {
-                    None
-                };
-                match __text {
-                    Some(__s)
-                        if (__s.len() as u32)
-                            < (::std::mem::size_of::<[i8; 64]>() as libc::socklen_t) =>
-                    {
-                        let __n = __s.len();
-                        (text.as_pointer() as Ptr<i8>).write_c_bytes(__s.as_bytes());
-                        elem!((text.as_pointer() as Ptr::<i8>), __n).write(0);
-                        (text.as_pointer() as Ptr<i8>)
-                    }
-                    Some(_) => {
-                        libcc2rs::cpp2rust_errno().write(::libc::ENOSPC);
-                        Ptr::null()
-                    }
-                    None => {
-                        libcc2rs::cpp2rust_errno().write(::libc::EAFNOSUPPORT);
-                        Ptr::null()
-                    }
-                }
-            }
-            .to_c_string_iterator();
-            let mut __it2 = Ptr::<i8>::from_string_literal(b"10.0.0.1").to_c_string_iterator();
-            loop {
-                let __c1 = __it1.next();
-                let __c2 = __it2.next();
-                if __c1 != __c2 {
-                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
-                }
-                if __c1.is_none() {
-                    break 0;
-                }
-            }
-        } == 0) as i32)
-            != 0)
-    );
-    let sixteen: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([
-        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
-        0_u8,
+    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..16).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let text: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..64).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let four: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        10_(),
+        unimplemented!(),
+        unimplemented!(),
+        1_(),
     ])));
-    (*sixteen.borrow_mut())[(15) as usize] = 1_u8;
-    assert!(
-        ((({
-            let mut __it1 = {
-                let __text = if libc::AF_INET6 == libc::AF_INET {
-                    let __b: [u8; 4] = ((sixteen.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice(4, |__s| __s.try_into().unwrap());
-                    Some(std::net::Ipv4Addr::from(__b).to_string())
-                } else if libc::AF_INET6 == libc::AF_INET6 {
-                    let __b: [u8; 16] = ((sixteen.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                        .to_any()
-                        .reinterpret_cast::<u8>()
-                        .with_slice(16, |__s| __s.try_into().unwrap());
-                    Some(std::net::Ipv6Addr::from(__b).to_string())
-                } else {
-                    None
-                };
-                match __text {
-                    Some(__s)
-                        if (__s.len() as u32)
-                            < (::std::mem::size_of::<[i8; 64]>() as libc::socklen_t) =>
-                    {
-                        let __n = __s.len();
-                        (text.as_pointer() as Ptr<i8>).write_c_bytes(__s.as_bytes());
-                        elem!((text.as_pointer() as Ptr::<i8>), __n).write(0);
-                        (text.as_pointer() as Ptr<i8>)
-                    }
-                    Some(_) => {
-                        libcc2rs::cpp2rust_errno().write(::libc::ENOSPC);
-                        Ptr::null()
-                    }
-                    None => {
-                        libcc2rs::cpp2rust_errno().write(::libc::EAFNOSUPPORT);
-                        Ptr::null()
-                    }
-                }
-            }
-            .to_c_string_iterator();
-            let mut __it2 = Ptr::<i8>::from_string_literal(b"::1").to_c_string_iterator();
-            loop {
-                let __c1 = __it1.next();
-                let __c2 = __it2.next();
-                if __c1 != __c2 {
-                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
-                }
-                if __c1.is_none() {
-                    break 0;
-                }
-            }
-        } == 0) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            let __text = if libc::AF_INET == libc::AF_INET {
-                let __b: [u8; 4] = ((four.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                    .to_any()
-                    .reinterpret_cast::<u8>()
-                    .with_slice(4, |__s| __s.try_into().unwrap());
-                Some(std::net::Ipv4Addr::from(__b).to_string())
-            } else if libc::AF_INET == libc::AF_INET6 {
-                let __b: [u8; 16] = ((four.as_pointer() as Ptr<u8>) as Ptr<u8>)
-                    .to_any()
-                    .reinterpret_cast::<u8>()
-                    .with_slice(16, |__s| __s.try_into().unwrap());
-                Some(std::net::Ipv6Addr::from(__b).to_string())
-            } else {
-                None
-            };
-            match __text {
-                Some(__s) if (__s.len() as u32) < (4 as libc::socklen_t) => {
-                    let __n = __s.len();
-                    (text.as_pointer() as Ptr<i8>).write_c_bytes(__s.as_bytes());
-                    elem!((text.as_pointer() as Ptr::<i8>), __n).write(0);
-                    (text.as_pointer() as Ptr<i8>)
-                }
-                Some(_) => {
-                    libcc2rs::cpp2rust_errno().write(::libc::ENOSPC);
-                    Ptr::null()
-                }
-                None => {
-                    libcc2rs::cpp2rust_errno().write(::libc::EAFNOSUPPORT);
-                    Ptr::null()
-                }
-            }
-        })
-        .is_null()) as i32)
-            != 0)
-    );
-    return 0;
+    unimplemented!();
+    let sixteen: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    (*sixteen.borrow_mut())[(15_()) as usize] = 1_();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

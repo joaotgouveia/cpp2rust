@@ -6,35 +6,32 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn inner_0(mut count: i32, ap: Ptr<VaArg>) -> i32 {
+pub fn inner_0(mut count: (), ap: Ptr<VaArg>) -> () {
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(ap));
-    let mut total: i32 = 0;
-    let mut i: i32 = 0;
-    'loop_: while (((i < count) as i32) != 0) {
-        total += (*ap.borrow_mut()).arg::<i32>();
+    let mut total: () = unimplemented!();
+    let mut i: () = unimplemented!();
+    'loop_: while (((i < count) as ()) != 0) {
+        total += (*ap.borrow_mut()).arg::<()>();
         i.postfix_inc();
     }
     return total;
 }
-pub fn outer_1(count: i32, __args: Box<[VaArg]>) -> i32 {
+pub fn outer_1(count: (), __args: Box<[VaArg]>) -> () {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
-    let count: Value<i32> = Rc::new(RefCell::new(count));
+    let count: Value<()> = Rc::new(RefCell::new(count));
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
     (*ap.borrow_mut()) = __args.as_pointer();
-    let mut result: i32 = ({ inner_0((*count.borrow()), (*ap.borrow()).clone()) });
+    let mut result: () = ({ inner_0((*count.borrow()), (*ap.borrow()).clone()) });
     return result;
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!(
-        (((({ outer_1(3, Box::new([(10).into(), (20).into(), (30).into(),])) }) == 60) as i32)
-            != 0)
-    );
-    assert!((((({ outer_1(1, Box::new([(42).into(),])) }) == 42) as i32) != 0));
-    assert!((((({ outer_1(0, Box::new([])) }) == 0) as i32) != 0));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

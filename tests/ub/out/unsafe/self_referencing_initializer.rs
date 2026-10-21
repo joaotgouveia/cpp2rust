@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct pair {
-    pub a: i32,
-    pub b: i32,
+    pub a: (),
+    pub b: (),
 }
 pub fn main() {
     unsafe {
@@ -18,13 +18,13 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: i32 = 0_i32;
-    x = ((x) + (1));
+unsafe fn main_0() -> () {
+    let mut x: () = unimplemented!();
+    x = ((x) + (1_()));
     let mut p: pair = <pair>::default();
     p = pair {
-        a: 1,
-        b: ((p.a) + (1)),
+        a: 1_(),
+        b: ((p.a) + (1_())),
     };
     return ((x) + (p.b));
 }

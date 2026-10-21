@@ -6,25 +6,25 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type Flag = bool;
+pub type Flag = ();
 pub const Flag_FLAG_OFF: Flag = false;
 pub const Flag_FLAG_ON: Flag = true;
-pub type Small = u8;
+pub type Small = ();
 pub const Small_SMALL_ZERO: Small = 0;
 pub const Small_SMALL_MAX: Small = 255;
-pub type Signed = i8;
+pub type Signed = ();
 pub const Signed_SIGNED_MIN: Signed = -128;
 pub const Signed_SIGNED_ONE: Signed = 1;
-pub type Wide = i64;
+pub type Wide = ();
 pub const Wide_WIDE_NEG: Wide = -1;
 pub const Wide_WIDE_BIG: Wide = 1099511627776;
-pub type Sized = u16;
+pub type Sized = ();
 pub const Sized_SIZED_A: Sized = 1;
 pub const Sized_SIZED_B: Sized = 65535;
-pub type Scoped = i8;
+pub type Scoped = ();
 pub const Scoped_NEG: Scoped = -2;
 pub const Scoped_POS: Scoped = 2;
-pub type Empty = bool;
+pub type Empty = ();
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct HoldsEmpty {
@@ -32,7 +32,11 @@ pub struct HoldsEmpty {
 }
 impl Default for HoldsEmpty {
     fn default() -> Self {
-        unsafe { HoldsEmpty { e: false } }
+        unsafe {
+            HoldsEmpty {
+                e: unimplemented!(),
+            }
+        }
     }
 }
 pub fn main() {
@@ -41,37 +45,37 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut flag: Flag = Flag_FLAG_ON;
-    assert!(flag);
-    assert!(!(Flag_FLAG_OFF));
+    unimplemented!();
+    unimplemented!();
     flag = Flag_FLAG_OFF;
-    assert!(((flag as i32) == (Flag_FLAG_OFF as i32)));
-    let mut b: bool = flag;
-    assert!(((b as i32) == (false as i32)));
+    unimplemented!();
+    let mut b: () = flag;
+    unimplemented!();
     let mut s: Small = Small_SMALL_MAX;
-    assert!(((s as i32) == (255)));
-    assert!(((::std::mem::size_of::<Small>()) == (1_usize)));
+    unimplemented!();
+    unimplemented!();
     s = Small_SMALL_ZERO;
-    assert!((((s as i32) + (1)) == (1)));
+    unimplemented!();
     let mut sg: Signed = Signed_SIGNED_MIN;
-    assert!(((sg as i32) == (-128_i32)));
-    assert!(((sg as i32) < (Signed_SIGNED_ONE as i32)));
+    unimplemented!();
+    unimplemented!();
     let mut w: Wide = Wide_WIDE_BIG;
-    assert!(((w as i64) == ((1_i64) << (40))));
-    assert!(((::std::mem::size_of::<Wide>()) == (8_usize)));
-    assert!(((Wide_WIDE_NEG as i64) < (0_i64)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut z: Sized = Sized_SIZED_B;
-    assert!(((z as i32) == (65535)));
-    assert!(((::std::mem::size_of::<Sized>()) == (2_usize)));
-    assert!((((Sized_SIZED_A as i32) + (1)) == (2)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut sc: Scoped = Scoped_NEG;
-    assert!(((sc as i32) == (-2_i32)));
-    assert!((((Scoped_POS as i8) as i32) == (2)));
+    unimplemented!();
+    unimplemented!();
     let mut he: HoldsEmpty = <HoldsEmpty>::default();
-    assert!(!(he.e));
-    let mut ev: Empty = false;
-    assert!(((ev as i32) == (he.e as i32)));
-    return 0;
+    unimplemented!();
+    let mut ev: Empty = unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

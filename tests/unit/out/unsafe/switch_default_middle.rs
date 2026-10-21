@@ -6,20 +6,20 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn default_middle_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+pub unsafe fn default_middle_0(mut x: ()) -> () {
+    let mut r: () = unimplemented!();
     'switch: {
         match { x } {
-            __v if __v == 1 => {
-                r = 1;
+            __v if __v == 1_() => {
+                r = 1_();
                 break 'switch;
             }
-            __v if __v == 2 => {
-                r = 2;
+            __v if __v == 2_() => {
+                r = 2_();
                 break 'switch;
             }
             _ => {
-                r = 99;
+                r = 99_();
                 break 'switch;
             }
         }
@@ -32,10 +32,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((unsafe { default_middle_0(1,) }) == (1)));
-    assert!(((unsafe { default_middle_0(2,) }) == (2)));
-    assert!(((unsafe { default_middle_0(99,) }) == (99)));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

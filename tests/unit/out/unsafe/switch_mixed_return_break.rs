@@ -6,22 +6,22 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn mixed_return_break_0(mut x: i32) -> i32 {
-    let mut r: i32 = -1_i32;
+pub unsafe fn mixed_return_break_0(mut x: ()) -> () {
+    let mut r: () = -1_();
     'switch: {
         match { x } {
-            __v if __v == 0 => {
-                return 100;
+            __v if __v == unimplemented!() => {
+                return 100_();
             }
-            __v if __v == 1 => {
-                r = 10;
+            __v if __v == 1_() => {
+                r = 10_();
                 break 'switch;
             }
-            __v if __v == 2 => {
-                return 200;
+            __v if __v == 2_() => {
+                return 200_();
             }
             _ => {
-                r = 99;
+                r = 99_();
                 break 'switch;
             }
         }
@@ -34,11 +34,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((unsafe { mixed_return_break_0(0,) }) == (100)));
-    assert!(((unsafe { mixed_return_break_0(1,) }) == (10)));
-    assert!(((unsafe { mixed_return_break_0(2,) }) == (200)));
-    assert!(((unsafe { mixed_return_break_0(99,) }) == (99)));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

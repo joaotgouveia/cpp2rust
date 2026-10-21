@@ -6,31 +6,31 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn for_test_0(mut n: i32) -> i32 {
-    let mut x: i32 = 0;
-    let mut i: i32 = 0;
-    let mut j: i32 = 0;
+pub fn for_test_0(mut n: ()) -> () {
+    let mut x: () = unimplemented!();
+    let mut i: () = unimplemented!();
+    let mut j: () = unimplemented!();
     'loop_: while (i < n) {
-        x += 1;
-        if (x == 100) {
+        x += 1_();
+        if (x == 100_()) {
             break;
         }
-        let mut k: i32 = 0;
-        let mut w: i32 = 0;
+        let mut k: () = unimplemented!();
+        let mut w: () = unimplemented!();
         'loop_: while (w < j) {
             break;
             {
                 {
-                    w += 1;
-                    k += 1
+                    w += 1_();
+                    k += 1_()
                 };
                 i += k
             };
         }
-        x = { (x + 1) };
+        x = { (x + 1_()) };
         {
             j = i;
-            i += 1
+            i += 1_()
         };
     }
     return x;
@@ -39,8 +39,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ for_test_0(200,) }) == 400));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

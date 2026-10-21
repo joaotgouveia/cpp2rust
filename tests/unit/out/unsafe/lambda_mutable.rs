@@ -12,33 +12,33 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut start: i32 = 5;
-    let mut next: FnPtr<fn() -> i32> = lambda_unsafe!(
+unsafe fn main_0() -> () {
+    let mut start: () = 5_();
+    let mut next: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
-            let start: i32 = start;
+            let start: () = start;
         },
-        || -> i32 {
+        || -> () {
             return start.postfix_inc();
         }
     );
-    assert!(((unsafe { next.call() }) == (5)));
-    assert!(((unsafe { next.call() }) == (6)));
-    assert!(((unsafe { next.call() }) == (7)));
-    assert!(((start) == (5)));
-    let mut total: i32 = 0;
-    let mut accumulate: FnPtr<fn(i32) -> i32> = lambda_unsafe!(
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut total: () = unimplemented!();
+    let mut accumulate: FnPtr<fn(()) -> ()> = lambda_unsafe!(
         {
-            let total: i32 = total;
+            let total: () = total;
         },
-        |mut x: i32| -> i32 {
+        |mut x: ()| -> () {
             total += x;
             return total;
         }
     );
-    assert!(((unsafe { accumulate.call(1,) }) == (1)));
-    assert!(((unsafe { accumulate.call(2,) }) == (3)));
-    assert!(((total) == (0)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

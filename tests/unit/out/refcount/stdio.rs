@@ -7,134 +7,50 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_fputc_0() {
-    {
-        let __c = ('H' as i32) as u8;
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&[__c])) {
-            1 => __c as i32,
-            _ => -1,
-        }
-    };
-    {
-        let __c = ('i' as i32) as u8;
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&[__c])) {
-            1 => __c as i32,
-            _ => -1,
-        }
-    };
-    {
-        let __c = ('\n' as i32) as u8;
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&[__c])) {
-            1 => __c as i32,
-            _ => -1,
-        }
-    };
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub fn test_fputs_1() {
-    match Ptr::<i8>::from_string_literal(b"hello").with_c_bytes(|__bytes| {
-        libcc2rs::c_stdout().with_mut(|__f| __f.write(__bytes)) == __bytes.len()
-    }) {
-        true => 0,
-        false => -1,
-    };
-    {
-        let __c = ('\n' as i32) as u8;
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&[__c])) {
-            1 => __c as i32,
-            _ => -1,
-        }
-    };
-    let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"from variable");
-    match s.with_c_bytes(|__bytes| {
-        libcc2rs::c_stdout().with_mut(|__f| __f.write(__bytes)) == __bytes.len()
-    }) {
-        true => 0,
-        false => -1,
-    };
-    {
-        let __c = ('\n' as i32) as u8;
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&[__c])) {
-            1 => __c as i32,
-            _ => -1,
-        }
-    };
-    let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
-        (('b' as i32) as i8),
-        (('u' as i32) as i8),
-        (('f' as i32) as i8),
-        (('\0' as i32) as i8),
+    unimplemented!();
+    unimplemented!();
+    let mut s: Ptr<()> = Ptr::<()>::from_string_literal(b"from variable");
+    unimplemented!();
+    unimplemented!();
+    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        ('b' as ()),
+        ('u' as ()),
+        ('f' as ()),
+        ('\0' as ()),
     ])));
-    match (buf.as_pointer() as Ptr<i8>).with_c_bytes(|__bytes| {
-        libcc2rs::c_stdout().with_mut(|__f| __f.write(__bytes)) == __bytes.len()
-    }) {
-        true => 0,
-        false => -1,
-    };
-    {
-        let __c = ('\n' as i32) as u8;
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&[__c])) {
-            1 => __c as i32,
-            _ => -1,
-        }
-    };
+    unimplemented!();
+    unimplemented!();
 }
 pub fn test_puts_2() {
-    {
-        let mut __bytes = Ptr::<i8>::from_string_literal(b"puts hello").to_c_u8_bytes();
-        __bytes.push(b'\n');
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&__bytes)) == __bytes.len() {
-            true => 0,
-            false => -1,
-        }
-    };
-    let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"puts variable");
-    {
-        let mut __bytes = s.to_c_u8_bytes();
-        __bytes.push(b'\n');
-        match libcc2rs::c_stdout().with_mut(|__f| __f.write(&__bytes)) == __bytes.len() {
-            true => 0,
-            false => -1,
-        }
-    };
+    unimplemented!();
+    let mut s: Ptr<()> = Ptr::<()>::from_string_literal(b"puts variable");
+    unimplemented!();
 }
 pub fn test_fileno_3() {
-    assert!((((libcc2rs::c_stdin().with(|__f| __f.fd) == 0) as i32) != 0));
-    assert!((((libcc2rs::c_stdout().with(|__f| __f.fd) == 1) as i32) != 0));
-    assert!((((libcc2rs::c_stderr().with(|__f| __f.fd) == 2) as i32) != 0));
-    let mut file: Ptr<i8> = Ptr::<i8>::from_string_literal(b"cpp2rust_fileno_test.tmp");
-    let mut fp: Ptr<CFile> = match CFile::open(
-        &file.to_rust_string(),
-        &Ptr::<i8>::from_string_literal(b"wb").to_rust_string(),
-    ) {
-        Some(__f) => Ptr::alloc(__f),
-        None => Ptr::null(),
-    };
-    assert!((((!((fp).is_null())) as i32) != 0));
-    assert!((((fp.with(|__f| __f.fd) > 2) as i32) != 0));
-    {
-        let __r = fp.with(|__f| __f.close());
-        fp.delete();
-        __r
-    };
-    assert!(
-        (((match nix::unistd::unlink(file.to_rust_string().as_str()) {
-            Ok(()) => 0,
-            Err(__e) => {
-                libcc2rs::cpp2rust_errno().write(__e as i32);
-                -1
-            }
-        } == 0) as i32)
-            != 0)
-    );
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut file: Ptr<()> = Ptr::<()>::from_string_literal(b"cpp2rust_fileno_test.tmp");
+    let mut fp: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     ({ test_fputc_0() });
     ({ test_fputs_1() });
     ({ test_puts_2() });
     ({ test_fileno_3() });
-    return 0;
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

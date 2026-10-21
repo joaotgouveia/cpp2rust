@@ -6,36 +6,36 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn nested_0(mut a: i32, mut b: i32) -> i32 {
-    let mut r: i32 = 0;
+pub unsafe fn nested_0(mut a: (), mut b: ()) -> () {
+    let mut r: () = unimplemented!();
     'switch: {
         match { a } {
-            __v if __v == 1 => {
+            __v if __v == 1_() => {
                 'switch: {
                     match { b } {
-                        __v if __v == 10 => {
-                            r = 11;
+                        __v if __v == 10_() => {
+                            r = 11_();
                             break 'switch;
                         }
-                        __v if __v == 20 => {
-                            r = 12;
+                        __v if __v == 20_() => {
+                            r = 12_();
                             break 'switch;
                         }
                         _ => {
-                            r = 13;
+                            r = 13_();
                             break 'switch;
                         }
                     }
                 };
-                r += 1;
+                r += 1_();
                 break 'switch;
             }
-            __v if __v == 2 => {
-                r = 2;
+            __v if __v == 2_() => {
+                r = 2_();
                 break 'switch;
             }
             _ => {
-                r = -1_i32;
+                r = -1_();
                 break 'switch;
             }
         }
@@ -48,11 +48,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((unsafe { nested_0(1, 10,) }) == (12)));
-    assert!(((unsafe { nested_0(1, 99,) }) == (14)));
-    assert!(((unsafe { nested_0(2, 0,) }) == (2)));
-    assert!(((unsafe { nested_0(3, 3,) }) == (-1_i32)));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

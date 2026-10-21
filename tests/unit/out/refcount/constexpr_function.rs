@@ -6,87 +6,87 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn runtime_only_0(mut x: i32) -> i32 {
-    return (x * 2);
+pub fn runtime_only_0(mut x: ()) -> () {
+    return (x * 2_());
 }
-pub fn first_1(mut p: Ptr<i32>) -> i32 {
+pub fn first_1(mut p: Ptr<()>) -> () {
     return (p.read());
 }
-pub fn scaled_2(mut x: i32) -> i32 {
-    if (x < 0) {
+pub fn scaled_2(mut x: ()) -> () {
+    if (x < unimplemented!()) {
         return ({ runtime_only_0(-x) });
     }
     return x;
 }
-pub fn half_3(mut x: f64) -> f64 {
+pub fn half_3(mut x: ()) -> () {
     return (x / 2_f64);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Flag {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
-pub fn use_4(f: Flag) -> i32 {
+pub fn use_4(f: Flag) -> () {
     let f: Value<Flag> = Rc::new(RefCell::new(f));
-    assert!(({ FlagImpl::to_bool(&f.as_pointer(),) }));
+    unimplemented!();
     return { (*f.borrow()).v };
 }
-pub fn checked_5(mut x: i32) -> i32 {
-    assert!((x > 0));
-    return (x + 1);
+pub fn checked_5(mut x: ()) -> () {
+    unimplemented!();
+    return (x + 1_());
 }
-pub fn in_constant_context_6() -> bool {
+pub fn in_constant_context_6() -> () {
     {}
-    return (({ runtime_only_0(1) }) == 0);
+    return (({ runtime_only_0(1_()) }) == unimplemented!());
 }
 const _: () = assert!(true, "in_constant_context()");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct P {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut runtime_context: bool = ({ in_constant_context_6() });
-    assert!(!(runtime_context));
-    let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([7, 8])));
-    assert!((({ first_1((arr.as_pointer() as Ptr::<i32>),) }) == 7));
-    assert!((({ first_1((arr.as_pointer() as Ptr::<i32>).offset((1) as isize),) }) == 8));
-    assert!((({ scaled_2(3,) }) == 3));
-    assert!((({ scaled_2(-3_i32,) }) == 6));
-    assert!((({ half_3(5_f64,) }) == 2.5_f64));
-    assert!((({ checked_5(1,) }) == 2));
-    let mut c: i32 = ({ checked_5(4) });
-    assert!((c == 5));
-    assert!((({ use_4(Flag { v: 2 },) }) == 2));
-    let mut u: i32 = ({ use_4(Flag { v: 3 }) });
-    assert!((u == 3));
-    let mut ptr: Ptr<i32> = (arr.as_pointer() as Ptr<i32>);
-    assert!(!(ptr).is_null());
-    let p: Value<P> = Rc::new(RefCell::new(P { v: 9 }));
-    assert!((({ PImpl::get(&p.as_pointer(),) }) == 9));
-    let mut k: i32 = ({ scaled_2(4) });
-    assert!((k == 4));
-    return 0;
+fn main_0() -> () {
+    let mut runtime_context: () = ({ in_constant_context_6() });
+    unimplemented!();
+    let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([7_(), 8_()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut c: () = ({ checked_5(4_()) });
+    unimplemented!();
+    unimplemented!();
+    let mut u: () = ({ use_4(Flag { v: 3_() }) });
+    unimplemented!();
+    let mut ptr: Ptr<()> = (arr.as_pointer() as Ptr<()>);
+    unimplemented!();
+    let p: Value<P> = Rc::new(RefCell::new(P { v: 9_() }));
+    unimplemented!();
+    let mut k: () = ({ scaled_2(4_()) });
+    unimplemented!();
+    return unimplemented!();
 }
 pub trait FlagImpl {
-    fn to_bool(&self) -> bool;
+    fn to_(&self) -> ();
 }
 impl FlagImpl for Ptr<Flag> {
-    fn to_bool(&self) -> bool {
-        return ((*self).with(|__s| __s.v) != 0);
+    fn to_(&self) -> () {
+        return ((*self).with(|__s| __s.v) != unimplemented!());
     }
 }
 pub trait PImpl {
-    fn get(&self) -> i32;
+    fn get(&self) -> ();
 }
 impl PImpl for Ptr<P> {
-    fn get(&self) -> i32 {
+    fn get(&self) -> () {
         return (*self).with(|__s| __s.v);
     }
 }

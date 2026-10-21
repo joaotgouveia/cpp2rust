@@ -9,38 +9,40 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct MoveOnly {
-    pub v: i32,
+    pub v: (),
 }
 impl MoveOnly {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self { v: v };
         this
     }
     pub unsafe fn move_from(o: *mut MoveOnly) -> Self {
         let mut this = Self { v: (*o).v };
-        (*o).v = 0;
+        (*o).v = unimplemented!();
         this
     }
 }
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct ConstMove {
-    pub mark: i32,
+    pub mark: (),
 }
 impl ConstMove {
     pub unsafe fn new() -> Self {
-        let mut this = Self { mark: 0 };
+        let mut this = Self {
+            mark: unimplemented!(),
+        };
         this
     }
     pub unsafe fn new_1(o: *mut ConstMove) -> Self {
         let mut this = Self {
-            mark: (((*o).mark) + (1)),
+            mark: (((*o).mark) + (1_())),
         };
         this
     }
     pub unsafe fn new_2(o: *const ConstMove) -> Self {
         let mut this = Self {
-            mark: (((*o).mark) + (10)),
+            mark: (((*o).mark) + (10_())),
         };
         this
     }
@@ -53,23 +55,23 @@ impl Default for ConstMove {
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct ThrowingMove {
-    pub v: i32,
-    pub copies: i32,
-    pub moves: i32,
+    pub v: (),
+    pub copies: (),
+    pub moves: (),
 }
 impl ThrowingMove {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self {
             v: v,
-            copies: 0,
-            moves: 0,
+            copies: unimplemented!(),
+            moves: unimplemented!(),
         };
         this
     }
     pub unsafe fn copy_from(o: *const ThrowingMove) -> Self {
         let mut this = Self {
             v: (*o).v,
-            copies: (((*o).copies) + (1)),
+            copies: (((*o).copies) + (1_())),
             moves: (*o).moves,
         };
         this
@@ -78,9 +80,9 @@ impl ThrowingMove {
         let mut this = Self {
             v: (*o).v,
             copies: (*o).copies,
-            moves: (((*o).moves) + (1)),
+            moves: (((*o).moves) + (1_())),
         };
-        (*o).v = 0;
+        (*o).v = unimplemented!();
         this
     }
 }
@@ -92,23 +94,23 @@ impl Clone for ThrowingMove {
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct NoexceptMove {
-    pub v: i32,
-    pub copies: i32,
-    pub moves: i32,
+    pub v: (),
+    pub copies: (),
+    pub moves: (),
 }
 impl NoexceptMove {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self {
             v: v,
-            copies: 0,
-            moves: 0,
+            copies: unimplemented!(),
+            moves: unimplemented!(),
         };
         this
     }
     pub unsafe fn copy_from(o: *const NoexceptMove) -> Self {
         let mut this = Self {
             v: (*o).v,
-            copies: (((*o).copies) + (1)),
+            copies: (((*o).copies) + (1_())),
             moves: (*o).moves,
         };
         this
@@ -117,9 +119,9 @@ impl NoexceptMove {
         let mut this = Self {
             v: (*o).v,
             copies: (*o).copies,
-            moves: (((*o).moves) + (1)),
+            moves: (((*o).moves) + (1_())),
         };
-        (*o).v = 0;
+        (*o).v = unimplemented!();
         this
     }
 }
@@ -128,12 +130,12 @@ impl Clone for NoexceptMove {
         unsafe { NoexceptMove::copy_from(self as *const NoexceptMove) }
     }
 }
-pub unsafe fn by_value_0(mut m: MoveOnly) -> i32 {
+pub unsafe fn by_value_0(mut m: MoveOnly) -> () {
     return m.v;
 }
-pub unsafe fn make_1(mut v: i32) -> MoveOnly {
+pub unsafe fn make_1(mut v: ()) -> MoveOnly {
     let mut m: MoveOnly = MoveOnly::new({ v });
-    return MoveOnly::move_from({ &mut m });
+    return MoveOnly::move_from({ &mut (*unimplemented!()) });
 }
 pub fn main() {
     unsafe {
@@ -141,56 +143,50 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut a: MoveOnly = MoveOnly::new({ 1 });
-    let mut b: MoveOnly = MoveOnly::move_from({ &mut a });
-    assert!(((b.v) == (1)));
-    assert!(((a.v) == (0)));
-    let mut c: MoveOnly = MoveOnly::move_from({ &mut b });
-    assert!(((c.v) == (1)));
-    assert!(((b.v) == (0)));
-    let mut d: MoveOnly = MoveOnly::move_from({ &mut c });
-    assert!(((d.v) == (1)));
-    assert!(((c.v) == (0)));
-    let mut e: MoveOnly = (unsafe { make_1(5) });
-    assert!(((e.v) == (5)));
-    assert!(((unsafe { by_value_0(MoveOnly::new({ 6 },),) }) == (6)));
-    assert!(((unsafe { by_value_0(MoveOnly::move_from({ &mut e },),) }) == (5)));
-    assert!(((e.v) == (0)));
-    let mut vec_: Vec<MoveOnly> = Vec::new();
-    {
-        let __a1 = MoveOnly::new({ 7 });
-        vec_.push(__a1)
-    };
-    let mut f: MoveOnly = MoveOnly::new({ 8 });
-    {
-        let __a1 = MoveOnly::move_from({ &mut f });
-        vec_.push(__a1)
-    };
-    assert!(((vec_[(0_usize)].v) == (7)) && ((vec_[(1_usize)].v) == (8)));
-    assert!(((f.v) == (0)));
+unsafe fn main_0() -> () {
+    let mut a: MoveOnly = MoveOnly::new({ 1_() });
+    let mut b: MoveOnly = MoveOnly::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+    let mut c: MoveOnly = MoveOnly::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+    let mut d: MoveOnly = MoveOnly::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+    let mut e: MoveOnly = (unsafe { make_1(5_()) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut vec_: () = unimplemented!();
+    unimplemented!();
+    let mut f: MoveOnly = MoveOnly::new({ 8_() });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut m: ConstMove = ConstMove::new();
-    let mut m1: ConstMove = ConstMove::new_1({ &mut m });
+    let mut m1: ConstMove = ConstMove::new_1({ &mut (*unimplemented!()) });
     let cm: ConstMove = ConstMove::new();
-    let mut m2: ConstMove = ConstMove::new_2({ &cm });
-    assert!(((m1.mark) == (1)));
-    assert!(((m2.mark) == (10)));
-    let mut t: ThrowingMove = ThrowingMove::new({ 1 });
-    let mut t1: ThrowingMove = ThrowingMove::copy_from({ &t });
-    assert!(((t1.v) == (1)));
-    assert!(((t1.copies) == (1)));
-    assert!(((t1.moves) == (0)));
-    assert!(((t.v) == (1)));
-    let mut n: NoexceptMove = NoexceptMove::new({ 2 });
-    let mut n1: NoexceptMove = NoexceptMove::move_from({ &mut n });
-    assert!(((n1.v) == (2)));
-    assert!(((n1.copies) == (0)));
-    assert!(((n1.moves) == (1)));
-    assert!(((n.v) == (0)));
-    let mut g: MoveOnly = MoveOnly::new({ 3 });
-    let mut g1: MoveOnly = MoveOnly::move_from({ &mut g });
-    assert!(((g1.v) == (3)));
-    assert!(((g.v) == (0)));
-    return 0;
+    let mut m2: ConstMove = ConstMove::new_2({ &(*unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+    let mut t: ThrowingMove = ThrowingMove::new({ 1_() });
+    let mut t1: ThrowingMove = ThrowingMove::copy_from({ &(*unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut n: NoexceptMove = NoexceptMove::new({ 2_() });
+    let mut n1: NoexceptMove = NoexceptMove::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut g: MoveOnly = MoveOnly::new({ 3_() });
+    let mut g1: MoveOnly = MoveOnly::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

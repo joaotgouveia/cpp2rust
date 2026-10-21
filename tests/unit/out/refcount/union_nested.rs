@@ -10,17 +10,17 @@ use std::rc::{Rc, Weak};
 #[byte_size(16)]
 pub struct record {
     #[offset(0)]
-    pub code: u16,
+    pub code: (),
     #[offset(2)]
     #[byte_size(14)]
-    pub pad: Box<[i8]>,
+    pub pad: Box<[()]>,
 }
 impl Default for record {
     fn default() -> Self {
         {
             record {
-                code: 0_u16,
-                pad: (0..14).map(|_| 0_i8).collect::<Box<[i8]>>(),
+                code: unimplemented!(),
+                pad: (0..14).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
     }
@@ -36,7 +36,7 @@ impl anon_0 {
     pub fn h(this: Ptr<Self>) -> Ptr<record> {
         this.reinterpret_cast()
     }
-    pub fn raw_(this: Ptr<Self>) -> Ptr<i8> {
+    pub fn raw_(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
 }
@@ -80,13 +80,13 @@ impl Default for anon_1 {
 #[byte_size(144)]
 pub struct Outer {
     #[offset(0)]
-    pub kind: i32,
+    pub kind: (),
     #[offset(4)]
-    pub level: i32,
+    pub level: (),
     #[offset(8)]
-    pub variant: i32,
+    pub variant: (),
     #[offset(12)]
-    pub len: u32,
+    pub len: (),
     #[offset(16)]
     #[byte_size(128)]
     pub body: anon_1,
@@ -95,39 +95,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let ex: Value<Outer> = <Value<Outer>>::default();
-    {
-        ((ex.as_pointer()) as Ptr<Outer>)
-            .to_any()
-            .memset((0) as u8, 144usize as usize);
-        ((ex.as_pointer()) as Ptr<Outer>).to_any()
-    };
-    (*ex.borrow_mut()).kind = 2;
-    (*ex.borrow_mut()).level = 1;
-    (*ex.borrow_mut()).variant = 6;
-    (*ex.borrow_mut()).len = (16usize as u32);
-    field!(anon_1::h(field_ptr!(ex.as_pointer(), body)), code).write(2_u16);
-    array_elem!(anon_1::h(field_ptr!(ex.as_pointer(), body)), pad, 0).write((('X' as i32) as i8));
-    assert!(
-        ((((anon_1::h(field_ptr!(ex.as_pointer(), body)).with(|__s| __s.code) as i32) == 2)
-            as i32)
-            != 0)
-    );
-    assert!(
-        (((((array_elem!(anon_1::h(field_ptr!(ex.as_pointer(), body)), pad, 0).read()) as i32)
-            == ('X' as i32)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((anon_0::h(field_ptr!(
-            anon_1::nested(field_ptr!(ex.as_pointer(), body)),
-            view
-        ))
-        .with(|__s| __s.code) as i32)
-            == 2) as i32)
-            != 0)
-    );
-    return 0;
+    ({
+        let ___s: () = ((ex.as_pointer()) as Ptr<Outer>).to_any();
+        let ___n: () = 144usize;
+        memset_2(___s, unimplemented!(), ___n)
+    });
+    (*ex.borrow_mut()).kind = 2_();
+    (*ex.borrow_mut()).level = 1_();
+    (*ex.borrow_mut()).variant = 6_();
+    (*ex.borrow_mut()).len = 16usize;
+    field!(anon_1::h(field_ptr!(ex.as_pointer(), body)), code).write(2_());
+    array_elem!(
+        anon_1::h(field_ptr!(ex.as_pointer(), body)),
+        pad,
+        unimplemented!()
+    )
+    .write(('X' as ()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

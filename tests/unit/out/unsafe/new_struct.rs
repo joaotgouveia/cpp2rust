@@ -9,14 +9,14 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Pair {
-    pub x: i32,
-    pub y: i32,
+    pub x: (),
+    pub y: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Triple {
-    pub a: i32,
-    pub b: i32,
+    pub a: (),
+    pub b: (),
     pub p: Pair,
 }
 pub fn main() {
@@ -25,38 +25,38 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut p: *mut Pair = (Box::leak(Box::new(Pair { x: 1, y: 2 })) as *mut Pair);
-    let mut out: i32 = (((*p).x) + ((*p).y));
+unsafe fn main_0() -> () {
+    let mut p: *mut Pair = (Box::leak(Box::new(Pair { x: 1_(), y: 2_() })) as *mut Pair);
+    let mut out: () = (((*p).x) + ((*p).y));
     {
         let __p = p;
         if !__p.is_null() {
             ::std::mem::drop(Box::from_raw(__p))
         }
     };
-    assert!(((out) == (3)));
+    unimplemented!();
     let mut t: Triple = Triple {
-        a: 1,
-        b: 0_i32,
+        a: 1_(),
+        b: unimplemented!(),
         p: <Pair>::default(),
     };
-    assert!(((t.a) == (1)));
-    assert!(((t.b) == (0)));
-    assert!(((t.p.x) == (0)) && ((t.p.y) == (0)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut q: *mut Triple = (Box::leak(Box::new(Triple {
-        a: 2,
-        b: 3,
+        a: 2_(),
+        b: 3_(),
         p: <Pair>::default(),
     })) as *mut Triple);
-    assert!((((*q).a) == (2)));
-    assert!((((*q).b) == (3)));
-    assert!((((*q).p.x) == (0)) && (((*q).p.y) == (0)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     {
         let __p = q;
         if !__p.is_null() {
             ::std::mem::drop(Box::from_raw(__p))
         }
     };
-    return 0;
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

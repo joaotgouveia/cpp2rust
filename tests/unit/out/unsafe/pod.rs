@@ -9,14 +9,14 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct POD {
-    pub x1: i32,
-    pub x2: i32,
-    pub x3: i32,
+    pub x1: (),
+    pub x2: (),
+    pub x3: (),
 }
 pub unsafe fn PODIncrement_0(pod: *mut POD) {
-    (*pod).x1 += 1;
-    (*pod).x2 += 2;
-    (*pod).x3 += 3;
+    (*pod).x1 += 1_();
+    (*pod).x2 += 2_();
+    (*pod).x3 += 3_();
 }
 pub fn main() {
     unsafe {
@@ -24,11 +24,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut p1: POD = POD {
-        x1: 10,
-        x2: 11,
-        x3: 12,
+        x1: 10_(),
+        x2: 11_(),
+        x3: 12_(),
     };
     let mut p2: POD = POD {
         x1: p1.x1,
@@ -36,7 +36,7 @@ unsafe fn main_0() -> i32 {
         x3: p1.x3,
     };
     (unsafe { PODIncrement_0(&mut p2) });
-    assert!(((((p2.x1) + (p2.x2)) + (p2.x3)) == (39)));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

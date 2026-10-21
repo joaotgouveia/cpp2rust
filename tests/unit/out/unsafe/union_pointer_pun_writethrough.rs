@@ -12,19 +12,19 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: i64 = (-1_i32 as i64);
+unsafe fn main_0() -> () {
+    let mut x: () = -1_();
     let mut pp: anon_0 = <anon_0>::default();
-    pp.as_signed = (&mut x as *mut i64);
-    (*pp.as_unsigned) = 42_u64;
-    assert!(((((x) == (42_i64)) as i32) != 0));
-    return 0;
+    pp.as_signed = (&mut x as *mut ());
+    (*pp.as_unsigned) = 42_();
+    unimplemented!();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union anon_0 {
-    pub as_unsigned: *mut u64,
-    pub as_signed: *mut i64,
+    pub as_unsigned: *mut (),
+    pub as_signed: *mut (),
 }
 impl Default for anon_0 {
     fn default() -> Self {

@@ -10,34 +10,34 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let x: Value<i32> = Rc::new(RefCell::new(1));
-    let mut p: Ptr<i32> = (x.as_pointer());
+fn main_0() -> () {
+    let x: Value<()> = Rc::new(RefCell::new(1_()));
+    let mut p: Ptr<()> = (x.as_pointer());
     {
-        p.with_mut(|__v| *__v = *__v + 1)
+        p.with_mut(|__v| *__v = *__v + 1_())
     };
-    assert!(((*x.borrow()) == 2));
-    let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
-    p = ((a.as_pointer() as Ptr<i32>).offset(1));
+    unimplemented!();
+    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
+    p = ((a.as_pointer() as Ptr<()>).offset(1_()));
     {
-        p.with_mut(|__v| *__v = *__v + 1)
+        p.with_mut(|__v| *__v = *__v + 1_())
     };
-    assert!(((*a.borrow())[(0) as usize] == 1) && ((*a.borrow())[(1) as usize] == 3));
+    unimplemented!();
     p.prefix_dec();
     {
-        p.with_mut(|__v| *__v = *__v + 1)
+        p.with_mut(|__v| *__v = *__v + 1_())
     };
-    assert!(((*a.borrow())[(0) as usize] == 2) && ((*a.borrow())[(1) as usize] == 3));
+    unimplemented!();
     p = (x.as_pointer());
     {
-        p.with_mut(|__v| *__v = *__v + 1)
+        p.with_mut(|__v| *__v = *__v + 1_())
     };
-    assert!(((*x.borrow()) == 3));
-    let mut p2: Ptr<i32> = (p).clone();
+    unimplemented!();
+    let mut p2: Ptr<()> = (p).clone();
     {
-        p2.with_mut(|__v| *__v = *__v + 1)
+        p2.with_mut(|__v| *__v = *__v + 1_())
     };
-    assert!(((*x.borrow()) == 4));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

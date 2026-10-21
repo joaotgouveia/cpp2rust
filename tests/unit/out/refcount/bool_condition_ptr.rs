@@ -10,41 +10,49 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let storage: Value<i32> = Rc::new(RefCell::new(7));
-    let mut p: Ptr<i32> = (storage.as_pointer());
-    let mut np: Ptr<i32> = Ptr::<i32>::null();
+fn main_0() -> () {
+    let storage: Value<()> = Rc::new(RefCell::new(7_()));
+    let mut p: Ptr<()> = (storage.as_pointer());
+    let mut np: Ptr<()> = Ptr::<()>::null();
     if !(p).is_null() {
-        assert!(true);
+        unimplemented!();
     }
     if !(!(p).is_null()) {
-        assert!(false);
+        unimplemented!();
     }
     if !(np).is_null() {
-        assert!(false);
+        unimplemented!();
     }
     if !(!(np).is_null()) {
-        assert!(true);
+        unimplemented!();
     }
-    let mut iter: Ptr<i32> = (p).clone();
-    let mut iters: i32 = 0;
+    let mut iter: Ptr<()> = (p).clone();
+    let mut iters: () = unimplemented!();
     'loop_: while !(iter).is_null() {
         iters.prefix_inc();
-        iter = Ptr::<i32>::null();
+        iter = Ptr::<()>::null();
     }
-    assert!((iters == 1));
-    let mut t3: i32 = if !(p).is_null() { 1 } else { 0 };
-    assert!((t3 == 1));
-    let mut t4: i32 = if !(np).is_null() { 1 } else { 0 };
-    assert!((t4 == 0));
-    let mut t5: i32 = (!(!(p).is_null()) as i32);
-    assert!((t5 == 0));
-    let mut t6: i32 = (!(!(np).is_null()) as i32);
-    assert!((t6 == 1));
-    let mut b2: bool = !(p).is_null();
-    let mut b3: bool = !(np).is_null();
-    assert!(b2);
-    assert!(!(b3));
-    return 0;
+    unimplemented!();
+    let mut t3: () = if !(p).is_null() {
+        1_()
+    } else {
+        unimplemented!()
+    };
+    unimplemented!();
+    let mut t4: () = if !(np).is_null() {
+        1_()
+    } else {
+        unimplemented!()
+    };
+    unimplemented!();
+    let mut t5: () = !(!(p).is_null());
+    unimplemented!();
+    let mut t6: () = !(!(np).is_null());
+    unimplemented!();
+    let mut b2: () = !(p).is_null();
+    let mut b3: () = !(np).is_null();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

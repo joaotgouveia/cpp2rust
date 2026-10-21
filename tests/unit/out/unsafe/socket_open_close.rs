@@ -12,10 +12,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut s: i32 = libc::socket(libc::AF_INET, libc::SOCK_STREAM, 0);
-    assert!(((((s) >= (0)) as i32) != 0));
-    assert!(((((libc::close(s)) == (0)) as i32) != 0));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut s: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

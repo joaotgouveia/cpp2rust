@@ -10,97 +10,55 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v1: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = 1;
-        (*v1.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 2;
-        (*v1.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 3;
-        (*v1.borrow_mut()).push(__a1)
-    };
-    let mut sum: i32 = 0;
-    'loop_: for x in IterRange::new(
-        v1.as_pointer().decay().begin(),
-        v1.as_pointer().decay().end(),
-    ) {
-        let mut x: i32 = (x.iter_deref().read());
+fn main_0() -> () {
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut sum: () = unimplemented!();
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut x: () = (unimplemented!().read());
         sum += x.prefix_inc();
     }
-    'loop_: for x in IterRange::new(
-        v1.as_pointer().decay().begin(),
-        v1.as_pointer().decay().end(),
-    ) {
-        let mut x: i32 = (x.iter_deref().read());
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut x: () = (unimplemented!().read());
         sum += x;
     }
-    'loop_: for x in IterRange::new(
-        v1.as_pointer().decay().begin(),
-        v1.as_pointer().decay().end(),
-    ) {
-        let x: Ptr<i32> = x.iter_deref();
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let x: Ptr<()> = unimplemented!();
         {
-            x.with_mut(|__v| *__v = *__v + 10)
+            x.with_mut(|__v| *__v = *__v + 10_())
         };
     }
-    'loop_: for x in IterRange::new(
-        v1.as_pointer().decay().begin(),
-        v1.as_pointer().decay().end(),
-    ) {
-        let x: Ptr<i32> = x.iter_deref();
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let x: Ptr<()> = unimplemented!();
         sum += { (x.read()) };
     }
-    let v2: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = (v1.as_pointer().decay().offset(0_usize));
-        (*v2.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = (v1.as_pointer().decay().offset(1_usize));
-        (*v2.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = (v1.as_pointer().decay().offset(2_usize));
-        (*v2.borrow_mut()).push(__a1)
-    };
-    'loop_: for p in IterRange::new(
-        v2.as_pointer().decay().begin(),
-        v2.as_pointer().decay().end(),
-    ) {
-        let mut p: Ptr<i32> = (p.iter_deref().read());
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: Ptr<()> = (unimplemented!().read());
         {
-            p.with_mut(|__v| *__v = *__v + 5)
+            p.with_mut(|__v| *__v = *__v + 5_())
         };
     }
-    'loop_: for p in IterRange::new(
-        v2.as_pointer().decay().begin(),
-        v2.as_pointer().decay().end(),
-    ) {
-        let mut p: Ptr<i32> = (p.iter_deref().read());
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: Ptr<()> = (unimplemented!().read());
         sum += { (p.read()) };
     }
-    'loop_: for p in IterRange::new(
-        v2.as_pointer().decay().begin(),
-        v2.as_pointer().decay().end(),
-    ) {
-        let mut p: Ptr<i32> = (p.iter_deref().read());
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: Ptr<()> = (unimplemented!().read());
         {
-            p.with_mut(|__v| *__v = *__v + 5)
+            p.with_mut(|__v| *__v = *__v + 5_())
         };
     }
-    'loop_: for p in IterRange::new(
-        v2.as_pointer().decay().begin(),
-        v2.as_pointer().decay().end(),
-    ) {
-        let mut p: Ptr<i32> = (p.iter_deref().read());
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: Ptr<()> = (unimplemented!().read());
         sum += { (p.read()) };
     }
-    assert!((sum == 168));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

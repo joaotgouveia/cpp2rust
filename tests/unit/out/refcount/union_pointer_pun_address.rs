@@ -10,14 +10,14 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct node_a {
     #[offset(0)]
-    pub n: i32,
+    pub n: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct node_b {
     #[offset(0)]
     #[byte_size(8)]
-    pub data: AnyPtr,
+    pub data: (),
     #[offset(8)]
     #[byte_size(8)]
     pub next: Ptr<node_b>,
@@ -26,13 +26,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let a: Value<node_a> = Rc::new(RefCell::new(node_a { n: 123 }));
+fn main_0() -> () {
+    let a: Value<node_a> = Rc::new(RefCell::new(node_a { n: 123_() }));
     let ptr: Value<anon_0> = <Value<anon_0>>::default();
     anon_0::to_a(ptr.as_pointer()).write((a.as_pointer()));
     let mut out: Ptr<node_b> = (anon_0::to_b(ptr.as_pointer()).read());
-    assert!(((({ (out).to_any() } == { (a.as_pointer()).to_any() }) as i32) != 0));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]

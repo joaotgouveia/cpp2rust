@@ -9,11 +9,11 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
-    pub keep: i32,
-    pub a: i32,
-    pub b: i64,
-    pub c: [libc::c_char; 5],
-    pub last: i32,
+    pub keep: (),
+    pub a: (),
+    pub b: (),
+    pub c: [(); 5],
+    pub last: (),
 }
 pub fn main() {
     unsafe {
@@ -21,59 +21,40 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut p: *mut S = (libcc2rs::malloc_unsafe(::std::mem::size_of::<S>()) as *mut S);
-    assert!((((!((p).is_null())) as i32) != 0));
-    {
-        let byte_0 = (p as *mut ::libc::c_void) as *mut u8;
-        for offset in 0..::std::mem::size_of::<S>() {
-            *byte_0.offset(offset as isize) = 255 as u8;
-        }
-        (p as *mut ::libc::c_void)
-    };
-    (*p).keep = 7;
-    {
-        let byte_0 = ((&mut (*p).a as *mut i32) as *mut ::libc::c_void) as *mut u8;
-        for offset in 0..(::std::mem::size_of::<S>() as usize)
-            .wrapping_sub((::std::mem::offset_of!(S, a) as usize))
-        {
-            *byte_0.offset(offset as isize) = 0 as u8;
-        }
-        ((&mut (*p).a as *mut i32) as *mut ::libc::c_void)
-    };
-    assert!((((((*p).keep) == (7)) as i32) != 0));
-    assert!(
-        ((((((((((((((*p).a) == (0)) as i32) != 0) && (((((*p).b) == (0_i64)) as i32) != 0))
-            as i32)
-            != 0)
-            && (((((*p).c[(4) as usize] as i32) == (0)) as i32) != 0)) as i32)
-            != 0)
-            && (((((*p).last) == (0)) as i32) != 0)) as i32)
-            != 0)
-    );
-    (*p).a = 1;
-    (*p).b = 2_i64;
-    (*p).c[(0) as usize] = (('x' as i32) as libc::c_char);
-    (*p).last = 3;
-    {
-        let byte_0 = ((&mut (*p).b as *mut i64) as *mut ::libc::c_void) as *mut u8;
-        for offset in 0..(::std::mem::offset_of!(S, last) as usize)
-            .wrapping_sub((::std::mem::offset_of!(S, b) as usize))
-        {
-            *byte_0.offset(offset as isize) = 0 as u8;
-        }
-        ((&mut (*p).b as *mut i64) as *mut ::libc::c_void)
-    };
-    assert!(
-        ((((((((*p).keep) == (7)) as i32) != 0) && (((((*p).a) == (1)) as i32) != 0)) as i32) != 0)
-    );
-    assert!(
-        ((((((((*p).b) == (0_i64)) as i32) != 0)
-            && (((((*p).c[(0) as usize] as i32) == (0)) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!((((((*p).last) == (3)) as i32) != 0));
-    libcc2rs::free_unsafe((p as *mut ::libc::c_void));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut p: *mut S = (unimplemented!() as *mut S);
+    unimplemented!();
+    (unsafe {
+        let ___s: () = (p as ());
+        let ___n: () = ::std::mem::size_of::<S>();
+        memset_0(___s, 255_(), ___n)
+    });
+    (*p).keep = 7_();
+    (unsafe {
+        memset_0(
+            ((&mut (*p).a as *mut ()) as ()),
+            unimplemented!(),
+            (::std::mem::size_of::<S>() as ()).wrapping_sub((::std::mem::offset_of!(S, a) as ())),
+        )
+    });
+    unimplemented!();
+    unimplemented!();
+    (*p).a = 1_();
+    (*p).b = 2_();
+    (*p).c[(unimplemented!()) as usize] = ('x' as ());
+    (*p).last = 3_();
+    (unsafe {
+        memset_0(
+            ((&mut (*p).b as *mut ()) as ()),
+            unimplemented!(),
+            (::std::mem::offset_of!(S, last) as ())
+                .wrapping_sub((::std::mem::offset_of!(S, b) as ())),
+        )
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

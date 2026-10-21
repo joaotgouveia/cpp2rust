@@ -6,33 +6,33 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn call_with_ulong_0(mut g: FnPtr<fn(u64) -> u64>) -> u64 {
-    return ({ g.call(3_u64) }).wrapping_add(1_u64);
+pub fn call_with_ulong_0(mut g: FnPtr<fn(()) -> ()>) -> () {
+    return ({ g.call(3_()) }).wrapping_add(1_());
 }
-pub fn same_type_1(mut a: u64) -> u64 {
+pub fn same_type_1(mut a: ()) -> () {
     return a;
 }
-pub fn via_size_t_param_2(mut b: usize) -> u64 {
-    return (b as u64);
+pub fn via_size_t_param_2(mut b: ()) -> () {
+    return b;
 }
-pub fn via_size_t_return_3(mut b: u64) -> usize {
-    return (b as usize);
+pub fn via_size_t_return_3(mut b: ()) -> () {
+    return b;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct pair {
     #[offset(0)]
-    pub a: i32,
+    pub a: (),
     #[offset(4)]
-    pub b: i32,
+    pub b: (),
 }
-pub fn pair_scaled_4(mut p: pair, mut n: usize) -> u64 {
-    return (((p.a as usize).wrapping_mul(n)).wrapping_add((p.b as usize)) as u64);
+pub fn pair_scaled_4(mut p: pair, mut n: ()) -> () {
+    return ((p.a).wrapping_mul(n)).wrapping_add(p.b);
 }
-pub fn make_pair_5(mut n: usize) -> pair {
+pub fn make_pair_5(mut n: ()) -> pair {
     let mut p: pair = pair {
-        a: (n as i32),
-        b: ((n as i32) * 2),
+        a: (n as ()),
+        b: ((n as ()) * 2_()),
     };
     return p;
 }
@@ -40,41 +40,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!(
-        (((({ call_with_ulong_0(FnPtr::<fn(u64) -> u64>::new(same_type_1),) }) == 4_u64) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            call_with_ulong_0(
-                (FnPtr::<fn(usize) -> u64>::new(via_size_t_param_2)).cast::<fn(u64) -> u64>(),
-            )
-        }) == 4_u64) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            call_with_ulong_0(
-                FnPtr::<fn(u64) -> usize>::new(via_size_t_return_3).cast::<fn(u64) -> u64>(),
-            )
-        }) == 4_u64) as i32)
-            != 0)
-    );
-    let mut original: FnPtr<fn(usize) -> u64> = FnPtr::<fn(usize) -> u64>::new(via_size_t_param_2);
-    let mut adapted: FnPtr<fn(u64) -> u64> = original.cast::<fn(u64) -> u64>();
-    let mut back: FnPtr<fn(usize) -> u64> = adapted.cast::<fn(usize) -> u64>();
-    assert!(((({ (back).clone() } == { (original).clone() }) as i32) != 0));
-    assert!((((({ back.call(5_usize,) }) == 5_u64) as i32) != 0));
-    let mut scaled: FnPtr<fn(pair, u64) -> u64> =
-        FnPtr::<fn(pair, usize) -> u64>::new(pair_scaled_4).cast::<fn(pair, u64) -> u64>();
-    let mut p: pair = pair { a: 3, b: 4 };
-    assert!((((({ scaled.call((p).clone(), 10_u64,) }) == 34_u64) as i32) != 0));
-    let mut make: FnPtr<fn(u64) -> pair> =
-        FnPtr::<fn(usize) -> pair>::new(make_pair_5).cast::<fn(u64) -> pair>();
-    let mut q: pair = ({ make.call(5_u64) });
-    assert!((((q.a == 5) as i32) != 0));
-    assert!((((q.b == 10) as i32) != 0));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut original: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(via_size_t_param_2);
+    let mut adapted: FnPtr<fn(()) -> ()> = original.cast::<fn(()) -> ()>();
+    let mut back: FnPtr<fn(()) -> ()> = adapted.cast::<fn(()) -> ()>();
+    unimplemented!();
+    unimplemented!();
+    let mut scaled: FnPtr<fn(pair, ()) -> ()> =
+        FnPtr::<fn(pair, ()) -> ()>::new(pair_scaled_4).cast::<fn(pair, ()) -> ()>();
+    let mut p: pair = pair { a: 3_(), b: 4_() };
+    unimplemented!();
+    let mut make: FnPtr<fn(()) -> pair> =
+        FnPtr::<fn(()) -> pair>::new(make_pair_5).cast::<fn(()) -> pair>();
+    let mut q: pair = ({ make.call(5_()) });
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

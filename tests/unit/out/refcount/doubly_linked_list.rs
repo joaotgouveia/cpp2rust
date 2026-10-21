@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(24)]
 pub struct Node {
     #[offset(0)]
-    pub val: i32,
+    pub val: (),
     #[offset(8)]
     #[byte_size(8)]
     pub next: Ptr<Node>,
@@ -18,18 +18,18 @@ pub struct Node {
     #[byte_size(8)]
     pub prev: Ptr<Node>,
 }
-pub fn Find_0(mut head: Ptr<Node>, mut idx: i32) -> Ptr<Node> {
+pub fn Find_0(mut head: Ptr<Node>, mut idx: ()) -> Ptr<Node> {
     let mut curr: Ptr<Node> = (head).clone();
-    let mut i: i32 = 0;
+    let mut i: () = unimplemented!();
     'loop_: while (i < idx) {
         curr = { curr.with(|__s| __s.next.clone()) };
         i.postfix_inc();
     }
     return curr;
 }
-pub fn FindBack_1(mut tail: Ptr<Node>, mut idx: i32) -> Ptr<Node> {
+pub fn FindBack_1(mut tail: Ptr<Node>, mut idx: ()) -> Ptr<Node> {
     let mut curr: Ptr<Node> = (tail).clone();
-    let mut i: i32 = 0;
+    let mut i: () = unimplemented!();
     'loop_: while (i < idx) {
         curr = { curr.with(|__s| __s.prev.clone()) };
         i.postfix_inc();
@@ -47,7 +47,7 @@ pub fn Append_2(head: Ptr<Node>, new_node: Ptr<Node>) {
         NodeImpl::SetPrev(&new_node, _p)
     });
 }
-pub fn Delete_3(mut head: Ptr<Node>, mut val: i32) -> Ptr<Node> {
+pub fn Delete_3(mut head: Ptr<Node>, mut val: ()) -> Ptr<Node> {
     let mut curr: Ptr<Node> = (head).clone();
     'loop_: while !((curr).is_null()) {
         if ({ curr.with(|__s| __s.val) } == { val }) {
@@ -80,45 +80,45 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let n0: Value<Node> = Rc::new(RefCell::new(Node {
-        val: 5,
+        val: 5_(),
         next: Ptr::<Node>::null(),
         prev: Ptr::<Node>::null(),
     }));
     let mut head: Ptr<Node> = (n0.as_pointer());
     let n1: Value<Node> = Rc::new(RefCell::new(Node {
-        val: 4,
+        val: 4_(),
         next: Ptr::<Node>::null(),
         prev: Ptr::<Node>::null(),
     }));
     let n2: Value<Node> = Rc::new(RefCell::new(Node {
-        val: 3,
+        val: 3_(),
         next: Ptr::<Node>::null(),
         prev: Ptr::<Node>::null(),
     }));
     let n3: Value<Node> = Rc::new(RefCell::new(Node {
-        val: 2,
+        val: 2_(),
         next: Ptr::<Node>::null(),
         prev: Ptr::<Node>::null(),
     }));
     let n4: Value<Node> = Rc::new(RefCell::new(Node {
-        val: 1,
+        val: 1_(),
         next: Ptr::<Node>::null(),
         prev: Ptr::<Node>::null(),
     }));
     let n5: Value<Node> = Rc::new(RefCell::new(Node {
-        val: 0,
+        val: unimplemented!(),
         next: Ptr::<Node>::null(),
         prev: Ptr::<Node>::null(),
     }));
     let n6: Value<Node> = Rc::new(RefCell::new(Node {
-        val: -1_i32,
+        val: -1_(),
         next: Ptr::<Node>::null(),
         prev: Ptr::<Node>::null(),
     }));
     let n7: Value<Node> = Rc::new(RefCell::new(Node {
-        val: -2_i32,
+        val: -2_(),
         next: Ptr::<Node>::null(),
         prev: Ptr::<Node>::null(),
     }));
@@ -157,90 +157,54 @@ fn main_0() -> i32 {
         let _new_node: Ptr<Node> = n7.as_pointer();
         Append_2(_head, _new_node)
     });
-    let __rhs = ({ Delete_3((head).clone(), 5) });
+    let __rhs = ({ Delete_3((head).clone(), 5_()) });
     head = __rhs;
-    let __rhs = ({ Delete_3((head).clone(), 0) });
+    let __rhs = ({ Delete_3((head).clone(), unimplemented!()) });
     head = __rhs;
-    let __rhs = ({ Delete_3((head).clone(), -2_i32) });
+    let __rhs = ({ Delete_3((head).clone(), -2_()) });
     head = __rhs;
     let mut tail: Ptr<Node> = ({ Tail_4((head).clone()) });
-    assert!((({ Find_0((head).clone(), 0,) }).with(|__s| __s.val) == 4));
-    assert!((({ Find_0((head).clone(), 1,) }).with(|__s| __s.val) == 3));
-    assert!((({ Find_0((head).clone(), 2,) }).with(|__s| __s.val) == 2));
-    assert!((({ Find_0((head).clone(), 3,) }).with(|__s| __s.val) == 1));
-    assert!((({ Find_0((head).clone(), 4,) }).with(|__s| __s.val) == -1_i32));
-    assert!(({ Find_0((head).clone(), 5,) }).is_null());
-    assert!((({ FindBack_1((tail).clone(), 0,) }).with(|__s| __s.val) == -1_i32));
-    assert!((({ FindBack_1((tail).clone(), 1,) }).with(|__s| __s.val) == 1));
-    assert!((({ FindBack_1((tail).clone(), 2,) }).with(|__s| __s.val) == 2));
-    assert!((({ FindBack_1((tail).clone(), 3,) }).with(|__s| __s.val) == 3));
-    assert!((({ FindBack_1((tail).clone(), 4,) }).with(|__s| __s.val) == 4));
-    assert!((({ FindBack_1((tail).clone(), 4,) }).with(|__s| __s.prev.clone())).is_null());
-    assert!(
-        (({ Find_0((head).clone(), 0,) })
-            .with(|__s| __s.next.clone())
-            .with(|__s| __s.val)
-            == 3)
-    );
-    assert!(
-        (({ Find_0((head).clone(), 1,) })
-            .with(|__s| __s.next.clone())
-            .with(|__s| __s.next.clone())
-            .with(|__s| __s.val)
-            == 1)
-    );
-    assert!(
-        (({ Find_0((head).clone(), 2,) })
-            .with(|__s| __s.prev.clone())
-            .with(|__s| __s.val)
-            == 3)
-    );
-    assert!((({ Find_0((head).clone(), 4,) }).with(|__s| __s.next.clone())).is_null());
-    assert!(
-        (({ FindBack_1((tail).clone(), 1,) })
-            .with(|__s| __s.prev.clone())
-            .with(|__s| __s.prev.clone())
-            .with(|__s| __s.val)
-            == 3)
-    );
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     field!(
-        ({ Find_0((head).clone(), 0,) }).with(|__s| __s.next.clone()),
+        ({ Find_0((head).clone(), unimplemented!(),) }).with(|__s| __s.next.clone()),
         val
     )
-    .write(30);
-    assert!((({ Find_0((head).clone(), 1,) }).with(|__s| __s.val) == 30));
-    let __rhs = (({ Find_0((head).clone(), 0) }).with(|__s| __s.val)
-        + ({ Find_0((head).clone(), 3) }).with(|__s| __s.val));
+    .write(30_());
+    unimplemented!();
+    let __rhs = (({ Find_0((head).clone(), unimplemented!()) }).with(|__s| __s.val)
+        + ({ Find_0((head).clone(), 3_()) }).with(|__s| __s.val));
     field!(
-        ({ Find_0((head).clone(), 1,) }).with(|__s| __s.next.clone()),
+        ({ Find_0((head).clone(), 1_(),) }).with(|__s| __s.next.clone()),
         val
     )
     .write(__rhs);
-    assert!((({ Find_0((head).clone(), 2,) }).with(|__s| __s.val) == (4 + 1)));
-    let mut sum: i32 = ((((({ Find_0((head).clone(), 0) }).with(|__s| __s.val)
-        + ({ Find_0((head).clone(), 1) }).with(|__s| __s.val))
-        + ({ Find_0((head).clone(), 2) }).with(|__s| __s.val))
-        + ({ Find_0((head).clone(), 3) }).with(|__s| __s.val))
-        + ({ Find_0((head).clone(), 4) }).with(|__s| __s.val));
-    assert!((sum == ((((4 + 30) + 5) + 1) + -1_i32)));
-    assert!(
-        (({ ({ Find_0((head).clone(), 0,) }).with(|__s| __s.val) } + {
-            ({ FindBack_1((tail).clone(), 0) }).with(|__s| __s.val)
-        }) == (4 + -1_i32))
-    );
-    assert!(
-        ({
-            ({ Find_0((head).clone(), 2) })
-                .with(|__s| __s.next.clone())
-                .with(|__s| __s.val)
-        } == { ({ FindBack_1((tail).clone(), 1,) }).with(|__s| __s.val) })
-    );
-    assert!(
-        ({ ({ Find_0((head).clone(), 0,) }).with(|__s| __s.prev.clone()) } == {
-            ({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.prev.clone())
-        })
-    );
-    return 0;
+    unimplemented!();
+    let mut sum: () = ((((({ Find_0((head).clone(), unimplemented!()) }).with(|__s| __s.val)
+        + ({ Find_0((head).clone(), 1_()) }).with(|__s| __s.val))
+        + ({ Find_0((head).clone(), 2_()) }).with(|__s| __s.val))
+        + ({ Find_0((head).clone(), 3_()) }).with(|__s| __s.val))
+        + ({ Find_0((head).clone(), 4_()) }).with(|__s| __s.val));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub trait NodeImpl {
     fn SetNext(&self, n: Ptr<Node>);

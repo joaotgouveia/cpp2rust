@@ -10,20 +10,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut N: i32 = 10000;
-    let mut arr: Ptr<u32> =
-        Ptr::alloc_array((0..(N as usize)).map(|_| 0_u32).collect::<Box<[u32]>>());
-    let mut i: i32 = 0;
+fn main_0() -> () {
+    let mut N: () = 10000_();
+    let mut arr: Ptr<()> =
+        Ptr::alloc_array((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>());
+    let mut i: () = unimplemented!();
     'loop_: while (i < N) {
-        elem!(arr, i).write(0_u32);
+        elem!(arr, i).write(unimplemented!());
         i.postfix_inc();
     }
-    elem!(arr, (N - 1)).write(3148519816_u32);
-    let mut words: Ptr<u16> = arr.reinterpret_cast::<u16>();
-    assert!((((elem!(words, ((N * 2) - 1)).read()) as i32) == 48042));
-    assert!((((elem!(words, ((N * 2) - 2)).read()) as i32) == 39304));
+    elem!(arr, (N - 1_())).write(3148519816_());
+    let mut words: Ptr<()> = arr.reinterpret_cast::<()>();
+    unimplemented!();
+    unimplemented!();
     arr.delete();
-    return 0;
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

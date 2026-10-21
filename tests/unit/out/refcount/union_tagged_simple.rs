@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type Kind_enum = u32;
+pub type Kind_enum = ();
 pub const Kind_enum_KIND_NONE: Kind_enum = 0;
 pub const Kind_enum_KIND_DONE: Kind_enum = 1;
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
@@ -17,10 +17,10 @@ pub struct anon_0 {
     __bytes: Box<[u8]>,
 }
 impl anon_0 {
-    pub fn obj(this: Ptr<Self>) -> Ptr<AnyPtr> {
+    pub fn obj(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
-    pub fn code(this: Ptr<Self>) -> Ptr<i32> {
+    pub fn code(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
 }
@@ -38,7 +38,7 @@ pub struct Event {
     pub kind: Kind_enum,
     #[offset(8)]
     #[byte_size(8)]
-    pub handle: AnyPtr,
+    pub handle: (),
     #[offset(16)]
     #[byte_size(8)]
     pub payload: anon_0,
@@ -47,27 +47,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let dummy: Value<i32> = Rc::new(RefCell::new(0));
+fn main_0() -> () {
+    let dummy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m1: Value<Event> = <Value<Event>>::default();
     (*m1.borrow_mut()).kind = Kind_enum_KIND_DONE;
-    (*m1.borrow_mut()).handle = ((dummy.as_pointer()) as Ptr<i32>).to_any();
-    anon_0::code(field_ptr!(m1.as_pointer(), payload)).write(42);
-    assert!(
-        (((({ (*m1.borrow()).kind } as u32) == ((Kind_enum_KIND_DONE as i32) as u32)) as i32) != 0)
-    );
-    assert!(((((anon_0::code(field_ptr!(m1.as_pointer(), payload)).read()) == 42) as i32) != 0));
+    (*m1.borrow_mut()).handle = ((dummy.as_pointer()) as Ptr<()>).to_any();
+    anon_0::code(field_ptr!(m1.as_pointer(), payload)).write(42_());
+    unimplemented!();
+    unimplemented!();
     let m2: Value<Event> = <Value<Event>>::default();
     (*m2.borrow_mut()).kind = Kind_enum_KIND_NONE;
-    (*m2.borrow_mut()).handle = ((dummy.as_pointer()) as Ptr<i32>).to_any();
+    (*m2.borrow_mut()).handle = ((dummy.as_pointer()) as Ptr<()>).to_any();
     anon_0::obj(field_ptr!(m2.as_pointer(), payload))
-        .write(((dummy.as_pointer()) as Ptr<i32>).to_any());
-    assert!(
-        ((({ (anon_0::obj(field_ptr!(m2.as_pointer(), payload)).read()) } == {
-            ((dummy.as_pointer()) as Ptr<i32>).to_any()
-        }) as i32)
-            != 0)
-    );
-    return 0;
+        .write(((dummy.as_pointer()) as Ptr<()>).to_any());
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

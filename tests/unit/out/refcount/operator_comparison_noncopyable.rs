@@ -6,20 +6,20 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(x: Ptr<S>, y: Ptr<S>) -> bool {
+pub fn operator_eq_0(x: Ptr<S>, y: Ptr<S>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_1(x: Ptr<S>, y: Ptr<S>) -> bool {
+pub fn operator_lt_1(x: Ptr<S>, y: Ptr<S>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
-    data_: i32,
+    data_: (),
 }
 impl S {
-    pub fn new(mut data: i32) -> Self {
+    pub fn new(mut data: ()) -> Self {
         Self { data_: data }
     }
     pub fn move_from(_a0: Ptr<S>) -> Self {
@@ -85,28 +85,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let a: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-    let b: Value<S> = Rc::new(RefCell::new(S::new({ 2 })));
-    let c: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-    assert!(
-        ({
-            let _x: Ptr<S> = a.as_pointer();
-            operator_eq_0(_x, c.as_pointer())
-        })
-    );
-    assert!(
-        ({
-            let _x: Ptr<S> = a.as_pointer();
-            operator_lt_1(_x, b.as_pointer())
-        })
-    );
-    assert!(
-        !({
-            let _x: Ptr<S> = b.as_pointer();
-            operator_lt_1(_x, a.as_pointer())
-        })
-    );
-    return 0;
+fn main_0() -> () {
+    let a: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+    let b: Value<S> = Rc::new(RefCell::new(S::new({ 2_() })));
+    let c: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

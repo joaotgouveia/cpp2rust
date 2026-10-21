@@ -10,36 +10,36 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct Item {
     #[offset(0)]
-    pub value: i32,
+    pub value: (),
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let mut arr: Ptr<Item> = Ptr::alloc_array(
-        (0..2_usize)
+        (0..2_())
             .map(|_| <Item>::default())
             .collect::<Box<[Item]>>(),
     );
-    field!(elem!(arr, 0), value).write(1);
-    field!(elem!(arr, 1), value).write(2);
+    field!(elem!(arr, unimplemented!()), value).write(1_());
+    field!(elem!(arr, 1_()), value).write(2_());
     ({
-        let _other: Ptr<Item> = (arr.offset((1) as isize));
-        ItemImpl::foo(&arr.offset((0) as isize), _other)
+        let _other: Ptr<Item> = (arr.offset((1_()) as isize));
+        ItemImpl::foo(&arr.offset((unimplemented!()) as isize), _other)
     });
-    let mut result: i32 =
-        (elem!(arr, 0).with(|__s| __s.value) + elem!(arr, 1).with(|__s| __s.value));
+    let mut result: () = (elem!(arr, unimplemented!()).with(|__s| __s.value)
+        + elem!(arr, 1_()).with(|__s| __s.value));
     arr.delete();
-    assert!((result == 11));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub trait ItemImpl {
     fn foo(&self, other: Ptr<Item>);
 }
 impl ItemImpl for Ptr<Item> {
     fn foo(&self, mut other: Ptr<Item>) {
-        field!(other, value).write(10);
+        field!(other, value).write(10_());
     }
 }
 pub fn __cpp2rust_init_globals() {}

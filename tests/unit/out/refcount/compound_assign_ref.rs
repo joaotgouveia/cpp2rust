@@ -10,16 +10,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+fn main_0() -> () {
+    let mut v: () = unimplemented!();
+    unimplemented!();
     {
-        let __a1 = 10;
-        (*v.borrow_mut()).push(__a1)
+        unimplemented!().with_mut(|__v| *__v = *__v + 5_())
     };
-    {
-        v.as_pointer().decay().with_mut(|__v| *__v = *__v + 5)
-    };
-    assert!(((v.as_pointer().decay().read()) == 15));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

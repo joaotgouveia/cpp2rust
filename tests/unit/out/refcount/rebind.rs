@@ -10,13 +10,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let x: Value<i32> = Rc::new(RefCell::new(1));
-    let r: Ptr<i32> = x.as_pointer();
-    let mut y: i32 = 10;
+fn main_0() -> () {
+    let x: Value<()> = Rc::new(RefCell::new(1_()));
+    let r: Ptr<()> = x.as_pointer();
+    let mut y: () = 10_();
     r.write({ y });
-    y += 1;
-    assert!(((*x.borrow()) == 10));
-    return 0;
+    y += 1_();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

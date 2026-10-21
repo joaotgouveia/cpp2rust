@@ -6,83 +6,45 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn fn_0(v: Ptr<Vec<i32>>, v3: Vec<i32>) {
-    let v3: Value<Vec<i32>> = Rc::new(RefCell::new(v3));
-    {
-        let __a1 = 20;
-        v.with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
-    };
-    let mut x: i32 = 0_i32;
-    let v2: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    let mut v4: Ptr<Vec<i32>> = (v3.as_pointer());
-    {
-        let __a1 = 0;
-        (*v2.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 1;
-        (*v2.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 3;
-        (*v2.borrow_mut()).push(__a1)
-    };
-    x = (index!(v, 2_usize).read());
-    (*v2.borrow_mut())[0_usize] = 1;
-    elem!(
-        (if true {
-            (Ptr::<Vec<i32>>::decay(&(v3.as_pointer())))
-        } else {
-            (Ptr::<Vec<i32>>::decay(&(v)))
-        }),
-        0_usize
-    )
-    .write(7);
-    v2.as_pointer().write((*v.upgrade().deref()).clone());
-    index!(v4, 1_usize).write(13);
-    assert!((x == 6));
-    assert!(((v.decay().read()) == 4));
-    assert!(((index!(v, 1_usize).read()) == 5));
-    assert!(((index!(v, 2_usize).read()) == 6));
-    assert!(((v.decay().to_last().read()) == 20));
-    assert!(({ (*v2.borrow())[0_usize] } == 4));
-    assert!(({ (*v2.borrow())[1_usize] } == 5));
-    assert!(({ (*v2.borrow())[2_usize] } == 6));
-    assert!(({ (*v3.borrow())[0_usize] } == 7));
-    assert!(({ (*v3.borrow())[1_usize] } == 13));
-    {
-        let __a1 = 20;
-        v.with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
-    };
+pub fn fn_0(v: Ptr<()>, v3: ()) {
+    let v3: Value<()> = Rc::new(RefCell::new(v3));
+    unimplemented!();
+    let mut x: () = unimplemented!();
+    let mut v2: () = unimplemented!();
+    let mut v4: Ptr<()> = (v3.as_pointer());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    x = (unimplemented!().read());
+    unimplemented!().write(1_());
+    unimplemented!().write(7_());
+    unimplemented!();
+    unimplemented!().write(13_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    let mut v2: Vec<i32> = Vec::new();
-    {
-        let __a1 = 4;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 5;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 6;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 8;
-        v2.push(__a1)
-    };
-    {
-        let __a1 = 9;
-        v2.push(__a1)
-    };
-    ({ fn_0(v.as_pointer(), v2.clone()) });
-    return 0;
+fn main_0() -> () {
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    ({ fn_0(v.as_pointer(), unimplemented!()) });
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

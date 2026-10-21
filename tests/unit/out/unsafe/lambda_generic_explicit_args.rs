@@ -9,9 +9,9 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Val {
-    pub x: i32,
+    pub x: (),
 }
-pub unsafe fn sum_0(mut a: Val, mut b: Val) -> i32 {
+pub unsafe fn sum_0(mut a: Val, mut b: Val) -> () {
     return ((a.x) + (b.x));
 }
 pub fn main() {
@@ -20,38 +20,36 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut total: i32 = 0;
+unsafe fn main_0() -> () {
+    let mut total: () = unimplemented!();
     let mut tally: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let total: *mut i32 = &mut total;
+            let total: *mut () = &mut total;
         },
         || {
-            (*total) = (((*total) as usize).wrapping_add(
-                ((::std::mem::size_of::<libc::c_char>() as usize)
-                    .wrapping_add((::std::mem::size_of::<libc::c_char>() as usize))
-                    as usize),
-            )) as i32;
+            (*total) = (*total).wrapping_add(
+                ((::std::mem::size_of::<()>() as ())
+                    .wrapping_add((::std::mem::size_of::<()>() as ())) as ()),
+            );
         },
         || {
-            (*total) = (((*total) as usize).wrapping_add(
-                ((::std::mem::size_of::<i32>() as usize)
-                    .wrapping_add((::std::mem::size_of::<libc::c_char>() as usize))
-                    as usize),
-            )) as i32;
+            (*total) = (*total).wrapping_add(
+                ((::std::mem::size_of::<()>() as ())
+                    .wrapping_add((::std::mem::size_of::<()>() as ())) as ()),
+            );
         }
     );
     (unsafe { tally.spec::<fn()>(0).call() });
     (unsafe { tally.spec::<fn()>(1).call() });
-    assert!(((total) == (7)));
-    let mut v: Val = Val { x: 5 };
-    let mut acc: i32 = 0;
+    unimplemented!();
+    let mut v: Val = Val { x: 5_() };
+    let mut acc: () = unimplemented!();
     let mut pick: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
             let v: *mut Val = &mut v;
-            let acc: *mut i32 = &mut acc;
+            let acc: *mut () = &mut acc;
         },
         || {
             (*acc) += (unsafe {
@@ -78,19 +76,19 @@ unsafe fn main_0() -> i32 {
     (unsafe { pick.spec::<fn()>(0).call() });
     (unsafe { pick.spec::<fn()>(1).call() });
     (unsafe { pick.spec::<fn()>(2).call() });
-    assert!(((acc) == (30)));
+    unimplemented!();
     let mut cast_to: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
-        |mut x: i32| -> i32 {
-            return ((x as i32) / (2));
+        |mut x: ()| -> () {
+            return ((x as ()) / (2_()));
         },
-        |mut x: i32| -> f64 {
-            return ((x as f64) / (2_f64));
+        |mut x: ()| -> () {
+            return ((x) / (2_()));
         }
     );
-    assert!(((unsafe { cast_to.spec::<fn(i32) -> i32>(0).call(5,) }) == (2)));
-    assert!(((unsafe { cast_to.spec::<fn(i32) -> f64>(1).call(5,) }) == (2.5_f64)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

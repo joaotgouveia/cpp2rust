@@ -7,106 +7,54 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_s6_addr_access_0() {
-    let loopback: [u8; 16] = [
-        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
-        1_u8,
+    let loopback: [(); 16] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        1_(),
     ];
-    let mut addr: ::libc::in6_addr = unsafe { std::mem::zeroed() };
-    let mut ap: *mut ::libc::in6_addr = (&mut addr as *mut ::libc::in6_addr);
-    {
-        if 16_usize != 0 {
-            ::std::ptr::copy_nonoverlapping(
-                (loopback.as_ptr() as *const ::libc::c_void),
-                ((*(&mut addr as *mut ::libc::in6_addr)).s6_addr.as_mut_ptr()
-                    as *mut ::libc::c_void),
-                16_usize as usize,
-            )
-        }
-        ((*(&mut addr as *mut ::libc::in6_addr)).s6_addr.as_mut_ptr() as *mut ::libc::c_void)
-    };
-    assert!(
-        (((({
-            let sa = core::slice::from_raw_parts(
-                ((*(ap as *mut ::libc::in6_addr)).s6_addr.as_mut_ptr() as *const ::libc::c_void)
-                    as *const u8,
-                16_usize as usize,
-            );
-            let sb = core::slice::from_raw_parts(
-                (loopback.as_ptr() as *const ::libc::c_void) as *const u8,
-                16_usize as usize,
-            );
-            let mut diff = 0_i32;
-            for (x, y) in sa.iter().zip(sb.iter()) {
-                if x != y {
-                    diff = (*x as i32) - (*y as i32);
-                    break;
-                }
-            }
-            diff
-        }) == (0)) as i32)
-            != 0)
-    );
-    (*(&mut addr as *mut ::libc::in6_addr)).s6_addr[(0) as usize] = 32_u8;
-    (*(ap as *mut ::libc::in6_addr)).s6_addr[(1) as usize] = 1_u8;
-    assert!(
-        ((((((((*(&mut addr as *mut ::libc::in6_addr)).s6_addr[(0) as usize] as i32) == (32))
-            as i32)
-            != 0)
-            && (((((*(ap as *mut ::libc::in6_addr)).s6_addr[(1) as usize] as i32) == (1)) as i32)
-                != 0)) as i32)
-            != 0)
-    );
-    (*(&mut addr as *mut ::libc::in6_addr)).s6_addr[(15) as usize] =
-        (((*(&mut addr as *mut ::libc::in6_addr)).s6_addr[(15) as usize] as i32) + 4) as u8;
-    (*(ap as *mut ::libc::in6_addr)).s6_addr[(15) as usize].postfix_inc();
-    assert!(
-        (((((*(&mut addr as *mut ::libc::in6_addr)).s6_addr[(15) as usize] as i32) == (6)) as i32)
-            != 0)
-    );
-    let mut bytes: *mut u8 = (*(&mut addr as *mut ::libc::in6_addr)).s6_addr.as_mut_ptr();
-    (*bytes.offset((2) as isize)) = 7_u8;
-    assert!(
-        (((((*(ap as *mut ::libc::in6_addr)).s6_addr[(2) as usize] as i32) == (7)) as i32) != 0)
-    );
-    let mut fourth: *mut u8 =
-        (&mut (*(ap as *mut ::libc::in6_addr)).s6_addr[(3) as usize] as *mut u8);
-    (*fourth) = 8_u8;
-    assert!(
-        (((((*(&mut addr as *mut ::libc::in6_addr)).s6_addr[(3) as usize] as i32) == (8)) as i32)
-            != 0)
-    );
-    {
-        if 16_usize != 0 {
-            ::std::ptr::copy_nonoverlapping(
-                (loopback.as_ptr() as *const ::libc::c_void),
-                ((*(ap as *mut ::libc::in6_addr)).s6_addr.as_mut_ptr() as *mut ::libc::c_void),
-                16_usize as usize,
-            )
-        }
-        ((*(ap as *mut ::libc::in6_addr)).s6_addr.as_mut_ptr() as *mut ::libc::c_void)
-    };
-    assert!(
-        (((({
-            let sa = core::slice::from_raw_parts(
-                ((*(&mut addr as *mut ::libc::in6_addr)).s6_addr.as_mut_ptr()
-                    as *const ::libc::c_void) as *const u8,
-                16_usize as usize,
-            );
-            let sb = core::slice::from_raw_parts(
-                (loopback.as_ptr() as *const ::libc::c_void) as *const u8,
-                16_usize as usize,
-            );
-            let mut diff = 0_i32;
-            for (x, y) in sa.iter().zip(sb.iter()) {
-                if x != y {
-                    diff = (*x as i32) - (*y as i32);
-                    break;
-                }
-            }
-            diff
-        }) == (0)) as i32)
-            != 0)
-    );
+    let mut addr: () = unimplemented!();
+    let mut ap: *mut () = (&mut addr as *mut ());
+    (unsafe {
+        memcpy_1(
+            (unimplemented!().as_mut_ptr() as ()),
+            (loopback.as_ptr() as ()),
+            16_(),
+        )
+    });
+    unimplemented!();
+    unimplemented!()[(unimplemented!()) as usize] = 32_();
+    unimplemented!()[(1_()) as usize] = 1_();
+    unimplemented!();
+    unimplemented!()[(15_()) as usize] += 4_();
+    unimplemented!()[(15_()) as usize].postfix_inc();
+    unimplemented!();
+    let mut bytes: *mut () = unimplemented!().as_mut_ptr();
+    (*bytes.offset((2_()) as isize)) = 7_();
+    unimplemented!();
+    let mut fourth: *mut () = (&mut unimplemented!()[(3_()) as usize] as *mut ());
+    (*fourth) = 8_();
+    unimplemented!();
+    (unsafe {
+        memcpy_1(
+            (unimplemented!().as_mut_ptr() as ()),
+            (loopback.as_ptr() as ()),
+            16_(),
+        )
+    });
+    unimplemented!();
 }
 pub fn main() {
     unsafe {
@@ -114,166 +62,41 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     (unsafe { test_s6_addr_access_0() });
-    let mut buf: [u8; 16] = [0_u8; 16];
-    assert!(
-        (((({
-            unsafe extern "C" {
-                fn inet_pton(af: i32, src: *const libc::c_char, dst: *mut ::libc::c_void) -> i32;
-            }
-            inet_pton(
-                libc::AF_INET,
-                (c"1.2.3.4".as_ptr().cast_mut()).cast_const(),
-                (buf.as_mut_ptr() as *mut ::libc::c_void),
-            )
-        }) == (1)) as i32)
-            != 0)
-    );
-    assert!(
-        (((((((((((((buf[(0) as usize] as i32) == (1)) as i32) != 0)
-            && ((((buf[(1) as usize] as i32) == (2)) as i32) != 0)) as i32)
-            != 0)
-            && ((((buf[(2) as usize] as i32) == (3)) as i32) != 0)) as i32)
-            != 0)
-            && ((((buf[(3) as usize] as i32) == (4)) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            unsafe extern "C" {
-                fn inet_pton(af: i32, src: *const libc::c_char, dst: *mut ::libc::c_void) -> i32;
-            }
-            inet_pton(
-                libc::AF_INET,
-                (c"999.1.1.1".as_ptr().cast_mut()).cast_const(),
-                (buf.as_mut_ptr() as *mut ::libc::c_void),
-            )
-        }) == (0)) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            unsafe extern "C" {
-                fn inet_pton(af: i32, src: *const libc::c_char, dst: *mut ::libc::c_void) -> i32;
-            }
-            inet_pton(
-                libc::AF_INET,
-                (c"not an ip".as_ptr().cast_mut()).cast_const(),
-                (buf.as_mut_ptr() as *mut ::libc::c_void),
-            )
-        }) == (0)) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            unsafe extern "C" {
-                fn inet_pton(af: i32, src: *const libc::c_char, dst: *mut ::libc::c_void) -> i32;
-            }
-            inet_pton(
-                libc::AF_INET6,
-                (c"::1".as_ptr().cast_mut()).cast_const(),
-                (buf.as_mut_ptr() as *mut ::libc::c_void),
-            )
-        }) == (1)) as i32)
-            != 0)
-    );
-    assert!(
-        (((((((buf[(0) as usize] as i32) == (0)) as i32) != 0)
-            && ((((buf[(15) as usize] as i32) == (1)) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            unsafe extern "C" {
-                fn inet_pton(af: i32, src: *const libc::c_char, dst: *mut ::libc::c_void) -> i32;
-            }
-            inet_pton(
-                libc::AF_INET6,
-                (c"2001:db8::5".as_ptr().cast_mut()).cast_const(),
-                (buf.as_mut_ptr() as *mut ::libc::c_void),
-            )
-        }) == (1)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((((((((buf[(0) as usize] as i32) == (32)) as i32) != 0)
-            && ((((buf[(1) as usize] as i32) == (1)) as i32) != 0)) as i32)
-            != 0)
-            && ((((buf[(15) as usize] as i32) == (5)) as i32) != 0)) as i32)
-            != 0)
-    );
-    let mut text: [libc::c_char; 64] = [(0 as libc::c_char); 64];
-    let mut four: [u8; 4] = [10_u8, 0_u8, 0_u8, 1_u8];
-    assert!(
-        ((((libc::strcmp(
-            {
-                unsafe extern "C" {
-                    fn inet_ntop(
-                        af: i32,
-                        src: *const ::libc::c_void,
-                        dst: *mut libc::c_char,
-                        size: u32,
-                    ) -> *const libc::c_char;
-                }
-                inet_ntop(
-                    libc::AF_INET,
-                    (four.as_mut_ptr() as *const ::libc::c_void),
-                    text.as_mut_ptr(),
-                    (::std::mem::size_of::<[libc::c_char; 64]>() as libc::socklen_t),
-                )
-            },
-            (c"10.0.0.1".as_ptr().cast_mut()).cast_const()
-        )) == (0)) as i32)
-            != 0)
-    );
-    let mut sixteen: [u8; 16] = [
-        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
-        0_u8,
+    let mut buf: [(); 16] = [unimplemented!(); 16];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut text: [(); 64] = [unimplemented!(); 64];
+    let mut four: [(); 4] = [10_(), unimplemented!(), unimplemented!(), 1_()];
+    unimplemented!();
+    let mut sixteen: [(); 16] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ];
-    sixteen[(15) as usize] = 1_u8;
-    assert!(
-        ((((libc::strcmp(
-            {
-                unsafe extern "C" {
-                    fn inet_ntop(
-                        af: i32,
-                        src: *const ::libc::c_void,
-                        dst: *mut libc::c_char,
-                        size: u32,
-                    ) -> *const libc::c_char;
-                }
-                inet_ntop(
-                    libc::AF_INET6,
-                    (sixteen.as_mut_ptr() as *const ::libc::c_void),
-                    text.as_mut_ptr(),
-                    (::std::mem::size_of::<[libc::c_char; 64]>() as libc::socklen_t),
-                )
-            },
-            (c"::1".as_ptr().cast_mut()).cast_const()
-        )) == (0)) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            unsafe extern "C" {
-                fn inet_ntop(
-                    af: i32,
-                    src: *const ::libc::c_void,
-                    dst: *mut libc::c_char,
-                    size: u32,
-                ) -> *const libc::c_char;
-            }
-            inet_ntop(
-                libc::AF_INET,
-                (four.as_mut_ptr() as *const ::libc::c_void),
-                text.as_mut_ptr(),
-                (4 as libc::socklen_t),
-            )
-        })
-        .is_null()) as i32)
-            != 0)
-    );
-    return 0;
+    sixteen[(15_()) as usize] = 1_();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

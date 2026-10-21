@@ -12,12 +12,12 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v: Vec<i32> = Vec::from([1, 2]);
-    let mut p: UnsafeRandomAccessIterator<i32> = v.begin();
-    let r: *const i32 = &v[(1_usize)];
-    (*p.iter_deref()) = (*r);
-    assert!(((v[(0_usize)]) == (2)));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut v: () = unimplemented!();
+    let mut p: () = unimplemented!();
+    let r: *const () = &(*unimplemented!());
+    (*unimplemented!()) = (*r);
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

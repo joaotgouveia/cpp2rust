@@ -6,18 +6,18 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn double_it_0(mut x: i32) -> i32 {
-    return ((x) * (2));
+pub unsafe fn double_it_0(mut x: ()) -> () {
+    return ((x) * (2_()));
 }
-pub unsafe fn triple_it_1(mut x: i32) -> i32 {
-    return ((x) * (3));
+pub unsafe fn triple_it_1(mut x: ()) -> () {
+    return ((x) * (3_()));
 }
-pub static mut g_op_2: std::cell::LazyCell<Option<unsafe fn(i32) -> i32>> =
+pub static mut g_op_2: std::cell::LazyCell<Option<unsafe fn(()) -> ()>> =
     std::cell::LazyCell::new(|| unsafe { None });
-pub unsafe fn set_op_3(mut fn_: Option<unsafe fn(i32) -> i32>) {
+pub unsafe fn set_op_3(mut fn_: Option<unsafe fn(()) -> ()>) {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)) = fn_;
 }
-pub unsafe fn call_op_4(mut x: i32) -> i32 {
+pub unsafe fn call_op_4(mut x: ()) -> () {
     if !(*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)).is_none() {
         return (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)).unwrap()(x) });
     }
@@ -29,19 +29,19 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((unsafe { call_op_4(5,) }) == (5)));
+unsafe fn main_0() -> () {
+    unimplemented!();
     (unsafe { set_op_3(Some(double_it_0)) });
-    assert!(!((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)).is_none()));
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)) == (Some(double_it_0))));
-    assert!(((unsafe { call_op_4(5,) }) == (10)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     (unsafe { set_op_3(Some(triple_it_1)) });
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)) == (Some(triple_it_1))));
-    assert!(((unsafe { call_op_4(5,) }) == (15)));
+    unimplemented!();
+    unimplemented!();
     (unsafe { set_op_3(None) });
-    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut g_op_2)).is_none());
-    assert!(((unsafe { call_op_4(5,) }) == (5)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const g_op_2);

@@ -10,17 +10,17 @@ use std::rc::{Rc, Weak};
 #[byte_size(16)]
 pub struct shape_a {
     #[offset(0)]
-    pub code: u16,
+    pub code: (),
     #[offset(2)]
     #[byte_size(14)]
-    pub pad: Box<[i8]>,
+    pub pad: Box<[()]>,
 }
 impl Default for shape_a {
     fn default() -> Self {
         {
             shape_a {
-                code: 0_u16,
-                pad: (0..14).map(|_| 0_i8).collect::<Box<[i8]>>(),
+                code: unimplemented!(),
+                pad: (0..14).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
     }
@@ -29,26 +29,26 @@ impl Default for shape_a {
 #[byte_size(28)]
 pub struct shape_b {
     #[offset(0)]
-    pub code: u16,
+    pub code: (),
     #[offset(2)]
-    pub lo: u16,
+    pub lo: (),
     #[offset(4)]
-    pub mid: u32,
+    pub mid: (),
     #[offset(8)]
     #[byte_size(16)]
-    pub fill: Box<[u8]>,
+    pub fill: Box<[()]>,
     #[offset(24)]
-    pub tail: u32,
+    pub tail: (),
 }
 impl Default for shape_b {
     fn default() -> Self {
         {
             shape_b {
-                code: 0_u16,
-                lo: 0_u16,
-                mid: 0_u32,
-                fill: (0..16).map(|_| 0_u8).collect::<Box<[u8]>>(),
-                tail: 0_u32,
+                code: unimplemented!(),
+                lo: unimplemented!(),
+                mid: unimplemented!(),
+                fill: (0..16).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+                tail: unimplemented!(),
             }
         }
     }
@@ -67,7 +67,7 @@ impl anon_0 {
     pub fn b(this: Ptr<Self>) -> Ptr<shape_b> {
         this.reinterpret_cast()
     }
-    pub fn raw_(this: Ptr<Self>) -> Ptr<i8> {
+    pub fn raw_(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
 }
@@ -82,7 +82,7 @@ impl Default for anon_0 {
 #[byte_size(68)]
 pub struct Container {
     #[offset(0)]
-    pub len: u32,
+    pub len: (),
     #[offset(4)]
     #[byte_size(64)]
     pub u: anon_0,
@@ -91,53 +91,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let c: Value<Container> = <Value<Container>>::default();
-    {
-        ((c.as_pointer()) as Ptr<Container>)
-            .to_any()
-            .memset((0) as u8, 68usize as usize);
-        ((c.as_pointer()) as Ptr<Container>).to_any()
-    };
-    field!(anon_0::a(field_ptr!(c.as_pointer(), u)), code).write(10_u16);
-    (*c.borrow_mut()).len = (28usize as u32);
+    ({
+        let ___s: () = ((c.as_pointer()) as Ptr<Container>).to_any();
+        let ___n: () = 68usize;
+        memset_1(___s, unimplemented!(), ___n)
+    });
+    field!(anon_0::a(field_ptr!(c.as_pointer(), u)), code).write(10_());
+    (*c.borrow_mut()).len = 28usize;
     field!(
         ((anon_0::a(field_ptr!(c.as_pointer(), u)))
             .to_any()
             .reinterpret_cast::<shape_b>()),
         tail
     )
-    .write(3735928559_u32);
-    assert!(
-        (((anon_0::b(field_ptr!(c.as_pointer(), u)).with(|__s| __s.tail) == 3735928559_u32)
-            as i32)
-            != 0)
-    );
-    assert!(
-        ((((anon_0::b(field_ptr!(c.as_pointer(), u)).with(|__s| __s.code) as i32) == 10) as i32)
-            != 0)
-    );
-    field!(anon_0::b(field_ptr!(c.as_pointer(), u)), lo).write(8080_u16);
-    assert!(
-        (((((elem!(
-            (((anon_0::raw_(field_ptr!(c.as_pointer(), u)).reinterpret_cast::<i8>()) as Ptr<i8>)
-                .reinterpret_cast::<u8>()),
-            2
-        )
-        .read()) as i32)
-            == 144) as i32)
-            != 0)
-    );
-    assert!(
-        (((((elem!(
-            (((anon_0::raw_(field_ptr!(c.as_pointer(), u)).reinterpret_cast::<i8>()) as Ptr<i8>)
-                .reinterpret_cast::<u8>()),
-            3
-        )
-        .read()) as i32)
-            == 31) as i32)
-            != 0)
-    );
-    return 0;
+    .write(3735928559_());
+    unimplemented!();
+    unimplemented!();
+    field!(anon_0::b(field_ptr!(c.as_pointer(), u)), lo).write(8080_());
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

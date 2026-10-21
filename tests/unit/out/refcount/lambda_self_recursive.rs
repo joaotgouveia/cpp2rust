@@ -10,84 +10,70 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let fact: Value<FnPtr<Generic>> =
         Rc::new(RefCell::new(lambda!(Generic, {}, |self_: FnPtr<
             Generic,
         >,
-                                                   mut n: i32|
-         -> i32 {
+                                                   mut n: ()|
+         -> () {
             let self_: Value<FnPtr<Generic>> = Rc::new(RefCell::new(self_));
-            if (n <= 1) {
-                return 1;
+            if (n <= 1_()) {
+                return 1_();
             }
             return (n
                 * ({
                     let _self_: FnPtr<Generic> = (*self_.borrow()).copy_from();
                     (*self_.borrow())
-                        .spec::<fn(FnPtr<Generic>, i32) -> i32>(0)
-                        .call(_self_, (n - 1))
+                        .spec::<fn(FnPtr<Generic>, ()) -> ()>(0)
+                        .call(_self_, (n - 1_()))
                 }));
         })));
-    assert!(
-        (({
-            let _self_: FnPtr<Generic> = (*fact.borrow()).copy_from();
-            (*fact.borrow())
-                .spec::<fn(FnPtr<Generic>, i32) -> i32>(0)
-                .call(_self_, 5)
-        }) == 120)
-    );
-    let calls: Value<i32> = Rc::new(RefCell::new(0));
+    unimplemented!();
+    let calls: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let fib: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let calls: Ptr<i32> = calls.as_pointer();
+            let calls: Ptr<()> = calls.as_pointer();
         },
-        |self_: Ptr<FnPtr<Generic>>, mut n: i32| -> i32 {
+        |self_: Ptr<FnPtr<Generic>>, mut n: ()| -> () {
             calls.with_mut(|__v| __v.postfix_inc());
-            if (n <= 2) {
-                return 1;
+            if (n <= 2_()) {
+                return 1_();
             }
             return (({
                 let _self_: Ptr<FnPtr<Generic>> = (self_).clone();
-                let _n: i32 = (n - 1);
+                let _n: () = (n - 1_());
                 (*self_.upgrade().deref())
-                    .spec::<fn(Ptr<FnPtr<Generic>>, i32) -> i32>(0)
+                    .spec::<fn(Ptr<FnPtr<Generic>>, ()) -> ()>(0)
                     .call(_self_, _n)
             }) + ({
                 let _self_: Ptr<FnPtr<Generic>> = (self_).clone();
-                let _n: i32 = (n - 2);
+                let _n: () = (n - 2_());
                 (*self_.upgrade().deref())
-                    .spec::<fn(Ptr<FnPtr<Generic>>, i32) -> i32>(0)
+                    .spec::<fn(Ptr<FnPtr<Generic>>, ()) -> ()>(0)
                     .call(_self_, _n)
             }));
         }
     )));
-    assert!(
-        (({
-            let _self_: Ptr<FnPtr<Generic>> = fib.as_pointer();
-            (*fib.borrow())
-                .spec::<fn(Ptr<FnPtr<Generic>>, i32) -> i32>(0)
-                .call(_self_, 6)
-        }) == 8)
-    );
-    assert!(((*calls.borrow()) == 15));
-    let depth: Value<i32> = Rc::new(RefCell::new(0));
+    unimplemented!();
+    unimplemented!();
+    let depth: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let count_down: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let depth: Ptr<i32> = depth.as_pointer();
+            let depth: Ptr<()> = depth.as_pointer();
         },
-        |self_: Ptr<FnPtr<Generic>>, mut n: i32| {
-            if (n == 0) {
+        |self_: Ptr<FnPtr<Generic>>, mut n: ()| {
+            if (n == unimplemented!()) {
                 return;
             }
             depth.with_mut(|__v| __v.postfix_inc());
             ({
                 let _self_: Ptr<FnPtr<Generic>> = (self_).clone();
-                let _n: i32 = (n - 1);
+                let _n: () = (n - 1_());
                 (*self_.upgrade().deref())
-                    .spec::<fn(Ptr<FnPtr<Generic>>, i32)>(0)
+                    .spec::<fn(Ptr<FnPtr<Generic>>, ())>(0)
                     .call(_self_, _n)
             });
         }
@@ -95,10 +81,10 @@ fn main_0() -> i32 {
     ({
         let _self_: Ptr<FnPtr<Generic>> = count_down.as_pointer();
         (*count_down.borrow())
-            .spec::<fn(Ptr<FnPtr<Generic>>, i32)>(0)
-            .call(_self_, 4)
+            .spec::<fn(Ptr<FnPtr<Generic>>, ())>(0)
+            .call(_self_, 4_())
     });
-    assert!(((*depth.borrow()) == 4));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

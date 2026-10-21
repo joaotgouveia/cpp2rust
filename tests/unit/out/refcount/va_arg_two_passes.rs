@@ -6,27 +6,27 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn sum_then_product_0(first: i32, __args: Box<[VaArg]>) -> i32 {
+pub fn sum_then_product_0(first: (), __args: Box<[VaArg]>) -> () {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
-    let first: Value<i32> = Rc::new(RefCell::new(first));
+    let first: Value<()> = Rc::new(RefCell::new(first));
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
-    let mut sum: i32 = (*first.borrow());
-    let mut product: i32 = (*first.borrow());
+    let mut sum: () = (*first.borrow());
+    let mut product: () = (*first.borrow());
     (*ap.borrow_mut()) = __args.as_pointer();
-    let mut val: i32 = 0_i32;
+    let mut val: () = unimplemented!();
     'loop_: while (((({
-        val = (*ap.borrow_mut()).arg::<i32>();
+        val = (*ap.borrow_mut()).arg::<()>();
         val
-    }) != 0) as i32)
+    }) != unimplemented!()) as ())
         != 0)
     {
         sum += val;
     }
     (*ap.borrow_mut()) = __args.as_pointer();
     'loop_: while (((({
-        val = (*ap.borrow_mut()).arg::<i32>();
+        val = (*ap.borrow_mut()).arg::<()>();
         val
-    }) != 0) as i32)
+    }) != unimplemented!()) as ())
         != 0)
     {
         product *= val;
@@ -37,12 +37,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!(
-        (((({ sum_then_product_0(2, Box::new([(3).into(), (4).into(), (0).into(),])) }) == 33)
-            as i32)
-            != 0)
-    );
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

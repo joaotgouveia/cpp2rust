@@ -9,13 +9,13 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct base {
-    pub kind: i32,
+    pub kind: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct derived {
     pub head: base,
-    pub value: usize,
+    pub value: (),
 }
 pub fn main() {
     unsafe {
@@ -23,22 +23,21 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut d: *mut derived =
-        (libcc2rs::malloc_unsafe(::std::mem::size_of::<derived>()) as *mut derived);
-    assert!((((!((d).is_null())) as i32) != 0));
-    (*d).head.kind = 3;
-    (*d).value = 7_usize;
+unsafe fn main_0() -> () {
+    let mut d: *mut derived = (unimplemented!() as *mut derived);
+    unimplemented!();
+    (*d).head.kind = 3_();
+    (*d).value = 7_();
     let mut b: *mut base = (&mut (*d).head as *mut base);
     let mut back: *mut derived = (b as *mut derived);
-    assert!(((((back) == (d)) as i32) != 0));
-    assert!((((((*back).value) == (7_usize)) as i32) != 0));
-    assert!((((((*back).head.kind) == (3)) as i32) != 0));
-    (*back).value = 8_usize;
-    assert!((((((*d).value) == (8_usize)) as i32) != 0));
-    (*b).kind = 4;
-    assert!((((((*d).head.kind) == (4)) as i32) != 0));
-    libcc2rs::free_unsafe((back as *mut ::libc::c_void));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (*back).value = 8_();
+    unimplemented!();
+    (*b).kind = 4_();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

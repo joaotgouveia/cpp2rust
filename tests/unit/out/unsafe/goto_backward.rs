@@ -6,18 +6,18 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn retry_0(mut n: i32) -> i32 {
-    let mut count: i32 = 0_i32;
-    let mut acc: i32 = 0_i32;
+pub unsafe fn retry_0(mut n: ()) -> () {
+    let mut count: () = unimplemented!();
+    let mut acc: () = unimplemented!();
     goto_block!({
         '__entry: {
-            count = 0;
-            acc = 0;
+            count = unimplemented!();
+            acc = unimplemented!();
         }
         'again: {
-            count += 1;
+            count += 1_();
             acc += n;
-            if ((((count) < (3)) as i32) != 0) {
+            if ((((count) < (3_())) as ()) != 0) {
                 goto!('again);
             }
             return acc;
@@ -31,8 +31,8 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((((unsafe { retry_0(4,) }) == (12)) as i32) != 0));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

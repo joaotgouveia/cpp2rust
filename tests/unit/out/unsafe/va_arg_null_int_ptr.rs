@@ -6,14 +6,14 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn first_nonnull_0(mut count: i32, __args: Box<[VaArg]>) -> i32 {
+pub unsafe fn first_nonnull_0(mut count: (), __args: Box<[VaArg]>) -> () {
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
-    let mut result: i32 = -1_i32;
-    let mut i: i32 = 0;
-    'loop_: while ((((i) < (count)) as i32) != 0) {
-        let mut p: *mut i32 = ap.arg::<*mut i32>();
-        if (((!((p).is_null())) as i32) != 0) {
+    let mut result: () = -1_();
+    let mut i: () = unimplemented!();
+    'loop_: while ((((i) < (count)) as ()) != 0) {
+        let mut p: *mut () = ap.arg::<*mut ()>();
+        if (((!((p).is_null())) as ()) != 0) {
             result = (*p);
             break;
         }
@@ -27,38 +27,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: i32 = 42;
-    assert!(
-        ((((unsafe {
-            first_nonnull_0(
-                2,
-                Box::new([
-                    (0 as *mut ::libc::c_void).into(),
-                    (&mut x as *mut i32).into(),
-                ]),
-            )
-        }) == (42)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe {
-            first_nonnull_0(
-                3,
-                Box::new([
-                    (0 as *mut ::libc::c_void).into(),
-                    (0 as *mut ::libc::c_void).into(),
-                    (&mut x as *mut i32).into(),
-                ]),
-            )
-        }) == (42)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe { first_nonnull_0(1, Box::new([(0 as *mut ::libc::c_void).into(),])) })
-            == (-1_i32)) as i32)
-            != 0)
-    );
-    return 0;
+unsafe fn main_0() -> () {
+    let mut x: () = 42_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

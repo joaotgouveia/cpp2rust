@@ -6,12 +6,12 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn pick_0(mut x: Option<i32>) -> i32 {
-    let mut x: i32 = x.unwrap_or_else(|| unsafe {
+pub unsafe fn pick_0(mut x: Option<()>) -> () {
+    let mut x: () = x.unwrap_or_else(|| unsafe {
         (unsafe {
-            FnPtr::<fn() -> i32>::new(|| -> i32 {
+            FnPtr::<fn() -> ()>::new(|| -> () {
                 unsafe {
-                    return 237;
+                    return 237_();
                 }
             })
             .call()
@@ -22,33 +22,33 @@ pub unsafe fn pick_0(mut x: Option<i32>) -> i32 {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S {
-    pub j: i32,
-    pub k: i32,
+    pub j: (),
+    pub k: (),
 }
 impl Default for S {
     fn default() -> Self {
         unsafe {
             S {
-                j: 10,
+                j: 10_(),
                 k: ((unsafe {
-                    FnPtr::<fn() -> i32>::new(|| -> i32 {
+                    FnPtr::<fn() -> ()>::new(|| -> () {
                         unsafe {
-                            return 3;
+                            return 3_();
                         }
                     })
                     .call()
-                }) + (1)),
+                }) + (1_())),
             }
         }
     }
 }
-pub static mut g_1: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe {
+pub static mut g_1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     (unsafe {
-        FnPtr::<fn() -> i32>::new(|| -> i32 {
+        FnPtr::<fn() -> ()>::new(|| -> () {
             unsafe {
-                let mut s: i32 = 0;
-                let mut i: i32 = 1;
-                'loop_: while ((i) <= (4)) {
+                let mut s: () = unimplemented!();
+                let mut i: () = 1_();
+                'loop_: while ((i) <= (4_())) {
                     s += i;
                     i.postfix_inc();
                 }
@@ -64,28 +64,28 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((unsafe { pick_0(None,) }) == (237)));
-    assert!(((unsafe { pick_0(Some(1),) }) == (1)));
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
     let mut s: S = <S>::default();
-    assert!(((s.k) == (4)));
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut g_1)) == (10)));
-    let mut a: i32 = 2;
-    let c: i32 = (unsafe {
+    unimplemented!();
+    unimplemented!();
+    let mut a: () = 2_();
+    let c: () = (unsafe {
         lambda_unsafe!(
             {
-                let a: *mut i32 = &mut a;
+                let a: *mut () = &mut a;
             },
-            || -> i32 {
+            || -> () {
                 (*a).postfix_inc();
-                return ((*a) * (10));
+                return ((*a) * (10_()));
             }
         )
         .call()
     });
-    assert!(((c) == (30)));
-    assert!(((a) == (3)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const g_1);

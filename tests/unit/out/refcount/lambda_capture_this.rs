@@ -10,46 +10,49 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct S {
     #[offset(0)]
-    pub n: i32,
+    pub n: (),
     #[offset(4)]
-    pub step: i32,
+    pub step: (),
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let s: Value<S> = Rc::new(RefCell::new(S { n: 0, step: 2 }));
-    ({ SImpl::bump(&s.as_pointer(), 3) });
-    assert!(({ (*s.borrow()).n } == 6));
-    ({ SImpl::bump_via_method(&s.as_pointer(), 4) });
-    assert!(({ (*s.borrow()).n } == 10));
-    assert!((({ SImpl::read_scaled(&s.as_pointer(),) }) == 20));
-    return 0;
+fn main_0() -> () {
+    let s: Value<S> = Rc::new(RefCell::new(S {
+        n: unimplemented!(),
+        step: 2_(),
+    }));
+    ({ SImpl::bump(&s.as_pointer(), 3_()) });
+    unimplemented!();
+    ({ SImpl::bump_via_method(&s.as_pointer(), 4_()) });
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub trait SImpl {
-    fn add(&self, k: i32);
-    fn scaled(&self) -> i32;
-    fn bump(&self, by: i32);
-    fn bump_via_method(&self, by: i32);
-    fn read_scaled(&self) -> i32;
+    fn add(&self, k: ());
+    fn scaled(&self) -> ();
+    fn bump(&self, by: ());
+    fn bump_via_method(&self, by: ());
+    fn read_scaled(&self) -> ();
 }
 impl SImpl for Ptr<S> {
-    fn add(&self, mut k: i32) {
+    fn add(&self, mut k: ()) {
         {
             let __rhs = k;
             field!((*self), n).with_mut(|__v| *__v = *__v + __rhs)
         };
     }
-    fn scaled(&self) -> i32 {
+    fn scaled(&self) -> () {
         return ((*self).with(|__s| __s.n) * (*self).with(|__s| __s.step));
     }
-    fn bump(&self, mut by: i32) {
-        let inc: Value<FnPtr<fn(i32)>> = Rc::new(RefCell::new(lambda!(
+    fn bump(&self, mut by: ()) {
+        let inc: Value<FnPtr<fn(())>> = Rc::new(RefCell::new(lambda!(
             {
                 let this_: Value<Ptr<S>> = Rc::new(RefCell::new((*self).clone()));
             },
-            |mut k: i32| {
+            |mut k: ()| {
                 {
                     let __rhs = k;
                     field!((*this_.borrow()).clone(), n).with_mut(|__v| *__v = *__v + __rhs)
@@ -59,23 +62,23 @@ impl SImpl for Ptr<S> {
         ({ (*inc.borrow()).call(by) });
         ({ (*inc.borrow()).call(by) });
     }
-    fn bump_via_method(&self, mut by: i32) {
-        let inc: Value<FnPtr<fn(i32)>> = Rc::new(RefCell::new(lambda!(
+    fn bump_via_method(&self, mut by: ()) {
+        let inc: Value<FnPtr<fn(())>> = Rc::new(RefCell::new(lambda!(
             {
                 let this_: Value<Ptr<S>> = Rc::new(RefCell::new((*self).clone()));
             },
-            |mut k: i32| {
+            |mut k: ()| {
                 ({ SImpl::add(&(*this_.borrow()).clone(), k) });
             }
         )));
         ({ (*inc.borrow()).call(by) });
     }
-    fn read_scaled(&self) -> i32 {
-        let get: Value<FnPtr<fn() -> i32>> = Rc::new(RefCell::new(lambda!(
+    fn read_scaled(&self) -> () {
+        let get: Value<FnPtr<fn() -> ()>> = Rc::new(RefCell::new(lambda!(
             {
                 let this_: Value<Ptr<S>> = Rc::new(RefCell::new((*self).clone()));
             },
-            || -> i32 {
+            || -> () {
                 return ({ SImpl::scaled(&(*this_.borrow()).clone()) });
             }
         )));

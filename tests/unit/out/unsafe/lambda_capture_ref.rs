@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
-    pub x: i32,
-    pub y: i32,
+    pub x: (),
+    pub y: (),
 }
 pub fn main() {
     unsafe {
@@ -18,35 +18,35 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut base: i32 = 10;
-    let mut add_base: FnPtr<fn(i32) -> i32> = lambda_unsafe!(
+unsafe fn main_0() -> () {
+    let mut base: () = 10_();
+    let mut add_base: FnPtr<fn(()) -> ()> = lambda_unsafe!(
         {
-            let base: *mut i32 = &mut base;
+            let base: *mut () = &mut base;
         },
-        |mut x: i32| -> i32 {
+        |mut x: ()| -> () {
             return ((x) + (*base));
         }
     );
-    assert!(((unsafe { add_base.call(5,) }) == (15)));
-    base = 100;
-    assert!(((unsafe { add_base.call(5,) }) == (105)));
-    let mut s: S = S { x: 1, y: 2 };
-    let mut sum: FnPtr<fn() -> i32> = lambda_unsafe!(
+    unimplemented!();
+    base = 100_();
+    unimplemented!();
+    let mut s: S = S { x: 1_(), y: 2_() };
+    let mut sum: FnPtr<fn() -> ()> = lambda_unsafe!(
         {
             let s: *mut S = &mut s;
         },
-        || -> i32 {
+        || -> () {
             return (((*s).x) + ((*s).y));
         }
     );
-    assert!(((unsafe { sum.call() }) == (3)));
-    s.x = 50;
-    assert!(((unsafe { sum.call() }) == (52)));
-    let mut counter: i32 = 0;
+    unimplemented!();
+    s.x = 50_();
+    unimplemented!();
+    let mut counter: () = unimplemented!();
     let mut bump: FnPtr<fn()> = lambda_unsafe!(
         {
-            let counter: *mut i32 = &mut counter;
+            let counter: *mut () = &mut counter;
         },
         || {
             (*counter).postfix_inc();
@@ -54,43 +54,43 @@ unsafe fn main_0() -> i32 {
     );
     (unsafe { bump.call() });
     (unsafe { bump.call() });
-    assert!(((counter) == (2)));
-    let mut arr: [u16; 4] = [3_u16, 1_u16, 2_u16, 0_u16];
-    let mut swap: FnPtr<fn(usize, usize)> = lambda_unsafe!(
+    unimplemented!();
+    let mut arr: [(); 4] = [3_(), 1_(), 2_(), unimplemented!()];
+    let mut swap: FnPtr<fn((), ())> = lambda_unsafe!(
         {
-            let arr: *mut [u16; 4] = &mut arr;
+            let arr: *mut [(); 4] = &mut arr;
         },
-        |mut i: usize, mut j: usize| {
-            let mut t: u16 = (*arr)[(j)];
-            (*arr)[(j)] = (*arr)[(i)];
-            (*arr)[(i)] = t;
+        |mut i: (), mut j: ()| {
+            let mut t: () = (*arr)[(j) as usize];
+            (*arr)[(j) as usize] = (*arr)[(i) as usize];
+            (*arr)[(i) as usize] = t;
         }
     );
-    (unsafe { swap.call(0_usize, 3_usize) });
-    assert!(((arr[(0) as usize] as i32) == (0)));
-    assert!(((arr[(3) as usize] as i32) == (3)));
-    let mut total: i32 = 0;
-    let mut add: FnPtr<fn(i32)> = lambda_unsafe!(
+    (unsafe { swap.call(unimplemented!(), 3_()) });
+    unimplemented!();
+    unimplemented!();
+    let mut total: () = unimplemented!();
+    let mut add: FnPtr<fn(())> = lambda_unsafe!(
         {
-            let t: *mut i32 = &mut total;
+            let t: *mut () = &mut total;
         },
-        |mut x: i32| {
+        |mut x: ()| {
             (*t) += x;
         }
     );
-    (unsafe { add.call(2) });
-    (unsafe { add.call(3) });
-    assert!(((total) == (5)));
-    let mut set_y: FnPtr<fn(i32)> = lambda_unsafe!(
+    (unsafe { add.call(2_()) });
+    (unsafe { add.call(3_()) });
+    unimplemented!();
+    let mut set_y: FnPtr<fn(())> = lambda_unsafe!(
         {
-            let y: *mut i32 = &mut s.y;
+            let y: *mut () = &mut s.y;
         },
-        |mut v: i32| {
+        |mut v: ()| {
             (*y) = v;
         }
     );
-    (unsafe { set_y.call(9) });
-    assert!(((s.y) == (9)));
-    return 0;
+    (unsafe { set_y.call(9_()) });
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -9,13 +9,13 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
-    pub head: i32,
-    pub tail: [i32; 3],
-    pub buf: [libc::c_char; 4],
+    pub head: (),
+    pub tail: [(); 3],
+    pub buf: [(); 4],
 }
 pub static mut s_0: std::cell::LazyCell<S> = std::cell::LazyCell::new(|| unsafe {
     S {
-        head: 5,
+        head: 5_(),
         tail: [0; 3],
         buf: [0; 4],
     }
@@ -26,27 +26,19 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!((((((*std::cell::LazyCell::force_mut(&mut *&raw mut s_0)).head) == (5)) as i32) != 0));
-    let mut i: i32 = 0;
-    'loop_: while ((((i) < (3)) as i32) != 0) {
-        assert!(
-            (((((*std::cell::LazyCell::force_mut(&mut *&raw mut s_0)).tail[(i) as usize]) == (0))
-                as i32)
-                != 0)
-        );
+unsafe fn main_0() -> () {
+    unimplemented!();
+    let mut i: () = unimplemented!();
+    'loop_: while ((((i) < (3_())) as ()) != 0) {
+        unimplemented!();
         i.postfix_inc();
     }
-    let mut i: i32 = 0;
-    'loop_: while ((((i) < (4)) as i32) != 0) {
-        assert!(
-            (((((*std::cell::LazyCell::force_mut(&mut *&raw mut s_0)).buf[(i) as usize] as i32)
-                == (0)) as i32)
-                != 0)
-        );
+    let mut i: () = unimplemented!();
+    'loop_: while ((((i) < (4_())) as ()) != 0) {
+        unimplemented!();
         i.postfix_inc();
     }
-    return 0;
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const s_0);

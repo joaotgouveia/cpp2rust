@@ -6,11 +6,11 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn foo_0(mut x: u32) {
-    x = (x).wrapping_add(1_u32);
+pub unsafe fn foo_0(mut x: ()) {
+    x = (x).wrapping_add(1_());
 }
-pub unsafe fn bar_1(x: *mut u32) {
-    (*x) = (*x).wrapping_add(1_u32);
+pub unsafe fn bar_1(x: *mut ()) {
+    (*x) = (*x).wrapping_add(1_());
 }
 pub fn main() {
     unsafe {
@@ -18,166 +18,139 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut m: UnsafeMap<i16, (i16, u32)> = UnsafeMap::new();
-    (*m.get_or_insert_with(0_i16.clone(), || (0_i16, <u32>::default()))).1 = 1_u32;
-    (*m.get_or_insert_with(1_i16.clone(), || (1_i16, <u32>::default()))).1 = 2_u32;
-    (*m.get_or_insert_with(2_i16.clone(), || (2_i16, <u32>::default()))).1 = 3_u32;
-    assert!(((m.len()) == (3_usize)));
-    assert!((((*m.get_or_insert_with(0_i16.clone(), || (0_i16, <u32>::default()))).1) == (1_u32)));
-    assert!((((*m.get_or_insert_with(1_i16.clone(), || (1_i16, <u32>::default()))).1) == (2_u32)));
-    assert!((((*m.get_or_insert_with(2_i16.clone(), || (2_i16, <u32>::default()))).1) == (3_u32)));
-    let mut x: i32 = 4;
-    (*m.get_or_insert_with(1_i16.clone(), || (1_i16, <u32>::default()))).1 = (x as u32);
-    assert!(((m.len()) == (3_usize)));
-    assert!((((*m.get_or_insert_with(0_i16.clone(), || (0_i16, <u32>::default()))).1) == (1_u32)));
-    assert!((((*m.get_or_insert_with(1_i16.clone(), || (1_i16, <u32>::default()))).1) == (4_u32)));
-    assert!((((*m.get_or_insert_with(2_i16.clone(), || (2_i16, <u32>::default()))).1) == (3_u32)));
-    (unsafe { foo_0((*m.get_or_insert_with(0_i16.clone(), || (0_i16, <u32>::default()))).1) });
-    assert!((((*m.get_or_insert_with(0_i16.clone(), || (0_i16, <u32>::default()))).1) == (1_u32)));
-    (unsafe { bar_1(&mut (*m.get_or_insert_with(2_i16.clone(), || (2_i16, <u32>::default()))).1) });
-    assert!((((*m.get_or_insert_with(2_i16.clone(), || (2_i16, <u32>::default()))).1) == (4_u32)));
-    (*m.get_or_insert_with(0_i16.clone(), || (0_i16, <u32>::default()))).1 =
-        ((*m.get_or_insert_with(0_i16.clone(), || (0_i16, <u32>::default()))).1)
-            .wrapping_add((*m.get_or_insert_with(2_i16.clone(), || (2_i16, <u32>::default()))).1);
-    assert!((((*m.get_or_insert_with(0_i16.clone(), || (0_i16, <u32>::default()))).1) == (5_u32)));
-    let mut end: UnsafeBidirectionalIterator<(i16, u32)> = m.end();
-    let mut it: UnsafeBidirectionalIterator<(i16, u32)> = m.find(&1_i16);
-    let mut const_it: UnsafeBidirectionalIterator<(i16, u32)> =
-        <UnsafeBidirectionalIterator<(i16, u32)>>::from(m.find(&10_i16));
-    let mut x1: u32 = if it == end {
-        0_u32
+unsafe fn main_0() -> () {
+    let mut m: () = unimplemented!();
+    (*unimplemented!()) = 1_();
+    (*unimplemented!()) = 2_();
+    (*unimplemented!()) = 3_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut x: () = 4_();
+    (*unimplemented!()) = x;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe { foo_0((*unimplemented!())) });
+    unimplemented!();
+    (unsafe { bar_1(&mut (*unimplemented!())) });
+    unimplemented!();
+    (*unimplemented!()) = (*unimplemented!()).wrapping_add((*unimplemented!()));
+    unimplemented!();
+    let mut end: () = unimplemented!();
+    let mut it: () = unimplemented!();
+    let mut const_it: () = unimplemented!();
+    let mut x1: () = if unimplemented!() {
+        unimplemented!()
     } else {
-        (*it.iter_deref()).1
+        (*unimplemented!()).second
     };
-    assert!(((x1) == (4_u32)));
-    let mut x2: u32 = if const_it == <UnsafeBidirectionalIterator<(i16, u32)>>::from((end).clone())
-    {
-        0_u32
+    unimplemented!();
+    let mut x2: () = if unimplemented!() {
+        unimplemented!()
     } else {
-        (*const_it.iter_deref()).1
+        (*unimplemented!()).second
     };
-    assert!(((x2) == (0_u32)));
-    let mut x3: u32 = if it == m.end() {
-        0_u32
+    unimplemented!();
+    let mut x3: () = if unimplemented!() {
+        unimplemented!()
     } else {
-        (*it.iter_deref()).1
+        (*unimplemented!()).second
     };
-    assert!(((x3) == (4_u32)));
-    let mut x4: u32 = if const_it == <UnsafeBidirectionalIterator<(i16, u32)>>::from(m.end()) {
-        0_u32
+    unimplemented!();
+    let mut x4: () = if unimplemented!() {
+        unimplemented!()
     } else {
-        (*const_it.iter_deref()).1
+        (*unimplemented!()).second
     };
-    assert!(((x4) == (0_u32)));
-    (*m.get_or_insert_with(4_i16.clone(), || (4_i16, <u32>::default()))).1 = 5_u32;
-    let mut it4: UnsafeBidirectionalIterator<(i16, u32)> = m.find(&4_i16);
-    let mut p: *mut u32 = (&mut (*it4.iter_deref()).1 as *mut u32);
-    let mut x5: u32 = (*p);
-    assert!((((*m.get_or_insert_with(4_i16.clone(), || (4_i16, <u32>::default()))).1) == (5_u32)));
-    assert!((((*it4.iter_deref()).1) == (5_u32)));
-    assert!(((*p) == (5_u32)));
-    assert!(((x5) == (5_u32)));
+    unimplemented!();
+    (*unimplemented!()) = 5_();
+    let mut it4: () = unimplemented!();
+    let mut p: *mut () = (&mut (*unimplemented!()).second as *mut ());
+    let mut x5: () = (*p);
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     (*p).prefix_inc();
-    assert!((((*m.get_or_insert_with(4_i16.clone(), || (4_i16, <u32>::default()))).1) == (6_u32)));
-    assert!((((*it4.iter_deref()).1) == (6_u32)));
-    assert!(((*p) == (6_u32)));
-    assert!(((x5) == (5_u32)));
-    let mut const_it4: UnsafeBidirectionalIterator<(i16, u32)> =
-        <UnsafeBidirectionalIterator<(i16, u32)>>::from(m.find(&4_i16));
-    assert!((((*const_it4.iter_deref()).1) == (6_u32)));
-    let r: *mut UnsafeMap<i16, (i16, u32)> = &mut m;
-    assert!((((*r).len()) == (4_usize)));
-    assert!(m.find(&4_i16) != m.end());
-    (*r).erase(&(it4).clone());
-    assert!((((*r).len()) == (3_usize)));
-    assert!(m.find(&4_i16) == m.end());
-    (*m.get_or_insert_with(7_i16.clone(), || (7_i16, <u32>::default()))).1 = 7_u32;
-    (*m.get_or_insert_with(8_i16.clone(), || (8_i16, <u32>::default()))).1 = 8_u32;
-    (*m.get_or_insert_with(9_i16.clone(), || (9_i16, <u32>::default()))).1 = 9_u32;
-    assert!((((*r).len()) == (6_usize)));
-    assert!(((m.erase_key(&10_i16)) == (0_usize)));
-    let mut key9: i32 = 9;
-    assert!(((m.erase_key(&(key9 as i16))) == (1_usize)));
-    assert!((((*r).len()) == (5_usize)));
-    let mut cit: UnsafeBidirectionalIterator<(i16, u32)> =
-        <UnsafeBidirectionalIterator<(i16, u32)>>::from(m.find(&7_i16));
-    let mut next: UnsafeBidirectionalIterator<(i16, u32)> = m.erase(&(cit).clone());
-    assert!(next == m.find(&8_i16));
-    next = m.erase(&(next).clone());
-    assert!(next == m.end());
-    assert!((((*r).len()) == (3_usize)));
-    assert!(m.find(&8_i16) == m.end());
-    let mut other_map: UnsafeMap<(i32, i64), ((i32, i64), f64)> = UnsafeMap::new();
-    assert!(((other_map.len()) == (0_usize)));
-    let mut key0: (i32, i64) = (1.into(), 1.into());
-    let mut value: f64 = 2_f64;
-    (*other_map.get_or_insert_with(key0.clone(), || (key0, <f64>::default()))).1 = value;
-    value = (*other_map.get_or_insert_with(key0.clone(), || (key0, <f64>::default()))).1;
-    assert!(((other_map.len()) == (1_usize)));
-    assert!(
-        (((*other_map.get_or_insert_with(key0.clone(), || (key0, <f64>::default()))).1) == (value))
-    );
-    assert!(((m.len()) == (3_usize)));
-    let mut k: i32 = 0;
-    assert!((((*m.get(&(k as i16)).expect("out of range!")).1) == (5_u32)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut const_it4: () = unimplemented!();
+    unimplemented!();
+    let r: *mut () = &mut m;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (*unimplemented!()) = 7_();
+    (*unimplemented!()) = 8_();
+    (*unimplemented!()) = 9_();
+    unimplemented!();
+    unimplemented!();
+    let mut key9: () = 9_();
+    unimplemented!();
+    unimplemented!();
+    let mut cit: () = unimplemented!();
+    let mut next: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut other_map: () = unimplemented!();
+    unimplemented!();
+    let mut key0: () = unimplemented!();
+    let mut value: () = 2_();
+    (*unimplemented!()) = value;
+    value = (*unimplemented!());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut k: () = unimplemented!();
+    unimplemented!();
     k.prefix_inc();
-    assert!((((*m.get(&(k as i16)).expect("out of range!")).1) == (4_u32)));
+    unimplemented!();
     k.prefix_inc();
-    assert!((((*m.get(&(k as i16)).expect("out of range!")).1) == (4_u32)));
-    let mut m2: UnsafeMap<i32, (i32, bool)> = UnsafeMap::new();
-    assert!(((m2.len()) == (0_usize)));
-    let mut indexes: Vec<i32> = Vec::new();
-    let mut i: u32 = 60_u32;
-    'loop_: while ((i) > (30_u32)) {
-        {
-            let __a1 = (i as i32);
-            indexes.push(__a1)
-        };
+    unimplemented!();
+    let mut m2: () = unimplemented!();
+    unimplemented!();
+    let mut indexes: () = unimplemented!();
+    let mut i: () = 60_();
+    'loop_: while ((i) > (30_())) {
+        unimplemented!();
         i.prefix_dec();
     }
-    let mut i: u32 = 100_u32;
-    'loop_: while ((i) > (60_u32)) {
-        {
-            let __a1 = (i as i32);
-            indexes.push(__a1)
-        };
+    let mut i: () = 100_();
+    'loop_: while ((i) > (60_())) {
+        unimplemented!();
         i.prefix_dec();
     }
-    let mut i: u32 = 30_u32;
-    'loop_: while ((i) > (0_u32)) {
-        {
-            let __a1 = (i as i32);
-            indexes.push(__a1)
-        };
+    let mut i: () = 30_();
+    'loop_: while ((i) > (unimplemented!())) {
+        unimplemented!();
         i.prefix_dec();
     }
-    let mut i: u32 = 0_u32;
-    'loop_: while ((i as usize) < (indexes.len())) {
-        (*m2.get_or_insert_with(indexes[(i as usize)].clone(), || {
-            (indexes[(i as usize)], <bool>::default())
-        }))
-        .1 = ((i).wrapping_rem(2_u32) != 0);
+    let mut i: () = unimplemented!();
+    'loop_: while ((i) < (unimplemented!())) {
+        (*unimplemented!()) = ((i).wrapping_rem(2_()) != 0);
         i.prefix_inc();
     }
-    assert!(((m2.len()) == (indexes.len())));
-    let mut last: i32 = -1_i32;
-    'loop_: for pair in IterRange::new(m2.begin(), m2.end()) {
-        let pair: *mut (i32, bool) = &mut (*pair.iter_deref());
-        assert!((((*pair).0) > (last)));
-        assert!((((*pair).1 as i32) == (((*pair).0) % (2))));
-        last = (*pair).0;
+    unimplemented!();
+    let mut last: () = -1_();
+    'loop_: for pair in IterRange::new(unimplemented!(), unimplemented!()) {
+        let pair: *mut () = &mut (*unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        last = (*pair).first;
     }
-    k = 0;
-    let value_0: *const u32 = &raw const (*m.get(&(k as i16)).expect("out of range!")).1;
-    assert!(
-        ((((((((m.len()).wrapping_add((x1 as usize))).wrapping_add((x2 as usize)))
-            .wrapping_add((x3 as usize)))
-        .wrapping_add((x4 as usize)))
-        .wrapping_add((x5 as usize)))
-        .wrapping_add(((*value_0) as usize)))
-            == (21_usize))
-    );
-    return 0;
+    k = unimplemented!();
+    let value_0: *const () = unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

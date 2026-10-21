@@ -7,33 +7,28 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_errno_0() {
-    (*libcc2rs::cpp2rust_errno_unsafe()) = 0;
-    assert!(((((*libcc2rs::cpp2rust_errno_unsafe()) == (0)) as i32) != 0));
-    (*libcc2rs::cpp2rust_errno_unsafe()) = 42;
-    assert!(((((*libcc2rs::cpp2rust_errno_unsafe()) == (42)) as i32) != 0));
-    let mut saved: i32 = (*libcc2rs::cpp2rust_errno_unsafe());
-    assert!(((((saved) == (42)) as i32) != 0));
-    (*libcc2rs::cpp2rust_errno_unsafe()) = 0;
+    (*unimplemented!()) = unimplemented!();
+    unimplemented!();
+    (*unimplemented!()) = 42_();
+    unimplemented!();
+    let mut saved: () = (*unimplemented!());
+    unimplemented!();
+    (*unimplemented!()) = unimplemented!();
 }
 pub unsafe fn test_errno_preserved_across_strdup_1() {
-    (*libcc2rs::cpp2rust_errno_unsafe()) = 99;
-    let mut d: *mut libc::c_char =
-        libcc2rs::strdup_unsafe((c"hello".as_ptr().cast_mut()).cast_const());
-    assert!((((!((d).is_null())) as i32) != 0));
-    assert!(((((*libcc2rs::cpp2rust_errno_unsafe()) == (99)) as i32) != 0));
-    libcc2rs::free_unsafe((d as *mut ::libc::c_void));
-    (*libcc2rs::cpp2rust_errno_unsafe()) = 0;
+    (*unimplemented!()) = 99_();
+    let mut d: *mut () = (unsafe { strdup_2((c"hello".as_ptr().cast_mut()).cast_const()) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (*unimplemented!()) = unimplemented!();
 }
-pub unsafe fn test_errno_from_fseek_2() {
-    (*libcc2rs::cpp2rust_errno_unsafe()) = 0;
-    let mut r: i32 = libc::fseek(
-        libcc2rs::stdin_unsafe(),
-        0_i64 as ::libc::c_long,
-        ::libc::SEEK_SET,
-    );
-    assert!(((((r) == (-1_i32)) as i32) != 0));
-    assert!(((((*libcc2rs::cpp2rust_errno_unsafe()) == (libc::ESPIPE)) as i32) != 0));
-    (*libcc2rs::cpp2rust_errno_unsafe()) = 0;
+pub unsafe fn test_errno_from_fseek_3() {
+    (*unimplemented!()) = unimplemented!();
+    let mut r: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (*unimplemented!()) = unimplemented!();
 }
 pub fn main() {
     unsafe {
@@ -41,10 +36,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     (unsafe { test_errno_0() });
     (unsafe { test_errno_preserved_across_strdup_1() });
-    (unsafe { test_errno_from_fseek_2() });
-    return 0;
+    (unsafe { test_errno_from_fseek_3() });
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

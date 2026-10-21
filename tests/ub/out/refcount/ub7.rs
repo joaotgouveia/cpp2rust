@@ -6,26 +6,26 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn strlen_0(mut s: Ptr<i8>) -> usize {
-    let mut begin: Ptr<i8> = (s).clone();
+pub fn strlen_0(mut s: Ptr<()>) -> () {
+    let mut begin: Ptr<()> = (s).clone();
     'loop_: while ((s.read()) != 0) {
         s.prefix_inc();
     }
-    return (((s - begin) as i64) as usize);
+    return (s - begin) as ();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let s: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
-        ('s' as i8),
-        ('t' as i8),
-        ('r' as i8),
-        ('i' as i8),
-        ('n' as i8),
-        ('g' as i8),
+fn main_0() -> () {
+    let s: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        ('s' as ()),
+        ('t' as ()),
+        ('r' as ()),
+        ('i' as ()),
+        ('n' as ()),
+        ('g' as ()),
     ])));
-    return (({ strlen_0(((s.as_pointer() as Ptr<i8>).offset(0))) }) as i32);
+    return ({ strlen_0(((s.as_pointer() as Ptr<()>).offset(unimplemented!()))) });
 }
 pub fn __cpp2rust_init_globals() {}

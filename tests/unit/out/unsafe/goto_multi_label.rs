@@ -6,22 +6,22 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn classify_0(mut n: i32) -> i32 {
-    let mut ret: i32 = 0_i32;
+pub unsafe fn classify_0(mut n: ()) -> () {
+    let mut ret: () = unimplemented!();
     goto_block!({
         '__entry: {
-            ret = 0;
-            if ((((n) < (0)) as i32) != 0) {
+            ret = unimplemented!();
+            if ((((n) < (unimplemented!())) as ()) != 0) {
                 goto!('error);
             }
-            if ((((n) == (0)) as i32) != 0) {
+            if ((((n) == (unimplemented!())) as ()) != 0) {
                 goto!('out);
             }
             ret = n;
             goto!('out);
         }
         'error: {
-            ret = -1_i32;
+            ret = -1_();
         }
         'out: {
             return ret;
@@ -35,10 +35,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((((unsafe { classify_0(5,) }) == (5)) as i32) != 0));
-    assert!(((((unsafe { classify_0(0,) }) == (0)) as i32) != 0));
-    assert!(((((unsafe { classify_0(-2_i32,) }) == (-1_i32)) as i32) != 0));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

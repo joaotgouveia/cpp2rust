@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Item {
-    pub flags: u8,
+    pub flags: (),
 }
 pub fn main() {
     unsafe {
@@ -17,26 +17,31 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut item: Item = Item { flags: 0_u8 };
+unsafe fn main_0() -> () {
+    let mut item: Item = Item {
+        flags: unimplemented!(),
+    };
     let mut ptr: *mut Item = (&mut item as *mut Item);
-    (*(ptr)).flags = (((*(ptr)).flags as i32) | ((1) << (0))) as u8;
-    (*(ptr)).flags = (((*(ptr)).flags as i32) | ((1) << (1))) as u8;
-    assert!((((*ptr).flags as i32) == (3)));
-    (*(ptr)).flags = (((*(ptr)).flags as i32) & ((!((1) << (0)) as u8) as i32)) as u8;
-    assert!((((*ptr).flags as i32) == (2)));
-    let mut bits: [u8; 4] = [0_u8, 0_u8, 0_u8, 0_u8];
-    (bits)[((5) / (8)) as usize] =
-        (((bits)[((5) / (8)) as usize] as i32) | ((((1) << ((5) & (7))) as u8) as i32)) as u8;
-    (bits)[((13) / (8)) as usize] =
-        (((bits)[((13) / (8)) as usize] as i32) | ((((1) << ((13) & (7))) as u8) as i32)) as u8;
-    assert!(((bits[(0) as usize] as i32) == (32)));
-    assert!(((bits[(1) as usize] as i32) == (32)));
-    assert!(((bits[(2) as usize] as i32) == (0)));
-    if (((*ptr).flags as i32) != (0)) {
-        (*(ptr)).flags = (((*(ptr)).flags as i32) & ((!((1) << (1)) as u8) as i32)) as u8;
+    (*(ptr)).flags |= ((1_()) << (unimplemented!()));
+    (*(ptr)).flags |= ((1_()) << (1_()));
+    unimplemented!();
+    (*(ptr)).flags &= !((1_()) << (unimplemented!()));
+    unimplemented!();
+    let mut bits: [(); 4] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    (bits)[((5_()) / (8_())) as usize] |= ((1_()) << ((5_()) & (7_())));
+    (bits)[((13_()) / (8_())) as usize] |= ((1_()) << ((13_()) & (7_())));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    if (((*ptr).flags) != (unimplemented!())) {
+        (*(ptr)).flags &= !((1_()) << (1_()));
     }
-    assert!((((*ptr).flags as i32) == (0)));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,39 +10,39 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut x: i32 = 1;
+fn main_0() -> () {
+    let mut x: () = 1_();
     {
-        let mut x: i32 = 2;
-        assert!((x == 2));
+        let mut x: () = 2_();
+        unimplemented!();
         {
-            let mut x: i32 = 3;
-            assert!((x == 3));
+            let mut x: () = 3_();
+            unimplemented!();
         }
-        assert!((x == 2));
+        unimplemented!();
     }
-    assert!((x == 1));
-    let mut sum: i32 = 0;
-    let mut i: i32 = 0;
-    'loop_: while (i < 3) {
-        let mut y: i32 = i;
+    unimplemented!();
+    let mut sum: () = unimplemented!();
+    let mut i: () = unimplemented!();
+    'loop_: while (i < 3_()) {
+        let mut y: () = i;
         {
-            let mut y: i32 = 10;
+            let mut y: () = 10_();
             sum += y;
         }
         sum += y;
         i.postfix_inc();
     }
-    assert!((sum == 33));
-    if (x == 1) {
-        let mut x: i32 = 5;
+    unimplemented!();
+    if (x == 1_()) {
+        let mut x: () = 5_();
         {
-            let mut x: i32 = 6;
-            assert!((x == 6));
+            let mut x: () = 6_();
+            unimplemented!();
         }
-        assert!((x == 5));
+        unimplemented!();
     }
-    assert!((x == 1));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

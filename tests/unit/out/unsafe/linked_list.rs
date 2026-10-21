@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Node {
-    pub val: i32,
+    pub val: (),
     pub next: *mut Node,
 }
 impl Node {
@@ -17,9 +17,9 @@ impl Node {
         self.next = next;
     }
 }
-pub unsafe fn Find_0(mut head: *mut Node, mut idx: i32) -> *mut Node {
+pub unsafe fn Find_0(mut head: *mut Node, mut idx: ()) -> *mut Node {
     let mut curr: *mut Node = head;
-    let mut i: i32 = 0;
+    let mut i: () = unimplemented!();
     'loop_: while ((i) < (idx)) {
         curr = (*curr).next;
         i.postfix_inc();
@@ -33,7 +33,7 @@ pub unsafe fn Append_1(head: *mut Node, new_node: *mut Node) {
     }
     (unsafe { Node::SetNext(&mut (*curr), (new_node)) });
 }
-pub unsafe fn Delete_2(mut head: *mut Node, mut val: i32) -> *mut Node {
+pub unsafe fn Delete_2(mut head: *mut Node, mut val: ()) -> *mut Node {
     let mut curr: *mut Node = head;
     let mut prev: *mut Node = std::ptr::null_mut();
     'loop_: while !((curr).is_null()) {
@@ -56,38 +56,38 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut n0: Node = Node {
-        val: 5,
+        val: 5_(),
         next: std::ptr::null_mut(),
     };
     let mut head: *mut Node = (&mut n0 as *mut Node);
     let mut n1: Node = Node {
-        val: 4,
+        val: 4_(),
         next: std::ptr::null_mut(),
     };
     let mut n2: Node = Node {
-        val: 3,
+        val: 3_(),
         next: std::ptr::null_mut(),
     };
     let mut n3: Node = Node {
-        val: 2,
+        val: 2_(),
         next: std::ptr::null_mut(),
     };
     let mut n4: Node = Node {
-        val: 1,
+        val: 1_(),
         next: std::ptr::null_mut(),
     };
     let mut n5: Node = Node {
-        val: 0,
+        val: unimplemented!(),
         next: std::ptr::null_mut(),
     };
     let mut n6: Node = Node {
-        val: -1_i32,
+        val: -1_(),
         next: std::ptr::null_mut(),
     };
     let mut n7: Node = Node {
-        val: -2_i32,
+        val: -2_(),
         next: std::ptr::null_mut(),
     };
     (unsafe {
@@ -125,17 +125,10 @@ unsafe fn main_0() -> i32 {
         let _new_node: *mut Node = &mut n7;
         Append_1(_head, _new_node)
     });
-    head = (unsafe { Delete_2(head, 5) });
-    head = (unsafe { Delete_2(head, 0) });
-    head = (unsafe { Delete_2(head, -2_i32) });
-    assert!(
-        (((((((*(unsafe { Find_0(head, 0,) })).val) == (4))
-            && (((*(unsafe { Find_0(head, 1,) })).val) == (3)))
-            && (((*(unsafe { Find_0(head, 2,) })).val) == (2)))
-            && (((*(unsafe { Find_0(head, 3,) })).val) == (1)))
-            && (((*(unsafe { Find_0(head, 4,) })).val) == (-1_i32)))
-            && ((unsafe { Find_0(head, 5,) }).is_null())
-    );
-    return 0;
+    head = (unsafe { Delete_2(head, 5_()) });
+    head = (unsafe { Delete_2(head, unimplemented!()) });
+    head = (unsafe { Delete_2(head, -2_()) });
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

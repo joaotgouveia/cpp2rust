@@ -6,32 +6,32 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn foo_0() -> i32 {
-    kX1_4.with(|rc| *rc.borrow_mut() += 1);
+pub fn foo_0() -> () {
+    kX1_4.with(|rc| *rc.borrow_mut() += 1_());
     return ((kX1_4.with(|rc| *rc.borrow()) + kX2_5.with(|rc| *rc.borrow()))
         + static_i_1.with(|rc| *rc.borrow()));
 }
 thread_local!(
-    static static_i_1: Value<i32> = Rc::new(RefCell::new(0_i32));
+    static static_i_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    static static_f_2: Value<f32> = Rc::new(RefCell::new(0_f32));
+    static static_f_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    static static_b_3: Value<bool> = Rc::new(RefCell::new(false));
+    static static_b_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    static kX1_4: Value<i32> = Rc::new(RefCell::new(1));
+    static kX1_4: Value<()> = Rc::new(RefCell::new(1_()));
 );
 thread_local!(
-    static kX2_5: Value<i32> = Rc::new(RefCell::new(2));
+    static kX2_5: Value<()> = Rc::new(RefCell::new(2_()));
 );
-pub fn from_local_class_6() -> i32 {
+pub fn from_local_class_6() -> () {
     return (({ S_8Impl::get(&Rc::new(RefCell::new(<S_8>::default())).as_pointer()) })
         + ({ S_8Impl::get(&Rc::new(RefCell::new(<S_8>::default())).as_pointer()) }));
 }
 thread_local!(
-    static x_7: Value<i32> = Rc::new(RefCell::new(3));
+    static x_7: Value<()> = Rc::new(RefCell::new(3_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -40,17 +40,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((((({ foo_0() }) + ({ foo_0() })) + ({ foo_0() })) == 15));
-    assert!((({ from_local_class_6() }) == 9));
-    assert!((({ from_local_class_6() }) == 13));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub trait S_8Impl {
-    fn get(&self) -> i32;
+    fn get(&self) -> ();
 }
 impl S_8Impl for Ptr<S_8> {
-    fn get(&self) -> i32 {
+    fn get(&self) -> () {
         return (*x_7.with(Value::clone).borrow_mut()).prefix_inc();
     }
 }

@@ -6,16 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn no_default_0(mut x: i32) -> i32 {
-    let mut r: i32 = -1_i32;
+pub fn no_default_0(mut x: ()) -> () {
+    let mut r: () = -1_();
     'switch: {
         match { x } {
-            __v if __v == 7 => {
-                r = 1;
+            __v if __v == 7_() => {
+                r = 1_();
                 break 'switch;
             }
-            __v if __v == 8 => {
-                r = 2;
+            __v if __v == 8_() => {
+                r = 2_();
                 break 'switch;
             }
             _ => {}
@@ -27,9 +27,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ no_default_0(7,) }) == 1));
-    assert!((({ no_default_0(42,) }) == -1_i32));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

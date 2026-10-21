@@ -10,17 +10,17 @@ use std::rc::{Rc, Weak};
 #[byte_size(16)]
 pub struct shape_a {
     #[offset(0)]
-    pub code: u16,
+    pub code: (),
     #[offset(2)]
     #[byte_size(14)]
-    pub pad: Box<[i8]>,
+    pub pad: Box<[()]>,
 }
 impl Default for shape_a {
     fn default() -> Self {
         {
             shape_a {
-                code: 0_u16,
-                pad: (0..14).map(|_| 0_i8).collect::<Box<[i8]>>(),
+                code: unimplemented!(),
+                pad: (0..14).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
     }
@@ -29,23 +29,23 @@ impl Default for shape_a {
 #[byte_size(16)]
 pub struct shape_b {
     #[offset(0)]
-    pub code: u16,
+    pub code: (),
     #[offset(2)]
-    pub lo: u16,
+    pub lo: (),
     #[offset(4)]
-    pub hi: u32,
+    pub hi: (),
     #[offset(8)]
     #[byte_size(8)]
-    pub fill: Box<[i8]>,
+    pub fill: Box<[()]>,
 }
 impl Default for shape_b {
     fn default() -> Self {
         {
             shape_b {
-                code: 0_u16,
-                lo: 0_u16,
-                hi: 0_u32,
-                fill: (0..8).map(|_| 0_i8).collect::<Box<[i8]>>(),
+                code: unimplemented!(),
+                lo: unimplemented!(),
+                hi: unimplemented!(),
+                fill: (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
     }
@@ -64,7 +64,7 @@ impl anon_0 {
     pub fn b(this: Ptr<Self>) -> Ptr<shape_b> {
         this.reinterpret_cast()
     }
-    pub fn raw_(this: Ptr<Self>) -> Ptr<i8> {
+    pub fn raw_(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
 }
@@ -86,87 +86,60 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let c: Value<Container> = <Value<Container>>::default();
-    {
-        ((c.as_pointer()) as Ptr<Container>)
-            .to_any()
-            .memset((0) as u8, 256usize as usize);
-        ((c.as_pointer()) as Ptr<Container>).to_any()
-    };
-    assert!(
-        ((((anon_0::a(field_ptr!(c.as_pointer(), view)).with(|__s| __s.code) as i32) == 0) as i32)
-            != 0)
-    );
-    assert!(
-        ((((anon_0::b(field_ptr!(c.as_pointer(), view)).with(|__s| __s.lo) as i32) == 0) as i32)
-            != 0)
-    );
-    assert!(
-        (((((elem!(
-            (anon_0::raw_(field_ptr!(c.as_pointer(), view)).reinterpret_cast::<i8>() as Ptr::<i8>),
-            0
-        )
-        .read()) as i32)
-            == 0) as i32)
-            != 0)
-    );
-    assert!(
-        (((((elem!(
-            (anon_0::raw_(field_ptr!(c.as_pointer(), view)).reinterpret_cast::<i8>() as Ptr::<i8>),
-            255
-        )
-        .read()) as i32)
-            == 0) as i32)
-            != 0)
-    );
-    let src: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([
-        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
-        0_u8,
+    ({
+        let ___s: () = ((c.as_pointer()) as Ptr<Container>).to_any();
+        let ___n: () = 256usize;
+        memset_1(___s, unimplemented!(), ___n)
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let src: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
-    (*src.borrow_mut())[(0) as usize] = 2_u8;
-    (*src.borrow_mut())[(2) as usize] = 80_u8;
-    (*src.borrow_mut())[(3) as usize] = 0_u8;
-    (*src.borrow_mut())[(4) as usize] = 127_u8;
-    (*src.borrow_mut())[(5) as usize] = 0_u8;
-    (*src.borrow_mut())[(6) as usize] = 0_u8;
-    (*src.borrow_mut())[(7) as usize] = 1_u8;
-    let mut len: usize = 16_usize;
-    assert!((((len <= ::std::mem::size_of::<[i8; 256]>()) as i32) != 0));
-    {
-        ((anon_0::raw_(field_ptr!(c.as_pointer(), view)).reinterpret_cast::<i8>()) as Ptr<i8>)
-            .to_any()
-            .memcpy(
-                &((src.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any(),
-                len as usize,
-            );
-        ((anon_0::raw_(field_ptr!(c.as_pointer(), view)).reinterpret_cast::<i8>()) as Ptr<i8>)
-            .to_any()
-    };
-    assert!(
-        ((((anon_0::b(field_ptr!(c.as_pointer(), view)).with(|__s| __s.code) as i32) == 2) as i32)
-            != 0)
-    );
-    assert!(
-        (((((elem!(
-            ((field_ptr!(anon_0::b(field_ptr!(c.as_pointer(), view)), lo))
-                .reinterpret_cast::<u8>()),
-            0
+    (*src.borrow_mut())[(unimplemented!()) as usize] = 2_();
+    (*src.borrow_mut())[(2_()) as usize] = 80_();
+    (*src.borrow_mut())[(3_()) as usize] = unimplemented!();
+    (*src.borrow_mut())[(4_()) as usize] = 127_();
+    (*src.borrow_mut())[(5_()) as usize] = unimplemented!();
+    (*src.borrow_mut())[(6_()) as usize] = unimplemented!();
+    (*src.borrow_mut())[(7_()) as usize] = 1_();
+    let mut len: () = 16_();
+    unimplemented!();
+    ({
+        memcpy_2(
+            ((anon_0::raw_(field_ptr!(c.as_pointer(), view)).reinterpret_cast::<()>()) as Ptr<()>)
+                .to_any(),
+            ((src.as_pointer() as Ptr<()>) as Ptr<()>).to_any(),
+            len,
         )
-        .read()) as i32)
-            == 80) as i32)
-            != 0)
-    );
-    {
-        ((c.as_pointer()) as Ptr<Container>)
-            .to_any()
-            .memset((0) as u8, 256usize as usize);
-        ((c.as_pointer()) as Ptr<Container>).to_any()
-    };
-    assert!(
-        ((((anon_0::b(field_ptr!(c.as_pointer(), view)).with(|__s| __s.code) as i32) == 0) as i32)
-            != 0)
-    );
-    return 0;
+    });
+    unimplemented!();
+    unimplemented!();
+    ({
+        let ___s: () = ((c.as_pointer()) as Ptr<Container>).to_any();
+        let ___n: () = 256usize;
+        memset_1(___s, unimplemented!(), ___n)
+    });
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

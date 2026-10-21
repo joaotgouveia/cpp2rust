@@ -9,11 +9,11 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Item {
-    pub value: i32,
+    pub value: (),
 }
 impl Item {
     pub unsafe fn foo(&mut self, mut other: *mut Item) {
-        (*other).value = 10;
+        (*other).value = 10_();
     }
 }
 pub fn main() {
@@ -22,21 +22,21 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut arr: *mut Item = Box::leak(
-        (0..2_usize)
+        (0..2_())
             .map(|_| <Item>::default())
             .collect::<Box<[Item]>>(),
     )
     .as_mut_ptr();
-    (*arr.offset((0) as isize)).value = 1;
-    (*arr.offset((1) as isize)).value = 2;
+    (*arr.offset((unimplemented!()) as isize)).value = 1_();
+    (*arr.offset((1_()) as isize)).value = 2_();
     (unsafe {
-        let _other: *mut Item = (&mut (*arr.offset((1) as isize)) as *mut Item);
-        Item::foo(&mut (*arr.offset((0) as isize)), _other)
+        let _other: *mut Item = (&mut (*arr.offset((1_()) as isize)) as *mut Item);
+        Item::foo(&mut (*arr.offset((unimplemented!()) as isize)), _other)
     });
-    let mut result: i32 =
-        (((*arr.offset((0) as isize)).value) + ((*arr.offset((1) as isize)).value));
+    let mut result: () = (((*arr.offset((unimplemented!()) as isize)).value)
+        + ((*arr.offset((1_()) as isize)).value));
     {
         let __p = arr;
         if !__p.is_null() {
@@ -47,7 +47,7 @@ unsafe fn main_0() -> i32 {
             )))
         }
     };
-    assert!(((result) == (11)));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

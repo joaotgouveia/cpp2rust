@@ -9,12 +9,12 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct StackArray {
-    pub arr: [*mut i32; 3],
+    pub arr: [*mut (); 3],
 }
 pub unsafe fn IncrementAll_0(s: *mut StackArray) {
-    let mut i: i32 = 0;
-    'loop_: while ((i) < (3)) {
-        (*(*s).arr[(i) as usize]) += 1;
+    let mut i: () = unimplemented!();
+    'loop_: while ((i) < (3_())) {
+        (*(*s).arr[(i) as usize]) += 1_();
         i.prefix_inc();
     }
 }
@@ -24,17 +24,17 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: i32 = 0;
+unsafe fn main_0() -> () {
+    let mut x: () = unimplemented!();
     let mut s: StackArray = StackArray {
         arr: [
-            (&mut x as *mut i32),
-            (&mut x as *mut i32),
-            (&mut x as *mut i32),
+            (&mut x as *mut ()),
+            (&mut x as *mut ()),
+            (&mut x as *mut ()),
         ],
     };
     (unsafe { IncrementAll_0(&mut s) });
-    assert!(((x) == (3)));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

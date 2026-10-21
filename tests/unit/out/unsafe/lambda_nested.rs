@@ -9,28 +9,28 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
-    pub v: i32,
+    pub v: (),
 }
 impl S {
-    pub unsafe fn nested_this(&mut self) -> i32 {
-        let mut outer: FnPtr<fn(i32) -> i32> = lambda_unsafe!(
+    pub unsafe fn nested_this(&mut self) -> () {
+        let mut outer: FnPtr<fn(()) -> ()> = lambda_unsafe!(
             {
                 let this_: *mut S = (self as *mut S);
             },
-            |mut y: i32| -> i32 {
-                let mut inner: FnPtr<fn(i32) -> i32> = lambda_unsafe!(
+            |mut y: ()| -> () {
+                let mut inner: FnPtr<fn(()) -> ()> = lambda_unsafe!(
                     {
                         let this_: *mut S = this_;
-                        let y: i32 = y;
+                        let y: () = y;
                     },
-                    |mut z: i32| -> i32 {
+                    |mut z: ()| -> () {
                         return ((((*this_).v) + (y)) + (z));
                     }
                 );
-                return (unsafe { inner.call(1) });
+                return (unsafe { inner.call(1_()) });
             }
         );
-        return (unsafe { outer.call(20) });
+        return (unsafe { outer.call(20_()) });
     }
 }
 pub fn main() {
@@ -39,30 +39,30 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: i32 = 10;
-    let mut outer: FnPtr<fn(i32) -> i32> = lambda_unsafe!(
+unsafe fn main_0() -> () {
+    let mut x: () = 10_();
+    let mut outer: FnPtr<fn(()) -> ()> = lambda_unsafe!(
         {
-            let x: *mut i32 = &mut x;
+            let x: *mut () = &mut x;
         },
-        |mut y: i32| -> i32 {
-            let mut inner: FnPtr<fn(i32) -> i32> = lambda_unsafe!(
+        |mut y: ()| -> () {
+            let mut inner: FnPtr<fn(()) -> ()> = lambda_unsafe!(
                 {
-                    let x: *mut i32 = x;
-                    let y: i32 = y;
+                    let x: *mut () = x;
+                    let y: () = y;
                 },
-                |mut z: i32| -> i32 {
+                |mut z: ()| -> () {
                     return (((*x) + (y)) + (z));
                 }
             );
-            return (unsafe { inner.call(1) });
+            return (unsafe { inner.call(1_()) });
         }
     );
-    assert!(((unsafe { outer.call(20,) }) == (31)));
-    x = 100;
-    assert!(((unsafe { outer.call(20,) }) == (121)));
-    let mut s: S = S { v: 5 };
-    assert!(((unsafe { S::nested_this(&mut s,) }) == (26)));
-    return 0;
+    unimplemented!();
+    x = 100_();
+    unimplemented!();
+    let mut s: S = S { v: 5_() };
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,9 +10,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let a: Value<u32> = Rc::new(RefCell::new(42_u32));
-    assert!((((((a.as_pointer()).to_any().reinterpret_cast::<i32>().read()) == 42) as i32) != 0));
-    return 0;
+fn main_0() -> () {
+    let a: Value<()> = Rc::new(RefCell::new(42_()));
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

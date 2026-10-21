@@ -9,32 +9,32 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct registry {
-    pub slot: *mut ::libc::c_void,
-    pub level: i64,
+    pub slot: (),
+    pub level: (),
 }
-pub type field = u32;
+pub type field = ();
 pub const field_FIELD_SLOT: field = 0;
 pub const field_FIELD_LEVEL: field = 1;
 pub unsafe fn registry_update_0(
     mut r: *mut registry,
     mut field: field,
     __args: Box<[VaArg]>,
-) -> i32 {
-    let mut result: i32 = 0;
+) -> () {
+    let mut result: () = unimplemented!();
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
     'switch: {
-        match { (field as u32) } {
-            __v if __v == ((field_FIELD_SLOT as i32) as u32) => {
-                (*r).slot = ap.arg::<*mut ::libc::c_void>();
+        match { (field as ()) } {
+            __v if __v == (field_FIELD_SLOT as i32) => {
+                (*r).slot = ap.arg::<()>();
                 break 'switch;
             }
-            __v if __v == ((field_FIELD_LEVEL as i32) as u32) => {
-                (*r).level = ap.arg::<i64>();
+            __v if __v == (field_FIELD_LEVEL as i32) => {
+                (*r).level = ap.arg::<()>();
                 break 'switch;
             }
             _ => {
-                result = 1;
+                result = 1_();
                 break 'switch;
             }
         }
@@ -47,35 +47,17 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut r: registry = registry {
-        slot: std::ptr::null_mut(),
-        level: 0_i64,
+        slot: unimplemented!(),
+        level: unimplemented!(),
     };
-    let mut payload: i32 = 7;
-    assert!(
-        ((((unsafe {
-            registry_update_0(
-                (&mut r as *mut registry),
-                field_FIELD_SLOT,
-                Box::new([(&mut payload as *mut i32).into()]),
-            )
-        }) == (0)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe {
-            registry_update_0(
-                (&mut r as *mut registry),
-                field_FIELD_LEVEL,
-                Box::new([(5_i64).into()]),
-            )
-        }) == (0)) as i32)
-            != 0)
-    );
-    assert!(((((r.slot) == ((&mut payload as *mut i32) as *mut ::libc::c_void)) as i32) != 0));
-    assert!(((((*(r.slot as *mut i32)) == (7)) as i32) != 0));
-    assert!(((((r.level) == (5_i64)) as i32) != 0));
-    return 0;
+    let mut payload: () = 7_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

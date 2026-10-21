@@ -10,46 +10,38 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut x: i32 = {
-        let mut a: i32 = 1;
-        let mut b: i32 = 2;
+fn main_0() -> () {
+    let mut x: () = {
+        let mut a: () = 1_();
+        let mut b: () = 2_();
         (a + b)
     };
-    assert!((x == 3));
-    let mut counter: i32 = 0;
-    let mut y: i32 = {
+    unimplemented!();
+    let mut counter: () = unimplemented!();
+    let mut y: () = {
         counter.postfix_inc();
-        (counter * 10)
+        (counter * 10_())
     };
-    assert!((y == 10));
-    assert!((counter == 1));
-    let mut z: i32 = {
-        let mut v: i32 = 5;
-        if (v > 0) {
-            v = { (v * 2) };
+    unimplemented!();
+    unimplemented!();
+    let mut z: () = {
+        let mut v: () = 5_();
+        if (v > unimplemented!()) {
+            v = { (v * 2_()) };
         }
         v
     };
-    assert!((z == 10));
-    assert!(
-        ({
-            let mut inner: i32 = {
-                let mut a: i32 = 100;
-                a
-            };
-            inner
-        } == 100)
-    );
+    unimplemented!();
+    unimplemented!();
     {
         counter.postfix_inc()
     };
     {
-        if (counter != 2) {
-            counter = 2;
+        if (counter != 2_()) {
+            counter = 2_();
         }
     };
-    assert!((counter == 2));
-    return 0;
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,24 +6,24 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn fallthrough_chain_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+pub fn fallthrough_chain_0(mut x: ()) -> () {
+    let mut r: () = unimplemented!();
     switch!(match x {
-        __v if __v == 1 => {
-            r += 1;
+        __v if __v == 1_() => {
+            r += 1_();
         }
-        __v if __v == 2 => {
-            r += 2;
+        __v if __v == 2_() => {
+            r += 2_();
         }
-        __v if __v == 3 => {
-            r += 4;
+        __v if __v == 3_() => {
+            r += 4_();
         }
-        __v if __v == 4 => {
-            r += 8;
+        __v if __v == 4_() => {
+            r += 8_();
             break;
         }
         _ => {
-            r = -1_i32;
+            r = -1_();
             break;
         }
     });
@@ -33,12 +33,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ fallthrough_chain_0(1,) }) == 15));
-    assert!((({ fallthrough_chain_0(2,) }) == 14));
-    assert!((({ fallthrough_chain_0(3,) }) == 12));
-    assert!((({ fallthrough_chain_0(4,) }) == 8));
-    assert!((({ fallthrough_chain_0(99,) }) == -1_i32));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return unimplemented!();
 }
 pub fn __cpp2rust_init_globals() {}
