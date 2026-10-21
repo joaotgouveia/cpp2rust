@@ -132,6 +132,9 @@ pub use termios::*;
 mod time;
 pub use time::*;
 
+mod map;
+pub use map::*;
+
 mod seams;
 pub use seams::*;
 

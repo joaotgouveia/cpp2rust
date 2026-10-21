@@ -200,11 +200,6 @@ fn f89<T1>(a0: &mut Ptr<T1>) -> Ptr<T1> {
     a0.prefix_inc()
 }
 
-fn f90<T1: Clone + ByteRepr>(a0: Ptr<T1>, a1: Ptr<T1>) -> Vec<T1> {
-    let __count = a1.get_offset() - a0.get_offset();
-    PtrValueIter::new(&a0, __count).collect::<Vec<_>>()
-}
-
 fn f91<T1>(a0: Vec<T1>) -> Vec<T1> {
     a0
 }
