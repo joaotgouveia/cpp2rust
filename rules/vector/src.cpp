@@ -11,6 +11,7 @@ template <typename T1> using t2 = typename std::vector<bool, T1>::value_type;
 
 template <typename T1> using t3 = typename std::vector<bool, T1>::size_type;
 
+<<<<<<< HEAD
 template <typename T1>
 using t4 = typename std::vector<bool, T1>::difference_type;
 
@@ -41,6 +42,24 @@ template <typename T1>
 typename std::vector<bool, T1>::allocator_type
 f1(const std::vector<bool, T1> &a0) {
   return a0.get_allocator();
+=======
+template <typename T1, typename T2 = std::allocator<T1>>
+using t10 = typename std::vector<T1, T2>::value_type;
+
+template <typename T1>
+using t11 = typename std::vector<std::vector<T1>>::value_type;
+
+using t12 = std::vector<bool>::reference;
+
+template <typename T1, typename T2 = std::allocator<T1>>
+using t13 = typename std::vector<T1, T2>::reference;
+
+template <typename T1, typename T2 = std::allocator<T1>>
+using t14 = typename std::vector<T1, T2>::const_reference;
+
+std::vector<bool> f38(std::size_t n, const bool &value) {
+  return std::vector<bool>(n, value);
+>>>>>>> master
 }
 
 template <typename T1> std::vector<bool, T1> f2() {

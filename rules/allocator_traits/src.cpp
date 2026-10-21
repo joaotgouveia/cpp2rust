@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <string>
@@ -77,3 +78,14 @@ void f6(T1 &a0, T2 *a1, T3 &&...a2) {
 template <typename T1, typename T2> void f7(T1 &a0, T2 *a1) {
   return std::allocator_traits<T1>::destroy(a0, a1);
 }
+=======
+// Copyright (c) 2022-present INESC-ID.
+// Distributed under the MIT license that can be found in the LICENSE file.
+
+#include <memory>
+
+template <typename T2, typename T1 = typename T2::value_type>
+using t1 = typename std::allocator_traits<T2>::value_type;
+
+template <typename T1> using t2 = typename std::allocator_traits<T1>::size_type;
+>>>>>>> master

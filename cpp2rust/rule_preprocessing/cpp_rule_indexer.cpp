@@ -236,6 +236,9 @@ std::string TypeKey(const clang::TypedefNameDecl *rule) {
   if (!type->isDependentType() && type->getAs<clang::TypedefType>()) {
     return RulesLoader::TypeKey(type);
   }
+  if (!type->isDependentType() && type->getAs<clang::TypedefType>()) {
+    return RulesLoader::TypeKey(type);
+  }
   while (type->isPointerType() || type->isReferenceType()) {
     type = type->getPointeeType();
   }

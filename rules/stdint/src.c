@@ -14,6 +14,7 @@ typedef uintptr_t t8;
 typedef int8_t t9;
 typedef uintmax_t t10;
 typedef intmax_t t11;
+<<<<<<< HEAD
 
 typedef int_fast16_t t12;
 
@@ -48,3 +49,5 @@ typedef uint_least32_t t26;
 typedef uint_least64_t t27;
 
 typedef uint_least8_t t28;
+=======
+>>>>>>> master

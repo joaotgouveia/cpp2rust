@@ -3,9 +3,19 @@
 #include <fstream>
 #include <utility>
 
+<<<<<<< HEAD
 template <typename T1, typename T2>
 void f1(std::basic_filebuf<T1, T2> &a0, std::basic_filebuf<T1, T2> &a1) {
   return std::swap<T1, T2>(a0, a1);
+=======
+using t1 = std::ifstream;
+using t2 = std::ofstream;
+using t3 = std::ostream_iterator<char>;
+using t4 = std::ostream_iterator<char>::ostream_type;
+
+std::ofstream f1(const char *filename, std::ios_base::openmode mode) {
+  return std::ofstream(filename, mode);
+>>>>>>> master
 }
 
 template <typename T1, typename T2>

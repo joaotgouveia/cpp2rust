@@ -4,9 +4,21 @@
 #include <condition_variable>
 #include <utility>
 
+<<<<<<< HEAD
 template <typename T1, typename T2>
 bool f1(const std::unique_ptr<T1, T2> &a0, std::nullptr_t a1) {
   return a0 < a1;
+=======
+template <typename T1> using t1 = std::unique_ptr<T1>;
+template <typename T1> using t2 = std::unique_ptr<T1[]>;
+template <typename T1> using t3 = typename std::unique_ptr<T1>::pointer;
+template <typename T1> using t4 = typename std::unique_ptr<T1[]>::pointer;
+
+template <typename T1> T1 *f2(const std::unique_ptr<T1> &o) { return o.get(); }
+
+template <typename T1> std::unique_ptr<T1> f3(T1 *p) {
+  return std::unique_ptr<T1>(p);
+>>>>>>> master
 }
 
 template <typename T1, typename T2>

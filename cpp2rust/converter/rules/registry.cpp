@@ -302,43 +302,55 @@ struct TypeRuleMatch {
 
 TypeRuleMatch findType(clang::QualType use) {
   TypeRuleMatch best;
-  use = AstMatcher::SkipInternalTypedefs(sema_->Context, use);
+  auto &ctx = sema_->Context;
+  auto consider = [&](clang::QualType type, bool templates) {
+    for (auto key : RuleKeys::GetTypeKeys(ctx, type)) {
+      auto [begin, end] = types_.equal_range(key);
+      for (auto it = begin; it != end; ++it) {
+        if (!templates && llvm::isa<clang::TemplateDecl>(it->second.decl)) {
+          continue;
+        }
+        auto match = AstMatcher::MatchType(*sema_, type, it->second.decl);
+        if (!match) {
+          continue;
+        }
+        if (best.rule_decl) {
+          auto better = AstMatcher::MoreSpecializedType(*sema_, it->second.decl,
+                                                        best.rule_decl->decl);
+          if (!better) {
+            type.dump(llvm::errs(), ctx);
+            it->second.decl->dump(llvm::errs());
+            best.rule_decl->decl->dump(llvm::errs());
+            llvm::report_fatal_error(
+                "type matches several rules, none more specialized");
+          }
+          if (better != it->second.decl) {
+            continue;
+          }
+        }
+        best = {&it->second, *std::move(match)};
+      }
+    }
+  };
+  auto skipped = RuleDecls::SkipInternalTypedefs(ctx, use);
+  if (RuleDecls::SpelledTypedef(ctx, skipped) !=
+      RuleDecls::SpelledTypedef(ctx, use)) {
+    consider(use, /*templates=*/false);
+    if (best.rule_decl) {
+      return best;
+    }
+  }
+  use = skipped;
   if (auto tag = use->getAsTagDecl();
       tag &&
       (IsUserDefinedDecl(tag) || tag->hasAttr<clang::TransparentUnionAttr>())) {
     return best;
   }
-  auto consider = [&](const RuleKeys::TypeKey &key) {
-    auto [begin, end] = types_.equal_range(key);
-    for (auto it = begin; it != end; ++it) {
-      auto match = AstMatcher::MatchType(*sema_, use, it->second.decl);
-      if (!match) {
-        continue;
-      }
-      if (best.rule_decl) {
-        auto better = AstMatcher::MoreSpecializedType(*sema_, it->second.decl,
-                                                      best.rule_decl->decl);
-        if (!better) {
-          use.dump(llvm::errs(), sema_->Context);
-          it->second.decl->dump(llvm::errs());
-          best.rule_decl->decl->dump(llvm::errs());
-          llvm::report_fatal_error(
-              "type matches several rules, none more specialized");
-        }
-        if (better != it->second.decl) {
-          continue;
-        }
-      }
-      best = {&it->second, *std::move(match)};
-    }
-  };
-  for (auto key : RuleKeys::GetTypeKeys(sema_->Context, use)) {
-    consider(key);
-  }
+  consider(use, /*templates=*/true);
   if (!best.rule_decl) {
-    auto spelled = AstMatcher::SpelledTypedef(sema_->Context, use);
+    auto spelled = RuleDecls::SpelledTypedef(ctx, use);
     if (spelled && !IsUserDefinedDecl(spelled)) {
-      use.dump(llvm::errs(), sema_->Context);
+      use.dump(llvm::errs(), ctx);
       llvm::report_fatal_error("typedef has no type rule");
     }
   }

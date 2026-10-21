@@ -1,0 +1,204 @@
+// Copyright (c) 2022-present INESC-ID.
+// Distributed under the MIT license that can be found in the LICENSE file.
+
+use libcc2rs::*;
+use std::cell::RefCell;
+use std::rc::Rc;
+
+fn t1() -> Vec<i8> {
+    vec![0]
+}
+
+fn t4() -> Vec<i8> {
+    vec![0]
+}
+
+fn t5() -> Ptr<i8> {
+    Ptr::null()
+}
+
+fn t6() -> Ptr<i8> {
+    Ptr::null()
+}
+
+fn t7() -> i8 {
+    0_i8
+}
+
+fn f1(a0: Vec<i8>, a1: usize, a2: usize) -> Vec<i8> {
+    let mut __tmp1 =
+        a0[(a1) as usize..::std::cmp::min((a1 + a2) as usize, a0.len().saturating_sub(1))].to_vec();
+    __tmp1.push(0);
+    __tmp1
+}
+
+fn f3(a0: Vec<i8>, a1: Ptr<i8>) -> Vec<i8> {
+    let mut r = a0;
+    r.pop();
+    a1.with_c_str(|__s| r.extend_from_slice(__s));
+    r.push(0);
+    r
+}
+
+fn f4(a0: Ptr<Vec<i8>>, a1: Ptr<i8>, a2: usize) -> Ptr<Vec<i8>> {
+    a0.with_mut(|__v: &mut Vec<i8>| {
+        __v.pop();
+        a1.with_slice(a2 as usize, |__s| __v.extend_from_slice(__s));
+        __v.push(0);
+    });
+    a0
+}
+
+fn f5(a0: Ptr<Vec<i8>>) -> Ptr<i8> {
+    a0.decay()
+}
+
+fn f6(a0: Ptr<Vec<i8>>) -> Ptr<i8> {
+    a0.decay()
+}
+
+fn f7(a0: Ptr<i8>, a1: usize) -> Vec<i8> {
+    let mut __v = Vec::with_capacity(a1 as usize + 1);
+    a0.with_slice(a1 as usize, |__s| __v.extend_from_slice(__s));
+    __v.push(0);
+    __v
+}
+
+fn f10(a0: Ptr<i8>) -> Vec<i8> {
+    let mut __bytes = a0.to_c_bytes();
+    __bytes.push(0);
+    __bytes
+}
+
+fn f11(a0: Ptr<Vec<i8>>) -> Ptr<i8> {
+    a0.decay()
+}
+
+fn f12(a0: Ptr<Vec<i8>>) -> RandomAccessIterator<i8> {
+    RandomAccessIterator::Vec(a0.decay())
+}
+
+fn f14(a0: Ptr<Vec<i8>>, a1: usize, a2: usize, a3: Ptr<i8>, a4: usize) -> Ptr<Vec<i8>> {
+    let pos = a1 as usize;
+    let end = std::cmp::min(
+        pos + a2 as usize,
+        (*a0.upgrade().deref()).len().saturating_sub(1),
+    );
+    a0.with_mut(|__v: &mut Vec<i8>| {
+        a3.with_slice(a4 as usize, |__s| {
+            __v.splice(pos..end, __s.iter().copied());
+        });
+    });
+    a0
+}
+
+fn f15(a0: Ptr<Vec<i8>>) -> RandomAccessIterator<i8> {
+    RandomAccessIterator::Vec(a0.decay().to_last())
+}
+
+fn f16(a0: Vec<i8>, a1: Ptr<i8>) -> usize {
+    a1.with_c_str(|__lookup| {
+        a0.iter()
+            .take(a0.len().saturating_sub(1))
+            .rposition(|&x| __lookup.contains(&x))
+            .unwrap_or(usize::MAX)
+    })
+}
+
+// TODO: This should modify a0 in place
+fn f17(a0: Vec<i8>, a1: Ptr<i8>) -> Vec<i8> {
+    let mut __tmp2 = a0;
+    __tmp2.pop();
+    a1.with_c_str(|__s| __tmp2.extend_from_slice(__s));
+    __tmp2.push(0);
+    __tmp2
+}
+
+fn f18(a0: Vec<i8>, a1: Ptr<i8>) -> bool {
+    a1.with_c_str(|__s| a0[..a0.len().saturating_sub(1)] == *__s)
+}
+
+// TODO: This should return a0
+fn f21(a0: &mut Vec<i8>, a1: usize, a2: i8) -> Vec<i8> {
+    a0.pop();
+    a0.resize(a0.len() + (a1) as usize, a2);
+    a0.push(0);
+    a0.clone()
+}
+
+fn f26(a0: Ptr<Vec<i8>>, a1: usize) -> Ptr<i8> {
+    if a1 as usize >= (*a0.upgrade().deref()).len().saturating_sub(1) {
+        panic!("out of bounds access")
+    } else {
+        a0.decay().offset(a1 as isize)
+    }
+}
+
+fn f2(a0: Vec<i8>) -> usize {
+    (a0.len() - 1)
+}
+
+fn f8(a0: std::fs::File, a1: std::fs::File) -> Vec<i8> {
+    use std::io::Read;
+    let mut __bytes: Vec<u8> = Vec::new();
+    let mut __f = &a0;
+    __f.read_to_end(&mut __bytes)
+        .expect("couldn't read the file");
+    __bytes.push(0);
+    CChar::from_byte_vec(__bytes)
+}
+
+fn f9(a0: usize, a1: i8) -> Vec<i8> {
+    vec![a1; (a0) as usize]
+        .iter()
+        .cloned()
+        .chain(std::iter::once(0))
+        .collect()
+}
+
+fn f13(a0: &mut Vec<i8>, a1: usize) {
+    a0.pop();
+    a0.resize((a1) as usize, 0);
+    a0.push(0)
+}
+
+fn f19(a0: Vec<i8>) -> usize {
+    (a0.len() - 1)
+}
+
+fn f22(a0: Vec<i8>) -> bool {
+    a0.len() <= 1
+}
+
+fn f23() -> Vec<i8> {
+    vec![0]
+}
+
+fn f24(a0: &mut Vec<i8>) {
+    a0.clear();
+    a0.push(0)
+}
+
+fn f25(a0: &mut Vec<i8>) {
+    a0.shrink_to_fit()
+}
+
+fn f27(a0: Vec<i8>) -> Vec<i8> {
+    a0
+}
+
+fn f28(a0: &mut Vec<i8>) -> Vec<i8> {
+    std::mem::take(&mut *a0)
+}
+
+fn f29(a0: Ptr<Vec<i8>>, a1: Vec<i8>) {
+    a0.write(a1)
+}
+
+fn f30(a0: Ptr<Vec<i8>>, a1: &mut Vec<i8>) {
+    a0.write(std::mem::take(&mut *a1))
+}
+
+fn f31(a0: Vec<i8>, a1: Ptr<i8>) -> bool {
+    a1.with_c_str(|__s| a0[..a0.len().saturating_sub(1)] != *__s)
+}
