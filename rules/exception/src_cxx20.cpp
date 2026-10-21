@@ -4,6 +4,4 @@
 #include <new>
 #include <utility>
 
-using t6 = max_align_t;
-
-using t7 = ptrdiff_t;
+using t5 = ptrdiff_t;

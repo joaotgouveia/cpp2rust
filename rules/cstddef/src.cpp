@@ -1,6 +1,5 @@
 #include "../common/init.h"
 #include "../common/traits.h"
-#include <cstddef>
 #include <exception>
 #include <utility>
 

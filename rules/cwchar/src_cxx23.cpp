@@ -5,4 +5,4 @@
 #include <stdlib.h>
 #include <utility>
 
-auto f127(wchar_t **a0, size_t *a1) { return open_wmemstream(a0, a1); }
+auto f111(wchar_t **a0, size_t *a1) { return open_wmemstream(a0, a1); }

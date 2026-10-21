@@ -51,78 +51,26 @@ wint_t f102(wchar_t a0, FILE *a1) { return putwc(a0, a1); }
 
 wint_t f103(wchar_t a0, FILE *a1) { return putwc_unlocked(a0, a1); }
 
-wint_t f104(FILE *a0) { return fgetwc(a0); }
+wint_t f104(wint_t a0, FILE *a1) { return ungetwc(a0, a1); }
 
-wchar_t *f105(wchar_t *__restrict a0, int a1, FILE *__restrict a2) {
-  return fgetws(a0, a1, a2);
-}
-
-wint_t f106(wchar_t a0, FILE *a1) { return fputwc(a0, a1); }
-
-int f107(const wchar_t *__restrict a0, FILE *__restrict a1) {
-  return fputws(a0, a1);
-}
-
-int f108(FILE *a0, int a1) { return fwide(a0, a1); }
-
-template <typename... Args>
-int f109(FILE *__restrict a0, const wchar_t *__restrict a1, Args... args) {
-  return fwprintf(a0, a1, args...);
-}
-
-template <typename... Args>
-int f110(FILE *__restrict a0, const wchar_t *__restrict a1, Args... args) {
-  return fwscanf(a0, a1, args...);
-}
-
-wint_t f111(FILE *a0) { return getwc(a0); }
-
-wint_t f112(wchar_t a0, FILE *a1) { return putwc(a0, a1); }
-
-wint_t f113(wint_t a0, FILE *a1) { return ungetwc(a0, a1); }
-
-int f114(FILE *__restrict a0, const wchar_t *__restrict a1, va_list a2) {
+int f105(FILE *__restrict a0, const wchar_t *__restrict a1, va_list a2) {
   return vfwprintf(a0, a1, a2);
 }
 
-int f115(FILE *__restrict a0, const wchar_t *__restrict a1, va_list a2) {
+int f106(FILE *__restrict a0, const wchar_t *__restrict a1, va_list a2) {
   return vfwscanf(a0, a1, a2);
 }
 
-int f116(wchar_t *__restrict a0, size_t a1, const wchar_t *__restrict a2,
+int f107(wchar_t *__restrict a0, size_t a1, const wchar_t *__restrict a2,
          va_list a3) {
   return vswprintf(a0, a1, a2, a3);
 }
 
-int f117(const wchar_t *__restrict a0, const wchar_t *__restrict a1,
+int f108(const wchar_t *__restrict a0, const wchar_t *__restrict a1,
          va_list a2) {
   return vswscanf(a0, a1, a2);
 }
 
-int f118(const wchar_t *__restrict a0, va_list a1) { return vwprintf(a0, a1); }
+int f109(const wchar_t *__restrict a0, va_list a1) { return vwprintf(a0, a1); }
 
-int f119(const wchar_t *__restrict a0, va_list a1) { return vwscanf(a0, a1); }
-
-wint_t f120(wint_t a0, FILE *a1) { return ungetwc(a0, a1); }
-
-int f121(FILE *__restrict a0, const wchar_t *__restrict a1, va_list a2) {
-  return vfwprintf(a0, a1, a2);
-}
-
-int f122(FILE *__restrict a0, const wchar_t *__restrict a1, va_list a2) {
-  return vfwscanf(a0, a1, a2);
-}
-
-int f123(wchar_t *__restrict a0, size_t a1, const wchar_t *__restrict a2,
-         va_list a3) {
-  return vswprintf(a0, a1, a2, a3);
-}
-
-int f124(const wchar_t *__restrict a0, const wchar_t *__restrict a1,
-         va_list a2) {
-  return vswscanf(a0, a1, a2);
-}
-
-int f125(const wchar_t *__restrict a0, va_list a1) { return vwprintf(a0, a1); }
-
-int f126(const wchar_t *__restrict a0, va_list a1) { return vwscanf(a0, a1); }
+int f110(const wchar_t *__restrict a0, va_list a1) { return vwscanf(a0, a1); }

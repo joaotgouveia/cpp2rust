@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <utility>
 
+using t1 = FILE;
+
 template <typename... Args>
 int f1(char **__restrict a0, const char *__restrict a1, Args... args) {
   return asprintf(a0, a1, args...);
@@ -14,15 +16,15 @@ void f2(FILE *a0) { return clearerr(a0); }
 
 void f3(FILE *a0) { return clearerr_unlocked(a0); }
 
-using t1 = cookie_close_function_t;
+using t2 = cookie_close_function_t;
 
-using t2 = cookie_io_functions_t;
+using t3 = cookie_io_functions_t;
 
-using t3 = cookie_read_function_t;
+using t4 = cookie_read_function_t;
 
-using t4 = cookie_seek_function_t;
+using t5 = cookie_seek_function_t;
 
-using t5 = cookie_write_function_t;
+using t6 = cookie_write_function_t;
 
 char *f4(char *a0) { return ctermid(a0); }
 
@@ -90,9 +92,9 @@ FILE *f28(void *__restrict a0, const char *__restrict a1,
   return fopencookie(a0, a1, std::move(a2));
 }
 
-using t6 = fpos64_t;
+using t7 = fpos64_t;
 
-using t7 = fpos_t;
+using t8 = fpos_t;
 
 template <typename... Args>
 int f29(FILE *__restrict a0, const char *__restrict a1, Args... args) {
@@ -259,16 +261,14 @@ int f82(const char *__restrict a0, const char *__restrict a1, Args... args) {
   return sscanf(a0, a1, args...);
 }
 
-using t8 = FILE;
+char *f83(const char *a0, const char *a1) { return tempnam(a0, a1); }
 
-FILE *f83() { return tmpfile(); }
+FILE *f84() { return tmpfile(); }
 
-char *f84(char a0[20]) { return tmpnam(a0); }
+FILE *f85() { return tmpfile64(); }
 
-int f85(int a0, FILE *a1) { return ungetc(a0, a1); }
+char *f86(char a0[20]) { return tmpnam(a0); }
 
-char *f86(const char *a0, const char *a1) { return tempnam(a0, a1); }
+char *f87(char a0[20]) { return tmpnam_r(a0); }
 
-FILE *f87() { return tmpfile64(); }
-
-char *f88(char a0[20]) { return tmpnam_r(a0); }
+int f88(int a0, FILE *a1) { return ungetc(a0, a1); }

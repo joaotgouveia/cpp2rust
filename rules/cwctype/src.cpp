@@ -59,26 +59,28 @@ int f26(wint_t a0, locale_t a1) { return iswxdigit_l(a0, a1); }
 
 wint_t f27(wint_t a0, wctrans_t a1) { return towctrans(a0, a1); }
 
-wint_t f28(wint_t a0) { return towlower(a0); }
-
-wint_t f29(wint_t a0) { return towupper(a0); }
-
-wctrans_t f30(const char *a0) { return wctrans(a0); }
-
-using t1 = wctrans_t;
-
-wctype_t f31(const char *a0) { return wctype(a0); }
-
-using t2 = wctype_t;
-
-wint_t f32(wint_t a0, wctrans_t a1, locale_t a2) {
+wint_t f28(wint_t a0, wctrans_t a1, locale_t a2) {
   return towctrans_l(a0, a1, a2);
 }
 
-wint_t f33(wint_t a0, locale_t a1) { return towlower_l(a0, a1); }
+wint_t f29(wint_t a0) { return towlower(a0); }
 
-wint_t f34(wint_t a0, locale_t a1) { return towupper_l(a0, a1); }
+wint_t f30(wint_t a0, locale_t a1) { return towlower_l(a0, a1); }
 
-wctrans_t f35(const char *a0, locale_t a1) { return wctrans_l(a0, a1); }
+wint_t f31(wint_t a0) { return towupper(a0); }
+
+wint_t f32(wint_t a0, locale_t a1) { return towupper_l(a0, a1); }
+
+wctrans_t f33(const char *a0) { return wctrans(a0); }
+
+wctrans_t f34(const char *a0, locale_t a1) { return wctrans_l(a0, a1); }
+
+using t1 = wctrans_t;
+
+wctype_t f35(const char *a0) { return wctype(a0); }
 
 wctype_t f36(const char *a0, locale_t a1) { return wctype_l(a0, a1); }
+
+using t2 = wctype_t;
+
+using t3 = wint_t;

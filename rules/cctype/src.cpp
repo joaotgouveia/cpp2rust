@@ -56,12 +56,12 @@ int f25(int a0) { return isxdigit(a0); }
 
 int f26(int a0, locale_t a1) { return isxdigit_l(a0, a1); }
 
-int f27(int a0) { return tolower(a0); }
+int f27(int a0) { return toascii(a0); }
 
-int f28(int a0) { return toupper(a0); }
+int f28(int a0) { return tolower(a0); }
 
-int f29(int a0) { return toascii(a0); }
+int f29(int a0, locale_t a1) { return tolower_l(a0, a1); }
 
-int f30(int a0, locale_t a1) { return tolower_l(a0, a1); }
+int f30(int a0) { return toupper(a0); }
 
 int f31(int a0, locale_t a1) { return toupper_l(a0, a1); }
