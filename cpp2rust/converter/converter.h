@@ -8,6 +8,7 @@
 #include <clang/AST/RecursiveASTVisitor.h>
 #include <clang/Sema/Sema.h>
 
+#include <format>
 #include <functional>
 #include <map>
 #include <memory>
@@ -27,6 +28,34 @@
 
 namespace cpp2rust {
 inline constexpr const char kDestructorName[] = "destructor";
+
+// Sets var to value while in scope.
+template <typename T> class ScopedValue {
+  T &var_;
+  T saved_;
+
+public:
+  ScopedValue(T &var, std::type_identity_t<T> value)
+      : var_(var), saved_(std::exchange(var, std::move(value))) {}
+  ~ScopedValue() { var_ = std::move(saved_); }
+  ScopedValue(const ScopedValue &) = delete;
+  ScopedValue &operator=(const ScopedValue &) = delete;
+};
+
+// Pushes value onto stack while in scope.
+template <typename T> class ScopedPush {
+  std::vector<T> &stack_;
+
+public:
+  ScopedPush(std::vector<T> &stack, std::type_identity_t<T> value)
+      : stack_(stack) {
+    stack_.push_back(std::move(value));
+  }
+  ~ScopedPush() { stack_.pop_back(); }
+  ScopedPush(const ScopedPush &) = delete;
+  ScopedPush &operator=(const ScopedPush &) = delete;
+};
+
 class Converter : public clang::RecursiveASTVisitor<Converter> {
 
 public:
@@ -103,6 +132,12 @@ public:
 
   virtual void EmitFunctionPreamble(clang::FunctionDecl *decl);
 
+  // Declares the storage of the temporary temp that the default argument of
+  // param is bound to, and returns its name.
+  std::string
+  EmitDefaultArgStorage(const clang::ParmVarDecl *param,
+                        const clang::MaterializeTemporaryExpr *temp);
+
   virtual void ConvertFunctionBody(clang::FunctionDecl *decl);
 
   void ConvertGotoBlock(clang::CompoundStmt *body);
@@ -112,6 +147,9 @@ public:
   void ConvertBodyStmts(clang::Stmt *body);
 
   void EmitHoistedDecls(clang::CompoundStmt *body);
+
+  // Declares decl ahead of its initialization, with a default value.
+  void EmitHoistedDecl(clang::VarDecl *decl);
 
   virtual bool VisitFunctionTemplateDecl(clang::FunctionTemplateDecl *decl);
   bool VisitVarTemplateDecl(clang::VarTemplateDecl *decl);
@@ -128,7 +166,7 @@ public:
 
   virtual void ConvertGlobalVarDecl(clang::VarDecl *decl);
 
-  virtual void ConvertVaListVarDecl(clang::VarDecl *decl);
+  void ConvertVaListVarDecl(clang::VarDecl *decl);
 
   virtual bool ConvertVarDeclSkipInit(clang::VarDecl *decl);
 
@@ -139,6 +177,7 @@ public:
   virtual void EmitRustStructOrUnion(clang::RecordDecl *decl);
 
   void EmitReprC(clang::RecordDecl *decl);
+  void EmitDerives(const clang::RecordDecl *decl);
   virtual void EmitRustUnion(clang::RecordDecl *decl);
 
   virtual bool EmitsReprCForRecords() const { return true; }
@@ -196,6 +235,8 @@ public:
 
   bool VisitLinkageSpecDecl(clang::LinkageSpecDecl *decl);
 
+  void ConvertDeclContext(clang::DeclContext *decl);
+
   virtual bool VisitTypedefDecl(clang::TypedefDecl *decl);
   virtual bool VisitTypeAliasDecl(clang::TypeAliasDecl *decl);
   virtual bool VisitTypeAliasTemplateDecl(clang::TypeAliasTemplateDecl *decl);
@@ -244,9 +285,11 @@ public:
 
     const std::string &GetOrMaterialize(
         unsigned argument_num,
-        std::function<std::pair<std::string, std::string>(const std::string &,
-                                                          clang::QualType)>
+        std::function<std::pair<std::string, std::string>(clang::QualType)>
             materialize_fn);
+
+    // str, preceded by the bindings of the temporaries that it refers to.
+    std::string Wrap(std::string str) const;
 
   private:
     std::vector<std::string> materialized_refs_;
@@ -289,7 +332,18 @@ public:
     void dump() const;
   };
 
-  std::optional<TempMaterializationCtx> ConvertCallExpr(clang::CallExpr *expr);
+  // Converts the calls that are converted to something other than a call,
+  // and returns whether expr is one.
+  bool ConvertSpecialCall(clang::CallExpr *expr);
+
+  // Converts the call expr, and returns the temporaries of the arguments of a
+  // call translated by a rule.
+  virtual std::optional<TempMaterializationCtx>
+  ConvertCallExpr(clang::CallExpr *expr);
+
+  // Emits the result of the call expr, which was converted to str.
+  virtual void EmitCallResult(clang::CallExpr *expr, std::string str,
+                              const TempMaterializationCtx *temps);
 
   struct CallArg {
     enum class Kind : int8_t {
@@ -347,6 +401,9 @@ public:
   ConvertLambdaToFunctionPointer(clang::Expr *lambda,
                                  const clang::CXXConversionDecl *conversion);
 
+  void EmitLambdaFunctionPointer(const clang::CXXRecordDecl *lambda,
+                                 clang::CXXMethodDecl *call_operator);
+
   virtual void
   ConvertFunctionToFunctionPointer(const clang::FunctionDecl *fn_decl);
 
@@ -371,15 +428,13 @@ public:
     return false;
   }
 
-  virtual void ConvertPrintf(clang::CallExpr *expr);
-
-  void ConvertVAArgCall(clang::CallExpr *expr);
+  virtual void ConvertVAArgCall(clang::CallExpr *expr);
 
   virtual void ConvertVariadicArg(clang::Expr *arg);
 
   void DefineImplicitMembers(clang::CXXRecordDecl *decl);
 
-  virtual bool VisitCallExpr(clang::CallExpr *expr);
+  bool VisitCallExpr(clang::CallExpr *expr);
 
   virtual bool VisitIntegerLiteral(clang::IntegerLiteral *expr);
 
@@ -402,6 +457,13 @@ public:
 
   virtual bool VisitCXXBoolLiteralExpr(clang::CXXBoolLiteralExpr *expr);
 
+  void EmitBoolLiteral(bool value);
+
+  // The value of expr, an integer constant expression.
+  void EmitEvaluatedInt(clang::Expr *expr);
+
+  void EmitNullPointer();
+
   bool VisitCXXNoexceptExpr(clang::CXXNoexceptExpr *expr);
 
   void ConvertIntegerToEnumeralCast(clang::Expr *to, clang::Expr *from);
@@ -417,6 +479,10 @@ public:
 
   virtual void ConvertBinaryOperator(clang::BinaryOperator *expr);
 
+  // The value that the compound assignment expr assigns to its left operand,
+  // whose type differs from the computation type.
+  std::string ConvertCompoundAssignValue(clang::CompoundAssignOperator *expr);
+
   virtual bool ConvertIncAndDec(clang::UnaryOperator *expr);
 
   virtual bool VisitUnaryOperator(clang::UnaryOperator *expr);
@@ -426,6 +492,10 @@ public:
   bool ConvertLValueConditional(clang::ConditionalOperator *expr);
 
   virtual bool VisitConditionalOperator(clang::ConditionalOperator *expr);
+
+  // A branch of a conditional operator of the given type.
+  virtual void ConvertConditionalBranch(clang::Expr *expr,
+                                        clang::QualType type);
 
   virtual bool VisitDeclRefExpr(clang::DeclRefExpr *expr);
 
@@ -442,6 +512,12 @@ public:
   virtual bool VisitCXXThisExpr(clang::CXXThisExpr *expr);
 
   virtual bool VisitInitListExpr(clang::InitListExpr *expr);
+  virtual void ConvertScalarInitList(clang::InitListExpr *expr);
+  // is_empty: whether the list, as written, has no initializers.
+  virtual void ConvertRecordInitList(clang::InitListExpr *expr, bool is_empty);
+  virtual void ConvertUnionInitList(clang::InitListExpr *expr,
+                                    const clang::FieldDecl *field);
+  virtual void ConvertArrayInitList(clang::InitListExpr *expr);
   bool VisitOpaqueValueExpr(clang::OpaqueValueExpr *expr);
   bool VisitArrayInitIndexExpr(clang::ArrayInitIndexExpr *expr);
   virtual bool VisitArrayInitLoopExpr(clang::ArrayInitLoopExpr *expr);
@@ -663,6 +739,9 @@ protected:
 
   virtual void ConvertFunctionParameters(clang::FunctionDecl *decl);
 
+  void ConvertParamList(llvm::ArrayRef<clang::ParmVarDecl *> params,
+                        bool is_variadic);
+
   virtual void ConvertFunctionQualifiers(clang::FunctionDecl *decl);
 
   virtual void ConvertFunctionReturnType(clang::FunctionDecl *decl);
@@ -721,6 +800,10 @@ protected:
   virtual void AddDefaultTraitForUnion(const clang::RecordDecl *decl);
 
   void EmitDefaultStructLiteral(const clang::RecordDecl *decl);
+
+  // Emits `impl Default for decl`, whose default() returns what body emits.
+  void EmitDefaultImpl(const clang::RecordDecl *decl,
+                       llvm::function_ref<void()> body);
 
   virtual void EmitByteSizeAttr(const clang::RecordDecl *decl);
 
@@ -793,7 +876,17 @@ protected:
 
   bool RecordDerivesCopy(clang::QualType type);
 
-  bool IsPassThroughRule(clang::Expr *expr) const;
+  bool IsPassThroughRule(clang::Expr *expr);
+
+  // Whether the rule of expr takes its argument number index, arg, a container
+  // in C++, as a pointer to its elements rather than to the container.
+  virtual bool ParamIsElementPtr(clang::Expr * /*expr*/, clang::Expr * /*arg*/,
+                                 unsigned /*index*/) {
+    return false;
+  }
+
+  // Checks that the rule of expr returns the type that expr returns in C++.
+  virtual void CheckRuleReturnType(clang::Expr * /*expr*/) {}
 
   bool RecordHasCopyableFields(const clang::RecordDecl *decl);
 
@@ -803,6 +896,9 @@ protected:
   clang::ASTContext &ctx_;
   std::unique_ptr<clang::MangleContext> mangle_context_;
   clang::FunctionDecl *curr_function_ = nullptr;
+  bool InConstructor() const {
+    return clang::isa_and_present<clang::CXXConstructorDecl>(curr_function_);
+  }
   bool in_function_formals_ = false;
   enum class MethodTarget : uint8_t {
     ValueImpl,
@@ -812,40 +908,14 @@ protected:
   };
   MethodTarget method_target_ = MethodTarget::ValueImpl;
 
-  struct PushMethodTarget {
-    Converter &c;
-    MethodTarget prev;
-    PushMethodTarget(Converter &c, MethodTarget k)
-        : c(c), prev(c.method_target_) {
-      c.method_target_ = k;
-    }
-    ~PushMethodTarget() { c.method_target_ = prev; }
-  };
-
   std::string ufcs_receiver_;
   bool in_const_initializer_ = false;
   std::optional<bool> autoref_mut_;
 
-  struct PushExplicitAutoref {
-    Converter &c;
-    std::optional<bool> prev;
-    PushExplicitAutoref(Converter &c, std::optional<bool> v)
-        : c(c), prev(c.autoref_mut_) {
-      c.autoref_mut_ = v;
-    }
-    ~PushExplicitAutoref() { c.autoref_mut_ = prev; }
-  };
-
-  struct PushConstInitializer {
-    Converter &c;
-    bool prev;
-    PushConstInitializer(Converter &c, bool enabled)
-        : c(c), prev(c.in_const_initializer_) {
-      c.in_const_initializer_ = enabled;
-    }
-    ~PushConstInitializer() { c.in_const_initializer_ = prev; }
-  };
   std::vector<clang::Expr *> curr_for_inc_;
+  // The names of the iterators of range-based for loops.
+  std::unordered_map<const clang::ValueDecl *, std::string>
+      range_iterator_names_;
   std::vector<clang::QualType> curr_init_type_;
 
   enum class BreakTarget : int8_t { Loop, FallthroughSwitch, Switch };
@@ -856,52 +926,14 @@ protected:
            break_target_.back() == BreakTarget::Switch;
   }
 
-  class PushBreakTarget {
-  public:
-    PushBreakTarget(std::vector<BreakTarget> &stack, BreakTarget target)
-        : stack_(stack) {
-      stack_.push_back(target);
-    }
-    ~PushBreakTarget() { stack_.pop_back(); }
-    PushBreakTarget(const PushBreakTarget &) = delete;
-    PushBreakTarget &operator=(const PushBreakTarget &) = delete;
-
-  private:
-    std::vector<BreakTarget> &stack_;
-  };
-
-  class PushInitType {
-  public:
-    PushInitType(Converter &c, clang::QualType type) : c_(c) {
-      c_.curr_init_type_.emplace_back(type);
-    }
-    ~PushInitType() { c_.curr_init_type_.pop_back(); }
-    PushInitType(const PushInitType &) = delete;
-    PushInitType &operator=(const PushInitType &) = delete;
-
-  private:
-    Converter &c_;
-  };
-
   // Local variables hoisted outside a goto_block so that all labels can see and
   // use the variables.
   std::unordered_set<const clang::VarDecl *> hoisted_decls_;
-  class PushHoistedDecls {
-  public:
-    PushHoistedDecls(std::unordered_set<const clang::VarDecl *> &field)
-        : field_(field), saved_(std::move(field)) {
-      field_.clear();
-    }
-    ~PushHoistedDecls() { field_ = std::move(saved_); }
-    PushHoistedDecls(const PushHoistedDecls &) = delete;
-    PushHoistedDecls &operator=(const PushHoistedDecls &) = delete;
-
-  private:
-    std::unordered_set<const clang::VarDecl *> &field_;
-    std::unordered_set<const clang::VarDecl *> saved_;
-  };
 
   unsigned materialized_temp_id_ = 0;
+  std::string NewTempName() {
+    return std::format("__tmp_{}", materialized_temp_id_++);
+  }
   std::string *materialized_temp_bindings_ = nullptr;
   class HoistMaterializedTempBindings {
     Converter &c;
@@ -1017,22 +1049,16 @@ protected:
 
   void dump_expr_kinds();
 
-  struct PushCurrFunction {
-    Converter &c;
-    clang::FunctionDecl *prev;
-    PushCurrFunction(Converter &c, clang::FunctionDecl *decl)
-        : c(c), prev(c.curr_function_) {
-      c.curr_function_ = decl;
-    }
-    ~PushCurrFunction() { c.curr_function_ = prev; }
-  };
-
   struct PushExprKind {
     Converter &c;
-    PushExprKind(Converter &c, ExprKind k, const char *file = __builtin_FILE(),
+    bool pushed;
+    PushExprKind(Converter &c, ExprKind k, bool enabled = true,
+                 const char *file = __builtin_FILE(),
                  int line = __builtin_LINE())
-        : c(c) {
-      c.curr_expr_kind_.push_back(k);
+        : c(c), pushed(enabled) {
+      if (pushed) {
+        c.curr_expr_kind_.push_back(k);
+      }
       log() << "PushExprKind " << file << ':' << line << ' ';
       c.dump_expr_kinds();
       log() << '[';
@@ -1041,29 +1067,35 @@ protected:
       }
       log() << "]\n";
     }
-    ~PushExprKind() { c.curr_expr_kind_.pop_back(); }
+    ~PushExprKind() {
+      if (pushed) {
+        c.curr_expr_kind_.pop_back();
+      }
+    }
   };
 
+  // Whether the converted expression evaluates to a new value, which can be
+  // moved, rather than to an existing one, which must be copied.
   enum class ComputedExprType : uint8_t {
-    Value,
-    FreshValue,
-    Pointer,
-    FreshPointer,
+    Fresh,
+    NotFresh,
     Unknown,
     Pending,
   };
   ComputedExprType computed_expr_type_ = ComputedExprType::Unknown;
 
   bool isFresh() const {
-    assert(computed_expr_type_ != ComputedExprType::Unknown);
-    assert(computed_expr_type_ != ComputedExprType::Pending);
-    return computed_expr_type_ == ComputedExprType::FreshValue ||
-           computed_expr_type_ == ComputedExprType::FreshPointer;
+    return computed_expr_type_ == ComputedExprType::Fresh;
   }
 
-  void SetFresh();
+  void MarkFresh() { computed_expr_type_ = ComputedExprType::Fresh; }
+  void MarkNotFresh() { computed_expr_type_ = ComputedExprType::NotFresh; }
+  // Emits str, which evaluates to a new value.
+  void EmitFresh(std::string_view str);
+  // str, cloned unless the expression it was converted from is fresh.
+  std::string MakeFresh(std::string str);
+  // A read of a value of the given type is fresh if the value is copied.
   void SetValueFreshness(clang::QualType type);
-  void SetFreshType(clang::QualType type);
 
   std::string ConvertLValue(clang::Expr *expr);
   std::string
@@ -1080,6 +1112,11 @@ protected:
 
   virtual std::string ConvertPointerReceiver(clang::Expr *arg,
                                              std::string_view param_type);
+
+  // A pointer to the elements of the container arg.
+  virtual std::string ConvertElementPtr(clang::Expr *arg) {
+    llvm_unreachable("no pointers to elements in this model");
+  }
 
   // A pointer to a new temporary with the value of the prvalue expr, which
   // lives until the end of the statement.

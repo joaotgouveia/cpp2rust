@@ -103,8 +103,6 @@ public:
 
   void ConvertGlobalVarDecl(clang::VarDecl *decl) override;
 
-  void ConvertVaListVarDecl(clang::VarDecl *decl) override;
-
   bool ConvertVarDeclSkipInit(clang::VarDecl *decl) override;
 
   void EmitHoistedInArmAssignment(clang::VarDecl *decl) override;
@@ -113,9 +111,18 @@ public:
 
   bool ConvertIncAndDec(clang::UnaryOperator *expr) override;
 
-  bool VisitConditionalOperator(clang::ConditionalOperator *expr) override;
+  void ConvertConditionalBranch(clang::Expr *expr,
+                                clang::QualType type) override;
 
-  void ConvertPrintf(clang::CallExpr *expr) override;
+  void ConvertPrintf(clang::CallExpr *expr);
+
+  void ConvertVAArgCall(clang::CallExpr *expr) override;
+
+  std::optional<TempMaterializationCtx>
+  ConvertCallExpr(clang::CallExpr *expr) override;
+
+  void EmitCallResult(clang::CallExpr *expr, std::string str,
+                      const TempMaterializationCtx *temps) override;
 
   void EmitFnPtrCall(clang::CallExpr *expr) override;
 
@@ -138,7 +145,6 @@ public:
 
   // FnPtr does not implement Copy
   bool FunctionPointerImplementsCopy() const override { return false; }
-  bool VisitCallExpr(clang::CallExpr *expr) override;
 
   bool VisitStringLiteral(clang::StringLiteral *expr) override;
 
@@ -146,7 +152,8 @@ public:
 
   bool VisitImplicitCastExpr(clang::ImplicitCastExpr *expr) override;
 
-  bool VisitFunctionPointerCast(clang::ExplicitCastExpr *expr);
+  // Converts a cast from or to a function pointer, if expr is one.
+  bool ConvertFunctionPointerCast(clang::ExplicitCastExpr *expr);
 
   bool VisitExplicitCastExpr(clang::ExplicitCastExpr *expr) override;
 
@@ -155,7 +162,11 @@ public:
   bool VisitStmtExpr(clang::StmtExpr *expr) override;
   bool VisitReturnStmt(clang::ReturnStmt *stmt) override;
 
-  bool VisitInitListExpr(clang::InitListExpr *expr) override;
+  void ConvertScalarInitList(clang::InitListExpr *expr) override;
+  void ConvertRecordInitList(clang::InitListExpr *expr, bool is_empty) override;
+  void ConvertUnionInitList(clang::InitListExpr *expr,
+                            const clang::FieldDecl *field) override;
+  void ConvertArrayInitList(clang::InitListExpr *expr) override;
 
   bool VisitCXXStdInitializerListExpr(
       clang::CXXStdInitializerListExpr *expr) override;
@@ -195,19 +206,14 @@ public:
   std::unordered_set<const clang::DeclRefExpr *> moved_reads_;
 
   struct PushRecordPtr {
-    ConverterRefCount &c;
-    std::string *record_ptr;
-    const clang::Expr *record_base;
+    ScopedValue<std::string *> record_ptr;
+    ScopedValue<const clang::Expr *> record_base;
 
     PushRecordPtr(ConverterRefCount &c, std::string *ptr,
                   const clang::Expr *base)
-        : c(c), record_ptr(std::exchange(c.record_ptr_, ptr)),
-          record_base(std::exchange(
-              c.record_base_, base ? base->IgnoreParenImpCasts() : nullptr)) {}
-    ~PushRecordPtr() {
-      c.record_ptr_ = record_ptr;
-      c.record_base_ = record_base;
-    }
+        : record_ptr(c.record_ptr_, ptr),
+          record_base(c.record_base_,
+                      base ? base->IgnoreParenImpCasts() : nullptr) {}
   };
 
   bool VisitCXXNewExpr(clang::CXXNewExpr *expr) override;
@@ -227,8 +233,6 @@ public:
   void ConvertVariadicArg(clang::Expr *arg) override;
 
   void ConvertArrayCXXConstructExpr(clang::CXXConstructExpr *expr) override;
-
-  bool VisitCXXDefaultArgExpr(clang::CXXDefaultArgExpr *expr) override;
 
   std::string GetDefaultAsString(clang::QualType qual_type) override;
 
@@ -357,6 +361,34 @@ private:
   void SetDerefFreshness(clang::QualType pointee_type);
   const char *GetPointerDerefPrefix(clang::QualType pointee_type) override;
 
+  // Dereferences, if enabled, the pointer to pointee_type emitted in scope.
+  class PushDeref {
+    ConverterRefCount &c;
+    clang::QualType pointee_type;
+    bool enabled;
+
+  public:
+    PushDeref(ConverterRefCount &c, clang::QualType pointee_type,
+              bool enabled = true)
+        : c(c), pointee_type(pointee_type), enabled(enabled) {
+      if (enabled) {
+        c.StrCat(token::kOpenParen, c.GetPointerDerefPrefix(pointee_type));
+      }
+    }
+    ~PushDeref() {
+      if (enabled) {
+        c.StrCat(c.GetPointerDerefSuffix(pointee_type), token::kCloseParen);
+        c.SetDerefFreshness(pointee_type);
+      }
+    }
+    PushDeref(const PushDeref &) = delete;
+    PushDeref &operator=(const PushDeref &) = delete;
+  };
+
+  // Emits the object that ptr points to: a pending dereference, which is
+  // written through ptr, if an lvalue is converted, or a read otherwise.
+  void EmitPointee(std::string ptr, clang::QualType pointee_type, bool fresh);
+
   void EmitSetOrAssign(clang::Expr *lhs, std::string_view rhs);
 
   // Whether an assigned value can be wrapped in braces to release its borrows
@@ -398,13 +430,18 @@ private:
   std::string ConvertPointerReceiver(clang::Expr *arg,
                                      std::string_view param_type) override;
 
-  std::string AsPointerMethod(clang::QualType type) const;
+  bool ParamIsElementPtr(clang::Expr *expr, clang::Expr *arg,
+                         unsigned index) override;
+  std::string ConvertElementPtr(clang::Expr *arg) override;
+  // The method that makes a pointer to an object of the given type, which is
+  // one to its elements if they are what ConvertObject wants.
+  std::string AsPointerMethod(clang::QualType type);
+  void CheckRuleReturnType(clang::Expr *expr) override;
 
   std::string ConvertTemporaryPointer(
       clang::Expr *expr,
       std::optional<clang::QualType> implicit_convert_to) override;
 
-  bool WantsElementPtr() const { return object_shape_ == ObjectShape::Element; }
   std::string
   ConvertFresh(clang::Expr *expr,
                std::optional<clang::QualType> implicit_convert_to = {});
@@ -516,6 +553,8 @@ private:
   std::string BoxValue(std::string &&str) const;
 
   std::vector<ConversionKind> conversion_kind_;
+  // The shape that the innermost ConvertObject wants, until a visitor makes a
+  // pointer of that shape.
   ObjectShape object_shape_ = ObjectShape::Whole;
 
   // Set by pointer-related visit methods (ConvertDeref,
