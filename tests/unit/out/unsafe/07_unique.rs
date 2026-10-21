@@ -18,7 +18,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut f: Option<Box<i32>> = Some(Box::new(8));
+    let mut f: std_unique_ptr_int__std_default_delete_int__ = Some(Box::new(8));
     (*f.as_deref()
         .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) = 9;
     let mut f_ptr1: *mut i32 = f

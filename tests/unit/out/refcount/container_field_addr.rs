@@ -10,37 +10,46 @@ use std::rc::{Rc, Weak};
 #[byte_size(32)]
 pub struct S {
     #[offset(0)]
-    pub tag: (),
+    pub tag: i32,
     #[offset(8)]
     #[byte_size(24)]
-    pub v: (),
+    pub v: Vec<i32>,
 }
-pub fn add_0(mut v: Ptr<()>, mut k: ()) {
-    unimplemented!();
+pub fn add_0(mut v: Ptr<Vec<i32>>, mut k: i32) {
+    {
+        let a0_clone = k.clone();
+        v.with_mut(|__v: &mut Vec<i32>| __v.push(a0_clone))
+    };
 }
 pub fn run_1(mut h: Ptr<S>) {
     ({
-        let _v: Ptr<()> = (field_ptr!(h, v));
-        let _k: () = h.with(|__s| __s.tag);
+        let _v: Ptr<Vec<i32>> = (field_ref!(h, v).as_pointer());
+        let _k: i32 = h.with(|__s| __s.tag);
         add_0(_v, _k)
     });
-    let mut pv: Ptr<()> = (field_ptr!(h, v));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut pv: Ptr<Vec<i32>> = (field_ref!(h, v).as_pointer());
+    {
+        let __a1 = ((*pv.upgrade().deref()).len() as i32);
+        pv.with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
+    };
+    assert!(
+        (((*h.upgrade().deref()).v.len() == 2_usize) && ((vec_elem!(h, v, 0_usize).read()) == 7))
+            && ((vec_elem!(h, v, 1_usize).read()) == 1)
+    );
+    assert!((h.with(|__s| __s.tag) == 7));
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let local: Value<S> = Rc::new(RefCell::new(<S>::default()));
-    (*local.borrow_mut()).tag = 7_();
+    (*local.borrow_mut()).tag = 7;
     ({ run_1((local.as_pointer())) });
     let mut heap: Ptr<S> = Ptr::alloc(<S>::default());
-    field!(heap, tag).write(7_());
+    field!(heap, tag).write(7);
     ({ run_1((heap).clone()) });
     heap.delete();
-    return unimplemented!();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

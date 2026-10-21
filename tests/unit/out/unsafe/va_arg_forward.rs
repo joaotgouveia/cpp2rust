@@ -6,19 +6,19 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn inner_0(mut count: (), mut ap: *const VaArg) -> () {
-    let mut total: () = unimplemented!();
-    let mut i: () = unimplemented!();
-    'loop_: while ((((i) < (count)) as ()) != 0) {
-        total += ap.arg::<()>();
+pub unsafe fn inner_0(mut count: i32, mut ap: *const VaArg) -> i32 {
+    let mut total: i32 = 0;
+    let mut i: i32 = 0;
+    'loop_: while ((((i) < (count)) as i32) != 0) {
+        total += ap.arg::<i32>();
         i.postfix_inc();
     }
     return total;
 }
-pub unsafe fn outer_1(mut count: (), __args: Box<[VaArg]>) -> () {
+pub unsafe fn outer_1(mut count: i32, __args: Box<[VaArg]>) -> i32 {
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
-    let mut result: () = (unsafe { inner_0(count, ap) });
+    let mut result: i32 = (unsafe { inner_0(count, ap) });
     return result;
 }
 pub fn main() {
@@ -27,10 +27,14 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+unsafe fn main_0() -> i32 {
+    assert!(
+        ((((unsafe { outer_1(3, Box::new([(10).into(), (20).into(), (30).into(),])) }) == (60))
+            as i32)
+            != 0)
+    );
+    assert!(((((unsafe { outer_1(1, Box::new([(42).into(),])) }) == (42)) as i32) != 0));
+    assert!(((((unsafe { outer_1(0, Box::new([])) }) == (0)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

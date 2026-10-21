@@ -13,19 +13,19 @@ pub struct container {
     #[byte_size(8)]
     pub p: Ptr<opaque>,
     #[offset(8)]
-    pub x: (),
+    pub x: i32,
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let mut c: container = container {
         p: Ptr::<opaque>::null(),
-        x: 42_(),
+        x: 42,
     };
     &(c.p);
-    return (c.x - 42_());
+    return (c.x - 42);
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]

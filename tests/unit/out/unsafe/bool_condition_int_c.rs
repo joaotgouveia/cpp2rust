@@ -12,60 +12,60 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut n: () = 3_();
-    let mut zero: () = unimplemented!();
-    let mut u: () = 4_();
-    let mut ul: () = 5_();
-    let mut ll: () = 6_();
-    let mut ch: () = ('a' as ());
+unsafe fn main_0() -> i32 {
+    let mut n: i32 = 3;
+    let mut zero: i32 = 0;
+    let mut u: u32 = 4_u32;
+    let mut ul: u64 = 5_u64;
+    let mut ll: i64 = 6_i64;
+    let mut ch: libc::c_char = (('a' as i32) as libc::c_char);
     if (n != 0) {
-        unimplemented!();
+        assert!((1 != 0));
     }
     if !(n != 0) {
-        unimplemented!();
+        assert!((0 != 0));
     }
     if (zero != 0) {
-        unimplemented!();
+        assert!((0 != 0));
     }
     if !(zero != 0) {
-        unimplemented!();
+        assert!((1 != 0));
     }
     if (u != 0) {
-        unimplemented!();
+        assert!((1 != 0));
     }
     if (ul != 0) {
-        unimplemented!();
+        assert!((1 != 0));
     }
     if (ll != 0) {
-        unimplemented!();
+        assert!((1 != 0));
     }
     if (ch != 0) {
-        unimplemented!();
+        assert!((1 != 0));
     }
-    let mut loop_count: () = unimplemented!();
-    let mut counter: () = 3_();
+    let mut loop_count: i32 = 0;
+    let mut counter: i32 = 3;
     'loop_: while (counter != 0) {
         counter.prefix_dec();
         loop_count.prefix_inc();
     }
-    unimplemented!();
-    let mut i: () = 5_();
+    assert!(((((loop_count) == (3)) as i32) != 0));
+    let mut i: i32 = 5;
     'loop_: while (i != 0) {
         loop_count.prefix_inc();
         i.prefix_dec();
     }
-    unimplemented!();
-    let mut t: () = if (n != 0) { 100_() } else { 200_() };
-    unimplemented!();
-    let mut t2: () = if (zero != 0) { 100_() } else { 200_() };
-    unimplemented!();
-    let mut t7: () = (!(n != 0) as ());
-    unimplemented!();
-    let mut t8: () = (!(zero != 0) as ());
-    unimplemented!();
-    let mut b1: () = (n != 0);
-    unimplemented!();
-    return unimplemented!();
+    assert!(((((loop_count) == (8)) as i32) != 0));
+    let mut t: i32 = if (n != 0) { 100 } else { 200 };
+    assert!(((((t) == (100)) as i32) != 0));
+    let mut t2: i32 = if (zero != 0) { 100 } else { 200 };
+    assert!(((((t2) == (200)) as i32) != 0));
+    let mut t7: i32 = (!(n != 0) as i32);
+    assert!(((((t7) == (0)) as i32) != 0));
+    let mut t8: i32 = (!(zero != 0) as i32);
+    assert!(((((t8) == (1)) as i32) != 0));
+    let mut b1: bool = (n != 0);
+    assert!(b1);
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

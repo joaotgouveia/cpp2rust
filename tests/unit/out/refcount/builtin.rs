@@ -7,67 +7,89 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_expect_0() {
-    let mut x: () = 42_();
-    unimplemented!();
+    let mut x: i32 = 42;
+    assert!(((((x == 42) as i32) as i64) != 0));
 }
 pub fn test_ctz_1() {
-    unimplemented!();
-    unimplemented!();
+    assert!((((8_u32.trailing_zeros() as i32 == 3) as i32) != 0));
+    assert!((((1_u32.trailing_zeros() as i32 == 0) as i32) != 0));
 }
 pub fn test_clz_2() {
-    unimplemented!();
-    unimplemented!();
+    assert!((((1_u32.leading_zeros() as i32 == 31) as i32) != 0));
+    assert!((((2147483648_u32.leading_zeros() as i32 == 0) as i32) != 0));
 }
 pub fn test_bswap16_3() {
-    unimplemented!();
+    assert!((((((4660 as u16).swap_bytes() as i32) == 13330) as i32) != 0));
 }
 pub fn test_bswap32_4() {
-    unimplemented!();
+    assert!((((305419896_u32.swap_bytes() == 2018915346_u32) as i32) != 0));
 }
 pub fn test_bswap64_5() {
-    unimplemented!();
+    assert!((((81985529216486895_u64.swap_bytes() == 17279655951921914625_u64) as i32) != 0));
 }
 pub fn test_ctzl_6() {
-    unimplemented!();
-    unimplemented!();
+    assert!((((8_u64.trailing_zeros() as i32 == 3) as i32) != 0));
+    assert!((((1_u64.trailing_zeros() as i32 == 0) as i32) != 0));
 }
 pub fn test_popcountl_7() {
-    unimplemented!();
-    unimplemented!();
+    assert!((((0_u64.count_ones() as i32 == 0) as i32) != 0));
+    assert!((((255_u64.count_ones() as i32 == 8) as i32) != 0));
 }
 pub fn test_clzl_8() {
-    unimplemented!();
-    unimplemented!();
+    assert!((((1_u64.leading_zeros() as i32 == 63) as i32) != 0));
+    assert!((((9223372036854775808_u64.leading_zeros() as i32 == 0) as i32) != 0));
 }
 pub fn test_inff_9() {
-    let mut inf: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut inf: f32 = f32::INFINITY;
+    assert!((((inf > 0_f32) as i32) != 0));
+    assert!((((inf == (inf * 2_f32)) as i32) != 0));
+    assert!(((((1_f32 / inf) == 0_f32) as i32) != 0));
 }
 pub fn test_nanf_10() {
-    let mut nan: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut nan: f32 = f32::NAN;
+    assert!((((nan != nan) as i32) != 0));
+    assert!(((!(((nan < 0_f32) as i32) != 0) as i32) != 0));
+    assert!(((!(((nan > 0_f32) as i32) != 0) as i32) != 0));
 }
 pub fn test_mul_overflow_long_11() {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let r: Value<i64> = Rc::new(RefCell::new(0_i64));
+    assert!(
+        ((!({
+            let (val, ovf) = 3_i64.overflowing_mul(7_i64);
+            (r.as_pointer()).write(val);
+            ovf
+        }) as i32)
+            != 0)
+    );
+    assert!(((((*r.borrow()) == 21_i64) as i32) != 0));
+    assert!({
+        let (val, ovf) = 9223372036854775807_i64.overflowing_mul(2_i64);
+        (r.as_pointer()).write(val);
+        ovf
+    });
 }
 pub fn test_mul_overflow_long_long_12() {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let r: Value<i64> = Rc::new(RefCell::new(0_i64));
+    assert!(
+        ((!({
+            let (val, ovf) = 1000_i64.overflowing_mul(1000_i64);
+            (r.as_pointer()).write(val);
+            ovf
+        }) as i32)
+            != 0)
+    );
+    assert!(((((*r.borrow()) == 1000000_i64) as i32) != 0));
+    assert!({
+        let (val, ovf) = 9223372036854775807_i64.overflowing_mul(2_i64);
+        (r.as_pointer()).write(val);
+        ovf
+    });
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test_expect_0() });
     ({ test_ctz_1() });
     ({ test_clz_2() });
@@ -81,6 +103,6 @@ fn main_0() -> () {
     ({ test_nanf_10() });
     ({ test_mul_overflow_long_11() });
     ({ test_mul_overflow_long_long_12() });
-    return unimplemented!();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

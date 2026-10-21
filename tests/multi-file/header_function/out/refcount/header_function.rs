@@ -10,23 +10,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    unimplemented!();
-    return unimplemented!();
+fn main_0() -> i32 {
+    assert!((((({ helper_0(42,) }) == 43) as i32) != 0));
+    return 0;
 }
-pub fn unrelated1_0() -> () {
-    return 1_();
+pub fn unrelated1_1() -> i32 {
+    return 1;
 }
-pub fn unrelated2_1() -> () {
-    return 2_();
+pub fn unrelated2_2() -> i32 {
+    return 2;
 }
-pub fn unrelated3_2() -> () {
-    return 3_();
+pub fn unrelated3_3() -> i32 {
+    return 3;
 }
-pub fn helper_3(mut x: ()) -> () {
-    &({ unrelated1_0() });
-    &({ unrelated2_1() });
-    &({ unrelated3_2() });
-    return (x + 1_());
+pub fn helper_0(mut x: i32) -> i32 {
+    &({ unrelated1_1() });
+    &({ unrelated2_2() });
+    &({ unrelated3_3() });
+    return (x + 1);
 }
 pub fn __cpp2rust_init_globals() {}

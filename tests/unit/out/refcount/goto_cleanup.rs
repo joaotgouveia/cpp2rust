@@ -6,18 +6,18 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn early_0(mut n: ()) -> () {
-    let mut ret: () = unimplemented!();
-    let mut intentionally_const_var: () = unimplemented!();
+pub fn early_0(mut n: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
+    let mut intentionally_const_var: i32 = 0_i32;
     goto_block!({
         '__entry: {
-            ret = unimplemented!();
-            if (((n < unimplemented!()) as ()) != 0) {
-                ret = -1_();
+            ret = 0;
+            if (((n < 0) as i32) != 0) {
+                ret = -1_i32;
                 goto!('out);
             }
-            ret = 100_();
-            intentionally_const_var = 22_();
+            ret = 100;
+            intentionally_const_var = 22;
         }
         'out: {
             return ((ret + intentionally_const_var) - intentionally_const_var);
@@ -25,21 +25,21 @@ pub fn early_0(mut n: ()) -> () {
     });
     panic!("ub: non-void function does not return a value")
 }
-pub fn from_loop_1(mut n: ()) -> () {
-    let mut ret: () = unimplemented!();
+pub fn from_loop_1(mut n: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
     goto_block!({
         '__entry: {
-            ret = unimplemented!();
-            let mut i: () = unimplemented!();
-            'loop_: while (((i < n) as ()) != 0) {
-                if (((i == 3_()) as ()) != 0) {
-                    ret = 7_();
+            ret = 0;
+            let mut i: i32 = 0;
+            'loop_: while (((i < n) as i32) != 0) {
+                if (((i == 3) as i32) != 0) {
+                    ret = 7;
                     goto!('out);
                 }
                 ret += i;
                 i.postfix_inc();
             }
-            ret = 999_();
+            ret = 999;
         }
         'out: {
             return ret;
@@ -47,24 +47,24 @@ pub fn from_loop_1(mut n: ()) -> () {
     });
     panic!("ub: non-void function does not return a value")
 }
-pub fn from_switch_2(mut n: ()) -> () {
-    let mut ret: () = unimplemented!();
+pub fn from_switch_2(mut n: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
     goto_block!({
         '__entry: {
-            ret = unimplemented!();
+            ret = 0;
             'switch: {
                 match { n } {
-                    __v if __v == 1_() => {
-                        ret = 10_();
+                    __v if __v == 1 => {
+                        ret = 10;
                         goto!('out);
                     }
                     _ => {
-                        ret = 20_();
+                        ret = 20;
                         break 'switch;
                     }
                 }
             };
-            ret = 999_();
+            ret = 999;
         }
         'out: {
             return ret;
@@ -77,17 +77,17 @@ pub fn from_switch_2(mut n: ()) -> () {
 pub struct wrapper {
     #[offset(0)]
     #[byte_size(8)]
-    pub item: Ptr<()>,
+    pub item: Ptr<i32>,
 }
-pub fn via_pointer_3(mut w: Ptr<wrapper>, mut fail: ()) -> () {
-    let mut ret: () = unimplemented!();
-    let mut item: Ptr<()> = Ptr::<()>::null();
+pub fn via_pointer_3(mut w: Ptr<wrapper>, mut fail: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
+    let mut item: Ptr<i32> = Ptr::<i32>::null();
     goto_block!({
         '__entry: {
-            ret = unimplemented!();
+            ret = 0;
             item = w.with(|__s| __s.item.clone());
             if (fail != 0) {
-                ret = -1_();
+                ret = -1_i32;
                 goto!('out);
             }
             ret = { (item.read()) };
@@ -98,46 +98,49 @@ pub fn via_pointer_3(mut w: Ptr<wrapper>, mut fail: ()) -> () {
     });
     panic!("ub: non-void function does not return a value")
 }
-pub fn via_arrays_4(mut fail: ()) -> () {
-    let mut ret: () = unimplemented!();
-    let mut remain: [(); 4] = [unimplemented!(); 4];
-    let mut name: [(); 5] = [unimplemented!(); 5];
-    goto_block! ( { '__entry:  { ret = unimplemented!()  ;
- ;
- ;
- remain = [ unimplemented!()  , unimplemented!()  , unimplemented!()  , unimplemented!()  , ]  ;
- ;
- ;
- name = b"wxyz\0".map(()::from_byte)  ;
- ;
- ;
- if ( fail != 0 ) { ret  = - 1_()  ;
- goto!('out) ;
- } remain [(1_() ) as usize]  = 9_()  ;
- ret  = ( ( ( remain [(unimplemented!() ) as usize] + remain [(1_() ) as usize] ) + ( ( ( ( name [(unimplemented!() ) as usize] == ( 'w' as ()  ) ) ) as () ) ) ) + ( ( ( ( name [(4_() ) as usize] == ( '\0' as ()  ) ) ) as () ) ) )  ;
- } 'out:  { return ret   ;
- } } );
+pub fn via_arrays_4(mut fail: i32) -> i32 {
+    let mut ret: i32 = 0_i32;
+    let mut remain: [u8; 4] = [0_u8; 4];
+    let mut name: [i8; 5] = [0_i8; 5];
+    goto_block!({
+        '__entry: {
+            ret = 0;
+            remain = [0_u8, 0_u8, 0_u8, 0_u8];
+            name = b"wxyz\0".map(i8::from_byte);
+            if (fail != 0) {
+                ret = -1_i32;
+                goto!('out);
+            }
+            remain[(1) as usize] = 9_u8;
+            ret = ((((remain[(0) as usize] as i32) + (remain[(1) as usize] as i32))
+                + (((name[(0) as usize] as i32) == ('w' as i32)) as i32))
+                + (((name[(4) as usize] as i32) == ('\0' as i32)) as i32));
+        }
+        'out: {
+            return ret;
+        }
+    });
     panic!("ub: non-void function does not return a value")
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let value: Value<()> = Rc::new(RefCell::new(42_()));
+fn main_0() -> i32 {
+    assert!((((({ early_0(-1_i32,) }) == -1_i32) as i32) != 0));
+    assert!((((({ early_0(5,) }) == 100) as i32) != 0));
+    assert!((((({ from_loop_1(2,) }) == 999) as i32) != 0));
+    assert!((((({ from_loop_1(10,) }) == 7) as i32) != 0));
+    assert!((((({ from_switch_2(1,) }) == 10) as i32) != 0));
+    assert!((((({ from_switch_2(2,) }) == 999) as i32) != 0));
+    let value: Value<i32> = Rc::new(RefCell::new(42));
     let w: Value<wrapper> = Rc::new(RefCell::new(wrapper {
         item: (value.as_pointer()),
     }));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+    assert!((((({ via_pointer_3((w.as_pointer()), 0,) }) == 42) as i32) != 0));
+    assert!((((({ via_pointer_3((w.as_pointer()), 1,) }) == -1_i32) as i32) != 0));
+    assert!((((({ via_arrays_4(0,) }) == 11) as i32) != 0));
+    assert!((((({ via_arrays_4(1,) }) == -1_i32) as i32) != 0));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

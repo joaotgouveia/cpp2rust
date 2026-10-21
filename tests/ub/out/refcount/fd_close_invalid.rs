@@ -10,11 +10,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    return if (((unimplemented!() == -1_()) as ()) != 0) {
-        unimplemented!()
+fn main_0() -> i32 {
+    return if (((FdRegistry::close(1234) == -1_i32) as i32) != 0) {
+        0
     } else {
-        1_()
+        1
     };
 }
 pub fn __cpp2rust_init_globals() {}

@@ -9,35 +9,39 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct context {
-    pub verbose: (),
-    pub last_error: (),
+    pub verbose: i32,
+    pub last_error: i32,
 }
-pub unsafe fn set_error_0(mut ctx: *mut context, mut fmt: *const (), __args: Box<[VaArg]>) {
+pub unsafe fn set_error_0(
+    mut ctx: *mut context,
+    mut fmt: *const libc::c_char,
+    __args: Box<[VaArg]>,
+) {
     if ((*ctx).verbose != 0) {
         let mut ap: *const VaArg = ::std::ptr::null();
         ap = __args.as_ptr();
-        (*ctx).last_error = ap.arg::<()>();
+        (*ctx).last_error = ap.arg::<i32>();
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union value {
-    pub i: (),
-    pub l: (),
+    pub i: i32,
+    pub l: i64,
 }
 impl Default for value {
     fn default() -> Self {
         unsafe { std::mem::zeroed() }
     }
 }
-pub unsafe fn pick_1(mut use_long: (), __args: Box<[VaArg]>) -> () {
+pub unsafe fn pick_1(mut use_long: i32, __args: Box<[VaArg]>) -> i64 {
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
     let mut v: value = ap.arg::<value>();
     if (use_long != 0) {
         return v.l;
     }
-    return v.i;
+    return (v.i as i64);
 }
 pub fn main() {
     unsafe {
@@ -45,32 +49,32 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut ctx: context = <context>::default();
-    ctx.verbose = 1_();
-    ctx.last_error = unimplemented!();
+    ctx.verbose = 1;
+    ctx.last_error = 0;
     (unsafe {
         set_error_0(
             (&mut ctx as *mut context),
             (c"error %d".as_ptr().cast_mut()).cast_const(),
-            Box::new([(42_()).into()]),
+            Box::new([(42).into()]),
         )
     });
-    unimplemented!();
-    ctx.verbose = unimplemented!();
+    assert!(((((ctx.last_error) == (42)) as i32) != 0));
+    ctx.verbose = 0;
     (unsafe {
         set_error_0(
             (&mut ctx as *mut context),
             (c"error %d".as_ptr().cast_mut()).cast_const(),
-            Box::new([(99_()).into()]),
+            Box::new([(99).into()]),
         )
     });
-    unimplemented!();
+    assert!(((((ctx.last_error) == (42)) as i32) != 0));
     let mut v: value = <value>::default();
-    v.l = ((1_()) << (40_()));
-    unimplemented!();
-    v.i = 7_();
-    unimplemented!();
-    return unimplemented!();
+    v.l = ((1_i64) << (40));
+    assert!(((((unsafe { pick_1(1, Box::new([(v).into(),])) }) == ((1_i64) << (40))) as i32) != 0));
+    v.i = 7;
+    assert!(((((unsafe { pick_1(0, Box::new([(v).into(),])) }) == (7_i64)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

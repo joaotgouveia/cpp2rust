@@ -9,26 +9,26 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Point {
-    pub x: (),
-    pub y: (),
+    pub x: i32,
+    pub y: i32,
 }
-pub unsafe fn agg_0(mut n: ()) -> () {
-    let mut buf40: [(); 40] = [unimplemented!(); 40];
-    let mut buf256: [(); 256] = [unimplemented!(); 256];
-    let mut arr64: [(); 64] = [unimplemented!(); 64];
-    let mut longs: [(); 33] = [unimplemented!(); 33];
+pub unsafe fn agg_0(mut n: i32) -> i32 {
+    let mut buf40: [libc::c_char; 40] = [(0 as libc::c_char); 40];
+    let mut buf256: [u8; 256] = [0_u8; 256];
+    let mut arr64: [i32; 64] = [0_i32; 64];
+    let mut longs: [i64; 33] = [0_i64; 33];
     let mut p: Point = <Point>::default();
-    let mut ptr: *mut () = std::ptr::null_mut();
-    let mut fp: Option<unsafe fn(()) -> ()> = None;
-    let mut file: () = unimplemented!();
-    let mut total: () = unimplemented!();
+    let mut ptr: *mut i32 = std::ptr::null_mut();
+    let mut fp: Option<unsafe fn(i32) -> i32> = None;
+    let mut file: *mut ::libc::FILE = std::ptr::null_mut();
+    let mut total: i32 = 0_i32;
     goto_block!({
         '__entry: {
-            total = unimplemented!();
-            if ((((n) < (unimplemented!())) as ()) != 0) {
+            total = 0;
+            if ((((n) < (0)) as i32) != 0) {
                 goto!('out);
             }
-            total = 1_();
+            total = 1;
         }
         'out: {
             return total;
@@ -42,9 +42,9 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+unsafe fn main_0() -> i32 {
+    assert!(((((unsafe { agg_0(-1_i32,) }) == (0)) as i32) != 0));
+    assert!(((((unsafe { agg_0(1,) }) == (1)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

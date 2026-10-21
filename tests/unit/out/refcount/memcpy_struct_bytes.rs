@@ -10,36 +10,34 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct point {
     #[offset(0)]
-    pub x: (),
+    pub x: i32,
     #[offset(4)]
-    pub y: (),
+    pub y: i32,
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let src: Value<point> = Rc::new(RefCell::new(point { x: 3_(), y: 7_() }));
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    ({
-        let ___dest: () = ((buf.as_pointer() as Ptr<()>) as Ptr<()>).to_any();
-        let ___n: () = ::std::mem::size_of::<[(); 8]>();
-        memcpy_0(___dest, ((src.as_pointer()) as Ptr<point>).to_any(), ___n)
-    });
+fn main_0() -> i32 {
+    let src: Value<point> = Rc::new(RefCell::new(point { x: 3, y: 7 }));
+    let buf: Value<Box<[u8]>> = Rc::new(RefCell::new((0..8).map(|_| 0_u8).collect::<Box<[u8]>>()));
+    {
+        ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any().memcpy(
+            &((src.as_pointer()) as Ptr<point>).to_any(),
+            ::std::mem::size_of::<[u8; 8]>() as usize,
+        );
+        ((buf.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any()
+    };
     let dst: Value<point> = <Value<point>>::default();
-    ({
-        let ___dest: () = ((dst.as_pointer()) as Ptr<point>).to_any();
-        let ___n: () = 8usize;
-        memcpy_0(
-            ___dest,
-            ((buf.as_pointer() as Ptr<()>) as Ptr<()>).to_any(),
-            ___n,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+    {
+        ((dst.as_pointer()) as Ptr<point>).to_any().memcpy(
+            &((buf.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any(),
+            8usize as usize,
+        );
+        ((dst.as_pointer()) as Ptr<point>).to_any()
+    };
+    assert!(((({ (*dst.borrow()).x } == 3) as i32) != 0));
+    assert!(((({ (*dst.borrow()).y } == 7) as i32) != 0));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

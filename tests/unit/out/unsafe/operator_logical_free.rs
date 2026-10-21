@@ -9,16 +9,16 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
-    pub v: (),
+    pub v: i32,
 }
-pub unsafe fn operator_not_0(a: *const S) -> () {
-    return (((*a).v) == (unimplemented!()));
+pub unsafe fn operator_not_0(a: *const S) -> bool {
+    return (((*a).v) == (0));
 }
-pub unsafe fn operator_and_1(a: *const S, b: *const S) -> () {
-    return (((*a).v) != (unimplemented!())) && (((*b).v) != (unimplemented!()));
+pub unsafe fn operator_and_1(a: *const S, b: *const S) -> bool {
+    return (((*a).v) != (0)) && (((*b).v) != (0));
 }
-pub unsafe fn operator_or_2(a: *const S, b: *const S) -> () {
-    return (((*a).v) != (unimplemented!())) || (((*b).v) != (unimplemented!()));
+pub unsafe fn operator_or_2(a: *const S, b: *const S) -> bool {
+    return (((*a).v) != (0)) || (((*b).v) != (0));
 }
 pub fn main() {
     unsafe {
@@ -26,17 +26,47 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut t: S = S { v: 1_() };
-    let mut f: S = S {
-        v: unimplemented!(),
-    };
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+unsafe fn main_0() -> i32 {
+    let mut t: S = S { v: 1 };
+    let mut f: S = S { v: 0 };
+    assert!(
+        (unsafe {
+            let _a: *const S = &f;
+            operator_not_0(_a)
+        })
+    );
+    assert!(
+        !(unsafe {
+            let _a: *const S = &t;
+            operator_not_0(_a)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _a: *const S = &t;
+            let _b: *const S = &t;
+            operator_and_1(_a, _b)
+        })
+    );
+    assert!(
+        !(unsafe {
+            let _a: *const S = &t;
+            operator_and_1(_a, &f)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _a: *const S = &t;
+            operator_or_2(_a, &f)
+        })
+    );
+    assert!(
+        !(unsafe {
+            let _a: *const S = &f;
+            let _b: *const S = &f;
+            operator_or_2(_a, _b)
+        })
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

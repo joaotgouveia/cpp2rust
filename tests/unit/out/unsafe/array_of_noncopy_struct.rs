@@ -9,15 +9,15 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg)]
 pub struct NonCopy {
-    pub data: (),
-    pub tag: (),
+    pub data: Vec<i32>,
+    pub tag: i32,
 }
 impl Default for NonCopy {
     fn default() -> Self {
         unsafe {
             NonCopy {
-                data: unimplemented!(),
-                tag: unimplemented!(),
+                data: Default::default(),
+                tag: 0,
             }
         }
     }
@@ -28,15 +28,18 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut arr: [NonCopy; 3] = std::array::from_fn::<_, 3, _>(|_| <NonCopy>::default());
-    arr[(unimplemented!()) as usize].tag = 7_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+    arr[(0) as usize].tag = 7;
+    {
+        let __a1 = 42;
+        arr[(1) as usize].data.push(__a1)
+    };
+    assert!(((arr[(0) as usize].tag) == (7)));
+    assert!(((arr[(1) as usize].data.len()) == (1_usize)));
+    assert!(((arr[(1) as usize].data[(0_usize)]) == (42)));
+    assert!(((arr[(2) as usize].tag) == (0)));
+    assert!(((arr[(2) as usize].data.len()) == (0_usize)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

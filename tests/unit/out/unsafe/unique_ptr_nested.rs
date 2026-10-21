@@ -36,7 +36,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut o: Option<Box<Outer>> = Some(Box::new(Outer {
+    let mut o: std_unique_ptr_Outer__std_default_delete_Outer__ = Some(Box::new(Outer {
         inner: Some(Box::new(Inner { x: 10, y: 20 })),
     }));
     (*(*o
@@ -59,8 +59,8 @@ unsafe fn main_0() -> i32 {
     .as_deref()
     .map_or(::std::ptr::null_mut(), |v| v as *const Inner as *mut Inner))
     .y));
-    let mut a: Option<Box<i32>> = Some(Box::new(100));
-    let mut b: Option<Box<i32>> = Some(Box::new(0));
+    let mut a: std_unique_ptr_int__std_default_delete_int__ = Some(Box::new(100));
+    let mut b: std_unique_ptr_int__std_default_delete_int__ = Some(Box::new(0));
     (*b.as_deref()
         .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) = (*a
         .as_deref()

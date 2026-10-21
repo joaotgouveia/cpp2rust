@@ -6,36 +6,46 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn fill_row_0(mut row: Ptr<()>, mut c: ()) {
-    elem!(row, unimplemented!()).write({ c });
-    elem!(row, 1_()).write(('\0' as ()));
+pub fn fill_row_0(mut row: Ptr<i8>, mut c: i8) {
+    elem!(row, 0).write({ c });
+    elem!(row, 1).write((('\0' as i32) as i8));
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let grid: Value<Box<[Box<[()]>]>> = Rc::new(RefCell::new(
+fn main_0() -> i32 {
+    let grid: Value<Box<[Box<[i8]>]>> = Rc::new(RefCell::new(
         (0..3)
-            .map(|_| (0..6).map(|_| unimplemented!()).collect::<Box<[()]>>())
-            .collect::<Box<[Box<[()]>]>>(),
+            .map(|_| (0..6).map(|_| 0_i8).collect::<Box<[i8]>>())
+            .collect::<Box<[Box<[i8]>]>>(),
     ));
-    let mut i: () = unimplemented!();
-    'loop_: while (((i < 3_()) as ()) != 0) {
+    let mut i: i32 = 0;
+    'loop_: while (((i < 3) as i32) != 0) {
         ({
-            let _row: Ptr<()> =
-                (((grid.as_pointer() as Ptr<Box<[()]>>).offset(i).as_pointer()) as Ptr<()>);
-            let _c: () = ((('a' as ()) + i) as ());
+            let _row: Ptr<i8> =
+                (((grid.as_pointer() as Ptr<Box<[i8]>>).offset(i).as_pointer()) as Ptr<i8>);
+            let _c: i8 = ((('a' as i32) + i) as i8);
             fill_row_0(_row, _c)
         });
         i.postfix_inc();
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (*grid.borrow_mut())[(2_()) as usize][(5_()) as usize] = ('z' as ());
-    unimplemented!();
-    return unimplemented!();
+    assert!(
+        (((((*grid.borrow())[(0) as usize][(0) as usize] as i32) == ('a' as i32)) as i32) != 0)
+    );
+    assert!(
+        (((((*grid.borrow())[(1) as usize][(0) as usize] as i32) == ('b' as i32)) as i32) != 0)
+    );
+    assert!(
+        (((((*grid.borrow())[(2) as usize][(0) as usize] as i32) == ('c' as i32)) as i32) != 0)
+    );
+    assert!(
+        (((((*grid.borrow())[(1) as usize][(1) as usize] as i32) == ('\0' as i32)) as i32) != 0)
+    );
+    (*grid.borrow_mut())[(2) as usize][(5) as usize] = (('z' as i32) as i8);
+    assert!(
+        (((((*grid.borrow())[(2) as usize][(5) as usize] as i32) == ('z' as i32)) as i32) != 0)
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

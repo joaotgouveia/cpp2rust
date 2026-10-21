@@ -12,18 +12,18 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut arr: [(); 7] = std::mem::transmute(*b"foobar\0");
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut split_pieces: *const () = (c"abcdefghi".as_ptr().cast_mut()).cast_const();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+unsafe fn main_0() -> i32 {
+    let mut arr: [libc::c_char; 7] = std::mem::transmute(*b"foobar\0");
+    assert!(((((arr[(0) as usize] as i32) == ('f' as i32)) as i32) != 0));
+    assert!(((((arr[(3) as usize] as i32) == ('b' as i32)) as i32) != 0));
+    assert!(((((arr[(5) as usize] as i32) == ('r' as i32)) as i32) != 0));
+    assert!(((((arr[(6) as usize] as i32) == ('\0' as i32)) as i32) != 0));
+    let mut split_pieces: *const libc::c_char = (c"abcdefghi".as_ptr().cast_mut()).cast_const();
+    assert!((((((*split_pieces.offset((0) as isize)) as i32) == ('a' as i32)) as i32) != 0));
+    assert!((((((*split_pieces.offset((3) as isize)) as i32) == ('d' as i32)) as i32) != 0));
+    assert!((((((*split_pieces.offset((6) as isize)) as i32) == ('g' as i32)) as i32) != 0));
+    assert!((((((*split_pieces.offset((8) as isize)) as i32) == ('i' as i32)) as i32) != 0));
+    assert!((((((*split_pieces.offset((9) as isize)) as i32) == ('\0' as i32)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

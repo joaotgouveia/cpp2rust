@@ -6,23 +6,23 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type Color = ();
+pub type Color = u32;
 pub const Color_RED: Color = 0;
 pub const Color_GREEN: Color = 1;
 pub const Color_BLUE: Color = 2;
-pub type Option = ();
+pub type Option = u32;
 pub const Option_OPT_NONE: Option = 0;
 pub const Option_OPT_A: Option = 10;
 pub const Option_OPT_B: Option = 20;
 pub const Option_OPT_C: Option = 30;
-pub type Tag_enum = ();
+pub type Tag_enum = u32;
 pub const Tag_enum_TAG_ZERO: Tag_enum = 0;
 pub const Tag_enum_TAG_ONE: Tag_enum = 1;
 pub const Tag_enum_TAG_TWO: Tag_enum = 2;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Entry {
-    pub name: *const (),
+    pub name: *const libc::c_char,
     pub color: Color,
     pub opt: Option,
 }
@@ -51,32 +51,32 @@ pub static mut entries_3: std::cell::LazyCell<[Entry; 3]> = std::cell::LazyCell:
         },
     ]
 });
-pub unsafe fn as_int_4(mut c: Color) -> () {
-    return (c as ());
+pub unsafe fn as_int_4(mut c: Color) -> i32 {
+    return (c as i32);
 }
-pub unsafe fn classify_option_5(mut option: ()) -> () {
+pub unsafe fn classify_option_5(mut option: i32) -> i32 {
     'switch: {
         match { option } {
             __v if __v == (Option_OPT_NONE as i32) => {
-                return -1_();
+                return -1_i32;
             }
             __v if __v == (Option_OPT_A as i32) => {
-                return 1_();
+                return 1;
             }
             __v if __v == (Option_OPT_B as i32) => {
-                return 2_();
+                return 2;
             }
             __v if __v == (Option_OPT_C as i32) => {
-                return 3_();
+                return 3;
             }
             _ => {
-                return unimplemented!();
+                return 0;
             }
         }
     };
     panic!("ub: non-void function does not return a value")
 }
-pub unsafe fn make_color_6(mut n: ()) -> Color {
+pub unsafe fn make_color_6(mut n: i32) -> Color {
     return ((n) as Color);
 }
 pub fn main() {
@@ -85,101 +85,148 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut c: Color = Color_RED;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    if ((((c as ()) == (Color_GREEN as i32)) as ()) != 0) {
-        return 1_();
+    assert!(((((c as u32) == ((Color_RED as i32) as u32)) as i32) != 0));
+    assert!(((((c as u32) == (0_u32)) as i32) != 0));
+    assert!(((((c as u32) != (1_u32)) as i32) != 0));
+    if ((((c as u32) == ((Color_GREEN as i32) as u32)) as i32) != 0) {
+        return 1;
     }
     'switch: {
-        match { (c as ()) } {
-            __v if __v == unimplemented!() => {
+        match { (c as u32) } {
+            __v if __v == (0 as u32) => {
                 break 'switch;
             }
-            __v if __v == 1_() => {
-                return 1_();
+            __v if __v == (1 as u32) => {
+                return 1;
             }
-            __v if __v == 2_() => {
-                return 2_();
+            __v if __v == (2 as u32) => {
+                return 2;
             }
             _ => {
-                return 99_();
+                return 99;
             }
         }
     };
-    let mut x: () = (c as ());
-    unimplemented!();
-    let mut y: () = (c as ()).wrapping_add(1_());
-    unimplemented!();
-    c = ((2_()) as Color);
-    unimplemented!();
-    unimplemented!();
-    c = (unsafe { make_color_6(1_()) });
-    unimplemented!();
-    let mut cmp: Color = (((c as ()).wrapping_add(1_())) as Color);
-    unimplemented!();
+    let mut x: i32 = (c as i32);
+    assert!(((((x) == (0)) as i32) != 0));
+    let mut y: i32 = (((c as u32).wrapping_add(1_u32)) as i32);
+    assert!(((((y) == (1)) as i32) != 0));
+    c = ((2) as Color);
+    assert!(((((c as u32) == ((Color_BLUE as i32) as u32)) as i32) != 0));
+    assert!(((((c as u32) == (2_u32)) as i32) != 0));
+    c = (unsafe { make_color_6(1) });
+    assert!(((((c as u32) == ((Color_GREEN as i32) as u32)) as i32) != 0));
+    let mut cmp: Color = (((c as u32).wrapping_add(1_u32)) as Color);
+    assert!(((((cmp as u32) == ((Color_BLUE as i32) as u32)) as i32) != 0));
     let mut o: Option = Option_OPT_A;
-    unimplemented!();
-    unimplemented!();
-    let mut oi: () = (o as ());
-    unimplemented!();
-    o = ((20_()) as Option);
-    unimplemented!();
-    let mut rc: () = (unsafe { classify_option_5((o as ())) });
-    unimplemented!();
-    rc = (unsafe { classify_option_5(20_()) });
-    unimplemented!();
+    assert!(((((o as u32) == ((Option_OPT_A as i32) as u32)) as i32) != 0));
+    assert!(((((o as u32) == (10_u32)) as i32) != 0));
+    let mut oi: i32 = (o as i32);
+    assert!(((((oi) == (10)) as i32) != 0));
+    o = ((20) as Option);
+    assert!(((((o as u32) == ((Option_OPT_B as i32) as u32)) as i32) != 0));
+    let mut rc: i32 = (unsafe { classify_option_5((o as i32)) });
+    assert!(((((rc) == (2)) as i32) != 0));
+    rc = (unsafe { classify_option_5(20) });
+    assert!(((((rc) == (2)) as i32) != 0));
     rc = (unsafe { classify_option_5((Option_OPT_C as i32)) });
-    unimplemented!();
+    assert!(((((rc) == (3)) as i32) != 0));
     let mut t: Tag_enum = Tag_enum_TAG_ONE;
-    unimplemented!();
-    unimplemented!();
-    let mut ti: () = (t as ());
-    unimplemented!();
-    t = ((2_()) as Tag_enum);
-    unimplemented!();
+    assert!(((((t as u32) == (1_u32)) as i32) != 0));
+    assert!(((((t as u32) == ((Tag_enum_TAG_ONE as i32) as u32)) as i32) != 0));
+    let mut ti: i32 = (t as i32);
+    assert!(((((ti) == (1)) as i32) != 0));
+    t = ((2) as Tag_enum);
+    assert!(((((t as u32) == ((Tag_enum_TAG_TWO as i32) as u32)) as i32) != 0));
     'switch: {
-        match { (t as ()) } {
-            __v if __v == (Tag_enum_TAG_ZERO as i32) => {
-                return 90_();
+        match { (t as u32) } {
+            __v if __v == ((Tag_enum_TAG_ZERO as i32) as u32) => {
+                return 90;
             }
-            __v if __v == 1_() => {
-                return 91_();
+            __v if __v == (1 as u32) => {
+                return 91;
             }
-            __v if __v == 2_() => {
+            __v if __v == (2 as u32) => {
                 break 'switch;
             }
             _ => {}
         }
     };
-    let mut extra: () = (((Color_RED as i32) + (Color_GREEN as i32)) + (Color_BLUE as i32));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut names: [*const (); 3] = [
+    let mut extra: i32 = (((Color_RED as i32) + (Color_GREEN as i32)) + (Color_BLUE as i32));
+    assert!(((((extra) == (((0) + (1)) + (2))) as i32) != 0));
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_color_0)) as u32)
+            == ((Color_GREEN as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_opt_1)) as u32)
+            == ((Option_OPT_B as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut global_tag_2)) as u32)
+            == ((Tag_enum_TAG_TWO as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].color as u32)
+            == ((Color_RED as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(0) as usize].opt as u32)
+            == ((Option_OPT_NONE as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].color as u32)
+            == ((Color_GREEN as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(1) as usize].opt as u32)
+            == ((Option_OPT_A as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].color as u32)
+            == ((Color_BLUE as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(2) as usize].opt as u32)
+            == ((Option_OPT_C as i32) as u32)) as i32)
+            != 0)
+    );
+    let mut names: [*const libc::c_char; 3] = [
         (c"red".as_ptr().cast_mut()).cast_const(),
         (c"green".as_ptr().cast_mut()).cast_const(),
         (c"blue".as_ptr().cast_mut()).cast_const(),
     ];
     let mut idx: Color = Color_GREEN;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut pp: *mut *const () = (&mut names[(idx) as usize] as *mut *const ());
-    unimplemented!();
+    assert!(
+        (((((*names[(idx) as usize].offset((0) as isize)) as i32) == ('g' as i32)) as i32) != 0)
+    );
+    assert!(
+        (((((*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))[(idx) as usize].opt as u32)
+            == ((Option_OPT_A as i32) as u32)) as i32)
+            != 0)
+    );
+    assert!(
+        (((((*names[(*std::cell::LazyCell::force_mut(&mut *&raw mut global_tag_2)) as usize]
+            .offset((0) as isize)) as i32)
+            == ('b' as i32)) as i32)
+            != 0)
+    );
+    let mut pp: *mut *const libc::c_char = (&mut names[(idx) as usize] as *mut *const libc::c_char);
+    assert!((((((*(*pp).offset((0) as isize)) as i32) == ('g' as i32)) as i32) != 0));
     let mut pe: *mut Entry = (&mut (*std::cell::LazyCell::force_mut(&mut *&raw mut entries_3))
         [(idx) as usize] as *mut Entry);
-    unimplemented!();
-    return unimplemented!();
+    assert!((((((*pe).opt as u32) == ((Option_OPT_A as i32) as u32)) as i32) != 0));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const global_color_0);

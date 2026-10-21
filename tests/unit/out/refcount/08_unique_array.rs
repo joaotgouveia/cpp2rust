@@ -10,14 +10,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut g: () = ({ make_unique_0(2_()) });
-    unimplemented!().write(11_());
-    unimplemented!().write(12_());
-    let mut g_ptr: Ptr<()> = unimplemented!();
-    elem!(g_ptr, unimplemented!()).write(13_());
-    elem!(g_ptr, 1_()).write(14_());
-    unimplemented!();
-    return unimplemented!();
+fn main_0() -> i32 {
+    let mut g: Option<Value<Box<[i32]>>> = Some(Rc::new(RefCell::new(
+        (0..2_usize).map(|_| <i32>::default()).collect::<Box<[_]>>(),
+    )));
+    (g.as_pointer() as Ptr<i32>)
+        .offset(0_usize as isize)
+        .write(11);
+    (g.as_pointer() as Ptr<i32>)
+        .offset(1_usize as isize)
+        .write(12);
+    let mut g_ptr: Ptr<i32> = g.as_pointer();
+    elem!(g_ptr, 0).write(13);
+    elem!(g_ptr, 1).write(14);
+    assert!(
+        ((((g.as_pointer() as Ptr<i32>).offset(0_usize as isize).read())
+            + ((g.as_pointer() as Ptr<i32>).offset(1_usize as isize).read()))
+            == 27)
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}
