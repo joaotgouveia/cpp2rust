@@ -182,6 +182,10 @@ private:
     if (type->isPointerType() || type->isReferenceType()) {
       return AddType(type->getPointeeType());
     }
+    if (type->isMemberPointerType()) {
+      // pointers-to-members are unsupported, skip
+      return;
+    }
     if (const auto *array = ctx_.getAsArrayType(type)) {
       return AddType(array->getElementType());
     }
