@@ -41,10 +41,6 @@ std::string TypeKey(clang::QualType type);
 
 llvm::json::Object ReadIndex(const std::filesystem::path &path);
 
-std::string DirIdentifier(llvm::StringRef dir);
-
-std::string DirName(llvm::StringRef identifier);
-
 class PragmaHandler : public clang::PragmaHandler {
 public:
   explicit PragmaHandler(clang::CompilerInstance &CI)

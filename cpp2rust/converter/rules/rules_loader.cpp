@@ -12,7 +12,6 @@
 #include <clang/Sema/Sema.h>
 #include <llvm/ADT/DenseSet.h>
 #include <llvm/ADT/STLExtras.h>
-#include <llvm/ADT/StringExtras.h>
 #include <llvm/Support/Error.h>
 #include <llvm/Support/ErrorHandling.h>
 #include <llvm/Support/JSON.h>
@@ -23,7 +22,6 @@
 #include <format>
 #include <ranges>
 #include <string>
-#include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
@@ -318,7 +316,7 @@ const llvm::json::Object &CxxIndex() {
 }
 
 std::string WrapRule(const llvm::json::Object &rule, bool is_cxx) {
-  auto dir = DirIdentifier(*rule.getString("dir"));
+  auto dir = rule.getString("dir")->str();
   auto text = rule.getString("text")->str();
   if (!is_cxx) {
     return std::format("#define {0} cpp2rust_rules_{1}_{0}\n{2}#undef {0}\n",
@@ -408,31 +406,6 @@ static std::string NameKey(const clang::NamedDecl *decl) {
     key += scope + '/';
   }
   return key + decl->getNameAsString();
-}
-
-std::string DirIdentifier(llvm::StringRef dir) {
-  std::string identifier;
-  for (char c : dir) {
-    identifier += llvm::isAlnum(c) ? c : '_';
-  }
-  return identifier;
-}
-
-std::string DirName(llvm::StringRef identifier) {
-  static const std::unordered_map<std::string, std::string> dirs = [] {
-    std::unordered_map<std::string, std::string> dirs;
-    for (const auto *index : {&CIndex(), &CxxIndex()}) {
-      for (const auto &[key, entries] : *index->getObject("rules")) {
-        for (const auto &entry : *entries.getAsArray()) {
-          auto dir = entry.getAsObject()->getString("dir")->str();
-          auto [it, inserted] = dirs.try_emplace(DirIdentifier(dir), dir);
-          assert(it->second == dir && "rule dirs mangle to the same identifier");
-        }
-      }
-    }
-    return dirs;
-  }();
-  return dirs.at(identifier.str());
 }
 
 std::string ClassKey(const clang::NamedDecl *decl) {
