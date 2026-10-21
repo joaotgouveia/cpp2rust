@@ -10,41 +10,102 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut N: () = 10000_();
-    let mut sentinel: () = (N / 2_());
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+fn main_0() -> i32 {
+    let mut N: i32 = 10000;
+    let mut sentinel: i32 = (N / 2);
+    let m: Value<Map<i32, (Value<i32>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
     let __rhs = sentinel;
-    unimplemented!().write(__rhs);
-    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut p: Ptr<()> = (field_ptr!(unimplemented!(), second));
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = unimplemented!();
+    Map::subscript(
+        (m.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<i32>)>>),
+        &sentinel,
+    )
+    .write(__rhs);
+    let it: Value<BidirectionalIterator<(Value<i32>, Value<i32>)>> = Rc::new(RefCell::new(
+        (m.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<i32>)>>)
+            .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.find(&sentinel)),
+    ));
+    let mut p: Ptr<i32> = ((*(*it.borrow()).iter_deref().upgrade().deref())
+        .1
+        .as_pointer());
+    assert!(
+        ((*(*(*it.borrow()).iter_deref().upgrade().deref()).1.borrow()) == sentinel)
+            && (!(Ptr::<i8>::from_string_literal(
+                b"iterator does not have correct value before insert"
+            ))
+            .is_null())
+    );
+    assert!(
+        ({ (p.read()) } == { sentinel })
+            && (!(Ptr::<i8>::from_string_literal(
+                b"pointer does not have correct value before insert"
+            ))
+            .is_null())
+    );
+    let mut i: i32 = 0;
     'loop_: while (i < sentinel) {
         let __rhs = i;
-        unimplemented!().write(__rhs);
+        Map::subscript(
+            (m.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<i32>)>>),
+            &i,
+        )
+        .write(__rhs);
         i.prefix_inc();
     }
-    let mut i: () = (sentinel + 1_());
+    let mut i: i32 = (sentinel + 1);
     'loop_: while (i <= N) {
         let __rhs = i;
-        unimplemented!().write(__rhs);
+        Map::subscript(
+            (m.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<i32>)>>),
+            &i,
+        )
+        .write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!().second = 57005_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut prev: () = -1_();
-    'loop_: for pair in IterRange::new(unimplemented!(), unimplemented!()) {
-        let pair: Ptr<()> = unimplemented!();
-        unimplemented!();
-        prev = pair.with(|__s| __s.first);
+    assert!(
+        ((*(*(*it.borrow()).iter_deref().upgrade().deref()).1.borrow()) != 0)
+            && (!(Ptr::<i8>::from_string_literal(
+                b"in refcount, iterator points to index 0 instead of sentinel"
+            ))
+            .is_null())
+    );
+    assert!(
+        ((*(*(*it.borrow()).iter_deref().upgrade().deref()).1.borrow()) == sentinel)
+            && (!(Ptr::<i8>::from_string_literal(
+                b"iterator does not have correct value after insert"
+            ))
+            .is_null())
+    );
+    assert!(
+        ({ (p.read()) } == { sentinel })
+            && (!(Ptr::<i8>::from_string_literal(
+                b"pointer does not have correct value after insert"
+            ))
+            .is_null())
+    );
+    (*(*(*it.borrow()).iter_deref().upgrade().deref())
+        .1
+        .borrow_mut()) = 57005;
+    assert!(
+        ((Map::subscript(
+            (m.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<i32>)>>),
+            &sentinel
+        )
+        .read())
+            == 57005)
+    );
+    assert!(((p.read()) == 57005));
+    assert!(((*m.borrow()).len() == (((N + 1) as u32) as usize)));
+    let mut prev: i32 = -1_i32;
+    'loop_: for pair in IterRange::new(
+        (m.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<i32>)>>)
+            .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
+        (m.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<i32>)>>)
+            .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.end()),
+    ) {
+        let pair: Ptr<(Value<i32>, Value<i32>)> = pair.iter_deref();
+        assert!(({ (*(*pair.upgrade().deref()).0.borrow()) } > { prev }));
+        prev = (*(*pair.upgrade().deref()).0.borrow());
     }
-    return unimplemented!();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

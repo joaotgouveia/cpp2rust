@@ -6,12 +6,13 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn sink_0(mut it: ()) -> () {
-    let mut cit: () = unimplemented!();
-    return if unimplemented!() {
-        (*unimplemented!()).second
+pub unsafe fn sink_0(mut it: UnsafeBidirectionalIterator<(i32, i32)>) -> i32 {
+    let mut cit: UnsafeBidirectionalIterator<(i32, i32)> =
+        <UnsafeBidirectionalIterator<(i32, i32)>>::from((it).clone());
+    return if cit == <UnsafeBidirectionalIterator<(i32, i32)>>::from((it).clone()) {
+        (*it.iter_deref()).1
     } else {
-        unimplemented!()
+        0
     };
 }
 pub fn main() {
@@ -20,24 +21,21 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut m: () = unimplemented!();
-    (*unimplemented!()) = 1_();
-    let mut end: () = unimplemented!();
-    let mut it0: () = unimplemented!();
-    let mut const_it: () = unimplemented!();
-    let mut r: () = if unimplemented!() {
-        unimplemented!()
+unsafe fn main_0() -> i32 {
+    let mut m: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
+    (*m.subscript_move(&mut 0, |__k| cpp_move_unsafe!(__k))) = 1;
+    let mut end: UnsafeBidirectionalIterator<(i32, i32)> = m.end();
+    let mut it0: UnsafeBidirectionalIterator<(i32, i32)> = m.find(&0);
+    let mut const_it: UnsafeBidirectionalIterator<(i32, i32)> =
+        <UnsafeBidirectionalIterator<(i32, i32)>>::from((it0).clone());
+    let mut r: i32 = if const_it == <UnsafeBidirectionalIterator<(i32, i32)>>::from((end).clone()) {
+        0
     } else {
-        1_()
+        1
     };
-    r += (unsafe { sink_0(unimplemented!()) });
-    r += if unimplemented!() {
-        unimplemented!()
-    } else {
-        1_()
-    };
-    unimplemented!();
-    return unimplemented!();
+    r += (unsafe { sink_0((it0).clone()) });
+    r += if end == end { 0 } else { 1 };
+    assert!(((r) == (2)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}
