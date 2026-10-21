@@ -6,12 +6,12 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn pick_0(x: Option<i32>) -> i32 {
-    let mut x: i32 = x.unwrap_or_else(|| {
+pub fn pick_0(x: Option<()>) -> () {
+    let mut x: () = x.unwrap_or_else(|| {
         ({
-            FnPtr::<fn() -> i32>::new(|| -> i32 {
+            FnPtr::<fn() -> ()>::new(|| -> () {
                 {
-                    return 237;
+                    return 237_();
                 }
             })
             .call()
@@ -23,35 +23,35 @@ pub fn pick_0(x: Option<i32>) -> i32 {
 #[byte_size(8)]
 pub struct S {
     #[offset(0)]
-    pub j: i32,
+    pub j: (),
     #[offset(4)]
-    pub k: i32,
+    pub k: (),
 }
 impl Default for S {
     fn default() -> Self {
         {
             S {
-                j: 10,
+                j: 10_(),
                 k: (({
-                    FnPtr::<fn() -> i32>::new(|| -> i32 {
+                    FnPtr::<fn() -> ()>::new(|| -> () {
                         {
-                            return 3;
+                            return 3_();
                         }
                     })
                     .call()
-                }) + 1),
+                }) + 1_()),
             }
         }
     }
 }
 thread_local!(
-    pub static g_1: Value<i32> = Rc::new(RefCell::new(
+    pub static g_1: Value<()> = Rc::new(RefCell::new(
         ({
-            FnPtr::<fn() -> i32>::new(|| -> i32 {
+            FnPtr::<fn() -> ()>::new(|| -> () {
                 {
-                    let mut s: i32 = 0;
-                    let mut i: i32 = 1;
-                    'loop_: while (i <= 4) {
+                    let mut s: () = 0_();
+                    let mut i: () = 1_();
+                    'loop_: while (i <= 4_()) {
                         s += i;
                         i.postfix_inc();
                     }
@@ -66,28 +66,28 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ pick_0(None,) }) == 237));
-    assert!((({ pick_0(Some(1),) }) == 1));
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
     let mut s: S = <S>::default();
-    assert!((s.k == 4));
-    assert!((g_1.with(|rc| *rc.borrow()) == 10));
-    let a: Value<i32> = Rc::new(RefCell::new(2));
-    let mut c: i32 = ({
+    unimplemented!();
+    unimplemented!();
+    let a: Value<()> = Rc::new(RefCell::new(2_()));
+    let mut c: () = ({
         lambda!(
             {
-                let a: Ptr<i32> = a.as_pointer();
+                let a: Ptr<()> = a.as_pointer();
             },
-            || -> i32 {
+            || -> () {
                 a.with_mut(|__v| __v.postfix_inc());
-                return ((a.read()) * 10);
+                return ((a.read()) * 10_());
             }
         )
         .call()
     });
-    assert!((c == 30));
-    assert!(((*a.borrow()) == 3));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {
     let _ = g_1.with(|_| ());

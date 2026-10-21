@@ -12,23 +12,23 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((((unsafe { helper_0(42,) }) == (43)) as i32) != 0));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    return 0_();
 }
-pub unsafe fn unrelated1_1() -> i32 {
-    return 1;
+pub unsafe fn unrelated1_0() -> () {
+    return 1_();
 }
-pub unsafe fn unrelated2_2() -> i32 {
-    return 2;
+pub unsafe fn unrelated2_1() -> () {
+    return 2_();
 }
-pub unsafe fn unrelated3_3() -> i32 {
-    return 3;
+pub unsafe fn unrelated3_2() -> () {
+    return 3_();
 }
-pub unsafe fn helper_0(mut x: i32) -> i32 {
-    &(unsafe { unrelated1_1() });
-    &(unsafe { unrelated2_2() });
-    &(unsafe { unrelated3_3() });
-    return ((x) + (1));
+pub unsafe fn helper_3(mut x: ()) -> () {
+    &(unsafe { unrelated1_0() });
+    &(unsafe { unrelated2_1() });
+    &(unsafe { unrelated3_2() });
+    return ((x) + (1_()));
 }
 pub unsafe fn __cpp2rust_init_globals() {}

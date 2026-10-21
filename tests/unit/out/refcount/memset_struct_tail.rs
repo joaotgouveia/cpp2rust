@@ -10,26 +10,26 @@ use std::rc::{Rc, Weak};
 #[byte_size(32)]
 pub struct S {
     #[offset(0)]
-    pub keep: i32,
+    pub keep: (),
     #[offset(4)]
-    pub a: i32,
+    pub a: (),
     #[offset(8)]
-    pub b: i64,
+    pub b: (),
     #[offset(16)]
     #[byte_size(5)]
-    pub c: Box<[i8]>,
+    pub c: Box<[()]>,
     #[offset(24)]
-    pub last: i32,
+    pub last: (),
 }
 impl Default for S {
     fn default() -> Self {
         {
             S {
-                keep: 0_i32,
-                a: 0_i32,
-                b: 0_i64,
-                c: (0..5).map(|_| 0_i8).collect::<Box<[i8]>>(),
-                last: 0_i32,
+                keep: unimplemented!(),
+                a: unimplemented!(),
+                b: unimplemented!(),
+                c: (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+                last: unimplemented!(),
             }
         }
     }
@@ -38,54 +38,39 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut p: Ptr<S> = libcc2rs::malloc_refcount(32usize).reinterpret_cast::<S>();
-    assert!((((!((p).is_null())) as i32) != 0));
-    {
-        (p).to_any().memset((255) as u8, 32usize as usize);
-        (p).to_any()
-    };
-    field!(p, keep).write(7);
-    {
-        ((field_ptr!(p, a)) as Ptr<i32>).to_any().memset(
-            (0) as u8,
-            (32usize as usize).wrapping_sub((4_usize as usize)) as usize,
-        );
-        ((field_ptr!(p, a)) as Ptr<i32>).to_any()
-    };
-    assert!((((p.with(|__s| __s.keep) == 7) as i32) != 0));
-    assert!(
-        ((((((((((((p.with(|__s| __s.a) == 0) as i32) != 0)
-            && (((p.with(|__s| __s.b) == 0_i64) as i32) != 0)) as i32)
-            != 0)
-            && (((((array_elem!(p, c, 4).read()) as i32) == 0) as i32) != 0)) as i32)
-            != 0)
-            && (((p.with(|__s| __s.last) == 0) as i32) != 0)) as i32)
-            != 0)
-    );
-    field!(p, a).write(1);
-    field!(p, b).write(2_i64);
-    array_elem!(p, c, 0).write((('x' as i32) as i8));
-    field!(p, last).write(3);
-    {
-        ((field_ptr!(p, b)) as Ptr<i64>).to_any().memset(
-            (0) as u8,
-            (24_usize as usize).wrapping_sub((8_usize as usize)) as usize,
-        );
-        ((field_ptr!(p, b)) as Ptr<i64>).to_any()
-    };
-    assert!(
-        ((((((p.with(|__s| __s.keep) == 7) as i32) != 0)
-            && (((p.with(|__s| __s.a) == 1) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((((p.with(|__s| __s.b) == 0_i64) as i32) != 0)
-            && (((((array_elem!(p, c, 0).read()) as i32) == 0) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!((((p.with(|__s| __s.last) == 3) as i32) != 0));
-    libcc2rs::free_refcount((p).to_any());
-    return 0;
+fn main_0() -> () {
+    let mut p: Ptr<S> = unimplemented!().reinterpret_cast::<S>();
+    unimplemented!();
+    ({
+        let ___s: () = (p).to_any();
+        let ___n: () = 32usize;
+        memset_0(___s, 255_(), ___n)
+    });
+    field!(p, keep).write(7_());
+    ({
+        memset_0(
+            ((field_ptr!(p, a)) as Ptr<()>).to_any(),
+            0_(),
+            (32usize as ()).wrapping_sub((4_usize as ())),
+        )
+    });
+    unimplemented!();
+    unimplemented!();
+    field!(p, a).write(1_());
+    field!(p, b).write(2_());
+    array_elem!(p, c, 0_()).write(('x' as ()));
+    field!(p, last).write(3_());
+    ({
+        memset_0(
+            ((field_ptr!(p, b)) as Ptr<()>).to_any(),
+            0_(),
+            (24_usize as ()).wrapping_sub((8_usize as ())),
+        )
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

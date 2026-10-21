@@ -7,64 +7,17 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_time_0() {
-    let mut t1: ::libc::time_t = {
-        let __out = Ptr::<::libc::time_t>::null();
-        match nix::time::clock_gettime(nix::time::ClockId::CLOCK_REALTIME) {
-            Ok(__ts) => {
-                let __s = __ts.tv_sec();
-                if !__out.is_null() {
-                    __out.write(__s);
-                }
-                __s
-            }
-            Err(__e) => {
-                libcc2rs::cpp2rust_errno().write(__e as i32);
-                -1
-            }
-        }
-    };
+    let mut t1: ::libc::time_t = libc::time(Ptr::<::libc::time_t>::null());
     let t2: Value<::libc::time_t> = Rc::new(RefCell::new((0 as ::libc::time_t)));
-    let mut t3: ::libc::time_t = {
-        let __out = (t2.as_pointer());
-        match nix::time::clock_gettime(nix::time::ClockId::CLOCK_REALTIME) {
-            Ok(__ts) => {
-                let __s = __ts.tv_sec();
-                if !__out.is_null() {
-                    __out.write(__s);
-                }
-                __s
-            }
-            Err(__e) => {
-                libcc2rs::cpp2rust_errno().write(__e as i32);
-                -1
-            }
-        }
-    };
-    assert!((((t1 > (1500000000 as ::libc::time_t)) as i32) != 0));
-    assert!(((((*t2.borrow()) == t3) as i32) != 0));
-    assert!((((t3 >= t1) as i32) != 0));
+    let mut t3: ::libc::time_t = libc::time((t2.as_pointer()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub fn print_tm_1(t: ::libc::time_t) {
     let t: Value<::libc::time_t> = Rc::new(RefCell::new(t));
-    let tm: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
-    assert!(
-        (((!(({
-            let __res = (tm.as_pointer());
-            match jiff::Timestamp::from_second((t.as_pointer()).read()) {
-                Ok(__ts) => {
-                    let __dt = __ts.to_zoned(jiff::tz::TimeZone::UTC);
-                    __res.with_mut(|__tm| *__tm = Tm::from_zoned(&__dt));
-                    __res
-                }
-                Err(_) => {
-                    libcc2rs::cpp2rust_errno().write(::libc::EOVERFLOW);
-                    Ptr::null()
-                }
-            }
-        })
-        .is_null())) as i32)
-            != 0)
-    );
+    let tm: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    unimplemented!();
     println!(
         "{}-{}-{} {}:{}:{} wday={} yday={} {} gmtoff={} isdst={}",
         { (*tm.borrow()).tm_year },
@@ -90,35 +43,12 @@ pub fn test_gmtime_r_2() {
     ({ print_tm_1((1704067199 as ::libc::time_t)) });
     ({ print_tm_1((1704067200 as ::libc::time_t)) });
     ({ print_tm_1((1721126096 as ::libc::time_t)) });
-    ({ print_tm_1((4102444800_i64 as ::libc::time_t)) });
+    ({ print_tm_1((4102444800_() as ::libc::time_t)) });
 }
 pub fn print_local_tm_3(t: ::libc::time_t) {
     let t: Value<::libc::time_t> = Rc::new(RefCell::new(t));
-    let tm: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
-    assert!(
-        (((!(({
-            let __res = (tm.as_pointer());
-            match jiff::Timestamp::from_second((t.as_pointer()).read()) {
-                Ok(__ts) => {
-                    let __dt = __ts.to_zoned(jiff::tz::TimeZone::system());
-                    let __info = __dt.time_zone().to_offset_info(__ts);
-                    let __isdst = if __info.dst().is_dst() { 1 } else { 0 };
-                    __res.with_mut(|__tm| {
-                        *__tm = Tm::from_zoned(&__dt);
-                        __tm.tm_isdst = __isdst;
-                        __tm.tm_zone = Ptr::alloc_c_str(__info.abbreviation().as_bytes());
-                    });
-                    __res
-                }
-                Err(_) => {
-                    libcc2rs::cpp2rust_errno().write(::libc::EOVERFLOW);
-                    Ptr::null()
-                }
-            }
-        })
-        .is_null())) as i32)
-            != 0)
-    );
+    let tm: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    unimplemented!();
     println!(
         "{}-{}-{} {}:{}:{} wday={} yday={} {} gmtoff={} isdst={}",
         { (*tm.borrow()).tm_year },
@@ -143,157 +73,33 @@ pub fn test_localtime_r_4() {
 }
 pub fn test_strftime_5() {
     let t: Value<::libc::time_t> = Rc::new(RefCell::new((1721126096 as ::libc::time_t)));
-    let tm: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
-    assert!(
-        (((!(({
-            let __res = (tm.as_pointer());
-            match jiff::Timestamp::from_second((t.as_pointer()).read()) {
-                Ok(__ts) => {
-                    let __dt = __ts.to_zoned(jiff::tz::TimeZone::UTC);
-                    __res.with_mut(|__tm| *__tm = Tm::from_zoned(&__dt));
-                    __res
-                }
-                Err(_) => {
-                    libcc2rs::cpp2rust_errno().write(::libc::EOVERFLOW);
-                    Ptr::null()
-                }
-            }
-        })
-        .is_null())) as i32)
-            != 0)
-    );
-    let buf: Value<Box<[i8]>> = Rc::new(RefCell::new((0..64).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    assert!(
-        ((({
-            let __dt = (tm.as_pointer()).with(|__tm| __tm.to_civil());
-            let __text = match __dt {
-                Ok(__d) => jiff::fmt::strtime::format(
-                    Ptr::<i8>::from_string_literal(b"%Y-%m-%d %H:%M:%S")
-                        .to_rust_string()
-                        .as_str(),
-                    __d,
-                )
-                .unwrap_or_default(),
-                Err(_) => String::new(),
-            };
-            if __text.is_empty() || __text.len() + 1 > ::std::mem::size_of::<[i8; 64]>() {
-                0
-            } else {
-                (buf.as_pointer() as Ptr<i8>).write_c_bytes(__text.as_bytes());
-                elem!((buf.as_pointer() as Ptr::<i8>), __text.len()).write(0);
-                __text.len()
-            }
-        } > 0_usize) as i32)
-            != 0)
-    );
-    println!("{}", (buf.as_pointer() as Ptr::<i8>));
-    assert!(
-        ((({
-            let __dt = (tm.as_pointer()).with(|__tm| __tm.to_civil());
-            let __text = match __dt {
-                Ok(__d) => jiff::fmt::strtime::format(
-                    Ptr::<i8>::from_string_literal(b"%a, %d %b %Y %T")
-                        .to_rust_string()
-                        .as_str(),
-                    __d,
-                )
-                .unwrap_or_default(),
-                Err(_) => String::new(),
-            };
-            if __text.is_empty() || __text.len() + 1 > ::std::mem::size_of::<[i8; 64]>() {
-                0
-            } else {
-                (buf.as_pointer() as Ptr<i8>).write_c_bytes(__text.as_bytes());
-                elem!((buf.as_pointer() as Ptr::<i8>), __text.len()).write(0);
-                __text.len()
-            }
-        } > 0_usize) as i32)
-            != 0)
-    );
-    println!("{}", (buf.as_pointer() as Ptr::<i8>));
-    assert!(
-        ((({
-            let __dt = (tm.as_pointer()).with(|__tm| __tm.to_civil());
-            let __text = match __dt {
-                Ok(__d) => jiff::fmt::strtime::format(
-                    Ptr::<i8>::from_string_literal(b"day %j 100%%")
-                        .to_rust_string()
-                        .as_str(),
-                    __d,
-                )
-                .unwrap_or_default(),
-                Err(_) => String::new(),
-            };
-            if __text.is_empty() || __text.len() + 1 > ::std::mem::size_of::<[i8; 64]>() {
-                0
-            } else {
-                (buf.as_pointer() as Ptr<i8>).write_c_bytes(__text.as_bytes());
-                elem!((buf.as_pointer() as Ptr::<i8>), __text.len()).write(0);
-                __text.len()
-            }
-        } > 0_usize) as i32)
-            != 0)
-    );
-    println!("{}", (buf.as_pointer() as Ptr::<i8>));
-    assert!(
-        ((({
-            let __dt = (tm.as_pointer()).with(|__tm| __tm.to_civil());
-            let __text = match __dt {
-                Ok(__d) => jiff::fmt::strtime::format(
-                    Ptr::<i8>::from_string_literal(b"%e")
-                        .to_rust_string()
-                        .as_str(),
-                    __d,
-                )
-                .unwrap_or_default(),
-                Err(_) => String::new(),
-            };
-            if __text.is_empty() || __text.len() + 1 > ::std::mem::size_of::<[i8; 64]>() {
-                0
-            } else {
-                (buf.as_pointer() as Ptr<i8>).write_c_bytes(__text.as_bytes());
-                elem!((buf.as_pointer() as Ptr::<i8>), __text.len()).write(0);
-                __text.len()
-            }
-        } > 0_usize) as i32)
-            != 0)
-    );
-    println!("{}", (buf.as_pointer() as Ptr::<i8>));
-    let small: Value<Box<[i8]>> =
-        Rc::new(RefCell::new((0..4).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    assert!(
-        ((({
-            let __dt = (tm.as_pointer()).with(|__tm| __tm.to_civil());
-            let __text = match __dt {
-                Ok(__d) => jiff::fmt::strtime::format(
-                    Ptr::<i8>::from_string_literal(b"%Y-%m-%d")
-                        .to_rust_string()
-                        .as_str(),
-                    __d,
-                )
-                .unwrap_or_default(),
-                Err(_) => String::new(),
-            };
-            if __text.is_empty() || __text.len() + 1 > ::std::mem::size_of::<[i8; 4]>() {
-                0
-            } else {
-                (small.as_pointer() as Ptr<i8>).write_c_bytes(__text.as_bytes());
-                elem!((small.as_pointer() as Ptr::<i8>), __text.len()).write(0);
-                __text.len()
-            }
-        } == 0_usize) as i32)
-            != 0)
-    );
+    let tm: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    unimplemented!();
+    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..64).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
+    println!("{}", (buf.as_pointer() as Ptr::<()>));
+    unimplemented!();
+    println!("{}", (buf.as_pointer() as Ptr::<()>));
+    unimplemented!();
+    println!("{}", (buf.as_pointer() as Ptr::<()>));
+    unimplemented!();
+    println!("{}", (buf.as_pointer() as Ptr::<()>));
+    let small: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     ({ test_time_0() });
     ({ test_gmtime_r_2() });
     ({ test_localtime_r_4() });
     ({ test_strftime_5() });
-    return 0;
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -12,30 +12,16 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut fd: i32 = 0;
+unsafe fn main_0() -> () {
+    let mut fd: () = 0_();
     let mut ssloc: libc::sockaddr_storage = unsafe { std::mem::zeroed() };
     let mut slen: libc::socklen_t =
         (::std::mem::size_of::<libc::sockaddr_storage>() as libc::socklen_t);
-    assert!(
-        ((((libc::getsockname(
-            fd,
-            ((&mut ssloc as *mut libc::sockaddr_storage) as *mut libc::sockaddr),
-            (&mut slen as *mut libc::socklen_t)
-        )) == (-1_i32)) as i32)
-            != 0)
-    );
+    unimplemented!();
     let mut sin: ::libc::sockaddr_in = unsafe { std::mem::zeroed() };
     let mut inlen: libc::socklen_t =
         (::std::mem::size_of::<::libc::sockaddr_in>() as libc::socklen_t);
-    assert!(
-        ((((libc::getsockname(
-            fd,
-            ((&mut sin as *mut ::libc::sockaddr_in) as *mut libc::sockaddr),
-            (&mut inlen as *mut libc::socklen_t)
-        )) == (-1_i32)) as i32)
-            != 0)
-    );
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct pair {
-    pub a: [i32; 4],
-    pub b: [i32; 4],
+    pub a: [(); 4],
+    pub b: [(); 4],
 }
 pub fn main() {
     unsafe {
@@ -18,9 +18,9 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut s: pair = <pair>::default();
-    assert!(((((s.a.as_mut_ptr().offset((4) as isize)) == (s.b.as_mut_ptr())) as i32) != 0));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

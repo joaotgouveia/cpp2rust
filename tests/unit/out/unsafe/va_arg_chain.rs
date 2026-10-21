@@ -6,21 +6,21 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn extract_nth_0(mut n: i32, mut ap: *const VaArg) -> i32 {
-    let mut i: i32 = 0;
-    'loop_: while ((((i) < (n)) as i32) != 0) {
-        ap.arg::<i32>();
+pub unsafe fn extract_nth_0(mut n: (), mut ap: *const VaArg) -> () {
+    let mut i: () = 0_();
+    'loop_: while ((((i) < (n)) as ()) != 0) {
+        ap.arg::<()>();
         i.postfix_inc();
     }
-    return ap.arg::<i32>();
+    return ap.arg::<()>();
 }
-pub unsafe fn middle_layer_1(mut n: i32, mut ap: *const VaArg) -> i32 {
+pub unsafe fn middle_layer_1(mut n: (), mut ap: *const VaArg) -> () {
     return (unsafe { extract_nth_0(n, ap) });
 }
-pub unsafe fn top_level_2(mut n: i32, __args: Box<[VaArg]>) -> i32 {
+pub unsafe fn top_level_2(mut n: (), __args: Box<[VaArg]>) -> () {
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
-    let mut result: i32 = (unsafe { middle_layer_1(n, ap) });
+    let mut result: () = (unsafe { middle_layer_1(n, ap) });
     return result;
 }
 pub fn main() {
@@ -29,29 +29,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(
-        ((((unsafe {
-            top_level_2(
-                2,
-                Box::new([(100).into(), (200).into(), (300).into(), (400).into()]),
-            )
-        }) == (300)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe { top_level_2(0, Box::new([(42).into(), (99).into(),])) }) == (42)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe {
-            top_level_2(
-                3,
-                Box::new([(1).into(), (2).into(), (3).into(), (4).into()]),
-            )
-        }) == (4)) as i32)
-            != 0)
-    );
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

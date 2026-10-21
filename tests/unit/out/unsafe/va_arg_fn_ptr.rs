@@ -6,44 +6,44 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn square_0(mut x: i32) -> i32 {
+pub unsafe fn square_0(mut x: ()) -> () {
     return ((x) * (x));
 }
-pub unsafe fn negate_1(mut x: i32) -> i32 {
+pub unsafe fn negate_1(mut x: ()) -> () {
     return -x;
 }
-pub unsafe fn add_2(mut a: i32, mut b: i32) -> i32 {
+pub unsafe fn add_2(mut a: (), mut b: ()) -> () {
     return ((a) + (b));
 }
-pub unsafe fn apply_unary_3(mut x: i32, __args: Box<[VaArg]>) -> i32 {
+pub unsafe fn apply_unary_3(mut x: (), __args: Box<[VaArg]>) -> () {
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
-    let mut fn_: Option<unsafe fn(i32) -> i32> = std::mem::transmute::<
+    let mut fn_: Option<unsafe fn(()) -> ()> = std::mem::transmute::<
         *mut ::libc::c_void,
-        Option<unsafe fn(i32) -> i32>,
+        Option<unsafe fn(()) -> ()>,
     >(ap.arg::<*mut ::libc::c_void>());
-    let mut result: i32 = (unsafe { (fn_).unwrap()(x) });
+    let mut result: () = (unsafe { (fn_).unwrap()(x) });
     return result;
 }
-pub unsafe fn apply_binary_4(mut a: i32, mut b: i32, __args: Box<[VaArg]>) -> i32 {
+pub unsafe fn apply_binary_4(mut a: (), mut b: (), __args: Box<[VaArg]>) -> () {
     let mut ap: *const VaArg = ::std::ptr::null();
     ap = __args.as_ptr();
-    let mut fn_: Option<unsafe fn(i32, i32) -> i32> = std::mem::transmute::<
+    let mut fn_: Option<unsafe fn((), ()) -> ()> = std::mem::transmute::<
         *mut ::libc::c_void,
-        Option<unsafe fn(i32, i32) -> i32>,
+        Option<unsafe fn((), ()) -> ()>,
     >(ap.arg::<*mut ::libc::c_void>());
-    let mut result: i32 = (unsafe { (fn_).unwrap()(a, b) });
+    let mut result: () = (unsafe { (fn_).unwrap()(a, b) });
     return result;
 }
 pub unsafe fn not_supported_5(
-    mut ctx: *mut ::libc::c_void,
-    mut fn_: Option<unsafe fn(i32) -> i32>,
-    mut extra: *mut ::libc::c_void,
-) -> i32 {
+    mut ctx: (),
+    mut fn_: Option<unsafe fn(()) -> ()>,
+    mut extra: (),
+) -> () {
     &(ctx);
     &(fn_);
     &(extra);
-    return -3_i32;
+    return -3_();
 }
 pub fn main() {
     unsafe {
@@ -51,81 +51,23 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(
-        ((((unsafe {
-            apply_unary_3(
-                5,
-                Box::new([(Some(square_0)
-                    .map_or(::std::ptr::null_mut(), |f| f as *mut ::libc::c_void))
-                .into()]),
-            )
-        }) == (25)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe {
-            apply_unary_3(
-                7,
-                Box::new([(Some(negate_1)
-                    .map_or(::std::ptr::null_mut(), |f| f as *mut ::libc::c_void))
-                .into()]),
-            )
-        }) == (-7_i32)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((unsafe {
-            apply_binary_4(
-                3,
-                4,
-                Box::new([(Some(add_2)
-                    .map_or(::std::ptr::null_mut(), |f| f as *mut ::libc::c_void))
-                .into()]),
-            )
-        }) == (7)) as i32)
-            != 0)
-    );
-    let mut dummy: i32 = 0;
-    assert!(
-        ((((unsafe {
-            let _ctx: *mut ::libc::c_void = ((&mut dummy as *mut i32) as *mut ::libc::c_void);
-            let _extra: *mut ::libc::c_void = ((&mut dummy as *mut i32) as *mut ::libc::c_void);
-            not_supported_5(_ctx, Some(square_0), _extra)
-        }) == (-3_i32)) as i32)
-            != 0)
-    );
-    let mut vu: Option<unsafe fn(i32, Box<[VaArg]>) -> i32> = Some(apply_unary_3);
-    assert!(
-        ((((unsafe {
-            (vu).unwrap()(
-                6,
-                Box::new([(Some(square_0)
-                    .map_or(::std::ptr::null_mut(), |f| f as *mut ::libc::c_void))
-                .into()]),
-            )
-        }) == (36)) as i32)
-            != 0)
-    );
-    let mut vb: Option<unsafe fn(i32, i32, Box<[VaArg]>) -> i32> = std::mem::transmute::<
-        Option<unsafe fn(i32, Box<[VaArg]>) -> i32>,
-        Option<unsafe fn(i32, i32, Box<[VaArg]>) -> i32>,
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut dummy: () = 0_();
+    unimplemented!();
+    let mut vu: Option<unsafe fn((), Box<[VaArg]>) -> ()> = Some(apply_unary_3);
+    unimplemented!();
+    let mut vb: Option<unsafe fn((), (), Box<[VaArg]>) -> ()> = std::mem::transmute::<
+        Option<unsafe fn((), Box<[VaArg]>) -> ()>,
+        Option<unsafe fn((), (), Box<[VaArg]>) -> ()>,
     >(Some(apply_unary_3));
     vu = std::mem::transmute::<
-        Option<unsafe fn(i32, i32, Box<[VaArg]>) -> i32>,
-        Option<unsafe fn(i32, Box<[VaArg]>) -> i32>,
+        Option<unsafe fn((), (), Box<[VaArg]>) -> ()>,
+        Option<unsafe fn((), Box<[VaArg]>) -> ()>,
     >(vb);
-    assert!(
-        ((((unsafe {
-            (vu).unwrap()(
-                2,
-                Box::new([(Some(negate_1)
-                    .map_or(::std::ptr::null_mut(), |f| f as *mut ::libc::c_void))
-                .into()]),
-            )
-        }) == (-2_i32)) as i32)
-            != 0)
-    );
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

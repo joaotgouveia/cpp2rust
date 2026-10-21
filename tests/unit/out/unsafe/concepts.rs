@@ -8,42 +8,42 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 const _: () = assert!(true, "Small<int>");
 const _: () = assert!(
-    ((::std::mem::size_of::<i32>()) == (4_usize)),
+    ((::std::mem::size_of::<()>()) == (4_())),
     "sizeof(int) == 4"
 );
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Sized {}
 impl Sized {
-    pub unsafe fn size(&mut self) -> i32 {
-        return 4;
+    pub unsafe fn size(&mut self) -> () {
+        return 4_();
     }
 }
-pub unsafe fn is_small_0() -> bool {
+pub unsafe fn is_small_0() -> () {
     return true;
 }
-pub unsafe fn is_small_1() -> bool {
+pub unsafe fn is_small_1() -> () {
     return false;
 }
-pub unsafe fn has_size_2() -> bool {
+pub unsafe fn has_size_2() -> () {
     return true;
 }
-pub unsafe fn has_size_3() -> bool {
+pub unsafe fn has_size_3() -> () {
     return false;
 }
-pub unsafe fn pick_4(mut x: i32) -> i32 {
+pub unsafe fn pick_4(mut x: ()) -> () {
     {
-        return 1;
+        return 1_();
     }
-    return 2;
+    return 2_();
 }
-pub unsafe fn pick_5(mut x: i64) -> i32 {
+pub unsafe fn pick_5(mut x: ()) -> () {
     {}
-    return 2;
+    return 2_();
 }
-pub unsafe fn pick_6(mut x: f32) -> i32 {
+pub unsafe fn pick_6(mut x: ()) -> () {
     {}
-    return 2;
+    return 2_();
 }
 pub fn main() {
     unsafe {
@@ -51,17 +51,17 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     const _: () = assert!(!(false), "!Small<long>");;
-    assert!((unsafe { is_small_0() }));
-    assert!(!(unsafe { is_small_1() }));
-    assert!(true);
-    assert!(!(false));
-    assert!((unsafe { has_size_2() }));
-    assert!(!(unsafe { has_size_3() }));
-    assert!(((unsafe { pick_4(1,) }) == (1)));
-    assert!(((unsafe { pick_5(1_i64,) }) == (2)));
-    assert!(((unsafe { pick_6(1_f32,) }) == (2)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

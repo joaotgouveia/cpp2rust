@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Point {
-    pub x: i32,
-    pub y: i32,
+    pub x: (),
+    pub y: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -21,25 +21,25 @@ pub struct Line {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Node {
-    pub value: i32,
+    pub value: (),
     pub next: *mut Node,
 }
-pub type Color = u32;
+pub type Color = ();
 pub const Color_RED: Color = 0;
 pub const Color_GREEN: Color = 1;
 pub const Color_BLUE: Color = 2;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Inner {
-    pub a: i32,
-    pub b: i32,
+    pub a: (),
+    pub b: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Container {
     pub inner: Inner,
     pub color: Color,
-    pub count: i32,
+    pub count: (),
 }
 pub fn main() {
     unsafe {
@@ -47,42 +47,42 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut p: Point = Point { x: 10, y: 20 };
-    assert!(((((p.x) == (10)) as i32) != 0));
-    assert!(((((p.y) == (20)) as i32) != 0));
+unsafe fn main_0() -> () {
+    let mut p: Point = Point { x: 10_(), y: 20_() };
+    unimplemented!();
+    unimplemented!();
     let mut q: Point = p;
-    q.x = 99;
-    assert!(((((p.x) == (10)) as i32) != 0));
-    assert!(((((q.x) == (99)) as i32) != 0));
-    assert!(((((q.y) == (20)) as i32) != 0));
+    q.x = 99_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut l: Line = Line {
-        start: Point { x: 1, y: 2 },
-        end: Point { x: 3, y: 4 },
+        start: Point { x: 1_(), y: 2_() },
+        end: Point { x: 3_(), y: 4_() },
     };
-    assert!(((((l.start.x) == (1)) as i32) != 0));
-    assert!(((((l.end.y) == (4)) as i32) != 0));
+    unimplemented!();
+    unimplemented!();
     let mut a: Node = Node {
-        value: 1,
+        value: 1_(),
         next: std::ptr::null_mut(),
     };
     let mut b: Node = Node {
-        value: 2,
+        value: 2_(),
         next: (&mut a as *mut Node),
     };
-    assert!((((((*b.next).value) == (1)) as i32) != 0));
+    unimplemented!();
     let mut c: Container = Container {
-        inner: Inner { a: 5, b: 6 },
+        inner: Inner { a: 5_(), b: 6_() },
         color: Color_GREEN,
-        count: 42,
+        count: 42_(),
     };
-    assert!(((((c.inner.a) == (5)) as i32) != 0));
-    assert!(((((c.inner.b) == (6)) as i32) != 0));
-    assert!(((((c.color as u32) == ((Color_GREEN as i32) as u32)) as i32) != 0));
-    assert!(((((c.count) == (42)) as i32) != 0));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut c2: Container = <Container>::default();
     c2.color = Color_BLUE;
-    assert!(((((c2.color as u32) == (2_u32)) as i32) != 0));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

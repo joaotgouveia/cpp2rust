@@ -6,25 +6,25 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn sm_0(mut n: i32) -> i32 {
-    let mut ret: i32 = 0_i32;
+pub unsafe fn sm_0(mut n: ()) -> () {
+    let mut ret: () = unimplemented!();
     goto_block!({
         '__entry: {
-            ret = 0;
+            ret = 0_();
             switch!(match n {
-                __v if __v == 0 => {
-                    ret += 1;
+                __v if __v == 0_() => {
+                    ret += 1_();
                 }
-                __v if __v == 1 => {
-                    ret += 10;
+                __v if __v == 1_() => {
+                    ret += 10_();
                     goto!('out);
                 }
                 _ => {
-                    ret += 100;
+                    ret += 100_();
                     break;
                 }
             });
-            ret += 1000;
+            ret += 1000_();
         }
         'out: {
             return ret;
@@ -38,10 +38,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!(((((unsafe { sm_0(0,) }) == (11)) as i32) != 0));
-    assert!(((((unsafe { sm_0(1,) }) == (10)) as i32) != 0));
-    assert!(((((unsafe { sm_0(9,) }) == (1100)) as i32) != 0));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

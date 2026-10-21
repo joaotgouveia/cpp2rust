@@ -10,7 +10,7 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct container {
     pub p: *mut opaque,
-    pub x: i32,
+    pub x: (),
 }
 pub fn main() {
     unsafe {
@@ -18,15 +18,15 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut c: container = container {
         p: std::ptr::null_mut(),
-        x: 42,
+        x: 42_(),
     };
     (unsafe { touch_0((&mut c as *mut container)) });
-    assert!(((((c.x) == (42)) as i32) != 0));
-    assert!(((((c.p).is_null()) as i32) != 0));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn touch_0(mut c: *mut container) {
     &((*c).p);

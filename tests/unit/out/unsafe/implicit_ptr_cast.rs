@@ -6,8 +6,8 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn write_ulong_0(mut p: *mut u64) {
-    (*p) = 42_u64;
+pub unsafe fn write_ulong_0(mut p: *mut ()) {
+    (*p) = 42_();
 }
 pub fn main() {
     unsafe {
@@ -15,10 +15,10 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: usize = 0_usize;
-    (unsafe { write_ulong_0(((&mut x as *mut usize) as *mut usize).cast::<u64>()) });
-    assert!(((((x) == (42_usize)) as i32) != 0));
-    return 0;
+unsafe fn main_0() -> () {
+    let mut x: () = 0_();
+    (unsafe { write_ulong_0((&mut x as *mut ())) });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

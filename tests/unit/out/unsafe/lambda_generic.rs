@@ -12,90 +12,90 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut twice: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
-        |mut x: i32| -> i32 {
+        |mut x: ()| -> () {
             return ((x) + (x));
         },
-        |mut x: f64| -> f64 {
+        |mut x: ()| -> () {
             return ((x) + (x));
         }
     );
-    assert!(((unsafe { twice.spec::<fn(i32) -> i32>(0).call(4,) }) == (8)));
-    assert!(((unsafe { twice.spec::<fn(f64) -> f64>(1).call(1.5_f64,) }) == (3_f64)));
-    let mut base: i32 = 10;
+    unimplemented!();
+    unimplemented!();
+    let mut base: () = 10_();
     let mut add_base: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let base: i32 = base;
+            let base: () = base;
         },
-        |mut x: i32| -> i32 {
+        |mut x: ()| -> () {
             return ((x) + (base));
         },
-        |mut x: f64| -> f64 {
-            return ((x) + (base as f64));
+        |mut x: ()| -> () {
+            return ((x) + (base));
         }
     );
-    assert!(((unsafe { add_base.spec::<fn(i32) -> i32>(0).call(5,) }) == (15)));
-    assert!(((unsafe { add_base.spec::<fn(f64) -> f64>(1).call(2.5_f64,) }) == (12.5_f64)));
-    let mut total: i32 = 0;
+    unimplemented!();
+    unimplemented!();
+    let mut total: () = 0_();
     let mut accumulate: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let total: *mut i32 = &mut total;
+            let total: *mut () = &mut total;
         },
-        |mut x: i32, mut y: i32| {
+        |mut x: (), mut y: ()| {
             (*total) += ((x) * (y));
         },
-        |mut x: u32, mut y: u32| {
-            (*total) = (((*total) as u32).wrapping_add((x).wrapping_mul(y))) as i32;
+        |mut x: (), mut y: ()| {
+            (*total) = (*total).wrapping_add((x).wrapping_mul(y));
         }
     );
-    (unsafe { accumulate.spec::<fn(i32, i32)>(0).call(2, 3) });
-    (unsafe { accumulate.spec::<fn(u32, u32)>(1).call(4_u32, 5_u32) });
-    assert!(((total) == (26)));
+    (unsafe { accumulate.spec::<fn((), ())>(0).call(2_(), 3_()) });
+    (unsafe { accumulate.spec::<fn((), ())>(1).call(4_(), 5_()) });
+    unimplemented!();
     let mut sub: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
-        |mut x: i32, mut y: i32| -> i32 {
+        |mut x: (), mut y: ()| -> () {
             return ((x) - (y));
         },
-        |mut x: f64, mut y: f64| -> f64 {
+        |mut x: (), mut y: ()| -> () {
             return ((x) - (y));
         }
     );
-    assert!(((unsafe { sub.spec::<fn(i32, i32) -> i32>(0).call(9, 4,) }) == (5)));
-    assert!(((unsafe { sub.spec::<fn(f64, f64) -> f64>(1).call(2.5_f64, 1_f64,) }) == (1.5_f64)));
+    unimplemented!();
+    unimplemented!();
     let mut mixed: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let base: i32 = base;
+            let base: () = base;
         },
-        |mut x: i32, mut y: i32| -> i32 {
+        |mut x: (), mut y: ()| -> () {
             return (((x) * (y)) + (base));
         },
-        |mut x: i32, mut y: f64| -> f64 {
-            return (((x as f64) * (y)) + (base as f64));
+        |mut x: (), mut y: ()| -> () {
+            return (((x) * (y)) + (base));
         }
     );
-    assert!(((unsafe { mixed.spec::<fn(i32, i32) -> i32>(0).call(2, 3,) }) == (16)));
-    assert!(((unsafe { mixed.spec::<fn(i32, f64) -> f64>(1).call(2, 0.5_f64,) }) == (11_f64)));
+    unimplemented!();
+    unimplemented!();
     let mut unused: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     &(unused);
-    let mut outer: FnPtr<fn(i32) -> i32> = lambda_unsafe!(
+    let mut outer: FnPtr<fn(()) -> ()> = lambda_unsafe!(
         {
-            let base: i32 = base;
+            let base: () = base;
         },
-        |mut y: i32| -> i32 {
-            let mut inner: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut z: i32| -> i32 {
-                return ((z) + (1));
+        |mut y: ()| -> () {
+            let mut inner: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut z: ()| -> () {
+                return ((z) + (1_()));
             });
-            return ((unsafe { inner.spec::<fn(i32) -> i32>(0).call(y) }) + (base));
+            return ((unsafe { inner.spec::<fn(()) -> ()>(0).call(y) }) + (base));
         }
     );
-    assert!(((unsafe { outer.call(5,) }) == (16)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,20 +10,20 @@ use std::rc::{Rc, Weak};
 #[byte_size(12)]
 pub struct S {
     #[offset(0)]
-    pub before: i32,
+    pub before: (),
     #[offset(4)]
     #[byte_size(4)]
-    pub mask: Box<[u8]>,
+    pub mask: Box<[()]>,
     #[offset(8)]
-    pub after: i32,
+    pub after: (),
 }
 impl Default for S {
     fn default() -> Self {
         {
             S {
-                before: 0_i32,
-                mask: (0..4).map(|_| 0_u8).collect::<Box<[u8]>>(),
-                after: 0_i32,
+                before: unimplemented!(),
+                mask: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+                after: unimplemented!(),
             }
         }
     }
@@ -32,37 +32,32 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut s: Ptr<S> = libcc2rs::malloc_refcount(12usize).reinterpret_cast::<S>();
-    assert!((((!((s).is_null())) as i32) != 0));
-    field!(s, before).write(1);
-    {
-        ((array_field_ptr!(s, mask) as Ptr<u8>) as Ptr<u8>)
-            .to_any()
-            .memset((5) as u8, ::std::mem::size_of::<[u8; 4]>() as usize);
-        ((array_field_ptr!(s, mask) as Ptr<u8>) as Ptr<u8>).to_any()
-    };
-    field!(s, after).write(2);
-    ((array_field_ptr!(s, mask)) as Ptr<u8>).write(7_u8);
-    let out: Value<Box<[u8]>> = Rc::new(RefCell::new((0..4).map(|_| 0_u8).collect::<Box<[u8]>>()));
-    {
-        ((out.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any().memcpy(
-            &((array_field_ptr!(s, mask)) as Ptr<u8>).to_any(),
-            ::std::mem::size_of::<[u8; 4]>() as usize,
-        );
-        ((out.as_pointer() as Ptr<u8>) as Ptr<u8>).to_any()
-    };
-    assert!(
-        ((((((((*out.borrow())[(0) as usize] as i32) == 7) as i32) != 0)
-            && (((((*out.borrow())[(3) as usize] as i32) == 5) as i32) != 0)) as i32)
-            != 0)
-    );
-    assert!(
-        ((((((s.with(|__s| __s.before) == 1) as i32) != 0)
-            && (((s.with(|__s| __s.after) == 2) as i32) != 0)) as i32)
-            != 0)
-    );
-    libcc2rs::free_refcount((s).to_any());
-    return 0;
+fn main_0() -> () {
+    let mut s: Ptr<S> = unimplemented!().reinterpret_cast::<S>();
+    unimplemented!();
+    field!(s, before).write(1_());
+    ({
+        let ___s: () = ((array_field_ptr!(s, mask) as Ptr<()>) as Ptr<()>).to_any();
+        let ___n: () = ::std::mem::size_of::<[(); 4]>();
+        memset_0(___s, 5_(), ___n)
+    });
+    field!(s, after).write(2_());
+    ((array_field_ptr!(s, mask)) as Ptr<()>).write(7_());
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    ({
+        let ___src: () = ((array_field_ptr!(s, mask)) as Ptr<()>).to_any();
+        let ___n: () = ::std::mem::size_of::<[(); 4]>();
+        memcpy_1(
+            ((out.as_pointer() as Ptr<()>) as Ptr<()>).to_any(),
+            ___src,
+            ___n,
+        )
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

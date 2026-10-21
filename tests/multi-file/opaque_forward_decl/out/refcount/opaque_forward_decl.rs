@@ -13,21 +13,21 @@ pub struct container {
     #[byte_size(8)]
     pub p: Ptr<opaque>,
     #[offset(8)]
-    pub x: i32,
+    pub x: (),
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let c: Value<container> = Rc::new(RefCell::new(container {
         p: Ptr::<opaque>::null(),
-        x: 42,
+        x: 42_(),
     }));
     ({ touch_0((c.as_pointer())) });
-    assert!(((({ (*c.borrow()).x } == 42) as i32) != 0));
-    assert!((((({ (*c.borrow()).p.clone() }).is_null()) as i32) != 0));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn touch_0(mut c: Ptr<container>) {
     &(c.with(|__s| __s.p.clone()));

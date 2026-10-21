@@ -10,7 +10,7 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct container {
     pub p: *mut opaque,
-    pub x: i32,
+    pub x: (),
 }
 pub fn main() {
     unsafe {
@@ -18,13 +18,13 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut c: container = container {
         p: std::ptr::null_mut(),
-        x: 42,
+        x: 42_(),
     };
     &(c.p);
-    return ((c.x) - (42));
+    return ((c.x) - (42_()));
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
 pub struct opaque;

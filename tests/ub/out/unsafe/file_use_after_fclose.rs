@@ -12,17 +12,17 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut fp: *mut ::libc::FILE = libc::fopen(
         (c"/tmp/cpp2rust_uafc_test.tmp".as_ptr().cast_mut()).cast_const(),
         (c"wb".as_ptr().cast_mut()).cast_const(),
     );
-    assert!(!(fp).is_null());
+    unimplemented!();
     libc::fclose(fp);
-    return if ((((libc::fputc(('x' as i32), fp)) == ('x' as i32)) as i32) != 0) {
-        1
+    return if ((((libc::fputc(('x' as ()), fp)) == ('x' as ())) as ()) != 0) {
+        1_()
     } else {
-        0
+        0_()
     };
 }
 pub unsafe fn __cpp2rust_init_globals() {}

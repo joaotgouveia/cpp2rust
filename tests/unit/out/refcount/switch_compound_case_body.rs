@@ -6,23 +6,23 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn compound_case_body_0(mut x: i32) -> i32 {
-    let mut r: i32 = 0;
+pub fn compound_case_body_0(mut x: ()) -> () {
+    let mut r: () = 0_();
     'switch: {
         match { x } {
-            __v if __v == 1 => {
-                let mut y: i32 = 10;
-                let mut z: i32 = 20;
+            __v if __v == 1_() => {
+                let mut y: () = 10_();
+                let mut z: () = 20_();
                 r = (y + z);
                 break 'switch;
             }
-            __v if __v == 2 => {
-                let mut y: i32 = 100;
-                r = (y - 1);
+            __v if __v == 2_() => {
+                let mut y: () = 100_();
+                r = (y - 1_());
                 break 'switch;
             }
             _ => {
-                r = -1_i32;
+                r = -1_();
                 break 'switch;
             }
         }
@@ -33,10 +33,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    assert!((({ compound_case_body_0(1,) }) == 30));
-    assert!((({ compound_case_body_0(2,) }) == 99));
-    assert!((({ compound_case_body_0(9,) }) == -1_i32));
-    return 0;
+fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

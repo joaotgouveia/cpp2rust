@@ -10,13 +10,13 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct record {
     pub code: u16,
-    pub pad: [libc::c_char; 14],
+    pub pad: [(); 14],
 }
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union anon_0 {
     pub h: record,
-    pub raw_: [libc::c_char; 128],
+    pub raw_: [(); 128],
 }
 impl Default for anon_0 {
     fn default() -> Self {
@@ -42,10 +42,10 @@ impl Default for anon_1 {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Outer {
-    pub kind: i32,
-    pub level: i32,
-    pub variant: i32,
-    pub len: u32,
+    pub kind: (),
+    pub level: (),
+    pub variant: (),
+    pub len: (),
     pub body: anon_1,
 }
 pub fn main() {
@@ -54,24 +54,22 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut ex: Outer = <Outer>::default();
-    {
-        let byte_0 = ((&mut ex as *mut Outer) as *mut ::libc::c_void) as *mut u8;
-        for offset in 0..::std::mem::size_of::<Outer>() {
-            *byte_0.offset(offset as isize) = 0 as u8;
-        }
-        ((&mut ex as *mut Outer) as *mut ::libc::c_void)
-    };
-    ex.kind = 2;
-    ex.level = 1;
-    ex.variant = 6;
-    ex.len = (::std::mem::size_of::<record>() as u32);
+    (unsafe {
+        let ___s: () = ((&mut ex as *mut Outer) as ());
+        let ___n: () = ::std::mem::size_of::<Outer>();
+        memset_2(___s, 0_(), ___n)
+    });
+    ex.kind = 2_();
+    ex.level = 1_();
+    ex.variant = 6_();
+    ex.len = ::std::mem::size_of::<record>();
     ex.body.h.code = 2_u16;
-    ex.body.h.pad[(0) as usize] = (('X' as i32) as libc::c_char);
-    assert!(((((ex.body.h.code as i32) == (2)) as i32) != 0));
-    assert!(((((ex.body.h.pad[(0) as usize] as i32) == ('X' as i32)) as i32) != 0));
-    assert!(((((ex.body.nested.view.h.code as i32) == (2)) as i32) != 0));
-    return 0;
+    ex.body.h.pad[(0_()) as usize] = ('X' as ());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,13 +10,13 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct Point {
     #[offset(0)]
-    pub x: i32,
+    pub x: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Box_int_ {
     #[offset(0)]
-    pub val: i32,
+    pub val: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -29,7 +29,7 @@ pub struct Box_Point_ {
 #[byte_size(4)]
 pub struct Deduced_int_ {
     #[offset(0)]
-    pub val: i32,
+    pub val: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -42,20 +42,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let i: Value<Box_int_> = Rc::new(RefCell::new(Box_int_ { val: 3 }));
-    assert!((({ Box_int_Impl::twice(&i.as_pointer(),) }) == 6));
+fn main_0() -> () {
+    let i: Value<Box_int_> = Rc::new(RefCell::new(Box_int_ { val: 3_() }));
+    unimplemented!();
     let p: Value<Box_Point_> = Rc::new(RefCell::new(Box_Point_ {
-        val: Point { x: 4 },
+        val: Point { x: 4_() },
     }));
-    assert!(({ ({ Box_Point_Impl::get(&p.as_pointer(),) }).x } == 4));
-    let d: Value<Deduced_int_> = Rc::new(RefCell::new(Deduced_int_ { val: 5 }));
-    assert!((({ Deduced_int_Impl::twice(&d.as_pointer(),) }) == 10));
+    unimplemented!();
+    let d: Value<Deduced_int_> = Rc::new(RefCell::new(Deduced_int_ { val: 5_() }));
+    unimplemented!();
     let dp: Value<Deduced_Point_> = Rc::new(RefCell::new(Deduced_Point_ {
-        val: Point { x: 6 },
+        val: Point { x: 6_() },
     }));
-    assert!(({ ({ Deduced_Point_Impl::get(&dp.as_pointer(),) }).x } == 6));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub trait Box_Point_Impl {
     fn get(&self) -> Point;
@@ -69,13 +69,13 @@ impl Box_Point_Impl for Ptr<Box_Point_> {
     }
 }
 pub trait Box_int_Impl {
-    fn get(&self) -> i32 {
+    fn get(&self) -> () {
         unimplemented!()
     }
-    fn twice(&self) -> i32;
+    fn twice(&self) -> ();
 }
 impl Box_int_Impl for Ptr<Box_int_> {
-    fn twice(&self) -> i32 {
+    fn twice(&self) -> () {
         return ((*self).with(|__s| __s.val) + (*self).with(|__s| __s.val));
     }
 }
@@ -88,10 +88,10 @@ impl Deduced_Point_Impl for Ptr<Deduced_Point_> {
     }
 }
 pub trait Deduced_int_Impl {
-    fn twice(&self) -> i32;
+    fn twice(&self) -> ();
 }
 impl Deduced_int_Impl for Ptr<Deduced_int_> {
-    fn twice(&self) -> i32 {
+    fn twice(&self) -> () {
         return ((*self).with(|__s| __s.val) + (*self).with(|__s| __s.val));
     }
 }

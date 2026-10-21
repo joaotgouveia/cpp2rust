@@ -10,17 +10,17 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Pair {
     #[offset(0)]
-    pub x: i32,
+    pub x: (),
     #[offset(4)]
-    pub y: i32,
+    pub y: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Triple {
     #[offset(0)]
-    pub a: i32,
+    pub a: (),
     #[offset(4)]
-    pub b: i32,
+    pub b: (),
     #[offset(8)]
     #[byte_size(8)]
     pub p: Pair,
@@ -29,28 +29,28 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut p: Ptr<Pair> = Ptr::alloc(Pair { x: 1, y: 2 });
-    let mut out: i32 = ({ p.with(|__s| __s.x) } + { p.with(|__s| __s.y) });
+fn main_0() -> () {
+    let mut p: Ptr<Pair> = Ptr::alloc(Pair { x: 1_(), y: 2_() });
+    let mut out: () = ({ p.with(|__s| __s.x) } + { p.with(|__s| __s.y) });
     p.delete();
-    assert!((out == 3));
+    unimplemented!();
     let mut t: Triple = Triple {
-        a: 1,
-        b: 0_i32,
+        a: 1_(),
+        b: unimplemented!(),
         p: <Pair>::default(),
     };
-    assert!((t.a == 1));
-    assert!((t.b == 0));
-    assert!((t.p.x == 0) && (t.p.y == 0));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut q: Ptr<Triple> = Ptr::alloc(Triple {
-        a: 2,
-        b: 3,
+        a: 2_(),
+        b: 3_(),
         p: <Pair>::default(),
     });
-    assert!((q.with(|__s| __s.a) == 2));
-    assert!((q.with(|__s| __s.b) == 3));
-    assert!((q.with(|__s| __s.p.x) == 0) && (q.with(|__s| __s.p.y) == 0));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     q.delete();
-    return 0;
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

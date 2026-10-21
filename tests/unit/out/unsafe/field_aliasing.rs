@@ -9,21 +9,21 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct In {
-    pub x: i32,
-    pub y: i32,
+    pub x: (),
+    pub y: (),
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
     pub in_: In,
-    pub total: i32,
-    pub n: i32,
-    pub arr: [i32; 4],
+    pub total: (),
+    pub n: (),
+    pub arr: [(); 4],
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Node {
-    pub x: i32,
+    pub x: (),
     pub self_: *mut Node,
 }
 pub fn main() {
@@ -32,36 +32,27 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut p: *mut S = (libcc2rs::calloc_unsafe(1_usize, ::std::mem::size_of::<S>()) as *mut S);
-    assert!((((!((p).is_null())) as i32) != 0));
+unsafe fn main_0() -> () {
+    let mut p: *mut S = (unimplemented!() as *mut S);
+    unimplemented!();
     let mut q: *mut S = p;
-    (*p).in_.x = 1;
-    (*p).in_.y = 2;
+    (*p).in_.x = 1_();
+    (*p).in_.y = 2_();
     (*p).total = (((*q).in_.x) + ((*q).in_.y));
-    assert!((((((*q).total) == (3)) as i32) != 0));
+    unimplemented!();
     let mut ip: *mut In = (&mut (*p).in_ as *mut In);
-    (*ip).x = (((*p).total) + (1));
-    assert!(
-        ((((((((*q).in_.x) == (4)) as i32) != 0) && (((((*q).in_.y) == (2)) as i32) != 0)) as i32)
-            != 0)
-    );
+    (*ip).x = (((*p).total) + (1_()));
+    unimplemented!();
     (*p).arr[((*p).n) as usize] = (*p).total;
-    (*p).n += 1;
+    (*p).n += 1_();
     (*p).arr[((*p).n) as usize] = (*q).in_.x;
-    assert!(
-        (((((((((((*q).arr[(0) as usize]) == (3)) as i32) != 0)
-            && (((((*q).arr[(1) as usize]) == (4)) as i32) != 0)) as i32)
-            != 0)
-            && (((((*q).n) == (1)) as i32) != 0)) as i32)
-            != 0)
-    );
-    libcc2rs::free_unsafe((p as *mut ::libc::c_void));
+    unimplemented!();
+    unimplemented!();
     let mut s: Node = <Node>::default();
-    s.x = 1;
+    s.x = 1_();
     s.self_ = (&mut s as *mut Node);
-    (*s.self_).x = ((s.x) + (1));
-    assert!(((((s.x) == (2)) as i32) != 0));
-    return 0;
+    (*s.self_).x = ((s.x) + (1_()));
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

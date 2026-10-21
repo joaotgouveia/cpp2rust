@@ -6,19 +6,19 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn mixed_args_0(count: i32, __args: Box<[VaArg]>) -> i32 {
+pub fn mixed_args_0(count: (), __args: Box<[VaArg]>) -> () {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
-    let count: Value<i32> = Rc::new(RefCell::new(count));
+    let count: Value<()> = Rc::new(RefCell::new(count));
     let ap: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
     (*ap.borrow_mut()) = __args.as_pointer();
-    let mut total: i32 = 0;
-    let mut i: i32 = 0;
-    'loop_: while (((i < (*count.borrow())) as i32) != 0) {
-        let mut tag: i32 = (*ap.borrow_mut()).arg::<i32>();
-        if (((tag == 0) as i32) != 0) {
-            total += (*ap.borrow_mut()).arg::<i32>();
+    let mut total: () = 0_();
+    let mut i: () = 0_();
+    'loop_: while (((i < (*count.borrow())) as ()) != 0) {
+        let mut tag: () = (*ap.borrow_mut()).arg::<()>();
+        if (((tag == 0_()) as ()) != 0) {
+            total += (*ap.borrow_mut()).arg::<()>();
         } else {
-            let mut ptr: Ptr<i32> = (*ap.borrow_mut()).arg::<Ptr<i32>>();
+            let mut ptr: Ptr<()> = (*ap.borrow_mut()).arg::<Ptr<()>>();
             total += { (ptr.read()) };
         }
         i.postfix_inc();
@@ -29,38 +29,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let x: Value<i32> = Rc::new(RefCell::new(100));
-    assert!(
-        (((({
-            mixed_args_0(
-                3,
-                Box::new([
-                    (0).into(),
-                    (10).into(),
-                    (1).into(),
-                    (x.as_pointer()).into(),
-                    (0).into(),
-                    (20).into(),
-                ]),
-            )
-        }) == 130) as i32)
-            != 0)
-    );
-    let y: Value<i32> = Rc::new(RefCell::new(50));
-    assert!(
-        (((({ mixed_args_0(1, Box::new([(1).into(), (y.as_pointer()).into(),])) }) == 50) as i32)
-            != 0)
-    );
-    assert!(
-        (((({
-            mixed_args_0(
-                2,
-                Box::new([(0).into(), (5).into(), (0).into(), (3).into()]),
-            )
-        }) == 8) as i32)
-            != 0)
-    );
-    return 0;
+fn main_0() -> () {
+    let x: Value<()> = Rc::new(RefCell::new(100_()));
+    unimplemented!();
+    let y: Value<()> = Rc::new(RefCell::new(50_()));
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}
