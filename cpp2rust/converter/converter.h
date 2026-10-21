@@ -1086,6 +1086,7 @@ protected:
   virtual std::string
   ConvertTemporaryPointer(clang::Expr *expr,
                           std::optional<clang::QualType> implicit_convert_to);
+
   std::string
   ConvertPointer(clang::Expr *expr,
                  std::optional<clang::QualType> implicit_convert_to = {},
