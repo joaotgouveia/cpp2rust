@@ -9,7 +9,6 @@ template <typename T1, std::size_t T2>
 using t2 = typename std::array<T1, T2>::value_type;
 
 template <typename T1, std::size_t T2>
-<<<<<<< HEAD
 using t3 = typename std::array<T1, T2>::pointer;
 
 template <typename T1, std::size_t T2>
@@ -43,19 +42,6 @@ template <typename T1, std::size_t T2>
 void f1(std::array<T1, T2> &a0,
         const typename std::array<T1, T2>::value_type &a1) {
   return a0.fill(a1);
-=======
-using t3 = typename std::array<T1, T2>::value_type;
-
-template <typename T1, std::size_t T2>
-using t4 = typename std::array<T1, T2>::pointer;
-
-template <typename T1, std::size_t T2>
-using t5 = typename std::array<T1, T2>::const_pointer;
-
-template <typename T1, std::size_t T2>
-const T1 *f1(const std::array<T1, T2> &o) {
-  return o.data();
->>>>>>> master
 }
 
 template <typename T1, std::size_t T2>

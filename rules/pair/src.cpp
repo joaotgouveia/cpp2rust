@@ -6,7 +6,6 @@
 template <typename T1, typename T2> using t1 = std::pair<T1, T2>;
 
 template <typename T1, typename T2>
-<<<<<<< HEAD
 using t2 = typename std::pair<T1, T2>::first_type;
 
 template <typename T1, typename T2>
@@ -14,15 +13,6 @@ using t3 = typename std::pair<T1, T2>::second_type;
 
 template <typename T1, typename T2>
 std::pair<T1, T2> f1(const std::pair<T1, T2> &a0) {
-=======
-using t2 = typename std::tuple_element<0, std::pair<T1, T2>>::type;
-
-template <typename T1, typename T2>
-using t3 = typename std::tuple_element<1, std::pair<T1, T2>>::type;
-
-template <typename T1, typename T2>
-std::pair<T1, T2> f2(const std::pair<T1, T2> &a0) {
->>>>>>> master
   return std::pair<T1, T2>(a0);
 }
 

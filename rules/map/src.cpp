@@ -11,7 +11,6 @@ using t1 = std::map<T1, T2, T3, T4>;
 template <typename T1, typename T2, typename T3, typename T4>
 using t2 = typename std::map<T1, T2, T3, T4>::key_type;
 
-<<<<<<< HEAD
 template <typename T1, typename T2, typename T3, typename T4>
 using t3 = typename std::map<T1, T2, T3, T4>::mapped_type;
 
@@ -48,16 +47,6 @@ using t13 = typename std::map<T1, T2, T3, T4>::difference_type;
 template <typename T1, typename T2, typename T3, typename T4>
 std::map<T1, T2, T3, T4> f1() {
   return std::map<T1, T2, T3, T4>();
-=======
-template <typename T1, typename T2>
-using t5 = typename std::map<T1, T2>::key_type;
-
-template <typename T1, typename T2>
-using t6 = typename std::map<T1, T2>::mapped_type;
-
-template <typename T1, typename T2> T2 &f1(std::map<T1, T2> &o, const T1 &key) {
-  return o[key];
->>>>>>> master
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

@@ -7,7 +7,6 @@
 #include <system_error>
 #include <utility>
 
-<<<<<<< HEAD
 template <typename T1> void f1(std::filesystem::path::iterator &a0, T1 a1) {
   return std::advance<T1>(a0, a1);
 }
@@ -395,14 +394,4 @@ std::filesystem::path::value_type f90() {
 
 void f91(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
-=======
-using t1 = std::filesystem::path;
-
-typedef std::filesystem::path::string_type t2;
-
-std::filesystem::path f1(const char *a0) { return std::filesystem::path(a0); }
-
-std::string f2(const std::filesystem::path &a0) {
-  return static_cast<std::string>(a0);
->>>>>>> master
 }
