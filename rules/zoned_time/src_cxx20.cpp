@@ -151,9 +151,3 @@ std::chrono::zoned_time<T1, T2> f25(std::string_view a0,
                                     std::chrono::choose a2) {
   return std::chrono::zoned_time<T1, T2>(std::move(a0), a1, a2);
 }
-
-template <typename T1, typename T2>
-bool f26(const std::chrono::zoned_time<T1, T2> &a0,
-         const std::chrono::zoned_time<T1, T2> &a1) {
-  return a0 == a1;
-}

@@ -2,13 +2,14 @@
 #include "../common/traits.h"
 #include <algorithm>
 #include <initializer_list>
+#include <ranges>
 #include <unordered_map>
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f82(std::from_range_t a0, T6 &&a1,
+f72(std::from_range_t a0, T6 &&a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::hasher &a3,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::key_equal &a4,
@@ -21,17 +22,7 @@ f82(std::from_range_t a0, T6 &&a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f83(std::from_range_t a0, T6 &&a1,
-    const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
-        &a2) {
-  return std::unordered_multimap<T1, T2, T3, T4, T5>(std::move(a0),
-                                                     std::forward<T6>(a1), a2);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6>
-std::unordered_multimap<T1, T2, T3, T4, T5>
-f84(std::from_range_t a0, T6 &&a1,
+f73(std::from_range_t a0, T6 &&a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
         &a3) {
@@ -42,7 +33,7 @@ f84(std::from_range_t a0, T6 &&a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f85(std::from_range_t a0, T6 &&a1,
+f74(std::from_range_t a0, T6 &&a1,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::hasher &a3,
     const typename std::unordered_multimap<T1, T2, T3, T4, T5>::allocator_type
@@ -53,6 +44,6 @@ f85(std::from_range_t a0, T6 &&a1,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-void f86(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
+void f75(std::unordered_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
   return a0.template insert_range<T6>(std::forward<T6>(a1));
 }

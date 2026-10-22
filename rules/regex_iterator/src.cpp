@@ -37,41 +37,30 @@ f2(T1 a0, T1 a1, const typename std::regex_iterator<T1, T2, T3>::regex_type &a2,
 }
 
 template <typename T1, typename T2, typename T3>
-std::regex_iterator<T1, T2, T3> f3(const std::regex_iterator<T1, T2, T3> &a0) {
-  return std::regex_iterator<T1, T2, T3>(a0);
-}
-
-template <typename T1, typename T2, typename T3>
-std::regex_iterator<T1, T2, T3> &f4(std::regex_iterator<T1, T2, T3> &a0,
-                                    const std::regex_iterator<T1, T2, T3> &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-bool f5(const std::regex_iterator<T1, T2, T3> &a0,
+bool f3(const std::regex_iterator<T1, T2, T3> &a0,
         const std::regex_iterator<T1, T2, T3> &a1) {
   return a0.operator==(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 const typename std::regex_iterator<T1, T2, T3>::value_type &
-f6(const std::regex_iterator<T1, T2, T3> &a0) {
+f4(const std::regex_iterator<T1, T2, T3> &a0) {
   return a0.operator*();
 }
 
 template <typename T1, typename T2, typename T3>
 const typename std::regex_iterator<T1, T2, T3>::value_type *
-f7(const std::regex_iterator<T1, T2, T3> &a0) {
+f5(const std::regex_iterator<T1, T2, T3> &a0) {
   return a0.operator->();
 }
 
 template <typename T1, typename T2, typename T3>
-std::regex_iterator<T1, T2, T3> &f8(std::regex_iterator<T1, T2, T3> &a0) {
+std::regex_iterator<T1, T2, T3> &f6(std::regex_iterator<T1, T2, T3> &a0) {
   return a0.operator++();
 }
 
 template <typename T1, typename T2, typename T3>
-std::regex_iterator<T1, T2, T3> f9(std::regex_iterator<T1, T2, T3> &a0,
+std::regex_iterator<T1, T2, T3> f7(std::regex_iterator<T1, T2, T3> &a0,
                                    int a1) {
   return a0.operator++(a1);
 }

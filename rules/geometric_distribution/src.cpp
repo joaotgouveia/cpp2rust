@@ -1,5 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
+#include <istream>
+#include <ostream>
 #include <random>
 #include <utility>
 

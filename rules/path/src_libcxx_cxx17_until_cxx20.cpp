@@ -1,0 +1,34 @@
+#include "../common/init.h"
+#include "../common/traits.h"
+#include <cstddef>
+#include <filesystem>
+#include <string.h>
+#include <string>
+#include <string_view>
+#include <utility>
+
+std::string f79(const std::filesystem::path &a0) { return a0.u8string(); }
+
+std::string f80(const std::filesystem::path &a0) {
+  return a0.generic_u8string();
+}
+
+bool f81(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+  return a0 >= a1;
+}
+
+bool f82(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+  return a0 > a1;
+}
+
+bool f83(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+  return a0 <= a1;
+}
+
+bool f84(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+  return a0 < a1;
+}
+
+bool f85(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+  return a0 != a1;
+}

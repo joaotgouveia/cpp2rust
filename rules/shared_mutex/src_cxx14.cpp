@@ -30,43 +30,19 @@ bool f9(std::shared_timed_mutex &a0, const std::chrono::duration<T1, T2> &a1) {
   return a0.template try_lock_shared_for<T1, T2>(a1);
 }
 
-template <typename T1>
-bool f10(std::shared_timed_mutex &a0,
-         const std::chrono::time_point<std::chrono::system_clock, T1> &a1) {
-  return a0.template try_lock_until<T1>(a1);
-}
-
-template <typename T1>
-bool f11(std::shared_timed_mutex &a0,
-         const std::chrono::time_point<std::chrono::steady_clock, T1> &a1) {
-  return a0.template try_lock_until<T1>(a1);
-}
-
 template <typename T1, typename T2>
-bool f12(std::shared_timed_mutex &a0,
+bool f10(std::shared_timed_mutex &a0,
          const std::chrono::time_point<T1, T2> &a1) {
   return a0.template try_lock_until<T1, T2>(a1);
 }
 
-template <typename T1>
-bool f13(std::shared_timed_mutex &a0,
-         const std::chrono::time_point<std::chrono::system_clock, T1> &a1) {
-  return a0.template try_lock_shared_until<T1>(a1);
-}
-
-template <typename T1>
-bool f14(std::shared_timed_mutex &a0,
-         const std::chrono::time_point<std::chrono::steady_clock, T1> &a1) {
-  return a0.template try_lock_shared_until<T1>(a1);
-}
-
 template <typename T1, typename T2>
-bool f15(std::shared_timed_mutex &a0,
+bool f11(std::shared_timed_mutex &a0,
          const std::chrono::time_point<T1, T2> &a1) {
   return a0.template try_lock_shared_until<T1, T2>(a1);
 }
 
 template <typename T1>
-void f16(std::shared_lock<T1> &a0, std::shared_lock<T1> &a1) {
+void f12(std::shared_lock<T1> &a0, std::shared_lock<T1> &a1) {
   return std::swap<T1>(a0, a1);
 }

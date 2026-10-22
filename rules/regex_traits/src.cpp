@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <cstddef>
 #include <regex>
 #include <utility>
 
@@ -36,48 +37,38 @@ f4(const std::regex_traits<T1> &a0,
 }
 
 template <typename T1>
-bool f5(const std::regex_traits<T1> &a0, T1 a1,
-        typename std::regex_traits<T1>::char_class_type a2) {
-  return a0.isctype(a1, a2);
-}
-
-template <typename T1> int f6(const std::regex_traits<T1> &a0, T1 a1, int a2) {
-  return a0.value(a1, a2);
-}
-
-template <typename T1>
 typename std::regex_traits<T1>::locale_type
-f7(std::regex_traits<T1> &a0, typename std::regex_traits<T1>::locale_type a1) {
+f5(std::regex_traits<T1> &a0, typename std::regex_traits<T1>::locale_type a1) {
   return a0.imbue(a1);
 }
 
 template <typename T1>
 typename std::regex_traits<T1>::locale_type
-f8(const std::regex_traits<T1> &a0) {
+f6(const std::regex_traits<T1> &a0) {
   return a0.getloc();
 }
 
 template <typename T1, typename T2>
-typename std::regex_traits<T1>::string_type f9(const std::regex_traits<T1> &a0,
+typename std::regex_traits<T1>::string_type f7(const std::regex_traits<T1> &a0,
                                                T2 a1, T2 a2) {
   return a0.template transform<T2>(a1, a2);
 }
 
 template <typename T1, typename T2>
-typename std::regex_traits<T1>::string_type f10(const std::regex_traits<T1> &a0,
-                                                T2 a1, T2 a2) {
+typename std::regex_traits<T1>::string_type f8(const std::regex_traits<T1> &a0,
+                                               T2 a1, T2 a2) {
   return a0.template transform_primary<T2>(a1, a2);
 }
 
 template <typename T1, typename T2>
-typename std::regex_traits<T1>::string_type f11(const std::regex_traits<T1> &a0,
-                                                T2 a1, T2 a2) {
+typename std::regex_traits<T1>::string_type f9(const std::regex_traits<T1> &a0,
+                                               T2 a1, T2 a2) {
   return a0.template lookup_collatename<T2>(a1, a2);
 }
 
 template <typename T1, typename T2>
 typename std::regex_traits<T1>::char_class_type
-f12(const std::regex_traits<T1> &a0, T2 a1, T2 a2, bool a3) {
+f10(const std::regex_traits<T1> &a0, T2 a1, T2 a2, bool a3) {
   return a0.template lookup_classname<T2>(a1, a2, a3);
 }
 

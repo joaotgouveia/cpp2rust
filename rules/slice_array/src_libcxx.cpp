@@ -1,0 +1,77 @@
+#include "../common/init.h"
+#include "../common/traits.h"
+#include <utility>
+#include <valarray>
+
+template <typename T1>
+const std::slice_array<T1> &f25(const std::slice_array<T1> &a0,
+                                const std::slice_array<T1> &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1>
+void f26(const std::slice_array<T1> &a0,
+         const typename std::slice_array<T1>::value_type &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1>
+void f27(const std::slice_array<T1> &a0,
+         const std::valarray<typename std::slice_array<T1>::value_type> &a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1, typename T2>
+void f28(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f29(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator*= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f30(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator/= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f31(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator%= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f32(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator+= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f33(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator-= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f34(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator^= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f35(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator&= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f36(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator|= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f37(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator<<= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+void f38(const std::slice_array<T1> &a0, const T2 &a1) {
+  return a0.template operator>>= <T2>(a1);
+}

@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <cstddef>
 #include <locale>
 #include <utility>
 
@@ -20,74 +21,63 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t5 = typename std::wstring_convert<T1, T2, T3, T4>::int_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::wstring_convert<T1, T2, T3, T4> f1() {
-  return {};
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::wstring_convert<T1, T2, T3, T4>
-f2(T1 *a0, typename std::wstring_convert<T1, T2, T3, T4>::state_type a1) {
-  return {a0, a1};
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::wide_string
-f3(std::wstring_convert<T1, T2, T3, T4> &a0, char a1) {
+f1(std::wstring_convert<T1, T2, T3, T4> &a0, char a1) {
   return a0.from_bytes(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::wide_string
-f4(std::wstring_convert<T1, T2, T3, T4> &a0, const char *a1) {
+f2(std::wstring_convert<T1, T2, T3, T4> &a0, const char *a1) {
   return a0.from_bytes(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::wide_string
-f5(std::wstring_convert<T1, T2, T3, T4> &a0,
+f3(std::wstring_convert<T1, T2, T3, T4> &a0,
    const typename std::wstring_convert<T1, T2, T3, T4>::byte_string &a1) {
   return a0.from_bytes(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::wide_string
-f6(std::wstring_convert<T1, T2, T3, T4> &a0, const char *a1, const char *a2) {
+f4(std::wstring_convert<T1, T2, T3, T4> &a0, const char *a1, const char *a2) {
   return a0.from_bytes(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::byte_string
-f7(std::wstring_convert<T1, T2, T3, T4> &a0, T2 a1) {
+f5(std::wstring_convert<T1, T2, T3, T4> &a0, T2 a1) {
   return a0.to_bytes(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::byte_string
-f8(std::wstring_convert<T1, T2, T3, T4> &a0, const T2 *a1) {
+f6(std::wstring_convert<T1, T2, T3, T4> &a0, const T2 *a1) {
   return a0.to_bytes(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::byte_string
-f9(std::wstring_convert<T1, T2, T3, T4> &a0,
+f7(std::wstring_convert<T1, T2, T3, T4> &a0,
    const typename std::wstring_convert<T1, T2, T3, T4>::wide_string &a1) {
   return a0.to_bytes(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::byte_string
-f10(std::wstring_convert<T1, T2, T3, T4> &a0, const T2 *a1, const T2 *a2) {
+f8(std::wstring_convert<T1, T2, T3, T4> &a0, const T2 *a1, const T2 *a2) {
   return a0.to_bytes(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::size_t f11(const std::wstring_convert<T1, T2, T3, T4> &a0) {
+std::size_t f9(const std::wstring_convert<T1, T2, T3, T4> &a0) {
   return a0.converted();
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::wstring_convert<T1, T2, T3, T4>::state_type
-f12(const std::wstring_convert<T1, T2, T3, T4> &a0) {
+f10(const std::wstring_convert<T1, T2, T3, T4> &a0) {
   return a0.state();
 }
 

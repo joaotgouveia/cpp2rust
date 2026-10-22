@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <iterator>
 #include <utility>
 
 template <typename T1> using t1 = std::counted_iterator<T1>;
@@ -112,29 +113,24 @@ std::counted_iterator<T1> &f20(std::counted_iterator<T1> &a0,
 }
 
 template <typename T1>
-std::iter_rvalue_reference_t<T1> f21(const std::counted_iterator<T1> &a0) {
-  return iter_move(a0);
-}
-
-template <typename T1>
-bool f22(const std::counted_iterator<T1> &a0, std::default_sentinel_t a1) {
+bool f21(const std::counted_iterator<T1> &a0, std::default_sentinel_t a1) {
   return a0 == std::move(a1);
 }
 
 template <typename T1>
-std::iter_difference_t<T1> f23(std::default_sentinel_t a0,
+std::iter_difference_t<T1> f22(std::default_sentinel_t a0,
                                const std::counted_iterator<T1> &a1) {
   return std::move(a0) - a1;
 }
 
 template <typename T1>
-std::iter_difference_t<T1> f24(const std::counted_iterator<T1> &a0,
+std::iter_difference_t<T1> f23(const std::counted_iterator<T1> &a0,
                                std::default_sentinel_t a1) {
   return a0 - std::move(a1);
 }
 
 template <typename T1>
-std::counted_iterator<T1> f25(std::iter_difference_t<T1> a0,
+std::counted_iterator<T1> f24(std::iter_difference_t<T1> a0,
                               const std::counted_iterator<T1> &a1) {
   return a0 + a1;
 }

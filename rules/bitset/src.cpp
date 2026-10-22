@@ -2,11 +2,11 @@
 #include "../common/traits.h"
 #include <algorithm>
 #include <bitset>
+#include <cstddef>
+#include <memory>
 #include <utility>
 
 template <std::size_t T1> using t1 = std::bitset<T1>;
-
-template <std::size_t T1> using t2 = typename std::bitset<T1>::reference;
 
 template <std::size_t T1> std::bitset<T1> f1() { return std::bitset<T1>(); }
 
@@ -89,134 +89,77 @@ template <std::size_t T1> unsigned long long f18(const std::bitset<T1> &a0) {
 
 template <std::size_t T1>
 std::basic_string<char, std::char_traits<char>, std::allocator<char>>
-f19(const std::bitset<T1> &a0) {
-  return a0.to_string();
-}
-
-template <std::size_t T1>
-std::basic_string<char, std::char_traits<char>, std::allocator<char>>
-f20(const std::bitset<T1> &a0, char a1, char a2) {
+f19(const std::bitset<T1> &a0, char a1, char a2) {
   return a0.to_string(a1, a2);
 }
 
-template <std::size_t T1> std::size_t f21(const std::bitset<T1> &a0) {
+template <std::size_t T1> std::size_t f20(const std::bitset<T1> &a0) {
   return a0.count();
 }
 
-template <std::size_t T1> std::size_t f22(const std::bitset<T1> &a0) {
+template <std::size_t T1> std::size_t f21(const std::bitset<T1> &a0) {
   return a0.size();
 }
 
 template <std::size_t T1>
-bool f23(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
+bool f22(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
   return a0.operator==(a1);
 }
 
-template <std::size_t T1> bool f24(const std::bitset<T1> &a0, std::size_t a1) {
+template <std::size_t T1> bool f23(const std::bitset<T1> &a0, std::size_t a1) {
   return a0.test(a1);
 }
 
-template <std::size_t T1> bool f25(const std::bitset<T1> &a0) {
+template <std::size_t T1> bool f24(const std::bitset<T1> &a0) {
   return a0.all();
 }
 
-template <std::size_t T1> bool f26(const std::bitset<T1> &a0) {
+template <std::size_t T1> bool f25(const std::bitset<T1> &a0) {
   return a0.any();
 }
 
-template <std::size_t T1> bool f27(const std::bitset<T1> &a0) {
+template <std::size_t T1> bool f26(const std::bitset<T1> &a0) {
   return a0.none();
 }
 
 template <std::size_t T1>
-std::bitset<T1> f28(const std::bitset<T1> &a0, std::size_t a1) {
+std::bitset<T1> f27(const std::bitset<T1> &a0, std::size_t a1) {
   return a0.operator<<(a1);
 }
 
 template <std::size_t T1>
-std::bitset<T1> f29(const std::bitset<T1> &a0, std::size_t a1) {
+std::bitset<T1> f28(const std::bitset<T1> &a0, std::size_t a1) {
   return a0.operator>>(a1);
 }
 
 template <std::size_t T1, typename T2, typename T3, typename T4>
-std::bitset<T1> f30(const std::basic_string<T2, T3, T4> &a0, std::size_t a1) {
-  return std::bitset<T1>(a0, a1);
-}
-
-template <std::size_t T1, typename T2, typename T3, typename T4>
-std::bitset<T1> f31(const std::basic_string<T2, T3, T4> &a0, std::size_t a1,
-                    std::size_t a2) {
-  return std::bitset<T1>(a0, a1, a2);
-}
-
-template <std::size_t T1, typename T2, typename T3, typename T4>
-std::bitset<T1> f32(const std::basic_string<T2, T3, T4> &a0, std::size_t a1,
-                    std::size_t a2, T2 a3, T2 a4) {
-  return std::bitset<T1>(a0, a1, a2, a3, a4);
-}
-
-template <std::size_t T1, typename T2>
-std::bitset<T1> f33(const T2 *a0, typename std::basic_string<T2>::size_type a1,
-                    T2 a2, T2 a3) {
-  return std::bitset<T1>(a0, a1, a2, a3);
-}
-
-template <std::size_t T1, typename T2, typename T3, typename T4>
-std::basic_string<T2, T3, T4> f34(const std::bitset<T1> &a0) {
-  return a0.template to_string<T2, T3, T4>();
-}
-
-template <std::size_t T1, typename T2, typename T3, typename T4>
-std::basic_string<T2, T3, T4> f35(const std::bitset<T1> &a0, T2 a1, T2 a2) {
+std::basic_string<T2, T3, T4> f29(const std::bitset<T1> &a0, T2 a1, T2 a2) {
   return a0.template to_string<T2, T3, T4>(a1, a2);
 }
 
 template <std::size_t T1, typename T2, typename T3>
-std::basic_string<T2, T3, std::allocator<T2>> f36(const std::bitset<T1> &a0) {
-  return a0.template to_string<T2, T3>();
-}
-
-template <std::size_t T1, typename T2, typename T3>
-std::basic_string<T2, T3, std::allocator<T2>> f37(const std::bitset<T1> &a0,
+std::basic_string<T2, T3, std::allocator<T2>> f30(const std::bitset<T1> &a0,
                                                   T2 a1, T2 a2) {
   return a0.template to_string<T2, T3>(a1, a2);
 }
 
 template <std::size_t T1, typename T2>
 std::basic_string<T2, std::char_traits<T2>, std::allocator<T2>>
-f38(const std::bitset<T1> &a0) {
-  return a0.template to_string<T2>();
-}
-
-template <std::size_t T1, typename T2>
-std::basic_string<T2, std::char_traits<T2>, std::allocator<T2>>
-f39(const std::bitset<T1> &a0, T2 a1, T2 a2) {
+f31(const std::bitset<T1> &a0, T2 a1, T2 a2) {
   return a0.template to_string<T2>(a1, a2);
 }
 
 template <std::size_t T1>
-std::bitset<T1> f40(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
+std::bitset<T1> f32(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
   return a0 & a1;
 }
 
-template <typename T1, typename T2, std::size_t T3>
-std::basic_ostream<T1, T2> &f41(std::basic_ostream<T1, T2> &a0,
-                                const std::bitset<T3> &a1) {
-  return a0 << a1;
-}
-
-template <typename T1, typename T2, std::size_t T3>
-std::basic_istream<T1, T2> &f42(std::basic_istream<T1, T2> &a0,
-                                std::bitset<T3> &a1) {
-  return a0 >> a1;
-}
-
 template <std::size_t T1>
-std::bitset<T1> f43(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
+std::bitset<T1> f33(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
   return a0 ^ a1;
 }
 
 template <std::size_t T1>
-std::bitset<T1> f44(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
+std::bitset<T1> f34(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
   return a0 | a1;
 }

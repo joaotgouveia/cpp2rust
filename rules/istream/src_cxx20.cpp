@@ -1,5 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
+#include <bitset>
+#include <iosfwd>
 #include <istream>
 #include <utility>
 

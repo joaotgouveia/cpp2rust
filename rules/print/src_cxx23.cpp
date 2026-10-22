@@ -1,6 +1,8 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <format>
+#include <iosfwd>
+#include <ostream>
 #include <print>
 #include <string_view>
 #include <utility>

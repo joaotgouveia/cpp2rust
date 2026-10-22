@@ -6,20 +6,16 @@
 
 using t2 = std::shared_mutex;
 
-using t3 = std::shared_mutex::native_handle_type;
+std::shared_mutex f13() { return {}; }
 
-std::shared_mutex f17() { return {}; }
+void f14(std::shared_mutex &a0) { return a0.lock(); }
 
-void f18(std::shared_mutex &a0) { return a0.lock(); }
+bool f15(std::shared_mutex &a0) { return a0.try_lock(); }
 
-bool f19(std::shared_mutex &a0) { return a0.try_lock(); }
+void f16(std::shared_mutex &a0) { return a0.unlock(); }
 
-void f20(std::shared_mutex &a0) { return a0.unlock(); }
+void f17(std::shared_mutex &a0) { return a0.lock_shared(); }
 
-void f21(std::shared_mutex &a0) { return a0.lock_shared(); }
+bool f18(std::shared_mutex &a0) { return a0.try_lock_shared(); }
 
-bool f22(std::shared_mutex &a0) { return a0.try_lock_shared(); }
-
-void f23(std::shared_mutex &a0) { return a0.unlock_shared(); }
-
-void *f24(std::shared_mutex &a0) { return a0.native_handle(); }
+void f19(std::shared_mutex &a0) { return a0.unlock_shared(); }

@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <array>
 #include <tuple>
 #include <utility>
 
@@ -146,28 +147,16 @@ std::tuple<T1...> f30(std::allocator_arg_t a0, const T2 &a1,
 
 template <typename... T1, typename T2, typename... T3>
 std::tuple<T1...> f31(std::allocator_arg_t a0, const T2 &a1,
-                      const std::tuple<T3...> &a2) {
-  return std::tuple<T1...>(std::move(a0), a1, a2);
-}
-
-template <typename... T1, typename T2, typename... T3>
-std::tuple<T1...> f32(std::allocator_arg_t a0, const T2 &a1,
                       std::tuple<T3...> &&a2) {
   return std::tuple<T1...>(std::move(a0), a1, std::move(a2));
 }
 
 template <typename... T1, typename... T2>
-std::tuple<T1...> &f33(std::tuple<T1...> &a0, const std::tuple<T2...> &a1) {
+std::tuple<T1...> &f32(std::tuple<T1...> &a0, const std::tuple<T2...> &a1) {
   return a0.template operator= <T2...>(a1);
 }
 
 template <typename... T1, typename... T2>
-std::tuple<T1...> &f34(std::tuple<T1...> &a0, std::tuple<T2...> &&a1) {
+std::tuple<T1...> &f33(std::tuple<T1...> &a0, std::tuple<T2...> &&a1) {
   return a0.template operator= <T2...>(std::move(a1));
-}
-
-template <typename... T1>
-auto f35(T1 &&...a0)
-    -> decltype(std::tuple_cat<T1...>(std::forward<T1>(a0)...)) {
-  return std::tuple_cat<T1...>(std::forward<T1>(a0)...);
 }

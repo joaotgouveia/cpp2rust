@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <fstream>
+#include <iosfwd>
 #include <utility>
 
 template <typename T1, typename T2>

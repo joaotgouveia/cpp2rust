@@ -28,36 +28,23 @@ f2(typename std::ostream_iterator<T1, T2, T3>::ostream_type &a0, const T2 *a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::ostream_iterator<T1, T2, T3>
-f3(const std::ostream_iterator<T1, T2, T3> &a0) {
-  return std::ostream_iterator<T1, T2, T3>(a0);
-}
-
-template <typename T1, typename T2, typename T3>
-std::ostream_iterator<T1, T2, T3> &
-f4(std::ostream_iterator<T1, T2, T3> &a0,
-   const std::ostream_iterator<T1, T2, T3> &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::ostream_iterator<T1, T2, T3> &f5(std::ostream_iterator<T1, T2, T3> &a0,
+std::ostream_iterator<T1, T2, T3> &f3(std::ostream_iterator<T1, T2, T3> &a0,
                                       const T1 &a1) {
   return a0.operator=(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::ostream_iterator<T1, T2, T3> &f6(std::ostream_iterator<T1, T2, T3> &a0) {
+std::ostream_iterator<T1, T2, T3> &f4(std::ostream_iterator<T1, T2, T3> &a0) {
   return a0.operator*();
 }
 
 template <typename T1, typename T2, typename T3>
-std::ostream_iterator<T1, T2, T3> &f7(std::ostream_iterator<T1, T2, T3> &a0) {
+std::ostream_iterator<T1, T2, T3> &f5(std::ostream_iterator<T1, T2, T3> &a0) {
   return a0.operator++();
 }
 
 template <typename T1, typename T2, typename T3>
-std::ostream_iterator<T1, T2, T3> &f8(std::ostream_iterator<T1, T2, T3> &a0,
+std::ostream_iterator<T1, T2, T3> &f6(std::ostream_iterator<T1, T2, T3> &a0,
                                       int a1) {
   return a0.operator++(a1);
 }
@@ -81,10 +68,10 @@ using t9 =
 template <typename T1, typename T2, typename T3>
 using t10 = typename std::ostream_iterator<T1, T2, T3>::ostream_type::sentry;
 
-template <typename T1, typename T2, typename T3> bool f9(bool a0) {
+template <typename T1, typename T2, typename T3> bool f7(bool a0) {
   return std::ostream_iterator<T1, T2, T3>::ostream_type::sync_with_stdio(a0);
 }
 
-template <typename T1, typename T2, typename T3> int f10() {
+template <typename T1, typename T2, typename T3> int f8() {
   return std::ostream_iterator<T1, T2, T3>::ostream_type::xalloc();
 }

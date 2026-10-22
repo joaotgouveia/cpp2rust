@@ -6,12 +6,7 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
-bool f69(const std::multiset<T1, T2, T3> &a0,
+bool f44(const std::multiset<T1, T2, T3> &a0,
          const typename std::multiset<T1, T2, T3>::key_type &a1) {
   return a0.contains(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-auto f70(const std::multiset<T1, T2, T3> &a0, const T4 &a1) {
-  return a0.template contains<T4>(a1);
 }

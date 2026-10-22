@@ -24,8 +24,3 @@ template <typename... T1> using t3 = std::scoped_lock<T1...>;
 template <typename... T1> std::scoped_lock<T1...> f3(T1 &...a0) {
   return std::scoped_lock<T1...>(a0...);
 }
-
-template <typename... T1>
-std::scoped_lock<T1...> f4(std::adopt_lock_t a0, T1 &...a1) {
-  return std::scoped_lock<T1...>(std::move(a0), a1...);
-}

@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <cstddef>
 #include <format>
 #include <string_view>
 #include <utility>
@@ -17,39 +18,34 @@ template <typename T1>
 using t4 = typename std::basic_format_parse_context<T1>::iterator;
 
 template <typename T1>
-std::basic_format_parse_context<T1> f1(std::basic_string_view<T1> a0) {
-  return std::basic_format_parse_context<T1>(a0);
-}
-
-template <typename T1>
 typename std::basic_format_parse_context<T1>::const_iterator
-f2(const std::basic_format_parse_context<T1> &a0) {
+f1(const std::basic_format_parse_context<T1> &a0) {
   return a0.begin();
 }
 
 template <typename T1>
 typename std::basic_format_parse_context<T1>::const_iterator
-f3(const std::basic_format_parse_context<T1> &a0) {
+f2(const std::basic_format_parse_context<T1> &a0) {
   return a0.end();
 }
 
 template <typename T1>
-void f4(std::basic_format_parse_context<T1> &a0,
+void f3(std::basic_format_parse_context<T1> &a0,
         typename std::basic_format_parse_context<T1>::const_iterator a1) {
   return a0.advance_to(a1);
 }
 
-template <typename T1> std::size_t f5(std::basic_format_parse_context<T1> &a0) {
+template <typename T1> std::size_t f4(std::basic_format_parse_context<T1> &a0) {
   return a0.next_arg_id();
 }
 
 template <typename T1>
-void f6(std::basic_format_parse_context<T1> &a0, std::size_t a1) {
+void f5(std::basic_format_parse_context<T1> &a0, std::size_t a1) {
   return a0.check_arg_id(a1);
 }
 
 template <typename T1>
-std::basic_format_parse_context<T1> f7(std::basic_string_view<T1> a0,
+std::basic_format_parse_context<T1> f6(std::basic_string_view<T1> a0,
                                        std::size_t a1) {
   return std::basic_format_parse_context<T1>(a0, a1);
 }

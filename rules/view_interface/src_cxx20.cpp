@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <ranges>
 #include <utility>
 
 template <typename T1> using t1 = std::ranges::view_interface<T1>;

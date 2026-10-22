@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <condition_variable>
+#include <memory>
 #include <utility>
 
 template <typename T1> using t1 = std::weak_ptr<T1>;

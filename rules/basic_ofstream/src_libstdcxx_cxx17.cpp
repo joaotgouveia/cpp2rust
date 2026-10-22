@@ -1,0 +1,19 @@
+#include "../common/init.h"
+#include "../common/traits.h"
+#include <algorithm>
+#include <fstream>
+#include <ios>
+#include <string>
+#include <utility>
+
+template <typename T1, typename T2, typename T3>
+void f70(std::basic_ofstream<T1, T2> &a0, const T3 &a1,
+         typename std::basic_ofstream<T1, T2>::openmode a2) {
+  return a0.template open<T3>(a1, a2);
+}
+
+template <typename T1, typename T2>
+std::basic_ofstream<T1, T2> &f71(std::basic_ofstream<T1, T2> &a0,
+                                 std::nullptr_t a1) {
+  return a0.operator<<(a1);
+}

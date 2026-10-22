@@ -1,7 +1,10 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <cstddef>
 #include <initializer_list>
+#include <istream>
+#include <ostream>
 #include <random>
 #include <utility>
 #include <vector>

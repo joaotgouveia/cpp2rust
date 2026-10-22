@@ -1,6 +1,9 @@
 #include "../common/init.h"
 #include "../common/traits.h"
+#include <bitset>
+#include <iosfwd>
 #include <istream>
+#include <string>
 #include <utility>
 
 template <typename T1>

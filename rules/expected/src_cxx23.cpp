@@ -2,6 +2,7 @@
 #include "../common/traits.h"
 #include <algorithm>
 #include <expected>
+#include <initializer_list>
 #include <utility>
 
 template <typename T1, typename T2> using t1 = std::expected<T1, T2>;
@@ -315,22 +316,4 @@ T1 f61(const std::expected<T1, T2> &a0, T3 &&a1) {
 template <typename T1, typename T2, typename T3>
 T1 f62(std::expected<T1, T2> &&a0, T3 &&a1) {
   return std::move(a0).template value_or<T3>(std::forward<T3>(a1));
-}
-
-using t5 = std::unexpect_t;
-
-std::unexpect_t f63() { return std::unexpect_t(); }
-
-std::unexpect_t f64(const std::unexpect_t &a0) { return std::unexpect_t(a0); }
-
-std::unexpect_t f65(std::unexpect_t &&a0) {
-  return std::unexpect_t(std::move(a0));
-}
-
-std::unexpect_t &f66(std::unexpect_t &a0, const std::unexpect_t &a1) {
-  return a0.operator=(a1);
-}
-
-std::unexpect_t &f67(std::unexpect_t &a0, std::unexpect_t &&a1) {
-  return a0.operator=(std::move(a1));
 }

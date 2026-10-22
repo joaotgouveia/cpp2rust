@@ -2,6 +2,9 @@
 #include "../common/traits.h"
 #include <algorithm>
 #include <barrier>
+#include <ios>
+#include <iosfwd>
+#include <ostream>
 #include <syncstream>
 #include <utility>
 
@@ -92,261 +95,103 @@ void f9(std::basic_osyncstream<T1, T2, T3> &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &
-f10(std::basic_osyncstream<T1, T2, T3> &a0,
-    std::basic_osyncstream<T1, T2, T3> &(*a1)(
-        std::basic_osyncstream<T1, T2, T3> &)) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &
-f11(std::basic_osyncstream<T1, T2, T3> &a0,
-    std::basic_ios<T1, T2> &(*a1)(std::basic_ios<T1, T2> &)) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f12(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        std::ios_base &(*a1)(std::ios_base &)) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f13(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        long a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f14(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        unsigned long a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f15(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        bool a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f16(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        short a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f17(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        unsigned short a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f18(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        int a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f19(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        unsigned int a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f20(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        long long a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f21(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        unsigned long long a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f22(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        double a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f23(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        float a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f24(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        long double a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f25(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        const void *a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f26(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        std::nullptr_t a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &f27(std::basic_osyncstream<T1, T2, T3> &a0,
-                                        std::basic_streambuf<T1, T2> *a1) {
-  return a0.operator<<(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &
-f28(std::basic_osyncstream<T1, T2, T3> &a0,
-    typename std::basic_osyncstream<T1, T2, T3>::char_type a1) {
-  return a0.put(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &
-f29(std::basic_osyncstream<T1, T2, T3> &a0,
-    const typename std::basic_osyncstream<T1, T2, T3>::char_type *a1,
-    std::streamsize a2) {
-  return a0.write(a1, a2);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &
-f30(std::basic_osyncstream<T1, T2, T3> &a0) {
-  return a0.flush();
-}
-
-template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::pos_type
-f31(std::basic_osyncstream<T1, T2, T3> &a0) {
+f10(std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.tellp();
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &
-f32(std::basic_osyncstream<T1, T2, T3> &a0,
-    typename std::basic_osyncstream<T1, T2, T3>::pos_type a1) {
-  return a0.seekp(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_osyncstream<T1, T2, T3> &
-f33(std::basic_osyncstream<T1, T2, T3> &a0,
-    typename std::basic_osyncstream<T1, T2, T3>::off_type a1,
-    typename std::basic_osyncstream<T1, T2, T3>::seekdir a2) {
-  return a0.seekp(a1, a2);
-}
-
-template <typename T1, typename T2, typename T3>
-bool f34(const std::basic_osyncstream<T1, T2, T3> &a0) {
+bool f11(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f35(const std::basic_osyncstream<T1, T2, T3> &a0) {
+bool f12(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.operator!();
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::iostate
-f36(const std::basic_osyncstream<T1, T2, T3> &a0) {
+f13(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.rdstate();
 }
 
 template <typename T1, typename T2, typename T3>
-void f37(std::basic_osyncstream<T1, T2, T3> &a0,
+void f14(std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::iostate a1) {
   return a0.clear(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f38(std::basic_osyncstream<T1, T2, T3> &a0,
+void f15(std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::iostate a1) {
   return a0.setstate(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f39(const std::basic_osyncstream<T1, T2, T3> &a0) {
+bool f16(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.good();
 }
 
 template <typename T1, typename T2, typename T3>
-bool f40(const std::basic_osyncstream<T1, T2, T3> &a0) {
+bool f17(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.eof();
 }
 
 template <typename T1, typename T2, typename T3>
-bool f41(const std::basic_osyncstream<T1, T2, T3> &a0) {
+bool f18(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.fail();
 }
 
 template <typename T1, typename T2, typename T3>
-bool f42(const std::basic_osyncstream<T1, T2, T3> &a0) {
+bool f19(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.bad();
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::iostate
-f43(const std::basic_osyncstream<T1, T2, T3> &a0) {
+f20(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.exceptions();
 }
 
 template <typename T1, typename T2, typename T3>
-void f44(std::basic_osyncstream<T1, T2, T3> &a0,
+void f21(std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::iostate a1) {
   return a0.exceptions(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_ostream<T1, T2> *f45(const std::basic_osyncstream<T1, T2, T3> &a0) {
-  return a0.tie();
-}
-
-template <typename T1, typename T2, typename T3>
-std::basic_ostream<T1, T2> *f46(std::basic_osyncstream<T1, T2, T3> &a0,
-                                std::basic_ostream<T1, T2> *a1) {
-  return a0.tie(a1);
-}
-
-template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::char_type
-f47(const std::basic_osyncstream<T1, T2, T3> &a0) {
+f22(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.fill();
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::char_type
-f48(std::basic_osyncstream<T1, T2, T3> &a0,
+f23(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::char_type a1) {
   return a0.fill(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::locale f49(std::basic_osyncstream<T1, T2, T3> &a0, const std::locale &a1) {
+std::locale f24(std::basic_osyncstream<T1, T2, T3> &a0, const std::locale &a1) {
   return a0.imbue(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-char f50(const std::basic_osyncstream<T1, T2, T3> &a0,
+char f25(const std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::char_type a1, char a2) {
   return a0.narrow(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::char_type
-f51(const std::basic_osyncstream<T1, T2, T3> &a0, char a1) {
+f26(const std::basic_osyncstream<T1, T2, T3> &a0, char a1) {
   return a0.widen(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f52(std::basic_osyncstream<T1, T2, T3> &a0,
+void f27(std::basic_osyncstream<T1, T2, T3> &a0,
          void (*a1)(typename std::basic_osyncstream<T1, T2, T3>::event,
                     std::basic_osyncstream<T1, T2, T3> &, int),
          int a2) {
@@ -355,80 +200,80 @@ void f52(std::basic_osyncstream<T1, T2, T3> &a0,
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::fmtflags
-f53(const std::basic_osyncstream<T1, T2, T3> &a0) {
+f28(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.flags();
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::fmtflags
-f54(std::basic_osyncstream<T1, T2, T3> &a0,
+f29(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::fmtflags a1) {
   return a0.flags(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::fmtflags
-f55(std::basic_osyncstream<T1, T2, T3> &a0,
+f30(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::fmtflags a1) {
   return a0.setf(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_osyncstream<T1, T2, T3>::fmtflags
-f56(std::basic_osyncstream<T1, T2, T3> &a0,
+f31(std::basic_osyncstream<T1, T2, T3> &a0,
     typename std::basic_osyncstream<T1, T2, T3>::fmtflags a1,
     typename std::basic_osyncstream<T1, T2, T3>::fmtflags a2) {
   return a0.setf(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-void f57(std::basic_osyncstream<T1, T2, T3> &a0,
+void f32(std::basic_osyncstream<T1, T2, T3> &a0,
          typename std::basic_osyncstream<T1, T2, T3>::fmtflags a1) {
   return a0.unsetf(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize f58(const std::basic_osyncstream<T1, T2, T3> &a0) {
+std::streamsize f33(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.precision();
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize f59(std::basic_osyncstream<T1, T2, T3> &a0,
+std::streamsize f34(std::basic_osyncstream<T1, T2, T3> &a0,
                     std::streamsize a1) {
   return a0.precision(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize f60(const std::basic_osyncstream<T1, T2, T3> &a0) {
+std::streamsize f35(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.width();
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize f61(std::basic_osyncstream<T1, T2, T3> &a0,
+std::streamsize f36(std::basic_osyncstream<T1, T2, T3> &a0,
                     std::streamsize a1) {
   return a0.width(a1);
 }
 
-template <typename T1, typename T2, typename T3> bool f62(bool a0) {
+template <typename T1, typename T2, typename T3> bool f37(bool a0) {
   return std::basic_osyncstream<T1, T2, T3>::sync_with_stdio(a0);
 }
 
 template <typename T1, typename T2, typename T3>
-std::locale f63(const std::basic_osyncstream<T1, T2, T3> &a0) {
+std::locale f38(const std::basic_osyncstream<T1, T2, T3> &a0) {
   return a0.getloc();
 }
 
-template <typename T1, typename T2, typename T3> int f64() {
+template <typename T1, typename T2, typename T3> int f39() {
   return std::basic_osyncstream<T1, T2, T3>::xalloc();
 }
 
 template <typename T1, typename T2, typename T3>
-long &f65(std::basic_osyncstream<T1, T2, T3> &a0, int a1) {
+long &f40(std::basic_osyncstream<T1, T2, T3> &a0, int a1) {
   return a0.iword(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void *&f66(std::basic_osyncstream<T1, T2, T3> &a0, int a1) {
+void *&f41(std::basic_osyncstream<T1, T2, T3> &a0, int a1) {
   return a0.pword(a1);
 }
 

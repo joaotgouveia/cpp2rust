@@ -2,6 +2,7 @@
 #include "../common/traits.h"
 #include <chrono>
 #include <condition_variable>
+#include <mutex>
 #include <shared_mutex>
 #include <utility>
 

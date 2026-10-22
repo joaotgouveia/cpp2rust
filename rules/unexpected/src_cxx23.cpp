@@ -2,6 +2,7 @@
 #include "../common/traits.h"
 #include <algorithm>
 #include <expected>
+#include <initializer_list>
 #include <utility>
 
 template <typename T1> using t1 = std::unexpected<T1>;

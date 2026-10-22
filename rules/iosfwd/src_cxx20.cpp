@@ -3,10 +3,10 @@
 #include <iosfwd>
 #include <utility>
 
-using t27 = std::osyncstream;
+using t1 = std::osyncstream;
 
-using t28 = std::syncbuf;
+using t2 = std::syncbuf;
 
-using t29 = std::wosyncstream;
+using t3 = std::wosyncstream;
 
-using t30 = std::wsyncbuf;
+using t4 = std::wsyncbuf;

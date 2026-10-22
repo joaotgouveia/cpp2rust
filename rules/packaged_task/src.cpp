@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <future>
+#include <memory>
 #include <tuple>
 #include <utility>
 

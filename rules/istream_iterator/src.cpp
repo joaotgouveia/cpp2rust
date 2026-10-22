@@ -27,42 +27,29 @@ f2(typename std::istream_iterator<T1, T2, T3, T4>::istream_type &a0) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::istream_iterator<T1, T2, T3, T4>
-f3(const std::istream_iterator<T1, T2, T3, T4> &a0) {
-  return std::istream_iterator<T1, T2, T3, T4>(a0);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::istream_iterator<T1, T2, T3, T4> &
-f4(std::istream_iterator<T1, T2, T3, T4> &a0,
-   const std::istream_iterator<T1, T2, T3, T4> &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-const T1 &f5(const std::istream_iterator<T1, T2, T3, T4> &a0) {
+const T1 &f3(const std::istream_iterator<T1, T2, T3, T4> &a0) {
   return a0.operator*();
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-const T1 *f6(const std::istream_iterator<T1, T2, T3, T4> &a0) {
+const T1 *f4(const std::istream_iterator<T1, T2, T3, T4> &a0) {
   return a0.operator->();
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::istream_iterator<T1, T2, T3, T4> &
-f7(std::istream_iterator<T1, T2, T3, T4> &a0) {
+f5(std::istream_iterator<T1, T2, T3, T4> &a0) {
   return a0.operator++();
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::istream_iterator<T1, T2, T3, T4>
-f8(std::istream_iterator<T1, T2, T3, T4> &a0, int a1) {
+f6(std::istream_iterator<T1, T2, T3, T4> &a0, int a1) {
   return a0.operator++(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f9(const std::istream_iterator<T1, T2, T3, T4> &a0,
+bool f7(const std::istream_iterator<T1, T2, T3, T4> &a0,
         const std::istream_iterator<T1, T2, T3, T4> &a1) {
   return a0 == a1;
 }
@@ -91,12 +78,11 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t10 =
     typename std::istream_iterator<T1, T2, T3, T4>::istream_type::sentry;
 
-template <typename T1, typename T2, typename T3, typename T4>
-bool f10(bool a0) {
+template <typename T1, typename T2, typename T3, typename T4> bool f8(bool a0) {
   return std::istream_iterator<T1, T2, T3, T4>::istream_type::sync_with_stdio(
       a0);
 }
 
-template <typename T1, typename T2, typename T3, typename T4> int f11() {
+template <typename T1, typename T2, typename T3, typename T4> int f9() {
   return std::istream_iterator<T1, T2, T3, T4>::istream_type::xalloc();
 }

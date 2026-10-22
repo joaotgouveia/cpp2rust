@@ -1,8 +1,11 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <cstddef>
+#include <cxxabi.h>
 #include <exception>
 #include <functional>
+#include <memory>
 #include <string>
 #include <utility>
 
@@ -68,27 +71,16 @@ const std::type_info &f11(const std::function<T1(T2...)> &a0) {
 }
 
 template <typename T1, typename... T2, typename T3>
-std::function<T1(T2...)> f12(T3 &&a0) {
-  return std::function<T1(T2...)>(std::forward<T3>(a0));
-}
-
-template <typename T1, typename... T2, typename T3>
-std::function<T1(T2...)> &f13(std::function<T1(T2...)> &a0, T3 &&a1) {
+std::function<T1(T2...)> &f12(std::function<T1(T2...)> &a0, T3 &&a1) {
   return a0.template operator= <T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename... T2, typename T3>
-std::function<T1(T2...)> &f14(std::function<T1(T2...)> &a0,
-                              std::reference_wrapper<T3> a1) {
-  return a0.template operator= <T3>(a1);
-}
-
-template <typename T1, typename... T2, typename T3>
-T3 *f15(std::function<T1(T2...)> &a0) {
+T3 *f13(std::function<T1(T2...)> &a0) {
   return a0.template target<T3>();
 }
 
 template <typename T1, typename... T2, typename T3>
-const T3 *f16(const std::function<T1(T2...)> &a0) {
+const T3 *f14(const std::function<T1(T2...)> &a0) {
   return a0.template target<T3>();
 }

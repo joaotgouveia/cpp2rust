@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <iterator>
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>

@@ -1,0 +1,16 @@
+#include "../common/init.h"
+#include "../common/traits.h"
+#include <initializer_list>
+#include <list>
+#include <utility>
+
+template <typename T1, typename T2>
+typename std::list<T1, T2>::size_type
+f105(std::list<T1, T2> &a0, const typename std::list<T1, T2>::value_type &a1) {
+  return a0.remove(a1);
+}
+
+template <typename T1, typename T2>
+auto f106(const std::list<T1, T2> &a0, const std::list<T1, T2> &a1) {
+  return a0 <=> a1;
+}

@@ -6,10 +6,10 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t36 = std::pmr::unordered_map<T1, T2, T3, T4>;
+using t16 = std::pmr::unordered_map<T1, T2, T3, T4>;
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t37 = std::pmr::unordered_multimap<T1, T2, T3, T4>;
+using t17 = std::pmr::unordered_multimap<T1, T2, T3, T4>;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::node_type
@@ -114,32 +114,4 @@ f88(std::unordered_map<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_map<T1, T2, T3, T4, T5>::key_type &&a2, T6 &&a3) {
   return a0.template insert_or_assign<T6>(a1, std::move(a2),
                                           std::forward<T6>(a3));
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6, typename T7>
-void f89(std::unordered_map<T1, T2, T3, T4, T5> &a0,
-         std::unordered_map<T1, T2, T6, T7, T5> &a1) {
-  return a0.template merge<T6, T7>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6, typename T7>
-void f90(std::unordered_map<T1, T2, T3, T4, T5> &a0,
-         std::unordered_map<T1, T2, T6, T7, T5> &&a1) {
-  return a0.template merge<T6, T7>(std::move(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6, typename T7>
-void f91(std::unordered_map<T1, T2, T3, T4, T5> &a0,
-         std::unordered_multimap<T1, T2, T6, T7, T5> &a1) {
-  return a0.template merge<T6, T7>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6, typename T7>
-void f92(std::unordered_map<T1, T2, T3, T4, T5> &a0,
-         std::unordered_multimap<T1, T2, T6, T7, T5> &&a1) {
-  return a0.template merge<T6, T7>(std::move(a1));
 }

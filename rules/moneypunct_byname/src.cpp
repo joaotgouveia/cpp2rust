@@ -1,6 +1,8 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <cstddef>
+#include <iomanip>
 #include <locale>
 #include <string>
 #include <utility>
@@ -103,7 +105,3 @@ using t11 = typename std::moneypunct_byname<T1, T2>::string_type::pointer;
 
 template <typename T1, bool T2>
 using t12 = typename std::moneypunct_byname<T1, T2>::string_type::const_pointer;
-
-template <typename T1, bool T2> bool f12() {
-  return std::moneypunct_byname<T1, T2>::intl;
-}

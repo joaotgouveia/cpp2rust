@@ -1,7 +1,9 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <compare>
 #include <coroutine>
+#include <cstddef>
 #include <utility>
 
 using t1 = std::coroutine_handle<std::noop_coroutine_promise>;

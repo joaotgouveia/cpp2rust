@@ -5,6 +5,6 @@
 
 template <typename T1>
 typename std::is_null_pointer<T1>::value_type
-f2(const std::is_null_pointer<T1> &a0) {
+f1(const std::is_null_pointer<T1> &a0) {
   return a0.operator()();
 }

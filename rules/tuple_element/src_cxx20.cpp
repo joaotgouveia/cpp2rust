@@ -2,6 +2,7 @@
 #include "../common/traits.h"
 #include <algorithm>
 #include <array>
+#include <ranges>
 #include <tuple>
 #include <utility>
 

@@ -1,5 +1,6 @@
 #include "../common/init.h"
 #include "../common/traits.h"
+#include <cstddef>
 #include <initializer_list>
 #include <utility>
 
@@ -32,16 +33,10 @@ template <typename T1> std::initializer_list<T1> f3() {
   return std::initializer_list<T1>();
 }
 
-template <typename T1>
-typename std::initializer_list<T1>::size_type
-f4(const std::initializer_list<T1> &a0) {
-  return a0.size();
-}
-
-template <typename T1> const T1 *f5(const std::initializer_list<T1> &a0) {
+template <typename T1> const T1 *f4(const std::initializer_list<T1> &a0) {
   return a0.begin();
 }
 
-template <typename T1> const T1 *f6(const std::initializer_list<T1> &a0) {
+template <typename T1> const T1 *f5(const std::initializer_list<T1> &a0) {
   return a0.end();
 }

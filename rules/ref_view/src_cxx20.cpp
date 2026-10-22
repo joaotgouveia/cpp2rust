@@ -35,27 +35,3 @@ template <typename T1> auto f6(const std::ranges::ref_view<T1> &a0) {
 template <typename T1, typename T2> std::ranges::ref_view<T1> f7(T2 &&a0) {
   return std::ranges::ref_view<T1>(std::forward<T2>(a0));
 }
-
-template <typename T1> bool f8(std::ranges::ref_view<T1> &a0) {
-  return static_cast<bool>(a0);
-}
-
-template <typename T1> bool f9(const std::ranges::ref_view<T1> &a0) {
-  return static_cast<bool>(a0);
-}
-
-template <typename T1> decltype(auto) f10(std::ranges::ref_view<T1> &a0) {
-  return a0.front();
-}
-
-template <typename T1> decltype(auto) f11(const std::ranges::ref_view<T1> &a0) {
-  return a0.front();
-}
-
-template <typename T1> decltype(auto) f12(std::ranges::ref_view<T1> &a0) {
-  return a0.back();
-}
-
-template <typename T1> decltype(auto) f13(const std::ranges::ref_view<T1> &a0) {
-  return a0.back();
-}

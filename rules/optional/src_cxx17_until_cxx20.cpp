@@ -7,56 +7,56 @@
 #include <utility>
 
 template <typename T1>
-bool f61(std::nullopt_t a0, const std::optional<T1> &a1) {
+bool f44(std::nullopt_t a0, const std::optional<T1> &a1) {
   return std::move(a0) != a1;
 }
 
 template <typename T1>
-bool f62(const std::optional<T1> &a0, std::nullopt_t a1) {
+bool f45(const std::optional<T1> &a0, std::nullopt_t a1) {
   return a0 != std::move(a1);
 }
 
 template <typename T1>
-bool f63(std::nullopt_t a0, const std::optional<T1> &a1) {
+bool f46(std::nullopt_t a0, const std::optional<T1> &a1) {
   return std::move(a0) < a1;
 }
 
 template <typename T1>
-bool f64(const std::optional<T1> &a0, std::nullopt_t a1) {
+bool f47(const std::optional<T1> &a0, std::nullopt_t a1) {
   return a0 < std::move(a1);
 }
 
 template <typename T1>
-bool f65(std::nullopt_t a0, const std::optional<T1> &a1) {
+bool f48(std::nullopt_t a0, const std::optional<T1> &a1) {
   return std::move(a0) <= a1;
 }
 
 template <typename T1>
-bool f66(const std::optional<T1> &a0, std::nullopt_t a1) {
+bool f49(const std::optional<T1> &a0, std::nullopt_t a1) {
   return a0 <= std::move(a1);
 }
 
 template <typename T1>
-bool f67(std::nullopt_t a0, const std::optional<T1> &a1) {
+bool f50(std::nullopt_t a0, const std::optional<T1> &a1) {
   return std::move(a0) == a1;
 }
 
 template <typename T1>
-bool f68(std::nullopt_t a0, const std::optional<T1> &a1) {
+bool f51(std::nullopt_t a0, const std::optional<T1> &a1) {
   return std::move(a0) > a1;
 }
 
 template <typename T1>
-bool f69(const std::optional<T1> &a0, std::nullopt_t a1) {
+bool f52(const std::optional<T1> &a0, std::nullopt_t a1) {
   return a0 > std::move(a1);
 }
 
 template <typename T1>
-bool f70(std::nullopt_t a0, const std::optional<T1> &a1) {
+bool f53(std::nullopt_t a0, const std::optional<T1> &a1) {
   return std::move(a0) >= a1;
 }
 
 template <typename T1>
-bool f71(const std::optional<T1> &a0, std::nullopt_t a1) {
+bool f54(const std::optional<T1> &a0, std::nullopt_t a1) {
   return a0 >= std::move(a1);
 }

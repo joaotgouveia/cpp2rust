@@ -1,7 +1,9 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <barrier>
+#include <ostream>
 #include <regex>
+#include <string>
 #include <utility>
 
 template <typename T1>

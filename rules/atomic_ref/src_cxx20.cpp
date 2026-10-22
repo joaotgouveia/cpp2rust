@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <atomic>
+#include <cstddef>
 #include <utility>
 
 template <typename T1> using t1 = std::atomic_ref<T1>;

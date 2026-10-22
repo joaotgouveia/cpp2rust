@@ -6,8 +6,8 @@
 
 template <typename T1, typename T2, typename... T3>
 typename std::forward_list<T1, T2>::value_type &
-f71(std::forward_list<T1, T2> &a0, T3 &&...a1) {
+f54(std::forward_list<T1, T2> &a0, T3 &&...a1) {
   return a0.template emplace_front<T3...>(std::forward<T3>(a1)...);
 }
 
-template <typename T1> using t20 = std::pmr::forward_list<T1>;
+template <typename T1> using t10 = std::pmr::forward_list<T1>;

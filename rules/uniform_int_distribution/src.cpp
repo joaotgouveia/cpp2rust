@@ -1,6 +1,8 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
+#include <iosfwd>
+#include <random>
 #include <utility>
 
 template <typename T1> using t1 = std::uniform_int_distribution<T1>;
@@ -15,71 +17,67 @@ template <typename T1> std::uniform_int_distribution<T1> f1() {
   return std::uniform_int_distribution<T1>();
 }
 
-template <typename T1> std::uniform_int_distribution<T1> f2(T1 a0, T1 a1) {
-  return std::uniform_int_distribution<T1>(a0, a1);
-}
-
 template <typename T1>
 std::uniform_int_distribution<T1>
-f3(const typename std::uniform_int_distribution<T1>::param_type &a0) {
+f2(const typename std::uniform_int_distribution<T1>::param_type &a0) {
   return std::uniform_int_distribution<T1>(a0);
 }
 
-template <typename T1> void f4(std::uniform_int_distribution<T1> &a0) {
+template <typename T1> void f3(std::uniform_int_distribution<T1> &a0) {
   return a0.reset();
 }
 
 template <typename T1>
 typename std::uniform_int_distribution<T1>::result_type
-f5(const std::uniform_int_distribution<T1> &a0) {
+f4(const std::uniform_int_distribution<T1> &a0) {
   return a0.a();
 }
 
 template <typename T1>
 typename std::uniform_int_distribution<T1>::result_type
-f6(const std::uniform_int_distribution<T1> &a0) {
+f5(const std::uniform_int_distribution<T1> &a0) {
   return a0.b();
 }
 
 template <typename T1>
 typename std::uniform_int_distribution<T1>::param_type
-f7(const std::uniform_int_distribution<T1> &a0) {
+f6(const std::uniform_int_distribution<T1> &a0) {
   return a0.param();
 }
 
 template <typename T1>
-void f8(std::uniform_int_distribution<T1> &a0,
+void f7(std::uniform_int_distribution<T1> &a0,
         const typename std::uniform_int_distribution<T1>::param_type &a1) {
   return a0.param(a1);
 }
 
 template <typename T1>
 typename std::uniform_int_distribution<T1>::result_type
-f9(const std::uniform_int_distribution<T1> &a0) {
+f8(const std::uniform_int_distribution<T1> &a0) {
   return a0.min();
 }
 
 template <typename T1>
 typename std::uniform_int_distribution<T1>::result_type
-f10(const std::uniform_int_distribution<T1> &a0) {
+f9(const std::uniform_int_distribution<T1> &a0) {
   return a0.max();
 }
 
 template <typename T1, typename T2>
 typename std::uniform_int_distribution<T1>::result_type
-f11(std::uniform_int_distribution<T1> &a0, T2 &a1) {
+f10(std::uniform_int_distribution<T1> &a0, T2 &a1) {
   return a0.template operator()<T2>(a1);
 }
 
 template <typename T1, typename T2>
 typename std::uniform_int_distribution<T1>::result_type
-f12(std::uniform_int_distribution<T1> &a0, T2 &a1,
+f11(std::uniform_int_distribution<T1> &a0, T2 &a1,
     const typename std::uniform_int_distribution<T1>::param_type &a2) {
   return a0.template operator()<T2>(a1, a2);
 }
 
 template <typename T1>
-bool f13(const std::uniform_int_distribution<T1> &a0,
+bool f12(const std::uniform_int_distribution<T1> &a0,
          const std::uniform_int_distribution<T1> &a1) {
   return a0 == a1;
 }
