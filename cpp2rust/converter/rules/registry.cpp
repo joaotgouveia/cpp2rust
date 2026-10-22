@@ -245,34 +245,47 @@ struct ExprMatch {
 };
 
 ExprMatch findExpr(const clang::Expr *use) {
-  ExprMatch best;
+  std::vector<ExprMatch> matches;
   auto consider = [&](const RuleKeys::ExprKey &key) {
     auto [begin, end] = exprs_.equal_range(key);
     for (auto it = begin; it != end; ++it) {
       auto args = AstMatcher::Match(*sema_, use, it->second.decl);
-      if (!args) {
-        continue;
+      if (args && llvm::none_of(matches, [&](const ExprMatch &match) {
+            return match.rule_decl == &it->second;
+          })) {
+        matches.push_back({&it->second, *args});
       }
-      if (best.rule_decl) {
-        auto better = AstMatcher::MoreSpecialized(*sema_, use, it->second.decl,
-                                                  best.rule_decl->decl);
-        if (!better) {
-          use->dump(llvm::errs(), sema_->Context);
-          it->second.decl->dump(llvm::errs());
-          best.rule_decl->decl->dump(llvm::errs());
-          llvm::report_fatal_error(
-              "use matches several rules, none more specialized");
-        }
-        if (better != it->second.decl) {
-          continue;
-        }
-      }
-      best = {&it->second, *args};
     }
+  };
+  auto most_specialized = [&]() -> ExprMatch {
+    if (matches.empty()) {
+      return {};
+    }
+    auto more = [&](const ExprMatch &lhs, const ExprMatch &rhs) {
+      return AstMatcher::MoreSpecialized(*sema_, use, lhs.rule_decl->decl,
+                                         rhs.rule_decl->decl) ==
+             lhs.rule_decl->decl;
+    };
+    auto best = matches.begin();
+    for (auto it = std::next(best); it != matches.end(); ++it) {
+      if (more(*it, *best)) {
+        best = it;
+      }
+    }
+    for (auto it = matches.begin(); it != matches.end(); ++it) {
+      if (it != best && !more(*best, *it)) {
+        use->dump(llvm::errs(), sema_->Context);
+        it->rule_decl->decl->dump(llvm::errs());
+        best->rule_decl->decl->dump(llvm::errs());
+        llvm::report_fatal_error(
+            "use matches several rules, none more specialized");
+      }
+    }
+    return *best;
   };
   auto key = RuleKeys::GetExprKey(sema_->Context, use);
   if (!key) {
-    return best;
+    return {};
   }
   consider(*key);
   if (auto member = std::get_if<RuleKeys::Member>(&*key)) {
@@ -285,7 +298,7 @@ ExprMatch findExpr(const clang::Expr *use) {
       consider(RuleKeys::kAnyConstructor);
     }
   }
-  return best;
+  return most_specialized();
 }
 
 struct TypeRuleMatch {
@@ -294,9 +307,10 @@ struct TypeRuleMatch {
 };
 
 TypeRuleMatch findType(clang::QualType use) {
-  TypeRuleMatch best;
   auto &ctx = sema_->Context;
-  auto consider = [&](clang::QualType type, bool templates) {
+  auto most_specialized = [&](clang::QualType type,
+                              bool templates) -> TypeRuleMatch {
+    std::vector<TypeRuleMatch> matches;
     for (auto key : RuleKeys::GetTypeKeys(ctx, type)) {
       auto [begin, end] = types_.equal_range(key);
       for (auto it = begin; it != end; ++it) {
@@ -304,32 +318,43 @@ TypeRuleMatch findType(clang::QualType use) {
           continue;
         }
         auto match = AstMatcher::MatchType(*sema_, type, it->second.decl);
-        if (!match) {
-          continue;
+        if (match && llvm::none_of(matches, [&](const TypeRuleMatch &other) {
+              return other.rule_decl == &it->second;
+            })) {
+          matches.push_back({&it->second, *std::move(match)});
         }
-        if (best.rule_decl) {
-          auto better = AstMatcher::MoreSpecializedType(*sema_, it->second.decl,
-                                                        best.rule_decl->decl);
-          if (!better) {
-            type.dump(llvm::errs(), ctx);
-            it->second.decl->dump(llvm::errs());
-            best.rule_decl->decl->dump(llvm::errs());
-            llvm::report_fatal_error(
-                "type matches several rules, none more specialized");
-          }
-          if (better != it->second.decl) {
-            continue;
-          }
-        }
-        best = {&it->second, *std::move(match)};
       }
     }
+    if (matches.empty()) {
+      return {};
+    }
+    auto more = [&](const TypeRuleMatch &lhs, const TypeRuleMatch &rhs) {
+      return AstMatcher::MoreSpecializedType(*sema_, lhs.rule_decl->decl,
+                                             rhs.rule_decl->decl) ==
+             lhs.rule_decl->decl;
+    };
+    auto best = matches.begin();
+    for (auto it = std::next(best); it != matches.end(); ++it) {
+      if (more(*it, *best)) {
+        best = it;
+      }
+    }
+    for (auto it = matches.begin(); it != matches.end(); ++it) {
+      if (it != best && !more(*best, *it)) {
+        type.dump(llvm::errs(), ctx);
+        it->rule_decl->decl->dump(llvm::errs());
+        best->rule_decl->decl->dump(llvm::errs());
+        llvm::report_fatal_error(
+            "type matches several rules, none more specialized");
+      }
+    }
+    return std::move(*best);
   };
   auto skipped = RuleDecls::SkipInternalTypedefs(ctx, use);
   if (RuleDecls::SpelledTypedef(ctx, skipped) !=
       RuleDecls::SpelledTypedef(ctx, use)) {
-    consider(use, /*templates=*/false);
-    if (best.rule_decl) {
+    if (auto best = most_specialized(use, /*templates=*/false);
+        best.rule_decl) {
       return best;
     }
   }
@@ -337,9 +362,9 @@ TypeRuleMatch findType(clang::QualType use) {
   if (auto tag = use->getAsTagDecl();
       tag &&
       (IsUserDefinedDecl(tag) || tag->hasAttr<clang::TransparentUnionAttr>())) {
-    return best;
+    return {};
   }
-  consider(use, /*templates=*/true);
+  auto best = most_specialized(use, /*templates=*/true);
   if (!best.rule_decl) {
     auto spelled = RuleDecls::SpelledTypedef(ctx, use);
     if (spelled && !IsUserDefinedDecl(spelled)) {
