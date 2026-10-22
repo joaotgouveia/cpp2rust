@@ -91,8 +91,9 @@ void AddRequiredClasses(clang::QualType type,
       if (auto key = RulesLoader::ClassKey(record); !key.empty()) {
         required.insert(key);
       }
+      return;
     }
-    return;
+    return AddRequiredClasses(alias->desugar(), required);
   }
   const clang::NamedDecl *decl = type->getAsTagDecl();
   if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
