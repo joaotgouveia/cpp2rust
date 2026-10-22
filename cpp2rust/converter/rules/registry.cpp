@@ -153,13 +153,20 @@ TranslationRule::TypeRule placeholderTypeRule() {
 }
 
 TranslationRule::ExprRule placeholderExprRule(const clang::NamedDecl *decl) {
-  auto function = decl->getAsFunction();
-  if (!function) {
-    decl->dump(llvm::errs());
+  unsigned num_params = 0;
+  if (auto function = decl->getAsFunction()) {
+    num_params = function->getNumParams();
+  } else {
+    auto proto = llvm::cast<clang::VarDecl>(decl)
+                     ->getType()
+                     ->getPointeeType()
+                     ->getAs<clang::FunctionProtoType>();
+    assert(proto && "placeholder expression rule is neither a function nor a "
+                    "function pointer");
+    num_params = proto->getNumParams();
   }
-  assert(function && "placeholder expression rule is not a function");
   TranslationRule::ExprRule rule;
-  rule.params.resize(function->getNumParams());
+  rule.params.resize(num_params);
   for (auto &param : rule.params) {
     param.type = "()";
   }
