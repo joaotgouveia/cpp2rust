@@ -209,8 +209,10 @@ private:
                     record)) {
           AddTemplateArgs(spec->getTemplateArgs().asArray());
         }
-        AddSpecialMembers(record);
-        AddIterator(type, record);
+        if (ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
+          AddSpecialMembers(record);
+          AddIterator(type, record);
+        }
       }
       return;
     }
@@ -219,8 +221,7 @@ private:
   }
 
   void AddSpecialMembers(clang::CXXRecordDecl *record) {
-    if (!record->hasDefinition() ||
-        !ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
+    if (!record->hasDefinition()) {
       return;
     }
     sema_.ForceDeclarationOfImplicitMembers(record->getDefinition());
@@ -236,8 +237,7 @@ private:
 
   void AddIterator(clang::QualType type, const clang::CXXRecordDecl *record) {
     auto *std_namespace = sema_.getStdNamespace();
-    if (!std_namespace ||
-        !ctx_.getSourceManager().isInSystemHeader(record->getLocation())) {
+    if (!std_namespace) {
       return;
     }
     clang::ClassTemplateDecl *traits = nullptr;

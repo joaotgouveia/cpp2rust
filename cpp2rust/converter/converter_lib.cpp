@@ -15,7 +15,6 @@
 #include <clang/Sema/Initialization.h>
 #include <clang/Sema/Sema.h>
 #include <llvm/Support/ErrorHandling.h>
-#include <llvm/Support/Path.h>
 #include <llvm/Support/raw_ostream.h>
 
 #include <algorithm>
@@ -384,13 +383,6 @@ bool IsMutatingCall(const clang::CallExpr *expr) {
   return true;
 }
 
-bool IsOverloadedFunction(const clang::FunctionDecl *decl) {
-  const auto *ctx = decl->getDeclContext();
-  const auto decl_name = decl->getDeclName();
-  const auto lookup_result = ctx->lookup(decl_name);
-  return !lookup_result.isSingleResult();
-}
-
 // Calls fn on the defined instantiations of the method templates of decl.
 static void ForEachTemplateInstantiation(
     const clang::CXXRecordDecl *decl,
@@ -501,13 +493,7 @@ bool CanUseCopyOrMoveName(const clang::CXXMethodDecl *decl,
                       return !method->isDeleted() && method_name &&
                              method_name == name;
                     }) == 1;
-  bool is_unique_name =
-      std::none_of(record->method_begin(), record->method_end(),
-                   [&name](const clang::CXXMethodDecl *method) {
-                     return method->getDeclName().isIdentifier() &&
-                            method->getName() == name;
-                   });
-  return is_unique_member && is_unique_name;
+  return is_unique_member && !HasMethodNamed(record, name);
 }
 
 bool IsUserDefinedCopyConstructor(const clang::CXXConstructorDecl *ctor) {
@@ -692,7 +678,10 @@ bool HasCallableCopyConstructor(const clang::RecordDecl *decl) {
              ctor->getDefinition();
     });
   }
-  if (cxx->defaultedCopyConstructorIsDeleted()) {
+  if (cxx->defaultedCopyConstructorIsDeleted() ||
+      std::ranges::any_of(cxx->ctors(), [](const auto *ctor) {
+        return ctor->isCopyConstructor() && ctor->isDeleted();
+      })) {
     return false;
   }
   auto &ctx = cxx->getASTContext();
@@ -851,15 +840,6 @@ GetDefaultArgTemporary(const clang::ParmVarDecl *param) {
   }
   return clang::dyn_cast<clang::MaterializeTemporaryExpr>(
       param->getDefaultArg()->IgnoreParens());
-}
-
-std::string GetMainFileName(const clang::ASTContext &ctx) {
-  const auto &src_mgr = ctx.getSourceManager();
-  auto file_id = src_mgr.getMainFileID();
-  auto file_entry = src_mgr.getFileEntryRefForID(file_id);
-  auto file_path = file_entry->getName();
-  auto file_name = llvm::sys::path::filename(file_path);
-  return llvm::sys::path::stem(file_name).str();
 }
 
 std::string GetFileName(const clang::Decl *decl) {
@@ -1543,18 +1523,12 @@ void ToIdentifier(std::string &name) {
   std::replace(name.begin(), name.end(), '*', 'p');
 }
 
-std::string GetConversionName(const clang::CXXConversionDecl *decl,
-                              const std::string &rust_type) {
-  auto name = "to_" + rust_type;
-  ToIdentifier(name);
-  const auto *record = decl->getParent();
-  bool is_unique_name =
-      std::none_of(record->method_begin(), record->method_end(),
-                   [&name](const clang::CXXMethodDecl *method) {
-                     return method->getDeclName().isIdentifier() &&
-                            method->getName() == name;
-                   });
-  return is_unique_name ? name : GetFunctionBaseName(decl);
+bool HasMethodNamed(const clang::CXXRecordDecl *record, llvm::StringRef name) {
+  return llvm::any_of(record->methods(),
+                      [&](const clang::CXXMethodDecl *method) {
+                        return method->getDeclName().isIdentifier() &&
+                               method->getName() == name;
+                      });
 }
 
 clang::CXXDestructorDecl *
@@ -1636,11 +1610,17 @@ void DefineImplicitMembers(clang::Sema &sema, clang::CXXRecordDecl *decl) {
   tu_scope.setEntity(sema.Context.getTranslationUnitDecl());
   auto *saved_tu_scope = std::exchange(sema.TUScope, &tu_scope);
   sema.ForceDeclarationOfImplicitMembers(decl);
-  auto define = [&](clang::CXXMethodDecl *method, auto &&definer) {
+  auto define = [&](clang::FunctionDecl *fn, auto &&definer) {
     RuleDecls::Trial trial(sema);
-    definer();
-    if (trial.failed()) {
-      method->setDeletedAsWritten(true);
+    clang::DiagnosticErrorTrap errors(sema.getDiagnostics());
+    {
+      clang::Sema::GlobalEagerInstantiationScope instantiations(
+          sema, /*Enabled=*/true, /*AtEndOfTU=*/false);
+      definer();
+      instantiations.perform();
+    }
+    if (trial.failed() || errors.hasErrorOccurred()) {
+      fn->setDeletedAsWritten(true);
     }
   };
   for (auto ctor : decl->ctors()) {
@@ -1684,11 +1664,9 @@ void DefineImplicitMembers(clang::Sema &sema, clang::CXXRecordDecl *decl) {
 #else
     auto kind = sema.getDefaultedComparisonKind(fn);
 #endif
-    RuleDecls::Trial trial(sema);
-    sema.DefineDefaultedComparison(decl->getLocation(), fn, kind);
-    if (trial.failed()) {
-      fn->setDeletedAsWritten(true);
-    }
+    define(fn, [&] {
+      sema.DefineDefaultedComparison(decl->getLocation(), fn, kind);
+    });
   };
   for (auto *method : decl->methods()) {
     define_defaulted_comparison(method);

@@ -8,6 +8,7 @@
 #include <clang/AST/DeclarationName.h>
 #include <clang/AST/Expr.h>
 #include <clang/AST/Type.h>
+#include <clang/Sema/Sema.h>
 #include <llvm/ADT/Hashing.h>
 
 #include <compare>
