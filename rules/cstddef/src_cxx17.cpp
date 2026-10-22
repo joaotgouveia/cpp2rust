@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <utility>
 
-using t2 = std::byte;
+using t1 = std::byte;
 
 std::byte f1(std::byte a0, std::byte a1) { return a0 & a1; }
 
