@@ -82,11 +82,9 @@ template <typename T1, typename T2, typename T3>
 using t10 = typename std::ostream_iterator<T1, T2, T3>::ostream_type::sentry;
 
 template <typename T1, typename T2, typename T3> bool f9(bool a0) {
-  return
-      typename std::ostream_iterator<T1, T2, T3>::ostream_type::sync_with_stdio(
-          a0);
+  return std::ostream_iterator<T1, T2, T3>::ostream_type::sync_with_stdio(a0);
 }
 
 template <typename T1, typename T2, typename T3> int f10() {
-  return typename std::ostream_iterator<T1, T2, T3>::ostream_type::xalloc();
+  return std::ostream_iterator<T1, T2, T3>::ostream_type::xalloc();
 }

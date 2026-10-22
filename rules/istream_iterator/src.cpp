@@ -93,10 +93,10 @@ using t10 =
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f10(bool a0) {
-  return typename std::istream_iterator<T1, T2, T3,
-                                        T4>::istream_type::sync_with_stdio(a0);
+  return std::istream_iterator<T1, T2, T3, T4>::istream_type::sync_with_stdio(
+      a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4> int f11() {
-  return typename std::istream_iterator<T1, T2, T3, T4>::istream_type::xalloc();
+  return std::istream_iterator<T1, T2, T3, T4>::istream_type::xalloc();
 }

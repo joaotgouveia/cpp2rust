@@ -116,11 +116,9 @@ f13(typename std::istreambuf_iterator<T1, T2>::istream_type &a0,
 }
 
 template <typename T1, typename T2> bool f14(bool a0) {
-  return
-      typename std::istreambuf_iterator<T1, T2>::istream_type::sync_with_stdio(
-          a0);
+  return std::istreambuf_iterator<T1, T2>::istream_type::sync_with_stdio(a0);
 }
 
 template <typename T1, typename T2> int f15() {
-  return typename std::istreambuf_iterator<T1, T2>::istream_type::xalloc();
+  return std::istreambuf_iterator<T1, T2>::istream_type::xalloc();
 }
