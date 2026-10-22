@@ -190,6 +190,10 @@ private:
     if (const auto *vector = type->getAs<clang::VectorType>()) {
       return AddType(vector->getElementType());
     }
+    if (const auto *member = type->getAs<clang::MemberPointerType>()) {
+      AddType(ctx_.getCanonicalTagType(member->getMostRecentCXXRecordDecl()));
+      return AddType(member->getPointeeType());
+    }
     if (const auto *fn = type->getAs<clang::FunctionType>()) {
       AddType(fn->getReturnType());
       if (const auto *proto = llvm::dyn_cast<clang::FunctionProtoType>(fn)) {
