@@ -123,27 +123,17 @@ fn f76<T1>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
     a0.end()
 }
 
-<<<<<<< HEAD
-fn f77<T1: ByteRepr>(a0: &mut Vec<T1>, a1: RandomAccessIterator<T1>, a2: T1) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
-=======
 fn f77<T1: ByteRepr>(
     a0: &mut Vec<T1>,
     a1: RandomAccessIterator<T1>,
     a2: T1,
 ) -> RandomAccessIterator<T1> {
-    let __off = a1.index();
->>>>>>> 6cef15081 (Drop everything unrelated to refcount and C++17, merge all rules)
+    let __it = a1;
+    let __off = __it.index();
     a0.insert(__off, a2);
     __it
 }
 
-<<<<<<< HEAD
-fn f79<T1: ByteRepr>(a0: &mut Vec<T1>, a1: RandomAccessIterator<T1>, a2: T1) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
-=======
 fn f78<T1: Default + Clone>(a0: usize, a1: T1) -> Vec<T1> {
     vec![a1; a0 as usize]
 }
@@ -153,8 +143,8 @@ fn f79<T1: ByteRepr>(
     a1: RandomAccessIterator<T1>,
     a2: T1,
 ) -> RandomAccessIterator<T1> {
-    let __off = a1.index();
->>>>>>> 6cef15081 (Drop everything unrelated to refcount and C++17, merge all rules)
+    let __it = a1;
+    let __off = __it.index();
     a0.insert(__off, a2);
     __it
 }
@@ -226,18 +216,13 @@ fn f96<T1>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
     a0.end()
 }
 
-<<<<<<< HEAD
-fn f98<T1: ByteRepr + 'static>(a0: Ptr<Vec<T1>>, a1: usize) -> Ptr<T1> {
-    let __idx = a1;
-    if __idx as usize >= (*a0.upgrade().deref()).len() {
-=======
 fn f97(a0: &mut Vec<bool>, a1: &mut Vec<bool>) {
     std::mem::swap(&mut *a0, &mut *a1)
 }
 
-fn f98<T1: ByteRepr>(a0: Ptr<Vec<T1>>, a1: usize) -> Ptr<Vec<T1>> {
-    if a1 as usize >= (*a0.upgrade().deref()).len() {
->>>>>>> 6cef15081 (Drop everything unrelated to refcount and C++17, merge all rules)
+fn f98<T1: ByteRepr + 'static>(a0: Ptr<Vec<T1>>, a1: usize) -> Ptr<T1> {
+    let __idx = a1;
+    if __idx as usize >= (*a0.upgrade().deref()).len() {
         panic!("out of bounds access")
     } else {
         a0.decay().offset(__idx as isize)
@@ -285,11 +270,10 @@ fn f105<T1: Clone + ByteRepr>(a0: Ptr<Vec<T1>>, a1: Vec<T1>) {
     a0.write(a1)
 }
 
-<<<<<<< HEAD
-fn f115<T1: Clone + ByteRepr>(a0: &mut Vec<T1>, a1: RandomAccessIterator<T1>, a2: usize, a3: T1) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
-=======
+fn f106<T1>(a0: &mut Vec<T1>) {
+    a0.shrink_to_fit()
+}
+
 fn f108<T1>(a0: &mut Vec<T1>) -> Vec<T1> {
     std::mem::take(&mut *a0)
 }
@@ -309,24 +293,20 @@ fn f115<T1: Clone + ByteRepr>(
     a2: usize,
     a3: T1,
 ) -> RandomAccessIterator<T1> {
-    let __off = a1.index();
->>>>>>> 6cef15081 (Drop everything unrelated to refcount and C++17, merge all rules)
+    let __it = a1;
+    let __off = __it.index();
     a0.splice(__off..__off, std::iter::repeat_n(a3, a2));
     __it
 }
 
-<<<<<<< HEAD
-fn f116<T1: ByteRepr>(a0: &mut Vec<T1>, a1: RandomAccessIterator<T1>, a2: Vec<T1>) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
-=======
 fn f116<T1: ByteRepr>(
     a0: &mut Vec<T1>,
     a1: RandomAccessIterator<T1>,
     a2: Vec<T1>,
 ) -> RandomAccessIterator<T1> {
+    let __it = a1;
+    let __off = __it.index();
     let __off = a1.index();
->>>>>>> 6cef15081 (Drop everything unrelated to refcount and C++17, merge all rules)
     a0.splice(__off..__off, a2);
     __it
 }

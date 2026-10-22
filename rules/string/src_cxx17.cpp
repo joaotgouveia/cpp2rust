@@ -5,7 +5,6 @@
 #include <string>
 
 using t1 = std::string;
-using t2 = std::string::iterator;
 typedef std::string::size_type t3;
 
 std::string f1(const std::string &s, std::size_t pos, std::size_t count) {
@@ -58,10 +57,6 @@ bool f18(const std::string &a, const char *b) { return a == b; }
 
 std::size_t f19(const std::string &s) { return s.length(); }
 
-std::string::iterator f20(std::string::iterator it, std::size_t n) {
-  return it + n;
-}
-
 std::string &f21(std::string &s, std::size_t n, char c) {
   return s.append(n, c);
 }
@@ -85,3 +80,5 @@ std::string &f29(std::string &dst, const std::string &src) { return dst = src; }
 std::string &f30(std::string &dst, std::string &&src) {
   return dst = std::move(src);
 }
+
+bool f31(const std::string &a, const char *b) { return a != b; }

@@ -43,6 +43,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Write, Seek};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
+use num_traits;
 )");
 }
 

@@ -9,6 +9,10 @@ fn t1() -> Vec<i8> {
     vec![0]
 }
 
+fn t3() -> usize {
+    0_usize
+}
+
 fn t4() -> Vec<i8> {
     vec![0]
 }
@@ -148,10 +152,6 @@ fn f18(a0: Vec<i8>, a1: Ptr<i8>) -> bool {
 
 fn f19(a0: Vec<i8>) -> usize {
     (a0.len() - 1)
-}
-
-fn f20(a0: Ptr<i8>, a1: usize) -> Ptr<i8> {
-    a0.offset(a1 as isize)
 }
 
 // TODO: This should return a0
