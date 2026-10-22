@@ -93,7 +93,7 @@ void AddRequiredClasses(clang::QualType type,
       }
       return;
     }
-    return AddRequiredClasses(alias->desugar(), required);
+    return AddRequiredClasses(alias->desugar().getCanonicalType(), required);
   }
   const clang::NamedDecl *decl = type->getAsTagDecl();
   if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
@@ -128,6 +128,18 @@ RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias) {
     AddRequiredClasses(fn->getType(), required);
   } else if (auto var = llvm::dyn_cast<clang::VarDecl>(rule)) {
     AddRequiredClasses(var->getType(), required);
+  }
+  if (auto tmpl = llvm::dyn_cast<clang::TemplateDecl>(rule)) {
+    for (auto param : *tmpl->getTemplateParameters()) {
+      if (auto type = llvm::dyn_cast<clang::TemplateTypeParmDecl>(param);
+          type && type->hasDefaultArgument()) {
+        AddRequiredClasses(type->getDefaultArgument().getArgument().getAsType(),
+                           required);
+      } else if (auto value =
+                     llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
+        AddRequiredClasses(value->getType(), required);
+      }
+    }
   }
   return required;
 }
