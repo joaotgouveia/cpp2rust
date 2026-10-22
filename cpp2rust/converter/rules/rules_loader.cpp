@@ -354,6 +354,9 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
   unsigned standard = is_cxx ? CxxStandard(opts) : 0;
   auto common = index.getString("common");
   std::string out;
+  if (is_cxx) {
+    out += "#include <utility>\n";
+  }
   if (!common->empty()) {
     out += "namespace cpp2rust_rules {\n" + common->str() + "}\n";
   }
