@@ -74,8 +74,17 @@ matchingDefinitions(clang::Sema &sema, clang::ClassTemplateDecl *tmpl,
       records.push_back(partial);
     }
   }
-  if (records.empty()) {
-    records.push_back(tmpl->getTemplatedDecl());
+  if (!records.empty()) {
+    return records;
+  }
+  records.push_back(tmpl->getTemplatedDecl());
+  if (!tmpl->getTemplatedDecl()->hasDefinition()) {
+    for (auto spec : tmpl->specializations()) {
+      if (spec->getSpecializationKind() ==
+          clang::TSK_ExplicitSpecialization) {
+        records.push_back(spec);
+      }
+    }
   }
   return records;
 }
