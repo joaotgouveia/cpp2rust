@@ -9,42 +9,42 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct Chain {
-    pub v: i32,
+    pub v: (),
 }
 impl Chain {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self { v: v };
         this
     }
     pub unsafe fn copy_from(o: *const Chain) -> Self {
         let mut this = Self {
-            v: (((*o).v) + (100)),
+            v: (((*o).v) + (100_())),
         };
         this
     }
     pub unsafe fn move_from(o: *mut Chain) -> Self {
         let mut this = Self {
-            v: (((*o).v) + (1)),
+            v: (((*o).v) + (1_())),
         };
-        (*o).v = 0;
+        (*o).v = 0_();
         this
     }
-    pub unsafe fn add_4(&mut self, mut n: i32) -> *mut Chain {
+    pub unsafe fn add_4(&mut self, mut n: ()) -> *mut Chain {
         self.v += n;
         return &mut (*(self as *mut Chain));
     }
-    pub unsafe fn add_5(&mut self, mut n: i32) -> *mut Chain {
+    pub unsafe fn add_5(&mut self, mut n: ()) -> *mut Chain {
         self.v += n;
-        return &mut (*(self as *mut Chain));
+        return &mut (*unimplemented!());
     }
     pub unsafe fn take(&mut self) -> Chain {
-        return Chain::move_from({ &mut (*(self as *mut Chain)) });
+        return Chain::move_from({ &mut (*unimplemented!()) });
     }
     pub unsafe fn copy(&self) -> Chain {
         return Chain::copy_from({ &(*(self as *const Chain)) });
     }
     pub unsafe fn self_(&mut self) -> *mut Chain {
-        return &mut (*(self as *mut Chain));
+        return &mut (*unimplemented!());
     }
 }
 impl Clone for Chain {
@@ -52,7 +52,7 @@ impl Clone for Chain {
         unsafe { Chain::copy_from(self as *const Chain) }
     }
 }
-pub unsafe fn consume_0(mut c: Chain) -> i32 {
+pub unsafe fn consume_0(mut c: Chain) -> () {
     return c.v;
 }
 pub fn main() {
@@ -61,27 +61,29 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut a: Chain = Chain::new({ 1 });
-    (unsafe { Chain::add_4(&mut (*(unsafe { Chain::add_4(&mut a, 1) })), 1) });
-    assert!(((a.v) == (3)));
-    let mut b0: Chain = Chain::new({ 5 });
+unsafe fn main_0() -> () {
+    let mut a: Chain = Chain::new({ 1_() });
+    (unsafe { Chain::add_4(&mut (*(unsafe { Chain::add_4(&mut a, 1_()) })), 1_()) });
+    unimplemented!();
+    let mut b0: Chain = Chain::new({ 5_() });
     let mut b: Chain = Chain::move_from({
-        (unsafe { Chain::add_5(&mut (*(unsafe { Chain::add_5(&mut b0, 1) })), 1) })
+        (unsafe {
+            Chain::add_5(
+                &mut (*(unsafe { Chain::add_5(&mut (*unimplemented!()), 1_()) })),
+                1_(),
+            )
+        })
     });
-    assert!(((b.v) == (8)) && ((b0.v) == (0)));
-    let mut c: Chain = (unsafe { Chain::take(&mut Chain::new({ 10 })) });
-    assert!(((c.v) == (11)));
+    unimplemented!();
+    let mut c: Chain = (unsafe { Chain::take(&mut Chain::new({ 10_() })) });
+    unimplemented!();
     let mut d: Chain = (unsafe { Chain::copy(&c) });
-    assert!(((d.v) == (111)) && ((c.v) == (11)));
-    let mut g: Chain = Chain::new({ 20 });
-    assert!(
-        ((unsafe { consume_0(Chain::move_from({ (unsafe { Chain::self_(&mut g,) }) },),) })
-            == (21))
-    );
-    let mut e: Chain = Chain::new({ 30 });
-    let mut f: Chain = (unsafe { Chain::take(&mut e) });
-    assert!(((f.v) == (31)) && ((e.v) == (0)));
-    return 0;
+    unimplemented!();
+    let mut g: Chain = Chain::new({ 20_() });
+    unimplemented!();
+    let mut e: Chain = Chain::new({ 30_() });
+    let mut f: Chain = (unsafe { Chain::take(&mut (*unimplemented!())) });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

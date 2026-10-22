@@ -6,26 +6,26 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub static mut alive_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
-pub static mut copies_1: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
-pub static mut moves_2: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+pub static mut alive_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut copies_1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut moves_2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(
     VaArg, FnPtrArg, MoveCtorUnsafe, CopyAssignUnsafe, MoveAssignUnsafe, DestructorUnsafe, Default,
 )]
 pub struct Buffer {
-    pub data: [i32; 4],
-    pub size: i32,
+    pub data: [(); 4],
+    pub size: (),
 }
 impl Buffer {
-    pub unsafe fn new(mut size: i32) -> Self {
+    pub unsafe fn new(mut size: ()) -> Self {
         let mut this = Self {
-            data: [0_i32; 4],
+            data: [unimplemented!(); 4],
             size: size,
         };
-        let mut i: i32 = 0;
-        'loop_: while ((i) < (4)) {
-            this.data[(i) as usize] = if ((i) < (size)) { i } else { -1_i32 };
+        let mut i: () = 0_();
+        'loop_: while ((i) < (4_())) {
+            this.data[(i) as usize] = if ((i) < (size)) { i } else { -1_() };
             i.prefix_inc();
         }
         (*std::cell::LazyCell::force_mut(&mut *&raw mut alive_0)).prefix_inc();
@@ -36,11 +36,11 @@ impl Buffer {
     }
     pub unsafe fn copy_from(o: *const Buffer) -> Self {
         let mut this = Self {
-            data: [0_i32; 4],
+            data: [unimplemented!(); 4],
             size: (*o).size,
         };
-        let mut i: i32 = 0;
-        'loop_: while ((i) < (4)) {
+        let mut i: () = 0_();
+        'loop_: while ((i) < (4_())) {
             this.data[(i) as usize] = (*o).data[(i) as usize];
             i.prefix_inc();
         }
@@ -50,16 +50,16 @@ impl Buffer {
     }
     pub unsafe fn move_from(o: *mut Buffer) -> Self {
         let mut this = Self {
-            data: [0_i32; 4],
+            data: [unimplemented!(); 4],
             size: (*o).size,
         };
-        let mut i: i32 = 0;
-        'loop_: while ((i) < (4)) {
+        let mut i: () = 0_();
+        'loop_: while ((i) < (4_())) {
             this.data[(i) as usize] = (*o).data[(i) as usize];
-            (*o).data[(i) as usize] = -1_i32;
+            (*o).data[(i) as usize] = -1_();
             i.prefix_inc();
         }
-        (*o).size = 0;
+        (*o).size = 0_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut alive_0)).prefix_inc();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut moves_2)).prefix_inc();
         this
@@ -69,8 +69,8 @@ impl Buffer {
             return &mut (*(self as *mut Buffer));
         }
         self.size = (*o).size;
-        let mut i: i32 = 0;
-        'loop_: while ((i) < (4)) {
+        let mut i: () = 0_();
+        'loop_: while ((i) < (4_())) {
             self.data[(i) as usize] = (*o).data[(i) as usize];
             i.prefix_inc();
         }
@@ -82,13 +82,13 @@ impl Buffer {
             return &mut (*(self as *mut Buffer));
         }
         self.size = (*o).size;
-        let mut i: i32 = 0;
-        'loop_: while ((i) < (4)) {
+        let mut i: () = 0_();
+        'loop_: while ((i) < (4_())) {
             self.data[(i) as usize] = (*o).data[(i) as usize];
-            (*o).data[(i) as usize] = -1_i32;
+            (*o).data[(i) as usize] = -1_();
             i.prefix_inc();
         }
-        (*o).size = 0;
+        (*o).size = 0_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut moves_2)).prefix_inc();
         return &mut (*(self as *mut Buffer));
     }
@@ -98,10 +98,10 @@ impl Clone for Buffer {
         unsafe { Buffer::copy_from(self as *const Buffer) }
     }
 }
-pub unsafe fn make_3(mut size: i32) -> Buffer {
+pub unsafe fn make_3(mut size: ()) -> Buffer {
     let mut b: Buffer = Buffer::new({ size });
     let _dtor_b = ScopedDestructorUnsafe::new(&raw mut b, Buffer::destructor);
-    return Buffer::move_from({ &mut b });
+    return Buffer::move_from({ &mut (*unimplemented!()) });
 }
 pub fn main() {
     unsafe {
@@ -109,52 +109,35 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     {
-        let mut a: Buffer = Buffer::new({ 4 });
+        let mut a: Buffer = Buffer::new({ 4_() });
         let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, Buffer::destructor);
         let mut b: Buffer = Buffer::copy_from({ &a });
         let _dtor_b = ScopedDestructorUnsafe::new(&raw mut b, Buffer::destructor);
-        assert!(
-            (((*std::cell::LazyCell::force_mut(&mut *&raw mut alive_0)) == (2))
-                && ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_1)) == (1)))
-                && ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_2)) == (0))
-        );
-        b.data[(0) as usize] = 100;
-        assert!(((a.data[(0) as usize]) == (0)));
-        let mut c: Buffer = Buffer::move_from({ &mut a });
+        unimplemented!();
+        b.data[(0_()) as usize] = 100_();
+        unimplemented!();
+        let mut c: Buffer = Buffer::move_from({ &mut (*unimplemented!()) });
         let _dtor_c = ScopedDestructorUnsafe::new(&raw mut c, Buffer::destructor);
-        assert!(
-            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alive_0)) == (3))
-                && ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_2)) == (1))
-        );
-        assert!(((a.size) == (0)) && ((a.data[(0) as usize]) == (-1_i32)));
-        assert!(((c.size) == (4)) && ((c.data[(3) as usize]) == (3)));
-        let mut d: Buffer = (unsafe { make_3(2) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut d: Buffer = (unsafe { make_3(2_()) });
         let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, Buffer::destructor);
-        assert!(
-            ((d.size) == (2)) && ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_2)) == (2))
-        );
+        unimplemented!();
         (unsafe { Buffer::copy_assign(&mut d, &b) });
-        assert!(
-            (((d.size) == (4)) && ((d.data[(0) as usize]) == (100)))
-                && ((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_1)) == (2))
-        );
-        (unsafe { Buffer::move_assign(&mut d, &mut c) });
-        assert!(
-            (((d.data[(0) as usize]) == (0)) && ((c.size) == (0)))
-                && ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_2)) == (3))
-        );
+        unimplemented!();
+        (unsafe { Buffer::move_assign(&mut d, &mut (*unimplemented!())) });
+        unimplemented!();
         (unsafe {
-            let _o: *mut Buffer = &mut d;
+            let _o: *mut Buffer = &mut (*unimplemented!());
             Buffer::move_assign(&mut d, _o)
         });
-        assert!(
-            ((d.size) == (4)) && ((*std::cell::LazyCell::force_mut(&mut *&raw mut moves_2)) == (3))
-        );
+        unimplemented!();
     }
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut alive_0)) == (0)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const alive_0);

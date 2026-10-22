@@ -8,11 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn sink_0(mut it: ()) -> () {
     let mut cit: () = unimplemented!();
-    return if unimplemented!() {
-        (*unimplemented!()).second
-    } else {
-        0_()
-    };
+    return if unimplemented!() { (*it).second } else { 0_() };
 }
 pub fn main() {
     unsafe {

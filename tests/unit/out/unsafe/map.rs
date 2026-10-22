@@ -42,33 +42,25 @@ unsafe fn main_0() -> () {
     let mut end: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut const_it: () = unimplemented!();
-    let mut x1: () = if unimplemented!() {
-        0_()
-    } else {
-        (*unimplemented!()).second
-    };
+    let mut x1: () = if unimplemented!() { 0_() } else { (*it).second };
     unimplemented!();
     let mut x2: () = if unimplemented!() {
         0_()
     } else {
-        (*unimplemented!()).second
+        (*const_it).second
     };
     unimplemented!();
-    let mut x3: () = if unimplemented!() {
-        0_()
-    } else {
-        (*unimplemented!()).second
-    };
+    let mut x3: () = if unimplemented!() { 0_() } else { (*it).second };
     unimplemented!();
     let mut x4: () = if unimplemented!() {
         0_()
     } else {
-        (*unimplemented!()).second
+        (*const_it).second
     };
     unimplemented!();
     (*unimplemented!()) = 5_();
     let mut it4: () = unimplemented!();
-    let mut p: *mut () = (&mut (*unimplemented!()).second as *mut ());
+    let mut p: *mut () = (&mut (*it4).second as *mut ());
     let mut x5: () = (*p);
     unimplemented!();
     unimplemented!();

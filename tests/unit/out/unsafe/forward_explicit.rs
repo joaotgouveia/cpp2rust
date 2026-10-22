@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type Overload = u32;
+pub type Overload = ();
 pub const Overload_kLvalueOverload: Overload = 1;
 pub const Overload_kRvalueOverload: Overload = 2;
 pub const Overload_kIntLvalueOverload: Overload = 3;
@@ -14,23 +14,23 @@ pub const Overload_kIntRvalueOverload: Overload = 4;
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct Tracked {
-    pub v: i32,
-    pub copies: i32,
-    pub moves: i32,
+    pub v: (),
+    pub copies: (),
+    pub moves: (),
 }
 impl Tracked {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self {
             v: v,
-            copies: 0,
-            moves: 0,
+            copies: 0_(),
+            moves: 0_(),
         };
         this
     }
     pub unsafe fn copy_from(o: *const Tracked) -> Self {
         let mut this = Self {
             v: (*o).v,
-            copies: (((*o).copies) + (1)),
+            copies: (((*o).copies) + (1_())),
             moves: (*o).moves,
         };
         this
@@ -39,9 +39,9 @@ impl Tracked {
         let mut this = Self {
             v: (*o).v,
             copies: (*o).copies,
-            moves: (((*o).moves) + (1)),
+            moves: (((*o).moves) + (1_())),
         };
-        (*o).v = 0;
+        (*o).v = 0_();
         this
     }
 }
@@ -56,10 +56,10 @@ pub unsafe fn chosen_overload_0(_a0: *const Tracked) -> Overload {
 pub unsafe fn chosen_overload_1(_a0: *mut Tracked) -> Overload {
     return Overload_kRvalueOverload;
 }
-pub unsafe fn chosen_overload_2(_a0: *const i32) -> Overload {
+pub unsafe fn chosen_overload_2(_a0: *const ()) -> Overload {
     return Overload_kIntLvalueOverload;
 }
-pub unsafe fn chosen_overload_3(_a0: *mut i32) -> Overload {
+pub unsafe fn chosen_overload_3(_a0: *mut ()) -> Overload {
     return Overload_kIntRvalueOverload;
 }
 pub unsafe fn copy_or_move_into_param_4(mut t: Tracked) -> Tracked {
@@ -71,35 +71,29 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut a: Tracked = Tracked::new({ 5 });
-    assert!((((unsafe { chosen_overload_0(&a,) }) as i32) == (Overload_kLvalueOverload as i32)));
-    assert!(((a.v) == (5)));
-    assert!(
-        (((unsafe { chosen_overload_1(&mut a,) }) as i32) == (Overload_kRvalueOverload as i32))
-    );
-    assert!(((a.v) == (5)));
-    let mut b: Tracked = Tracked::new({ 6 });
+unsafe fn main_0() -> () {
+    let mut a: Tracked = Tracked::new({ 5_() });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut b: Tracked = Tracked::new({ 6_() });
     let mut moved: Tracked = (unsafe { copy_or_move_into_param_4(Tracked::move_from({ &mut b })) });
-    assert!(((moved.v) == (6)));
-    assert!(((moved.copies) == (0)));
-    assert!(((moved.moves) == (2)));
-    assert!(((b.v) == (0)));
-    let mut c: Tracked = Tracked::new({ 7 });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut c: Tracked = Tracked::new({ 7_() });
     let mut copied: Tracked = (unsafe { copy_or_move_into_param_4(Tracked::copy_from({ &c })) });
-    assert!(((copied.v) == (7)));
-    assert!(((copied.copies) == (1)));
-    assert!(((copied.moves) == (1)));
-    assert!(((c.v) == (7)));
-    let mut i: i32 = 8;
-    assert!((((unsafe { chosen_overload_2(&i,) }) as i32) == (Overload_kIntLvalueOverload as i32)));
-    assert!(
-        (((unsafe { chosen_overload_3(&mut i,) }) as i32) == (Overload_kIntRvalueOverload as i32))
-    );
-    assert!(
-        (((unsafe { chosen_overload_3(&mut i,) }) as i32) == (Overload_kIntRvalueOverload as i32))
-    );
-    assert!(((i) == (8)));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 8_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

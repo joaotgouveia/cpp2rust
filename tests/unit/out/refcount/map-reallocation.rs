@@ -17,7 +17,7 @@ fn main_0() -> () {
     let __rhs = sentinel;
     unimplemented!().write(__rhs);
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut p: Ptr<()> = (field_ptr!(unimplemented!(), second));
+    let mut p: Ptr<()> = (field_ptr!(it.as_pointer(), second));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -35,7 +35,7 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!().second = 57005_();
+    field!((*it.borrow_mut()), second).write(57005_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
