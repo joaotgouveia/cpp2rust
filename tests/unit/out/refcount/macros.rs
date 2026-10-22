@@ -7,20 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn base_name_0(mut path: Ptr<()>) -> Ptr<()> {
-    let mut slash: Ptr<()> = unimplemented!();
+    let mut slash: Ptr<()> = ({ strrchr_1((path).clone(), ('/' as ())) });
     return if !(slash).is_null() {
         slash.offset((1_()) as isize)
     } else {
         path
     };
 }
-pub fn log_1(mut file: Ptr<()>, mut line: (), mut func: Ptr<()>) {
+pub fn log_2(mut file: Ptr<()>, mut line: (), mut func: Ptr<()>) {
     println!("{} {} {}", file, line, func);
 }
-pub fn line_2() -> () {
+pub fn line_3() -> () {
     return line!() as ();
 }
-pub fn function_3() -> Ptr<()> {
+pub fn function_4() -> Ptr<()> {
     return Ptr::<()>::from_string_literal(b"function");
 }
 pub fn main() {
@@ -35,7 +35,7 @@ fn main_0() -> () {
         Ptr::<()>::from_string_literal(b"main")
     );
     ({
-        log_1(
+        log_2(
             Ptr::<()>::from_string_literal(b"macros.cpp"),
             20_(),
             Ptr::<()>::from_string_literal(b"main"),
@@ -44,7 +44,7 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    println!("{}", ({ function_3() }));
+    println!("{}", ({ function_4() }));
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

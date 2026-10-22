@@ -13,7 +13,14 @@ pub fn main() {
 fn main_0() -> () {
     let mut array: Ptr<()> =
         Ptr::alloc_array((0..100_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-    unimplemented!();
+    ({
+        let ___s: () = (array).to_any();
+        memset_0(
+            ___s,
+            0_(),
+            (::std::mem::size_of::<()>() as ()).wrapping_mul(100_()),
+        )
+    });
     elem!(array, 99_()).write(-1_());
     let mut p1: Ptr<()> = (array).clone();
     'loop_: while ((p1.read()) >= 0_()) {

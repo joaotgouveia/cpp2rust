@@ -10,12 +10,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let f: Value<f32> = Rc::new(RefCell::new(1_f32));
+fn main_0() -> () {
+    let f: Value<()> = Rc::new(RefCell::new(1_f32));
     let mut bits: Ptr<u32> = (f.as_pointer()).reinterpret_cast::<u32>();
-    assert!(((bits.read()) == 1065353216_u32));
+    unimplemented!();
     bits.write(1073741824_u32);
-    assert!(((*f.borrow()) == 2_f32));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

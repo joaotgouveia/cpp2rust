@@ -92,8 +92,18 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut y: () = 0_();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        let ___dest: () = ((&mut o.items[(2_()) as usize].a as *mut ()) as ());
+        let ___src: () = ((&mut o.items[(1_()) as usize].a as *mut ()) as ());
+        memcpy_2(___dest, ___src, ::std::mem::size_of::<()>())
+    });
+    (unsafe {
+        memcpy_2(
+            ((&mut y as *mut ()) as ()),
+            ((&mut o.items[(2_()) as usize].a as *mut ()) as ()),
+            ::std::mem::size_of::<()>(),
+        )
+    });
     unimplemented!();
     let mut bytes: [(); 8] = [
         unimplemented!(),

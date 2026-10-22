@@ -18,7 +18,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut table: [Entry; 8] = [
         Entry {
             bits: 1_u8,
@@ -53,35 +53,17 @@ unsafe fn main_0() -> i32 {
             value: 0_u16,
         },
     ];
-    let mut table_size: usize = 4_usize;
-    {
-        if ((table_size as u64).wrapping_mul((::std::mem::size_of::<Entry>() as u64)) as usize) != 0
-        {
-            ::std::ptr::copy_nonoverlapping(
-                ((&mut table[(0) as usize] as *mut Entry) as *const ::libc::c_void),
-                ((&mut table[(table_size)] as *mut Entry) as *mut ::libc::c_void),
-                ((table_size as u64).wrapping_mul((::std::mem::size_of::<Entry>() as u64)) as usize)
-                    as usize,
-            )
-        }
-        ((&mut table[(table_size)] as *mut Entry) as *mut ::libc::c_void)
-    };
-    assert!(
-        ((table[(4) as usize].bits as i32) == (1))
-            && ((table[(4) as usize].value as i32) == (4369))
-    );
-    assert!(
-        ((table[(5) as usize].bits as i32) == (2))
-            && ((table[(5) as usize].value as i32) == (8738))
-    );
-    assert!(
-        ((table[(6) as usize].bits as i32) == (3))
-            && ((table[(6) as usize].value as i32) == (13107))
-    );
-    assert!(
-        ((table[(7) as usize].bits as i32) == (4))
-            && ((table[(7) as usize].value as i32) == (17476))
-    );
-    return 0;
+    let mut table_size: () = 4_();
+    (unsafe {
+        let ___dest: () = ((&mut table[(table_size) as usize] as *mut Entry) as ());
+        let ___src: () = ((&mut table[(0_()) as usize] as *mut Entry) as ());
+        let ___n: () = (table_size).wrapping_mul((::std::mem::size_of::<Entry>() as ()));
+        memcpy_0(___dest, ___src, ___n)
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

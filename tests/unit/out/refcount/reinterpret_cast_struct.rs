@@ -18,15 +18,15 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let p: Value<Point> = Rc::new(RefCell::new(<Point>::default()));
-    (*p.borrow_mut()).x = 67305985;
-    (*p.borrow_mut()).y = 134678021;
+    (*p.borrow_mut()).x = (67305985_() as i32);
+    (*p.borrow_mut()).y = (134678021_() as i32);
     let mut bytes: Ptr<u8> = (p.as_pointer()).reinterpret_cast::<u8>();
-    assert!((((elem!(bytes, 0).read()) as i32) == 1));
-    assert!((((elem!(bytes, 3).read()) as i32) == 4));
-    assert!((((elem!(bytes, 4).read()) as i32) == 5));
-    assert!((((elem!(bytes, 7).read()) as i32) == 8));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

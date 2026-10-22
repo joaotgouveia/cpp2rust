@@ -26,16 +26,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let pt: Value<Point> = Rc::new(RefCell::new(Point {
         x: 10_u32,
         y: 20_u32,
     }));
     let mut pair: Ptr<Pair> = (pt.as_pointer()).reinterpret_cast::<Pair>();
-    assert!((pair.with(|__s| __s.first) == 10_u32));
-    assert!((pair.with(|__s| __s.second) == 20_u32));
+    unimplemented!();
+    unimplemented!();
     field!(pair, first).write(42_u32);
-    assert!(({ (*pt.borrow()).x } == 42_u32));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

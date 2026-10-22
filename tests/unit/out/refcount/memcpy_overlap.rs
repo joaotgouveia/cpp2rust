@@ -13,7 +13,12 @@ pub fn main() {
 fn main_0() -> () {
     let buf: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_(), 6_()])));
-    unimplemented!();
+    ({
+        let ___dest: () =
+            ((buf.as_pointer() as Ptr<()>).offset((2_()) as isize) as Ptr<()>).to_any();
+        let ___src: () = ((buf.as_pointer() as Ptr<()>) as Ptr<()>).to_any();
+        memmove_0(___dest, ___src, 4_())
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();

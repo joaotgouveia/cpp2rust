@@ -15,7 +15,14 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut array: *mut () =
         Box::leak((0..100_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-    unimplemented!();
+    (unsafe {
+        let ___s: () = (array as ());
+        memset_0(
+            ___s,
+            0_(),
+            (::std::mem::size_of::<()>() as ()).wrapping_mul(100_()),
+        )
+    });
     (*array.offset((99_()) as isize)) = -1_();
     let mut p1: *mut () = array;
     'loop_: while ((*p1) >= (0_())) {

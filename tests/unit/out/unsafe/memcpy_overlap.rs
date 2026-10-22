@@ -14,7 +14,11 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut buf: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
-    unimplemented!();
+    (unsafe {
+        let ___dest: () = (buf.as_mut_ptr().offset((2_()) as isize) as ());
+        let ___src: () = (buf.as_mut_ptr() as ());
+        memmove_0(___dest, ___src, 4_())
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();

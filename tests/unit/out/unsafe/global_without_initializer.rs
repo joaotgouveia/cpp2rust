@@ -9,24 +9,25 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
-    pub a: i32,
+    pub a: (),
 }
 pub static mut s_0: std::cell::LazyCell<*mut S> =
     std::cell::LazyCell::new(|| unsafe { std::ptr::null_mut() });
 pub static mut file_1: std::cell::LazyCell<*mut ::libc::FILE> =
     std::cell::LazyCell::new(|| unsafe { std::ptr::null_mut() });
-pub static mut size_2: std::cell::LazyCell<usize> = std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut size_2: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut s_0)).is_null());
-    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut file_1)).is_null());
-    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut size_2)) == (0_usize)));
-    return 0;
+unsafe fn main_0() -> () {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const s_0);

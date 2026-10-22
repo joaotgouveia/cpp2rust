@@ -80,7 +80,11 @@ fn main_0() -> () {
     let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    unimplemented!();
+    ({
+        let ___s: () = ((buf.as_pointer() as Ptr<()>) as Ptr<()>).to_any();
+        let ___n: () = ::std::mem::size_of::<[(); 4]>();
+        memset_0(___s, 0_(), ___n)
+    });
     let mut ru: Ptr<basic> = (buf.as_pointer() as Ptr<()>).reinterpret_cast::<basic>();
     let mut pi: Ptr<()> = (basic::i(ru.clone())).clone();
     let mut pf: Ptr<()> = (basic::f(ru.clone())).clone();
@@ -103,10 +107,10 @@ fn main_0() -> () {
     }));
     unimplemented!();
     {
-        let anon_0: Value<anon_0> = Rc::new(RefCell::new(<anon_0>::default()));
-        anon_0::ai(anon_0.as_pointer()).write(11_());
+        let anon_1: Value<anon_1> = Rc::new(RefCell::new(<anon_1>::default()));
+        anon_1::ai(anon_1.as_pointer()).write(11_());
         unimplemented!();
-        anon_0::ai(anon_0.as_pointer()).write(1065353216_());
+        anon_1::ai(anon_1.as_pointer()).write(1065353216_());
         unimplemented!();
     }
     let us: Value<underscores> = Rc::new(RefCell::new(<underscores>::default()));
@@ -121,12 +125,12 @@ fn main_0() -> () {
 }
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(4)]
-pub struct anon_0 {
+pub struct anon_1 {
     #[offset(0)]
     #[byte_size(4)]
     __bytes: Box<[u8]>,
 }
-impl anon_0 {
+impl anon_1 {
     pub fn ai(this: Ptr<Self>) -> Ptr<()> {
         this.reinterpret_cast()
     }
@@ -134,9 +138,9 @@ impl anon_0 {
         this.reinterpret_cast()
     }
 }
-impl Default for anon_0 {
+impl Default for anon_1 {
     fn default() -> Self {
-        anon_0 {
+        anon_1 {
             __bytes: Box::from([0u8; 4]),
         }
     }

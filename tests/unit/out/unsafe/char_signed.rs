@@ -63,7 +63,7 @@ unsafe fn main_0() -> () {
     (unsafe {
         libc::printf(
             c"%d\n".as_ptr() as *const libc::c_char,
-            ((unimplemented!()) > (0_())),
+            ((unsafe { strcmp_2(c"\x80".as_ptr(), c"a".as_ptr()) }) > (0_())),
         )
     });
     let mut s: () = unimplemented!();

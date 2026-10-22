@@ -10,8 +10,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut file_ptr: Ptr<CFile> = Ptr::null();
-    return 0;
+fn main_0() -> () {
+    let mut file_ptr: *mut ::libc::FILE = std::ptr::null_mut();
+    return libc::fflush(file_ptr);
 }
 pub fn __cpp2rust_init_globals() {}

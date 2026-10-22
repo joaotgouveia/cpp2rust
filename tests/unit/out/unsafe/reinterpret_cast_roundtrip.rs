@@ -12,16 +12,16 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut original: i32 = 67305985;
+unsafe fn main_0() -> () {
+    let mut original: i32 = (67305985_() as i32);
     let mut halves: *mut i16 = ((&mut original as *mut i32) as *mut i16);
-    assert!((((*halves.offset((0) as isize)) as i32) == (513)));
-    assert!((((*halves.offset((1) as isize)) as i32) == (1027)));
-    (*halves.offset((0) as isize)) = 4112_i16;
-    assert!(((original) == (67309584)));
+    unimplemented!();
+    unimplemented!();
+    (*halves.offset((0_()) as isize)) = 4112_i16;
+    unimplemented!();
     let mut arr: [i16; 2] = [513_i16, 1027_i16];
     let mut as_int: *mut i32 = (arr.as_mut_ptr() as *mut i32);
-    assert!(((*as_int) == (67305985)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

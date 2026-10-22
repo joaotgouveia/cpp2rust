@@ -12,19 +12,19 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
+unsafe fn main_0() -> () {
     let mut arr: *mut u32 =
-        Box::leak((0..2_usize).map(|_| 0_u32).collect::<Box<[u32]>>()).as_mut_ptr();
-    (*arr.offset((0) as isize)) = 67305985_u32;
-    (*arr.offset((1) as isize)) = 134678021_u32;
+        Box::leak((0..2_()).map(|_| 0_u32).collect::<Box<[u32]>>()).as_mut_ptr();
+    (*arr.offset((0_()) as isize)) = 67305985_u32;
+    (*arr.offset((1_()) as isize)) = 134678021_u32;
     let mut bytes: *mut u8 = (arr as *mut u8);
-    assert!((((*bytes.offset((0) as isize)) as i32) == (1)));
-    assert!((((*bytes.offset((4) as isize)) as i32) == (5)));
-    assert!((((*bytes.offset((7) as isize)) as i32) == (8)));
-    (*bytes.offset((0) as isize)) = 170_u8;
-    assert!(((*arr.offset((0) as isize)) == (67306154_u32)));
-    (*bytes.offset((5) as isize)) = 187_u8;
-    assert!(((*arr.offset((1) as isize)) == (134724357_u32)));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (*bytes.offset((0_()) as isize)) = 170_u8;
+    unimplemented!();
+    (*bytes.offset((5_()) as isize)) = 187_u8;
+    unimplemented!();
     {
         let __p = arr;
         if !__p.is_null() {
@@ -35,6 +35,6 @@ unsafe fn main_0() -> i32 {
             )))
         }
     };
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

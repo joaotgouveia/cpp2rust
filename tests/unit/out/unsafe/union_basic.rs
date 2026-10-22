@@ -53,7 +53,11 @@ unsafe fn main_0() -> () {
     u.f = 3.14_f32;
     unimplemented!();
     let mut buf: [(); 4] = [unimplemented!(); 4];
-    unimplemented!();
+    (unsafe {
+        let ___s: () = (buf.as_mut_ptr() as ());
+        let ___n: () = ::std::mem::size_of::<[(); 4]>();
+        memset_0(___s, 0_(), ___n)
+    });
     let mut ru: *mut basic = (buf.as_mut_ptr() as *mut basic);
     let mut pi: *mut () = (&mut (*ru).i as *mut ());
     let mut pf: *mut () = (&mut (*ru).f as *mut ());
@@ -68,10 +72,10 @@ unsafe fn main_0() -> () {
     let mut copied: basic = basic { i: 7_() };
     unimplemented!();
     {
-        let mut anon_0: anon_0 = <anon_0>::default();
-        anon_0.ai = 11_();
+        let mut anon_1: anon_1 = <anon_1>::default();
+        anon_1.ai = 11_();
         unimplemented!();
-        anon_0.ai = 1065353216_();
+        anon_1.ai = 1065353216_();
         unimplemented!();
     }
     let mut us: underscores = <underscores>::default();
@@ -86,11 +90,11 @@ unsafe fn main_0() -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
-pub union anon_0 {
+pub union anon_1 {
     pub ai: (),
     pub af: (),
 }
-impl Default for anon_0 {
+impl Default for anon_1 {
     fn default() -> Self {
         unsafe { std::mem::zeroed() }
     }

@@ -126,8 +126,30 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let y: Value<()> = Rc::new(RefCell::new(0_()));
-    unimplemented!();
-    unimplemented!();
+    ({
+        let ___dest: () = ((field_ptr!(
+            (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((2_()) as isize),
+            a
+        )) as Ptr<()>)
+            .to_any();
+        let ___src: () = ((field_ptr!(
+            (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((1_()) as isize),
+            a
+        )) as Ptr<()>)
+            .to_any();
+        memcpy_2(___dest, ___src, ::std::mem::size_of::<()>())
+    });
+    ({
+        memcpy_2(
+            ((y.as_pointer()) as Ptr<()>).to_any(),
+            ((field_ptr!(
+                (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((2_()) as isize),
+                a
+            )) as Ptr<()>)
+                .to_any(),
+            ::std::mem::size_of::<()>(),
+        )
+    });
     unimplemented!();
     let bytes: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),

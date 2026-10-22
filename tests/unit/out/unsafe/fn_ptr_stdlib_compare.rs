@@ -6,21 +6,11 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn my_alternative_fread_0(
-    mut p: *mut libc::c_char,
-    mut n: usize,
-    mut m: usize,
-    mut f: *mut ::libc::c_void,
-) -> usize {
-    return 22_usize;
+pub unsafe fn my_alternative_fread_0(mut p: *mut (), mut n: (), mut m: (), mut f: ()) -> () {
+    return 22_();
 }
-pub unsafe fn my_alternative_fwrite_1(
-    mut p: *const libc::c_char,
-    mut n: usize,
-    mut m: usize,
-    mut f: *mut ::libc::c_void,
-) -> usize {
-    return 33_usize;
+pub unsafe fn my_alternative_fwrite_1(mut p: *const (), mut n: (), mut m: (), mut f: ()) -> () {
+    return 33_();
 }
 pub fn main() {
     unsafe {
@@ -28,171 +18,118 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut fn1: Option<unsafe fn(*mut ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize> =
+unsafe fn main_0() -> () {
+    let mut fn1: Option<unsafe fn((), (), (), *mut ::libc::FILE) -> ()> =
         Some(libcc2rs::fread_unsafe);
-    assert!(((fn1) == (Some(libcc2rs::fread_unsafe))));
-    assert!(!((fn1).is_none()));
-    let mut fn2: Option<unsafe fn(*mut libc::c_char, usize, usize, *mut ::libc::c_void) -> usize> =
+    unimplemented!();
+    unimplemented!();
+    let mut fn2: Option<unsafe fn(*mut (), (), (), ()) -> ()> = std::mem::transmute::<
+        Option<unsafe fn((), (), (), *mut ::libc::FILE) -> ()>,
+        Option<unsafe fn(*mut (), (), (), ()) -> ()>,
+    >(Some(libcc2rs::fread_unsafe));
+    unimplemented!();
+    let mut f3: Option<unsafe fn((), (), (), *mut ::libc::FILE) -> ()> =
         std::mem::transmute::<
-            Option<unsafe fn(*mut ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize>,
-            Option<unsafe fn(*mut libc::c_char, usize, usize, *mut ::libc::c_void) -> usize>,
-        >(Some(libcc2rs::fread_unsafe));
-    assert!(
-        ((fn1)
-            == (std::mem::transmute::<
-                Option<unsafe fn(*mut libc::c_char, usize, usize, *mut ::libc::c_void) -> usize>,
-                Option<unsafe fn(*mut ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize>,
-            >(fn2)))
-    );
-    let mut f3: Option<unsafe fn(*mut ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize> =
-        std::mem::transmute::<
-            Option<unsafe fn(*mut libc::c_char, usize, usize, *mut ::libc::c_void) -> usize>,
-            Option<unsafe fn(*mut ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize>,
+            Option<unsafe fn(*mut (), (), (), ()) -> ()>,
+            Option<unsafe fn((), (), (), *mut ::libc::FILE) -> ()>,
         >(Some(my_alternative_fread_0));
-    assert!(
-        ((unsafe { (f3).unwrap()(std::ptr::null_mut(), 0_usize, 0_usize, std::ptr::null_mut(),) })
-            == (22_usize))
-    );
+    unimplemented!();
     let mut __do_while = true;
-    'loop_: while __do_while || (0 != 0) {
+    'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut stream: *mut ::libc::FILE = libc::fopen(c"/dev/zero".as_ptr(), c"rb".as_ptr());
-        assert!(!((stream).is_null()));
-        let mut buf: [libc::c_char; 16] = [(0 as libc::c_char); 16];
-        {
-            let byte_0 = (buf.as_mut_ptr() as *mut ::libc::c_void) as *mut u8;
-            for offset in 0..::std::mem::size_of::<[libc::c_char; 16]>() {
-                *byte_0.offset(offset as isize) = (('X' as libc::c_char) as i32) as u8;
-            }
-            (buf.as_mut_ptr() as *mut ::libc::c_void)
-        };
-        let mut n: usize = libcc2rs::fread_unsafe(
-            (buf.as_mut_ptr() as *mut ::libc::c_void),
-            1_usize,
-            10_usize,
-            stream,
-        );
-        assert!(((n) == (10_usize)));
-        let mut i: i32 = 0;
-        'loop_: while ((i) < (10)) {
-            assert!(((buf[(i) as usize] as i32) == (0)));
-            i.prefix_inc();
-        }
-        let mut i: i32 = 10;
-        'loop_: while ((i) < (16)) {
-            assert!(((buf[(i) as usize] as i32) == (('X' as libc::c_char) as i32)));
-            i.prefix_inc();
-        }
-        libc::fclose(stream);
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (0 != 0) {
-        __do_while = false;
-        let mut stream: *mut ::libc::FILE = libc::fopen(c"/dev/zero".as_ptr(), c"rb".as_ptr());
-        assert!(!((stream).is_null()));
-        let mut buf: [libc::c_char; 16] = [(0 as libc::c_char); 16];
-        {
-            let byte_0 = (buf.as_mut_ptr() as *mut ::libc::c_void) as *mut u8;
-            for offset in 0..::std::mem::size_of::<[libc::c_char; 16]>() {
-                *byte_0.offset(offset as isize) = (('X' as libc::c_char) as i32) as u8;
-            }
-            (buf.as_mut_ptr() as *mut ::libc::c_void)
-        };
-        let mut n: usize = (unsafe {
-            (fn1).unwrap()(
-                (buf.as_mut_ptr() as *mut ::libc::c_void),
-                1_usize,
-                10_usize,
-                stream,
-            )
+        unimplemented!();
+        let mut buf: [(); 16] = [unimplemented!(); 16];
+        (unsafe {
+            let ___s: () = (buf.as_mut_ptr() as ());
+            let ___n: () = ::std::mem::size_of::<[(); 16]>();
+            memset_3(___s, ('X' as ()), ___n)
         });
-        assert!(((n) == (10_usize)));
-        let mut i: i32 = 0;
-        'loop_: while ((i) < (10)) {
-            assert!(((buf[(i) as usize] as i32) == (0)));
+        let mut n: () = libcc2rs::fread_unsafe((buf.as_mut_ptr() as ()), 1_(), 10_(), stream);
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while ((i) < (10_())) {
+            unimplemented!();
             i.prefix_inc();
         }
-        let mut i: i32 = 10;
-        'loop_: while ((i) < (16)) {
-            assert!(((buf[(i) as usize] as i32) == (('X' as libc::c_char) as i32)));
+        let mut i: () = 10_();
+        'loop_: while ((i) < (16_())) {
+            unimplemented!();
             i.prefix_inc();
         }
         libc::fclose(stream);
     }
-    let mut gn1: Option<
-        unsafe fn(*const ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize,
-    > = Some(libcc2rs::fwrite_unsafe);
-    assert!(((gn1) == (Some(libcc2rs::fwrite_unsafe))));
-    assert!(!((gn1).is_none()));
-    let mut gn2: Option<
-        unsafe fn(*const libc::c_char, usize, usize, *mut ::libc::c_void) -> usize,
-    > = std::mem::transmute::<
-        Option<unsafe fn(*const ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize>,
-        Option<unsafe fn(*const libc::c_char, usize, usize, *mut ::libc::c_void) -> usize>,
-    >(Some(libcc2rs::fwrite_unsafe));
-    assert!(
-        ((gn1)
-            == (std::mem::transmute::<
-                Option<unsafe fn(*const libc::c_char, usize, usize, *mut ::libc::c_void) -> usize>,
-                Option<unsafe fn(*const ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize>,
-            >(gn2)))
-    );
-    let mut g3: Option<unsafe fn(*const ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize> =
+    let mut __do_while = true;
+    'loop_: while __do_while || (0_() != 0) {
+        __do_while = false;
+        let mut stream: *mut ::libc::FILE = libc::fopen(c"/dev/zero".as_ptr(), c"rb".as_ptr());
+        unimplemented!();
+        let mut buf: [(); 16] = [unimplemented!(); 16];
+        (unsafe {
+            let ___s: () = (buf.as_mut_ptr() as ());
+            let ___n: () = ::std::mem::size_of::<[(); 16]>();
+            memset_3(___s, ('X' as ()), ___n)
+        });
+        let mut n: () = (unsafe { (fn1).unwrap()((buf.as_mut_ptr() as ()), 1_(), 10_(), stream) });
+        unimplemented!();
+        let mut i: () = 0_();
+        'loop_: while ((i) < (10_())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (16_())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        libc::fclose(stream);
+    }
+    let mut gn1: Option<unsafe fn((), (), (), *mut ::libc::FILE) -> ()> =
+        Some(libcc2rs::fwrite_unsafe);
+    unimplemented!();
+    unimplemented!();
+    let mut gn2: Option<unsafe fn(*const (), (), (), ()) -> ()> =
         std::mem::transmute::<
-            Option<unsafe fn(*const libc::c_char, usize, usize, *mut ::libc::c_void) -> usize>,
-            Option<unsafe fn(*const ::libc::c_void, usize, usize, *mut ::libc::FILE) -> usize>,
+            Option<unsafe fn((), (), (), *mut ::libc::FILE) -> ()>,
+            Option<unsafe fn(*const (), (), (), ()) -> ()>,
+        >(Some(libcc2rs::fwrite_unsafe));
+    unimplemented!();
+    let mut g3: Option<unsafe fn((), (), (), *mut ::libc::FILE) -> ()> =
+        std::mem::transmute::<
+            Option<unsafe fn(*const (), (), (), ()) -> ()>,
+            Option<unsafe fn((), (), (), *mut ::libc::FILE) -> ()>,
         >(Some(my_alternative_fwrite_1));
-    assert!(
-        ((unsafe { (g3).unwrap()(std::ptr::null(), 0_usize, 0_usize, std::ptr::null_mut(),) })
-            == (33_usize))
-    );
+    unimplemented!();
     let mut __do_while = true;
-    'loop_: while __do_while || (0 != 0) {
+    'loop_: while __do_while || (0_() != 0) {
         __do_while = false;
         let mut stream: *mut ::libc::FILE = libc::fopen(c"/dev/null".as_ptr(), c"wb".as_ptr());
-        assert!(!((stream).is_null()));
-        let mut buf: [libc::c_char; 10] = [(0 as libc::c_char); 10];
-        {
-            let byte_0 = (buf.as_mut_ptr() as *mut ::libc::c_void) as *mut u8;
-            for offset in 0..::std::mem::size_of::<[libc::c_char; 10]>() {
-                *byte_0.offset(offset as isize) = (('Y' as libc::c_char) as i32) as u8;
-            }
-            (buf.as_mut_ptr() as *mut ::libc::c_void)
-        };
-        let mut n: usize = libcc2rs::fwrite_unsafe(
-            (buf.as_mut_ptr() as *const ::libc::c_void),
-            1_usize,
-            10_usize,
-            stream,
-        );
-        assert!(((n) == (10_usize)));
-        libc::fclose(stream);
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (0 != 0) {
-        __do_while = false;
-        let mut stream: *mut ::libc::FILE = libc::fopen(c"/dev/null".as_ptr(), c"wb".as_ptr());
-        assert!(!((stream).is_null()));
-        let mut buf: [libc::c_char; 10] = [(0 as libc::c_char); 10];
-        {
-            let byte_0 = (buf.as_mut_ptr() as *mut ::libc::c_void) as *mut u8;
-            for offset in 0..::std::mem::size_of::<[libc::c_char; 10]>() {
-                *byte_0.offset(offset as isize) = (('Y' as libc::c_char) as i32) as u8;
-            }
-            (buf.as_mut_ptr() as *mut ::libc::c_void)
-        };
-        let mut n: usize = (unsafe {
-            (gn1).unwrap()(
-                (buf.as_mut_ptr() as *const ::libc::c_void),
-                1_usize,
-                10_usize,
-                stream,
-            )
+        unimplemented!();
+        let mut buf: [(); 10] = [unimplemented!(); 10];
+        (unsafe {
+            let ___s: () = (buf.as_mut_ptr() as ());
+            let ___n: () = ::std::mem::size_of::<[(); 10]>();
+            memset_3(___s, ('Y' as ()), ___n)
         });
-        assert!(((n) == (10_usize)));
+        let mut n: () = libcc2rs::fwrite_unsafe((buf.as_mut_ptr() as ()), 1_(), 10_(), stream);
+        unimplemented!();
         libc::fclose(stream);
     }
-    return 0;
+    let mut __do_while = true;
+    'loop_: while __do_while || (0_() != 0) {
+        __do_while = false;
+        let mut stream: *mut ::libc::FILE = libc::fopen(c"/dev/null".as_ptr(), c"wb".as_ptr());
+        unimplemented!();
+        let mut buf: [(); 10] = [unimplemented!(); 10];
+        (unsafe {
+            let ___s: () = (buf.as_mut_ptr() as ());
+            let ___n: () = ::std::mem::size_of::<[(); 10]>();
+            memset_3(___s, ('Y' as ()), ___n)
+        });
+        let mut n: () = (unsafe { (gn1).unwrap()((buf.as_mut_ptr() as ()), 1_(), 10_(), stream) });
+        unimplemented!();
+        libc::fclose(stream);
+    }
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -16,7 +16,14 @@ unsafe fn main_0() -> () {
     let N: () = 3_();
     let mut arr: *mut () =
         Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-    unimplemented!();
+    (unsafe {
+        let ___s: () = (arr as ());
+        memset_0(
+            ___s,
+            1_(),
+            (::std::mem::size_of::<()>() as ()).wrapping_mul(N),
+        )
+    });
     let mut sum: () = 0_();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {

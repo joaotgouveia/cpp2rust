@@ -14,7 +14,14 @@ fn main_0() -> () {
     let mut N: () = 3_();
     let mut arr: Ptr<()> =
         Ptr::alloc_array((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>());
-    unimplemented!();
+    ({
+        let ___s: () = (arr).to_any();
+        memset_0(
+            ___s,
+            1_(),
+            (::std::mem::size_of::<()>() as ()).wrapping_mul(N),
+        )
+    });
     let mut sum: () = 0_();
     let mut i: () = 0_();
     'loop_: while (i < N) {
