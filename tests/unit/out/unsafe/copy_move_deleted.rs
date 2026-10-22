@@ -9,42 +9,42 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct NoCopy {
-    pub v: i32,
+    pub v: (),
 }
 impl NoCopy {
-    pub unsafe fn new(mut v: i32) -> Self {
+    pub unsafe fn new(mut v: ()) -> Self {
         let mut this = Self { v: v };
         this
     }
     pub unsafe fn move_from(o: *mut NoCopy) -> Self {
         let mut this = Self { v: (*o).v };
-        (*o).v = 0;
+        (*o).v = 0_();
         this
     }
     pub unsafe fn move_assign(&mut self, o: *mut NoCopy) -> *mut NoCopy {
         self.v = (*o).v;
-        (*o).v = 0;
+        (*o).v = 0_();
         return &mut (*(self as *mut NoCopy));
     }
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct PrivateCopy {
-    pub v: i32,
+    pub v: (),
 }
 impl PrivateCopy {
     pub unsafe fn new() -> Self {
-        let mut this = Self { v: 0 };
+        let mut this = Self { v: 0_() };
         this
     }
     pub unsafe fn move_from(o: *mut PrivateCopy) -> Self {
         let mut this = Self { v: (*o).v };
-        (*o).v = 0;
+        (*o).v = 0_();
         this
     }
     pub unsafe fn move_assign(&mut self, o: *mut PrivateCopy) -> *mut PrivateCopy {
         self.v = (*o).v;
-        (*o).v = 0;
+        (*o).v = 0_();
         return &mut (*(self as *mut PrivateCopy));
     }
 }
@@ -56,11 +56,11 @@ impl Default for PrivateCopy {
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct Immovable {
-    pub v: i32,
+    pub v: (),
 }
 impl Immovable {
     pub unsafe fn new() -> Self {
-        let mut this = Self { v: 0 };
+        let mut this = Self { v: 0_() };
         this
     }
 }
@@ -73,7 +73,7 @@ impl Default for Immovable {
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Container {
     pub inner: NoCopy,
-    pub tag: i32,
+    pub tag: (),
 }
 impl Container {
     pub unsafe fn move_from(_a0: *mut Container) -> Self {
@@ -95,12 +95,12 @@ impl Container {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct VecHolder {
-    pub items: Vec<NoCopy>,
+    pub items: (),
 }
 impl VecHolder {
     pub unsafe fn move_from(_a0: *mut VecHolder) -> Self {
         let mut this = Self {
-            items: std::mem::take(&mut (*_a0).items),
+            items: unimplemented!(),
         };
         this
     }
@@ -117,34 +117,34 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut a: NoCopy = NoCopy::new({ 1 });
-    let mut b: NoCopy = NoCopy::move_from({ &mut a });
-    assert!(((b.v) == (1)) && ((a.v) == (0)));
-    (unsafe { NoCopy::move_assign(&mut a, &mut b) });
-    assert!(((a.v) == (1)) && ((b.v) == (0)));
+unsafe fn main_0() -> () {
+    let mut a: NoCopy = NoCopy::new({ 1_() });
+    let mut b: NoCopy = NoCopy::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
+    (unsafe { NoCopy::move_assign(&mut a, &mut (*unimplemented!())) });
+    unimplemented!();
     (unsafe { bump_0((&mut a as *mut NoCopy)) });
-    assert!(((a.v) == (2)));
+    unimplemented!();
     let mut p: PrivateCopy = PrivateCopy::new();
-    p.v = 3;
-    let mut q: PrivateCopy = PrivateCopy::move_from({ &mut p });
-    assert!(((q.v) == (3)) && ((p.v) == (0)));
-    (unsafe { PrivateCopy::move_assign(&mut p, &mut q) });
-    assert!(((p.v) == (3)) && ((q.v) == (0)));
+    p.v = 3_();
+    let mut q: PrivateCopy = PrivateCopy::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
+    (unsafe { PrivateCopy::move_assign(&mut p, &mut (*unimplemented!())) });
+    unimplemented!();
     let mut im: Immovable = Immovable::new();
-    im.v = 4;
+    im.v = 4_();
     (unsafe { bump_ref_1(&mut im) });
     let mut pim: *mut Immovable = (&mut im as *mut Immovable);
-    assert!((((*pim).v) == (5)));
+    unimplemented!();
     let mut c: Container = Container {
-        inner: NoCopy::new({ 6 }),
-        tag: 7,
+        inner: NoCopy::new({ 6_() }),
+        tag: 7_(),
     };
-    let mut d: Container = Container::move_from({ &mut c });
-    assert!((((d.inner.v) == (6)) && ((d.tag) == (7))) && ((c.inner.v) == (0)));
+    let mut d: Container = Container::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
     let mut h: VecHolder = <VecHolder>::default();
-    let mut h2: VecHolder = VecHolder::move_from({ &mut h });
-    assert!(((h2.items.len()) == (0_usize)));
-    return 0;
+    let mut h2: VecHolder = VecHolder::move_from({ &mut (*unimplemented!()) });
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

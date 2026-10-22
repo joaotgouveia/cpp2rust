@@ -10,50 +10,26 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Item {
     #[offset(0)]
-    pub key: i32,
+    pub key: (),
     #[offset(4)]
-    pub value: i32,
+    pub value: (),
 }
-pub fn Compare_0(a: Ptr<Item>, b: Ptr<Item>) -> bool {
+pub fn Compare_0(a: Ptr<Item>, b: Ptr<Item>) -> () {
     return ({ a.with(|__s| __s.key) } < { b.with(|__s| __s.key) });
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<Item>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = Item { key: 3, value: 30 };
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = Item { key: 1, value: 10 };
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = Item { key: 2, value: 20 };
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __n = v.decay().end().iter_distance(&v.decay().begin());
-        let mut __order: Vec<isize> = (0..__n).collect();
-        __order.sort_by(|&__x, &__y| {
-            let __a = v.decay().begin().iter_at(__x);
-            let __b = v.decay().begin().iter_at(__y);
-            if Compare_0.call(__a.clone(), __b.clone()) {
-                std::cmp::Ordering::Less
-            } else if Compare_0.call(__b, __a) {
-                std::cmp::Ordering::Greater
-            } else {
-                std::cmp::Ordering::Equal
-            }
-        });
-        reorder(__order, |__i| v.decay().begin().iter_at(__i));
-    };
-    assert!(({ (*v.borrow())[0_usize].key } == 1));
-    assert!(({ (*v.borrow())[1_usize].key } == 2));
-    assert!(({ (*v.borrow())[2_usize].key } == 3));
-    return 0;
+fn main_0() -> () {
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

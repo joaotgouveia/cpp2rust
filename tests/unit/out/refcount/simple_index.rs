@@ -10,12 +10,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::from([true])));
-    assert!(({ (*v.borrow())[0_usize] } as bool));
-    let r: Value<bool> = Rc::new(RefCell::new({ (*v.borrow())[0_usize] }));
-    let copy: Value<bool> = Rc::new(RefCell::new((*r.borrow())));
-    assert!(((*copy.borrow()) as bool));
-    return 0;
+fn main_0() -> () {
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let copy: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

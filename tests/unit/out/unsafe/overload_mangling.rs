@@ -50,10 +50,10 @@ impl S {
     pub unsafe fn take_7(&self, x: *mut ()) -> () {
         return (((self.base) + (*x)) + (2_()));
     }
-    pub unsafe fn pick_8(&self, mut p: ((), ())) -> () {
+    pub unsafe fn pick_8(&self, mut p: ()) -> () {
         return ((self.base) + (p.first));
     }
-    pub unsafe fn pick_9(&self, mut p: ((), ())) -> () {
+    pub unsafe fn pick_9(&self, mut p: ()) -> () {
         return ((self.base) + (p.second));
     }
     pub unsafe fn apply_10(&self, mut f: Option<unsafe fn(*mut ())>, mut x: ()) -> () {
@@ -69,7 +69,7 @@ impl S {
     }
     pub unsafe fn combine_13(
         &self,
-        p: *const ((), ()),
+        p: *const (),
         mut f: Option<unsafe fn(()) -> ()>,
         mut q: *const (),
         mut n: (),
@@ -78,7 +78,7 @@ impl S {
     }
     pub unsafe fn combine_14(
         &self,
-        p: *const ((), ()),
+        p: *const (),
         mut f: Option<unsafe fn(*mut (), ())>,
         mut q: *mut (),
         mut n: (),

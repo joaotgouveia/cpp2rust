@@ -6,10 +6,10 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn second_of_0(p: Ptr<((), ())>) -> () {
+pub fn second_of_0(p: Ptr<()>) -> () {
     return (({ get_1((p).clone()) }).read());
 }
-pub fn first_of_2(p: Ptr<((), ())>) -> () {
+pub fn first_of_2(p: Ptr<()>) -> () {
     return (({ get_3((p).clone()) }).read());
 }
 pub fn main() {
@@ -17,7 +17,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let p: Value<((), ())> = Rc::new(RefCell::new(unimplemented!()));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

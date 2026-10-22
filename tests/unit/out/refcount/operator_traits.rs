@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct Lt {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 impl std::cmp::Ord for Lt {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -54,7 +54,7 @@ impl std::cmp::Eq for Lt {}
 #[byte_size(4)]
 pub struct Eq {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 impl std::cmp::PartialEq for Eq {
     fn eq(&self, other: &Self) -> bool {
@@ -71,7 +71,7 @@ impl std::cmp::Eq for Eq {}
 #[byte_size(4)]
 pub struct Cmp {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 impl std::cmp::Ord for Cmp {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -103,7 +103,7 @@ impl std::cmp::Eq for Cmp {}
 #[byte_size(4)]
 pub struct Free {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 impl std::cmp::Ord for Free {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -140,190 +140,75 @@ impl std::cmp::PartialEq for Free {
     }
 }
 impl std::cmp::Eq for Free {}
-pub fn operator_lt_0(a: Ptr<Free>, b: Ptr<Free>) -> bool {
+pub fn operator_lt_0(a: Ptr<Free>, b: Ptr<Free>) -> () {
     return ({ a.with(|__s| __s.v) } < { b.with(|__s| __s.v) });
 }
-pub fn operator_eq_1(a: Ptr<Free>, b: Ptr<Free>) -> bool {
+pub fn operator_eq_1(a: Ptr<Free>, b: Ptr<Free>) -> () {
     return ({ a.with(|__s| __s.v) } == { b.with(|__s| __s.v) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Wrapped_int_ {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut w: Wrapped_int_ = Wrapped_int_ { v: 2 };
-    assert!((w.v == 2));
-    let lts: Value<Vec<Lt>> = Rc::new(RefCell::new(Vec::from([
-        Lt { v: 3 },
-        Lt { v: 1 },
-        Lt { v: 2 },
-    ])));
-    {
-        let __n = lts.decay().end().iter_distance(&lts.decay().begin());
-        let mut __order: Vec<isize> = (0..__n).collect();
-        __order.sort_by(|&__x, &__y| {
-            lts.decay()
-                .begin()
-                .iter_at(__x)
-                .with(|__a| lts.decay().begin().iter_at(__y).with(|__b| __a.cmp(__b)))
-        });
-        reorder(__order, |__i| lts.decay().begin().iter_at(__i));
-    };
-    assert!(
-        (({ (*lts.borrow())[0_usize].v } == 1) && ({ (*lts.borrow())[1_usize].v } == 2))
-            && ({ (*lts.borrow())[2_usize].v } == 3)
-    );
-    let eqs: Value<Vec<Eq>> = Rc::new(RefCell::new(Vec::from([
-        Eq { v: 1 },
-        Eq { v: 2 },
-        Eq { v: 3 },
-    ])));
-    let mut two: Eq = Eq { v: 2 };
-    let mut nine: Eq = Eq { v: 9 };
-    assert!(
-        ({
-            let mut __it = eqs.decay().begin();
-            while __it != eqs.decay().end() && __it.iter_deref().with(|__v| *__v != two) {
-                __it.iter_inc();
-            }
-            __it
-        }
-        .iter_deref()
-        .with(|__s| __s.v)
-            == 2)
-    );
-    assert!(
-        {
-            let mut __it = eqs.decay().begin();
-            while __it != eqs.decay().end() && __it.iter_deref().with(|__v| *__v != nine) {
-                __it.iter_inc();
-            }
-            __it
-        } == eqs.decay().end()
-    );
-    let cmps: Value<Vec<Cmp>> = Rc::new(RefCell::new(Vec::from([
-        Cmp { v: 3 },
-        Cmp { v: 1 },
-        Cmp { v: 2 },
-    ])));
-    {
-        let __n = cmps.decay().end().iter_distance(&cmps.decay().begin());
-        let mut __order: Vec<isize> = (0..__n).collect();
-        __order.sort_by(|&__x, &__y| {
-            cmps.decay()
-                .begin()
-                .iter_at(__x)
-                .with(|__a| cmps.decay().begin().iter_at(__y).with(|__b| __a.cmp(__b)))
-        });
-        reorder(__order, |__i| cmps.decay().begin().iter_at(__i));
-    };
-    assert!(({ (*cmps.borrow())[0_usize].v } == 1) && ({ (*cmps.borrow())[2_usize].v } == 3));
-    let mut three: Cmp = Cmp { v: 3 };
-    assert!(
-        ({
-            let mut __it = cmps.decay().begin();
-            while __it != cmps.decay().end() && __it.iter_deref().with(|__v| *__v != three) {
-                __it.iter_inc();
-            }
-            __it
-        }
-        .iter_deref()
-        .with(|__s| __s.v)
-            == 3)
-    );
-    let frees: Value<Vec<Free>> = Rc::new(RefCell::new(Vec::from([Free { v: 2 }, Free { v: 1 }])));
-    {
-        let __n = frees.decay().end().iter_distance(&frees.decay().begin());
-        let mut __order: Vec<isize> = (0..__n).collect();
-        __order.sort_by(|&__x, &__y| {
-            frees
-                .decay()
-                .begin()
-                .iter_at(__x)
-                .with(|__a| frees.decay().begin().iter_at(__y).with(|__b| __a.cmp(__b)))
-        });
-        reorder(__order, |__i| frees.decay().begin().iter_at(__i));
-    };
-    assert!(({ (*frees.borrow())[0_usize].v } == 1));
-    let mut ftwo: Free = Free { v: 2 };
-    assert!(
-        ({
-            let mut __it = frees.decay().begin();
-            while __it != frees.decay().end() && __it.iter_deref().with(|__v| *__v != ftwo) {
-                __it.iter_inc();
-            }
-            __it
-        }
-        .iter_deref()
-        .with(|__s| __s.v)
-            == 2)
-    );
-    let m: Value<Map<Lt, (Value<Lt>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
-    Map::subscript_move(
-        m.as_pointer(),
-        Rc::new(RefCell::new(Lt { v: 2 })).as_pointer(),
-        |__k| cpp_move!(__k),
-    )
-    .write(20);
-    Map::subscript_move(
-        m.as_pointer(),
-        Rc::new(RefCell::new(Lt { v: 1 })).as_pointer(),
-        |__k| cpp_move!(__k),
-    )
-    .write(10);
-    assert!(
-        ((*(*m
-            .as_pointer()
-            .with(|__m: &Map<Lt, (Value<Lt>, Value<i32>)>| __m.begin())
-            .iter_deref()
-            .upgrade()
-            .deref())
-        .1
-        .borrow())
-            == 10)
-    );
-    assert!(
-        ((Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(Lt { v: 2 })).as_pointer(),
-            |__k| cpp_move!(__k)
-        )
-        .read())
-            == 20)
-    );
-    return 0;
+fn main_0() -> () {
+    let mut w: Wrapped_int_ = Wrapped_int_ { v: 2_() };
+    unimplemented!();
+    let mut lts: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut eqs: () = unimplemented!();
+    let mut two: Eq = Eq { v: 2_() };
+    let mut nine: Eq = Eq { v: 9_() };
+    unimplemented!();
+    unimplemented!();
+    let mut cmps: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut three: Cmp = Cmp { v: 3_() };
+    unimplemented!();
+    let mut frees: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ftwo: Free = Free { v: 2_() };
+    unimplemented!();
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!().write(20_());
+    unimplemented!().write(10_());
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub trait CmpImpl {
-    fn operator_cmp(&self, o: Ptr<Cmp>) -> std::cmp::Ordering;
-    fn operator_eq(&self, o: Ptr<Cmp>) -> bool;
+    fn operator_cmp(&self, o: Ptr<Cmp>) -> ();
+    fn operator_eq(&self, o: Ptr<Cmp>) -> ();
 }
 impl CmpImpl for Ptr<Cmp> {
-    fn operator_cmp(&self, o: Ptr<Cmp>) -> std::cmp::Ordering {
+    fn operator_cmp(&self, o: Ptr<Cmp>) -> () {
         return std::cmp::Ord::cmp(&((*self).with(|__s| __s.v)), &(o.with(|__s| __s.v)));
     }
-    fn operator_eq(&self, o: Ptr<Cmp>) -> bool {
+    fn operator_eq(&self, o: Ptr<Cmp>) -> () {
         return ({ (*self).with(|__s| __s.v) } == { o.with(|__s| __s.v) });
     }
 }
 pub trait EqImpl {
-    fn operator_eq(&self, o: Ptr<Eq>) -> bool;
+    fn operator_eq(&self, o: Ptr<Eq>) -> ();
 }
 impl EqImpl for Ptr<Eq> {
-    fn operator_eq(&self, o: Ptr<Eq>) -> bool {
+    fn operator_eq(&self, o: Ptr<Eq>) -> () {
         return ({ (*self).with(|__s| __s.v) } == { o.with(|__s| __s.v) });
     }
 }
 pub trait LtImpl {
-    fn operator_lt(&self, o: Ptr<Lt>) -> bool;
+    fn operator_lt(&self, o: Ptr<Lt>) -> ();
 }
 impl LtImpl for Ptr<Lt> {
-    fn operator_lt(&self, o: Ptr<Lt>) -> bool {
+    fn operator_lt(&self, o: Ptr<Lt>) -> () {
         return ({ (*self).with(|__s| __s.v) } < { o.with(|__s| __s.v) });
     }
 }

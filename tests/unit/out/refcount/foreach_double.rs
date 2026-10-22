@@ -10,73 +10,55 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = 1;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 2;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 3;
-        (*v.borrow_mut()).push(__a1)
-    };
-    let mut square: i32 = 0;
-    'loop_: for e1 in IterRange::new(v.decay().begin(), v.decay().end()) {
-        let mut e1: i32 = (e1.iter_deref().read());
-        'loop_: for e2 in IterRange::new(v.decay().begin(), v.decay().end()) {
-            let mut e2: i32 = (e2.iter_deref().read());
+fn main_0() -> () {
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut square: () = 0_();
+    'loop_: for e1 in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut e1: () = (unimplemented!().read());
+        'loop_: for e2 in IterRange::new(unimplemented!(), unimplemented!()) {
+            let mut e2: () = (unimplemented!().read());
             square += (e1 * e2);
         }
     }
-    'loop_: for e1 in IterRange::new(v.decay().begin(), v.decay().end()) {
-        let e1: Ptr<i32> = e1.iter_deref();
-        'loop_: for e2 in IterRange::new(v.decay().begin(), v.decay().end()) {
-            let e2: Ptr<i32> = e2.iter_deref();
+    'loop_: for e1 in IterRange::new(unimplemented!(), unimplemented!()) {
+        let e1: Ptr<()> = unimplemented!();
+        'loop_: for e2 in IterRange::new(unimplemented!(), unimplemented!()) {
+            let e2: Ptr<()> = unimplemented!();
             square += { ({ (e1.read()) } * { (e2.read()) }) };
         }
     }
-    'loop_: for e1 in IterRange::new(v.decay().begin(), v.decay().end()) {
-        let e1: Ptr<i32> = e1.iter_deref();
-        'loop_: for e2 in IterRange::new(v.decay().begin(), v.decay().end()) {
-            let e2: Ptr<i32> = e2.iter_deref();
+    'loop_: for e1 in IterRange::new(unimplemented!(), unimplemented!()) {
+        let e1: Ptr<()> = unimplemented!();
+        'loop_: for e2 in IterRange::new(unimplemented!(), unimplemented!()) {
+            let e2: Ptr<()> = unimplemented!();
             square += { ({ (e1.read()) } * { (e2.read()) }) };
         }
     }
-    'loop_: for e1 in IterRange::new(v.decay().begin(), v.decay().end()) {
-        let e1: Ptr<i32> = e1.iter_deref();
-        'loop_: for e2 in IterRange::new(v.decay().begin(), v.decay().end()) {
-            let e2: Ptr<i32> = e2.iter_deref();
+    'loop_: for e1 in IterRange::new(unimplemented!(), unimplemented!()) {
+        let e1: Ptr<()> = unimplemented!();
+        'loop_: for e2 in IterRange::new(unimplemented!(), unimplemented!()) {
+            let e2: Ptr<()> = unimplemented!();
             square += { ({ (e1.read()) } * { (e2.read()) }) };
         }
     }
-    let m: Value<Vec<Vec<i32>>> = Rc::new(RefCell::new(Vec::new()));
-    let v1: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = std::mem::take(&mut (*v1.borrow_mut()));
-        (*m.borrow_mut()).push(__a1)
-    };
-    let v2: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = std::mem::take(&mut (*v2.borrow_mut()));
-        (*m.borrow_mut()).push(__a1)
-    };
-    let v3: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = std::mem::take(&mut (*v3.borrow_mut()));
-        (*m.borrow_mut()).push(__a1)
-    };
-    'loop_: for row in IterRange::new(m.decay().begin(), m.decay().end()) {
-        let row: Ptr<Vec<i32>> = row.iter_deref();
-        'loop_: for col in IterRange::new(row.decay().begin(), row.decay().end()) {
-            let col: Ptr<i32> = col.iter_deref();
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v1: () = unimplemented!();
+    unimplemented!();
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    let mut v3: () = unimplemented!();
+    unimplemented!();
+    'loop_: for row in IterRange::new(unimplemented!(), unimplemented!()) {
+        let row: Ptr<()> = unimplemented!();
+        'loop_: for col in IterRange::new(unimplemented!(), unimplemented!()) {
+            let col: Ptr<()> = unimplemented!();
             square += { (col.read()) };
         }
     }
-    assert!((square == 144));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

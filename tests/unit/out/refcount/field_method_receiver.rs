@@ -10,13 +10,13 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct Counter {
     #[offset(0)]
-    pub n: i32,
+    pub n: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct S {
     #[offset(0)]
-    pub tag: i32,
+    pub tag: (),
     #[offset(4)]
     #[byte_size(4)]
     pub c: Counter,
@@ -25,94 +25,80 @@ pub struct S {
     pub arr: Box<[Counter]>,
     #[offset(16)]
     #[byte_size(24)]
-    pub v: Vec<i32>,
+    pub v: (),
 }
 impl Default for S {
     fn default() -> Self {
         {
             S {
-                tag: 0_i32,
+                tag: unimplemented!(),
                 c: <Counter>::default(),
                 arr: (0..2)
                     .map(|_| <Counter>::default())
                     .collect::<Box<[Counter]>>(),
-                v: Default::default(),
+                v: unimplemented!(),
             }
         }
     }
 }
 pub fn run_0(mut o: Ptr<S>) {
-    ({ CounterImpl::add(&field_ptr!(o, c), 2) });
-    assert!((({ CounterImpl::get(&field_ptr!(o, c),) }) == 2));
+    ({ CounterImpl::add(&field_ptr!(o, c), 2_()) });
+    unimplemented!();
     ({
         CounterImpl::add(
-            &(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize),
-            5,
+            &(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1_()) as isize),
+            5_(),
         )
     });
-    assert!(
-        (({ CounterImpl::get(&(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize),) })
-            == 5)
-    );
-    ({ CounterImpl::add(&({ CounterImpl::self_(&field_ptr!(o, c)) }), 1) });
-    assert!((({ CounterImpl::get(&field_ptr!(o, c),) }) == 3));
-    assert!(({ ({ CounterImpl::self_(&field_ptr!(o, c),) }) } == { (field_ptr!(o, c)) }));
+    unimplemented!();
+    ({ CounterImpl::add(&({ CounterImpl::self_(&field_ptr!(o, c)) }), 1_()) });
+    unimplemented!();
+    unimplemented!();
     ({
         let _other: Ptr<Counter> =
-            ((array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize));
+            ((array_field_ptr!(o, arr) as Ptr<Counter>).offset((1_()) as isize));
         CounterImpl::take(
-            &(array_field_ptr!(o, arr) as Ptr<Counter>).offset((0) as isize),
+            &(array_field_ptr!(o, arr) as Ptr<Counter>).offset((0_()) as isize),
             _other,
         )
     });
-    assert!(
-        (({ CounterImpl::get(&(array_field_ptr!(o, arr) as Ptr<Counter>).offset((0) as isize),) })
-            == 5)
-            && (({
-                CounterImpl::get(&(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize))
-            }) == 0)
-    );
+    unimplemented!();
     ({
         let _other: Ptr<Counter> = (field_ptr!(o, c));
         CounterImpl::take(&field_ptr!(o, c), _other)
     });
-    assert!((({ CounterImpl::get(&field_ptr!(o, c),) }) == 0));
+    unimplemented!();
     ({ SImpl::bump(&o) });
-    assert!((({ CounterImpl::get(&field_ptr!(o, c),) }) == 1));
-    {
-        let __a1 = ({ CounterImpl::get(&field_ptr!(o, c)) });
-        field!(o, v).with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
-    };
-    assert!(
-        ((*o.upgrade().deref()).v.len() == 1_usize) && ((vec_elem!(o, v, 0_usize).read()) == 1)
-    );
-    assert!((o.with(|__s| __s.tag) == 1));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let local: Value<S> = Rc::new(RefCell::new(<S>::default()));
-    (*local.borrow_mut()).tag = 1;
+    (*local.borrow_mut()).tag = 1_();
     ({ run_0((local.as_pointer())) });
     let mut heap: Ptr<S> = Ptr::alloc(<S>::default());
-    field!(heap, tag).write(1);
+    field!(heap, tag).write(1_());
     ({ run_0((heap).clone()) });
     heap.delete();
-    return 0;
+    return 0_();
 }
 pub trait CounterImpl {
-    fn get(&self) -> i32;
-    fn add(&self, k: i32);
+    fn get(&self) -> ();
+    fn add(&self, k: ());
     fn self_(&self) -> Ptr<Counter>;
     fn take(&self, other: Ptr<Counter>);
 }
 impl CounterImpl for Ptr<Counter> {
-    fn get(&self) -> i32 {
+    fn get(&self) -> () {
         return (*self).with(|__s| __s.n);
     }
-    fn add(&self, mut k: i32) {
+    fn add(&self, mut k: ()) {
         {
             let __rhs = k;
             field!((*self), n).with_mut(|__v| *__v = *__v + __rhs)
@@ -126,7 +112,7 @@ impl CounterImpl for Ptr<Counter> {
             let __rhs = { other.with(|__s| __s.n) };
             field!((*self), n).with_mut(|__v| *__v = *__v + __rhs)
         };
-        field!(other, n).write(0);
+        field!(other, n).write(0_());
     }
 }
 pub trait SImpl {
@@ -135,7 +121,7 @@ pub trait SImpl {
 impl SImpl for Ptr<S> {
     fn bump(&self) {
         ({
-            let _k: i32 = (*self).with(|__s| __s.tag);
+            let _k: () = (*self).with(|__s| __s.tag);
             CounterImpl::add(&field_ptr!((*self), c), _k)
         });
     }

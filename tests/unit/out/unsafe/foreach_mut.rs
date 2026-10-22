@@ -12,67 +12,49 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut v1: Vec<i32> = Vec::new();
-    {
-        let __a1 = 1;
-        v1.push(__a1)
-    };
-    {
-        let __a1 = 2;
-        v1.push(__a1)
-    };
-    {
-        let __a1 = 3;
-        v1.push(__a1)
-    };
-    let mut sum: i32 = 0;
-    'loop_: for x in IterRange::new(v1.begin(), v1.end()) {
-        let mut x: i32 = (*x.iter_deref());
+unsafe fn main_0() -> () {
+    let mut v1: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut sum: () = 0_();
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut x: () = (*unimplemented!());
         sum += x.prefix_inc();
     }
-    'loop_: for x in IterRange::new(v1.begin(), v1.end()) {
-        let x: i32 = (*x.iter_deref());
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let x: () = (*unimplemented!());
         sum += x;
     }
-    'loop_: for x in IterRange::new(v1.begin(), v1.end()) {
-        let x: *mut i32 = &mut (*x.iter_deref());
-        (*x) += 10;
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let x: *mut () = &mut (*unimplemented!());
+        (*x) += 10_();
     }
-    'loop_: for x in IterRange::new(v1.begin(), v1.end()) {
-        let x: *const i32 = &(*x.iter_deref());
+    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
+        let x: *const () = &(*unimplemented!());
         sum += (*x);
     }
-    let mut v2: Vec<*mut i32> = Vec::new();
-    {
-        let __a1 = (&mut v1[(0_usize)] as *mut i32);
-        v2.push(__a1)
-    };
-    {
-        let __a1 = (&mut v1[(1_usize)] as *mut i32);
-        v2.push(__a1)
-    };
-    {
-        let __a1 = (&mut v1[(2_usize)] as *mut i32);
-        v2.push(__a1)
-    };
-    'loop_: for p in IterRange::new(v2.begin(), v2.end()) {
-        let mut p: *mut i32 = (*p.iter_deref());
-        (*p) += 5;
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: *mut () = (*unimplemented!());
+        (*p) += 5_();
     }
-    'loop_: for p in IterRange::new(v2.begin(), v2.end()) {
-        let p: *mut i32 = (*p.iter_deref());
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let p: *mut () = (*unimplemented!());
         sum += (*p);
     }
-    'loop_: for p in IterRange::new(v2.begin(), v2.end()) {
-        let mut p: *mut i32 = (*p.iter_deref());
-        (*p) += 5;
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: *mut () = (*unimplemented!());
+        (*p) += 5_();
     }
-    'loop_: for p in IterRange::new(v2.begin(), v2.end()) {
-        let mut p: *const i32 = (*p.iter_deref()).cast_const();
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: *const () = (*unimplemented!()).cast_const();
         sum += (*p);
     }
-    assert!(((sum) == (168)));
-    return 0;
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -6,21 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn foo_0(a0: RandomAccessIterator<i32>) {
-    let a0: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(a0));
+pub fn foo_0(a0: ()) {
+    let a0: Value<()> = Rc::new(RefCell::new(a0));
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let vec_: Value<Vec<i32>> = Rc::new(RefCell::new(
-        (0..(4_usize) as usize)
-            .map(|_| <i32>::default())
-            .collect::<Vec<_>>(),
-    ));
-    let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(vec_.decay().begin()));
-    ({ foo_0((*it.borrow()).clone()) });
-    return 0;
+fn main_0() -> () {
+    let mut vec_: () = unimplemented!();
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ foo_0(unimplemented!()) });
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

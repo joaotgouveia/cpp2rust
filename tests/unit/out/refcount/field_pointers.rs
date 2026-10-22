@@ -10,17 +10,17 @@ use std::rc::{Rc, Weak};
 #[byte_size(12)]
 pub struct Inner {
     #[offset(0)]
-    pub a: i32,
+    pub a: (),
     #[offset(4)]
     #[byte_size(8)]
-    pub name: Box<[i8]>,
+    pub name: Box<[()]>,
 }
 impl Default for Inner {
     fn default() -> Self {
         {
             Inner {
-                a: 0_i32,
-                name: (0..8).map(|_| 0_i8).collect::<Box<[i8]>>(),
+                a: unimplemented!(),
+                name: (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
     }
@@ -29,15 +29,15 @@ impl Default for Inner {
 #[byte_size(8)]
 pub struct Header {
     #[offset(0)]
-    pub tag: i32,
+    pub tag: (),
     #[offset(4)]
-    pub size: i16,
+    pub size: (),
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(104)]
 pub struct Outer {
     #[offset(0)]
-    pub x: i32,
+    pub x: (),
     #[offset(4)]
     #[byte_size(12)]
     pub inner: Inner,
@@ -46,170 +46,115 @@ pub struct Outer {
     pub items: Box<[Inner]>,
     #[offset(56)]
     #[byte_size(24)]
-    pub v: Vec<i32>,
+    pub v: (),
     #[offset(80)]
     #[byte_size(8)]
-    pub cursor: Ptr<i32>,
+    pub cursor: Ptr<()>,
     #[offset(88)]
     #[byte_size(16)]
-    pub buf: Box<[i32]>,
+    pub buf: Box<[()]>,
 }
 impl Default for Outer {
     fn default() -> Self {
         {
             Outer {
-                x: 0_i32,
+                x: unimplemented!(),
                 inner: <Inner>::default(),
                 items: (0..3).map(|_| <Inner>::default()).collect::<Box<[Inner]>>(),
-                v: Default::default(),
-                cursor: Ptr::<i32>::null(),
-                buf: (0..4).map(|_| 0_i32).collect::<Box<[i32]>>(),
+                v: unimplemented!(),
+                cursor: Ptr::<()>::null(),
+                buf: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             }
         }
     }
 }
-pub fn set_0(mut p: Ptr<i32>, mut value: i32) {
+pub fn set_0(mut p: Ptr<()>, mut value: ()) {
     p.write({ value });
 }
-pub fn bump_1(mut o: Ptr<Outer>) -> i32 {
+pub fn bump_1(mut o: Ptr<Outer>) -> () {
     field!(o, x).with_mut(|__v| __v.postfix_inc());
-    return 1;
+    return 1_();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let o: Value<Outer> = Rc::new(RefCell::new(<Outer>::default()));
-    (*o.borrow_mut()).x = 1;
-    let mut px: Ptr<i32> = (field_ptr!(o.as_pointer(), x));
-    px.write(2);
-    assert!(({ (*o.borrow()).x } == 2));
-    let mut pa: Ptr<i32> = (field_ptr!(field_ptr!(o.as_pointer(), inner), a));
+    (*o.borrow_mut()).x = 1_();
+    let mut px: Ptr<()> = (field_ptr!(o.as_pointer(), x));
+    px.write(2_());
+    unimplemented!();
+    let mut pa: Ptr<()> = (field_ptr!(field_ptr!(o.as_pointer(), inner), a));
     ({
-        let _p: Ptr<i32> = (pa).clone();
-        set_0(_p, 3)
+        let _p: Ptr<()> = (pa).clone();
+        set_0(_p, 3_())
     });
-    assert!(({ (*o.borrow()).inner.a } == 3));
-    let mut pi: Ptr<i32> = (field_ptr!(
-        (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((1) as isize),
+    unimplemented!();
+    let mut pi: Ptr<()> = (field_ptr!(
+        (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((1_()) as isize),
         a
     ));
-    pi.write(4);
-    assert!((array_elem!(o.as_pointer(), items, 1).with(|__s| __s.a) == 4));
-    assert!(
-        ({
-            (field_ptr!(
-                (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((0) as isize),
-                a
-            ))
-        } != { (pi).clone() })
-    );
-    let mut name: Ptr<i8> = (array_field_ptr!(field_ptr!(o.as_pointer(), inner), name) as Ptr<i8>);
-    let mut i: i32 = 0;
-    'loop_: while (i < 3) {
-        elem!(name, i).write({ (((('a' as i8) as i32) + i) as i8) });
+    pi.write(4_());
+    unimplemented!();
+    unimplemented!();
+    let mut name: Ptr<()> = (array_field_ptr!(field_ptr!(o.as_pointer(), inner), name) as Ptr<()>);
+    let mut i: () = 0_();
+    'loop_: while (i < 3_()) {
+        elem!(name, i).write({ (('a' as ()) + i) });
         i.prefix_inc();
     }
-    assert!(
-        ((array_field_ptr!(field_ptr!(o.as_pointer(), inner), name) as Ptr::<i8>)
-            .to_c_string_iterator()
-            .count()
-            == 3_usize)
-    );
-    assert!(
-        ({ name.offset((3) as isize) } == {
-            ((array_field_ptr!(field_ptr!(o.as_pointer(), inner), name) as Ptr<i8>)
-                .offset((3) as isize))
-        })
-    );
+    unimplemented!();
+    unimplemented!();
     (*o.borrow_mut()).cursor =
-        { ((array_field_ptr!(o.as_pointer(), buf) as Ptr<i32>).offset((1) as isize)) };
-    { (*o.borrow()).cursor.clone() }.write(5);
+        { ((array_field_ptr!(o.as_pointer(), buf) as Ptr<()>).offset((1_()) as isize)) };
+    { (*o.borrow()).cursor.clone() }.write(5_());
     {
-        { (*o.borrow_mut()).cursor.postfix_inc() }.with_mut(|__v| *__v = *__v + 1)
+        { (*o.borrow_mut()).cursor.postfix_inc() }.with_mut(|__v| *__v = *__v + 1_())
     };
-    assert!(
-        ((array_elem!(o.as_pointer(), buf, 1).read()) == 6)
-            && ({ { (*o.borrow()).cursor.clone() } } == {
-                ((array_field_ptr!(o.as_pointer(), buf) as Ptr<i32>).offset((2) as isize))
-            })
-    );
-    (*o.borrow_mut()).x = 0;
-    let mut first: i32 = ({ OuterImpl::next(&o.as_pointer()) });
-    assert!((first == 0) && ({ (*o.borrow()).x } == 1));
+    unimplemented!();
+    (*o.borrow_mut()).x = 0_();
+    let mut first: () = ({ OuterImpl::next(&o.as_pointer()) });
+    unimplemented!();
     let __rhs = ({ (*o.borrow()).inner.a } + ({ bump_1((o.as_pointer())) }));
     (*o.borrow_mut()).x = __rhs;
-    assert!(({ (*o.borrow()).x } == 4));
+    unimplemented!();
     ({
-        let _k: i32 = { (*o.borrow()).inner.a };
+        let _k: () = { (*o.borrow()).inner.a };
         OuterImpl::push(&o.as_pointer(), _k)
     });
-    assert!(
-        ((*o.borrow()).v.len() == 1_usize) && ((vec_elem!(o.as_pointer(), v, 0_usize).read()) == 7)
-    );
-    assert!((({ OuterImpl::sum(&o.as_pointer(),) }) == 7));
-    let y: Value<i32> = Rc::new(RefCell::new(0));
-    {
-        ((field_ptr!(
-            (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((2) as isize),
-            a
-        )) as Ptr<i32>)
-            .to_any()
-            .memcpy(
-                &((field_ptr!(
-                    (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((1) as isize),
-                    a
-                )) as Ptr<i32>)
-                    .to_any(),
-                ::std::mem::size_of::<i32>() as usize,
-            );
-        ((field_ptr!(
-            (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((2) as isize),
-            a
-        )) as Ptr<i32>)
-            .to_any()
-    };
-    {
-        ((y.as_pointer()) as Ptr<i32>).to_any().memcpy(
-            &((field_ptr!(
-                (array_field_ptr!(o.as_pointer(), items) as Ptr<Inner>).offset((2) as isize),
-                a
-            )) as Ptr<i32>)
-                .to_any(),
-            ::std::mem::size_of::<i32>() as usize,
-        );
-        ((y.as_pointer()) as Ptr<i32>).to_any()
-    };
-    assert!(((*y.borrow()) == 4));
-    let bytes: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([
-        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
+    unimplemented!();
+    unimplemented!();
+    let y: Value<()> = Rc::new(RefCell::new(0_()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let bytes: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
-    let mut view: Ptr<Header> = (bytes.as_pointer() as Ptr<u8>).reinterpret_cast::<Header>();
-    field!(view, tag).write(16909060);
-    assert!(
-        (((*bytes.borrow())[(0) as usize] as i32) == 4)
-            || (((*bytes.borrow())[(3) as usize] as i32) == 4)
-    );
-    ({ set_0((field_ptr!(view, tag)), 0) });
-    assert!(
-        (((*bytes.borrow())[(0) as usize] as i32) == 0)
-            && (((*bytes.borrow())[(3) as usize] as i32) == 0)
-    );
-    field!(view, size).write(1_i16);
-    assert!(
-        ((((*bytes.borrow())[(4) as usize] as i32) + ((*bytes.borrow())[(5) as usize] as i32))
-            == 1)
-    );
-    return 0;
+    let mut view: Ptr<Header> = (bytes.as_pointer() as Ptr<()>).reinterpret_cast::<Header>();
+    field!(view, tag).write(16909060_());
+    unimplemented!();
+    ({ set_0((field_ptr!(view, tag)), 0_()) });
+    unimplemented!();
+    field!(view, size).write(1_());
+    unimplemented!();
+    return 0_();
 }
 pub trait OuterImpl {
-    fn next(&self) -> i32;
-    fn sum(&self) -> i32;
-    fn push(&self, k: i32);
+    fn next(&self) -> ();
+    fn sum(&self) -> ();
+    fn push(&self, k: ());
 }
 impl OuterImpl for Ptr<Outer> {
-    fn next(&self) -> i32 {
+    fn next(&self) -> () {
         return (array_elem!(
             (*self),
             buf,
@@ -217,14 +162,11 @@ impl OuterImpl for Ptr<Outer> {
         )
         .read());
     }
-    fn sum(&self) -> i32 {
+    fn sum(&self) -> () {
         return ((*self).with(|__s| __s.x) + (*self).with(|__s| __s.inner.a));
     }
-    fn push(&self, mut k: i32) {
-        {
-            let __a1 = (k + (*self).with(|__s| __s.x));
-            field!((*self), v).with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
-        };
+    fn push(&self, mut k: ()) {
+        unimplemented!();
     }
 }
 pub fn __cpp2rust_init_globals() {}

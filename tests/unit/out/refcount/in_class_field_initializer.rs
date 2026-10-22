@@ -10,22 +10,22 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Inner {
     #[offset(0)]
-    pub x: i32,
+    pub x: (),
     #[offset(4)]
-    pub y: i32,
+    pub y: (),
 }
 impl Default for Inner {
     fn default() -> Self {
-        { Inner { x: 3, y: 4 } }
+        { Inner { x: 3_(), y: 4_() } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(24)]
 pub struct S {
     #[offset(0)]
-    pub a: i32,
+    pub a: (),
     #[offset(4)]
-    pub b: i8,
+    pub b: (),
     #[offset(8)]
     #[byte_size(8)]
     pub c: Inner,
@@ -37,8 +37,8 @@ impl Default for S {
     fn default() -> Self {
         {
             S {
-                a: 1,
-                b: 2_i8,
+                a: 1_(),
+                b: 2_(),
                 c: <Inner>::default(),
                 d: <Inner>::default(),
             }
@@ -49,12 +49,12 @@ impl Default for S {
 #[byte_size(8)]
 pub struct Boxed_int_ {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
     #[offset(4)]
-    pub tag: i32,
+    pub tag: (),
 }
 impl Boxed_int_ {
-    pub fn new(mut x: i32, mut t: i32) -> Self {
+    pub fn new(mut x: (), mut t: ()) -> Self {
         Self { v: x, tag: t }
     }
 }
@@ -62,8 +62,8 @@ impl Default for Boxed_int_ {
     fn default() -> Self {
         {
             Boxed_int_ {
-                v: 0_i32,
-                tag: 0_i32,
+                v: unimplemented!(),
+                tag: unimplemented!(),
             }
         }
     }
@@ -72,17 +72,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let mut s: S = <S>::default();
-    assert!((s.a == 1));
-    assert!(((s.b as i32) == 2));
-    assert!((s.c.x == 3));
-    assert!((s.c.y == 4));
-    assert!((s.d.x == 3));
-    assert!((s.d.y == 4));
-    let mut boxed: Boxed_int_ = Boxed_int_::new({ 5 }, { 9 });
-    assert!((boxed.v == 5));
-    assert!((boxed.tag == 9));
-    return 0;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut boxed: Boxed_int_ = Boxed_int_::new({ 5_() }, { 9_() });
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

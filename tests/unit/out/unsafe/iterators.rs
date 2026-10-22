@@ -12,45 +12,27 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut x: Vec<libc::c_char> = {
-        let s = c"hello".as_ptr();
-        std::slice::from_raw_parts(s, (0..).take_while(|&i| *s.add(i) != 0).count() + 1).to_vec()
-    };
-    'loop_: for c in IterRange::new(
-        UnsafeRandomAccessIterator::Vec(x.as_mut_ptr()),
-        UnsafeRandomAccessIterator::Vec(x.as_mut_ptr().add(x.len() - 1)),
-    ) {
-        let c: *mut libc::c_char = &mut (*c.iter_deref());
+unsafe fn main_0() -> () {
+    let mut x: () = unimplemented!();
+    'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
+        let c: *mut () = &mut (*unimplemented!());
         (*c).prefix_inc();
     }
-    'loop_: for c in IterRange::new(
-        UnsafeRandomAccessIterator::Vec(x.as_mut_ptr()),
-        UnsafeRandomAccessIterator::Vec(x.as_mut_ptr().add(x.len() - 1)),
-    ) {
-        let c: *mut libc::c_char = &mut (*c.iter_deref());
-        (unsafe { libc::printf(c"%c\n".as_ptr() as *const libc::c_char, ((*c) as i32)) });
+    'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
+        let c: *mut () = &mut (*unimplemented!());
+        (unsafe { libc::printf(c"%c\n".as_ptr() as *const libc::c_char, (*c)) });
     }
-    'loop_: for c in IterRange::new(
-        UnsafeRandomAccessIterator::Vec(x.as_mut_ptr()),
-        UnsafeRandomAccessIterator::Vec(x.as_mut_ptr().add(x.len() - 1)),
-    ) {
-        let mut c: libc::c_char = (*c.iter_deref());
-        (unsafe { libc::printf(c"%c\n".as_ptr() as *const libc::c_char, (c as i32)) });
+    'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut c: () = (*unimplemented!());
+        (unsafe { libc::printf(c"%c\n".as_ptr() as *const libc::c_char, (c)) });
     }
-    let mut v: Vec<*mut i32> = Vec::new();
-    {
-        let __a1 = (Box::leak(Box::new(2)) as *mut i32);
-        v.push(__a1)
-    };
-    {
-        let __a1 = (Box::leak(Box::new(3)) as *mut i32);
-        v.push(__a1)
-    };
-    'loop_: for p in IterRange::new(v.begin(), v.end()) {
-        let mut p: *mut i32 = (*p.iter_deref());
+    let mut v: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut p: *mut () = (*unimplemented!());
         (unsafe { libc::printf(c"%d\n".as_ptr() as *const libc::c_char, (*p)) });
     }
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

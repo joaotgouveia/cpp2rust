@@ -12,8 +12,8 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut vec_: Vec<i32> = std::array::from_fn::<_, 3_usize, _>(|_| <i32>::default()).to_vec();
-    return 0;
+unsafe fn main_0() -> () {
+    let mut vec_: () = unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

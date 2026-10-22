@@ -6,10 +6,10 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn second_of_0(p: *const ((), ())) -> () {
+pub unsafe fn second_of_0(p: *const ()) -> () {
     return (*(unsafe { get_1(p) }));
 }
-pub unsafe fn first_of_2(p: *const ((), ())) -> () {
+pub unsafe fn first_of_2(p: *const ()) -> () {
     return (*(unsafe { get_3(p) }));
 }
 pub fn main() {
@@ -19,7 +19,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut p: ((), ()) = unimplemented!();
+    let mut p: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
