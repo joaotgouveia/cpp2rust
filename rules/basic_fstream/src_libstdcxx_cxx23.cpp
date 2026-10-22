@@ -4,6 +4,7 @@
 #include <fstream>
 #include <ios>
 #include <iosfwd>
+#include <type_traits>
 #include <utility>
 
 template <typename T1, typename T2>

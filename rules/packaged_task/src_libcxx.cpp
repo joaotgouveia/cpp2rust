@@ -50,7 +50,22 @@ template <typename... T1> void f22(std::packaged_task<void(T1...)> &a0) {
   return a0.reset();
 }
 
-template <typename... T1, typename T2>
+template <typename... T1, typename T2,
+          typename std::enable_if<
+              !std::is_same<typename std::remove_cv<
+                                typename std::remove_reference<T2>::type>::type,
+                            std::packaged_task<void(T1...)>>::value,
+              int>::type T3 = 0>
 std::packaged_task<void(T1...)> f23(T2 &&a0) {
   return std::packaged_task<void(T1...)>(std::forward<T2>(a0));
+}
+
+template <typename T1, typename... T2, typename T3,
+          typename std::enable_if<
+              !std::is_same<typename std::remove_cv<
+                                typename std::remove_reference<T3>::type>::type,
+                            std::packaged_task<T1(T2...)>>::value,
+              int>::type T4 = 0>
+std::packaged_task<T1(T2...)> f24(T3 &&a0) {
+  return std::packaged_task<T1(T2...)>(std::forward<T3>(a0));
 }

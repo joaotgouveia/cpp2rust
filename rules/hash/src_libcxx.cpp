@@ -1,7 +1,6 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
-#include <bitset>
 #include <cstddef>
 #include <functional>
 #include <memory>
@@ -10,7 +9,7 @@
 #include <utility>
 #include <vector>
 
-using t43 = std::hash<std::error_condition>;
+using t42 = std::hash<std::error_condition>;
 
 std::size_t f204(const std::hash<std::error_condition> &a0,
                  const std::error_condition &a1) {
@@ -45,7 +44,7 @@ std::size_t f210(const std::hash<std::type_index> &a0, std::type_index a1) {
   return a0.operator()(std::move(a1));
 }
 
-using t44 = std::hash<std::nullptr_t>;
+using t43 = std::hash<std::nullptr_t>;
 
 std::size_t f211(const std::hash<std::nullptr_t> &a0, std::nullptr_t a1) {
   return a0.operator()(a1);
@@ -72,7 +71,7 @@ std::hash<std::nullptr_t> &f216(std::hash<std::nullptr_t> &a0,
 }
 
 template <typename T1, typename T2>
-using t45 = std::hash<std::__enable_hash_helper<
+using t44 = std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>, typename std::unique_ptr<T1, T2>::pointer>>;
 
 template <typename T1, typename T2>

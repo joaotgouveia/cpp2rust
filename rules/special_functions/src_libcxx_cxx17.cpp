@@ -9,7 +9,8 @@ double f2(unsigned int a0, double a1) { return std::hermite(a0, a1); }
 
 float f3(unsigned int a0, float a1) { return std::hermite(a0, a1); }
 
-template <typename T1> double f4(unsigned int a0, T1 a1) {
+template <typename T1, std::enable_if_t<std::is_integral_v<T1>, int> T2 = 0>
+double f4(unsigned int a0, T1 a1) {
   return std::hermite<T1>(a0, a1);
 }
 

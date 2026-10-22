@@ -86,24 +86,11 @@ f6(T1 const *a0, typename std::messages<T1>::string_type::size_type a1,
 }
 
 template <typename T1>
-typename std::messages<T1>::string_type f7(T1 const *a0,
+typename std::messages<T1>::string_type f7(std::initializer_list<T1> a0,
                                            const std::allocator<T1> &a1) {
   return typename std::messages<T1>::string_type(a0, a1);
 }
 
-template <typename T1>
-typename std::messages<T1>::string_type
-f8(typename std::messages<T1>::string_type::size_type a0, T1 a1,
-   const std::allocator<T1> &a2) {
-  return typename std::messages<T1>::string_type(a0, a1, a2);
-}
-
-template <typename T1>
-typename std::messages<T1>::string_type f9(std::initializer_list<T1> a0,
-                                           const std::allocator<T1> &a1) {
-  return typename std::messages<T1>::string_type(a0, a1);
-}
-
-template <typename T1> const std::locale::id &f10() {
+template <typename T1> const std::locale::id &f8() {
   return std::messages<T1>::id;
 }

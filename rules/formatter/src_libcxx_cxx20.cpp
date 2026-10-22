@@ -104,7 +104,7 @@ typename T2::iterator f134(const std::formatter<T1 *, T1> &a0, T1 *a1, T2 &a2) {
   return a0.template format<T2>(a1, a2);
 }
 
-template <typename T1> using t52 = std::formatter<bool, T1>;
+template <typename T1> using t50 = std::formatter<bool, T1>;
 
 template <typename T1, typename T2>
 typename T2::iterator f135(std::formatter<bool, T1> &a0, T2 &a1) {
@@ -118,7 +118,7 @@ typename T2::iterator f136(const std::formatter<bool, T1> &a0, bool a1,
 }
 
 template <typename T1, typename T2>
-using t53 = std::formatter<std::chrono::hh_mm_ss<T1>, T2>;
+using t51 = std::formatter<std::chrono::hh_mm_ss<T1>, T2>;
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator f137(std::formatter<std::chrono::hh_mm_ss<T1>, T2> &a0,
@@ -139,7 +139,7 @@ typename T3::iterator f139(std::formatter<std::chrono::sys_time<T1>, T2> &a0,
 }
 
 template <typename T1, typename T2>
-using t54 = std::formatter<std::basic_string_view<T1, T2>, T1>;
+using t52 = std::formatter<std::basic_string_view<T1, T2>, T1>;
 
 template <typename T1, typename T2, typename T3>
 typename T3::iterator
@@ -155,7 +155,7 @@ f141(std::formatter<std::chrono::duration<T1, T2>, T3> &a0, T4 &a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-using t55 = std::formatter<std::basic_string<T1, T2, T3>, T1>;
+using t53 = std::formatter<std::basic_string<T1, T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename T4::iterator

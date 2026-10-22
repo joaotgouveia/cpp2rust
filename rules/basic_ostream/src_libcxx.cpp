@@ -1,9 +1,8 @@
 #include "../common/init.h"
 #include "../common/traits.h"
-#include <algorithm>
 #include <bitset>
 #include <ios>
-#include <iosfwd>
+#include <memory>
 #include <ostream>
 #include <streambuf>
 #include <string_view>
@@ -144,30 +143,27 @@ std::basic_ostream<T1, T2> &f82(std::basic_ostream<T1, T2> &a0, T1 a1) {
   return a0 << a1;
 }
 
-template <typename T1, typename T2> T1 &&f83(T1 &&a0, const T2 &a1) {
-  return std::forward<T1>(a0) << a1;
-}
-
 template <typename T1, typename T2, std::size_t T3>
-std::basic_ostream<T1, T2> &f84(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f83(std::basic_ostream<T1, T2> &a0,
                                 const std::bitset<T3> &a1) {
   return a0 << a1;
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_ostream<T1, T2> &f85(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f84(std::basic_ostream<T1, T2> &a0,
                                 const std::shared_ptr<T3> &a1) {
   return a0 << a1;
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_ostream<T1, T2> &f86(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f85(std::basic_ostream<T1, T2> &a0,
                                 const std::basic_string<T1, T2, T3> &a1) {
   return a0 << a1;
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
-std::basic_ostream<T1, T2> &f87(std::basic_ostream<T1, T2> &a0,
+template <typename T1, typename T2, typename T3, typename T4,
+          typename std::enable_if<true, int>::type T5 = 0>
+std::basic_ostream<T1, T2> &f86(std::basic_ostream<T1, T2> &a0,
                                 const std::unique_ptr<T3, T4> &a1) {
   return a0 << a1;
 }

@@ -51,8 +51,3 @@ template <typename T1, typename... T2>
 void f9(std::packaged_task<T1(T2...)> &a0) {
   return a0.reset();
 }
-
-template <typename T1, typename... T2, typename T3>
-std::packaged_task<T1(T2...)> f10(T3 &&a0) {
-  return std::packaged_task<T1(T2...)>(std::forward<T3>(a0));
-}

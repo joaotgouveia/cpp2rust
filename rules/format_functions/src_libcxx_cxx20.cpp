@@ -110,18 +110,22 @@ template <typename... T1> auto f18(T1 &...a0) {
   return std::make_wformat_args<T1...>(a0...);
 }
 
+template <typename T1 = void>
 std::string f19(std::string_view a0, std::format_args a1) {
   return std::vformat(std::move(a0), std::move(a1));
 }
 
+template <typename T1 = void>
 std::wstring f20(std::wstring_view a0, std::wformat_args a1) {
   return std::vformat(std::move(a0), std::move(a1));
 }
 
+template <typename T1 = void>
 std::string f21(std::locale a0, std::string_view a1, std::format_args a2) {
   return std::vformat(std::move(a0), std::move(a1), std::move(a2));
 }
 
+template <typename T1 = void>
 std::wstring f22(std::locale a0, std::wstring_view a1, std::wformat_args a2) {
   return std::vformat(std::move(a0), std::move(a1), std::move(a2));
 }

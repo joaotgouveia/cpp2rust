@@ -464,7 +464,11 @@ std::seed_seq f75() { return {}; }
 
 std::size_t f76(const std::seed_seq &a0) { return a0.size(); }
 
-template <typename T1> std::seed_seq f77(std::initializer_list<T1> a0) {
+template <typename T1,
+          typename T2 = typename std::enable_if<
+              std::integral_constant<bool, std::is_integral<T1>::value>::value,
+              void>::type>
+std::seed_seq f77(std::initializer_list<T1> a0) {
   return {a0};
 }
 

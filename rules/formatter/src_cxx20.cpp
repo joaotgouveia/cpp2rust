@@ -49,15 +49,13 @@ template <typename T1> using t16 = std::formatter<const T1 *, T1>;
 
 template <typename T1> using t17 = std::formatter<T1 *, T1>;
 
-template <typename T1, std::size_t T2> using t18 = std::formatter<T1[T2], T1>;
+template <typename T1, typename T2>
+using t18 = std::formatter<std::chrono::sys_time<T1>, T2>;
 
 template <typename T1, typename T2>
-using t19 = std::formatter<std::chrono::sys_time<T1>, T2>;
+using t19 = std::formatter<std::chrono::local_time<T1>, T2>;
 
-template <typename T1, typename T2>
-using t20 = std::formatter<std::chrono::local_time<T1>, T2>;
-
-template <typename T1, typename T2> using t21 = std::formatter<T1, T2>;
+template <typename T1, typename T2> using t20 = std::formatter<T1, T2>;
 
 template <typename T1, typename T2, typename T3>
-using t22 = std::formatter<std::chrono::duration<T1, T2>, T3>;
+using t21 = std::formatter<std::chrono::duration<T1, T2>, T3>;

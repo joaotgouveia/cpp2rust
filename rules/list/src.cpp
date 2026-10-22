@@ -46,218 +46,211 @@ std::list<T1, T2> f3(typename std::list<T1, T2>::size_type a0,
 }
 
 template <typename T1, typename T2>
-std::list<T1, T2> f4(typename std::list<T1, T2>::size_type a0,
-                     const typename std::list<T1, T2>::value_type &a1,
-                     const typename std::list<T1, T2>::allocator_type &a2) {
-  return std::list<T1, T2>(a0, a1, a2);
-}
-
-template <typename T1, typename T2>
-std::list<T1, T2> f5(const std::list<T1, T2> &a0) {
+std::list<T1, T2> f4(const std::list<T1, T2> &a0) {
   return std::list<T1, T2>(a0);
 }
 
 template <typename T1, typename T2>
-std::list<T1, T2> f6(std::list<T1, T2> &&a0) {
+std::list<T1, T2> f5(std::list<T1, T2> &&a0) {
   return std::list<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>
 std::list<T1, T2>
-f7(std::initializer_list<typename std::list<T1, T2>::value_type> a0,
+f6(std::initializer_list<typename std::list<T1, T2>::value_type> a0,
    const typename std::list<T1, T2>::allocator_type &a1) {
   return std::list<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::list<T1, T2> f8(const std::list<T1, T2> &a0,
+std::list<T1, T2> f7(const std::list<T1, T2> &a0,
                      const typename std::list<T1, T2>::allocator_type &a1) {
   return std::list<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::list<T1, T2> f9(std::list<T1, T2> &&a0,
+std::list<T1, T2> f8(std::list<T1, T2> &&a0,
                      const typename std::list<T1, T2>::allocator_type &a1) {
   return std::list<T1, T2>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2>
-std::list<T1, T2> &f10(std::list<T1, T2> &a0, const std::list<T1, T2> &a1) {
+std::list<T1, T2> &f9(std::list<T1, T2> &a0, const std::list<T1, T2> &a1) {
   return a0.operator=(a1);
 }
 
 template <typename T1, typename T2>
-std::list<T1, T2> &f11(std::list<T1, T2> &a0, std::list<T1, T2> &&a1) {
+std::list<T1, T2> &f10(std::list<T1, T2> &a0, std::list<T1, T2> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2>
 std::list<T1, T2> &
-f12(std::list<T1, T2> &a0,
+f11(std::list<T1, T2> &a0,
     std::initializer_list<typename std::list<T1, T2>::value_type> a1) {
   return a0.operator=(a1);
 }
 
 template <typename T1, typename T2>
-void f13(std::list<T1, T2> &a0, typename std::list<T1, T2>::size_type a1,
+void f12(std::list<T1, T2> &a0, typename std::list<T1, T2>::size_type a1,
          const typename std::list<T1, T2>::value_type &a2) {
   return a0.assign(a1, a2);
 }
 
 template <typename T1, typename T2>
-void f14(std::list<T1, T2> &a0,
+void f13(std::list<T1, T2> &a0,
          std::initializer_list<typename std::list<T1, T2>::value_type> a1) {
   return a0.assign(a1);
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::allocator_type f15(const std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::allocator_type f14(const std::list<T1, T2> &a0) {
   return a0.get_allocator();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::iterator f16(std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::iterator f15(std::list<T1, T2> &a0) {
   return a0.begin();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::const_iterator f17(const std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::const_iterator f16(const std::list<T1, T2> &a0) {
   return a0.begin();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::iterator f18(std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::iterator f17(std::list<T1, T2> &a0) {
   return a0.end();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::const_iterator f19(const std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::const_iterator f18(const std::list<T1, T2> &a0) {
   return a0.end();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::reverse_iterator f20(std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::reverse_iterator f19(std::list<T1, T2> &a0) {
   return a0.rbegin();
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::const_reverse_iterator
-f21(const std::list<T1, T2> &a0) {
+f20(const std::list<T1, T2> &a0) {
   return a0.rbegin();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::reverse_iterator f22(std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::reverse_iterator f21(std::list<T1, T2> &a0) {
   return a0.rend();
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::const_reverse_iterator
-f23(const std::list<T1, T2> &a0) {
+f22(const std::list<T1, T2> &a0) {
   return a0.rend();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::const_iterator f24(const std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::const_iterator f23(const std::list<T1, T2> &a0) {
   return a0.cbegin();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::const_iterator f25(const std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::const_iterator f24(const std::list<T1, T2> &a0) {
   return a0.cend();
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::const_reverse_iterator
-f26(const std::list<T1, T2> &a0) {
+f25(const std::list<T1, T2> &a0) {
   return a0.crbegin();
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::const_reverse_iterator
-f27(const std::list<T1, T2> &a0) {
+f26(const std::list<T1, T2> &a0) {
   return a0.crend();
 }
 
-template <typename T1, typename T2> bool f28(const std::list<T1, T2> &a0) {
+template <typename T1, typename T2> bool f27(const std::list<T1, T2> &a0) {
   return a0.empty();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::size_type f29(const std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::size_type f28(const std::list<T1, T2> &a0) {
   return a0.size();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::size_type f30(const std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::size_type f29(const std::list<T1, T2> &a0) {
   return a0.max_size();
 }
 
 template <typename T1, typename T2>
-void f31(std::list<T1, T2> &a0, typename std::list<T1, T2>::size_type a1) {
+void f30(std::list<T1, T2> &a0, typename std::list<T1, T2>::size_type a1) {
   return a0.resize(a1);
 }
 
 template <typename T1, typename T2>
-void f32(std::list<T1, T2> &a0, typename std::list<T1, T2>::size_type a1,
+void f31(std::list<T1, T2> &a0, typename std::list<T1, T2>::size_type a1,
          const typename std::list<T1, T2>::value_type &a2) {
   return a0.resize(a1, a2);
 }
 
 template <typename T1, typename T2>
-void f33(std::list<T1, T2> &a0,
+void f32(std::list<T1, T2> &a0,
          const typename std::list<T1, T2>::value_type &a1) {
   return a0.push_front(a1);
 }
 
 template <typename T1, typename T2>
-void f34(std::list<T1, T2> &a0, typename std::list<T1, T2>::value_type &&a1) {
+void f33(std::list<T1, T2> &a0, typename std::list<T1, T2>::value_type &&a1) {
   return a0.push_front(std::move(a1));
 }
 
-template <typename T1, typename T2> void f35(std::list<T1, T2> &a0) {
+template <typename T1, typename T2> void f34(std::list<T1, T2> &a0) {
   return a0.pop_front();
 }
 
 template <typename T1, typename T2>
-void f36(std::list<T1, T2> &a0,
+void f35(std::list<T1, T2> &a0,
          const typename std::list<T1, T2>::value_type &a1) {
   return a0.push_back(a1);
 }
 
 template <typename T1, typename T2>
-void f37(std::list<T1, T2> &a0, typename std::list<T1, T2>::value_type &&a1) {
+void f36(std::list<T1, T2> &a0, typename std::list<T1, T2>::value_type &&a1) {
   return a0.push_back(std::move(a1));
 }
 
-template <typename T1, typename T2> void f38(std::list<T1, T2> &a0) {
+template <typename T1, typename T2> void f37(std::list<T1, T2> &a0) {
   return a0.pop_back();
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::iterator
-f39(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+f38(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
     const typename std::list<T1, T2>::value_type &a2) {
   return a0.insert(a1, a2);
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::iterator
-f40(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+f39(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
     typename std::list<T1, T2>::value_type &&a2) {
   return a0.insert(a1, std::move(a2));
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::iterator
-f41(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+f40(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
     std::initializer_list<typename std::list<T1, T2>::value_type> a2) {
   return a0.insert(a1, a2);
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::iterator
-f42(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+f41(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
     typename std::list<T1, T2>::size_type a2,
     const typename std::list<T1, T2>::value_type &a3) {
   return a0.insert(a1, a2, a3);
@@ -265,144 +258,126 @@ f42(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::iterator
-f43(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1) {
+f42(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1) {
   return a0.erase(a1);
 }
 
 template <typename T1, typename T2>
 typename std::list<T1, T2>::iterator
-f44(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+f43(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
     typename std::list<T1, T2>::const_iterator a2) {
   return a0.erase(a1, a2);
 }
 
 template <typename T1, typename T2>
-void f45(std::list<T1, T2> &a0, std::list<T1, T2> &a1) {
+void f44(std::list<T1, T2> &a0, std::list<T1, T2> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1, typename T2> void f46(std::list<T1, T2> &a0) {
+template <typename T1, typename T2> void f45(std::list<T1, T2> &a0) {
   return a0.clear();
 }
 
 template <typename T1, typename T2>
-void f47(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+void f46(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
          std::list<T1, T2> &&a2) {
   return a0.splice(a1, std::move(a2));
 }
 
 template <typename T1, typename T2>
-void f48(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+void f47(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
          std::list<T1, T2> &a2) {
   return a0.splice(a1, a2);
 }
 
 template <typename T1, typename T2>
-void f49(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+void f48(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
          std::list<T1, T2> &&a2,
          typename std::list<T1, T2>::const_iterator a3) {
   return a0.splice(a1, std::move(a2), a3);
 }
 
 template <typename T1, typename T2>
-void f50(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+void f49(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
          std::list<T1, T2> &a2, typename std::list<T1, T2>::const_iterator a3) {
   return a0.splice(a1, a2, a3);
 }
 
 template <typename T1, typename T2>
-void f51(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+void f50(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
          std::list<T1, T2> &&a2, typename std::list<T1, T2>::const_iterator a3,
          typename std::list<T1, T2>::const_iterator a4) {
   return a0.splice(a1, std::move(a2), a3, a4);
 }
 
 template <typename T1, typename T2>
-void f52(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+void f51(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
          std::list<T1, T2> &a2, typename std::list<T1, T2>::const_iterator a3,
          typename std::list<T1, T2>::const_iterator a4) {
   return a0.splice(a1, a2, a3, a4);
 }
 
-template <typename T1, typename T2> void f53(std::list<T1, T2> &a0) {
+template <typename T1, typename T2> void f52(std::list<T1, T2> &a0) {
   return a0.unique();
 }
 
 template <typename T1, typename T2>
-void f54(std::list<T1, T2> &a0, std::list<T1, T2> &&a1) {
+void f53(std::list<T1, T2> &a0, std::list<T1, T2> &&a1) {
   return a0.merge(std::move(a1));
 }
 
 template <typename T1, typename T2>
-void f55(std::list<T1, T2> &a0, std::list<T1, T2> &a1) {
+void f54(std::list<T1, T2> &a0, std::list<T1, T2> &a1) {
   return a0.merge(a1);
 }
 
-template <typename T1, typename T2> void f56(std::list<T1, T2> &a0) {
+template <typename T1, typename T2> void f55(std::list<T1, T2> &a0) {
   return a0.reverse();
 }
 
-template <typename T1, typename T2> void f57(std::list<T1, T2> &a0) {
+template <typename T1, typename T2> void f56(std::list<T1, T2> &a0) {
   return a0.sort();
 }
 
-template <typename T1, typename T2, typename T3>
-std::list<T1, T2> f58(T3 a0, T3 a1,
-                      const typename std::list<T1, T2>::allocator_type &a2) {
-  return std::list<T1, T2>(a0, a1, a2);
-}
-
-template <typename T1, typename T2, typename T3>
-void f59(std::list<T1, T2> &a0, T3 a1, T3 a2) {
-  return a0.template assign<T3>(a1, a2);
-}
-
 template <typename T1, typename T2, typename... T3>
-void f60(std::list<T1, T2> &a0, T3 &&...a1) {
+void f57(std::list<T1, T2> &a0, T3 &&...a1) {
   return a0.template emplace_front<T3...>(std::forward<T3>(a1)...);
 }
 
 template <typename T1, typename T2, typename... T3>
-void f61(std::list<T1, T2> &a0, T3 &&...a1) {
+void f58(std::list<T1, T2> &a0, T3 &&...a1) {
   return a0.template emplace_back<T3...>(std::forward<T3>(a1)...);
 }
 
 template <typename T1, typename T2, typename... T3>
 typename std::list<T1, T2>::iterator
-f62(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+f59(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
     T3 &&...a2) {
   return a0.template emplace<T3...>(a1, std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::list<T1, T2>::iterator
-f63(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1, T3 a2,
-    T3 a3) {
-  return a0.template insert<T3>(a1, a2, a3);
-}
-
-template <typename T1, typename T2, typename T3>
-void f64(std::list<T1, T2> &a0, T3 a1) {
+void f60(std::list<T1, T2> &a0, T3 a1) {
   return a0.template remove_if<T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f65(std::list<T1, T2> &a0, T3 a1) {
+void f61(std::list<T1, T2> &a0, T3 a1) {
   return a0.template unique<T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f66(std::list<T1, T2> &a0, std::list<T1, T2> &&a1, T3 a2) {
+void f62(std::list<T1, T2> &a0, std::list<T1, T2> &&a1, T3 a2) {
   return a0.template merge<T3>(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
-void f67(std::list<T1, T2> &a0, std::list<T1, T2> &a1, T3 a2) {
+void f63(std::list<T1, T2> &a0, std::list<T1, T2> &a1, T3 a2) {
   return a0.template merge<T3>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-void f68(std::list<T1, T2> &a0, T3 a1) {
+void f64(std::list<T1, T2> &a0, T3 a1) {
   return a0.template sort<T3>(a1);
 }
 

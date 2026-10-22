@@ -128,23 +128,3 @@ void f100(std::forward_list<T1, T2> &a0,
           const typename std::forward_list<T1, T2>::value_type &a1) {
   return a0.remove(a1);
 }
-
-template <typename T1, typename T2>
-std::forward_list<T1, T2>
-f101(typename std::forward_list<T1, T2>::size_type a0,
-     const typename std::forward_list<T1, T2>::value_type &a1,
-     const typename std::forward_list<T1, T2>::allocator_type &a2) {
-  return std::forward_list<T1, T2>(a0, a1, a2);
-}
-
-template <typename T1, typename T2, typename T3>
-std::forward_list<T1, T2> f102(T3 a0, T3 a1) {
-  return std::forward_list<T1, T2>(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::forward_list<T1, T2>
-f103(T3 a0, T3 a1,
-     const typename std::forward_list<T1, T2>::allocator_type &a2) {
-  return std::forward_list<T1, T2>(a0, a1, a2);
-}

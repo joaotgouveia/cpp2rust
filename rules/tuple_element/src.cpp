@@ -1,7 +1,6 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
-#include <array>
 #include <tuple>
 #include <utility>
 
@@ -40,9 +39,3 @@ using t11 = std::tuple_element<1, std::pair<T1, T2>>;
 
 template <typename T1, typename T2>
 using t12 = typename std::tuple_element<1, std::pair<T1, T2>>::type;
-
-template <std::size_t T1, typename T2, std::size_t T3>
-using t13 = std::tuple_element<T1, std::array<T2, T3>>;
-
-template <std::size_t T1, typename T2, std::size_t T3>
-using t14 = typename std::tuple_element<T1, std::array<T2, T3>>::type;

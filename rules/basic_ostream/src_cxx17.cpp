@@ -2,7 +2,9 @@
 #include "../common/traits.h"
 #include <algorithm>
 #include <bitset>
+#include <cstddef>
 #include <ios>
+#include <memory>
 #include <ostream>
 #include <streambuf>
 #include <string>

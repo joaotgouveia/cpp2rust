@@ -59,11 +59,7 @@ void f8(std::stack<T1, T2> &a0, std::stack<T1, T2> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1, typename T2> std::stack<T1, T2> f9() {
-  return std::stack<T1, T2>();
-}
-
 template <typename T1, typename T2, typename... T3>
-void f10(std::stack<T1, T2> &a0, T3 &&...a1) {
+void f9(std::stack<T1, T2> &a0, T3 &&...a1) {
   return a0.template emplace<T3...>(std::forward<T3>(a1)...);
 }

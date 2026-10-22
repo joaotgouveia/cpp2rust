@@ -1,8 +1,8 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <ios>
-#include <iosfwd>
 #include <istream>
+#include <ostream>
 #include <streambuf>
 #include <utility>
 

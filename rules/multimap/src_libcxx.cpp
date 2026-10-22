@@ -6,20 +6,20 @@
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::multimap<T1, T2, T3, T4>
-f81(const typename std::multimap<T1, T2, T3, T4>::key_compare &a0) {
+f79(const typename std::multimap<T1, T2, T3, T4>::key_compare &a0) {
   return std::multimap<T1, T2, T3, T4>(a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::multimap<T1, T2, T3, T4>
-f82(const typename std::multimap<T1, T2, T3, T4>::key_compare &a0,
+f80(const typename std::multimap<T1, T2, T3, T4>::key_compare &a0,
     const typename std::multimap<T1, T2, T3, T4>::allocator_type &a1) {
   return std::multimap<T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::multimap<T1, T2, T3, T4>
-f83(std::initializer_list<typename std::multimap<T1, T2, T3, T4>::value_type>
+f81(std::initializer_list<typename std::multimap<T1, T2, T3, T4>::value_type>
         a0,
     const typename std::multimap<T1, T2, T3, T4>::key_compare &a1) {
   return std::multimap<T1, T2, T3, T4>(a0, a1);
@@ -27,7 +27,7 @@ f83(std::initializer_list<typename std::multimap<T1, T2, T3, T4>::value_type>
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::multimap<T1, T2, T3, T4>
-f84(std::initializer_list<typename std::multimap<T1, T2, T3, T4>::value_type>
+f82(std::initializer_list<typename std::multimap<T1, T2, T3, T4>::value_type>
         a0,
     const typename std::multimap<T1, T2, T3, T4>::key_compare &a1,
     const typename std::multimap<T1, T2, T3, T4>::allocator_type &a2) {
@@ -36,16 +36,35 @@ f84(std::initializer_list<typename std::multimap<T1, T2, T3, T4>::value_type>
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::multimap<T1, T2, T3, T4>
-f85(T5 a0, T5 a1,
+f83(T5 a0, T5 a1,
     const typename std::multimap<T1, T2, T3, T4>::key_compare &a2) {
   return std::multimap<T1, T2, T3, T4>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::multimap<T1, T2, T3, T4>
-f86(T5 a0, T5 a1, const typename std::multimap<T1, T2, T3, T4>::key_compare &a2,
+f84(T5 a0, T5 a1, const typename std::multimap<T1, T2, T3, T4>::key_compare &a2,
     const typename std::multimap<T1, T2, T3, T4>::allocator_type &a3) {
   return std::multimap<T1, T2, T3, T4>(a0, a1, a2, a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename std::enable_if<
+              std::is_constructible<std::pair<const T1, T2>, T5>::value,
+              int>::type T6 = 0>
+typename std::multimap<T1, T2, T3, T4>::iterator
+f85(std::multimap<T1, T2, T3, T4> &a0, T5 &&a1) {
+  return a0.template insert<T5>(std::forward<T5>(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename std::enable_if<
+              std::is_constructible<std::pair<const T1, T2>, T5>::value,
+              int>::type T6 = 0>
+typename std::multimap<T1, T2, T3, T4>::iterator
+f86(std::multimap<T1, T2, T3, T4> &a0,
+    typename std::multimap<T1, T2, T3, T4>::const_iterator a1, T5 &&a2) {
+  return a0.template insert<T5>(a1, std::forward<T5>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

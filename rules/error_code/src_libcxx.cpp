@@ -54,11 +54,17 @@ std::error_code &f20(std::error_code &a0, std::error_code &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1> std::error_code f21(T1 a0) {
+template <typename T1,
+          typename std::enable_if<std::is_error_code_enum<T1>::value, int>::type
+              T2 = 0>
+std::error_code f21(T1 a0) {
   return std::error_code(a0);
 }
 
-template <typename T1> std::error_code &f22(std::error_code &a0, T1 a1) {
+template <typename T1,
+          typename std::enable_if<std::is_error_code_enum<T1>::value, int>::type
+              T2 = 0>
+std::error_code &f22(std::error_code &a0, T1 a1) {
   return a0.template operator= <T1>(a1);
 }
 

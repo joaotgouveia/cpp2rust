@@ -5,16 +5,17 @@
 #include <iosfwd>
 #include <string>
 #include <string_view>
+#include <type_traits>
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
-bool f66(const std::basic_string<T1, T2, T3> &a0,
+bool f60(const std::basic_string<T1, T2, T3> &a0,
          std::basic_string_view<T1, T2> a1) {
   return a0.starts_with(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f67(const std::basic_string<T1, T2, T3> &a0,
+bool f61(const std::basic_string<T1, T2, T3> &a0,
          std::basic_string_view<T1, T2> a1) {
   return a0.ends_with(a1);
 }

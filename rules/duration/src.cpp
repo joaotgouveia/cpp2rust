@@ -78,26 +78,3 @@ template <typename T1, typename T2> std::chrono::duration<T1, T2> f12() {
 template <typename T1, typename T2> std::chrono::duration<T1, T2> f13() {
   return std::chrono::duration<T1, T2>::max();
 }
-
-template <typename T1, typename T2, typename T3>
-std::chrono::duration<T1, T2> f14(const T3 &a0) {
-  return std::chrono::duration<T1, T2>(a0);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::chrono::duration<T1, T2> f15(const std::chrono::duration<T3, T4> &a0) {
-  return std::chrono::duration<T1, T2>(a0);
-}
-
-template <typename T1, typename T2>
-std::chrono::duration<T1, T2> &
-f16(std::chrono::duration<T1, T2> &a0,
-    const typename std::chrono::duration<T1, T2>::rep &a1) {
-  return a0.operator%=(a1);
-}
-
-template <typename T1, typename T2>
-std::chrono::duration<T1, T2> &f17(std::chrono::duration<T1, T2> &a0,
-                                   const std::chrono::duration<T1, T2> &a1) {
-  return a0.operator%=(a1);
-}

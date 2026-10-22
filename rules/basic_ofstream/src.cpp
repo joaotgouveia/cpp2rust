@@ -2,7 +2,7 @@
 #include "../common/traits.h"
 #include <fstream>
 #include <ios>
-#include <iosfwd>
+#include <ostream>
 #include <string>
 #include <utility>
 

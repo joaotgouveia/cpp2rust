@@ -1,8 +1,8 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <ios>
-#include <iosfwd>
 #include <istream>
+#include <ostream>
 #include <streambuf>
 #include <utility>
 
@@ -43,7 +43,10 @@ f78(std::basic_istream<T1, T2> &a0,
   return a0.get(a1, a2);
 }
 
-template <typename T1, typename T2>
+template <
+    typename T1, typename T2,
+    typename T3 = typename std::basic_istream<T1, T2>::char_type,
+    typename std::enable_if<std::is_same<T1, char>::value, int>::type T4 = 0>
 std::basic_istream<T1, T2> &
 f79(std::basic_istream<T1, T2> &a0, std::streamsize a1,
     typename std::basic_istream<T1, T2>::char_type a2) {

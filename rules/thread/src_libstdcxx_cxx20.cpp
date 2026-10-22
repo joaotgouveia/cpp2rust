@@ -42,7 +42,10 @@ std::stop_token f18(const std::jthread &a0) { return a0.get_stop_token(); }
 
 bool f19(std::jthread &a0) { return a0.request_stop(); }
 
-template <typename T1, typename... T2> std::jthread f20(T1 &&a0, T2 &&...a1) {
+template <typename T1, typename... T2,
+          typename T3 = std::enable_if_t<
+              !std::is_same_v<std::remove_cvref_t<T1>, std::jthread>>>
+std::jthread f20(T1 &&a0, T2 &&...a1) {
   return std::jthread(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 

@@ -2,6 +2,8 @@
 #include "../common/traits.h"
 #include <ios>
 #include <iosfwd>
+#include <ostream>
+#include <streambuf>
 #include <string>
 #include <utility>
 

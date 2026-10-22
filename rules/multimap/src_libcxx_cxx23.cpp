@@ -7,16 +7,16 @@
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::multimap<T1, T2, T3, T4>
-f101(std::from_range_t a0, T5 &&a1,
-     const typename std::multimap<T1, T2, T3, T4>::key_compare &a2,
-     const typename std::multimap<T1, T2, T3, T4>::allocator_type &a3) {
+f91(std::from_range_t a0, T5 &&a1,
+    const typename std::multimap<T1, T2, T3, T4>::key_compare &a2,
+    const typename std::multimap<T1, T2, T3, T4>::allocator_type &a3) {
   return std::multimap<T1, T2, T3, T4>(std::move(a0), std::forward<T5>(a1), a2,
                                        a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::multimap<T1, T2, T3, T4>
-f102(std::from_range_t a0, T5 &&a1,
-     const typename std::multimap<T1, T2, T3, T4>::allocator_type &a2) {
+f92(std::from_range_t a0, T5 &&a1,
+    const typename std::multimap<T1, T2, T3, T4>::allocator_type &a2) {
   return std::multimap<T1, T2, T3, T4>(std::move(a0), std::forward<T5>(a1), a2);
 }

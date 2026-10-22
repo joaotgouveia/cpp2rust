@@ -1,7 +1,6 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
-#include <array>
 #include <tuple>
 #include <type_traits>
 #include <utility>

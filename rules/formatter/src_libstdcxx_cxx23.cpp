@@ -11,7 +11,7 @@
 #include <thread>
 #include <utility>
 
-using t39 = std::formatter<std::stacktrace_entry>;
+using t38 = std::formatter<std::stacktrace_entry>;
 
 const std::basic_string_view<char>::value_type *
 f91(std::formatter<std::stacktrace_entry> &a0,
@@ -52,15 +52,13 @@ f97(const std::formatter<std::stacktrace_entry> &a0,
   return a0.template format<T1>(a1, a2);
 }
 
-using t40 = std::formatter<const char *, wchar_t>;
+using t39 = std::formatter<const char *, wchar_t>;
 
-using t41 = std::formatter<char *, wchar_t>;
+using t40 = std::formatter<char *, wchar_t>;
 
 void f98(std::formatter<char, wchar_t> &a0) { return a0.set_debug_format(); }
 
-template <std::size_t T1> using t42 = std::formatter<char[T1], wchar_t>;
-
-template <typename T1> using t43 = std::formatter<std::thread::id, T1>;
+template <typename T1> using t41 = std::formatter<std::thread::id, T1>;
 
 template <typename T1>
 typename std::basic_format_parse_context<T1>::iterator
@@ -80,7 +78,7 @@ template <typename T1> void f101(std::formatter<T1 *, T1> &a0) {
   return a0.set_debug_format();
 }
 
-template <typename T1> using t44 = std::formatter<std::basic_stacktrace<T1>>;
+template <typename T1> using t42 = std::formatter<std::basic_stacktrace<T1>>;
 
 template <typename T1>
 const std::basic_string_view<char>::value_type *
@@ -103,7 +101,7 @@ void f104(std::formatter<std::basic_string_view<char, T1>, char> &a0) {
 }
 
 template <typename T1>
-using t45 = std::formatter<std::basic_string_view<char, T1>, wchar_t>;
+using t43 = std::formatter<std::basic_string_view<char, T1>, wchar_t>;
 
 template <typename T1>
 void f105(std::formatter<std::basic_string_view<wchar_t, T1>, wchar_t> &a0) {
@@ -120,7 +118,7 @@ void f107(std::formatter<std::basic_string<char, T1, T2>, char> &a0) {
 }
 
 template <typename T1, typename T2>
-using t46 = std::formatter<std::basic_string<char, T1, T2>, wchar_t>;
+using t44 = std::formatter<std::basic_string<char, T1, T2>, wchar_t>;
 
 template <typename T1, typename T2>
 void f108(std::formatter<std::basic_string<wchar_t, T1, T2>, wchar_t> &a0) {
@@ -128,7 +126,7 @@ void f108(std::formatter<std::basic_string<wchar_t, T1, T2>, wchar_t> &a0) {
 }
 
 template <typename T1, typename... T2>
-using t47 = std::formatter<std::tuple<T2...>, T1>;
+using t45 = std::formatter<std::tuple<T2...>, T1>;
 
 template <typename T1, typename... T2>
 void f109(std::formatter<std::tuple<T2...>, T1> &a0,
@@ -150,7 +148,7 @@ f111(std::formatter<std::tuple<T2...>, T1> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t48 = std::formatter<std::pair<T2, T3>, T1>;
+using t46 = std::formatter<std::pair<T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3>
 void f112(std::formatter<std::pair<T2, T3>, T1> &a0,
@@ -172,7 +170,7 @@ f114(std::formatter<std::pair<T2, T3>, T1> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t49 = std::formatter<std::queue<T2, T3>, T1>;
+using t47 = std::formatter<std::queue<T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_format_parse_context<T1>::iterator
@@ -182,7 +180,7 @@ f115(std::formatter<std::queue<T2, T3>, T1> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t50 = std::formatter<std::stack<T2, T3>, T1>;
+using t48 = std::formatter<std::stack<T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_format_parse_context<T1>::iterator
@@ -192,7 +190,7 @@ f116(std::formatter<std::stack<T2, T3>, T1> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t51 = std::formatter<std::priority_queue<T2, T3, T4>, T1>;
+using t49 = std::formatter<std::priority_queue<T2, T3, T4>, T1>;
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::basic_format_parse_context<T1>::iterator

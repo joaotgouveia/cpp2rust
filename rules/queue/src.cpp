@@ -69,26 +69,7 @@ void f10(std::queue<T1, T2> &a0, std::queue<T1, T2> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1, typename T2> std::queue<T1, T2> f11() {
-  return std::queue<T1, T2>();
-}
-
-template <typename T1, typename T2, typename T3>
-std::queue<T1, T2> f12(const T3 &a0) {
-  return std::queue<T1, T2>(a0);
-}
-
-template <typename T1, typename T2, typename T3>
-std::queue<T1, T2> f13(const std::queue<T1, T2> &a0, const T3 &a1) {
-  return std::queue<T1, T2>(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3>
-std::queue<T1, T2> f14(std::queue<T1, T2> &&a0, const T3 &a1) {
-  return std::queue<T1, T2>(std::move(a0), a1);
-}
-
 template <typename T1, typename T2, typename... T3>
-void f15(std::queue<T1, T2> &a0, T3 &&...a1) {
+void f11(std::queue<T1, T2> &a0, T3 &&...a1) {
   return a0.template emplace<T3...>(std::forward<T3>(a1)...);
 }

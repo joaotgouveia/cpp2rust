@@ -114,29 +114,12 @@ f10(const std::scoped_allocator_adaptor<T1, T2...> &a0) {
   return a0.select_on_container_copy_construction();
 }
 
-template <typename T1, typename... T2, typename T3>
-std::scoped_allocator_adaptor<T1, T2...> f11(T3 &&a0, const T2 &...a1) {
-  return std::scoped_allocator_adaptor<T1, T2...>(std::forward<T3>(a0), a1...);
-}
-
-template <typename T1, typename... T2, typename T3>
-std::scoped_allocator_adaptor<T1, T2...>
-f12(const std::scoped_allocator_adaptor<T3, T2...> &a0) {
-  return std::scoped_allocator_adaptor<T1, T2...>(a0);
-}
-
-template <typename T1, typename... T2, typename T3>
-std::scoped_allocator_adaptor<T1, T2...>
-f13(std::scoped_allocator_adaptor<T3, T2...> &&a0) {
-  return std::scoped_allocator_adaptor<T1, T2...>(std::move(a0));
-}
-
 template <typename T1, typename... T2, typename T3, typename... T4>
-void f14(std::scoped_allocator_adaptor<T1, T2...> &a0, T3 *a1, T4 &&...a2) {
+void f11(std::scoped_allocator_adaptor<T1, T2...> &a0, T3 *a1, T4 &&...a2) {
   return a0.template construct<T3, T4...>(a1, std::forward<T4>(a2)...);
 }
 
 template <typename T1, typename... T2, typename T3>
-void f15(std::scoped_allocator_adaptor<T1, T2...> &a0, T3 *a1) {
+void f12(std::scoped_allocator_adaptor<T1, T2...> &a0, T3 *a1) {
   return a0.template destroy<T3>(a1);
 }

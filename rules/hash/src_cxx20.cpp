@@ -19,7 +19,7 @@
 #include <variant>
 #include <vector>
 
-template <typename T1> using t10 = std::hash<std::coroutine_handle<T1>>;
+template <typename T1> using t9 = std::hash<std::coroutine_handle<T1>>;
 
 template <typename T1>
 std::size_t f27(const std::hash<std::coroutine_handle<T1>> &a0,

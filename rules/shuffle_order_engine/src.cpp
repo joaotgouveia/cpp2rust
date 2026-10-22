@@ -70,22 +70,12 @@ f11(std::shuffle_order_engine<T1, T2> &a0) {
   return a0.operator()();
 }
 
-template <typename T1, std::size_t T2, typename T3>
-std::shuffle_order_engine<T1, T2> f12(T3 &a0) {
-  return std::shuffle_order_engine<T1, T2>(a0);
-}
-
-template <typename T1, std::size_t T2, typename T3>
-void f13(std::shuffle_order_engine<T1, T2> &a0, T3 &a1) {
-  return a0.template seed<T3>(a1);
-}
-
 template <typename T1, std::size_t T2>
-bool f14(const std::shuffle_order_engine<T1, T2> &a0,
+bool f12(const std::shuffle_order_engine<T1, T2> &a0,
          const std::shuffle_order_engine<T1, T2> &a1) {
   return a0 == a1;
 }
 
-template <typename T1, std::size_t T2> std::size_t f15() {
+template <typename T1, std::size_t T2> std::size_t f13() {
   return std::shuffle_order_engine<T1, T2>::table_size;
 }

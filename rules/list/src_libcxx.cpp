@@ -58,11 +58,6 @@ void f101(std::list<T1, T2> &a0,
   return a0.remove(a1);
 }
 
-template <typename T1, typename T2, typename T3>
-std::list<T1, T2> f102(T3 a0, T3 a1) {
-  return std::list<T1, T2>(a0, a1);
-}
-
 template <typename T1, typename T2>
 using t23 = typename std::list<T1, T2>::iterator::iterator_category;
 

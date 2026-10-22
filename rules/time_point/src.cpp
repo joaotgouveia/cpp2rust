@@ -54,10 +54,3 @@ template <typename T1, typename T2> std::chrono::time_point<T1, T2> f6() {
 template <typename T1, typename T2> std::chrono::time_point<T1, T2> f7() {
   return std::chrono::time_point<T1, T2>::max();
 }
-
-template <typename T1, typename T2, typename T3>
-std::chrono::time_point<T1, T2>
-f8(const std::chrono::time_point<
-    typename std::chrono::time_point<T1, T2>::clock, T3> &a0) {
-  return std::chrono::time_point<T1, T2>(a0);
-}

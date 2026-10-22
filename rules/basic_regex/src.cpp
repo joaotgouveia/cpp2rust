@@ -74,9 +74,3 @@ std::basic_regex<T1, T2> f9(T3 a0, T3 a1,
                             typename std::basic_regex<T1, T2>::flag_type a2) {
   return std::basic_regex<T1, T2>(a0, a1, a2);
 }
-
-template <typename T1, typename T2, typename T3>
-std::basic_regex<T1, T2> &f10(std::basic_regex<T1, T2> &a0, T3 a1, T3 a2,
-                              typename std::basic_regex<T1, T2>::flag_type a3) {
-  return a0.template assign<T3>(a1, a2, a3);
-}

@@ -9,7 +9,7 @@
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_map<T1, T2, T3, T4, T5>
-f92(std::from_range_t a0, T6 &&a1,
+f90(std::from_range_t a0, T6 &&a1,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_map<T1, T2, T3, T4, T5>::hasher &a3,
     const typename std::unordered_map<T1, T2, T3, T4, T5>::key_equal &a4,
@@ -21,7 +21,7 @@ f92(std::from_range_t a0, T6 &&a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_map<T1, T2, T3, T4, T5>
-f93(std::from_range_t a0, T6 &&a1,
+f91(std::from_range_t a0, T6 &&a1,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_map<T1, T2, T3, T4, T5>::allocator_type &a3) {
   return std::unordered_map<T1, T2, T3, T4, T5>(std::move(a0),
@@ -31,7 +31,7 @@ f93(std::from_range_t a0, T6 &&a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_map<T1, T2, T3, T4, T5>
-f94(std::from_range_t a0, T6 &&a1,
+f92(std::from_range_t a0, T6 &&a1,
     typename std::unordered_map<T1, T2, T3, T4, T5>::size_type a2,
     const typename std::unordered_map<T1, T2, T3, T4, T5>::hasher &a3,
     const typename std::unordered_map<T1, T2, T3, T4, T5>::allocator_type &a4) {
@@ -41,6 +41,6 @@ f94(std::from_range_t a0, T6 &&a1,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-void f95(std::unordered_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
+void f93(std::unordered_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
   return a0.template insert_range<T6>(std::forward<T6>(a1));
 }

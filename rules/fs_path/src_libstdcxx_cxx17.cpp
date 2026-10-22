@@ -2,7 +2,6 @@
 #include "../common/traits.h"
 #include <algorithm>
 #include <filesystem>
-#include <ios>
 #include <string>
 #include <system_error>
 #include <utility>
@@ -295,103 +294,31 @@ std::filesystem::path::iterator f71(const std::filesystem::path &a0) {
   return a0.end();
 }
 
-template <typename T1>
-std::filesystem::path f72(const T1 &a0, std::filesystem::path::format a1) {
-  return std::filesystem::path(a0, a1);
-}
-
-template <typename T1>
-std::filesystem::path f73(T1 a0, T1 a1, std::filesystem::path::format a2) {
-  return std::filesystem::path(a0, a1, a2);
-}
-
-template <typename T1>
-std::filesystem::path f74(const T1 &a0, const std::locale &a1,
-                          std::filesystem::path::format a2) {
-  return std::filesystem::path(a0, a1, a2);
-}
-
-template <typename T1>
-std::filesystem::path f75(T1 a0, T1 a1, const std::locale &a2,
-                          std::filesystem::path::format a3) {
-  return std::filesystem::path(a0, a1, a2, a3);
-}
-
-template <typename T1>
-std::filesystem::path &f76(std::filesystem::path &a0, const T1 &a1) {
-  return a0.template operator= <T1>(a1);
-}
-
-template <typename T1>
-std::filesystem::path &f77(std::filesystem::path &a0, const T1 &a1) {
-  return a0.template assign<T1>(a1);
-}
-
-template <typename T1>
-std::filesystem::path &f78(std::filesystem::path &a0, T1 a1, T1 a2) {
-  return a0.template assign<T1>(a1, a2);
-}
-
-template <typename T1>
-std::filesystem::path &f79(std::filesystem::path &a0, const T1 &a1) {
-  return a0.template operator/= <T1>(a1);
-}
-
-template <typename T1>
-std::filesystem::path &f80(std::filesystem::path &a0, const T1 &a1) {
-  return a0.template append<T1>(a1);
-}
-
-template <typename T1>
-std::filesystem::path &f81(std::filesystem::path &a0, T1 a1, T1 a2) {
-  return a0.template append<T1>(a1, a2);
-}
-
-template <typename T1>
-std::filesystem::path &f82(std::filesystem::path &a0, const T1 &a1) {
-  return a0.template operator+= <T1>(a1);
-}
-
-template <typename T1>
-std::filesystem::path &f83(std::filesystem::path &a0, T1 a1) {
-  return a0.template operator+= <T1>(a1);
-}
-
-template <typename T1>
-std::filesystem::path &f84(std::filesystem::path &a0, const T1 &a1) {
-  return a0.template concat<T1>(a1);
-}
-
-template <typename T1>
-std::filesystem::path &f85(std::filesystem::path &a0, T1 a1, T1 a2) {
-  return a0.template concat<T1>(a1, a2);
-}
-
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f86(const std::filesystem::path &a0,
+std::basic_string<T1, T2, T3> f72(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template string<T1, T2, T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f87(const std::filesystem::path &a0,
+std::basic_string<T1, T2, T3> f73(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template generic_string<T1, T2, T3>(a1);
 }
 
-std::filesystem::path f88(const std::filesystem::path &a0,
+std::filesystem::path f74(const std::filesystem::path &a0,
                           const std::filesystem::path &a1) {
   return a0 / a1;
 }
 
-bool f89(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+bool f75(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return a0 == a1;
 }
 
-std::filesystem::path::value_type f90() {
+std::filesystem::path::value_type f76() {
   return std::filesystem::path::preferred_separator;
 }
 
-void f91(std::filesystem::path &a0, std::filesystem::path &a1) {
+void f77(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
 }

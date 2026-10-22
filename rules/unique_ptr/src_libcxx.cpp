@@ -5,43 +5,93 @@
 #include <utility>
 
 template <typename T1, typename T2>
-__add_lvalue_reference(T1) f66(const std::unique_ptr<T1[], T2> &a0,
-                               std::size_t a1) {
+typename std::add_lvalue_reference<T1>::type
+f57(const std::unique_ptr<T1[], T2> &a0, std::size_t a1) {
   return a0.operator[](a1);
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
-std::unique_ptr<T1[], T2> f67(T3 a0, T4 a1, std::size_t a2) {
-  return std::unique_ptr<T1[], T2>(a0, a1, a2);
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1[], T2>::deleter_type,
+          typename std::enable_if<std::is_default_constructible<T2>::value &&
+                                      !std::is_pointer<T2>::value,
+                                  int>::type T4 = 0>
+std::unique_ptr<T1[], T2> f58() {
+  return std::unique_ptr<T1[], T2>();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1[], T2>::deleter_type,
+          typename std::enable_if<std::is_default_constructible<T2>::value &&
+                                      !std::is_pointer<T2>::value,
+                                  int>::type T4 = 0>
+std::unique_ptr<T1[], T2> f59(std::nullptr_t a0) {
+  return std::unique_ptr<T1[], T2>(a0);
+}
+
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1[], T2>::deleter_type,
+          typename std::enable_if<std::is_copy_constructible<T2>::value,
+                                  int>::type T4 = 0>
 std::unique_ptr<T1[], T2>
-f68(std::nullptr_t a0,
+f60(std::nullptr_t a0,
     const typename std::unique_ptr<T1[], T2>::deleter_type &a1) {
   return std::unique_ptr<T1[], T2>(a0, a1);
 }
 
-template <typename T1, typename T2, typename T3>
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1[], T2>::deleter_type,
+          typename std::enable_if<!std::is_reference<T2>::value &&
+                                      std::is_move_constructible<T2>::value,
+                                  int>::type T4 = 0>
 std::unique_ptr<T1[], T2>
-f69(T3 a0, typename std::unique_ptr<T1[], T2>::deleter_type &&a1) {
+f61(std::nullptr_t a0, typename std::unique_ptr<T1[], T2>::deleter_type &&a1) {
   return std::unique_ptr<T1[], T2>(a0, std::move(a1));
 }
 
-template <typename T1, typename T2>
-std::unique_ptr<T1[], T2>
-f70(std::nullptr_t a0, typename std::unique_ptr<T1[], T2>::deleter_type &&a1) {
-  return std::unique_ptr<T1[], T2>(a0, std::move(a1));
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1, T2>::deleter_type,
+          typename std::enable_if<std::is_default_constructible<T2>::value &&
+                                      !std::is_pointer<T2>::value,
+                                  int>::type T4 = 0>
+std::unique_ptr<T1, T2> f62() {
+  return std::unique_ptr<T1, T2>();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1, T2>::deleter_type,
+          typename std::enable_if<std::is_default_constructible<T2>::value &&
+                                      !std::is_pointer<T2>::value,
+                                  int>::type T4 = 0>
+std::unique_ptr<T1, T2> f63(std::nullptr_t a0) {
+  return std::unique_ptr<T1, T2>(a0);
+}
+
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1, T2>::deleter_type,
+          typename std::enable_if<std::is_default_constructible<T2>::value &&
+                                      !std::is_pointer<T2>::value,
+                                  int>::type T4 = 0>
+std::unique_ptr<T1, T2> f64(typename std::unique_ptr<T1, T2>::pointer a0) {
+  return std::unique_ptr<T1, T2>(a0);
+}
+
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1, T2>::deleter_type,
+          typename std::enable_if<std::is_copy_constructible<T2>::value,
+                                  int>::type T4 = 0>
 std::unique_ptr<T1, T2>
-f71(typename std::unique_ptr<T1, T2>::pointer a0,
+f65(typename std::unique_ptr<T1, T2>::pointer a0,
+    const typename std::unique_ptr<T1, T2>::deleter_type &a1) {
+  return std::unique_ptr<T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2,
+          typename T3 = typename std::unique_ptr<T1, T2>::deleter_type,
+          typename std::enable_if<!std::is_reference<T2>::value &&
+                                      std::is_move_constructible<T2>::value,
+                                  int>::type T4 = 0>
+std::unique_ptr<T1, T2>
+f66(typename std::unique_ptr<T1, T2>::pointer a0,
     typename std::unique_ptr<T1, T2>::deleter_type &&a1) {
   return std::unique_ptr<T1, T2>(a0, std::move(a1));
-}
-
-template <typename T1, typename T2>
-__add_lvalue_reference(T1) f72(const std::unique_ptr<T1, T2> &a0) {
-  return a0.operator*();
 }

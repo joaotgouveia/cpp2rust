@@ -237,8 +237,3 @@ template <typename T1, std::size_t T2>
 bool f32(const std::array<T1, T2> &a0, const std::array<T1, T2> &a1) {
   return a0 == a1;
 }
-
-template <typename T1, std::size_t T2>
-void f33(std::array<T1, T2> &a0, std::array<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
-}

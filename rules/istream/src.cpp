@@ -18,16 +18,12 @@ std::basic_istream<char, T1> &f2(std::basic_istream<char, T1> &a0,
   return a0 >> a1;
 }
 
-template <typename T1, typename T2> T1 &&f3(T1 &&a0, T2 &&a1) {
-  return std::forward<T1>(a0) >> std::forward<T2>(a1);
-}
-
 template <typename T1, typename T2>
-std::basic_istream<T1, T2> &f4(std::basic_istream<T1, T2> &a0, T1 &a1) {
+std::basic_istream<T1, T2> &f3(std::basic_istream<T1, T2> &a0, T1 &a1) {
   return a0 >> a1;
 }
 
 template <typename T1, typename T2>
-std::basic_istream<T1, T2> &f5(std::basic_istream<T1, T2> &a0) {
+std::basic_istream<T1, T2> &f4(std::basic_istream<T1, T2> &a0) {
   return std::ws<T1, T2>(a0);
 }

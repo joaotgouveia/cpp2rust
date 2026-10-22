@@ -1,7 +1,6 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
-#include <bitset>
 #include <cstddef>
 #include <functional>
 #include <memory>
@@ -11,13 +10,13 @@
 #include <vector>
 
 template <typename T1>
-using t46 = typename std::hash<std::shared_ptr<T1>>::argument_type;
+using t45 = typename std::hash<std::shared_ptr<T1>>::argument_type;
 
 template <typename T1>
-using t47 = typename std::hash<std::shared_ptr<T1>>::result_type;
+using t46 = typename std::hash<std::shared_ptr<T1>>::result_type;
 
 template <typename T1>
-using t48 =
+using t47 =
     typename std::hash<std::shared_ptr<T1>>::argument_type::element_type;
 
 template <typename T1>
@@ -74,218 +73,281 @@ f226(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
 }
 
 template <typename T1>
-__add_lvalue_reference(T1)
-f227(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
-  return a0.operator*();
-}
-
-template <typename T1>
 typename std::hash<std::shared_ptr<T1>>::argument_type::element_type *
-f228(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
+f227(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
   return a0.operator->();
 }
 
 template <typename T1>
-long f229(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
+long f228(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
   return a0.use_count();
 }
 
 template <typename T1>
-bool f230(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
+bool f229(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
   return a0.unique();
 }
 
 template <typename T1>
-bool f231(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
+bool f230(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0) {
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2>
-typename std::hash<std::shared_ptr<T1>>::argument_type f232(T2 *a0) {
-  return typename std::hash<std::shared_ptr<T1>>::argument_type(a0);
-}
-
-template <typename T1, typename T2, typename T3>
-typename std::hash<std::shared_ptr<T1>>::argument_type f233(T2 *a0, T3 a1) {
-  return typename std::hash<std::shared_ptr<T1>>::argument_type(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::hash<std::shared_ptr<T1>>::argument_type f234(T2 *a0, T3 a1,
-                                                            T4 a2) {
-  return typename std::hash<std::shared_ptr<T1>>::argument_type(a0, a1, a2);
-}
-
-template <typename T1, typename T2>
 typename std::hash<std::shared_ptr<T1>>::argument_type
-f235(const std::shared_ptr<T2> &a0,
+f231(const std::shared_ptr<T2> &a0,
      typename std::hash<std::shared_ptr<T1>>::argument_type::element_type *a1) {
   return typename std::hash<std::shared_ptr<T1>>::argument_type(a0, a1);
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename std::enable_if<std::is_convertible<T2 *, T1 *>::value,
+                                  int>::type T3 = 0>
 typename std::hash<std::shared_ptr<T1>>::argument_type
-f236(const std::shared_ptr<T2> &a0) {
-  return typename std::hash<std::shared_ptr<T1>>::argument_type(a0);
-}
-
-template <typename T1, typename T2>
-typename std::hash<std::shared_ptr<T1>>::argument_type
-f237(std::shared_ptr<T2> &&a0) {
+f232(std::auto_ptr<T2> &&a0) {
   return typename std::hash<std::shared_ptr<T1>>::argument_type(std::move(a0));
 }
 
-template <typename T1, typename T2>
-typename std::hash<std::shared_ptr<T1>>::argument_type
-f238(const std::weak_ptr<T2> &a0) {
-  return typename std::hash<std::shared_ptr<T1>>::argument_type(a0);
-}
-
-template <typename T1, typename T2>
-typename std::hash<std::shared_ptr<T1>>::argument_type
-f239(std::auto_ptr<T2> &&a0) {
-  return typename std::hash<std::shared_ptr<T1>>::argument_type(std::move(a0));
-}
-
-template <typename T1, typename T2, typename T3>
-typename std::hash<std::shared_ptr<T1>>::argument_type
-f240(std::unique_ptr<T2, T3> &&a0) {
-  return typename std::hash<std::shared_ptr<T1>>::argument_type(std::move(a0));
-}
-
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename std::enable_if<!std::is_array<T2>::value &&
+                                      std::is_convertible<T2 *, T1 *>::value,
+                                  int>::type T3 = 0>
 typename std::hash<std::shared_ptr<T1>>::argument_type &
-f241(typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
-     const std::shared_ptr<T2> &a1) {
-  return a0.template operator= <T2>(a1);
-}
-
-template <typename T1, typename T2>
-typename std::hash<std::shared_ptr<T1>>::argument_type &
-f242(typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
-     std::shared_ptr<T2> &&a1) {
-  return a0.template operator= <T2>(std::move(a1));
-}
-
-template <typename T1, typename T2>
-typename std::hash<std::shared_ptr<T1>>::argument_type &
-f243(typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
+f233(typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
      std::auto_ptr<T2> &&a1) {
   return a0.template operator= <T2>(std::move(a1));
 }
 
-template <typename T1, typename T2, typename T3>
-typename std::hash<std::shared_ptr<T1>>::argument_type &
-f244(typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
-     std::unique_ptr<T2, T3> &&a1) {
-  return a0.template operator= <T2, T3>(std::move(a1));
-}
-
 template <typename T1, typename T2>
-void f245(typename std::hash<std::shared_ptr<T1>>::argument_type &a0, T2 *a1) {
-  return a0.template reset<T2>(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-void f246(typename std::hash<std::shared_ptr<T1>>::argument_type &a0, T2 *a1,
-          T3 a2) {
-  return a0.template reset<T2, T3>(a1, a2);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-void f247(typename std::hash<std::shared_ptr<T1>>::argument_type &a0, T2 *a1,
-          T3 a2, T4 a3) {
-  return a0.template reset<T2, T3, T4>(a1, a2, a3);
-}
-
-template <typename T1, typename T2>
-bool f248(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
+bool f234(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
           const std::shared_ptr<T2> &a1) {
   return a0.template owner_before<T2>(a1);
 }
 
 template <typename T1, typename T2>
-bool f249(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
+bool f235(const typename std::hash<std::shared_ptr<T1>>::argument_type &a0,
           const std::weak_ptr<T2> &a1) {
   return a0.template owner_before<T2>(a1);
 }
 
 template <typename T1, typename T2>
-using t49 = typename std::hash<std::__enable_hash_helper<
+using t48 = typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::argument_type;
 
 template <typename T1, typename T2>
-using t50 = typename std::hash<std::__enable_hash_helper<
+using t49 = typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::result_type;
 
 template <typename T1, typename T2>
-using t51 = typename std::hash<std::__enable_hash_helper<
+using t50 = typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::argument_type::element_type;
 
 template <typename T1, typename T2>
-using t52 = typename std::hash<std::__enable_hash_helper<
+using t51 = typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::argument_type::deleter_type;
 
 template <typename T1, typename T2>
-using t53 = typename std::hash<std::__enable_hash_helper<
+using t52 = typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::argument_type::pointer;
 
 template <typename T1, typename T2>
-bool f250(const typename std::hash<std::__enable_hash_helper<
+typename std::hash<std::__enable_hash_helper<
+    std::unique_ptr<T1, T2>,
+    typename std::unique_ptr<T1, T2>::pointer>>::argument_type
+f236(typename std::hash<std::unique_ptr<T1, T2>>::argument_type &&a0) {
+  return typename std::hash<std::__enable_hash_helper<
+      std::unique_ptr<T1, T2>,
+      typename std::unique_ptr<T1, T2>::pointer>>::argument_type(std::move(a0));
+}
+
+template <typename T1, typename T2>
+typename std::hash<std::unique_ptr<T1, T2>>::argument_type &
+f237(typename std::hash<std::__enable_hash_helper<
+         std::unique_ptr<T1, T2>,
+         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0,
+     typename std::hash<std::unique_ptr<T1, T2>>::argument_type &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+template <typename T1, typename T2>
+typename std::hash<std::unique_ptr<T1, T2>>::argument_type &
+f238(typename std::hash<std::__enable_hash_helper<
+         std::unique_ptr<T1, T2>,
+         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0,
+     std::nullptr_t a1) {
+  return a0.operator=(a1);
+}
+
+template <typename T1, typename T2>
+typename std::hash<std::unique_ptr<T1, T2>>::argument_type::pointer
+f239(const typename std::hash<std::__enable_hash_helper<
+         std::unique_ptr<T1, T2>,
+         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2>
+typename std::hash<std::unique_ptr<T1, T2>>::argument_type::pointer
+f240(const typename std::hash<std::__enable_hash_helper<
+         std::unique_ptr<T1, T2>,
+         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0) {
+  return a0.get();
+}
+
+template <typename T1, typename T2>
+typename std::hash<std::unique_ptr<T1, T2>>::argument_type::deleter_type &
+f241(typename std::hash<std::__enable_hash_helper<
+         std::unique_ptr<T1, T2>,
+         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0) {
+  return a0.get_deleter();
+}
+
+template <typename T1, typename T2>
+const typename std::hash<std::unique_ptr<T1, T2>>::argument_type::deleter_type &
+f242(const typename std::hash<std::__enable_hash_helper<
+         std::unique_ptr<T1, T2>,
+         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0) {
+  return a0.get_deleter();
+}
+
+template <typename T1, typename T2>
+bool f243(const typename std::hash<std::__enable_hash_helper<
               std::unique_ptr<T1, T2>,
               typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0) {
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2>
+typename std::hash<std::unique_ptr<T1, T2>>::argument_type::pointer
+f244(typename std::hash<std::__enable_hash_helper<
+         std::unique_ptr<T1, T2>,
+         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0) {
+  return a0.release();
+}
+
+template <typename T1, typename T2>
+void f245(
+    typename std::hash<std::__enable_hash_helper<
+        std::unique_ptr<T1, T2>,
+        typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0,
+    typename std::hash<std::unique_ptr<T1, T2>>::argument_type::pointer a1) {
+  return a0.reset(a1);
+}
+
+template <typename T1, typename T2>
+void f246(typename std::hash<std::__enable_hash_helper<
+              std::unique_ptr<T1, T2>,
+              typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0,
+          typename std::hash<std::unique_ptr<T1, T2>>::argument_type &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1, typename T2,
+          typename T3 = typename std::hash<
+              std::unique_ptr<T1, T2>>::argument_type::deleter_type,
+          typename std::enable_if<std::is_default_constructible<T2>::value &&
+                                      !std::is_pointer<T2>::value,
+                                  int>::type T4 = 0>
 typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::argument_type
-f251() {
+f247() {
   return typename std::hash<std::__enable_hash_helper<
       std::unique_ptr<T1, T2>,
       typename std::unique_ptr<T1, T2>::pointer>>::argument_type();
 }
 
-template <typename T1, typename T2>
+template <typename T1, typename T2,
+          typename T3 = typename std::hash<
+              std::unique_ptr<T1, T2>>::argument_type::deleter_type,
+          typename std::enable_if<std::is_default_constructible<T2>::value &&
+                                      !std::is_pointer<T2>::value,
+                                  int>::type T4 = 0>
 typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::argument_type
-f252(std::nullptr_t a0) {
+f248(std::nullptr_t a0) {
   return typename std::hash<std::__enable_hash_helper<
       std::unique_ptr<T1, T2>,
       typename std::unique_ptr<T1, T2>::pointer>>::argument_type(a0);
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
+template <typename T1, typename T2,
+          typename T3 = typename std::hash<
+              std::unique_ptr<T1, T2>>::argument_type::deleter_type,
+          typename std::enable_if<std::is_default_constructible<T2>::value &&
+                                      !std::is_pointer<T2>::value,
+                                  int>::type T4 = 0>
 typename std::hash<std::__enable_hash_helper<
     std::unique_ptr<T1, T2>,
     typename std::unique_ptr<T1, T2>::pointer>>::argument_type
-f253(std::unique_ptr<T3, T4> &&a0) {
+f249(typename std::hash<std::unique_ptr<T1, T2>>::argument_type::pointer a0) {
+  return typename std::hash<std::__enable_hash_helper<
+      std::unique_ptr<T1, T2>,
+      typename std::unique_ptr<T1, T2>::pointer>>::argument_type(a0);
+}
+
+template <typename T1, typename T2,
+          typename T3 = typename std::hash<
+              std::unique_ptr<T1, T2>>::argument_type::deleter_type,
+          typename std::enable_if<std::is_copy_constructible<T2>::value,
+                                  int>::type T4 = 0>
+typename std::hash<std::__enable_hash_helper<
+    std::unique_ptr<T1, T2>,
+    typename std::unique_ptr<T1, T2>::pointer>>::argument_type
+f250(typename std::hash<std::unique_ptr<T1, T2>>::argument_type::pointer a0,
+     const typename std::hash<
+         std::unique_ptr<T1, T2>>::argument_type::deleter_type &a1) {
+  return typename std::hash<std::__enable_hash_helper<
+      std::unique_ptr<T1, T2>,
+      typename std::unique_ptr<T1, T2>::pointer>>::argument_type(a0, a1);
+}
+
+template <typename T1, typename T2,
+          typename T3 = typename std::hash<
+              std::unique_ptr<T1, T2>>::argument_type::deleter_type,
+          typename std::enable_if<!std::is_reference<T2>::value &&
+                                      std::is_move_constructible<T2>::value,
+                                  int>::type T4 = 0>
+typename std::hash<std::__enable_hash_helper<
+    std::unique_ptr<T1, T2>,
+    typename std::unique_ptr<T1, T2>::pointer>>::argument_type
+f251(typename std::hash<std::unique_ptr<T1, T2>>::argument_type::pointer a0,
+     typename std::hash<std::unique_ptr<T1, T2>>::argument_type::deleter_type
+         &&a1) {
+  return typename std::hash<std::__enable_hash_helper<
+      std::unique_ptr<T1, T2>, typename std::unique_ptr<T1, T2>::pointer>>::
+      argument_type(a0, std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3,
+          typename std::enable_if<
+              std::is_convertible<T3 *, T1 *>::value &&
+                  std::is_same<T2, std::default_delete<T1>>::value,
+              int>::type T4 = 0>
+typename std::hash<std::__enable_hash_helper<
+    std::unique_ptr<T1, T2>,
+    typename std::unique_ptr<T1, T2>::pointer>>::argument_type
+f252(std::auto_ptr<T3> &&a0) {
   return typename std::hash<std::__enable_hash_helper<
       std::unique_ptr<T1, T2>,
       typename std::unique_ptr<T1, T2>::pointer>>::argument_type(std::move(a0));
 }
 
-template <typename T1, typename T2, typename T3>
-typename std::hash<std::__enable_hash_helper<
-    std::unique_ptr<T1, T2>,
-    typename std::unique_ptr<T1, T2>::pointer>>::argument_type
-f254(std::auto_ptr<T3> &&a0) {
-  return typename std::hash<std::__enable_hash_helper<
-      std::unique_ptr<T1, T2>,
-      typename std::unique_ptr<T1, T2>::pointer>>::argument_type(std::move(a0));
-}
-
-template <typename T1, typename T2>
-__add_lvalue_reference(T1)
-f255(const typename std::hash<std::__enable_hash_helper<
+template <typename T1, typename T2, typename T3,
+          typename std::enable_if<
+              std::is_convertible<T3 *, T1 *>::value &&
+                  std::is_same<T2, std::default_delete<T1>>::value,
+              int>::type T4 = 0>
+typename std::hash<std::unique_ptr<T1, T2>>::argument_type &
+f253(typename std::hash<std::__enable_hash_helper<
          std::unique_ptr<T1, T2>,
-         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0) {
-  return a0.operator*();
+         typename std::unique_ptr<T1, T2>::pointer>>::argument_type &a0,
+     std::auto_ptr<T3> a1) {
+  return a0.template operator= <T3>(a1);
 }

@@ -29,27 +29,22 @@ decltype(auto) f5(const std::common_iterator<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-auto f6(const std::common_iterator<T1, T2> &a0) {
-  return a0.operator->();
-}
-
-template <typename T1, typename T2>
-std::common_iterator<T1, T2> &f7(std::common_iterator<T1, T2> &a0) {
+std::common_iterator<T1, T2> &f6(std::common_iterator<T1, T2> &a0) {
   return a0.operator++();
 }
 
 template <typename T1, typename T2>
-decltype(auto) f8(std::common_iterator<T1, T2> &a0, int a1) {
+decltype(auto) f7(std::common_iterator<T1, T2> &a0, int a1) {
   return a0.operator++(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::common_iterator<T1, T2> f9(const std::common_iterator<T3, T4> &a0) {
+std::common_iterator<T1, T2> f8(const std::common_iterator<T3, T4> &a0) {
   return std::common_iterator<T1, T2>(a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::common_iterator<T1, T2> &f10(std::common_iterator<T1, T2> &a0,
-                                  const std::common_iterator<T3, T4> &a1) {
+std::common_iterator<T1, T2> &f9(std::common_iterator<T1, T2> &a0,
+                                 const std::common_iterator<T3, T4> &a1) {
   return a0.template operator= <T3, T4>(a1);
 }

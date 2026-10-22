@@ -5,7 +5,7 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f126(std::map<T1, T2, T3, T4> &a0,
+void f115(std::map<T1, T2, T3, T4> &a0,
           std::map<typename std::map<T1, T2, T3, T4>::key_type,
                    typename std::map<T1, T2, T3, T4>::mapped_type, T5,
                    typename std::map<T1, T2, T3, T4>::allocator_type> &a1) {
@@ -13,7 +13,7 @@ void f126(std::map<T1, T2, T3, T4> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f127(std::map<T1, T2, T3, T4> &a0,
+void f116(std::map<T1, T2, T3, T4> &a0,
           std::map<typename std::map<T1, T2, T3, T4>::key_type,
                    typename std::map<T1, T2, T3, T4>::mapped_type, T5,
                    typename std::map<T1, T2, T3, T4>::allocator_type> &&a1) {
@@ -21,7 +21,7 @@ void f127(std::map<T1, T2, T3, T4> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f128(
+void f117(
     std::map<T1, T2, T3, T4> &a0,
     std::multimap<typename std::map<T1, T2, T3, T4>::key_type,
                   typename std::map<T1, T2, T3, T4>::mapped_type, T5,
@@ -30,7 +30,7 @@ void f128(
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f129(
+void f118(
     std::map<T1, T2, T3, T4> &a0,
     std::multimap<typename std::map<T1, T2, T3, T4>::key_type,
                   typename std::map<T1, T2, T3, T4>::mapped_type, T5,

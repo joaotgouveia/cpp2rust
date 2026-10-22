@@ -1,7 +1,6 @@
 #include "../common/init.h"
 #include "../common/traits.h"
 #include <algorithm>
-#include <array>
 #include <tuple>
 #include <type_traits>
 #include <utility>
@@ -15,11 +14,8 @@ f1(const std::tuple_size<std::tuple<T1...>> &a0) {
       a0);
 }
 
-template <typename T1, std::size_t T2>
-using t2 = std::tuple_size<std::array<T1, T2>>;
-
 template <typename T1, typename T2>
-using t3 = std::tuple_size<std::pair<T1, T2>>;
+using t2 = std::tuple_size<std::pair<T1, T2>>;
 
 template <typename T1, typename T2>
 typename std::tuple_size<std::pair<T1, T2>>::value_type

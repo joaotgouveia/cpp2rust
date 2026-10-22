@@ -99,19 +99,6 @@ f8(T1 const *a0, typename std::messages_byname<T1>::string_type::size_type a1,
 
 template <typename T1>
 typename std::messages_byname<T1>::string_type
-f9(T1 const *a0, const std::allocator<T1> &a1) {
-  return typename std::messages_byname<T1>::string_type(a0, a1);
-}
-
-template <typename T1>
-typename std::messages_byname<T1>::string_type
-f10(typename std::messages_byname<T1>::string_type::size_type a0, T1 a1,
-    const std::allocator<T1> &a2) {
-  return typename std::messages_byname<T1>::string_type(a0, a1, a2);
-}
-
-template <typename T1>
-typename std::messages_byname<T1>::string_type
-f11(std::initializer_list<T1> a0, const std::allocator<T1> &a1) {
+f9(std::initializer_list<T1> a0, const std::allocator<T1> &a1) {
   return typename std::messages_byname<T1>::string_type(a0, a1);
 }

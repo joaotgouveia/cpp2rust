@@ -36,7 +36,13 @@ std::thread::native_handle_type f32(std::thread &a0) {
 
 unsigned int f33() { return std::thread::hardware_concurrency(); }
 
-template <typename T1, typename... T2> std::thread f34(T1 &&a0, T2 &&...a1) {
+template <typename T1, typename... T2,
+          typename std::enable_if<
+              !std::is_same<typename std::remove_cv<
+                                typename std::remove_reference<T1>::type>::type,
+                            std::thread>::value,
+              int>::type T3 = 0>
+std::thread f34(T1 &&a0, T2 &&...a1) {
   return std::thread(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 

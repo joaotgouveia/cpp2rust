@@ -1,9 +1,8 @@
 #include "../common/init.h"
 #include "../common/traits.h"
-#include <algorithm>
 #include <bitset>
 #include <ios>
-#include <iosfwd>
+#include <memory>
 #include <ostream>
 #include <streambuf>
 #include <string>

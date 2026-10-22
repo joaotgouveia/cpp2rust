@@ -83,11 +83,6 @@ f89(const std::deque<T1, T2> &a0) {
   return a0.back();
 }
 
-template <typename T1, typename T2, typename T3>
-std::deque<T1, T2> f90(T3 a0, T3 a1) {
-  return std::deque<T1, T2>(a0, a1);
-}
-
 template <typename T1, typename T2>
 using t35 = typename std::deque<T1, T2>::reverse_iterator::iterator_category;
 

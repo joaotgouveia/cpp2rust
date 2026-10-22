@@ -5,8 +5,6 @@
 
 template <typename T1> using t1 = std::chrono::hh_mm_ss<T1>;
 
-template <typename T1> using t2 = typename std::chrono::hh_mm_ss<T1>::precision;
-
 template <typename T1> std::chrono::hh_mm_ss<T1> f1() {
   return std::chrono::hh_mm_ss<T1>();
 }
@@ -51,12 +49,6 @@ typename std::chrono::hh_mm_ss<T1>::precision
 f9(const std::chrono::hh_mm_ss<T1> &a0) {
   return a0.to_duration();
 }
-
-template <typename T1>
-using t3 = typename std::chrono::hh_mm_ss<T1>::precision::rep;
-
-template <typename T1>
-using t4 = typename std::chrono::hh_mm_ss<T1>::precision::period;
 
 template <typename T1> unsigned int f10() {
   return std::chrono::hh_mm_ss<T1>::fractional_width;

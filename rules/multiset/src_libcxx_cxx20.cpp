@@ -4,11 +4,6 @@
 #include <set>
 #include <utility>
 
-template <typename T1, typename T2, typename T3, typename T4>
-bool f105(const std::multiset<T1, T2, T3> &a0, const T4 &a1) {
-  return a0.template contains<T4>(a1);
-}
-
 template <typename T1, typename T2, typename T3>
 using t33 =
     typename std::multiset<T1, T2, T3>::reverse_iterator::iterator_concept;

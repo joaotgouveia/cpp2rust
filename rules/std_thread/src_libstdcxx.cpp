@@ -43,6 +43,16 @@ std::thread::native_handle_type f13(std::thread &a0) {
 
 unsigned int f14() { return std::thread::hardware_concurrency(); }
 
-template <typename T1, typename... T2> std::thread f15(T1 &&a0, T2 &&...a1) {
+template <
+    typename T1, typename... T2,
+    typename T3 = typename std::enable_if<
+        std::integral_constant<
+            bool, std::integral_constant<
+                      bool, !std::is_same<typename std::remove_cv<
+                                              typename std::remove_reference<
+                                                  T1>::type>::type,
+                                          std::thread>::value>::value>::value,
+        void>::type>
+std::thread f15(T1 &&a0, T2 &&...a1) {
   return std::thread(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }

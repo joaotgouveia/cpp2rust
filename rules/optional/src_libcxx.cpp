@@ -5,15 +5,15 @@
 
 using t5 = std::bad_optional_access;
 
-std::bad_optional_access f85() { return std::bad_optional_access(); }
+std::bad_optional_access f90() { return std::bad_optional_access(); }
 
-std::bad_optional_access f86(const std::bad_optional_access &a0) {
+std::bad_optional_access f91(const std::bad_optional_access &a0) {
   return std::bad_optional_access(a0);
 }
 
-std::bad_optional_access &f87(std::bad_optional_access &a0,
+std::bad_optional_access &f92(std::bad_optional_access &a0,
                               const std::bad_optional_access &a1) {
   return a0.operator=(a1);
 }
 
-const char *f88(const std::bad_optional_access &a0) { return a0.what(); }
+const char *f93(const std::bad_optional_access &a0) { return a0.what(); }

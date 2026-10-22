@@ -137,13 +137,13 @@ std::chrono::system_clock::duration f25() {
   return std::chrono::duration<long long, std::ratio<1, 1000000>>::max();
 }
 
-template <typename T1> std::chrono::system_clock::duration f26(const T1 &a0) {
-  return std::chrono::system_clock::duration(a0);
-}
-
-template <typename T1, typename T2>
-std::chrono::system_clock::duration
-f27(const std::chrono::duration<T1, T2> &a0) {
+template <typename T1,
+          typename std::enable_if<
+              std::is_convertible<const T1 &, long long>::value &&
+                  (std::integral_constant<bool, false>::value ||
+                   !std::chrono::treat_as_floating_point<T1>::value),
+              int>::type T2 = 0>
+std::chrono::system_clock::duration f26(const T1 &a0) {
   return std::chrono::system_clock::duration(a0);
 }
 
@@ -157,43 +157,47 @@ using t11 = std::chrono::time_point<std::chrono::system_clock>::rep;
 
 using t12 = std::chrono::time_point<std::chrono::system_clock>::period;
 
-std::chrono::system_clock::time_point f28() {
+std::chrono::system_clock::time_point f27() {
   return std::chrono::system_clock::time_point();
 }
 
 std::chrono::system_clock::time_point
-f29(const std::chrono::time_point<std::chrono::system_clock>::duration &a0) {
+f28(const std::chrono::time_point<std::chrono::system_clock>::duration &a0) {
   return std::chrono::system_clock::time_point(a0);
 }
 
 std::chrono::time_point<std::chrono::system_clock>::duration
-f30(const std::chrono::system_clock::time_point &a0) {
+f29(const std::chrono::system_clock::time_point &a0) {
   return a0.time_since_epoch();
 }
 
 std::chrono::system_clock::time_point &
-f31(std::chrono::system_clock::time_point &a0,
+f30(std::chrono::system_clock::time_point &a0,
     const std::chrono::time_point<std::chrono::system_clock>::duration &a1) {
   return a0.operator+=(a1);
 }
 
 std::chrono::system_clock::time_point &
-f32(std::chrono::system_clock::time_point &a0,
+f31(std::chrono::system_clock::time_point &a0,
     const std::chrono::time_point<std::chrono::system_clock>::duration &a1) {
   return a0.operator-=(a1);
 }
 
-std::chrono::system_clock::time_point f33() {
+std::chrono::system_clock::time_point f32() {
   return std::chrono::time_point<std::chrono::system_clock>::min();
 }
 
-std::chrono::system_clock::time_point f34() {
+std::chrono::system_clock::time_point f33() {
   return std::chrono::time_point<std::chrono::system_clock>::max();
 }
 
-template <typename T1>
+template <typename T1,
+          typename std::enable_if<
+              std::is_convertible<
+                  T1, typename std::chrono::system_clock::duration>::value,
+              int>::type T2 = 0>
 std::chrono::system_clock::time_point
-f35(const std::chrono::time_point<
+f34(const std::chrono::time_point<
     std::chrono::time_point<
         std::chrono::system_clock,
         std::chrono::duration<long long, std::ratio<1, 1000000>>>::clock,
@@ -201,4 +205,4 @@ f35(const std::chrono::time_point<
   return std::chrono::system_clock::time_point(a0);
 }
 
-bool f36() { return std::chrono::system_clock::is_steady; }
+bool f35() { return std::chrono::system_clock::is_steady; }

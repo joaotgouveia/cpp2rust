@@ -5,7 +5,6 @@
 #include <ios>
 #include <locale>
 #include <memory>
-#include <string.h>
 #include <string>
 #include <string_view>
 #include <utility>

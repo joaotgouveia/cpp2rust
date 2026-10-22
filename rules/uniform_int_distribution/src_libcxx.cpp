@@ -1,6 +1,7 @@
 #include "../common/init.h"
 #include "../common/traits.h"
-#include <iosfwd>
+#include <istream>
+#include <ostream>
 #include <random>
 #include <utility>
 

@@ -4,22 +4,22 @@
 #include <utility>
 
 template <typename T1, typename T2>
-bool f64(const std::basic_string_view<T1, T2> &a0, T1 a1) {
+bool f63(const std::basic_string_view<T1, T2> &a0, T1 a1) {
   return a0.starts_with(a1);
 }
 
 template <typename T1, typename T2>
-bool f65(const std::basic_string_view<T1, T2> &a0, const T1 *a1) {
+bool f64(const std::basic_string_view<T1, T2> &a0, const T1 *a1) {
   return a0.starts_with(a1);
 }
 
 template <typename T1, typename T2>
-bool f66(const std::basic_string_view<T1, T2> &a0, T1 a1) {
+bool f65(const std::basic_string_view<T1, T2> &a0, T1 a1) {
   return a0.ends_with(a1);
 }
 
 template <typename T1, typename T2>
-bool f67(const std::basic_string_view<T1, T2> &a0, const T1 *a1) {
+bool f66(const std::basic_string_view<T1, T2> &a0, const T1 *a1) {
   return a0.ends_with(a1);
 }
 

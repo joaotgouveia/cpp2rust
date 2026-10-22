@@ -52,38 +52,28 @@ f7(std::linear_congruential_engine<T1, T2, T3, T4> &a0) {
   return a0.operator()();
 }
 
-template <typename T1, T1 T2, T1 T3, T1 T4, typename T5>
-std::linear_congruential_engine<T1, T2, T3, T4> f8(T5 &a0) {
-  return std::linear_congruential_engine<T1, T2, T3, T4>(a0);
-}
-
-template <typename T1, T1 T2, T1 T3, T1 T4, typename T5>
-void f9(std::linear_congruential_engine<T1, T2, T3, T4> &a0, T5 &a1) {
-  return a0.template seed<T5>(a1);
-}
-
 template <typename T1, T1 T2, T1 T3, T1 T4>
-bool f10(const std::linear_congruential_engine<T1, T2, T3, T4> &a0,
-         const std::linear_congruential_engine<T1, T2, T3, T4> &a1) {
+bool f8(const std::linear_congruential_engine<T1, T2, T3, T4> &a0,
+        const std::linear_congruential_engine<T1, T2, T3, T4> &a1) {
   return a0 == a1;
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f11() {
+typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f9() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::multiplier;
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f12() {
+typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f10() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::increment;
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f13() {
+typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f11() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::modulus;
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f14() {
+typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f12() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::default_seed;
 }

@@ -62,15 +62,13 @@ std::hash<std::type_index> &f11(std::hash<std::type_index> &a0,
   return a0.operator=(std::move(a1));
 }
 
-template <std::size_t T1> using t3 = std::hash<std::bitset<T1>>;
-
-template <typename T1> using t4 = std::hash<T1 *>;
+template <typename T1> using t3 = std::hash<T1 *>;
 
 template <typename T1> std::size_t f12(const std::hash<T1 *> &a0, T1 *a1) {
   return a0.operator()(a1);
 }
 
-template <typename T1> using t5 = std::hash<std::shared_ptr<T1>>;
+template <typename T1> using t4 = std::hash<std::shared_ptr<T1>>;
 
 template <typename T1>
 std::size_t f13(const std::hash<std::shared_ptr<T1>> &a0,
@@ -78,7 +76,7 @@ std::size_t f13(const std::hash<std::shared_ptr<T1>> &a0,
   return a0.operator()(a1);
 }
 
-template <typename T1> using t6 = std::hash<std::vector<bool, T1>>;
+template <typename T1> using t5 = std::hash<std::vector<bool, T1>>;
 
 template <typename T1>
 std::size_t f14(const std::hash<std::vector<bool, T1>> &a0,
@@ -86,4 +84,4 @@ std::size_t f14(const std::hash<std::vector<bool, T1>> &a0,
   return a0.operator()(a1);
 }
 
-template <typename T1> using t7 = std::hash<T1>;
+template <typename T1> using t6 = std::hash<T1>;

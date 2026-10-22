@@ -25,14 +25,6 @@ template <typename T1> auto f5(std::ranges::join_view<T1> &a0) {
   return a0.begin();
 }
 
-template <typename T1> auto f6(const std::ranges::join_view<T1> &a0) {
-  return a0.begin();
-}
-
-template <typename T1> auto f7(std::ranges::join_view<T1> &a0) {
-  return a0.end();
-}
-
-template <typename T1> auto f8(const std::ranges::join_view<T1> &a0) {
+template <typename T1> auto f6(std::ranges::join_view<T1> &a0) {
   return a0.end();
 }

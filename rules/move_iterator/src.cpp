@@ -78,14 +78,3 @@ f11(const std::move_iterator<T1> &a0,
     typename std::move_iterator<T1>::difference_type a1) {
   return a0.operator[](a1);
 }
-
-template <typename T1, typename T2>
-std::move_iterator<T1> f12(const std::move_iterator<T2> &a0) {
-  return std::move_iterator<T1>(a0);
-}
-
-template <typename T1, typename T2>
-std::move_iterator<T1> &f13(std::move_iterator<T1> &a0,
-                            const std::move_iterator<T2> &a1) {
-  return a0.template operator= <T2>(a1);
-}

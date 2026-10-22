@@ -1,6 +1,5 @@
 #include "../common/init.h"
 #include "../common/traits.h"
-#include <queue>
 #include <utility>
 #include <vector>
 

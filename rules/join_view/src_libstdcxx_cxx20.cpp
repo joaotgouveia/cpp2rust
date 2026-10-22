@@ -3,6 +3,14 @@
 #include <ranges>
 #include <utility>
 
+template <typename T1> auto f7(const std::ranges::join_view<T1> &a0) {
+  return a0.begin();
+}
+
+template <typename T1> auto f8(const std::ranges::join_view<T1> &a0) {
+  return a0.end();
+}
+
 template <typename T1> bool f9(std::ranges::join_view<T1> &a0) {
   return a0.empty();
 }

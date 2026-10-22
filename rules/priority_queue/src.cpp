@@ -86,34 +86,7 @@ void f11(std::priority_queue<T1, T2, T3> &a0,
   return a0.swap(a1);
 }
 
-template <typename T1, typename T2, typename T3>
-std::priority_queue<T1, T2, T3> f12() {
-  return std::priority_queue<T1, T2, T3>();
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::priority_queue<T1, T2, T3> f13(const T4 &a0) {
-  return std::priority_queue<T1, T2, T3>(a0);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::priority_queue<T1, T2, T3> f14(const std::priority_queue<T1, T2, T3> &a0,
-                                    const T4 &a1) {
-  return std::priority_queue<T1, T2, T3>(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::priority_queue<T1, T2, T3> f15(std::priority_queue<T1, T2, T3> &&a0,
-                                    const T4 &a1) {
-  return std::priority_queue<T1, T2, T3>(std::move(a0), a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::priority_queue<T1, T2, T3> f16(T4 a0, T4 a1, const T5 &a2) {
-  return std::priority_queue<T1, T2, T3>(a0, a1, a2);
-}
-
 template <typename T1, typename T2, typename T3, typename... T4>
-void f17(std::priority_queue<T1, T2, T3> &a0, T4 &&...a1) {
+void f12(std::priority_queue<T1, T2, T3> &a0, T4 &&...a1) {
   return a0.template emplace<T4...>(std::forward<T4>(a1)...);
 }

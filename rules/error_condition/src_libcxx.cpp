@@ -49,11 +49,16 @@ std::error_condition &f15(std::error_condition &a0, std::error_condition &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1> std::error_condition f16(T1 a0) {
+template <typename T1,
+          typename std::enable_if<std::is_error_condition_enum<T1>::value,
+                                  int>::type T2 = 0>
+std::error_condition f16(T1 a0) {
   return std::error_condition(a0);
 }
 
-template <typename T1>
+template <typename T1,
+          typename std::enable_if<std::is_error_condition_enum<T1>::value,
+                                  int>::type T2 = 0>
 std::error_condition &f17(std::error_condition &a0, T1 a1) {
   return a0.template operator= <T1>(a1);
 }

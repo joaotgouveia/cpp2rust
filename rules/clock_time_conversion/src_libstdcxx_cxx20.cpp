@@ -219,7 +219,7 @@ f24(const std::chrono::clock_time_conversion<std::chrono::utc_clock,
 template <typename T1>
 using t5 = std::chrono::clock_time_conversion<std::chrono::system_clock, T1>;
 
-template <typename T1, typename T2>
+template <typename T1, typename T2, typename T3 = T1>
 auto f25(
     const std::chrono::clock_time_conversion<std::chrono::system_clock, T1> &a0,
     const std::chrono::time_point<T1, T2> &a1) {
@@ -229,7 +229,7 @@ auto f25(
 template <typename T1>
 using t6 = std::chrono::clock_time_conversion<std::chrono::utc_clock, T1>;
 
-template <typename T1, typename T2>
+template <typename T1, typename T2, typename T3 = T1>
 auto f26(
     const std::chrono::clock_time_conversion<std::chrono::utc_clock, T1> &a0,
     const std::chrono::time_point<T1, T2> &a1) {
@@ -239,7 +239,7 @@ auto f26(
 template <typename T1>
 using t7 = std::chrono::clock_time_conversion<T1, std::chrono::system_clock>;
 
-template <typename T1, typename T2>
+template <typename T1, typename T2, typename T3 = T1>
 auto f27(
     const std::chrono::clock_time_conversion<T1, std::chrono::system_clock> &a0,
     const std::chrono::sys_time<T2> &a1) {
@@ -249,7 +249,7 @@ auto f27(
 template <typename T1>
 using t8 = std::chrono::clock_time_conversion<T1, std::chrono::utc_clock>;
 
-template <typename T1, typename T2>
+template <typename T1, typename T2, typename T3 = T1>
 auto f28(
     const std::chrono::clock_time_conversion<T1, std::chrono::utc_clock> &a0,
     const std::chrono::utc_time<T2> &a1) {

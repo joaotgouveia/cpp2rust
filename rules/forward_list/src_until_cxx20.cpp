@@ -5,31 +5,31 @@
 #include <utility>
 
 template <typename T1, typename T2>
-bool f49(const std::forward_list<T1, T2> &a0,
+bool f47(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return a0 != a1;
 }
 
 template <typename T1, typename T2>
-bool f50(const std::forward_list<T1, T2> &a0,
+bool f48(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return a0 < a1;
 }
 
 template <typename T1, typename T2>
-bool f51(const std::forward_list<T1, T2> &a0,
+bool f49(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return a0 <= a1;
 }
 
 template <typename T1, typename T2>
-bool f52(const std::forward_list<T1, T2> &a0,
+bool f50(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return a0 > a1;
 }
 
 template <typename T1, typename T2>
-bool f53(const std::forward_list<T1, T2> &a0,
+bool f51(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return a0 >= a1;
 }

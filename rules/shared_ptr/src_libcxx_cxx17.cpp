@@ -6,13 +6,13 @@
 #include <utility>
 
 template <typename T1>
-__add_lvalue_reference(__remove_extent(T1))
-f103(const std::shared_ptr<T1> &a0) {
+typename std::add_lvalue_reference<typename std::remove_extent<T1>::type>::type
+f90(const std::shared_ptr<T1> &a0) {
   return a0.operator*();
 }
 
 template <typename T1>
-__add_lvalue_reference(__remove_extent(T1)) f104(const std::shared_ptr<T1> &a0,
-                                                 std::ptrdiff_t a1) {
+typename std::add_lvalue_reference<typename std::remove_extent<T1>::type>::type
+f91(const std::shared_ptr<T1> &a0, std::ptrdiff_t a1) {
   return a0.operator[](a1);
 }

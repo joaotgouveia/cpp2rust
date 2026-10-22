@@ -71,26 +71,16 @@ f11(std::discard_block_engine<T1, T2, T3> &a0) {
   return a0.operator()();
 }
 
-template <typename T1, std::size_t T2, std::size_t T3, typename T4>
-std::discard_block_engine<T1, T2, T3> f12(T4 &a0) {
-  return std::discard_block_engine<T1, T2, T3>(a0);
-}
-
-template <typename T1, std::size_t T2, std::size_t T3, typename T4>
-void f13(std::discard_block_engine<T1, T2, T3> &a0, T4 &a1) {
-  return a0.template seed<T4>(a1);
-}
-
 template <typename T1, std::size_t T2, std::size_t T3>
-bool f14(const std::discard_block_engine<T1, T2, T3> &a0,
+bool f12(const std::discard_block_engine<T1, T2, T3> &a0,
          const std::discard_block_engine<T1, T2, T3> &a1) {
   return a0 == a1;
 }
 
-template <typename T1, std::size_t T2, std::size_t T3> std::size_t f15() {
+template <typename T1, std::size_t T2, std::size_t T3> std::size_t f13() {
   return std::discard_block_engine<T1, T2, T3>::block_size;
 }
 
-template <typename T1, std::size_t T2, std::size_t T3> std::size_t f16() {
+template <typename T1, std::size_t T2, std::size_t T3> std::size_t f14() {
   return std::discard_block_engine<T1, T2, T3>::used_block;
 }
