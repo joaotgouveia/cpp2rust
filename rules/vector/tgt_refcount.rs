@@ -253,6 +253,10 @@ fn f105<T1: Clone + ByteRepr>(a0: Ptr<Vec<T1>>, a1: Vec<T1>) {
     a0.write(a1)
 }
 
+fn f106<T1>(a0: &mut Vec<T1>) {
+    a0.shrink_to_fit()
+}
+
 fn f108<T1>(a0: &mut Vec<T1>) -> Vec<T1> {
     std::mem::take(&mut *a0)
 }
