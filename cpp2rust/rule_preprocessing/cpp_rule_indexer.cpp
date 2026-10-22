@@ -380,6 +380,7 @@ llvm::json::Object ReadJson(const fs::path &path) {
 }
 
 struct StandardRange {
+  std::string library;
   unsigned since = 11;
   unsigned until = 0;
 };
@@ -389,6 +390,12 @@ StandardRange RuleFileStandards(const fs::path &src_path) {
   llvm::StringRef stem = stem_string;
   StandardRange range;
   bool valid = stem.consume_front("src");
+  for (llvm::StringRef library : {"libcxx", "libstdcxx"}) {
+    if (valid && stem.consume_front(("_" + library).str())) {
+      range.library = library.str();
+      break;
+    }
+  }
   if (valid && stem.consume_front("_cxx")) {
     valid = !stem.consumeInteger(10, range.since);
   }
@@ -429,14 +436,20 @@ void IndexDir(const fs::path &rule_dir, const fs::path &out) {
   for (const auto &src_path : cxx_srcs) {
     auto range = RuleFileStandards(src_path);
     llvm::json::Object rules;
-    Index(src_path, /*is_c=*/false, dir_name,
-          {std::format("-std=c++{}", range.since)}, rules);
+    std::vector<std::string> cxx_flags{std::format("-std=c++{}", range.since)};
+    if (range.library == "libcxx") {
+      cxx_flags.push_back("-stdlib=libc++");
+    }
+    Index(src_path, /*is_c=*/false, dir_name, cxx_flags, rules);
     for (auto &[key, entries] : rules) {
       for (auto &entry : *entries.getAsArray()) {
         auto &rule = *entry.getAsObject();
         rule["since"] = range.since;
         if (range.until) {
           rule["until"] = range.until;
+        }
+        if (!range.library.empty()) {
+          rule["library"] = range.library;
         }
       }
     }

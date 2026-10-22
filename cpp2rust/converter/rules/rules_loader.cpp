@@ -6,6 +6,7 @@
 #include <clang/AST/ASTContext.h>
 #include <clang/AST/RecursiveASTVisitor.h>
 #include <clang/Basic/LangOptions.h>
+#include <clang/Lex/HeaderSearchOptions.h>
 #include <clang/Lex/Lexer.h>
 #include <clang/Lex/Preprocessor.h>
 #include <clang/Sema/Lookup.h>
@@ -348,7 +349,8 @@ unsigned CxxStandard(const clang::LangOptions &opts) {
 }
 
 std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
-                               const clang::LangOptions &opts) {
+                               const clang::LangOptions &opts,
+                               llvm::StringRef library) {
   bool is_cxx = opts.CPlusPlus;
   const auto &index = is_cxx ? CxxIndex() : CIndex();
   unsigned standard = is_cxx ? CxxStandard(opts) : 0;
@@ -374,6 +376,10 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
         continue;
       }
       if (auto until = rule->getInteger("until"); until && *until <= standard) {
+        continue;
+      }
+      if (auto rule_library = rule->getString("library");
+          rule_library && *rule_library != library) {
         continue;
       }
       if (auto required = rule->getArray("requires");
@@ -587,7 +593,10 @@ void PragmaHandler::HandlePragma(clang::Preprocessor &PP,
   RuleUsageCollector collector(CI_.getSema(), keys);
   collector.TraverseDecl(ctx.getTranslationUnitDecl());
 
-  auto text = BuildRulesEpilogue(keys, ctx.getLangOpts());
+  auto text =
+      BuildRulesEpilogue(keys, ctx.getLangOpts(),
+                         CI_.getHeaderSearchOpts().UseLibcxx ? "libcxx"
+                                                             : "libstdcxx");
   log() << "rules loaded for this translation unit:\n" << text;
   auto rules_file = src_mgr.createFileID(
       llvm::MemoryBuffer::getMemBufferCopy(text, "<cpp2rust-rules>"),
