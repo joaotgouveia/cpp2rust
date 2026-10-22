@@ -7,6 +7,7 @@
 
 typedef FILE *t1;
 typedef FILE t2;
+typedef fpos_t t3;
 
 FILE *f1(const char *pathname, const char *mode) {
   return fopen(pathname, mode);

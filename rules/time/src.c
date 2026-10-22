@@ -8,6 +8,7 @@ typedef struct tm t1;
 typedef struct timeval t2;
 typedef struct timespec t3;
 typedef time_t t4;
+typedef clock_t t6;
 
 time_t f1(time_t *t) { return time(t); }
 

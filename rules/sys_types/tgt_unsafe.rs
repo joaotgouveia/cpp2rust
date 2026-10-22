@@ -16,3 +16,7 @@ fn t3() -> ::libc::uid_t {
 fn t4() -> ::libc::off_t {
     0 as ::libc::off_t
 }
+
+fn t5() -> ::libc::pid_t {
+    0 as ::libc::pid_t
+}

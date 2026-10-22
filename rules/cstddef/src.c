@@ -8,3 +8,4 @@ typedef size_t t2;
 typedef ptrdiff_t t3;
 typedef __typeof__(sizeof(0)) t5;
 typedef ssize_t t6;
+typedef max_align_t t7;

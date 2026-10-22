@@ -5,3 +5,4 @@
 
 typedef uid_t t1;
 typedef off_t t2;
+typedef pid_t t5;

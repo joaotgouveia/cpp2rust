@@ -9,6 +9,10 @@ fn t2() -> ::libc::FILE {
     unimplemented!()
 }
 
+fn t3() -> ::libc::fpos_t {
+    unsafe { std::mem::zeroed() }
+}
+
 unsafe fn f1(a0: *const libc::c_char, a1: *const libc::c_char) -> *mut ::libc::FILE {
     libc::fopen(a0, a1)
 }
