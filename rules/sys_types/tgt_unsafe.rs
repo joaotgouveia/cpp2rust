@@ -20,3 +20,7 @@ fn t4() -> ::libc::off_t {
 fn t5() -> ::libc::pid_t {
     0 as ::libc::pid_t
 }
+
+fn t6() -> ::libc::key_t {
+    0 as ::libc::key_t
+}
