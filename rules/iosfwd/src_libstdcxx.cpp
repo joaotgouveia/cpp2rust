@@ -3,54 +3,54 @@
 #include <iosfwd>
 #include <utility>
 
-using t5 = std::filebuf;
+using t1 = std::filebuf;
 
-using t6 = std::fstream;
+using t2 = std::fstream;
 
-using t7 = std::ifstream;
+using t3 = std::ifstream;
 
-using t8 = std::ios;
+using t4 = std::ios;
 
-using t9 = std::iostream;
+using t5 = std::iostream;
 
-using t10 = std::istream;
+using t6 = std::istream;
 
-using t11 = std::istringstream;
+using t7 = std::istringstream;
 
-using t12 = std::ofstream;
+using t8 = std::ofstream;
 
-using t13 = std::ostream;
+using t9 = std::ostream;
 
-using t14 = std::ostringstream;
+using t10 = std::ostringstream;
 
-using t15 = std::streambuf;
+using t11 = std::streambuf;
 
-using t16 = std::stringbuf;
+using t12 = std::stringbuf;
 
-using t17 = std::stringstream;
+using t13 = std::stringstream;
 
-using t18 = std::wfilebuf;
+using t14 = std::wfilebuf;
 
-using t19 = std::wfstream;
+using t15 = std::wfstream;
 
-using t20 = std::wifstream;
+using t16 = std::wifstream;
 
-using t21 = std::wios;
+using t17 = std::wios;
 
-using t22 = std::wiostream;
+using t18 = std::wiostream;
 
-using t23 = std::wistream;
+using t19 = std::wistream;
 
-using t24 = std::wistringstream;
+using t20 = std::wistringstream;
 
-using t25 = std::wofstream;
+using t21 = std::wofstream;
 
-using t26 = std::wostream;
+using t22 = std::wostream;
 
-using t27 = std::wostringstream;
+using t23 = std::wostringstream;
 
-using t28 = std::wstreambuf;
+using t24 = std::wstreambuf;
 
-using t29 = std::wstringbuf;
+using t25 = std::wstringbuf;
 
-using t30 = std::wstringstream;
+using t26 = std::wstringstream;

@@ -7,7 +7,7 @@
 #include <string_view>
 #include <utility>
 
-using t29 = std::formatter<char, wchar_t>;
+using t23 = std::formatter<char, wchar_t>;
 
 std::formatter<char, wchar_t> f2() { return std::formatter<char, wchar_t>(); }
 
@@ -55,6 +55,8 @@ f10(const std::formatter<std::chrono::day, T1> &a0, const std::chrono::day &a1,
     std::basic_format_context<T2, T1> &a2) {
   return a0.template format<T2>(a1, a2);
 }
+
+template <typename T1> using t24 = std::formatter<std::chrono::local_info, T1>;
 
 template <typename T1>
 typename std::basic_format_parse_context<T1>::iterator
@@ -142,6 +144,8 @@ f22(const std::formatter<std::chrono::month_weekday_last, T1> &a0,
     std::basic_format_context<T2, T1> &a2) {
   return a0.template format<T2>(a1, a2);
 }
+
+template <typename T1> using t25 = std::formatter<std::chrono::sys_info, T1>;
 
 template <typename T1>
 typename std::basic_format_parse_context<T1>::iterator
@@ -307,7 +311,7 @@ f45(const std::formatter<const T1 *, T1> &a0, const T1 *a1,
   return a0.template format<T2>(a1, a2);
 }
 
-template <typename T1> using t30 = std::formatter<const void *, T1>;
+template <typename T1> using t26 = std::formatter<const void *, T1>;
 
 template <typename T1> std::formatter<const void *, T1> f46() {
   return std::formatter<const void *, T1>();
@@ -344,7 +348,7 @@ f51(const std::formatter<T1 *, T1> &a0, T1 *a1,
   return a0.template format<T2>(a1, a2);
 }
 
-template <typename T1> using t31 = std::formatter<void *, T1>;
+template <typename T1> using t27 = std::formatter<void *, T1>;
 
 template <typename T1> std::formatter<void *, T1> f52() {
   return std::formatter<void *, T1>();
@@ -364,7 +368,7 @@ f54(const std::formatter<void *, T1> &a0, void *a1,
 }
 
 template <typename T1>
-using t32 = std::formatter<std::basic_string_view<char, T1>, char>;
+using t28 = std::formatter<std::basic_string_view<char, T1>, char>;
 
 template <typename T1>
 std::formatter<std::basic_string_view<char, T1>, char> f55() {
@@ -387,7 +391,7 @@ f57(const std::formatter<std::basic_string_view<char, T1>, char> &a0,
 }
 
 template <typename T1>
-using t33 = std::formatter<std::basic_string_view<wchar_t, T1>, wchar_t>;
+using t29 = std::formatter<std::basic_string_view<wchar_t, T1>, wchar_t>;
 
 template <typename T1>
 std::formatter<std::basic_string_view<wchar_t, T1>, wchar_t> f58() {
@@ -409,7 +413,7 @@ f60(const std::formatter<std::basic_string_view<wchar_t, T1>, wchar_t> &a0,
   return a0.template format<T2>(a1, a2);
 }
 
-template <typename T1> using t34 = std::formatter<std::nullptr_t, T1>;
+template <typename T1> using t30 = std::formatter<std::nullptr_t, T1>;
 
 template <typename T1> std::formatter<std::nullptr_t, T1> f61() {
   return std::formatter<std::nullptr_t, T1>();
@@ -429,7 +433,7 @@ f63(const std::formatter<std::nullptr_t, T1> &a0, std::nullptr_t a1,
   return a0.template format<T2>(a1, a2);
 }
 
-template <typename T1> using t35 = std::formatter<T1, T1>;
+template <typename T1> using t31 = std::formatter<T1, T1>;
 
 template <typename T1> std::formatter<T1, T1> f64() {
   return std::formatter<T1, T1>();
@@ -449,7 +453,7 @@ f66(const std::formatter<T1, T1> &a0, T1 a1,
 }
 
 template <typename T1, typename T2>
-using t36 = std::formatter<std::basic_string<char, T1, T2>, char>;
+using t32 = std::formatter<std::basic_string<char, T1, T2>, char>;
 
 template <typename T1, typename T2>
 std::formatter<std::basic_string<char, T1, T2>, char> f67() {
@@ -472,7 +476,7 @@ f69(const std::formatter<std::basic_string<char, T1, T2>, char> &a0,
 }
 
 template <typename T1, typename T2>
-using t37 = std::formatter<std::basic_string<wchar_t, T1, T2>, wchar_t>;
+using t33 = std::formatter<std::basic_string<wchar_t, T1, T2>, wchar_t>;
 
 template <typename T1, typename T2>
 std::formatter<std::basic_string<wchar_t, T1, T2>, wchar_t> f70() {
@@ -510,6 +514,9 @@ f74(const std::formatter<std::chrono::sys_time<T1>, T2> &a0,
 }
 
 template <typename T1, typename T2>
+using t34 = std::formatter<std::chrono::gps_time<T1>, T2>;
+
+template <typename T1, typename T2>
 typename std::basic_format_parse_context<T2>::iterator
 f75(std::formatter<std::chrono::gps_time<T1>, T2> &a0,
     std::basic_format_parse_context<T2> &a1) {
@@ -540,6 +547,9 @@ f78(const std::formatter<std::chrono::local_time<T1>, T2> &a0,
 }
 
 template <typename T1, typename T2>
+using t35 = std::formatter<std::chrono::tai_time<T1>, T2>;
+
+template <typename T1, typename T2>
 typename std::basic_format_parse_context<T2>::iterator
 f79(std::formatter<std::chrono::tai_time<T1>, T2> &a0,
     std::basic_format_parse_context<T2> &a1) {
@@ -553,6 +563,9 @@ f80(const std::formatter<std::chrono::tai_time<T1>, T2> &a0,
     std::basic_format_context<T3, T2> &a2) {
   return a0.template format<T3>(a1, a2);
 }
+
+template <typename T1, typename T2>
+using t36 = std::formatter<std::chrono::utc_time<T1>, T2>;
 
 template <typename T1, typename T2>
 typename std::basic_format_parse_context<T2>::iterator
@@ -587,7 +600,7 @@ f85(const std::formatter<T1, T2> &a0, T1 a1,
 }
 
 template <typename T1, typename T2, typename T3>
-using t38 =
+using t37 =
     std::formatter<std::chrono::hh_mm_ss<std::chrono::duration<T1, T2>>, T3>;
 
 template <typename T1, typename T2, typename T3>
@@ -621,6 +634,9 @@ f89(const std::formatter<std::chrono::duration<T1, T2>, T3> &a0,
     std::basic_format_context<T4, T3> &a2) {
   return a0.template format<T4>(a1, a2);
 }
+
+template <typename T1, typename T2, typename T3>
+using t38 = std::formatter<std::chrono::zoned_time<T1, T2>, T3>;
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::basic_format_context<T4, T3>::iterator
