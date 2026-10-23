@@ -21,7 +21,11 @@ pub struct test_macros_detail_is_same_std_pair_std_reference_wrapper_int___void_
 pub unsafe fn dummy_2() {}
 pub unsafe fn test_decay_3() {
     let mut arr: [(); 1] = [unimplemented!()];
-    let mut pr: () = unimplemented!();
+    let mut pr: () = {
+        let mut __tmp_0: *mut () = arr.as_mut_ptr();
+        let mut __tmp_1: Option<unsafe fn()> = Some(dummy_2);
+        std_pair_char_ptr__void__ptr____::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
+    };
     const _: () = assert!(true, "");;
     unimplemented!();
 }

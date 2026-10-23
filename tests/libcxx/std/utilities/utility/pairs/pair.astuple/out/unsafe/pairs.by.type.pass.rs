@@ -51,7 +51,7 @@ pub unsafe fn test_0() -> () {
     {
         let mut x: () = 42_();
         let y: () = 43_();
-        let p: () = unimplemented!();
+        let p: () = std_pair_int_ref__const_int_ref_::new_1({ &mut x }, { &y });
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<int&>(std::move(p)))>::value"

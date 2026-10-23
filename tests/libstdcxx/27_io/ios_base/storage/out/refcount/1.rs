@@ -255,10 +255,10 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut x4: () = unimplemented!();
+    ({ std_ios_base::xalloc() });
+    ({ std_ios_base::xalloc() });
+    ({ std_ios_base::xalloc() });
+    let mut x4: () = ({ std_ios_base::xalloc() });
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }

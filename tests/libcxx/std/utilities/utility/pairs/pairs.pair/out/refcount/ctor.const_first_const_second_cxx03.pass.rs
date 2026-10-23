@@ -55,7 +55,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(3.5_f32));
+            let __tmp_1: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+            std_pair_float__short_ptr_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
     }

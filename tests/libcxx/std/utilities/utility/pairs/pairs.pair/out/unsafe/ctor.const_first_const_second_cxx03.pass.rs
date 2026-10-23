@@ -43,7 +43,11 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_0: () = 3.5_f32;
+            let mut __tmp_1: *mut () = std::ptr::null_mut();
+            std_pair_float__short_ptr_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
         unimplemented!();
         unimplemented!();
     }

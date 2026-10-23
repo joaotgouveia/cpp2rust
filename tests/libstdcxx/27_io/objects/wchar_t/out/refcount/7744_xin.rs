@@ -255,7 +255,7 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test11_10() {
-    unimplemented!();
+    ({ std_ios_base::sync_with_stdio(Some(false)) });
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;

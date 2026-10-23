@@ -38,9 +38,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let mut x: () = 42_();
-        let mut y: () = 43_();
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<()> = Rc::new(RefCell::new(42_()));
+        let y: Value<()> = Rc::new(RefCell::new(43_()));
+        let p: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__const_int_ref_::new_1(
+            { x.as_pointer() },
+            { y.as_pointer() },
+        )));
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<0>(std::move(p)))>::value"
