@@ -183,8 +183,17 @@ bool f43(std::ranges::elements_view<T1, T2> &a0)
   requires(std::ranges::sized_range<std::ranges::elements_view<T1, T2>> ||
            std::ranges::forward_range<std::ranges::elements_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::elements_view<T1, T2>> &&
-           std::same_as<std::ranges::elements_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::elements_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
 {
   return a0.empty();
 }
@@ -196,21 +205,44 @@ bool f44(const std::ranges::elements_view<T1, T2> &a0)
            std::ranges::forward_range<
                std::ranges::elements_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::elements_view<T1, T2>> &&
-           std::same_as<std::ranges::elements_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::elements_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
 {
   return a0.empty();
 }
 
 template <typename T1, std::size_t T2,
           typename T3 = std::ranges::elements_view<T1, T2>>
-bool f45(std::ranges::elements_view<T1, T2> &a0) {
+bool f45(std::ranges::elements_view<T1, T2> &a0)
+  requires(
+      std::ranges::view<T1> &&
+      std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>, T2> &&
+      std::ranges::__has_tuple_element<
+          std::remove_reference_t<std::ranges::range_reference_t<T1>>, T2> &&
+      std::ranges::__returnable_element<std::ranges::range_reference_t<T1>, T2>)
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, std::size_t T2,
           typename T3 = std::ranges::elements_view<T1, T2>>
-bool f46(const std::ranges::elements_view<T1, T2> &a0) {
+bool f46(const std::ranges::elements_view<T1, T2> &a0)
+  requires(
+      std::ranges::view<T1> &&
+      std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>, T2> &&
+      std::ranges::__has_tuple_element<
+          std::remove_reference_t<std::ranges::range_reference_t<T1>>, T2> &&
+      std::ranges::__returnable_element<std::ranges::range_reference_t<T1>, T2>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -220,8 +252,17 @@ auto f47(std::ranges::elements_view<T1, T2> &a0)
   requires(std::contiguous_iterator<
               std::ranges::iterator_t<std::ranges::elements_view<T1, T2>>>) &&
           (std::is_class_v<std::ranges::elements_view<T1, T2>> &&
-           std::same_as<std::ranges::elements_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::elements_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
 {
   return a0.data();
 }
@@ -233,8 +274,17 @@ auto f48(const std::ranges::elements_view<T1, T2> &a0)
            std::contiguous_iterator<std::ranges::iterator_t<
                std::ranges::elements_view<T1, T2> const>>) &&
           (std::is_class_v<std::ranges::elements_view<T1, T2>> &&
-           std::same_as<std::ranges::elements_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::elements_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
 {
   return a0.data();
 }
@@ -244,8 +294,17 @@ template <typename T1, std::size_t T2,
 decltype(auto) f49(std::ranges::elements_view<T1, T2> &a0)
   requires(std::ranges::forward_range<std::ranges::elements_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::elements_view<T1, T2>> &&
-           std::same_as<std::ranges::elements_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::elements_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
 {
   return a0.front();
 }
@@ -256,8 +315,17 @@ decltype(auto) f50(const std::ranges::elements_view<T1, T2> &a0)
   requires(std::ranges::forward_range<
               std::ranges::elements_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::elements_view<T1, T2>> &&
-           std::same_as<std::ranges::elements_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::elements_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
 {
   return a0.front();
 }
@@ -269,8 +337,17 @@ decltype(auto) f51(std::ranges::elements_view<T1, T2> &a0)
                std::ranges::elements_view<T1, T2>> &&
            std::ranges::common_range<std::ranges::elements_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::elements_view<T1, T2>> &&
-           std::same_as<std::ranges::elements_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::elements_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
 {
   return a0.back();
 }
@@ -283,10 +360,57 @@ decltype(auto) f52(const std::ranges::elements_view<T1, T2> &a0)
            std::ranges::common_range<
                std::ranges::elements_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::elements_view<T1, T2>> &&
-           std::same_as<std::ranges::elements_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::elements_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
 {
   return a0.back();
+}
+
+template <typename T1, std::size_t T2, typename T3>
+decltype(auto) f53(std::ranges::elements_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1)
+  requires(std::is_class_v<std::ranges::elements_view<T1, T2>> &&
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
+{
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, std::size_t T2, typename T3>
+decltype(auto) f54(const std::ranges::elements_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1)
+  requires(std::is_class_v<std::ranges::elements_view<T1, T2>> &&
+           std::same_as<
+               std::ranges::elements_view<T1, T2>,
+               std::remove_cv_t<std::ranges::elements_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::__has_tuple_element<std::ranges::range_value_t<T1>,
+                                            T2> &&
+           std::ranges::__has_tuple_element<
+               std::remove_reference_t<std::ranges::range_reference_t<T1>>,
+               T2> &&
+           std::ranges::__returnable_element<std::ranges::range_reference_t<T1>,
+                                             T2>)
+{
+  return a0.template operator[]<T3>(a1);
 }
 
 template <typename T1> using t2 = std::ranges::keys_view<T1>;

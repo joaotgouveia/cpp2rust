@@ -74,7 +74,11 @@ decltype(auto) f7(std::ranges::split_view<T1, T2> &a0,
                   std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::split_view<T1, T2>> &&
            std::same_as<std::ranges::split_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::split_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::split_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::ranges::view<T2> &&
+           std::indirectly_comparable<std::ranges::iterator_t<T1>,
+                                      std::ranges::iterator_t<T2>,
+                                      std::ranges::equal_to>)
 {
   return a0.template operator[]<T3>(a1);
 }
@@ -84,7 +88,11 @@ decltype(auto) f8(const std::ranges::split_view<T1, T2> &a0,
                   std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::split_view<T1, T2>> &&
            std::same_as<std::ranges::split_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::split_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::split_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::ranges::view<T2> &&
+           std::indirectly_comparable<std::ranges::iterator_t<T1>,
+                                      std::ranges::iterator_t<T2>,
+                                      std::ranges::equal_to>)
 {
   return a0.template operator[]<T3>(a1);
 }

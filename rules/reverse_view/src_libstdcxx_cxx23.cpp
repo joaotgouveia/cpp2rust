@@ -7,7 +7,8 @@ auto f26(std::ranges::reverse_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::reverse_view<T1>>) &&
           (std::is_class_v<std::ranges::reverse_view<T1>> &&
            std::same_as<std::ranges::reverse_view<T1>,
-                        std::remove_cv_t<std::ranges::reverse_view<T1>>>)
+                        std::remove_cv_t<std::ranges::reverse_view<T1>>>) &&
+          (std::ranges::bidirectional_range<T1>)
 {
   return a0.cbegin();
 }
@@ -17,7 +18,8 @@ auto f27(const std::ranges::reverse_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::reverse_view<T1>>) &&
           (std::is_class_v<std::ranges::reverse_view<T1>> &&
            std::same_as<std::ranges::reverse_view<T1>,
-                        std::remove_cv_t<std::ranges::reverse_view<T1>>>)
+                        std::remove_cv_t<std::ranges::reverse_view<T1>>>) &&
+          (std::ranges::bidirectional_range<T1>)
 {
   return a0.cbegin();
 }
@@ -27,7 +29,8 @@ auto f28(std::ranges::reverse_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::reverse_view<T1>>) &&
           (std::is_class_v<std::ranges::reverse_view<T1>> &&
            std::same_as<std::ranges::reverse_view<T1>,
-                        std::remove_cv_t<std::ranges::reverse_view<T1>>>)
+                        std::remove_cv_t<std::ranges::reverse_view<T1>>>) &&
+          (std::ranges::bidirectional_range<T1>)
 {
   return a0.cend();
 }
@@ -37,7 +40,8 @@ auto f29(const std::ranges::reverse_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::reverse_view<T1>>) &&
           (std::is_class_v<std::ranges::reverse_view<T1>> &&
            std::same_as<std::ranges::reverse_view<T1>,
-                        std::remove_cv_t<std::ranges::reverse_view<T1>>>)
+                        std::remove_cv_t<std::ranges::reverse_view<T1>>>) &&
+          (std::ranges::bidirectional_range<T1>)
 {
   return a0.cend();
 }

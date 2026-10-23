@@ -3,7 +3,7 @@
 #include <utility>
 
 template <typename T1>
-std::ranges::owning_view<T1> f5()
+std::ranges::owning_view<T1> f3()
   requires(std::default_initializable<T1>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
@@ -12,7 +12,7 @@ std::ranges::owning_view<T1> f5()
 }
 
 template <typename T1>
-std::ranges::owning_view<T1> f6(T1 &&a0)
+std::ranges::owning_view<T1> f4(T1 &&a0)
   requires(
       std::movable<T1> &&
       (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
@@ -21,7 +21,7 @@ std::ranges::owning_view<T1> f6(T1 &&a0)
 }
 
 template <typename T1>
-std::ranges::owning_view<T1> f7(std::ranges::owning_view<T1> &&a0)
+std::ranges::owning_view<T1> f5(std::ranges::owning_view<T1> &&a0)
   requires(
       std::movable<T1> &&
       (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
@@ -30,7 +30,7 @@ std::ranges::owning_view<T1> f7(std::ranges::owning_view<T1> &&a0)
 }
 
 template <typename T1>
-std::ranges::owning_view<T1> &f8(std::ranges::owning_view<T1> &a0,
+std::ranges::owning_view<T1> &f6(std::ranges::owning_view<T1> &a0,
                                  std::ranges::owning_view<T1> &&a1)
   requires(
       std::movable<T1> &&
@@ -40,7 +40,7 @@ std::ranges::owning_view<T1> &f8(std::ranges::owning_view<T1> &a0,
 }
 
 template <typename T1>
-T1 &f9(std::ranges::owning_view<T1> &a0)
+T1 &f7(std::ranges::owning_view<T1> &a0)
   requires(
       std::movable<T1> &&
       (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
@@ -49,7 +49,7 @@ T1 &f9(std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-const T1 &f10(const std::ranges::owning_view<T1> &a0)
+const T1 &f8(const std::ranges::owning_view<T1> &a0)
   requires(
       std::movable<T1> &&
       (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
@@ -58,7 +58,7 @@ const T1 &f10(const std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f11(std::ranges::owning_view<T1> &&a0)
+T1 &&f9(std::ranges::owning_view<T1> &&a0)
   requires(
       std::movable<T1> &&
       (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
@@ -67,7 +67,7 @@ T1 &&f11(std::ranges::owning_view<T1> &&a0)
 }
 
 template <typename T1>
-const T1 &&f12(const std::ranges::owning_view<T1> &&a0)
+const T1 &&f10(const std::ranges::owning_view<T1> &&a0)
   requires(
       std::movable<T1> &&
       (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
@@ -76,7 +76,7 @@ const T1 &&f12(const std::ranges::owning_view<T1> &&a0)
 }
 
 template <typename T1>
-std::ranges::iterator_t<T1> f13(std::ranges::owning_view<T1> &a0)
+std::ranges::iterator_t<T1> f11(std::ranges::owning_view<T1> &a0)
   requires(
       std::movable<T1> &&
       (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
@@ -85,7 +85,7 @@ std::ranges::iterator_t<T1> f13(std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-std::ranges::sentinel_t<T1> f14(std::ranges::owning_view<T1> &a0)
+std::ranges::sentinel_t<T1> f12(std::ranges::owning_view<T1> &a0)
   requires(
       std::movable<T1> &&
       (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
@@ -94,7 +94,7 @@ std::ranges::sentinel_t<T1> f14(std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-auto f15(const std::ranges::owning_view<T1> &a0)
+auto f13(const std::ranges::owning_view<T1> &a0)
   requires(std::ranges::range<const T1>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
@@ -103,7 +103,7 @@ auto f15(const std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-auto f16(const std::ranges::owning_view<T1> &a0)
+auto f14(const std::ranges::owning_view<T1> &a0)
   requires(std::ranges::range<const T1>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
@@ -112,7 +112,7 @@ auto f16(const std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-auto f17(std::ranges::owning_view<T1> &a0)
+auto f15(std::ranges::owning_view<T1> &a0)
   requires(std::ranges::sized_range<T1>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
@@ -121,7 +121,7 @@ auto f17(std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-auto f18(const std::ranges::owning_view<T1> &a0)
+auto f16(const std::ranges::owning_view<T1> &a0)
   requires(std::ranges::sized_range<const T1>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
@@ -130,7 +130,7 @@ auto f18(const std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-auto f19(std::ranges::owning_view<T1> &a0)
+auto f17(std::ranges::owning_view<T1> &a0)
   requires(std::ranges::contiguous_range<T1>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
@@ -139,7 +139,7 @@ auto f19(std::ranges::owning_view<T1> &a0)
 }
 
 template <typename T1>
-auto f20(const std::ranges::owning_view<T1> &a0)
+auto f18(const std::ranges::owning_view<T1> &a0)
   requires(std::ranges::contiguous_range<const T1>) &&
           (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
                                    std::remove_cv_t<T1>>))
@@ -147,53 +147,95 @@ auto f20(const std::ranges::owning_view<T1> &a0)
   return a0.data();
 }
 
-template <typename T1> bool f21(std::ranges::owning_view<T1> &a0) {
+template <typename T1>
+bool f19(std::ranges::owning_view<T1> &a0)
+  requires(
+      std::movable<T1> &&
+      (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
+{
   return static_cast<bool>(a0);
 }
 
-template <typename T1> bool f22(const std::ranges::owning_view<T1> &a0) {
+template <typename T1>
+bool f20(const std::ranges::owning_view<T1> &a0)
+  requires(
+      std::movable<T1> &&
+      (!std::ranges::__detail::__is_initializer_list<std::remove_cv_t<T1>>))
+{
   return static_cast<bool>(a0);
+}
+
+template <typename T1>
+decltype(auto) f21(std::ranges::owning_view<T1> &a0)
+  requires(std::ranges::forward_range<std::ranges::owning_view<T1>>) &&
+          (std::is_class_v<std::ranges::owning_view<T1>> &&
+           std::same_as<std::ranges::owning_view<T1>,
+                        std::remove_cv_t<std::ranges::owning_view<T1>>>) &&
+          (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
+                                   std::remove_cv_t<T1>>))
+{
+  return a0.front();
+}
+
+template <typename T1>
+decltype(auto) f22(const std::ranges::owning_view<T1> &a0)
+  requires(std::ranges::forward_range<const std::ranges::owning_view<T1>>) &&
+          (std::is_class_v<std::ranges::owning_view<T1>> &&
+           std::same_as<std::ranges::owning_view<T1>,
+                        std::remove_cv_t<std::ranges::owning_view<T1>>>) &&
+          (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
+                                   std::remove_cv_t<T1>>))
+{
+  return a0.front();
 }
 
 template <typename T1>
 decltype(auto) f23(std::ranges::owning_view<T1> &a0)
-  requires(std::ranges::forward_range<std::ranges::owning_view<T1>>) &&
-          (std::is_class_v<std::ranges::owning_view<T1>> &&
-           std::same_as<std::ranges::owning_view<T1>,
-                        std::remove_cv_t<std::ranges::owning_view<T1>>>)
-{
-  return a0.front();
-}
-
-template <typename T1>
-decltype(auto) f24(const std::ranges::owning_view<T1> &a0)
-  requires(std::ranges::forward_range<const std::ranges::owning_view<T1>>) &&
-          (std::is_class_v<std::ranges::owning_view<T1>> &&
-           std::same_as<std::ranges::owning_view<T1>,
-                        std::remove_cv_t<std::ranges::owning_view<T1>>>)
-{
-  return a0.front();
-}
-
-template <typename T1>
-decltype(auto) f25(std::ranges::owning_view<T1> &a0)
   requires(std::ranges::bidirectional_range<std::ranges::owning_view<T1>> &&
            std::ranges::common_range<std::ranges::owning_view<T1>>) &&
           (std::is_class_v<std::ranges::owning_view<T1>> &&
            std::same_as<std::ranges::owning_view<T1>,
-                        std::remove_cv_t<std::ranges::owning_view<T1>>>)
+                        std::remove_cv_t<std::ranges::owning_view<T1>>>) &&
+          (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
+                                   std::remove_cv_t<T1>>))
 {
   return a0.back();
 }
 
 template <typename T1>
-decltype(auto) f26(const std::ranges::owning_view<T1> &a0)
+decltype(auto) f24(const std::ranges::owning_view<T1> &a0)
   requires(std::ranges::bidirectional_range<
                const std::ranges::owning_view<T1>> &&
            std::ranges::common_range<const std::ranges::owning_view<T1>>) &&
           (std::is_class_v<std::ranges::owning_view<T1>> &&
            std::same_as<std::ranges::owning_view<T1>,
-                        std::remove_cv_t<std::ranges::owning_view<T1>>>)
+                        std::remove_cv_t<std::ranges::owning_view<T1>>>) &&
+          (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
+                                   std::remove_cv_t<T1>>))
 {
   return a0.back();
+}
+
+template <typename T1, typename T2>
+decltype(auto) f25(std::ranges::owning_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1)
+  requires(std::is_class_v<std::ranges::owning_view<T1>> &&
+           std::same_as<std::ranges::owning_view<T1>,
+                        std::remove_cv_t<std::ranges::owning_view<T1>>>) &&
+          (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
+                                   std::remove_cv_t<T1>>))
+{
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f26(const std::ranges::owning_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1)
+  requires(std::is_class_v<std::ranges::owning_view<T1>> &&
+           std::same_as<std::ranges::owning_view<T1>,
+                        std::remove_cv_t<std::ranges::owning_view<T1>>>) &&
+          (std::movable<T1> && (!std::ranges::__detail::__is_initializer_list<
+                                   std::remove_cv_t<T1>>))
+{
+  return a0.template operator[]<T2>(a1);
 }

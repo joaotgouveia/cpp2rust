@@ -31,7 +31,8 @@ bool f13(std::ranges::stride_view<T1> &a0)
            (!std::ranges::sized_range<std::ranges::stride_view<T1>>)) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.empty();
 }
@@ -41,7 +42,8 @@ bool f14(std::ranges::stride_view<T1> &a0)
   requires(std::ranges::sized_range<std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.empty();
 }
@@ -52,7 +54,8 @@ bool f15(const std::ranges::stride_view<T1> &a0)
            (!std::ranges::sized_range<const std::ranges::stride_view<T1>>)) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.empty();
 }
@@ -62,16 +65,23 @@ bool f16(const std::ranges::stride_view<T1> &a0)
   requires(std::ranges::sized_range<const std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.empty();
 }
 
-template <typename T1> bool f17(std::ranges::stride_view<T1> &a0) {
+template <typename T1>
+bool f17(std::ranges::stride_view<T1> &a0)
+  requires(std::ranges::view<T1>)
+{
   return static_cast<bool>(a0);
 }
 
-template <typename T1> bool f18(const std::ranges::stride_view<T1> &a0) {
+template <typename T1>
+bool f18(const std::ranges::stride_view<T1> &a0)
+  requires(std::ranges::view<T1>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -81,7 +91,8 @@ auto f19(std::ranges::stride_view<T1> &a0)
               std::ranges::iterator_t<std::ranges::stride_view<T1>>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.data();
 }
@@ -93,7 +104,8 @@ auto f20(const std::ranges::stride_view<T1> &a0)
                std::ranges::iterator_t<const std::ranges::stride_view<T1>>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.data();
 }
@@ -103,7 +115,8 @@ decltype(auto) f21(std::ranges::stride_view<T1> &a0)
   requires(std::ranges::forward_range<std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.front();
 }
@@ -113,7 +126,8 @@ decltype(auto) f22(const std::ranges::stride_view<T1> &a0)
   requires(std::ranges::forward_range<const std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.front();
 }
@@ -124,7 +138,8 @@ decltype(auto) f23(std::ranges::stride_view<T1> &a0)
            std::ranges::common_range<std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.back();
 }
@@ -136,7 +151,8 @@ decltype(auto) f24(const std::ranges::stride_view<T1> &a0)
            std::ranges::common_range<const std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.back();
 }
@@ -146,7 +162,8 @@ auto f25(std::ranges::stride_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.cbegin();
 }
@@ -156,7 +173,8 @@ auto f26(const std::ranges::stride_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.cbegin();
 }
@@ -166,7 +184,8 @@ auto f27(std::ranges::stride_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.cend();
 }
@@ -176,7 +195,8 @@ auto f28(const std::ranges::stride_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::stride_view<T1>>) &&
           (std::is_class_v<std::ranges::stride_view<T1>> &&
            std::same_as<std::ranges::stride_view<T1>,
-                        std::remove_cv_t<std::ranges::stride_view<T1>>>)
+                        std::remove_cv_t<std::ranges::stride_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.cend();
 }

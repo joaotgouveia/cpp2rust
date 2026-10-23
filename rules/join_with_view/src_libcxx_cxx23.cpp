@@ -118,8 +118,13 @@ bool f39(std::ranges::join_with_view<T1, T2> &a0)
   requires(std::ranges::sized_range<std::ranges::join_with_view<T1, T2>> ||
            std::ranges::forward_range<std::ranges::join_with_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.empty();
 }
@@ -132,21 +137,36 @@ bool f40(const std::ranges::join_with_view<T1, T2> &a0)
            std::ranges::forward_range<
                std::ranges::join_with_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.empty();
 }
 
 template <typename T1, typename T2,
           typename T3 = std::ranges::join_with_view<T1, T2>>
-bool f41(std::ranges::join_with_view<T1, T2> &a0) {
+bool f41(std::ranges::join_with_view<T1, T2> &a0)
+  requires(std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2,
           typename T3 = std::ranges::join_with_view<T1, T2>>
-bool f42(const std::ranges::join_with_view<T1, T2> &a0) {
+bool f42(const std::ranges::join_with_view<T1, T2> &a0)
+  requires(std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -156,8 +176,13 @@ auto f43(std::ranges::join_with_view<T1, T2> &a0)
   requires(std::contiguous_iterator<
               std::ranges::iterator_t<std::ranges::join_with_view<T1, T2>>>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.data();
 }
@@ -169,8 +194,13 @@ auto f44(const std::ranges::join_with_view<T1, T2> &a0)
            std::contiguous_iterator<std::ranges::iterator_t<
                std::ranges::join_with_view<T1, T2> const>>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.data();
 }
@@ -183,8 +213,13 @@ auto f45(std::ranges::join_with_view<T1, T2> &a0)
                std::ranges::sentinel_t<std::ranges::join_with_view<T1, T2>>,
                std::ranges::iterator_t<std::ranges::join_with_view<T1, T2>>>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.size();
 }
@@ -200,8 +235,13 @@ auto f46(const std::ranges::join_with_view<T1, T2> &a0)
                std::ranges::iterator_t<
                    std::ranges::join_with_view<T1, T2> const>>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.size();
 }
@@ -211,8 +251,13 @@ template <typename T1, typename T2,
 decltype(auto) f47(std::ranges::join_with_view<T1, T2> &a0)
   requires(std::ranges::forward_range<std::ranges::join_with_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.front();
 }
@@ -223,8 +268,13 @@ decltype(auto) f48(const std::ranges::join_with_view<T1, T2> &a0)
   requires(std::ranges::forward_range<
               std::ranges::join_with_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.front();
 }
@@ -236,8 +286,13 @@ decltype(auto) f49(std::ranges::join_with_view<T1, T2> &a0)
                std::ranges::join_with_view<T1, T2>> &&
            std::ranges::common_range<std::ranges::join_with_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.back();
 }
@@ -250,8 +305,43 @@ decltype(auto) f50(const std::ranges::join_with_view<T1, T2> &a0)
            std::ranges::common_range<
                std::ranges::join_with_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
-           std::same_as<std::ranges::join_with_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>)
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
 {
   return a0.back();
+}
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f51(std::ranges::join_with_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1)
+  requires(std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
+{
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f52(const std::ranges::join_with_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1)
+  requires(std::is_class_v<std::ranges::join_with_view<T1, T2>> &&
+           std::same_as<
+               std::ranges::join_with_view<T1, T2>,
+               std::remove_cv_t<std::ranges::join_with_view<T1, T2>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
+           std::ranges::view<T2> &&
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
+{
+  return a0.template operator[]<T3>(a1);
 }

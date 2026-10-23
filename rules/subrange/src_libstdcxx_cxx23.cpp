@@ -6,7 +6,9 @@ auto f25(std::ranges::subrange<T1, T2, T3> &a0)
   requires(std::ranges::input_range<std::ranges::subrange<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.cbegin();
 }
@@ -16,7 +18,9 @@ auto f26(const std::ranges::subrange<T1, T2, T3> &a0)
   requires(std::ranges::input_range<const std::ranges::subrange<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.cbegin();
 }
@@ -26,7 +30,9 @@ auto f27(std::ranges::subrange<T1, T2, T3> &a0)
   requires(std::ranges::input_range<std::ranges::subrange<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.cend();
 }
@@ -36,7 +42,9 @@ auto f28(const std::ranges::subrange<T1, T2, T3> &a0)
   requires(std::ranges::input_range<const std::ranges::subrange<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.cend();
 }

@@ -238,61 +238,89 @@ T1 f41(const std::atomic_ref<T1> &a0, T1 a1)
   return a0.operator^=(a1);
 }
 
-template <typename T1> bool f42(const std::atomic_ref<T1> &a0) {
+template <typename T1>
+bool f42(const std::atomic_ref<T1> &a0)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.is_lock_free();
 }
 
 template <typename T1>
-void f43(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2) {
+void f43(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.store(a1, a2);
 }
 
 template <typename T1>
-T1 f44(const std::atomic_ref<T1> &a0, std::memory_order a1) {
+T1 f44(const std::atomic_ref<T1> &a0, std::memory_order a1)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.load(a1);
 }
 
-template <typename T1> T1 f45(const std::atomic_ref<T1> &a0) {
+template <typename T1>
+T1 f45(const std::atomic_ref<T1> &a0)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return static_cast<T1>(a0);
 }
 
 template <typename T1>
-T1 f46(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2) {
+T1 f46(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.exchange(a1, a2);
 }
 
 template <typename T1>
 bool f47(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
-         std::memory_order a4) {
+         std::memory_order a4)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
 template <typename T1>
 bool f48(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
-         std::memory_order a4) {
+         std::memory_order a4)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f49(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+bool f49(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
 template <typename T1>
-bool f50(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+bool f50(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 template <typename T1>
-void f51(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2) {
+void f51(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.wait(a1, a2);
 }
 
-template <typename T1> void f52(const std::atomic_ref<T1> &a0) {
+template <typename T1>
+void f52(const std::atomic_ref<T1> &a0)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.notify_one();
 }
 
-template <typename T1> void f53(const std::atomic_ref<T1> &a0) {
+template <typename T1>
+void f53(const std::atomic_ref<T1> &a0)
+  requires((std::integral<T1> && !std::same_as<bool, T1>))
+{
   return a0.notify_all();
 }
 
@@ -349,6 +377,150 @@ T1 f60(const std::atomic_ref<T1> &a0, T1 a1)
   return a0.operator-=(a1);
 }
 
-template <typename T1> T1 f61(const std::atomic_ref<T1> &a0, T1 a1) {
+template <typename T1>
+bool f61(const std::atomic_ref<T1> &a0)
+  requires(std::floating_point<T1>)
+{
+  return a0.is_lock_free();
+}
+
+template <typename T1>
+void f62(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2)
+  requires(std::floating_point<T1>)
+{
+  return a0.store(a1, a2);
+}
+
+template <typename T1>
+T1 f63(const std::atomic_ref<T1> &a0, std::memory_order a1)
+  requires(std::floating_point<T1>)
+{
+  return a0.load(a1);
+}
+
+template <typename T1>
+T1 f64(const std::atomic_ref<T1> &a0)
+  requires(std::floating_point<T1>)
+{
+  return static_cast<T1>(a0);
+}
+
+template <typename T1>
+T1 f65(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2)
+  requires(std::floating_point<T1>)
+{
+  return a0.exchange(a1, a2);
+}
+
+template <typename T1>
+bool f66(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+         std::memory_order a4)
+  requires(std::floating_point<T1>)
+{
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+template <typename T1>
+bool f67(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+         std::memory_order a4)
+  requires(std::floating_point<T1>)
+{
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+template <typename T1>
+bool f68(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3)
+  requires(std::floating_point<T1>)
+{
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+template <typename T1>
+bool f69(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3)
+  requires(std::floating_point<T1>)
+{
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+template <typename T1>
+void f70(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2)
+  requires(std::floating_point<T1>)
+{
+  return a0.wait(a1, a2);
+}
+
+template <typename T1>
+void f71(const std::atomic_ref<T1> &a0)
+  requires(std::floating_point<T1>)
+{
+  return a0.notify_one();
+}
+
+template <typename T1>
+void f72(const std::atomic_ref<T1> &a0)
+  requires(std::floating_point<T1>)
+{
+  return a0.notify_all();
+}
+
+template <typename T1> T1 f73(const std::atomic_ref<T1> &a0, T1 a1) {
   return a0.operator=(a1);
+}
+
+template <typename T1> bool f74(const std::atomic_ref<T1> &a0) {
+  return a0.is_lock_free();
+}
+
+template <typename T1>
+void f75(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2) {
+  return a0.store(a1, a2);
+}
+
+template <typename T1>
+T1 f76(const std::atomic_ref<T1> &a0, std::memory_order a1) {
+  return a0.load(a1);
+}
+
+template <typename T1> T1 f77(const std::atomic_ref<T1> &a0) {
+  return static_cast<T1>(a0);
+}
+
+template <typename T1>
+T1 f78(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2) {
+  return a0.exchange(a1, a2);
+}
+
+template <typename T1>
+bool f79(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+         std::memory_order a4) {
+  return a0.compare_exchange_weak(a1, a2, a3, a4);
+}
+
+template <typename T1>
+bool f80(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+         std::memory_order a4) {
+  return a0.compare_exchange_strong(a1, a2, a3, a4);
+}
+
+template <typename T1>
+bool f81(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+  return a0.compare_exchange_weak(a1, a2, a3);
+}
+
+template <typename T1>
+bool f82(const std::atomic_ref<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+  return a0.compare_exchange_strong(a1, a2, a3);
+}
+
+template <typename T1>
+void f83(const std::atomic_ref<T1> &a0, T1 a1, std::memory_order a2) {
+  return a0.wait(a1, a2);
+}
+
+template <typename T1> void f84(const std::atomic_ref<T1> &a0) {
+  return a0.notify_one();
+}
+
+template <typename T1> void f85(const std::atomic_ref<T1> &a0) {
+  return a0.notify_all();
 }

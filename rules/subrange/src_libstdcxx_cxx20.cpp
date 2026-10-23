@@ -57,12 +57,18 @@ T4 f16(const std::ranges::subrange<T1, T2, T3> &a0)
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3>
-bool f17(std::ranges::subrange<T1, T2, T3> &a0) {
+bool f17(std::ranges::subrange<T1, T2, T3> &a0)
+  requires((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2, std::ranges::subrange_kind T3>
-bool f18(const std::ranges::subrange<T1, T2, T3> &a0) {
+bool f18(const std::ranges::subrange<T1, T2, T3> &a0)
+  requires((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
+{
   return static_cast<bool>(a0);
 }
 
@@ -72,7 +78,9 @@ auto f19(std::ranges::subrange<T1, T2, T3> &a0)
               std::ranges::iterator_t<std::ranges::subrange<T1, T2, T3>>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.data();
 }
@@ -84,7 +92,9 @@ auto f20(const std::ranges::subrange<T1, T2, T3> &a0)
                const std::ranges::subrange<T1, T2, T3>>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.data();
 }
@@ -94,7 +104,9 @@ decltype(auto) f21(std::ranges::subrange<T1, T2, T3> &a0)
   requires(std::ranges::forward_range<std::ranges::subrange<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.front();
 }
@@ -105,7 +117,9 @@ decltype(auto) f22(const std::ranges::subrange<T1, T2, T3> &a0)
               const std::ranges::subrange<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.front();
 }
@@ -117,7 +131,9 @@ decltype(auto) f23(std::ranges::subrange<T1, T2, T3> &a0)
            std::ranges::common_range<std::ranges::subrange<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.back();
 }
@@ -130,7 +146,9 @@ decltype(auto) f24(const std::ranges::subrange<T1, T2, T3> &a0)
                const std::ranges::subrange<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::subrange<T1, T2, T3>> &&
            std::same_as<std::ranges::subrange<T1, T2, T3>,
-                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::subrange<T1, T2, T3>>>) &&
+          ((T3 == std::ranges::subrange_kind::sized ||
+            !std::sized_sentinel_for<T2, T1>))
 {
   return a0.back();
 }

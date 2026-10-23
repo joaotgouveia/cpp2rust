@@ -82,7 +82,8 @@ bool f11(std::ranges::as_const_view<T1> &a0)
            (!std::ranges::sized_range<std::ranges::as_const_view<T1>>)) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.empty();
 }
@@ -92,7 +93,8 @@ bool f12(std::ranges::as_const_view<T1> &a0)
   requires(std::ranges::sized_range<std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.empty();
 }
@@ -103,7 +105,8 @@ bool f13(const std::ranges::as_const_view<T1> &a0)
            (!std::ranges::sized_range<const std::ranges::as_const_view<T1>>)) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.empty();
 }
@@ -113,16 +116,23 @@ bool f14(const std::ranges::as_const_view<T1> &a0)
   requires(std::ranges::sized_range<const std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.empty();
 }
 
-template <typename T1> bool f15(std::ranges::as_const_view<T1> &a0) {
+template <typename T1>
+bool f15(std::ranges::as_const_view<T1> &a0)
+  requires(std::ranges::input_range<T1>)
+{
   return static_cast<bool>(a0);
 }
 
-template <typename T1> bool f16(const std::ranges::as_const_view<T1> &a0) {
+template <typename T1>
+bool f16(const std::ranges::as_const_view<T1> &a0)
+  requires(std::ranges::input_range<T1>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -132,7 +142,8 @@ auto f17(std::ranges::as_const_view<T1> &a0)
               std::ranges::iterator_t<std::ranges::as_const_view<T1>>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.data();
 }
@@ -144,7 +155,8 @@ auto f18(const std::ranges::as_const_view<T1> &a0)
                const std::ranges::as_const_view<T1>>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.data();
 }
@@ -154,7 +166,8 @@ decltype(auto) f19(std::ranges::as_const_view<T1> &a0)
   requires(std::ranges::forward_range<std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.front();
 }
@@ -164,7 +177,8 @@ decltype(auto) f20(const std::ranges::as_const_view<T1> &a0)
   requires(std::ranges::forward_range<const std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.front();
 }
@@ -175,7 +189,8 @@ decltype(auto) f21(std::ranges::as_const_view<T1> &a0)
            std::ranges::common_range<std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.back();
 }
@@ -187,7 +202,8 @@ decltype(auto) f22(const std::ranges::as_const_view<T1> &a0)
            std::ranges::common_range<const std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.back();
 }
@@ -197,7 +213,8 @@ auto f23(std::ranges::as_const_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.cbegin();
 }
@@ -207,7 +224,8 @@ auto f24(const std::ranges::as_const_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.cbegin();
 }
@@ -217,7 +235,8 @@ auto f25(std::ranges::as_const_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.cend();
 }
@@ -227,7 +246,8 @@ auto f26(const std::ranges::as_const_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::as_const_view<T1>>) &&
           (std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.cend();
 }
@@ -237,7 +257,8 @@ decltype(auto) f27(std::ranges::as_const_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }
@@ -247,7 +268,8 @@ decltype(auto) f28(const std::ranges::as_const_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::as_const_view<T1>> &&
            std::same_as<std::ranges::as_const_view<T1>,
-                        std::remove_cv_t<std::ranges::as_const_view<T1>>>)
+                        std::remove_cv_t<std::ranges::as_const_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }

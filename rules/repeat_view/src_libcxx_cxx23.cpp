@@ -89,7 +89,10 @@ bool f35(std::ranges::repeat_view<T1, T2> &a0)
            std::ranges::forward_range<std::ranges::repeat_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
 {
   return a0.empty();
 }
@@ -102,20 +105,31 @@ bool f36(const std::ranges::repeat_view<T1, T2> &a0)
                std::ranges::repeat_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
 {
   return a0.empty();
 }
 
 template <typename T1, typename T2,
           typename T3 = std::ranges::repeat_view<T1, T2>>
-bool f37(std::ranges::repeat_view<T1, T2> &a0) {
+bool f37(std::ranges::repeat_view<T1, T2> &a0)
+  requires((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2,
           typename T3 = std::ranges::repeat_view<T1, T2>>
-bool f38(const std::ranges::repeat_view<T1, T2> &a0) {
+bool f38(const std::ranges::repeat_view<T1, T2> &a0)
+  requires((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
+{
   return static_cast<bool>(a0);
 }
 
@@ -126,7 +140,10 @@ auto f39(std::ranges::repeat_view<T1, T2> &a0)
               std::ranges::iterator_t<std::ranges::repeat_view<T1, T2>>>) &&
           (std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
 {
   return a0.data();
 }
@@ -139,7 +156,10 @@ auto f40(const std::ranges::repeat_view<T1, T2> &a0)
                std::ranges::repeat_view<T1, T2> const>>) &&
           (std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
 {
   return a0.data();
 }
@@ -150,7 +170,10 @@ decltype(auto) f41(std::ranges::repeat_view<T1, T2> &a0)
   requires(std::ranges::forward_range<std::ranges::repeat_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
 {
   return a0.front();
 }
@@ -162,7 +185,10 @@ decltype(auto) f42(const std::ranges::repeat_view<T1, T2> &a0)
               std::ranges::repeat_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
 {
   return a0.front();
 }
@@ -174,7 +200,10 @@ decltype(auto) f43(std::ranges::repeat_view<T1, T2> &a0)
            std::ranges::common_range<std::ranges::repeat_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
 {
   return a0.back();
 }
@@ -187,7 +216,36 @@ decltype(auto) f44(const std::ranges::repeat_view<T1, T2> &a0)
            std::ranges::common_range<std::ranges::repeat_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
            std::same_as<std::ranges::repeat_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
 {
   return a0.back();
+}
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f45(std::ranges::repeat_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1)
+  requires(std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
+           std::same_as<std::ranges::repeat_view<T1, T2>,
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
+{
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f46(const std::ranges::repeat_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1)
+  requires(std::is_class_v<std::ranges::repeat_view<T1, T2>> &&
+           std::same_as<std::ranges::repeat_view<T1, T2>,
+                        std::remove_cv_t<std::ranges::repeat_view<T1, T2>>>) &&
+          ((std::is_object_v<T1> && std::same_as<T1, std::remove_cv_t<T1>> &&
+            (std::ranges::__integer_like_with_usable_difference_type<T2> ||
+             std::same_as<T2, std::unreachable_sentinel_t>)))
+{
+  return a0.template operator[]<T3>(a1);
 }

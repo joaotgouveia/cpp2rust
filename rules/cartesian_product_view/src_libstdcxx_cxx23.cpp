@@ -90,7 +90,8 @@ bool f10(std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.empty();
 }
@@ -102,7 +103,8 @@ bool f11(std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.empty();
 }
@@ -116,7 +118,8 @@ bool f12(const std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.empty();
 }
@@ -128,18 +131,23 @@ bool f13(const std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.empty();
 }
 
 template <typename T1, typename... T2>
-bool f14(std::ranges::cartesian_product_view<T1, T2...> &a0) {
+bool f14(std::ranges::cartesian_product_view<T1, T2...> &a0)
+  requires((std::ranges::view<T1> && ... && std::ranges::view<T2>))
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename... T2>
-bool f15(const std::ranges::cartesian_product_view<T1, T2...> &a0) {
+bool f15(const std::ranges::cartesian_product_view<T1, T2...> &a0)
+  requires((std::ranges::view<T1> && ... && std::ranges::view<T2>))
+{
   return static_cast<bool>(a0);
 }
 
@@ -150,7 +158,8 @@ auto f16(std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.data();
 }
@@ -164,7 +173,8 @@ auto f17(const std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.data();
 }
@@ -176,7 +186,8 @@ decltype(auto) f18(std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.front();
 }
@@ -188,7 +199,8 @@ decltype(auto) f19(const std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.front();
 }
@@ -202,7 +214,8 @@ decltype(auto) f20(std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.back();
 }
@@ -216,7 +229,8 @@ decltype(auto) f21(const std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.back();
 }
@@ -228,7 +242,8 @@ auto f22(std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.cbegin();
 }
@@ -240,7 +255,8 @@ auto f23(const std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.cbegin();
 }
@@ -252,7 +268,8 @@ auto f24(std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.cend();
 }
@@ -264,7 +281,8 @@ auto f25(const std::ranges::cartesian_product_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
            std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
                         std::remove_cv_t<
-                            std::ranges::cartesian_product_view<T1, T2...>>>)
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.cend();
 }
@@ -272,11 +290,11 @@ auto f25(const std::ranges::cartesian_product_view<T1, T2...> &a0)
 template <typename T1, typename... T2, typename T3>
 decltype(auto) f26(std::ranges::cartesian_product_view<T1, T2...> &a0,
                    std::ranges::range_difference_t<T3> a1)
-  requires(
-      std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
-      std::same_as<
-          std::ranges::cartesian_product_view<T1, T2...>,
-          std::remove_cv_t<std::ranges::cartesian_product_view<T1, T2...>>>)
+  requires(std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
+           std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
+                        std::remove_cv_t<
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.template operator[]<T3>(a1);
 }
@@ -284,11 +302,11 @@ decltype(auto) f26(std::ranges::cartesian_product_view<T1, T2...> &a0,
 template <typename T1, typename... T2, typename T3>
 decltype(auto) f27(const std::ranges::cartesian_product_view<T1, T2...> &a0,
                    std::ranges::range_difference_t<T3> a1)
-  requires(
-      std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
-      std::same_as<
-          std::ranges::cartesian_product_view<T1, T2...>,
-          std::remove_cv_t<std::ranges::cartesian_product_view<T1, T2...>>>)
+  requires(std::is_class_v<std::ranges::cartesian_product_view<T1, T2...>> &&
+           std::same_as<std::ranges::cartesian_product_view<T1, T2...>,
+                        std::remove_cv_t<
+                            std::ranges::cartesian_product_view<T1, T2...>>>) &&
+          ((std::ranges::view<T1> && ... && std::ranges::view<T2>))
 {
   return a0.template operator[]<T3>(a1);
 }

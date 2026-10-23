@@ -7,7 +7,8 @@ auto f24(std::ranges::filter_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::filter_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.cbegin();
 }
@@ -17,7 +18,8 @@ auto f25(const std::ranges::filter_view<T1, T2> &a0)
   requires(std::ranges::input_range<const std::ranges::filter_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.cbegin();
 }
@@ -27,7 +29,8 @@ auto f26(std::ranges::filter_view<T1, T2> &a0)
   requires(std::ranges::input_range<std::ranges::filter_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.cend();
 }
@@ -37,7 +40,8 @@ auto f27(const std::ranges::filter_view<T1, T2> &a0)
   requires(std::ranges::input_range<const std::ranges::filter_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.cend();
 }

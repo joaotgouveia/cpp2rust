@@ -7,7 +7,9 @@ auto f25(std::ranges::join_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::join_view<T1>>) &&
           (std::is_class_v<std::ranges::join_view<T1>> &&
            std::same_as<std::ranges::join_view<T1>,
-                        std::remove_cv_t<std::ranges::join_view<T1>>>)
+                        std::remove_cv_t<std::ranges::join_view<T1>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>>)
 {
   return a0.cbegin();
 }
@@ -17,7 +19,9 @@ auto f26(const std::ranges::join_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::join_view<T1>>) &&
           (std::is_class_v<std::ranges::join_view<T1>> &&
            std::same_as<std::ranges::join_view<T1>,
-                        std::remove_cv_t<std::ranges::join_view<T1>>>)
+                        std::remove_cv_t<std::ranges::join_view<T1>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>>)
 {
   return a0.cbegin();
 }
@@ -27,7 +31,9 @@ auto f27(std::ranges::join_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::join_view<T1>>) &&
           (std::is_class_v<std::ranges::join_view<T1>> &&
            std::same_as<std::ranges::join_view<T1>,
-                        std::remove_cv_t<std::ranges::join_view<T1>>>)
+                        std::remove_cv_t<std::ranges::join_view<T1>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>>)
 {
   return a0.cend();
 }
@@ -37,7 +43,9 @@ auto f28(const std::ranges::join_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::join_view<T1>>) &&
           (std::is_class_v<std::ranges::join_view<T1>> &&
            std::same_as<std::ranges::join_view<T1>,
-                        std::remove_cv_t<std::ranges::join_view<T1>>>)
+                        std::remove_cv_t<std::ranges::join_view<T1>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>>)
 {
   return a0.cend();
 }

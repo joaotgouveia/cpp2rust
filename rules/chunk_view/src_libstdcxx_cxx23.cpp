@@ -59,7 +59,8 @@ bool f8(std::ranges::chunk_view<T1> &a0)
            (!std::ranges::sized_range<std::ranges::chunk_view<T1>>)) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.empty();
 }
@@ -69,7 +70,8 @@ bool f9(std::ranges::chunk_view<T1> &a0)
   requires(std::ranges::sized_range<std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.empty();
 }
@@ -80,7 +82,8 @@ bool f10(const std::ranges::chunk_view<T1> &a0)
            (!std::ranges::sized_range<const std::ranges::chunk_view<T1>>)) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.empty();
 }
@@ -90,16 +93,23 @@ bool f11(const std::ranges::chunk_view<T1> &a0)
   requires(std::ranges::sized_range<const std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.empty();
 }
 
-template <typename T1> bool f12(std::ranges::chunk_view<T1> &a0) {
+template <typename T1>
+bool f12(std::ranges::chunk_view<T1> &a0)
+  requires(std::ranges::input_range<T1>)
+{
   return static_cast<bool>(a0);
 }
 
-template <typename T1> bool f13(const std::ranges::chunk_view<T1> &a0) {
+template <typename T1>
+bool f13(const std::ranges::chunk_view<T1> &a0)
+  requires(std::ranges::input_range<T1>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -109,7 +119,8 @@ auto f14(std::ranges::chunk_view<T1> &a0)
               std::ranges::iterator_t<std::ranges::chunk_view<T1>>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.data();
 }
@@ -121,7 +132,8 @@ auto f15(const std::ranges::chunk_view<T1> &a0)
                std::ranges::iterator_t<const std::ranges::chunk_view<T1>>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.data();
 }
@@ -131,7 +143,8 @@ decltype(auto) f16(std::ranges::chunk_view<T1> &a0)
   requires(std::ranges::forward_range<std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.front();
 }
@@ -141,7 +154,8 @@ decltype(auto) f17(const std::ranges::chunk_view<T1> &a0)
   requires(std::ranges::forward_range<const std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.front();
 }
@@ -152,7 +166,8 @@ decltype(auto) f18(std::ranges::chunk_view<T1> &a0)
            std::ranges::common_range<std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.back();
 }
@@ -164,7 +179,8 @@ decltype(auto) f19(const std::ranges::chunk_view<T1> &a0)
            std::ranges::common_range<const std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.back();
 }
@@ -174,7 +190,8 @@ auto f20(std::ranges::chunk_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.cbegin();
 }
@@ -184,7 +201,8 @@ auto f21(const std::ranges::chunk_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.cbegin();
 }
@@ -194,7 +212,8 @@ auto f22(std::ranges::chunk_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.cend();
 }
@@ -204,7 +223,8 @@ auto f23(const std::ranges::chunk_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::chunk_view<T1>>) &&
           (std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.cend();
 }
@@ -214,7 +234,8 @@ decltype(auto) f24(std::ranges::chunk_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }
@@ -224,7 +245,8 @@ decltype(auto) f25(const std::ranges::chunk_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::chunk_view<T1>> &&
            std::same_as<std::ranges::chunk_view<T1>,
-                        std::remove_cv_t<std::ranges::chunk_view<T1>>>)
+                        std::remove_cv_t<std::ranges::chunk_view<T1>>>) &&
+          (std::ranges::input_range<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }

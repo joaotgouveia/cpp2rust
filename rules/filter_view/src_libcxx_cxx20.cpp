@@ -24,7 +24,8 @@ bool f30(std::ranges::filter_view<T1, T2> &a0)
            std::ranges::forward_range<std::ranges::filter_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.empty();
 }
@@ -37,20 +38,25 @@ bool f31(const std::ranges::filter_view<T1, T2> &a0)
                std::ranges::filter_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.empty();
 }
 
 template <typename T1, typename T2,
           typename T3 = std::ranges::filter_view<T1, T2>>
-bool f32(std::ranges::filter_view<T1, T2> &a0) {
+bool f32(std::ranges::filter_view<T1, T2> &a0)
+  requires(std::ranges::view<T1> && std::is_object_v<T2>)
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2,
           typename T3 = std::ranges::filter_view<T1, T2>>
-bool f33(const std::ranges::filter_view<T1, T2> &a0) {
+bool f33(const std::ranges::filter_view<T1, T2> &a0)
+  requires(std::ranges::view<T1> && std::is_object_v<T2>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -61,7 +67,8 @@ auto f34(std::ranges::filter_view<T1, T2> &a0)
               std::ranges::iterator_t<std::ranges::filter_view<T1, T2>>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.data();
 }
@@ -74,7 +81,8 @@ auto f35(const std::ranges::filter_view<T1, T2> &a0)
                std::ranges::filter_view<T1, T2> const>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.data();
 }
@@ -88,7 +96,8 @@ auto f36(std::ranges::filter_view<T1, T2> &a0)
                std::ranges::iterator_t<std::ranges::filter_view<T1, T2>>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.size();
 }
@@ -103,7 +112,8 @@ auto f37(const std::ranges::filter_view<T1, T2> &a0)
                    std::ranges::filter_view<T1, T2> const>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.size();
 }
@@ -114,7 +124,8 @@ decltype(auto) f38(std::ranges::filter_view<T1, T2> &a0)
   requires(std::ranges::forward_range<std::ranges::filter_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.front();
 }
@@ -126,7 +137,8 @@ decltype(auto) f39(const std::ranges::filter_view<T1, T2> &a0)
               std::ranges::filter_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.front();
 }
@@ -138,7 +150,8 @@ decltype(auto) f40(std::ranges::filter_view<T1, T2> &a0)
            std::ranges::common_range<std::ranges::filter_view<T1, T2>>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.back();
 }
@@ -151,7 +164,8 @@ decltype(auto) f41(const std::ranges::filter_view<T1, T2> &a0)
            std::ranges::common_range<std::ranges::filter_view<T1, T2> const>) &&
           (std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.back();
 }

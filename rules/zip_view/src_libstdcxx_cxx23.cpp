@@ -24,7 +24,8 @@ bool f11(std::ranges::zip_view<T1...> &a0)
            (!std::ranges::sized_range<std::ranges::zip_view<T1...>>)) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.empty();
 }
@@ -34,7 +35,8 @@ bool f12(std::ranges::zip_view<T1...> &a0)
   requires(std::ranges::sized_range<std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.empty();
 }
@@ -45,7 +47,8 @@ bool f13(const std::ranges::zip_view<T1...> &a0)
            (!std::ranges::sized_range<const std::ranges::zip_view<T1...>>)) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.empty();
 }
@@ -55,16 +58,23 @@ bool f14(const std::ranges::zip_view<T1...> &a0)
   requires(std::ranges::sized_range<const std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.empty();
 }
 
-template <typename... T1> bool f15(std::ranges::zip_view<T1...> &a0) {
+template <typename... T1>
+bool f15(std::ranges::zip_view<T1...> &a0)
+  requires((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
+{
   return static_cast<bool>(a0);
 }
 
-template <typename... T1> bool f16(const std::ranges::zip_view<T1...> &a0) {
+template <typename... T1>
+bool f16(const std::ranges::zip_view<T1...> &a0)
+  requires((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
+{
   return static_cast<bool>(a0);
 }
 
@@ -74,7 +84,8 @@ auto f17(std::ranges::zip_view<T1...> &a0)
               std::ranges::iterator_t<std::ranges::zip_view<T1...>>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.data();
 }
@@ -86,7 +97,8 @@ auto f18(const std::ranges::zip_view<T1...> &a0)
                std::ranges::iterator_t<const std::ranges::zip_view<T1...>>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.data();
 }
@@ -96,7 +108,8 @@ decltype(auto) f19(std::ranges::zip_view<T1...> &a0)
   requires(std::ranges::forward_range<std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.front();
 }
@@ -106,7 +119,8 @@ decltype(auto) f20(const std::ranges::zip_view<T1...> &a0)
   requires(std::ranges::forward_range<const std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.front();
 }
@@ -117,7 +131,8 @@ decltype(auto) f21(std::ranges::zip_view<T1...> &a0)
            std::ranges::common_range<std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.back();
 }
@@ -129,7 +144,8 @@ decltype(auto) f22(const std::ranges::zip_view<T1...> &a0)
            std::ranges::common_range<const std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.back();
 }
@@ -139,7 +155,8 @@ auto f23(std::ranges::zip_view<T1...> &a0)
   requires(std::ranges::input_range<std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.cbegin();
 }
@@ -149,7 +166,8 @@ auto f24(const std::ranges::zip_view<T1...> &a0)
   requires(std::ranges::input_range<const std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.cbegin();
 }
@@ -159,7 +177,8 @@ auto f25(std::ranges::zip_view<T1...> &a0)
   requires(std::ranges::input_range<std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.cend();
 }
@@ -169,7 +188,8 @@ auto f26(const std::ranges::zip_view<T1...> &a0)
   requires(std::ranges::input_range<const std::ranges::zip_view<T1...>>) &&
           (std::is_class_v<std::ranges::zip_view<T1...>> &&
            std::same_as<std::ranges::zip_view<T1...>,
-                        std::remove_cv_t<std::ranges::zip_view<T1...>>>)
+                        std::remove_cv_t<std::ranges::zip_view<T1...>>>) &&
+          ((std::ranges::view<T1> && ...) && (sizeof...(T1) > 0))
 {
   return a0.cend();
 }

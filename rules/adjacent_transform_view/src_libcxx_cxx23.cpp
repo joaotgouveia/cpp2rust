@@ -147,8 +147,14 @@ bool f39(std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
                std::ranges::adjacent_transform_view<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
-                        std::remove_cv_t<
-                            std::ranges::adjacent_transform_view<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
 {
   return a0.empty();
 }
@@ -162,21 +168,41 @@ bool f40(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
                std::ranges::adjacent_transform_view<T1, T2, T3> const>) &&
           (std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
-                        std::remove_cv_t<
-                            std::ranges::adjacent_transform_view<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
 {
   return a0.empty();
 }
 
 template <typename T1, typename T2, std::size_t T3,
           typename T4 = std::ranges::adjacent_transform_view<T1, T2, T3>>
-bool f41(std::ranges::adjacent_transform_view<T1, T2, T3> &a0) {
+bool f41(std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
+  requires(std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2, std::size_t T3,
           typename T4 = std::ranges::adjacent_transform_view<T1, T2, T3>>
-bool f42(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0) {
+bool f42(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
+  requires(std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -187,8 +213,14 @@ auto f43(std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
                std::ranges::adjacent_transform_view<T1, T2, T3>>>) &&
           (std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
-                        std::remove_cv_t<
-                            std::ranges::adjacent_transform_view<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
 {
   return a0.data();
 }
@@ -202,8 +234,14 @@ auto f44(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
                std::ranges::adjacent_transform_view<T1, T2, T3> const>>) &&
           (std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
-                        std::remove_cv_t<
-                            std::ranges::adjacent_transform_view<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
 {
   return a0.data();
 }
@@ -215,8 +253,14 @@ decltype(auto) f45(std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
               std::ranges::adjacent_transform_view<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
-                        std::remove_cv_t<
-                            std::ranges::adjacent_transform_view<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
 {
   return a0.front();
 }
@@ -228,8 +272,14 @@ decltype(auto) f46(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
               std::ranges::adjacent_transform_view<T1, T2, T3> const>) &&
           (std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
-                        std::remove_cv_t<
-                            std::ranges::adjacent_transform_view<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
 {
   return a0.front();
 }
@@ -243,8 +293,14 @@ decltype(auto) f47(std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
                std::ranges::adjacent_transform_view<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
-                        std::remove_cv_t<
-                            std::ranges::adjacent_transform_view<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
 {
   return a0.back();
 }
@@ -258,8 +314,48 @@ decltype(auto) f48(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0)
                std::ranges::adjacent_transform_view<T1, T2, T3> const>) &&
           (std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
            std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
-                        std::remove_cv_t<
-                            std::ranges::adjacent_transform_view<T1, T2, T3>>>)
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
 {
   return a0.back();
+}
+
+template <typename T1, typename T2, std::size_t T3, typename T4>
+decltype(auto) f49(std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
+                   std::ranges::range_difference_t<T4> a1)
+  requires(std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
+           std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
+{
+  return a0.template operator[]<T4>(a1);
+}
+
+template <typename T1, typename T2, std::size_t T3, typename T4>
+decltype(auto) f50(const std::ranges::adjacent_transform_view<T1, T2, T3> &a0,
+                   std::ranges::range_difference_t<T4> a1)
+  requires(std::is_class_v<std::ranges::adjacent_transform_view<T1, T2, T3>> &&
+           std::same_as<std::ranges::adjacent_transform_view<T1, T2, T3>,
+                        std::remove_cv_t<std::ranges::adjacent_transform_view<
+                            T1, T2, T3>>>) &&
+          (std::ranges::view<T1> && (T3 > 0) && std::is_object_v<T2> &&
+           std::regular_invocable<std::ranges::__apply_n<T2 &, T3>,
+                                  std::ranges::range_reference_t<T1>> &&
+           std::__referenceable<
+               std::invoke_result_t<std::ranges::__apply_n<T2 &, T3>,
+                                    std::ranges::range_reference_t<T1>>>)
+{
+  return a0.template operator[]<T4>(a1);
 }

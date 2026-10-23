@@ -79,7 +79,8 @@ bool f10(std::ranges::slide_view<T1> &a0)
            (!std::ranges::sized_range<std::ranges::slide_view<T1>>)) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.empty();
 }
@@ -89,7 +90,8 @@ bool f11(std::ranges::slide_view<T1> &a0)
   requires(std::ranges::sized_range<std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.empty();
 }
@@ -100,7 +102,8 @@ bool f12(const std::ranges::slide_view<T1> &a0)
            (!std::ranges::sized_range<const std::ranges::slide_view<T1>>)) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.empty();
 }
@@ -110,16 +113,23 @@ bool f13(const std::ranges::slide_view<T1> &a0)
   requires(std::ranges::sized_range<const std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.empty();
 }
 
-template <typename T1> bool f14(std::ranges::slide_view<T1> &a0) {
+template <typename T1>
+bool f14(std::ranges::slide_view<T1> &a0)
+  requires(std::ranges::view<T1>)
+{
   return static_cast<bool>(a0);
 }
 
-template <typename T1> bool f15(const std::ranges::slide_view<T1> &a0) {
+template <typename T1>
+bool f15(const std::ranges::slide_view<T1> &a0)
+  requires(std::ranges::view<T1>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -129,7 +139,8 @@ auto f16(std::ranges::slide_view<T1> &a0)
               std::ranges::iterator_t<std::ranges::slide_view<T1>>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.data();
 }
@@ -141,7 +152,8 @@ auto f17(const std::ranges::slide_view<T1> &a0)
                std::ranges::iterator_t<const std::ranges::slide_view<T1>>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.data();
 }
@@ -151,7 +163,8 @@ decltype(auto) f18(std::ranges::slide_view<T1> &a0)
   requires(std::ranges::forward_range<std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.front();
 }
@@ -161,7 +174,8 @@ decltype(auto) f19(const std::ranges::slide_view<T1> &a0)
   requires(std::ranges::forward_range<const std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.front();
 }
@@ -172,7 +186,8 @@ decltype(auto) f20(std::ranges::slide_view<T1> &a0)
            std::ranges::common_range<std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.back();
 }
@@ -184,7 +199,8 @@ decltype(auto) f21(const std::ranges::slide_view<T1> &a0)
            std::ranges::common_range<const std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.back();
 }
@@ -194,7 +210,8 @@ auto f22(std::ranges::slide_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.cbegin();
 }
@@ -204,7 +221,8 @@ auto f23(const std::ranges::slide_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.cbegin();
 }
@@ -214,7 +232,8 @@ auto f24(std::ranges::slide_view<T1> &a0)
   requires(std::ranges::input_range<std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.cend();
 }
@@ -224,7 +243,8 @@ auto f25(const std::ranges::slide_view<T1> &a0)
   requires(std::ranges::input_range<const std::ranges::slide_view<T1>>) &&
           (std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.cend();
 }
@@ -234,7 +254,8 @@ decltype(auto) f26(std::ranges::slide_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }
@@ -244,7 +265,8 @@ decltype(auto) f27(const std::ranges::slide_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::slide_view<T1>> &&
            std::same_as<std::ranges::slide_view<T1>,
-                        std::remove_cv_t<std::ranges::slide_view<T1>>>)
+                        std::remove_cv_t<std::ranges::slide_view<T1>>>) &&
+          (std::ranges::view<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }

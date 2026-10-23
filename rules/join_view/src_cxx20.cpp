@@ -59,7 +59,9 @@ decltype(auto) f7(std::ranges::join_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::join_view<T1>> &&
            std::same_as<std::ranges::join_view<T1>,
-                        std::remove_cv_t<std::ranges::join_view<T1>>>)
+                        std::remove_cv_t<std::ranges::join_view<T1>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>>)
 {
   return a0.template operator[]<T2>(a1);
 }
@@ -69,7 +71,9 @@ decltype(auto) f8(const std::ranges::join_view<T1> &a0,
                   std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::join_view<T1>> &&
            std::same_as<std::ranges::join_view<T1>,
-                        std::remove_cv_t<std::ranges::join_view<T1>>>)
+                        std::remove_cv_t<std::ranges::join_view<T1>>>) &&
+          (std::ranges::view<T1> &&
+           std::ranges::input_range<std::ranges::range_reference_t<T1>>)
 {
   return a0.template operator[]<T2>(a1);
 }

@@ -120,7 +120,13 @@ bool f35(std::ranges::zip_transform_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
-               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>)
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
 {
   return a0.empty();
 }
@@ -135,20 +141,40 @@ bool f36(const std::ranges::zip_transform_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
-               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>)
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
 {
   return a0.empty();
 }
 
 template <typename T1, typename... T2,
           typename T3 = std::ranges::zip_transform_view<T1, T2...>>
-bool f37(std::ranges::zip_transform_view<T1, T2...> &a0) {
+bool f37(std::ranges::zip_transform_view<T1, T2...> &a0)
+  requires(
+      (std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+      std::is_object_v<T1> &&
+      std::regular_invocable<T1 &, std::ranges::range_reference_t<T2>...> &&
+      std::__referenceable<
+          std::invoke_result_t<T1 &, std::ranges::range_reference_t<T2>...>>)
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename... T2,
           typename T3 = std::ranges::zip_transform_view<T1, T2...>>
-bool f38(const std::ranges::zip_transform_view<T1, T2...> &a0) {
+bool f38(const std::ranges::zip_transform_view<T1, T2...> &a0)
+  requires(
+      (std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+      std::is_object_v<T1> &&
+      std::regular_invocable<T1 &, std::ranges::range_reference_t<T2>...> &&
+      std::__referenceable<
+          std::invoke_result_t<T1 &, std::ranges::range_reference_t<T2>...>>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -160,7 +186,13 @@ auto f39(std::ranges::zip_transform_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
-               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>)
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
 {
   return a0.data();
 }
@@ -175,7 +207,13 @@ auto f40(const std::ranges::zip_transform_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
-               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>)
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
 {
   return a0.data();
 }
@@ -188,7 +226,13 @@ decltype(auto) f41(std::ranges::zip_transform_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
-               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>)
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
 {
   return a0.front();
 }
@@ -201,7 +245,13 @@ decltype(auto) f42(const std::ranges::zip_transform_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
-               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>)
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
 {
   return a0.front();
 }
@@ -216,7 +266,13 @@ decltype(auto) f43(std::ranges::zip_transform_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
-               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>)
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
 {
   return a0.back();
 }
@@ -231,7 +287,47 @@ decltype(auto) f44(const std::ranges::zip_transform_view<T1, T2...> &a0)
           (std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
            std::same_as<
                std::ranges::zip_transform_view<T1, T2...>,
-               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>)
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
 {
   return a0.back();
+}
+
+template <typename T1, typename... T2, typename T3>
+decltype(auto) f45(std::ranges::zip_transform_view<T1, T2...> &a0,
+                   std::ranges::range_difference_t<T3> a1)
+  requires(std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
+           std::same_as<
+               std::ranges::zip_transform_view<T1, T2...>,
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
+{
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, typename... T2, typename T3>
+decltype(auto) f46(const std::ranges::zip_transform_view<T1, T2...> &a0,
+                   std::ranges::range_difference_t<T3> a1)
+  requires(std::is_class_v<std::ranges::zip_transform_view<T1, T2...>> &&
+           std::same_as<
+               std::ranges::zip_transform_view<T1, T2...>,
+               std::remove_cv_t<std::ranges::zip_transform_view<T1, T2...>>>) &&
+          ((std::ranges::view<T2> && ...) && (sizeof...(T2) > 0) &&
+           std::is_object_v<T1> &&
+           std::regular_invocable<T1 &,
+                                  std::ranges::range_reference_t<T2>...> &&
+           std::__referenceable<std::invoke_result_t<
+               T1 &, std::ranges::range_reference_t<T2>...>>)
+{
+  return a0.template operator[]<T3>(a1);
 }

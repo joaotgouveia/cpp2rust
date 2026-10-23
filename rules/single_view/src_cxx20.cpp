@@ -87,7 +87,8 @@ decltype(auto) f12(std::ranges::single_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::single_view<T1>> &&
            std::same_as<std::ranges::single_view<T1>,
-                        std::remove_cv_t<std::ranges::single_view<T1>>>)
+                        std::remove_cv_t<std::ranges::single_view<T1>>>) &&
+          (std::is_object_v<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }
@@ -97,7 +98,8 @@ decltype(auto) f13(const std::ranges::single_view<T1> &a0,
                    std::ranges::range_difference_t<T2> a1)
   requires(std::is_class_v<std::ranges::single_view<T1>> &&
            std::same_as<std::ranges::single_view<T1>,
-                        std::remove_cv_t<std::ranges::single_view<T1>>>)
+                        std::remove_cv_t<std::ranges::single_view<T1>>>) &&
+          (std::is_object_v<T1>)
 {
   return a0.template operator[]<T2>(a1);
 }

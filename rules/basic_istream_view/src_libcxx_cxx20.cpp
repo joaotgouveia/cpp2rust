@@ -36,9 +36,11 @@ bool f27(std::ranges::basic_istream_view<T1, T2, T3> &a0)
            std::ranges::forward_range<
                std::ranges::basic_istream_view<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.empty();
 }
@@ -51,22 +53,30 @@ bool f28(const std::ranges::basic_istream_view<T1, T2, T3> &a0)
            std::ranges::forward_range<
                std::ranges::basic_istream_view<T1, T2, T3> const>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.empty();
 }
 
 template <typename T1, typename T2, typename T3,
           typename T4 = std::ranges::basic_istream_view<T1, T2, T3>>
-bool f29(std::ranges::basic_istream_view<T1, T2, T3> &a0) {
+bool f29(std::ranges::basic_istream_view<T1, T2, T3> &a0)
+  requires(std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
+{
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2, typename T3,
           typename T4 = std::ranges::basic_istream_view<T1, T2, T3>>
-bool f30(const std::ranges::basic_istream_view<T1, T2, T3> &a0) {
+bool f30(const std::ranges::basic_istream_view<T1, T2, T3> &a0)
+  requires(std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
+{
   return static_cast<bool>(a0);
 }
 
@@ -76,9 +86,11 @@ auto f31(std::ranges::basic_istream_view<T1, T2, T3> &a0)
   requires(std::contiguous_iterator<std::ranges::iterator_t<
                std::ranges::basic_istream_view<T1, T2, T3>>>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.data();
 }
@@ -91,9 +103,11 @@ auto f32(const std::ranges::basic_istream_view<T1, T2, T3> &a0)
            std::contiguous_iterator<std::ranges::iterator_t<
                std::ranges::basic_istream_view<T1, T2, T3> const>>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.data();
 }
@@ -109,9 +123,11 @@ auto f33(std::ranges::basic_istream_view<T1, T2, T3> &a0)
                std::ranges::iterator_t<
                    std::ranges::basic_istream_view<T1, T2, T3>>>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.size();
 }
@@ -127,9 +143,11 @@ auto f34(const std::ranges::basic_istream_view<T1, T2, T3> &a0)
                std::ranges::iterator_t<
                    std::ranges::basic_istream_view<T1, T2, T3> const>>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.size();
 }
@@ -140,9 +158,11 @@ decltype(auto) f35(std::ranges::basic_istream_view<T1, T2, T3> &a0)
   requires(std::ranges::forward_range<
               std::ranges::basic_istream_view<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.front();
 }
@@ -153,9 +173,11 @@ decltype(auto) f36(const std::ranges::basic_istream_view<T1, T2, T3> &a0)
   requires(std::ranges::forward_range<
               std::ranges::basic_istream_view<T1, T2, T3> const>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.front();
 }
@@ -168,9 +190,11 @@ decltype(auto) f37(std::ranges::basic_istream_view<T1, T2, T3> &a0)
            std::ranges::common_range<
                std::ranges::basic_istream_view<T1, T2, T3>>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.back();
 }
@@ -183,9 +207,37 @@ decltype(auto) f38(const std::ranges::basic_istream_view<T1, T2, T3> &a0)
            std::ranges::common_range<
                std::ranges::basic_istream_view<T1, T2, T3> const>) &&
           (std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
-           std::same_as<
-               std::ranges::basic_istream_view<T1, T2, T3>,
-               std::remove_cv_t<std::ranges::basic_istream_view<T1, T2, T3>>>)
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
 {
   return a0.back();
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+decltype(auto) f39(std::ranges::basic_istream_view<T1, T2, T3> &a0,
+                   std::ranges::range_difference_t<T4> a1)
+  requires(std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
+{
+  return a0.template operator[]<T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+decltype(auto) f40(const std::ranges::basic_istream_view<T1, T2, T3> &a0,
+                   std::ranges::range_difference_t<T4> a1)
+  requires(std::is_class_v<std::ranges::basic_istream_view<T1, T2, T3>> &&
+           std::same_as<std::ranges::basic_istream_view<T1, T2, T3>,
+                        std::remove_cv_t<
+                            std::ranges::basic_istream_view<T1, T2, T3>>>) &&
+          (std::default_initializable<T1> &&
+           std::ranges::__stream_extractable<T1, T2, T3>)
+{
+  return a0.template operator[]<T4>(a1);
 }

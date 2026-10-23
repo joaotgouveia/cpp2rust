@@ -44,7 +44,8 @@ decltype(auto) f6(std::ranges::filter_view<T1, T2> &a0,
                   std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.template operator[]<T3>(a1);
 }
@@ -54,7 +55,8 @@ decltype(auto) f7(const std::ranges::filter_view<T1, T2> &a0,
                   std::ranges::range_difference_t<T3> a1)
   requires(std::is_class_v<std::ranges::filter_view<T1, T2>> &&
            std::same_as<std::ranges::filter_view<T1, T2>,
-                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>)
+                        std::remove_cv_t<std::ranges::filter_view<T1, T2>>>) &&
+          (std::ranges::view<T1> && std::is_object_v<T2>)
 {
   return a0.template operator[]<T3>(a1);
 }
