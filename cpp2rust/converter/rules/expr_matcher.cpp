@@ -680,12 +680,18 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
     return a_tmpl && !b_tmpl ? b : nullptr;
   }
   RuleDecls::Trial trial(sema);
-  auto better = sema.getMoreSpecializedTemplate(
-      a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Call,
-      getOperands(sema.Context, use).size());
-  if (!better) {
-    better = sema.getMoreSpecializedTemplate(a_tmpl, b_tmpl, use->getBeginLoc(),
-                                             clang::TPOC_Conversion, 0);
+  // partial ordering compares rules taking the same operands; a rule written
+  // as a0++ takes one less than one taking the dummy int of a postfix operator
+  clang::FunctionTemplateDecl *better = nullptr;
+  if (getOperands(sema.Context, use, a_function->getNumParams()).size() ==
+      getOperands(sema.Context, use, b_function->getNumParams()).size()) {
+    better = sema.getMoreSpecializedTemplate(
+        a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Call,
+        getOperands(sema.Context, use).size());
+    if (!better) {
+      better = sema.getMoreSpecializedTemplate(
+          a_tmpl, b_tmpl, use->getBeginLoc(), clang::TPOC_Conversion, 0);
+    }
   }
   if (better == a_tmpl) {
     return a;
