@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <ranges>
 #include <utility>
 
@@ -46,4 +47,16 @@ auto f8(std::ranges::take_while_view<T1, T2> &a0) {
 template <typename T1, typename T2>
 auto f9(const std::ranges::take_while_view<T1, T2> &a0) {
   return a0.end();
+}
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f10(std::ranges::take_while_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f11(const std::ranges::take_while_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
 }

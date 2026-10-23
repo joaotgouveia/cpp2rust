@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <ranges>
 #include <utility>
 
@@ -42,4 +43,16 @@ auto f7(std::ranges::zip_transform_view<T1, T2...> &a0) {
 template <typename T1, typename... T2>
 auto f8(const std::ranges::zip_transform_view<T1, T2...> &a0) {
   return a0.size();
+}
+
+template <typename T1, typename... T2, typename T3>
+decltype(auto) f9(std::ranges::zip_transform_view<T1, T2...> &a0,
+                  std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, typename... T2, typename T3>
+decltype(auto) f10(const std::ranges::zip_transform_view<T1, T2...> &a0,
+                   std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
 }

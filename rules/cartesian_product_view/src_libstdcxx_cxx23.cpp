@@ -120,3 +120,15 @@ template <typename T1, typename... T2>
 auto f23(const std::ranges::cartesian_product_view<T1, T2...> &a0) {
   return a0.cend();
 }
+
+template <typename T1, typename... T2, typename T3>
+decltype(auto) f24(std::ranges::cartesian_product_view<T1, T2...> &a0,
+                   std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, typename... T2, typename T3>
+decltype(auto) f25(const std::ranges::cartesian_product_view<T1, T2...> &a0,
+                   std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
+}

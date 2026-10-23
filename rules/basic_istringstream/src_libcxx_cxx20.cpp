@@ -4,24 +4,24 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
-std::basic_istringstream<T1, T2, T3> f103(unsigned int a0, const T3 &a1) {
+std::basic_istringstream<T1, T2, T3> f104(unsigned int a0, const T3 &a1) {
   return std::basic_istringstream<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_istringstream<T1, T2, T3> f104(std::basic_string<T1, T2, T3> &&a0,
+std::basic_istringstream<T1, T2, T3> f105(std::basic_string<T1, T2, T3> &&a0,
                                           unsigned int a1) {
   return std::basic_istringstream<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_istringstream<T1, T2, T3>
-f105(const std::basic_string<T1, T2, T4> &a0, unsigned int a1, const T3 &a2) {
+f106(const std::basic_string<T1, T2, T4> &a0, unsigned int a1, const T3 &a2) {
   return std::basic_istringstream<T1, T2, T3>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_istringstream<T1, T2, T3>
-f106(const std::basic_string<T1, T2, T4> &a0, unsigned int a1) {
+f107(const std::basic_string<T1, T2, T4> &a0, unsigned int a1) {
   return std::basic_istringstream<T1, T2, T3>(a0, a1);
 }

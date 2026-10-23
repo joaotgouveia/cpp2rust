@@ -4,6 +4,6 @@
 template <typename T1, typename T2>
 std::allocation_result<typename std::allocator_traits<T1>::pointer,
                        typename std::allocator_traits<T1>::size_type>
-f20(T2 &a0, typename std::allocator_traits<T1>::size_type a1) {
+f42(T2 &a0, typename std::allocator_traits<T1>::size_type a1) {
   return std::allocator_traits<T1>::allocate_at_least(a0, a1);
 }

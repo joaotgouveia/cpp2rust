@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <ranges>
 #include <utility>
 
@@ -41,4 +42,16 @@ template <typename T1> T1 f9(const std::ranges::enumerate_view<T1> &a0) {
 
 template <typename T1> T1 f10(std::ranges::enumerate_view<T1> &&a0) {
   return std::move(a0).base();
+}
+
+template <typename T1, typename T2>
+decltype(auto) f11(std::ranges::enumerate_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f12(const std::ranges::enumerate_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
 }

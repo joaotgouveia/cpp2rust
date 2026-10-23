@@ -3,71 +3,71 @@
 #include <utility>
 
 template <typename T1, typename T2>
-bool f9(std::ranges::repeat_view<T1, T2> &a0) {
-  return a0.empty();
-}
-
-template <typename T1, typename T2>
-bool f10(const std::ranges::repeat_view<T1, T2> &a0) {
-  return a0.empty();
-}
-
-template <typename T1, typename T2>
 bool f11(std::ranges::repeat_view<T1, T2> &a0) {
-  return static_cast<bool>(a0);
+  return a0.empty();
 }
 
 template <typename T1, typename T2>
 bool f12(const std::ranges::repeat_view<T1, T2> &a0) {
+  return a0.empty();
+}
+
+template <typename T1, typename T2>
+bool f13(std::ranges::repeat_view<T1, T2> &a0) {
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2>
-auto f13(std::ranges::repeat_view<T1, T2> &a0) {
+bool f14(const std::ranges::repeat_view<T1, T2> &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1, typename T2>
+auto f15(std::ranges::repeat_view<T1, T2> &a0) {
   return a0.data();
 }
 
 template <typename T1, typename T2>
-auto f14(const std::ranges::repeat_view<T1, T2> &a0) {
+auto f16(const std::ranges::repeat_view<T1, T2> &a0) {
   return a0.data();
-}
-
-template <typename T1, typename T2>
-decltype(auto) f15(std::ranges::repeat_view<T1, T2> &a0) {
-  return a0.front();
-}
-
-template <typename T1, typename T2>
-decltype(auto) f16(const std::ranges::repeat_view<T1, T2> &a0) {
-  return a0.front();
 }
 
 template <typename T1, typename T2>
 decltype(auto) f17(std::ranges::repeat_view<T1, T2> &a0) {
-  return a0.back();
+  return a0.front();
 }
 
 template <typename T1, typename T2>
 decltype(auto) f18(const std::ranges::repeat_view<T1, T2> &a0) {
+  return a0.front();
+}
+
+template <typename T1, typename T2>
+decltype(auto) f19(std::ranges::repeat_view<T1, T2> &a0) {
   return a0.back();
 }
 
 template <typename T1, typename T2>
-auto f19(std::ranges::repeat_view<T1, T2> &a0) {
-  return a0.cbegin();
-}
-
-template <typename T1, typename T2>
-auto f20(const std::ranges::repeat_view<T1, T2> &a0) {
-  return a0.cbegin();
+decltype(auto) f20(const std::ranges::repeat_view<T1, T2> &a0) {
+  return a0.back();
 }
 
 template <typename T1, typename T2>
 auto f21(std::ranges::repeat_view<T1, T2> &a0) {
-  return a0.cend();
+  return a0.cbegin();
 }
 
 template <typename T1, typename T2>
 auto f22(const std::ranges::repeat_view<T1, T2> &a0) {
+  return a0.cbegin();
+}
+
+template <typename T1, typename T2>
+auto f23(std::ranges::repeat_view<T1, T2> &a0) {
+  return a0.cend();
+}
+
+template <typename T1, typename T2>
+auto f24(const std::ranges::repeat_view<T1, T2> &a0) {
   return a0.cend();
 }

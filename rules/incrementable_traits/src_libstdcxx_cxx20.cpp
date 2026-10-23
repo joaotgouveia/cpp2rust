@@ -1,9 +1,9 @@
 #include <algorithm>
 #include <utility>
 
-using t7 = std::incrementable_traits<unsigned __int128>;
+using t8 = std::incrementable_traits<unsigned __int128>;
 
-using t8 = std::incrementable_traits<unsigned __int128>::difference_type;
+using t9 = std::incrementable_traits<unsigned __int128>::difference_type;
 
 std::incrementable_traits<unsigned __int128> f1() {
   return std::incrementable_traits<unsigned __int128>();

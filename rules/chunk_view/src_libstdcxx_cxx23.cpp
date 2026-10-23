@@ -91,3 +91,15 @@ template <typename T1> auto f20(std::ranges::chunk_view<T1> &a0) {
 template <typename T1> auto f21(const std::ranges::chunk_view<T1> &a0) {
   return a0.cend();
 }
+
+template <typename T1, typename T2>
+decltype(auto) f22(std::ranges::chunk_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f23(const std::ranges::chunk_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}

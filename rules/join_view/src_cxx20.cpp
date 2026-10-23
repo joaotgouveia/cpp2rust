@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <ranges>
 #include <utility>
 
@@ -25,4 +26,16 @@ template <typename T1> auto f5(std::ranges::join_view<T1> &a0) {
 
 template <typename T1> auto f6(std::ranges::join_view<T1> &a0) {
   return a0.end();
+}
+
+template <typename T1, typename T2>
+decltype(auto) f7(std::ranges::join_view<T1> &a0,
+                  std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f8(const std::ranges::join_view<T1> &a0,
+                  std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
 }

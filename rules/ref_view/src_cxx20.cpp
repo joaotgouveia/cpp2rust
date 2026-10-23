@@ -33,3 +33,15 @@ template <typename T1> auto f6(const std::ranges::ref_view<T1> &a0) {
 template <typename T1, typename T2> std::ranges::ref_view<T1> f7(T2 &&a0) {
   return std::ranges::ref_view<T1>(std::forward<T2>(a0));
 }
+
+template <typename T1, typename T2>
+decltype(auto) f8(std::ranges::ref_view<T1> &a0,
+                  std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f9(const std::ranges::ref_view<T1> &a0,
+                  std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}

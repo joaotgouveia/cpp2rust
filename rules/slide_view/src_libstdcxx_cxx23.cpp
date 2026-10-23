@@ -98,3 +98,15 @@ template <typename T1> auto f22(std::ranges::slide_view<T1> &a0) {
 template <typename T1> auto f23(const std::ranges::slide_view<T1> &a0) {
   return a0.cend();
 }
+
+template <typename T1, typename T2>
+decltype(auto) f24(std::ranges::slide_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f25(const std::ranges::slide_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}

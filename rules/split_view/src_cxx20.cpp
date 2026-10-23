@@ -37,3 +37,15 @@ template <typename T1, typename T2, typename T3>
 std::ranges::split_view<T1, T2> f7(T3 &&a0, std::ranges::range_value_t<T3> a1) {
   return std::ranges::split_view<T1, T2>(std::forward<T3>(a0), a1);
 }
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f8(std::ranges::split_view<T1, T2> &a0,
+                  std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f9(const std::ranges::split_view<T1, T2> &a0,
+                  std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
+}

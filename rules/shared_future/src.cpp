@@ -44,3 +44,15 @@ template <typename T1> bool f8(const std::shared_future<T1> &a0) {
 template <typename T1> void f9(const std::shared_future<T1> &a0) {
   return a0.wait();
 }
+
+template <typename T1, typename T2, typename T3>
+std::future_status f10(const std::shared_future<T1> &a0,
+                       const std::chrono::duration<T2, T3> &a1) {
+  return a0.template wait_for<T2, T3>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+std::future_status f11(const std::shared_future<T1> &a0,
+                       const std::chrono::time_point<T2, T3> &a1) {
+  return a0.template wait_until<T2, T3>(a1);
+}

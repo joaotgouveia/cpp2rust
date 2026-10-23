@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <ranges>
 #include <utility>
 
@@ -99,4 +100,16 @@ template <typename T1> auto f23(std::ranges::as_const_view<T1> &a0) {
 
 template <typename T1> auto f24(const std::ranges::as_const_view<T1> &a0) {
   return a0.cend();
+}
+
+template <typename T1, typename T2>
+decltype(auto) f25(std::ranges::as_const_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f26(const std::ranges::as_const_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
 }

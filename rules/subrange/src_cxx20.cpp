@@ -70,3 +70,15 @@ template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
 T4 f12(const std::ranges::subrange<T1, T2, T3> &a0) {
   return static_cast<T4>(a0);
 }
+
+template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
+decltype(auto) f13(std::ranges::subrange<T1, T2, T3> &a0,
+                   std::ranges::range_difference_t<T4> a1) {
+  return a0.template operator[]<T4>(a1);
+}
+
+template <typename T1, typename T2, std::ranges::subrange_kind T3, typename T4>
+decltype(auto) f14(const std::ranges::subrange<T1, T2, T3> &a0,
+                   std::ranges::range_difference_t<T4> a1) {
+  return a0.template operator[]<T4>(a1);
+}

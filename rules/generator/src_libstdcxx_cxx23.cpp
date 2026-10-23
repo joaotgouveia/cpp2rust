@@ -112,4 +112,16 @@ auto f20(const std::generator<T1, T2, T3> &a0) {
   return a0.cend();
 }
 
+template <typename T1, typename T2, typename T3, typename T4>
+decltype(auto) f21(std::generator<T1, T2, T3> &a0,
+                   std::ranges::range_difference_t<T4> a1) {
+  return a0.template operator[]<T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+decltype(auto) f22(const std::generator<T1, T2, T3> &a0,
+                   std::ranges::range_difference_t<T4> a1) {
+  return a0.template operator[]<T4>(a1);
+}
+
 template <typename T1, typename T2> using t4 = std::pmr::generator<T1, T2>;

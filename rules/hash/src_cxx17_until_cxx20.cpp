@@ -7,6 +7,7 @@
 #include <future>
 #include <memory>
 #include <optional>
+#include <string>
 #include <string_view>
 #include <system_error>
 #include <typeindex>
@@ -14,6 +15,6 @@
 #include <variant>
 #include <vector>
 
-using t9 = std::hash<std::monostate>::result_type;
+using t13 = std::hash<std::monostate>::result_type;
 
-using t10 = std::hash<std::monostate>::argument_type;
+using t14 = std::hash<std::monostate>::argument_type;

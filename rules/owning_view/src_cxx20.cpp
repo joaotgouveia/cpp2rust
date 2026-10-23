@@ -80,3 +80,15 @@ template <typename T1> auto f17(std::ranges::owning_view<T1> &a0) {
 template <typename T1> auto f18(const std::ranges::owning_view<T1> &a0) {
   return a0.data();
 }
+
+template <typename T1, typename T2>
+decltype(auto) f19(std::ranges::owning_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f20(const std::ranges::owning_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}

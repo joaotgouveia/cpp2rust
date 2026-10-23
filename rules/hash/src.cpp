@@ -6,6 +6,7 @@
 #include <future>
 #include <memory>
 #include <string>
+#include <string_view>
 #include <system_error>
 #include <typeindex>
 #include <utility>
@@ -66,20 +67,65 @@ template <typename T1> std::size_t f12(const std::hash<T1 *> &a0, T1 *a1) {
   return a0.operator()(a1);
 }
 
-template <typename T1> using t4 = std::hash<std::shared_ptr<T1>>;
+template <typename T1>
+using t4 = std::hash<std::basic_string<char, std::char_traits<char>, T1>>;
 
 template <typename T1>
-std::size_t f13(const std::hash<std::shared_ptr<T1>> &a0,
+std::size_t
+f13(const std::hash<std::basic_string<char, std::char_traits<char>, T1>> &a0,
+    const std::basic_string<char, std::char_traits<char>, T1> &a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1>
+using t5 = std::hash<std::basic_string<wchar_t, std::char_traits<wchar_t>, T1>>;
+
+template <typename T1>
+std::size_t
+f14(const std::hash<std::basic_string<wchar_t, std::char_traits<wchar_t>, T1>>
+        &a0,
+    const std::basic_string<wchar_t, std::char_traits<wchar_t>, T1> &a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1>
+using t6 =
+    std::hash<std::basic_string<char16_t, std::char_traits<char16_t>, T1>>;
+
+template <typename T1>
+std::size_t
+f15(const std::hash<std::basic_string<char16_t, std::char_traits<char16_t>, T1>>
+        &a0,
+    const std::basic_string<char16_t, std::char_traits<char16_t>, T1> &a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1>
+using t7 =
+    std::hash<std::basic_string<char32_t, std::char_traits<char32_t>, T1>>;
+
+template <typename T1>
+std::size_t
+f16(const std::hash<std::basic_string<char32_t, std::char_traits<char32_t>, T1>>
+        &a0,
+    const std::basic_string<char32_t, std::char_traits<char32_t>, T1> &a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1> using t8 = std::hash<std::shared_ptr<T1>>;
+
+template <typename T1>
+std::size_t f17(const std::hash<std::shared_ptr<T1>> &a0,
                 const std::shared_ptr<T1> &a1) {
   return a0.operator()(a1);
 }
 
-template <typename T1> using t5 = std::hash<std::vector<bool, T1>>;
+template <typename T1> using t9 = std::hash<std::vector<bool, T1>>;
 
 template <typename T1>
-std::size_t f14(const std::hash<std::vector<bool, T1>> &a0,
+std::size_t f18(const std::hash<std::vector<bool, T1>> &a0,
                 const std::vector<bool, T1> &a1) {
   return a0.operator()(a1);
 }
 
-template <typename T1> using t6 = std::hash<T1>;
+template <typename T1> using t10 = std::hash<T1>;

@@ -41,83 +41,95 @@ template <typename T1> bool f8(const std::future<T1> &a0) { return a0.valid(); }
 
 template <typename T1> void f9(const std::future<T1> &a0) { return a0.wait(); }
 
-const std::error_category &f10() { return std::future_category(); }
+template <typename T1, typename T2, typename T3>
+std::future_status f10(const std::future<T1> &a0,
+                       const std::chrono::duration<T2, T3> &a1) {
+  return a0.template wait_for<T2, T3>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+std::future_status f11(const std::future<T1> &a0,
+                       const std::chrono::time_point<T2, T3> &a1) {
+  return a0.template wait_until<T2, T3>(a1);
+}
+
+const std::error_category &f12() { return std::future_category(); }
 
 using t2 = std::future_errc;
 
-std::future_errc f11() { return std::future_errc::future_already_retrieved; }
+std::future_errc f13() { return std::future_errc::future_already_retrieved; }
 
-std::future_errc f12() { return std::future_errc::promise_already_satisfied; }
+std::future_errc f14() { return std::future_errc::promise_already_satisfied; }
 
-std::future_errc f13() { return std::future_errc::no_state; }
+std::future_errc f15() { return std::future_errc::no_state; }
 
-std::future_errc f14() { return std::future_errc::broken_promise; }
+std::future_errc f16() { return std::future_errc::broken_promise; }
 
 using t3 = std::future_error;
 
-const char *f15(const std::future_error &a0) { return a0.what(); }
+const char *f17(const std::future_error &a0) { return a0.what(); }
 
-const std::error_code &f16(const std::future_error &a0) { return a0.code(); }
+const std::error_code &f18(const std::future_error &a0) { return a0.code(); }
 
-std::future_error f17(const std::future_error &a0) {
+std::future_error f19(const std::future_error &a0) {
   return std::future_error(a0);
 }
 
-std::future_error &f18(std::future_error &a0, const std::future_error &a1) {
+std::future_error &f20(std::future_error &a0, const std::future_error &a1) {
   return a0.operator=(a1);
 }
 
 using t4 = std::future_status;
 
-std::future_status f19() { return std::future_status::ready; }
+std::future_status f21() { return std::future_status::ready; }
 
-std::future_status f20() { return std::future_status::timeout; }
+std::future_status f22() { return std::future_status::timeout; }
 
-std::future_status f21() { return std::future_status::deferred; }
+std::future_status f23() { return std::future_status::deferred; }
 
 using t5 = std::launch;
 
-std::launch f22() { return std::launch::async; }
+std::launch f24() { return std::launch::async; }
 
-std::launch f23() { return std::launch::deferred; }
+std::launch f25() { return std::launch::deferred; }
 
-std::error_code f24(std::future_errc a0) { return std::make_error_code(a0); }
+std::error_code f26(std::future_errc a0) { return std::make_error_code(a0); }
 
-std::error_condition f25(std::future_errc a0) {
+std::error_condition f27(std::future_errc a0) {
   return std::make_error_condition(a0);
 }
 
-std::launch f26(std::launch a0, std::launch a1) {
+std::launch f28(std::launch a0, std::launch a1) {
   return std::operator&(a0, a1);
 }
 
-std::launch &f27(std::launch &a0, std::launch a1) {
+std::launch &f29(std::launch &a0, std::launch a1) {
   return std::operator&=(a0, a1);
 }
 
-std::launch f28(std::launch a0, std::launch a1) {
+std::launch f30(std::launch a0, std::launch a1) {
   return std::operator^(a0, a1);
 }
 
-std::launch &f29(std::launch &a0, std::launch a1) {
+std::launch &f31(std::launch &a0, std::launch a1) {
   return std::operator^=(a0, a1);
 }
 
-std::launch f30(std::launch a0, std::launch a1) {
+std::launch f32(std::launch a0, std::launch a1) {
   return std::operator|(a0, a1);
 }
 
-std::launch &f31(std::launch &a0, std::launch a1) {
+std::launch &f33(std::launch &a0, std::launch a1) {
   return std::operator|=(a0, a1);
 }
 
-std::launch f32(std::launch a0) { return std::operator~(a0); }
+std::launch f34(std::launch a0) { return std::operator~(a0); }
 
-template <typename T1> void f33(std::promise<T1> &a0, std::promise<T1> &a1) {
+template <typename T1> void f35(std::promise<T1> &a0, std::promise<T1> &a1) {
   return std::swap<T1>(a0, a1);
 }
 
 template <typename T1, typename... T2>
-void f34(std::packaged_task<T1(T2...)> &a0, std::packaged_task<T1(T2...)> &a1) {
+void f36(std::packaged_task<T1(T2...)> &a0, std::packaged_task<T1(T2...)> &a1) {
   return std::swap<T1, T2...>(a0, a1);
 }

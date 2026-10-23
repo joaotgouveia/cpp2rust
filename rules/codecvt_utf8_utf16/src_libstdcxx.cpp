@@ -2,6 +2,15 @@
 #include <codecvt>
 #include <utility>
 
+template <unsigned long T1, std::codecvt_mode T2>
+using t2 = std::codecvt_utf8_utf16<wchar_t, T1, T2>;
+
+template <unsigned long T1, std::codecvt_mode T2>
+using t3 = std::codecvt_utf8_utf16<char16_t, T1, T2>;
+
+template <unsigned long T1, std::codecvt_mode T2>
+using t4 = std::codecvt_utf8_utf16<char32_t, T1, T2>;
+
 template <typename T1, unsigned long T2, std::codecvt_mode T3>
 typename std::codecvt_utf8_utf16<T1, T2, T3>::result
 f2(const std::codecvt_utf8_utf16<T1, T2, T3> &a0, std::mbstate_t &a1,

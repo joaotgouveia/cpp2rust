@@ -45,3 +45,15 @@ std::ranges::repeat_view<T1, T2>
 f8(std::piecewise_construct_t a0, std::tuple<T3...> a1, std::tuple<T4...> a2) {
   return std::ranges::repeat_view<T1, T2>(std::move(a0), a1, a2);
 }
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f9(std::ranges::repeat_view<T1, T2> &a0,
+                  std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
+}
+
+template <typename T1, typename T2, typename T3>
+decltype(auto) f10(const std::ranges::repeat_view<T1, T2> &a0,
+                   std::ranges::range_difference_t<T3> a1) {
+  return a0.template operator[]<T3>(a1);
+}

@@ -53,3 +53,15 @@ template <typename T1, typename... T2>
 std::ranges::single_view<T1> f12(std::in_place_t a0, T2 &&...a1) {
   return std::ranges::single_view<T1>(std::move(a0), std::forward<T2>(a1)...);
 }
+
+template <typename T1, typename T2>
+decltype(auto) f13(std::ranges::single_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}
+
+template <typename T1, typename T2>
+decltype(auto) f14(const std::ranges::single_view<T1> &a0,
+                   std::ranges::range_difference_t<T2> a1) {
+  return a0.template operator[]<T2>(a1);
+}

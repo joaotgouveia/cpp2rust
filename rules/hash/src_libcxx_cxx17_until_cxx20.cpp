@@ -4,6 +4,8 @@
 #include <functional>
 #include <memory>
 #include <optional>
+#include <string>
+#include <string_view>
 #include <system_error>
 #include <typeindex>
 #include <utility>
@@ -11,17 +13,17 @@
 #include <vector>
 
 template <typename T1>
-using t53 = typename std::hash<std::__enable_hash_helper<
+using t64 = typename std::hash<std::__enable_hash_helper<
     std::optional<T1>, std::remove_const_t<T1>>>::argument_type;
 
 template <typename T1>
-using t54 = typename std::hash<std::__enable_hash_helper<
+using t65 = typename std::hash<std::__enable_hash_helper<
     std::optional<T1>, std::remove_const_t<T1>>>::result_type;
 
 template <typename... T1>
-using t55 = typename std::hash<std::__enable_hash_helper<
+using t66 = typename std::hash<std::__enable_hash_helper<
     std::variant<T1...>, std::remove_const_t<T1>...>>::argument_type;
 
 template <typename... T1>
-using t56 = typename std::hash<std::__enable_hash_helper<
+using t67 = typename std::hash<std::__enable_hash_helper<
     std::variant<T1...>, std::remove_const_t<T1>...>>::result_type;
