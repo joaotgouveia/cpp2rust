@@ -523,6 +523,27 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
       a_function ? a_function->getDescribedFunctionTemplate() : nullptr;
   auto b_tmpl =
       b_function ? b_function->getDescribedFunctionTemplate() : nullptr;
+  // Two plain functions are told apart as C++ calls them: an exact match on
+  // invalid_argument beats the inherited rule on logic_error.
+  if (a_function && b_function && !a_tmpl && !b_tmpl) {
+    RuleDecls::Trial trial(sema);
+    auto loc = use->getBeginLoc();
+    auto operands = getOperands(sema.Context, use, a_function->getNumParams());
+    clang::OverloadCandidateSet set(loc,
+                                    clang::OverloadCandidateSet::CSK_Normal);
+    for (auto function : {a_function, b_function}) {
+      auto candidate = const_cast<clang::FunctionDecl *>(function);
+      sema.AddOverloadCandidate(
+          candidate, clang::DeclAccessPair::make(candidate, clang::AS_public),
+          operands, set);
+    }
+    clang::OverloadCandidateSet::iterator best;
+    if (set.BestViableFunction(sema, loc, best) != clang::OR_Success ||
+        trial.failed()) {
+      return nullptr;
+    }
+    return best->Function == a_function ? a : b;
+  }
   if (!a_tmpl || !b_tmpl) {
     if (!a_tmpl && b_tmpl) {
       return a;
