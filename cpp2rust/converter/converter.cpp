@@ -3183,6 +3183,10 @@ bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
     // FIXME: improve error handling
     llvm::errs() << "unsupported CXXOperatorCallExpr: "
                  << clang::getOperatorSpelling(expr->getOperator()) << '\n';
+    expr->dump();
+    if (auto *callee = expr->getCalleeDecl()) {
+      callee->dump();
+    }
     assert(0);
   }
   return false;
