@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <atomic>
+#include <barrier>
 #include <chrono>
 #include <compare>
 #include <cstddef>

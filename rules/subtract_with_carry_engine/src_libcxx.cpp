@@ -5,13 +5,13 @@
 #include <utility>
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-bool f15(const std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
+bool f14(const std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
          const std::subtract_with_carry_engine<T1, T2, T3, T4> &a1) {
   return std::operator!= <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-bool f16(const std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
+bool f15(const std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
          const std::subtract_with_carry_engine<T1, T2, T3, T4> &a1) {
   return std::operator== <T1, T2, T3, T4>(a0, a1);
 }
@@ -19,7 +19,7 @@ bool f16(const std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
 template <typename T1, typename T2, typename T3, std::size_t T4, std::size_t T5,
           std::size_t T6>
 std::basic_ostream<T1, T2> &
-f17(std::basic_ostream<T1, T2> &a0,
+f16(std::basic_ostream<T1, T2> &a0,
     const std::subtract_with_carry_engine<T3, T4, T5, T6> &a1) {
   return std::operator<< <T1, T2, T3, T4, T5, T6>(a0, a1);
 }
@@ -27,12 +27,32 @@ f17(std::basic_ostream<T1, T2> &a0,
 template <typename T1, typename T2, typename T3, std::size_t T4, std::size_t T5,
           std::size_t T6>
 std::basic_istream<T1, T2> &
-f18(std::basic_istream<T1, T2> &a0,
+f17(std::basic_istream<T1, T2> &a0,
     std::subtract_with_carry_engine<T3, T4, T5, T6> &a1) {
   return std::operator>> <T1, T2, T3, T4, T5, T6>(a0, a1);
 }
 
+template <
+    typename T1, std::size_t T2, std::size_t T3, std::size_t T4, typename T5,
+    std::__enable_if_t<std::__is_seed_sequence_v<
+                           T5, std::subtract_with_carry_engine<T1, T2, T3, T4>>,
+                       int>
+        T6 = 0>
+std::subtract_with_carry_engine<T1, T2, T3, T4> f18(T5 &a0) {
+  return std::subtract_with_carry_engine<T1, T2, T3, T4>(a0);
+}
+
+template <
+    typename T1, std::size_t T2, std::size_t T3, std::size_t T4, typename T5,
+    std::__enable_if_t<std::__is_seed_sequence_v<
+                           T5, std::subtract_with_carry_engine<T1, T2, T3, T4>>,
+                       int>
+        T6 = 0>
+void f19(std::subtract_with_carry_engine<T1, T2, T3, T4> &a0, T5 &a1) {
+  return a0.template seed<T5>(a1);
+}
+
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-T1 f19() {
+T1 f20() {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>::default_seed;
 }

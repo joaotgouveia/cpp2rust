@@ -61,8 +61,8 @@ std::string f26(const std::error_code &a0) { return a0.message(); }
 
 bool f27(const std::error_code &a0) { return static_cast<bool>(a0); }
 
-template <typename T1, typename T2 = typename std::enable_if<
-                           std::is_error_code_enum<T1>::value, void>::type>
+template <typename T1,
+          typename T2 = std::__enable_if_t<std::is_error_code_enum<T1>::value>>
 std::error_code f28(T1 a0) {
   return std::error_code(a0);
 }
@@ -100,8 +100,8 @@ std::string f37(const std::error_condition &a0) { return a0.message(); }
 
 bool f38(const std::error_condition &a0) { return static_cast<bool>(a0); }
 
-template <typename T1, typename T2 = typename std::enable_if<
-                           std::is_error_condition_enum<T1>::value, void>::type>
+template <typename T1, typename T2 = std::__enable_if_t<
+                           std::is_error_condition_enum<T1>::value>>
 std::error_condition f39(T1 a0) {
   return std::error_condition(a0);
 }

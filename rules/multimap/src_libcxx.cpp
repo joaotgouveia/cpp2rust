@@ -19,18 +19,18 @@ std::multimap<T1, T2, T3, T4> f81(T5 a0, T5 a1, const T3 &a2) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename std::enable_if<
-              std::is_constructible<std::pair<const T1, T2>, T5>::value,
-              int>::type T6 = 0>
+          std::__enable_if_t<
+              std::is_constructible<std::pair<const T1, T2>, T5>::value, int>
+              T6 = 0>
 typename std::multimap<T1, T2, T3, T4>::iterator
 f82(std::multimap<T1, T2, T3, T4> &a0, T5 &&a1) {
   return a0.template insert<T5>(std::forward<T5>(a1));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename std::enable_if<
-              std::is_constructible<std::pair<const T1, T2>, T5>::value,
-              int>::type T6 = 0>
+          std::__enable_if_t<
+              std::is_constructible<std::pair<const T1, T2>, T5>::value, int>
+              T6 = 0>
 typename std::multimap<T1, T2, T3, T4>::iterator
 f83(std::multimap<T1, T2, T3, T4> &a0,
     typename std::multimap<T1, T2, T3, T4>::const_iterator a1, T5 &&a2) {

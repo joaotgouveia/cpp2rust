@@ -63,8 +63,13 @@ bool f22(const std::chrono::time_point<T1, T2> &a0,
 }
 
 template <typename T1, typename T2, typename T3,
-          typename std::enable_if<std::is_convertible<T3, T2>::value, int>::type
-              T4 = 0>
+          std::__enable_if_t<std::is_convertible<T3, T2>::value, int> T4 = 0>
 std::chrono::time_point<T1, T2> f23(const std::chrono::time_point<T1, T3> &a0) {
   return std::chrono::time_point<T1, T2>(a0);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<std::chrono::__is_duration_v<T1>, int> T4 = 0>
+std::chrono::time_point<T2, T1> f24(const std::chrono::time_point<T2, T3> &a0) {
+  return std::chrono::time_point_cast<T1, T2, T3>(a0);
 }

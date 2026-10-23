@@ -113,32 +113,17 @@ void f102(std::vector<bool, T1> &a0, std::size_t a1, bool a2) {
   return a0.resize(a1, a2);
 }
 
-template <typename T1, typename T2,
-          typename T3 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T2>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+template <typename T1, typename T2, typename T3 = std::_RequireInputIter<T2>>
 std::vector<bool, T1> f103(T2 a0, T2 a1, const T1 &a2) {
   return std::vector<bool, T1>(a0, a1, a2);
 }
 
-template <typename T1, typename T2,
-          typename T3 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T2>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+template <typename T1, typename T2, typename T3 = std::_RequireInputIter<T2>>
 void f104(std::vector<bool, T1> &a0, T2 a1, T2 a2) {
   return a0.template assign<T2>(a1, a2);
 }
 
-template <typename T1, typename T2,
-          typename T3 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T2>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+template <typename T1, typename T2, typename T3 = std::_RequireInputIter<T2>>
 typename std::vector<bool, T1>::iterator
 f105(std::vector<bool, T1> &a0,
      typename std::vector<bool, T1>::const_iterator a1, T2 a2, T2 a3) {
@@ -473,31 +458,19 @@ f158(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
 }
 
 template <typename T1, typename T2, typename T3,
-          typename T4 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T3>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+          typename T4 = std::_RequireInputIter<T3>>
 std::vector<T1, T2> f159(T3 a0, T3 a1, const T2 &a2) {
   return std::vector<T1, T2>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3,
-          typename T4 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T3>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+          typename T4 = std::_RequireInputIter<T3>>
 void f160(std::vector<T1, T2> &a0, T3 a1, T3 a2) {
   return a0.template assign<T3>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3,
-          typename T4 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T3>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+          typename T4 = std::_RequireInputIter<T3>>
 typename std::vector<T1, T2>::iterator
 f161(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
      T3 a2, T3 a3) {

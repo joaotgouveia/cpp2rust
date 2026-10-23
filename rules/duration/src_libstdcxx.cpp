@@ -28,31 +28,10 @@ f17(const std::chrono::duration<T1, T2> &a0) {
 
 template <
     typename T1, typename T2, typename T3,
-    typename T4 = typename std::enable_if<
-        std::integral_constant<
-            bool,
-            std::is_convertible<const T3 &, T1>::value &&
-                std::integral_constant<
-                    bool, std::chrono::treat_as_floating_point<T1>::value ||
-                              std::integral_constant<
-                                  bool, !std::chrono::treat_as_floating_point<
-                                            T3>::value>::value>::value>::value,
-        void>::type>
+    typename T4 = std::_Require<
+        std::is_convertible<const T3 &, T1>,
+        std::__or_<std::chrono::treat_as_floating_point<T1>,
+                   std::__not_<std::chrono::treat_as_floating_point<T3>>>>>
 std::chrono::duration<T1, T2> f18(const T3 &a0) {
   return std::chrono::duration<T1, T2>(a0);
-}
-
-template <typename T1, typename T2, typename T3 = T1>
-typename std::enable_if<!std::chrono::treat_as_floating_point<T1>::value,
-                        std::chrono::duration<T1, T2> &>::type
-f19(std::chrono::duration<T1, T2> &a0, const T1 &a1) {
-  return a0.operator%=(a1);
-}
-
-template <typename T1, typename T2, typename T3 = T1>
-typename std::enable_if<!std::chrono::treat_as_floating_point<T1>::value,
-                        std::chrono::duration<T1, T2> &>::type
-f20(std::chrono::duration<T1, T2> &a0,
-    const std::chrono::duration<T1, T2> &a1) {
-  return a0.operator%=(a1);
 }

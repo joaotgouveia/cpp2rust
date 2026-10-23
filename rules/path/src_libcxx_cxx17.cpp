@@ -238,51 +238,65 @@ std::filesystem::path::iterator f60(const std::filesystem::path &a0) {
   return a0.end();
 }
 
+template <typename T1, typename T2 = std::__enable_if_t<
+                           std::filesystem::__is_pathable<T1>::value, void>>
+std::filesystem::path f61(const T1 &a0, std::filesystem::path::format a1) {
+  return std::filesystem::path(a0, a1);
+}
+
 template <typename T1>
-std::filesystem::path f61(T1 a0, T1 a1, std::filesystem::path::format a2) {
+std::filesystem::path f62(T1 a0, T1 a1, std::filesystem::path::format a2) {
   return std::filesystem::path(a0, a1, a2);
 }
 
 template <typename T1>
-std::filesystem::path &f62(std::filesystem::path &a0, T1 a1, T1 a2) {
+std::filesystem::path &f63(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template assign<T1>(a1, a2);
 }
 
 template <typename T1>
-std::filesystem::path &f63(std::filesystem::path &a0, T1 a1, T1 a2) {
+std::filesystem::path &f64(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template append<T1>(a1, a2);
 }
 
+template <
+    typename T1,
+    std::__enable_if_t<std::filesystem::__can_convert_char<T1>::value, int> T2 =
+        0>
+std::filesystem::path &f65(std::filesystem::path &a0, T1 a1) {
+  return a0.template operator+= <T1>(a1);
+}
+
 template <typename T1>
-std::filesystem::path &f64(std::filesystem::path &a0, T1 a1, T1 a2) {
+std::filesystem::path &f66(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template concat<T1>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f65(const std::filesystem::path &a0,
+std::basic_string<T1, T2, T3> f67(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template string<T1, T2, T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f66(const std::filesystem::path &a0,
+std::basic_string<T1, T2, T3> f68(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template generic_string<T1, T2, T3>(a1);
 }
 
-std::filesystem::path f67(const std::filesystem::path &a0,
+std::filesystem::path f69(const std::filesystem::path &a0,
                           const std::filesystem::path &a1) {
   return operator/(a0, a1);
 }
 
-bool f68(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+bool f70(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator==(a0, a1);
 }
 
-std::filesystem::path::value_type f69() {
+std::filesystem::path::value_type f71() {
   return std::filesystem::path::preferred_separator;
 }
 
-void f70(std::filesystem::path &a0, std::filesystem::path &a1) {
+void f72(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
 }

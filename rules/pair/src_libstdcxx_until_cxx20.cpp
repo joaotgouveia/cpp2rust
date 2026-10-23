@@ -1,22 +1,119 @@
 #include <algorithm>
 #include <utility>
 
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::enable_if<
-    std::integral_constant<
-        bool, std::is_assignable<T1 &, const T3 &>::value &&
-                  std::is_assignable<T2 &, const T4 &>::value>::value,
-    std::pair<T1, T2> &>::type
-f11(std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
-  return a0.template operator= <T3, T4>(a1);
+template <
+    typename T1, typename T2, typename T3 = T1, typename T4 = T2,
+    typename std::enable_if<
+        std::__and_<std::__is_implicitly_default_constructible<T1>,
+                    std::__is_implicitly_default_constructible<T2>>::value,
+        bool>::type T5 = true>
+std::pair<T1, T2> f11() {
+  return std::pair<T1, T2>();
 }
 
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::enable_if<
-    std::integral_constant<bool,
-                           std::is_assignable<T1 &, T3 &&>::value &&
-                               std::is_assignable<T2 &, T4 &&>::value>::value,
-    std::pair<T1, T2> &>::type
-f12(std::pair<T1, T2> &a0, std::pair<T3, T4> &&a1) {
-  return a0.template operator= <T3, T4>(std::move(a1));
+template <typename T1, typename T2, typename T3 = T1, typename T4 = T2,
+          typename std::enable_if<
+              std::__and_<
+                  std::is_default_constructible<T1>,
+                  std::is_default_constructible<T2>,
+                  std::__not_<std::__and_<
+                      std::__is_implicitly_default_constructible<T1>,
+                      std::__is_implicitly_default_constructible<T2>>>>::value,
+              bool>::type T5 = false>
+std::pair<T1, T2> f12() {
+  return std::pair<T1, T2>();
+}
+
+template <typename T1, typename T2, typename T3 = T1, typename T4 = T2,
+          typename std::enable_if<
+              std::_PCC<true, T1, T2>::template _ConstructiblePair<T1, T2>() &&
+                  std::_PCC<true, T1,
+                            T2>::template _ImplicitlyConvertiblePair<T1, T2>(),
+              bool>::type T5 = true>
+std::pair<T1, T2> f13(const T1 &a0, const T2 &a1) {
+  return std::pair<T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3 = T1, typename T4 = T2,
+          typename std::enable_if<
+              std::_PCC<true, T1, T2>::template _ConstructiblePair<T1, T2>() &&
+                  !std::_PCC<true, T1,
+                             T2>::template _ImplicitlyConvertiblePair<T1, T2>(),
+              bool>::type T5 = false>
+std::pair<T1, T2> f14(const T1 &a0, const T2 &a1) {
+  return std::pair<T1, T2>(a0, a1);
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4,
+    typename std::enable_if<
+        std::_PCC<!std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
+                  T1, T2>::template _ConstructiblePair<T3, T4>() &&
+            std::_PCC<!std::is_same<T1, T3>::value ||
+                          !std::is_same<T2, T4>::value,
+                      T1, T2>::template _ImplicitlyConvertiblePair<T3, T4>(),
+        bool>::type T5 = true>
+std::pair<T1, T2> f15(const std::pair<T3, T4> &a0) {
+  return std::pair<T1, T2>(a0);
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4,
+    typename std::enable_if<
+        std::_PCC<!std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
+                  T1, T2>::template _ConstructiblePair<T3, T4>() &&
+            !std::_PCC<!std::is_same<T1, T3>::value ||
+                           !std::is_same<T2, T4>::value,
+                       T1, T2>::template _ImplicitlyConvertiblePair<T3, T4>(),
+        bool>::type T5 = false>
+std::pair<T1, T2> f16(const std::pair<T3, T4> &a0) {
+  return std::pair<T1, T2>(a0);
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4,
+    typename std::enable_if<
+        std::_PCC<true, T1, T2>::template _MoveConstructiblePair<T3, T4>() &&
+            std::_PCC<true, T1,
+                      T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
+        bool>::type T5 = true>
+std::pair<T1, T2> f17(T3 &&a0, T4 &&a1) {
+  return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4,
+    typename std::enable_if<
+        std::_PCC<true, T1, T2>::template _MoveConstructiblePair<T3, T4>() &&
+            !std::_PCC<true, T1,
+                       T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
+        bool>::type T5 = false>
+std::pair<T1, T2> f18(T3 &&a0, T4 &&a1) {
+  return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4,
+    typename std::enable_if<
+        std::_PCC<!std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
+                  T1, T2>::template _MoveConstructiblePair<T3, T4>() &&
+            std::_PCC<
+                !std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
+                T1, T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
+        bool>::type T5 = true>
+std::pair<T1, T2> f19(std::pair<T3, T4> &&a0) {
+  return std::pair<T1, T2>(std::move(a0));
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4,
+    typename std::enable_if<
+        std::_PCC<!std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
+                  T1, T2>::template _MoveConstructiblePair<T3, T4>() &&
+            !std::_PCC<
+                !std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
+                T1, T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
+        bool>::type T5 = false>
+std::pair<T1, T2> f20(std::pair<T3, T4> &&a0) {
+  return std::pair<T1, T2>(std::move(a0));
 }

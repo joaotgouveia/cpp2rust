@@ -107,3 +107,72 @@ f95(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     typename std::deque<T1, T2>::size_type a2, const T1 &a3) {
   return a0.insert(a1, a2, a3);
 }
+
+template <typename T1, typename T2,
+          std::__enable_if_t<std::__is_allocator_v<T2>, int> T3 = 0>
+std::deque<T1, T2> f96(typename std::deque<T1, T2>::size_type a0, const T1 &a1,
+                       const T2 &a2) {
+  return std::deque<T1, T2>(a0, a1, a2);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<std::__has_input_iterator_category<T3>::value, int>
+              T4 = 0>
+std::deque<T1, T2> f97(T3 a0, T3 a1) {
+  return std::deque<T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<std::__has_input_iterator_category<T3>::value, int>
+              T4 = 0>
+std::deque<T1, T2> f98(T3 a0, T3 a1, const T2 &a2) {
+  return std::deque<T1, T2>(a0, a1, a2);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<
+              std::__has_input_iterator_category<T3>::value &&
+                  !std::__has_random_access_iterator_category<T3>::value,
+              int>
+              T4 = 0>
+void f99(std::deque<T1, T2> &a0, T3 a1, T3 a2) {
+  return a0.template assign<T3>(a1, a2);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<
+              std::__has_random_access_iterator_category<T3>::value, int>
+              T4 = 0>
+void f100(std::deque<T1, T2> &a0, T3 a1, T3 a2) {
+  return a0.template assign<T3>(a1, a2);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<
+              std::__has_exactly_input_iterator_category<T3>::value, int>
+              T4 = 0>
+typename std::deque<T1, T2>::iterator
+f101(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
+     T3 a2, T3 a3) {
+  return a0.template insert<T3>(a1, a2, a3);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<
+              std::__has_exactly_forward_iterator_category<T3>::value, int>
+              T4 = 0>
+typename std::deque<T1, T2>::iterator
+f102(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
+     T3 a2, T3 a3) {
+  return a0.template insert<T3>(a1, a2, a3);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<
+              std::__has_bidirectional_iterator_category<T3>::value, int>
+              T4 = 0>
+typename std::deque<T1, T2>::iterator
+f103(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
+     T3 a2, T3 a3) {
+  return a0.template insert<T3>(a1, a2, a3);
+}

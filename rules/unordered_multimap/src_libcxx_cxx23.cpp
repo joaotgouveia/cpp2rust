@@ -6,7 +6,7 @@
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f122(std::from_range_t a0, T6 &&a1,
+f128(std::from_range_t a0, T6 &&a1,
      typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
      const T3 &a3, const T4 &a4, const T5 &a5) {
   return std::unordered_multimap<T1, T2, T3, T4, T5>(
@@ -16,7 +16,7 @@ f122(std::from_range_t a0, T6 &&a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f123(std::from_range_t a0, T6 &&a1,
+f129(std::from_range_t a0, T6 &&a1,
      typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
      const T5 &a3) {
   return std::unordered_multimap<T1, T2, T3, T4, T5>(
@@ -26,7 +26,7 @@ f123(std::from_range_t a0, T6 &&a1,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::unordered_multimap<T1, T2, T3, T4, T5>
-f124(std::from_range_t a0, T6 &&a1,
+f130(std::from_range_t a0, T6 &&a1,
      typename std::unordered_multimap<T1, T2, T3, T4, T5>::size_type a2,
      const T3 &a3, const T5 &a4) {
   return std::unordered_multimap<T1, T2, T3, T4, T5>(

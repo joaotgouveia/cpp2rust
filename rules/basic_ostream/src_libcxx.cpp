@@ -140,27 +140,37 @@ std::basic_ostream<T1, T2> &f86(std::basic_ostream<T1, T2> &a0, T1 a1) {
   return std::operator<< <T1, T2>(a0, a1);
 }
 
+template <typename T1, typename T2,
+          std::__enable_if_t<
+              std::_And<std::is_base_of<std::ios_base, T1>,
+                        std::__is_ostreamable<T1 &, const T2 &>>::value,
+              int>
+              T3 = 0>
+T1 &&f87(T1 &&a0, const T2 &a1) {
+  return std::operator<< <T1, T2>(std::forward<T1>(a0), a1);
+}
+
 template <typename T1, typename T2, std::size_t T3>
-std::basic_ostream<T1, T2> &f87(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f88(std::basic_ostream<T1, T2> &a0,
                                 const std::bitset<T3> &a1) {
   return std::operator<< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_ostream<T1, T2> &f88(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f89(std::basic_ostream<T1, T2> &a0,
                                 const std::shared_ptr<T3> &a1) {
   return std::operator<< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_ostream<T1, T2> &f89(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f90(std::basic_ostream<T1, T2> &a0,
                                 const std::basic_string<T1, T2, T3> &a1) {
   return std::operator<< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
           typename std::enable_if<true, int>::type T5 = 0>
-std::basic_ostream<T1, T2> &f90(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f91(std::basic_ostream<T1, T2> &a0,
                                 const std::unique_ptr<T3, T4> &a1) {
   return std::operator<< <T1, T2, T3, T4>(a0, a1);
 }

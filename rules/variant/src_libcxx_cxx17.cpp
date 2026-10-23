@@ -5,7 +5,7 @@
 #include <variant>
 
 template <typename... T1>
-auto f44(std::variant<T1...> &a0, std::variant<T1...> &a1) {
+auto f46(std::variant<T1...> &a0, std::variant<T1...> &a1) {
   return std::swap<T1...>(a0, a1);
 }
 
@@ -16,7 +16,7 @@ template <
                          std::variant_alternative_t<0, std::variant<T1...>>>,
                      int>
         T3 = 0>
-std::variant<T1...> f45() {
+std::variant<T1...> f47() {
   return std::variant<T1...>();
 }
 
@@ -28,6 +28,6 @@ template <typename... T1, std::size_t T2, typename... T3,
                   std::variant_alternative_t<T2, std::variant<T1...>>, T3...>,
               int>
               T6 = 0>
-std::variant<T1...> f46(std::in_place_index_t<T2> a0, T3 &&...a1) {
+std::variant<T1...> f48(std::in_place_index_t<T2> a0, T3 &&...a1) {
   return std::variant<T1...>(a0, std::forward<T3>(a1)...);
 }

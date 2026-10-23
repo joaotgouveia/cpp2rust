@@ -11,21 +11,21 @@ std::move_iterator<T1> f28(std::move_iterator<T1> &a0, int a1) {
   return a0.operator++(a1);
 }
 
-template <
-    typename T1, typename T2,
-    typename std::enable_if<!std::is_same<T2, T1>::value &&
-                                std::is_convertible<const T2 &, T1>::value,
-                            int>::type T3 = 0>
+template <typename T1, typename T2,
+          std::__enable_if_t<!std::is_same<T2, T1>::value &&
+                                 std::is_convertible<const T2 &, T1>::value,
+                             int>
+              T3 = 0>
 std::move_iterator<T1> f29(const std::move_iterator<T2> &a0) {
   return std::move_iterator<T1>(a0);
 }
 
-template <
-    typename T1, typename T2,
-    typename std::enable_if<!std::is_same<T2, T1>::value &&
-                                std::is_convertible<const T2 &, T1>::value &&
-                                std::is_assignable<T1 &, const T2 &>::value,
-                            int>::type T3 = 0>
+template <typename T1, typename T2,
+          std::__enable_if_t<!std::is_same<T2, T1>::value &&
+                                 std::is_convertible<const T2 &, T1>::value &&
+                                 std::is_assignable<T1 &, const T2 &>::value,
+                             int>
+              T3 = 0>
 std::move_iterator<T1> &f30(std::move_iterator<T1> &a0,
                             const std::move_iterator<T2> &a1) {
   return a0.template operator= <T2>(a1);

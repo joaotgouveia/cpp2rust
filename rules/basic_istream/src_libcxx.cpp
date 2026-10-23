@@ -4,9 +4,8 @@
 #include <streambuf>
 #include <utility>
 
-template <
-    typename T1, typename T2, typename T3 = T1,
-    typename std::enable_if<std::is_same<T1, char>::value, int>::type T4 = 0>
+template <typename T1, typename T2, typename T3 = T1,
+          std::__enable_if_t<std::is_same<T1, char>::value, int> T4 = 0>
 std::basic_istream<T1, T2> &f75(std::basic_istream<T1, T2> &a0,
                                 std::streamsize a1, T1 a2) {
   return a0.ignore(a1, a2);

@@ -102,43 +102,27 @@ f143(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
-          typename T5 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T4>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+          typename T5 = std::_RequireInputIter<T4>>
 std::basic_string<T1, T2, T3> f144(T4 a0, T4 a1, const T3 &a2) {
   return std::basic_string<T1, T2, T3>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
-          typename T5 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T4>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+          typename T5 = std::_RequireInputIter<T4>>
 std::basic_string<T1, T2, T3> &f145(std::basic_string<T1, T2, T3> &a0, T4 a1,
                                     T4 a2) {
   return a0.template append<T4>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
-          typename T5 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T4>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+          typename T5 = std::_RequireInputIter<T4>>
 std::basic_string<T1, T2, T3> &f146(std::basic_string<T1, T2, T3> &a0, T4 a1,
                                     T4 a2) {
   return a0.template assign<T4>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
-          typename T5 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T4>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+          typename T5 = std::_RequireInputIter<T4>>
 typename std::basic_string<T1, T2, T3>::iterator
 f147(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1, T4 a2, T4 a3) {
@@ -146,11 +130,7 @@ f147(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4,
-          typename T5 = typename std::enable_if<
-              std::is_convertible<
-                  typename std::iterator_traits<T4>::iterator_category,
-                  std::input_iterator_tag>::value,
-              void>::type>
+          typename T5 = std::_RequireInputIter<T4>>
 std::basic_string<T1, T2, T3> &
 f148(std::basic_string<T1, T2, T3> &a0,
      typename std::basic_string<T1, T2, T3>::const_iterator a1,

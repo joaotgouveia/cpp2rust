@@ -2,44 +2,15 @@
 #include <random>
 #include <utility>
 
-template <
-    typename T1, std::size_t T2, typename T3,
-    typename T4 = typename std::enable_if<
-        std::integral_constant<
-            bool,
-            std::integral_constant<
-                bool, !std::is_same<
-                          typename std::remove_cv<
-                              typename std::remove_reference<T3>::type>::type,
-                          std::shuffle_order_engine<T1, T2>>::value>::value &&
-                std::is_unsigned<typename T3::result_type>::value &&
-                std::integral_constant<
-                    bool, !std::is_convertible<T3, typename T1::result_type>::
-                              value>::value>::value,
-        void>::type>
+template <typename T1, std::size_t T2, typename T3,
+          typename T4 = std::__detail::_If_seed_seq_for<
+              T3, std::shuffle_order_engine<T1, T2>, typename T1::result_type>>
 std::shuffle_order_engine<T1, T2> f13(T3 &a0) {
   return std::shuffle_order_engine<T1, T2>(a0);
 }
 
-template <typename T1, std::size_t T2, typename T3>
-typename std::enable_if<
-    std::integral_constant<
-        bool, std::integral_constant<
-                  bool, !std::is_same<
-                            typename std::remove_cv<
-                                typename std::remove_reference<T3>::type>::type,
-                            std::shuffle_order_engine<T1, T2>>::value>::value &&
-                  std::is_unsigned<typename T3::result_type>::value &&
-                  std::integral_constant<
-                      bool, !std::is_convertible<T3, typename T1::result_type>::
-                                value>::value>::value,
-    void>::type
-f14(std::shuffle_order_engine<T1, T2> &a0, T3 &a1) {
-  return a0.template seed<T3>(a1);
-}
-
 template <typename T1, std::size_t T2>
-bool f15(const std::shuffle_order_engine<T1, T2> &a0,
+bool f14(const std::shuffle_order_engine<T1, T2> &a0,
          const std::shuffle_order_engine<T1, T2> &a1) {
   return operator==(a0, a1);
 }
