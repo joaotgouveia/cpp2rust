@@ -370,8 +370,7 @@ pub fn regex_match_debug_18(mut __s: Ptr<()>, __re: Ptr<()>, __f: Option<()>) ->
     let mut __f: () = __f.unwrap_or_else(|| match_default_19.with(|rc| *rc.borrow()));
     return ({
         let ___first: Ptr<()> = (__s).clone();
-        let ___last: Ptr<()> =
-            __s.offset(({ std_regex_traits_wchar_t_::length((__s).clone()) }) as isize);
+        let ___last: Ptr<()> = __s.offset((unimplemented!()) as isize);
         let ___re: Ptr<()> = (__re).clone();
         let ___flags: () = __f;
         regex_match_debug_17(___first, ___last, ___re, ___flags)

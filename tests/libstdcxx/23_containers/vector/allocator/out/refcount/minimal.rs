@@ -327,6 +327,10 @@ impl Default for __gnu_test_SimpleAllocator_T_ {
         { __gnu_test_SimpleAllocator_T_::new() }
     }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct __gnu_test_SimpleAllocator_unsigned_long_ {}
+impl __gnu_test_SimpleAllocator_unsigned_long_ {}
 pub fn operator_eq_15(
     _a0: Ptr<__gnu_test_SimpleAllocator_T_>,
     _a1: Ptr<__gnu_test_SimpleAllocator_T_>,
@@ -759,6 +763,18 @@ impl __gnu_test_SimpleAllocator_T_Impl for Ptr<__gnu_test_SimpleAllocator_T_> {
     fn deallocate(&self, mut p: Ptr<T>, mut n: ()) {
         ({ (unimplemented!() as std___new_allocator_T_).deallocate((p).clone(), n) });
     }
+}
+pub trait __gnu_test_SimpleAllocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+        unimplemented!()
+    }
+}
+impl __gnu_test_SimpleAllocator_unsigned_long_Impl
+    for Ptr<__gnu_test_SimpleAllocator_unsigned_long_>
+{
 }
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;

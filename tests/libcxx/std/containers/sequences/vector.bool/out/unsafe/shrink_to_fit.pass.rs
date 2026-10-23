@@ -42,15 +42,12 @@ pub struct increasing_allocator_unsigned_long_ {
     pub min_elements: (),
 }
 impl increasing_allocator_unsigned_long_ {
-    pub unsafe fn allocate_at_least(
-        &mut self,
-        mut n: (),
-    ) -> std_allocation_result_unsigned_long_ptr__unsigned_long_ {
+    pub unsafe fn allocate_at_least(&mut self, mut n: ()) -> () {
         if ((n) < (self.min_elements)) {
             n = self.min_elements;
         }
         self.min_elements = (self.min_elements).wrapping_add(1000_());
-        return (unsafe { unimplemented!().allocate_at_least(n) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
         unimplemented!();
@@ -271,7 +268,7 @@ impl min_allocator_bool_ {}
 impl min_allocator_unsigned_long_ {}
 pub unsafe fn tests_7() -> () {
     {
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut before_cap: () = unimplemented!();
         unimplemented!();
@@ -281,7 +278,7 @@ pub unsafe fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut v: () = std_vector_bool__min_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut before_cap: () = unimplemented!();
         unimplemented!();
@@ -296,7 +293,7 @@ pub unsafe fn tests_7() -> () {
     }
     {
         let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ bits_per_word });
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

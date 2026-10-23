@@ -439,12 +439,12 @@ impl util_iterator_error {
 }
 pub unsafe fn test_8(mut i: random_access_iterator_char_ptr_, mut n: (), mut x: ()) {
     let r: () = unimplemented!();
-    let mut rr: () = ((*unimplemented!()) as ());
+    let mut rr: () = (r[(n) as usize] as ());
     unimplemented!();
 }
 pub unsafe fn test_9(mut i: *mut (), mut n: (), mut x: ()) {
     let r: () = unimplemented!();
-    let mut rr: () = ((*unimplemented!()) as ());
+    let mut rr: () = (r[(n) as usize] as ());
     unimplemented!();
 }
 pub unsafe fn test_10(mut i: *mut (), mut n: (), mut x: ()) {
@@ -507,7 +507,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut i: adl_Iterator =
             (unsafe { adl_Iterator::TrackMoves(a.as_mut_ptr(), &mut iter_moves) });
         let mut mi: () = unimplemented!();
-        let mut x: () = (*unimplemented!());
+        let mut x: () = mi[(0_()) as usize];
         unimplemented!();
         unimplemented!();
     }

@@ -251,10 +251,16 @@ pub unsafe fn test_10() -> () {
     {
         let mut p1: *mut A =
             Box::leak((0..3_()).map(|_| <A>::default()).collect::<Box<[A]>>()).as_mut_ptr();
-        let mut s1: () = unimplemented!();
+        let mut s1: () = {
+            let mut __tmp_0: Deleter_Aarrarr_ = Deleter_Aarrarr_::new_1({ 1_() });
+            std_unique_ptr_Aarrarr__Deleter_Aarrarr__::new({ p1 }, { &mut __tmp_0 })
+        };
         let mut p2: *mut A =
             Box::leak((0..3_()).map(|_| <A>::default()).collect::<Box<[A]>>()).as_mut_ptr();
-        let mut s2: () = unimplemented!();
+        let mut s2: () = {
+            let mut __tmp_1: Deleter_Aarrarr_ = Deleter_Aarrarr_::new_1({ 2_() });
+            std_unique_ptr_Aarrarr__Deleter_Aarrarr__::new({ p2 }, { &mut __tmp_1 })
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();

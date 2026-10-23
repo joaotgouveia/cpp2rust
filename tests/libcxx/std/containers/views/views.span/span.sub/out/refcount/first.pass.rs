@@ -20,7 +20,7 @@ pub fn testConstexprSpan_2(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -33,7 +33,7 @@ pub fn testConstexprSpan_3(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -46,7 +46,7 @@ pub fn testConstexprSpan_4(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -59,7 +59,7 @@ pub fn testConstexprSpan_5(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -72,7 +72,7 @@ pub fn testConstexprSpan_6(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -150,7 +150,7 @@ pub fn testConstexprSpan_12(sp: ()) -> () {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -163,7 +163,7 @@ pub fn testRuntimeSpan_13(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -177,7 +177,7 @@ pub fn testRuntimeSpan_14(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -191,7 +191,7 @@ pub fn testRuntimeSpan_15(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -205,7 +205,7 @@ pub fn testRuntimeSpan_16(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -275,7 +275,7 @@ pub fn testRuntimeSpan_21(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -289,7 +289,7 @@ pub fn testRuntimeSpan_22(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -303,7 +303,7 @@ pub fn testRuntimeSpan_23(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -317,7 +317,7 @@ pub fn testRuntimeSpan_24(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -331,7 +331,7 @@ pub fn testRuntimeSpan_25(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -345,7 +345,7 @@ pub fn testRuntimeSpan_26(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     unimplemented!();
     unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(({ (*sp.borrow()).first() })));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

@@ -176,6 +176,9 @@ pub struct test_allocator_int__rebind_int_ptr_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_const_int_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_int__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -293,6 +296,9 @@ pub fn operator_eq_5(x: Ptr<test_allocator_bool_>, y: Ptr<test_allocator_bool_>)
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_unsigned_int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_bool__rebind_bool_ {}
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_bool_ {

@@ -369,7 +369,7 @@ pub unsafe fn regex_search_debug_17(
     });
     return (unsafe {
         let ___s: *const () = __s;
-        let ___e: *const () = __s.offset((unsafe { std_regex_traits_char_::length(__s) }) as isize);
+        let ___e: *const () = __s.offset((unimplemented!()) as isize);
         let ___m: *mut () = __m;
         let ___re: *const () = __e;
         let ___flags: () = __f;

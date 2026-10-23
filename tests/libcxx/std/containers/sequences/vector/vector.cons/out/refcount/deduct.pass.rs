@@ -1107,6 +1107,9 @@ impl Default for test_allocator_A_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_double__rebind_double_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_double__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_double_ {
@@ -1158,6 +1161,9 @@ impl Default for test_allocator_double_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_int__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -1234,6 +1240,9 @@ pub fn operator_eq_19(x: Ptr<test_allocator_short_>, y: Ptr<test_allocator_short
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_short__rebind_short_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_short__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_short_ {
@@ -1305,6 +1314,29 @@ impl Default for test_allocator_short_ {
             test_allocator_short_ {
                 data_: 0_(),
                 id_: 0_(),
+                stats_: Ptr::<test_allocator_statistics>::null(),
+            }
+        }
+    }
+}
+#[derive(Record, ByteRepr, FnPtrArg)]
+#[byte_size(16)]
+pub struct test_allocator_unsigned_int_ {
+    #[offset(0)]
+    data_: (),
+    #[offset(4)]
+    id_: (),
+    #[offset(8)]
+    #[byte_size(8)]
+    stats_: Ptr<test_allocator_statistics>,
+}
+impl test_allocator_unsigned_int_ {}
+impl Default for test_allocator_unsigned_int_ {
+    fn default() -> Self {
+        {
+            test_allocator_unsigned_int_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -2598,6 +2630,36 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
+pub trait test_allocator_unsigned_int_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn address_11(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn address_12(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn destroy(&self, mut p: Ptr<()>) {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+    fn get_id(&self) -> () {
+        unimplemented!()
+    }
+}
+impl test_allocator_unsigned_int_Impl for Ptr<test_allocator_unsigned_int_> {}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();

@@ -61,15 +61,21 @@ pub fn Consume_1(mut safe_ptr: ()) -> () {
 }
 pub fn RndStuff_2() {
     let mut x1: () = unimplemented!();
-    let mut x2: () = std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new_1({
-        Ptr::alloc_array((0..100_()).map(|_| unimplemented!()).collect::<Box<[()]>>())
-    });
+    let x2: Value<()> = Rc::new(RefCell::new(
+        std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new_1({
+            Ptr::alloc_array((0..100_()).map(|_| unimplemented!()).collect::<Box<[()]>>())
+        }),
+    ));
     let mut i: () = 0_();
     'loop_: while (i < 100_()) {
         unimplemented!().write(1_());
         i.prefix_inc();
     }
-    unimplemented!();
+    ({
+        (*x2.borrow()).reset(Ptr::alloc_array(
+            (0..200_()).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+        ))
+    });
     let mut i: () = 0_();
     'loop_: while (i < 200_()) {
         unimplemented!().write(2_());
@@ -81,7 +87,7 @@ pub fn RndStuff_2() {
         unimplemented!();
         i.prefix_inc();
     }
-    let mut x3: () = ({ make_unique_3(10_()) });
+    let x3: Value<()> = Rc::new(RefCell::new(({ make_unique_3(10_()) })));
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
         unimplemented!().write(Pair { x: 1_(), y: 2_() });
@@ -97,7 +103,13 @@ pub fn RndStuff_2() {
         unimplemented!();
         i.prefix_inc();
     }
-    unimplemented!();
+    ({
+        (*x3.borrow()).reset(Ptr::alloc_array(
+            (0..50_())
+                .map(|_| <Pair>::default())
+                .collect::<Box<[Pair]>>(),
+        ))
+    });
     let mut i: () = 0_();
     'loop_: while (i < 50_()) {
         unimplemented!().write(Pair { x: -1_(), y: -2_() });

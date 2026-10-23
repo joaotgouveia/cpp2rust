@@ -183,7 +183,7 @@ impl min_allocator_bool_ {}
 impl min_allocator_unsigned_long_ {}
 pub fn tests_7() -> () {
     {
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut before_cap: () = unimplemented!();
         unimplemented!();
@@ -193,7 +193,7 @@ pub fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut v: () = std_vector_bool__min_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut before_cap: () = unimplemented!();
         unimplemented!();
@@ -208,7 +208,7 @@ pub fn tests_7() -> () {
     }
     {
         let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ bits_per_word });
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -266,7 +266,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     return 0_();
 }
 pub trait increasing_allocator_bool_Impl {
-    fn allocate_at_least(&self, mut n: ()) -> std_allocation_result_bool_ptr__unsigned_long_ {
+    fn allocate_at_least(&self, mut n: ()) -> () {
         unimplemented!()
     }
     fn allocate(&self, mut n: ()) -> Ptr<()> {
@@ -278,23 +278,20 @@ pub trait increasing_allocator_bool_Impl {
 }
 impl increasing_allocator_bool_Impl for Ptr<increasing_allocator_bool_> {}
 pub trait increasing_allocator_unsigned_long_Impl {
-    fn allocate_at_least(&self, n: ()) -> std_allocation_result_unsigned_long_ptr__unsigned_long_;
+    fn allocate_at_least(&self, n: ()) -> ();
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()
     }
     fn deallocate(&self, p: Ptr<()>, n: ());
 }
 impl increasing_allocator_unsigned_long_Impl for Ptr<increasing_allocator_unsigned_long_> {
-    fn allocate_at_least(
-        &self,
-        mut n: (),
-    ) -> std_allocation_result_unsigned_long_ptr__unsigned_long_ {
+    fn allocate_at_least(&self, mut n: ()) -> () {
         if (n < (*self).with(|__s| __s.min_elements)) {
             n = (*self).with(|__s| __s.min_elements);
         }
         field!((*self), min_elements)
             .write({ ((*self).with(|__s| __s.min_elements)).wrapping_add(1000_()) });
-        return ({ unimplemented!().allocate_at_least(n) });
+        return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
         unimplemented!();

@@ -199,7 +199,7 @@ impl min_allocator_bool_ {}
 impl min_allocator_unsigned_long_ {}
 pub unsafe fn tests_7() -> () {
     {
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -219,7 +219,7 @@ pub unsafe fn tests_7() -> () {
         }
     }
     {
-        let mut v: () = std_vector_bool__min_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

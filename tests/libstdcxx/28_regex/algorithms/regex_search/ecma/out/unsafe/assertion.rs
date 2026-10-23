@@ -380,8 +380,7 @@ pub unsafe fn regex_search_debug_18(mut __s: *const (), __e: *const (), mut __f:
     });
     return (unsafe {
         let ___first: *const () = __s;
-        let ___last: *const () =
-            __s.offset((unsafe { std_regex_traits_char_::length(__s) }) as isize);
+        let ___last: *const () = __s.offset((unimplemented!()) as isize);
         let ___re: *const () = __e;
         let ___flags: () = __f;
         regex_search_debug_17(___first, ___last, ___re, ___flags)

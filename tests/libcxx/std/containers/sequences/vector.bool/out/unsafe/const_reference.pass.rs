@@ -6,13 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
-pub const anon_0_value: anon_0 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std___bit_const_reference_std_vector_bool__std_allocator_bool_____std___bit_const_reference_std_vector_bool__std_allocator_bool____
-{}
-pub unsafe fn test_1() -> () {
+pub unsafe fn test_0() -> () {
     const _: () = assert!(true, "");;
     let mut vec_: () = unimplemented!();
     unimplemented!();
@@ -42,7 +36,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_1() });
+    (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

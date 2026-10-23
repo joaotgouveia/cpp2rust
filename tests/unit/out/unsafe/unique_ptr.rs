@@ -76,7 +76,11 @@ pub unsafe fn RndStuff_2() {
         (*unimplemented!()) = 1_();
         i.prefix_inc();
     }
-    unimplemented!();
+    (unsafe {
+        x2.reset(
+            Box::leak((0..200_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr(),
+        )
+    });
     let mut i: () = 0_();
     'loop_: while ((i) < (200_())) {
         (*unimplemented!()) = 2_();
@@ -104,7 +108,16 @@ pub unsafe fn RndStuff_2() {
         unimplemented!();
         i.prefix_inc();
     }
-    unimplemented!();
+    (unsafe {
+        x3.reset(
+            Box::leak(
+                (0..50_())
+                    .map(|_| <Pair>::default())
+                    .collect::<Box<[Pair]>>(),
+            )
+            .as_mut_ptr(),
+        )
+    });
     let mut i: () = 0_();
     'loop_: while ((i) < (50_())) {
         (*unimplemented!()) = Pair { x: -1_(), y: -2_() };

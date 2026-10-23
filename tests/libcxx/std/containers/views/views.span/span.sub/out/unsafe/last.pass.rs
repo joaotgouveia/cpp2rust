@@ -19,7 +19,7 @@ pub struct test_macros_detail_is_same_std_string__std_string_ {}
 pub unsafe fn testConstexprSpan_2(mut sp: ()) -> () {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -32,7 +32,7 @@ pub unsafe fn testConstexprSpan_2(mut sp: ()) -> () {
 pub unsafe fn testConstexprSpan_3(mut sp: ()) -> () {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -45,7 +45,7 @@ pub unsafe fn testConstexprSpan_3(mut sp: ()) -> () {
 pub unsafe fn testConstexprSpan_4(mut sp: ()) -> () {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -58,7 +58,7 @@ pub unsafe fn testConstexprSpan_4(mut sp: ()) -> () {
 pub unsafe fn testConstexprSpan_5(mut sp: ()) -> () {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -71,7 +71,7 @@ pub unsafe fn testConstexprSpan_5(mut sp: ()) -> () {
 pub unsafe fn testConstexprSpan_6(mut sp: ()) -> () {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -149,7 +149,7 @@ pub unsafe fn testConstexprSpan_11(mut sp: ()) -> () {
 pub unsafe fn testConstexprSpan_12(mut sp: ()) -> () {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -162,7 +162,7 @@ pub unsafe fn testConstexprSpan_12(mut sp: ()) -> () {
 pub unsafe fn testRuntimeSpan_13(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -175,7 +175,7 @@ pub unsafe fn testRuntimeSpan_13(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_14(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -188,7 +188,7 @@ pub unsafe fn testRuntimeSpan_14(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_15(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -201,7 +201,7 @@ pub unsafe fn testRuntimeSpan_15(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_16(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -266,7 +266,7 @@ pub unsafe fn testRuntimeSpan_20(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_21(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -279,7 +279,7 @@ pub unsafe fn testRuntimeSpan_21(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_22(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -292,7 +292,7 @@ pub unsafe fn testRuntimeSpan_22(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_23(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -305,7 +305,7 @@ pub unsafe fn testRuntimeSpan_23(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_24(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -318,7 +318,7 @@ pub unsafe fn testRuntimeSpan_24(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_25(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -331,7 +331,7 @@ pub unsafe fn testRuntimeSpan_25(mut sp: ()) {
 pub unsafe fn testRuntimeSpan_26(mut sp: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s1: () = (unsafe { sp.last() });
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

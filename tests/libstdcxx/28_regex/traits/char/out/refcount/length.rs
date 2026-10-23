@@ -256,7 +256,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let mut p: Ptr<()> = Ptr::<()>::from_string_literal(b"");
-    let mut i: () = ({ std_regex_traits_char_::length((p).clone()) });
+    let mut i: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -209,10 +209,22 @@ pub fn test_10() -> () {
     {
         let mut p1: Ptr<A> =
             Ptr::alloc_array((0..3_()).map(|_| <A>::default()).collect::<Box<[A]>>());
-        let mut s1: () = unimplemented!();
+        let mut s1: () = {
+            let __tmp_0: Value<Deleter_Aarrarr_> =
+                Rc::new(RefCell::new(Deleter_Aarrarr_::new_1({ 1_() })));
+            std_unique_ptr_Aarrarr__Deleter_Aarrarr__::new({ (p1).clone() }, {
+                __tmp_0.as_pointer()
+            })
+        };
         let mut p2: Ptr<A> =
             Ptr::alloc_array((0..3_()).map(|_| <A>::default()).collect::<Box<[A]>>());
-        let mut s2: () = unimplemented!();
+        let mut s2: () = {
+            let __tmp_1: Value<Deleter_Aarrarr_> =
+                Rc::new(RefCell::new(Deleter_Aarrarr_::new_1({ 2_() })));
+            std_unique_ptr_Aarrarr__Deleter_Aarrarr__::new({ (p2).clone() }, {
+                __tmp_1.as_pointer()
+            })
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();

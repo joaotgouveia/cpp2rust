@@ -354,8 +354,7 @@ pub fn regex_search_debug_17(mut __s: Ptr<()>, __m: Ptr<()>, __e: Ptr<()>, __f: 
     let mut __f: () = __f.unwrap_or_else(|| match_default_18.with(|rc| *rc.borrow()));
     return ({
         let ___s: Ptr<()> = (__s).clone();
-        let ___e: Ptr<()> =
-            __s.offset(({ std_regex_traits_char_::length((__s).clone()) }) as isize);
+        let ___e: Ptr<()> = __s.offset((unimplemented!()) as isize);
         let ___m: Ptr<()> = (__m).clone();
         let ___re: Ptr<()> = (__e).clone();
         let ___flags: () = __f;

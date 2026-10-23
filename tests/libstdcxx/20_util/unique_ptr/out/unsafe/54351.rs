@@ -353,7 +353,9 @@ impl C {
 }
 pub unsafe fn test02_12() {
     let mut d: D = <D>::default();
-    unimplemented!();
+    (unsafe {
+        d.c.reset(Box::leak((0..1_()).map(|_| <C>::default()).collect::<Box<[C]>>()).as_mut_ptr())
+    });
     (*unimplemented!()).d = (&mut d as *mut D);
 }
 pub fn main() {

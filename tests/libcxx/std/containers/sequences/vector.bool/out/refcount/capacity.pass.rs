@@ -113,7 +113,7 @@ pub fn tests_6() -> () {
         unimplemented!();
     }
     {
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -123,7 +123,7 @@ pub fn tests_6() -> () {
         unimplemented!();
     }
     {
-        let mut v: () = std_vector_bool__min_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

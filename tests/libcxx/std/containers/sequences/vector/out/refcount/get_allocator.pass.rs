@@ -204,6 +204,22 @@ impl Default for other_allocator_int_ {
         }
     }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(4)]
+pub struct other_allocator_unsigned_long_ {
+    #[offset(0)]
+    data_: (),
+}
+impl other_allocator_unsigned_long_ {}
+impl Default for other_allocator_unsigned_long_ {
+    fn default() -> Self {
+        {
+            other_allocator_unsigned_long_ {
+                data_: unimplemented!(),
+            }
+        }
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
@@ -288,6 +304,21 @@ impl other_allocator_int_Impl for Ptr<other_allocator_int_> {
         unimplemented!();
     }
 }
+pub trait other_allocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn select_on_container_copy_construction(&self) -> other_allocator_unsigned_long_ {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+}
+impl other_allocator_unsigned_long_Impl for Ptr<other_allocator_unsigned_long_> {}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

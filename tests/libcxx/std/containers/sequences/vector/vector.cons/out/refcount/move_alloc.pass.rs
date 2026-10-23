@@ -358,6 +358,9 @@ pub fn operator_eq_19(x: Ptr<test_allocator_MoveOnly_>, y: Ptr<test_allocator_Mo
 pub struct test_allocator_MoveOnly__rebind_MoveOnly_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
+pub struct test_allocator_MoveOnly__rebind_unsigned_int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
 pub struct test_allocator_MoveOnly__rebind_MoveOnly_ptr_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -434,6 +437,29 @@ impl Default for test_allocator_MoveOnly_ {
             test_allocator_MoveOnly_ {
                 data_: unimplemented!(),
                 id_: 0_(),
+                stats_: Ptr::<test_allocator_statistics>::null(),
+            }
+        }
+    }
+}
+#[derive(Record, ByteRepr, FnPtrArg)]
+#[byte_size(16)]
+pub struct test_allocator_unsigned_int_ {
+    #[offset(0)]
+    data_: (),
+    #[offset(4)]
+    id_: (),
+    #[offset(8)]
+    #[byte_size(8)]
+    stats_: Ptr<test_allocator_statistics>,
+}
+impl test_allocator_unsigned_int_ {}
+impl Default for test_allocator_unsigned_int_ {
+    fn default() -> Self {
+        {
+            test_allocator_unsigned_int_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -520,6 +546,22 @@ impl Default for other_allocator_MoveOnly_ {
     fn default() -> Self {
         {
             other_allocator_MoveOnly_ {
+                data_: unimplemented!(),
+            }
+        }
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(4)]
+pub struct other_allocator_unsigned_long_ {
+    #[offset(0)]
+    data_: (),
+}
+impl other_allocator_unsigned_long_ {}
+impl Default for other_allocator_unsigned_long_ {
+    fn default() -> Self {
+        {
+            other_allocator_unsigned_long_ {
                 data_: unimplemented!(),
             }
         }
@@ -691,6 +733,14 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
+pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    #[offset(0)]
+    #[byte_size(8)]
+    ptr_: Ptr<()>,
+}
+impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(8)]
 pub struct min_pointer_min_pointer_MoveOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
 {
     #[offset(0)]
@@ -721,6 +771,9 @@ impl std::cmp::PartialEq for min_allocator_MoveOnly_ {
 impl std::cmp::Eq for min_allocator_MoveOnly_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
+pub struct min_allocator_unsigned_long_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
 pub struct min_allocator_min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -747,6 +800,10 @@ impl Default for safe_allocator_MoveOnly_ {
         { safe_allocator_MoveOnly_::new() }
     }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct safe_allocator_unsigned_long_ {}
+impl safe_allocator_unsigned_long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct safe_allocator_MoveOnly_ptr_ {}
@@ -1005,6 +1062,22 @@ impl min_allocator_min_pointer_const_MoveOnly__std_integral_constant_unsigned_lo
     for Ptr<min_allocator_min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0___>
 {
 }
+pub trait min_allocator_unsigned_long_Impl {
+    fn allocate(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn deallocate(
+        &self,
+        mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
+        mut n: (),
+    ) {
+        unimplemented!()
+    }
+}
+impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {}
 pub trait min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> ();
     fn operator_deref(&self) -> Ptr<MoveOnly>;
@@ -1270,6 +1343,70 @@ pub trait min_pointer_min_pointer_const_MoveOnly__std_integral_constant_unsigned
 }
 impl min_pointer_min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__> {
 }
+pub trait min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl {
+    fn to_(&self) -> () {
+        unimplemented!()
+    }
+    fn operator_deref(&self) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn operator_arrow(&self) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn operator_inc_8(
+        &self,
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_inc_9(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_dec_10(
+        &self,
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_dec_11(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_add_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_sub_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_add(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_sub(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+}
+impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl
+    for Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__>
+{
+}
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
@@ -1327,6 +1464,21 @@ pub trait other_allocator_const_MoveOnly_ptr_Impl {
     }
 }
 impl other_allocator_const_MoveOnly_ptr_Impl for Ptr<other_allocator_const_MoveOnly_ptr_> {}
+pub trait other_allocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn select_on_container_copy_construction(&self) -> other_allocator_unsigned_long_ {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+}
+impl other_allocator_unsigned_long_Impl for Ptr<other_allocator_unsigned_long_> {}
 pub trait safe_allocator_MoveOnly_Impl {
     fn allocate(&self, n: ()) -> Ptr<MoveOnly>;
     fn deallocate(&self, p: Ptr<MoveOnly>, n: ());
@@ -1375,6 +1527,15 @@ pub trait safe_allocator_const_MoveOnly_ptr_Impl {
     }
 }
 impl safe_allocator_const_MoveOnly_ptr_Impl for Ptr<safe_allocator_const_MoveOnly_ptr_> {}
+pub trait safe_allocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+        unimplemented!()
+    }
+}
+impl safe_allocator_unsigned_long_Impl for Ptr<safe_allocator_unsigned_long_> {}
 pub trait test_allocator_MoveOnly_Impl {
     fn destructor(&self);
     fn address_11(&self, x: ()) -> Ptr<MoveOnly> {
@@ -1547,6 +1708,36 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
+pub trait test_allocator_unsigned_int_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn address_11(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn address_12(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn destroy(&self, mut p: Ptr<()>) {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+    fn get_id(&self) -> () {
+        unimplemented!()
+    }
+}
+impl test_allocator_unsigned_int_Impl for Ptr<test_allocator_unsigned_int_> {}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();

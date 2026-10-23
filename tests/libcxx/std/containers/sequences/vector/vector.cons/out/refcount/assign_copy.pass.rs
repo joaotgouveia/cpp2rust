@@ -174,6 +174,9 @@ pub fn operator_eq_5(x: Ptr<test_allocator_int_>, y: Ptr<test_allocator_int_>) -
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_int__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -250,6 +253,29 @@ impl Default for test_allocator_int_ {
         }
     }
 }
+#[derive(Record, ByteRepr, FnPtrArg)]
+#[byte_size(16)]
+pub struct test_allocator_unsigned_int_ {
+    #[offset(0)]
+    data_: (),
+    #[offset(4)]
+    id_: (),
+    #[offset(8)]
+    #[byte_size(8)]
+    stats_: Ptr<test_allocator_statistics>,
+}
+impl test_allocator_unsigned_int_ {}
+impl Default for test_allocator_unsigned_int_ {
+    fn default() -> Self {
+        {
+            test_allocator_unsigned_int_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: Ptr::<test_allocator_statistics>::null(),
+            }
+        }
+    }
+}
 pub fn operator_eq_6(x: Ptr<other_allocator_int_>, y: Ptr<other_allocator_int_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -292,6 +318,22 @@ impl Default for other_allocator_int_ {
     fn default() -> Self {
         {
             other_allocator_int_ {
+                data_: unimplemented!(),
+            }
+        }
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(4)]
+pub struct other_allocator_unsigned_long_ {
+    #[offset(0)]
+    data_: (),
+}
+impl other_allocator_unsigned_long_ {}
+impl Default for other_allocator_unsigned_long_ {
+    fn default() -> Self {
+        {
+            other_allocator_unsigned_long_ {
                 data_: unimplemented!(),
             }
         }
@@ -429,6 +471,14 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(8)]
+pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    #[offset(0)]
+    #[byte_size(8)]
+    ptr_: Ptr<()>,
+}
+impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_eq_17(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
     return true;
 }
@@ -441,6 +491,9 @@ impl std::cmp::PartialEq for min_allocator_int_ {
     }
 }
 impl std::cmp::Eq for min_allocator_int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct min_allocator_unsigned_long_ {}
 pub fn operator_eq_18(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> () {
     return true;
 }
@@ -463,6 +516,10 @@ impl Default for safe_allocator_int_ {
         { safe_allocator_int_::new() }
     }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct safe_allocator_unsigned_long_ {}
+impl safe_allocator_unsigned_long_ {}
 pub fn operator_eq_20(
     lhs: Ptr<MaybePOCCAAllocator_int__false_>,
     rhs: Ptr<MaybePOCCAAllocator_int__false_>,
@@ -474,6 +531,9 @@ pub fn operator_eq_20(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MaybePOCCAAllocator_int__false__rebind_int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct MaybePOCCAAllocator_int__false__rebind_unsigned_long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(16)]
 pub struct MaybePOCCAAllocator_int__false_ {
@@ -541,6 +601,9 @@ pub fn operator_ne_22(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MaybePOCCAAllocator_int__true__rebind_int_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct MaybePOCCAAllocator_int__true__rebind_unsigned_long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(16)]
 pub struct MaybePOCCAAllocator_int__true_ {
@@ -582,6 +645,46 @@ impl Default for MaybePOCCAAllocator_int__true_ {
         {
             MaybePOCCAAllocator_int__true_ {
                 id_: 0_(),
+                copy_assigned_into_: Ptr::<()>::null(),
+            }
+        }
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(16)]
+pub struct MaybePOCCAAllocator_unsigned_long__false_ {
+    #[offset(0)]
+    id_: (),
+    #[offset(8)]
+    #[byte_size(8)]
+    copy_assigned_into_: Ptr<()>,
+}
+impl MaybePOCCAAllocator_unsigned_long__false_ {}
+impl Default for MaybePOCCAAllocator_unsigned_long__false_ {
+    fn default() -> Self {
+        {
+            MaybePOCCAAllocator_unsigned_long__false_ {
+                id_: unimplemented!(),
+                copy_assigned_into_: Ptr::<()>::null(),
+            }
+        }
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(16)]
+pub struct MaybePOCCAAllocator_unsigned_long__true_ {
+    #[offset(0)]
+    id_: (),
+    #[offset(8)]
+    #[byte_size(8)]
+    copy_assigned_into_: Ptr<()>,
+}
+impl MaybePOCCAAllocator_unsigned_long__true_ {}
+impl Default for MaybePOCCAAllocator_unsigned_long__true_ {
+    fn default() -> Self {
+        {
+            MaybePOCCAAllocator_unsigned_long__true_ {
+                id_: unimplemented!(),
                 copy_assigned_into_: Ptr::<()>::null(),
             }
         }
@@ -784,6 +887,48 @@ impl MaybePOCCAAllocator_int__true_Impl for Ptr<MaybePOCCAAllocator_int__true_> 
         return (*self).with(|__s| __s.id_);
     }
 }
+pub trait MaybePOCCAAllocator_unsigned_long__false_Impl {
+    fn copy_assign(
+        &self,
+        a: Ptr<MaybePOCCAAllocator_unsigned_long__false_>,
+    ) -> Ptr<MaybePOCCAAllocator_unsigned_long__false_> {
+        unimplemented!()
+    }
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut ptr: Ptr<()>, mut n: ()) {
+        unimplemented!()
+    }
+    fn id(&self) -> () {
+        unimplemented!()
+    }
+}
+impl MaybePOCCAAllocator_unsigned_long__false_Impl
+    for Ptr<MaybePOCCAAllocator_unsigned_long__false_>
+{
+}
+pub trait MaybePOCCAAllocator_unsigned_long__true_Impl {
+    fn copy_assign(
+        &self,
+        a: Ptr<MaybePOCCAAllocator_unsigned_long__true_>,
+    ) -> Ptr<MaybePOCCAAllocator_unsigned_long__true_> {
+        unimplemented!()
+    }
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut ptr: Ptr<()>, mut n: ()) {
+        unimplemented!()
+    }
+    fn id(&self) -> () {
+        unimplemented!()
+    }
+}
+impl MaybePOCCAAllocator_unsigned_long__true_Impl
+    for Ptr<MaybePOCCAAllocator_unsigned_long__true_>
+{
+}
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -814,6 +959,22 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
         unimplemented!();
     }
 }
+pub trait min_allocator_unsigned_long_Impl {
+    fn allocate(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn deallocate(
+        &self,
+        mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
+        mut n: (),
+    ) {
+        unimplemented!()
+    }
+}
+impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {}
 pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
@@ -990,6 +1151,70 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         return (*tmp.borrow()).clone();
     }
 }
+pub trait min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl {
+    fn to_(&self) -> () {
+        unimplemented!()
+    }
+    fn operator_deref(&self) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn operator_arrow(&self) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn operator_inc_8(
+        &self,
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_inc_9(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_dec_10(
+        &self,
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_post_dec_11(
+        &self,
+        mut _a0: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_add_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_sub_assign(
+        &self,
+        mut n: (),
+    ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
+        unimplemented!()
+    }
+    fn operator_add(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_sub(
+        &self,
+        mut n: (),
+    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+        unimplemented!()
+    }
+    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+}
+impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl
+    for Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__>
+{
+}
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
@@ -1017,6 +1242,21 @@ impl other_allocator_int_Impl for Ptr<other_allocator_int_> {
         unimplemented!();
     }
 }
+pub trait other_allocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn select_on_container_copy_construction(&self) -> other_allocator_unsigned_long_ {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+}
+impl other_allocator_unsigned_long_Impl for Ptr<other_allocator_unsigned_long_> {}
 pub trait safe_allocator_int_Impl {
     fn allocate(&self, n: ()) -> Ptr<()>;
     fn deallocate(&self, p: Ptr<()>, n: ());
@@ -1055,6 +1295,15 @@ impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
         unimplemented!();
     }
 }
+pub trait safe_allocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+        unimplemented!()
+    }
+}
+impl safe_allocator_unsigned_long_Impl for Ptr<safe_allocator_unsigned_long_> {}
 pub trait test_allocator_int_Impl {
     fn destructor(&self);
     fn address_11(&self, x: ()) -> Ptr<()> {
@@ -1167,6 +1416,36 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
+pub trait test_allocator_unsigned_int_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn address_11(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn address_12(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn destroy(&self, mut p: Ptr<()>) {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+    fn get_id(&self) -> () {
+        unimplemented!()
+    }
+}
+impl test_allocator_unsigned_int_Impl for Ptr<test_allocator_unsigned_int_> {}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();

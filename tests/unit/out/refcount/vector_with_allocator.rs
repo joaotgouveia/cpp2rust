@@ -12,6 +12,9 @@ pub struct TestAllocator_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestAllocator_double_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct TestAllocator_unsigned_long_ {}
 pub fn copy_0(mut copy_vector: ()) {}
 pub fn fn_1(v: Ptr<()>, v3: ()) {
     let v3: Value<()> = Rc::new(RefCell::new(v3));
@@ -212,4 +215,13 @@ impl TestAllocator_int_Impl for Ptr<TestAllocator_int_> {
         p.delete();
     }
 }
+pub trait TestAllocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut _a1: ()) {
+        unimplemented!()
+    }
+}
+impl TestAllocator_unsigned_long_Impl for Ptr<TestAllocator_unsigned_long_> {}
 pub fn __cpp2rust_init_globals() {}

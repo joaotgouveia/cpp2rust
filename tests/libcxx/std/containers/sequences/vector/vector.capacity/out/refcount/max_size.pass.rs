@@ -311,6 +311,9 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_char__rebind_char_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_char__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_char_ {
@@ -361,6 +364,29 @@ impl Default for test_allocator_char_ {
             test_allocator_char_ {
                 data_: unimplemented!(),
                 id_: 0_(),
+                stats_: Ptr::<test_allocator_statistics>::null(),
+            }
+        }
+    }
+}
+#[derive(Record, ByteRepr, FnPtrArg)]
+#[byte_size(16)]
+pub struct test_allocator_unsigned_int_ {
+    #[offset(0)]
+    data_: (),
+    #[offset(4)]
+    id_: (),
+    #[offset(8)]
+    #[byte_size(8)]
+    stats_: Ptr<test_allocator_statistics>,
+}
+impl test_allocator_unsigned_int_ {}
+impl Default for test_allocator_unsigned_int_ {
+    fn default() -> Self {
+        {
+            test_allocator_unsigned_int_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -1822,6 +1848,36 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
+pub trait test_allocator_unsigned_int_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn address_11(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn address_12(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn destroy(&self, mut p: Ptr<()>) {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+    fn get_id(&self) -> () {
+        unimplemented!()
+    }
+}
+impl test_allocator_unsigned_int_Impl for Ptr<test_allocator_unsigned_int_> {}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();

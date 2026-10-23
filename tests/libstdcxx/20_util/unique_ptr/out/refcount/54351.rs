@@ -304,7 +304,11 @@ pub struct C {
 }
 pub fn test02_12() {
     let d: Value<D> = Rc::new(RefCell::new(<D>::default()));
-    unimplemented!();
+    ({
+        { (*d.borrow()).c.clone() }.reset(Ptr::alloc_array(
+            (0..1_()).map(|_| <C>::default()).collect::<Box<[C]>>(),
+        ))
+    });
     let __rhs = (d.as_pointer());
     field!(unimplemented!(), d).write(__rhs);
 }

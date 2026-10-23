@@ -258,7 +258,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut p: *const () = c"".as_ptr();
-    let mut i: () = (unsafe { std_regex_traits_char_::length(p) });
+    let mut i: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

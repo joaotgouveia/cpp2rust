@@ -166,7 +166,7 @@ impl Default for explicit_allocator_unsigned_long_ {
 }
 pub fn tests_7() -> () {
     {
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -184,7 +184,7 @@ pub fn tests_7() -> () {
         }
     }
     {
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         'loop_: while (unimplemented!() < unimplemented!()) {
             unimplemented!();
         }
@@ -206,7 +206,7 @@ pub fn tests_7() -> () {
         }
     }
     {
-        let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         'loop_: while (unimplemented!() < unimplemented!()) {
             unimplemented!();
         }
@@ -230,14 +230,14 @@ pub fn tests_7() -> () {
         }
     }
     {
-        let mut v: () = std_vector_bool__explicit_allocator_bool__::new_1({ 10_() });
+        let mut v: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v: () = std_vector_bool__min_allocator_bool__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
