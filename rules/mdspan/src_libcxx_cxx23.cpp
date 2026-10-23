@@ -314,12 +314,14 @@ f43(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6, typename T7, typename T8>
 std::mdspan<T1, T2, T3, T4> f44(const std::mdspan<T5, T6, T7, T8> &a0)
-  requires(
-      (std::is_constructible_v<
-           typename std::mdspan<T1, T2, T3, T4>::mapping_type,
-           const typename T7::template mapping<T6> &> &&
-       std::is_constructible_v<
-           typename std::mdspan<T1, T2, T3, T4>::accessor_type, const T8 &>))
+  requires((std::is_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::mapping_type,
+                const typename T7::template mapping<T6> &> &&
+            std::is_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::accessor_type,
+                const T8 &>)) &&
+          (!(std::is_same<T5, T1>::value && std::is_same<T6, T2>::value &&
+             std::is_same<T7, T3>::value && std::is_same<T8, T4>::value))
 {
   return std::mdspan<T1, T2, T3, T4>(a0);
 }

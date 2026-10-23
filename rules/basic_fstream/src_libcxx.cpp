@@ -5,31 +5,24 @@
 #include <utility>
 
 template <typename T1, typename T2>
-std::basic_fstream<T1, T2> f110(const char *a0, unsigned int a1) {
+std::basic_fstream<T1, T2> f111(const char *a0, unsigned int a1) {
   return std::basic_fstream<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::basic_fstream<T1, T2> f111(const std::string &a0, unsigned int a1) {
+std::basic_fstream<T1, T2> f112(const std::string &a0, unsigned int a1) {
   return std::basic_fstream<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-void f112(std::basic_fstream<T1, T2> &a0, const char *a1, unsigned int a2) {
+void f113(std::basic_fstream<T1, T2> &a0, const char *a1, unsigned int a2) {
   return a0.open(a1, a2);
 }
 
 template <typename T1, typename T2>
-void f113(std::basic_fstream<T1, T2> &a0, const std::string &a1,
+void f114(std::basic_fstream<T1, T2> &a0, const std::string &a1,
           unsigned int a2) {
   return a0.open(a1, a2);
-}
-
-template <typename T1, typename T2, typename T3 = T1,
-          std::__enable_if_t<std::is_same<T1, char>::value, int> T4 = 0>
-std::basic_fstream<T1, T2> &f114(std::basic_fstream<T1, T2> &a0,
-                                 std::streamsize a1, T1 a2) {
-  return a0.ignore(a1, a2);
 }
 
 template <typename T1, typename T2>

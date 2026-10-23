@@ -15,7 +15,9 @@ template <
                      typename std::optional<T1>::
                          template __not_constructing_bool_from_optional<T2>>,
         bool>
-        T3 = true>
+        T3 = true,
+    typename std::enable_if<(!(std::is_same<T2, std::nullopt_t>::value)),
+                            int>::type T4 = 0>
 std::optional<T1> f56(T2 &&a0) {
   return std::optional<T1>(std::forward<T2>(a0));
 }
@@ -32,7 +34,9 @@ template <
                      typename std::optional<T1>::
                          template __not_constructing_bool_from_optional<T2>>,
         bool>
-        T3 = false>
+        T3 = false,
+    typename std::enable_if<(!(std::is_same<T2, std::nullopt_t>::value)),
+                            int>::type T4 = 0>
 std::optional<T1> f57(T2 &&a0) {
   return std::optional<T1>(std::forward<T2>(a0));
 }

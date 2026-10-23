@@ -46,7 +46,10 @@ template <typename T1, typename T2, typename T3, typename T4,
                                  template __is_implicitly_constructible<
                                      const T3 &, const T4 &>(),
                              bool>
-              T5 = true>
+              T5 = true,
+          typename std::enable_if<(!(std::is_same<T3, T1>::value &&
+                                     std::is_same<T4, T2>::value)),
+                                  int>::type T6 = 0>
 std::tuple<T1, T2> f37(const std::tuple<T3, T4> &a0) {
   return std::tuple<T1, T2>(a0);
 }
@@ -56,7 +59,10 @@ template <typename T1, typename T2, typename T3, typename T4,
                                  template __is_explicitly_constructible<
                                      const T3 &, const T4 &>(),
                              bool>
-              T5 = false>
+              T5 = false,
+          typename std::enable_if<(!(std::is_same<T3, T1>::value &&
+                                     std::is_same<T4, T2>::value)),
+                                  int>::type T6 = 0>
 std::tuple<T1, T2> f38(const std::tuple<T3, T4> &a0) {
   return std::tuple<T1, T2>(a0);
 }
@@ -66,7 +72,10 @@ template <
     std::__enable_if_t<std::_TupleConstraints<true, T1, T2>::
                            template __is_implicitly_constructible<T3, T4>(),
                        bool>
-        T5 = true>
+        T5 = true,
+    typename std::enable_if<(!(std::is_same<T3, T1>::value &&
+                               std::is_same<T4, T2>::value)),
+                            int>::type T6 = 0>
 std::tuple<T1, T2> f39(std::tuple<T3, T4> &&a0) {
   return std::tuple<T1, T2>(std::move(a0));
 }
@@ -76,7 +85,10 @@ template <
     std::__enable_if_t<std::_TupleConstraints<true, T1, T2>::
                            template __is_explicitly_constructible<T3, T4>(),
                        bool>
-        T5 = false>
+        T5 = false,
+    typename std::enable_if<(!(std::is_same<T3, T1>::value &&
+                               std::is_same<T4, T2>::value)),
+                            int>::type T6 = 0>
 std::tuple<T1, T2> f40(std::tuple<T3, T4> &&a0) {
   return std::tuple<T1, T2>(std::move(a0));
 }

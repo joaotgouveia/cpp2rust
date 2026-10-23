@@ -12,7 +12,22 @@ std::u8string f81(const std::filesystem::path &a0) {
   return a0.generic_u8string();
 }
 
-std::strong_ordering f82(const std::filesystem::path &a0,
+template <
+    typename T1,
+    std::__enable_if_t<std::filesystem::__can_convert_char<T1>::value, int> T2 =
+        0>
+std::filesystem::path &f82(std::filesystem::path &a0, T1 a1)
+  requires(
+      !(std::is_same<T1, const std::filesystem::path &>::value) &&
+      !(std::is_same<T1, const std::filesystem::path::string_type &>::value) &&
+      !(std::is_same<T1, std::filesystem::path::__string_view>::value) &&
+      !(std::is_same<T1, const std::filesystem::path::value_type *>::value) &&
+      !(std::is_same<T1, std::filesystem::path::value_type>::value))
+{
+  return a0.template operator+= <T1>(a1);
+}
+
+std::strong_ordering f83(const std::filesystem::path &a0,
                          const std::filesystem::path &a1) {
   return operator<=>(a0, a1);
 }

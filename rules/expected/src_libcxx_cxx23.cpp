@@ -67,12 +67,16 @@ void f116(std::expected<T1, T2> &a0, std::expected<T1, T2> &a1)
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::expected<T1, T2> f117(const std::expected<T3, T4> &a0) {
+std::expected<T1, T2> f117(const std::expected<T3, T4> &a0)
+  requires(!(std::is_same<T3, T1>::value && std::is_same<T4, T2>::value))
+{
   return std::expected<T1, T2>(a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::expected<T1, T2> f118(std::expected<T3, T4> &&a0) {
+std::expected<T1, T2> f118(std::expected<T3, T4> &&a0)
+  requires(!(std::is_same<T3, T1>::value && std::is_same<T4, T2>::value))
+{
   return std::expected<T1, T2>(std::move(a0));
 }
 
@@ -204,7 +208,9 @@ std::expected<T1, T2> f132(T3 &&a0)
             std::is_constructible_v<T1, T3> &&
             !std::__is_std_unexpected<std::remove_cvref_t<T3>>::value &&
             (!std::is_same_v<std::remove_cv_t<T1>, bool> ||
-             !std::__is_std_expected<std::remove_cvref_t<T3>>::value)))
+             !std::__is_std_expected<std::remove_cvref_t<T3>>::value))) &&
+          (!(std::is_same<T3, const std::expected<T1, T2> &>::value) &&
+           !(std::is_same<T3, std::expected<T1, T2>>::value))
 {
   return std::expected<T1, T2>(std::forward<T3>(a0));
 }
@@ -216,7 +222,9 @@ std::expected<T1, T2> &f133(std::expected<T1, T2> &a0, T3 &&a1)
             std::is_constructible_v<T1, T3> && std::is_assignable_v<T1 &, T3> &&
             (std::is_nothrow_constructible_v<T1, T3> ||
              std::is_nothrow_move_constructible_v<T1> ||
-             std::is_nothrow_move_constructible_v<T2>)))
+             std::is_nothrow_move_constructible_v<T2>))) &&
+          (!(std::is_same<T3, const std::expected<T1, T2> &>::value) &&
+           !(std::is_same<T3, std::expected<T1, T2>>::value))
 {
   return a0.template operator= <T3>(std::forward<T3>(a1));
 }

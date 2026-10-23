@@ -61,73 +61,61 @@ std::string f26(const std::error_code &a0) { return a0.message(); }
 
 bool f27(const std::error_code &a0) { return static_cast<bool>(a0); }
 
-template <typename T1,
-          typename T2 = std::__enable_if_t<std::is_error_code_enum<T1>::value>>
-std::error_code f28(T1 a0) {
-  return std::error_code(a0);
-}
-
 using t4 = std::error_condition;
 
-std::error_condition f29() { return std::error_condition(); }
+std::error_condition f28() { return std::error_condition(); }
 
-std::error_condition f30(int a0, const std::error_category &a1) {
+std::error_condition f29(int a0, const std::error_category &a1) {
   return std::error_condition(a0, a1);
 }
 
-std::error_condition f31(const std::error_condition &a0) {
+std::error_condition f30(const std::error_condition &a0) {
   return std::error_condition(a0);
 }
 
-std::error_condition &f32(std::error_condition &a0,
+std::error_condition &f31(std::error_condition &a0,
                           const std::error_condition &a1) {
   return a0.operator=(a1);
 }
 
-void f33(std::error_condition &a0, int a1, const std::error_category &a2) {
+void f32(std::error_condition &a0, int a1, const std::error_category &a2) {
   return a0.assign(a1, a2);
 }
 
-void f34(std::error_condition &a0) { return a0.clear(); }
+void f33(std::error_condition &a0) { return a0.clear(); }
 
-int f35(const std::error_condition &a0) { return a0.value(); }
+int f34(const std::error_condition &a0) { return a0.value(); }
 
-const std::error_category &f36(const std::error_condition &a0) {
+const std::error_category &f35(const std::error_condition &a0) {
   return a0.category();
 }
 
-std::string f37(const std::error_condition &a0) { return a0.message(); }
+std::string f36(const std::error_condition &a0) { return a0.message(); }
 
-bool f38(const std::error_condition &a0) { return static_cast<bool>(a0); }
+bool f37(const std::error_condition &a0) { return static_cast<bool>(a0); }
 
-template <typename T1, typename T2 = std::__enable_if_t<
-                           std::is_error_condition_enum<T1>::value>>
-std::error_condition f39(T1 a0) {
-  return std::error_condition(a0);
-}
+const std::error_category &f38() { return std::generic_category(); }
 
-const std::error_category &f40() { return std::generic_category(); }
+std::error_code f39(std::errc a0) { return std::make_error_code(a0); }
 
-std::error_code f41(std::errc a0) { return std::make_error_code(a0); }
-
-std::error_condition f42(std::errc a0) { return std::make_error_condition(a0); }
+std::error_condition f40(std::errc a0) { return std::make_error_condition(a0); }
 
 template <typename T1, typename T2>
-std::basic_ostream<T1, T2> &f43(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f41(std::basic_ostream<T1, T2> &a0,
                                 const std::error_code &a1) {
   return std::operator<< <T1, T2>(a0, a1);
 }
 
-bool f44(const std::error_code &a0, const std::error_condition &a1) {
+bool f42(const std::error_code &a0, const std::error_condition &a1) {
   return std::operator==(a0, a1);
 }
 
-bool f45(const std::error_code &a0, const std::error_code &a1) {
+bool f43(const std::error_code &a0, const std::error_code &a1) {
   return std::operator==(a0, a1);
 }
 
-bool f46(const std::error_condition &a0, const std::error_condition &a1) {
+bool f44(const std::error_condition &a0, const std::error_condition &a1) {
   return std::operator==(a0, a1);
 }
 
-const std::error_category &f47() { return std::system_category(); }
+const std::error_category &f45() { return std::system_category(); }

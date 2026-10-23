@@ -4,38 +4,42 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
-std::basic_istringstream<T1, T2, T3> f104(unsigned int a0, const T3 &a1) {
+std::basic_istringstream<T1, T2, T3> f103(unsigned int a0, const T3 &a1) {
   return std::basic_istringstream<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_istringstream<T1, T2, T3> f105(std::basic_string<T1, T2, T3> &&a0,
+std::basic_istringstream<T1, T2, T3> f104(std::basic_string<T1, T2, T3> &&a0,
                                           unsigned int a1) {
   return std::basic_istringstream<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_istringstream<T1, T2, T3>
-f106(const std::basic_string<T1, T2, T4> &a0, unsigned int a1, const T3 &a2) {
+f105(const std::basic_string<T1, T2, T4> &a0, unsigned int a1, const T3 &a2) {
   return std::basic_istringstream<T1, T2, T3>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_istringstream<T1, T2, T3>
-f107(const std::basic_string<T1, T2, T4> &a0, unsigned int a1) {
+f106(const std::basic_string<T1, T2, T4> &a0, unsigned int a1)
+  requires(!(std::is_same<T4, T3>::value))
+{
   return std::basic_istringstream<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_string<T1, T2, T4>
-f108(const std::basic_istringstream<T1, T2, T3> &a0, const T4 &a1)
+f107(const std::basic_istringstream<T1, T2, T3> &a0, const T4 &a1)
   requires(std::__is_allocator_v<T4>)
 {
   return a0.template str<T4>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-void f109(std::basic_istringstream<T1, T2, T3> &a0,
-          const std::basic_string<T1, T2, T4> &a1) {
+void f108(std::basic_istringstream<T1, T2, T3> &a0,
+          const std::basic_string<T1, T2, T4> &a1)
+  requires(!(std::is_same<T4, T3>::value))
+{
   return a0.template str<T4>(a1);
 }

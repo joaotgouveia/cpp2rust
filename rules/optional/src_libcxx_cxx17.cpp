@@ -275,146 +275,9 @@ std::optional<T1> f107(std::in_place_t a0, std::initializer_list<T2> a1,
   return std::optional<T1>(std::move(a0), a1, std::forward<T3>(a2)...);
 }
 
-template <
-    typename T1, typename T2,
-    std::enable_if_t<
-        std::_If<
-            std::_IsNotSame<std::__remove_cvref_t<T2>,
-                            std::in_place_t>::value &&
-                std::_IsNotSame<std::__remove_cvref_t<T2>,
-                                std::optional<T1>>::value &&
-                (!std::is_same_v<std::remove_cv_t<T1>, bool> ||
-                 !std::__is_std_optional<std::__remove_cvref_t<T2>>::value),
-            typename std::optional<T1>::_CheckOptionalArgsConstructor,
-            std::__check_tuple_constructor_fail>::
-            template __enable_implicit<T2>(),
-        int>
-        T3 = 0>
-std::optional<T1> f108(T2 &&a0) {
-  return std::optional<T1>(std::forward<T2>(a0));
-}
-
-template <
-    typename T1, typename T2,
-    std::enable_if_t<
-        std::_If<
-            std::_IsNotSame<std::__remove_cvref_t<T2>,
-                            std::in_place_t>::value &&
-                std::_IsNotSame<std::__remove_cvref_t<T2>,
-                                std::optional<T1>>::value &&
-                (!std::is_same_v<std::remove_cv_t<T1>, bool> ||
-                 !std::__is_std_optional<std::__remove_cvref_t<T2>>::value),
-            typename std::optional<T1>::_CheckOptionalArgsConstructor,
-            std::__check_tuple_constructor_fail>::
-            template __enable_explicit<T2>(),
-        int>
-        T3 = 0>
-std::optional<T1> f109(T2 &&a0) {
-  return std::optional<T1>(std::forward<T2>(a0));
-}
-
-template <typename T1, typename T2,
-          std::enable_if_t<
-              std::_If<std::_And<std::_IsNotSame<T2, T1>,
-                                 std::is_constructible<T1, const T2 &>>::value,
-                       typename std::optional<T1>::
-                           template _CheckOptionalLikeConstructor<const T2 &>,
-                       std::__check_tuple_constructor_fail>::
-                  template __enable_implicit<T2>(),
-              int>
-              T3 = 0>
-std::optional<T1> f110(const std::optional<T2> &a0) {
-  return std::optional<T1>(a0);
-}
-
-template <typename T1, typename T2,
-          std::enable_if_t<
-              std::_If<std::_And<std::_IsNotSame<T2, T1>,
-                                 std::is_constructible<T1, const T2 &>>::value,
-                       typename std::optional<T1>::
-                           template _CheckOptionalLikeConstructor<const T2 &>,
-                       std::__check_tuple_constructor_fail>::
-                  template __enable_explicit<T2>(),
-              int>
-              T3 = 0>
-std::optional<T1> f111(const std::optional<T2> &a0) {
-  return std::optional<T1>(a0);
-}
-
-template <typename T1, typename T2,
-          std::enable_if_t<
-              std::_If<std::_And<std::_IsNotSame<T2, T1>,
-                                 std::is_constructible<T1, T2 &&>>::value,
-                       typename std::optional<
-                           T1>::template _CheckOptionalLikeConstructor<T2 &&>,
-                       std::__check_tuple_constructor_fail>::
-                  template __enable_implicit<T2>(),
-              int>
-              T3 = 0>
-std::optional<T1> f112(std::optional<T2> &&a0) {
-  return std::optional<T1>(std::move(a0));
-}
-
-template <typename T1, typename T2,
-          std::enable_if_t<
-              std::_If<std::_And<std::_IsNotSame<T2, T1>,
-                                 std::is_constructible<T1, T2 &&>>::value,
-                       typename std::optional<
-                           T1>::template _CheckOptionalLikeConstructor<T2 &&>,
-                       std::__check_tuple_constructor_fail>::
-                  template __enable_explicit<T2>(),
-              int>
-              T3 = 0>
-std::optional<T1> f113(std::optional<T2> &&a0) {
-  return std::optional<T1>(std::move(a0));
-}
-
-template <
-    typename T1, typename T2,
-    std::enable_if_t<
-        std::_And<std::_IsNotSame<std::__remove_cvref_t<T2>, std::optional<T1>>,
-                  std::_Or<std::_IsNotSame<std::__remove_cvref_t<T2>, T1>,
-                           std::_Not<std::is_scalar<T1>>>,
-                  std::is_constructible<T1, T2>,
-                  std::is_assignable<T1 &, T2>>::value,
-        int>
-        T3 = 0>
-std::optional<T1> &f114(std::optional<T1> &a0, T2 &&a1) {
-  return a0.template operator= <T2>(std::forward<T2>(a1));
-}
-
-template <typename T1, typename T2,
-          std::enable_if_t<
-              std::_If<std::_And<std::_IsNotSame<T2, T1>,
-                                 std::is_constructible<T1, const T2 &>,
-                                 std::is_assignable<T1 &, const T2 &>>::value,
-                       typename std::optional<T1>::
-                           template _CheckOptionalLikeConstructor<const T2 &>,
-                       std::__check_tuple_constructor_fail>::
-                  template __enable_assign<T2>(),
-              int>
-              T3 = 0>
-std::optional<T1> &f115(std::optional<T1> &a0, const std::optional<T2> &a1) {
-  return a0.template operator= <T2>(a1);
-}
-
-template <typename T1, typename T2,
-          std::enable_if_t<
-              std::_If<std::_And<std::_IsNotSame<T2, T1>,
-                                 std::is_constructible<T1, T2 &&>>::value,
-                       typename std::optional<
-                           T1>::template _CheckOptionalLikeConstructor<T2 &&>,
-                       std::__check_tuple_constructor_fail>::
-                  template __enable_assign<T2>(),
-              int>
-              T3 = 0>
-std::optional<T1> &f116(std::optional<T1> &a0, std::optional<T2> &&a1) {
-  return a0.template operator= <T2>(std::move(a1));
-}
-
 template <typename T1, typename... T2,
           std::enable_if_t<std::is_constructible_v<T1, T2...>, int> T3 = 0>
-T1 &f117(std::optional<T1> &a0, T2 &&...a1) {
+T1 &f108(std::optional<T1> &a0, T2 &&...a1) {
   return a0.template emplace<T2...>(std::forward<T2>(a1)...);
 }
 
@@ -423,44 +286,31 @@ template <
     std::enable_if_t<
         std::is_constructible_v<T1, std::initializer_list<T2> &, T3...>, int>
         T4 = 0>
-T1 &f118(std::optional<T1> &a0, std::initializer_list<T2> a1, T3 &&...a2) {
+T1 &f109(std::optional<T1> &a0, std::initializer_list<T2> a1, T3 &&...a2) {
   return a0.template emplace<T2, T3...>(a1, std::forward<T3>(a2)...);
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f119(const std::optional<T1> &a0) {
+std::add_pointer_t<T1 const> f110(const std::optional<T1> &a0) {
   return a0.operator->();
 }
 
-template <typename T1> std::add_pointer_t<T1> f120(std::optional<T1> &a0) {
+template <typename T1> std::add_pointer_t<T1> f111(std::optional<T1> &a0) {
   return a0.operator->();
 }
 
-template <typename T1> T1 const &f121(const std::optional<T1> &a0) {
+template <typename T1> T1 const &f112(const std::optional<T1> &a0) {
   return a0.operator*();
 }
 
-template <typename T1> T1 const &&f122(const std::optional<T1> &&a0) {
+template <typename T1> T1 const &&f113(const std::optional<T1> &&a0) {
   return std::move(a0).operator*();
 }
 
-template <typename T1> T1 const &f123(const std::optional<T1> &a0) {
+template <typename T1> T1 const &f114(const std::optional<T1> &a0) {
   return a0.value();
 }
 
-template <typename T1> T1 const &&f124(const std::optional<T1> &&a0) {
+template <typename T1> T1 const &&f115(const std::optional<T1> &&a0) {
   return std::move(a0).value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f125(const std::optional<T1> &a0) {
-  return a0.operator->();
-}
-
-template <typename T1> T1 &f126(const std::optional<T1> &a0) {
-  return a0.operator*();
-}
-
-template <typename T1> T1 &f127(const std::optional<T1> &a0) {
-  return a0.value();
 }

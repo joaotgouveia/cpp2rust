@@ -52,7 +52,10 @@ template <
             std::_PCC<!std::is_same<T1, T3>::value ||
                           !std::is_same<T2, T4>::value,
                       T1, T2>::template _ImplicitlyConvertiblePair<T3, T4>(),
-        bool>::type T5 = true>
+        bool>::type T5 = true,
+    typename std::enable_if<(!(std::is_same<T3, T1>::value &&
+                               std::is_same<T4, T2>::value)),
+                            int>::type T6 = 0>
 std::pair<T1, T2> f9(const std::pair<T3, T4> &a0) {
   return std::pair<T1, T2>(a0);
 }
@@ -65,7 +68,10 @@ template <
             !std::_PCC<!std::is_same<T1, T3>::value ||
                            !std::is_same<T2, T4>::value,
                        T1, T2>::template _ImplicitlyConvertiblePair<T3, T4>(),
-        bool>::type T5 = false>
+        bool>::type T5 = false,
+    typename std::enable_if<(!(std::is_same<T3, T1>::value &&
+                               std::is_same<T4, T2>::value)),
+                            int>::type T6 = 0>
 std::pair<T1, T2> f10(const std::pair<T3, T4> &a0) {
   return std::pair<T1, T2>(a0);
 }
@@ -100,7 +106,10 @@ template <
             std::_PCC<
                 !std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
                 T1, T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
-        bool>::type T5 = true>
+        bool>::type T5 = true,
+    typename std::enable_if<(!(std::is_same<T3, T1>::value &&
+                               std::is_same<T4, T2>::value)),
+                            int>::type T6 = 0>
 std::pair<T1, T2> f13(std::pair<T3, T4> &&a0) {
   return std::pair<T1, T2>(std::move(a0));
 }
@@ -113,7 +122,10 @@ template <
             !std::_PCC<
                 !std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
                 T1, T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
-        bool>::type T5 = false>
+        bool>::type T5 = false,
+    typename std::enable_if<(!(std::is_same<T3, T1>::value &&
+                               std::is_same<T4, T2>::value)),
+                            int>::type T6 = 0>
 std::pair<T1, T2> f14(std::pair<T3, T4> &&a0) {
   return std::pair<T1, T2>(std::move(a0));
 }

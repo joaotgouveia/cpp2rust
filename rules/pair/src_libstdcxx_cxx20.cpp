@@ -35,7 +35,9 @@ std::pair<T1, T2> &f18(std::pair<T1, T2> &a0, std::pair<T1, T2> &&a1)
 template <typename T1, typename T2, typename T3, typename T4>
 std::pair<T1, T2> f19(T3 &&a0, T4 &&a1)
   requires((std::pair<T1, T2>::template _S_constructible<T3, T4>()) &&
-           (!std::pair<T1, T2>::template _S_dangles<T3, T4>()))
+           (!std::pair<T1, T2>::template _S_dangles<T3, T4>())) &&
+          (!(std::is_same<T3, const std::type_identity_t<T1> &>::value &&
+             std::is_same<T4, const T2 &>::value))
 {
   return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }
@@ -44,7 +46,8 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::pair<T1, T2> f20(const std::pair<T3, T4> &a0)
   requires((std::pair<T1, T2>::template _S_constructible<const T3 &,
                                                          const T4 &>()) &&
-           (!std::pair<T1, T2>::template _S_dangles<T3, T4>()))
+           (!std::pair<T1, T2>::template _S_dangles<T3, T4>())) &&
+          (!(std::is_same<T3, T1>::value && std::is_same<T4, T2>::value))
 {
   return std::pair<T1, T2>(a0);
 }
@@ -52,22 +55,25 @@ std::pair<T1, T2> f20(const std::pair<T3, T4> &a0)
 template <typename T1, typename T2, typename T3, typename T4>
 std::pair<T1, T2> f21(std::pair<T3, T4> &&a0)
   requires((std::pair<T1, T2>::template _S_constructible<T3, T4>()) &&
-           (!std::pair<T1, T2>::template _S_dangles<T3, T4>()))
+           (!std::pair<T1, T2>::template _S_dangles<T3, T4>())) &&
+          (!(std::is_same<T3, T1>::value && std::is_same<T4, T2>::value))
 {
   return std::pair<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::pair<T1, T2> &f22(std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1)
-  requires(
-      (std::pair<T1, T2>::template _S_assignable<const T3 &, const T4 &>()))
+  requires((std::pair<T1, T2>::template _S_assignable<const T3 &,
+                                                      const T4 &>())) &&
+          (!(std::is_same<T3, T1>::value && std::is_same<T4, T2>::value))
 {
   return a0.template operator= <T3, T4>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::pair<T1, T2> &f23(std::pair<T1, T2> &a0, std::pair<T3, T4> &&a1)
-  requires((std::pair<T1, T2>::template _S_assignable<T3, T4>()))
+  requires((std::pair<T1, T2>::template _S_assignable<T3, T4>())) &&
+          (!(std::is_same<T3, T1>::value && std::is_same<T4, T2>::value))
 {
   return a0.template operator= <T3, T4>(std::move(a1));
 }

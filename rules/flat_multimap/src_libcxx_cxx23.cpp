@@ -411,7 +411,10 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::flat_multimap<T1, T2, T3, T4, T5> f63(const T6 &a0)
   requires(std::flat_multimap<T1, T2, T3, T4,
-                              T5>::template __allocator_ctor_constraint<T6>)
+                              T5>::template __allocator_ctor_constraint<T6>) &&
+          (!(std::is_same<T6, std::flat_multimap<T1, T2, T3, T4, T5>>::value) &&
+           !(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_compare>::value))
 {
   return std::flat_multimap<T1, T2, T3, T4, T5>(a0);
 }
@@ -528,7 +531,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 std::flat_multimap<T1, T2, T3, T4, T5>
 f75(std::initializer_list<std::pair<T1, T2>> a0, const T6 &a1)
   requires(std::flat_multimap<T1, T2, T3, T4,
-                              T5>::template __allocator_ctor_constraint<T6>)
+                              T5>::template __allocator_ctor_constraint<T6>) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_compare>::value))
 {
   return std::flat_multimap<T1, T2, T3, T4, T5>(a0, a1);
 }
@@ -550,7 +555,9 @@ std::flat_multimap<T1, T2, T3, T4, T5>
 f77(std::sorted_equivalent_t a0, std::initializer_list<std::pair<T1, T2>> a1,
     const T6 &a2)
   requires(std::flat_multimap<T1, T2, T3, T4,
-                              T5>::template __allocator_ctor_constraint<T6>)
+                              T5>::template __allocator_ctor_constraint<T6>) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_compare>::value))
 {
   return std::flat_multimap<T1, T2, T3, T4, T5>(std::move(a0), a1, a2);
 }
@@ -593,10 +600,16 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f80(std::flat_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1)
   requires(std::is_constructible_v<
-           std::pair<
-               typename std::flat_multimap<T1, T2, T3, T4, T5>::key_type,
-               typename std::flat_multimap<T1, T2, T3, T4, T5>::mapped_type>,
-           T6>)
+              std::pair<
+                  typename std::flat_multimap<T1, T2, T3, T4, T5>::key_type,
+                  typename std::flat_multimap<T1, T2, T3, T4, T5>::mapped_type>,
+              T6>) &&
+          (!(std::is_same<T6, const typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::value_type &>::value) &&
+           !(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::value_type>::value) &&
+           !(std::is_same<T6, std::initializer_list<typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::value_type>>::value))
 {
   return a0.template insert<T6>(std::forward<T6>(a1));
 }
@@ -607,10 +620,14 @@ typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f81(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator a1, T6 &&a2)
   requires(std::is_constructible_v<
-           std::pair<
-               typename std::flat_multimap<T1, T2, T3, T4, T5>::key_type,
-               typename std::flat_multimap<T1, T2, T3, T4, T5>::mapped_type>,
-           T6>)
+              std::pair<
+                  typename std::flat_multimap<T1, T2, T3, T4, T5>::key_type,
+                  typename std::flat_multimap<T1, T2, T3, T4, T5>::mapped_type>,
+              T6>) &&
+          (!(std::is_same<T6, const typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::value_type &>::value) &&
+           !(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::value_type>::value))
 {
   return a0.template insert<T6>(a1, std::forward<T6>(a2));
 }
@@ -648,12 +665,18 @@ void f85(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::size_t f86(std::flat_multimap<T1, T2, T3, T4, T5> &a0, T6 &&a1)
-  requires(
-      (std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent &&
-       !std::is_convertible_v<
-           T6 &&, typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator> &&
-       !std::is_convertible_v<T6 &&, typename std::flat_multimap<
-                                         T1, T2, T3, T4, T5>::const_iterator>))
+  requires((std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent &&
+            !std::is_convertible_v<T6 &&, typename std::flat_multimap<
+                                              T1, T2, T3, T4, T5>::iterator> &&
+            !std::is_convertible_v<
+                T6 &&, typename std::flat_multimap<T1, T2, T3, T4,
+                                                   T5>::const_iterator>)) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::iterator>::value) &&
+           !(std::is_same<T6, typename std::flat_multimap<T1, T2, T3, T4, T5>::
+                                  const_iterator>::value) &&
+           !(std::is_same<T6, const typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type &>::value))
 {
   return a0.template erase<T6>(std::forward<T6>(a1));
 }
@@ -662,7 +685,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f87(std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template find<T6>(a1);
 }
@@ -671,7 +696,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator
 f88(const std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template find<T6>(a1);
 }
@@ -679,7 +706,9 @@ f88(const std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 std::size_t f89(const std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template count<T6>(a1);
 }
@@ -687,7 +716,9 @@ std::size_t f89(const std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 bool f90(const std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template contains<T6>(a1);
 }
@@ -696,7 +727,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f91(std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template lower_bound<T6>(a1);
 }
@@ -705,7 +738,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator
 f92(const std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template lower_bound<T6>(a1);
 }
@@ -714,7 +749,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator
 f93(std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template upper_bound<T6>(a1);
 }
@@ -723,7 +760,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator
 f94(const std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template upper_bound<T6>(a1);
 }
@@ -733,7 +772,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 std::pair<typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator,
           typename std::flat_multimap<T1, T2, T3, T4, T5>::iterator>
 f95(std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template equal_range<T6>(a1);
 }
@@ -743,7 +784,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
 std::pair<typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator,
           typename std::flat_multimap<T1, T2, T3, T4, T5>::const_iterator>
 f96(const std::flat_multimap<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent)
+  requires(std::flat_multimap<T1, T2, T3, T4, T5>::__is_compare_transparent) &&
+          (!(std::is_same<T6, typename std::flat_multimap<
+                                  T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template equal_range<T6>(a1);
 }

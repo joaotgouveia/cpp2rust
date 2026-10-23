@@ -83,7 +83,8 @@ f13(const std::layout_left::mapping<T1> &a0,
 template <typename T1, typename T2>
 std::layout_left::mapping<T1> f14(const std::layout_left::mapping<T2> &a0)
   requires((std::is_constructible_v<
-            typename std::layout_left::mapping<T1>::extents_type, T2>))
+              typename std::layout_left::mapping<T1>::extents_type, T2>)) &&
+          (!(std::is_same<T2, T1>::value))
 {
   return std::layout_left::mapping<T1>(a0);
 }

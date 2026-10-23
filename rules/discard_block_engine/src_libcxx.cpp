@@ -5,25 +5,15 @@
 #include <utility>
 
 template <typename T1, std::size_t T2, std::size_t T3>
-bool f16(const std::discard_block_engine<T1, T2, T3> &a0,
+bool f17(const std::discard_block_engine<T1, T2, T3> &a0,
          const std::discard_block_engine<T1, T2, T3> &a1) {
   return std::operator!= <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, std::size_t T2, std::size_t T3>
-bool f17(const std::discard_block_engine<T1, T2, T3> &a0,
+bool f18(const std::discard_block_engine<T1, T2, T3> &a0,
          const std::discard_block_engine<T1, T2, T3> &a1) {
   return std::operator== <T1, T2, T3>(a0, a1);
-}
-
-template <typename T1, std::size_t T2, std::size_t T3, typename T4,
-          std::__enable_if_t<std::__is_seed_sequence_v<
-                                 T4, std::discard_block_engine<T1, T2, T3>> &&
-                                 !std::is_convertible<T4, T1>::value,
-                             int>
-              T5 = 0>
-std::discard_block_engine<T1, T2, T3> f18(T4 &a0) {
-  return std::discard_block_engine<T1, T2, T3>(a0);
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, typename T4,

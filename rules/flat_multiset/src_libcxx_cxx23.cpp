@@ -339,7 +339,11 @@ std::flat_multiset<T1, T2, T3> f56(std::from_range_t a0, T4 &&a1,
 template <typename T1, typename T2, typename T3, typename T4>
 std::flat_multiset<T1, T2, T3> f57(const T4 &a0)
   requires(std::uses_allocator<
-           typename std::flat_multiset<T1, T2, T3>::container_type, T4>::value)
+              typename std::flat_multiset<T1, T2, T3>::container_type,
+              T4>::value) &&
+          (!(std::is_same<T4, std::flat_multiset<T1, T2, T3>>::value) &&
+           !(std::is_same<T4, typename std::flat_multiset<
+                                  T1, T2, T3>::key_compare>::value))
 {
   return std::flat_multiset<T1, T2, T3>(a0);
 }
@@ -468,7 +472,10 @@ std::flat_multiset<T1, T2, T3> f70(std::from_range_t a0, T4 &&a1, const T2 &a2,
 template <typename T1, typename T2, typename T3, typename T4>
 std::flat_multiset<T1, T2, T3> f71(std::initializer_list<T1> a0, const T4 &a1)
   requires(std::uses_allocator<
-           typename std::flat_multiset<T1, T2, T3>::container_type, T4>::value)
+              typename std::flat_multiset<T1, T2, T3>::container_type,
+              T4>::value) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_compare>::value))
 {
   return std::flat_multiset<T1, T2, T3>(a0, a1);
 }
@@ -486,7 +493,10 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::flat_multiset<T1, T2, T3> f73(std::sorted_equivalent_t a0,
                                    std::initializer_list<T1> a1, const T4 &a2)
   requires(std::uses_allocator<
-           typename std::flat_multiset<T1, T2, T3>::container_type, T4>::value)
+              typename std::flat_multiset<T1, T2, T3>::container_type,
+              T4>::value) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_compare>::value))
 {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2);
 }
@@ -549,12 +559,15 @@ void f80(std::flat_multiset<T1, T2, T3> &a0, std::sorted_equivalent_t a1,
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::size_type
 f81(std::flat_multiset<T1, T2, T3> &a0, T4 &&a1)
-  requires(
-      (std::__is_transparent_v<T2> &&
-       !std::is_convertible_v<
-           T4 &&, typename std::flat_multiset<T1, T2, T3>::iterator> &&
-       !std::is_convertible_v<
-           T4 &&, typename std::flat_multiset<T1, T2, T3>::const_iterator>))
+  requires((std::__is_transparent_v<T2> &&
+            !std::is_convertible_v<
+                T4 &&, typename std::flat_multiset<T1, T2, T3>::iterator> &&
+            !std::is_convertible_v<T4 &&, typename std::flat_multiset<
+                                              T1, T2, T3>::const_iterator>)) &&
+          (!(std::is_same<
+               T4, typename std::flat_multiset<T1, T2, T3>::iterator>::value) &&
+           !(std::is_same<T4, const typename std::flat_multiset<
+                                  T1, T2, T3>::key_type &>::value))
 {
   return a0.template erase<T4>(std::forward<T4>(a1));
 }
@@ -562,7 +575,9 @@ f81(std::flat_multiset<T1, T2, T3> &a0, T4 &&a1)
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::iterator
 f82(std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template find<T4>(a1);
 }
@@ -570,7 +585,9 @@ f82(std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::const_iterator
 f83(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template find<T4>(a1);
 }
@@ -578,14 +595,18 @@ f83(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::size_type
 f84(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template count<T4>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f85(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template contains<T4>(a1);
 }
@@ -593,7 +614,9 @@ bool f85(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::iterator
 f86(std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template lower_bound<T4>(a1);
 }
@@ -601,7 +624,9 @@ f86(std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::const_iterator
 f87(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template lower_bound<T4>(a1);
 }
@@ -609,7 +634,9 @@ f87(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::iterator
 f88(std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template upper_bound<T4>(a1);
 }
@@ -617,7 +644,9 @@ f88(std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::flat_multiset<T1, T2, T3>::const_iterator
 f89(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template upper_bound<T4>(a1);
 }
@@ -626,7 +655,9 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::pair<typename std::flat_multiset<T1, T2, T3>::iterator,
           typename std::flat_multiset<T1, T2, T3>::iterator>
 f90(std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template equal_range<T4>(a1);
 }
@@ -635,7 +666,9 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::pair<typename std::flat_multiset<T1, T2, T3>::const_iterator,
           typename std::flat_multiset<T1, T2, T3>::const_iterator>
 f91(const std::flat_multiset<T1, T2, T3> &a0, const T4 &a1)
-  requires(std::__is_transparent_v<T2>)
+  requires(std::__is_transparent_v<T2>) &&
+          (!(std::is_same<
+              T4, typename std::flat_multiset<T1, T2, T3>::key_type>::value))
 {
   return a0.template equal_range<T4>(a1);
 }

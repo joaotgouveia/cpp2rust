@@ -6,15 +6,15 @@
 
 using t4 = std::bad_optional_access;
 
-std::bad_optional_access f40() { return std::bad_optional_access(); }
+std::bad_optional_access f39() { return std::bad_optional_access(); }
 
-const char *f41(const std::bad_optional_access &a0) { return a0.what(); }
+const char *f40(const std::bad_optional_access &a0) { return a0.what(); }
 
-std::bad_optional_access f42(const std::bad_optional_access &a0) {
+std::bad_optional_access f41(const std::bad_optional_access &a0) {
   return std::bad_optional_access(a0);
 }
 
-std::bad_optional_access &f43(std::bad_optional_access &a0,
+std::bad_optional_access &f42(std::bad_optional_access &a0,
                               const std::bad_optional_access &a1) {
   return a0.operator=(a1);
 }
@@ -22,13 +22,13 @@ std::bad_optional_access &f43(std::bad_optional_access &a0,
 template <typename T1>
 std::enable_if_t<std::is_constructible_v<std::decay_t<T1>, T1>,
                  std::optional<std::decay_t<T1>>>
-f44(T1 &&a0) {
+f43(T1 &&a0) {
   return std::make_optional<T1>(std::forward<T1>(a0));
 }
 
 template <typename T1, typename... T2>
 std::enable_if_t<std::is_constructible_v<T1, T2...>, std::optional<T1>>
-f45(T2 &&...a0) {
+f44(T2 &&...a0) {
   return std::make_optional<T1, T2...>(std::forward<T2>(a0)...);
 }
 
@@ -36,33 +36,35 @@ template <typename T1, typename T2, typename... T3>
 std::enable_if_t<
     std::is_constructible_v<T1, std::initializer_list<T2> &, T3...>,
     std::optional<T1>>
-f46(std::initializer_list<T2> a0, T3 &&...a1) {
+f45(std::initializer_list<T2> a0, T3 &&...a1) {
   return std::make_optional<T1, T2, T3...>(a0, std::forward<T3>(a1)...);
 }
 
-template <typename T1> const T1 *f47(const std::optional<T1> &a0) {
+template <typename T1> const T1 *f46(const std::optional<T1> &a0) {
   return a0.operator->();
 }
 
-template <typename T1> T1 *f48(std::optional<T1> &a0) {
+template <typename T1> T1 *f47(std::optional<T1> &a0) {
   return a0.operator->();
 }
 
-template <typename T1> const T1 &f49(const std::optional<T1> &a0) {
+template <typename T1> const T1 &f48(const std::optional<T1> &a0) {
   return a0.operator*();
 }
 
-template <typename T1> const T1 &&f50(const std::optional<T1> &&a0) {
+template <typename T1> const T1 &&f49(const std::optional<T1> &&a0) {
   return std::move(a0).operator*();
 }
 
-template <typename T1> const T1 &f51(const std::optional<T1> &a0) {
+template <typename T1> const T1 &f50(const std::optional<T1> &a0) {
   return a0.value();
 }
 
-template <typename T1> const T1 &&f52(const std::optional<T1> &&a0) {
+template <typename T1> const T1 &&f51(const std::optional<T1> &&a0) {
   return std::move(a0).value();
 }
+
+template <typename T1> void f52(std::optional<T1> &a0) { return a0.reset(); }
 
 template <typename T1, typename... T2>
 std::enable_if_t<std::is_constructible_v<T1, T2...>, T1 &>

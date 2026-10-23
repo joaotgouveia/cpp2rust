@@ -3,15 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-template <typename T1>
-std::enable_if_t<
-    std::is_copy_constructible<std::enable_if_t<
-        !std::is_same_v<std::decay_t<T1>, std::any>, std::decay_t<T1>>>::value,
-    std::any &>
-f14(std::any &a0, T1 &&a1) {
-  return a0.template operator= <T1>(std::forward<T1>(a1));
-}
-
 template <typename T1> T1 *f15(std::any *a0) { return std::any_cast<T1>(a0); }
 
 template <typename T1> const T1 *f16(const std::any *a0) {

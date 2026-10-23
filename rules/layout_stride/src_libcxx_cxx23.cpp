@@ -84,7 +84,8 @@ std::layout_stride::mapping<T1> f14(const T2 &a0)
             std::is_constructible_v<
                 typename std::layout_stride::mapping<T1>::extents_type,
                 typename T2::extents_type> &&
-            T2::is_always_unique() && T2::is_always_strided()))
+            T2::is_always_unique() && T2::is_always_strided())) &&
+          (!(std::is_same<T2, std::layout_stride::mapping<T1>>::value))
 {
   return std::layout_stride::mapping<T1>(a0);
 }

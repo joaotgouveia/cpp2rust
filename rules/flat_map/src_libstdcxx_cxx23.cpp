@@ -53,7 +53,11 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::mapped_type &
 f7(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1)
-  requires(std::__transparent_comparator<T3>)
+  requires(std::__transparent_comparator<T3>) &&
+          (!(std::is_same<T6, const typename std::flat_map<
+                                  T1, T2, T3, T4, T5>::key_type &>::value) &&
+           !(std::is_same<T6, typename std::flat_map<T1, T2, T3, T4,
+                                                     T5>::key_type>::value))
 {
   return a0.template operator[]<T6>(std::forward<T6>(a1));
 }
@@ -62,7 +66,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 typename std::flat_map<T1, T2, T3, T4, T5>::mapped_type &
 f8(std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::same_as<T6, T1> || std::__transparent_comparator<T3>)
+  requires(std::same_as<T6, T1> || std::__transparent_comparator<T3>) &&
+          (!(std::is_same<
+              T6, typename std::flat_map<T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template at<T6>(a1);
 }
@@ -71,7 +77,9 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 const typename std::flat_map<T1, T2, T3, T4, T5>::mapped_type &
 f9(const std::flat_map<T1, T2, T3, T4, T5> &a0, const T6 &a1)
-  requires(std::same_as<T6, T1> || std::__transparent_comparator<T3>)
+  requires(std::same_as<T6, T1> || std::__transparent_comparator<T3>) &&
+          (!(std::is_same<
+              T6, typename std::flat_map<T1, T2, T3, T4, T5>::key_type>::value))
 {
   return a0.template at<T6>(a1);
 }

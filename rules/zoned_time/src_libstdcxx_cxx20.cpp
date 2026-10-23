@@ -125,7 +125,8 @@ std::chrono::sys_info f20(const std::chrono::zoned_time<T1, T2> &a0) {
 template <typename T1, typename T2, typename T3>
 std::chrono::zoned_time<T1, T2> f21(const std::chrono::zoned_time<T3, T2> &a0)
   requires(std::is_convertible_v<std::chrono::sys_time<T3>,
-                                 std::chrono::sys_time<T1>>)
+                                 std::chrono::sys_time<T1>>) &&
+          (!(std::is_same<T3, T1>::value))
 {
   return std::chrono::zoned_time<T1, T2>(a0);
 }

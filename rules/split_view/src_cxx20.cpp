@@ -63,7 +63,8 @@ std::ranges::split_view<T1, T2> f6(T3 &&a0, std::ranges::range_value_t<T3> a1)
           (std::ranges::view<T1> && std::ranges::view<T2> &&
            std::indirectly_comparable<std::ranges::iterator_t<T1>,
                                       std::ranges::iterator_t<T2>,
-                                      std::ranges::equal_to>)
+                                      std::ranges::equal_to>) &&
+          (!(std::is_same<T3, T1>::value))
 {
   return std::ranges::split_view<T1, T2>(std::forward<T3>(a0), a1);
 }

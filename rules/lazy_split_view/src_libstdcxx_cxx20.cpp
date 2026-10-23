@@ -115,7 +115,8 @@ std::ranges::lazy_split_view<T1, T2> f11(T3 &&a0,
                                       std::ranges::iterator_t<T2>,
                                       std::ranges::equal_to> &&
            (std::ranges::forward_range<T1> ||
-            std::ranges::__detail::__tiny_range<T2>))
+            std::ranges::__detail::__tiny_range<T2>)) &&
+          (!(std::is_same<T3, T1>::value))
 {
   return std::ranges::lazy_split_view<T1, T2>(std::forward<T3>(a0), a1);
 }

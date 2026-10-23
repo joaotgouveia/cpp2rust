@@ -63,21 +63,11 @@ std::auto_ptr<T1> &f14(std::auto_ptr<T1> &a0, std::auto_ptr_ref<T1> a1) {
 }
 
 template <typename T1, typename T2>
-std::auto_ptr<T1> f15(std::auto_ptr<T2> &a0) {
-  return {a0};
-}
-
-template <typename T1, typename T2>
-std::auto_ptr<T1> &f16(std::auto_ptr<T1> &a0, std::auto_ptr<T2> &a1) {
-  return a0.template operator= <T2>(a1);
-}
-
-template <typename T1, typename T2>
-std::auto_ptr_ref<T2> f17(std::auto_ptr<T1> &a0) {
+std::auto_ptr_ref<T2> f15(std::auto_ptr<T1> &a0) {
   return static_cast<std::auto_ptr_ref<T2>>(a0);
 }
 
 template <typename T1, typename T2>
-std::auto_ptr<T2> f18(std::auto_ptr<T1> &a0) {
+std::auto_ptr<T2> f16(std::auto_ptr<T1> &a0) {
   return static_cast<std::auto_ptr<T2>>(a0);
 }

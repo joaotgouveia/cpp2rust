@@ -119,27 +119,22 @@ std::span<T1, T2> f18(T3 a0, T4 a1) {
   return std::span<T1, T2>(a0, a1);
 }
 
-template <typename T1, std::size_t T2, typename T3>
-std::span<T1, T2> f19(T3 &&a0) {
-  return std::span<T1, T2>(std::forward<T3>(a0));
-}
-
 template <typename T1, std::size_t T2, std::size_t T3>
-std::span<T1, T3> f20(const std::span<T1, T2> &a0) {
+std::span<T1, T3> f19(const std::span<T1, T2> &a0) {
   return a0.template first<T3>();
 }
 
 template <typename T1, std::size_t T2, std::size_t T3>
-std::span<T1, T3> f21(const std::span<T1, T2> &a0) {
+std::span<T1, T3> f20(const std::span<T1, T2> &a0) {
   return a0.template last<T3>();
 }
 
 template <typename T1, std::size_t T2, std::size_t T3,
           std::size_t T4 = std::dynamic_extent>
-auto f22(const std::span<T1, T2> &a0) {
+auto f21(const std::span<T1, T2> &a0) {
   return a0.template subspan<T3>();
 }
 
-template <typename T1, std::size_t T2> std::size_t f23() {
+template <typename T1, std::size_t T2> std::size_t f22() {
   return std::span<T1, T2>::extent;
 }

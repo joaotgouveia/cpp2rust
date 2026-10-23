@@ -247,25 +247,3 @@ f141(T6 a0, T6 a1,
      const T3 &a3, const T5 &a4) {
   return std::unordered_map<T1, T2, T3, T4, T5>(a0, a1, a2, a3, a4);
 }
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6,
-          std::__enable_if_t<
-              std::is_constructible<std::pair<const T1, T2>, T6>::value, int>
-              T7 = 0>
-std::pair<typename std::unordered_map<T1, T2, T3, T4, T5>::iterator, bool>
-f142(std::unordered_map<T1, T2, T3, T4, T5> &a0, T6 &&a1) {
-  return a0.template insert<T6>(std::forward<T6>(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6,
-          std::__enable_if_t<
-              std::is_constructible<std::pair<const T1, T2>, T6>::value, int>
-              T7 = 0>
-typename std::unordered_map<T1, T2, T3, T4, T5>::iterator
-f143(std::unordered_map<T1, T2, T3, T4, T5> &a0,
-     typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
-     T6 &&a2) {
-  return a0.template insert<T6>(a1, std::forward<T6>(a2));
-}

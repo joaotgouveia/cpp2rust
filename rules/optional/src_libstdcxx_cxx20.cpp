@@ -13,11 +13,12 @@ std::compare_three_way_result_t<T1, T2> f64(const std::optional<T1> &a0,
 
 template <typename T1, typename T2>
 std::optional<T1> f65(T2 &&a0)
-  requires(
-      (!std::is_same_v<std::optional<T1>, std::remove_cvref_t<T2>>) &&
-      (!std::is_same_v<std::in_place_t, std::remove_cvref_t<T2>>) &&
-      std::is_constructible_v<T1, T2> &&
-      std::optional<T1>::template __not_constructing_bool_from_optional<T2>)
+  requires((!std::is_same_v<std::optional<T1>, std::remove_cvref_t<T2>>) &&
+           (!std::is_same_v<std::in_place_t, std::remove_cvref_t<T2>>) &&
+           std::is_constructible_v<T1, T2> &&
+           std::optional<T1>::template __not_constructing_bool_from_optional<
+               T2>) &&
+          (!(std::is_same<T2, std::nullopt_t>::value))
 {
   return std::optional<T1>(std::forward<T2>(a0));
 }
@@ -58,7 +59,8 @@ template <typename T1, typename T2>
 std::optional<T1> &f70(std::optional<T1> &a0, T2 &&a1)
   requires((!std::is_same_v<std::optional<T1>, std::remove_cvref_t<T2>>) &&
            (!(std::is_scalar_v<T1> && std::is_same_v<T1, std::decay_t<T2>>)) &&
-           std::is_constructible_v<T1, T2> && std::is_assignable_v<T1 &, T2>)
+           std::is_constructible_v<T1, T2> && std::is_assignable_v<T1 &, T2>) &&
+          (!(std::is_same<T2, std::nullopt_t>::value))
 {
   return a0.template operator= <T2>(std::forward<T2>(a1));
 }

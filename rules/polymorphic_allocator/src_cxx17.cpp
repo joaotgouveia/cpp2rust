@@ -46,24 +46,18 @@ std::pmr::memory_resource *f7(const std::pmr::polymorphic_allocator<T1> &a0) {
   return a0.resource();
 }
 
-template <typename T1, typename T2>
-std::pmr::polymorphic_allocator<T1>
-f8(const std::pmr::polymorphic_allocator<T2> &a0) {
-  return std::pmr::polymorphic_allocator<T1>(a0);
-}
-
 template <typename T1, typename T2, typename... T3>
-void f9(std::pmr::polymorphic_allocator<T1> &a0, T2 *a1, T3 &&...a2) {
+void f8(std::pmr::polymorphic_allocator<T1> &a0, T2 *a1, T3 &&...a2) {
   return a0.template construct<T2, T3...>(a1, std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename T2>
-void f10(std::pmr::polymorphic_allocator<T1> &a0, T2 *a1) {
+void f9(std::pmr::polymorphic_allocator<T1> &a0, T2 *a1) {
   return a0.template destroy<T2>(a1);
 }
 
 template <typename T1>
-bool f11(const std::pmr::polymorphic_allocator<T1> &a0,
+bool f10(const std::pmr::polymorphic_allocator<T1> &a0,
          const std::pmr::polymorphic_allocator<T1> &a1) {
   return operator==(a0, a1);
 }

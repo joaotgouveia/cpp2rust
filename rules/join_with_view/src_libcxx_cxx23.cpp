@@ -106,7 +106,8 @@ f38(T3 &&a0, std::ranges::range_value_t<std::ranges::range_reference_t<T1>> a1)
           (std::ranges::view<T1> &&
            std::ranges::input_range<std::ranges::range_reference_t<T1>> &&
            std::ranges::view<T2> &&
-           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>)
+           std::ranges::__concatable<std::ranges::range_reference_t<T1>, T2>) &&
+          (!(std::is_same<T3, T1>::value))
 {
   return std::ranges::join_with_view<T1, T2>(std::forward<T3>(a0), a1);
 }

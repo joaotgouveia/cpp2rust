@@ -73,3 +73,21 @@ std::shared_ptr<T1> f72(std::shared_ptr<T2> &&a0,
                         typename std::shared_ptr<T1>::element_type *a1) {
   return std::shared_ptr<T1>(std::move(a0), a1);
 }
+
+template <typename T1, typename T2,
+          typename T3 = typename std::enable_if<std::is_constructible<
+              std::__shared_ptr<T1>, const std::shared_ptr<T2> &>::value>::type>
+std::shared_ptr<T1> f73(const std::shared_ptr<T2> &a0)
+  requires(!(std::is_same<T2, T1>::value))
+{
+  return std::shared_ptr<T1>(a0);
+}
+
+template <typename T1, typename T2,
+          typename T3 = typename std::enable_if<std::is_constructible<
+              std::__shared_ptr<T1>, std::shared_ptr<T2>>::value>::type>
+std::shared_ptr<T1> f74(std::shared_ptr<T2> &&a0)
+  requires(!(std::is_same<T2, T1>::value))
+{
+  return std::shared_ptr<T1>(std::move(a0));
+}

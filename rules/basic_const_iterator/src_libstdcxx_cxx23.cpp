@@ -146,7 +146,7 @@ std::basic_const_iterator<T1> f20(std::basic_const_iterator<T2> a0) {
 
 template <typename T1, typename T2>
 std::basic_const_iterator<T1> f21(T2 &&a0)
-  requires(std::convertible_to<T2, T1>)
+  requires(std::convertible_to<T2, T1>) && (!(std::is_same<T2, T1>::value))
 {
   return std::basic_const_iterator<T1>(std::forward<T2>(a0));
 }
@@ -174,28 +174,36 @@ T2 f24(std::basic_const_iterator<T1> &&a0)
 
 template <typename T1, typename T2>
 bool f25(const std::basic_const_iterator<T1> &a0, const T2 &a1)
-  requires(std::random_access_iterator<T1> && std::totally_ordered_with<T1, T2>)
+  requires(std::random_access_iterator<T1> &&
+           std::totally_ordered_with<T1, T2>) &&
+          (!(std::is_same<T2, std::basic_const_iterator<T1>>::value))
 {
   return a0.template operator< <T2>(a1);
 }
 
 template <typename T1, typename T2>
 bool f26(const std::basic_const_iterator<T1> &a0, const T2 &a1)
-  requires(std::random_access_iterator<T1> && std::totally_ordered_with<T1, T2>)
+  requires(std::random_access_iterator<T1> &&
+           std::totally_ordered_with<T1, T2>) &&
+          (!(std::is_same<T2, std::basic_const_iterator<T1>>::value))
 {
   return a0.template operator><T2>(a1);
 }
 
 template <typename T1, typename T2>
 bool f27(const std::basic_const_iterator<T1> &a0, const T2 &a1)
-  requires(std::random_access_iterator<T1> && std::totally_ordered_with<T1, T2>)
+  requires(std::random_access_iterator<T1> &&
+           std::totally_ordered_with<T1, T2>) &&
+          (!(std::is_same<T2, std::basic_const_iterator<T1>>::value))
 {
   return a0.template operator<= <T2>(a1);
 }
 
 template <typename T1, typename T2>
 bool f28(const std::basic_const_iterator<T1> &a0, const T2 &a1)
-  requires(std::random_access_iterator<T1> && std::totally_ordered_with<T1, T2>)
+  requires(std::random_access_iterator<T1> &&
+           std::totally_ordered_with<T1, T2>) &&
+          (!(std::is_same<T2, std::basic_const_iterator<T1>>::value))
 {
   return a0.template operator>= <T2>(a1);
 }
@@ -204,7 +212,8 @@ template <typename T1, typename T2>
 auto f29(const std::basic_const_iterator<T1> &a0, const T2 &a1)
   requires(std::random_access_iterator<T1> &&
            std::totally_ordered_with<T1, T2> &&
-           std::three_way_comparable_with<T1, T2>)
+           std::three_way_comparable_with<T1, T2>) &&
+          (!(std::is_same<T2, std::basic_const_iterator<T1>>::value))
 {
   return a0.template operator<=> <T2>(a1);
 }

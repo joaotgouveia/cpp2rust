@@ -19,11 +19,6 @@ template <typename T1> using t12 = typename std::allocator<T1>::is_always_equal;
 template <typename T1> std::allocator<T1> f4() { return std::allocator<T1>(); }
 
 template <typename T1, typename T2>
-std::allocator<T1> f5(const std::allocator<T2> &a0) {
-  return std::allocator<T1>(a0);
-}
-
-template <typename T1, typename T2>
-bool f6(const std::allocator<T1> &a0, const std::allocator<T2> &a1) {
+bool f5(const std::allocator<T1> &a0, const std::allocator<T2> &a1) {
   return std::operator== <T1, T2>(a0, a1);
 }

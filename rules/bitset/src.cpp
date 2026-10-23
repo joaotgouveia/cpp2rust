@@ -141,23 +141,17 @@ std::basic_string<T2, T3, std::allocator<T2>> f30(const std::bitset<T1> &a0,
   return a0.template to_string<T2, T3>(a1, a2);
 }
 
-template <std::size_t T1, typename T2>
-std::basic_string<T2, std::char_traits<T2>, std::allocator<T2>>
-f31(const std::bitset<T1> &a0, T2 a1, T2 a2) {
-  return a0.template to_string<T2>(a1, a2);
-}
-
 template <std::size_t T1>
-std::bitset<T1> f32(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
+std::bitset<T1> f31(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
   return std::operator& <T1>(a0, a1);
 }
 
 template <std::size_t T1>
-std::bitset<T1> f33(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
+std::bitset<T1> f32(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
   return std::operator^ <T1>(a0, a1);
 }
 
 template <std::size_t T1>
-std::bitset<T1> f34(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
+std::bitset<T1> f33(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
   return std::operator| <T1>(a0, a1);
 }
