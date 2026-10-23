@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_getpwuid_0() {
-    let mut pw: *mut () = unimplemented!();
+    let mut pw: *mut passwd = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -21,19 +21,19 @@ pub unsafe fn test_getpwuid_0() {
 }
 pub unsafe fn test_getpwuid_missing_1() {
     (*unimplemented!()) = 0_();
-    let mut pw: *mut () = unimplemented!();
+    let mut pw: *mut passwd = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_getpwuid_r_2() {
-    let mut pw: () = unimplemented!();
+    let mut pw: passwd = unsafe { std::mem::zeroed::<passwd>() };
     let mut buf: [(); 4096] = [unimplemented!(); 4096];
-    let mut result: *mut () = std::ptr::null_mut();
+    let mut result: *mut passwd = std::ptr::null_mut();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut pw2: *mut () = unimplemented!();
+    let mut pw2: *mut passwd = unimplemented!();
     unimplemented!();
     unimplemented!();
     (unsafe {
@@ -44,9 +44,9 @@ pub unsafe fn test_getpwuid_r_2() {
     });
 }
 pub unsafe fn test_getpwuid_r_erange_3() {
-    let mut pw: () = unimplemented!();
+    let mut pw: passwd = unsafe { std::mem::zeroed::<passwd>() };
     let mut tiny: [(); 1] = [unimplemented!(); 1];
-    let mut result: *mut () = std::ptr::null_mut();
+    let mut result: *mut passwd = std::ptr::null_mut();
     unimplemented!();
     unimplemented!();
 }

@@ -12,10 +12,10 @@ pub fn main() {
 }
 fn main_0() -> () {
     let mut fd: () = 0_();
-    let ssloc: Value<libc::sockaddr_storage> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let ssloc: Value<sockaddr_storage> = <Value<sockaddr_storage>>::default();
     let slen: Value<libc::socklen_t> = Rc::new(RefCell::new((128usize as libc::socklen_t)));
     unimplemented!();
-    let sin: Value<::libc::sockaddr_in> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let sin: Value<sockaddr_in> = <Value<sockaddr_in>>::default();
     let inlen: Value<libc::socklen_t> = Rc::new(RefCell::new((16usize as libc::socklen_t)));
     unimplemented!();
     return 0_();

@@ -74,15 +74,15 @@ impl Default for NotMoveConstructible {
     }
 }
 pub unsafe fn can_swap_0() -> () {
-    return unimplemented!();
-}
-pub unsafe fn can_swap_1() -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_swap_2() -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
-pub unsafe fn test_unique_ptr_3() {
+pub unsafe fn can_swap_3() -> () {
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_4));
+}
+pub unsafe fn test_unique_ptr_5() {
     let mut i: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
     let mut k: () = 0_();
     'loop_: while ((k) < (3_())) {
@@ -103,7 +103,7 @@ pub unsafe fn test_unique_ptr_3() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_4() -> () {
+pub unsafe fn test_6() -> () {
     {
         let mut i: [(); 3] = [1_(), 2_(), 3_()];
         let mut j: [(); 3] = [4_(), 5_(), 6_()];
@@ -162,7 +162,7 @@ pub unsafe fn test_4() -> () {
         const _: () = assert!(true, "noexcept(std::swap(ma, ma))");;
     }
     {
-        (unsafe { test_unique_ptr_3() });
+        (unsafe { test_unique_ptr_5() });
     }
     return true;
 }
@@ -182,7 +182,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_4() });
+    (unsafe { test_6() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

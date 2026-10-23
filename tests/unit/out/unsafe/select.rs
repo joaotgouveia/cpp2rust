@@ -18,10 +18,10 @@ unsafe fn main_0() -> () {
     let mut rset: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut tv: ::libc::timeval = unsafe { std::mem::zeroed() };
+    let mut tv: timeval = unsafe { std::mem::zeroed::<timeval>() };
     (unsafe {
-        let ___s: () = ((&mut tv as *mut ::libc::timeval) as ());
-        let ___n: () = ::std::mem::size_of::<::libc::timeval>();
+        let ___s: () = ((&mut tv as *mut timeval) as ());
+        let ___n: () = ::std::mem::size_of::<timeval>();
         memset_0(___s, 0_(), ___n)
     });
     tv.tv_sec = 0_();

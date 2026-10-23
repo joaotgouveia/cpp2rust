@@ -47,7 +47,7 @@ pub fn check_stream_failed_7(val: Ptr<()>) -> () {
     return unimplemented!();
 }
 pub fn check_limits_8() {
-    let mut is_unsigned: () = unimplemented!();
+    let mut is_unsigned: () = value_9.with(|rc| *rc.borrow());
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -70,56 +70,9 @@ pub fn check_limits_8() {
         unimplemented!().with_mut(|__v| __v.postfix_inc());
         unimplemented!();
     }
-}
-pub fn check_limits_9() {
-    let mut is_unsigned: () = unimplemented!();
-    let mut minv: () = unimplemented!();
-    let mut maxv: () = unimplemented!();
-    let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let maxiss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    let mins: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let maxs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let maxoss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let minoss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut new_minv: () = unimplemented!();
-    let mut new_maxv: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!().with_mut(|__v| __v.postfix_inc());
-    unimplemented!();
-    {}
 }
 pub fn check_limits_10() {
-    let mut is_unsigned: () = unimplemented!();
-    let mut minv: () = unimplemented!();
-    let mut maxv: () = unimplemented!();
-    let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let maxiss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    let mins: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let maxs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let maxoss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let minoss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut new_minv: () = unimplemented!();
-    let mut new_maxv: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!().with_mut(|__v| __v.postfix_inc());
-    unimplemented!();
-    {
-        unimplemented!().with_mut(|__v| __v.postfix_inc());
-        unimplemented!();
-    }
-}
-pub fn check_limits_11() {
-    let mut is_unsigned: () = unimplemented!();
+    let mut is_unsigned: () = value_11.with(|rc| *rc.borrow());
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -141,7 +94,7 @@ pub fn check_limits_11() {
     {}
 }
 pub fn check_limits_12() {
-    let mut is_unsigned: () = unimplemented!();
+    let mut is_unsigned: () = value_9.with(|rc| *rc.borrow());
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -166,7 +119,7 @@ pub fn check_limits_12() {
     }
 }
 pub fn check_limits_13() {
-    let mut is_unsigned: () = unimplemented!();
+    let mut is_unsigned: () = value_11.with(|rc| *rc.borrow());
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -188,7 +141,7 @@ pub fn check_limits_13() {
     {}
 }
 pub fn check_limits_14() {
-    let mut is_unsigned: () = unimplemented!();
+    let mut is_unsigned: () = value_9.with(|rc| *rc.borrow());
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -213,7 +166,54 @@ pub fn check_limits_14() {
     }
 }
 pub fn check_limits_15() {
-    let mut is_unsigned: () = unimplemented!();
+    let mut is_unsigned: () = value_11.with(|rc| *rc.borrow());
+    let mut minv: () = unimplemented!();
+    let mut maxv: () = unimplemented!();
+    let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let maxiss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mins: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let maxs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let maxoss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let minoss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut new_minv: () = unimplemented!();
+    let mut new_maxv: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!().with_mut(|__v| __v.postfix_inc());
+    unimplemented!();
+    {}
+}
+pub fn check_limits_16() {
+    let mut is_unsigned: () = value_9.with(|rc| *rc.borrow());
+    let mut minv: () = unimplemented!();
+    let mut maxv: () = unimplemented!();
+    let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let maxiss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mins: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let maxs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let maxoss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let minoss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut new_minv: () = unimplemented!();
+    let mut new_maxv: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!().with_mut(|__v| __v.postfix_inc());
+    unimplemented!();
+    {
+        unimplemented!().with_mut(|__v| __v.postfix_inc());
+        unimplemented!();
+    }
+}
+pub fn check_limits_17() {
+    let mut is_unsigned: () = value_11.with(|rc| *rc.borrow());
     let mut minv: () = unimplemented!();
     let mut maxv: () = unimplemented!();
     let miniss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -255,13 +255,13 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ check_limits_8() });
-    ({ check_limits_9() });
     ({ check_limits_10() });
-    ({ check_limits_11() });
     ({ check_limits_12() });
     ({ check_limits_13() });
     ({ check_limits_14() });
     ({ check_limits_15() });
+    ({ check_limits_16() });
+    ({ check_limits_17() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

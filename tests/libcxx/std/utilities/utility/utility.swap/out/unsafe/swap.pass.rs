@@ -90,24 +90,24 @@ impl NotMoveConstructible {
 pub struct NotMoveAssignable {}
 impl NotMoveAssignable {}
 pub unsafe fn can_swap_0() -> () {
-    return unimplemented!();
-}
-pub unsafe fn can_swap_1() -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_swap_2() -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_swap_3() -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_swap_4() -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_5));
 }
-pub unsafe fn test_swap_constexpr_5() -> () {
+pub unsafe fn can_swap_6() -> () {
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_5));
+}
+pub unsafe fn test_swap_constexpr_7() -> () {
     let mut i: () = 1_();
     let mut j: () = 2_();
-    (unsafe { swap_6(&mut i, &mut j) });
+    (unsafe { swap_8(&mut i, &mut j) });
     return ((i) == (2_())) && ((j) == (1_()));
 }
 pub fn main() {
@@ -129,7 +129,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut i: () = 1_();
         let mut j: () = 2_();
-        (unsafe { swap_6(&mut i, &mut j) });
+        (unsafe { swap_8(&mut i, &mut j) });
         unimplemented!();
         unimplemented!();
     }

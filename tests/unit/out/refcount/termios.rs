@@ -14,7 +14,7 @@ fn main_0() -> () {
     let mut path: Ptr<()> = Ptr::<()>::from_string_literal(b"cpp2rust_termios_test.tmp");
     let mut fd: () = unimplemented!();
     unimplemented!();
-    let tio: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tio: Value<termios> = <Value<termios>>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();

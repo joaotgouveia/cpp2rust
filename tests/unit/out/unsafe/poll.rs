@@ -16,7 +16,7 @@ unsafe fn main_0() -> () {
     let mut fds: [(); 2] = [unimplemented!(); 2];
     unimplemented!();
     unimplemented!();
-    let mut pfd: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
+    let mut pfd: [pollfd; 2] = [unsafe { std::mem::zeroed::<pollfd>() }; 2];
     pfd[(0_()) as usize].fd = fds[(0_()) as usize];
     pfd[(0_()) as usize].events = 1_();
     pfd[(0_()) as usize].revents = 0_();

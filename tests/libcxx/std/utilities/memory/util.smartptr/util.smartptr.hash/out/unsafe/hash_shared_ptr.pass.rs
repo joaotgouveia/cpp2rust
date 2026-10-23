@@ -27,88 +27,85 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool__float__double__long_double___types_type_list_Enum__EnumClass__void_ptr__const_void_ptr__Class_ptr__std_nullptr_t__
 {}
 pub unsafe fn can_hash_impl_0(mut _a0: ()) -> () {
-    return unimplemented!();
-}
-pub unsafe fn can_hash_impl_1(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_2(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_3(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_4(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_5(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_6(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_7(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_8(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_9(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_10(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_11(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_12(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_13(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_14(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_15(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_16(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_17(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_18(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_19(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_20(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_21(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_22(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_23(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_24(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_impl_25(mut _a0: ()) -> () {
-    return unimplemented!();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
-pub unsafe fn can_hash_26() -> () {
-    return (unsafe { can_hash_impl_0(0_()) });
+pub unsafe fn can_hash_impl_26(mut _a0: ()) -> () {
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
 }
 pub unsafe fn can_hash_27() -> () {
-    return (unsafe { can_hash_impl_1(0_()) });
+    return (unsafe { can_hash_impl_0(0_()) });
 }
 pub unsafe fn can_hash_28() -> () {
     return (unsafe { can_hash_impl_2(0_()) });
@@ -182,6 +179,9 @@ pub unsafe fn can_hash_50() -> () {
 pub unsafe fn can_hash_51() -> () {
     return (unsafe { can_hash_impl_25(0_()) });
 }
+pub unsafe fn can_hash_52() -> () {
+    return (unsafe { can_hash_impl_26(0_()) });
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ConvertibleToSimple_std_shared_ptr_int__ {}
@@ -216,7 +216,7 @@ impl Default for ConvertibleTo_std_shared_ptr_A__ {
         }
     }
 }
-pub unsafe fn test_hash_enabled_52(key: Option<*const ()>) {
+pub unsafe fn test_hash_enabled_53(key: Option<*const ()>) {
     let mut __key_default: Option<()> = None;
     let mut key: *const () =
         key.unwrap_or_else(|| unsafe { __key_default.insert(unimplemented!()) as *const () });
@@ -243,7 +243,7 @@ pub unsafe fn test_hash_enabled_52(key: Option<*const ()>) {
     let h: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_hash_enabled_53(key: Option<*const ()>) {
+pub unsafe fn test_hash_enabled_54(key: Option<*const ()>) {
     let mut __key_default: Option<()> = None;
     let mut key: *const () =
         key.unwrap_or_else(|| unsafe { __key_default.insert(unimplemented!()) as *const () });
@@ -305,8 +305,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        (unsafe { test_hash_enabled_52(None) });
         (unsafe { test_hash_enabled_53(None) });
+        (unsafe { test_hash_enabled_54(None) });
     }
     return 0_();
 }

@@ -16,8 +16,10 @@ fn main_0() -> () {
     ));
     unimplemented!();
     unimplemented!();
-    let pfd: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    let pfd: Value<Box<[pollfd]>> = Rc::new(RefCell::new(
+        (0..2)
+            .map(|_| <pollfd>::default())
+            .collect::<Box<[pollfd]>>(),
     ));
     (*pfd.borrow_mut())[(0_()) as usize].fd = (*fds.borrow())[(0_()) as usize];
     (*pfd.borrow_mut())[(0_()) as usize].events = 1_();

@@ -16,7 +16,7 @@ unsafe fn main_0() -> () {
     let mut path: *const () = (c"cpp2rust_termios_test.tmp".as_ptr().cast_mut()).cast_const();
     let mut fd: () = unimplemented!();
     unimplemented!();
-    let mut tio: () = unimplemented!();
+    let mut tio: termios = unsafe { std::mem::zeroed::<termios>() };
     unimplemented!();
     unimplemented!();
     unimplemented!();

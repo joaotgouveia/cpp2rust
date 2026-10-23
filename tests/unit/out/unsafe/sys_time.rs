@@ -15,7 +15,7 @@ pub unsafe fn test_time_0() {
     unimplemented!();
 }
 pub unsafe fn print_tm_1(mut t: ::libc::time_t) {
-    let mut tm: ::libc::tm = unsafe { std::mem::zeroed() };
+    let mut tm: tm = unsafe { std::mem::zeroed::<tm>() };
     unimplemented!();
     (unsafe {
         libc::printf(
@@ -50,7 +50,7 @@ pub unsafe fn test_gmtime_r_2() {
     (unsafe { print_tm_1((4102444800_() as ::libc::time_t)) });
 }
 pub unsafe fn print_local_tm_3(mut t: ::libc::time_t) {
-    let mut tm: ::libc::tm = unsafe { std::mem::zeroed() };
+    let mut tm: tm = unsafe { std::mem::zeroed::<tm>() };
     unimplemented!();
     (unsafe {
         libc::printf(
@@ -81,7 +81,7 @@ pub unsafe fn test_localtime_r_4() {
 }
 pub unsafe fn test_strftime_5() {
     let mut t: ::libc::time_t = (1721126096 as ::libc::time_t);
-    let mut tm: ::libc::tm = unsafe { std::mem::zeroed() };
+    let mut tm: tm = unsafe { std::mem::zeroed::<tm>() };
     unimplemented!();
     let mut buf: [(); 64] = [unimplemented!(); 64];
     unimplemented!();

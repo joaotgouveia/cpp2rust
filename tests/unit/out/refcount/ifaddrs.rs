@@ -11,11 +11,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let list: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let list: Value<Ptr<ifaddrs>> = Rc::new(RefCell::new(Ptr::<ifaddrs>::null()));
     unimplemented!();
     unimplemented!();
     let mut found_loopback: () = 0_();
-    let mut ifa: Ptr<()> = Ptr::<()>::null();
+    let mut ifa: Ptr<ifaddrs> = Ptr::<ifaddrs>::null();
     ifa = (*list.borrow()).clone();
     'loop_: while (((!((ifa).is_null())) as ()) != 0) {
         unimplemented!();
@@ -32,13 +32,13 @@ fn main_0() -> () {
             ifa = { ifa.with(|__s| __s.ifa_next.clone()) };
             continue 'loop_;
         }
-        let mut sin: Ptr<::libc::sockaddr_in> = ifa
+        let mut sin: Ptr<sockaddr_in> = ifa
             .with(|__s| __s.ifa_addr.clone())
-            .reinterpret_cast::<::libc::sockaddr_in>();
+            .reinterpret_cast::<sockaddr_in>();
         let lo_be: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([127_(), 0_(), 0_(), 1_()])));
         if (((({
             memcmp_0(
-                ((field_ptr!(sin, sin_addr)) as Ptr<::libc::in_addr>).to_any(),
+                ((field_ptr!(sin, sin_addr)) as Ptr<in_addr>).to_any(),
                 ((lo_be.as_pointer() as Ptr<()>) as Ptr<()>).to_any(),
                 4_(),
             )
@@ -48,9 +48,9 @@ fn main_0() -> () {
             found_loopback = 1_();
             unimplemented!();
             unimplemented!();
-            let mut mask: Ptr<::libc::sockaddr_in> = ifa
+            let mut mask: Ptr<sockaddr_in> = ifa
                 .with(|__s| __s.ifa_netmask.clone())
-                .reinterpret_cast::<::libc::sockaddr_in>();
+                .reinterpret_cast::<sockaddr_in>();
             let mask_be: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([255_(), 0_(), 0_(), 0_()])));
             unimplemented!();

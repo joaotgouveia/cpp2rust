@@ -13,12 +13,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut pw: *mut () = unimplemented!();
+    let mut pw: *mut passwd = unimplemented!();
     if !(!(pw).is_null()) {
         return 0_();
     }
     let mut home: *mut () = (*pw).pw_dir;
-    let mut d: *mut ::libc::dirent =
+    let mut d: *mut dirent =
         libc::readdir(libc::opendir((c"/tmp".as_ptr().cast_mut()).cast_const()));
     let mut dname: *mut () = (*d).d_name.as_mut_ptr();
     return 0_();

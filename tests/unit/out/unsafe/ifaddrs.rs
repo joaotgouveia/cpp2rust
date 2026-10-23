@@ -13,11 +13,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut list: *mut () = std::ptr::null_mut();
+    let mut list: *mut ifaddrs = std::ptr::null_mut();
     unimplemented!();
     unimplemented!();
     let mut found_loopback: () = 0_();
-    let mut ifa: *mut () = std::ptr::null_mut();
+    let mut ifa: *mut ifaddrs = std::ptr::null_mut();
     ifa = list;
     'loop_: while (((!((ifa).is_null())) as ()) != 0) {
         unimplemented!();
@@ -29,11 +29,11 @@ unsafe fn main_0() -> () {
             ifa = (*ifa).ifa_next;
             continue 'loop_;
         }
-        let mut sin: *mut ::libc::sockaddr_in = ((*ifa).ifa_addr as *mut ::libc::sockaddr_in);
+        let mut sin: *mut sockaddr_in = ((*ifa).ifa_addr as *mut sockaddr_in);
         let mut lo_be: [(); 4] = [127_(), 0_(), 0_(), 1_()];
         if ((((unsafe {
             memcmp_0(
-                ((&mut (*sin).sin_addr as *mut ::libc::in_addr) as ()),
+                ((&mut (*sin).sin_addr as *mut in_addr) as ()),
                 (lo_be.as_mut_ptr() as ()),
                 4_(),
             )
@@ -43,8 +43,7 @@ unsafe fn main_0() -> () {
             found_loopback = 1_();
             unimplemented!();
             unimplemented!();
-            let mut mask: *mut ::libc::sockaddr_in =
-                ((*ifa).ifa_netmask as *mut ::libc::sockaddr_in);
+            let mut mask: *mut sockaddr_in = ((*ifa).ifa_netmask as *mut sockaddr_in);
             let mut mask_be: [(); 4] = [255_(), 0_(), 0_(), 0_()];
             unimplemented!();
             unimplemented!();

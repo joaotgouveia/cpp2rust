@@ -25,8 +25,8 @@ pub unsafe fn test_s6_addr_access_0() {
         0_(),
         1_(),
     ];
-    let mut addr: ::libc::in6_addr = unsafe { std::mem::zeroed() };
-    let mut ap: *mut ::libc::in6_addr = (&mut addr as *mut ::libc::in6_addr);
+    let mut addr: in6_addr = unsafe { std::mem::zeroed::<in6_addr>() };
+    let mut ap: *mut in6_addr = (&mut addr as *mut in6_addr);
     (unsafe {
         memcpy_1(
             ((*(&mut addr as *mut ::libc::in6_addr)).s6_addr.as_mut_ptr() as ()),

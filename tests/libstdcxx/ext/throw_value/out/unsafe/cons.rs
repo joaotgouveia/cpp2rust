@@ -12,7 +12,7 @@ pub unsafe fn foo1_0() {
     let mut v3: __gnu_cxx_throw_value_limit = <__gnu_cxx_throw_value_limit>::default();
 }
 pub unsafe fn foo2_1() -> () {
-    let mut b: () = unimplemented!();
+    let mut b: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_2));
     return b;
 }
 pub fn main() {

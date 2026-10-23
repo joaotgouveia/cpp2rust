@@ -18,9 +18,9 @@ fn main_0() -> () {
     let rset: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let tv: Value<::libc::timeval> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let tv: Value<timeval> = <Value<timeval>>::default();
     ({
-        let ___s: () = ((tv.as_pointer()) as Ptr<::libc::timeval>).to_any();
+        let ___s: () = ((tv.as_pointer()) as Ptr<timeval>).to_any();
         let ___n: () = 16usize;
         memset_0(___s, 0_(), ___n)
     });

@@ -25,8 +25,8 @@ pub fn test_s6_addr_access_0() {
         0_(),
         1_(),
     ])));
-    let addr: Value<::libc::in6_addr> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-    let mut ap: Ptr<::libc::in6_addr> = (addr.as_pointer());
+    let addr: Value<in6_addr> = <Value<in6_addr>>::default();
+    let mut ap: Ptr<in6_addr> = (addr.as_pointer());
     ({
         memcpy_1(
             ((&raw mut (*addr.as_pointer()).s6_addr as Ptr<u8>) as Ptr<u8>).to_any(),

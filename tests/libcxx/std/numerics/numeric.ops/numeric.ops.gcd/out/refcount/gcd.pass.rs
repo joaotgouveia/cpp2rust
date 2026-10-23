@@ -1018,51 +1018,12 @@ pub fn do_fuzzy_tests_73() {
 }
 pub fn do_limit_tests_74() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() + (if unimplemented!() { 3_() } else { 0_() })),
-        (unimplemented!() + 1_()),
-        (unimplemented!() + 2_()),
-        unimplemented!(),
-        (unimplemented!() - 1_()),
-        (unimplemented!() - 2_()),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-        -1_(),
-        -2_(),
-        -3_(),
-        -4_(),
-        -5_(),
-        -6_(),
-        -7_(),
-        -8_(),
-        -9_(),
-        -10_(),
-    ])));
-    'loop_: for n in IterRange::new(
-        (inputs.as_pointer() as Ptr<()>),
-        (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
-    ) {
-        let mut n: () = (n.read());
-        'loop_: for m in IterRange::new(
-            (inputs.as_pointer() as Ptr<()>),
-            (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
-        ) {
-            let mut m: () = (m.read());
-            unimplemented!();
-        }
-    }
-}
-pub fn do_limit_tests_75() {
-    let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() + (if unimplemented!() { 3_() } else { 0_() })),
+        (unimplemented!()
+            + (if value_75.with(|rc| *rc.borrow()) {
+                3_()
+            } else {
+                0_()
+            })),
         (unimplemented!() + 1_()),
         (unimplemented!() + 2_()),
         unimplemented!(),
@@ -1106,51 +1067,12 @@ pub fn do_limit_tests_75() {
 }
 pub fn do_limit_tests_76() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() + (if unimplemented!() { 3_() } else { 0_() })),
-        (unimplemented!() + 1_()),
-        (unimplemented!() + 2_()),
-        unimplemented!(),
-        (unimplemented!() - 1_()),
-        (unimplemented!() - 2_()),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-        (-1_() as ()),
-        (-2_() as ()),
-        (-3_() as ()),
-        (-4_() as ()),
-        (-5_() as ()),
-        (-6_() as ()),
-        (-7_() as ()),
-        (-8_() as ()),
-        (-9_() as ()),
-        (-10_() as ()),
-    ])));
-    'loop_: for n in IterRange::new(
-        (inputs.as_pointer() as Ptr<()>),
-        (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
-    ) {
-        let mut n: () = (n.read());
-        'loop_: for m in IterRange::new(
-            (inputs.as_pointer() as Ptr<()>),
-            (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
-        ) {
-            let mut m: () = (m.read());
-            unimplemented!();
-        }
-    }
-}
-pub fn do_limit_tests_77() {
-    let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() + (if unimplemented!() { 3_() } else { 0_() })),
+        (unimplemented!()
+            + (if value_75.with(|rc| *rc.borrow()) {
+                3_()
+            } else {
+                0_()
+            })),
         (unimplemented!() + 1_()),
         (unimplemented!() + 2_()),
         unimplemented!(),
@@ -1192,9 +1114,63 @@ pub fn do_limit_tests_77() {
         }
     }
 }
+pub fn do_limit_tests_77() {
+    let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        (unimplemented!()
+            + (if value_75.with(|rc| *rc.borrow()) {
+                3_()
+            } else {
+                0_()
+            })),
+        (unimplemented!() + 1_()),
+        (unimplemented!() + 2_()),
+        unimplemented!(),
+        (unimplemented!() - 1_()),
+        (unimplemented!() - 2_()),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+        5_(),
+        6_(),
+        7_(),
+        8_(),
+        9_(),
+        10_(),
+        (-1_() as ()),
+        (-2_() as ()),
+        (-3_() as ()),
+        (-4_() as ()),
+        (-5_() as ()),
+        (-6_() as ()),
+        (-7_() as ()),
+        (-8_() as ()),
+        (-9_() as ()),
+        (-10_() as ()),
+    ])));
+    'loop_: for n in IterRange::new(
+        (inputs.as_pointer() as Ptr<()>),
+        (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
+    ) {
+        let mut n: () = (n.read());
+        'loop_: for m in IterRange::new(
+            (inputs.as_pointer() as Ptr<()>),
+            (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
+        ) {
+            let mut m: () = (m.read());
+            unimplemented!();
+        }
+    }
+}
 pub fn do_limit_tests_78() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() + (if unimplemented!() { 3_() } else { 0_() })),
+        (unimplemented!()
+            + (if value_75.with(|rc| *rc.borrow()) {
+                3_()
+            } else {
+                0_()
+            })),
         (unimplemented!() + 1_()),
         (unimplemented!() + 2_()),
         unimplemented!(),
@@ -1238,7 +1214,12 @@ pub fn do_limit_tests_78() {
 }
 pub fn do_limit_tests_79() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() + (if unimplemented!() { 3_() } else { 0_() })),
+        (unimplemented!()
+            + (if value_80.with(|rc| *rc.borrow()) {
+                3_()
+            } else {
+                0_()
+            })),
         (unimplemented!() + 1_()),
         (unimplemented!() + 2_()),
         unimplemented!(),
@@ -1280,53 +1261,64 @@ pub fn do_limit_tests_79() {
         }
     }
 }
-pub fn do_limit_tests_80() {
-    let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() as ()).wrapping_add((if unimplemented!() { 3_() } else { 0_() })),
-        (unimplemented!() as ()).wrapping_add(1_()),
-        (unimplemented!() as ()).wrapping_add(2_()),
-        unimplemented!(),
-        (unimplemented!() as ()).wrapping_sub(1_()),
-        (unimplemented!() as ()).wrapping_sub(2_()),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-        -1_(),
-        -2_(),
-        -3_(),
-        -4_(),
-        -5_(),
-        -6_(),
-        -7_(),
-        -8_(),
-        -9_(),
-        -10_(),
-    ])));
-    'loop_: for n in IterRange::new(
-        (inputs.as_pointer() as Ptr<()>),
-        (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
-    ) {
-        let mut n: () = (n.read());
-        'loop_: for m in IterRange::new(
-            (inputs.as_pointer() as Ptr<()>),
-            (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
-        ) {
-            let mut m: () = (m.read());
-            unimplemented!();
-        }
-    }
-}
 pub fn do_limit_tests_81() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() as ()).wrapping_add((if unimplemented!() { 3_() } else { 0_() })),
+        (unimplemented!()
+            + (if value_80.with(|rc| *rc.borrow()) {
+                3_()
+            } else {
+                0_()
+            })),
+        (unimplemented!() + 1_()),
+        (unimplemented!() + 2_()),
+        unimplemented!(),
+        (unimplemented!() - 1_()),
+        (unimplemented!() - 2_()),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+        5_(),
+        6_(),
+        7_(),
+        8_(),
+        9_(),
+        10_(),
+        -1_(),
+        -2_(),
+        -3_(),
+        -4_(),
+        -5_(),
+        -6_(),
+        -7_(),
+        -8_(),
+        -9_(),
+        -10_(),
+    ])));
+    'loop_: for n in IterRange::new(
+        (inputs.as_pointer() as Ptr<()>),
+        (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
+    ) {
+        let mut n: () = (n.read());
+        'loop_: for m in IterRange::new(
+            (inputs.as_pointer() as Ptr<()>),
+            (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
+        ) {
+            let mut m: () = (m.read());
+            unimplemented!();
+        }
+    }
+}
+pub fn do_limit_tests_82() {
+    let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        (unimplemented!() as ()).wrapping_add(
+            (if value_80.with(|rc| *rc.borrow()) {
+                3_()
+            } else {
+                0_()
+            }),
+        ),
         (unimplemented!() as ()).wrapping_add(1_()),
         (unimplemented!() as ()).wrapping_add(2_()),
         unimplemented!(),
@@ -1368,259 +1360,55 @@ pub fn do_limit_tests_81() {
         }
     }
 }
-pub fn do_test_82(_a0: Option<()>) -> () {
-    let mut _a0: () = _a0.unwrap_or_else(|| 0_());
-    let accumulate: Value<()> = Rc::new(RefCell::new(true));
-    'loop_: for TC in IterRange::new(
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((12_()) as isize),
+pub fn do_limit_tests_83() {
+    let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        (unimplemented!() as ()).wrapping_add(
+            (if value_80.with(|rc| *rc.borrow()) {
+                3_()
+            } else {
+                0_()
+            }),
+        ),
+        (unimplemented!() as ()).wrapping_add(1_()),
+        (unimplemented!() as ()).wrapping_add(2_()),
+        unimplemented!(),
+        (unimplemented!() as ()).wrapping_sub(1_()),
+        (unimplemented!() as ()).wrapping_sub(2_()),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+        5_(),
+        6_(),
+        7_(),
+        8_(),
+        9_(),
+        10_(),
+        -1_(),
+        -2_(),
+        -3_(),
+        -4_(),
+        -5_(),
+        -6_(),
+        -7_(),
+        -8_(),
+        -9_(),
+        -10_(),
+    ])));
+    'loop_: for n in IterRange::new(
+        (inputs.as_pointer() as Ptr<()>),
+        (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
     ) {
-        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_2(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_2(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_2(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_2(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_2(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_2(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_2(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_2(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_3(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_3(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_4(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_5(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_4(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_5(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_4(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_5(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_4(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_5(_in1, _in2, _out)
-            });
+        let mut n: () = (n.read());
+        'loop_: for m in IterRange::new(
+            (inputs.as_pointer() as Ptr<()>),
+            (inputs.as_pointer() as Ptr<()>).offset((27_()) as isize),
+        ) {
+            let mut m: () = (m.read());
+            unimplemented!();
         }
     }
-    return (*accumulate.borrow());
-}
-pub fn do_test_83(_a0: Option<()>) -> () {
-    let mut _a0: () = _a0.unwrap_or_else(|| 0_());
-    let accumulate: Value<()> = Rc::new(RefCell::new(true));
-    'loop_: for TC in IterRange::new(
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((12_()) as isize),
-    ) {
-        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_6(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_6(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_6(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_6(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_6(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_6(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_6(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_6(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_7(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_7(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_8(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_9(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_8(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_9(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_8(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_9(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_8(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_9(_in1, _in2, _out)
-            });
-        }
-    }
-    return (*accumulate.borrow());
 }
 pub fn do_test_84(_a0: Option<()>) -> () {
     let mut _a0: () = _a0.unwrap_or_else(|| 0_());
@@ -1635,49 +1423,49 @@ pub fn do_test_84(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_10(_in1, _in2, _out)
+                test0_2(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_10(_in1, _in2, _out)
+                test0_2(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_10(_in1, _in2, _out)
+                test0_2(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_10(_in1, _in2, _out)
+                test0_2(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_10(_in1, _in2, _out)
+                test0_2(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_10(_in1, _in2, _out)
+                test0_2(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_10(_in1, _in2, _out)
+                test0_2(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_10(_in1, _in2, _out)
+                test0_2(_in1, _in2, _out)
             });
         }
         {
@@ -1685,13 +1473,13 @@ pub fn do_test_84(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_11(_in1, _in2, _out)
+                test0_3(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_11(_in1, _in2, _out)
+                test0_3(_in1, _in2, _out)
             });
         }
         {
@@ -1699,25 +1487,25 @@ pub fn do_test_84(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_12(_in1, _in2, _out)
+                test0_4(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_13(_in1, _in2, _out)
+                test0_5(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_12(_in1, _in2, _out)
+                test0_4(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_13(_in1, _in2, _out)
+                test0_5(_in1, _in2, _out)
             });
         }
         {
@@ -1725,25 +1513,25 @@ pub fn do_test_84(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_12(_in1, _in2, _out)
+                test0_4(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_13(_in1, _in2, _out)
+                test0_5(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_12(_in1, _in2, _out)
+                test0_4(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_13(_in1, _in2, _out)
+                test0_5(_in1, _in2, _out)
             });
         }
     }
@@ -1762,49 +1550,49 @@ pub fn do_test_85(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_14(_in1, _in2, _out)
+                test0_6(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_14(_in1, _in2, _out)
+                test0_6(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_14(_in1, _in2, _out)
+                test0_6(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_14(_in1, _in2, _out)
+                test0_6(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_14(_in1, _in2, _out)
+                test0_6(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_14(_in1, _in2, _out)
+                test0_6(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_14(_in1, _in2, _out)
+                test0_6(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_14(_in1, _in2, _out)
+                test0_6(_in1, _in2, _out)
             });
         }
         {
@@ -1812,13 +1600,13 @@ pub fn do_test_85(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_15(_in1, _in2, _out)
+                test0_7(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_15(_in1, _in2, _out)
+                test0_7(_in1, _in2, _out)
             });
         }
         {
@@ -1826,25 +1614,25 @@ pub fn do_test_85(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_16(_in1, _in2, _out)
+                test0_8(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_17(_in1, _in2, _out)
+                test0_9(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_16(_in1, _in2, _out)
+                test0_8(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_17(_in1, _in2, _out)
+                test0_9(_in1, _in2, _out)
             });
         }
         {
@@ -1852,25 +1640,25 @@ pub fn do_test_85(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_16(_in1, _in2, _out)
+                test0_8(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_17(_in1, _in2, _out)
+                test0_9(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_16(_in1, _in2, _out)
+                test0_8(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_17(_in1, _in2, _out)
+                test0_9(_in1, _in2, _out)
             });
         }
     }
@@ -1889,49 +1677,49 @@ pub fn do_test_86(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_18(_in1, _in2, _out)
+                test0_10(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_18(_in1, _in2, _out)
+                test0_10(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_18(_in1, _in2, _out)
+                test0_10(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_18(_in1, _in2, _out)
+                test0_10(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_18(_in1, _in2, _out)
+                test0_10(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_18(_in1, _in2, _out)
+                test0_10(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_18(_in1, _in2, _out)
+                test0_10(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_18(_in1, _in2, _out)
+                test0_10(_in1, _in2, _out)
             });
         }
         {
@@ -1939,13 +1727,13 @@ pub fn do_test_86(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_19(_in1, _in2, _out)
+                test0_11(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_19(_in1, _in2, _out)
+                test0_11(_in1, _in2, _out)
             });
         }
         {
@@ -1953,25 +1741,25 @@ pub fn do_test_86(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_20(_in1, _in2, _out)
+                test0_12(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_21(_in1, _in2, _out)
+                test0_13(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_20(_in1, _in2, _out)
+                test0_12(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_21(_in1, _in2, _out)
+                test0_13(_in1, _in2, _out)
             });
         }
         {
@@ -1979,25 +1767,25 @@ pub fn do_test_86(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_20(_in1, _in2, _out)
+                test0_12(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_21(_in1, _in2, _out)
+                test0_13(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_20(_in1, _in2, _out)
+                test0_12(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_21(_in1, _in2, _out)
+                test0_13(_in1, _in2, _out)
             });
         }
     }
@@ -2016,49 +1804,49 @@ pub fn do_test_87(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_22(_in1, _in2, _out)
+                test0_14(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_22(_in1, _in2, _out)
+                test0_14(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_22(_in1, _in2, _out)
+                test0_14(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_22(_in1, _in2, _out)
+                test0_14(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_23(_in1, _in2, _out)
+                test0_14(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_23(_in1, _in2, _out)
+                test0_14(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_23(_in1, _in2, _out)
+                test0_14(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_23(_in1, _in2, _out)
+                test0_14(_in1, _in2, _out)
             });
         }
         {
@@ -2066,13 +1854,13 @@ pub fn do_test_87(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_24(_in1, _in2, _out)
+                test0_15(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_25(_in1, _in2, _out)
+                test0_15(_in1, _in2, _out)
             });
         }
         {
@@ -2080,25 +1868,25 @@ pub fn do_test_87(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_26(_in1, _in2, _out)
+                test0_16(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_27(_in1, _in2, _out)
+                test0_17(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_26(_in1, _in2, _out)
+                test0_16(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_27(_in1, _in2, _out)
+                test0_17(_in1, _in2, _out)
             });
         }
         {
@@ -2106,25 +1894,25 @@ pub fn do_test_87(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_28(_in1, _in2, _out)
+                test0_16(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_29(_in1, _in2, _out)
+                test0_17(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_28(_in1, _in2, _out)
+                test0_16(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_29(_in1, _in2, _out)
+                test0_17(_in1, _in2, _out)
             });
         }
     }
@@ -2143,6 +1931,260 @@ pub fn do_test_88(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
+                test0_18(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_18(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_18(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_18(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_18(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_18(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_18(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_18(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_19(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_19(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_20(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_21(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_20(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_21(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_20(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_21(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_20(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_21(_in1, _in2, _out)
+            });
+        }
+    }
+    return (*accumulate.borrow());
+}
+pub fn do_test_89(_a0: Option<()>) -> () {
+    let mut _a0: () = _a0.unwrap_or_else(|| 0_());
+    let accumulate: Value<()> = Rc::new(RefCell::new(true));
+    'loop_: for TC in IterRange::new(
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((12_()) as isize),
+    ) {
+        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_22(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_22(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_22(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_22(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_23(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_23(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_23(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_23(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_24(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_25(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_26(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_27(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_26(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_27(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_28(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_29(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_28(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_29(_in1, _in2, _out)
+            });
+        }
+    }
+    return (*accumulate.borrow());
+}
+pub fn do_test_90(_a0: Option<()>) -> () {
+    let mut _a0: () = _a0.unwrap_or_else(|| 0_());
+    let accumulate: Value<()> = Rc::new(RefCell::new(true));
+    'loop_: for TC in IterRange::new(
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((12_()) as isize),
+    ) {
+        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
                 test0_23(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
@@ -2257,260 +2299,6 @@ pub fn do_test_88(_a0: Option<()>) -> () {
     }
     return (*accumulate.borrow());
 }
-pub fn do_test_89(_a0: Option<()>) -> () {
-    let mut _a0: () = _a0.unwrap_or_else(|| 0_());
-    let accumulate: Value<()> = Rc::new(RefCell::new(true));
-    'loop_: for TC in IterRange::new(
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((12_()) as isize),
-    ) {
-        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_30(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_30(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_30(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_30(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_31(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_31(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_31(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_31(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_32(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_33(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_34(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_35(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_34(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_35(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_36(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_37(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_36(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_37(_in1, _in2, _out)
-            });
-        }
-    }
-    return (*accumulate.borrow());
-}
-pub fn do_test_90(_a0: Option<()>) -> () {
-    let mut _a0: () = _a0.unwrap_or_else(|| 0_());
-    let accumulate: Value<()> = Rc::new(RefCell::new(true));
-    'loop_: for TC in IterRange::new(
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((12_()) as isize),
-    ) {
-        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_31(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_31(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_31(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_31(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_30(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_30(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_30(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_30(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_33(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_32(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_36(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_37(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_36(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_37(_in1, _in2, _out)
-            });
-        }
-        {
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_34(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_35(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = -TC.x;
-                let _in2: () = TC.y;
-                let _out: () = TC.expect;
-                test0_34(_in1, _in2, _out)
-            });
-            (*accumulate.borrow_mut()) &= ({
-                let _in1: () = TC.x;
-                let _in2: () = -TC.y;
-                let _out: () = TC.expect;
-                test0_35(_in1, _in2, _out)
-            });
-        }
-    }
-    return (*accumulate.borrow());
-}
 pub fn do_test_91(_a0: Option<()>) -> () {
     let mut _a0: () = _a0.unwrap_or_else(|| 0_());
     let accumulate: Value<()> = Rc::new(RefCell::new(true));
@@ -2524,49 +2312,49 @@ pub fn do_test_91(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_38(_in1, _in2, _out)
+                test0_30(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_38(_in1, _in2, _out)
+                test0_30(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_38(_in1, _in2, _out)
+                test0_30(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_38(_in1, _in2, _out)
+                test0_30(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_39(_in1, _in2, _out)
+                test0_31(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_39(_in1, _in2, _out)
+                test0_31(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_39(_in1, _in2, _out)
+                test0_31(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_39(_in1, _in2, _out)
+                test0_31(_in1, _in2, _out)
             });
         }
         {
@@ -2574,13 +2362,13 @@ pub fn do_test_91(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_40(_in1, _in2, _out)
+                test0_32(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_41(_in1, _in2, _out)
+                test0_33(_in1, _in2, _out)
             });
         }
         {
@@ -2588,25 +2376,25 @@ pub fn do_test_91(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_42(_in1, _in2, _out)
+                test0_34(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_43(_in1, _in2, _out)
+                test0_35(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_42(_in1, _in2, _out)
+                test0_34(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_43(_in1, _in2, _out)
+                test0_35(_in1, _in2, _out)
             });
         }
         {
@@ -2614,25 +2402,25 @@ pub fn do_test_91(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_44(_in1, _in2, _out)
+                test0_36(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_45(_in1, _in2, _out)
+                test0_37(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = -TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
-                test0_44(_in1, _in2, _out)
+                test0_36(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
                 let _in1: () = TC.x;
                 let _in2: () = -TC.y;
                 let _out: () = TC.expect;
-                test0_45(_in1, _in2, _out)
+                test0_37(_in1, _in2, _out)
             });
         }
     }
@@ -2651,6 +2439,260 @@ pub fn do_test_92(_a0: Option<()>) -> () {
                 let _in1: () = TC.x;
                 let _in2: () = TC.y;
                 let _out: () = TC.expect;
+                test0_31(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_31(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_31(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_31(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_30(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_30(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_30(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_30(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_33(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_32(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_36(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_37(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_36(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_37(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_34(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_35(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_34(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_35(_in1, _in2, _out)
+            });
+        }
+    }
+    return (*accumulate.borrow());
+}
+pub fn do_test_93(_a0: Option<()>) -> () {
+    let mut _a0: () = _a0.unwrap_or_else(|| 0_());
+    let accumulate: Value<()> = Rc::new(RefCell::new(true));
+    'loop_: for TC in IterRange::new(
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((12_()) as isize),
+    ) {
+        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_38(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_38(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_38(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_38(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_39(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_39(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_39(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_39(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_40(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_41(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_42(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_43(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_42(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_43(_in1, _in2, _out)
+            });
+        }
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_44(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_45(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = -TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
+                test0_44(_in1, _in2, _out)
+            });
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = -TC.y;
+                let _out: () = TC.expect;
+                test0_45(_in1, _in2, _out)
+            });
+        }
+    }
+    return (*accumulate.borrow());
+}
+pub fn do_test_94(_a0: Option<()>) -> () {
+    let mut _a0: () = _a0.unwrap_or_else(|| 0_());
+    let accumulate: Value<()> = Rc::new(RefCell::new(true));
+    'loop_: for TC in IterRange::new(
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((12_()) as isize),
+    ) {
+        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
+        {
+            (*accumulate.borrow_mut()) &= ({
+                let _in1: () = TC.x;
+                let _in2: () = TC.y;
+                let _out: () = TC.expect;
                 test0_39(_in1, _in2, _out)
             });
             (*accumulate.borrow_mut()) &= ({
@@ -2765,7 +2807,7 @@ pub fn do_test_92(_a0: Option<()>) -> () {
     }
     return (*accumulate.borrow());
 }
-pub fn do_test_93(_a0: Option<()>) -> () {
+pub fn do_test_95(_a0: Option<()>) -> () {
     let mut _a0: () = _a0.unwrap_or_else(|| 0_());
     let accumulate: Value<()> = Rc::new(RefCell::new(true));
     'loop_: for TC in IterRange::new(
@@ -2892,7 +2934,7 @@ pub fn do_test_93(_a0: Option<()>) -> () {
     }
     return (*accumulate.borrow());
 }
-pub fn do_test_94(_a0: Option<()>) -> () {
+pub fn do_test_96(_a0: Option<()>) -> () {
     let mut _a0: () = _a0.unwrap_or_else(|| 0_());
     let accumulate: Value<()> = Rc::new(RefCell::new(true));
     'loop_: for TC in IterRange::new(
@@ -3076,7 +3118,7 @@ fn main_0(argc: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     {
         let res: Value<()> = Rc::new(RefCell::new(
-            ({ gcd_95((1234_i64 as ()), (-2147483647_() - 1_())) }),
+            ({ gcd_97((1234_i64 as ()), (-2147483647_() - 1_())) }),
         ));
         const _: () = assert!(true, "std::is_same_v<decltype(res), std::int64_t>");;
         unimplemented!();
@@ -3090,13 +3132,13 @@ fn main_0(argc: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ do_fuzzy_tests_72() });
     ({ do_fuzzy_tests_73() });
     ({ do_limit_tests_74() });
-    ({ do_limit_tests_75() });
     ({ do_limit_tests_76() });
     ({ do_limit_tests_77() });
     ({ do_limit_tests_78() });
     ({ do_limit_tests_79() });
-    ({ do_limit_tests_80() });
     ({ do_limit_tests_81() });
+    ({ do_limit_tests_82() });
+    ({ do_limit_tests_83() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

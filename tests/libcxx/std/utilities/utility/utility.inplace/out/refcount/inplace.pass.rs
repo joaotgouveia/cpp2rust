@@ -8,31 +8,31 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn check_tag_0(_a0: ()) -> () {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
-}
-pub fn check_tag_1(_a0: ()) -> () {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
+    return (value_1.with(|rc| *rc.borrow())) && (value_1.with(|rc| *rc.borrow()));
 }
 pub fn check_tag_2(_a0: ()) -> () {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
+    return (value_1.with(|rc| *rc.borrow())) && (value_1.with(|rc| *rc.borrow()));
 }
 pub fn check_tag_3(_a0: ()) -> () {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
+    return (value_1.with(|rc| *rc.borrow())) && (value_1.with(|rc| *rc.borrow()));
 }
 pub fn check_tag_4(_a0: ()) -> () {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
+    return (value_1.with(|rc| *rc.borrow())) && (value_1.with(|rc| *rc.borrow()));
 }
 pub fn check_tag_5(_a0: ()) -> () {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
+    return (value_1.with(|rc| *rc.borrow())) && (value_1.with(|rc| *rc.borrow()));
 }
 pub fn check_tag_6(_a0: ()) -> () {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
+    return (value_1.with(|rc| *rc.borrow())) && (value_1.with(|rc| *rc.borrow()));
+}
+pub fn check_tag_7(_a0: ()) -> () {
+    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    return (value_1.with(|rc| *rc.borrow())) && (value_1.with(|rc| *rc.borrow()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

@@ -7,25 +7,25 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_ipv4_literal_0() {
-    let hints: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let hints: Value<addrinfo> = <Value<addrinfo>>::default();
     (*hints.borrow_mut()).ai_flags = 0_();
     (*hints.borrow_mut()).ai_protocol = 0_();
     (*hints.borrow_mut()).ai_addrlen = (0 as libc::socklen_t);
-    (*hints.borrow_mut()).ai_addr = Ptr::<libc::sockaddr>::null();
+    (*hints.borrow_mut()).ai_addr = Ptr::<sockaddr>::null();
     (*hints.borrow_mut()).ai_canonname = Ptr::<()>::null();
-    (*hints.borrow_mut()).ai_next = Ptr::<()>::null();
+    (*hints.borrow_mut()).ai_next = Ptr::<addrinfo>::null();
     (*hints.borrow_mut()).ai_family = libc::AF_INET;
     (*hints.borrow_mut()).ai_socktype = libc::SOCK_STREAM;
-    let res: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let res: Value<Ptr<addrinfo>> = Rc::new(RefCell::new(Ptr::<addrinfo>::null()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut sin: Ptr<::libc::sockaddr_in> = (*res.borrow())
+    let mut sin: Ptr<sockaddr_in> = (*res.borrow())
         .with(|__s| __s.ai_addr.clone())
-        .reinterpret_cast::<::libc::sockaddr_in>();
+        .reinterpret_cast::<sockaddr_in>();
     unimplemented!();
     let port_be: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         (8080_() / 256_()),
@@ -37,24 +37,24 @@ pub fn test_ipv4_literal_0() {
     unimplemented!();
 }
 pub fn test_ipv6_literal_1() {
-    let hints: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let hints: Value<addrinfo> = <Value<addrinfo>>::default();
     (*hints.borrow_mut()).ai_flags = 0_();
     (*hints.borrow_mut()).ai_protocol = 0_();
     (*hints.borrow_mut()).ai_addrlen = (0 as libc::socklen_t);
-    (*hints.borrow_mut()).ai_addr = Ptr::<libc::sockaddr>::null();
+    (*hints.borrow_mut()).ai_addr = Ptr::<sockaddr>::null();
     (*hints.borrow_mut()).ai_canonname = Ptr::<()>::null();
-    (*hints.borrow_mut()).ai_next = Ptr::<()>::null();
+    (*hints.borrow_mut()).ai_next = Ptr::<addrinfo>::null();
     (*hints.borrow_mut()).ai_family = libc::AF_INET6;
     (*hints.borrow_mut()).ai_socktype = libc::SOCK_STREAM;
-    let res: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let res: Value<Ptr<addrinfo>> = Rc::new(RefCell::new(Ptr::<addrinfo>::null()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut sin6: Ptr<::libc::sockaddr_in6> = (*res.borrow())
+    let mut sin6: Ptr<sockaddr_in6> = (*res.borrow())
         .with(|__s| __s.ai_addr.clone())
-        .reinterpret_cast::<::libc::sockaddr_in6>();
+        .reinterpret_cast::<sockaddr_in6>();
     unimplemented!();
     let port_be: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         (443_() / 256_()),
@@ -83,13 +83,13 @@ pub fn test_ipv6_literal_1() {
     unimplemented!();
 }
 pub fn test_null_hints_2() {
-    let res: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let res: Value<Ptr<addrinfo>> = Rc::new(RefCell::new(Ptr::<addrinfo>::null()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut sin: Ptr<::libc::sockaddr_in> = (*res.borrow())
+    let mut sin: Ptr<sockaddr_in> = (*res.borrow())
         .with(|__s| __s.ai_addr.clone())
-        .reinterpret_cast::<::libc::sockaddr_in>();
+        .reinterpret_cast::<sockaddr_in>();
     let addr_be: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([127_(), 0_(), 0_(), 1_()])));
     unimplemented!();
     unimplemented!();

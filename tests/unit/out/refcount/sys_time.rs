@@ -16,7 +16,7 @@ pub fn test_time_0() {
 }
 pub fn print_tm_1(t: ::libc::time_t) {
     let t: Value<::libc::time_t> = Rc::new(RefCell::new(t));
-    let tm: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let tm: Value<tm> = <Value<tm>>::default();
     unimplemented!();
     println!(
         "{}-{}-{} {}:{}:{} wday={} yday={} {} gmtoff={} isdst={}",
@@ -47,7 +47,7 @@ pub fn test_gmtime_r_2() {
 }
 pub fn print_local_tm_3(t: ::libc::time_t) {
     let t: Value<::libc::time_t> = Rc::new(RefCell::new(t));
-    let tm: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let tm: Value<tm> = <Value<tm>>::default();
     unimplemented!();
     println!(
         "{}-{}-{} {}:{}:{} wday={} yday={} {} gmtoff={} isdst={}",
@@ -73,7 +73,7 @@ pub fn test_localtime_r_4() {
 }
 pub fn test_strftime_5() {
     let t: Value<::libc::time_t> = Rc::new(RefCell::new((1721126096 as ::libc::time_t)));
-    let tm: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let tm: Value<tm> = <Value<tm>>::default();
     unimplemented!();
     let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..64).map(|_| unimplemented!()).collect::<Box<[()]>>(),

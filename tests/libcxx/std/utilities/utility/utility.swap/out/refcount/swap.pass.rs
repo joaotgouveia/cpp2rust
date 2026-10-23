@@ -69,24 +69,24 @@ impl NotMoveConstructible {}
 pub struct NotMoveAssignable {}
 impl NotMoveAssignable {}
 pub fn can_swap_0() -> () {
-    return unimplemented!();
-}
-pub fn can_swap_1() -> () {
-    return unimplemented!();
+    return value_1.with(|rc| *rc.borrow());
 }
 pub fn can_swap_2() -> () {
-    return unimplemented!();
+    return value_1.with(|rc| *rc.borrow());
 }
 pub fn can_swap_3() -> () {
-    return unimplemented!();
+    return value_1.with(|rc| *rc.borrow());
 }
 pub fn can_swap_4() -> () {
-    return unimplemented!();
+    return value_5.with(|rc| *rc.borrow());
 }
-pub fn test_swap_constexpr_5() -> () {
+pub fn can_swap_6() -> () {
+    return value_5.with(|rc| *rc.borrow());
+}
+pub fn test_swap_constexpr_7() -> () {
     let i: Value<()> = Rc::new(RefCell::new(1_()));
     let j: Value<()> = Rc::new(RefCell::new(2_()));
-    ({ swap_6(i.as_pointer(), j.as_pointer()) });
+    ({ swap_8(i.as_pointer(), j.as_pointer()) });
     return ((*i.borrow()) == 2_()) && ((*j.borrow()) == 1_());
 }
 pub fn main() {
@@ -112,7 +112,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let i: Value<()> = Rc::new(RefCell::new(1_()));
         let j: Value<()> = Rc::new(RefCell::new(2_()));
-        ({ swap_6(i.as_pointer(), j.as_pointer()) });
+        ({ swap_8(i.as_pointer(), j.as_pointer()) });
         unimplemented!();
         unimplemented!();
     }
