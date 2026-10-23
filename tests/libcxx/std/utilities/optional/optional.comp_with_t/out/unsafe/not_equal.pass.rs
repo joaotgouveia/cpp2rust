@@ -120,10 +120,14 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub unsafe fn operator_cmp_4(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
+    if ((lhs.value) == (unsafe { std_numeric_limits_int_::min() }))
+        || ((rhs.value) == (unsafe { std_numeric_limits_int_::min() }))
+    {
         return unimplemented!();
     }
-    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
+    if ((lhs.value) == (unsafe { std_numeric_limits_int_::max() }))
+        || ((rhs.value) == (unsafe { std_numeric_limits_int_::max() }))
+    {
         return unimplemented!();
     }
     return unimplemented!();
@@ -313,8 +317,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let val: X = X::new({ 2_() });
         let o1: () = unimplemented!();
-        let o2: () = unimplemented!();
-        let o3: () = unimplemented!();
+        let o2: () = 1_();
+        let o3: () = std_optional_X_::new_1({ &val });
         const _: () = assert!(true, "(o1 != T(1))");;
         const _: () = assert!(true, "!(o2 != T(1))");;
         const _: () = assert!(true, "(o3 != T(1))");;
@@ -327,12 +331,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "!(val != o3)");;
     }
     {
-        let o1: () = unimplemented!();
+        let o1: () = 42_();
         const _: () = assert!(true, "o1 != 101l");;
         const _: () = assert!(true, "!(42l != o1)");;
     }
     {
-        let o1: () = unimplemented!();
+        let o1: () = 42_();
         const _: () = assert!(true, "o1 != 101");;
         const _: () = assert!(true, "!(42 != o1)");;
     }

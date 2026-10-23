@@ -120,13 +120,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         d = (unsafe {
-            let _d: () = unimplemented!();
+            let _d: () = d.clone();
             operator_mul_2(_d, n)
         });
         unimplemented!();
         d = (unsafe {
             let _arg0: NotARep = n;
-            operator_mul_3(_arg0, unimplemented!())
+            operator_mul_3(_arg0, d.clone())
         });
         unimplemented!();
     }

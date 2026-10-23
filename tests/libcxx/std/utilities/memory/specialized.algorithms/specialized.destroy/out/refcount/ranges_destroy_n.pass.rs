@@ -233,29 +233,23 @@ pub fn operator_add_2(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_1(_i, n)
     });
 }
-pub fn iter_swap_3(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_4(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_4(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_5(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -301,7 +295,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_7(
+            operator_cmp_6(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -326,7 +320,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_6(
+            operator_eq_5(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -453,79 +447,124 @@ impl Clone for Counted {
         Counted::copy_from(__src.as_pointer())
     }
 }
-pub fn test_8() {
+pub fn test_7() {
     {
         let mut N: () = 5_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut counter: () = 0_();
-        let mut out: Ptr<Counted> = unimplemented!();
+        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut out: Ptr<Counted> =
+            ({ std_allocator_traits_std_allocator_Counted__::allocate(alloc.as_pointer(), N) });
         let mut i: () = 0_();
         'loop_: while (i != N) {
-            unimplemented!();
+            ({
+                std_allocator_traits_std_allocator_Counted__::construct(
+                    alloc.as_pointer(),
+                    out.offset((i) as isize),
+                    counter.as_pointer(),
+                )
+            });
             i.prefix_inc();
         }
         unimplemented!();
-        ({ (*destroy_n_9.with(Value::clone).borrow_mut())((out).clone(), N) });
+        ({ (*destroy_n_8.with(Value::clone).borrow_mut())((out).clone(), N) });
         unimplemented!();
-        unimplemented!();
+        ({
+            std_allocator_traits_std_allocator_Counted__::deallocate(
+                alloc.as_pointer(),
+                (out).clone(),
+                N,
+            )
+        });
     }
 }
-pub fn test_10() {
+pub fn test_9() {
     {
         let mut N: () = 5_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut counter: () = 0_();
-        let mut out: Ptr<Counted> = unimplemented!();
+        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut out: Ptr<Counted> =
+            ({ std_allocator_traits_std_allocator_Counted__::allocate(alloc.as_pointer(), N) });
         let mut i: () = 0_();
         'loop_: while (i != N) {
-            unimplemented!();
+            ({
+                std_allocator_traits_std_allocator_Counted__::construct(
+                    alloc.as_pointer(),
+                    out.offset((i) as isize),
+                    counter.as_pointer(),
+                )
+            });
             i.prefix_inc();
         }
         unimplemented!();
         ({
-            (*destroy_n_9.with(Value::clone).borrow_mut())(
+            (*destroy_n_8.with(Value::clone).borrow_mut())(
                 forward_iterator_Counted_ptr_::new_1({ (out).clone() }),
                 N,
             )
         });
         unimplemented!();
-        unimplemented!();
+        ({
+            std_allocator_traits_std_allocator_Counted__::deallocate(
+                alloc.as_pointer(),
+                (out).clone(),
+                N,
+            )
+        });
     }
 }
-pub fn tests_11() -> () {
-    ({ test_8() });
-    ({ test_10() });
+pub fn tests_10() -> () {
+    ({ test_7() });
+    ({ test_9() });
     return true;
 }
-pub fn test_arrays_12() -> () {
+pub fn test_arrays_11() -> () {
     {
         let mut N: () = 5_();
         let M: Value<()> = Rc::new(RefCell::new(3_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut counter: () = 0_();
-        let mut buffer: Ptr<Box<[Counted]>> = unimplemented!();
+        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut buffer: Ptr<Box<[Counted]>> = ({
+            std_allocator_traits_std_allocator_Countedarr3arr__::allocate(alloc.as_pointer(), N)
+        });
         let mut i: () = 0_();
         'loop_: while (i != N) {
             let array_ref: Ptr<Counted> = (buffer.offset((i) as isize)).as_pointer();
             let mut j: () = 0_();
             'loop_: while (j != (*M.borrow())) {
-                unimplemented!();
+                ({
+                    std_allocator_traits_std_allocator_Countedarr3arr__::construct(
+                        alloc.as_pointer(),
+                        unimplemented!(),
+                        counter.as_pointer(),
+                    )
+                });
                 j.prefix_inc();
             }
             i.prefix_inc();
         }
         unimplemented!();
-        ({ (*destroy_n_9.with(Value::clone).borrow_mut())((buffer).clone(), N) });
+        ({ (*destroy_n_8.with(Value::clone).borrow_mut())((buffer).clone(), N) });
         unimplemented!();
-        unimplemented!();
+        ({
+            std_allocator_traits_std_allocator_Countedarr3arr__::deallocate(
+                alloc.as_pointer(),
+                (buffer).clone(),
+                N,
+            )
+        });
     }
     {
         let mut N: () = 5_();
         let A: Value<()> = Rc::new(RefCell::new(3_()));
         let B: Value<()> = Rc::new(RefCell::new(3_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut counter: () = 0_();
-        let mut buffer: Ptr<Box<[Box<[Counted]>]>> = unimplemented!();
+        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut buffer: Ptr<Box<[Box<[Counted]>]>> = ({
+            std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::allocate(
+                alloc.as_pointer(),
+                N,
+            )
+        });
         let mut i: () = 0_();
         'loop_: while (i != N) {
             let array_ref: Ptr<Box<[Counted]>> = (buffer.offset((i) as isize)).as_pointer();
@@ -533,7 +572,13 @@ pub fn test_arrays_12() -> () {
             'loop_: while (j != (*A.borrow())) {
                 let mut k: () = 0_();
                 'loop_: while (k != (*B.borrow())) {
-                    unimplemented!();
+                    ({
+                        std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::construct(
+                            alloc.as_pointer(),
+                            unimplemented!(),
+                            counter.as_pointer(),
+                        )
+                    });
                     k.prefix_inc();
                 }
                 j.prefix_inc();
@@ -541,9 +586,15 @@ pub fn test_arrays_12() -> () {
             i.prefix_inc();
         }
         unimplemented!();
-        ({ (*destroy_n_9.with(Value::clone).borrow_mut())((buffer).clone(), N) });
+        ({ (*destroy_n_8.with(Value::clone).borrow_mut())((buffer).clone(), N) });
         unimplemented!();
-        unimplemented!();
+        ({
+            std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::deallocate(
+                alloc.as_pointer(),
+                (buffer).clone(),
+                N,
+            )
+        });
     }
     return true;
 }
@@ -567,8 +618,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ tests_11() });
-    ({ test_arrays_12() });
+    ({ tests_10() });
+    ({ test_arrays_11() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

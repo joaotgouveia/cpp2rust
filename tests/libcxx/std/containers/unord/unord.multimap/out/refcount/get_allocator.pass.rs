@@ -164,15 +164,6 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl other_allocator_std_pair_const_int__std_string__ {
-    pub fn new_1(
-        a: Ptr<other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__>,
-    ) -> Self {
-        Self {
-            data_: a.with(|__s| __s.data_),
-        }
-    }
-}
 pub fn operator_eq_4(
     x: Ptr<other_allocator_std_pair_const_int__std_string__>,
     y: Ptr<other_allocator_std_pair_const_int__std_string__>,
@@ -186,7 +177,7 @@ pub struct other_allocator_std_pair_const_int__std_string__ {
     data_: (),
 }
 impl other_allocator_std_pair_const_int__std_string__ {
-    pub fn new_2(mut i: ()) -> Self {
+    pub fn new_1(mut i: ()) -> Self {
         Self { data_: i }
     }
 }
@@ -220,50 +211,6 @@ impl Default for other_allocator_std_pair_const_int__std_string__ {
         }
     }
 }
-impl other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {
-    pub fn new_1(a: Ptr<other_allocator_std_pair_const_int__std_string__>) -> Self {
-        Self {
-            data_: a.with(|__s| __s.data_),
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {}
-impl Default
-    for other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__
-{
-    fn default() -> Self {
-        {
-            other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__
-{
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ { }
-impl Default for other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ { fn default() -> Self { { other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ { data_ : unimplemented!() , } } } }
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_ { pub fn new_1 ( a : Ptr< other_allocator_std_pair_const_int__std_string__  > , ) -> Self { Self { data_ : a.with(|__s| __s . data_ )  , }  } }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_
-{
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_ { }
-impl Default for other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_ { fn default() -> Self { { other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_ { data_ : unimplemented!() , } } } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
@@ -308,7 +255,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let alloc: Value<other_allocator_std_pair_const_int__std_string__> = Rc::new(RefCell::new(
-            other_allocator_std_pair_const_int__std_string__::new_2({ 1_() }),
+            other_allocator_std_pair_const_int__std_string__::new_1({ 1_() }),
         ));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -325,83 +272,6 @@ impl Tag_XImpl for Ptr<Tag_X> {
     }
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X> {
         return (*self).clone();
-    }
-}
-pub trait other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<
-        std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr_,
-    > {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr_  >,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }    fn select_on_container_copy_construction ( &self , ) -> other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__{
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__Impl for Ptr<other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__> {
-}
-pub trait other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_Impl
-{
-    fn allocate ( &self , mut n : ()  , ) -> Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr_  >  >{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr_  >  >,
-        s: (),
-    );
-    fn select_on_container_copy_construction ( &self , ) -> other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_{
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_Impl for Ptr<other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_> {
-fn deallocate ( &self , mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr_  >  >  , mut s : ()  , ) { unimplemented!()  ;
- } }
-pub trait other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__Impl {
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_int__std_string___void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        p: Ptr<std___hash_node_std___hash_value_type_int__std_string___void_ptr_>,
-        s: (),
-    );
-    fn select_on_container_copy_construction(
-        &self,
-    ) -> other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__Impl
-    for Ptr<other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__>
-{
-    fn deallocate(
-        &self,
-        mut p: Ptr<std___hash_node_std___hash_value_type_int__std_string___void_ptr_>,
-        mut s: (),
-    ) {
-        unimplemented!();
     }
 }
 pub trait other_allocator_std_pair_const_int__std_string__Impl {

@@ -467,13 +467,6 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_1844674407
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_int__10__rebind_std___forward_list_node_int__void_ptr__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_int__10__rebind_std___forward_begin_node_std___forward_list_node_int__void_ptr__ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct limited_allocator_int__10__rebind_int_ {}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
@@ -486,69 +479,6 @@ impl limited_allocator_int__10_ {
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor(&mut self.handle_);
     }
 }
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
-pub struct limited_allocator_std___forward_list_node_int__void_ptr___10_ {
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___forward_list_node_int__void_ptr___10_ {
-    pub unsafe fn new() -> Self {
-        let mut this = Self {
-            handle_: (unsafe { make_thread_unsafe_shared_5() }),
-        };
-        this
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___forward_list_node_int__void_ptr_,
-        mut n: (),
-    ) {
-        (unsafe {
-            limited_alloc_handle_10_::deallocate_2_struct_std___forward_list_node_int__void_ptr_(
-                &mut (*(unsafe {
-                    detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::operator_arrow_7(
-                        &mut self.handle_,
-                    )
-                })),
-                p,
-                n,
-            )
-        });
-    }
-    pub unsafe fn max_size(&self) -> () {
-        return 10_();
-    }
-}
-impl limited_allocator_std___forward_list_node_int__void_ptr___10_ {
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor(&mut self.handle_);
-    }
-}
-impl Default for limited_allocator_std___forward_list_node_int__void_ptr___10_ {
-    fn default() -> Self {
-        unsafe { limited_allocator_std___forward_list_node_int__void_ptr___10_::new() }
-    }
-}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
-pub struct limited_allocator_std___forward_begin_node_std___forward_list_node_int__void_ptr__ptr___10_
-{
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___forward_begin_node_std___forward_list_node_int__void_ptr__ptr___10_ {}
-impl limited_allocator_std___forward_begin_node_std___forward_list_node_int__void_ptr__ptr___10_ {
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor(&mut self.handle_);
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_int__18446744073709551615__rebind_std___forward_list_node_int__void_ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_int__18446744073709551615__rebind_std___forward_begin_node_std___forward_list_node_int__void_ptr__ptr__
-{}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct limited_allocator_int__18446744073709551615__rebind_int_ {}
@@ -565,54 +495,6 @@ impl limited_allocator_int__18446744073709551615_ {
         );
     }
 }
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
-pub struct limited_allocator_std___forward_list_node_int__void_ptr___18446744073709551615_ {
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl limited_allocator_std___forward_list_node_int__void_ptr___18446744073709551615_ {
-    pub unsafe fn new() -> Self {
-        let mut this = Self {
-            handle_: (unsafe { make_thread_unsafe_shared_6() }),
-        };
-        this
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___forward_list_node_int__void_ptr_,
-        mut n: (),
-    ) {
-        (unsafe {
-            limited_alloc_handle_18446744073709551615_ :: deallocate_2_struct_std___forward_list_node_int__void_ptr_ ( &mut ( * ( unsafe { detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ :: operator_arrow_7 ( &mut self . handle_   , ) } )   )  , p , n , )
-        });
-    }
-    pub unsafe fn max_size(&self) -> () {
-        return 18446744073709551615_();
-    }
-}
-impl limited_allocator_std___forward_list_node_int__void_ptr___18446744073709551615_ {
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::destructor(
-            &mut self.handle_,
-        );
-    }
-}
-impl Default for limited_allocator_std___forward_list_node_int__void_ptr___18446744073709551615_ {
-    fn default() -> Self {
-        unsafe {
-            limited_allocator_std___forward_list_node_int__void_ptr___18446744073709551615_::new()
-        }
-    }
-}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
-pub struct limited_allocator_std___forward_begin_node_std___forward_list_node_int__void_ptr__ptr___18446744073709551615_
-{
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl limited_allocator_std___forward_begin_node_std___forward_list_node_int__void_ptr__ptr___18446744073709551615_ { }
-impl limited_allocator_std___forward_begin_node_std___forward_list_node_int__void_ptr__ptr___18446744073709551615_ { pub unsafe fn destructor (&mut self) { detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::destructor(&mut self.handle_);
- } }
 pub unsafe fn test_7() -> () {
     {
         let mut c: () = unimplemented!();

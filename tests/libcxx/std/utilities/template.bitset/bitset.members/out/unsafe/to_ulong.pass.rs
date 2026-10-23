@@ -21,7 +21,7 @@ pub unsafe fn test_to_ulong_0() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),
@@ -68,7 +68,7 @@ pub unsafe fn test_to_ulong_2() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),
@@ -115,7 +115,7 @@ pub unsafe fn test_to_ulong_4() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),
@@ -162,7 +162,7 @@ pub unsafe fn test_to_ulong_5() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),
@@ -209,7 +209,7 @@ pub unsafe fn test_to_ulong_6() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),
@@ -256,7 +256,7 @@ pub unsafe fn test_to_ulong_7() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),
@@ -303,7 +303,7 @@ pub unsafe fn test_to_ulong_8() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),
@@ -350,7 +350,7 @@ pub unsafe fn test_to_ulong_9() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),
@@ -397,7 +397,7 @@ pub unsafe fn test_to_ulong_10() {
     let max: () = if is_M_zero {
         0_()
     } else {
-        ((unimplemented!()) >> (X))
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) >> (X))
     };
     let mut tests: [(); 8] = [
         0_(),

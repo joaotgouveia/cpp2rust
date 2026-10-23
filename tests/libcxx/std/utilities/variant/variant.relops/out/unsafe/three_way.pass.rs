@@ -505,10 +505,14 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub unsafe fn operator_cmp_15(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
+    if ((lhs.value) == (unsafe { std_numeric_limits_int_::min() }))
+        || ((rhs.value) == (unsafe { std_numeric_limits_int_::min() }))
+    {
         return unimplemented!();
     }
-    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
+    if ((lhs.value) == (unsafe { std_numeric_limits_int_::max() }))
+        || ((rhs.value) == (unsafe { std_numeric_limits_int_::max() }))
+    {
         return unimplemented!();
     }
     return unimplemented!();
@@ -850,7 +854,7 @@ pub unsafe fn test_three_way_25() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let nan: () = unimplemented!();
+        let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
         {
             let v1: () = {
                 let mut __tmp_20: () = 1_();

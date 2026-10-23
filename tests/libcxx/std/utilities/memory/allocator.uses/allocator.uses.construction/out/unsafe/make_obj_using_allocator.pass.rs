@@ -457,76 +457,73 @@ impl Default for NotAllocatorAware {
 pub struct ConvertibleToPair {}
 impl ConvertibleToPair {
     pub unsafe fn to_(&self) -> () {
-        return unimplemented!();
+        return {
+            let mut __tmp_0: () = 1_();
+            let mut __tmp_1: () = 2_();
+            std_pair_int__int_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
     }
 }
 pub unsafe fn test_4() -> () {
     let mut a: test_allocator_int_ = test_allocator_int_::new_1({ 12_() });
     let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_int_::destructor);
     {
-        let mut ret: UsesAllocArgT = unimplemented!();
+        let mut ret: UsesAllocArgT = (unsafe { make_obj_using_allocator_5(&a) });
         let _dtor_ret = ScopedDestructorUnsafe::new(&raw mut ret, UsesAllocArgT::destructor);
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut ret: UsesAllocLast = unimplemented!();
+        let mut ret: UsesAllocLast = (unsafe { make_obj_using_allocator_6(&a) });
         let _dtor_ret = ScopedDestructorUnsafe::new(&raw mut ret, UsesAllocLast::destructor);
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut ret: NotAllocatorAware = unimplemented!();
+        let mut ret: NotAllocatorAware = (unsafe { make_obj_using_allocator_7(&a) });
         unimplemented!();
     }
     {
-        let mut ret: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ret: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ret: () = unimplemented!();
+        let mut ret: () = (unsafe {
+            let mut ___args_2: () = unimplemented!();
+            let mut ___args_3: () = unimplemented!();
+            make_obj_using_allocator_8(
+                &a,
+                &(*std::cell::LazyCell::force_mut(&mut *&raw mut piecewise_construct_9)),
+                &mut ___args_2,
+                &mut ___args_3,
+            )
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
-        let mut ret: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut ret: () = (unsafe { make_obj_using_allocator_10(&a) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
-        let mut ret: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut ret: () = (unsafe {
+            let mut ___args_1: () = 0_();
+            let mut ___args_2: () = 0_();
+            make_obj_using_allocator_11(&a, &mut ___args_1, &mut ___args_2)
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
-        let mut ret: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_2: () = 0_();
+            let mut __tmp_3: () = 0_();
+            std_pair_int__int_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
+        };
+        let mut ret: () = (unsafe { make_obj_using_allocator_12(&a, &mut p) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -537,8 +534,45 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
-        let mut ret: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_4: () = 0_();
+            let mut __tmp_5: () = 0_();
+            std_pair_int__int_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
+        };
+        let mut ret: () = (unsafe { make_obj_using_allocator_13(&a, &(*unimplemented!())) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut p: () = {
+            let mut __tmp_6: () = 0_();
+            let mut __tmp_7: () = 0_();
+            std_pair_int__int_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
+        };
+        let mut ret: () =
+            (unsafe { make_obj_using_allocator_14(&a, &mut *(&raw mut p).cast::<()>()) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut p: () = {
+            let mut __tmp_8: () = 0_();
+            let mut __tmp_9: () = 0_();
+            std_pair_int__int_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
+        };
+        let mut ret: () = (unsafe { make_obj_using_allocator_15(&a, unimplemented!()) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -550,13 +584,13 @@ pub unsafe fn test_4() -> () {
     }
     {
         let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
-        let mut ret: () = unimplemented!();
+        let mut ret: () = (unsafe { make_obj_using_allocator_16(&a, &mut ctp) });
         unimplemented!();
         unimplemented!();
     }
     {
         let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
-        let mut ret: () = unimplemented!();
+        let mut ret: () = (unsafe { make_obj_using_allocator_17(&a, &mut ctp) });
         unimplemented!();
         unimplemented!();
     }

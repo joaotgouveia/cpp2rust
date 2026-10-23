@@ -541,13 +541,13 @@ pub fn CreateTuple_0(_a0: ()) {
     &(*t3.borrow_mut());
     &(*t4.borrow_mut());
     &(*t5.borrow_mut());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (*t1.borrow_mut()) = (*tuple.borrow()).clone();
+    (*t1.borrow_mut()) = (*tuple.borrow()).clone();
+    (*t1.borrow_mut()) = (*tuple.borrow()).clone();
+    (*t1.borrow_mut()) = (*tuple.borrow()).clone();
+    ({ swap_3(t1.as_pointer(), t2.as_pointer()) });
 }
-pub fn test_3() -> () {
+pub fn test_4() -> () {
     ({ CreateTuple_0(<()>::default()) });
     return true;
 }
@@ -571,7 +571,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_3() });
+    ({ test_4() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -181,11 +181,7 @@ impl Default for TracedBase_true__true_ {
     }
 }
 pub fn swap_0(x: Ptr<ADLSwap>, y: Ptr<ADLSwap>) {
-    ({
-        let ___x: Ptr<()> = field_ptr!(x, i);
-        let ___y: Ptr<()> = field_ptr!(y, i);
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
     field!(x, adlSwapCalled).write(true);
     field!(y, adlSwapCalled).write(true);
 }
@@ -229,7 +225,7 @@ impl MoveOnlyErrorType {
         Self {}
     }
 }
-pub fn operator_eq_2(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) -> () {
+pub fn operator_eq_1(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) -> () {
     return ({ _a0.with(|__s| __s.b) } == { _a1.with(|__s| __s.b) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
@@ -248,7 +244,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_2(
+            operator_eq_1(
                 Rc::new(RefCell::new(TailClobberer_0_ { b: self.b.clone() })).as_pointer(),
                 Rc::new(RefCell::new(TailClobberer_0_ { b: other.b.clone() })).as_pointer(),
             )
@@ -311,7 +307,7 @@ impl BoolWithPadding {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 8usize;
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         field!(this, val_).write(val);
@@ -358,7 +354,7 @@ impl IntWithoutPadding {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 4usize;
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         field!(this, val_).write(val);
@@ -522,7 +518,7 @@ const _: () = assert!(
     true,
     "!std::is_nothrow_move_assignable_v<std::expected<int, MoveCtorMayThrow>>"
 );
-pub fn test_4() -> () {
+pub fn test_3() -> () {
     {
         let mut oldState: TracedBase_false__state = <TracedBase_false__state>::default();
         let mut newState: TracedBase_false__state = <TracedBase_false__state>::default();
@@ -671,7 +667,7 @@ pub fn test_4() -> () {
     }
     return true;
 }
-pub fn testException_5() {}
+pub fn testException_4() {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -692,9 +688,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_4() });
+    ({ test_3() });
     const _: () = assert!(true, "test()");;
-    ({ testException_5() });
+    ({ testException_4() });
     return 0_();
 }
 pub trait BoolWithPaddingImpl {

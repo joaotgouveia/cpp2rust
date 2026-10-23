@@ -820,25 +820,21 @@ pub unsafe fn operator_add_23(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_24(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_25(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_26(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_25(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_27(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_26(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_28(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_27(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -922,7 +918,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_28(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_27(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -932,7 +928,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_27(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_26(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1007,7 +1003,7 @@ pub struct sentinel {}
 #[derive(FnPtrArg, Default)]
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
-pub static mut enable_borrowed_range_29: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_28: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
@@ -1313,7 +1309,7 @@ impl EqComparableInputIter_int_ptr_ {
 pub unsafe fn base_19(i: *const EqComparableInputIter_std___wrap_iter_char_ptr__) -> () {
     return (*i).it_.clone();
 }
-pub unsafe fn operator_eq_30(
+pub unsafe fn operator_eq_29(
     left: *const EqComparableInputIter_std___wrap_iter_char_ptr__,
     right: *const EqComparableInputIter_std___wrap_iter_char_ptr__,
 ) -> () {
@@ -1336,7 +1332,7 @@ impl EqComparableInputIter_std___wrap_iter_char_ptr__ {
 impl std::cmp::PartialEq for EqComparableInputIter_std___wrap_iter_char_ptr__ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_30(
+            operator_eq_29(
                 self as *const EqComparableInputIter_std___wrap_iter_char_ptr__,
                 other as *const EqComparableInputIter_std___wrap_iter_char_ptr__,
             )
@@ -1457,6 +1453,36 @@ const _: () = assert!(
     true,
     "std::ranges::forward_range<const lwg4074::PatternWithProxyConstAccess>"
 );
+pub unsafe fn testEquality_30(t1: *const (), t2: *const (), mut isEqual: ()) -> () {
+    if isEqual {
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (!(unimplemented!())) {
+            return false;
+        }
+        if (!(unimplemented!())) {
+            return false;
+        }
+    } else {
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+    }
+    return true;
+}
 pub unsafe fn testEquality_31(t1: *const (), t2: *const (), mut isEqual: ()) -> () {
     if isEqual {
         if !(unimplemented!()) {
@@ -1577,40 +1603,10 @@ pub unsafe fn testEquality_34(t1: *const (), t2: *const (), mut isEqual: ()) -> 
     }
     return true;
 }
-pub unsafe fn testEquality_35(t1: *const (), t2: *const (), mut isEqual: ()) -> () {
-    if isEqual {
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (!(unimplemented!())) {
-            return false;
-        }
-        if (!(unimplemented!())) {
-            return false;
-        }
-    } else {
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-    }
-    return true;
-}
-pub unsafe fn operator_lt_36(lhs: *const LessAndEqComp, rhs: *const LessAndEqComp) -> () {
+pub unsafe fn operator_lt_35(lhs: *const LessAndEqComp, rhs: *const LessAndEqComp) -> () {
     return (((*lhs).value) < ((*rhs).value));
 }
-pub unsafe fn operator_eq_37(lhs: *const LessAndEqComp, rhs: *const LessAndEqComp) -> () {
+pub unsafe fn operator_eq_36(lhs: *const LessAndEqComp, rhs: *const LessAndEqComp) -> () {
     return (((*lhs).value) == ((*rhs).value));
 }
 #[repr(C)]
@@ -1627,9 +1623,9 @@ impl LessAndEqComp {
 impl std::cmp::Ord for LessAndEqComp {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_36(self as *const LessAndEqComp, other as *const LessAndEqComp) {
+            if operator_lt_35(self as *const LessAndEqComp, other as *const LessAndEqComp) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_36(other as *const LessAndEqComp, self as *const LessAndEqComp) {
+            } else if operator_lt_35(other as *const LessAndEqComp, self as *const LessAndEqComp) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1644,11 +1640,11 @@ impl std::cmp::PartialOrd for LessAndEqComp {
 }
 impl std::cmp::PartialEq for LessAndEqComp {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_37(self as *const LessAndEqComp, other as *const LessAndEqComp) }
+        unsafe { operator_eq_36(self as *const LessAndEqComp, other as *const LessAndEqComp) }
     }
 }
 impl std::cmp::Eq for LessAndEqComp {}
-pub unsafe fn operator_cmp_38(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
+pub unsafe fn operator_cmp_37(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
     {
         let mut cmp: () = std::cmp::Ord::cmp(&(_a0.value), &(_a1.value));
         if !(unimplemented!()) {
@@ -1670,7 +1666,7 @@ impl StrongOrder {
 }
 impl std::cmp::Ord for StrongOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_38(self.clone(), other.clone()) }
+        unsafe { operator_cmp_37(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for StrongOrder {
@@ -1680,11 +1676,11 @@ impl std::cmp::PartialOrd for StrongOrder {
 }
 impl std::cmp::PartialEq for StrongOrder {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_cmp_38(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
+        unsafe { operator_cmp_37(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
     }
 }
 impl std::cmp::Eq for StrongOrder {}
-pub unsafe fn operator_cmp_39(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
+pub unsafe fn operator_cmp_38(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     {
         let mut cmp: () = unimplemented!();
         if !(unimplemented!()) {
@@ -1706,7 +1702,7 @@ impl WeakOrder {
 }
 impl std::cmp::Ord for WeakOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_39(self.clone(), other.clone()) }
+        unsafe { operator_cmp_38(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for WeakOrder {
@@ -1716,20 +1712,24 @@ impl std::cmp::PartialOrd for WeakOrder {
 }
 impl std::cmp::PartialEq for WeakOrder {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_cmp_39(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
+        unsafe { operator_cmp_38(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
     }
 }
 impl std::cmp::Eq for WeakOrder {}
-pub unsafe fn operator_cmp_40(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
+pub unsafe fn operator_cmp_39(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
+    if ((lhs.value) == (unsafe { std_numeric_limits_int_::min() }))
+        || ((rhs.value) == (unsafe { std_numeric_limits_int_::min() }))
+    {
         return unimplemented!();
     }
-    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
+    if ((lhs.value) == (unsafe { std_numeric_limits_int_::max() }))
+        || ((rhs.value) == (unsafe { std_numeric_limits_int_::max() }))
+    {
         return unimplemented!();
     }
     return unimplemented!();
 }
-pub unsafe fn operator_eq_41(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
+pub unsafe fn operator_eq_40(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     return unimplemented!();
 }
 #[repr(C)]
@@ -1745,7 +1745,7 @@ impl PartialOrder {
 }
 impl std::cmp::Ord for PartialOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_40(self.clone(), other.clone()) }
+        unsafe { operator_cmp_39(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for PartialOrder {
@@ -1755,7 +1755,7 @@ impl std::cmp::PartialOrd for PartialOrder {
 }
 impl std::cmp::PartialEq for PartialOrder {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_41(self.clone(), other.clone()) }
+        unsafe { operator_eq_40(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for PartialOrder {}
@@ -1770,7 +1770,7 @@ const _: () = assert!(!(false), "!HasOperatorLessThan<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorLessThanEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorNotEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorSpaceship<NonComparable>");
-pub unsafe fn operator_eq_42(_a0: *const EqualityComparable, _a1: *const EqualityComparable) -> () {
+pub unsafe fn operator_eq_41(_a0: *const EqualityComparable, _a1: *const EqualityComparable) -> () {
     return (((*_a0).value_) == ((*_a1).value_));
 }
 #[repr(C)]
@@ -1787,7 +1787,7 @@ impl EqualityComparable {
 impl std::cmp::PartialEq for EqualityComparable {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_42(
+            operator_eq_41(
                 self as *const EqualityComparable,
                 other as *const EqualityComparable,
             )
@@ -1798,10 +1798,10 @@ impl std::cmp::Eq for EqualityComparable {}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
-pub unsafe fn operator_eq_43(_a0: *const ThreeWayComparable, _a1: *const ThreeWayComparable) -> () {
+pub unsafe fn operator_eq_42(_a0: *const ThreeWayComparable, _a1: *const ThreeWayComparable) -> () {
     return (((*_a0).value_) == ((*_a1).value_));
 }
-pub unsafe fn operator_cmp_44(
+pub unsafe fn operator_cmp_43(
     _a0: *const ThreeWayComparable,
     _a1: *const ThreeWayComparable,
 ) -> () {
@@ -1827,7 +1827,7 @@ impl ThreeWayComparable {
 impl std::cmp::Ord for ThreeWayComparable {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            operator_cmp_44(
+            operator_cmp_43(
                 self as *const ThreeWayComparable,
                 other as *const ThreeWayComparable,
             )
@@ -1842,7 +1842,7 @@ impl std::cmp::PartialOrd for ThreeWayComparable {
 impl std::cmp::PartialEq for ThreeWayComparable {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_43(
+            operator_eq_42(
                 self as *const ThreeWayComparable,
                 other as *const ThreeWayComparable,
             )
@@ -1879,12 +1879,12 @@ impl ImplicitBool {
         return self.val;
     }
 }
-pub unsafe fn operator_eq_45(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
+pub unsafe fn operator_eq_44(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {
         val: ((lhs.x) == (rhs.y)),
     };
 }
-pub unsafe fn test_46() -> () {
+pub unsafe fn test_45() -> () {
     {
         let mut iter: () = unimplemented!();
         unimplemented!();
@@ -1925,10 +1925,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_46() });
+    (unsafe { test_45() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_29);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_28);
 }

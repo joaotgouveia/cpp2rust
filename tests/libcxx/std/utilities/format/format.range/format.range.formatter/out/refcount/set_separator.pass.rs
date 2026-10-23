@@ -102,13 +102,7 @@ pub fn test_setter_4() {
                 })
             }),
         ));
-        ({
-            let ___range: Value<()> =
-                Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1({
-                    unimplemented!()
-                })));
-            (*formatter.borrow()).format(___range.as_pointer(), format_ctx.as_pointer())
-        });
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -130,13 +124,7 @@ pub fn test_setter_6() {
                 })
             }),
         ));
-        ({
-            let ___range: Value<()> =
-                Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1({
-                    unimplemented!()
-                })));
-            (*formatter.borrow()).format(___range.as_pointer(), format_ctx.as_pointer())
-        });
+        unimplemented!();
         unimplemented!();
     }
 }

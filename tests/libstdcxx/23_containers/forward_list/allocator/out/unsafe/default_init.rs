@@ -303,30 +303,10 @@ impl __gnu_test_uneq_allocator_base {
         return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_map_14));
     }
 }
-impl __gnu_test_default_init_allocator_int_ {
-    pub unsafe fn new_1(
-        a: *const __gnu_test_default_init_allocator_std__Fwd_list_node_int__,
-    ) -> Self {
-        let mut this = Self { state: (*a).state };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_default_init_allocator_int_ {
     pub state: (),
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct __gnu_test_default_init_allocator_std__Fwd_list_node_int__ {
-    pub state: (),
-}
-impl __gnu_test_default_init_allocator_std__Fwd_list_node_int__ {
-    pub unsafe fn deallocate(&mut self, mut p: *mut std__Fwd_list_node_int_, mut n: ()) {
-        (unsafe {
-            (unimplemented!() as std___new_allocator_std__Fwd_list_node_int__).deallocate(p, n)
-        });
-    }
 }
 pub unsafe fn operator_eq_15(
     mut _a0: __gnu_test_NullablePointer_void_,

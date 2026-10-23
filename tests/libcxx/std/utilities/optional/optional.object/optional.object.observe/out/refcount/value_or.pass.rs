@@ -103,13 +103,19 @@ impl std::cmp::PartialEq for Z {
 impl std::cmp::Eq for Z {}
 pub fn test_2() -> () {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
+            std_optional_X_::new_1({ unimplemented!() }, { __tmp_0.as_pointer() })
+        }));
         let y: Value<Y> = Rc::new(RefCell::new(Y::new({ 3_() })));
         unimplemented!();
         unimplemented!();
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<()> = Rc::new(RefCell::new({
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
+            std_optional_X_::new_1({ unimplemented!() }, { __tmp_1.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
     }

@@ -545,19 +545,19 @@ pub unsafe fn test_cast_43() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut v: *mut small_type_0_ = unimplemented!();
+        let mut v: *mut small_type_0_ = (unsafe { any_cast_44((&mut a as *mut ())) });
         unimplemented!();
         unimplemented!();
         (*v).value = 999_();
-        let mut cv: *const small_type_0_ = unimplemented!();
+        let mut cv: *const small_type_0_ = (unsafe { any_cast_45((&mut a as *mut ())) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        cv = unimplemented!();
+        cv = (unsafe { any_cast_46((ca)) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        cv = (unsafe { any_cast_44((ca)) });
+        cv = (unsafe { any_cast_47((ca)) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -567,7 +567,7 @@ pub unsafe fn test_cast_43() {
     }
     unimplemented!();
 }
-pub unsafe fn test_cast_45() {
+pub unsafe fn test_cast_48() {
     unimplemented!();
     (unsafe { large_type_0_::reset() });
     {
@@ -581,19 +581,19 @@ pub unsafe fn test_cast_45() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut v: *mut large_type_0_ = unimplemented!();
+        let mut v: *mut large_type_0_ = (unsafe { any_cast_49((&mut a as *mut ())) });
         unimplemented!();
         unimplemented!();
         (*v).value = 999_();
-        let mut cv: *const large_type_0_ = unimplemented!();
+        let mut cv: *const large_type_0_ = (unsafe { any_cast_50((&mut a as *mut ())) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        cv = unimplemented!();
+        cv = (unsafe { any_cast_51((ca)) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        cv = (unsafe { any_cast_46((ca)) });
+        cv = (unsafe { any_cast_52((ca)) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -603,7 +603,7 @@ pub unsafe fn test_cast_45() {
     }
     unimplemented!();
 }
-pub unsafe fn test_cast_non_copyable_type_47() {
+pub unsafe fn test_cast_non_copyable_type_53() {
     let mut a: () = 42_();
     let ca: *const () = &a;
     unimplemented!();
@@ -611,17 +611,17 @@ pub unsafe fn test_cast_non_copyable_type_47() {
 }
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
-pub struct NoCopy_48 {}
-pub unsafe fn test_cast_array_49() {
+pub struct NoCopy_54 {}
+pub unsafe fn test_cast_array_55() {
     let mut arr: [(); 3] = [unimplemented!(); 3];
     let mut a: () = std_any::new_1({ &mut arr });
     unimplemented!();
-    let mut p: *mut [(); 3] = unimplemented!();
+    let mut p: *mut [(); 3] = (unsafe { any_cast_56((&mut a as *mut ())) });
     unimplemented!();
 }
-pub unsafe fn test_fn_50() {}
-pub unsafe fn test_cast_function_pointer_51() {
-    let mut a: () = std_any::new_2({ Some(test_fn_50) });
+pub unsafe fn test_fn_57() {}
+pub unsafe fn test_cast_function_pointer_58() {
+    let mut a: () = std_any::new_2({ Some(test_fn_57) });
     unimplemented!();
     let mut fn_ptr: Option<unsafe fn()> = unimplemented!();
     unimplemented!();
@@ -647,10 +647,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_cast_nullptr_41() });
     (unsafe { test_cast_empty_42() });
     (unsafe { test_cast_43() });
-    (unsafe { test_cast_45() });
-    (unsafe { test_cast_non_copyable_type_47() });
-    (unsafe { test_cast_array_49() });
-    (unsafe { test_cast_function_pointer_51() });
+    (unsafe { test_cast_48() });
+    (unsafe { test_cast_non_copyable_type_53() });
+    (unsafe { test_cast_array_55() });
+    (unsafe { test_cast_function_pointer_58() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

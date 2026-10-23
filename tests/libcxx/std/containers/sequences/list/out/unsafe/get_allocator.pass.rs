@@ -180,12 +180,6 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl other_allocator_int_ {
-    pub unsafe fn new_1(a: *const other_allocator_std___list_node_int__void_ptr__) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 pub unsafe fn operator_eq_4(x: *const other_allocator_int_, y: *const other_allocator_int_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
@@ -195,7 +189,7 @@ pub struct other_allocator_int_ {
     data_: (),
 }
 impl other_allocator_int_ {
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_1(mut i: ()) -> Self {
         let mut this = Self { data_: i };
         this
     }
@@ -215,46 +209,6 @@ impl Default for other_allocator_int_ {
     fn default() -> Self {
         unsafe {
             other_allocator_int_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-impl other_allocator_std___list_node_int__void_ptr__ {
-    pub unsafe fn new_1(a: *const other_allocator_int_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___list_node_int__void_ptr__ {
-    data_: (),
-}
-impl other_allocator_std___list_node_int__void_ptr__ {
-    pub unsafe fn deallocate(&mut self, mut p: *mut std___list_node_int__void_ptr_, mut s: ()) {
-        unimplemented!();
-    }
-}
-impl Default for other_allocator_std___list_node_int__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___list_node_int__void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___list_node_base_int__void_ptr__ {
-    data_: (),
-}
-impl other_allocator_std___list_node_base_int__void_ptr__ {}
-impl Default for other_allocator_std___list_node_base_int__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___list_node_base_int__void_ptr__ {
                 data_: unimplemented!(),
             }
         }
@@ -293,7 +247,7 @@ pub unsafe fn test_5() -> () {
         unimplemented!();
     }
     {
-        let mut alloc: other_allocator_int_ = other_allocator_int_::new_2({ 1_() });
+        let mut alloc: other_allocator_int_ = other_allocator_int_::new_1({ 1_() });
         let l: () = unimplemented!();
         unimplemented!();
     }

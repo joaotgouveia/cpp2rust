@@ -504,7 +504,11 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_2: Value<()> = Rc::new(RefCell::new(0_()));
+            let __tmp_3: Value<()> = Rc::new(RefCell::new(0_()));
+            std_pair_int__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
         let mut ptr: Ptr<()> = unimplemented!();
         let mut ret: Ptr<()> = unimplemented!();
         unimplemented!();
@@ -518,7 +522,11 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_4: Value<()> = Rc::new(RefCell::new(0_()));
+            let __tmp_5: Value<()> = Rc::new(RefCell::new(0_()));
+            std_pair_int__int_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
+        }));
         let mut ptr: Ptr<()> = unimplemented!();
         let mut ret: Ptr<()> = unimplemented!();
         unimplemented!();
@@ -532,7 +540,11 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_6: Value<()> = Rc::new(RefCell::new(0_()));
+            let __tmp_7: Value<()> = Rc::new(RefCell::new(0_()));
+            std_pair_int__int_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
+        }));
         let mut ptr: Ptr<()> = unimplemented!();
         let mut ret: Ptr<()> = unimplemented!();
         unimplemented!();
@@ -546,7 +558,11 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_8: Value<()> = Rc::new(RefCell::new(0_()));
+            let __tmp_9: Value<()> = Rc::new(RefCell::new(0_()));
+            std_pair_int__int_::new_1({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
+        }));
         let mut ptr: Ptr<()> = unimplemented!();
         let mut ret: Ptr<()> = unimplemented!();
         unimplemented!();
@@ -608,7 +624,11 @@ pub trait ConvertibleToPairImpl {
 }
 impl ConvertibleToPairImpl for Ptr<ConvertibleToPair> {
     fn to_(&self) -> () {
-        return unimplemented!();
+        return {
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
+            std_pair_int__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        };
     }
 }
 pub trait Tag_XImpl {

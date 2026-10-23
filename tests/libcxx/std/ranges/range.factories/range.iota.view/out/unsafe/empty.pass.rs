@@ -281,7 +281,7 @@ pub unsafe fn test_nonempty_iota_sfinae_22() {
         const _: () = assert!(true, "HasEmpty<decltype(iv)>");;
     }
     {
-        let mut v: () = std_vector_char__std_allocator_char__::new_1({ unimplemented!() });
+        let mut v: () = unimplemented!();
         let mut it: () = unimplemented!();
         let mut iv: () =
             (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_21))(&mut it) });
@@ -320,7 +320,7 @@ pub unsafe fn test_nonempty_iota_24() {
         unimplemented!();
     }
     {
-        let mut v: () = std_vector_char__std_allocator_char__::new_1({ unimplemented!() });
+        let mut v: () = unimplemented!();
         let mut it: () = unimplemented!();
         let mut iv: () =
             (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_21))(&mut it) });

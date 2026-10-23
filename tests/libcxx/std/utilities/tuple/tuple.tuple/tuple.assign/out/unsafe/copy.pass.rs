@@ -55,12 +55,12 @@ pub unsafe fn test_0() -> () {
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
-        unimplemented!();
+        t = (t0).clone();
     }
     {
         let mut t0: () = 2_();
         let mut t: () = unimplemented!();
-        unimplemented!();
+        t = (t0).clone();
         unimplemented!();
     }
     {
@@ -70,7 +70,7 @@ pub unsafe fn test_0() -> () {
             std_tuple_int__char_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
         };
         let mut t: () = unimplemented!();
-        unimplemented!();
+        t = (t0).clone();
         unimplemented!();
         unimplemented!();
     }
@@ -83,7 +83,7 @@ pub unsafe fn test_0() -> () {
             std_tuple_int_ref__int_refref_::new({ &mut x }, { &mut *(&raw mut y).cast::<()>() });
         let mut t2: () =
             std_tuple_int_ref__int_refref_::new({ &mut x2 }, { &mut *(&raw mut y2).cast::<()>() });
-        unimplemented!();
+        t = (t2).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -118,7 +118,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             })
         };
         let mut t: () = unimplemented!();
-        unimplemented!();
+        t = (t0).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();

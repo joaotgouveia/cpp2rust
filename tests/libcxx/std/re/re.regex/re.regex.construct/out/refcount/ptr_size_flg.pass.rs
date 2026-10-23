@@ -35,7 +35,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\)"),
             5_(),
-            std_regex_constants_syntax_option_type_basic,
+            unimplemented!(),
             1_(),
         )
     });
@@ -43,7 +43,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a[bc]\\)"),
             9_(),
-            std_regex_constants_syntax_option_type_basic,
+            unimplemented!(),
             1_(),
         )
     });
@@ -51,7 +51,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
             13_(),
-            std_regex_constants_syntax_option_type_basic,
+            unimplemented!(),
             2_(),
         )
     });
@@ -59,7 +59,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"(a([bc]))"),
             9_(),
-            std_regex_constants_syntax_option_type_basic,
+            unimplemented!(),
             0_(),
         )
     });
@@ -67,7 +67,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\)"),
             5_(),
-            std_regex_constants_syntax_option_type_extended,
+            unimplemented!(),
             0_(),
         )
     });
@@ -75,7 +75,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a[bc]\\)"),
             9_(),
-            std_regex_constants_syntax_option_type_extended,
+            unimplemented!(),
             0_(),
         )
     });
@@ -83,7 +83,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
             13_(),
-            std_regex_constants_syntax_option_type_extended,
+            unimplemented!(),
             0_(),
         )
     });
@@ -91,7 +91,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"(a([bc]))"),
             9_(),
-            std_regex_constants_syntax_option_type_extended,
+            unimplemented!(),
             2_(),
         )
     });
@@ -99,7 +99,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\)"),
             5_(),
-            std_regex_constants_syntax_option_type_ECMAScript,
+            unimplemented!(),
             0_(),
         )
     });
@@ -107,7 +107,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a[bc]\\)"),
             9_(),
-            std_regex_constants_syntax_option_type_ECMAScript,
+            unimplemented!(),
             0_(),
         )
     });
@@ -115,7 +115,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
             13_(),
-            std_regex_constants_syntax_option_type_ECMAScript,
+            unimplemented!(),
             0_(),
         )
     });
@@ -123,7 +123,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"(a([bc]))"),
             9_(),
-            std_regex_constants_syntax_option_type_ECMAScript,
+            unimplemented!(),
             2_(),
         )
     });
@@ -131,7 +131,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\)"),
             5_(),
-            std_regex_constants_syntax_option_type_awk,
+            unimplemented!(),
             0_(),
         )
     });
@@ -139,7 +139,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a[bc]\\)"),
             9_(),
-            std_regex_constants_syntax_option_type_awk,
+            unimplemented!(),
             0_(),
         )
     });
@@ -147,7 +147,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
             13_(),
-            std_regex_constants_syntax_option_type_awk,
+            unimplemented!(),
             0_(),
         )
     });
@@ -155,7 +155,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"(a([bc]))"),
             9_(),
-            std_regex_constants_syntax_option_type_awk,
+            unimplemented!(),
             2_(),
         )
     });
@@ -163,7 +163,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\)"),
             5_(),
-            std_regex_constants_syntax_option_type_grep,
+            unimplemented!(),
             1_(),
         )
     });
@@ -171,7 +171,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a[bc]\\)"),
             9_(),
-            std_regex_constants_syntax_option_type_grep,
+            unimplemented!(),
             1_(),
         )
     });
@@ -179,7 +179,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
             13_(),
-            std_regex_constants_syntax_option_type_grep,
+            unimplemented!(),
             2_(),
         )
     });
@@ -187,7 +187,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"(a([bc]))"),
             9_(),
-            std_regex_constants_syntax_option_type_grep,
+            unimplemented!(),
             0_(),
         )
     });
@@ -195,7 +195,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\)"),
             5_(),
-            std_regex_constants_syntax_option_type_egrep,
+            unimplemented!(),
             0_(),
         )
     });
@@ -203,7 +203,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a[bc]\\)"),
             9_(),
-            std_regex_constants_syntax_option_type_egrep,
+            unimplemented!(),
             0_(),
         )
     });
@@ -211,7 +211,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
             13_(),
-            std_regex_constants_syntax_option_type_egrep,
+            unimplemented!(),
             0_(),
         )
     });
@@ -219,7 +219,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         test_0(
             Ptr::<()>::from_string_literal(b"(a([bc]))"),
             9_(),
-            std_regex_constants_syntax_option_type_egrep,
+            unimplemented!(),
             2_(),
         )
     });

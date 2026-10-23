@@ -15,7 +15,7 @@ pub unsafe fn test_tie_0() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        res = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

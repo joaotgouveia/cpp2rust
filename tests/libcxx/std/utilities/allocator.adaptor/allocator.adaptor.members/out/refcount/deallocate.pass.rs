@@ -116,8 +116,13 @@ pub trait A1_int_Impl {
     }
 }
 impl A1_int_Impl for Ptr<A1_int_> {
-    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
-        unimplemented!();
+    fn deallocate(&self, p: Ptr<()>, n: ()) {
+        let p: Value<Ptr<()>> = Rc::new(RefCell::new(p));
+        let n: Value<()> = Rc::new(RefCell::new(n));
+        deallocate_called_3.with(|rc| {
+            *rc.borrow_mut() =
+                std_pair_int_ptr__unsigned_long_::new_1({ p.as_pointer() }, { n.as_pointer() })
+        });
     }
 }
 pub trait A2_int_Impl {

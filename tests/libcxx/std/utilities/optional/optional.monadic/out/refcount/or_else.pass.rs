@@ -216,7 +216,7 @@ const _: () = assert!(
     "!has_or_else<std::optional<NonMovable>&&, decltype(return_optional<NonMovable>)>"
 );
 pub fn take_int_14(mut _a0: ()) -> () {
-    return unimplemented!();
+    return 0_();
 }
 pub fn take_int_return_void_15(mut _a0: ()) {}
 const _: () = assert!(
@@ -232,21 +232,12 @@ pub fn test_16() -> () {
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        (*opt.borrow_mut()) = unimplemented!();
+        unimplemented!();
         &(unimplemented!());
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let __rhs = ({
-            let ___f: Value<FnPtr<fn() -> ()>> =
-                Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
-                    {
-                        return unimplemented!();
-                    }
-                })));
-            (*opt.borrow()).or_else(___f.as_pointer())
-        });
-        (*opt.borrow_mut()) = __rhs;
+        unimplemented!();
         &({
             let ___f: Value<FnPtr<fn() -> ()>> =
                 Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {

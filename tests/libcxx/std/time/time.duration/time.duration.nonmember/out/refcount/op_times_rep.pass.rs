@@ -125,14 +125,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let __rhs = ({
-            let _d: () = unimplemented!();
+            let _d: () = (*d.borrow()).clone();
             operator_mul_2(_d, (n).clone())
         });
         (*d.borrow_mut()) = __rhs;
         unimplemented!();
         let __rhs = ({
             let _arg0: NotARep = (n).clone();
-            operator_mul_3(_arg0, unimplemented!())
+            operator_mul_3(_arg0, (*d.borrow()).clone())
         });
         (*d.borrow_mut()) = __rhs;
         unimplemented!();

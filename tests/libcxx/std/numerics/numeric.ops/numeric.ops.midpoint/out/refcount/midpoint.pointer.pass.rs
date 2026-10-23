@@ -74,114 +74,42 @@ const _: () = assert!(!(false), "!has_midpoint<const void*>");
 const _: () = assert!(!(false), "!has_midpoint<volatile void*>");
 const _: () = assert!(!(false), "!has_midpoint<const volatile void*>");
 pub fn check_12(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_13(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
+}
+pub fn check_13(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
 }
 pub fn check_14(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_15(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
+}
+pub fn check_15(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
 }
 pub fn check_16(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_17(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
+}
+pub fn check_17(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
 }
 pub fn check_18(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_19(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
+}
+pub fn check_19(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
 }
 pub fn check_20(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_21(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
+}
+pub fn check_21(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
 }
 pub fn check_22(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_23(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
 }
-pub fn check_24(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_25(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
+pub fn check_23(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
+    return ({ unimplemented!() } == { base.offset((expect) as isize) });
 }
-pub fn check_26(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_27(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
-}
-pub fn check_28(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_29(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
-}
-pub fn check_30(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_31(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
-}
-pub fn check_32(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_33(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
-}
-pub fn check_34(mut base: Ptr<()>, mut i: (), mut j: (), mut expect: ()) -> () {
-    return ({
-        ({
-            let ___a: Ptr<()> = base.offset((i) as isize);
-            let ___b: Ptr<()> = base.offset((j) as isize);
-            midpoint_35(___a, ___b)
-        })
-    } == { base.offset((expect) as isize) });
-}
-pub fn test_pointer_36() -> () {
+pub fn test_pointer_24() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -218,7 +146,7 @@ pub fn test_pointer_36() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_37() -> () {
+pub fn test_pointer_25() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -255,7 +183,7 @@ pub fn test_pointer_37() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_38() -> () {
+pub fn test_pointer_26() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -292,7 +220,7 @@ pub fn test_pointer_38() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_39() -> () {
+pub fn test_pointer_27() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -329,7 +257,7 @@ pub fn test_pointer_39() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_40() -> () {
+pub fn test_pointer_28() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -366,7 +294,7 @@ pub fn test_pointer_40() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_41() -> () {
+pub fn test_pointer_29() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -403,7 +331,7 @@ pub fn test_pointer_41() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_42() -> () {
+pub fn test_pointer_30() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -440,7 +368,7 @@ pub fn test_pointer_42() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_43() -> () {
+pub fn test_pointer_31() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -477,7 +405,7 @@ pub fn test_pointer_43() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_44() -> () {
+pub fn test_pointer_32() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -514,7 +442,7 @@ pub fn test_pointer_44() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_45() -> () {
+pub fn test_pointer_33() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -551,7 +479,7 @@ pub fn test_pointer_45() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_46() -> () {
+pub fn test_pointer_34() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -588,7 +516,7 @@ pub fn test_pointer_46() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_pointer_47() -> () {
+pub fn test_pointer_35() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -625,7 +553,7 @@ pub fn test_pointer_47() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_48() {
+pub fn test_36() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -633,7 +561,7 @@ pub fn test_48() {
     const _: () = assert!(true, "test_pointer<T>()");;
     const _: () = assert!(true, "test_pointer<const T>()");;
 }
-pub fn test_49() {
+pub fn test_37() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -641,7 +569,7 @@ pub fn test_49() {
     const _: () = assert!(true, "test_pointer<T>()");;
     const _: () = assert!(true, "test_pointer<const T>()");;
 }
-pub fn test_50() {
+pub fn test_38() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -669,9 +597,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_48() });
-    ({ test_49() });
-    ({ test_50() });
+    ({ test_36() });
+    ({ test_37() });
+    ({ test_38() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

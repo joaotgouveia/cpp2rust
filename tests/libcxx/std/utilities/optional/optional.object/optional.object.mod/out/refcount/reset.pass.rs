@@ -20,7 +20,7 @@ pub fn check_reset_1() -> () {
         unimplemented!();
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<()> = Rc::new(RefCell::new(3_()));
         ({ ((*opt.borrow()) as std___optional_destruct_base_int__true_).reset() });
         unimplemented!();
     }
@@ -57,7 +57,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<()> = Rc::new(RefCell::new(<X>::default()));
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);
         ({ ((*opt.borrow()) as std___optional_destruct_base_X__false_).reset() });
         unimplemented!();

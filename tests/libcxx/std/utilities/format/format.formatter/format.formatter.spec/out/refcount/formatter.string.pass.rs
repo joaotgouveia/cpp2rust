@@ -108,11 +108,7 @@ pub fn test_4(mut expected: (), fmt: (), a: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        let ___str: Ptr<()> = (arg).clone();
-        let ___ctx: Ptr<()> = format_ctx.as_pointer();
-        (*formatter.borrow()).format(___str, ___ctx)
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_6(mut expected: (), fmt: (), a: (), mut offset: ()) {
@@ -139,7 +135,7 @@ pub fn test_6(mut expected: (), fmt: (), a: (), mut offset: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format(unimplemented!(), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_8(mut expected: (), fmt: (), a: (), mut offset: ()) {
@@ -167,11 +163,7 @@ pub fn test_8(mut expected: (), fmt: (), a: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        let ___str: Ptr<()> = (arg).clone();
-        let ___ctx: Ptr<()> = format_ctx.as_pointer();
-        (*formatter.borrow()).format(___str, ___ctx)
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_10(mut expected: (), fmt: (), a: (), mut offset: ()) {
@@ -199,7 +191,7 @@ pub fn test_10(mut expected: (), fmt: (), a: (), mut offset: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format(unimplemented!(), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_termination_condition_12(mut expected: (), f: (), mut arg: ()) {

@@ -100,11 +100,7 @@ impl Default for TracedBase_false__true_ {
     }
 }
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    (unsafe {
-        let ___x: *mut () = &mut (*x).i;
-        let ___y: *mut () = &mut (*y).i;
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -150,7 +146,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -167,7 +163,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_2(
+            operator_eq_1(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -229,7 +225,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -276,7 +272,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -410,7 +406,7 @@ const _: () = assert!(
     true,
     "!std::is_assignable_v<std::expected<void, NotCopyAssignable>&, const std::unexpected<NotCopyAssignable>&>"
 );
-pub unsafe fn test_4() -> () {
+pub unsafe fn test_3() -> () {
     {
         let mut state: TracedBase_false__state = <TracedBase_false__state>::default();
         let mut e: () = unimplemented!();
@@ -458,7 +454,7 @@ pub unsafe fn test_4() -> () {
     }
     return true;
 }
-pub unsafe fn testException_5() {}
+pub unsafe fn testException_4() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -475,9 +471,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_4() });
+    (unsafe { test_3() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_5() });
+    (unsafe { testException_4() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

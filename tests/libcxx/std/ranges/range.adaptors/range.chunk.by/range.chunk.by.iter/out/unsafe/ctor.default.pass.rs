@@ -496,25 +496,21 @@ pub unsafe fn operator_add_11(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_12(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_13(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -598,7 +594,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -608,7 +604,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_15(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -809,6 +805,12 @@ impl IntWrapper {
         return ((self.value_) <= (other.value_));
     }
 }
+pub unsafe fn testDefaultConstructible_16() {
+    let mut i: () = unimplemented!();
+    let mut j: () = unimplemented!();
+    unimplemented!();
+    const _: () = assert!(true, "noexcept(ChunkByIterator{{}}) == IsNoexcept");;
+}
 pub unsafe fn testDefaultConstructible_17() {
     let mut i: () = unimplemented!();
     let mut j: () = unimplemented!();
@@ -833,18 +835,12 @@ pub unsafe fn testDefaultConstructible_20() {
     unimplemented!();
     const _: () = assert!(true, "noexcept(ChunkByIterator{{}}) == IsNoexcept");;
 }
-pub unsafe fn testDefaultConstructible_21() {
-    let mut i: () = unimplemented!();
-    let mut j: () = unimplemented!();
-    unimplemented!();
-    const _: () = assert!(true, "noexcept(ChunkByIterator{{}}) == IsNoexcept");;
-}
-pub unsafe fn tests_22() -> () {
+pub unsafe fn tests_21() -> () {
+    (unsafe { testDefaultConstructible_16() });
     (unsafe { testDefaultConstructible_17() });
     (unsafe { testDefaultConstructible_18() });
     (unsafe { testDefaultConstructible_19() });
     (unsafe { testDefaultConstructible_20() });
-    (unsafe { testDefaultConstructible_21() });
     return true;
 }
 pub fn main() {
@@ -863,7 +859,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_22() });
+    (unsafe { tests_21() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

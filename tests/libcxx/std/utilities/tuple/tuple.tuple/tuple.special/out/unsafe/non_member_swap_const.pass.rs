@@ -57,7 +57,7 @@ pub unsafe fn test_2() -> () {
         };
         std_tuple_CS__S_ref_::new({ &mut __tmp_1 }, { &mut s2 })
     };
-    unimplemented!();
+    (unsafe { swap_3(&t1, &t2) });
     unimplemented!();
     unimplemented!();
     return true;

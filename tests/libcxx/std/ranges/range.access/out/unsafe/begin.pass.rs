@@ -289,25 +289,21 @@ pub unsafe fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_10(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -391,7 +387,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -401,7 +397,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -469,7 +465,7 @@ impl util_iterator_error {
         this
     }
 }
-pub static mut globalBuff_14: std::cell::LazyCell<[(); 8]> =
+pub static mut globalBuff_13: std::cell::LazyCell<[(); 8]> =
     std::cell::LazyCell::new(|| unsafe { [unimplemented!(); 8] });
 const _: () = assert!(true, "!std::is_invocable_v<RangeBeginT, int (&&)[10]>");
 const _: () = assert!(true, "std::is_invocable_v<RangeBeginT, int (&)[10]>");
@@ -555,7 +551,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeCBeginT, BeginMember const&&>"
 );
-pub unsafe fn testReturnTypes_15() -> () {
+pub unsafe fn testReturnTypes_14() -> () {
     {
         let mut x: [*mut (); 2] = [std::ptr::null_mut(); 2];
         const _: () = assert!(true, "");;
@@ -567,7 +563,7 @@ pub unsafe fn testReturnTypes_15() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut x: Different_16 = <Different_16>::default();
+        let mut x: Different_15 = <Different_15>::default();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
@@ -575,8 +571,8 @@ pub unsafe fn testReturnTypes_15() -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Different_16 {}
-pub unsafe fn testArray_17() -> () {
+pub struct Different_15 {}
+pub unsafe fn testArray_16() -> () {
     let mut a: [(); 2] = [unimplemented!(); 2];
     unimplemented!();
     unimplemented!();
@@ -653,11 +649,11 @@ const _: () = assert!(
 pub struct EnabledBorrowingBeginMember {}
 impl EnabledBorrowingBeginMember {
     pub unsafe fn begin(&self) -> *mut () {
-        return (&mut (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_14))
+        return (&mut (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13))
             [(0_()) as usize] as *mut ());
     }
 }
-pub static mut enable_borrowed_range_18: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_17: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -682,7 +678,7 @@ impl EmptyPtrBeginMember {
         return (&self.x as *const EmptyPtrBeginMember_Empty);
     }
 }
-pub unsafe fn testBeginMember_19() -> () {
+pub unsafe fn testBeginMember_18() -> () {
     let mut a: BeginMember = <BeginMember>::default();
     unimplemented!();
     unimplemented!();
@@ -707,7 +703,7 @@ pub unsafe fn testBeginMember_19() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn begin_20(bf: *const BeginFunction) -> *const () {
+pub unsafe fn begin_19(bf: *const BeginFunction) -> *const () {
     return (&(*bf).x as *const ());
 }
 #[repr(C)]
@@ -750,8 +746,8 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeBeginT, BeginFunctionReturnsPtrConvertible const&>"
 );
-pub unsafe fn begin_21(mut _a0: BeginFunctionByValue) -> *mut () {
-    return (&mut (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_14))[(1_()) as usize]
+pub unsafe fn begin_20(mut _a0: BeginFunctionByValue) -> *mut () {
+    return (&mut (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13))[(1_()) as usize]
         as *mut ());
 }
 #[repr(C)]
@@ -761,16 +757,16 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeCBeginT, BeginFunctionByValue>"
 );
-pub unsafe fn begin_22(mut _a0: BeginFunctionEnabledBorrowing) -> *mut () {
-    return (&mut (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_14))[(2_()) as usize]
+pub unsafe fn begin_21(mut _a0: BeginFunctionEnabledBorrowing) -> *mut () {
+    return (&mut (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13))[(2_()) as usize]
         as *mut ());
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct BeginFunctionEnabledBorrowing {}
-pub static mut enable_borrowed_range_23: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_22: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
-pub unsafe fn begin_24(
+pub unsafe fn begin_23(
     bf: *const BeginFunctionReturnsEmptyPtr,
 ) -> *const BeginFunctionReturnsEmptyPtr_Empty {
     return (&(*bf).x as *const BeginFunctionReturnsEmptyPtr_Empty);
@@ -783,7 +779,7 @@ pub struct BeginFunctionReturnsEmptyPtr_Empty {}
 pub struct BeginFunctionReturnsEmptyPtr {
     pub x: BeginFunctionReturnsEmptyPtr_Empty,
 }
-pub unsafe fn begin_25(bf: *const BeginFunctionWithDataMember) -> *const () {
+pub unsafe fn begin_24(bf: *const BeginFunctionWithDataMember) -> *const () {
     return (&(*bf).x as *const ());
 }
 #[repr(C)]
@@ -792,7 +788,7 @@ pub struct BeginFunctionWithDataMember {
     pub x: (),
     pub begin: (),
 }
-pub unsafe fn begin_26(bf: *const BeginFunctionWithPrivateBeginMember) -> *const () {
+pub unsafe fn begin_25(bf: *const BeginFunctionWithPrivateBeginMember) -> *const () {
     return (&(*bf).y as *const ());
 }
 #[repr(C)]
@@ -800,7 +796,7 @@ pub unsafe fn begin_26(bf: *const BeginFunctionWithPrivateBeginMember) -> *const
 pub struct BeginFunctionWithPrivateBeginMember {
     pub y: (),
 }
-pub unsafe fn testBeginFunction_27() -> () {
+pub unsafe fn testBeginFunction_26() -> () {
     let mut a: BeginFunction = <BeginFunction>::default();
     let aa: BeginFunction = <BeginFunction>::default();
     unimplemented!();
@@ -845,28 +841,28 @@ const _: () = assert!(true, "");
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NoThrowMemberBegin {}
-pub static mut ntmb_28: std::cell::LazyCell<NoThrowMemberBegin> =
+pub static mut ntmb_27: std::cell::LazyCell<NoThrowMemberBegin> =
     std::cell::LazyCell::new(|| unsafe { <NoThrowMemberBegin>::default() });
 const _: () = assert!(true, "noexcept(std::ranges::begin(ntmb))");
 const _: () = assert!(true, "noexcept(std::ranges::cbegin(ntmb))");
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NoThrowADLBegin {}
-pub static mut ntab_29: std::cell::LazyCell<NoThrowADLBegin> =
+pub static mut ntab_28: std::cell::LazyCell<NoThrowADLBegin> =
     std::cell::LazyCell::new(|| unsafe { <NoThrowADLBegin>::default() });
 const _: () = assert!(true, "noexcept(std::ranges::begin(ntab))");
 const _: () = assert!(true, "noexcept(std::ranges::cbegin(ntab))");
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NoThrowMemberBeginReturnsRef {}
-pub static mut ntmbrr_30: std::cell::LazyCell<NoThrowMemberBeginReturnsRef> =
+pub static mut ntmbrr_29: std::cell::LazyCell<NoThrowMemberBeginReturnsRef> =
     std::cell::LazyCell::new(|| unsafe { <NoThrowMemberBeginReturnsRef>::default() });
 const _: () = assert!(true, "!noexcept(std::ranges::begin(ntmbrr))");
 const _: () = assert!(true, "!noexcept(std::ranges::cbegin(ntmbrr))");
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct BeginReturnsArrayRef {}
-pub static mut brar_31: std::cell::LazyCell<BeginReturnsArrayRef> =
+pub static mut brar_30: std::cell::LazyCell<BeginReturnsArrayRef> =
     std::cell::LazyCell::new(|| unsafe { <BeginReturnsArrayRef>::default() });
 const _: () = assert!(true, "noexcept(std::ranges::begin(brar))");
 const _: () = assert!(true, "noexcept(std::ranges::cbegin(brar))");
@@ -903,20 +899,20 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "testReturnTypes()");;
-    (unsafe { testArray_17() });
+    (unsafe { testArray_16() });
     const _: () = assert!(true, "testArray()");;
-    (unsafe { testBeginMember_19() });
+    (unsafe { testBeginMember_18() });
     const _: () = assert!(true, "testBeginMember()");;
-    (unsafe { testBeginFunction_27() });
+    (unsafe { testBeginFunction_26() });
     const _: () = assert!(true, "testBeginFunction()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const globalBuff_14);
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_18);
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_23);
-    std::cell::LazyCell::force(&*&raw const ntmb_28);
-    std::cell::LazyCell::force(&*&raw const ntab_29);
-    std::cell::LazyCell::force(&*&raw const ntmbrr_30);
-    std::cell::LazyCell::force(&*&raw const brar_31);
+    std::cell::LazyCell::force(&*&raw const globalBuff_13);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_17);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_22);
+    std::cell::LazyCell::force(&*&raw const ntmb_27);
+    std::cell::LazyCell::force(&*&raw const ntab_28);
+    std::cell::LazyCell::force(&*&raw const ntmbrr_29);
+    std::cell::LazyCell::force(&*&raw const brar_30);
 }

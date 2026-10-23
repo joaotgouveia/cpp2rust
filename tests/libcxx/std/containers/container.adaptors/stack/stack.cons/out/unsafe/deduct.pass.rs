@@ -1120,12 +1120,6 @@ impl Default for test_allocator_void_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_long__rebind_std___list_node_long__void_ptr__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_long__rebind_std___list_node_base_long__void_ptr__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_long__rebind_long_ {}
 #[repr(C)]
 #[derive(FnPtrArg, DestructorUnsafe)]
@@ -1164,145 +1158,8 @@ impl Default for test_allocator_long_ {
         }
     }
 }
-impl test_allocator_std___list_node_long__void_ptr__ {
-    pub unsafe fn new_1(a: *const test_allocator_long_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
-#[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
-pub struct test_allocator_std___list_node_long__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___list_node_long__void_ptr__ {
-    pub unsafe fn copy_from(a: *const test_allocator_std___list_node_long__void_ptr__) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        unimplemented!();
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).copied.prefix_inc();
-        }
-        this
-    }
-    pub unsafe fn move_from(a: *mut test_allocator_std___list_node_long__void_ptr__) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).moved.prefix_inc();
-        }
-        unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_16));
-        this
-    }
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_15));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_15));
-    }
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-        mut _a1: Option<()>,
-    ) -> *mut std___list_node_long__void_ptr_ {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut std___list_node_long__void_ptr_, mut s: ()) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Clone for test_allocator_std___list_node_long__void_ptr__ {
-    fn clone(&self) -> Self {
-        unsafe {
-            test_allocator_std___list_node_long__void_ptr__::copy_from(
-                self as *const test_allocator_std___list_node_long__void_ptr__,
-            )
-        }
-    }
-}
-impl Default for test_allocator_std___list_node_long__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___list_node_long__void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___list_node_base_long__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___list_node_base_long__void_ptr__ {}
-impl Default for test_allocator_std___list_node_base_long__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___list_node_base_long__void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
 impl test_allocator_short_ {
     pub unsafe fn new_1(a: *const test_allocator_int_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
-impl test_allocator_short_ {
-    pub unsafe fn new_2(a: *const test_allocator_std___list_node_short__void_ptr__) -> Self {
         let mut this = Self {
             data_: (*a).data_,
             id_: (*a).id_,
@@ -1323,12 +1180,6 @@ pub unsafe fn operator_eq_19(
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_short__rebind_std___list_node_short__void_ptr__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_short__rebind_std___list_node_base_short__void_ptr__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_short__rebind_short_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -1344,7 +1195,7 @@ pub struct test_allocator_short_ {
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_short_ {
-    pub unsafe fn new_3(mut data: ()) -> Self {
+    pub unsafe fn new_2(mut data: ()) -> Self {
         let mut this = Self {
             data_: data,
             id_: 0_(),
@@ -1525,129 +1376,6 @@ impl Default for test_allocator_int_ {
             test_allocator_int_ {
                 data_: 0_(),
                 id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-impl test_allocator_std___list_node_short__void_ptr__ {
-    pub unsafe fn new_1(a: *const test_allocator_short_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
-#[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
-pub struct test_allocator_std___list_node_short__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___list_node_short__void_ptr__ {
-    pub unsafe fn copy_from(a: *const test_allocator_std___list_node_short__void_ptr__) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        unimplemented!();
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).copied.prefix_inc();
-        }
-        this
-    }
-    pub unsafe fn move_from(a: *mut test_allocator_std___list_node_short__void_ptr__) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).moved.prefix_inc();
-        }
-        unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_16));
-        this
-    }
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_15));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_15));
-    }
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-        mut _a1: Option<()>,
-    ) -> *mut std___list_node_short__void_ptr_ {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut std___list_node_short__void_ptr_, mut s: ()) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Clone for test_allocator_std___list_node_short__void_ptr__ {
-    fn clone(&self) -> Self {
-        unsafe {
-            test_allocator_std___list_node_short__void_ptr__::copy_from(
-                self as *const test_allocator_std___list_node_short__void_ptr__,
-            )
-        }
-    }
-}
-impl Default for test_allocator_std___list_node_short__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___list_node_short__void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___list_node_base_short__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___list_node_base_short__void_ptr__ {}
-impl Default for test_allocator_std___list_node_base_short__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___list_node_base_short__void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
                 stats_: std::ptr::null_mut(),
             }
         }

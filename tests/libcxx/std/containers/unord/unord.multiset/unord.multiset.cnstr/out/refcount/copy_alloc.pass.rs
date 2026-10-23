@@ -102,15 +102,6 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<()>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    pub fn new_1(
-        mut p : min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    ) -> Self {
-        Self {
-            ptr_: (p.ptr_).to_any(),
-        }
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -121,47 +112,9 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___>,
-}
-impl min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } pub fn new_2 ( mut p : min_pointer_void__std_integral_constant_unsigned_long__0__  , ) -> Self { Self { ptr_ : p . ptr_  .reinterpret_cast::<std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___>()  , }  } }
-pub fn operator_eq_5(
-    mut x : min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
-pub fn operator_ne_6(
-    mut x : min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !({
-        let _x: min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__   = x   ;
-        operator_eq_5(_x, y)
-    });
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { #[offset(0)] #[byte_size(8)] ptr_ : Ptr< std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >  , }
-impl min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } pub fn new_2 ( mut _a0 : ()  , ) -> Self { Self { ptr_ : Ptr::<std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___>::null()  , }  } pub fn pointer_to ( t : Ptr< std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  > , ) -> min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  { return min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool {  { operator_eq_5(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
 pub struct min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { #[offset(0)] #[byte_size(8)] ptr_ : Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >  , }
 impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } pub fn new_2 ( mut _a0 : ()  , ) -> Self { Self { ptr_ : Ptr::<min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__>::null()  , }  } }
-impl min_allocator_int_ {
-    pub fn new_1(
-        mut _a0 : min_allocator_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____,
-    ) -> Self {
-        Self {}
-    }
-}
-pub fn operator_eq_7(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
+pub fn operator_eq_5(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -169,36 +122,15 @@ pub fn operator_eq_7(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -
 pub struct min_allocator_int_ {}
 impl std::cmp::PartialEq for min_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_7(self.clone(), other.clone()) }
+        { operator_eq_5(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_int_ {}
-impl
-    min_allocator_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{
-    pub fn new_1(mut _a0: min_allocator_int_) -> Self {
-        Self {}
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____
-{}
 impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { pub fn new_1 ( mut _a0 : min_allocator_int_  , ) -> Self { Self { }  } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___
 {}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl min_allocator_int_ {}
-impl
-    min_allocator_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{
-}
 impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
@@ -243,22 +175,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_8: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_6: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_9: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_7: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_10(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_8(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_11(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_9(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_10(_x, _y)
+        operator_eq_8(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -319,7 +251,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_10(
+            operator_eq_8(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -358,27 +290,9 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl test_allocator_int_ {
-    pub fn new_1(a: Ptr<test_allocator_std___hash_node_int__void_ptr__>) -> Self {
-        let __this: Value<test_allocator_int_> = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<test_allocator_int_> = __this.as_pointer();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-}
-pub fn operator_eq_12(x: Ptr<test_allocator_int_>, y: Ptr<test_allocator_int_>) -> () {
+pub fn operator_eq_10(x: Ptr<test_allocator_int_>, y: Ptr<test_allocator_int_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_int__rebind_std___hash_node_int__void_ptr__ {}
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -391,7 +305,7 @@ pub struct test_allocator_int_ {
     stats_: Ptr<test_allocator_statistics>,
 }
 impl test_allocator_int_ {
-    pub fn new_2(mut data: ()) -> Self {
+    pub fn new_1(mut data: ()) -> Self {
         Self {
             data_: data,
             id_: 0_(),
@@ -402,7 +316,7 @@ impl test_allocator_int_ {
 impl std::cmp::PartialEq for test_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_10(
                 Rc::new(RefCell::new(test_allocator_int_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -431,176 +345,6 @@ impl Default for test_allocator_int_ {
         }
     }
 }
-impl test_allocator_std___hash_node_int__void_ptr__ {
-    pub fn new_1(a: Ptr<test_allocator_int_>) -> Self {
-        let __this: Value<test_allocator_std___hash_node_int__void_ptr__> =
-            Rc::new(RefCell::new(Self {
-                data_: a.with(|__s| __s.data_),
-                id_: a.with(|__s| __s.id_),
-                stats_: a.with(|__s| __s.stats_.clone()),
-            }));
-        let this: Ptr<test_allocator_std___hash_node_int__void_ptr__> = __this.as_pointer();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std___hash_node_int__void_ptr___rebind_std___hash_node_base_std___hash_node_int__void_ptr__ptr__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std___hash_node_int__void_ptr___rebind_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_
-{}
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_int__void_ptr__ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_int__void_ptr__ {}
-impl Default for test_allocator_std___hash_node_int__void_ptr__ {
-    fn default() -> Self {
-        {
-            test_allocator_std___hash_node_int__void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ {}
-impl Default for test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ {
-    fn default() -> Self {
-        {
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-impl test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_ {
-    pub fn new_1(a: Ptr<test_allocator_int_>) -> Self {
-        let __this: Value<
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_,
-        > = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_,
-        > = __this.as_pointer();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-}
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_ {
-    pub fn copy_from(
-        a: Ptr<test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_>,
-    ) -> Self {
-        let __this: Value<
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_,
-        > = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_,
-        > = __this.as_pointer();
-        unimplemented!();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-    pub fn move_from(
-        a: Ptr<test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_>,
-    ) -> Self {
-        let __this: Value<
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_,
-        > = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_,
-        > = __this.as_pointer();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
-        }
-        unimplemented!();
-        field!(a, id_).write(moved_value_9.with(|rc| *rc.borrow()));
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-}
-impl Clone for test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_ {
-    fn clone(&self) -> Self {
-        let __src: Value<
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_,
-        > = Rc::new(RefCell::new(
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_ {
-                data_: self.data_.clone(),
-                id_: self.id_.clone(),
-                stats_: self.stats_.clone(),
-            },
-        ));
-        test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_::copy_from(
-            __src.as_pointer(),
-        )
-    }
-}
-impl Default for test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_ {
-    fn default() -> Self {
-        {
-            test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
@@ -618,7 +362,7 @@ impl Tag_X {
         Self {}
     }
 }
-pub fn test_alloc_13(new_alloc: Ptr<()>) {
+pub fn test_alloc_11(new_alloc: Ptr<()>) {
     {
         let mut arr: [(); 4] = [1_(), 2_(), 3_(), 3_()];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -679,7 +423,7 @@ pub fn test_alloc_13(new_alloc: Ptr<()>) {
         unimplemented!();
     }
 }
-pub fn test_alloc_14(new_alloc: Ptr<min_allocator_int_>) {
+pub fn test_alloc_12(new_alloc: Ptr<min_allocator_int_>) {
     {
         let mut arr: [(); 4] = [1_(), 2_(), 3_(), 3_()];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -740,7 +484,7 @@ pub fn test_alloc_14(new_alloc: Ptr<min_allocator_int_>) {
         unimplemented!();
     }
 }
-pub fn test_alloc_15(new_alloc: Ptr<test_allocator_int_>) {
+pub fn test_alloc_13(new_alloc: Ptr<test_allocator_int_>) {
     {
         let mut arr: [(); 4] = [1_(), 2_(), 3_(), 3_()];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -801,20 +545,20 @@ pub fn test_alloc_15(new_alloc: Ptr<test_allocator_int_>) {
         unimplemented!();
     }
 }
-pub fn test_16() {
+pub fn test_14() {
     ({
         let _new_alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_alloc_13(_new_alloc.as_pointer())
+        test_alloc_11(_new_alloc.as_pointer())
     });
     ({
         let _new_alloc: Value<min_allocator_int_> =
             Rc::new(RefCell::new(<min_allocator_int_>::default()));
-        test_alloc_14(_new_alloc.as_pointer())
+        test_alloc_12(_new_alloc.as_pointer())
     });
     ({
         let _new_alloc: Value<test_allocator_int_> =
-            Rc::new(RefCell::new(test_allocator_int_::new_2({ 25_() })));
-        test_alloc_15(_new_alloc.as_pointer())
+            Rc::new(RefCell::new(test_allocator_int_::new_1({ 25_() })));
+        test_alloc_13(_new_alloc.as_pointer())
     });
 }
 pub fn main() {
@@ -837,9 +581,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_16() });
+    ({ test_14() });
     return 0_();
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__;
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -877,34 +624,6 @@ pub trait min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_
 impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___Impl for Ptr<min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___> {
 fn allocate ( &self , mut n : ()  , ) -> min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  { return min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
  } fn deallocate ( &self , mut p : min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  , mut n : ()  , ) { unimplemented!()  ;
- } }
-pub trait min_allocator_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____Impl
-{
-    fn allocate ( &self , mut n : ()  , ) -> min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-        mut n: (),
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____Impl for Ptr<min_allocator_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____> {
-}
-pub trait min_allocator_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____Impl
-{
-    fn allocate ( &self , n : ()  , ) -> min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  ;
-    fn deallocate(
-        &self,
-        p : min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-        n: (),
-    );
-}
-impl min_allocator_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____Impl for Ptr<min_allocator_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____> {
-fn allocate ( &self , mut n : ()  , ) -> min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  { return min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
- } fn deallocate ( &self , mut p : min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  , mut n : ()  , ) { unimplemented!()  ;
  } }
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
@@ -990,75 +709,6 @@ impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_in
 fn to_ ( &self , ) -> ()  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
  } fn operator_index ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  > { return (* self ) .with(|__s| __s . ptr_ .clone()) . offset ( ( n ) as isize )   ;
  } }
-pub trait min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_(&self) -> ();
-    fn operator_deref ( &self , ) -> Ptr< std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >{
-        unimplemented!()
-    }
-    fn operator_arrow ( &self , ) -> Ptr< std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >  ;
-    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : ()  , ) -> min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : ()  , ) -> min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : ()  , ) -> min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : ()  , ) -> min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_index ( &self , mut n : ()  , ) -> Ptr< std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >{
-        unimplemented!()
-    }
-}
-impl min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__> {
-fn to_ ( &self , ) -> ()  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
- } fn operator_arrow ( &self , ) -> Ptr< std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >  { return (* self ) .with(|__s| __s . ptr_ .clone())   ;
- } }
-pub trait min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_(&self) -> ();
-    fn operator_deref(
-        &self,
-    ) -> Ptr<std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___>;
-    fn operator_arrow(
-        &self,
-    ) -> Ptr<std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___>;
-    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : ()  , ) -> min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : ()  , ) -> min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : ()  , ) -> min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : ()  , ) -> min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_index(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__> {
-fn to_ ( &self , ) -> ()  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
- } fn operator_deref ( &self , ) -> Ptr< std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___  > { return (* self ) .with(|__s| __s . ptr_ .clone())    ;
- } fn operator_arrow ( &self , ) -> Ptr< std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___  >  { return (* self ) .with(|__s| __s . ptr_ .clone())   ;
- } }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
@@ -1102,8 +752,8 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_8.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_8.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_6.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_6.with(|rc| *rc.borrow()));
     }
 }
 pub trait test_allocator_statisticsImpl {
@@ -1128,225 +778,6 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
-pub trait test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_> {
-        unimplemented!()
-    }
-    fn allocate(
-        &self,
-        mut n: (),
-        mut _a1: (),
-    ) -> Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__Impl
-    for Ptr<test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__>
-{
-}
-pub trait test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_Impl {
-    fn destructor(&self);
-    fn address_11(
-        &self,
-        x: (),
-    ) -> Ptr<Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>> {
-        unimplemented!()
-    }
-    fn address_12(
-        &self,
-        x: (),
-    ) -> Ptr<Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>> {
-        unimplemented!()
-    }
-    fn allocate(
-        &self,
-        n: (),
-        _a1: Option<()>,
-    ) -> Ptr<Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>>;
-    fn deallocate(
-        &self,
-        p: Ptr<Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>>,
-        s: (),
-    );
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_Impl
-    for Ptr<test_allocator_std___hash_node_base_std___hash_node_int__void_ptr__ptr__ptr_>
-{
-    fn destructor(&self) {
-        unimplemented!();
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
-        }
-        field!((*self), data_).write(destructed_value_8.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_8.with(|rc| *rc.borrow()));
-    }
-    fn allocate(
-        &self,
-        mut n: (),
-        _a1: Option<()>,
-    ) -> Ptr<Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>> {
-        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            if ({
-                (*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.time_to_throw)
-            } >= {
-                (*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.throw_after)
-            }) {
-                unimplemented!();
-            }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_add(n)
-            });
-        }
-        return unimplemented!();
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<Ptr<std___hash_node_base_std___hash_node_int__void_ptr__ptr_>>,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
-            field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_sub(s)
-            });
-        }
-        unimplemented!();
-    }
-}
-pub trait test_allocator_std___hash_node_int__void_ptr__Impl {
-    fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<std___hash_node_int__void_ptr_> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<std___hash_node_int__void_ptr_> {
-        unimplemented!()
-    }
-    fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<std___hash_node_int__void_ptr_>;
-    fn deallocate(&self, p: Ptr<std___hash_node_int__void_ptr_>, s: ());
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<std___hash_node_int__void_ptr_>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_int__void_ptr__Impl
-    for Ptr<test_allocator_std___hash_node_int__void_ptr__>
-{
-    fn destructor(&self) {
-        unimplemented!();
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
-        }
-        field!((*self), data_).write(destructed_value_8.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_8.with(|rc| *rc.borrow()));
-    }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<std___hash_node_int__void_ptr_> {
-        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            if ({
-                (*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.time_to_throw)
-            } >= {
-                (*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.throw_after)
-            }) {
-                unimplemented!();
-            }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_add(n)
-            });
-        }
-        return unimplemented!();
-    }
-    fn deallocate(&self, mut p: Ptr<std___hash_node_int__void_ptr_>, mut s: ()) {
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
-            field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_sub(s)
-            });
-        }
-        unimplemented!();
-    }
-}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();
@@ -1355,8 +786,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_8.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_8.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_6.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_6.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -1396,6 +827,6 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_2.with(|_| ());
     let _ = dealloc_count_3.with(|_| ());
     let _ = disable_default_constructor_4.with(|_| ());
-    let _ = destructed_value_8.with(|_| ());
-    let _ = moved_value_9.with(|_| ());
+    let _ = destructed_value_6.with(|_| ());
+    let _ = moved_value_7.with(|_| ());
 }

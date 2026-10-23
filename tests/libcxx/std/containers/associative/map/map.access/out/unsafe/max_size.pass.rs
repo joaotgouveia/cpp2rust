@@ -469,10 +469,6 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_1844674407
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_std_pair_const_int__int___10__rebind_std___tree_node_std___value_type_int__int___void_ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct limited_allocator_std_pair_const_int__int___10__rebind_std_pair_const_int__int__ {}
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
@@ -487,62 +483,6 @@ impl limited_allocator_std_pair_const_int__int___10_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___10__rebind_std___tree_node_base_void_ptr__
-{}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
-pub struct limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___10_ {
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___10_ {
-    pub unsafe fn new() -> Self {
-        let mut this = Self {
-            handle_: (unsafe { make_thread_unsafe_shared_5() }),
-        };
-        this
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___tree_node_std___value_type_int__int___void_ptr_,
-        mut n: (),
-    ) {
-        (unsafe {
-            limited_alloc_handle_10_ :: deallocate_2_class_std___tree_node_struct_std___value_type_int__int___void_ptr_ ( &mut ( * ( unsafe { detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ :: operator_arrow_7 ( &mut self . handle_   , ) } )   )  , p , n , )
-        });
-    }
-    pub unsafe fn max_size(&self) -> () {
-        return 10_();
-    }
-}
-impl limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___10_ {
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor(&mut self.handle_);
-    }
-}
-impl Default for limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___10_ {
-    fn default() -> Self {
-        unsafe {
-            limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___10_::new()
-        }
-    }
-}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
-pub struct limited_allocator_std___tree_node_base_void_ptr___10_ {
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___tree_node_base_void_ptr___10_ {}
-impl limited_allocator_std___tree_node_base_void_ptr___10_ {
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor(&mut self.handle_);
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_std_pair_const_int__int___18446744073709551615__rebind_std___tree_node_std___value_type_int__int___void_ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct limited_allocator_std_pair_const_int__int___18446744073709551615__rebind_std_pair_const_int__int__
 {}
 #[repr(C)]
@@ -552,61 +492,6 @@ pub struct limited_allocator_std_pair_const_int__int___18446744073709551615_ {
 }
 impl limited_allocator_std_pair_const_int__int___18446744073709551615_ {}
 impl limited_allocator_std_pair_const_int__int___18446744073709551615_ {
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::destructor(
-            &mut self.handle_,
-        );
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___18446744073709551615__rebind_std___tree_node_base_void_ptr__
-{}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
-pub struct limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___18446744073709551615_
-{
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl
-    limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___18446744073709551615_
-{
-    pub unsafe fn new() -> Self {
-        let mut this = Self {
-            handle_: (unsafe { make_thread_unsafe_shared_6() }),
-        };
-        this
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___tree_node_std___value_type_int__int___void_ptr_,
-        mut n: (),
-    ) {
-        (unsafe {
-            limited_alloc_handle_18446744073709551615_ :: deallocate_2_class_std___tree_node_struct_std___value_type_int__int___void_ptr_ ( &mut ( * ( unsafe { detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ :: operator_arrow_7 ( &mut self . handle_   , ) } )   )  , p , n , )
-        });
-    }
-    pub unsafe fn max_size(&self) -> () {
-        return 18446744073709551615_();
-    }
-}
-impl
-    limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___18446744073709551615_
-{
-    pub unsafe fn destructor(&mut self) {
-        detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::destructor(
-            &mut self.handle_,
-        );
-    }
-}
-impl Default for limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___18446744073709551615_ { fn default() -> Self { unsafe { limited_allocator_std___tree_node_std___value_type_int__int___void_ptr___18446744073709551615_ :: new ( )  } } }
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
-pub struct limited_allocator_std___tree_node_base_void_ptr___18446744073709551615_ {
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl limited_allocator_std___tree_node_base_void_ptr___18446744073709551615_ {}
-impl limited_allocator_std___tree_node_base_void_ptr___18446744073709551615_ {
     pub unsafe fn destructor(&mut self) {
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::destructor(
             &mut self.handle_,

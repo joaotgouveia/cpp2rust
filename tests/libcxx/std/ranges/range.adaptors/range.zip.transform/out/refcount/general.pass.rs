@@ -27,12 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let v1: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1({
-        unimplemented!()
-    })));
-    let v2: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1({
-        unimplemented!()
-    })));
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ztv: Value<()> = Rc::new(RefCell::new(
         ({
             let ___fun: Value<()> = Rc::new(RefCell::new(unimplemented!()));

@@ -450,7 +450,7 @@ pub unsafe fn test_21() -> () {
     }
     {
         let io: () = unimplemented!();
-        let imax: () = unimplemented!();
+        let imax: () = (unsafe { std_numeric_limits_int_::max() });
         unimplemented!();
     }
     {

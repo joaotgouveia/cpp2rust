@@ -1,0 +1,101 @@
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::cell::RefCell;
+use std::collections::BTreeMap;
+use std::io::prelude::*;
+use std::io::{Read, Seek, Write};
+use std::os::fd::AsFd;
+use std::rc::{Rc, Weak};
+pub type anon_0 = ();
+pub const anon_0_value: anon_0 = 1;
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_macros_detail_is_same_std_chrono_year_month__std_chrono_year_month_ {}
+pub fn test_ym_plus_y_1() -> () {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    'loop_: while ((*i.borrow()) <= 10_()) {
+        let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ym2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*i.borrow_mut()).prefix_inc();
+    }
+    return true;
+}
+pub fn test_ym_plus_m_2() -> () {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    {
+        let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let dm: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
+            std_chrono_duration_int__std_ratio_2629746__1__::new_1({ __tmp_0.as_pointer() })
+        }));
+        let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    'loop_: while ((*i.borrow()) <= 11_()) {
+        let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ym2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*i.borrow_mut()).prefix_inc();
+    }
+    let i: Value<()> = Rc::new(RefCell::new(12_()));
+    'loop_: while ((*i.borrow()) < 23_()) {
+        let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ym2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*i.borrow_mut()).prefix_inc();
+    }
+    return true;
+}
+pub fn test_3() -> () {
+    ({ test_ym_plus_y_1() });
+    ({ test_ym_plus_m_2() });
+    return true;
+}
+pub fn main() {
+    let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
+    let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
+    let args_ptr: Ptr<i8> = args.as_pointer();
+    let mut off = 0;
+    let argv: Value<Box<[Ptr<i8>]>> = Rc::new(RefCell::new(
+        ::std::env::args()
+            .map(|arg| {
+                let ptr = args_ptr.offset(off);
+                ptr.write_c_bytes(arg.as_bytes());
+                off += arg.len() + 1;
+                ptr
+            })
+            .chain(::std::iter::once(Ptr::null()))
+            .collect(),
+    ));
+    __cpp2rust_init_globals();
+    ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
+}
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_3() });
+    const _: () = assert!(true, "test()");;
+    return 0_();
+}
+pub fn __cpp2rust_init_globals() {}

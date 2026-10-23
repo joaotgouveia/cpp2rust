@@ -7,11 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn swap_0(x: Ptr<ADLSwap>, y: Ptr<ADLSwap>) {
-    ({
-        let ___x: Ptr<()> = field_ptr!(x, i);
-        let ___y: Ptr<()> = field_ptr!(y, i);
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
     field!(x, adlSwapCalled).write(true);
     field!(y, adlSwapCalled).write(true);
 }
@@ -55,7 +51,7 @@ impl MoveOnlyErrorType {
         Self {}
     }
 }
-pub fn operator_eq_2(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) -> () {
+pub fn operator_eq_1(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) -> () {
     return ({ _a0.with(|__s| __s.b) } == { _a1.with(|__s| __s.b) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
@@ -74,7 +70,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_2(
+            operator_eq_1(
                 Rc::new(RefCell::new(TailClobberer_0_ { b: self.b.clone() })).as_pointer(),
                 Rc::new(RefCell::new(TailClobberer_0_ { b: other.b.clone() })).as_pointer(),
             )
@@ -82,7 +78,7 @@ impl std::cmp::PartialEq for TailClobberer_0_ {
     }
 }
 impl std::cmp::Eq for TailClobberer_0_ {}
-pub fn operator_eq_3(_a0: Ptr<TailClobberer_1_>, _a1: Ptr<TailClobberer_1_>) -> () {
+pub fn operator_eq_2(_a0: Ptr<TailClobberer_1_>, _a1: Ptr<TailClobberer_1_>) -> () {
     return ({ _a0.with(|__s| __s.b) } == { _a1.with(|__s| __s.b) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor)]
@@ -101,7 +97,7 @@ impl TailClobberer_1_ {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 2usize;
-                memset_4(___s, 1_(), ___n)
+                memset_3(___s, 1_(), ___n)
             });
         }
         field!(this, b).write(false);
@@ -116,7 +112,7 @@ impl TailClobberer_1_ {
 impl std::cmp::PartialEq for TailClobberer_1_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_3(
+            operator_eq_2(
                 Rc::new(RefCell::new(TailClobberer_1_ { b: self.b.clone() })).as_pointer(),
                 Rc::new(RefCell::new(TailClobberer_1_ { b: other.b.clone() })).as_pointer(),
             )
@@ -184,7 +180,7 @@ impl BoolWithPadding {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 8usize;
-                memset_4(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         field!(this, val_).write(val);
@@ -231,7 +227,7 @@ impl IntWithoutPadding {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 4usize;
-                memset_4(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         field!(this, val_).write(val);
@@ -277,7 +273,7 @@ pub struct Foo {}
 const _: () = assert!(!(false), "!HasValueNoexcept<Foo>");
 const _: () = assert!(true, "HasValueNoexcept<std::expected<int, int>>");
 const _: () = assert!(true, "HasValueNoexcept<const std::expected<int, int>>");
-pub fn test_5() -> () {
+pub fn test_4() -> () {
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -313,7 +309,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_5() });
+    ({ test_4() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -854,10 +854,10 @@ pub fn basic_gcd__57(mut m: (), mut n: ()) -> () {
 }
 pub fn basic_gcd_58(mut m: (), mut n: ()) -> () {
     {
-        if (m < 0_()) && (m != unimplemented!()) {
+        if (m < 0_()) && (m != ({ std_numeric_limits_signed_char_::min() })) {
             m = { -m };
         }
-        if (n < 0_()) && (n != unimplemented!()) {
+        if (n < 0_()) && (n != ({ std_numeric_limits_signed_char_::min() })) {
             n = { -n };
         }
     }
@@ -865,10 +865,10 @@ pub fn basic_gcd_58(mut m: (), mut n: ()) -> () {
 }
 pub fn basic_gcd_59(mut m: (), mut n: ()) -> () {
     {
-        if (m < 0_()) && (m != unimplemented!()) {
+        if (m < 0_()) && (m != ({ std_numeric_limits_short_::min() })) {
             m = { -m };
         }
-        if (n < 0_()) && (n != unimplemented!()) {
+        if (n < 0_()) && (n != ({ std_numeric_limits_short_::min() })) {
             n = { -n };
         }
     }
@@ -876,10 +876,10 @@ pub fn basic_gcd_59(mut m: (), mut n: ()) -> () {
 }
 pub fn basic_gcd_60(mut m: (), mut n: ()) -> () {
     {
-        if (m < 0_()) && (m != unimplemented!()) {
+        if (m < 0_()) && (m != ({ std_numeric_limits_int_::min() })) {
             m = { -m };
         }
-        if (n < 0_()) && (n != unimplemented!()) {
+        if (n < 0_()) && (n != ({ std_numeric_limits_int_::min() })) {
             n = { -n };
         }
     }
@@ -887,10 +887,10 @@ pub fn basic_gcd_60(mut m: (), mut n: ()) -> () {
 }
 pub fn basic_gcd_61(mut m: (), mut n: ()) -> () {
     {
-        if (m < 0_()) && (m != unimplemented!()) {
+        if (m < 0_()) && (m != ({ std_numeric_limits_long_::min() })) {
             m = { -m };
         }
-        if (n < 0_()) && (n != unimplemented!()) {
+        if (n < 0_()) && (n != ({ std_numeric_limits_long_::min() })) {
             n = { -n };
         }
     }
@@ -914,7 +914,7 @@ pub fn basic_gcd_65(mut m: (), mut n: ()) -> () {
 }
 pub fn do_fuzzy_tests_66() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut max_input: () = unimplemented!();
+    let mut max_input: () = ({ std_numeric_limits_signed_char_::max() });
     let distrib: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -927,7 +927,7 @@ pub fn do_fuzzy_tests_66() {
 }
 pub fn do_fuzzy_tests_67() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut max_input: () = unimplemented!();
+    let mut max_input: () = ({ std_numeric_limits_short_::max() });
     let distrib: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -940,7 +940,7 @@ pub fn do_fuzzy_tests_67() {
 }
 pub fn do_fuzzy_tests_68() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut max_input: () = unimplemented!();
+    let mut max_input: () = ({ std_numeric_limits_int_::max() });
     let distrib: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -953,7 +953,7 @@ pub fn do_fuzzy_tests_68() {
 }
 pub fn do_fuzzy_tests_69() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut max_input: () = unimplemented!();
+    let mut max_input: () = ({ std_numeric_limits_long_::max() });
     let distrib: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -966,7 +966,7 @@ pub fn do_fuzzy_tests_69() {
 }
 pub fn do_fuzzy_tests_70() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut max_input: () = unimplemented!();
+    let mut max_input: () = ({ std_numeric_limits_unsigned_char_::max() });
     let distrib: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -979,7 +979,7 @@ pub fn do_fuzzy_tests_70() {
 }
 pub fn do_fuzzy_tests_71() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut max_input: () = unimplemented!();
+    let mut max_input: () = ({ std_numeric_limits_unsigned_short_::max() });
     let distrib: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -992,7 +992,7 @@ pub fn do_fuzzy_tests_71() {
 }
 pub fn do_fuzzy_tests_72() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut max_input: () = unimplemented!();
+    let mut max_input: () = ({ std_numeric_limits_unsigned_int_::max() });
     let distrib: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -1005,7 +1005,7 @@ pub fn do_fuzzy_tests_72() {
 }
 pub fn do_fuzzy_tests_73() {
     let gen_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut max_input: () = unimplemented!();
+    let mut max_input: () = ({ std_numeric_limits_unsigned_long_::max() });
     let distrib: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -1018,17 +1018,17 @@ pub fn do_fuzzy_tests_73() {
 }
 pub fn do_limit_tests_74() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!()
+        (({ std_numeric_limits_signed_char_::min() })
             + (if value_75.with(|rc| *rc.borrow()) {
                 3_()
             } else {
                 0_()
             })),
-        (unimplemented!() + 1_()),
-        (unimplemented!() + 2_()),
-        unimplemented!(),
-        (unimplemented!() - 1_()),
-        (unimplemented!() - 2_()),
+        (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+        (({ std_numeric_limits_signed_char_::min() }) + 2_()),
+        ({ std_numeric_limits_signed_char_::max() }),
+        (({ std_numeric_limits_signed_char_::max() }) - 1_()),
+        (({ std_numeric_limits_signed_char_::max() }) - 2_()),
         0_(),
         1_(),
         2_(),
@@ -1067,17 +1067,17 @@ pub fn do_limit_tests_74() {
 }
 pub fn do_limit_tests_76() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!()
+        (({ std_numeric_limits_short_::min() })
             + (if value_75.with(|rc| *rc.borrow()) {
                 3_()
             } else {
                 0_()
             })),
-        (unimplemented!() + 1_()),
-        (unimplemented!() + 2_()),
-        unimplemented!(),
-        (unimplemented!() - 1_()),
-        (unimplemented!() - 2_()),
+        (({ std_numeric_limits_short_::min() }) + 1_()),
+        (({ std_numeric_limits_short_::min() }) + 2_()),
+        ({ std_numeric_limits_short_::max() }),
+        (({ std_numeric_limits_short_::max() }) - 1_()),
+        (({ std_numeric_limits_short_::max() }) - 2_()),
         0_(),
         1_(),
         2_(),
@@ -1116,17 +1116,17 @@ pub fn do_limit_tests_76() {
 }
 pub fn do_limit_tests_77() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!()
+        (({ std_numeric_limits_int_::min() })
             + (if value_75.with(|rc| *rc.borrow()) {
                 3_()
             } else {
                 0_()
             })),
-        (unimplemented!() + 1_()),
-        (unimplemented!() + 2_()),
-        unimplemented!(),
-        (unimplemented!() - 1_()),
-        (unimplemented!() - 2_()),
+        (({ std_numeric_limits_int_::min() }) + 1_()),
+        (({ std_numeric_limits_int_::min() }) + 2_()),
+        ({ std_numeric_limits_int_::max() }),
+        (({ std_numeric_limits_int_::max() }) - 1_()),
+        (({ std_numeric_limits_int_::max() }) - 2_()),
         0_(),
         1_(),
         2_(),
@@ -1165,17 +1165,17 @@ pub fn do_limit_tests_77() {
 }
 pub fn do_limit_tests_78() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!()
+        (({ std_numeric_limits_long_::min() })
             + (if value_75.with(|rc| *rc.borrow()) {
                 3_()
             } else {
                 0_()
             })),
-        (unimplemented!() + 1_()),
-        (unimplemented!() + 2_()),
-        unimplemented!(),
-        (unimplemented!() - 1_()),
-        (unimplemented!() - 2_()),
+        (({ std_numeric_limits_long_::min() }) + 1_()),
+        (({ std_numeric_limits_long_::min() }) + 2_()),
+        ({ std_numeric_limits_long_::max() }),
+        (({ std_numeric_limits_long_::max() }) - 1_()),
+        (({ std_numeric_limits_long_::max() }) - 2_()),
         0_(),
         1_(),
         2_(),
@@ -1214,17 +1214,17 @@ pub fn do_limit_tests_78() {
 }
 pub fn do_limit_tests_79() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!()
+        (({ std_numeric_limits_unsigned_char_::min() })
             + (if value_80.with(|rc| *rc.borrow()) {
                 3_()
             } else {
                 0_()
             })),
-        (unimplemented!() + 1_()),
-        (unimplemented!() + 2_()),
-        unimplemented!(),
-        (unimplemented!() - 1_()),
-        (unimplemented!() - 2_()),
+        (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+        (({ std_numeric_limits_unsigned_char_::min() }) + 2_()),
+        ({ std_numeric_limits_unsigned_char_::max() }),
+        (({ std_numeric_limits_unsigned_char_::max() }) - 1_()),
+        (({ std_numeric_limits_unsigned_char_::max() }) - 2_()),
         0_(),
         1_(),
         2_(),
@@ -1263,17 +1263,17 @@ pub fn do_limit_tests_79() {
 }
 pub fn do_limit_tests_81() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!()
+        (({ std_numeric_limits_unsigned_short_::min() })
             + (if value_80.with(|rc| *rc.borrow()) {
                 3_()
             } else {
                 0_()
             })),
-        (unimplemented!() + 1_()),
-        (unimplemented!() + 2_()),
-        unimplemented!(),
-        (unimplemented!() - 1_()),
-        (unimplemented!() - 2_()),
+        (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+        (({ std_numeric_limits_unsigned_short_::min() }) + 2_()),
+        ({ std_numeric_limits_unsigned_short_::max() }),
+        (({ std_numeric_limits_unsigned_short_::max() }) - 1_()),
+        (({ std_numeric_limits_unsigned_short_::max() }) - 2_()),
         0_(),
         1_(),
         2_(),
@@ -1312,18 +1312,18 @@ pub fn do_limit_tests_81() {
 }
 pub fn do_limit_tests_82() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() as ()).wrapping_add(
+        (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(
             (if value_80.with(|rc| *rc.borrow()) {
                 3_()
             } else {
                 0_()
             }),
         ),
-        (unimplemented!() as ()).wrapping_add(1_()),
-        (unimplemented!() as ()).wrapping_add(2_()),
-        unimplemented!(),
-        (unimplemented!() as ()).wrapping_sub(1_()),
-        (unimplemented!() as ()).wrapping_sub(2_()),
+        (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+        (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(2_()),
+        ({ std_numeric_limits_unsigned_int_::max() }),
+        (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_()),
+        (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(2_()),
         0_(),
         1_(),
         2_(),
@@ -1362,18 +1362,18 @@ pub fn do_limit_tests_82() {
 }
 pub fn do_limit_tests_83() {
     let inputs: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        (unimplemented!() as ()).wrapping_add(
+        (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(
             (if value_80.with(|rc| *rc.borrow()) {
                 3_()
             } else {
                 0_()
             }),
         ),
-        (unimplemented!() as ()).wrapping_add(1_()),
-        (unimplemented!() as ()).wrapping_add(2_()),
-        unimplemented!(),
-        (unimplemented!() as ()).wrapping_sub(1_()),
-        (unimplemented!() as ()).wrapping_sub(2_()),
+        (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+        (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(2_()),
+        ({ std_numeric_limits_unsigned_long_::max() }),
+        (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_()),
+        (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(2_()),
         0_(),
         1_(),
         2_(),

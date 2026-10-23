@@ -194,9 +194,6 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_int__rebind_std___tree_node_int__void_ptr__ {}
-#[repr(C)]
 #[derive(FnPtrArg)]
 pub struct test_allocator_int_ {
     data_: (),
@@ -208,83 +205,6 @@ impl Default for test_allocator_int_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___tree_node_int__void_ptr___rebind_std___tree_node_base_void_ptr__ {
-}
-#[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std___tree_node_int__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_int__void_ptr__ {
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
-    }
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-        mut _a1: Option<()>,
-    ) -> *mut std___tree_node_int__void_ptr_ {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut std___tree_node_int__void_ptr_, mut s: ()) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Default for test_allocator_std___tree_node_int__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_int__void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___tree_node_base_void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_base_void_ptr__ {}
-impl Default for test_allocator_std___tree_node_base_void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_base_void_ptr__ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
                 stats_: std::ptr::null_mut(),
@@ -349,26 +269,6 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: *mut (),
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    pub unsafe fn new_1(
-        mut p : min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    ) -> Self {
-        let mut this = Self {
-            ptr_: (p.ptr_ as ()),
-        };
-        this
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    pub unsafe fn new_2(
-        mut p : min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    ) -> Self {
-        let mut this = Self {
-            ptr_: (p.ptr_ as ()),
-        };
-        this
-    }
-}
 pub unsafe fn operator_eq_10(
     mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
@@ -387,102 +287,49 @@ impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_lo
     }
 }
 impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_11(
-    mut x : min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__
-{
-    ptr_: *mut std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___,
-}
-impl min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_11(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_12(
-    mut x : min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_13(
-    mut x : min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  = x ;
-        operator_eq_12(_x, y)
-    });
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__
-{
-    ptr_: *mut std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0___,
-}
-impl min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_12(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_14(
-    mut x : min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_14(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___tree_end_node_min_pointer_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-impl
-    min_allocator_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{
-    pub unsafe fn allocate ( &mut self , mut n : () , ) -> min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        return min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p : min_pointer_std___tree_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
+pub unsafe fn test0_11(
+    mut s: (),
+    mut p: FnPtr<Generic>,
+    mut expected: (),
+    mut expected_erased_count: (),
+) {
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___tree_node_base_min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+pub unsafe fn test0_12(
+    mut s: (),
+    mut p: FnPtr<Generic>,
+    mut expected: (),
+    mut expected_erased_count: (),
+) {
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test0_13(
+    mut s: (),
+    mut p: FnPtr<Generic>,
+    mut expected: (),
+    mut expected_erased_count: (),
+) {
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test0_14(
+    mut s: (),
+    mut p: FnPtr<Generic>,
+    mut expected: (),
+    mut expected_erased_count: (),
+) {
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test0_15(
     mut s: (),
     mut p: FnPtr<Generic>,
@@ -743,45 +590,133 @@ pub unsafe fn test0_40(
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test0_41(
-    mut s: (),
-    mut p: FnPtr<Generic>,
-    mut expected: (),
-    mut expected_erased_count: (),
-) {
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_41() {
+    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (1_()));
+    });
+    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (2_()));
+    });
+    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (3_()));
+    });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (4_()));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return false;
+    });
+    (unsafe { test0_11(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_12(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_12(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_12(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_14(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_16(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
-pub unsafe fn test0_42(
-    mut s: (),
-    mut p: FnPtr<Generic>,
-    mut expected: (),
-    mut expected_erased_count: (),
-) {
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_42() {
+    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (1_()));
+    });
+    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (2_()));
+    });
+    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (3_()));
+    });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (4_()));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return false;
+    });
+    (unsafe { test0_17(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_18(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_18(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_19(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_18(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_19(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_20(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_21(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_22(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
-pub unsafe fn test0_43(
-    mut s: (),
-    mut p: FnPtr<Generic>,
-    mut expected: (),
-    mut expected_erased_count: (),
-) {
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_43() {
+    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (1_()));
+    });
+    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (2_()));
+    });
+    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (3_()));
+    });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (4_()));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return false;
+    });
+    (unsafe { test0_23(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_23(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_24(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_23(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_24(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_25(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_23(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_24(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_25(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_26(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_27(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_28(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
-pub unsafe fn test0_44(
-    mut s: (),
-    mut p: FnPtr<Generic>,
-    mut expected: (),
-    mut expected_erased_count: (),
-) {
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_44() {
+    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (1_()));
+    });
+    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (2_()));
+    });
+    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (3_()));
+    });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
+        return ((v) == (4_()));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
+        return false;
+    });
+    (unsafe { test0_29(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_29(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_30(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_29(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_30(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_31(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_29(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_30(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_31(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_32(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_33(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_34(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test_45() {
     let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
@@ -802,153 +737,25 @@ pub unsafe fn test_45() {
     let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
         return false;
     });
-    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_17(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_15(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_16(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_17(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_18(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_19(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_20(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_35(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_35(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_36(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_35(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_36(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_37(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_35(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_36(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_37(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
+    (unsafe { test0_38(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
+    (unsafe { test0_39(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
+    (unsafe { test0_40(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
 }
-pub unsafe fn test_46() {
-    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (1_()));
-    });
-    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (2_()));
-    });
-    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (3_()));
-    });
-    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (4_()));
-    });
-    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return true;
-    });
-    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return false;
-    });
-    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_23(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_21(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_22(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_23(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_24(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_25(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_26(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
-}
-pub unsafe fn test_47() {
-    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (1_()));
-    });
-    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (2_()));
-    });
-    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (3_()));
-    });
-    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (4_()));
-    });
-    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return true;
-    });
-    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return false;
-    });
-    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_29(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_28(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_29(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_30(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_31(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_32(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
-}
-pub unsafe fn test_48() {
-    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (1_()));
-    });
-    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (2_()));
-    });
-    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (3_()));
-    });
-    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (4_()));
-    });
-    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return true;
-    });
-    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return false;
-    });
-    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_35(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_33(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_34(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_35(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_36(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_37(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_38(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
-}
-pub unsafe fn test_49() {
-    let mut is1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (1_()));
-    });
-    let mut is2: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (2_()));
-    });
-    let mut is3: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (3_()));
-    });
-    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: ()| -> () {
-        return ((v) == (4_()));
-    });
-    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return true;
-    });
-    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut _a0: ()| -> () {
-        return false;
-    });
-    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_41(unimplemented!(), is3.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_39(unimplemented!(), is1.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_40(unimplemented!(), is2.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_41(unimplemented!(), is3.copy_from(), unimplemented!(), 1_()) });
-    (unsafe { test0_42(unimplemented!(), is4.copy_from(), unimplemented!(), 0_()) });
-    (unsafe { test0_43(unimplemented!(), True.copy_from(), unimplemented!(), 3_()) });
-    (unsafe { test0_44(unimplemented!(), False.copy_from(), unimplemented!(), 0_()) });
-}
-pub unsafe fn test_50() -> () {
+pub unsafe fn test_46() -> () {
+    (unsafe { test_41() });
+    (unsafe { test_42() });
+    (unsafe { test_43() });
+    (unsafe { test_44() });
     (unsafe { test_45() });
-    (unsafe { test_46() });
-    (unsafe { test_47() });
-    (unsafe { test_48() });
-    (unsafe { test_49() });
     return true;
 }
 pub fn main() {
@@ -967,7 +774,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_50() });
+    (unsafe { test_46() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

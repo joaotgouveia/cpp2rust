@@ -736,13 +736,21 @@ const _: () = assert!(
 );
 pub unsafe fn test_6() -> () {
     {
-        let p: () = unimplemented!();
+        let p: () = {
+            let mut __tmp_0: () = 1_();
+            let mut __tmp_1: () = 2_();
+            std_pair_ConstMove__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
         let mut t: () = p;
         unimplemented!();
         unimplemented!();
     }
     {
-        let p: () = unimplemented!();
+        let p: () = {
+            let mut __tmp_2: () = 1_();
+            let mut __tmp_3: () = 2_();
+            std_pair_ConstMove__int_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
+        };
         let mut t: () =
             std_tuple_ExplicitConstructibleFrom_ConstMove___ExplicitConstructibleFrom_int__::new({
                 &p

@@ -149,10 +149,14 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_4(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == ({ std_numeric_limits_int_::min() }))
+        || (rhs.value == ({ std_numeric_limits_int_::min() }))
+    {
         return unimplemented!();
     }
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == ({ std_numeric_limits_int_::max() }))
+        || (rhs.value == ({ std_numeric_limits_int_::max() }))
+    {
         return unimplemented!();
     }
     return unimplemented!();
@@ -365,8 +369,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let val: Value<X> = Rc::new(RefCell::new(X::new({ 2_() })));
         let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let o2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let o3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let o2: Value<()> = Rc::new(RefCell::new(1_()));
+        let o3: Value<()> = Rc::new(RefCell::new(std_optional_X_::new_1({ val.as_pointer() })));
         const _: () = assert!(true, "!(o1 >= T(1))");;
         const _: () = assert!(true, "(o2 >= T(1))");;
         const _: () = assert!(true, "(o3 >= T(1))");;
@@ -381,12 +385,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "(T(3) >= o3)");;
     }
     {
-        let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let o1: Value<()> = Rc::new(RefCell::new(42_()));
         const _: () = assert!(true, "o1 >= 42l");;
         const _: () = assert!(true, "!(11l >= o1)");;
     }
     {
-        let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let o1: Value<()> = Rc::new(RefCell::new(42_()));
         const _: () = assert!(true, "o1 >= 42");;
         const _: () = assert!(true, "!(11 >= o1)");;
     }

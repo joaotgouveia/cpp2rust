@@ -38,7 +38,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut ret: () = (unsafe { get_temporary_buffer_0(unimplemented!()) });
+        let mut ret: () =
+            (unsafe { get_temporary_buffer_0((unsafe { std_numeric_limits_long_::min() })) });
         unimplemented!();
         unimplemented!();
     }

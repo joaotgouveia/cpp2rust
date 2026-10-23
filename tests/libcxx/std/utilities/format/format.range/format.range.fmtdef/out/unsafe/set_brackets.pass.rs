@@ -120,7 +120,7 @@ pub unsafe fn test_setter_4() {
             })
         });
         (unsafe {
-            let mut ___range: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
+            let mut ___range: () = unimplemented!();
             ( formatter as std___range_default_formatter_std_range_format_sequence__std_vector_int__std_allocator_int____char_ ) . format  ( & mut ___range , & mut format_ctx , )
         });
         unimplemented!();
@@ -147,7 +147,7 @@ pub unsafe fn test_setter_6() {
             })
         });
         (unsafe {
-            let mut ___range: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
+            let mut ___range: () = unimplemented!();
             ( formatter as std___range_default_formatter_std_range_format_sequence__std_vector_int__std_allocator_int____wchar_t_ ) . format  ( & mut ___range , & mut format_ctx , )
         });
         unimplemented!();

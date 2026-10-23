@@ -256,14 +256,6 @@ pub struct __gnu_test_semaphore {
     pid_: ::libc::pid_t,
 }
 impl __gnu_test_semaphore {}
-impl Alloc_int_ {
-    pub unsafe fn new_1(a: Alloc_std___detail__Hash_node_int__false__) -> Self {
-        let mut this = Self {
-            id: unimplemented!(),
-        };
-        this
-    }
-}
 pub unsafe fn operator_eq_10(a: *const Alloc_int_, a2: *const Alloc_int_) -> () {
     return unimplemented!();
 }
@@ -280,7 +272,7 @@ pub struct Alloc_int_ {
     pub id: (),
 }
 impl Alloc_int_ {
-    pub unsafe fn new_2(mut identity: ()) -> Self {
+    pub unsafe fn new(mut identity: ()) -> Self {
         let mut this = Self {
             id: (unsafe { make_shared_12(&mut identity) }),
         };
@@ -293,64 +285,6 @@ impl std::cmp::PartialEq for Alloc_int_ {
     }
 }
 impl std::cmp::Eq for Alloc_int_ {}
-impl Alloc_std___detail__Hash_node_int__false__ {
-    pub unsafe fn new_1(a: Alloc_int_) -> Self {
-        let mut this = Self {
-            id: unimplemented!(),
-        };
-        this
-    }
-}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct Alloc_std___detail__Hash_node_int__false__ {
-    pub id: (),
-}
-impl Alloc_std___detail__Hash_node_int__false__ {
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut std___detail__Hash_node_int__false_ {
-        return (unsafe {
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_int__false__)
-                .allocate(n, None)
-        });
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___detail__Hash_node_int__false_,
-        mut n: (),
-    ) {
-        (unsafe {
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_int__false__)
-                .deallocate(p, n)
-        });
-    }
-}
-impl Alloc_std___detail__Hash_node_base_ptr_ {
-    pub unsafe fn new_1(a: Alloc_std___detail__Hash_node_int__false__) -> Self {
-        let mut this = Self {
-            id: unimplemented!(),
-        };
-        this
-    }
-}
-#[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, Default)]
-pub struct Alloc_std___detail__Hash_node_base_ptr_ {
-    pub id: (),
-}
-impl Alloc_std___detail__Hash_node_base_ptr_ {
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut *mut std___detail__Hash_node_base {
-        return (unsafe {
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_base_ptr_)
-                .allocate(n, None)
-        });
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut *mut std___detail__Hash_node_base, mut n: ()) {
-        (unsafe {
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_base_ptr_)
-                .deallocate(p, n)
-        });
-    }
-}
 pub unsafe fn test_node_ops_13() {
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
@@ -809,7 +743,7 @@ pub unsafe fn test_node_ops_13() {
     }
 }
 pub unsafe fn test_alloc_lifetime_15() {
-    let mut a: Alloc_int_ = Alloc_int_::new_2({ 1_() });
+    let mut a: Alloc_int_ = Alloc_int_::new({ 1_() });
     let mut s: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

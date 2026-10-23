@@ -324,8 +324,12 @@ pub fn make_thread_unsafe_shared_14() -> detail_thread_unsafe_shared_ptr_limited
     );
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ptr.borrow_mut()).block = unimplemented!();
-    unimplemented!();
+    (*ptr.borrow_mut()).block = ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_96___control_block__::allocate ( alloc .as_pointer()  , 1_()  , )
+    });
+    ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_96___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
+    });
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_96__::copy_from({
         ptr.as_pointer()
     });
@@ -421,7 +425,7 @@ pub fn test_15(s: (), mut str: Ptr<()>, mut pos: (), mut n: (), mut expected: ()
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut str_len: () = unimplemented!();
     if (pos <= str_len) {
-        ({ (*s.borrow()).append_72((str).clone(), pos, n) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -431,7 +435,7 @@ pub fn test_16(s: (), mut str: Ptr<()>, mut pos: (), mut n: (), mut expected: ()
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut str_len: () = unimplemented!();
     if (pos <= str_len) {
-        ({ (*s.borrow()).append_72((str).clone(), pos, n) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -441,7 +445,7 @@ pub fn test_17(s: (), mut str: Ptr<()>, mut pos: (), mut n: (), mut expected: ()
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut str_len: () = unimplemented!();
     if (pos <= str_len) {
-        ({ (*s.borrow()).append_72((str).clone(), pos, n) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -451,7 +455,7 @@ pub fn test_18(s: (), mut str: Ptr<()>, mut pos: (), mut n: (), mut expected: ()
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut str_len: () = unimplemented!();
     if (pos <= str_len) {
-        ({ (*s.borrow()).append_72((str).clone(), pos, n) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1588,8 +1592,12 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_96__Impl
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_96___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
+        });
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_96___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_()  , )
+        });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_96_> {
         return (field_ptr!((*self).with(|__s| __s.block.clone()), content));

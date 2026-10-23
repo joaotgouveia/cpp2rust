@@ -349,9 +349,6 @@ impl Default for test_allocator_void_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_MoveOnly__rebind_std___hash_node_MoveOnly__void_ptr__ {}
-#[repr(C)]
 #[derive(FnPtrArg)]
 pub struct test_allocator_MoveOnly_ {
     data_: (),
@@ -371,71 +368,6 @@ impl Default for test_allocator_MoveOnly_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___hash_node_MoveOnly__void_ptr___rebind_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___hash_node_MoveOnly__void_ptr___rebind_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_
-{}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___hash_node_MoveOnly__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___hash_node_MoveOnly__void_ptr__ {}
-impl Default for test_allocator_std___hash_node_MoveOnly__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___hash_node_MoveOnly__void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {}
-impl Default for test_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {}
-impl Default for test_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct other_allocator_MoveOnly_ {
     data_: (),
@@ -445,53 +377,6 @@ impl Default for other_allocator_MoveOnly_ {
     fn default() -> Self {
         unsafe {
             other_allocator_MoveOnly_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___hash_node_MoveOnly__void_ptr__ {
-    data_: (),
-}
-impl other_allocator_std___hash_node_MoveOnly__void_ptr__ {}
-impl Default for other_allocator_std___hash_node_MoveOnly__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___hash_node_MoveOnly__void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {
-    data_: (),
-}
-impl other_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {}
-impl Default for other_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {
-    data_: (),
-}
-impl other_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {}
-impl Default
-    for other_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_
-{
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {
                 data_: unimplemented!(),
             }
         }
@@ -545,48 +430,12 @@ pub struct some_alloc_MoveOnly_ {}
 impl some_alloc_MoveOnly_ {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
-pub struct some_alloc_std___hash_node_MoveOnly__void_ptr__ {}
-impl some_alloc_std___hash_node_MoveOnly__void_ptr__ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {}
-impl some_alloc_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {}
-impl some_alloc_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
 pub struct some_alloc2_MoveOnly_ {}
 impl some_alloc2_MoveOnly_ {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
-pub struct some_alloc2_std___hash_node_MoveOnly__void_ptr__ {}
-impl some_alloc2_std___hash_node_MoveOnly__void_ptr__ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc2_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {}
-impl some_alloc2_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc2_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {}
-impl some_alloc2_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
 pub struct some_alloc3_MoveOnly_ {}
 impl some_alloc3_MoveOnly_ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc3_std___hash_node_MoveOnly__void_ptr__ {}
-impl some_alloc3_std___hash_node_MoveOnly__void_ptr__ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc3_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {}
-impl some_alloc3_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ {}
-#[repr(C)]
-#[derive(FnPtrArg, Default)]
-pub struct some_alloc3_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {}
-impl some_alloc3_std___hash_node_base_std___hash_node_MoveOnly__void_ptr__ptr__ptr_ {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

@@ -303,75 +303,27 @@ impl __gnu_test_uneq_allocator_base {
         return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_map_14));
     }
 }
-impl __gnu_test_SimpleAllocator_T_ {
-    pub unsafe fn new_1(_a0: *const __gnu_test_SimpleAllocator_std__List_node_T__) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct __gnu_test_SimpleAllocator_T_ {}
 impl __gnu_test_SimpleAllocator_T_ {
-    pub unsafe fn new_2() -> Self {
+    pub unsafe fn new() -> Self {
         let mut this = Self {};
         this
     }
 }
 impl Default for __gnu_test_SimpleAllocator_T_ {
     fn default() -> Self {
-        unsafe { __gnu_test_SimpleAllocator_T_::new_2() }
+        unsafe { __gnu_test_SimpleAllocator_T_::new() }
     }
 }
-impl __gnu_test_SimpleAllocator_std__List_node_T__ {
-    pub unsafe fn new_1(_a0: *const __gnu_test_SimpleAllocator_T_) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct __gnu_test_SimpleAllocator_std__List_node_T__ {}
-impl __gnu_test_SimpleAllocator_std__List_node_T__ {
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut std__List_node_T_ {
-        return (unsafe {
-            (unimplemented!() as std___new_allocator_std__List_node_T__).allocate(n, None)
-        });
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut std__List_node_T_, mut n: ()) {
-        (unsafe { (unimplemented!() as std___new_allocator_std__List_node_T__).deallocate(p, n) });
-    }
-}
-impl std::cmp::PartialEq for __gnu_test_SimpleAllocator_std__List_node_T__ {
-    fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            operator_eq_15(
-                self as *const __gnu_test_SimpleAllocator_std__List_node_T__,
-                other as *const __gnu_test_SimpleAllocator_std__List_node_T__,
-            )
-        }
-    }
-}
-impl std::cmp::Eq for __gnu_test_SimpleAllocator_std__List_node_T__ {}
 pub unsafe fn operator_eq_15(
-    _a0: *const __gnu_test_SimpleAllocator_std__List_node_T__,
-    _a1: *const __gnu_test_SimpleAllocator_std__List_node_T__,
-) -> () {
-    return true;
-}
-pub unsafe fn operator_ne_16(
-    _a0: *const __gnu_test_SimpleAllocator_std__List_node_T__,
-    _a1: *const __gnu_test_SimpleAllocator_std__List_node_T__,
-) -> () {
-    return false;
-}
-pub unsafe fn operator_eq_17(
     mut _a0: __gnu_test_NullablePointer_void_,
     mut _a1: __gnu_test_NullablePointer_void_,
 ) -> () {
     return true;
 }
-pub unsafe fn operator_ne_18(
+pub unsafe fn operator_ne_16(
     mut _a0: __gnu_test_NullablePointer_void_,
     mut _a1: __gnu_test_NullablePointer_void_,
 ) -> () {
@@ -395,7 +347,7 @@ impl __gnu_test_NullablePointer_void_ {
 }
 impl std::cmp::PartialEq for __gnu_test_NullablePointer_void_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self.clone(), other.clone()) }
+        unsafe { operator_eq_15(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for __gnu_test_NullablePointer_void_ {}
@@ -443,9 +395,9 @@ pub struct T {
 impl std::cmp::Ord for T {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_19(self as *const T, other as *const T) {
+            if operator_lt_17(self as *const T, other as *const T) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_19(other as *const T, self as *const T) {
+            } else if operator_lt_17(other as *const T, self as *const T) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -460,17 +412,17 @@ impl std::cmp::PartialOrd for T {
 }
 impl std::cmp::PartialEq for T {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_20(self as *const T, other as *const T) }
+        unsafe { operator_eq_18(self as *const T, other as *const T) }
     }
 }
 impl std::cmp::Eq for T {}
-pub unsafe fn operator_eq_20(l: *const T, r: *const T) -> () {
+pub unsafe fn operator_eq_18(l: *const T, r: *const T) -> () {
     return (((*l).i) == ((*r).i));
 }
-pub unsafe fn operator_lt_19(l: *const T, r: *const T) -> () {
+pub unsafe fn operator_lt_17(l: *const T, r: *const T) -> () {
     return (((*l).i) < ((*r).i));
 }
-pub unsafe fn test01_21() {
+pub unsafe fn test01_19() {
     let mut v: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -478,7 +430,7 @@ pub unsafe fn test01_21() {
         __do_while = false;
         if !((unimplemented!()) < (unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_22(
+                __builtin_fprintf_20(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -501,7 +453,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test01_21() });
+    (unsafe { test01_19() });
     return 0_();
 }
 impl __gnu_test_semaphore {
@@ -510,47 +462,47 @@ impl __gnu_test_semaphore {
             sem_set_: unimplemented!(),
             pid_: 0 as ::libc::pid_t,
         };
-        this.pid_ = ((unsafe { getpid_23() }) as ::libc::pid_t);
+        this.pid_ = ((unsafe { getpid_21() }) as ::libc::pid_t);
         this.sem_set_ =
-            (unsafe { semget_24(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+            (unsafe { semget_22(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
         if ((this.sem_set_) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_25(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
+        if ((unsafe { semctl_23(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
         {
             (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_26(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_24(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
     let mut limit: () = ((size) * (1048576_()));
     (unsafe {
-        getrlimit_27(
+        getrlimit_25(
             (__rlimit_resource_RLIMIT_DATA as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_28(
+        setrlimit_26(
             (__rlimit_resource_RLIMIT_DATA as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
     (unsafe {
-        getrlimit_27(
+        getrlimit_25(
             (__rlimit_resource___RLIMIT_RSS as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_28(
+        setrlimit_26(
             (__rlimit_resource___RLIMIT_RSS as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
@@ -558,37 +510,37 @@ pub unsafe fn set_memory_limits_26(mut size: Option<()>) {
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_27((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    (unsafe { getrlimit_25((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_28(
+        setrlimit_26(
             (__rlimit_resource_RLIMIT_AS as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
 }
-pub unsafe fn set_file_limit_29(mut size: ()) {
+pub unsafe fn set_file_limit_27(mut size: ()) {
     let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
     let mut limit: () = ((size) as ());
     (unsafe {
-        getrlimit_27(
+        getrlimit_25(
             (__rlimit_resource_RLIMIT_FSIZE as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_28(
+        setrlimit_26(
             (__rlimit_resource_RLIMIT_FSIZE as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
 }
-pub unsafe fn verify_demangle_30(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_28(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_31(
+        __cxa_demangle_29(
             mangled,
             std::ptr::null_mut(),
             std::ptr::null_mut(),
@@ -627,7 +579,7 @@ pub unsafe fn verify_demangle_30(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_32(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_30(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -654,7 +606,7 @@ pub unsafe fn run_tests_wrapped_locale_32(mut name: *const (), l: *const __gnu_t
             __do_while = false;
             if !(unimplemented!()) {
                 (unsafe {
-                    __builtin_fprintf_22 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
+                    __builtin_fprintf_20 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
                 });
                 unimplemented!();
             }
@@ -668,7 +620,7 @@ pub unsafe fn run_tests_wrapped_locale_32(mut name: *const (), l: *const __gnu_t
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
 }
-pub unsafe fn run_tests_wrapped_env_33(
+pub unsafe fn run_tests_wrapped_env_31(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -719,15 +671,15 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_23() })) {
-            (unsafe { semctl_25(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unsafe { getpid_21() })) {
+            (unsafe { semctl_23(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
         let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_34(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
+        if ((unsafe { semop_32(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not signal semaphore".as_ptr()) });
         }
     }
@@ -735,12 +687,12 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
         let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_34(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
+        if ((unsafe { semop_32(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not wait for semaphore".as_ptr()) });
         }
     }
 }
-pub unsafe fn test_tm_35(
+pub unsafe fn test_tm_33(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -751,18 +703,18 @@ pub unsafe fn test_tm_35(
     mut yday: (),
     mut isdst: (),
 ) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_36));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_34));
 }
-static mut tmp_36: std::cell::LazyCell<::libc::tm> =
+static mut tmp_34: std::cell::LazyCell<::libc::tm> =
     std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
 static mut allocationCount__10: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
@@ -772,7 +724,7 @@ static mut constructCount__12: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
 static mut destructCount__13: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn check_construct_destroy_37(
+pub unsafe fn check_construct_destroy_35(
     mut tag: *const (),
     mut expected_c: (),
     mut expected_d: (),

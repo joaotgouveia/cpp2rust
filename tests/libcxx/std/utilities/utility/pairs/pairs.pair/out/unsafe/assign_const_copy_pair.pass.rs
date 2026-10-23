@@ -599,15 +599,23 @@ pub unsafe fn test_6() -> () {
         let mut i2: () = 2_();
         let mut d1: () = 3_f64;
         let mut d2: () = 5_f64;
-        let p1: () = unimplemented!();
-        let p2: () = unimplemented!();
+        let p1: () = std_pair_int_ref__double_ref_::new({ &mut i1 }, { &mut d1 });
+        let p2: () = std_pair_int_ref__double_ref_::new({ &mut i2 }, { &mut d2 });
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p1: () = unimplemented!();
-        let p2: () = unimplemented!();
+        let p1: () = {
+            let mut __tmp_0: () = 1_();
+            let mut __tmp_1: () = 2_();
+            std_pair_ConstCopyAssign__ConstCopyAssign_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
+        let p2: () = {
+            let mut __tmp_2: () = 3_();
+            let mut __tmp_3: () = 4_();
+            std_pair_ConstCopyAssign__ConstCopyAssign_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
+        };
         unimplemented!();
         unimplemented!();
         unimplemented!();

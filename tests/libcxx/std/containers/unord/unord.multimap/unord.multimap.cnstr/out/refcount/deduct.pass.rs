@@ -1528,31 +1528,9 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl test_allocator_std_pair_const_int__long__ {
-    pub fn new_1(
-        a: Ptr<test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__>,
-    ) -> Self {
-        let __this: Value<test_allocator_std_pair_const_int__long__> =
-            Rc::new(RefCell::new(Self {
-                data_: a.with(|__s| __s.data_),
-                id_: a.with(|__s| __s.id_),
-                stats_: a.with(|__s| __s.stats_.clone()),
-            }));
-        let this: Ptr<test_allocator_std_pair_const_int__long__> = __this.as_pointer();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_std_pair_const_int__long___rebind_std_pair_const_int__long__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std_pair_const_int__long___rebind_std___hash_node_std___hash_value_type_int__long___void_ptr__
-{}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_std_pair_const_int__long__ {
@@ -1565,7 +1543,7 @@ pub struct test_allocator_std_pair_const_int__long__ {
     stats_: Ptr<test_allocator_statistics>,
 }
 impl test_allocator_std_pair_const_int__long__ {
-    pub fn new_2(mut data: (), mut id: ()) -> Self {
+    pub fn new_1(mut data: (), mut id: ()) -> Self {
         Self {
             data_: data,
             id_: id,
@@ -1610,100 +1588,6 @@ impl Default for test_allocator_std_pair_const_int__long__ {
         }
     }
 }
-impl test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__ {
-    pub fn new_1(a: Ptr<test_allocator_std_pair_const_int__long__>) -> Self {
-        let __this: Value<
-            test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__,
-        > = Rc::new(RefCell::new(Self {
-            data_: a.with(|__s| __s.data_),
-            id_: a.with(|__s| __s.id_),
-            stats_: a.with(|__s| __s.stats_.clone()),
-        }));
-        let this: Ptr<test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__> =
-            __this.as_pointer();
-        if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
-        }
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr___rebind_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr___rebind_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_
-{}
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__ {}
-impl Default for test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__ {
-    fn default() -> Self {
-        {
-            test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__
-{
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ { }
-impl Default for test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ { fn default() -> Self { { test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ { data_ : unimplemented!() , id_ : unimplemented!() , stats_ : Ptr::<test_allocator_statistics>::null() , } } } }
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_ { pub fn new_1 ( a : Ptr< test_allocator_std_pair_const_int__long__  > , ) -> Self { let __this : Value<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_> = Rc::new(RefCell::new(Self { data_ : a.with(|__s| __s . data_ )  , id_ : a.with(|__s| __s . id_ )  , stats_ : a.with(|__s| __s . stats_ .clone())  , } )) ;
- let this : Ptr<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_> = __this.as_pointer() ;
- if ! ( ( this .with(|__s| __s . stats_ .clone()) ).is_null() ) { field!(this .with(|__s| __s . stats_ .clone()) , count) .with_mut(|__v| __v. prefix_inc ()) ;
- field!(this .with(|__s| __s . stats_ .clone()) , converted) .with_mut(|__v| __v. prefix_inc ()) ;
- }  Rc::try_unwrap(__this).ok().unwrap().into_inner() } }
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_
-{
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_ { pub fn copy_from ( a : Ptr< test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_  > , ) -> Self { let __this : Value<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_> = Rc::new(RefCell::new(Self { data_ : a.with(|__s| __s . data_ )  , id_ : a.with(|__s| __s . id_ )  , stats_ : a.with(|__s| __s . stats_ .clone())  , } )) ;
- let this : Ptr<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_> = __this.as_pointer() ;
- unimplemented!()  ;
- if ! ( ( this .with(|__s| __s . stats_ .clone()) ).is_null() ) { field!(this .with(|__s| __s . stats_ .clone()) , count) .with_mut(|__v| __v. prefix_inc ()) ;
- field!(this .with(|__s| __s . stats_ .clone()) , copied) .with_mut(|__v| __v. prefix_inc ()) ;
- }  Rc::try_unwrap(__this).ok().unwrap().into_inner() } pub fn move_from ( a : Ptr< test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_  > , ) -> Self { let __this : Value<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_> = Rc::new(RefCell::new(Self { data_ : a.with(|__s| __s . data_ )  , id_ : a.with(|__s| __s . id_ )  , stats_ : a.with(|__s| __s . stats_ .clone())  , } )) ;
- let this : Ptr<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_> = __this.as_pointer() ;
- if ! ( ( this .with(|__s| __s . stats_ .clone()) ).is_null() ) { field!(this .with(|__s| __s . stats_ .clone()) , count) .with_mut(|__v| __v. prefix_inc ()) ;
- field!(this .with(|__s| __s . stats_ .clone()) , moved) .with_mut(|__v| __v. prefix_inc ()) ;
- } unimplemented!()  ;
- field!(a, id_) .write( moved_value_81 .with(|rc| *rc.borrow())  ) ;
-  Rc::try_unwrap(__this).ok().unwrap().into_inner() } }
-impl Clone for test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_ { fn clone(&self) -> Self { let __src: Value<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_> = Rc::new(RefCell::new(test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_ { data_: self.data_.clone(),id_: self.id_.clone(),stats_: self.stats_.clone(), })); test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_::copy_from(__src.as_pointer()) } }
-impl Default for test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_ { fn default() -> Self { { test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_ { data_ : 0_()  , id_ : 0_()  , stats_ : Ptr::<test_allocator_statistics>::null()  , } } } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
@@ -1944,7 +1828,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<test_allocator_std_pair_const_int__long__> = Rc::new(RefCell::new(
-            test_allocator_std_pair_const_int__long__::new_2({ 0_() }, { 42_() }),
+            test_allocator_std_pair_const_int__long__::new_1({ 0_() }, { 42_() }),
         ));
         let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1955,7 +1839,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<test_allocator_std_pair_const_int__long__> = Rc::new(RefCell::new(
-            test_allocator_std_pair_const_int__long__::new_2({ 0_() }, { 43_() }),
+            test_allocator_std_pair_const_int__long__::new_1({ 0_() }, { 43_() }),
         ));
         let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2951,227 +2835,6 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), copied).write(0_());
         field!((*self), moved).write(0_());
         field!((*self), converted).write(0_());
-    }
-}
-pub trait test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__Impl
-{
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(
-        &self,
-        x: (),
-    ) -> Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_>
-    {
-        unimplemented!()
-    }
-    fn address_12(
-        &self,
-        x: (),
-    ) -> Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_>
-    {
-        unimplemented!()
-    }
-    fn allocate(
-        &self,
-        mut n: (),
-        mut _a1: (),
-    ) -> Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_>
-    {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<
-            std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_,
-        >,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(
-        &self,
-        mut p: Ptr<
-            std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_,
-        >,
-    ) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__Impl for Ptr<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__> {
-}
-pub trait test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_Impl
-{
-    fn destructor(&self);
-    fn address_11(
-        &self,
-        x: (),
-    ) -> Ptr<
-        Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_>,
-    > {
-        unimplemented!()
-    }
-    fn address_12(
-        &self,
-        x: (),
-    ) -> Ptr<
-        Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_>,
-    > {
-        unimplemented!()
-    }
-    fn allocate(
-        &self,
-        n: (),
-        _a1: Option<()>,
-    ) -> Ptr<
-        Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_>,
-    >;
-    fn deallocate(
-        &self,
-        p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_  >  >,
-        s: (),
-    );
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(
-        &self,
-        mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_  >  >,
-    ) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_Impl for Ptr<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr__ptr_> {
-fn destructor ( &self , ) { unimplemented!()  ;
- unimplemented!()  ;
- if ! ( ( (* self ) .with(|__s| __s . stats_ .clone()) ).is_null() ) { field!((* self ) .with(|__s| __s . stats_ .clone()) , count) .with_mut(|__v| __v. prefix_dec ()) ;
- } field!((* self ) , data_) .write( destructed_value_80 .with(|rc| *rc.borrow())  ) ;
- field!((* self ) , id_) .write( destructed_value_80 .with(|rc| *rc.borrow())  ) ;
- } fn allocate ( &self , mut n : ()  , _a1 : Option< ()  > , ) -> Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_  >  >  { let mut _a1 : ()   = _a1.unwrap_or_else(|| unimplemented!() ) ;
- unimplemented!()  ;
- if ! ( ( (* self ) .with(|__s| __s . stats_ .clone()) ).is_null() ) { if ({ (* self ) .with(|__s| __s . stats_ .clone()) .with(|__s| __s . time_to_throw )  } >= { (* self ) .with(|__s| __s . stats_ .clone()) .with(|__s| __s . throw_after )  }) { unimplemented!()  ;
- } field!((* self ) .with(|__s| __s . stats_ .clone()) , time_to_throw) .with_mut(|__v| __v. prefix_inc ()) ;
- field!((* self ) .with(|__s| __s . stats_ .clone()) , alloc_count) .with_mut(|__v| __v. prefix_inc ()) ;
- field!((* self ) .with(|__s| __s . stats_ .clone()) , allocated_size) .write( { ( (* self ) .with(|__s| __s . stats_ .clone()) .with(|__s| __s . allocated_size )  ) . wrapping_add ( n )  } ) ;
- } return unimplemented!()    ;
- } fn deallocate ( &self , mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__long___void_ptr__ptr_  >  >  , mut s : ()  , ) { unimplemented!()  ;
- if ! ( ( (* self ) .with(|__s| __s . stats_ .clone()) ).is_null() ) { field!((* self ) .with(|__s| __s . stats_ .clone()) , alloc_count) .with_mut(|__v| __v. prefix_dec ()) ;
- field!((* self ) .with(|__s| __s . stats_ .clone()) , allocated_size) .write( { ( (* self ) .with(|__s| __s . stats_ .clone()) .with(|__s| __s . allocated_size )  ) . wrapping_sub ( s )  } ) ;
- } unimplemented!()  ;
- } }
-pub trait test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__Impl {
-    fn destructor(&self);
-    fn address_11(
-        &self,
-        x: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_int__long___void_ptr_> {
-        unimplemented!()
-    }
-    fn address_12(
-        &self,
-        x: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_int__long___void_ptr_> {
-        unimplemented!()
-    }
-    fn allocate(
-        &self,
-        n: (),
-        _a1: Option<()>,
-    ) -> Ptr<std___hash_node_std___hash_value_type_int__long___void_ptr_>;
-    fn deallocate(
-        &self,
-        p: Ptr<std___hash_node_std___hash_value_type_int__long___void_ptr_>,
-        s: (),
-    );
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<std___hash_node_std___hash_value_type_int__long___void_ptr_>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__Impl
-    for Ptr<test_allocator_std___hash_node_std___hash_value_type_int__long___void_ptr__>
-{
-    fn destructor(&self) {
-        unimplemented!();
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
-        }
-        field!((*self), data_).write(destructed_value_80.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_80.with(|rc| *rc.borrow()));
-    }
-    fn allocate(
-        &self,
-        mut n: (),
-        _a1: Option<()>,
-    ) -> Ptr<std___hash_node_std___hash_value_type_int__long___void_ptr_> {
-        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            if ({
-                (*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.time_to_throw)
-            } >= {
-                (*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.throw_after)
-            }) {
-                unimplemented!();
-            }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_add(n)
-            });
-        }
-        return unimplemented!();
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<std___hash_node_std___hash_value_type_int__long___void_ptr_>,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
-            field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
-                    .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_sub(s)
-            });
-        }
-        unimplemented!();
     }
 }
 pub trait test_allocator_std_pair_const_int__long__Impl {

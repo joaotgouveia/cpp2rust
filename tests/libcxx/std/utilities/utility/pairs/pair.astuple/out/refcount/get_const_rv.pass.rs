@@ -28,7 +28,16 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(
+                std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(3_()) }),
+            ));
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_std_unique_ptr_int__std_default_delete_int____short_::new(
+                { __tmp_0.as_pointer() },
+                { __tmp_1.as_pointer() },
+            )
+        }));
         const _: () = assert!(
             true,
             "std::is_same<const std::unique_ptr<int>&&, decltype(std::get<0>(std::move(p)))>::value"
@@ -38,9 +47,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let mut x: () = 42_();
-        let mut y: () = 43_();
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<()> = Rc::new(RefCell::new(42_()));
+        let y: Value<()> = Rc::new(RefCell::new(43_()));
+        let p: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__const_int_ref_::new(
+            { x.as_pointer() },
+            { y.as_pointer() },
+        )));
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<0>(std::move(p)))>::value"
@@ -55,7 +67,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let x: Value<()> = Rc::new(RefCell::new(42_()));
         let y: Value<()> = Rc::new(RefCell::new(43_()));
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new(std_pair_int_refref__const_int_refref_::new(
+            { (x.as_pointer()).reinterpret_cast::<()>() },
+            { y.as_pointer() },
+        )));
         const _: () = assert!(
             true,
             "std::is_same<int&&, decltype(std::get<0>(std::move(p)))>::value"
@@ -68,7 +83,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
         const _: () = assert!(true, "std::get<0>(std::move(p1)) == 3");;
         const _: () = assert!(true, "std::get<1>(std::move(p1)) == 4");;
     }

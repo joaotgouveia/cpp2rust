@@ -851,10 +851,10 @@ pub unsafe fn basic_gcd__57(mut m: (), mut n: ()) -> () {
 }
 pub unsafe fn basic_gcd_58(mut m: (), mut n: ()) -> () {
     {
-        if ((m) < (0_())) && ((m) != (unimplemented!())) {
+        if ((m) < (0_())) && ((m) != (unsafe { std_numeric_limits_signed_char_::min() })) {
             m = -m;
         }
-        if ((n) < (0_())) && ((n) != (unimplemented!())) {
+        if ((n) < (0_())) && ((n) != (unsafe { std_numeric_limits_signed_char_::min() })) {
             n = -n;
         }
     }
@@ -862,10 +862,10 @@ pub unsafe fn basic_gcd_58(mut m: (), mut n: ()) -> () {
 }
 pub unsafe fn basic_gcd_59(mut m: (), mut n: ()) -> () {
     {
-        if ((m) < (0_())) && ((m) != (unimplemented!())) {
+        if ((m) < (0_())) && ((m) != (unsafe { std_numeric_limits_short_::min() })) {
             m = -m;
         }
-        if ((n) < (0_())) && ((n) != (unimplemented!())) {
+        if ((n) < (0_())) && ((n) != (unsafe { std_numeric_limits_short_::min() })) {
             n = -n;
         }
     }
@@ -873,10 +873,10 @@ pub unsafe fn basic_gcd_59(mut m: (), mut n: ()) -> () {
 }
 pub unsafe fn basic_gcd_60(mut m: (), mut n: ()) -> () {
     {
-        if ((m) < (0_())) && ((m) != (unimplemented!())) {
+        if ((m) < (0_())) && ((m) != (unsafe { std_numeric_limits_int_::min() })) {
             m = -m;
         }
-        if ((n) < (0_())) && ((n) != (unimplemented!())) {
+        if ((n) < (0_())) && ((n) != (unsafe { std_numeric_limits_int_::min() })) {
             n = -n;
         }
     }
@@ -884,10 +884,10 @@ pub unsafe fn basic_gcd_60(mut m: (), mut n: ()) -> () {
 }
 pub unsafe fn basic_gcd_61(mut m: (), mut n: ()) -> () {
     {
-        if ((m) < (0_())) && ((m) != (unimplemented!())) {
+        if ((m) < (0_())) && ((m) != (unsafe { std_numeric_limits_long_::min() })) {
             m = -m;
         }
-        if ((n) < (0_())) && ((n) != (unimplemented!())) {
+        if ((n) < (0_())) && ((n) != (unsafe { std_numeric_limits_long_::min() })) {
             n = -n;
         }
     }
@@ -911,7 +911,7 @@ pub unsafe fn basic_gcd_65(mut m: (), mut n: ()) -> () {
 }
 pub unsafe fn do_fuzzy_tests_66() {
     let mut gen_: () = unimplemented!();
-    let max_input: () = unimplemented!();
+    let max_input: () = (unsafe { std_numeric_limits_signed_char_::max() });
     let mut distrib: () = unimplemented!();
     let nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -924,7 +924,7 @@ pub unsafe fn do_fuzzy_tests_66() {
 }
 pub unsafe fn do_fuzzy_tests_67() {
     let mut gen_: () = unimplemented!();
-    let max_input: () = unimplemented!();
+    let max_input: () = (unsafe { std_numeric_limits_short_::max() });
     let mut distrib: () = unimplemented!();
     let nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -937,7 +937,7 @@ pub unsafe fn do_fuzzy_tests_67() {
 }
 pub unsafe fn do_fuzzy_tests_68() {
     let mut gen_: () = unimplemented!();
-    let max_input: () = unimplemented!();
+    let max_input: () = (unsafe { std_numeric_limits_int_::max() });
     let mut distrib: () = unimplemented!();
     let nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -950,7 +950,7 @@ pub unsafe fn do_fuzzy_tests_68() {
 }
 pub unsafe fn do_fuzzy_tests_69() {
     let mut gen_: () = unimplemented!();
-    let max_input: () = unimplemented!();
+    let max_input: () = (unsafe { std_numeric_limits_long_::max() });
     let mut distrib: () = unimplemented!();
     let nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -963,7 +963,7 @@ pub unsafe fn do_fuzzy_tests_69() {
 }
 pub unsafe fn do_fuzzy_tests_70() {
     let mut gen_: () = unimplemented!();
-    let max_input: () = unimplemented!();
+    let max_input: () = (unsafe { std_numeric_limits_unsigned_char_::max() });
     let mut distrib: () = unimplemented!();
     let nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -976,7 +976,7 @@ pub unsafe fn do_fuzzy_tests_70() {
 }
 pub unsafe fn do_fuzzy_tests_71() {
     let mut gen_: () = unimplemented!();
-    let max_input: () = unimplemented!();
+    let max_input: () = (unsafe { std_numeric_limits_unsigned_short_::max() });
     let mut distrib: () = unimplemented!();
     let nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -989,7 +989,7 @@ pub unsafe fn do_fuzzy_tests_71() {
 }
 pub unsafe fn do_fuzzy_tests_72() {
     let mut gen_: () = unimplemented!();
-    let max_input: () = unimplemented!();
+    let max_input: () = (unsafe { std_numeric_limits_unsigned_int_::max() });
     let mut distrib: () = unimplemented!();
     let nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -1002,7 +1002,7 @@ pub unsafe fn do_fuzzy_tests_72() {
 }
 pub unsafe fn do_fuzzy_tests_73() {
     let mut gen_: () = unimplemented!();
-    let max_input: () = unimplemented!();
+    let max_input: () = (unsafe { std_numeric_limits_unsigned_long_::max() });
     let mut distrib: () = unimplemented!();
     let nb_rounds: () = 10000_();
     let mut i: () = 0_();
@@ -1015,17 +1015,17 @@ pub unsafe fn do_fuzzy_tests_73() {
 }
 pub unsafe fn do_limit_tests_74() {
     let mut inputs: [(); 27] = [
-        ((unimplemented!())
+        ((unsafe { std_numeric_limits_signed_char_::min() })
             + (if (*std::cell::LazyCell::force_mut(&mut *&raw mut value_75)) {
                 3_()
             } else {
                 0_()
             })),
-        ((unimplemented!()) + (1_())),
-        ((unimplemented!()) + (2_())),
-        unimplemented!(),
-        ((unimplemented!()) - (1_())),
-        ((unimplemented!()) - (2_())),
+        ((unsafe { std_numeric_limits_signed_char_::min() }) + (1_())),
+        ((unsafe { std_numeric_limits_signed_char_::min() }) + (2_())),
+        (unsafe { std_numeric_limits_signed_char_::max() }),
+        ((unsafe { std_numeric_limits_signed_char_::max() }) - (1_())),
+        ((unsafe { std_numeric_limits_signed_char_::max() }) - (2_())),
         0_(),
         1_(),
         2_(),
@@ -1064,17 +1064,17 @@ pub unsafe fn do_limit_tests_74() {
 }
 pub unsafe fn do_limit_tests_76() {
     let mut inputs: [(); 27] = [
-        ((unimplemented!())
+        ((unsafe { std_numeric_limits_short_::min() })
             + (if (*std::cell::LazyCell::force_mut(&mut *&raw mut value_75)) {
                 3_()
             } else {
                 0_()
             })),
-        ((unimplemented!()) + (1_())),
-        ((unimplemented!()) + (2_())),
-        unimplemented!(),
-        ((unimplemented!()) - (1_())),
-        ((unimplemented!()) - (2_())),
+        ((unsafe { std_numeric_limits_short_::min() }) + (1_())),
+        ((unsafe { std_numeric_limits_short_::min() }) + (2_())),
+        (unsafe { std_numeric_limits_short_::max() }),
+        ((unsafe { std_numeric_limits_short_::max() }) - (1_())),
+        ((unsafe { std_numeric_limits_short_::max() }) - (2_())),
         0_(),
         1_(),
         2_(),
@@ -1113,17 +1113,17 @@ pub unsafe fn do_limit_tests_76() {
 }
 pub unsafe fn do_limit_tests_77() {
     let mut inputs: [(); 27] = [
-        ((unimplemented!())
+        ((unsafe { std_numeric_limits_int_::min() })
             + (if (*std::cell::LazyCell::force_mut(&mut *&raw mut value_75)) {
                 3_()
             } else {
                 0_()
             })),
-        ((unimplemented!()) + (1_())),
-        ((unimplemented!()) + (2_())),
-        unimplemented!(),
-        ((unimplemented!()) - (1_())),
-        ((unimplemented!()) - (2_())),
+        ((unsafe { std_numeric_limits_int_::min() }) + (1_())),
+        ((unsafe { std_numeric_limits_int_::min() }) + (2_())),
+        (unsafe { std_numeric_limits_int_::max() }),
+        ((unsafe { std_numeric_limits_int_::max() }) - (1_())),
+        ((unsafe { std_numeric_limits_int_::max() }) - (2_())),
         0_(),
         1_(),
         2_(),
@@ -1162,17 +1162,17 @@ pub unsafe fn do_limit_tests_77() {
 }
 pub unsafe fn do_limit_tests_78() {
     let mut inputs: [(); 27] = [
-        ((unimplemented!())
+        ((unsafe { std_numeric_limits_long_::min() })
             + (if (*std::cell::LazyCell::force_mut(&mut *&raw mut value_75)) {
                 3_()
             } else {
                 0_()
             })),
-        ((unimplemented!()) + (1_())),
-        ((unimplemented!()) + (2_())),
-        unimplemented!(),
-        ((unimplemented!()) - (1_())),
-        ((unimplemented!()) - (2_())),
+        ((unsafe { std_numeric_limits_long_::min() }) + (1_())),
+        ((unsafe { std_numeric_limits_long_::min() }) + (2_())),
+        (unsafe { std_numeric_limits_long_::max() }),
+        ((unsafe { std_numeric_limits_long_::max() }) - (1_())),
+        ((unsafe { std_numeric_limits_long_::max() }) - (2_())),
         0_(),
         1_(),
         2_(),
@@ -1211,17 +1211,17 @@ pub unsafe fn do_limit_tests_78() {
 }
 pub unsafe fn do_limit_tests_79() {
     let mut inputs: [(); 27] = [
-        ((unimplemented!())
+        ((unsafe { std_numeric_limits_unsigned_char_::min() })
             + (if (*std::cell::LazyCell::force_mut(&mut *&raw mut value_80)) {
                 3_()
             } else {
                 0_()
             })),
-        ((unimplemented!()) + (1_())),
-        ((unimplemented!()) + (2_())),
-        unimplemented!(),
-        ((unimplemented!()) - (1_())),
-        ((unimplemented!()) - (2_())),
+        ((unsafe { std_numeric_limits_unsigned_char_::min() }) + (1_())),
+        ((unsafe { std_numeric_limits_unsigned_char_::min() }) + (2_())),
+        (unsafe { std_numeric_limits_unsigned_char_::max() }),
+        ((unsafe { std_numeric_limits_unsigned_char_::max() }) - (1_())),
+        ((unsafe { std_numeric_limits_unsigned_char_::max() }) - (2_())),
         0_(),
         1_(),
         2_(),
@@ -1260,17 +1260,17 @@ pub unsafe fn do_limit_tests_79() {
 }
 pub unsafe fn do_limit_tests_81() {
     let mut inputs: [(); 27] = [
-        ((unimplemented!())
+        ((unsafe { std_numeric_limits_unsigned_short_::min() })
             + (if (*std::cell::LazyCell::force_mut(&mut *&raw mut value_80)) {
                 3_()
             } else {
                 0_()
             })),
-        ((unimplemented!()) + (1_())),
-        ((unimplemented!()) + (2_())),
-        unimplemented!(),
-        ((unimplemented!()) - (1_())),
-        ((unimplemented!()) - (2_())),
+        ((unsafe { std_numeric_limits_unsigned_short_::min() }) + (1_())),
+        ((unsafe { std_numeric_limits_unsigned_short_::min() }) + (2_())),
+        (unsafe { std_numeric_limits_unsigned_short_::max() }),
+        ((unsafe { std_numeric_limits_unsigned_short_::max() }) - (1_())),
+        ((unsafe { std_numeric_limits_unsigned_short_::max() }) - (2_())),
         0_(),
         1_(),
         2_(),
@@ -1309,18 +1309,18 @@ pub unsafe fn do_limit_tests_81() {
 }
 pub unsafe fn do_limit_tests_82() {
     let mut inputs: [(); 27] = [
-        (unimplemented!() as ()).wrapping_add(
+        ((unsafe { std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(
             (if (*std::cell::LazyCell::force_mut(&mut *&raw mut value_80)) {
                 3_()
             } else {
                 0_()
             }),
         ),
-        (unimplemented!() as ()).wrapping_add(1_()),
-        (unimplemented!() as ()).wrapping_add(2_()),
-        unimplemented!(),
-        (unimplemented!() as ()).wrapping_sub(1_()),
-        (unimplemented!() as ()).wrapping_sub(2_()),
+        ((unsafe { std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+        ((unsafe { std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(2_()),
+        (unsafe { std_numeric_limits_unsigned_int_::max() }),
+        ((unsafe { std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_()),
+        ((unsafe { std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(2_()),
         0_(),
         1_(),
         2_(),
@@ -1359,18 +1359,18 @@ pub unsafe fn do_limit_tests_82() {
 }
 pub unsafe fn do_limit_tests_83() {
     let mut inputs: [(); 27] = [
-        (unimplemented!() as ()).wrapping_add(
+        ((unsafe { std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(
             (if (*std::cell::LazyCell::force_mut(&mut *&raw mut value_80)) {
                 3_()
             } else {
                 0_()
             }),
         ),
-        (unimplemented!() as ()).wrapping_add(1_()),
-        (unimplemented!() as ()).wrapping_add(2_()),
-        unimplemented!(),
-        (unimplemented!() as ()).wrapping_sub(1_()),
-        (unimplemented!() as ()).wrapping_sub(2_()),
+        ((unsafe { std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+        ((unsafe { std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(2_()),
+        (unsafe { std_numeric_limits_unsigned_long_::max() }),
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_()),
+        ((unsafe { std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(2_()),
         0_(),
         1_(),
         2_(),

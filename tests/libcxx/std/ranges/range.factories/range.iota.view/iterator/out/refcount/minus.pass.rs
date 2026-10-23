@@ -235,8 +235,12 @@ pub fn test_18() -> () {
     {
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_19(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_19(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -244,8 +248,12 @@ pub fn test_18() -> () {
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_20(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_20(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -253,8 +261,12 @@ pub fn test_18() -> () {
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -262,14 +274,22 @@ pub fn test_18() -> () {
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "!std::is_reference_v<decltype(iter2 - 5)>");;
@@ -278,64 +298,100 @@ pub fn test_18() -> () {
     {
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_19(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_19(({ (*io.borrow()).begin() }), 5_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_19(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_19(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_19(({ (*io.borrow()).begin() }), 5_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_19(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 5_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 5_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_21(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_20(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_20(({ (*io.borrow()).begin() }), 5_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), int>");;
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_20(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_20(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), int>");;
         }
         {
             let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter1: Value<()> = Rc::new(RefCell::new(
+                ({ next_20(({ (*io.borrow()).begin() }), 5_()) }),
+            ));
+            let iter2: Value<()> = Rc::new(RefCell::new(
+                ({ next_20(({ (*io.borrow()).begin() }), 10_()) }),
+            ));
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), int>");;
         }

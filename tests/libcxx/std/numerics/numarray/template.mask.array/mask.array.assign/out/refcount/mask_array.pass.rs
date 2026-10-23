@@ -89,7 +89,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vb1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vb2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!() = unimplemented!();
+        unimplemented!() = ((*v2.borrow())[(*vb2.borrow())]).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();

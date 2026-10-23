@@ -180,14 +180,6 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl other_allocator_std_pair_const_int__std_string__ {
-    pub unsafe fn new_1(
-        a : *const other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__,
-    ) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 pub unsafe fn operator_eq_4(
     x: *const other_allocator_std_pair_const_int__std_string__,
     y: *const other_allocator_std_pair_const_int__std_string__,
@@ -200,7 +192,7 @@ pub struct other_allocator_std_pair_const_int__std_string__ {
     data_: (),
 }
 impl other_allocator_std_pair_const_int__std_string__ {
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_1(mut i: ()) -> Self {
         let mut this = Self { data_: i };
         this
     }
@@ -225,56 +217,6 @@ impl Default for other_allocator_std_pair_const_int__std_string__ {
         }
     }
 }
-impl other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {
-    pub unsafe fn new_1(a: *const other_allocator_std_pair_const_int__std_string__) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {
-    data_: (),
-}
-impl other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___hash_node_std___hash_value_type_int__std_string___void_ptr_,
-        mut s: (),
-    ) {
-        unimplemented!();
-    }
-}
-impl Default
-    for other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__
-{
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__
-{
-    data_: (),
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ { }
-impl Default for other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ { fn default() -> Self { unsafe { other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ { data_ : unimplemented!() , } } } }
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_ { pub unsafe fn new_1 ( a : *const other_allocator_std_pair_const_int__std_string__ , ) -> Self { let mut this = Self { data_ : ( * a ) . data_  , } ;
- this } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_
-{
-    data_: (),
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_ { pub unsafe fn deallocate ( &mut self , mut p : *mut *mut std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr_ , mut s : () , ) { unimplemented!()  ;
- } }
-impl Default for other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_ { fn default() -> Self { unsafe { other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ptr_ { data_ : unimplemented!() , } } } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
@@ -324,7 +266,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut alloc: other_allocator_std_pair_const_int__std_string__ =
-            other_allocator_std_pair_const_int__std_string__::new_2({ 1_() });
+            other_allocator_std_pair_const_int__std_string__::new_1({ 1_() });
         let m: () = unimplemented!();
         unimplemented!();
     }

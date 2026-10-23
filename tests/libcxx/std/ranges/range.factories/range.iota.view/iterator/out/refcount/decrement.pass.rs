@@ -234,8 +234,12 @@ pub const CtorKind_ValueCtor: CtorKind = 1;
 pub fn test_18() -> () {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter1: Value<()> = Rc::new(RefCell::new(
+            ({ next_19(({ (*io.borrow()).begin() }), None) }),
+        ));
+        let iter2: Value<()> = Rc::new(RefCell::new(
+            ({ next_19(({ (*io.borrow()).begin() }), None) }),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -248,8 +252,12 @@ pub fn test_18() -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter1: Value<()> = Rc::new(RefCell::new(
+            ({ next_20(({ (*io.borrow()).begin() }), None) }),
+        ));
+        let iter2: Value<()> = Rc::new(RefCell::new(
+            ({ next_20(({ (*io.borrow()).begin() }), None) }),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();

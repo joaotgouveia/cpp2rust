@@ -188,7 +188,7 @@ pub fn check_X_4() -> () {
     let dtor_called: Value<()> = Rc::new(RefCell::new(false));
     let x: Value<X> = Rc::new(RefCell::new(X::new_1({ dtor_called.as_pointer() })));
     let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<()> = Rc::new(RefCell::new(std_optional_X_::new_1({ x.as_pointer() })));
     unimplemented!();
     let v: Ptr<X> = ({ (*opt.borrow()).emplace(unimplemented!(), dtor_called.as_pointer()) });
     const _: () = assert!(true, "std::is_same_v<X&, decltype(v)>");;

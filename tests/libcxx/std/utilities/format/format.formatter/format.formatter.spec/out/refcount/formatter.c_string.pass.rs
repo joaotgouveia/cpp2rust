@@ -103,7 +103,7 @@ pub fn test_4(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format((*arg.borrow()).clone(), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_6(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
@@ -125,7 +125,7 @@ pub fn test_6(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format((*arg.borrow()).clone(), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_8(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
@@ -148,7 +148,7 @@ pub fn test_8(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format((*arg.borrow()).clone(), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_10(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
@@ -171,7 +171,7 @@ pub fn test_10(mut expected: (), fmt: (), mut a: Ptr<()>, mut offset: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format((*arg.borrow()).clone(), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_termination_condition_12(mut expected: (), f: (), mut arg: Ptr<()>) {

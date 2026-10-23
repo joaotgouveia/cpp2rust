@@ -146,7 +146,7 @@ pub unsafe fn check_X_4() -> () {
     let mut dtor_called: () = false;
     let mut x: X = X::new_1({ &mut dtor_called });
     let _dtor_x = ScopedDestructorUnsafe::new(&raw mut x, X::destructor);
-    let mut opt: () = unimplemented!();
+    let mut opt: () = std_optional_X_::new_1({ &mut x });
     unimplemented!();
     let v: *mut X = (unsafe { opt.emplace(unimplemented!(), &mut dtor_called) });
     const _: () = assert!(true, "std::is_same_v<X&, decltype(v)>");;

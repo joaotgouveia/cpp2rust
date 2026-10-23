@@ -20,7 +20,8 @@ impl A1_int_ {
         this
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        unimplemented!();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut deallocate_called_3)) =
+            std_pair_int_ptr__unsigned_long_::new_1({ &mut p }, { &mut n });
     }
 }
 impl Default for A1_int_ {

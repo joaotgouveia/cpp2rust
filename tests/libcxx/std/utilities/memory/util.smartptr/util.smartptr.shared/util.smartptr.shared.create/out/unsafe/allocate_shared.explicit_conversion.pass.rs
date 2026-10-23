@@ -9,31 +9,6 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ExplicitAllocator_int_ {}
-impl ExplicitAllocator_std___shared_ptr_emplace_int__ExplicitAllocator_int___ {
-    pub unsafe fn new_1(mut _a0: ExplicitAllocator_int_) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct ExplicitAllocator_std___shared_ptr_emplace_int__ExplicitAllocator_int___ {}
-impl ExplicitAllocator_std___shared_ptr_emplace_int__ExplicitAllocator_int___ {
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-    ) -> *mut std___shared_ptr_emplace_int__ExplicitAllocator_int__ {
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut ptr: *mut std___shared_ptr_emplace_int__ExplicitAllocator_int__,
-        mut n: (),
-    ) {
-        unimplemented!();
-        return;
-    }
-}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -50,7 +25,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut ptr: () = unimplemented!();
+    let mut ptr: () = (unsafe {
+        let mut ___a: ExplicitAllocator_int_ = <ExplicitAllocator_int_>::default();
+        let mut ___args: () = 0_();
+        allocate_shared_0(&mut ___a, &mut ___args)
+    });
     &(ptr);
     return 0_();
 }

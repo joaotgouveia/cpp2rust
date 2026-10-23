@@ -21,7 +21,7 @@ pub fn test_to_ulong_0() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -68,7 +68,7 @@ pub fn test_to_ulong_2() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -115,7 +115,7 @@ pub fn test_to_ulong_4() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -162,7 +162,7 @@ pub fn test_to_ulong_5() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -209,7 +209,7 @@ pub fn test_to_ulong_6() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -256,7 +256,7 @@ pub fn test_to_ulong_7() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -303,7 +303,7 @@ pub fn test_to_ulong_8() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -350,7 +350,7 @@ pub fn test_to_ulong_9() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -397,7 +397,7 @@ pub fn test_to_ulong_10() {
     let mut max: () = if is_M_zero {
         0_()
     } else {
-        (unimplemented!() >> X)
+        (({ std_numeric_limits_unsigned_long_::max() }) >> X)
     };
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),

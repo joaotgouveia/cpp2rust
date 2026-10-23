@@ -21,11 +21,7 @@ const _: () = assert!(true, "std::is_swappable_v<std::unexpected<int>>");
 const _: () = assert!(true, "std::is_swappable_v<std::unexpected<MayThrowSwap>>");
 const _: () = assert!(true, "!std::is_swappable_v<std::unexpected<NonSwappable>>");
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    (unsafe {
-        let ___x: *mut () = &mut (*x).i;
-        let ___y: *mut () = &mut (*y).i;
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -38,7 +34,7 @@ impl ADLSwap {
         this
     }
 }
-pub unsafe fn test_2() -> () {
+pub unsafe fn test_1() -> () {
     let mut unex1: () = unimplemented!();
     let mut unex2: () = unimplemented!();
     unimplemented!();
@@ -62,7 +58,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_2() });
+    (unsafe { test_1() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

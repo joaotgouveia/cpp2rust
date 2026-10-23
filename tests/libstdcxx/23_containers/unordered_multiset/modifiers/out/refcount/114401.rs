@@ -254,13 +254,6 @@ pub struct __gnu_test_semaphore {
     pid_: ::libc::pid_t,
 }
 impl __gnu_test_semaphore {}
-impl Alloc_int_ {
-    pub fn new_1(mut a: Alloc_std___detail__Hash_node_int__false__) -> Self {
-        Self {
-            id: unimplemented!(),
-        }
-    }
-}
 pub fn operator_eq_10(a: Ptr<Alloc_int_>, a2: Ptr<Alloc_int_>) -> () {
     return unimplemented!();
 }
@@ -279,7 +272,7 @@ pub struct Alloc_int_ {
     pub id: (),
 }
 impl Alloc_int_ {
-    pub fn new_2(identity: ()) -> Self {
+    pub fn new(identity: ()) -> Self {
         let identity: Value<()> = Rc::new(RefCell::new(identity));
         Self {
             id: ({ make_shared_12(identity.as_pointer()) }),
@@ -303,36 +296,6 @@ impl std::cmp::PartialEq for Alloc_int_ {
     }
 }
 impl std::cmp::Eq for Alloc_int_ {}
-impl Alloc_std___detail__Hash_node_int__false__ {
-    pub fn new_1(mut a: Alloc_int_) -> Self {
-        Self {
-            id: unimplemented!(),
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(16)]
-pub struct Alloc_std___detail__Hash_node_int__false__ {
-    #[offset(0)]
-    #[byte_size(16)]
-    pub id: (),
-}
-impl Alloc_std___detail__Hash_node_int__false__ {}
-impl Alloc_std___detail__Hash_node_base_ptr_ {
-    pub fn new_1(mut a: Alloc_std___detail__Hash_node_int__false__) -> Self {
-        Self {
-            id: unimplemented!(),
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(16)]
-pub struct Alloc_std___detail__Hash_node_base_ptr_ {
-    #[offset(0)]
-    #[byte_size(16)]
-    pub id: (),
-}
-impl Alloc_std___detail__Hash_node_base_ptr_ {}
 pub fn test_node_ops_13() {
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -821,7 +784,7 @@ pub fn test_node_ops_13() {
     }
 }
 pub fn test_alloc_lifetime_15() {
-    let a: Value<Alloc_int_> = Rc::new(RefCell::new(Alloc_int_::new_2({ 1_() })));
+    let a: Value<Alloc_int_> = Rc::new(RefCell::new(Alloc_int_::new({ 1_() })));
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1261,44 +1224,6 @@ pub trait Alloc_int_Impl {
     }
 }
 impl Alloc_int_Impl for Ptr<Alloc_int_> {}
-pub trait Alloc_std___detail__Hash_node_base_ptr_Impl {
-    fn allocate(&self, n: ()) -> Ptr<Ptr<std___detail__Hash_node_base>>;
-    fn deallocate(&self, p: Ptr<Ptr<std___detail__Hash_node_base>>, n: ());
-}
-impl Alloc_std___detail__Hash_node_base_ptr_Impl for Ptr<Alloc_std___detail__Hash_node_base_ptr_> {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<std___detail__Hash_node_base>> {
-        return ({
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_base_ptr_)
-                .allocate(n, None)
-        });
-    }
-    fn deallocate(&self, mut p: Ptr<Ptr<std___detail__Hash_node_base>>, mut n: ()) {
-        ({
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_base_ptr_)
-                .deallocate((p).clone(), n)
-        });
-    }
-}
-pub trait Alloc_std___detail__Hash_node_int__false__Impl {
-    fn allocate(&self, n: ()) -> Ptr<std___detail__Hash_node_int__false_>;
-    fn deallocate(&self, p: Ptr<std___detail__Hash_node_int__false_>, n: ());
-}
-impl Alloc_std___detail__Hash_node_int__false__Impl
-    for Ptr<Alloc_std___detail__Hash_node_int__false__>
-{
-    fn allocate(&self, mut n: ()) -> Ptr<std___detail__Hash_node_int__false_> {
-        return ({
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_int__false__)
-                .allocate(n, None)
-        });
-    }
-    fn deallocate(&self, mut p: Ptr<std___detail__Hash_node_int__false_>, mut n: ()) {
-        ({
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_int__false__)
-                .deallocate((p).clone(), n)
-        });
-    }
-}
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
     fn destructor(&self);

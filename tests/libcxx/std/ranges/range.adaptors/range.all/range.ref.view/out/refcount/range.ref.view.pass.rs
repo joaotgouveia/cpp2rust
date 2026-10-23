@@ -275,29 +275,23 @@ pub fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_5(_i, n)
     });
 }
-pub fn iter_swap_7(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_8(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -343,7 +337,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_11(
+            operator_cmp_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -368,7 +362,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_10(
+            operator_eq_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -453,23 +447,23 @@ impl util_iterator_error {
     }
 }
 thread_local!(
-    pub static globalBuff_12: Value<Box<[()]>> = Rc::new(RefCell::new(
+    pub static globalBuff_11: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
 );
-pub fn begin_13(range: Ptr<Range>) -> Ptr<()> {
-    return (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
+pub fn begin_12(range: Ptr<Range>) -> Ptr<()> {
+    return (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>)
         .offset((range.with(|__s| __s.start)) as isize);
 }
-pub fn end_14(_a0: Ptr<Range>) -> Ptr<()> {
-    return (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
+pub fn end_13(_a0: Ptr<Range>) -> Ptr<()> {
+    return (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
 }
-pub fn begin_15(range: Ptr<Range>) -> Ptr<()> {
-    return (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
+pub fn begin_14(range: Ptr<Range>) -> Ptr<()> {
+    return (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>)
         .offset((range.with(|__s| __s.start)) as isize);
 }
-pub fn end_16(_a0: Ptr<Range>) -> Ptr<()> {
-    return (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
+pub fn end_15(_a0: Ptr<Range>) -> Ptr<()> {
+    return (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
@@ -529,21 +523,21 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ForwardRange {}
-pub fn operator_eq_17(
+pub fn operator_eq_16(
     mut _a0: Cpp17InputRange_sentinel,
     iter: cpp17_input_iterator_int_ptr__int_ptr_,
 ) -> () {
     let iter: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(iter));
     return (({ base_0(iter.as_pointer()) })
-        == (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize));
+        == (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize));
 }
-pub fn operator_sub_18(
+pub fn operator_sub_17(
     mut _a0: Cpp17InputRange_sentinel,
     mut _a1: cpp17_input_iterator_int_ptr__int_ptr_,
 ) -> () {
     return -8_();
 }
-pub fn operator_sub_19(
+pub fn operator_sub_18(
     mut _a0: cpp17_input_iterator_int_ptr__int_ptr_,
     mut _a1: Cpp17InputRange_sentinel,
 ) -> () {
@@ -555,15 +549,15 @@ pub struct Cpp17InputRange_sentinel {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Cpp17InputRange {}
-pub fn operator_eq_20(
+pub fn operator_eq_19(
     mut _a0: Cpp20InputRange_sentinel,
     iter: Ptr<cpp20_input_iterator_int_ptr_>,
 ) -> () {
     return ({ ({ base_3((iter).clone()) }) } == {
-        (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize)
+        (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize)
     });
 }
-pub fn operator_sub_21(
+pub fn operator_sub_20(
     mut _a0: Cpp20InputRange_sentinel,
     _a1: Ptr<cpp20_input_iterator_int_ptr_>,
 ) -> () {
@@ -576,13 +570,13 @@ pub struct Cpp20InputRange_sentinel {}
 #[byte_size(1)]
 pub struct Cpp20InputRange {}
 thread_local!(
-    pub static enable_borrowed_range_22: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_21: Value<()> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(
     true,
     "std::same_as<decltype(std::ranges::ref_view(std::declval<Range&>())),\n              std::ranges::ref_view<Range>>"
 );
-pub fn test_23() -> () {
+pub fn test_22() -> () {
     {
         let mut range: Range = <Range>::default();
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -668,7 +662,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_23() });
+    ({ test_22() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -688,7 +682,7 @@ pub trait Cpp17InputRangeImpl {
 impl Cpp17InputRangeImpl for Ptr<Cpp17InputRange> {
     fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         return cpp17_input_iterator_int_ptr__int_ptr_::new({
-            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>)
         });
     }
     fn end(&self) -> Cpp17InputRange_sentinel {
@@ -702,7 +696,7 @@ pub trait Cpp20InputRangeImpl {
 impl Cpp20InputRangeImpl for Ptr<Cpp20InputRange> {
     fn begin(&self) -> cpp20_input_iterator_int_ptr_ {
         return cpp20_input_iterator_int_ptr_::new({
-            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>)
         });
     }
     fn end(&self) -> Cpp20InputRange_sentinel {
@@ -716,12 +710,12 @@ pub trait ForwardRangeImpl {
 impl ForwardRangeImpl for Ptr<ForwardRange> {
     fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
+            (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>)
         });
     }
     fn end(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize)
+            (globalBuff_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize)
         });
     }
 }
@@ -1017,6 +1011,6 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = globalBuff_12.with(|_| ());
-    let _ = enable_borrowed_range_22.with(|_| ());
+    let _ = globalBuff_11.with(|_| ());
+    let _ = enable_borrowed_range_21.with(|_| ());
 }

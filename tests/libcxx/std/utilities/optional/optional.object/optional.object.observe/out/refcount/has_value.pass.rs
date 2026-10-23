@@ -42,7 +42,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "!opt.has_value()");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<()> = Rc::new(RefCell::new(0_()));
         const _: () = assert!(true, "opt.has_value()");;
     }
     return 0_();

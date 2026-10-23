@@ -274,20 +274,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     return 0_();
 }
 pub trait increasing_allocator_char_Impl {
-    fn allocate_at_least(&self, n: ()) -> std_allocation_result_char_ptr__unsigned_long_;
+    fn allocate_at_least(&self, n: ()) -> ();
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()
     }
     fn deallocate(&self, p: Ptr<()>, n: ());
 }
 impl increasing_allocator_char_Impl for Ptr<increasing_allocator_char_> {
-    fn allocate_at_least(&self, mut n: ()) -> std_allocation_result_char_ptr__unsigned_long_ {
+    fn allocate_at_least(&self, mut n: ()) -> () {
         if (n < (*self).with(|__s| __s.min_elements)) {
             n = (*self).with(|__s| __s.min_elements);
         }
         field!((*self), min_elements)
             .write({ ((*self).with(|__s| __s.min_elements)).wrapping_add(1000_()) });
-        return ({ unimplemented!().allocate_at_least(n) });
+        return unimplemented!();
     }
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
         unimplemented!();

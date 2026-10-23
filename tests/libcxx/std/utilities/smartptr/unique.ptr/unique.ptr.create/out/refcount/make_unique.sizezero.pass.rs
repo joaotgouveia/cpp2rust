@@ -51,18 +51,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let p: Value<()> = Rc::new(RefCell::new(
-            std_unique_ptr_Aarrarr__std_default_delete_Aarrarr__::new_1({
+            std_unique_ptr_Aarrarr__std_default_delete_Aarrarr__::new({
                 Ptr::alloc_array((0..1_()).map(|_| <A>::default()).collect::<Box<[A]>>())
             }),
         ));
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new(({ make_unique_0() })));
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(({ make_unique_0(1_()) })));
+        let p: Value<()> = Rc::new(RefCell::new(({ make_unique_1(1_()) })));
         unimplemented!();
     }
     return 0_();

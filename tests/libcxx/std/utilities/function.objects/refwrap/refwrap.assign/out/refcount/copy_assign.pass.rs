@@ -28,7 +28,7 @@ pub fn test_0(t: Ptr<FnPtr<fn()>>) {
     let r2: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_void__ptr____::new({
         t2.as_pointer()
     })));
-    unimplemented!();
+    (*r2.borrow_mut()) = (*r.borrow()).clone();
     unimplemented!();
 }
 pub fn test_1(t: Ptr<functor1>) {
@@ -39,7 +39,7 @@ pub fn test_1(t: Ptr<functor1>) {
     let r2: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_functor1_::new({
         t2.as_pointer()
     })));
-    unimplemented!();
+    (*r2.borrow_mut()) = (*r.borrow()).clone();
     unimplemented!();
 }
 pub fn test_2(t: Ptr<()>) {
@@ -50,7 +50,7 @@ pub fn test_2(t: Ptr<()>) {
     let r2: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
         t2.as_pointer()
     })));
-    unimplemented!();
+    (*r2.borrow_mut()) = (*r.borrow()).clone();
     unimplemented!();
 }
 pub fn test_3(t: Ptr<()>) {
@@ -61,7 +61,7 @@ pub fn test_3(t: Ptr<()>) {
     let r2: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_const_int_::new({
         t2.as_pointer()
     })));
-    unimplemented!();
+    (*r2.borrow_mut()) = (*r.borrow()).clone();
     unimplemented!();
 }
 pub fn test_4(t: Ptr<convertible_to_int_ref>) {
@@ -72,7 +72,7 @@ pub fn test_4(t: Ptr<convertible_to_int_ref>) {
     let r2: Value<()> = Rc::new(RefCell::new(
         std_reference_wrapper_convertible_to_int_ref_::new({ t2.as_pointer() }),
     ));
-    unimplemented!();
+    (*r2.borrow_mut()) = (*r.borrow()).clone();
     unimplemented!();
 }
 pub fn test_5(t: Ptr<convertible_to_int_ref>) {
@@ -83,7 +83,7 @@ pub fn test_5(t: Ptr<convertible_to_int_ref>) {
     let r2: Value<()> = Rc::new(RefCell::new(
         std_reference_wrapper_const_convertible_to_int_ref_::new({ t2.as_pointer() }),
     ));
-    unimplemented!();
+    (*r2.borrow_mut()) = (*r.borrow()).clone();
     unimplemented!();
 }
 pub fn f_6() {}
@@ -95,7 +95,7 @@ pub fn test_function_8() {
     let r2: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_void____::new({
         FnPtr::<fn()>::new(g_7)
     })));
-    unimplemented!();
+    (*r2.borrow_mut()) = (*r.borrow()).clone();
     unimplemented!();
 }
 pub fn main() {

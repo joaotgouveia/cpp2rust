@@ -220,7 +220,7 @@ pub fn test_construction_with_repeated_types_12() {
     const _: () = assert!(true, "std::is_constructible<V, Bar>::value");;
 }
 pub fn test_vector_bool_13() {
-    let mut vec_: () = std_vector_bool__std_allocator_bool__::new_1({ unimplemented!() });
+    let mut vec_: () = unimplemented!();
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();

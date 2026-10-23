@@ -7,8 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn is_about_0(mut x: (), mut y: (), mut significant_digits: ()) -> () {
-    let mut epsilon: () = unimplemented!();
-    return ((unsafe { abs_1(((x) - (y))) }) < (epsilon));
+    let mut epsilon: () = (unsafe { pow_1(((1_f64) / (10_f64)), significant_digits) });
+    return ((unsafe { abs_2(((x) - (y))) }) < (epsilon));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -41,7 +41,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut v3: () = (unsafe {
             (unsafe {
                 let mut ___x: () = 2_f64;
-                pow_2(&mut ___x, &v1)
+                pow_3(&mut ___x, &v1)
             })()
         });
         unimplemented!();

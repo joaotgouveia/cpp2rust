@@ -7,11 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn swap_0(x: Ptr<ADLSwap>, y: Ptr<ADLSwap>) {
-    ({
-        let ___x: Ptr<()> = field_ptr!(x, i);
-        let ___y: Ptr<()> = field_ptr!(y, i);
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
     field!(x, adlSwapCalled).write(true);
     field!(y, adlSwapCalled).write(true);
 }
@@ -41,17 +37,9 @@ impl Default for ADLSwap {
         }
     }
 }
-pub fn swap_2(x: Ptr<TrackedMove_true_>, y: Ptr<TrackedMove_true_>) {
-    ({
-        let ___x: Ptr<()> = field_ptr!(x, i);
-        let ___y: Ptr<()> = field_ptr!(y, i);
-        swap_1(___x, ___y)
-    });
-    ({
-        let ___x: Ptr<()> = field_ptr!(x, numberOfMoves);
-        let ___y: Ptr<()> = field_ptr!(y, numberOfMoves);
-        swap_1(___x, ___y)
-    });
+pub fn swap_1(x: Ptr<TrackedMove_true_>, y: Ptr<TrackedMove_true_>) {
+    unimplemented!();
+    unimplemented!();
     field!(x, swapCalled).write(true);
     field!(y, swapCalled).write(true);
 }
@@ -95,17 +83,9 @@ impl Default for TrackedMove_true_ {
         }
     }
 }
-pub fn swap_3(x: Ptr<TrackedMove_false_>, y: Ptr<TrackedMove_false_>) {
-    ({
-        let ___x: Ptr<()> = field_ptr!(x, i);
-        let ___y: Ptr<()> = field_ptr!(y, i);
-        swap_1(___x, ___y)
-    });
-    ({
-        let ___x: Ptr<()> = field_ptr!(x, numberOfMoves);
-        let ___y: Ptr<()> = field_ptr!(y, numberOfMoves);
-        swap_1(___x, ___y)
-    });
+pub fn swap_2(x: Ptr<TrackedMove_false_>, y: Ptr<TrackedMove_false_>) {
+    unimplemented!();
+    unimplemented!();
     field!(x, swapCalled).write(true);
     field!(y, swapCalled).write(true);
 }
@@ -163,10 +143,10 @@ impl MoveOnlyErrorType {
         Self {}
     }
 }
-pub fn operator_eq_4(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) -> () {
+pub fn operator_eq_3(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) -> () {
     return ({ _a0.with(|__s| __s.b) } == { _a1.with(|__s| __s.b) });
 }
-pub fn swap_5(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) {}
+pub fn swap_4(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) {}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor)]
 #[byte_size(2)]
 pub struct TailClobberer_0_ {
@@ -183,7 +163,7 @@ impl TailClobberer_0_ {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 2usize;
-                memset_6(___s, 0_(), ___n)
+                memset_5(___s, 0_(), ___n)
             });
         }
         field!(this, b).write(false);
@@ -198,7 +178,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_4(
+            operator_eq_3(
                 Rc::new(RefCell::new(TailClobberer_0_ { b: self.b.clone() })).as_pointer(),
                 Rc::new(RefCell::new(TailClobberer_0_ { b: other.b.clone() })).as_pointer(),
             )
@@ -211,10 +191,10 @@ impl Default for TailClobberer_0_ {
         { TailClobberer_0_::new_1() }
     }
 }
-pub fn operator_eq_7(_a0: Ptr<TailClobberer_1_>, _a1: Ptr<TailClobberer_1_>) -> () {
+pub fn operator_eq_6(_a0: Ptr<TailClobberer_1_>, _a1: Ptr<TailClobberer_1_>) -> () {
     return ({ _a0.with(|__s| __s.b) } == { _a1.with(|__s| __s.b) });
 }
-pub fn swap_8(_a0: Ptr<TailClobberer_1_>, _a1: Ptr<TailClobberer_1_>) {}
+pub fn swap_7(_a0: Ptr<TailClobberer_1_>, _a1: Ptr<TailClobberer_1_>) {}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor)]
 #[byte_size(2)]
 pub struct TailClobberer_1_ {
@@ -231,7 +211,7 @@ impl TailClobberer_1_ {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 2usize;
-                memset_6(___s, 1_(), ___n)
+                memset_5(___s, 1_(), ___n)
             });
         }
         field!(this, b).write(false);
@@ -246,7 +226,7 @@ impl TailClobberer_1_ {
 impl std::cmp::PartialEq for TailClobberer_1_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_7(
+            operator_eq_6(
                 Rc::new(RefCell::new(TailClobberer_1_ { b: self.b.clone() })).as_pointer(),
                 Rc::new(RefCell::new(TailClobberer_1_ { b: other.b.clone() })).as_pointer(),
             )
@@ -334,7 +314,7 @@ impl BoolWithPadding {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 8usize;
-                memset_6(___s, 0_(), ___n)
+                memset_5(___s, 0_(), ___n)
             });
         }
         field!(this, val_).write(val);
@@ -381,7 +361,7 @@ impl IntWithoutPadding {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 4usize;
-                memset_6(___s, 0_(), ___n)
+                memset_5(___s, 0_(), ___n)
             });
         }
         field!(this, val_).write(val);
@@ -475,13 +455,13 @@ const _: () = assert!(true, "HasMemberSwap<int, int>");
 pub struct NotSwappable {}
 const _: () = assert!(!(false), "!HasMemberSwap<NotSwappable, int>");
 const _: () = assert!(!(false), "!HasMemberSwap<int, NotSwappable>");
-pub fn swap_9(_a0: Ptr<NotMoveConstructible>, _a1: Ptr<NotMoveConstructible>) {}
+pub fn swap_8(_a0: Ptr<NotMoveConstructible>, _a1: Ptr<NotMoveConstructible>) {}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotMoveConstructible {}
 const _: () = assert!(!(false), "!HasMemberSwap<NotMoveConstructible, int>");
 const _: () = assert!(!(false), "!HasMemberSwap<int, NotMoveConstructible>");
-pub fn swap_10(_a0: Ptr<MoveMayThrow>, _a1: Ptr<MoveMayThrow>) {}
+pub fn swap_9(_a0: Ptr<MoveMayThrow>, _a1: Ptr<MoveMayThrow>) {}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MoveMayThrow {}
@@ -492,13 +472,13 @@ const _: () = assert!(!(false), "!HasMemberSwap<MoveMayThrow, MoveMayThrow>");
 const _: () = assert!(true, "MemberSwapNoexcept<int, int>");
 const _: () = assert!(!(false), "!MemberSwapNoexcept<MoveMayThrow, int>");
 const _: () = assert!(!(false), "!MemberSwapNoexcept<int, MoveMayThrow>");
-pub fn swap_11(_a0: Ptr<SwapMayThrow>, _a1: Ptr<SwapMayThrow>) {}
+pub fn swap_10(_a0: Ptr<SwapMayThrow>, _a1: Ptr<SwapMayThrow>) {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct SwapMayThrow {}
 const _: () = assert!(!(false), "!MemberSwapNoexcept<SwapMayThrow, int>");
 const _: () = assert!(!(false), "!MemberSwapNoexcept<int, SwapMayThrow>");
-pub fn test_12() -> () {
+pub fn test_11() -> () {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -616,7 +596,7 @@ pub fn test_12() -> () {
     }
     return true;
 }
-pub fn testException_13() {}
+pub fn testException_12() {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -637,9 +617,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_12() });
+    ({ test_11() });
     const _: () = assert!(true, "test()");;
-    ({ testException_13() });
+    ({ testException_12() });
     return 0_();
 }
 pub trait BoolWithPaddingImpl {

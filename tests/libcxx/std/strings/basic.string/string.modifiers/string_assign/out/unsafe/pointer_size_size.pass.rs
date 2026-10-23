@@ -416,8 +416,12 @@ pub unsafe fn make_thread_unsafe_shared_14()
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_33__::destructor,
     );
     let mut alloc: () = unimplemented!();
-    ptr.block = unimplemented!();
-    unimplemented!();
+    ptr.block = (unsafe {
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_33___control_block__::allocate ( & mut alloc , 1_() , )
+    });
+    (unsafe {
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_33___control_block__::construct ( & mut alloc , ptr . block  , )
+    });
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_33__::copy_from({ &ptr });
 }
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_33___control_block {
@@ -466,8 +470,12 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_33__ {
             return;
         };
         let mut alloc: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        (unsafe {
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_33___control_block__::destroy ( & mut alloc , self . block  , )
+        });
+        (unsafe {
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_33___control_block__::deallocate ( & mut alloc , self . block  , 1_() , )
+        });
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_33_ {
         return (&mut (*self.block).content as *mut limited_alloc_handle_33_);
@@ -555,7 +563,7 @@ impl Default for limited_allocator_char__33_ {
 pub unsafe fn test_15(mut s: (), mut str: *const (), mut pos: (), mut n: (), mut expected: ()) {
     let mut str_len: () = unimplemented!();
     if ((pos) <= (str_len)) {
-        (unsafe { s.assign_92(str, pos, n) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -564,7 +572,7 @@ pub unsafe fn test_15(mut s: (), mut str: *const (), mut pos: (), mut n: (), mut
 pub unsafe fn test_16(mut s: (), mut str: *const (), mut pos: (), mut n: (), mut expected: ()) {
     let mut str_len: () = unimplemented!();
     if ((pos) <= (str_len)) {
-        (unsafe { s.assign_92(str, pos, n) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -573,7 +581,7 @@ pub unsafe fn test_16(mut s: (), mut str: *const (), mut pos: (), mut n: (), mut
 pub unsafe fn test_17(mut s: (), mut str: *const (), mut pos: (), mut n: (), mut expected: ()) {
     let mut str_len: () = unimplemented!();
     if ((pos) <= (str_len)) {
-        (unsafe { s.assign_92(str, pos, n) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -582,7 +590,7 @@ pub unsafe fn test_17(mut s: (), mut str: *const (), mut pos: (), mut n: (), mut
 pub unsafe fn test_18(mut s: (), mut str: *const (), mut pos: (), mut n: (), mut expected: ()) {
     let mut str_len: () = unimplemented!();
     if ((pos) <= (str_len)) {
-        (unsafe { s.assign_92(str, pos, n) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

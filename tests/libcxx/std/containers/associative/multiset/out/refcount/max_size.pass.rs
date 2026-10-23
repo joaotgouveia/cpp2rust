@@ -396,9 +396,6 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_1844674407
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct limited_allocator_int__10__rebind_int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_int__10__rebind_std___tree_node_int__void_ptr__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
 pub struct limited_allocator_int__10_ {
@@ -409,41 +406,7 @@ pub struct limited_allocator_int__10_ {
 impl limited_allocator_int__10_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct limited_allocator_std___tree_node_int__void_ptr___10__rebind_std___tree_node_base_void_ptr__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
-#[byte_size(8)]
-pub struct limited_allocator_std___tree_node_int__void_ptr___10_ {
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___tree_node_int__void_ptr___10_ {
-    pub fn new() -> Self {
-        Self {
-            handle_: ({ make_thread_unsafe_shared_5() }),
-        }
-    }
-}
-impl Default for limited_allocator_std___tree_node_int__void_ptr___10_ {
-    fn default() -> Self {
-        { limited_allocator_std___tree_node_int__void_ptr___10_::new() }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
-#[byte_size(8)]
-pub struct limited_allocator_std___tree_node_base_void_ptr___10_ {
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___tree_node_base_void_ptr___10_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
 pub struct limited_allocator_int__18446744073709551615__rebind_int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_int__18446744073709551615__rebind_std___tree_node_int__void_ptr__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
 pub struct limited_allocator_int__18446744073709551615_ {
@@ -452,37 +415,6 @@ pub struct limited_allocator_int__18446744073709551615_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
 }
 impl limited_allocator_int__18446744073709551615_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_std___tree_node_int__void_ptr___18446744073709551615__rebind_std___tree_node_base_void_ptr__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
-#[byte_size(8)]
-pub struct limited_allocator_std___tree_node_int__void_ptr___18446744073709551615_ {
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl limited_allocator_std___tree_node_int__void_ptr___18446744073709551615_ {
-    pub fn new() -> Self {
-        Self {
-            handle_: ({ make_thread_unsafe_shared_6() }),
-        }
-    }
-}
-impl Default for limited_allocator_std___tree_node_int__void_ptr___18446744073709551615_ {
-    fn default() -> Self {
-        { limited_allocator_std___tree_node_int__void_ptr___18446744073709551615_::new() }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
-#[byte_size(8)]
-pub struct limited_allocator_std___tree_node_base_void_ptr___18446744073709551615_ {
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl limited_allocator_std___tree_node_base_void_ptr___18446744073709551615_ {}
 pub fn test_7() -> () {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -730,110 +662,6 @@ pub trait limited_allocator_int__18446744073709551615_Impl {
 impl limited_allocator_int__18446744073709551615_Impl
     for Ptr<limited_allocator_int__18446744073709551615_>
 {
-    fn destructor(&self) {
-        field_ptr!(self, handle_).destructor();
-    }
-}
-pub trait limited_allocator_std___tree_node_base_void_ptr___10_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___tree_node_base_void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<std___tree_node_base_void_ptr_>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___tree_node_base_void_ptr___10_Impl
-    for Ptr<limited_allocator_std___tree_node_base_void_ptr___10_>
-{
-    fn destructor(&self) {
-        field_ptr!(self, handle_).destructor();
-    }
-}
-pub trait limited_allocator_std___tree_node_base_void_ptr___18446744073709551615_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___tree_node_base_void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<std___tree_node_base_void_ptr_>, mut n: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___tree_node_base_void_ptr___18446744073709551615_Impl
-    for Ptr<limited_allocator_std___tree_node_base_void_ptr___18446744073709551615_>
-{
-    fn destructor(&self) {
-        field_ptr!(self, handle_).destructor();
-    }
-}
-pub trait limited_allocator_std___tree_node_int__void_ptr___10_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___tree_node_int__void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, p: Ptr<std___tree_node_int__void_ptr_>, n: ());
-    fn max_size(&self) -> ();
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___tree_node_int__void_ptr___10_Impl
-    for Ptr<limited_allocator_std___tree_node_int__void_ptr___10_>
-{
-    fn deallocate(&self, mut p: Ptr<std___tree_node_int__void_ptr_>, mut n: ()) {
-        ({
-            limited_alloc_handle_10_Impl::deallocate_2_class_std___tree_node_int__void_ptr_(
-                &({
-                    detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl::operator_arrow_7(
-                        &field_ptr!((*self), handle_),
-                    )
-                }),
-                (p).clone(),
-                n,
-            )
-        });
-    }
-    fn max_size(&self) -> () {
-        return 10_();
-    }
-    fn destructor(&self) {
-        field_ptr!(self, handle_).destructor();
-    }
-}
-pub trait limited_allocator_std___tree_node_int__void_ptr___18446744073709551615_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___tree_node_int__void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, p: Ptr<std___tree_node_int__void_ptr_>, n: ());
-    fn max_size(&self) -> ();
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___tree_node_int__void_ptr___18446744073709551615_Impl
-    for Ptr<limited_allocator_std___tree_node_int__void_ptr___18446744073709551615_>
-{
-    fn deallocate(&self, mut p: Ptr<std___tree_node_int__void_ptr_>, mut n: ()) {
-        ({
-            limited_alloc_handle_18446744073709551615_Impl :: deallocate_2_class_std___tree_node_int__void_ptr_ ( &( { detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__Impl :: operator_arrow_7 ( &field_ptr!((* self )  , handle_)  , ) } )   , (p ).clone() , n  , )
-        });
-    }
-    fn max_size(&self) -> () {
-        return 18446744073709551615_();
-    }
     fn destructor(&self) {
         field_ptr!(self, handle_).destructor();
     }

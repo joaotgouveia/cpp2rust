@@ -96,59 +96,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub unsafe fn operator_eq_7(
-    mut x : min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_8(
-    mut x : min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  = x ;
-        operator_eq_7(_x, y)
-    });
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_7(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_9(
-    mut x : min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_9(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-impl min_allocator_DefaultOnly_ {
-    pub unsafe fn new_1(
-        mut _a0 : min_allocator_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0____,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-pub unsafe fn operator_eq_10(
     mut _a0: min_allocator_DefaultOnly_,
     mut _a1: min_allocator_DefaultOnly_,
 ) -> () {
@@ -159,26 +106,11 @@ pub unsafe fn operator_eq_10(
 pub struct min_allocator_DefaultOnly_ {}
 impl std::cmp::PartialEq for min_allocator_DefaultOnly_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_10(self.clone(), other.clone()) }
+        unsafe { operator_eq_7(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_DefaultOnly_ {}
-impl min_allocator_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0____ { pub unsafe fn new_1 ( mut _a0 : min_allocator_DefaultOnly_ , ) -> Self { let mut this = Self { } ;
- this } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-impl min_allocator_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0____ { pub unsafe fn allocate ( &mut self , mut n : () , ) -> min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } pub unsafe fn deallocate ( &mut self , mut p : min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ , mut n : () , ) { unimplemented!()  ;
- } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___forward_begin_node_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____
-{}
-impl min_allocator_DefaultOnly_ {}
-impl min_allocator_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0____ { }
-pub unsafe fn check_allocator_11(mut n: (), alloc: Option<*const ()>) {
+pub unsafe fn check_allocator_8(mut n: (), alloc: Option<*const ()>) {
     let mut __alloc_default: Option<()> = None;
     let mut alloc: *const () =
         alloc.unwrap_or_else(|| unsafe { __alloc_default.insert(unimplemented!()) as *const () });
@@ -186,7 +118,7 @@ pub unsafe fn check_allocator_11(mut n: (), alloc: Option<*const ()>) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn check_allocator_12(mut n: (), alloc: Option<*const min_allocator_DefaultOnly_>) {
+pub unsafe fn check_allocator_9(mut n: (), alloc: Option<*const min_allocator_DefaultOnly_>) {
     let mut __alloc_default: Option<min_allocator_DefaultOnly_> = None;
     let mut alloc: *const min_allocator_DefaultOnly_ = alloc.unwrap_or_else(|| unsafe {
         __alloc_default.insert(<min_allocator_DefaultOnly_>::default())
@@ -245,8 +177,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             };
         }
         unimplemented!();
-        (unsafe { check_allocator_11(0_(), None) });
-        (unsafe { check_allocator_11(3_(), None) });
+        (unsafe { check_allocator_8(0_(), None) });
+        (unsafe { check_allocator_8(3_(), None) });
     }
     {
         let mut N: () = 10_();
@@ -262,8 +194,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             };
         }
         unimplemented!();
-        (unsafe { check_allocator_12(0_(), None) });
-        (unsafe { check_allocator_12(3_(), None) });
+        (unsafe { check_allocator_9(0_(), None) });
+        (unsafe { check_allocator_9(3_(), None) });
     }
     return 0_();
 }

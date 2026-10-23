@@ -27,174 +27,30 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe {
-        test_0(
-            c"\\(a\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_basic,
-            1_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a[bc]\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_basic,
-            1_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\([bc]\\)\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_basic,
-            2_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"(a([bc]))".as_ptr(),
-            std_regex_constants_syntax_option_type_basic,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a[bc]\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\([bc]\\)\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"(a([bc]))".as_ptr(),
-            std_regex_constants_syntax_option_type_extended,
-            2_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a[bc]\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\([bc]\\)\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"(a([bc]))".as_ptr(),
-            std_regex_constants_syntax_option_type_ECMAScript,
-            2_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_awk,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a[bc]\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_awk,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\([bc]\\)\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_awk,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"(a([bc]))".as_ptr(),
-            std_regex_constants_syntax_option_type_awk,
-            2_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_grep,
-            1_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a[bc]\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_grep,
-            1_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\([bc]\\)\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_grep,
-            2_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"(a([bc]))".as_ptr(),
-            std_regex_constants_syntax_option_type_grep,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_egrep,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a[bc]\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_egrep,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"\\(a\\([bc]\\)\\)".as_ptr(),
-            std_regex_constants_syntax_option_type_egrep,
-            0_(),
-        )
-    });
-    (unsafe {
-        test_0(
-            c"(a([bc]))".as_ptr(),
-            std_regex_constants_syntax_option_type_egrep,
-            2_(),
-        )
-    });
+    (unsafe { test_0(c"\\(a\\)".as_ptr(), unimplemented!(), 1_()) });
+    (unsafe { test_0(c"\\(a[bc]\\)".as_ptr(), unimplemented!(), 1_()) });
+    (unsafe { test_0(c"\\(a\\([bc]\\)\\)".as_ptr(), unimplemented!(), 2_()) });
+    (unsafe { test_0(c"(a([bc]))".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a[bc]\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a\\([bc]\\)\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"(a([bc]))".as_ptr(), unimplemented!(), 2_()) });
+    (unsafe { test_0(c"\\(a\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a[bc]\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a\\([bc]\\)\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"(a([bc]))".as_ptr(), unimplemented!(), 2_()) });
+    (unsafe { test_0(c"\\(a\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a[bc]\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a\\([bc]\\)\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"(a([bc]))".as_ptr(), unimplemented!(), 2_()) });
+    (unsafe { test_0(c"\\(a\\)".as_ptr(), unimplemented!(), 1_()) });
+    (unsafe { test_0(c"\\(a[bc]\\)".as_ptr(), unimplemented!(), 1_()) });
+    (unsafe { test_0(c"\\(a\\([bc]\\)\\)".as_ptr(), unimplemented!(), 2_()) });
+    (unsafe { test_0(c"(a([bc]))".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a[bc]\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"\\(a\\([bc]\\)\\)".as_ptr(), unimplemented!(), 0_()) });
+    (unsafe { test_0(c"(a([bc]))".as_ptr(), unimplemented!(), 2_()) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

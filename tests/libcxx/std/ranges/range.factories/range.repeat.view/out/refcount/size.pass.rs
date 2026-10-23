@@ -18,7 +18,7 @@ pub fn test_0() -> () {
         unimplemented!();
     }
     {
-        let mut int_max: () = unimplemented!();
+        let mut int_max: () = ({ std_numeric_limits_int_::max() });
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

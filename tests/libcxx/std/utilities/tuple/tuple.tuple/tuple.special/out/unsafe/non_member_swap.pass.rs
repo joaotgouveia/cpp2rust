@@ -193,12 +193,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut t0: () = unimplemented!();
         let mut t1: () = unimplemented!();
-        unimplemented!();
+        (unsafe { swap_14(&mut t0, &mut t1) });
     }
     {
         let mut t0: () = MoveOnly::new({ Some(0_()) });
         let mut t1: () = MoveOnly::new({ Some(1_()) });
-        unimplemented!();
+        (unsafe { swap_15(&mut t0, &mut t1) });
         unimplemented!();
         unimplemented!();
     }
@@ -213,7 +213,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let mut __tmp_3: MoveOnly = MoveOnly::new({ Some(3_()) });
             std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
         };
-        unimplemented!();
+        (unsafe { swap_16(&mut t0, &mut t1) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -236,7 +236,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 &mut __tmp_9
             })
         };
-        unimplemented!();
+        (unsafe { swap_17(&mut t0, &mut t1) });
         unimplemented!();
         unimplemented!();
         unimplemented!();

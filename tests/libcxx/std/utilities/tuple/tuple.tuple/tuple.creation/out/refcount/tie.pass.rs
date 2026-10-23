@@ -15,7 +15,7 @@ pub fn test_tie_0() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        (*res.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

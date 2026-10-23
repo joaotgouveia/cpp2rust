@@ -35,17 +35,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut p: () = std_unique_ptr_Aarrarr__std_default_delete_Aarrarr__::new_1({
+        let mut p: () = std_unique_ptr_Aarrarr__std_default_delete_Aarrarr__::new({
             Box::leak((0..1_()).map(|_| <A>::default()).collect::<Box<[A]>>()).as_mut_ptr()
         });
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = (unsafe { make_unique_0() });
         unimplemented!();
     }
     {
-        let mut p: () = (unsafe { make_unique_0(1_()) });
+        let mut p: () = (unsafe { make_unique_1(1_()) });
         unimplemented!();
     }
     return 0_();

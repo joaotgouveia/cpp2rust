@@ -149,10 +149,14 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_4(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == ({ std_numeric_limits_int_::min() }))
+        || (rhs.value == ({ std_numeric_limits_int_::min() }))
+    {
         return unimplemented!();
     }
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == ({ std_numeric_limits_int_::max() }))
+        || (rhs.value == ({ std_numeric_limits_int_::max() }))
+    {
         return unimplemented!();
     }
     return unimplemented!();
@@ -349,8 +353,16 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        let p2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_long__long_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -359,8 +371,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_4: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_5: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
+        }));
+        let p2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_6: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_7: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -369,8 +389,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_8: Value<()> = Rc::new(RefCell::new(2_()));
+            let __tmp_9: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
+        }));
+        let p2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_10: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_11: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_10.as_pointer() }, { __tmp_11.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -379,8 +407,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_12: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_13: Value<()> = Rc::new(RefCell::new(2_()));
+            std_pair_int__short_::new({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
+        }));
+        let p2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_14: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_15: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -389,8 +425,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_16: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_17: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_16.as_pointer() }, { __tmp_17.as_pointer() })
+        }));
+        let p2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_18: Value<()> = Rc::new(RefCell::new(2_()));
+            let __tmp_19: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_18.as_pointer() }, { __tmp_19.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -399,8 +443,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_20: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_21: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_20.as_pointer() }, { __tmp_21.as_pointer() })
+        }));
+        let p2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_22: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_23: Value<()> = Rc::new(RefCell::new(2_()));
+            std_pair_int__short_::new({ __tmp_22.as_pointer() }, { __tmp_23.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -409,8 +461,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_24: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_25: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_24.as_pointer() }, { __tmp_25.as_pointer() })
+        }));
+        let p2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_26: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_27: Value<()> = Rc::new(RefCell::new(2_()));
+            std_pair_int__short_::new({ __tmp_26.as_pointer() }, { __tmp_27.as_pointer() })
+        }));
         const _: () = assert!(true, "!(p1 == p2)");;
         const _: () = assert!(true, "(p1 != p2)");;
         const _: () = assert!(true, "!(p1 <  p2)");;

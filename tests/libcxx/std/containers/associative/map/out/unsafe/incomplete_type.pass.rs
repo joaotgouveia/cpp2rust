@@ -36,33 +36,6 @@ pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
 pub struct complete_type_allocator_std_pair_const_int__int__ {}
 impl complete_type_allocator_std_pair_const_int__int__ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {}
-impl complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {
-    pub unsafe fn new() -> Self {
-        let mut this = Self {};
-        this
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___tree_node_std___value_type_int__int___void_ptr_,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
-}
-impl Default for complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__::new()
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct complete_type_allocator_std___tree_node_base_void_ptr__ {}
-impl complete_type_allocator_std___tree_node_base_void_ptr__ {}
-#[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
 pub struct A {
     pub data: (),

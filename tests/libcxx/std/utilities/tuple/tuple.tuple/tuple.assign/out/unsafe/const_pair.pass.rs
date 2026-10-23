@@ -30,9 +30,13 @@ impl PotentiallyThrowingCopyAssignable {
 }
 pub unsafe fn test_0() -> () {
     {
-        let mut t0: () = unimplemented!();
+        let mut t0: () = {
+            let mut __tmp_0: () = 2_();
+            let mut __tmp_1: () = ('a' as ());
+            std_pair_long__char_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
         let mut t1: () = unimplemented!();
-        unimplemented!();
+        t1 = (t0).clone();
         unimplemented!();
         unimplemented!();
     }

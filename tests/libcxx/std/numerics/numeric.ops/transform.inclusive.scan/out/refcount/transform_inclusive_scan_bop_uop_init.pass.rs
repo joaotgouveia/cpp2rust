@@ -329,29 +329,23 @@ pub fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_5(_i, n)
     });
 }
-pub fn iter_swap_7(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_8(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -397,7 +391,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_11(
+            operator_cmp_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -422,7 +416,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_10(
+            operator_eq_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -509,6 +503,27 @@ impl util_iterator_error {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct add_one {}
+pub fn test_11(
+    mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    bop: (),
+    mut uop: add_one,
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
 pub fn test_12(
     mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
@@ -523,38 +538,60 @@ pub fn test_12(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_13(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_14(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_13(
+    mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    bop: (),
+    uop: (),
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    let uop: Value<()> = Rc::new(RefCell::new(uop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_14(
+    mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    bop: (),
+    uop: (),
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    let uop: Value<()> = Rc::new(RefCell::new(uop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_15(
-    mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    mut first: forward_iterator_const_int_ptr_,
+    mut last: forward_iterator_const_int_ptr_,
     bop: (),
     mut uop: add_one,
     mut init: (),
@@ -566,38 +603,59 @@ pub fn test_15(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_16(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_17(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_16(
+    mut first: forward_iterator_const_int_ptr_,
+    mut last: forward_iterator_const_int_ptr_,
+    bop: (),
+    mut uop: add_one,
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_17(
+    mut first: forward_iterator_const_int_ptr_,
+    mut last: forward_iterator_const_int_ptr_,
+    bop: (),
+    uop: (),
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    let uop: Value<()> = Rc::new(RefCell::new(uop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_18(
-    mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    mut first: forward_iterator_const_int_ptr_,
+    mut last: forward_iterator_const_int_ptr_,
     bop: (),
     uop: (),
     mut init: (),
@@ -610,38 +668,58 @@ pub fn test_18(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_19(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_20(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_19(
+    mut first: bidirectional_iterator_const_int_ptr_,
+    mut last: bidirectional_iterator_const_int_ptr_,
+    bop: (),
+    mut uop: add_one,
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_20(
+    mut first: bidirectional_iterator_const_int_ptr_,
+    mut last: bidirectional_iterator_const_int_ptr_,
+    bop: (),
+    mut uop: add_one,
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_21(
-    mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    mut first: bidirectional_iterator_const_int_ptr_,
+    mut last: bidirectional_iterator_const_int_ptr_,
     bop: (),
     uop: (),
     mut init: (),
@@ -654,38 +732,59 @@ pub fn test_21(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_22(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_23(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_22(
+    mut first: bidirectional_iterator_const_int_ptr_,
+    mut last: bidirectional_iterator_const_int_ptr_,
+    bop: (),
+    uop: (),
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    let uop: Value<()> = Rc::new(RefCell::new(uop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_23(
+    mut first: random_access_iterator_const_int_ptr_,
+    mut last: random_access_iterator_const_int_ptr_,
+    bop: (),
+    mut uop: add_one,
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_24(
-    mut first: forward_iterator_const_int_ptr_,
-    mut last: forward_iterator_const_int_ptr_,
+    mut first: random_access_iterator_const_int_ptr_,
+    mut last: random_access_iterator_const_int_ptr_,
     bop: (),
     mut uop: add_one,
     mut init: (),
@@ -697,38 +796,60 @@ pub fn test_24(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_25(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_14(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_25(
+    mut first: random_access_iterator_const_int_ptr_,
+    mut last: random_access_iterator_const_int_ptr_,
+    bop: (),
+    uop: (),
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    let uop: Value<()> = Rc::new(RefCell::new(uop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_26(
-    mut first: forward_iterator_const_int_ptr_,
-    mut last: forward_iterator_const_int_ptr_,
+    mut first: random_access_iterator_const_int_ptr_,
+    mut last: random_access_iterator_const_int_ptr_,
+    bop: (),
+    uop: (),
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    let uop: Value<()> = Rc::new(RefCell::new(uop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_27(
+    mut first: Ptr<()>,
+    mut last: Ptr<()>,
     bop: (),
     mut uop: add_one,
     mut init: (),
@@ -740,38 +861,37 @@ pub fn test_26(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_27(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_17(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_28(
-    mut first: forward_iterator_const_int_ptr_,
-    mut last: forward_iterator_const_int_ptr_,
+    mut first: Ptr<()>,
+    mut last: Ptr<()>,
+    bop: (),
+    mut uop: add_one,
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_29(
+    mut first: Ptr<()>,
+    mut last: Ptr<()>,
     bop: (),
     uop: (),
     mut init: (),
@@ -784,38 +904,16 @@ pub fn test_28(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_29(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_20(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_30(
-    mut first: forward_iterator_const_int_ptr_,
-    mut last: forward_iterator_const_int_ptr_,
+    mut first: Ptr<()>,
+    mut last: Ptr<()>,
     bop: (),
     uop: (),
     mut init: (),
@@ -828,38 +926,37 @@ pub fn test_30(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_31(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_23(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_31(
+    mut first: Ptr<()>,
+    mut last: Ptr<()>,
+    bop: (),
+    mut uop: add_one,
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_32(
-    mut first: bidirectional_iterator_const_int_ptr_,
-    mut last: bidirectional_iterator_const_int_ptr_,
+    mut first: Ptr<()>,
+    mut last: Ptr<()>,
     bop: (),
     mut uop: add_one,
     mut init: (),
@@ -871,433 +968,36 @@ pub fn test_32(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_33(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_14(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
+    end = __rhs;
+    unimplemented!();
+}
+pub fn test_33(
+    mut first: Ptr<()>,
+    mut last: Ptr<()>,
+    bop: (),
+    uop: (),
+    mut init: (),
+    mut rFirst: Ptr<()>,
+    mut rLast: Ptr<()>,
+) {
+    let bop: Value<()> = Rc::new(RefCell::new(bop));
+    let uop: Value<()> = Rc::new(RefCell::new(uop));
+    unimplemented!();
+    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut end: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
 pub fn test_34(
-    mut first: bidirectional_iterator_const_int_ptr_,
-    mut last: bidirectional_iterator_const_int_ptr_,
-    bop: (),
-    mut uop: add_one,
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_35(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_17(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_36(
-    mut first: bidirectional_iterator_const_int_ptr_,
-    mut last: bidirectional_iterator_const_int_ptr_,
-    bop: (),
-    uop: (),
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    let uop: Value<()> = Rc::new(RefCell::new(uop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_37(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_20(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_38(
-    mut first: bidirectional_iterator_const_int_ptr_,
-    mut last: bidirectional_iterator_const_int_ptr_,
-    bop: (),
-    uop: (),
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    let uop: Value<()> = Rc::new(RefCell::new(uop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_39(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_23(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_40(
-    mut first: random_access_iterator_const_int_ptr_,
-    mut last: random_access_iterator_const_int_ptr_,
-    bop: (),
-    mut uop: add_one,
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_41(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_14(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_42(
-    mut first: random_access_iterator_const_int_ptr_,
-    mut last: random_access_iterator_const_int_ptr_,
-    bop: (),
-    mut uop: add_one,
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_43(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_17(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_44(
-    mut first: random_access_iterator_const_int_ptr_,
-    mut last: random_access_iterator_const_int_ptr_,
-    bop: (),
-    uop: (),
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    let uop: Value<()> = Rc::new(RefCell::new(uop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_45(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_20(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_46(
-    mut first: random_access_iterator_const_int_ptr_,
-    mut last: random_access_iterator_const_int_ptr_,
-    bop: (),
-    uop: (),
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    let uop: Value<()> = Rc::new(RefCell::new(uop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        transform_inclusive_scan_47(
-            (first).clone(),
-            (last).clone(),
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_23(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_48(
-    mut first: Ptr<()>,
-    mut last: Ptr<()>,
-    bop: (),
-    mut uop: add_one,
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        let ___first: Ptr<()> = (first).clone();
-        let ___last: Ptr<()> = (last).clone();
-        let ___init: () = init;
-        transform_inclusive_scan_49(
-            ___first,
-            ___last,
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_14(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_50(
-    mut first: Ptr<()>,
-    mut last: Ptr<()>,
-    bop: (),
-    mut uop: add_one,
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        let ___first: Ptr<()> = (first).clone();
-        let ___last: Ptr<()> = (last).clone();
-        let ___init: () = init;
-        transform_inclusive_scan_51(
-            ___first,
-            ___last,
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_17(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_52(
     mut first: Ptr<()>,
     mut last: Ptr<()>,
     bop: (),
@@ -1312,272 +1012,14 @@ pub fn test_52(
     let out: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut end: Ptr<()> = ({
-        let ___first: Ptr<()> = (first).clone();
-        let ___last: Ptr<()> = (last).clone();
-        let ___init: () = init;
-        transform_inclusive_scan_53(
-            ___first,
-            ___last,
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
+    let mut end: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_20(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
+    let __rhs = unimplemented!();
     end = __rhs;
     unimplemented!();
 }
-pub fn test_54(
-    mut first: Ptr<()>,
-    mut last: Ptr<()>,
-    bop: (),
-    uop: (),
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    let uop: Value<()> = Rc::new(RefCell::new(uop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        let ___first: Ptr<()> = (first).clone();
-        let ___last: Ptr<()> = (last).clone();
-        let ___init: () = init;
-        transform_inclusive_scan_55(
-            ___first,
-            ___last,
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_23(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_56(
-    mut first: Ptr<()>,
-    mut last: Ptr<()>,
-    bop: (),
-    mut uop: add_one,
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        let ___first: Ptr<()> = (first).clone();
-        let ___last: Ptr<()> = (last).clone();
-        let ___init: () = init;
-        transform_inclusive_scan_14(
-            ___first,
-            ___last,
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_14(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_57(
-    mut first: Ptr<()>,
-    mut last: Ptr<()>,
-    bop: (),
-    mut uop: add_one,
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        let ___first: Ptr<()> = (first).clone();
-        let ___last: Ptr<()> = (last).clone();
-        let ___init: () = init;
-        transform_inclusive_scan_17(
-            ___first,
-            ___last,
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_17(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            (uop).clone(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_58(
-    mut first: Ptr<()>,
-    mut last: Ptr<()>,
-    bop: (),
-    uop: (),
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    let uop: Value<()> = Rc::new(RefCell::new(uop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        let ___first: Ptr<()> = (first).clone();
-        let ___last: Ptr<()> = (last).clone();
-        let ___init: () = init;
-        transform_inclusive_scan_20(
-            ___first,
-            ___last,
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_20(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_59(
-    mut first: Ptr<()>,
-    mut last: Ptr<()>,
-    bop: (),
-    uop: (),
-    mut init: (),
-    mut rFirst: Ptr<()>,
-    mut rLast: Ptr<()>,
-) {
-    let bop: Value<()> = Rc::new(RefCell::new(bop));
-    let uop: Value<()> = Rc::new(RefCell::new(uop));
-    unimplemented!();
-    let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut end: Ptr<()> = ({
-        let ___first: Ptr<()> = (first).clone();
-        let ___last: Ptr<()> = (last).clone();
-        let ___init: () = init;
-        transform_inclusive_scan_23(
-            ___first,
-            ___last,
-            (out.as_pointer() as Ptr<()>),
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    let __rhs = ({
-        let ___first: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (end).clone();
-        let ___result: Ptr<()> = (out.as_pointer() as Ptr<()>);
-        let ___init: () = init;
-        transform_inclusive_scan_23(
-            ___first,
-            ___last,
-            ___result,
-            unimplemented!(),
-            unimplemented!(),
-            ___init,
-        )
-    });
-    end = __rhs;
-    unimplemented!();
-}
-pub fn test_60() {
+pub fn test_35() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
     let pResI0: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
@@ -1631,6 +1073,27 @@ pub fn test_60() {
                 });
             let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_11(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    (ia.as_pointer() as Ptr<()>)
+                });
+            let _last: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
             test_12(
                 _first,
                 _last,
@@ -1650,30 +1113,9 @@ pub fn test_60() {
                 cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                     (ia.as_pointer() as Ptr<()>).offset((i) as isize)
                 });
-            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_15(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                    (ia.as_pointer() as Ptr<()>)
-                });
-            let _last: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
             let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_18(
+            test_13(
                 _first,
                 _last,
                 unimplemented!(),
@@ -1694,7 +1136,7 @@ pub fn test_60() {
                 });
             let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_21(
+            test_14(
                 _first,
                 _last,
                 unimplemented!(),
@@ -1715,6 +1157,27 @@ pub fn test_60() {
                 });
             let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_11(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    (ia.as_pointer() as Ptr<()>)
+                });
+            let _last: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
             test_12(
                 _first,
                 _last,
@@ -1734,8 +1197,165 @@ pub fn test_60() {
                 cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                     (ia.as_pointer() as Ptr<()>).offset((i) as isize)
                 });
-            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_13(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    (ia.as_pointer() as Ptr<()>)
+                });
+            let _last: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_14(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        i.prefix_inc();
+    }
+}
+pub fn test_36() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
+    let pResI0: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
+    let mResI0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
+    let pResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        -4_(),
+        -9_(),
+        -16_(),
+        -25_(),
+    ])));
+    let mResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
+    let pResI2: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([4_(), 8_(), 14_(), 22_(), 32_()])));
+    let mResI2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        4_(),
+        16_(),
+        96_(),
+        768_(),
+        7680_(),
+    ])));
+    let pResN2: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([1_(), -2_(), -7_(), -14_(), -23_()])));
+    let mResN2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -2_(),
+        6_(),
+        -30_(),
+        210_(),
+        -1890_(),
+    ])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    const _: () = assert!(true, "sa == sizeof(pResI0) / sizeof(pResI0[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResI0) / sizeof(mResI0[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResN0) / sizeof(pResN0[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResN0) / sizeof(mResN0[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResI2) / sizeof(pResI2[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResI2) / sizeof(mResI2[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResN2) / sizeof(pResN2[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResN2) / sizeof(mResN2[0])");;
+    let mut i: () = 0_();
+    'loop_: while (i < sa) {
+        ({
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+            });
+            let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_15(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+            });
+            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_16(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+            });
+            let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_17(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+            });
+            let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_18(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+            });
+            let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
             test_15(
                 _first,
                 _last,
@@ -1747,16 +1367,49 @@ pub fn test_60() {
             )
         });
         ({
-            let _first: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                    (ia.as_pointer() as Ptr<()>)
-                });
-            let _last: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+            });
+            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_16(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+            });
             let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_17(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+            });
+            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
             test_18(
                 _first,
                 _last,
@@ -1767,17 +1420,175 @@ pub fn test_60() {
                 _rLast,
             )
         });
+        i.prefix_inc();
+    }
+}
+pub fn test_37() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
+    let pResI0: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
+    let mResI0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
+    let pResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        -4_(),
+        -9_(),
+        -16_(),
+        -25_(),
+    ])));
+    let mResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
+    let pResI2: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([4_(), 8_(), 14_(), 22_(), 32_()])));
+    let mResI2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        4_(),
+        16_(),
+        96_(),
+        768_(),
+        7680_(),
+    ])));
+    let pResN2: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([1_(), -2_(), -7_(), -14_(), -23_()])));
+    let mResN2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -2_(),
+        6_(),
+        -30_(),
+        210_(),
+        -1890_(),
+    ])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    const _: () = assert!(true, "sa == sizeof(pResI0) / sizeof(pResI0[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResI0) / sizeof(mResI0[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResN0) / sizeof(pResN0[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResN0) / sizeof(mResN0[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResI2) / sizeof(pResI2[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResI2) / sizeof(mResI2[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResN2) / sizeof(pResN2[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResN2) / sizeof(mResN2[0])");;
+    let mut i: () = 0_();
+    'loop_: while (i < sa) {
         ({
-            let _first: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                    (ia.as_pointer() as Ptr<()>)
-                });
-            let _last: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<()>).offset((i) as isize)
                 });
-            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_19(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_20(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_21(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_22(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_19(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_20(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
             test_21(
                 _first,
                 _last,
@@ -1788,10 +1599,29 @@ pub fn test_60() {
                 _rLast,
             )
         });
+        ({
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_22(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
         i.prefix_inc();
     }
 }
-pub fn test_61() {
+pub fn test_38() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
     let pResI0: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
@@ -1835,13 +1665,33 @@ pub fn test_61() {
     let mut i: () = 0_();
     'loop_: while (i < sa) {
         ({
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-            });
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
             let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_23(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
             test_24(
                 _first,
                 _last,
@@ -1853,14 +1703,171 @@ pub fn test_61() {
             )
         });
         ({
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-            });
-            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_25(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
             test_26(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_23(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_24(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_25(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
+                });
+            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_26(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        i.prefix_inc();
+    }
+}
+pub fn test_39() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
+    let pResI0: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
+    let mResI0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
+    let pResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        -4_(),
+        -9_(),
+        -16_(),
+        -25_(),
+    ])));
+    let mResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
+    let pResI2: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([4_(), 8_(), 14_(), 22_(), 32_()])));
+    let mResI2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        4_(),
+        16_(),
+        96_(),
+        768_(),
+        7680_(),
+    ])));
+    let pResN2: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([1_(), -2_(), -7_(), -14_(), -23_()])));
+    let mResN2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -2_(),
+        6_(),
+        -30_(),
+        210_(),
+        -1890_(),
+    ])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    const _: () = assert!(true, "sa == sizeof(pResI0) / sizeof(pResI0[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResI0) / sizeof(mResI0[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResN0) / sizeof(pResN0[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResN0) / sizeof(mResN0[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResI2) / sizeof(pResI2[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResI2) / sizeof(mResI2[0])");;
+    const _: () = assert!(true, "sa == sizeof(pResN2) / sizeof(pResN2[0])");;
+    const _: () = assert!(true, "sa == sizeof(mResN2) / sizeof(mResN2[0])");;
+    let mut i: () = 0_();
+    'loop_: while (i < sa) {
+        ({
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_27(
                 _first,
                 _last,
                 unimplemented!(),
@@ -1871,14 +1878,26 @@ pub fn test_61() {
             )
         });
         ({
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-            });
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_28(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
             let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_28(
+            test_29(
                 _first,
                 _last,
                 unimplemented!(),
@@ -1889,11 +1908,8 @@ pub fn test_61() {
             )
         });
         ({
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-            });
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
             let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
             test_30(
@@ -1907,14 +1923,11 @@ pub fn test_61() {
             )
         });
         ({
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-            });
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
             let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_24(
+            test_27(
                 _first,
                 _last,
                 unimplemented!(),
@@ -1925,35 +1938,29 @@ pub fn test_61() {
             )
         });
         ({
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-            });
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
             let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_26(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-            });
-            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
             test_28(
                 _first,
                 _last,
                 unimplemented!(),
+                <add_one>::default(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_29(
+                _first,
+                _last,
+                unimplemented!(),
                 unimplemented!(),
                 2_(),
                 _rFirst,
@@ -1961,11 +1968,8 @@ pub fn test_61() {
             )
         });
         ({
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-            });
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
             let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
             test_30(
@@ -1981,7 +1985,7 @@ pub fn test_61() {
         i.prefix_inc();
     }
 }
-pub fn test_62() {
+pub fn test_40() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
     let pResI0: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
@@ -2025,14 +2029,25 @@ pub fn test_62() {
     let mut i: () = 0_();
     'loop_: while (i < sa) {
         ({
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
             let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_31(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
             test_32(
                 _first,
                 _last,
@@ -2044,37 +2059,29 @@ pub fn test_62() {
             )
         });
         ({
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_33(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                0_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
             test_34(
                 _first,
                 _last,
                 unimplemented!(),
-                <add_one>::default(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_36(
-                _first,
-                _last,
-                unimplemented!(),
                 unimplemented!(),
                 0_(),
                 _rFirst,
@@ -2082,33 +2089,25 @@ pub fn test_62() {
             )
         });
         ({
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_38(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
             let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
             let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_31(
+                _first,
+                _last,
+                unimplemented!(),
+                <add_one>::default(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
             test_32(
                 _first,
                 _last,
@@ -2120,56 +2119,29 @@ pub fn test_62() {
             )
         });
         ({
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
+            test_33(
+                _first,
+                _last,
+                unimplemented!(),
+                unimplemented!(),
+                2_(),
+                _rFirst,
+                _rLast,
+            )
+        });
+        ({
+            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
+            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
+            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
             test_34(
                 _first,
                 _last,
                 unimplemented!(),
-                <add_one>::default(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_36(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_38(
-                _first,
-                _last,
-                unimplemented!(),
                 unimplemented!(),
                 2_(),
                 _rFirst,
@@ -2179,556 +2151,14 @@ pub fn test_62() {
         i.prefix_inc();
     }
 }
-pub fn test_63() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
-    let pResI0: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
-    let mResI0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
-    let pResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        -4_(),
-        -9_(),
-        -16_(),
-        -25_(),
-    ])));
-    let mResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
-    let pResI2: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([4_(), 8_(), 14_(), 22_(), 32_()])));
-    let mResI2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        4_(),
-        16_(),
-        96_(),
-        768_(),
-        7680_(),
-    ])));
-    let pResN2: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([1_(), -2_(), -7_(), -14_(), -23_()])));
-    let mResN2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -2_(),
-        6_(),
-        -30_(),
-        210_(),
-        -1890_(),
-    ])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    const _: () = assert!(true, "sa == sizeof(pResI0) / sizeof(pResI0[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResI0) / sizeof(mResI0[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResN0) / sizeof(pResN0[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResN0) / sizeof(mResN0[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResI2) / sizeof(pResI2[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResI2) / sizeof(mResI2[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResN2) / sizeof(pResN2[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResN2) / sizeof(mResN2[0])");;
-    let mut i: () = 0_();
-    'loop_: while (i < sa) {
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_40(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_42(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_44(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_46(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_40(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_42(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_44(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((i) as isize)
-                });
-            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_46(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        i.prefix_inc();
-    }
-}
-pub fn test_64() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
-    let pResI0: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
-    let mResI0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
-    let pResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        -4_(),
-        -9_(),
-        -16_(),
-        -25_(),
-    ])));
-    let mResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
-    let pResI2: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([4_(), 8_(), 14_(), 22_(), 32_()])));
-    let mResI2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        4_(),
-        16_(),
-        96_(),
-        768_(),
-        7680_(),
-    ])));
-    let pResN2: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([1_(), -2_(), -7_(), -14_(), -23_()])));
-    let mResN2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -2_(),
-        6_(),
-        -30_(),
-        210_(),
-        -1890_(),
-    ])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    const _: () = assert!(true, "sa == sizeof(pResI0) / sizeof(pResI0[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResI0) / sizeof(mResI0[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResN0) / sizeof(pResN0[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResN0) / sizeof(mResN0[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResI2) / sizeof(pResI2[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResI2) / sizeof(mResI2[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResN2) / sizeof(pResN2[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResN2) / sizeof(mResN2[0])");;
-    let mut i: () = 0_();
-    'loop_: while (i < sa) {
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_48(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_50(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_52(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_54(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_48(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_50(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_52(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_54(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        i.prefix_inc();
-    }
-}
-pub fn test_65() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 5_(), 7_(), 9_()])));
-    let pResI0: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([2_(), 6_(), 12_(), 20_(), 30_()])));
-    let mResI0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
-    let pResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        -4_(),
-        -9_(),
-        -16_(),
-        -25_(),
-    ])));
-    let mResN0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_(), 0_(), 0_()])));
-    let pResI2: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([4_(), 8_(), 14_(), 22_(), 32_()])));
-    let mResI2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        4_(),
-        16_(),
-        96_(),
-        768_(),
-        7680_(),
-    ])));
-    let pResN2: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([1_(), -2_(), -7_(), -14_(), -23_()])));
-    let mResN2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -2_(),
-        6_(),
-        -30_(),
-        210_(),
-        -1890_(),
-    ])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    const _: () = assert!(true, "sa == sizeof(pResI0) / sizeof(pResI0[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResI0) / sizeof(mResI0[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResN0) / sizeof(pResN0[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResN0) / sizeof(mResN0[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResI2) / sizeof(pResI2[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResI2) / sizeof(mResI2[0])");;
-    const _: () = assert!(true, "sa == sizeof(pResN2) / sizeof(pResN2[0])");;
-    const _: () = assert!(true, "sa == sizeof(mResN2) / sizeof(mResN2[0])");;
-    let mut i: () = 0_();
-    'loop_: while (i < sa) {
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (pResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResI0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_56(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (mResI0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_57(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (pResN0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_58(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (mResN0.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN0.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_59(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                0_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (pResI2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResI2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_56(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (mResI2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResI2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_57(
-                _first,
-                _last,
-                unimplemented!(),
-                <add_one>::default(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (pResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (pResN2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_58(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        ({
-            let _first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((i) as isize);
-            let _rFirst: Ptr<()> = (mResN2.as_pointer() as Ptr<()>);
-            let _rLast: Ptr<()> = (mResN2.as_pointer() as Ptr<()>).offset((i) as isize);
-            test_59(
-                _first,
-                _last,
-                unimplemented!(),
-                unimplemented!(),
-                2_(),
-                _rFirst,
-                _rLast,
-            )
-        });
-        i.prefix_inc();
-    }
-}
-pub fn triangle_66(mut n: ()) -> () {
+pub fn triangle_41(mut n: ()) -> () {
     return ((n).wrapping_mul(((n).wrapping_add(1_())))).wrapping_div(2_());
 }
-pub fn basic_tests_67() {
+pub fn basic_tests_42() {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = unimplemented!();
-            let ___result: Ptr<()> = unimplemented!();
-            transform_inclusive_scan_68(
-                ___first,
-                ___last,
-                ___result,
-                unimplemented!(),
-                <add_one>::default(),
-                50_(),
-            )
-        });
+        unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
             unimplemented!();
@@ -2738,19 +2168,7 @@ pub fn basic_tests_67() {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = unimplemented!();
-            let ___result: Ptr<()> = unimplemented!();
-            transform_inclusive_scan_68(
-                ___first,
-                ___last,
-                ___result,
-                unimplemented!(),
-                <add_one>::default(),
-                30_(),
-            )
-        });
+        unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
             unimplemented!();
@@ -2760,19 +2178,7 @@ pub fn basic_tests_67() {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = unimplemented!();
-            let ___result: Ptr<()> = unimplemented!();
-            transform_inclusive_scan_68(
-                ___first,
-                ___last,
-                ___result,
-                unimplemented!(),
-                <add_one>::default(),
-                40_(),
-            )
-        });
+        unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
             unimplemented!();
@@ -2782,37 +2188,14 @@ pub fn basic_tests_67() {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = unimplemented!();
-            let ___result: Ptr<()> = unimplemented!();
-            transform_inclusive_scan_68(
-                ___first,
-                ___last,
-                ___result,
-                unimplemented!(),
-                <add_one>::default(),
-                1_(),
-            )
-        });
+        unimplemented!();
         unimplemented!();
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = unimplemented!();
-            transform_inclusive_scan_69(
-                ___first,
-                ___last,
-                unimplemented!(),
-                unimplemented!(),
-                <add_one>::default(),
-                1_(),
-            )
-        });
+        unimplemented!();
         unimplemented!();
         let mut j: () = 2_();
         unimplemented!();
@@ -2824,14 +2207,14 @@ pub fn basic_tests_67() {
         }
     }
 }
-pub fn test_70() -> () {
-    ({ basic_tests_67() });
-    ({ test_60() });
-    ({ test_61() });
-    ({ test_62() });
-    ({ test_63() });
-    ({ test_64() });
-    ({ test_65() });
+pub fn test_43() -> () {
+    ({ basic_tests_42() });
+    ({ test_35() });
+    ({ test_36() });
+    ({ test_37() });
+    ({ test_38() });
+    ({ test_39() });
+    ({ test_40() });
     return true;
 }
 pub fn main() {
@@ -2854,7 +2237,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_70() });
+    ({ test_43() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

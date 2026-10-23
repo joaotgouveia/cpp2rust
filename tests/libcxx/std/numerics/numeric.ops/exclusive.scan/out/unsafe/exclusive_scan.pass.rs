@@ -432,25 +432,21 @@ pub unsafe fn operator_add_10(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_12(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -534,7 +530,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_15(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -544,7 +540,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_14(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_13(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -612,7 +608,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_16(
+pub unsafe fn test_15(
     mut first: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     mut last: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     mut init: (),
@@ -627,7 +623,7 @@ pub unsafe fn test_16(
     end = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_17(
+pub unsafe fn test_16(
     mut first: forward_iterator_const_int_ptr_,
     mut last: forward_iterator_const_int_ptr_,
     mut init: (),
@@ -642,7 +638,7 @@ pub unsafe fn test_17(
     end = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_18(
+pub unsafe fn test_17(
     mut first: bidirectional_iterator_const_int_ptr_,
     mut last: bidirectional_iterator_const_int_ptr_,
     mut init: (),
@@ -657,7 +653,7 @@ pub unsafe fn test_18(
     end = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_19(
+pub unsafe fn test_18(
     mut first: random_access_iterator_const_int_ptr_,
     mut last: random_access_iterator_const_int_ptr_,
     mut init: (),
@@ -672,7 +668,7 @@ pub unsafe fn test_19(
     end = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_20(
+pub unsafe fn test_19(
     mut first: *const (),
     mut last: *const (),
     mut init: (),
@@ -687,7 +683,7 @@ pub unsafe fn test_20(
     end = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_21(
+pub unsafe fn test_20(
     mut first: *mut (),
     mut last: *mut (),
     mut init: (),
@@ -702,7 +698,7 @@ pub unsafe fn test_21(
     end = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_22() {
+pub unsafe fn test_21() {
     let mut ia: [(); 5] = [1_(), 3_(), 5_(), 7_(), 9_()];
     let pRes: [(); 5] = [0_(), 1_(), 4_(), 9_(), 16_()];
     let sa: () =
@@ -721,6 +717,27 @@ pub unsafe fn test_22() {
                 });
             let _rFirst: *const () = pRes.as_ptr();
             let _rLast: *const () = pRes.as_ptr().offset((i) as isize);
+            test_15(_first, _last, 0_(), _rFirst, _rLast)
+        });
+        i.prefix_inc();
+    }
+}
+pub unsafe fn test_22() {
+    let mut ia: [(); 5] = [1_(), 3_(), 5_(), 7_(), 9_()];
+    let pRes: [(); 5] = [0_(), 1_(), 4_(), 9_(), 16_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    const _: () = assert!(true, "sa == sizeof(pRes) / sizeof(pRes[0])");;
+    let mut i: () = 0_();
+    'loop_: while ((i) < (sa)) {
+        (unsafe {
+            let _first: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((i) as isize)).cast_const()
+            });
+            let _rFirst: *const () = pRes.as_ptr();
+            let _rLast: *const () = pRes.as_ptr().offset((i) as isize);
             test_16(_first, _last, 0_(), _rFirst, _rLast)
         });
         i.prefix_inc();
@@ -735,11 +752,12 @@ pub unsafe fn test_23() {
     let mut i: () = 0_();
     'loop_: while ((i) < (sa)) {
         (unsafe {
-            let _first: forward_iterator_const_int_ptr_ =
-                forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-            let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((i) as isize)).cast_const()
-            });
+            let _first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+            let _last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_mut_ptr().offset((i) as isize)).cast_const()
+                });
             let _rFirst: *const () = pRes.as_ptr();
             let _rLast: *const () = pRes.as_ptr().offset((i) as isize);
             test_17(_first, _last, 0_(), _rFirst, _rLast)
@@ -756,10 +774,10 @@ pub unsafe fn test_24() {
     let mut i: () = 0_();
     'loop_: while ((i) < (sa)) {
         (unsafe {
-            let _first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-            let _last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
                     (ia.as_mut_ptr().offset((i) as isize)).cast_const()
                 });
             let _rFirst: *const () = pRes.as_ptr();
@@ -778,12 +796,8 @@ pub unsafe fn test_25() {
     let mut i: () = 0_();
     'loop_: while ((i) < (sa)) {
         (unsafe {
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_mut_ptr().offset((i) as isize)).cast_const()
-                });
+            let _first: *const () = ia.as_mut_ptr();
+            let _last: *const () = ia.as_mut_ptr().offset((i) as isize);
             let _rFirst: *const () = pRes.as_ptr();
             let _rLast: *const () = pRes.as_ptr().offset((i) as isize);
             test_19(_first, _last, 0_(), _rFirst, _rLast)
@@ -800,8 +814,8 @@ pub unsafe fn test_26() {
     let mut i: () = 0_();
     'loop_: while ((i) < (sa)) {
         (unsafe {
-            let _first: *const () = ia.as_mut_ptr();
-            let _last: *const () = ia.as_mut_ptr().offset((i) as isize);
+            let _first: *mut () = ia.as_mut_ptr();
+            let _last: *mut () = ia.as_mut_ptr().offset((i) as isize);
             let _rFirst: *const () = pRes.as_ptr();
             let _rLast: *const () = pRes.as_ptr().offset((i) as isize);
             test_20(_first, _last, 0_(), _rFirst, _rLast)
@@ -809,28 +823,10 @@ pub unsafe fn test_26() {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_27() {
-    let mut ia: [(); 5] = [1_(), 3_(), 5_(), 7_(), 9_()];
-    let pRes: [(); 5] = [0_(), 1_(), 4_(), 9_(), 16_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    const _: () = assert!(true, "sa == sizeof(pRes) / sizeof(pRes[0])");;
-    let mut i: () = 0_();
-    'loop_: while ((i) < (sa)) {
-        (unsafe {
-            let _first: *mut () = ia.as_mut_ptr();
-            let _last: *mut () = ia.as_mut_ptr().offset((i) as isize);
-            let _rFirst: *const () = pRes.as_ptr();
-            let _rLast: *const () = pRes.as_ptr().offset((i) as isize);
-            test_21(_first, _last, 0_(), _rFirst, _rLast)
-        });
-        i.prefix_inc();
-    }
-}
-pub unsafe fn triangle_28(mut n: ()) -> () {
+pub unsafe fn triangle_27(mut n: ()) -> () {
     return ((n).wrapping_mul(((n).wrapping_add(1_())))).wrapping_div(2_());
 }
-pub unsafe fn basic_tests_29() {
+pub unsafe fn basic_tests_28() {
     {
         let mut v: () = unimplemented!();
         unimplemented!();
@@ -862,14 +858,14 @@ pub unsafe fn basic_tests_29() {
         }
     }
 }
-pub unsafe fn test_30() -> () {
-    (unsafe { basic_tests_29() });
+pub unsafe fn test_29() -> () {
+    (unsafe { basic_tests_28() });
+    (unsafe { test_21() });
     (unsafe { test_22() });
     (unsafe { test_23() });
     (unsafe { test_24() });
     (unsafe { test_25() });
     (unsafe { test_26() });
-    (unsafe { test_27() });
     return true;
 }
 pub fn main() {
@@ -888,7 +884,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_30() });
+    (unsafe { test_29() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

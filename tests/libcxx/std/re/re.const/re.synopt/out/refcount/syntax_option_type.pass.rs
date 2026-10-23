@@ -95,8 +95,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut e1: () = std_regex_constants_syntax_option_type_icase;
-    let mut e2: () = std_regex_constants_syntax_option_type_nosubs;
+    let mut e1: () = unimplemented!();
+    let mut e2: () = unimplemented!();
     let __rhs = unimplemented!();
     e1 = __rhs;
     let __rhs = unimplemented!();

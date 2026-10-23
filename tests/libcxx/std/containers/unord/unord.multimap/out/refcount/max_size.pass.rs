@@ -398,10 +398,6 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_1844674407
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct limited_allocator_std_pair_const_int__int___10__rebind_std_pair_const_int__int__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_std_pair_const_int__int___10__rebind_std___hash_node_std___hash_value_type_int__int___void_ptr__
-{}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
 pub struct limited_allocator_std_pair_const_int__int___10_ {
@@ -412,57 +408,7 @@ pub struct limited_allocator_std_pair_const_int__int___10_ {
 impl limited_allocator_std_pair_const_int__int___10_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10__rebind_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10__rebind_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
-#[byte_size(8)]
-pub struct limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10_ {
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10_ {
-    pub fn new() -> Self {
-        Self {
-            handle_: ({ make_thread_unsafe_shared_5() }),
-        }
-    }
-}
-impl Default for limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10_ {
-    fn default() -> Self {
-        { limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10_::new() }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
-#[byte_size(8)]
-pub struct limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___10_
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___10_ { }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
-#[byte_size(8)]
-pub struct limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__10_
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
-}
-impl limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__10_ { pub fn new ( ) -> Self { Self { handle_ : ( { make_thread_unsafe_shared_5 ( ) } )   , }  } }
-impl Default for limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__10_ { fn default() -> Self { { limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__10_ :: new ( )  } } }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
 pub struct limited_allocator_std_pair_const_int__int___18446744073709551615__rebind_std_pair_const_int__int__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_std_pair_const_int__int___18446744073709551615__rebind_std___hash_node_std___hash_value_type_int__int___void_ptr__
 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
@@ -472,43 +418,6 @@ pub struct limited_allocator_std_pair_const_int__int___18446744073709551615_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
 }
 impl limited_allocator_std_pair_const_int__int___18446744073709551615_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615__rebind_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615__rebind_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
-#[byte_size(8)]
-pub struct limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615_
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615_ { pub fn new ( ) -> Self { Self { handle_ : ( { make_thread_unsafe_shared_6 ( ) } )   , }  } }
-impl Default for limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615_ { fn default() -> Self { { limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615_ :: new ( )  } } }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
-#[byte_size(8)]
-pub struct limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___18446744073709551615_
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___18446744073709551615_ { }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
-#[byte_size(8)]
-pub struct limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__18446744073709551615_
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
-}
-impl limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__18446744073709551615_ { pub fn new ( ) -> Self { Self { handle_ : ( { make_thread_unsafe_shared_6 ( ) } )   , }  } }
-impl Default for limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__18446744073709551615_ { fn default() -> Self { { limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__18446744073709551615_ :: new ( )  } } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -749,176 +658,6 @@ impl limited_alloc_handle_18446744073709551615_Impl
         }
         unimplemented!();
     }
-}
-pub trait limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___10_Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_>
-    {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<
-            std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_,
-        >,
-        mut n: (),
-    ) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___10_Impl for Ptr<limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___10_> {
-fn destructor(&self) { field_ptr!(self, handle_).destructor();
- }
-}
-pub trait limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___18446744073709551615_Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_>
-    {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<
-            std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_,
-        >,
-        mut n: (),
-    ) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___18446744073709551615_Impl for Ptr<limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr___18446744073709551615_> {
-fn destructor(&self) { field_ptr!(self, handle_).destructor();
- }
-}
-pub trait limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__10_Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<
-        Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_>,
-    > {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_  >  >,
-        n: (),
-    );
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__10_Impl for Ptr<limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__10_> {
-fn deallocate ( &self , mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_  >  >  , mut n : ()  , ) { ( { limited_alloc_handle_10_Impl :: deallocate_2_struct_std___hash_node_base_struct_std___hash_node_struct_std___hash_value_type_int__int___void_ptr__ptr__ptr ( &( { detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl :: operator_arrow_7 ( &field_ptr!((* self )  , handle_)  , ) } )   , (p ).clone() , n  , ) } )  ;
- } fn destructor(&self) { field_ptr!(self, handle_).destructor();
- }
-}
-pub trait limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__18446744073709551615_Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<
-        Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_>,
-    > {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_  >  >,
-        n: (),
-    );
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__18446744073709551615_Impl for Ptr<limited_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr__18446744073709551615_> {
-fn deallocate ( &self , mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_  >  >  , mut n : ()  , ) { ( { limited_alloc_handle_18446744073709551615_Impl :: deallocate_2_struct_std___hash_node_base_struct_std___hash_node_struct_std___hash_value_type_int__int___void_ptr__ptr__ptr ( &( { detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__Impl :: operator_arrow_7 ( &field_ptr!((* self )  , handle_)  , ) } )   , (p ).clone() , n  , ) } )  ;
- } fn destructor(&self) { field_ptr!(self, handle_).destructor();
- }
-}
-pub trait limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10_Impl {
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_int__int___void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, p: Ptr<std___hash_node_std___hash_value_type_int__int___void_ptr_>, n: ());
-    fn max_size(&self) -> ();
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_10_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10_Impl
-    for Ptr<limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___10_>
-{
-    fn deallocate(
-        &self,
-        mut p: Ptr<std___hash_node_std___hash_value_type_int__int___void_ptr_>,
-        mut n: (),
-    ) {
-        ({
-            limited_alloc_handle_10_Impl :: deallocate_2_struct_std___hash_node_struct_std___hash_value_type_int__int___void_ptr_ ( &( { detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl :: operator_arrow_7 ( &field_ptr!((* self )  , handle_)  , ) } )   , (p ).clone() , n  , )
-        });
-    }
-    fn max_size(&self) -> () {
-        return 10_();
-    }
-    fn destructor(&self) {
-        field_ptr!(self, handle_).destructor();
-    }
-}
-pub trait limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615_Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_int__int___void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, p: Ptr<std___hash_node_std___hash_value_type_int__int___void_ptr_>, n: ());
-    fn max_size(&self) -> ();
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615_Impl for Ptr<limited_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr___18446744073709551615_> {
-fn deallocate ( &self , mut p : Ptr< std___hash_node_std___hash_value_type_int__int___void_ptr_  >  , mut n : ()  , ) { ( { limited_alloc_handle_18446744073709551615_Impl :: deallocate_2_struct_std___hash_node_struct_std___hash_value_type_int__int___void_ptr_ ( &( { detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__Impl :: operator_arrow_7 ( &field_ptr!((* self )  , handle_)  , ) } )   , (p ).clone() , n  , ) } )  ;
- } fn max_size ( &self , ) -> ()  { return 18446744073709551615_()   ;
- } fn destructor(&self) { field_ptr!(self, handle_).destructor();
- }
 }
 pub trait limited_allocator_std_pair_const_int__int___10_Impl {
     fn allocate(&self, mut n: ()) -> Ptr<()> {

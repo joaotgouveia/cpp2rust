@@ -426,7 +426,7 @@ pub unsafe fn test_6(a: *const ()) {
     const _: () = assert!(true, "");;
     let mut m0: () = unimplemented!();
     unimplemented!();
-    let mut m1: () = unimplemented!();
+    let mut m1: () = m0;
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -435,7 +435,7 @@ pub unsafe fn test_7(a: *const ()) {
     const _: () = assert!(true, "");;
     let mut m0: () = unimplemented!();
     unimplemented!();
-    let mut m1: () = unimplemented!();
+    let mut m1: () = m0;
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -444,7 +444,7 @@ pub unsafe fn test_8(a: *const test_allocator_std_csub_match_) {
     const _: () = assert!(true, "");;
     let mut m0: () = unimplemented!();
     unimplemented!();
-    let mut m1: () = unimplemented!();
+    let mut m1: () = m0;
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -453,7 +453,7 @@ pub unsafe fn test_9(a: *const test_allocator_std_wcsub_match_) {
     const _: () = assert!(true, "");;
     let mut m0: () = unimplemented!();
     unimplemented!();
-    let mut m1: () = unimplemented!();
+    let mut m1: () = m0;
     unimplemented!();
     unimplemented!();
     unimplemented!();

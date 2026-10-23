@@ -262,22 +262,6 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl test_allocator_NotConstructible_ {
-    pub unsafe fn new_1(
-        a: *const test_allocator_std___hash_node_NotConstructible__void_ptr__,
-    ) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
 pub unsafe fn operator_eq_6(
     x: *const test_allocator_NotConstructible_,
     y: *const test_allocator_NotConstructible_,
@@ -287,9 +271,6 @@ pub unsafe fn operator_eq_6(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_NotConstructible__rebind_NotConstructible_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_NotConstructible__rebind_std___hash_node_NotConstructible__void_ptr__ {}
 #[repr(C)]
 #[derive(FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_NotConstructible_ {
@@ -327,116 +308,6 @@ impl Default for test_allocator_NotConstructible_ {
                 id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___hash_node_NotConstructible__void_ptr___rebind_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___hash_node_NotConstructible__void_ptr___rebind_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_
-{}
-#[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std___hash_node_NotConstructible__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___hash_node_NotConstructible__void_ptr__ {
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___hash_node_NotConstructible__void_ptr_,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Default for test_allocator_std___hash_node_NotConstructible__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___hash_node_NotConstructible__void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ {}
-impl Default
-    for test_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__
-{
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_
-{
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_ {
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_2));
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut *mut std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr_,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Default
-    for test_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_
-{
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_ { data_ : 0_() , id_ : 0_() , stats_ : std::ptr::null_mut() , }
         }
     }
 }
@@ -497,16 +368,6 @@ pub struct min_pointer_NotConstructible__std_integral_constant_unsigned_long__0_
     ptr_: *mut NotConstructible,
 }
 impl min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    pub unsafe fn new_1(
-        mut p : min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    ) -> Self {
-        let mut this = Self {
-            ptr_: (p.ptr_ as ()),
-        };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -515,50 +376,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { pub unsafe fn new_1 ( mut p : min_pointer_void__std_integral_constant_unsigned_long__0__ , ) -> Self { let mut this = Self { ptr_ : ( p . ptr_  as *mut std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0___ ) , } ;
- this } pub unsafe fn operator_arrow ( &self , ) -> *mut std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } }
-pub unsafe fn operator_eq_11(
-    mut x : min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_12(
-    mut x : min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  = x ;
-        operator_eq_11(_x, y)
-    });
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn operator_arrow ( &self , ) -> *mut std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_11(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { ptr_ : *mut min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ , }
 impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { pub unsafe fn new_1 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
  this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
  } }
-impl min_allocator_NotConstructible_ {
-    pub unsafe fn new_1(
-        mut _a0 : min_allocator_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0____,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-pub unsafe fn operator_eq_13(
+pub unsafe fn operator_eq_11(
     mut _a0: min_allocator_NotConstructible_,
     mut _a1: min_allocator_NotConstructible_,
 ) -> () {
@@ -569,37 +391,17 @@ pub unsafe fn operator_eq_13(
 pub struct min_allocator_NotConstructible_ {}
 impl std::cmp::PartialEq for min_allocator_NotConstructible_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_13(self.clone(), other.clone()) }
+        unsafe { operator_eq_11(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_NotConstructible_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-impl min_allocator_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0____ { pub unsafe fn deallocate ( &mut self , mut p : min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ , mut n : () , ) { unimplemented!()  ;
- } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____
-{}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___
 {}
 impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { pub unsafe fn deallocate ( &mut self , mut p : min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ , mut n : () , ) { unimplemented!()  ;
  } }
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl min_allocator_NotConstructible_ {}
-impl explicit_allocator_NotConstructible_ {
-    pub unsafe fn new_1(
-        mut _a0: explicit_allocator_std___hash_node_NotConstructible__void_ptr__,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-pub unsafe fn operator_eq_14(
+pub unsafe fn operator_eq_12(
     mut _a0: explicit_allocator_NotConstructible_,
     mut _a1: explicit_allocator_NotConstructible_,
 ) -> () {
@@ -609,78 +411,22 @@ pub unsafe fn operator_eq_14(
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct explicit_allocator_NotConstructible_ {}
 impl explicit_allocator_NotConstructible_ {
-    pub unsafe fn new_2() -> Self {
+    pub unsafe fn new() -> Self {
         let mut this = Self {};
         this
     }
 }
 impl std::cmp::PartialEq for explicit_allocator_NotConstructible_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_14(self.clone(), other.clone()) }
+        unsafe { operator_eq_12(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for explicit_allocator_NotConstructible_ {}
 impl Default for explicit_allocator_NotConstructible_ {
     fn default() -> Self {
-        unsafe { explicit_allocator_NotConstructible_::new_2() }
+        unsafe { explicit_allocator_NotConstructible_::new() }
     }
 }
-impl explicit_allocator_std___hash_node_NotConstructible__void_ptr__ {
-    pub unsafe fn new_1(mut _a0: explicit_allocator_NotConstructible_) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct explicit_allocator_std___hash_node_NotConstructible__void_ptr__ {}
-impl explicit_allocator_std___hash_node_NotConstructible__void_ptr__ {
-    pub unsafe fn new_2() -> Self {
-        let mut this = Self {};
-        this
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___hash_node_NotConstructible__void_ptr_,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
-}
-impl Default for explicit_allocator_std___hash_node_NotConstructible__void_ptr__ {
-    fn default() -> Self {
-        unsafe { explicit_allocator_std___hash_node_NotConstructible__void_ptr__::new_2() }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct explicit_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__
-{}
-impl explicit_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ {}
-impl explicit_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_ {
-    pub unsafe fn new_1(mut _a0: explicit_allocator_NotConstructible_) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct explicit_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_
-{}
-impl explicit_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_ {
-    pub unsafe fn new_2() -> Self {
-        let mut this = Self {};
-        this
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut *mut std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr_,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
-}
-impl Default for explicit_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_ { fn default() -> Self { unsafe { explicit_allocator_std___hash_node_base_std___hash_node_NotConstructible__void_ptr__ptr__ptr_ :: new_2 ( )  } } }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -736,7 +482,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         }
         {
             let mut a: explicit_allocator_NotConstructible_ =
-                explicit_allocator_NotConstructible_::new_2();
+                explicit_allocator_NotConstructible_::new();
             let mut c: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -760,6 +506,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     return 0_();
 }
+#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
+pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__;
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const destructed_value_2);
     std::cell::LazyCell::force(&*&raw const moved_value_3);

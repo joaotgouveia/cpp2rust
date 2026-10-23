@@ -460,7 +460,11 @@ impl Default for NotAllocatorAware {
 pub struct ConvertibleToPair {}
 impl ConvertibleToPair {
     pub unsafe fn to_(&self) -> () {
-        return unimplemented!();
+        return {
+            let mut __tmp_0: () = 1_();
+            let mut __tmp_1: () = 2_();
+            std_pair_int__int_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
     }
 }
 pub unsafe fn test_uses_allocator_construction_args_4(args: *mut test_allocator_int_) -> () {
@@ -1357,7 +1361,11 @@ pub unsafe fn testOne_136() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_2: () = 3_();
+            let mut __tmp_3: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
+        };
         let mut ret: () = (unsafe { test_uses_allocator_construction_args_30(&mut a, &mut p) });
         unimplemented!();
         unimplemented!();
@@ -1365,7 +1373,11 @@ pub unsafe fn testOne_136() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_4: () = 3_();
+            let mut __tmp_5: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
+        };
         let mut ret: () =
             (unsafe { test_uses_allocator_construction_args_32(&mut a, &(*unimplemented!())) });
         unimplemented!();
@@ -1374,7 +1386,11 @@ pub unsafe fn testOne_136() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_6: () = 3_();
+            let mut __tmp_7: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
+        };
         let mut ret: () = (unsafe {
             test_uses_allocator_construction_args_34(&mut a, &mut *(&raw mut p).cast::<()>())
         });
@@ -1403,25 +1419,41 @@ pub unsafe fn testOne_136() {
             &(ret);
         }
         {
-            let p: () = unimplemented!();
+            let p: () = {
+                let mut __tmp_8: () = 1_();
+                let mut __tmp_9: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
+            };
             let mut ret: () = (unsafe { test_uses_allocator_construction_args_10(&mut a, &p) });
             &(ret);
         }
         {
-            let mut p: () = unimplemented!();
+            let mut p: () = {
+                let mut __tmp_10: () = 1_();
+                let mut __tmp_11: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_10 }, { &mut __tmp_11 })
+            };
             let mut ret: () = (unsafe {
                 test_uses_allocator_construction_args_12(&mut a, &mut *(&raw mut p).cast::<()>())
             });
             &(ret);
         }
         {
-            let p: () = unimplemented!();
+            let p: () = {
+                let mut __tmp_12: () = 1_();
+                let mut __tmp_13: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_12 }, { &mut __tmp_13 })
+            };
             let mut ret: () = (unsafe { test_uses_allocator_construction_args_14(&mut a, &p) });
             &(ret);
         }
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_14: () = 3_();
+            let mut __tmp_15: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_14 }, { &mut __tmp_15 })
+        };
         let mut ret: () =
             (unsafe { test_uses_allocator_construction_args_36(&mut a, unimplemented!()) });
         unimplemented!();
@@ -1522,7 +1554,11 @@ pub unsafe fn testOne_142() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_16: () = 3_();
+            let mut __tmp_17: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_16 }, { &mut __tmp_17 })
+        };
         let mut ret: () = (unsafe { test_uses_allocator_construction_args_60(&mut a, &mut p) });
         unimplemented!();
         unimplemented!();
@@ -1530,7 +1566,11 @@ pub unsafe fn testOne_142() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_18: () = 3_();
+            let mut __tmp_19: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_18 }, { &mut __tmp_19 })
+        };
         let mut ret: () =
             (unsafe { test_uses_allocator_construction_args_62(&mut a, &(*unimplemented!())) });
         unimplemented!();
@@ -1539,7 +1579,11 @@ pub unsafe fn testOne_142() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_20: () = 3_();
+            let mut __tmp_21: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_20 }, { &mut __tmp_21 })
+        };
         let mut ret: () = (unsafe {
             test_uses_allocator_construction_args_64(&mut a, &mut *(&raw mut p).cast::<()>())
         });
@@ -1568,25 +1612,41 @@ pub unsafe fn testOne_142() {
             &(ret);
         }
         {
-            let p: () = unimplemented!();
+            let p: () = {
+                let mut __tmp_22: () = 1_();
+                let mut __tmp_23: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_22 }, { &mut __tmp_23 })
+            };
             let mut ret: () = (unsafe { test_uses_allocator_construction_args_10(&mut a, &p) });
             &(ret);
         }
         {
-            let mut p: () = unimplemented!();
+            let mut p: () = {
+                let mut __tmp_24: () = 1_();
+                let mut __tmp_25: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_24 }, { &mut __tmp_25 })
+            };
             let mut ret: () = (unsafe {
                 test_uses_allocator_construction_args_12(&mut a, &mut *(&raw mut p).cast::<()>())
             });
             &(ret);
         }
         {
-            let p: () = unimplemented!();
+            let p: () = {
+                let mut __tmp_26: () = 1_();
+                let mut __tmp_27: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_26 }, { &mut __tmp_27 })
+            };
             let mut ret: () = (unsafe { test_uses_allocator_construction_args_14(&mut a, &p) });
             &(ret);
         }
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_28: () = 3_();
+            let mut __tmp_29: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_28 }, { &mut __tmp_29 })
+        };
         let mut ret: () =
             (unsafe { test_uses_allocator_construction_args_66(&mut a, unimplemented!()) });
         unimplemented!();
@@ -1687,7 +1747,11 @@ pub unsafe fn testOne_147() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_30: () = 3_();
+            let mut __tmp_31: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_30 }, { &mut __tmp_31 })
+        };
         let mut ret: () = (unsafe { test_uses_allocator_construction_args_90(&mut a, &mut p) });
         unimplemented!();
         unimplemented!();
@@ -1695,7 +1759,11 @@ pub unsafe fn testOne_147() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_32: () = 3_();
+            let mut __tmp_33: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_32 }, { &mut __tmp_33 })
+        };
         let mut ret: () =
             (unsafe { test_uses_allocator_construction_args_92(&mut a, &(*unimplemented!())) });
         unimplemented!();
@@ -1704,7 +1772,11 @@ pub unsafe fn testOne_147() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_34: () = 3_();
+            let mut __tmp_35: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_34 }, { &mut __tmp_35 })
+        };
         let mut ret: () = (unsafe {
             test_uses_allocator_construction_args_94(&mut a, &mut *(&raw mut p).cast::<()>())
         });
@@ -1733,25 +1805,41 @@ pub unsafe fn testOne_147() {
             &(ret);
         }
         {
-            let p: () = unimplemented!();
+            let p: () = {
+                let mut __tmp_36: () = 1_();
+                let mut __tmp_37: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_36 }, { &mut __tmp_37 })
+            };
             let mut ret: () = (unsafe { test_uses_allocator_construction_args_10(&mut a, &p) });
             &(ret);
         }
         {
-            let mut p: () = unimplemented!();
+            let mut p: () = {
+                let mut __tmp_38: () = 1_();
+                let mut __tmp_39: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_38 }, { &mut __tmp_39 })
+            };
             let mut ret: () = (unsafe {
                 test_uses_allocator_construction_args_12(&mut a, &mut *(&raw mut p).cast::<()>())
             });
             &(ret);
         }
         {
-            let p: () = unimplemented!();
+            let p: () = {
+                let mut __tmp_40: () = 1_();
+                let mut __tmp_41: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_40 }, { &mut __tmp_41 })
+            };
             let mut ret: () = (unsafe { test_uses_allocator_construction_args_14(&mut a, &p) });
             &(ret);
         }
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_42: () = 3_();
+            let mut __tmp_43: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_42 }, { &mut __tmp_43 })
+        };
         let mut ret: () =
             (unsafe { test_uses_allocator_construction_args_96(&mut a, unimplemented!()) });
         unimplemented!();
@@ -1852,7 +1940,11 @@ pub unsafe fn testOne_152() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_44: () = 3_();
+            let mut __tmp_45: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_44 }, { &mut __tmp_45 })
+        };
         let mut ret: () = (unsafe { test_uses_allocator_construction_args_120(&mut a, &mut p) });
         unimplemented!();
         unimplemented!();
@@ -1860,7 +1952,11 @@ pub unsafe fn testOne_152() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_46: () = 3_();
+            let mut __tmp_47: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_46 }, { &mut __tmp_47 })
+        };
         let mut ret: () =
             (unsafe { test_uses_allocator_construction_args_122(&mut a, &(*unimplemented!())) });
         unimplemented!();
@@ -1869,7 +1965,11 @@ pub unsafe fn testOne_152() {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_48: () = 3_();
+            let mut __tmp_49: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_48 }, { &mut __tmp_49 })
+        };
         let mut ret: () = (unsafe {
             test_uses_allocator_construction_args_124(&mut a, &mut *(&raw mut p).cast::<()>())
         });
@@ -1898,25 +1998,41 @@ pub unsafe fn testOne_152() {
             &(ret);
         }
         {
-            let p: () = unimplemented!();
+            let p: () = {
+                let mut __tmp_50: () = 1_();
+                let mut __tmp_51: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_50 }, { &mut __tmp_51 })
+            };
             let mut ret: () = (unsafe { test_uses_allocator_construction_args_10(&mut a, &p) });
             &(ret);
         }
         {
-            let mut p: () = unimplemented!();
+            let mut p: () = {
+                let mut __tmp_52: () = 1_();
+                let mut __tmp_53: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_52 }, { &mut __tmp_53 })
+            };
             let mut ret: () = (unsafe {
                 test_uses_allocator_construction_args_12(&mut a, &mut *(&raw mut p).cast::<()>())
             });
             &(ret);
         }
         {
-            let p: () = unimplemented!();
+            let p: () = {
+                let mut __tmp_54: () = 1_();
+                let mut __tmp_55: () = 2_();
+                std_pair_int__int_::new_1({ &mut __tmp_54 }, { &mut __tmp_55 })
+            };
             let mut ret: () = (unsafe { test_uses_allocator_construction_args_14(&mut a, &p) });
             &(ret);
         }
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_56: () = 3_();
+            let mut __tmp_57: () = 4_();
+            std_pair_int__int_::new_1({ &mut __tmp_56 }, { &mut __tmp_57 })
+        };
         let mut ret: () =
             (unsafe { test_uses_allocator_construction_args_126(&mut a, unimplemented!()) });
         unimplemented!();

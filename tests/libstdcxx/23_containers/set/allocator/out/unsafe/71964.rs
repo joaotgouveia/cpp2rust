@@ -256,15 +256,6 @@ pub struct __gnu_test_semaphore {
     pid_: ::libc::pid_t,
 }
 impl __gnu_test_semaphore {}
-impl mv_allocator_int_ {
-    pub unsafe fn new_1(a: *const mv_allocator_std__Rb_tree_node_int__) -> Self {
-        let mut this = Self {
-            moved_to: (*a).moved_to,
-            moved_from: (*a).moved_from,
-        };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct mv_allocator_int_ {
@@ -272,39 +263,6 @@ pub struct mv_allocator_int_ {
     pub moved_from: (),
 }
 impl mv_allocator_int_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
-pub struct mv_allocator_std__Rb_tree_node_int__ {
-    pub moved_to: (),
-    pub moved_from: (),
-}
-impl mv_allocator_std__Rb_tree_node_int__ {
-    pub unsafe fn new() -> Self {
-        let mut this = Self {
-            moved_to: false,
-            moved_from: false,
-        };
-        this
-    }
-    pub unsafe fn move_from(a: *mut mv_allocator_std__Rb_tree_node_int__) -> Self {
-        let mut this = Self {
-            moved_to: true,
-            moved_from: unimplemented!(),
-        };
-        (*a).moved_from = true;
-        this
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut std__Rb_tree_node_int_, mut n: ()) {
-        (unsafe {
-            (unimplemented!() as std___new_allocator_std__Rb_tree_node_int__).deallocate(p, n)
-        });
-    }
-}
-impl Default for mv_allocator_std__Rb_tree_node_int__ {
-    fn default() -> Self {
-        unsafe { mv_allocator_std__Rb_tree_node_int__::new() }
-    }
-}
 pub unsafe fn test01_10() {
     let mut s: () = unimplemented!();
     let mut t: () = unimplemented!();

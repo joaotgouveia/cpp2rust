@@ -748,13 +748,7 @@ pub unsafe fn test_9() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe {
-            s.append_72(
-                c"QRST".as_ptr(),
-                0_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_10)),
-            )
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { s.append_69_std_string_view_0(&sv, 0_(), None) });
@@ -772,13 +766,7 @@ pub unsafe fn test_9() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe {
-            s.append_72(
-                (arr.as_mut_ptr()).cast_const(),
-                0_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_10)),
-            )
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

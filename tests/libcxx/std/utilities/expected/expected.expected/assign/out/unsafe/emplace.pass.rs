@@ -135,11 +135,7 @@ impl Default for TracedBase_false__false_ {
     }
 }
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    (unsafe {
-        let ___x: *mut () = &mut (*x).i;
-        let ___y: *mut () = &mut (*y).i;
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -185,7 +181,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -202,7 +198,7 @@ impl TailClobberer_0_ {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<TailClobberer_0_>();
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         this.b = false;
@@ -216,7 +212,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_2(
+            operator_eq_1(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -283,7 +279,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -330,7 +326,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -459,7 +455,7 @@ const _: () = assert!(
     !(false),
     "!CanEmplace<std::expected<CtorFromInt<false>, int>, int, int>"
 );
-pub unsafe fn test_4() -> () {
+pub unsafe fn test_3() -> () {
     {
         let mut oldState: TracedBase_true__state = <TracedBase_true__state>::default();
         let mut newState: TracedBase_true__state = <TracedBase_true__state>::default();
@@ -519,7 +515,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_4() });
+    (unsafe { test_3() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

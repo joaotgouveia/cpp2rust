@@ -254,14 +254,6 @@ pub struct __gnu_test_semaphore {
     pid_: ::libc::pid_t,
 }
 impl __gnu_test_semaphore {}
-impl mv_allocator_int_ {
-    pub fn new_1(a: Ptr<mv_allocator_std__Rb_tree_node_int__>) -> Self {
-        Self {
-            moved_to: a.with(|__s| __s.moved_to),
-            moved_from: a.with(|__s| __s.moved_from),
-        }
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 pub struct mv_allocator_int_ {
@@ -271,35 +263,6 @@ pub struct mv_allocator_int_ {
     pub moved_from: (),
 }
 impl mv_allocator_int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
-#[byte_size(2)]
-pub struct mv_allocator_std__Rb_tree_node_int__ {
-    #[offset(0)]
-    pub moved_to: (),
-    #[offset(1)]
-    pub moved_from: (),
-}
-impl mv_allocator_std__Rb_tree_node_int__ {
-    pub fn new() -> Self {
-        Self {
-            moved_to: false,
-            moved_from: false,
-        }
-    }
-    pub fn move_from(a: Ptr<mv_allocator_std__Rb_tree_node_int__>) -> Self {
-        let __this: mv_allocator_std__Rb_tree_node_int__ = Self {
-            moved_to: true,
-            moved_from: unimplemented!(),
-        };
-        field!(a, moved_from).write(true);
-        __this
-    }
-}
-impl Default for mv_allocator_std__Rb_tree_node_int__ {
-    fn default() -> Self {
-        { mv_allocator_std__Rb_tree_node_int__::new() }
-    }
-}
 pub fn test01_10() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -721,20 +684,6 @@ pub trait mv_allocator_int_Impl {
     }
 }
 impl mv_allocator_int_Impl for Ptr<mv_allocator_int_> {}
-pub trait mv_allocator_std__Rb_tree_node_int__Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std__Rb_tree_node_int_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, p: Ptr<std__Rb_tree_node_int_>, n: ());
-}
-impl mv_allocator_std__Rb_tree_node_int__Impl for Ptr<mv_allocator_std__Rb_tree_node_int__> {
-    fn deallocate(&self, mut p: Ptr<std__Rb_tree_node_int_>, mut n: ()) {
-        ({
-            (unimplemented!() as std___new_allocator_std__Rb_tree_node_int__)
-                .deallocate((p).clone(), n)
-        });
-    }
-}
 pub fn __cpp2rust_init_globals() {
     let _ = count_0.with(|_| ());
     let _ = count__1.with(|_| ());

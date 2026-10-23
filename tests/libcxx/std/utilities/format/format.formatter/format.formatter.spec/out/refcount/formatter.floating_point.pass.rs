@@ -4011,73 +4011,105 @@ pub fn test_value_59(mut value: ()) {
     ({ test_general_upper_case_precision_55(value) });
 }
 pub fn test_special_values_60() {
-    ({ test_value_56(-unimplemented!()) });
+    ({ test_value_56(-({ std_numeric_limits_float_::max() })) });
     ({ test_value_56(-1_f64) });
-    ({ test_value_56(-unimplemented!()) });
-    ({ test_value_56(-unimplemented!()) });
+    ({ test_value_56(-({ std_numeric_limits_float_::min() })) });
+    ({ test_value_56(-({ std_numeric_limits_float_::denorm_min() })) });
     ({ test_value_56(-0_f64) });
     ({ test_value_56(0_f64) });
-    ({ test_value_56(unimplemented!()) });
+    ({ test_value_56(({ std_numeric_limits_float_::denorm_min() })) });
     ({ test_value_56(1_f64) });
-    ({ test_value_56(unimplemented!()) });
-    ({ test_value_56(unimplemented!()) });
+    ({ test_value_56(({ std_numeric_limits_float_::min() })) });
+    ({ test_value_56(({ std_numeric_limits_float_::max() })) });
 }
 pub fn test_special_values_61() {
-    ({ test_value_57(-unimplemented!()) });
+    ({ test_value_57(-({ std_numeric_limits_double_::max() })) });
     ({ test_value_57(-1_f64) });
-    ({ test_value_57(-unimplemented!()) });
-    ({ test_value_57(-unimplemented!()) });
+    ({ test_value_57(-({ std_numeric_limits_double_::min() })) });
+    ({ test_value_57(-({ std_numeric_limits_double_::denorm_min() })) });
     ({ test_value_57(-0_f64) });
     ({ test_value_57(0_f64) });
-    ({ test_value_57(unimplemented!()) });
+    ({ test_value_57(({ std_numeric_limits_double_::denorm_min() })) });
     ({ test_value_57(1_f64) });
-    ({ test_value_57(unimplemented!()) });
-    ({ test_value_57(unimplemented!()) });
+    ({ test_value_57(({ std_numeric_limits_double_::min() })) });
+    ({ test_value_57(({ std_numeric_limits_double_::max() })) });
 }
 pub fn test_special_values_62() {
-    ({ test_value_58(-unimplemented!()) });
+    ({ test_value_58(-({ std_numeric_limits_float_::max() })) });
     ({ test_value_58(-1_f64) });
-    ({ test_value_58(-unimplemented!()) });
-    ({ test_value_58(-unimplemented!()) });
+    ({ test_value_58(-({ std_numeric_limits_float_::min() })) });
+    ({ test_value_58(-({ std_numeric_limits_float_::denorm_min() })) });
     ({ test_value_58(-0_f64) });
     ({ test_value_58(0_f64) });
-    ({ test_value_58(unimplemented!()) });
+    ({ test_value_58(({ std_numeric_limits_float_::denorm_min() })) });
     ({ test_value_58(1_f64) });
-    ({ test_value_58(unimplemented!()) });
-    ({ test_value_58(unimplemented!()) });
+    ({ test_value_58(({ std_numeric_limits_float_::min() })) });
+    ({ test_value_58(({ std_numeric_limits_float_::max() })) });
 }
 pub fn test_special_values_63() {
-    ({ test_value_59(-unimplemented!()) });
+    ({ test_value_59(-({ std_numeric_limits_double_::max() })) });
     ({ test_value_59(-1_f64) });
-    ({ test_value_59(-unimplemented!()) });
-    ({ test_value_59(-unimplemented!()) });
+    ({ test_value_59(-({ std_numeric_limits_double_::min() })) });
+    ({ test_value_59(-({ std_numeric_limits_double_::denorm_min() })) });
     ({ test_value_59(-0_f64) });
     ({ test_value_59(0_f64) });
-    ({ test_value_59(unimplemented!()) });
+    ({ test_value_59(({ std_numeric_limits_double_::denorm_min() })) });
     ({ test_value_59(1_f64) });
-    ({ test_value_59(unimplemented!()) });
-    ({ test_value_59(unimplemented!()) });
+    ({ test_value_59(({ std_numeric_limits_double_::min() })) });
+    ({ test_value_59(({ std_numeric_limits_double_::max() })) });
 }
 pub fn test_float_type_64() {
-    ({ test_termination_condition_16(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_16(unimplemented!(), -unimplemented!(), None) });
+    ({
+        test_termination_condition_16(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_16(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
     ({ test_termination_condition_16(unimplemented!(), -0_f64, None) });
     ({ test_termination_condition_16(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_16(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_16(unimplemented!(), unimplemented!(), None) });
+    ({
+        test_termination_condition_16(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_16(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
     {}
     {}
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_16(_f, -unimplemented!(), Some(_expected))
+        test_termination_condition_16(
+            _f,
+            -({ std_numeric_limits_float_::infinity() }),
+            Some(_expected),
+        )
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_16(_f, unimplemented!(), Some(_expected))
+        test_termination_condition_16(
+            _f,
+            ({ std_numeric_limits_float_::infinity() }),
+            Some(_expected),
+        )
     });
-    let mut nan: () = unimplemented!();
+    let mut nan: () = ({ std_numeric_limits_float_::quiet_NaN() });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
@@ -4093,30 +4125,86 @@ pub fn test_float_type_64() {
     }
 }
 pub fn test_float_type_66() {
-    ({ test_termination_condition_17(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_17(unimplemented!(), -unimplemented!(), None) });
+    ({
+        test_termination_condition_17(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_17(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
     ({ test_termination_condition_17(unimplemented!(), -0_f64, None) });
     ({ test_termination_condition_17(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_17(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_17(unimplemented!(), unimplemented!(), None) });
+    ({
+        test_termination_condition_17(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_17(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
     {
-        ({ test_termination_condition_17(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_17(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_17(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_17(unimplemented!(), unimplemented!(), None) });
+        ({
+            test_termination_condition_17(
+                unimplemented!(),
+                -({ std_numeric_limits_double_::max() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_17(
+                unimplemented!(),
+                -({ std_numeric_limits_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_17(
+                unimplemented!(),
+                ({ std_numeric_limits_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_17(
+                unimplemented!(),
+                ({ std_numeric_limits_double_::max() }),
+                None,
+            )
+        });
     }
     {}
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_17(_f, -unimplemented!(), Some(_expected))
+        test_termination_condition_17(
+            _f,
+            -({ std_numeric_limits_double_::infinity() }),
+            Some(_expected),
+        )
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_17(_f, unimplemented!(), Some(_expected))
+        test_termination_condition_17(
+            _f,
+            ({ std_numeric_limits_double_::infinity() }),
+            Some(_expected),
+        )
     });
-    let mut nan: () = unimplemented!();
+    let mut nan: () = ({ std_numeric_limits_double_::quiet_NaN() });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
@@ -4132,35 +4220,115 @@ pub fn test_float_type_66() {
     }
 }
 pub fn test_float_type_68() {
-    ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
+    ({
+        test_termination_condition_18(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_18(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
     ({ test_termination_condition_18(unimplemented!(), -0_f64, None) });
     ({ test_termination_condition_18(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
+    ({
+        test_termination_condition_18(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_18(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
     {
-        ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
+        ({
+            test_termination_condition_18(
+                unimplemented!(),
+                -({ std_numeric_limits_double_::max() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_18(
+                unimplemented!(),
+                -({ std_numeric_limits_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_18(
+                unimplemented!(),
+                ({ std_numeric_limits_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_18(
+                unimplemented!(),
+                ({ std_numeric_limits_double_::max() }),
+                None,
+            )
+        });
     }
     {
-        ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_18(unimplemented!(), unimplemented!(), None) });
+        ({
+            test_termination_condition_18(
+                unimplemented!(),
+                -({ std_numeric_limits_long_double_::max() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_18(
+                unimplemented!(),
+                -({ std_numeric_limits_long_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_18(
+                unimplemented!(),
+                ({ std_numeric_limits_long_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_18(
+                unimplemented!(),
+                ({ std_numeric_limits_long_double_::max() }),
+                None,
+            )
+        });
     }
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_18(_f, -unimplemented!(), Some(_expected))
+        test_termination_condition_18(
+            _f,
+            -({ std_numeric_limits_long_double_::infinity() }),
+            Some(_expected),
+        )
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_18(_f, unimplemented!(), Some(_expected))
+        test_termination_condition_18(
+            _f,
+            ({ std_numeric_limits_long_double_::infinity() }),
+            Some(_expected),
+        )
     });
-    let mut nan: () = unimplemented!();
+    let mut nan: () = ({ std_numeric_limits_long_double_::quiet_NaN() });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
@@ -4174,25 +4342,57 @@ pub fn test_float_type_68() {
     {}
 }
 pub fn test_float_type_70() {
-    ({ test_termination_condition_19(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_19(unimplemented!(), -unimplemented!(), None) });
+    ({
+        test_termination_condition_19(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_19(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
     ({ test_termination_condition_19(unimplemented!(), -0_f64, None) });
     ({ test_termination_condition_19(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_19(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_19(unimplemented!(), unimplemented!(), None) });
+    ({
+        test_termination_condition_19(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_19(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
     {}
     {}
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_19(_f, -unimplemented!(), Some(_expected))
+        test_termination_condition_19(
+            _f,
+            -({ std_numeric_limits_float_::infinity() }),
+            Some(_expected),
+        )
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_19(_f, unimplemented!(), Some(_expected))
+        test_termination_condition_19(
+            _f,
+            ({ std_numeric_limits_float_::infinity() }),
+            Some(_expected),
+        )
     });
-    let mut nan: () = unimplemented!();
+    let mut nan: () = ({ std_numeric_limits_float_::quiet_NaN() });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
@@ -4208,30 +4408,86 @@ pub fn test_float_type_70() {
     }
 }
 pub fn test_float_type_71() {
-    ({ test_termination_condition_20(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_20(unimplemented!(), -unimplemented!(), None) });
+    ({
+        test_termination_condition_20(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_20(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
     ({ test_termination_condition_20(unimplemented!(), -0_f64, None) });
     ({ test_termination_condition_20(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_20(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_20(unimplemented!(), unimplemented!(), None) });
+    ({
+        test_termination_condition_20(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_20(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
     {
-        ({ test_termination_condition_20(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_20(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_20(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_20(unimplemented!(), unimplemented!(), None) });
+        ({
+            test_termination_condition_20(
+                unimplemented!(),
+                -({ std_numeric_limits_double_::max() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_20(
+                unimplemented!(),
+                -({ std_numeric_limits_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_20(
+                unimplemented!(),
+                ({ std_numeric_limits_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_20(
+                unimplemented!(),
+                ({ std_numeric_limits_double_::max() }),
+                None,
+            )
+        });
     }
     {}
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_20(_f, -unimplemented!(), Some(_expected))
+        test_termination_condition_20(
+            _f,
+            -({ std_numeric_limits_double_::infinity() }),
+            Some(_expected),
+        )
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_20(_f, unimplemented!(), Some(_expected))
+        test_termination_condition_20(
+            _f,
+            ({ std_numeric_limits_double_::infinity() }),
+            Some(_expected),
+        )
     });
-    let mut nan: () = unimplemented!();
+    let mut nan: () = ({ std_numeric_limits_double_::quiet_NaN() });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
@@ -4247,35 +4503,115 @@ pub fn test_float_type_71() {
     }
 }
 pub fn test_float_type_72() {
-    ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-    ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
+    ({
+        test_termination_condition_21(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_21(
+            unimplemented!(),
+            -({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
     ({ test_termination_condition_21(unimplemented!(), -0_f64, None) });
     ({ test_termination_condition_21(unimplemented!(), 0_f64, None) });
-    ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-    ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
+    ({
+        test_termination_condition_21(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::min() }),
+            None,
+        )
+    });
+    ({
+        test_termination_condition_21(
+            unimplemented!(),
+            ({ std_numeric_limits_float_::max() }),
+            None,
+        )
+    });
     {
-        ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
+        ({
+            test_termination_condition_21(
+                unimplemented!(),
+                -({ std_numeric_limits_double_::max() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_21(
+                unimplemented!(),
+                -({ std_numeric_limits_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_21(
+                unimplemented!(),
+                ({ std_numeric_limits_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_21(
+                unimplemented!(),
+                ({ std_numeric_limits_double_::max() }),
+                None,
+            )
+        });
     }
     {
-        ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), -unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
-        ({ test_termination_condition_21(unimplemented!(), unimplemented!(), None) });
+        ({
+            test_termination_condition_21(
+                unimplemented!(),
+                -({ std_numeric_limits_long_double_::max() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_21(
+                unimplemented!(),
+                -({ std_numeric_limits_long_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_21(
+                unimplemented!(),
+                ({ std_numeric_limits_long_double_::min() }),
+                None,
+            )
+        });
+        ({
+            test_termination_condition_21(
+                unimplemented!(),
+                ({ std_numeric_limits_long_double_::max() }),
+                None,
+            )
+        });
     }
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_21(_f, -unimplemented!(), Some(_expected))
+        test_termination_condition_21(
+            _f,
+            -({ std_numeric_limits_long_double_::infinity() }),
+            Some(_expected),
+        )
     });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();
-        test_termination_condition_21(_f, unimplemented!(), Some(_expected))
+        test_termination_condition_21(
+            _f,
+            ({ std_numeric_limits_long_double_::infinity() }),
+            Some(_expected),
+        )
     });
-    let mut nan: () = unimplemented!();
+    let mut nan: () = ({ std_numeric_limits_long_double_::quiet_NaN() });
     ({
         let _f: () = unimplemented!();
         let _expected: () = unimplemented!();

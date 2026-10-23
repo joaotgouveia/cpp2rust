@@ -187,7 +187,7 @@ pub fn test_format_8(expected: (), arg: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format(arg.as_pointer(), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_format_10(expected: (), arg: ()) {
@@ -204,14 +204,12 @@ pub fn test_format_10(expected: (), arg: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format(arg.as_pointer(), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_assure_parse_is_called_12(fmt: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(
-        std_vector_parse_call_validator__std_allocator_parse_call_validator__::new_1({ 1_() }),
-    ));
+    let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
@@ -225,13 +223,11 @@ pub fn test_assure_parse_is_called_12(fmt: ()) {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ (*formatter.borrow()).format(arg.as_pointer(), format_ctx.as_pointer()) });
+    unimplemented!();
 }
 pub fn test_assure_parse_is_called_14(fmt: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg: Value<()> = Rc::new(RefCell::new(
-        std_vector_parse_call_validator__std_allocator_parse_call_validator__::new_1({ 1_() }),
-    ));
+    let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
@@ -245,12 +241,10 @@ pub fn test_assure_parse_is_called_14(fmt: ()) {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ (*formatter.borrow()).format(arg.as_pointer(), format_ctx.as_pointer()) });
+    unimplemented!();
 }
 pub fn test_assure_parse_is_called_16() {
-    let arg: Value<()> = Rc::new(RefCell::new(
-        std_vector_parse_call_validator__std_allocator_parse_call_validator__::new_1({ 1_() }),
-    ));
+    let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
@@ -272,9 +266,7 @@ pub fn test_assure_parse_is_called_16() {
     ({ test_assure_parse_is_called_12(unimplemented!()) });
 }
 pub fn test_assure_parse_is_called_17() {
-    let arg: Value<()> = Rc::new(RefCell::new(
-        std_vector_parse_call_validator__std_allocator_parse_call_validator__::new_1({ 1_() }),
-    ));
+    let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
@@ -296,33 +288,13 @@ pub fn test_assure_parse_is_called_17() {
     ({ test_assure_parse_is_called_14(unimplemented!()) });
 }
 pub fn test_fmt_18() {
-    ({
-        test_format_8(
-            unimplemented!(),
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }),
-        )
-    });
-    ({
-        test_format_8(
-            unimplemented!(),
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }),
-        )
-    });
+    ({ test_format_8(unimplemented!(), unimplemented!()) });
+    ({ test_format_8(unimplemented!(), unimplemented!()) });
     ({ test_assure_parse_is_called_16() });
 }
 pub fn test_fmt_19() {
-    ({
-        test_format_10(
-            unimplemented!(),
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }),
-        )
-    });
-    ({
-        test_format_10(
-            unimplemented!(),
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }),
-        )
-    });
+    ({ test_format_10(unimplemented!(), unimplemented!()) });
+    ({ test_format_10(unimplemented!(), unimplemented!()) });
     ({ test_assure_parse_is_called_17() });
 }
 pub fn test_20() {

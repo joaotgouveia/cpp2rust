@@ -16,7 +16,7 @@ pub struct test_macros_detail_is_same_std_optional_int___std_optional_int__ {}
 pub struct LVal {}
 impl LVal {
     pub unsafe fn operator_call_1(&mut self, _a0: *mut ()) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 #[repr(C)]
@@ -24,7 +24,7 @@ impl LVal {
 pub struct CLVal {}
 impl CLVal {
     pub unsafe fn operator_call_2(&mut self, _a0: *const ()) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 #[repr(C)]
@@ -32,7 +32,7 @@ impl CLVal {
 pub struct RVal {}
 impl RVal {
     pub unsafe fn operator_call_3(&mut self, _a0: *mut ()) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 #[repr(C)]
@@ -40,7 +40,7 @@ impl RVal {
 pub struct CRVal {}
 impl CRVal {
     pub unsafe fn operator_call_4(&mut self, _a0: *const ()) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 #[repr(C)]
@@ -48,7 +48,7 @@ impl CRVal {
 pub struct RefQual {}
 impl RefQual {
     pub unsafe fn operator_call_1(&mut self, mut _a0: ()) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 #[repr(C)]
@@ -56,7 +56,7 @@ impl RefQual {
 pub struct CRefQual {}
 impl CRefQual {
     pub unsafe fn operator_call_2(&self, mut _a0: ()) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 #[repr(C)]
@@ -64,7 +64,7 @@ impl CRefQual {
 pub struct RVRefQual {}
 impl RVRefQual {
     pub unsafe fn operator_call_3(&mut self, mut _a0: ()) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 #[repr(C)]
@@ -72,7 +72,7 @@ impl RVRefQual {
 pub struct RVCRefQual {}
 impl RVCRefQual {
     pub unsafe fn operator_call_4(&self, mut _a0: ()) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 #[repr(C)]
@@ -149,7 +149,7 @@ impl NoCopy {
         this
     }
     pub unsafe fn operator_call(&mut self, _a0: *const NoCopy) -> () {
-        return unimplemented!();
+        return 1_();
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const NoCopy) -> *mut NoCopy {
         return &mut (*(self as *mut NoCopy));
@@ -165,19 +165,19 @@ impl Clone for NoCopy {
 pub struct NonConst {}
 impl NonConst {
     pub unsafe fn non_const(&mut self) -> () {
-        return unimplemented!();
+        return 1_();
     }
 }
 pub unsafe fn test_val_types_1() {
     {
         {
-            let mut i: () = unimplemented!();
+            let mut i: () = 0_();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut i: () = unimplemented!();
+            let mut i: () = 0_();
             let mut l: RefQual = <RefQual>::default();
             unimplemented!();
             let mut nl: NORefQual = <NORefQual>::default();
@@ -187,13 +187,13 @@ pub unsafe fn test_val_types_1() {
     }
     {
         {
-            let i: () = unimplemented!();
+            let i: () = 0_();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let i: () = unimplemented!();
+            let i: () = 0_();
             let l: CRefQual = <CRefQual>::default();
             unimplemented!();
             let nl: NOCRefQual = <NOCRefQual>::default();
@@ -203,13 +203,13 @@ pub unsafe fn test_val_types_1() {
     }
     {
         {
-            let mut i: () = unimplemented!();
+            let mut i: () = 0_();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut i: () = unimplemented!();
+            let mut i: () = 0_();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
@@ -217,13 +217,13 @@ pub unsafe fn test_val_types_1() {
     }
     {
         {
-            let i: () = unimplemented!();
+            let i: () = 0_();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let i: () = unimplemented!();
+            let i: () = 0_();
             let l: RVCRefQual = <RVCRefQual>::default();
             unimplemented!();
             let nl: NORVCRefQual = <NORVCRefQual>::default();

@@ -28,15 +28,12 @@ pub struct increasing_allocator_char_ {
     pub min_elements: (),
 }
 impl increasing_allocator_char_ {
-    pub unsafe fn allocate_at_least(
-        &mut self,
-        mut n: (),
-    ) -> std_allocation_result_char_ptr__unsigned_long_ {
+    pub unsafe fn allocate_at_least(&mut self, mut n: ()) -> () {
         if ((n) < (self.min_elements)) {
             n = self.min_elements;
         }
         self.min_elements = (self.min_elements).wrapping_add(1000_());
-        return (unsafe { unimplemented!().allocate_at_least(n) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
         unimplemented!();

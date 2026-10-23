@@ -18,7 +18,7 @@ pub unsafe fn test_0() -> () {
         unimplemented!();
     }
     {
-        let int_max: () = unimplemented!();
+        let int_max: () = (unsafe { std_numeric_limits_int_::max() });
         let mut rv: () = unimplemented!();
         unimplemented!();
     }

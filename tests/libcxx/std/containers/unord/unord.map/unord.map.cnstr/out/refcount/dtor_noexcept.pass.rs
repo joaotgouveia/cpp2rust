@@ -348,10 +348,6 @@ impl Default for test_allocator_void_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_allocator_std_pair_const_MoveOnly__MoveOnly___rebind_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
 pub struct test_allocator_std_pair_const_MoveOnly__MoveOnly___rebind_std_pair_const_MoveOnly__MoveOnly__
 {}
 #[derive(Record, ByteRepr, FnPtrArg)]
@@ -377,67 +373,6 @@ impl Default for test_allocator_std_pair_const_MoveOnly__MoveOnly__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr___rebind_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr___rebind_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_
-{}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ {}
-impl Default
-    for test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__
-{
-    fn default() -> Self {
-        {
-            test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__
-{
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ { }
-impl Default for test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ { fn default() -> Self { { test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ { data_ : unimplemented!() , id_ : unimplemented!() , stats_ : Ptr::<test_allocator_statistics>::null() , } } } }
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_
-{
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_ { }
-impl Default for test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_ { fn default() -> Self { { test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_ { data_ : unimplemented!() , id_ : unimplemented!() , stats_ : Ptr::<test_allocator_statistics>::null() , } } } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct other_allocator_std_pair_const_MoveOnly__MoveOnly__ {
@@ -454,42 +389,6 @@ impl Default for other_allocator_std_pair_const_MoveOnly__MoveOnly__ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ {}
-impl Default
-    for other_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__
-{
-    fn default() -> Self {
-        {
-            other_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__
-{
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ { }
-impl Default for other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ { fn default() -> Self { { other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ { data_ : unimplemented!() , } } } }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_
-{
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_ { }
-impl Default for other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_ { fn default() -> Self { { other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_ { data_ : unimplemented!() , } } } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
@@ -614,74 +513,6 @@ impl TrivialMoveOnlyImpl for Ptr<TrivialMoveOnly> {
         });
     }
 }
-pub trait other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__Impl
-{
-    fn allocate ( &self , mut n : ()  , ) -> Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }    fn select_on_container_copy_construction ( &self , ) -> other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__{
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__Impl for Ptr<other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__> {
-}
-pub trait other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_Impl
-{
-    fn allocate ( &self , mut n : ()  , ) -> Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >  >{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >  >,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }    fn select_on_container_copy_construction ( &self , ) -> other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_{
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_Impl for Ptr<other_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_> {
-}
-pub trait other_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr_>,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }
-    fn select_on_container_copy_construction(
-        &self,
-    ) -> other_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__Impl
-    for Ptr<other_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__>
-{
-}
 pub trait other_allocator_std_pair_const_MoveOnly__MoveOnly__Impl {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()
@@ -741,128 +572,6 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), moved).write(0_());
         field!((*self), converted).write(0_());
     }
-}
-pub trait test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__Impl
-{
-    fn destructor(&self) {
-        unimplemented!()
-    }    fn address_11 ( &self , x : () , ) -> Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >{
-        unimplemented!()
-    }    fn address_12 ( &self , x : () , ) -> Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >{
-        unimplemented!()
-    }    fn allocate ( &self , mut n : ()  , mut _a1 : ()  , ) -> Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(
-        &self,
-        mut p : Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >,
-    ) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__Impl for Ptr<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__> {
-}
-pub trait test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_Impl
-{
-    fn destructor(&self) {
-        unimplemented!()
-    }    fn address_11 ( &self , x : () , ) -> Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >  >{
-        unimplemented!()
-    }    fn address_12 ( &self , x : () , ) -> Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >  >{
-        unimplemented!()
-    }    fn allocate ( &self , mut n : ()  , mut _a1 : ()  , ) -> Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >  >{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >  >,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(
-        &self,
-        mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr_  >  >,
-    ) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_Impl for Ptr<test_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ptr_> {
-}
-pub trait test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(
-        &self,
-        x: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr_> {
-        unimplemented!()
-    }
-    fn address_12(
-        &self,
-        x: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr_> {
-        unimplemented!()
-    }
-    fn allocate(
-        &self,
-        mut n: (),
-        mut _a1: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr_>,
-        mut s: (),
-    ) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(
-        &self,
-        mut p: Ptr<std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr_>,
-    ) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__Impl
-    for Ptr<test_allocator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__>
-{
 }
 pub trait test_allocator_std_pair_const_MoveOnly__MoveOnly__Impl {
     fn destructor(&self) {

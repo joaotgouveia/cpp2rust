@@ -63,7 +63,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut p2: () = std_shared_ptr_A_::new_1({ ptr2 });
             let mut w2: () = std_weak_ptr_A_::new_1({ &p2 });
-            (unsafe { w1.swap(&mut w2) });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

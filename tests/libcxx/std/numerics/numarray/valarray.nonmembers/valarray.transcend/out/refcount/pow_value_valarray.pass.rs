@@ -7,8 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn is_about_0(mut x: (), mut y: (), mut significant_digits: ()) -> () {
-    let mut epsilon: () = unimplemented!();
-    return (({ abs_1((x - y)) }) < epsilon);
+    let mut epsilon: () = ({ pow_1((1_f64 / 10_f64), significant_digits) });
+    return (({ abs_2((x - y)) }) < epsilon);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -48,7 +48,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             ({
                 ({
                     let ___x: Value<()> = Rc::new(RefCell::new(2_f64));
-                    pow_2(___x.as_pointer(), v1.as_pointer())
+                    pow_3(___x.as_pointer(), v1.as_pointer())
                 })()
             }),
         ));

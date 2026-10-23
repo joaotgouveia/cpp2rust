@@ -151,8 +151,11 @@ pub unsafe fn test_20() -> () {
         (unsafe { test_string.call() });
     }
     let test_unique_ptr: FnPtr<fn()> = FnPtr::<fn()>::new(|| unsafe {
-        let mut s: () = unimplemented!();
-        let mut opt: () = (unsafe { make_optional_24(&mut *(&raw mut s).cast::<()>()) });
+        let mut s: () = (unsafe {
+            let mut ___args: () = 3_();
+            make_unique_24(&mut ___args)
+        });
+        let mut opt: () = (unsafe { make_optional_25(&mut *(&raw mut s).cast::<()>()) });
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

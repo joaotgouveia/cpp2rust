@@ -107,12 +107,12 @@ impl NoMove {
 pub unsafe fn test_val_types_1() {
     {
         {
-            let mut i: () = unimplemented!();
+            let mut i: () = 0_();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut i: () = unimplemented!();
+            let mut i: () = 0_();
             let mut l: RefQual = <RefQual>::default();
             unimplemented!();
             const _: () = assert!(true, "");;
@@ -120,12 +120,12 @@ pub unsafe fn test_val_types_1() {
     }
     {
         {
-            let i: () = unimplemented!();
+            let i: () = 0_();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let i: () = unimplemented!();
+            let i: () = 0_();
             let l: CRefQual = <CRefQual>::default();
             unimplemented!();
             const _: () = assert!(true, "");;
@@ -133,24 +133,24 @@ pub unsafe fn test_val_types_1() {
     }
     {
         {
-            let mut i: () = unimplemented!();
+            let mut i: () = 0_();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut i: () = unimplemented!();
+            let mut i: () = 0_();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
     {
         {
-            let i: () = unimplemented!();
+            let i: () = 0_();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let i: () = unimplemented!();
+            let i: () = 0_();
             let l: RVCRefQual = <RVCRefQual>::default();
             unimplemented!();
             const _: () = assert!(true, "");;

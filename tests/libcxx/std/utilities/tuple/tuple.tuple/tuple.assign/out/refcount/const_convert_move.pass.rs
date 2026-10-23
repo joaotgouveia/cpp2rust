@@ -583,20 +583,20 @@ pub fn test_6() -> () {
             { j1.as_pointer() },
             { j2.as_pointer() },
         )));
-        unimplemented!();
+        (*t2.borrow_mut()) = (*t1.borrow()).clone();
         unimplemented!();
         unimplemented!();
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(1_()));
         let t2: Value<()> = Rc::new(RefCell::new(2_()));
-        unimplemented!();
+        (*t2.borrow_mut()) = (*t1.borrow()).clone();
         unimplemented!();
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        (*t2.borrow_mut()) = (*t1.borrow()).clone();
         unimplemented!();
     }
     return true;

@@ -35,7 +35,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::is_same_v<decltype(ri), std::reference_wrapper<int>>"
     );;
-    let ri2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ri2: Value<()> = Rc::new(RefCell::new((*ri.borrow()).clone()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri2), std::reference_wrapper<int>>"
@@ -48,7 +48,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::is_same_v<decltype(rj), std::reference_wrapper<const int>>"
     );;
-    let rj2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let rj2: Value<()> = Rc::new(RefCell::new((*rj.borrow()).clone()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj2), std::reference_wrapper<const int>>"

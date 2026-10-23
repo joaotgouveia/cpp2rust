@@ -42,7 +42,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let ret: Value<()> = Rc::new(RefCell::new(({ get_temporary_buffer_0(unimplemented!()) })));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({ get_temporary_buffer_0(({ std_numeric_limits_long_::min() })) }),
+        ));
         unimplemented!();
         unimplemented!();
     }

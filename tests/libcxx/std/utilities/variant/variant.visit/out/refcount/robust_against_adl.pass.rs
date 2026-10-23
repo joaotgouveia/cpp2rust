@@ -9,10 +9,50 @@ use std::rc::{Rc, Weak};
 pub fn test_0(mut do_it: ()) -> () {
     if do_it {
         let v: Value<()> = Rc::new(RefCell::new(Default::default()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        ({
+            let ___visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+                Generic,
+                {},
+                |mut _a0: Ptr<Holder_Incomplete_>| {},
+                |mut _a0: ()| {}
+            )));
+            visit_1(___visitor.as_pointer(), v.as_pointer())
+        });
+        ({
+            let ___visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+                Generic,
+                {},
+                |mut _a0: Ptr<Holder_Incomplete_>| -> Ptr<Holder_Incomplete_> {
+                    return Ptr::<Holder_Incomplete_>::null();
+                },
+                |mut _a0: ()| -> Ptr<Holder_Incomplete_> {
+                    return Ptr::<Holder_Incomplete_>::null();
+                }
+            )));
+            visit_2(___visitor.as_pointer(), v.as_pointer())
+        });
+        ({
+            let ___visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+                Generic,
+                {},
+                |mut _a0: Ptr<Holder_Incomplete_>| {},
+                |mut _a0: ()| {}
+            )));
+            visit_3(___visitor.as_pointer(), v.as_pointer())
+        });
+        ({
+            let ___visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+                Generic,
+                {},
+                |mut _a0: Ptr<Holder_Incomplete_>| -> Ptr<Holder_Incomplete_> {
+                    return Ptr::<Holder_Incomplete_>::null();
+                },
+                |mut _a0: ()| -> Ptr<Holder_Incomplete_> {
+                    return Ptr::<Holder_Incomplete_>::null();
+                }
+            )));
+            visit_4(___visitor.as_pointer(), v.as_pointer())
+        });
     }
     return true;
 }
@@ -40,4 +80,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test(true)");;
     return 0_();
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct Holder_Incomplete_;
 pub fn __cpp2rust_init_globals() {}

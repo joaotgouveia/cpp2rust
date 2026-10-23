@@ -353,10 +353,6 @@ impl Default for test_allocator_void_ {
 pub struct test_allocator_std_pair_const_MoveOnly__MoveOnly___rebind_std_pair_const_MoveOnly__MoveOnly__
 {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std_pair_const_MoveOnly__MoveOnly___rebind_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__
-{}
-#[repr(C)]
 #[derive(FnPtrArg)]
 pub struct test_allocator_std_pair_const_MoveOnly__MoveOnly__ {
     data_: (),
@@ -376,48 +372,6 @@ impl Default for test_allocator_std_pair_const_MoveOnly__MoveOnly__ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr___rebind_std___tree_node_base_void_ptr__
-{}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__ {}
-impl Default for test_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___tree_node_base_void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_base_void_ptr__ {}
-impl Default for test_allocator_std___tree_node_base_void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_base_void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct other_allocator_std_pair_const_MoveOnly__MoveOnly__ {
     data_: (),
@@ -427,36 +381,6 @@ impl Default for other_allocator_std_pair_const_MoveOnly__MoveOnly__ {
     fn default() -> Self {
         unsafe {
             other_allocator_std_pair_const_MoveOnly__MoveOnly__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__ {
-    data_: (),
-}
-impl other_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__ {}
-impl Default for other_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___tree_node_std___value_type_MoveOnly__MoveOnly___void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___tree_node_base_void_ptr__ {
-    data_: (),
-}
-impl other_allocator_std___tree_node_base_void_ptr__ {}
-impl Default for other_allocator_std___tree_node_base_void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___tree_node_base_void_ptr__ {
                 data_: unimplemented!(),
             }
         }

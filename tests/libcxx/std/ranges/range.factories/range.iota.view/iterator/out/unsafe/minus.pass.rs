@@ -228,8 +228,8 @@ pub unsafe fn test_18() -> () {
     {
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_19((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_19((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -237,8 +237,8 @@ pub unsafe fn test_18() -> () {
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_20((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_20((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -246,8 +246,8 @@ pub unsafe fn test_18() -> () {
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -255,14 +255,14 @@ pub unsafe fn test_18() -> () {
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
             unimplemented!();
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "!std::is_reference_v<decltype(iter2 - 5)>");;
@@ -271,64 +271,64 @@ pub unsafe fn test_18() -> () {
     {
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_19((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_19((unsafe { io.begin() }), 5_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_19((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_19((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_19((unsafe { io.begin() }), 5_()) });
+            let mut iter2: () = (unsafe { next_19((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_21((unsafe { io.begin() }), 5_()) });
+            let mut iter2: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_21((unsafe { io.begin() }), 5_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_21((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), IntDiffT>");;
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_20((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_20((unsafe { io.begin() }), 5_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), int>");;
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_20((unsafe { io.begin() }), 10_()) });
+            let mut iter2: () = (unsafe { next_20((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), int>");;
         }
         {
             let mut io: () = unimplemented!();
-            let mut iter1: () = unimplemented!();
-            let mut iter2: () = unimplemented!();
+            let mut iter1: () = (unsafe { next_20((unsafe { io.begin() }), 5_()) });
+            let mut iter2: () = (unsafe { next_20((unsafe { io.begin() }), 10_()) });
             unimplemented!();
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), int>");;
         }

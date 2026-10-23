@@ -73,7 +73,7 @@ pub fn test_2() -> () {
         }));
         std_tuple_CS__S_ref_::new({ __tmp_1.as_pointer() }, { s2.as_pointer() })
     }));
-    unimplemented!();
+    ({ swap_3(t1.as_pointer(), t2.as_pointer()) });
     unimplemented!();
     unimplemented!();
     return true;

@@ -9,14 +9,6 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ExplicitAllocator_int_ {}
-impl ExplicitAllocator_std___shared_ptr_emplace_int__ExplicitAllocator_int___ {
-    pub fn new_1(mut _a0: ExplicitAllocator_int_) -> Self {
-        Self {}
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct ExplicitAllocator_std___shared_ptr_emplace_int__ExplicitAllocator_int___ {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -37,7 +29,14 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let ptr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ptr: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___a: Value<ExplicitAllocator_int_> =
+                Rc::new(RefCell::new(<ExplicitAllocator_int_>::default()));
+            let ___args: Value<()> = Rc::new(RefCell::new(0_()));
+            allocate_shared_0(___a.as_pointer(), ___args.as_pointer())
+        }),
+    ));
     &(*ptr.borrow_mut());
     return 0_();
 }
@@ -50,23 +49,4 @@ pub trait ExplicitAllocator_int_Impl {
     }
 }
 impl ExplicitAllocator_int_Impl for Ptr<ExplicitAllocator_int_> {}
-pub trait ExplicitAllocator_std___shared_ptr_emplace_int__ExplicitAllocator_int___Impl {
-    fn allocate(&self, n: ()) -> Ptr<std___shared_ptr_emplace_int__ExplicitAllocator_int__>;
-    fn deallocate(&self, ptr: Ptr<std___shared_ptr_emplace_int__ExplicitAllocator_int__>, n: ());
-}
-impl ExplicitAllocator_std___shared_ptr_emplace_int__ExplicitAllocator_int___Impl
-    for Ptr<ExplicitAllocator_std___shared_ptr_emplace_int__ExplicitAllocator_int___>
-{
-    fn allocate(&self, mut n: ()) -> Ptr<std___shared_ptr_emplace_int__ExplicitAllocator_int__> {
-        return unimplemented!();
-    }
-    fn deallocate(
-        &self,
-        mut ptr: Ptr<std___shared_ptr_emplace_int__ExplicitAllocator_int__>,
-        mut n: (),
-    ) {
-        unimplemented!();
-        return;
-    }
-}
 pub fn __cpp2rust_init_globals() {}

@@ -302,7 +302,7 @@ pub fn test_nonempty_iota_sfinae_22() {
         const _: () = assert!(true, "HasEmpty<decltype(iv)>");;
     }
     {
-        let mut v: () = std_vector_char__std_allocator_char__::new_1({ unimplemented!() });
+        let mut v: () = unimplemented!();
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iv: Value<()> = Rc::new(RefCell::new(
             ({ (*iota_21.with(Value::clone).borrow_mut())(it.as_pointer()) }),
@@ -348,7 +348,7 @@ pub fn test_nonempty_iota_24() {
         unimplemented!();
     }
     {
-        let mut v: () = std_vector_char__std_allocator_char__::new_1({ unimplemented!() });
+        let mut v: () = unimplemented!();
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iv: Value<()> = Rc::new(RefCell::new(
             ({ (*iota_21.with(Value::clone).borrow_mut())(it.as_pointer()) }),

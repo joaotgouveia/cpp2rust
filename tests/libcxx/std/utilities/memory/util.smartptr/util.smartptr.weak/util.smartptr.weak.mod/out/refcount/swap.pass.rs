@@ -64,7 +64,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let p2: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({ (ptr2).clone() })));
             let w2: Value<()> = Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ p2.as_pointer() })));
-            ({ (*w1.borrow()).swap(w2.as_pointer()) });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

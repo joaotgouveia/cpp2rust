@@ -32,200 +32,168 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             { c"\\(a\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_basic, 1_())
+        test_0(&mut _p, unimplemented!(), 1_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a[bc]\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_basic, 1_())
+        test_0(&mut _p, unimplemented!(), 1_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\([bc]\\)\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_basic, 2_())
+        test_0(&mut _p, unimplemented!(), 2_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"(a([bc]))".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_basic, 0_())
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\)".as_ptr() },
             None,
         );
-        test_0(
-            &mut _p,
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a[bc]\\)".as_ptr() },
             None,
         );
-        test_0(
-            &mut _p,
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\([bc]\\)\\)".as_ptr() },
             None,
         );
-        test_0(
-            &mut _p,
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"(a([bc]))".as_ptr() },
             None,
         );
-        test_0(
-            &mut _p,
-            std_regex_constants_syntax_option_type_extended,
-            2_(),
-        )
+        test_0(&mut _p, unimplemented!(), 2_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\)".as_ptr() },
             None,
         );
-        test_0(
-            &mut _p,
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a[bc]\\)".as_ptr() },
             None,
         );
-        test_0(
-            &mut _p,
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\([bc]\\)\\)".as_ptr() },
             None,
         );
-        test_0(
-            &mut _p,
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"(a([bc]))".as_ptr() },
             None,
         );
-        test_0(
-            &mut _p,
-            std_regex_constants_syntax_option_type_ECMAScript,
-            2_(),
-        )
+        test_0(&mut _p, unimplemented!(), 2_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_awk, 0_())
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a[bc]\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_awk, 0_())
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\([bc]\\)\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_awk, 0_())
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"(a([bc]))".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_awk, 2_())
+        test_0(&mut _p, unimplemented!(), 2_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_grep, 1_())
+        test_0(&mut _p, unimplemented!(), 1_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a[bc]\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_grep, 1_())
+        test_0(&mut _p, unimplemented!(), 1_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\([bc]\\)\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_grep, 2_())
+        test_0(&mut _p, unimplemented!(), 2_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"(a([bc]))".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_grep, 0_())
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_egrep, 0_())
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a[bc]\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_egrep, 0_())
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"\\(a\\([bc]\\)\\)".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_egrep, 0_())
+        test_0(&mut _p, unimplemented!(), 0_())
     });
     (unsafe {
         let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { c"(a([bc]))".as_ptr() },
             None,
         );
-        test_0(&mut _p, std_regex_constants_syntax_option_type_egrep, 2_())
+        test_0(&mut _p, unimplemented!(), 2_())
     });
     return 0_();
 }

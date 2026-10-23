@@ -182,10 +182,6 @@ impl Default for test_allocator_void_ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std_pair_const_int__int___rebind_std___tree_node_std___value_type_int__int___void_ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {}
 #[repr(C)]
 #[derive(FnPtrArg)]
@@ -206,10 +202,6 @@ impl Default for test_allocator_std_pair_const_int__int__ {
         }
     }
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std_pair_const_int__StrongOrder___rebind_std___tree_node_std___value_type_int__StrongOrder___void_ptr__
-{}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_std_pair_const_int__StrongOrder___rebind_std_pair_const_int__StrongOrder__
@@ -235,10 +227,6 @@ impl Default for test_allocator_std_pair_const_int__StrongOrder__ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std_pair_const_int__WeakOrder___rebind_std___tree_node_std___value_type_int__WeakOrder___void_ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_std_pair_const_int__WeakOrder___rebind_std_pair_const_int__WeakOrder__ {
 }
 #[repr(C)]
@@ -262,10 +250,6 @@ impl Default for test_allocator_std_pair_const_int__WeakOrder__ {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std_pair_const_int__PartialOrder___rebind_std___tree_node_std___value_type_int__PartialOrder___void_ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_std_pair_const_int__PartialOrder___rebind_std_pair_const_int__PartialOrder__
 {}
 #[repr(C)]
@@ -282,273 +266,6 @@ impl Default for test_allocator_std_pair_const_int__PartialOrder__ {
             test_allocator_std_pair_const_int__PartialOrder__ {
                 data_: unimplemented!(),
                 id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___tree_node_std___value_type_int__int___void_ptr___rebind_std___tree_node_base_void_ptr__
-{}
-#[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-    }
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-        mut _a1: Option<()>,
-    ) -> *mut std___tree_node_std___value_type_int__int___void_ptr_ {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___tree_node_std___value_type_int__int___void_ptr_,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Default for test_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___tree_node_base_void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_base_void_ptr__ {}
-impl Default for test_allocator_std___tree_node_base_void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_base_void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___tree_node_std___value_type_int__StrongOrder___void_ptr___rebind_std___tree_node_base_void_ptr__
-{}
-#[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std___tree_node_std___value_type_int__StrongOrder___void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_std___value_type_int__StrongOrder___void_ptr__ {
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-    }
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-        mut _a1: Option<()>,
-    ) -> *mut std___tree_node_std___value_type_int__StrongOrder___void_ptr_ {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___tree_node_std___value_type_int__StrongOrder___void_ptr_,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Default for test_allocator_std___tree_node_std___value_type_int__StrongOrder___void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_std___value_type_int__StrongOrder___void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___tree_node_std___value_type_int__WeakOrder___void_ptr___rebind_std___tree_node_base_void_ptr__
-{}
-#[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std___tree_node_std___value_type_int__WeakOrder___void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_std___value_type_int__WeakOrder___void_ptr__ {
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-    }
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-        mut _a1: Option<()>,
-    ) -> *mut std___tree_node_std___value_type_int__WeakOrder___void_ptr_ {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___tree_node_std___value_type_int__WeakOrder___void_ptr_,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Default for test_allocator_std___tree_node_std___value_type_int__WeakOrder___void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_std___value_type_int__WeakOrder___void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_std___tree_node_std___value_type_int__PartialOrder___void_ptr___rebind_std___tree_node_base_void_ptr__
-{}
-#[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std___tree_node_std___value_type_int__PartialOrder___void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___tree_node_std___value_type_int__PartialOrder___void_ptr__ {
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-    }
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-        mut _a1: Option<()>,
-    ) -> *mut std___tree_node_std___value_type_int__PartialOrder___void_ptr_ {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___tree_node_std___value_type_int__PartialOrder___void_ptr_,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Default for test_allocator_std___tree_node_std___value_type_int__PartialOrder___void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___tree_node_std___value_type_int__PartialOrder___void_ptr__ {
-                data_: 0_(),
-                id_: 0_(),
                 stats_: std::ptr::null_mut(),
             }
         }

@@ -695,7 +695,7 @@ pub fn test_18() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('a' as ()),
             std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"b") },
                 None,
@@ -709,7 +709,7 @@ pub fn test_18() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('b' as ()),
             std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"aa") },
                 None,
@@ -723,7 +723,7 @@ pub fn test_18() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('c' as ()),
             std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
@@ -1033,7 +1033,7 @@ pub fn test_19() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('a' as ()),
             std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"b") },
                 None,
@@ -1047,7 +1047,7 @@ pub fn test_19() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('b' as ()),
             std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"aa") },
                 None,
@@ -1061,7 +1061,7 @@ pub fn test_19() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('c' as ()),
             std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
@@ -1371,7 +1371,7 @@ pub fn test_20() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('a' as ()),
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"b") },
                 None,
@@ -1385,7 +1385,7 @@ pub fn test_20() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('b' as ()),
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"aa") },
                 None,
@@ -1399,7 +1399,7 @@ pub fn test_20() {
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,
             ),
-            unimplemented!(),
+            ('c' as ()),
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
                 { Ptr::<()>::from_string_literal(b"aba") },
                 None,

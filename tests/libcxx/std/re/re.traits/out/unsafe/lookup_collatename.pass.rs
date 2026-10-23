@@ -292,25 +292,21 @@ pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_6(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -394,7 +390,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -404,7 +400,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -472,11 +468,11 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_10(mut A: *const (), expected: *const ()) {
+pub unsafe fn test_9(mut A: *const (), expected: *const ()) {
     let mut t: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_11(mut A: *const (), expected: *const ()) {
+pub unsafe fn test_10(mut A: *const (), expected: *const ()) {
     let mut t: () = unimplemented!();
     unimplemented!();
 }
@@ -498,7 +494,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
         let mut _expected: () = unimplemented!();
-        test_10(c"NUL".as_ptr(), &mut _expected)
+        test_9(c"NUL".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -506,7 +502,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\x07".as_ptr() },
                 None,
             );
-        test_10(c"alert".as_ptr(), &mut _expected)
+        test_9(c"alert".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -514,7 +510,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\x08".as_ptr() },
                 None,
             );
-        test_10(c"backspace".as_ptr(), &mut _expected)
+        test_9(c"backspace".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -522,7 +518,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\t".as_ptr() },
                 None,
             );
-        test_10(c"tab".as_ptr(), &mut _expected)
+        test_9(c"tab".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -530,7 +526,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\r".as_ptr() },
                 None,
             );
-        test_10(c"carriage-return".as_ptr(), &mut _expected)
+        test_9(c"carriage-return".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -538,7 +534,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\n".as_ptr() },
                 None,
             );
-        test_10(c"newline".as_ptr(), &mut _expected)
+        test_9(c"newline".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -546,7 +542,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\x0b".as_ptr() },
                 None,
             );
-        test_10(c"vertical-tab".as_ptr(), &mut _expected)
+        test_9(c"vertical-tab".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -554,7 +550,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\x0c".as_ptr() },
                 None,
             );
-        test_10(c"form-feed".as_ptr(), &mut _expected)
+        test_9(c"form-feed".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -562,7 +558,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c" ".as_ptr() },
                 None,
             );
-        test_10(c"space".as_ptr(), &mut _expected)
+        test_9(c"space".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -570,7 +566,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"!".as_ptr() },
                 None,
             );
-        test_10(c"exclamation-mark".as_ptr(), &mut _expected)
+        test_9(c"exclamation-mark".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -578,7 +574,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\"".as_ptr() },
                 None,
             );
-        test_10(c"quotation-mark".as_ptr(), &mut _expected)
+        test_9(c"quotation-mark".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -586,7 +582,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"#".as_ptr() },
                 None,
             );
-        test_10(c"number-sign".as_ptr(), &mut _expected)
+        test_9(c"number-sign".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -594,7 +590,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"$".as_ptr() },
                 None,
             );
-        test_10(c"dollar-sign".as_ptr(), &mut _expected)
+        test_9(c"dollar-sign".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -602,7 +598,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"%".as_ptr() },
                 None,
             );
-        test_10(c"percent-sign".as_ptr(), &mut _expected)
+        test_9(c"percent-sign".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -610,7 +606,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"&".as_ptr() },
                 None,
             );
-        test_10(c"ampersand".as_ptr(), &mut _expected)
+        test_9(c"ampersand".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -618,7 +614,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\'".as_ptr() },
                 None,
             );
-        test_10(c"apostrophe".as_ptr(), &mut _expected)
+        test_9(c"apostrophe".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -626,7 +622,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"(".as_ptr() },
                 None,
             );
-        test_10(c"left-parenthesis".as_ptr(), &mut _expected)
+        test_9(c"left-parenthesis".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -634,7 +630,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c")".as_ptr() },
                 None,
             );
-        test_10(c"right-parenthesis".as_ptr(), &mut _expected)
+        test_9(c"right-parenthesis".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -642,7 +638,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"*".as_ptr() },
                 None,
             );
-        test_10(c"asterisk".as_ptr(), &mut _expected)
+        test_9(c"asterisk".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -650,7 +646,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"+".as_ptr() },
                 None,
             );
-        test_10(c"plus-sign".as_ptr(), &mut _expected)
+        test_9(c"plus-sign".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -658,7 +654,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c",".as_ptr() },
                 None,
             );
-        test_10(c"comma".as_ptr(), &mut _expected)
+        test_9(c"comma".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -666,7 +662,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"-".as_ptr() },
                 None,
             );
-        test_10(c"hyphen-minus".as_ptr(), &mut _expected)
+        test_9(c"hyphen-minus".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -674,7 +670,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"-".as_ptr() },
                 None,
             );
-        test_10(c"hyphen".as_ptr(), &mut _expected)
+        test_9(c"hyphen".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -682,7 +678,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c".".as_ptr() },
                 None,
             );
-        test_10(c"full-stop".as_ptr(), &mut _expected)
+        test_9(c"full-stop".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -690,7 +686,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c".".as_ptr() },
                 None,
             );
-        test_10(c"period".as_ptr(), &mut _expected)
+        test_9(c"period".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -698,7 +694,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"/".as_ptr() },
                 None,
             );
-        test_10(c"slash".as_ptr(), &mut _expected)
+        test_9(c"slash".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -706,7 +702,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"/".as_ptr() },
                 None,
             );
-        test_10(c"solidus".as_ptr(), &mut _expected)
+        test_9(c"solidus".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -714,7 +710,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"0".as_ptr() },
                 None,
             );
-        test_10(c"zero".as_ptr(), &mut _expected)
+        test_9(c"zero".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -722,7 +718,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"1".as_ptr() },
                 None,
             );
-        test_10(c"one".as_ptr(), &mut _expected)
+        test_9(c"one".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -730,7 +726,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"2".as_ptr() },
                 None,
             );
-        test_10(c"two".as_ptr(), &mut _expected)
+        test_9(c"two".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -738,7 +734,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"3".as_ptr() },
                 None,
             );
-        test_10(c"three".as_ptr(), &mut _expected)
+        test_9(c"three".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -746,7 +742,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"4".as_ptr() },
                 None,
             );
-        test_10(c"four".as_ptr(), &mut _expected)
+        test_9(c"four".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -754,7 +750,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"5".as_ptr() },
                 None,
             );
-        test_10(c"five".as_ptr(), &mut _expected)
+        test_9(c"five".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -762,7 +758,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"6".as_ptr() },
                 None,
             );
-        test_10(c"six".as_ptr(), &mut _expected)
+        test_9(c"six".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -770,7 +766,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"7".as_ptr() },
                 None,
             );
-        test_10(c"seven".as_ptr(), &mut _expected)
+        test_9(c"seven".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -778,7 +774,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"8".as_ptr() },
                 None,
             );
-        test_10(c"eight".as_ptr(), &mut _expected)
+        test_9(c"eight".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -786,7 +782,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"9".as_ptr() },
                 None,
             );
-        test_10(c"nine".as_ptr(), &mut _expected)
+        test_9(c"nine".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -794,7 +790,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c":".as_ptr() },
                 None,
             );
-        test_10(c"colon".as_ptr(), &mut _expected)
+        test_9(c"colon".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -802,7 +798,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c";".as_ptr() },
                 None,
             );
-        test_10(c"semicolon".as_ptr(), &mut _expected)
+        test_9(c"semicolon".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -810,7 +806,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"<".as_ptr() },
                 None,
             );
-        test_10(c"less-than-sign".as_ptr(), &mut _expected)
+        test_9(c"less-than-sign".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -818,7 +814,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"=".as_ptr() },
                 None,
             );
-        test_10(c"equals-sign".as_ptr(), &mut _expected)
+        test_9(c"equals-sign".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -826,7 +822,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c">".as_ptr() },
                 None,
             );
-        test_10(c"greater-than-sign".as_ptr(), &mut _expected)
+        test_9(c"greater-than-sign".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -834,7 +830,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"?".as_ptr() },
                 None,
             );
-        test_10(c"question-mark".as_ptr(), &mut _expected)
+        test_9(c"question-mark".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -842,7 +838,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"@".as_ptr() },
                 None,
             );
-        test_10(c"commercial-at".as_ptr(), &mut _expected)
+        test_9(c"commercial-at".as_ptr(), &mut _expected)
     });
     let mut c: () = ('A' as ());
     'loop_: while ((c) <= ('Z' as ())) {
@@ -854,7 +850,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                     { a.as_ptr() },
                     None,
                 );
-            test_10(_A, &mut _expected)
+            test_9(_A, &mut _expected)
         });
         c.prefix_inc();
     }
@@ -864,7 +860,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"[".as_ptr() },
                 None,
             );
-        test_10(c"left-square-bracket".as_ptr(), &mut _expected)
+        test_9(c"left-square-bracket".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -872,7 +868,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\\".as_ptr() },
                 None,
             );
-        test_10(c"backslash".as_ptr(), &mut _expected)
+        test_9(c"backslash".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -880,7 +876,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"\\".as_ptr() },
                 None,
             );
-        test_10(c"reverse-solidus".as_ptr(), &mut _expected)
+        test_9(c"reverse-solidus".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -888,7 +884,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"]".as_ptr() },
                 None,
             );
-        test_10(c"right-square-bracket".as_ptr(), &mut _expected)
+        test_9(c"right-square-bracket".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -896,7 +892,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"^".as_ptr() },
                 None,
             );
-        test_10(c"circumflex-accent".as_ptr(), &mut _expected)
+        test_9(c"circumflex-accent".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -904,7 +900,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"^".as_ptr() },
                 None,
             );
-        test_10(c"circumflex".as_ptr(), &mut _expected)
+        test_9(c"circumflex".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -912,7 +908,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"_".as_ptr() },
                 None,
             );
-        test_10(c"low-line".as_ptr(), &mut _expected)
+        test_9(c"low-line".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -920,7 +916,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"_".as_ptr() },
                 None,
             );
-        test_10(c"underscore".as_ptr(), &mut _expected)
+        test_9(c"underscore".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -928,7 +924,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"`".as_ptr() },
                 None,
             );
-        test_10(c"grave-accent".as_ptr(), &mut _expected)
+        test_9(c"grave-accent".as_ptr(), &mut _expected)
     });
     let mut c: () = ('a' as ());
     'loop_: while ((c) <= ('z' as ())) {
@@ -940,7 +936,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                     { a.as_ptr() },
                     None,
                 );
-            test_10(_A, &mut _expected)
+            test_9(_A, &mut _expected)
         });
         c.prefix_inc();
     }
@@ -950,7 +946,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"{".as_ptr() },
                 None,
             );
-        test_10(c"left-brace".as_ptr(), &mut _expected)
+        test_9(c"left-brace".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -958,7 +954,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"{".as_ptr() },
                 None,
             );
-        test_10(c"left-curly-bracket".as_ptr(), &mut _expected)
+        test_9(c"left-curly-bracket".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -966,7 +962,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"|".as_ptr() },
                 None,
             );
-        test_10(c"vertical-line".as_ptr(), &mut _expected)
+        test_9(c"vertical-line".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -974,7 +970,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"}".as_ptr() },
                 None,
             );
-        test_10(c"right-brace".as_ptr(), &mut _expected)
+        test_9(c"right-brace".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -982,7 +978,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"}".as_ptr() },
                 None,
             );
-        test_10(c"right-curly-bracket".as_ptr(), &mut _expected)
+        test_9(c"right-curly-bracket".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -990,7 +986,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"~".as_ptr() },
                 None,
             );
-        test_10(c"tilde".as_ptr(), &mut _expected)
+        test_9(c"tilde".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -998,7 +994,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"".as_ptr() },
                 None,
             );
-        test_10(c"tild".as_ptr(), &mut _expected)
+        test_9(c"tild".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () =
@@ -1006,11 +1002,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { c"".as_ptr() },
                 None,
             );
-        test_10(c"ch".as_ptr(), &mut _expected)
+        test_9(c"ch".as_ptr(), &mut _expected)
     });
     (unsafe {
         let mut _expected: () = unimplemented!();
-        test_11(
+        test_10(
             [78 as (), 85 as (), 76 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1021,7 +1017,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [7 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 97 as (), 108 as (), 101 as (), 114 as (), 116 as (), 0 as (),
             ]
@@ -1035,7 +1031,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [8 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 98 as (), 97 as (), 99 as (), 107 as (), 115 as (), 112 as (), 97 as (), 99 as (),
                 101 as (), 0 as (),
@@ -1050,7 +1046,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [9 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [116 as (), 97 as (), 98 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1061,7 +1057,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [13 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 99 as (), 97 as (), 114 as (), 114 as (), 105 as (), 97 as (), 103 as (),
                 101 as (), 45 as (), 114 as (), 101 as (), 116 as (), 117 as (), 114 as (),
@@ -1077,7 +1073,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [10 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 110 as (), 101 as (), 119 as (), 108 as (), 105 as (), 110 as (), 101 as (),
                 0 as (),
@@ -1092,7 +1088,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [11 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 118 as (), 101 as (), 114 as (), 116 as (), 105 as (), 99 as (), 97 as (),
                 108 as (), 45 as (), 116 as (), 97 as (), 98 as (), 0 as (),
@@ -1107,7 +1103,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [12 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 102 as (), 111 as (), 114 as (), 109 as (), 45 as (), 102 as (), 101 as (),
                 101 as (), 100 as (), 0 as (),
@@ -1122,7 +1118,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [32 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [115 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1133,7 +1129,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [33 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 101 as (), 120 as (), 99 as (), 108 as (), 97 as (), 109 as (), 97 as (),
                 116 as (), 105 as (), 111 as (), 110 as (), 45 as (), 109 as (), 97 as (),
@@ -1149,7 +1145,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [34 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 113 as (), 117 as (), 111 as (), 116 as (), 97 as (), 116 as (), 105 as (),
                 111 as (), 110 as (), 45 as (), 109 as (), 97 as (), 114 as (), 107 as (), 0 as (),
@@ -1164,7 +1160,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [35 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 110 as (), 117 as (), 109 as (), 98 as (), 101 as (), 114 as (), 45 as (),
                 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1179,7 +1175,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [36 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 100 as (), 111 as (), 108 as (), 108 as (), 97 as (), 114 as (), 45 as (),
                 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1194,7 +1190,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [37 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 112 as (), 101 as (), 114 as (), 99 as (), 101 as (), 110 as (), 116 as (),
                 45 as (), 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1209,7 +1205,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [38 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 97 as (), 109 as (), 112 as (), 101 as (), 114 as (), 115 as (), 97 as (),
                 110 as (), 100 as (), 0 as (),
@@ -1224,7 +1220,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [39 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 97 as (), 112 as (), 111 as (), 115 as (), 116 as (), 114 as (), 111 as (),
                 112 as (), 104 as (), 101 as (), 0 as (),
@@ -1239,7 +1235,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [40 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 112 as (), 97 as (),
                 114 as (), 101 as (), 110 as (), 116 as (), 104 as (), 101 as (), 115 as (),
@@ -1255,7 +1251,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [41 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 112 as (),
                 97 as (), 114 as (), 101 as (), 110 as (), 116 as (), 104 as (), 101 as (),
@@ -1271,7 +1267,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [42 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 97 as (), 115 as (), 116 as (), 101 as (), 114 as (), 105 as (), 115 as (),
                 107 as (), 0 as (),
@@ -1286,7 +1282,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [43 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 112 as (), 108 as (), 117 as (), 115 as (), 45 as (), 115 as (), 105 as (),
                 103 as (), 110 as (), 0 as (),
@@ -1301,7 +1297,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [44 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [99 as (), 111 as (), 109 as (), 109 as (), 97 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1312,7 +1308,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [45 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 104 as (), 121 as (), 112 as (), 104 as (), 101 as (), 110 as (), 45 as (),
                 109 as (), 105 as (), 110 as (), 117 as (), 115 as (), 0 as (),
@@ -1327,7 +1323,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [45 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 104 as (), 121 as (), 112 as (), 104 as (), 101 as (), 110 as (), 0 as (),
             ]
@@ -1341,7 +1337,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [46 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 102 as (), 117 as (), 108 as (), 108 as (), 45 as (), 115 as (), 116 as (),
                 111 as (), 112 as (), 0 as (),
@@ -1356,7 +1352,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [46 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 112 as (), 101 as (), 114 as (), 105 as (), 111 as (), 100 as (), 0 as (),
             ]
@@ -1370,7 +1366,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [47 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 115 as (), 108 as (), 97 as (), 115 as (), 104 as (), 0 as (),
             ]
@@ -1384,7 +1380,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [47 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 115 as (), 111 as (), 108 as (), 105 as (), 100 as (), 117 as (), 115 as (),
                 0 as (),
@@ -1399,7 +1395,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [48 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [122 as (), 101 as (), 114 as (), 111 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1410,7 +1406,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [49 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [111 as (), 110 as (), 101 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1421,7 +1417,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [50 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [116 as (), 119 as (), 111 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1432,7 +1428,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [51 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 116 as (), 104 as (), 114 as (), 101 as (), 101 as (), 0 as (),
             ]
@@ -1446,7 +1442,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [52 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [102 as (), 111 as (), 117 as (), 114 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1457,7 +1453,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [53 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [102 as (), 105 as (), 118 as (), 101 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1468,7 +1464,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [54 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [115 as (), 105 as (), 120 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1479,7 +1475,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [55 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 115 as (), 101 as (), 118 as (), 101 as (), 110 as (), 0 as (),
             ]
@@ -1493,7 +1489,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [56 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 101 as (), 105 as (), 103 as (), 104 as (), 116 as (), 0 as (),
             ]
@@ -1507,7 +1503,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [57 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [110 as (), 105 as (), 110 as (), 101 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1518,7 +1514,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [58 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 99 as (), 111 as (), 108 as (), 111 as (), 110 as (), 0 as (),
             ]
@@ -1532,7 +1528,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [59 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 115 as (), 101 as (), 109 as (), 105 as (), 99 as (), 111 as (), 108 as (),
                 111 as (), 110 as (), 0 as (),
@@ -1547,7 +1543,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [60 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 108 as (), 101 as (), 115 as (), 115 as (), 45 as (), 116 as (), 104 as (),
                 97 as (), 110 as (), 45 as (), 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1562,7 +1558,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [61 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 101 as (), 113 as (), 117 as (), 97 as (), 108 as (), 115 as (), 45 as (),
                 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1577,7 +1573,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [62 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 103 as (), 114 as (), 101 as (), 97 as (), 116 as (), 101 as (), 114 as (),
                 45 as (), 116 as (), 104 as (), 97 as (), 110 as (), 45 as (), 115 as (),
@@ -1593,7 +1589,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [63 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 113 as (), 117 as (), 101 as (), 115 as (), 116 as (), 105 as (), 111 as (),
                 110 as (), 45 as (), 109 as (), 97 as (), 114 as (), 107 as (), 0 as (),
@@ -1608,7 +1604,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [64 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 99 as (), 111 as (), 109 as (), 109 as (), 101 as (), 114 as (), 99 as (),
                 105 as (), 97 as (), 108 as (), 45 as (), 97 as (), 116 as (), 0 as (),
@@ -1627,7 +1623,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                     { a.as_ptr() },
                     None,
                 );
-            test_11(_A, &mut _expected)
+            test_10(_A, &mut _expected)
         });
         c.prefix_inc();
     }
@@ -1637,7 +1633,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [91 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 115 as (), 113 as (),
                 117 as (), 97 as (), 114 as (), 101 as (), 45 as (), 98 as (), 114 as (), 97 as (),
@@ -1653,7 +1649,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [92 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 98 as (), 97 as (), 99 as (), 107 as (), 115 as (), 108 as (), 97 as (), 115 as (),
                 104 as (), 0 as (),
@@ -1668,7 +1664,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [92 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 114 as (), 101 as (), 118 as (), 101 as (), 114 as (), 115 as (), 101 as (),
                 45 as (), 115 as (), 111 as (), 108 as (), 105 as (), 100 as (), 117 as (),
@@ -1684,7 +1680,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [93 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 115 as (),
                 113 as (), 117 as (), 97 as (), 114 as (), 101 as (), 45 as (), 98 as (),
@@ -1700,7 +1696,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [94 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 99 as (), 105 as (), 114 as (), 99 as (), 117 as (), 109 as (), 102 as (),
                 108 as (), 101 as (), 120 as (), 45 as (), 97 as (), 99 as (), 99 as (), 101 as (),
@@ -1716,7 +1712,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [94 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 99 as (), 105 as (), 114 as (), 99 as (), 117 as (), 109 as (), 102 as (),
                 108 as (), 101 as (), 120 as (), 0 as (),
@@ -1731,7 +1727,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [95 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 108 as (), 111 as (), 119 as (), 45 as (), 108 as (), 105 as (), 110 as (),
                 101 as (), 0 as (),
@@ -1746,7 +1742,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [95 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 117 as (), 110 as (), 100 as (), 101 as (), 114 as (), 115 as (), 99 as (),
                 111 as (), 114 as (), 101 as (), 0 as (),
@@ -1761,7 +1757,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [96 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 103 as (), 114 as (), 97 as (), 118 as (), 101 as (), 45 as (), 97 as (), 99 as (),
                 99 as (), 101 as (), 110 as (), 116 as (), 0 as (),
@@ -1780,7 +1776,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                     { a.as_ptr() },
                     None,
                 );
-            test_11(_A, &mut _expected)
+            test_10(_A, &mut _expected)
         });
         c.prefix_inc();
     }
@@ -1790,7 +1786,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [123 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 98 as (), 114 as (),
                 97 as (), 99 as (), 101 as (), 0 as (),
@@ -1805,7 +1801,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [123 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 99 as (), 117 as (),
                 114 as (), 108 as (), 121 as (), 45 as (), 98 as (), 114 as (), 97 as (), 99 as (),
@@ -1821,7 +1817,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [124 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 118 as (), 101 as (), 114 as (), 116 as (), 105 as (), 99 as (), 97 as (),
                 108 as (), 45 as (), 108 as (), 105 as (), 110 as (), 101 as (), 0 as (),
@@ -1836,7 +1832,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [125 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 98 as (),
                 114 as (), 97 as (), 99 as (), 101 as (), 0 as (),
@@ -1851,7 +1847,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [125 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 99 as (),
                 117 as (), 114 as (), 108 as (), 121 as (), 45 as (), 98 as (), 114 as (),
@@ -1867,7 +1863,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [126 as (), 0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [
                 116 as (), 105 as (), 108 as (), 100 as (), 101 as (), 0 as (),
             ]
@@ -1881,7 +1877,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [0 as ()].as_ptr() },
                 None,
             );
-        test_11(
+        test_10(
             [116 as (), 105 as (), 108 as (), 100 as (), 0 as ()].as_ptr(),
             &mut _expected,
         )
@@ -1892,7 +1888,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { [0 as ()].as_ptr() },
                 None,
             );
-        test_11([99 as (), 104 as (), 0 as ()].as_ptr(), &mut _expected)
+        test_10([99 as (), 104 as (), 0 as ()].as_ptr(), &mut _expected)
     });
     return 0_();
 }

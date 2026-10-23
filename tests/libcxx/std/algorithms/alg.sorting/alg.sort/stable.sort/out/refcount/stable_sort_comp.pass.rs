@@ -18,7 +18,7 @@ pub fn generate_sawtooth_0(mut N: (), mut M: ()) -> () {
     let ver: Value<()> = Rc::new(RefCell::new(0_()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
-        let __rhs = std_pair_int__int_::new_1({ x.as_pointer() }, { ver.as_pointer() });
+        let __rhs = std_pair_int__int_::new({ x.as_pointer() }, { ver.as_pointer() });
         unimplemented!().write(__rhs);
         if ((*x.borrow_mut()).prefix_inc() == M) {
             (*x.borrow_mut()) = 0_();

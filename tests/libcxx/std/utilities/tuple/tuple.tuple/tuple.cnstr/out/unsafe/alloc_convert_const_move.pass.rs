@@ -904,19 +904,9 @@ pub unsafe fn test_6() -> () {
     }
     {
         let t1: () = unimplemented!();
-        let mut t2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let t1: () = unimplemented!();
         let mut t2: () = {
             let mut __tmp_9: test_allocator_int_ = <test_allocator_int_>::default();
-            std_tuple_TracedCopyMove__TracedCopyMove_::new_1(
-                { unimplemented!() },
-                { &mut __tmp_9 },
-                { &t1 },
-            )
+            std_tuple_TracedCopyMove_::new_1({ unimplemented!() }, { &mut __tmp_9 }, { &t1 })
         };
         unimplemented!();
         unimplemented!();
@@ -925,7 +915,7 @@ pub unsafe fn test_6() -> () {
         let t1: () = unimplemented!();
         let mut t2: () = {
             let mut __tmp_10: test_allocator_int_ = <test_allocator_int_>::default();
-            std_tuple_ConvertibleFrom_CvtFromTupleRef__::new(
+            std_tuple_TracedCopyMove__TracedCopyMove_::new_1(
                 { unimplemented!() },
                 { &mut __tmp_10 },
                 { &t1 },
@@ -938,9 +928,22 @@ pub unsafe fn test_6() -> () {
         let t1: () = unimplemented!();
         let mut t2: () = {
             let mut __tmp_11: test_allocator_int_ = <test_allocator_int_>::default();
-            std_tuple_ConvertibleFrom_ExplicitCtrFromTupleRef__::new(
+            std_tuple_ConvertibleFrom_CvtFromTupleRef__::new(
                 { unimplemented!() },
                 { &mut __tmp_11 },
+                { &t1 },
+            )
+        };
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let t1: () = unimplemented!();
+        let mut t2: () = {
+            let mut __tmp_12: test_allocator_int_ = <test_allocator_int_>::default();
+            std_tuple_ConvertibleFrom_ExplicitCtrFromTupleRef__::new(
+                { unimplemented!() },
+                { &mut __tmp_12 },
                 { &t1 },
             )
         };

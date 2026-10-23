@@ -68,7 +68,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut v2: () = unimplemented!();
     unimplemented!();
     let mut vb: () = unimplemented!();
-    unimplemented!();
+    unimplemented!() = (v2).clone();
     unimplemented!();
     unimplemented!();
     unimplemented!();

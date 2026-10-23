@@ -437,81 +437,78 @@ pub fn test_4() -> () {
         Rc::new(RefCell::new(test_allocator_int_::new_1({ 12_() })));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
     {
-        let ret: Value<UsesAllocArgT> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<UsesAllocArgT> = Rc::new(RefCell::new(
+            ({ make_obj_using_allocator_5(a.as_pointer()) }),
+        ));
         let _dtor_ret = ScopedDestructor::new(&ret, |__p| __p.destructor());
         unimplemented!();
         unimplemented!();
     }
     {
-        let ret: Value<UsesAllocLast> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<UsesAllocLast> = Rc::new(RefCell::new(
+            ({ make_obj_using_allocator_6(a.as_pointer()) }),
+        ));
         let _dtor_ret = ScopedDestructor::new(&ret, |__p| __p.destructor());
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut ret: NotAllocatorAware = unimplemented!();
+        let mut ret: NotAllocatorAware = ({ make_obj_using_allocator_7(a.as_pointer()) });
         unimplemented!();
     }
     {
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___args_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let ___args_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                make_obj_using_allocator_8(
+                    a.as_pointer(),
+                    piecewise_construct_9.with(|v| v.as_pointer()),
+                    ___args_2.as_pointer(),
+                    ___args_3.as_pointer(),
+                )
+            }),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({ make_obj_using_allocator_10(a.as_pointer()) }),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___args_1: Value<()> = Rc::new(RefCell::new(0_()));
+                let ___args_2: Value<()> = Rc::new(RefCell::new(0_()));
+                make_obj_using_allocator_11(
+                    a.as_pointer(),
+                    ___args_1.as_pointer(),
+                    ___args_2.as_pointer(),
+                )
+            }),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_2: Value<()> = Rc::new(RefCell::new(0_()));
+            let __tmp_3: Value<()> = Rc::new(RefCell::new(0_()));
+            std_pair_int__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({ make_obj_using_allocator_12(a.as_pointer(), p.as_pointer()) }),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -522,14 +519,77 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_4: Value<()> = Rc::new(RefCell::new(0_()));
+            let __tmp_5: Value<()> = Rc::new(RefCell::new(0_()));
+            std_pair_int__int_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
+        }));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({ make_obj_using_allocator_13(a.as_pointer(), unimplemented!()) }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_6: Value<()> = Rc::new(RefCell::new(0_()));
+            let __tmp_7: Value<()> = Rc::new(RefCell::new(0_()));
+            std_pair_int__int_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
+        }));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({
+                make_obj_using_allocator_14(
+                    a.as_pointer(),
+                    (p.as_pointer()).reinterpret_cast::<()>(),
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_8: Value<()> = Rc::new(RefCell::new(0_()));
+            let __tmp_9: Value<()> = Rc::new(RefCell::new(0_()));
+            std_pair_int__int_::new_1({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
+        }));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({ make_obj_using_allocator_15(a.as_pointer(), unimplemented!()) }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let ctp: Value<ConvertibleToPair> = Rc::new(RefCell::new(<ConvertibleToPair>::default()));
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({ make_obj_using_allocator_16(a.as_pointer(), ctp.as_pointer()) }),
+        ));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let ctp: Value<ConvertibleToPair> = Rc::new(RefCell::new(<ConvertibleToPair>::default()));
+        let ret: Value<()> = Rc::new(RefCell::new(
+            ({ make_obj_using_allocator_17(a.as_pointer(), ctp.as_pointer()) }),
+        ));
         unimplemented!();
         unimplemented!();
     }
@@ -564,7 +624,11 @@ pub trait ConvertibleToPairImpl {
 }
 impl ConvertibleToPairImpl for Ptr<ConvertibleToPair> {
     fn to_(&self) -> () {
-        return unimplemented!();
+        return {
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
+            std_pair_int__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        };
     }
 }
 pub trait Tag_XImpl {

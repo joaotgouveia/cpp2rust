@@ -232,29 +232,9 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl test_allocator_int_ {
-    pub unsafe fn new_1(a: *const test_allocator_std___list_node_int__void_ptr__) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
 pub unsafe fn operator_eq_7(x: *const test_allocator_int_, y: *const test_allocator_int_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_int__rebind_std___list_node_int__void_ptr__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_int__rebind_std___list_node_base_int__void_ptr__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_int__rebind_int_ {}
@@ -266,7 +246,7 @@ pub struct test_allocator_int_ {
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_int_ {
-    pub unsafe fn new_2(mut data: ()) -> Self {
+    pub unsafe fn new_1(mut data: ()) -> Self {
         let mut this = Self {
             data_: data,
             id_: 0_(),
@@ -306,135 +286,6 @@ impl Default for test_allocator_int_ {
         }
     }
 }
-impl test_allocator_std___list_node_int__void_ptr__ {
-    pub unsafe fn new_1(a: *const test_allocator_int_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
-#[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, DestructorUnsafe)]
-pub struct test_allocator_std___list_node_int__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___list_node_int__void_ptr__ {
-    pub unsafe fn copy_from(a: *const test_allocator_std___list_node_int__void_ptr__) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        unimplemented!();
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).copied.prefix_inc();
-        }
-        this
-    }
-    pub unsafe fn move_from(a: *mut test_allocator_std___list_node_int__void_ptr__) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).moved.prefix_inc();
-        }
-        unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_4));
-        this
-    }
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_3));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_3));
-    }
-    pub unsafe fn allocate(
-        &mut self,
-        mut n: (),
-        mut _a1: Option<()>,
-    ) -> *mut std___list_node_int__void_ptr_ {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
-            }
-            (*self.stats_).time_to_throw.prefix_inc();
-            (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
-        }
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut std___list_node_int__void_ptr_, mut s: ()) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Clone for test_allocator_std___list_node_int__void_ptr__ {
-    fn clone(&self) -> Self {
-        unsafe {
-            test_allocator_std___list_node_int__void_ptr__::copy_from(
-                self as *const test_allocator_std___list_node_int__void_ptr__,
-            )
-        }
-    }
-}
-impl Default for test_allocator_std___list_node_int__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___list_node_int__void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___list_node_base_int__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___list_node_base_int__void_ptr__ {}
-impl Default for test_allocator_std___list_node_base_int__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___list_node_base_int__void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-impl other_allocator_int_ {
-    pub unsafe fn new_1(a: *const other_allocator_std___list_node_int__void_ptr__) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
 pub unsafe fn operator_eq_8(x: *const other_allocator_int_, y: *const other_allocator_int_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
@@ -444,7 +295,7 @@ pub struct other_allocator_int_ {
     data_: (),
 }
 impl other_allocator_int_ {
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_1(mut i: ()) -> Self {
         let mut this = Self { data_: i };
         this
     }
@@ -464,58 +315,6 @@ impl Default for other_allocator_int_ {
     fn default() -> Self {
         unsafe {
             other_allocator_int_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-impl other_allocator_std___list_node_int__void_ptr__ {
-    pub unsafe fn new_1(a: *const other_allocator_int_) -> Self {
-        let mut this = Self { data_: (*a).data_ };
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___list_node_int__void_ptr__ {
-    data_: (),
-}
-impl other_allocator_std___list_node_int__void_ptr__ {
-    pub unsafe fn new_2(mut i: ()) -> Self {
-        let mut this = Self { data_: i };
-        this
-    }
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut std___list_node_int__void_ptr_ {
-        return unimplemented!();
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut std___list_node_int__void_ptr_, mut s: ()) {
-        unimplemented!();
-    }
-    pub unsafe fn select_on_container_copy_construction(
-        &self,
-    ) -> other_allocator_std___list_node_int__void_ptr__ {
-        return other_allocator_std___list_node_int__void_ptr__::new_2({ -2_() });
-    }
-}
-impl Default for other_allocator_std___list_node_int__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___list_node_int__void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct other_allocator_std___list_node_base_int__void_ptr__ {
-    data_: (),
-}
-impl other_allocator_std___list_node_base_int__void_ptr__ {}
-impl Default for other_allocator_std___list_node_base_int__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            other_allocator_std___list_node_base_int__void_ptr__ {
                 data_: unimplemented!(),
             }
         }
@@ -590,73 +389,7 @@ pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     ptr_: *const (),
 }
 impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_13(
-    mut x : min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_14(
-    mut x : min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  = x ;
-        operator_eq_13(_x, y)
-    });
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__
-{
-    ptr_: *mut std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___,
-}
-impl min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn operator_deref ( &self , ) -> *mut std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_13(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_15(
-    mut x : min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_16(
-    mut x : min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  = x ;
-        operator_eq_15(_x, y)
-    });
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__
-{
-    ptr_:
-        *mut std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0___,
-}
-impl min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn operator_arrow ( &self , ) -> *mut std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_15(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-impl min_allocator_int_ {
-    pub unsafe fn new_1(
-        mut _a0 : min_allocator_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-pub unsafe fn operator_eq_17(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
+pub unsafe fn operator_eq_13(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
     return true;
 }
 #[repr(C)]
@@ -664,46 +397,11 @@ pub unsafe fn operator_eq_17(mut _a0: min_allocator_int_, mut _a1: min_allocator
 pub struct min_allocator_int_ {}
 impl std::cmp::PartialEq for min_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self.clone(), other.clone()) }
+        unsafe { operator_eq_13(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_int_ {}
-impl
-    min_allocator_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{
-    pub unsafe fn new_1(mut _a0: min_allocator_int_) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-impl
-    min_allocator_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{
-    pub unsafe fn allocate ( &mut self , mut n : () , ) -> min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        return min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p : min_pointer_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___list_node_base_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-impl min_allocator_int_ {}
-impl
-    min_allocator_std___list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{
-}
-pub unsafe fn test_18() -> () {
+pub unsafe fn test_14() -> () {
     {
         let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
@@ -712,7 +410,7 @@ pub unsafe fn test_18() -> () {
     {
         let mut l: () = {
             let mut __tmp_0: () = 2_();
-            let mut __tmp_1: test_allocator_int_ = test_allocator_int_::new_2({ 5_() });
+            let mut __tmp_1: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
             std_list_int__test_allocator_int__::new_1({ 3_() }, { &mut __tmp_0 }, { &mut __tmp_1 })
         };
         let mut l2: () = unimplemented!();
@@ -722,7 +420,7 @@ pub unsafe fn test_18() -> () {
     {
         let mut l: () = {
             let mut __tmp_2: () = 2_();
-            let mut __tmp_3: other_allocator_int_ = other_allocator_int_::new_2({ 5_() });
+            let mut __tmp_3: other_allocator_int_ = other_allocator_int_::new_1({ 5_() });
             std_list_int__other_allocator_int__::new_1({ 3_() }, { &mut __tmp_2 }, { &mut __tmp_3 })
         };
         let mut l2: () = unimplemented!();
@@ -762,7 +460,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
+    (unsafe { test_14() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

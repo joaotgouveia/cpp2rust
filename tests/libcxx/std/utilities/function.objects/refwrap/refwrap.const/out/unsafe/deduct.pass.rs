@@ -29,7 +29,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "std::is_same_v<decltype(ri), std::reference_wrapper<int>>"
     );;
-    let mut ri2: () = unimplemented!();
+    let mut ri2: () = ri.clone();
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri2), std::reference_wrapper<int>>"
@@ -40,7 +40,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "std::is_same_v<decltype(rj), std::reference_wrapper<const int>>"
     );;
-    let mut rj2: () = unimplemented!();
+    let mut rj2: () = rj.clone();
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj2), std::reference_wrapper<const int>>"

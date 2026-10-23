@@ -43,8 +43,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_0(std_regex_constants_syntax_option_type_ECMAScript) });
-    (unsafe { test_0(std_regex_constants_syntax_option_type_extended) });
+    (unsafe { test_0(unimplemented!()) });
+    (unsafe { test_0(unimplemented!()) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

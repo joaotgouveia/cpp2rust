@@ -123,7 +123,7 @@ pub fn test_contract_18() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_19() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<()> = Rc::new(RefCell::new(<X>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -167,7 +167,7 @@ pub fn test_contract_22() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_23() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<()> = Rc::new(RefCell::new(<X>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -187,14 +187,14 @@ pub fn test_24() -> () {
     ({ test_contract_22() });
     ({ test_contract_23() });
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<()> = Rc::new(RefCell::new(<X>::default()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         let x: Ptr<X> = (opt.as_pointer() as std___optional_storage_base_X__false_);
         unimplemented!();
-        let x2: Ptr<X> = (opt.as_pointer() as std___optional_storage_base_X__false_);
+        let x2: Ptr<X> = (unimplemented!() as std___optional_storage_base_X__false_);
         unimplemented!();
     }
     return true;

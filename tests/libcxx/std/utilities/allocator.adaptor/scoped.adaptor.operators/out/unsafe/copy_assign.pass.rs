@@ -172,7 +172,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut aN: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_0)) = false;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_1)) = false;
-        unimplemented!();
+        aN = (a1).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -190,7 +190,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_1)) = false;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_5)) = false;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_6)) = false;
-        unimplemented!();
+        aN = (a1).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -215,7 +215,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_6)) = false;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_9)) = false;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_10)) = false;
-        unimplemented!();
+        aN = (a1).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();

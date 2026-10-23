@@ -202,7 +202,7 @@ const _: () = assert!(
     "!has_or_else<std::optional<NonMovable>&&, decltype(return_optional<NonMovable>)>"
 );
 pub unsafe fn take_int_14(mut _a0: ()) -> () {
-    return unimplemented!();
+    return 0_();
 }
 pub unsafe fn take_int_return_void_15(mut _a0: ()) {}
 const _: () = assert!(
@@ -218,19 +218,12 @@ pub unsafe fn test_16() -> () {
     {
         let mut opt: () = unimplemented!();
         unimplemented!();
-        opt = unimplemented!();
+        unimplemented!();
         &(unimplemented!());
     }
     {
         let mut opt: () = unimplemented!();
-        opt = (unsafe {
-            let mut ___f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
-                unsafe {
-                    return unimplemented!();
-                }
-            });
-            opt.or_else(&mut ___f)
-        });
+        unimplemented!();
         &(unsafe {
             let mut ___f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
                 unsafe {

@@ -110,15 +110,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let v2: () = unimplemented!();
     let mut sz: [(); 3] = [2_(), 4_(), 3_()];
     let mut st: [(); 3] = [19_(), 4_(), 1_()];
-    v1[({
-        let mut __tmp_0: () = unimplemented!();
-        let mut __tmp_1: () = unimplemented!();
-        std_gslice::new_1({ 3_() }, { &mut __tmp_0 }, { &mut __tmp_1 })
-    }) as usize] = v2[({
-        let mut __tmp_2: () = unimplemented!();
-        let mut __tmp_3: () = unimplemented!();
-        std_gslice::new_1({ 3_() }, { &mut __tmp_2 }, { &mut __tmp_3 })
-    }) as usize];
+    unimplemented!() = v2[(unimplemented!()) as usize];
     unimplemented!();
     unimplemented!();
     unimplemented!();

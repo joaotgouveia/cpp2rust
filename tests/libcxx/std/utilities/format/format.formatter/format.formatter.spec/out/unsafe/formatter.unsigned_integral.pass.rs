@@ -594,7 +594,11 @@ pub unsafe fn test_unsigned_integral_type_45() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(_expected, _f, unimplemented!())
+            test_termination_condition_33(
+                _expected,
+                _f,
+                (unsafe { std_numeric_limits_unsigned___int128_::max() }),
+            )
         });
     }
     (unsafe {
@@ -798,7 +802,11 @@ pub unsafe fn test_unsigned_integral_type_51() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(_expected, _f, unimplemented!())
+            test_termination_condition_39(
+                _expected,
+                _f,
+                (unsafe { std_numeric_limits_unsigned___int128_::max() }),
+            )
         });
     }
     (unsafe {

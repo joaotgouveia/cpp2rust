@@ -25,7 +25,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let o1: () = unimplemented!();
-        let o2: () = unimplemented!();
+        let o2: () = 1_();
         const _: () = assert!(true, "(nullopt >= o1)");;
         const _: () = assert!(true, "!(nullopt >= o2)");;
         const _: () = assert!(true, "(o1 >= nullopt)");;

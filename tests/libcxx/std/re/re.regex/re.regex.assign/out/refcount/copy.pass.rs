@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    (*r2.borrow_mut()) = (*r1.borrow()).clone();
     unimplemented!();
     unimplemented!();
     return 0_();

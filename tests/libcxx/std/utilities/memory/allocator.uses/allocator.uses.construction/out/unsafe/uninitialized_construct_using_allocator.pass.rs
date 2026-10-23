@@ -457,7 +457,11 @@ impl Default for NotAllocatorAware {
 pub struct ConvertibleToPair {}
 impl ConvertibleToPair {
     pub unsafe fn to_(&self) -> () {
-        return unimplemented!();
+        return {
+            let mut __tmp_0: () = 1_();
+            let mut __tmp_1: () = 2_();
+            std_pair_int__int_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
     }
 }
 pub unsafe fn test_4() -> () {
@@ -531,7 +535,11 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_2: () = 0_();
+            let mut __tmp_3: () = 0_();
+            std_pair_int__int_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
+        };
         let mut ptr: *mut () = unimplemented!();
         let mut ret: *mut () = unimplemented!();
         unimplemented!();
@@ -545,7 +553,11 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_4: () = 0_();
+            let mut __tmp_5: () = 0_();
+            std_pair_int__int_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
+        };
         let mut ptr: *mut () = unimplemented!();
         let mut ret: *mut () = unimplemented!();
         unimplemented!();
@@ -559,7 +571,11 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_6: () = 0_();
+            let mut __tmp_7: () = 0_();
+            std_pair_int__int_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
+        };
         let mut ptr: *mut () = unimplemented!();
         let mut ret: *mut () = unimplemented!();
         unimplemented!();
@@ -573,7 +589,11 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_8: () = 0_();
+            let mut __tmp_9: () = 0_();
+            std_pair_int__int_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
+        };
         let mut ptr: *mut () = unimplemented!();
         let mut ret: *mut () = unimplemented!();
         unimplemented!();

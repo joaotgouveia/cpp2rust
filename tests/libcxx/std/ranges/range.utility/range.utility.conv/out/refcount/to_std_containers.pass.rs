@@ -930,29 +930,23 @@ pub fn operator_add_23(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_22(_i, n)
     });
 }
-pub fn iter_swap_24(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_25(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_24(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_26(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_25(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_27(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_28(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_27(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -998,7 +992,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_28(
+            operator_cmp_27(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1023,7 +1017,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_27(
+            operator_eq_26(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1115,7 +1109,7 @@ pub struct sentinel {}
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
 thread_local!(
-    pub static enable_borrowed_range_29: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_28: Value<()> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
@@ -1169,14 +1163,24 @@ pub struct UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_alloc
 {}
 impl UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ { pub fn new_1 ( adaptor : Ptr< ()  > , ) -> Self { Self { }  } }
 thread_local!(
-    pub static ints_30 : Value<() > = Rc::new(RefCell::new(std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ :: new_1 ( { unimplemented!()  } , )  )) ;
+    pub static ints_29: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static chars_31 : Value<() > = Rc::new(RefCell::new(std_vector_std_vector_char__std_allocator_char____std_allocator_std_vector_char__std_allocator_char____ :: new_1 ( { unimplemented!()  } , )  )) ;
+    pub static chars_30: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static pairs_32 : Value<() > = Rc::new(RefCell::new(std_vector_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_allocator_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____ :: new_1 ( { unimplemented!()  } , )  )) ;
+    pub static pairs_31: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
+pub fn test_is_equal_32(inputs: ()) {
+    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: Ptr<()> = unimplemented!();
+        let mut from: () =
+            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+}
 pub fn test_is_equal_33(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
@@ -1211,8 +1215,10 @@ pub fn test_is_equal_36(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let from: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
+            { unimplemented!() },
+            { unimplemented!() },
+        )));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -1257,7 +1263,7 @@ pub fn test_is_equal_40(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
+        let from: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
             { unimplemented!() },
             { unimplemented!() },
         )));
@@ -1305,10 +1311,11 @@ pub fn test_is_equal_44(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -1356,11 +1363,8 @@ pub fn test_is_equal_48(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let mut from: () =
+            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -1399,8 +1403,10 @@ pub fn test_is_equal_52(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let from: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
+            { unimplemented!() },
+            { unimplemented!() },
+        )));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -1445,7 +1451,7 @@ pub fn test_is_equal_56(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
+        let from: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
             { unimplemented!() },
             { unimplemented!() },
         )));
@@ -1493,10 +1499,11 @@ pub fn test_is_equal_60(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -1544,11 +1551,9 @@ pub fn test_is_equal_64(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let mut from: () = std_vector_char__std_allocator_char__::new_1({ unimplemented!() }, {
+            unimplemented!()
+        });
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -1557,23 +1562,17 @@ pub fn test_is_equal_65(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let mut from: () = std_vector_char__std_allocator_char__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut from: () =
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            );
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
 pub fn test_is_equal_66(inputs: ()) {
-    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: Ptr<()> = unimplemented!();
-        let mut from: () = unimplemented!();
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-}
-pub fn test_is_equal_67(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
@@ -1585,16 +1584,21 @@ pub fn test_is_equal_67(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_68(inputs: ()) {
+pub fn test_is_equal_67(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let mut from: () = unimplemented!();
+        let mut from: () =
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            );
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
-pub fn test_is_equal_69(inputs: ()) {
+pub fn test_is_equal_68(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
@@ -1606,16 +1610,21 @@ pub fn test_is_equal_69(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_70(inputs: ()) {
+pub fn test_is_equal_69(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let mut from: () = unimplemented!();
+        let mut from: () =
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            );
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
-pub fn test_is_equal_71(inputs: ()) {
+pub fn test_is_equal_70(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
@@ -1628,11 +1637,26 @@ pub fn test_is_equal_71(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_72(inputs: ()) {
+pub fn test_is_equal_71(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let mut from: () = unimplemented!();
+        let mut from: () =
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            );
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+}
+pub fn test_is_permutation_72(inputs: ()) {
+    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: Ptr<()> = unimplemented!();
+        let mut from: () =
+            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -1711,8 +1735,10 @@ pub fn test_is_permutation_80(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let from: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
+            { unimplemented!() },
+            { unimplemented!() },
+        )));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -1805,7 +1831,7 @@ pub fn test_is_permutation_88(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
+        let from: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
             { unimplemented!() },
             { unimplemented!() },
         )));
@@ -1901,10 +1927,11 @@ pub fn test_is_permutation_96(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2004,11 +2031,7 @@ pub fn test_is_permutation_104(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2161,12 +2184,7 @@ pub fn test_is_permutation_121(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2175,12 +2193,7 @@ pub fn test_is_permutation_122(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2189,12 +2202,7 @@ pub fn test_is_permutation_123(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2203,12 +2211,7 @@ pub fn test_is_permutation_124(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2217,12 +2220,7 @@ pub fn test_is_permutation_125(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2231,12 +2229,7 @@ pub fn test_is_permutation_126(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2245,12 +2238,7 @@ pub fn test_is_permutation_127(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2259,12 +2247,7 @@ pub fn test_is_permutation_128(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2273,7 +2256,7 @@ pub fn test_is_permutation_129(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2282,7 +2265,7 @@ pub fn test_is_permutation_130(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2291,7 +2274,7 @@ pub fn test_is_permutation_131(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2300,7 +2283,7 @@ pub fn test_is_permutation_132(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2309,7 +2292,7 @@ pub fn test_is_permutation_133(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2318,7 +2301,7 @@ pub fn test_is_permutation_134(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2327,7 +2310,7 @@ pub fn test_is_permutation_135(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2336,7 +2319,8 @@ pub fn test_is_permutation_136(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let mut from: () =
+            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2415,8 +2399,10 @@ pub fn test_is_permutation_144(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let from: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
+            { unimplemented!() },
+            { unimplemented!() },
+        )));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2509,7 +2495,7 @@ pub fn test_is_permutation_152(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
+        let from: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
             { unimplemented!() },
             { unimplemented!() },
         )));
@@ -2605,10 +2591,11 @@ pub fn test_is_permutation_160(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2708,11 +2695,7 @@ pub fn test_is_permutation_168(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2865,12 +2848,7 @@ pub fn test_is_permutation_185(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2879,12 +2857,7 @@ pub fn test_is_permutation_186(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2893,12 +2866,7 @@ pub fn test_is_permutation_187(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2907,12 +2875,7 @@ pub fn test_is_permutation_188(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2921,12 +2884,7 @@ pub fn test_is_permutation_189(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2935,12 +2893,7 @@ pub fn test_is_permutation_190(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2949,12 +2902,7 @@ pub fn test_is_permutation_191(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2963,12 +2911,7 @@ pub fn test_is_permutation_192(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2977,7 +2920,7 @@ pub fn test_is_permutation_193(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2986,7 +2929,7 @@ pub fn test_is_permutation_194(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -2995,7 +2938,7 @@ pub fn test_is_permutation_195(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -3004,7 +2947,7 @@ pub fn test_is_permutation_196(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -3013,7 +2956,7 @@ pub fn test_is_permutation_197(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -3022,7 +2965,7 @@ pub fn test_is_permutation_198(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -3031,7 +2974,7 @@ pub fn test_is_permutation_199(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -3040,7 +2983,12 @@ pub fn test_is_permutation_200(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+            ),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -3204,7 +3152,7 @@ pub fn test_is_permutation_212(inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
+            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
                 { unimplemented!() },
                 { unimplemented!() },
             ),
@@ -3372,7 +3320,7 @@ pub fn test_is_permutation_224(inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
+            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
                 { unimplemented!() },
                 { unimplemented!() },
             ),
@@ -3539,12 +3487,7 @@ pub fn test_is_permutation_236(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from : Value<() > = Rc::new(RefCell::new(std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -3652,7 +3595,7 @@ pub fn test_is_permutation_248(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4093,7 +4036,7 @@ pub fn test_is_permutation_297(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4102,7 +4045,7 @@ pub fn test_is_permutation_298(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4111,7 +4054,7 @@ pub fn test_is_permutation_299(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4120,7 +4063,7 @@ pub fn test_is_permutation_300(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4129,7 +4072,7 @@ pub fn test_is_permutation_301(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4138,7 +4081,7 @@ pub fn test_is_permutation_302(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4147,7 +4090,7 @@ pub fn test_is_permutation_303(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4156,7 +4099,7 @@ pub fn test_is_permutation_304(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4165,7 +4108,7 @@ pub fn test_is_permutation_305(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4174,7 +4117,7 @@ pub fn test_is_permutation_306(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4183,7 +4126,7 @@ pub fn test_is_permutation_307(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4192,7 +4135,7 @@ pub fn test_is_permutation_308(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4201,7 +4144,7 @@ pub fn test_is_permutation_309(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4210,7 +4153,7 @@ pub fn test_is_permutation_310(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4219,7 +4162,7 @@ pub fn test_is_permutation_311(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4228,7 +4171,7 @@ pub fn test_is_permutation_312(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4237,7 +4180,7 @@ pub fn test_is_permutation_313(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4246,7 +4189,7 @@ pub fn test_is_permutation_314(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4255,7 +4198,7 @@ pub fn test_is_permutation_315(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4264,7 +4207,7 @@ pub fn test_is_permutation_316(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4273,7 +4216,7 @@ pub fn test_is_permutation_317(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4282,7 +4225,7 @@ pub fn test_is_permutation_318(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4291,7 +4234,7 @@ pub fn test_is_permutation_319(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4300,7 +4243,7 @@ pub fn test_is_permutation_320(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4309,7 +4252,7 @@ pub fn test_is_permutation_321(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4318,7 +4261,7 @@ pub fn test_is_permutation_322(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4327,7 +4270,7 @@ pub fn test_is_permutation_323(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4336,7 +4279,7 @@ pub fn test_is_permutation_324(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4345,7 +4288,7 @@ pub fn test_is_permutation_325(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4354,7 +4297,7 @@ pub fn test_is_permutation_326(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4363,7 +4306,7 @@ pub fn test_is_permutation_327(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4372,7 +4315,7 @@ pub fn test_is_permutation_328(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4381,7 +4324,7 @@ pub fn test_is_permutation_329(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4390,7 +4333,7 @@ pub fn test_is_permutation_330(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4399,7 +4342,7 @@ pub fn test_is_permutation_331(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4408,7 +4351,7 @@ pub fn test_is_permutation_332(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4417,7 +4360,7 @@ pub fn test_is_permutation_333(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4426,7 +4369,7 @@ pub fn test_is_permutation_334(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4435,7 +4378,7 @@ pub fn test_is_permutation_335(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4444,7 +4387,7 @@ pub fn test_is_permutation_336(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4453,7 +4396,7 @@ pub fn test_is_permutation_337(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4462,7 +4405,7 @@ pub fn test_is_permutation_338(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4471,7 +4414,7 @@ pub fn test_is_permutation_339(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4480,7 +4423,7 @@ pub fn test_is_permutation_340(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4489,7 +4432,7 @@ pub fn test_is_permutation_341(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4498,7 +4441,7 @@ pub fn test_is_permutation_342(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4507,7 +4450,7 @@ pub fn test_is_permutation_343(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4516,7 +4459,12 @@ pub fn test_is_permutation_344(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+            ),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -4680,7 +4628,7 @@ pub fn test_is_permutation_356(inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
+            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
                 { unimplemented!() },
                 { unimplemented!() },
             ),
@@ -4848,7 +4796,7 @@ pub fn test_is_permutation_368(inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
+            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
                 { unimplemented!() },
                 { unimplemented!() },
             ),
@@ -5015,12 +4963,7 @@ pub fn test_is_permutation_380(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let from : Value<() > = Rc::new(RefCell::new(std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5128,7 +5071,7 @@ pub fn test_is_permutation_392(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5569,7 +5512,7 @@ pub fn test_is_permutation_441(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5578,7 +5521,7 @@ pub fn test_is_permutation_442(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5587,7 +5530,7 @@ pub fn test_is_permutation_443(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5596,7 +5539,7 @@ pub fn test_is_permutation_444(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5605,7 +5548,7 @@ pub fn test_is_permutation_445(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5614,7 +5557,7 @@ pub fn test_is_permutation_446(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5623,7 +5566,7 @@ pub fn test_is_permutation_447(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5632,7 +5575,7 @@ pub fn test_is_permutation_448(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5641,7 +5584,7 @@ pub fn test_is_permutation_449(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5650,7 +5593,7 @@ pub fn test_is_permutation_450(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5659,7 +5602,7 @@ pub fn test_is_permutation_451(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5668,7 +5611,7 @@ pub fn test_is_permutation_452(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5677,7 +5620,7 @@ pub fn test_is_permutation_453(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5686,7 +5629,7 @@ pub fn test_is_permutation_454(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5695,7 +5638,7 @@ pub fn test_is_permutation_455(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5704,7 +5647,7 @@ pub fn test_is_permutation_456(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5713,7 +5656,7 @@ pub fn test_is_permutation_457(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5722,7 +5665,7 @@ pub fn test_is_permutation_458(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5731,7 +5674,7 @@ pub fn test_is_permutation_459(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5740,7 +5683,7 @@ pub fn test_is_permutation_460(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5749,7 +5692,7 @@ pub fn test_is_permutation_461(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5758,7 +5701,7 @@ pub fn test_is_permutation_462(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5767,7 +5710,7 @@ pub fn test_is_permutation_463(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5776,7 +5719,7 @@ pub fn test_is_permutation_464(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5785,7 +5728,7 @@ pub fn test_is_permutation_465(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5794,7 +5737,7 @@ pub fn test_is_permutation_466(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5803,7 +5746,7 @@ pub fn test_is_permutation_467(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5812,7 +5755,7 @@ pub fn test_is_permutation_468(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5821,7 +5764,7 @@ pub fn test_is_permutation_469(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5830,7 +5773,7 @@ pub fn test_is_permutation_470(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5839,7 +5782,7 @@ pub fn test_is_permutation_471(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5848,7 +5791,7 @@ pub fn test_is_permutation_472(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5857,7 +5800,7 @@ pub fn test_is_permutation_473(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5866,7 +5809,7 @@ pub fn test_is_permutation_474(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5875,7 +5818,7 @@ pub fn test_is_permutation_475(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5884,7 +5827,7 @@ pub fn test_is_permutation_476(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5893,7 +5836,7 @@ pub fn test_is_permutation_477(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5902,7 +5845,7 @@ pub fn test_is_permutation_478(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5911,7 +5854,7 @@ pub fn test_is_permutation_479(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5920,7 +5863,7 @@ pub fn test_is_permutation_480(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5929,7 +5872,7 @@ pub fn test_is_permutation_481(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5938,7 +5881,7 @@ pub fn test_is_permutation_482(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5947,7 +5890,7 @@ pub fn test_is_permutation_483(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5956,7 +5899,7 @@ pub fn test_is_permutation_484(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5965,7 +5908,7 @@ pub fn test_is_permutation_485(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5974,7 +5917,7 @@ pub fn test_is_permutation_486(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
+        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -5983,25 +5926,20 @@ pub fn test_is_permutation_487(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-}
-pub fn test_is_permutation_488(inputs: ()) {
-    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: Ptr<()> = unimplemented!();
-        let from : Value<() > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , )  )) ;
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-}
-pub fn test_is_equal_for_adaptors_489(inputs: ()) {
-    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: Ptr<()> = unimplemented!();
         let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+}
+pub fn test_is_equal_for_adaptors_488(inputs: ()) {
+    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: Ptr<()> = unimplemented!();
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
@@ -6012,6 +5950,31 @@ pub fn test_is_equal_for_adaptors_489(inputs: ()) {
         let unwrap_to: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
+                    (result.as_pointer()).reinterpret_cast::<()>()
+                }),
+            ));
+        unimplemented!();
+    }
+}
+pub fn test_is_equal_for_adaptors_489(inputs: ()) {
+    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: Ptr<()> = unimplemented!();
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
+            Rc::new(RefCell::new(
+                UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
+                    (from.as_pointer()).reinterpret_cast::<()>()
+                }),
+            ));
+        let unwrap_to: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
+            Rc::new(RefCell::new(
+                UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
                     (result.as_pointer()).reinterpret_cast::<()>()
                 }),
             ));
@@ -6022,28 +5985,11 @@ pub fn test_is_equal_for_adaptors_490(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
-            Rc::new(RefCell::new(
-                UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (from.as_pointer()).reinterpret_cast::<()>()
-                }),
-            ));
-        let unwrap_to: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
-            Rc::new(RefCell::new(
-                UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (result.as_pointer()).reinterpret_cast::<()>()
-                }),
-            ));
-        unimplemented!();
-    }
-}
-pub fn test_is_equal_for_adaptors_491(inputs: ()) {
-    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
@@ -6055,11 +6001,15 @@ pub fn test_is_equal_for_adaptors_491(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_492(inputs: ()) {
+pub fn test_is_equal_for_adaptors_491(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
@@ -6070,6 +6020,31 @@ pub fn test_is_equal_for_adaptors_492(inputs: ()) {
         let unwrap_to: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
                 UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
+                    (result.as_pointer()).reinterpret_cast::<()>()
+                }),
+            ));
+        unimplemented!();
+    }
+}
+pub fn test_is_equal_for_adaptors_492(inputs: ()) {
+    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: Ptr<()> = unimplemented!();
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
+            Rc::new(RefCell::new(
+                UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
+                    (from.as_pointer()).reinterpret_cast::<()>()
+                }),
+            ));
+        let unwrap_to: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
+            Rc::new(RefCell::new(
+                UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
                     (result.as_pointer()).reinterpret_cast::<()>()
                 }),
             ));
@@ -6080,28 +6055,11 @@ pub fn test_is_equal_for_adaptors_493(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
-            Rc::new(RefCell::new(
-                UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (from.as_pointer()).reinterpret_cast::<()>()
-                }),
-            ));
-        let unwrap_to: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
-            Rc::new(RefCell::new(
-                UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (result.as_pointer()).reinterpret_cast::<()>()
-                }),
-            ));
-        unimplemented!();
-    }
-}
-pub fn test_is_equal_for_adaptors_494(inputs: ()) {
-    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
@@ -6113,11 +6071,17 @@ pub fn test_is_equal_for_adaptors_494(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_495(inputs: ()) {
+pub fn test_is_equal_for_adaptors_494(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            ),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (from .as_pointer() ).reinterpret_cast::<()  >()  } , )  )) ;
         let unwrap_to: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
@@ -6129,11 +6093,17 @@ pub fn test_is_equal_for_adaptors_495(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_496(inputs: ()) {
+pub fn test_is_equal_for_adaptors_495(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            ),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (from .as_pointer() ).reinterpret_cast::<()  >()  } , )  )) ;
         let unwrap_to: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
@@ -6145,22 +6115,32 @@ pub fn test_is_equal_for_adaptors_496(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_497(inputs: ()) {
+pub fn test_is_equal_for_adaptors_496(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            ),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (from .as_pointer() ).reinterpret_cast::<()  >()  } , )  )) ;
         let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (result .as_pointer() ).reinterpret_cast::<()  >()  } , )  )) ;
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_498(inputs: ()) {
+pub fn test_is_equal_for_adaptors_497(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
@@ -6172,6 +6152,32 @@ pub fn test_is_equal_for_adaptors_498(inputs: ()) {
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____,
         > = Rc::new(RefCell::new(
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____::new_1({
+                (result.as_pointer()).reinterpret_cast::<()>()
+            }),
+        ));
+        unimplemented!();
+    }
+}
+pub fn test_is_equal_for_adaptors_498(inputs: ()) {
+    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: Ptr<()> = unimplemented!();
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
+            Rc::new(RefCell::new(
+                UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
+                    (from.as_pointer()).reinterpret_cast::<()>()
+                }),
+            ));
+        let unwrap_to: Value<
+            UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____,
+        > = Rc::new(RefCell::new(
+            UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____::new_1({
                 (result.as_pointer()).reinterpret_cast::<()>()
             }),
         ));
@@ -6182,29 +6188,11 @@ pub fn test_is_equal_for_adaptors_499(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
-            Rc::new(RefCell::new(
-                UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                    (from.as_pointer()).reinterpret_cast::<()>()
-                }),
-            ));
-        let unwrap_to: Value<
-            UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____,
-        > = Rc::new(RefCell::new(
-            UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____::new_1({
-                (result.as_pointer()).reinterpret_cast::<()>()
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
             }),
         ));
-        unimplemented!();
-    }
-}
-pub fn test_is_equal_for_adaptors_500(inputs: ()) {
-    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from: Value<UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
@@ -6216,11 +6204,15 @@ pub fn test_is_equal_for_adaptors_500(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_501(inputs: ()) {
+pub fn test_is_equal_for_adaptors_500(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
@@ -6232,6 +6224,32 @@ pub fn test_is_equal_for_adaptors_501(inputs: ()) {
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____,
         > = Rc::new(RefCell::new(
             UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____::new_1({
+                (result.as_pointer()).reinterpret_cast::<()>()
+            }),
+        ));
+        unimplemented!();
+    }
+}
+pub fn test_is_equal_for_adaptors_501(inputs: ()) {
+    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: Ptr<()> = unimplemented!();
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
+            Rc::new(RefCell::new(
+                UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
+                    (from.as_pointer()).reinterpret_cast::<()>()
+                }),
+            ));
+        let unwrap_to: Value<
+            UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____,
+        > = Rc::new(RefCell::new(
+            UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____::new_1({
                 (result.as_pointer()).reinterpret_cast::<()>()
             }),
         ));
@@ -6242,29 +6260,11 @@ pub fn test_is_equal_for_adaptors_502(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
-            Rc::new(RefCell::new(
-                UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                    (from.as_pointer()).reinterpret_cast::<()>()
-                }),
-            ));
-        let unwrap_to: Value<
-            UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____,
-        > = Rc::new(RefCell::new(
-            UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____::new_1({
-                (result.as_pointer()).reinterpret_cast::<()>()
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
+                unimplemented!()
             }),
         ));
-        unimplemented!();
-    }
-}
-pub fn test_is_equal_for_adaptors_503(inputs: ()) {
-    let inputs: Value<()> = Rc::new(RefCell::new(inputs));
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from: Value<UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____> =
             Rc::new(RefCell::new(
@@ -6276,11 +6276,17 @@ pub fn test_is_equal_for_adaptors_503(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_504(inputs: ()) {
+pub fn test_is_equal_for_adaptors_503(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            ),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (from .as_pointer() ).reinterpret_cast::<()  >()  } , )  )) ;
         let unwrap_to: Value<
@@ -6293,11 +6299,17 @@ pub fn test_is_equal_for_adaptors_504(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_505(inputs: ()) {
+pub fn test_is_equal_for_adaptors_504(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            ),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (from .as_pointer() ).reinterpret_cast::<()  >()  } , )  )) ;
         let unwrap_to: Value<
@@ -6310,236 +6322,243 @@ pub fn test_is_equal_for_adaptors_505(inputs: ()) {
         unimplemented!();
     }
 }
-pub fn test_is_equal_for_adaptors_506(inputs: ()) {
+pub fn test_is_equal_for_adaptors_505(inputs: ()) {
     let inputs: Value<()> = Rc::new(RefCell::new(inputs));
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: Ptr<()> = unimplemented!();
-        let from: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<()> = Rc::new(RefCell::new(
+            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
+                { unimplemented!() },
+                { unimplemented!() },
+                None,
+            ),
+        ));
         let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unwrap_from : Value<UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { (from .as_pointer() ).reinterpret_cast::<()  >()  } , )  )) ;
         let unwrap_to : Value<UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ > = Rc::new(RefCell::new(UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { (result .as_pointer() ).reinterpret_cast::<()  >()  } , )  )) ;
         unimplemented!();
     }
 }
-pub fn test_507() {
+pub fn test_506() {
     {
         {
             ({
-                for_each_0 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_2 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_33 ( unimplemented!()  , ) } )  ;
+                for_each_0 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_2 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_32 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_33 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_34 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_35 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_36 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_508 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_37 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_507 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_36 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_37 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_38 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_39 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_40 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_509 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_41 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_508 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_40 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_41 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_42 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_43 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_44 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_510 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_45 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_509 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_44 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_45 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_46 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_47 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_48 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
  } )  , )
             });
             ({
-                for_each_3 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_4 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_49 ( unimplemented!()  , ) } )  ;
+                for_each_3 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_4 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_48 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_49 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_50 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_51 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_52 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_511 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_53 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_510 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_52 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_53 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_54 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_55 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_56 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_512 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_57 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_511 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_56 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_57 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_58 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_59 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_60 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_513 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_61 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_512 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_60 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_61 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_62 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_63 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_64 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
  } )  , )
             });
         }
         {
             ({
-                for_each_5 ( <types_type_list_std_vector_char__std_allocator_char____std_deque_char__std_allocator_char____std_list_char__std_allocator_char____std_forward_list_char__std_allocator_char___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_65 ( unimplemented!()  , ) } )  ;
- ( { test_is_equal_66 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_67 ( unimplemented!()  , ) } )  ;
- ( { test_is_equal_68 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_69 ( unimplemented!()  , ) } )  ;
- ( { test_is_equal_70 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_71 ( unimplemented!()  , ) } )  ;
- ( { test_is_equal_72 ( unimplemented!()  , ) } )  ;
+                for_each_5 ( <types_type_list_std_vector_char__std_allocator_char____std_deque_char__std_allocator_char____std_list_char__std_allocator_char____std_forward_list_char__std_allocator_char___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_64 ( unimplemented!()  , ) } )  ;
+ ( { test_is_equal_65 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_66 ( unimplemented!()  , ) } )  ;
+ ( { test_is_equal_67 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_68 ( unimplemented!()  , ) } )  ;
+ ( { test_is_equal_69 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_70 ( unimplemented!()  , ) } )  ;
+ ( { test_is_equal_71 ( unimplemented!()  , ) } )  ;
  } )  , )
             });
         }
     }
     {
         ({
-            for_each_6 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_8 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_73 ( unimplemented!()  , ) } )  ;
+            for_each_6 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_8 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_72 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_73 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_74 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_75 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_76 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_77 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_78 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_79 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_80 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_514 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_81 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_513 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_80 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_81 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_82 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_83 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_84 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_85 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_86 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_87 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_88 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_515 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_89 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_514 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_88 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_89 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_90 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_91 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_92 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_93 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_94 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_95 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_96 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_516 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_97 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_515 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_96 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_97 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_98 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_99 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_100 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_101 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_102 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_103 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_104 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_517 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_105 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_516 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_104 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_105 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_106 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_107 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_108 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_109 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_110 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_111 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_112 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_518 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_113 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_517 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_112 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_113 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_114 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_115 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_116 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_117 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_118 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_119 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_120 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_519 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_121 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_518 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_120 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_121 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_122 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_123 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_124 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_125 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_126 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_127 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_128 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_520 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_129 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_519 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_128 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_129 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_130 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_131 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_132 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_133 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_134 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_135 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_136 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
  } )  , )
         });
         ({
-            for_each_9 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_10 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_137 ( unimplemented!()  , ) } )  ;
+            for_each_9 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_10 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_136 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_137 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_138 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_139 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_140 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_141 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_142 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_143 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_144 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_521 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_145 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_520 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_144 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_145 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_146 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_147 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_148 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_149 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_150 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_151 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_152 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_522 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_153 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_521 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_152 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_153 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_154 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_155 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_156 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_157 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_158 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_159 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_160 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_523 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_161 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_522 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_160 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_161 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_162 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_163 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_164 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_165 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_166 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_167 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_168 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_524 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_169 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_523 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_168 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_169 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_170 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_171 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_172 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_173 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_174 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_175 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_176 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_525 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_177 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_524 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_176 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_177 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_178 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_179 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_180 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_181 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_182 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_183 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_184 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_526 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_185 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_525 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_184 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_185 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_186 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_187 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_188 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_189 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_190 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_191 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_192 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_527 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_193 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_526 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_192 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_193 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_194 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_195 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_196 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_197 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_198 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_199 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_200 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
  } )  , )
         });
     }
     {
         ({
-            for_each_11 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_13 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_201 ( unimplemented!()  , ) } )  ;
+            for_each_11 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_13 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_200 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_201 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_202 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_203 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_204 ( unimplemented!()  , ) } )  ;
@@ -6550,9 +6569,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_209 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_210 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_211 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_212 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_528 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_213 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_527 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_212 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_213 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_214 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_215 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_216 ( unimplemented!()  , ) } )  ;
@@ -6563,9 +6582,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_221 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_222 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_223 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_224 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_529 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_225 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_528 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_224 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_225 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_226 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_227 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_228 ( unimplemented!()  , ) } )  ;
@@ -6576,9 +6595,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_233 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_234 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_235 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_236 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_530 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_237 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_529 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_236 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_237 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_238 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_239 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_240 ( unimplemented!()  , ) } )  ;
@@ -6589,9 +6608,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_245 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_246 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_247 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_248 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_531 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_249 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_530 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_248 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_249 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_250 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_251 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_252 ( unimplemented!()  , ) } )  ;
@@ -6602,9 +6621,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_257 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_258 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_259 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_260 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_532 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_261 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_531 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_260 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_261 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_262 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_263 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_264 ( unimplemented!()  , ) } )  ;
@@ -6615,9 +6634,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_269 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_270 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_271 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_272 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_533 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_273 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_532 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_272 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_273 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_274 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_275 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_276 ( unimplemented!()  , ) } )  ;
@@ -6628,9 +6647,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_281 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_282 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_283 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_284 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_534 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_285 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_533 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_284 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_285 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_286 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_287 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_288 ( unimplemented!()  , ) } )  ;
@@ -6641,9 +6660,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_293 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_294 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_295 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_296 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_535 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_297 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_534 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_296 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_297 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_298 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_299 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_300 ( unimplemented!()  , ) } )  ;
@@ -6654,9 +6673,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_305 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_306 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_307 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_308 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_536 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_309 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_535 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_308 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_309 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_310 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_311 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_312 ( unimplemented!()  , ) } )  ;
@@ -6667,9 +6686,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_317 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_318 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_319 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_320 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_537 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_321 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_536 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_320 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_321 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_322 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_323 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_324 ( unimplemented!()  , ) } )  ;
@@ -6680,9 +6699,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_329 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_330 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_331 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_332 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_538 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_333 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_537 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_332 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_333 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_334 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_335 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_336 ( unimplemented!()  , ) } )  ;
@@ -6693,12 +6712,12 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_341 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_342 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_343 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_344 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
  } )  , )
         });
         ({
-            for_each_14 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_15 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_345 ( unimplemented!()  , ) } )  ;
+            for_each_14 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_15 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_344 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_345 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_346 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_347 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_348 ( unimplemented!()  , ) } )  ;
@@ -6709,9 +6728,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_353 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_354 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_355 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_356 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_539 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_357 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_538 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_356 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_357 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_358 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_359 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_360 ( unimplemented!()  , ) } )  ;
@@ -6722,9 +6741,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_365 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_366 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_367 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_368 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_540 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_369 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_539 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_368 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_369 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_370 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_371 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_372 ( unimplemented!()  , ) } )  ;
@@ -6735,9 +6754,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_377 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_378 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_379 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_380 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_541 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_381 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_540 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_380 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_381 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_382 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_383 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_384 ( unimplemented!()  , ) } )  ;
@@ -6748,9 +6767,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_389 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_390 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_391 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_392 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_542 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_393 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_541 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_392 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_393 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_394 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_395 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_396 ( unimplemented!()  , ) } )  ;
@@ -6761,9 +6780,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_401 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_402 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_403 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_404 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_543 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_405 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_542 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_404 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_405 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_406 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_407 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_408 ( unimplemented!()  , ) } )  ;
@@ -6774,9 +6793,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_413 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_414 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_415 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_416 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_544 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_417 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_543 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_416 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_417 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_418 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_419 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_420 ( unimplemented!()  , ) } )  ;
@@ -6787,9 +6806,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_425 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_426 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_427 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_428 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_545 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_429 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_544 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_428 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_429 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_430 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_431 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_432 ( unimplemented!()  , ) } )  ;
@@ -6800,9 +6819,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_437 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_438 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_439 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_440 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_546 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_441 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_545 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_440 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_441 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_442 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_443 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_444 ( unimplemented!()  , ) } )  ;
@@ -6813,9 +6832,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_449 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_450 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_451 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_452 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_547 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_453 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_546 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_452 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_453 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_454 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_455 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_456 ( unimplemented!()  , ) } )  ;
@@ -6826,9 +6845,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_461 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_462 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_463 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_464 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_548 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_465 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_547 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_464 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_465 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_466 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_467 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_468 ( unimplemented!()  , ) } )  ;
@@ -6839,9 +6858,9 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_473 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_474 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_475 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_476 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_549 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_477 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_548 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_permutation_476 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_permutation_477 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_478 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_479 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_480 ( unimplemented!()  , ) } )  ;
@@ -6852,39 +6871,38 @@ pub fn test_507() {
  } , | | { ( { test_is_permutation_485 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_486 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_permutation_487 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_permutation_488 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
  } )  , )
         });
     }
     {
         ({
-            for_each_16 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_18 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_489 ( unimplemented!()  , ) } )  ;
+            for_each_16 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_18 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_488 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_for_adaptors_489 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_for_adaptors_490 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_for_adaptors_491 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_550 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_492 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_549 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_491 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_for_adaptors_492 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_for_adaptors_493 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_for_adaptors_494 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_551 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_495 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_550 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_494 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_for_adaptors_495 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_for_adaptors_496 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_for_adaptors_497 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
  } )  , )
         });
         ({
-            for_each_19 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_20 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_498 ( unimplemented!()  , ) } )  ;
+            for_each_19 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___  >::default()  , lambda! ( Generic , { } , | | { ( { for_each_20 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_497 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_for_adaptors_498 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_for_adaptors_499 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_for_adaptors_500 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_552 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_501 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_551 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_500 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_for_adaptors_501 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_for_adaptors_502 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_for_adaptors_503 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
- } , | | { ( { for_each_553 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_504 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { for_each_552 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___  >::default()  , lambda! ( Generic , { } , | | { ( { test_is_equal_for_adaptors_503 ( unimplemented!()  , ) } )  ;
+ } , | | { ( { test_is_equal_for_adaptors_504 ( unimplemented!()  , ) } )  ;
  } , | | { ( { test_is_equal_for_adaptors_505 ( unimplemented!()  , ) } )  ;
- } , | | { ( { test_is_equal_for_adaptors_506 ( unimplemented!()  , ) } )  ;
  } )  , ) } )  ;
  } )  , )
         });
@@ -6910,7 +6928,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_507() });
+    ({ test_506() });
     return 0_();
 }
 pub trait BorrowedRange_int_Impl {
@@ -7250,8 +7268,8 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = enable_borrowed_range_29.with(|_| ());
-    let _ = ints_30.with(|_| ());
-    let _ = chars_31.with(|_| ());
-    let _ = pairs_32.with(|_| ());
+    let _ = enable_borrowed_range_28.with(|_| ());
+    let _ = ints_29.with(|_| ());
+    let _ = chars_30.with(|_| ());
+    let _ = pairs_31.with(|_| ());
 }

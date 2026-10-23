@@ -23,10 +23,16 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
+    &(unsafe {
+        let mut ___a: () = unimplemented!();
+        allocate_shared_0(&mut ___a, 10_())
+    });
+    &(unsafe { make_shared_1(10_()) });
+    &(unsafe {
+        let mut ___a: () = unimplemented!();
+        allocate_shared_2(&mut ___a)
+    });
+    &(unsafe { make_shared_3() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

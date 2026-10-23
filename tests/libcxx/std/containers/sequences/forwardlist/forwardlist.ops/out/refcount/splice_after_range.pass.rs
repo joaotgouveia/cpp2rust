@@ -43,24 +43,6 @@ pub struct min_pointer_long__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<()>,
 }
 impl min_pointer_long__std_integral_constant_unsigned_long__0__ {}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    pub fn new_1(
-        mut p : min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    ) -> Self {
-        Self {
-            ptr_: (p.ptr_).to_any(),
-        }
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    pub fn new_2(
-        mut p : min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    ) -> Self {
-        Self {
-            ptr_: (p.ptr_).to_any(),
-        }
-    }
-}
 pub fn operator_eq_4(
     mut x: min_pointer_void__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_void__std_integral_constant_unsigned_long__0__,
@@ -90,63 +72,11 @@ impl std::cmp::PartialEq for min_pointer_void__std_integral_constant_unsigned_lo
     }
 }
 impl std::cmp::Eq for min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_6(
-    mut x : min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
-pub fn operator_ne_7(
-    mut x : min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !({
-        let _x: min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__   = x   ;
-        operator_eq_6(_x, y)
-    });
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<
-        std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___,
-    >,
-}
-impl min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } pub fn new_2 ( mut _a0 : ()  , ) -> Self { Self { ptr_ : Ptr::<std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___>::null()  , }  } pub fn pointer_to ( t : Ptr< std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___  > , ) -> min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  { return min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool {  { operator_eq_6(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_8(
-    mut x : min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { #[offset(0)] #[byte_size(8)] ptr_ : Ptr< std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >  , }
-impl min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } pub fn new_2 ( mut _a0 : ()  , ) -> Self { Self { ptr_ : Ptr::<std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___>::null()  , }  } pub fn pointer_to ( t : Ptr< std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  > , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  { return min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool {  { operator_eq_8(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_long_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____
-{}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 thread_local!(
-    pub static t1_9: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    pub static t1_6: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
         1_(),
         2_(),
@@ -158,7 +88,7 @@ thread_local!(
     ])));
 );
 thread_local!(
-    pub static t2_10: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    pub static t2_7: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         10_(),
         11_(),
         12_(),
@@ -168,16 +98,16 @@ thread_local!(
     ])));
 );
 thread_local!(
-    pub static size_t1_11: Value<()> = Rc::new(RefCell::new(
+    pub static size_t1_8: Value<()> = Rc::new(RefCell::new(
         ((unimplemented!() - unimplemented!()) as () as ()),
     ));
 );
 thread_local!(
-    pub static size_t2_12: Value<()> = Rc::new(RefCell::new(
+    pub static size_t2_9: Value<()> = Rc::new(RefCell::new(
         ((unimplemented!() - unimplemented!()) as () as ()),
     ));
 );
-pub fn testd_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
+pub fn testd_10(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n1: () = 0_();
     'loop_: while (n1 < p) {
@@ -195,7 +125,7 @@ pub fn testd_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             unimplemented!()
         };
     }
-    'loop_: while (n1 < size_t1_11.with(|rc| *rc.borrow())) {
+    'loop_: while (n1 < size_t1_8.with(|rc| *rc.borrow())) {
         unimplemented!();
         {
             n1.prefix_inc();
@@ -204,7 +134,7 @@ pub fn testd_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     }
     unimplemented!();
 }
-pub fn testd_14(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
+pub fn testd_11(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n1: () = 0_();
     'loop_: while (n1 < p) {
@@ -222,7 +152,7 @@ pub fn testd_14(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             unimplemented!()
         };
     }
-    'loop_: while (n1 < size_t1_11.with(|rc| *rc.borrow())) {
+    'loop_: while (n1 < size_t1_8.with(|rc| *rc.borrow())) {
         unimplemented!();
         {
             n1.prefix_inc();
@@ -231,7 +161,7 @@ pub fn testd_14(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     }
     unimplemented!();
 }
-pub fn tests_15(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
+pub fn tests_12(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n: () = 0_();
     let mut d: () = if (l > (f + 1_())) {
@@ -241,7 +171,7 @@ pub fn tests_15(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     };
     if (d == 0_()) || (p == f) {
         n = 0_();
-        'loop_: while (n < size_t1_11.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -274,7 +204,7 @@ pub fn tests_15(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             };
         }
         n = (l - 1_());
-        'loop_: while (n < size_t1_11.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -307,7 +237,7 @@ pub fn tests_15(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             };
         }
         n = p;
-        'loop_: while (n < size_t1_11.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -317,7 +247,7 @@ pub fn tests_15(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     }
     unimplemented!();
 }
-pub fn tests_16(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
+pub fn tests_13(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n: () = 0_();
     let mut d: () = if (l > (f + 1_())) {
@@ -327,7 +257,7 @@ pub fn tests_16(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     };
     if (d == 0_()) || (p == f) {
         n = 0_();
-        'loop_: while (n < size_t1_11.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -360,7 +290,7 @@ pub fn tests_16(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             };
         }
         n = (l - 1_());
-        'loop_: while (n < size_t1_11.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -393,7 +323,7 @@ pub fn tests_16(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
             };
         }
         n = p;
-        'loop_: while (n < size_t1_11.with(|rc| *rc.borrow())) {
+        'loop_: while (n < size_t1_8.with(|rc| *rc.borrow())) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -403,14 +333,14 @@ pub fn tests_16(c: Ptr<()>, mut p: (), mut f: (), mut l: ()) {
     }
     unimplemented!();
 }
-pub fn test_17() -> () {
+pub fn test_14() -> () {
     {
         let mut f: () = 0_();
-        'loop_: while (f <= (size_t2_12.with(|rc| *rc.borrow()) + 1_())) {
+        'loop_: while (f <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
             let mut l: () = f;
-            'loop_: while (l <= (size_t2_12.with(|rc| *rc.borrow()) + 1_())) {
+            'loop_: while (l <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
                 let mut p: () = 0_();
-                'loop_: while (p <= size_t1_11.with(|rc| *rc.borrow())) {
+                'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
                     let c1: Value<()> = Rc::new(RefCell::new(
                         std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
                             unimplemented!()
@@ -422,7 +352,7 @@ pub fn test_17() -> () {
                         }),
                     ));
                     unimplemented!();
-                    ({ testd_13(c1.as_pointer(), p, f, l) });
+                    ({ testd_10(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 l.prefix_inc();
@@ -430,9 +360,9 @@ pub fn test_17() -> () {
             f.prefix_inc();
         }
         let mut f: () = 0_();
-        'loop_: while (f <= (size_t1_11.with(|rc| *rc.borrow()) + 1_())) {
+        'loop_: while (f <= (size_t1_8.with(|rc| *rc.borrow()) + 1_())) {
             let mut l: () = f;
-            'loop_: while (l <= size_t1_11.with(|rc| *rc.borrow())) {
+            'loop_: while (l <= size_t1_8.with(|rc| *rc.borrow())) {
                 let mut p: () = 0_();
                 'loop_: while (p <= f) {
                     let c1: Value<()> = Rc::new(RefCell::new(
@@ -441,18 +371,18 @@ pub fn test_17() -> () {
                         }),
                     ));
                     unimplemented!();
-                    ({ tests_15(c1.as_pointer(), p, f, l) });
+                    ({ tests_12(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 let mut p: () = l;
-                'loop_: while (p <= size_t1_11.with(|rc| *rc.borrow())) {
+                'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
                     let c1: Value<()> = Rc::new(RefCell::new(
                         std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
                             unimplemented!()
                         }),
                     ));
                     unimplemented!();
-                    ({ tests_15(c1.as_pointer(), p, f, l) });
+                    ({ tests_12(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 l.prefix_inc();
@@ -462,11 +392,11 @@ pub fn test_17() -> () {
     }
     {
         let mut f: () = 0_();
-        'loop_: while (f <= (size_t2_12.with(|rc| *rc.borrow()) + 1_())) {
+        'loop_: while (f <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
             let mut l: () = f;
-            'loop_: while (l <= (size_t2_12.with(|rc| *rc.borrow()) + 1_())) {
+            'loop_: while (l <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
                 let mut p: () = 0_();
-                'loop_: while (p <= size_t1_11.with(|rc| *rc.borrow())) {
+                'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
                     let c1: Value<()> = Rc::new(RefCell::new(
                         std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
                             unimplemented!()
@@ -478,7 +408,7 @@ pub fn test_17() -> () {
                         }),
                     ));
                     unimplemented!();
-                    ({ testd_14(c1.as_pointer(), p, f, l) });
+                    ({ testd_11(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 l.prefix_inc();
@@ -486,9 +416,9 @@ pub fn test_17() -> () {
             f.prefix_inc();
         }
         let mut f: () = 0_();
-        'loop_: while (f <= (size_t1_11.with(|rc| *rc.borrow()) + 1_())) {
+        'loop_: while (f <= (size_t1_8.with(|rc| *rc.borrow()) + 1_())) {
             let mut l: () = f;
-            'loop_: while (l <= size_t1_11.with(|rc| *rc.borrow())) {
+            'loop_: while (l <= size_t1_8.with(|rc| *rc.borrow())) {
                 let mut p: () = 0_();
                 'loop_: while (p <= f) {
                     let c1: Value<()> = Rc::new(RefCell::new(
@@ -497,18 +427,18 @@ pub fn test_17() -> () {
                         }),
                     ));
                     unimplemented!();
-                    ({ tests_16(c1.as_pointer(), p, f, l) });
+                    ({ tests_13(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 let mut p: () = l;
-                'loop_: while (p <= size_t1_11.with(|rc| *rc.borrow())) {
+                'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
                     let c1: Value<()> = Rc::new(RefCell::new(
                         std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
                             unimplemented!()
                         }),
                     ));
                     unimplemented!();
-                    ({ tests_16(c1.as_pointer(), p, f, l) });
+                    ({ tests_13(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 l.prefix_inc();
@@ -554,34 +484,6 @@ pub trait min_allocator_long_Impl {
     }
 }
 impl min_allocator_long_Impl for Ptr<min_allocator_long_> {}
-pub trait min_allocator_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____Impl
-{
-    fn allocate ( &self , mut n : ()  , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-        mut n: (),
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____Impl for Ptr<min_allocator_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____> {
-}
-pub trait min_allocator_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0____Impl
-{
-    fn allocate ( &self , n : ()  , ) -> min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  ;
-    fn deallocate(
-        &self,
-        p : min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-        n: (),
-    );
-}
-impl min_allocator_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0____Impl for Ptr<min_allocator_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0____> {
-fn allocate ( &self , mut n : ()  , ) -> min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  { return min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
- } fn deallocate ( &self , mut p : min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  , mut n : ()  , ) { unimplemented!()  ;
- } }
 pub trait min_pointer_long__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
@@ -642,80 +544,6 @@ impl min_pointer_long__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_long__std_integral_constant_unsigned_long__0__>
 {
 }
-pub trait min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_(&self) -> ();
-    fn operator_deref ( &self , ) -> Ptr< std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  > ;
-    fn operator_arrow ( &self , ) -> Ptr< std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >  ;
-    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : ()  , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : ()  , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : ()  , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : ()  , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_index ( &self , mut n : ()  , ) -> Ptr< std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >{
-        unimplemented!()
-    }
-}
-impl min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__> {
-fn to_ ( &self , ) -> ()  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
- } fn operator_deref ( &self , ) -> Ptr< std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  > { return (* self ) .with(|__s| __s . ptr_ .clone())    ;
- } fn operator_arrow ( &self , ) -> Ptr< std___forward_begin_node_min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___  >  { return (* self ) .with(|__s| __s . ptr_ .clone())   ;
- } }
-pub trait min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_(&self) -> ();
-    fn operator_deref(
-        &self,
-    ) -> Ptr<
-        std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___,
-    >;
-    fn operator_arrow(
-        &self,
-    ) -> Ptr<
-        std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___,
-    >;
-    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : ()  , ) -> min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : ()  , ) -> min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : ()  , ) -> min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : ()  , ) -> min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_index(
-        &self,
-        mut n: (),
-    ) -> Ptr<
-        std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___,
-    > {
-        unimplemented!()
-    }
-}
-impl min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__> {
-fn to_ ( &self , ) -> ()  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
- } fn operator_deref ( &self , ) -> Ptr< std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___  > { return (* self ) .with(|__s| __s . ptr_ .clone())    ;
- } fn operator_arrow ( &self , ) -> Ptr< std___forward_list_node_long__min_pointer_void__std_integral_constant_unsigned_long__0___  >  { return (* self ) .with(|__s| __s . ptr_ .clone())   ;
- } }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
     fn to_(&self) -> () {
         unimplemented!()
@@ -730,8 +558,8 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_1.with(|_| ());
     let _ = dealloc_count_2.with(|_| ());
     let _ = disable_default_constructor_3.with(|_| ());
-    let _ = t1_9.with(|_| ());
-    let _ = t2_10.with(|_| ());
-    let _ = size_t1_11.with(|_| ());
-    let _ = size_t2_12.with(|_| ());
+    let _ = t1_6.with(|_| ());
+    let _ = t2_7.with(|_| ());
+    let _ = size_t1_8.with(|_| ());
+    let _ = size_t2_9.with(|_| ());
 }

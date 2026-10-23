@@ -186,9 +186,14 @@ pub fn test_27() -> () {
         ({ (*test_string.borrow()).call() });
     }
     let test_unique_ptr: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___args: Value<()> = Rc::new(RefCell::new(3_()));
+                make_unique_31(___args.as_pointer())
+            }),
+        ));
         let opt: Value<()> = Rc::new(RefCell::new(
-            ({ make_optional_31((s.as_pointer()).reinterpret_cast::<()>()) }),
+            ({ make_optional_32((s.as_pointer()).reinterpret_cast::<()>()) }),
         ));
         unimplemented!();
         unimplemented!();

@@ -385,28 +385,28 @@ impl Tag_X {
 }
 pub fn test_6(a: Ptr<()>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m1: Value<()> = Rc::new(RefCell::new((*m0.borrow()).clone()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_7(a: Ptr<()>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m1: Value<()> = Rc::new(RefCell::new((*m0.borrow()).clone()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_8(a: Ptr<test_allocator_std_csub_match_>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m1: Value<()> = Rc::new(RefCell::new((*m0.borrow()).clone()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_9(a: Ptr<test_allocator_std_wcsub_match_>) {
     let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m1: Value<()> = Rc::new(RefCell::new((*m0.borrow()).clone()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

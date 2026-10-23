@@ -202,7 +202,7 @@ pub unsafe fn test_format_8(mut expected: (), mut arg: ()) {
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { & mut __tmp_0 } , )
         })
     });
-    (unsafe { formatter.format(&mut arg, &mut format_ctx) });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_format_10(mut expected: (), mut arg: ()) {
@@ -215,12 +215,11 @@ pub unsafe fn test_format_10(mut expected: (), mut arg: ()) {
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_1 } , )
         })
     });
-    (unsafe { formatter.format(&mut arg, &mut format_ctx) });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_12(mut fmt: ()) {
-    let mut arg: () =
-        std_vector_parse_call_validator__std_allocator_parse_call_validator__::new_1({ 1_() });
+    let mut arg: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut format_ctx: () = (unsafe {
@@ -232,11 +231,10 @@ pub unsafe fn test_assure_parse_is_called_12(mut fmt: ()) {
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
     unimplemented!();
-    (unsafe { formatter.format(&mut arg, &mut format_ctx) });
+    unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_14(mut fmt: ()) {
-    let mut arg: () =
-        std_vector_parse_call_validator__std_allocator_parse_call_validator__::new_1({ 1_() });
+    let mut arg: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut format_ctx: () = (unsafe {
@@ -248,11 +246,10 @@ pub unsafe fn test_assure_parse_is_called_14(mut fmt: ()) {
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
     unimplemented!();
-    (unsafe { formatter.format(&mut arg, &mut format_ctx) });
+    unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_16() {
-    let mut arg: () =
-        std_vector_parse_call_validator__std_allocator_parse_call_validator__::new_1({ 1_() });
+    let mut arg: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut format_ctx: () = (unsafe {
@@ -272,8 +269,7 @@ pub unsafe fn test_assure_parse_is_called_16() {
     (unsafe { test_assure_parse_is_called_12(unimplemented!()) });
 }
 pub unsafe fn test_assure_parse_is_called_17() {
-    let mut arg: () =
-        std_vector_parse_call_validator__std_allocator_parse_call_validator__::new_1({ 1_() });
+    let mut arg: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut format_ctx: () = (unsafe {
@@ -293,33 +289,13 @@ pub unsafe fn test_assure_parse_is_called_17() {
     (unsafe { test_assure_parse_is_called_14(unimplemented!()) });
 }
 pub unsafe fn test_fmt_18() {
-    (unsafe {
-        test_format_8(
-            unimplemented!(),
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }),
-        )
-    });
-    (unsafe {
-        test_format_8(
-            unimplemented!(),
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }),
-        )
-    });
+    (unsafe { test_format_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_format_8(unimplemented!(), unimplemented!()) });
     (unsafe { test_assure_parse_is_called_16() });
 }
 pub unsafe fn test_fmt_19() {
-    (unsafe {
-        test_format_10(
-            unimplemented!(),
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }),
-        )
-    });
-    (unsafe {
-        test_format_10(
-            unimplemented!(),
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }),
-        )
-    });
+    (unsafe { test_format_10(unimplemented!(), unimplemented!()) });
+    (unsafe { test_format_10(unimplemented!(), unimplemented!()) });
     (unsafe { test_assure_parse_is_called_17() });
 }
 pub unsafe fn test_20() {

@@ -647,19 +647,19 @@ pub fn test_cast_43() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut v: Ptr<small_type_0_> = unimplemented!();
+        let mut v: Ptr<small_type_0_> = ({ any_cast_44((a.as_pointer())) });
         unimplemented!();
         unimplemented!();
         field!(v, value).write(999_());
-        let mut cv: Ptr<small_type_0_> = unimplemented!();
+        let mut cv: Ptr<small_type_0_> = ({ any_cast_45((a.as_pointer())) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        cv = unimplemented!();
+        cv = ({ any_cast_46((ca).clone()) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        cv = ({ any_cast_44((ca).clone()) });
+        cv = ({ any_cast_47((ca).clone()) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -669,7 +669,7 @@ pub fn test_cast_43() {
     }
     unimplemented!();
 }
-pub fn test_cast_45() {
+pub fn test_cast_48() {
     unimplemented!();
     ({ large_type_0_::reset() });
     {
@@ -683,19 +683,19 @@ pub fn test_cast_45() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut v: Ptr<large_type_0_> = unimplemented!();
+        let mut v: Ptr<large_type_0_> = ({ any_cast_49((a.as_pointer())) });
         unimplemented!();
         unimplemented!();
         field!(v, value).write(999_());
-        let mut cv: Ptr<large_type_0_> = unimplemented!();
+        let mut cv: Ptr<large_type_0_> = ({ any_cast_50((a.as_pointer())) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        cv = unimplemented!();
+        cv = ({ any_cast_51((ca).clone()) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        cv = ({ any_cast_46((ca).clone()) });
+        cv = ({ any_cast_52((ca).clone()) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -705,7 +705,7 @@ pub fn test_cast_45() {
     }
     unimplemented!();
 }
-pub fn test_cast_non_copyable_type_47() {
+pub fn test_cast_non_copyable_type_53() {
     let a: Value<()> = Rc::new(RefCell::new(42_()));
     let ca: Ptr<()> = a.as_pointer();
     unimplemented!();
@@ -713,20 +713,20 @@ pub fn test_cast_non_copyable_type_47() {
 }
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct NoCopy_48 {}
-pub fn test_cast_array_49() {
+pub struct NoCopy_54 {}
+pub fn test_cast_array_55() {
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let a: Value<()> = Rc::new(RefCell::new(std_any::new_1({ arr.as_pointer() })));
     unimplemented!();
-    let mut p: Ptr<Box<[()]>> = unimplemented!();
+    let mut p: Ptr<Box<[()]>> = ({ any_cast_56((a.as_pointer())) });
     unimplemented!();
 }
-pub fn test_fn_50() {}
-pub fn test_cast_function_pointer_51() {
+pub fn test_fn_57() {}
+pub fn test_cast_function_pointer_58() {
     let a: Value<()> = Rc::new(RefCell::new(std_any::new_2({
-        FnPtr::<fn()>::new(test_fn_50)
+        FnPtr::<fn()>::new(test_fn_57)
     })));
     unimplemented!();
     let mut fn_ptr: FnPtr<fn()> = unimplemented!();
@@ -757,10 +757,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_cast_nullptr_41() });
     ({ test_cast_empty_42() });
     ({ test_cast_43() });
-    ({ test_cast_45() });
-    ({ test_cast_non_copyable_type_47() });
-    ({ test_cast_array_49() });
-    ({ test_cast_function_pointer_51() });
+    ({ test_cast_48() });
+    ({ test_cast_non_copyable_type_53() });
+    ({ test_cast_array_55() });
+    ({ test_cast_function_pointer_58() });
     return 0_();
 }
 pub trait TypeIDImpl {

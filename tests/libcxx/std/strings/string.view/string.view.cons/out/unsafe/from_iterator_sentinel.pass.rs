@@ -737,25 +737,21 @@ pub unsafe fn operator_add_37(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_38(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_39(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_40(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_39(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_41(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_40(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_42(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_41(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -839,7 +835,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_42(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_41(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -849,7 +845,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_41(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_40(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -916,6 +912,11 @@ impl util_iterator_error {
         let mut this = Self {};
         this
     }
+}
+pub unsafe fn test_construction_42(mut val: ()) {
+    let mut sv: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn test_construction_43(mut val: ()) {
     let mut sv: () = unimplemented!();
@@ -1062,62 +1063,57 @@ pub unsafe fn test_construction_71(mut val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_construction_72(mut val: ()) {
-    let mut sv: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_with_char_73() {
+pub unsafe fn test_with_char_72() {
     let val: () = unimplemented!();
+    (unsafe { test_construction_42(unimplemented!()) });
     (unsafe { test_construction_43(unimplemented!()) });
     (unsafe { test_construction_44(unimplemented!()) });
     (unsafe { test_construction_45(unimplemented!()) });
     (unsafe { test_construction_46(unimplemented!()) });
     (unsafe { test_construction_47(unimplemented!()) });
-    (unsafe { test_construction_48(unimplemented!()) });
 }
-pub unsafe fn test_with_char_74() {
+pub unsafe fn test_with_char_73() {
     let val: () = unimplemented!();
+    (unsafe { test_construction_48(unimplemented!()) });
     (unsafe { test_construction_49(unimplemented!()) });
     (unsafe { test_construction_50(unimplemented!()) });
     (unsafe { test_construction_51(unimplemented!()) });
     (unsafe { test_construction_52(unimplemented!()) });
     (unsafe { test_construction_53(unimplemented!()) });
-    (unsafe { test_construction_54(unimplemented!()) });
 }
-pub unsafe fn test_with_char_75() {
+pub unsafe fn test_with_char_74() {
     let val: () = unimplemented!();
+    (unsafe { test_construction_54(unimplemented!()) });
     (unsafe { test_construction_55(unimplemented!()) });
     (unsafe { test_construction_56(unimplemented!()) });
     (unsafe { test_construction_57(unimplemented!()) });
     (unsafe { test_construction_58(unimplemented!()) });
     (unsafe { test_construction_59(unimplemented!()) });
-    (unsafe { test_construction_60(unimplemented!()) });
 }
-pub unsafe fn test_with_char_76() {
+pub unsafe fn test_with_char_75() {
     let val: () = unimplemented!();
+    (unsafe { test_construction_60(unimplemented!()) });
     (unsafe { test_construction_61(unimplemented!()) });
     (unsafe { test_construction_62(unimplemented!()) });
     (unsafe { test_construction_63(unimplemented!()) });
     (unsafe { test_construction_64(unimplemented!()) });
     (unsafe { test_construction_65(unimplemented!()) });
-    (unsafe { test_construction_66(unimplemented!()) });
 }
-pub unsafe fn test_with_char_77() {
+pub unsafe fn test_with_char_76() {
     let val: () = unimplemented!();
+    (unsafe { test_construction_66(unimplemented!()) });
     (unsafe { test_construction_67(unimplemented!()) });
     (unsafe { test_construction_68(unimplemented!()) });
     (unsafe { test_construction_69(unimplemented!()) });
     (unsafe { test_construction_70(unimplemented!()) });
     (unsafe { test_construction_71(unimplemented!()) });
-    (unsafe { test_construction_72(unimplemented!()) });
 }
-pub unsafe fn test_78() -> () {
+pub unsafe fn test_77() -> () {
+    (unsafe { test_with_char_72() });
     (unsafe { test_with_char_73() });
     (unsafe { test_with_char_74() });
     (unsafe { test_with_char_75() });
     (unsafe { test_with_char_76() });
-    (unsafe { test_with_char_77() });
     return true;
 }
 const _: () = assert!(
@@ -1160,7 +1156,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_78() });
+    (unsafe { test_77() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -46,7 +46,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ swap_0(v1.as_pointer(), v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
@@ -68,7 +68,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ swap_0(v1.as_pointer(), v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
@@ -98,7 +98,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ swap_0(v1.as_pointer(), v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
@@ -117,7 +117,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ swap_0(v1.as_pointer(), v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {

@@ -16,7 +16,7 @@ pub unsafe fn test_0(rhs: *const (), mut is_going_to_throw: Option<()>) {
     if is_going_to_throw {
         return;
     }
-    let mut lhs: () = unimplemented!();
+    let mut lhs: () = std_optional_X_::new_1({ rhs });
     unimplemented!();
     if rhs_engaged {
         unimplemented!();
@@ -32,7 +32,7 @@ pub unsafe fn test_1(rhs: *const (), mut is_going_to_throw: Option<()>) {
     if is_going_to_throw {
         return;
     }
-    let mut lhs: () = unimplemented!();
+    let mut lhs: () = std_optional_Y_::new_1({ rhs });
     unimplemented!();
     if rhs_engaged {
         unimplemented!();
@@ -48,7 +48,7 @@ pub unsafe fn test_2(rhs: *const (), mut is_going_to_throw: Option<()>) {
     if is_going_to_throw {
         return;
     }
-    let mut lhs: () = unimplemented!();
+    let mut lhs: () = std_optional_Z_::new_1({ rhs });
     unimplemented!();
     if rhs_engaged {
         unimplemented!();
@@ -138,7 +138,7 @@ pub unsafe fn test_all_7() -> () {
         (unsafe { test_0(&rhs, None) });
     }
     {
-        let mut rhs: () = unimplemented!();
+        let mut rhs: () = 3_();
         (unsafe { test_0(&rhs, None) });
     }
     return true;
@@ -149,7 +149,7 @@ pub unsafe fn test_all_8() -> () {
         (unsafe { test_1(&rhs, None) });
     }
     {
-        let mut rhs: () = unimplemented!();
+        let mut rhs: () = 3_();
         (unsafe { test_1(&rhs, None) });
     }
     return true;
@@ -179,7 +179,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe { test_2(&rhs, None) });
     }
     {
-        let mut rhs: () = unimplemented!();
+        let mut rhs: () = 3_();
         (unsafe { test_2(&rhs, Some(true)) });
     }
     return 0_();

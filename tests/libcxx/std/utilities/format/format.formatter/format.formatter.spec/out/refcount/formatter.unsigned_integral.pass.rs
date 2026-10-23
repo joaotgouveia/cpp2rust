@@ -687,7 +687,11 @@ pub fn test_unsigned_integral_type_45() {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(_expected, _f, unimplemented!())
+            test_termination_condition_33(
+                _expected,
+                _f,
+                ({ std_numeric_limits_unsigned___int128_::max() }),
+            )
         });
     }
     ({
@@ -891,7 +895,11 @@ pub fn test_unsigned_integral_type_51() {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(_expected, _f, unimplemented!())
+            test_termination_condition_39(
+                _expected,
+                _f,
+                ({ std_numeric_limits_unsigned___int128_::max() }),
+            )
         });
     }
     ({

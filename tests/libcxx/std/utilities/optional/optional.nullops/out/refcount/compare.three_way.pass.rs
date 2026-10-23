@@ -497,10 +497,14 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_8(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == ({ std_numeric_limits_int_::min() }))
+        || (rhs.value == ({ std_numeric_limits_int_::min() }))
+    {
         return unimplemented!();
     }
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == ({ std_numeric_limits_int_::max() }))
+        || (rhs.value == ({ std_numeric_limits_int_::max() }))
+    {
         return unimplemented!();
     }
     return unimplemented!();
@@ -685,12 +689,12 @@ pub fn test_14() -> () {
         unimplemented!();
     }
     {
-        let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let op: Value<()> = Rc::new(RefCell::new(1_()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let op: Value<()> = Rc::new(RefCell::new(1_()));
         unimplemented!();
         unimplemented!();
     }

@@ -39,23 +39,6 @@ thread_local!(
 #[byte_size(1)]
 pub struct complete_type_allocator_std_pair_const_int__int__ {}
 impl complete_type_allocator_std_pair_const_int__int__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {}
-impl complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {
-    pub fn new() -> Self {
-        Self {}
-    }
-}
-impl Default for complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__ {
-    fn default() -> Self {
-        { complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__::new() }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct complete_type_allocator_std___tree_node_base_void_ptr__ {}
-impl complete_type_allocator_std___tree_node_base_void_ptr__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(48)]
 pub struct A {
@@ -175,35 +158,6 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_6() });
     return 0_();
-}
-pub trait complete_type_allocator_std___tree_node_base_void_ptr__Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___tree_node_base_void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<std___tree_node_base_void_ptr_>, mut n: ()) {
-        unimplemented!()
-    }
-}
-impl complete_type_allocator_std___tree_node_base_void_ptr__Impl
-    for Ptr<complete_type_allocator_std___tree_node_base_void_ptr__>
-{
-}
-pub trait complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___tree_node_std___value_type_int__int___void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, p: Ptr<std___tree_node_std___value_type_int__int___void_ptr_>, n: ());
-}
-impl complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__Impl
-    for Ptr<complete_type_allocator_std___tree_node_std___value_type_int__int___void_ptr__>
-{
-    fn deallocate(
-        &self,
-        mut p: Ptr<std___tree_node_std___value_type_int__int___void_ptr_>,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
 }
 pub trait complete_type_allocator_std_pair_const_int__int__Impl {
     fn allocate(&self, mut n: ()) -> Ptr<()> {

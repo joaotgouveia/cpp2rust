@@ -303,19 +303,11 @@ impl __gnu_test_uneq_allocator_base {
         return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_map_14));
     }
 }
-impl __gnu_test_SimpleAllocator_T_ {
-    pub unsafe fn new_1(
-        _a0: *const __gnu_test_SimpleAllocator_std___detail__Hash_node_T__false__,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct __gnu_test_SimpleAllocator_T_ {}
 impl __gnu_test_SimpleAllocator_T_ {
-    pub unsafe fn new_2() -> Self {
+    pub unsafe fn new() -> Self {
         let mut this = Self {};
         this
     }
@@ -333,55 +325,7 @@ impl std::cmp::PartialEq for __gnu_test_SimpleAllocator_T_ {
 impl std::cmp::Eq for __gnu_test_SimpleAllocator_T_ {}
 impl Default for __gnu_test_SimpleAllocator_T_ {
     fn default() -> Self {
-        unsafe { __gnu_test_SimpleAllocator_T_::new_2() }
-    }
-}
-impl __gnu_test_SimpleAllocator_std___detail__Hash_node_T__false__ {
-    pub unsafe fn new_1(_a0: *const __gnu_test_SimpleAllocator_T_) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct __gnu_test_SimpleAllocator_std___detail__Hash_node_T__false__ {}
-impl __gnu_test_SimpleAllocator_std___detail__Hash_node_T__false__ {
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut std___detail__Hash_node_T__false_ {
-        return (unsafe {
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_T__false__)
-                .allocate(n, None)
-        });
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut std___detail__Hash_node_T__false_, mut n: ()) {
-        (unsafe {
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_T__false__)
-                .deallocate(p, n)
-        });
-    }
-}
-impl __gnu_test_SimpleAllocator_std___detail__Hash_node_base_ptr_ {
-    pub unsafe fn new_1(
-        _a0: *const __gnu_test_SimpleAllocator_std___detail__Hash_node_T__false__,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct __gnu_test_SimpleAllocator_std___detail__Hash_node_base_ptr_ {}
-impl __gnu_test_SimpleAllocator_std___detail__Hash_node_base_ptr_ {
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut *mut std___detail__Hash_node_base {
-        return (unsafe {
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_base_ptr_)
-                .allocate(n, None)
-        });
-    }
-    pub unsafe fn deallocate(&mut self, mut p: *mut *mut std___detail__Hash_node_base, mut n: ()) {
-        (unsafe {
-            (unimplemented!() as std___new_allocator_std___detail__Hash_node_base_ptr_)
-                .deallocate(p, n)
-        });
+        unsafe { __gnu_test_SimpleAllocator_T_::new() }
     }
 }
 pub unsafe fn operator_eq_15(

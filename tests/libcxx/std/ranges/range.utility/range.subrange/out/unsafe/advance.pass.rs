@@ -335,25 +335,21 @@ pub unsafe fn operator_add_7(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_8(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_9(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -437,7 +433,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -447,7 +443,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -515,12 +511,12 @@ impl util_iterator_error {
         this
     }
 }
-pub static mut globalBuff_13: std::cell::LazyCell<[(); 8]> =
+pub static mut globalBuff_12: std::cell::LazyCell<[(); 8]> =
     std::cell::LazyCell::new(|| unsafe { [unimplemented!(); 8] });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Empty {}
-pub unsafe fn operator_eq_14(lhs: *const MoveOnlyForwardIter, mut rhs: *mut ()) -> () {
+pub unsafe fn operator_eq_13(lhs: *const MoveOnlyForwardIter, mut rhs: *mut ()) -> () {
     return (((*lhs).base) == (rhs));
 }
 #[repr(C)]
@@ -557,13 +553,13 @@ impl Default for MoveOnlyForwardIter {
         }
     }
 }
-pub unsafe fn operator_eq_15(
+pub unsafe fn operator_eq_14(
     lhs: *const SizedSentinelForwardIter,
     rhs: *const SizedSentinelForwardIter,
 ) -> () {
     return (((*lhs).base_) == ((*rhs).base_));
 }
-pub unsafe fn operator_sub_16(
+pub unsafe fn operator_sub_15(
     a: *const SizedSentinelForwardIter,
     b: *const SizedSentinelForwardIter,
 ) -> () {
@@ -594,7 +590,7 @@ impl SizedSentinelForwardIter {
 impl std::cmp::PartialEq for SizedSentinelForwardIter {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_15(
+            operator_eq_14(
                 self as *const SizedSentinelForwardIter,
                 other as *const SizedSentinelForwardIter,
             )
@@ -640,7 +636,7 @@ impl Default for ConvertibleForwardIter {
     }
 }
 const _: () = assert!(true, "std::is_convertible_v<ConvertibleForwardIter, int*>");
-pub unsafe fn operator_eq_17(
+pub unsafe fn operator_eq_16(
     _a0: *const ConditionallyConvertibleBase_false_,
     _a1: *const ConditionallyConvertibleBase_false_,
 ) -> () {
@@ -655,7 +651,7 @@ impl ConditionallyConvertibleBase_false_ {}
 impl std::cmp::PartialEq for ConditionallyConvertibleBase_false_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_17(
+            operator_eq_16(
                 self as *const ConditionallyConvertibleBase_false_,
                 other as *const ConditionallyConvertibleBase_false_,
             )
@@ -672,7 +668,7 @@ impl Default for ConditionallyConvertibleBase_false_ {
         }
     }
 }
-pub unsafe fn operator_eq_18(
+pub unsafe fn operator_eq_17(
     _a0: *const ConditionallyConvertibleBase_true_,
     _a1: *const ConditionallyConvertibleBase_true_,
 ) -> () {
@@ -687,7 +683,7 @@ impl ConditionallyConvertibleBase_true_ {}
 impl std::cmp::PartialEq for ConditionallyConvertibleBase_true_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_18(
+            operator_eq_17(
                 self as *const ConditionallyConvertibleBase_true_,
                 other as *const ConditionallyConvertibleBase_true_,
             )
@@ -710,18 +706,18 @@ pub struct ForwardBorrowedRange {}
 impl ForwardBorrowedRange {
     pub unsafe fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr()
         });
     }
     pub unsafe fn end(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
                 .as_mut_ptr()
                 .offset((8_()) as isize)
         });
     }
 }
-pub static mut enable_borrowed_range_19: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_18: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -732,18 +728,18 @@ pub struct ConvertibleForwardBorrowedRange {}
 impl ConvertibleForwardBorrowedRange {
     pub unsafe fn begin(&self) -> ConvertibleForwardIter {
         return ConvertibleForwardIter::new_1({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr()
         });
     }
     pub unsafe fn end(&self) -> *mut () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13))
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
             .as_mut_ptr()
             .offset((8_()) as isize);
     }
 }
-pub static mut enable_borrowed_range_20: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_19: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
-pub unsafe fn operator_eq_21(
+pub unsafe fn operator_eq_20(
     mut s: ForwardBorrowedRangeDifferentSentinel_sentinel,
     mut i: forward_iterator_int_ptr_,
 ) -> () {
@@ -760,20 +756,20 @@ pub struct ForwardBorrowedRangeDifferentSentinel {}
 impl ForwardBorrowedRangeDifferentSentinel {
     pub unsafe fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr()
         });
     }
     pub unsafe fn end(&self) -> ForwardBorrowedRangeDifferentSentinel_sentinel {
         return ForwardBorrowedRangeDifferentSentinel_sentinel {
-            value: (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13))
+            value: (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
                 .as_mut_ptr()
                 .offset((8_()) as isize),
         };
     }
 }
-pub static mut enable_borrowed_range_22: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_21: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
-pub unsafe fn operator_eq_23(
+pub unsafe fn operator_eq_22(
     mut s: DifferentSentinelWithSizeMember_sentinel,
     mut i: forward_iterator_int_ptr_,
 ) -> () {
@@ -790,12 +786,12 @@ pub struct DifferentSentinelWithSizeMember {}
 impl DifferentSentinelWithSizeMember {
     pub unsafe fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr()
         });
     }
     pub unsafe fn end(&self) -> DifferentSentinelWithSizeMember_sentinel {
         return DifferentSentinelWithSizeMember_sentinel {
-            value: (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13))
+            value: (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
                 .as_mut_ptr()
                 .offset((8_()) as isize),
         };
@@ -804,13 +800,13 @@ impl DifferentSentinelWithSizeMember {
         return 8_();
     }
 }
-pub static mut enable_borrowed_range_24: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_23: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
-pub unsafe fn test_25() -> () {
+pub unsafe fn test_24() -> () {
     let mut a: () = std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-        { (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13)).as_mut_ptr() },
+        { (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr() },
         {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_13))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
                 .as_mut_ptr()
                 .offset((8_()) as isize)
         },
@@ -857,14 +853,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_25() });
+    (unsafe { test_24() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const globalBuff_13);
+    std::cell::LazyCell::force(&*&raw const globalBuff_12);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_18);
     std::cell::LazyCell::force(&*&raw const enable_borrowed_range_19);
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_20);
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_22);
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_24);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_21);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_23);
 }

@@ -115,10 +115,7 @@ pub unsafe fn test_setter_4() {
                 std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & mut __tmp_0 } , )
             })
         });
-        (unsafe {
-            let mut ___range: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
-            formatter.format(&mut ___range, &mut format_ctx)
-        });
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -138,10 +135,7 @@ pub unsafe fn test_setter_6() {
                 std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { & mut __tmp_1 } , )
             })
         });
-        (unsafe {
-            let mut ___range: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
-            formatter.format(&mut ___range, &mut format_ctx)
-        });
+        unimplemented!();
         unimplemented!();
     }
 }

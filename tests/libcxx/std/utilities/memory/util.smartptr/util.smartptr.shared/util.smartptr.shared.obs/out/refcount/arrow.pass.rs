@@ -28,7 +28,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_std_pair_int__int__::new_1({
-        Ptr::alloc(unimplemented!())
+        Ptr::alloc({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        })
     })));
     unimplemented!();
     unimplemented!();

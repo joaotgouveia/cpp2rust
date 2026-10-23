@@ -15,7 +15,11 @@ pub struct S {
 impl S {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            a: unimplemented!(),
+            a: {
+                let mut __tmp_0: () = 1_();
+                let mut __tmp_1: () = 2_();
+                std_pair_int__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
+            },
             k: (*(unsafe { get_0(&mut this.a) })),
         };
         this
@@ -27,7 +31,11 @@ impl Default for S {
     }
 }
 pub unsafe fn getP_1() -> () {
-    return unimplemented!();
+    return {
+        let mut __tmp_2: () = 3_();
+        let mut __tmp_3: () = 4_();
+        std_pair_int__int_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
+    };
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -46,7 +54,11 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = {
+            let mut __tmp_4: () = 3_();
+            let mut __tmp_5: () = 4_();
+            std_pair_int__short_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
+        };
         unimplemented!();
         unimplemented!();
         (*(unsafe { get_2(&mut p) })) = 5_();

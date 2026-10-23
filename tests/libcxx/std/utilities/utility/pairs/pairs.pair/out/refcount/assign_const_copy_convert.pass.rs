@@ -571,19 +571,38 @@ const _: () = assert!(
 );
 pub fn test_6() -> () {
     {
-        let mut i1: () = 1_();
-        let mut i2: () = 2_();
-        let mut j1: () = 3_();
-        let mut j2: () = 4_();
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i1: Value<()> = Rc::new(RefCell::new(1_()));
+        let i2: Value<()> = Rc::new(RefCell::new(2_()));
+        let j1: Value<()> = Rc::new(RefCell::new(3_()));
+        let j2: Value<()> = Rc::new(RefCell::new(4_()));
+        let p1: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new(
+            { i1.as_pointer() },
+            { i2.as_pointer() },
+        )));
+        let p2: Value<()> = Rc::new(RefCell::new(std_pair_long_ref__long_ref_::new(
+            { j1.as_pointer() },
+            { j2.as_pointer() },
+        )));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
+            std_pair_ConstCopyAssign__ConstCopyAssign_::new({ __tmp_0.as_pointer() }, {
+                __tmp_1.as_pointer()
+            })
+        }));
+        let p2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_AssignableFrom_ConstCopyAssign___AssignableFrom_ConstCopyAssign__::new(
+                { __tmp_2.as_pointer() },
+                { __tmp_3.as_pointer() },
+            )
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();

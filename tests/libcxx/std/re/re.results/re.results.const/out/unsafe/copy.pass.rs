@@ -468,28 +468,28 @@ impl Tag_X {
 }
 pub unsafe fn test_6(a: *const ()) {
     let mut m0: () = unimplemented!();
-    let mut m1: () = unimplemented!();
+    let mut m1: () = m0.clone();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_7(a: *const ()) {
     let mut m0: () = unimplemented!();
-    let mut m1: () = unimplemented!();
+    let mut m1: () = m0.clone();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_8(a: *const test_allocator_std_csub_match_) {
     let mut m0: () = unimplemented!();
-    let mut m1: () = unimplemented!();
+    let mut m1: () = m0.clone();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_9(a: *const test_allocator_std_wcsub_match_) {
     let mut m0: () = unimplemented!();
-    let mut m1: () = unimplemented!();
+    let mut m1: () = m0.clone();
     unimplemented!();
     unimplemented!();
     unimplemented!();

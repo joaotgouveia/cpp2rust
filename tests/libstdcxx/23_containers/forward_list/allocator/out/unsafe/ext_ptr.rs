@@ -303,34 +303,12 @@ impl __gnu_test_uneq_allocator_base {
         return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_map_14));
     }
 }
-impl __gnu_test_CustomPointerAlloc_T_ {
-    pub unsafe fn new_1(
-        _a0 : *const __gnu_test_CustomPointerAlloc_std___fwdlist__Node___gnu_cxx__Pointer_adapter___gnu_cxx__Std_pointer_impl_T____,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_CustomPointerAlloc_T__rebind_T_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct __gnu_test_CustomPointerAlloc_T__rebind_std___fwdlist__Node___gnu_cxx__Pointer_adapter___gnu_cxx__Std_pointer_impl_T____
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_CustomPointerAlloc_T_ {}
-impl __gnu_test_CustomPointerAlloc_std___fwdlist__Node___gnu_cxx__Pointer_adapter___gnu_cxx__Std_pointer_impl_T____ { pub unsafe fn new_1 ( _a0 : *const __gnu_test_CustomPointerAlloc_T_ , ) -> Self { let mut this = Self { } ;
- this } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct __gnu_test_CustomPointerAlloc_std___fwdlist__Node___gnu_cxx__Pointer_adapter___gnu_cxx__Std_pointer_impl_T____
-{}
-impl __gnu_test_CustomPointerAlloc_std___fwdlist__Node___gnu_cxx__Pointer_adapter___gnu_cxx__Std_pointer_impl_T____ { pub unsafe fn allocate ( &mut self , mut n : () , mut _a1 : Option< () > , ) -> () { let mut _a1 : ()  = _a1.unwrap_or_else(|| unsafe { unimplemented!()  }) ;
- return unimplemented!()  ;
- } pub unsafe fn deallocate ( &mut self , mut p : () , mut n : () , ) { ( unsafe { self . deallocate  ( unimplemented!()  , n , ) } )  ;
- } }
 pub unsafe fn operator_eq_15(
     mut _a0: __gnu_test_NullablePointer_void_,
     mut _a1: __gnu_test_NullablePointer_void_,

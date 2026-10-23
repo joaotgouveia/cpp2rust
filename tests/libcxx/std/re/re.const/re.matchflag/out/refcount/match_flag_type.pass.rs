@@ -95,8 +95,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut e1: () = std_regex_constants_match_flag_type_match_not_bol;
-    let mut e2: () = std_regex_constants_match_flag_type_match_not_eol;
+    let mut e1: () = unimplemented!();
+    let mut e2: () = unimplemented!();
     let __rhs = unimplemented!();
     e1 = __rhs;
     let __rhs = unimplemented!();

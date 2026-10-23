@@ -213,7 +213,7 @@ pub fn test_format_10(expected: (), arg: ()) {
 }
 pub fn test_assure_parse_is_called_12(fmt: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg : Value<() > = Rc::new(RefCell::new(std_map_parse_call_validator__parse_call_validator__std_less_parse_call_validator___std_allocator_std_pair_const_parse_call_validator__parse_call_validator___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+    let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
@@ -235,7 +235,7 @@ pub fn test_assure_parse_is_called_12(fmt: ()) {
 }
 pub fn test_assure_parse_is_called_14(fmt: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let arg : Value<() > = Rc::new(RefCell::new(std_map_parse_call_validator__parse_call_validator__std_less_parse_call_validator___std_allocator_std_pair_const_parse_call_validator__parse_call_validator___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+    let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
@@ -256,7 +256,7 @@ pub fn test_assure_parse_is_called_14(fmt: ()) {
     });
 }
 pub fn test_assure_parse_is_called_16() {
-    let arg : Value<() > = Rc::new(RefCell::new(std_map_parse_call_validator__parse_call_validator__std_less_parse_call_validator___std_allocator_std_pair_const_parse_call_validator__parse_call_validator___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+    let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
@@ -277,7 +277,7 @@ pub fn test_assure_parse_is_called_16() {
     ({ test_assure_parse_is_called_12(unimplemented!()) });
 }
 pub fn test_assure_parse_is_called_17() {
-    let arg : Value<() > = Rc::new(RefCell::new(std_map_parse_call_validator__parse_call_validator__std_less_parse_call_validator___std_allocator_std_pair_const_parse_call_validator__parse_call_validator___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+    let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_ctx: Value<()> = Rc::new(RefCell::new(
@@ -298,45 +298,13 @@ pub fn test_assure_parse_is_called_17() {
     ({ test_assure_parse_is_called_14(unimplemented!()) });
 }
 pub fn test_fmt_18() {
-    ({
-        test_format_8(
-            unimplemented!(),
-            std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        )
-    });
-    ({
-        test_format_8(
-            unimplemented!(),
-            std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        )
-    });
+    ({ test_format_8(unimplemented!(), unimplemented!()) });
+    ({ test_format_8(unimplemented!(), unimplemented!()) });
     ({ test_assure_parse_is_called_16() });
 }
 pub fn test_fmt_19() {
-    ({
-        test_format_10(
-            unimplemented!(),
-            std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        )
-    });
-    ({
-        test_format_10(
-            unimplemented!(),
-            std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                None,
-            ),
-        )
-    });
+    ({ test_format_10(unimplemented!(), unimplemented!()) });
+    ({ test_format_10(unimplemented!(), unimplemented!()) });
     ({ test_assure_parse_is_called_17() });
 }
 pub fn test_20() {

@@ -34,7 +34,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut v2: () = unimplemented!();
         let mut v1_save: () = unimplemented!();
         let mut v2_save: () = unimplemented!();
-        (unsafe { swap_0(&mut v1, &mut v2) });
+        unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {
@@ -56,7 +56,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut v2: () = unimplemented!();
         let mut v1_save: () = unimplemented!();
         let mut v2_save: () = unimplemented!();
-        (unsafe { swap_0(&mut v1, &mut v2) });
+        unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {
@@ -78,7 +78,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut v2: () = unimplemented!();
         let mut v1_save: () = unimplemented!();
         let mut v2_save: () = unimplemented!();
-        (unsafe { swap_0(&mut v1, &mut v2) });
+        unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {
@@ -97,7 +97,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut v2: () = unimplemented!();
         let mut v1_save: () = unimplemented!();
         let mut v2_save: () = unimplemented!();
-        (unsafe { swap_0(&mut v1, &mut v2) });
+        unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {

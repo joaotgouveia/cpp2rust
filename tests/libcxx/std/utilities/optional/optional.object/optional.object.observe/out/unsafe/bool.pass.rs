@@ -34,7 +34,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "!opt");;
     }
     {
-        let opt: () = unimplemented!();
+        let opt: () = 0_();
         const _: () = assert!(true, "opt");;
     }
     return 0_();

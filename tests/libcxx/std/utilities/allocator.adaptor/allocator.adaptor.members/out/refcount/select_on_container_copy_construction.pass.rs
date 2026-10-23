@@ -146,13 +146,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let a1: Value<()> = Rc::new(RefCell::new(A1_int_::new({ 3_() })));
         unimplemented!();
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a2: Value<()> = Rc::new(RefCell::new(
+            ({
+                std_allocator_traits_std_scoped_allocator_adaptor_A1_int___::select_on_container_copy_construction ( a1 .as_pointer()  , )
+            }),
+        ));
         unimplemented!();
     }
     {
         let a1: Value<()> = Rc::new(RefCell::new(A3_int_::new({ 3_() })));
         unimplemented!();
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a2: Value<()> = Rc::new(RefCell::new(
+            ({
+                std_allocator_traits_std_scoped_allocator_adaptor_A3_int___::select_on_container_copy_construction ( a1 .as_pointer()  , )
+            }),
+        ));
         unimplemented!();
     }
     {
@@ -169,7 +177,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a2: Value<()> = Rc::new(RefCell::new(
+            ({
+                std_allocator_traits_std_scoped_allocator_adaptor_A1_int___A2_int___A3_int___::select_on_container_copy_construction ( a1 .as_pointer()  , )
+            }),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();

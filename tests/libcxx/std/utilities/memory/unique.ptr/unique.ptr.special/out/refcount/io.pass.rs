@@ -27,10 +27,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut p: () = std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(3_()) });
+    let p: Value<()> = Rc::new(RefCell::new(
+        std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(3_()) }),
+    ));
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    write!(os.as_pointer(), "{:}", (*p.borrow_mut()),);
     unimplemented!();
     return 0_();
 }

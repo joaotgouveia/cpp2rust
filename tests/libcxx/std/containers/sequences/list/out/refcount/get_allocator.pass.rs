@@ -164,13 +164,6 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl other_allocator_int_ {
-    pub fn new_1(a: Ptr<other_allocator_std___list_node_int__void_ptr__>) -> Self {
-        Self {
-            data_: a.with(|__s| __s.data_),
-        }
-    }
-}
 pub fn operator_eq_4(x: Ptr<other_allocator_int_>, y: Ptr<other_allocator_int_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -181,7 +174,7 @@ pub struct other_allocator_int_ {
     data_: (),
 }
 impl other_allocator_int_ {
-    pub fn new_2(mut i: ()) -> Self {
+    pub fn new_1(mut i: ()) -> Self {
         Self { data_: i }
     }
 }
@@ -206,45 +199,6 @@ impl Default for other_allocator_int_ {
     fn default() -> Self {
         {
             other_allocator_int_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-impl other_allocator_std___list_node_int__void_ptr__ {
-    pub fn new_1(a: Ptr<other_allocator_int_>) -> Self {
-        Self {
-            data_: a.with(|__s| __s.data_),
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___list_node_int__void_ptr__ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___list_node_int__void_ptr__ {}
-impl Default for other_allocator_std___list_node_int__void_ptr__ {
-    fn default() -> Self {
-        {
-            other_allocator_std___list_node_int__void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___list_node_base_int__void_ptr__ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___list_node_base_int__void_ptr__ {}
-impl Default for other_allocator_std___list_node_base_int__void_ptr__ {
-    fn default() -> Self {
-        {
-            other_allocator_std___list_node_base_int__void_ptr__ {
                 data_: unimplemented!(),
             }
         }
@@ -275,7 +229,7 @@ pub fn test_5() -> () {
     }
     {
         let alloc: Value<other_allocator_int_> =
-            Rc::new(RefCell::new(other_allocator_int_::new_2({ 1_() })));
+            Rc::new(RefCell::new(other_allocator_int_::new_1({ 1_() })));
         let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -331,47 +285,6 @@ pub trait other_allocator_int_Impl {
     }
 }
 impl other_allocator_int_Impl for Ptr<other_allocator_int_> {}
-pub trait other_allocator_std___list_node_base_int__void_ptr__Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___list_node_base_int__void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<std___list_node_base_int__void_ptr_>, mut s: ()) {
-        unimplemented!()
-    }
-    fn select_on_container_copy_construction(
-        &self,
-    ) -> other_allocator_std___list_node_base_int__void_ptr__ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___list_node_base_int__void_ptr__Impl
-    for Ptr<other_allocator_std___list_node_base_int__void_ptr__>
-{
-}
-pub trait other_allocator_std___list_node_int__void_ptr__Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___list_node_int__void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, p: Ptr<std___list_node_int__void_ptr_>, s: ());
-    fn select_on_container_copy_construction(
-        &self,
-    ) -> other_allocator_std___list_node_int__void_ptr__ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___list_node_int__void_ptr__Impl
-    for Ptr<other_allocator_std___list_node_int__void_ptr__>
-{
-    fn deallocate(&self, mut p: Ptr<std___list_node_int__void_ptr_>, mut s: ()) {
-        unimplemented!();
-    }
-}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

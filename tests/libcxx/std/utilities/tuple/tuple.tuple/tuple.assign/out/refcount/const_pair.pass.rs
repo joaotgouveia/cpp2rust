@@ -14,9 +14,13 @@ pub struct NothrowCopyAssignable {}
 pub struct PotentiallyThrowingCopyAssignable {}
 pub fn test_0() -> () {
     {
-        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t0: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(('a' as ())));
+            std_pair_long__char_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        (*t1.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
         unimplemented!();
     }

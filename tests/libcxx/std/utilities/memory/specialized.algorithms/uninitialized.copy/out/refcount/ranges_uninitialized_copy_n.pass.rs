@@ -1098,29 +1098,23 @@ pub fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_15(_i, n)
     });
 }
-pub fn iter_swap_17(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_18(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_19(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_18(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_21(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -1166,7 +1160,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_21(
+            operator_cmp_20(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1191,7 +1185,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_20(
+            operator_eq_19(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1290,7 +1284,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<decltype(std::ranges::uninitialized_copy_n), int*, std::size_t, NotConvertibleFromInt*,\n                                   NotConvertibleFromInt*>"
 );
-pub fn test_22() -> () {
+pub fn test_21() -> () {
     let n: Value<()> = Rc::new(RefCell::new(3_()));
     let in_: Value<Box<[ConstCopy]>> = Rc::new(RefCell::new(Box::new([
         ConstCopy::new_1({ 1_() }),
@@ -1305,7 +1299,7 @@ pub fn test_22() -> () {
                 let ___n: () = (*n.borrow());
                 let ___ofirst: Ptr<ConstCopy> = (out).clone();
                 let ___olast: Ptr<ConstCopy> = out.offset((*n.borrow()) as isize);
-                (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+                (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                     (in_.as_pointer() as Ptr<ConstCopy>),
                     ___n,
                     ___ofirst,
@@ -1330,7 +1324,7 @@ pub fn test_22() -> () {
             ({
                 let ___ofirst: Ptr<ConstCopy> = (out).clone();
                 let ___olast: Ptr<ConstCopy> = out.offset((m) as isize);
-                (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+                (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                     (in_.as_pointer() as Ptr<ConstCopy>),
                     (*n.borrow()),
                     ___ofirst,
@@ -1379,7 +1373,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 let ___ofirst: Ptr<Counted> =
                     ({ Buffer_Counted__1_Impl::begin(&out.as_pointer()) });
                 let ___olast: Ptr<Counted> = ({ Buffer_Counted__1_Impl::end(&out.as_pointer()) });
-                (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+                (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                     (in_.as_pointer() as Ptr<Counted>),
                     0_(),
                     ___ofirst,
@@ -1410,7 +1404,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 let ___ofirst: Ptr<Counted> =
                     ({ Buffer_Counted__5_Impl::begin(&out.as_pointer()) });
                 let ___olast: Ptr<Counted> = ({ Buffer_Counted__5_Impl::end(&out.as_pointer()) });
-                (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+                (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                     (in_.as_pointer() as Ptr<Counted>),
                     (*N.borrow()),
                     ___ofirst,
@@ -1436,7 +1430,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let ___ofirst: Ptr<()> = ({ Buffer_double__3_Impl::begin(&out.as_pointer()) });
             let ___olast: Ptr<()> = ({ Buffer_double__3_Impl::end(&out.as_pointer()) });
-            (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+            (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                 (in_.as_pointer() as Ptr<()>),
                 (*N.borrow()),
                 ___ofirst,
@@ -1462,7 +1456,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 let ___ofirst: Ptr<Counted> =
                     ({ Buffer_Counted__3_Impl::begin(&out.as_pointer()) });
                 let ___olast: Ptr<Counted> = ({ Buffer_Counted__3_Impl::end(&out.as_pointer()) });
-                (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+                (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                     (in_.as_pointer() as Ptr<Counted>),
                     (*N.borrow()),
                     ___ofirst,
@@ -1490,7 +1484,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let ___ofirst: Ptr<()> = ({ Buffer_int__3_Impl::begin(&out.as_pointer()) });
             let ___olast: Ptr<()> = ({ Buffer_int__3_Impl::end(&out.as_pointer()) });
-            (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+            (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                 cpp20_input_iterator_const_int_ptr_::move_from({ in_.as_pointer() }),
                 (*N.borrow()),
                 ___ofirst,
@@ -1530,7 +1524,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let array: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
             ({
-                (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+                (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                     overload_compare_iterator_int_ptr_::new_1({ (array.as_pointer() as Ptr<()>) }),
                     (*N.borrow()),
                     (p).clone(),
@@ -1573,7 +1567,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let array: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
             ({
-                (*uninitialized_copy_n_23.with(Value::clone).borrow_mut())(
+                (*uninitialized_copy_n_22.with(Value::clone).borrow_mut())(
                     (array.as_pointer() as Ptr<()>),
                     (*N.borrow()),
                     overload_compare_iterator_int_ptr_::new_1({ (p).clone() }),
@@ -1587,7 +1581,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             }
         }
     }
-    ({ test_22() });
+    ({ test_21() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]

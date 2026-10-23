@@ -370,7 +370,7 @@ pub fn test_T_assignment_performs_assignment_13() {
 pub fn test_T_assignment_performs_construction_throw_14() {}
 pub fn test_T_assignment_performs_assignment_throw_15() {}
 pub fn test_T_assignment_vector_bool_16() {
-    let mut vec_: () = std_vector_bool__std_allocator_bool__::new_1({ unimplemented!() });
+    let mut vec_: () = unimplemented!();
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*v.borrow_mut()) = unimplemented!();
     unimplemented!();

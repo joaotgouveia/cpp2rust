@@ -180,36 +180,12 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-impl test_allocator_NotConstructible_ {
-    pub unsafe fn new_1(
-        a: *const test_allocator_std___forward_list_node_NotConstructible__void_ptr__,
-    ) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
 pub unsafe fn operator_eq_4(
     x: *const test_allocator_NotConstructible_,
     y: *const test_allocator_NotConstructible_,
 ) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_NotConstructible__rebind_std___forward_list_node_NotConstructible__void_ptr__
-{}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_allocator_NotConstructible__rebind_std___forward_begin_node_std___forward_list_node_NotConstructible__void_ptr__ptr__
-{}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_allocator_NotConstructible__rebind_NotConstructible_ {}
@@ -221,7 +197,7 @@ pub struct test_allocator_NotConstructible_ {
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_NotConstructible_ {
-    pub unsafe fn new_2(mut data: ()) -> Self {
+    pub unsafe fn new_1(mut data: ()) -> Self {
         let mut this = Self {
             data_: data,
             id_: 0_(),
@@ -261,71 +237,6 @@ impl Default for test_allocator_NotConstructible_ {
         }
     }
 }
-impl test_allocator_std___forward_list_node_NotConstructible__void_ptr__ {
-    pub unsafe fn new_1(a: *const test_allocator_NotConstructible_) -> Self {
-        let mut this = Self {
-            data_: (*a).data_,
-            id_: (*a).id_,
-            stats_: (*a).stats_,
-        };
-        if !((this.stats_).is_null()) {
-            (*this.stats_).count.prefix_inc();
-            (*this.stats_).converted.prefix_inc();
-        }
-        this
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
-pub struct test_allocator_std___forward_list_node_NotConstructible__void_ptr__ {
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___forward_list_node_NotConstructible__void_ptr__ {
-    pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).count.prefix_dec();
-        }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___forward_list_node_NotConstructible__void_ptr_,
-        mut s: (),
-    ) {
-        unimplemented!();
-        if !((self.stats_).is_null()) {
-            (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
-        }
-        unimplemented!();
-    }
-}
-impl Default for test_allocator_std___forward_list_node_NotConstructible__void_ptr__ {
-    fn default() -> Self {
-        unsafe {
-            test_allocator_std___forward_list_node_NotConstructible__void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: std::ptr::null_mut(),
-            }
-        }
-    }
-}
-#[repr(C)]
-#[derive(FnPtrArg)]
-pub struct test_allocator_std___forward_begin_node_std___forward_list_node_NotConstructible__void_ptr__ptr__
-{
-    data_: (),
-    id_: (),
-    stats_: *mut test_allocator_statistics,
-}
-impl test_allocator_std___forward_begin_node_std___forward_list_node_NotConstructible__void_ptr__ptr__ { }
-impl Default for test_allocator_std___forward_begin_node_std___forward_list_node_NotConstructible__void_ptr__ptr__ { fn default() -> Self { unsafe { test_allocator_std___forward_begin_node_std___forward_list_node_NotConstructible__void_ptr__ptr__ { data_ : unimplemented!() , id_ : unimplemented!() , stats_ : std::ptr::null_mut() , } } } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
@@ -408,45 +319,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub unsafe fn operator_eq_10(
-    mut x : min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_11(
-    mut x : min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  = x ;
-        operator_eq_10(_x, y)
-    });
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { pub unsafe fn new_1 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn operator_deref ( &self , ) -> *mut std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_10(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn operator_arrow ( &self , ) -> *mut std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl min_allocator_NotConstructible_ {
-    pub unsafe fn new_1(
-        mut _a0 : min_allocator_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0____,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-pub unsafe fn operator_eq_12(
     mut _a0: min_allocator_NotConstructible_,
     mut _a1: min_allocator_NotConstructible_,
 ) -> () {
@@ -457,33 +329,11 @@ pub unsafe fn operator_eq_12(
 pub struct min_allocator_NotConstructible_ {}
 impl std::cmp::PartialEq for min_allocator_NotConstructible_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self.clone(), other.clone()) }
+        unsafe { operator_eq_10(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_NotConstructible_ {}
-impl min_allocator_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0____ { pub unsafe fn new_1 ( mut _a0 : min_allocator_NotConstructible_ , ) -> Self { let mut this = Self { } ;
- this } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-impl min_allocator_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0____ { pub unsafe fn deallocate ( &mut self , mut p : min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ , mut n : () , ) { unimplemented!()  ;
- } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___forward_begin_node_min_pointer_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____
-{}
-impl min_allocator_NotConstructible_ {}
-impl min_allocator_std___forward_list_node_NotConstructible__min_pointer_void__std_integral_constant_unsigned_long__0____ { }
-impl explicit_allocator_NotConstructible_ {
-    pub unsafe fn new_1(
-        mut _a0: explicit_allocator_std___forward_list_node_NotConstructible__void_ptr__,
-    ) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-pub unsafe fn operator_eq_13(
+pub unsafe fn operator_eq_11(
     mut _a0: explicit_allocator_NotConstructible_,
     mut _a1: explicit_allocator_NotConstructible_,
 ) -> () {
@@ -493,46 +343,23 @@ pub unsafe fn operator_eq_13(
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct explicit_allocator_NotConstructible_ {}
 impl explicit_allocator_NotConstructible_ {
-    pub unsafe fn new_2() -> Self {
+    pub unsafe fn new() -> Self {
         let mut this = Self {};
         this
     }
 }
 impl std::cmp::PartialEq for explicit_allocator_NotConstructible_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_13(self.clone(), other.clone()) }
+        unsafe { operator_eq_11(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for explicit_allocator_NotConstructible_ {}
 impl Default for explicit_allocator_NotConstructible_ {
     fn default() -> Self {
-        unsafe { explicit_allocator_NotConstructible_::new_2() }
+        unsafe { explicit_allocator_NotConstructible_::new() }
     }
 }
-impl explicit_allocator_std___forward_list_node_NotConstructible__void_ptr__ {
-    pub unsafe fn new_1(mut _a0: explicit_allocator_NotConstructible_) -> Self {
-        let mut this = Self {};
-        this
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct explicit_allocator_std___forward_list_node_NotConstructible__void_ptr__ {}
-impl explicit_allocator_std___forward_list_node_NotConstructible__void_ptr__ {
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___forward_list_node_NotConstructible__void_ptr_,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct explicit_allocator_std___forward_begin_node_std___forward_list_node_NotConstructible__void_ptr__ptr__
-{}
-impl explicit_allocator_std___forward_begin_node_std___forward_list_node_NotConstructible__void_ptr__ptr__ { }
-pub unsafe fn test_14() -> () {
+pub unsafe fn test_12() -> () {
     {
         let mut c: () = unimplemented!();
         unimplemented!();

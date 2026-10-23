@@ -250,7 +250,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut t: () = (unsafe { tuple_cat_17() });
+        let mut t: () = unimplemented!();
         (&(t));
     }
     {
@@ -272,7 +272,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let t: () = (unsafe { tuple_cat_17() });
+        let t: () = unimplemented!();
         (&(t));
     }
     {

@@ -164,8 +164,11 @@ pub unsafe fn test_27() -> () {
         (unsafe { test_string.call() });
     }
     let test_unique_ptr: FnPtr<fn()> = FnPtr::<fn()>::new(|| unsafe {
-        let mut s: () = unimplemented!();
-        let mut opt: () = (unsafe { make_optional_31(&mut *(&raw mut s).cast::<()>()) });
+        let mut s: () = (unsafe {
+            let mut ___args: () = 3_();
+            make_unique_31(&mut ___args)
+        });
+        let mut opt: () = (unsafe { make_optional_32(&mut *(&raw mut s).cast::<()>()) });
         unimplemented!();
         unimplemented!();
     });

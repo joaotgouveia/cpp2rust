@@ -11,8 +11,8 @@ pub unsafe fn test_0() {
     let s: [(); 12] = std::mem::transmute(*b"abcdefghijk\0");
     unimplemented!();
     let mut m2: () = unimplemented!();
-    let mut m1_save: () = unimplemented!();
-    let mut m2_save: () = unimplemented!();
+    let mut m1_save: () = m1.clone();
+    let mut m2_save: () = m2.clone();
     unimplemented!();
     unimplemented!();
     unimplemented!();

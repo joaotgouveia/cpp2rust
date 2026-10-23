@@ -9,10 +9,50 @@ use std::rc::Rc;
 pub unsafe fn test_0(mut do_it: ()) -> () {
     if do_it {
         let mut v: () = Default::default();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        (unsafe {
+            let mut ___visitor: FnPtr<Generic> = lambda_unsafe!(
+                Generic,
+                {},
+                |mut _a0: *mut Holder_Incomplete_| {},
+                |mut _a0: ()| {}
+            );
+            visit_1(&mut ___visitor, &mut v)
+        });
+        (unsafe {
+            let mut ___visitor: FnPtr<Generic> = lambda_unsafe!(
+                Generic,
+                {},
+                |mut _a0: *mut Holder_Incomplete_| -> *mut Holder_Incomplete_ {
+                    return std::ptr::null_mut();
+                },
+                |mut _a0: ()| -> *mut Holder_Incomplete_ {
+                    return std::ptr::null_mut();
+                }
+            );
+            visit_2(&mut ___visitor, &mut v)
+        });
+        (unsafe {
+            let mut ___visitor: FnPtr<Generic> = lambda_unsafe!(
+                Generic,
+                {},
+                |mut _a0: *mut Holder_Incomplete_| {},
+                |mut _a0: ()| {}
+            );
+            visit_3(&mut ___visitor, &mut v)
+        });
+        (unsafe {
+            let mut ___visitor: FnPtr<Generic> = lambda_unsafe!(
+                Generic,
+                {},
+                |mut _a0: *mut Holder_Incomplete_| -> *mut Holder_Incomplete_ {
+                    return std::ptr::null_mut();
+                },
+                |mut _a0: ()| -> *mut Holder_Incomplete_ {
+                    return std::ptr::null_mut();
+                }
+            );
+            visit_4(&mut ___visitor, &mut v)
+        });
     }
     return true;
 }
@@ -36,4 +76,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "test(true)");;
     return 0_();
 }
+#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
+pub struct Holder_Incomplete_;
 pub unsafe fn __cpp2rust_init_globals() {}

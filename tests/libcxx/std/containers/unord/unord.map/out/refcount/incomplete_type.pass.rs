@@ -41,35 +41,6 @@ pub struct complete_type_allocator_std_pair_const_int__int__ {}
 impl complete_type_allocator_std_pair_const_int__int__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
-pub struct complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__ {}
-impl complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__ {
-    pub fn new() -> Self {
-        Self {}
-    }
-}
-impl Default
-    for complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__
-{
-    fn default() -> Self {
-        {
-            complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__::new(
-            )
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__
-{}
-impl complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ { }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_
-{}
-impl complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_ { pub fn new ( ) -> Self { Self { }  } }
-impl Default for complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_ { fn default() -> Self { { complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_ :: new ( )  } } }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
 pub struct MyHash_A_ {}
 impl MyHash_A_ {
     pub fn new() -> Self {
@@ -158,66 +129,6 @@ pub trait MyHash_A_Impl {
     }
 }
 impl MyHash_A_Impl for Ptr<MyHash_A_> {}
-pub trait complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_>
-    {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<
-            std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_,
-        >,
-        mut n: (),
-    ) {
-        unimplemented!()
-    }
-}
-impl complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__Impl for Ptr<complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__> {
-}
-pub trait complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_Impl
-{
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<
-        Ptr<std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_>,
-    > {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_  >  >,
-        n: (),
-    );
-}
-impl complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_Impl for Ptr<complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_> {
-fn deallocate ( &self , mut p : Ptr< Ptr< std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_  >  >  , mut n : ()  , ) { unimplemented!()  ;
- } }
-pub trait complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__Impl {
-    fn allocate(
-        &self,
-        mut n: (),
-    ) -> Ptr<std___hash_node_std___hash_value_type_int__int___void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, p: Ptr<std___hash_node_std___hash_value_type_int__int___void_ptr_>, n: ());
-}
-impl complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__Impl
-    for Ptr<complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__>
-{
-    fn deallocate(
-        &self,
-        mut p: Ptr<std___hash_node_std___hash_value_type_int__int___void_ptr_>,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
-}
 pub trait complete_type_allocator_std_pair_const_int__int__Impl {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()

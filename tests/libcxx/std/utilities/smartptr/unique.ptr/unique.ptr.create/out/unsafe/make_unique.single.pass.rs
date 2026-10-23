@@ -8,13 +8,16 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0() -> () {
     {
-        let mut p1: () = unimplemented!();
+        let mut p1: () = (unsafe {
+            let mut ___args: () = 1_();
+            make_unique_1(&mut ___args)
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut p2: () = unimplemented!();
+        let mut p2: () = (unsafe { make_unique_2(&std::mem::transmute(*b"Meow!\0")) });
         unimplemented!();
         unimplemented!();
         unimplemented!();

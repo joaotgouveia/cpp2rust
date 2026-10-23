@@ -74,90 +74,42 @@ const _: () = assert!(!(false), "!has_midpoint<const void*>");
 const _: () = assert!(!(false), "!has_midpoint<volatile void*>");
 const _: () = assert!(!(false), "!has_midpoint<const volatile void*>");
 pub unsafe fn check_12(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *mut () = base.offset((i) as isize);
-        let ___b: *mut () = base.offset((j) as isize);
-        midpoint_13(___a, ___b)
-    }) == (base.offset((expect) as isize)));
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
 }
-pub unsafe fn check_14(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *const () = base.offset((i) as isize);
-        let ___b: *const () = base.offset((j) as isize);
-        midpoint_15(___a, ___b)
-    }) == (base.offset((expect) as isize)));
+pub unsafe fn check_13(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
+}
+pub unsafe fn check_14(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
+}
+pub unsafe fn check_15(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
 }
 pub unsafe fn check_16(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *mut () = base.offset((i) as isize);
-        let ___b: *mut () = base.offset((j) as isize);
-        midpoint_17(___a, ___b)
-    }) == (base.offset((expect) as isize)));
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
 }
-pub unsafe fn check_18(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *const () = base.offset((i) as isize);
-        let ___b: *const () = base.offset((j) as isize);
-        midpoint_19(___a, ___b)
-    }) == (base.offset((expect) as isize)));
+pub unsafe fn check_17(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
+}
+pub unsafe fn check_18(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
+}
+pub unsafe fn check_19(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
 }
 pub unsafe fn check_20(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *mut () = base.offset((i) as isize);
-        let ___b: *mut () = base.offset((j) as isize);
-        midpoint_21(___a, ___b)
-    }) == (base.offset((expect) as isize)));
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
 }
-pub unsafe fn check_22(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *const () = base.offset((i) as isize);
-        let ___b: *const () = base.offset((j) as isize);
-        midpoint_23(___a, ___b)
-    }) == (base.offset((expect) as isize)));
+pub unsafe fn check_21(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
 }
-pub unsafe fn check_24(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *mut () = base.offset((i) as isize);
-        let ___b: *mut () = base.offset((j) as isize);
-        midpoint_25(___a, ___b)
-    }) == (base.offset((expect) as isize)));
+pub unsafe fn check_22(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
 }
-pub unsafe fn check_26(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *const () = base.offset((i) as isize);
-        let ___b: *const () = base.offset((j) as isize);
-        midpoint_27(___a, ___b)
-    }) == (base.offset((expect) as isize)));
+pub unsafe fn check_23(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
+    return ((unimplemented!()) == (base.offset((expect) as isize)));
 }
-pub unsafe fn check_28(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *mut () = base.offset((i) as isize);
-        let ___b: *mut () = base.offset((j) as isize);
-        midpoint_29(___a, ___b)
-    }) == (base.offset((expect) as isize)));
-}
-pub unsafe fn check_30(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *const () = base.offset((i) as isize);
-        let ___b: *const () = base.offset((j) as isize);
-        midpoint_31(___a, ___b)
-    }) == (base.offset((expect) as isize)));
-}
-pub unsafe fn check_32(mut base: *mut (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *mut () = base.offset((i) as isize);
-        let ___b: *mut () = base.offset((j) as isize);
-        midpoint_33(___a, ___b)
-    }) == (base.offset((expect) as isize)));
-}
-pub unsafe fn check_34(mut base: *const (), mut i: (), mut j: (), mut expect: ()) -> () {
-    return ((unsafe {
-        let ___a: *const () = base.offset((i) as isize);
-        let ___b: *const () = base.offset((j) as isize);
-        midpoint_35(___a, ___b)
-    }) == (base.offset((expect) as isize)));
-}
-pub unsafe fn test_pointer_36() -> () {
+pub unsafe fn test_pointer_24() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -194,7 +146,7 @@ pub unsafe fn test_pointer_36() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_37() -> () {
+pub unsafe fn test_pointer_25() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -231,7 +183,7 @@ pub unsafe fn test_pointer_37() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_38() -> () {
+pub unsafe fn test_pointer_26() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -268,7 +220,7 @@ pub unsafe fn test_pointer_38() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_39() -> () {
+pub unsafe fn test_pointer_27() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -305,7 +257,7 @@ pub unsafe fn test_pointer_39() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_40() -> () {
+pub unsafe fn test_pointer_28() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -342,7 +294,7 @@ pub unsafe fn test_pointer_40() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_41() -> () {
+pub unsafe fn test_pointer_29() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -379,7 +331,7 @@ pub unsafe fn test_pointer_41() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_42() -> () {
+pub unsafe fn test_pointer_30() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -416,7 +368,7 @@ pub unsafe fn test_pointer_42() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_43() -> () {
+pub unsafe fn test_pointer_31() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -453,7 +405,7 @@ pub unsafe fn test_pointer_43() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_44() -> () {
+pub unsafe fn test_pointer_32() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -490,7 +442,7 @@ pub unsafe fn test_pointer_44() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_45() -> () {
+pub unsafe fn test_pointer_33() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -527,7 +479,7 @@ pub unsafe fn test_pointer_45() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_46() -> () {
+pub unsafe fn test_pointer_34() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -564,7 +516,7 @@ pub unsafe fn test_pointer_46() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointer_47() -> () {
+pub unsafe fn test_pointer_35() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut array: [(); 20] = [
@@ -601,7 +553,7 @@ pub unsafe fn test_pointer_47() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_48() {
+pub unsafe fn test_36() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -609,7 +561,7 @@ pub unsafe fn test_48() {
     const _: () = assert!(true, "test_pointer<T>()");;
     const _: () = assert!(true, "test_pointer<const T>()");;
 }
-pub unsafe fn test_49() {
+pub unsafe fn test_37() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -617,7 +569,7 @@ pub unsafe fn test_49() {
     const _: () = assert!(true, "test_pointer<T>()");;
     const _: () = assert!(true, "test_pointer<const T>()");;
 }
-pub unsafe fn test_50() {
+pub unsafe fn test_38() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -641,9 +593,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_48() });
-    (unsafe { test_49() });
-    (unsafe { test_50() });
+    (unsafe { test_36() });
+    (unsafe { test_37() });
+    (unsafe { test_38() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -102,7 +102,7 @@ pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format((*arg.borrow()), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -123,7 +123,7 @@ pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({ (*formatter.borrow()).format((*arg.borrow()), format_ctx.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_termination_condition_8(mut expected: (), f: (), mut arg: ()) {

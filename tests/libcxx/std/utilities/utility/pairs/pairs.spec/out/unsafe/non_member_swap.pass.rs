@@ -24,9 +24,17 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p1: () = unimplemented!();
-        let mut p2: () = unimplemented!();
-        unimplemented!();
+        let mut p1: () = {
+            let mut __tmp_0: () = 3_();
+            let mut __tmp_1: () = 4_();
+            std_pair_int__short_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
+        let mut p2: () = {
+            let mut __tmp_2: () = 5_();
+            let mut __tmp_3: () = 6_();
+            std_pair_int__short_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
+        };
+        (unsafe { swap_0(&mut p1, &mut p2) });
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -8,9 +8,27 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_constexpr_0() -> () {
     let p: *const () = [49 as (), 50 as (), 51 as (), 0 as ()].as_ptr();
-    return ((((unimplemented!()) == (p)) && ((unimplemented!()) == (p.offset((1_()) as isize))))
-        && ((unimplemented!()) == (p.offset((2_()) as isize))))
-        && ((unimplemented!()).is_null());
+    return ((((unsafe {
+        let ___s: *const () = p;
+        let mut ___a: () = (49 as ());
+        std_char_traits_char16_t_::find(___s, 3_(), &mut ___a)
+    }) == (p))
+        && ((unsafe {
+            let ___s: *const () = p;
+            let mut ___a: () = (50 as ());
+            std_char_traits_char16_t_::find(___s, 3_(), &mut ___a)
+        }) == (p.offset((1_()) as isize))))
+        && ((unsafe {
+            let ___s: *const () = p;
+            let mut ___a: () = (51 as ());
+            std_char_traits_char16_t_::find(___s, 3_(), &mut ___a)
+        }) == (p.offset((2_()) as isize))))
+        && ((unsafe {
+            let ___s: *const () = p;
+            let mut ___a: () = (52 as ());
+            std_char_traits_char16_t_::find(___s, 3_(), &mut ___a)
+        })
+        .is_null());
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

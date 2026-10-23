@@ -156,7 +156,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 &mut __tmp_1
             })
         };
-        let mut a2: () = unimplemented!();
+        let mut a2: () = a1.clone();
         unimplemented!();
         unimplemented!();
     }
@@ -171,7 +171,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 { &mut __tmp_4 },
             )
         };
-        let mut a2: () = unimplemented!();
+        let mut a2: () = a1.clone();
         unimplemented!();
         unimplemented!();
     }

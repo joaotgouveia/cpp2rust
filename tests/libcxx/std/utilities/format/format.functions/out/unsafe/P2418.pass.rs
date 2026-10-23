@@ -264,7 +264,7 @@ impl MultiStringType {
 pub unsafe fn test_14() {
     let mut m: MoveOnly = MoveOnly::new({ Some(10_()) });
     let mut buffer: [(); 10] = [unimplemented!(); 10];
-    let mut loc: () = unimplemented!();
+    let mut loc: std_locale = <std_locale>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -309,7 +309,7 @@ pub unsafe fn test_14() {
 pub unsafe fn test_15() {
     let mut m: MoveOnly = MoveOnly::new({ Some(10_()) });
     let mut buffer: [(); 10] = [unimplemented!(); 10];
-    let mut loc: () = unimplemented!();
+    let mut loc: std_locale = <std_locale>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();

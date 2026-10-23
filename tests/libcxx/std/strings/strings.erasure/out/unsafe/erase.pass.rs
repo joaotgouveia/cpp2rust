@@ -783,7 +783,7 @@ pub unsafe fn test_18() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('a' as ()),
             std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
                 { c"b".as_ptr() },
                 None,
@@ -797,7 +797,7 @@ pub unsafe fn test_18() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('b' as ()),
             std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
                 { c"aa".as_ptr() },
                 None,
@@ -811,7 +811,7 @@ pub unsafe fn test_18() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('c' as ()),
             std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
                 { c"aba".as_ptr() },
                 None,
@@ -1121,7 +1121,7 @@ pub unsafe fn test_19() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('a' as ()),
             std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
                 { c"b".as_ptr() },
                 None,
@@ -1135,7 +1135,7 @@ pub unsafe fn test_19() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('b' as ()),
             std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
                 { c"aa".as_ptr() },
                 None,
@@ -1149,7 +1149,7 @@ pub unsafe fn test_19() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('c' as ()),
             std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
                 { c"aba".as_ptr() },
                 None,
@@ -1459,7 +1459,7 @@ pub unsafe fn test_20() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('a' as ()),
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
                 { c"b".as_ptr() },
                 None,
@@ -1473,7 +1473,7 @@ pub unsafe fn test_20() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('b' as ()),
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
                 { c"aa".as_ptr() },
                 None,
@@ -1487,7 +1487,7 @@ pub unsafe fn test_20() {
                 { c"aba".as_ptr() },
                 None,
             ),
-            unimplemented!(),
+            ('c' as ()),
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
                 { c"aba".as_ptr() },
                 None,

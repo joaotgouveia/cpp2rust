@@ -122,7 +122,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut ptr: *mut () = (buffer.as_mut_ptr() as *mut ());
         let mut a: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_6)) = 0_();
-        (unsafe { a.construct(ptr) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -132,7 +132,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut ptr: *mut () = (buffer.as_mut_ptr() as *mut ());
         let mut a: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_6)) = 0_();
-        (unsafe { a.construct(ptr) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

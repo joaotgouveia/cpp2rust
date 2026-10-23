@@ -349,9 +349,6 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_MoveOnly__rebind_MoveOnly_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_MoveOnly__rebind_std___tree_node_MoveOnly__void_ptr__ {}
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(16)]
 pub struct test_allocator_MoveOnly_ {
@@ -375,56 +372,6 @@ impl Default for test_allocator_MoveOnly_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std___tree_node_MoveOnly__void_ptr___rebind_std___tree_node_base_void_ptr__
-{}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_std___tree_node_MoveOnly__void_ptr__ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___tree_node_MoveOnly__void_ptr__ {}
-impl Default for test_allocator_std___tree_node_MoveOnly__void_ptr__ {
-    fn default() -> Self {
-        {
-            test_allocator_std___tree_node_MoveOnly__void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg)]
-#[byte_size(16)]
-pub struct test_allocator_std___tree_node_base_void_ptr__ {
-    #[offset(0)]
-    data_: (),
-    #[offset(4)]
-    id_: (),
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std___tree_node_base_void_ptr__ {}
-impl Default for test_allocator_std___tree_node_base_void_ptr__ {
-    fn default() -> Self {
-        {
-            test_allocator_std___tree_node_base_void_ptr__ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct other_allocator_MoveOnly_ {
@@ -436,38 +383,6 @@ impl Default for other_allocator_MoveOnly_ {
     fn default() -> Self {
         {
             other_allocator_MoveOnly_ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___tree_node_MoveOnly__void_ptr__ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___tree_node_MoveOnly__void_ptr__ {}
-impl Default for other_allocator_std___tree_node_MoveOnly__void_ptr__ {
-    fn default() -> Self {
-        {
-            other_allocator_std___tree_node_MoveOnly__void_ptr__ {
-                data_: unimplemented!(),
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(4)]
-pub struct other_allocator_std___tree_node_base_void_ptr__ {
-    #[offset(0)]
-    data_: (),
-}
-impl other_allocator_std___tree_node_base_void_ptr__ {}
-impl Default for other_allocator_std___tree_node_base_void_ptr__ {
-    fn default() -> Self {
-        {
-            other_allocator_std___tree_node_base_void_ptr__ {
                 data_: unimplemented!(),
             }
         }
@@ -610,46 +525,6 @@ pub trait other_allocator_MoveOnly_Impl {
     }
 }
 impl other_allocator_MoveOnly_Impl for Ptr<other_allocator_MoveOnly_> {}
-pub trait other_allocator_std___tree_node_MoveOnly__void_ptr__Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___tree_node_MoveOnly__void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<std___tree_node_MoveOnly__void_ptr_>, mut s: ()) {
-        unimplemented!()
-    }
-    fn select_on_container_copy_construction(
-        &self,
-    ) -> other_allocator_std___tree_node_MoveOnly__void_ptr__ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___tree_node_MoveOnly__void_ptr__Impl
-    for Ptr<other_allocator_std___tree_node_MoveOnly__void_ptr__>
-{
-}
-pub trait other_allocator_std___tree_node_base_void_ptr__Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<std___tree_node_base_void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<std___tree_node_base_void_ptr_>, mut s: ()) {
-        unimplemented!()
-    }
-    fn select_on_container_copy_construction(
-        &self,
-    ) -> other_allocator_std___tree_node_base_void_ptr__ {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-}
-impl other_allocator_std___tree_node_base_void_ptr__Impl
-    for Ptr<other_allocator_std___tree_node_base_void_ptr__>
-{
-}
 pub trait some_comp_MoveOnly_Impl {
     fn operator_call(&self, _a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
         unimplemented!()
@@ -707,72 +582,6 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), moved).write(0_());
         field!((*self), converted).write(0_());
     }
-}
-pub trait test_allocator_std___tree_node_MoveOnly__void_ptr__Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<std___tree_node_MoveOnly__void_ptr_> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<std___tree_node_MoveOnly__void_ptr_> {
-        unimplemented!()
-    }
-    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<std___tree_node_MoveOnly__void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<std___tree_node_MoveOnly__void_ptr_>, mut s: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<std___tree_node_MoveOnly__void_ptr_>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___tree_node_MoveOnly__void_ptr__Impl
-    for Ptr<test_allocator_std___tree_node_MoveOnly__void_ptr__>
-{
-}
-pub trait test_allocator_std___tree_node_base_void_ptr__Impl {
-    fn destructor(&self) {
-        unimplemented!()
-    }
-    fn address_11(&self, x: ()) -> Ptr<std___tree_node_base_void_ptr_> {
-        unimplemented!()
-    }
-    fn address_12(&self, x: ()) -> Ptr<std___tree_node_base_void_ptr_> {
-        unimplemented!()
-    }
-    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<std___tree_node_base_void_ptr_> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<std___tree_node_base_void_ptr_>, mut s: ()) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> () {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<std___tree_node_base_void_ptr_>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> () {
-        unimplemented!()
-    }
-    fn get_id(&self) -> () {
-        unimplemented!()
-    }
-}
-impl test_allocator_std___tree_node_base_void_ptr__Impl
-    for Ptr<test_allocator_std___tree_node_base_void_ptr__>
-{
 }
 pub trait test_allocator_void_Impl {
     fn destructor(&self);

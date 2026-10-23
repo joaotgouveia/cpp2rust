@@ -38,11 +38,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_basic,
-            1_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 1_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -51,11 +47,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_basic,
-            1_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 1_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -64,11 +56,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_basic,
-            2_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 2_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -77,11 +65,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_basic,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -90,11 +74,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -103,11 +83,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -116,11 +92,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_extended,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -129,11 +101,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_extended,
-            2_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 2_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -142,11 +110,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -155,11 +119,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -168,11 +128,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_ECMAScript,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -181,11 +137,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_ECMAScript,
-            2_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 2_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -194,11 +146,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_awk,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -207,11 +155,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_awk,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -220,11 +164,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_awk,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -233,11 +173,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_awk,
-            2_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 2_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -246,11 +182,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_grep,
-            1_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 1_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -259,11 +191,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_grep,
-            1_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 1_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -272,11 +200,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_grep,
-            2_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 2_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -285,11 +209,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_grep,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -298,11 +218,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_egrep,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -311,11 +227,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_egrep,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -324,11 +236,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_egrep,
-            0_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 0_())
     });
     ({
         let _p: Value<()> = Rc::new(RefCell::new(
@@ -337,11 +245,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 None,
             ),
         ));
-        test_0(
-            _p.as_pointer(),
-            std_regex_constants_syntax_option_type_egrep,
-            2_(),
-        )
+        test_0(_p.as_pointer(), unimplemented!(), 2_())
     });
     return 0_();
 }

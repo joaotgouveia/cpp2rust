@@ -29,12 +29,12 @@ pub fn test_0() -> () {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        (*t.borrow_mut()) = (*t0.borrow()).clone();
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(2_()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
     }
     {
@@ -44,7 +44,7 @@ pub fn test_0() -> () {
             std_tuple_int__char_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
         }));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
         unimplemented!();
     }
@@ -61,7 +61,7 @@ pub fn test_0() -> () {
             { x2.as_pointer() },
             { (y2.as_pointer()).reinterpret_cast::<()>() },
         )));
-        unimplemented!();
+        (*t.borrow_mut()) = (*t2.borrow()).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -102,7 +102,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             )
         }));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();

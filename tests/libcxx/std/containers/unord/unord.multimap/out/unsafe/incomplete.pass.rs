@@ -37,45 +37,6 @@ pub struct complete_type_allocator_std_pair_const_int__int__ {}
 impl complete_type_allocator_std_pair_const_int__int__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__ {}
-impl complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__ {
-    pub unsafe fn new() -> Self {
-        let mut this = Self {};
-        this
-    }
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std___hash_node_std___hash_value_type_int__int___void_ptr_,
-        mut n: (),
-    ) {
-        unimplemented!();
-    }
-}
-impl Default
-    for complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__
-{
-    fn default() -> Self {
-        unsafe {
-            complete_type_allocator_std___hash_node_std___hash_value_type_int__int___void_ptr__::new(
-            )
-        }
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__
-{}
-impl complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ { }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_
-{}
-impl complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_ { pub unsafe fn new ( ) -> Self { let mut this = Self { } ;
- this } pub unsafe fn deallocate ( &mut self , mut p : *mut *mut std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_ , mut n : () , ) { unimplemented!()  ;
- } }
-impl Default for complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_ { fn default() -> Self { unsafe { complete_type_allocator_std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr__ptr_ :: new ( )  } } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct MyHash_A_ {}
 impl MyHash_A_ {
     pub unsafe fn new() -> Self {

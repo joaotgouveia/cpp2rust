@@ -18,7 +18,11 @@ pub struct S {
 impl S {
     pub fn new() -> Self {
         let __this: Value<S> = Rc::new(RefCell::new(Self {
-            a: unimplemented!(),
+            a: {
+                let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
+                let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
+                std_pair_int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+            },
             k: (({ get_0(field_ptr!(this, a)) }).read()),
         }));
         let this: Ptr<S> = __this.as_pointer();
@@ -31,7 +35,11 @@ impl Default for S {
     }
 }
 pub fn getP_1() -> () {
-    return unimplemented!();
+    return {
+        let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
+        let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
+        std_pair_int__int_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+    };
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -54,7 +62,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new({
+            let __tmp_4: Value<()> = Rc::new(RefCell::new(3_()));
+            let __tmp_5: Value<()> = Rc::new(RefCell::new(4_()));
+            std_pair_int__short_::new({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
+        }));
         unimplemented!();
         unimplemented!();
         ({ get_2(p.as_pointer()) }).write(5_());

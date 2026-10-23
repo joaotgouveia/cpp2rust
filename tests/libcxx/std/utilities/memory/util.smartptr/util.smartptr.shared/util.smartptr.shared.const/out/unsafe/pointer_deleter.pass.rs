@@ -366,7 +366,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             });
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: () = std_shared_ptr_int_::new_4(
+            { unimplemented!() },
+            { lambda_unsafe!(Generic, {}, |mut _a0: ()| {}) },
+            None,
+        );
     }
     {
         let mut a: () = std_shared_ptr_chararrarr_::new_1(

@@ -303,35 +303,10 @@ impl __gnu_test_uneq_allocator_base {
         return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_map_14));
     }
 }
-impl __gnu_test_default_init_allocator_std_pair_const_int__int__ {
-    pub unsafe fn new_1(
-        a: *const __gnu_test_default_init_allocator_std__Rb_tree_node_std_pair_const_int__int___,
-    ) -> Self {
-        let mut this = Self { state: (*a).state };
-        this
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_default_init_allocator_std_pair_const_int__int__ {
     pub state: (),
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct __gnu_test_default_init_allocator_std__Rb_tree_node_std_pair_const_int__int___ {
-    pub state: (),
-}
-impl __gnu_test_default_init_allocator_std__Rb_tree_node_std_pair_const_int__int___ {
-    pub unsafe fn deallocate(
-        &mut self,
-        mut p: *mut std__Rb_tree_node_std_pair_const_int__int__,
-        mut n: (),
-    ) {
-        (unsafe {
-            (unimplemented!() as std___new_allocator_std__Rb_tree_node_std_pair_const_int__int___)
-                .deallocate(p, n)
-        });
-    }
 }
 pub unsafe fn operator_eq_15(
     mut _a0: __gnu_test_NullablePointer_void_,

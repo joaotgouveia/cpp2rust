@@ -114,20 +114,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sz: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([2_(), 4_(), 3_()])));
     let st: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([19_(), 4_(), 1_()])));
-    let __rhs = (*elem!(v2.as_pointer(), {
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_gslice::new_1({ 3_() }, { __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    })
-    .upgrade()
-    .deref())
-    .clone();
-    elem!(v1.as_pointer(), {
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_gslice::new_1({ 3_() }, { __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-    })
-    .write(__rhs);
+    let __rhs = (*elem!(v2.as_pointer(), unimplemented!()).upgrade().deref()).clone();
+    unimplemented!() = __rhs;
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -43,78 +43,22 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_4(
-    mut x : min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-pub unsafe fn operator_ne_5(
-    mut x : min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return !(unsafe {
-        let _x: min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  = x ;
-        operator_eq_4(_x, y)
-    });
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_4(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_6(
-    mut x : min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return ((x.ptr_) == (y.ptr_));
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { ptr_ : *mut std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , }
-impl min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn new_2 ( mut _a0 : () , ) -> Self { let mut this = Self { ptr_ : std::ptr::null_mut() , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn operator_arrow ( &self , ) -> *mut std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { return self . ptr_   ;
- } pub unsafe fn pointer_to ( t : *mut std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ , ) -> min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-impl std::cmp::PartialEq for min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_6(self.clone(), other.clone()) }}}
-impl std::cmp::Eq for min_pointer_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____
-{}
-impl min_allocator_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0____ { pub unsafe fn allocate ( &mut self , mut n : () , ) -> min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } pub unsafe fn deallocate ( &mut self , mut p : min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ , mut n : () , ) { unimplemented!()  ;
- } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_allocator_std___forward_begin_node_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____
-{}
-pub static mut t1_7: std::cell::LazyCell<[(); 8]> =
+pub static mut t1_4: std::cell::LazyCell<[(); 8]> =
     std::cell::LazyCell::new(|| unsafe { [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_()] });
-pub static mut t2_8: std::cell::LazyCell<[(); 3]> =
+pub static mut t2_5: std::cell::LazyCell<[(); 3]> =
     std::cell::LazyCell::new(|| unsafe { [10_(), 11_(), 12_()] });
-pub static mut size_t1_9: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut size_t1_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     (((unimplemented!() as usize - unimplemented!() as usize) / ::std::mem::size_of::<()>()) as ()
         as ())
 });
-pub static mut size_t2_10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut size_t2_7: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     (((unimplemented!() as usize - unimplemented!() as usize) / ::std::mem::size_of::<()>()) as ()
         as ())
 });
-pub unsafe fn testd_11(c: *const (), mut p: (), mut f: ()) {
+pub unsafe fn testd_8(c: *const (), mut p: (), mut f: ()) {
     let mut i: () = unimplemented!();
     let mut n1: () = 0_();
     'loop_: while ((n1) < (p)) {
@@ -132,7 +76,7 @@ pub unsafe fn testd_11(c: *const (), mut p: (), mut f: ()) {
             unimplemented!()
         };
     }
-    'loop_: while ((n1) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+    'loop_: while ((n1) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
         unimplemented!();
         {
             n1.prefix_inc();
@@ -141,7 +85,7 @@ pub unsafe fn testd_11(c: *const (), mut p: (), mut f: ()) {
     }
     unimplemented!();
 }
-pub unsafe fn testd_12(c: *const (), mut p: (), mut f: ()) {
+pub unsafe fn testd_9(c: *const (), mut p: (), mut f: ()) {
     let mut i: () = unimplemented!();
     let mut n1: () = 0_();
     'loop_: while ((n1) < (p)) {
@@ -159,7 +103,7 @@ pub unsafe fn testd_12(c: *const (), mut p: (), mut f: ()) {
             unimplemented!()
         };
     }
-    'loop_: while ((n1) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+    'loop_: while ((n1) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
         unimplemented!();
         {
             n1.prefix_inc();
@@ -168,12 +112,12 @@ pub unsafe fn testd_12(c: *const (), mut p: (), mut f: ()) {
     }
     unimplemented!();
 }
-pub unsafe fn tests_13(c: *const (), mut p: (), mut f: ()) {
+pub unsafe fn tests_10(c: *const (), mut p: (), mut f: ()) {
     let mut i: () = unimplemented!();
     let mut n: () = 0_();
     if ((p) == (f)) || ((p) == ((f) + (1_()))) {
         n = 0_();
-        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -206,7 +150,7 @@ pub unsafe fn tests_13(c: *const (), mut p: (), mut f: ()) {
             };
         }
         n = ((f) + (1_()));
-        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -239,7 +183,7 @@ pub unsafe fn tests_13(c: *const (), mut p: (), mut f: ()) {
             };
         }
         n = p;
-        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -249,12 +193,12 @@ pub unsafe fn tests_13(c: *const (), mut p: (), mut f: ()) {
     }
     unimplemented!();
 }
-pub unsafe fn tests_14(c: *const (), mut p: (), mut f: ()) {
+pub unsafe fn tests_11(c: *const (), mut p: (), mut f: ()) {
     let mut i: () = unimplemented!();
     let mut n: () = 0_();
     if ((p) == (f)) || ((p) == ((f) + (1_()))) {
         n = 0_();
-        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -287,7 +231,7 @@ pub unsafe fn tests_14(c: *const (), mut p: (), mut f: ()) {
             };
         }
         n = ((f) + (1_()));
-        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -320,7 +264,7 @@ pub unsafe fn tests_14(c: *const (), mut p: (), mut f: ()) {
             };
         }
         n = p;
-        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+        'loop_: while ((n) < (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
             unimplemented!();
             {
                 n.prefix_inc();
@@ -330,14 +274,14 @@ pub unsafe fn tests_14(c: *const (), mut p: (), mut f: ()) {
     }
     unimplemented!();
 }
-pub unsafe fn test_15() -> () {
+pub unsafe fn test_12() -> () {
     {
         let mut f: () = 0_();
         'loop_: while ((f)
-            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t2_10)) - (1_())))
+            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t2_7)) - (1_())))
         {
             let mut p: () = 0_();
-            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
                 let mut c1: () =
                     std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
                         unimplemented!()
@@ -347,23 +291,23 @@ pub unsafe fn test_15() -> () {
                         unimplemented!()
                     });
                 unimplemented!();
-                (unsafe { testd_11(&c1, p, f) });
+                (unsafe { testd_8(&c1, p, f) });
                 p.prefix_inc();
             }
             f.prefix_inc();
         }
         let mut f: () = 0_();
         'loop_: while ((f)
-            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9)) - (1_())))
+            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6)) - (1_())))
         {
             let mut p: () = 0_();
-            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
                 let mut c1: () =
                     std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
                         unimplemented!()
                     });
                 unimplemented!();
-                (unsafe { tests_13(&c1, p, f) });
+                (unsafe { tests_10(&c1, p, f) });
                 p.prefix_inc();
             }
             f.prefix_inc();
@@ -372,10 +316,10 @@ pub unsafe fn test_15() -> () {
     {
         let mut f: () = 0_();
         'loop_: while ((f)
-            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t2_10)) - (1_())))
+            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t2_7)) - (1_())))
         {
             let mut p: () = 0_();
-            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
                 let mut c1: () =
                     std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
                         unimplemented!()
@@ -385,23 +329,23 @@ pub unsafe fn test_15() -> () {
                         unimplemented!()
                     });
                 unimplemented!();
-                (unsafe { testd_12(&c1, p, f) });
+                (unsafe { testd_9(&c1, p, f) });
                 p.prefix_inc();
             }
             f.prefix_inc();
         }
         let mut f: () = 0_();
         'loop_: while ((f)
-            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9)) - (1_())))
+            <= ((*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6)) - (1_())))
         {
             let mut p: () = 0_();
-            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_9))) {
+            'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
                 let mut c1: () =
                     std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
                         unimplemented!()
                     });
                 unimplemented!();
-                (unsafe { tests_14(&c1, p, f) });
+                (unsafe { tests_11(&c1, p, f) });
                 p.prefix_inc();
             }
             f.prefix_inc();
@@ -433,8 +377,8 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const alloc_count_1);
     std::cell::LazyCell::force(&*&raw const dealloc_count_2);
     std::cell::LazyCell::force(&*&raw const disable_default_constructor_3);
-    std::cell::LazyCell::force(&*&raw const t1_7);
-    std::cell::LazyCell::force(&*&raw const t2_8);
-    std::cell::LazyCell::force(&*&raw const size_t1_9);
-    std::cell::LazyCell::force(&*&raw const size_t2_10);
+    std::cell::LazyCell::force(&*&raw const t1_4);
+    std::cell::LazyCell::force(&*&raw const t2_5);
+    std::cell::LazyCell::force(&*&raw const size_t1_6);
+    std::cell::LazyCell::force(&*&raw const size_t2_7);
 }

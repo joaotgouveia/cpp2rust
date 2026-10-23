@@ -23,8 +23,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut v1: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
-    let mut v2: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
+    let mut v1: () = unimplemented!();
+    let mut v2: () = unimplemented!();
     let mut ztv: () = (unsafe {
         let mut ___fun: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_transform_0))(

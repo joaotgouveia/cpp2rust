@@ -31,7 +31,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         Ptr::alloc(32_())
     })));
     unimplemented!();
-    unimplemented!().write(3_());
+    (*p.borrow_mut()).write(3_());
     unimplemented!();
     return 0_();
 }
