@@ -163,6 +163,14 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
         llvm::isa_and_nonnull<clang::CXXMethodDecl>(op->getDirectCallee())) {
       operands[0] = operands[0]->IgnoreParenImpCasts();
     }
+    // A rule written as a0++ has no parameter for the dummy int of a postfix
+    // operator.
+    auto postfix = (op->getOperator() == clang::OO_PlusPlus ||
+                    op->getOperator() == clang::OO_MinusMinus) &&
+                   operands.size() == 2;
+    if (postfix && arity == 1) {
+      operands.pop_back();
+    }
   } else if (auto call = llvm::dyn_cast<clang::CXXMemberCallExpr>(expr)) {
     operands.push_back(getObject(
         ctx, call->getImplicitObjectArgument()->IgnoreParenImpCasts()));
