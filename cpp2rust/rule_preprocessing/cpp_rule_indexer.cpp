@@ -5,6 +5,7 @@
 #include <clang/AST/Decl.h>
 #include <clang/AST/DeclTemplate.h>
 #include <clang/AST/ExprCXX.h>
+#include <clang/AST/RecursiveASTVisitor.h>
 #include <clang/Basic/TokenKinds.h>
 #include <clang/Frontend/ASTUnit.h>
 #include <clang/Tooling/Tooling.h>
@@ -21,6 +22,7 @@
 #include <cstdlib>
 #include <filesystem>
 #include <format>
+#include <set>
 #include <string>
 #include <unordered_set>
 #include <vector>
@@ -130,19 +132,70 @@ RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias) {
   } else if (auto var = llvm::dyn_cast<clang::VarDecl>(rule)) {
     AddRequiredClasses(var->getType(), required);
   }
-  if (auto tmpl = llvm::dyn_cast<clang::TemplateDecl>(rule)) {
-    for (auto param : *tmpl->getTemplateParameters()) {
-      if (auto type = llvm::dyn_cast<clang::TemplateTypeParmDecl>(param);
-          type && type->hasDefaultArgument()) {
-        AddRequiredClasses(type->getDefaultArgument().getArgument().getAsType(),
-                           required);
-      } else if (auto value =
-                     llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
-        AddRequiredClasses(value->getType(), required);
+  return required;
+}
+
+// Names the rule's template parameters (its SFINAE) refer to. They come from
+// library headers the user may not include, and the rule only parses where
+// they are declared.
+class DeclaredNames : public clang::RecursiveASTVisitor<DeclaredNames> {
+public:
+  bool VisitTemplateSpecializationType(clang::TemplateSpecializationType *type) {
+    Add(type->getTemplateName().getAsTemplateDecl());
+    return true;
+  }
+
+  bool VisitTypedefType(clang::TypedefType *type) {
+    Add(type->getDecl());
+    return true;
+  }
+
+  bool VisitTagType(clang::TagType *type) {
+    Add(type->getDecl());
+    return true;
+  }
+
+  bool VisitDeclRefExpr(clang::DeclRefExpr *expr) {
+    Add(expr->getDecl());
+    return true;
+  }
+
+  bool VisitOverloadExpr(clang::OverloadExpr *expr) {
+    for (auto decl : expr->decls()) {
+      Add(decl->getUnderlyingDecl());
+    }
+    return true;
+  }
+
+  std::set<std::string> names;
+
+private:
+  void Add(const clang::NamedDecl *decl) {
+    if (!decl || !decl->getIdentifier() ||
+        !llvm::isa<clang::NamespaceDecl>(
+            decl->getDeclContext()->getRedeclContext())) {
+      return;
+    }
+    std::string name;
+    for (auto scope = decl->getDeclContext(); !scope->isTranslationUnit();
+         scope = scope->getParent()) {
+      if (auto ns = llvm::dyn_cast<clang::NamespaceDecl>(scope);
+          ns && !ns->isInline() && !ns->isAnonymousNamespace()) {
+        name = ns->getName().str() + "::" + name;
       }
     }
+    names.insert(name + decl->getName().str());
   }
-  return required;
+};
+
+std::set<std::string> TemplateParameterNames(const clang::Decl *rule) {
+  DeclaredNames visitor;
+  if (auto tmpl = llvm::dyn_cast<clang::TemplateDecl>(rule)) {
+    for (auto param : *tmpl->getTemplateParameters()) {
+      visitor.TraverseDecl(param);
+    }
+  }
+  return std::move(visitor.names);
 }
 
 std::string ClassOfParameters(const clang::Decl *rule) {
@@ -324,6 +377,9 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
     } else if (auto required = RequiredClasses(decl, alias);
                !required.empty()) {
       rule["requires"] = llvm::json::Array(required);
+    }
+    if (auto declared = TemplateParameterNames(decl); !declared.empty()) {
+      rule["declares"] = llvm::json::Array(declared);
     }
     AddRule(rules, key, std::move(rule));
   }

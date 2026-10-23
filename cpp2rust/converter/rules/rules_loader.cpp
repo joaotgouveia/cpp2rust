@@ -23,6 +23,7 @@
 #include <format>
 #include <ranges>
 #include <string>
+#include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
@@ -348,9 +349,35 @@ unsigned CxxStandard(const clang::LangOptions &opts) {
   return 11;
 }
 
+// Whether a qualified name (std::__is_val_expr) is declared in the TU.
+bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
+  clang::DeclContext *scope = sema.Context.getTranslationUnitDecl();
+  llvm::SmallVector<llvm::StringRef, 4> parts;
+  name.split(parts, "::");
+  for (auto [i, part] : llvm::enumerate(parts)) {
+    bool last = i + 1 == parts.size();
+    clang::LookupResult result(
+        sema, &sema.Context.Idents.get(part), clang::SourceLocation(),
+        last ? clang::Sema::LookupOrdinaryName
+             : clang::Sema::LookupNamespaceName);
+    if (!sema.LookupQualifiedName(result, scope) || result.empty()) {
+      return false;
+    }
+    if (last) {
+      return true;
+    }
+    auto ns = result.getAsSingle<clang::NamespaceDecl>();
+    if (!ns) {
+      return false;
+    }
+    scope = ns;
+  }
+  return false;
+}
+
 std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
-                               const clang::LangOptions &opts,
-                               llvm::StringRef library) {
+                               clang::Sema &sema, llvm::StringRef library) {
+  const auto &opts = sema.getLangOpts();
   bool is_cxx = opts.CPlusPlus;
   const auto &index = is_cxx ? CxxIndex() : CIndex();
   unsigned standard = is_cxx ? CxxStandard(opts) : 0;
@@ -363,6 +390,7 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
     out += "namespace cpp2rust_rules {\n" + common->str() + "}\n";
   }
   auto rules = index.getObject("rules");
+  std::unordered_map<std::string, bool> declared_names;
   std::vector<std::string> candidates(keys.begin(), keys.end());
   candidates.push_back(kAnyClassKey);
   for (const auto &key : candidates) {
@@ -386,6 +414,18 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
           required &&
           !llvm::all_of(*required, [&](const llvm::json::Value &key) {
             return keys.contains(key.getAsString()->str());
+          })) {
+        continue;
+      }
+      if (auto declared = rule->getArray("declares");
+          declared &&
+          !llvm::all_of(*declared, [&](const llvm::json::Value &name) {
+            auto text = name.getAsString()->str();
+            auto [it, inserted] = declared_names.try_emplace(text, false);
+            if (inserted) {
+              it->second = IsDeclared(sema, text);
+            }
+            return it->second;
           })) {
         continue;
       }
@@ -594,7 +634,7 @@ void PragmaHandler::HandlePragma(clang::Preprocessor &PP,
   collector.TraverseDecl(ctx.getTranslationUnitDecl());
 
   auto text = BuildRulesEpilogue(
-      keys, ctx.getLangOpts(),
+      keys, CI_.getSema(),
       PP.isMacroDefined("_LIBCPP_VERSION") ? "libcxx" : "libstdcxx");
   log() << "rules loaded for this translation unit:\n" << text;
   auto rules_file = src_mgr.createFileID(
