@@ -959,16 +959,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         (unsafe {
-            let mut _x: () = std_deque_int__std_allocator_int__::new_1({ ab.as_mut_ptr() }, { an });
+            let mut _x: () = unimplemented!();
             test_27(&mut _x)
         });
     }
     {
-        let mut v: () = {
-            let mut __tmp_0: () = 2_();
-            let mut __tmp_1: test_allocator_int_ = test_allocator_int_::new_2({ 5_() });
-            std_deque_int__test_allocator_int__::new_1({ 3_() }, { &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -976,13 +972,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut v: () = {
-            let mut __tmp_2: () = 2_();
-            let mut __tmp_3: other_allocator_int_ = other_allocator_int_::new_2({ 5_() });
-            std_deque_int__other_allocator_int__::new_1({ 3_() }, { &mut __tmp_2 }, {
-                &mut __tmp_3
-            })
-        };
+        let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1012,16 +1002,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         (unsafe {
-            let mut _x: () = std_deque_int__min_allocator_int__::new_1({ ab.as_mut_ptr() }, { an });
+            let mut _x: () = unimplemented!();
             test_28(&mut _x)
         });
     }
     {
-        let mut v: () = {
-            let mut __tmp_4: () = 2_();
-            let mut __tmp_5: min_allocator_int_ = <min_allocator_int_>::default();
-            std_deque_int__min_allocator_int__::new_2({ 3_() }, { &mut __tmp_4 }, { &mut __tmp_5 })
-        };
+        let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         unimplemented!();

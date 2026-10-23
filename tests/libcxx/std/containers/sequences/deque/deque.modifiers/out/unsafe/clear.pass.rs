@@ -473,8 +473,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let t: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-        let mut c: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -492,8 +491,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let t: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-        let mut c: () =
-            std_deque_int__min_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

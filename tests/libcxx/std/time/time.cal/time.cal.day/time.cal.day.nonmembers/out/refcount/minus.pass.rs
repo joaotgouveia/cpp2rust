@@ -19,13 +19,13 @@ pub struct test_macros_detail_is_same_std_chrono_duration_int__std_ratio_86400__
 {}
 pub fn test_2() -> () {
     let dy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) <= 10_()) {
+    let mut i: () = 0_();
+    'loop_: while (i <= 10_()) {
         let d1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let off: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
     return true;
 }

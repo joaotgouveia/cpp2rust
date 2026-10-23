@@ -26,8 +26,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a: [(); 3] = [3_(), 5_(), 7_()];
         let mut sseq: () = unimplemented!();
-        let mut e1: () =
-            std_linear_congruential_engine_unsigned_int__5__7__11_::new_1({ &mut sseq });
+        let mut e1: () = unimplemented!();
         let mut e2: () = unimplemented!();
         unimplemented!();
     }

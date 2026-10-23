@@ -238,11 +238,7 @@ pub fn is_contiguous_container_asan_correct_19(_a0: Ptr<()>) -> () {
     return true;
 }
 pub fn test_20(mut n: (), x: Ptr<()>, a: Ptr<()>) {
-    let c: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-        { n },
-        { (x).clone() },
-        { (a).clone() },
-    )));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -255,11 +251,7 @@ pub fn test_20(mut n: (), x: Ptr<()>, a: Ptr<()>) {
     }
 }
 pub fn test_21(mut n: (), x: Ptr<()>, a: Ptr<min_allocator_int_>) {
-    let c: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1(
-        { n },
-        { (x).clone() },
-        { (a).clone() },
-    )));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -272,11 +264,7 @@ pub fn test_21(mut n: (), x: Ptr<()>, a: Ptr<min_allocator_int_>) {
     }
 }
 pub fn test_22(mut n: (), x: Ptr<()>, a: Ptr<safe_allocator_int_>) {
-    let c: Value<()> = Rc::new(RefCell::new(std_vector_int__safe_allocator_int__::new_1(
-        { n },
-        { (x).clone() },
-        { (a).clone() },
-    )));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

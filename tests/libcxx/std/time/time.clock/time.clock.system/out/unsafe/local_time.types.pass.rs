@@ -63,8 +63,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    let mut s0 : () = std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long_long__std_ratio_1__1___ :: new_1 ( { & d0 } , )  ;
-    let mut s1 : () = std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long_long__std_ratio_1__1___ :: new_1 ( { & d1 } , )  ;
+    let mut s0: () = unimplemented!();
+    let mut s1: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();

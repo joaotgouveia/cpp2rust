@@ -1047,21 +1047,25 @@ pub unsafe fn operator_add_37(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_38(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_39(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_39(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_40(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_40(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_41(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_41(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_42(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1145,7 +1149,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_41(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_42(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1155,7 +1159,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_40(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_41(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1223,25 +1227,25 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn operator_eq_42(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_eq_43(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_43(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ne_44(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_44(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_lt_45(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_45(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_le_46(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_46(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_gt_47(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_47(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ge_48(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_48(_a0: *const MoveOnly, _a1: *const MoveOnly) -> () {
+pub unsafe fn operator_cmp_49(_a0: *const MoveOnly, _a1: *const MoveOnly) -> () {
     {
         let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
         if !(unimplemented!()) {
@@ -1283,7 +1287,7 @@ impl MoveOnly {
 }
 impl std::cmp::Ord for MoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_48(self as *const MoveOnly, other as *const MoveOnly) }
+        unsafe { operator_cmp_49(self as *const MoveOnly, other as *const MoveOnly) }
     }
 }
 impl std::cmp::PartialOrd for MoveOnly {
@@ -1293,7 +1297,7 @@ impl std::cmp::PartialOrd for MoveOnly {
 }
 impl std::cmp::PartialEq for MoveOnly {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_42(self as *const MoveOnly, other as *const MoveOnly) }
+        unsafe { operator_eq_43(self as *const MoveOnly, other as *const MoveOnly) }
     }
 }
 impl std::cmp::Eq for MoveOnly {}
@@ -1302,25 +1306,25 @@ impl Default for MoveOnly {
         unsafe { MoveOnly::new(None) }
     }
 }
-pub unsafe fn operator_eq_49(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_eq_50(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_50(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ne_51(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_51(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_lt_52(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_52(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_le_53(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_53(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_gt_54(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_54(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ge_55(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_55(_a0: *const TrivialMoveOnly, _a1: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_cmp_56(_a0: *const TrivialMoveOnly, _a1: *const TrivialMoveOnly) -> () {
     {
         let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
         if !(unimplemented!()) {
@@ -1363,7 +1367,7 @@ impl TrivialMoveOnly {
 impl std::cmp::Ord for TrivialMoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            operator_cmp_55(
+            operator_cmp_56(
                 self as *const TrivialMoveOnly,
                 other as *const TrivialMoveOnly,
             )
@@ -1378,7 +1382,7 @@ impl std::cmp::PartialOrd for TrivialMoveOnly {
 impl std::cmp::PartialEq for TrivialMoveOnly {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_49(
+            operator_eq_50(
                 self as *const TrivialMoveOnly,
                 other as *const TrivialMoveOnly,
             )
@@ -1391,39 +1395,7 @@ impl Default for TrivialMoveOnly {
         unsafe { TrivialMoveOnly::new(None) }
     }
 }
-pub static mut LargeN_56: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 128_() });
-pub unsafe fn test_57() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let mut work: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
+pub static mut LargeN_57: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 128_() });
 pub unsafe fn test_58() -> () {
     let mut orig: [(); 7] = [
         unimplemented!(),
@@ -1457,128 +1429,7 @@ pub unsafe fn test_58() -> () {
     return true;
 }
 pub unsafe fn test_59() -> () {
-    let mut orig: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut orig: [(); 7] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -1589,133 +1440,12 @@ pub unsafe fn test_59() -> () {
     ];
     let mut x: () = 1_();
     let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
+    'loop_: while ((i) < (7_())) {
         x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
         orig[(i) as usize] = (x).wrapping_rem(1000_());
         i.prefix_inc();
     }
-    let mut work: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut work: [(); 7] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -2005,70 +1735,6 @@ pub unsafe fn test_60() -> () {
     return true;
 }
 pub unsafe fn test_61() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let mut work: [MoveOnly; 7] = [
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_62() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let mut work: [MoveOnly; 7] = [
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_63() -> () {
     let mut orig: [(); 128] = [
         unimplemented!(),
         unimplemented!(),
@@ -2206,128 +1872,192 @@ pub unsafe fn test_63() -> () {
         orig[(i) as usize] = (x).wrapping_rem(1000_());
         i.prefix_inc();
     }
-    let mut work: [MoveOnly; 128] = [
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
+    let mut work: [(); 128] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_62() -> () {
+    let mut orig: [(); 7] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (7_())) {
+        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
+        orig[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
+    let mut work: [MoveOnly; 7] = [
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_63() -> () {
+    let mut orig: [(); 7] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (7_())) {
+        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
+        orig[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
+    let mut work: [MoveOnly; 7] = [
         MoveOnly::new(None),
         MoveOnly::new(None),
         MoveOnly::new(None),
@@ -2617,344 +2347,6 @@ pub unsafe fn test_64() -> () {
     return true;
 }
 pub unsafe fn test_65() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let mut work: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_66() -> () {
-    let mut orig: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let mut work: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_67() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let mut work: [MoveOnly; 7] = [
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_68() -> () {
     let mut orig: [(); 128] = [
         unimplemented!(),
         unimplemented!(),
@@ -3228,8 +2620,8 @@ pub unsafe fn test_68() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointers_69() -> () {
-    let mut data: [(); 17] = [
+pub unsafe fn test_66() -> () {
+    let mut orig: [(); 7] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -3237,60 +2629,602 @@ pub unsafe fn test_pointers_69() -> () {
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut orig: [*mut (); 17] = [
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
     ];
     let mut x: () = 1_();
     let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+    'loop_: while ((i) < (7_())) {
+        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
+        orig[(i) as usize] = (x).wrapping_rem(1000_());
         i.prefix_inc();
     }
-    let mut work: [*mut (); 17] = [
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
+    let mut work: [(); 7] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_67() -> () {
+    let mut orig: [(); 128] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (128_())) {
+        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
+        orig[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
+    let mut work: [(); 128] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_68() -> () {
+    let mut orig: [(); 7] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (7_())) {
+        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
+        orig[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
+    let mut work: [MoveOnly; 7] = [
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_69() -> () {
+    let mut orig: [(); 128] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (128_())) {
+        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
+        orig[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
+    let mut work: [MoveOnly; 128] = [
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
     ];
     unimplemented!();
     unimplemented!();
@@ -3369,7 +3303,7 @@ pub unsafe fn test_pointers_70() -> () {
     return true;
 }
 pub unsafe fn test_pointers_71() -> () {
-    let data: [(); 17] = [
+    let mut data: [(); 17] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -3388,49 +3322,49 @@ pub unsafe fn test_pointers_71() -> () {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut orig: [*const (); 17] = [
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
+    let mut orig: [*mut (); 17] = [
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
     ];
     let mut x: () = 1_();
     let mut i: () = 0_();
     'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&data[((x).wrapping_rem(258_())) as usize] as *const ());
+        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
         i.prefix_inc();
     }
-    let mut work: [*const (); 17] = [
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
-        std::ptr::null(),
+    let mut work: [*mut (); 17] = [
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
     ];
     unimplemented!();
     unimplemented!();
@@ -3509,7 +3443,7 @@ pub unsafe fn test_pointers_72() -> () {
     return true;
 }
 pub unsafe fn test_pointers_73() -> () {
-    let mut data: [(); 17] = [
+    let data: [(); 17] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -3528,49 +3462,49 @@ pub unsafe fn test_pointers_73() -> () {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut orig: [*mut (); 17] = [
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
+    let mut orig: [*const (); 17] = [
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
     ];
     let mut x: () = 1_();
     let mut i: () = 0_();
     'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+        orig[(i) as usize] = (&data[((x).wrapping_rem(258_())) as usize] as *const ());
         i.prefix_inc();
     }
-    let mut work: [*mut (); 17] = [
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
-        std::ptr::null_mut(),
+    let mut work: [*const (); 17] = [
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
+        std::ptr::null(),
     ];
     unimplemented!();
     unimplemented!();
@@ -3719,6 +3653,76 @@ pub unsafe fn test_pointers_75() -> () {
     return true;
 }
 pub unsafe fn test_pointers_76() -> () {
+    let mut data: [(); 17] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut orig: [*mut (); 17] = [
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+    ];
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (17_())) {
+        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+        i.prefix_inc();
+    }
+    let mut work: [*mut (); 17] = [
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+        std::ptr::null_mut(),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_pointers_77() -> () {
     let data: [(); 17] = [
         unimplemented!(),
         unimplemented!(),
@@ -3788,7 +3792,7 @@ pub unsafe fn test_pointers_76() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_pointers_77() -> () {
+pub unsafe fn test_pointers_78() -> () {
     let mut data: [(); 17] = [
         unimplemented!(),
         unimplemented!(),
@@ -3874,7 +3878,6 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_57() });
     (unsafe { test_58() });
     (unsafe { test_59() });
     (unsafe { test_60() });
@@ -3882,19 +3885,20 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_62() });
     (unsafe { test_63() });
     (unsafe { test_64() });
-    (unsafe { test_pointers_69() });
+    (unsafe { test_65() });
     (unsafe { test_pointers_70() });
     (unsafe { test_pointers_71() });
     (unsafe { test_pointers_72() });
     (unsafe { test_pointers_73() });
     (unsafe { test_pointers_74() });
-    (unsafe { test_65() });
+    (unsafe { test_pointers_75() });
     (unsafe { test_66() });
     (unsafe { test_67() });
     (unsafe { test_68() });
-    (unsafe { test_pointers_75() });
+    (unsafe { test_69() });
     (unsafe { test_pointers_76() });
     (unsafe { test_pointers_77() });
+    (unsafe { test_pointers_78() });
     const _: () = assert!(true, "test<7, int, int*>()");;
     const _: () = assert!(true, "test<7, int, random_access_iterator<int*>>()");;
     const _: () = assert!(true, "test<7, int, contiguous_iterator<int*>>()");;
@@ -3943,5 +3947,5 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const LargeN_56);
+    std::cell::LazyCell::force(&*&raw const LargeN_57);
 }

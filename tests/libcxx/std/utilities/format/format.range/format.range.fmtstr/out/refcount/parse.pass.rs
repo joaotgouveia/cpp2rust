@@ -111,10 +111,7 @@ pub fn get_format_types_1() -> () {
     return unimplemented!();
 }
 pub fn get_temp_file_name_2() -> () {
-    let mut Name: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"libcxx.XXXXXX") },
-        None,
-    );
+    let mut Name: () = unimplemented!();
     let mut FD: () = ({ mkstemp_3((unimplemented!())) });
     if (FD == -1_()) {
         ({ perror_4(Ptr::<()>::from_string_literal(b"mkstemp")) });

@@ -13,10 +13,7 @@ pub unsafe fn operator_rem_assign_0(mut d: (), mut _a1: NotARep) -> () {
     return d;
 }
 pub unsafe fn test_constexpr_1() -> () {
-    let mut s: () = {
-        let mut __tmp_0: () = 11_();
-        std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_0 })
-    };
+    let mut s: () = unimplemented!();
     unimplemented!();
     return ((unimplemented!()) == (2_()));
 }
@@ -37,22 +34,16 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut us: () = {
-            let mut __tmp_1: () = 11_();
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ &mut __tmp_1 })
-        };
+        let mut us: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "test_constexpr()");;
     {
-        let mut d: () = {
-            let mut __tmp_2: () = 5_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_2 })
-        };
+        let mut d: () = unimplemented!();
         let mut n: NotARep = <NotARep>::default();
         (unsafe {
-            let _d: () = d.clone();
+            let _d: () = unimplemented!();
             operator_rem_assign_0(_d, n)
         });
         unimplemented!();

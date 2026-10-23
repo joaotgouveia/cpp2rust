@@ -48,7 +48,7 @@ pub unsafe fn test_basic_2() {
     }
     {
         let d: Deleter = Deleter::new();
-        let mut p: () = std_unique_ptr_int__const_Deleter_ref_::new({ unimplemented!() }, { &d });
+        let mut p: () = unimplemented!();
         let cp: *const () = &p;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -57,7 +57,7 @@ pub unsafe fn test_basic_2() {
     }
     {
         let mut d: Deleter = Deleter::new();
-        let mut p: () = std_unique_ptr_int__Deleter_ref_::new({ unimplemented!() }, { &mut d });
+        let mut p: () = unimplemented!();
         let cp: *const () = &p;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -76,8 +76,7 @@ pub unsafe fn test_basic_3() {
     }
     {
         let d: Deleter = Deleter::new();
-        let mut p: () =
-            std_unique_ptr_intarrarr__const_Deleter_ref_::new({ Default::default() }, { &d });
+        let mut p: () = unimplemented!();
         let cp: *const () = &p;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -86,8 +85,7 @@ pub unsafe fn test_basic_3() {
     }
     {
         let mut d: Deleter = Deleter::new();
-        let mut p: () =
-            std_unique_ptr_intarrarr__Deleter_ref_::new({ Default::default() }, { &mut d });
+        let mut p: () = unimplemented!();
         let cp: *const () = &p;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

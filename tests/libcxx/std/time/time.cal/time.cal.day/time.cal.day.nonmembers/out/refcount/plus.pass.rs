@@ -13,14 +13,14 @@ pub const anon_0_value: anon_0 = 1;
 pub struct test_macros_detail_is_same_std_chrono_day__std_chrono_day_ {}
 pub fn test_1() -> () {
     let dy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) <= 10_()) {
+    let mut i: () = 0_();
+    'loop_: while (i <= 10_()) {
         let d1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let d2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
     return true;
 }

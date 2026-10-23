@@ -481,75 +481,18 @@ pub unsafe fn test_15(mut s0: ()) {
 }
 pub unsafe fn test_string_16(a: *const ()) {
     (unsafe { test_13(unimplemented!()) });
-    (unsafe {
-        test_13({
-            let mut __tmp_0: () = unimplemented!();
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                { Some(&mut __tmp_0) },
-            )
-        })
-    });
-    (unsafe {
-        test_13({
-            let mut __tmp_1: () = unimplemented!();
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                        .as_ptr()
-                },
-                { Some(&mut __tmp_1) },
-            )
-        })
-    });
+    (unsafe { test_13(unimplemented!()) });
+    (unsafe { test_13(unimplemented!()) });
 }
 pub unsafe fn test_string_17(a: *const test_allocator_char_) {
     (unsafe { test_14(unimplemented!()) });
-    (unsafe {
-        test_14({
-            let mut __tmp_2: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                { &mut __tmp_2 },
-            )
-        })
-    });
-    (unsafe {
-        test_14({
-            let mut __tmp_3: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                {
-                    c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                        .as_ptr()
-                },
-                { &mut __tmp_3 },
-            )
-        })
-    });
+    (unsafe { test_14(unimplemented!()) });
+    (unsafe { test_14(unimplemented!()) });
 }
 pub unsafe fn test_string_18(a: *const min_allocator_char_) {
     (unsafe { test_15(unimplemented!()) });
-    (unsafe {
-        test_15({
-            let mut __tmp_4: min_allocator_char_ = (*a);
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                { &mut __tmp_4 },
-            )
-        })
-    });
-    (unsafe {
-        test_15({
-            let mut __tmp_5: min_allocator_char_ = (*a);
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                {
-                    c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                        .as_ptr()
-                },
-                { &mut __tmp_5 },
-            )
-        })
-    });
+    (unsafe { test_15(unimplemented!()) });
+    (unsafe { test_15(unimplemented!()) });
 }
 pub unsafe fn test_19() -> () {
     (unsafe {

@@ -193,124 +193,44 @@ pub struct transparent_equal_final {}
 pub fn test_transparent_equal_range_5(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
     let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___k: Value<SearchedType_int_> =
-                Rc::new(RefCell::new(SearchedType_int_::new({ 1_() }, {
-                    (conversions.as_pointer())
-                })));
-            (*c.borrow()) . equal_range_72_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ ( ___k.as_pointer() , )
-        }),
-    ));
+    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*iters.borrow_mut()) = ({
-        let ___k: Value<SearchedType_int_> =
-            Rc::new(RefCell::new(SearchedType_int_::new({ 2_() }, {
-                (conversions.as_pointer())
-            })));
-        (*c.borrow()) . equal_range_72_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ ( ___k.as_pointer() , )
-    });
+    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = ({
-        let ___k: Value<SearchedType_int_> =
-            Rc::new(RefCell::new(SearchedType_int_::new({ 3_() }, {
-                (conversions.as_pointer())
-            })));
-        (*c.borrow()) . equal_range_72_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ ( ___k.as_pointer() , )
-    });
+    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_transparent_equal_range_6(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
     let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___k: Value<SearchedType_int_> =
-                Rc::new(RefCell::new(SearchedType_int_::new({ 1_() }, {
-                    (conversions.as_pointer())
-                })));
-            (*c.borrow()) . equal_range_73_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ ( ___k.as_pointer() , )
-        }),
-    ));
+    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*iters.borrow_mut()) = ({
-        let ___k: Value<SearchedType_int_> =
-            Rc::new(RefCell::new(SearchedType_int_::new({ 2_() }, {
-                (conversions.as_pointer())
-            })));
-        (*c.borrow()) . equal_range_73_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ ( ___k.as_pointer() , )
-    });
+    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = ({
-        let ___k: Value<SearchedType_int_> =
-            Rc::new(RefCell::new(SearchedType_int_::new({ 3_() }, {
-                (conversions.as_pointer())
-            })));
-        (*c.borrow()) . equal_range_73_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ ( ___k.as_pointer() , )
-    });
+    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_transparent_equal_range_7(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
     let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___k: Value<SearchedType_int_> =
-                Rc::new(RefCell::new(SearchedType_int_::new({ 1_() }, {
-                    (conversions.as_pointer())
-                })));
-            (*c.borrow()) . equal_range_72_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ ( ___k.as_pointer() , )
-        }),
-    ));
+    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*iters.borrow_mut()) = ({
-        let ___k: Value<SearchedType_int_> =
-            Rc::new(RefCell::new(SearchedType_int_::new({ 2_() }, {
-                (conversions.as_pointer())
-            })));
-        (*c.borrow()) . equal_range_72_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ ( ___k.as_pointer() , )
-    });
+    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = ({
-        let ___k: Value<SearchedType_int_> =
-            Rc::new(RefCell::new(SearchedType_int_::new({ 3_() }, {
-                (conversions.as_pointer())
-            })));
-        (*c.borrow()) . equal_range_72_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ ( ___k.as_pointer() , )
-    });
+    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_transparent_equal_range_8(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
     let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___k: Value<SearchedType_int_> =
-                Rc::new(RefCell::new(SearchedType_int_::new({ 1_() }, {
-                    (conversions.as_pointer())
-                })));
-            (*c.borrow()) . equal_range_73_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ ( ___k.as_pointer() , )
-        }),
-    ));
+    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*iters.borrow_mut()) = ({
-        let ___k: Value<SearchedType_int_> =
-            Rc::new(RefCell::new(SearchedType_int_::new({ 2_() }, {
-                (conversions.as_pointer())
-            })));
-        (*c.borrow()) . equal_range_73_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ ( ___k.as_pointer() , )
-    });
+    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = ({
-        let ___k: Value<SearchedType_int_> =
-            Rc::new(RefCell::new(SearchedType_int_::new({ 3_() }, {
-                (conversions.as_pointer())
-            })));
-        (*c.borrow()) . equal_range_73_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ ( ___k.as_pointer() , )
-    });
+    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
 }

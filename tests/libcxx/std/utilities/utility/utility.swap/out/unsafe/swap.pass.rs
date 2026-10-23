@@ -107,7 +107,7 @@ pub unsafe fn can_swap_6() -> () {
 pub unsafe fn test_swap_constexpr_7() -> () {
     let mut i: () = 1_();
     let mut j: () = 2_();
-    unimplemented!();
+    (unsafe { swap_8(&mut i, &mut j) });
     return ((i) == (2_())) && ((j) == (1_()));
 }
 pub fn main() {
@@ -129,7 +129,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut i: () = 1_();
         let mut j: () = 2_();
-        unimplemented!();
+        (unsafe { swap_8(&mut i, &mut j) });
         unimplemented!();
         unimplemented!();
     }

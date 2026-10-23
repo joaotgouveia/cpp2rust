@@ -489,12 +489,7 @@ pub unsafe fn is_string_asan_correct_16(_a0: *const ()) -> () {
 }
 pub unsafe fn test_17(mut sv: (), mut pos: (), mut n: ()) {
     if ((pos) <= (unimplemented!())) {
-        let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { &sv },
-            { (pos as ()) },
-            { (n as ()) },
-            None,
-        );
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut rlen: () = (*unimplemented!());
@@ -507,12 +502,7 @@ pub unsafe fn test_17(mut sv: (), mut pos: (), mut n: ()) {
 }
 pub unsafe fn test_18(mut sv: (), mut pos: (), mut n: ()) {
     if ((pos) <= (unimplemented!())) {
-        let mut s2: () = std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-            { &sv },
-            { pos },
-            { n },
-            None,
-        );
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut rlen: () = (*unimplemented!());
@@ -525,12 +515,7 @@ pub unsafe fn test_18(mut sv: (), mut pos: (), mut n: ()) {
 }
 pub unsafe fn test_19(mut sv: (), mut pos: (), mut n: ()) {
     if ((pos) <= (unimplemented!())) {
-        let mut s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { &sv },
-            { (pos as ()) },
-            { (n as ()) },
-            None,
-        );
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut rlen: () = (*unimplemented!());
@@ -543,12 +528,7 @@ pub unsafe fn test_19(mut sv: (), mut pos: (), mut n: ()) {
 }
 pub unsafe fn test_20(mut sv: (), mut pos: (), mut n: ()) {
     if ((pos) <= (unimplemented!())) {
-        let mut s2: () = std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-            { &sv },
-            { (pos as ()) },
-            { (n as ()) },
-            None,
-        );
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut rlen: () = (*unimplemented!());
@@ -561,12 +541,7 @@ pub unsafe fn test_20(mut sv: (), mut pos: (), mut n: ()) {
 }
 pub unsafe fn test_21(mut sv: (), mut pos: (), mut n: (), a: *const ()) {
     if ((pos) <= (unimplemented!())) {
-        let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { &sv },
-            { (pos as ()) },
-            { (n as ()) },
-            { Some(a) },
-        );
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut rlen: () = (*unimplemented!());
@@ -578,12 +553,7 @@ pub unsafe fn test_21(mut sv: (), mut pos: (), mut n: (), a: *const ()) {
 }
 pub unsafe fn test_22(mut sv: (), mut pos: (), mut n: (), a: *const test_allocator_char_) {
     if ((pos) <= (unimplemented!())) {
-        let mut s2: () = std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-            { &sv },
-            { pos },
-            { n },
-            { Some(a) },
-        );
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut rlen: () = (*unimplemented!());
@@ -595,12 +565,7 @@ pub unsafe fn test_22(mut sv: (), mut pos: (), mut n: (), a: *const test_allocat
 }
 pub unsafe fn test_23(mut sv: (), mut pos: (), mut n: (), a: *const min_allocator_char_) {
     if ((pos) <= (unimplemented!())) {
-        let mut s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { &sv },
-            { (pos as ()) },
-            { (n as ()) },
-            { Some(a) },
-        );
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut rlen: () = (*unimplemented!());
@@ -612,12 +577,7 @@ pub unsafe fn test_23(mut sv: (), mut pos: (), mut n: (), a: *const min_allocato
 }
 pub unsafe fn test_24(mut sv: (), mut pos: (), mut n: (), a: *const safe_allocator_char_) {
     if ((pos) <= (unimplemented!())) {
-        let mut s2: () = std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-            { &sv },
-            { (pos as ()) },
-            { (n as ()) },
-            { Some(a) },
-        );
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut rlen: () = (*unimplemented!());
@@ -877,29 +837,16 @@ pub unsafe fn test_29() -> () {
         test_string_28(&mut _a)
     });
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"ABCD".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let mut sv: () = unimplemented!();
         let mut arr: [(); 5] = std::mem::transmute(*b"IJKL\0");
         let mut s1: () = unimplemented!();
         unimplemented!();
         let mut s2: () = unimplemented!();
         unimplemented!();
-        let mut s3: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { &sv },
-            { 0_() },
-            { (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_30)) },
-            None,
-        );
+        let mut s3: () = unimplemented!();
         unimplemented!();
-        let mut s4: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { &sv },
-            { 0_() },
-            { 3_() },
-            None,
-        );
+        let mut s4: () = unimplemented!();
         unimplemented!();
         let mut s5: () = unimplemented!();
         unimplemented!();

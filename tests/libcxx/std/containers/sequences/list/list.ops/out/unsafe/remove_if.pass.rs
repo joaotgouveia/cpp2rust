@@ -110,9 +110,7 @@ pub unsafe fn test_7() -> () {
     {
         let mut a1: [(); 4] = [1_(), 2_(), 3_(), 4_()];
         let mut a2: [(); 2] = [3_(), 4_()];
-        let mut c: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((4_()) as isize)
-        });
+        let mut c: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_6) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
@@ -127,9 +125,7 @@ pub unsafe fn test_7() -> () {
     {
         let mut a1: [(); 4] = [1_(), 2_(), 3_(), 4_()];
         let mut a2: [(); 2] = [1_(), 3_()];
-        let mut c: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((4_()) as isize)
-        });
+        let mut c: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(even_5) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
@@ -143,10 +139,7 @@ pub unsafe fn test_7() -> () {
     {
         let mut a1: [(); 7] = [1_(), 2_(), 1_(), 3_(), 5_(), 8_(), 11_()];
         let mut a2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
-        let mut c: () =
-            std_list_PredLWG526__std_allocator_PredLWG526__::new_1({ a1.as_mut_ptr() }, {
-                a1.as_mut_ptr().offset((7_()) as isize)
-            });
+        let mut c: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -159,9 +152,7 @@ pub unsafe fn test_7() -> () {
     {
         let mut a1: [(); 4] = [1_(), 2_(), 3_(), 4_()];
         let mut a2: [(); 2] = [3_(), 4_()];
-        let mut c: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((4_()) as isize)
-        });
+        let mut c: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_6) });
         let _dtor_cp = ScopedDestructorUnsafe::new(

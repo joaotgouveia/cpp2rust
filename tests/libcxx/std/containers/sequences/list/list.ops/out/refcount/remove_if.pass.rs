@@ -105,10 +105,7 @@ pub fn test_7() -> () {
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
         let a2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 4_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((4_()) as isize) },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(g_6)
@@ -123,10 +120,7 @@ pub fn test_7() -> () {
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
         let a2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((4_()) as isize) },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(even_5)
@@ -148,12 +142,7 @@ pub fn test_7() -> () {
             11_(),
         ])));
         let mut a2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
-        let c: Value<()> = Rc::new(RefCell::new(
-            std_list_PredLWG526__std_allocator_PredLWG526__::new_1(
-                { (a1.as_pointer() as Ptr<()>) },
-                { (a1.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-            ),
-        ));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -166,10 +155,7 @@ pub fn test_7() -> () {
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
         let a2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 4_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((4_()) as isize) },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(g_6)

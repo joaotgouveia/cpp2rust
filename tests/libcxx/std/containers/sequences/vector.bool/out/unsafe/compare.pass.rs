@@ -487,41 +487,27 @@ pub unsafe fn test_12() -> () {
     {
         let mut items1: [(); 3] = [false, true, false];
         let mut items2: [(); 3] = [false, true, true];
-        let v1: () = std_vector_bool__std_allocator_bool__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let v2: () = std_vector_bool__std_allocator_bool__::new_1({ items2.as_mut_ptr() }, {
-            items2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut items1: [(); 3] = [false, false, false];
         let mut items2: [(); 3] = [false, true, false];
-        let v1: () = std_vector_bool__std_allocator_bool__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let v2: () = std_vector_bool__std_allocator_bool__::new_1({ items2.as_mut_ptr() }, {
-            items2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut items1: [(); 2] = [false, true];
         let mut items2: [(); 3] = [false, true, false];
-        let v1: () = std_vector_bool__std_allocator_bool__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((2_()) as isize)
-        });
-        let v2: () = std_vector_bool__std_allocator_bool__::new_1({ items2.as_mut_ptr() }, {
-            items2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut items: [(); 3] = [false, true, false];
-        let v1: () = std_vector_bool__std_allocator_bool__::new_1({ items.as_mut_ptr() }, {
-            items.as_mut_ptr().offset((3_()) as isize)
-        });
+        let v1: () = unimplemented!();
         let v2: () = unimplemented!();
         unimplemented!();
     }

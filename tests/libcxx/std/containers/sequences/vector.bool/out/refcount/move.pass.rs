@@ -1325,7 +1325,7 @@ pub trait test_allocator_bool_Impl {
     fn address_12(&self, x: ()) -> Ptr<()> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
+    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
         unimplemented!()
     }
     fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {

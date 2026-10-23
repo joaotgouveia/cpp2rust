@@ -196,61 +196,26 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let a1: Value<()> = Rc::new(RefCell::new(A1_int_::new({ Some(3_()) })));
-        let a2: Value<()> = Rc::new(RefCell::new(std_scoped_allocator_adaptor_A1_int__::new_1(
-            { a1.as_pointer() },
-        )));
+        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let a1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ Some(4_()) })));
-            let __tmp_1: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
-            std_scoped_allocator_adaptor_A1_int___A2_int__::new_1({ __tmp_0.as_pointer() }, {
-                __tmp_1.as_pointer()
-            })
-        }));
-        let a2: Value<()> = Rc::new(RefCell::new((*a1.borrow()).clone()));
+        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let a1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ Some(4_()) })));
-            let __tmp_3: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
-            let __tmp_4: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ Some(6_()) })));
-            std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
-                { __tmp_2.as_pointer() },
-                { __tmp_3.as_pointer() },
-                { __tmp_4.as_pointer() },
-            )
-        }));
-        let a2: Value<()> = Rc::new(RefCell::new((*a1.borrow()).clone()));
+        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let a1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ Some(4_()) })));
-            let __tmp_6: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
-            let __tmp_7: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ Some(6_()) })));
-            std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
-                { __tmp_5.as_pointer() },
-                { __tmp_6.as_pointer() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
-        let a2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ Some(4_()) })));
-            let __tmp_9: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
-            let __tmp_10: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ Some(5_()) })));
-            std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
-                { __tmp_8.as_pointer() },
-                { __tmp_9.as_pointer() },
-                { __tmp_10.as_pointer() },
-            )
-        }));
+        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

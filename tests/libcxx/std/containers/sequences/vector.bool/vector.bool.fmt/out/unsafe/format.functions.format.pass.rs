@@ -188,34 +188,14 @@ pub unsafe fn fmt_invalid_types_14(mut valid: ()) -> () {
     });
     return unimplemented!();
 }
-static mut result_2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 1_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 2_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { 1_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { 2_() },
-        { (':' as ()) },
-        None,
-    )
-});
+static mut result_2: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_4: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_6: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_8: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn fmt_invalid_types_15(mut valid: ()) -> () {
     return (unsafe { fmt_invalid_types_10(unimplemented!()) });
 }
@@ -2822,10 +2802,7 @@ pub unsafe fn test_concat_message_38(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2839,10 +2816,7 @@ pub unsafe fn test_concat_message_39(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2856,10 +2830,7 @@ pub unsafe fn test_concat_message_40(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2873,10 +2844,7 @@ pub unsafe fn test_concat_message_41(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2890,10 +2858,7 @@ pub unsafe fn test_concat_message_42(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2907,10 +2872,7 @@ pub unsafe fn test_concat_message_43(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2924,10 +2886,7 @@ pub unsafe fn test_concat_message_44(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2941,10 +2900,7 @@ pub unsafe fn test_concat_message_45(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2958,10 +2914,7 @@ pub unsafe fn test_concat_message_46(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2975,10 +2928,7 @@ pub unsafe fn test_concat_message_47(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -2992,10 +2942,7 @@ pub unsafe fn test_concat_message_48(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }
@@ -3009,10 +2956,7 @@ pub unsafe fn test_concat_message_49(
     args_6: *mut (),
 ) -> () {
     {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"Message discarded since it can\'t be streamed to std::cerr.\n".as_ptr() },
-            None,
-        );
+        return unimplemented!();
     }
     panic!("ub: non-void function does not return a value")
 }

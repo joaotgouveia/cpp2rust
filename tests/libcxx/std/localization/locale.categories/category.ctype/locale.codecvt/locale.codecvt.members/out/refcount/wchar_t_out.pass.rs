@@ -30,16 +30,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
     {
-        let mut from: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut to: () = unimplemented!();
         let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut from_next: Ptr<()> = Ptr::<()>::null();
@@ -51,16 +42,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let mut from: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let mut from: () = unimplemented!();
         unimplemented!().write(('\0' as ()));
         let mut to: () = unimplemented!();
         let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -73,16 +55,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let mut from: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut to: () = unimplemented!();
         let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut from_next: Ptr<()> = Ptr::<()>::null();

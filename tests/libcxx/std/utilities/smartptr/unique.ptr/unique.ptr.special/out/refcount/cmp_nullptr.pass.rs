@@ -383,9 +383,7 @@ pub fn test_18() -> () {
         ({ AssertOrderReturn_4() });
         ({ AssertOrderReturn_5() });
     }
-    let p1: Value<()> = Rc::new(RefCell::new(
-        std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(1_()) }),
-    ));
+    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     {
@@ -413,11 +411,7 @@ pub fn test_18() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let p3: Value<()> = Rc::new(RefCell::new(
-        std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new_1({
-            Ptr::alloc_array((0..1_()).map(|_| unimplemented!()).collect::<Box<[()]>>())
-        }),
-    ));
+    let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     {

@@ -51,40 +51,40 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut opt: () = 5_();
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut opt: () = <A>::default();
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let mut __tmp_0: () = 5_();
         let source: *const () = &mut __tmp_0;
-        let mut opt: () = std_optional_int_::new_1({ source });
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
         let mut source: *const () = std::ptr::null();
-        let mut opt: () = std_optional_const_int_ptr_::new_1({ &mut source });
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
         let mut source: [(); 3] = [1_(), 2_(), 3_()];
-        let mut opt: () = std_optional_int_ptr_::new_1({ &mut source });
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut source: () = ('A' as ());
+        let mut source: () = unimplemented!();
         let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();

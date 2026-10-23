@@ -30,9 +30,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_()])));
         let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let e1: Value<()> = Rc::new(RefCell::new(
-            std_linear_congruential_engine_unsigned_int__5__7__11_::new_1({ sseq.as_pointer() }),
-        ));
+        let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

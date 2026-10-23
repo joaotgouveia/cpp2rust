@@ -455,14 +455,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut mr: () = unimplemented!();
             let mut mr2: () = unimplemented!();
-            let mut pks: () = {
-                let mut __tmp_0: () = unimplemented!();
-                std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { &mut __tmp_0 },
-                )
-            };
+            let mut pks: () = unimplemented!();
             let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -472,14 +465,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut mr: () = unimplemented!();
             let mut mr2: () = unimplemented!();
-            let mut pks: () = {
-                let mut __tmp_1: () = unimplemented!();
-                std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { &mut __tmp_1 },
-                )
-            };
+            let mut pks: () = unimplemented!();
             let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -494,14 +480,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut mr: () = unimplemented!();
             let mut mr2: () = unimplemented!();
-            let mut pks: () = {
-                let mut __tmp_2: () = unimplemented!();
-                std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { &mut __tmp_2 },
-                )
-            };
+            let mut pks: () = unimplemented!();
             let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -511,14 +490,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut mr: () = unimplemented!();
             let mut mr2: () = unimplemented!();
-            let mut pks: () = {
-                let mut __tmp_3: () = unimplemented!();
-                std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { &mut __tmp_3 },
-                )
-            };
+            let mut pks: () = unimplemented!();
             let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();

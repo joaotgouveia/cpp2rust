@@ -658,32 +658,15 @@ pub unsafe fn test_6() -> () {
         let mut i2: () = 2_();
         let mut j1: () = 3_();
         let mut j2: () = 4_();
-        let mut p1: () =
-            std_pair_int_refref__int_refref_::new({ &mut *(&raw mut i1).cast::<()>() }, {
-                &mut *(&raw mut i2).cast::<()>()
-            });
-        let p2: () =
-            std_pair_long_refref__long_refref_::new({ &mut *(&raw mut j1).cast::<()>() }, {
-                &mut *(&raw mut j2).cast::<()>()
-            });
+        let mut p1: () = unimplemented!();
+        let p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut p1: () = {
-            let mut __tmp_0: () = 1_();
-            let mut __tmp_1: () = 2_();
-            std_pair_ConstMoveAssign__ConstMoveAssign_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        let p2: () = {
-            let mut __tmp_2: () = 3_();
-            let mut __tmp_3: () = 4_();
-            std_pair_AssignableFrom_ConstMoveAssign___AssignableFrom_ConstMoveAssign__::new(
-                { &mut __tmp_2 },
-                { &mut __tmp_3 },
-            )
-        };
+        let mut p1: () = unimplemented!();
+        let p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

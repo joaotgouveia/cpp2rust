@@ -72,13 +72,13 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut a: () = std_function_R____::new_1({ Some(f0_4) });
+        let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut b: () = std_function_R____::new_1({ (Some(f0_4)) });
+        let mut b: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut c: () = std_function_R____::new_1({ Some(f0_4) });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut d: () = std_function_R____::new_1({ (Some(f0_4)) });
+        let mut d: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
     {

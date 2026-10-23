@@ -141,7 +141,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut v1: () = unimplemented!();
     let v2: () = unimplemented!();
     let mut ia: () = unimplemented!();
-    unimplemented!() = (v2[(ia) as usize]).clone();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

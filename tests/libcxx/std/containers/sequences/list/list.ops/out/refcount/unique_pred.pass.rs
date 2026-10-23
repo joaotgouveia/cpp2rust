@@ -95,16 +95,7 @@ pub fn test_6() -> () {
             3_(),
         ])));
         let a2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([2_(), 1_(), 4_(), 3_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            {
-                (a1.as_pointer() as Ptr<()>).offset(
-                    ((::std::mem::size_of::<[(); 9]>() as ())
-                        .wrapping_div((::std::mem::size_of::<()>() as ())))
-                        as isize,
-                )
-            },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -122,12 +113,7 @@ pub fn test_6() -> () {
             11_(),
         ])));
         let mut a2: [(); 6] = [1_(), 2_(), 3_(), 5_(), 2_(), 11_()];
-        let c: Value<()> = Rc::new(RefCell::new(
-            std_list_PredLWG526__std_allocator_PredLWG526__::new_1(
-                { (a1.as_pointer() as Ptr<()>) },
-                { (a1.as_pointer() as Ptr<()>).offset((9_()) as isize) },
-            ),
-        ));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -150,16 +136,7 @@ pub fn test_6() -> () {
             3_(),
         ])));
         let a2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([2_(), 1_(), 4_(), 3_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            {
-                (a1.as_pointer() as Ptr<()>).offset(
-                    ((::std::mem::size_of::<[(); 9]>() as ())
-                        .wrapping_div((::std::mem::size_of::<()>() as ())))
-                        as isize,
-                )
-            },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

@@ -692,11 +692,7 @@ const _: () = assert!(
 );
 pub fn test_6() -> () {
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_MutableCopy__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(
             std_tuple_ConvertibleFrom_MutableCopy___ConvertibleFrom_int__::new({ p.as_pointer() }),
         ));
@@ -704,11 +700,7 @@ pub fn test_6() -> () {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_MutableCopy__int_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(
             std_tuple_ExplicitConstructibleFrom_MutableCopy___ExplicitConstructibleFrom_int__::new(
                 { p.as_pointer() },

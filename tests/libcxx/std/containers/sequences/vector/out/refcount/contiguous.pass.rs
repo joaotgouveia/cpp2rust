@@ -460,16 +460,7 @@ pub fn tests_19() -> () {
             test_contiguous_16(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(9_f64));
-                let __tmp_1: Value<test_allocator_double_> =
-                    Rc::new(RefCell::new(test_allocator_double_::new_1({ 5_() })));
-                std_vector_double__test_allocator_double__::new_1(
-                    { 7_() },
-                    { __tmp_0.as_pointer() },
-                    { __tmp_1.as_pointer() },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_16(_c.as_pointer())
         });
     }
@@ -479,16 +470,7 @@ pub fn tests_19() -> () {
             test_contiguous_17(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(11_f64));
-                let __tmp_3: Value<min_allocator_double_> =
-                    Rc::new(RefCell::new(<min_allocator_double_>::default()));
-                std_vector_double__min_allocator_double__::new_1(
-                    { 9_() },
-                    { __tmp_2.as_pointer() },
-                    { __tmp_3.as_pointer() },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_17(_c.as_pointer())
         });
     }
@@ -498,16 +480,7 @@ pub fn tests_19() -> () {
             test_contiguous_18(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_4: Value<()> = Rc::new(RefCell::new(11_f64));
-                let __tmp_5: Value<safe_allocator_double_> =
-                    Rc::new(RefCell::new(safe_allocator_double_::new()));
-                std_vector_double__safe_allocator_double__::new_1(
-                    { 9_() },
-                    { __tmp_4.as_pointer() },
-                    { __tmp_5.as_pointer() },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_18(_c.as_pointer())
         });
     }

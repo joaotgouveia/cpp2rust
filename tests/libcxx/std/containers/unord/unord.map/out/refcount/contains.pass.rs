@@ -23,10 +23,7 @@ pub fn test_0(mut bad: (), args_1: (), args_2: (), args_3: (), args_4: ()) {
         (pairs.as_pointer() as Ptr<()>).offset((4_()) as isize),
     ) {
         let p: Ptr<()> = (p).clone();
-        ({
-            let ___x: Ptr<()> = (p).clone();
-            (*map.borrow()).insert_45_struct_std_pair_char__int__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<()>),
@@ -54,10 +51,7 @@ pub fn test_1(mut bad: (), args_1: (), args_2: (), args_3: (), args_4: ()) {
         (pairs.as_pointer() as Ptr<()>).offset((4_()) as isize),
     ) {
         let p: Ptr<()> = (p).clone();
-        ({
-            let ___x: Ptr<()> = (p).clone();
-            (*map.borrow()).insert_45_struct_std_pair_char__char__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<()>),
@@ -85,10 +79,7 @@ pub fn test_2(mut bad: (), args_1: (), args_2: (), args_3: (), args_4: ()) {
         (pairs.as_pointer() as Ptr<()>).offset((4_()) as isize),
     ) {
         let p: Ptr<()> = (p).clone();
-        ({
-            let ___x: Ptr<()> = (p).clone();
-            (*map.borrow()).insert_45_struct_std_pair_int__struct_E__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<()>),
@@ -116,10 +107,7 @@ pub fn test_3(mut bad: (), args_1: (), args_2: (), args_3: (), args_4: ()) {
         (pairs.as_pointer() as Ptr<()>).offset((4_()) as isize),
     ) {
         let p: Ptr<()> = (p).clone();
-        ({
-            let ___x: Ptr<()> = (p).clone();
-            (*map.borrow()).insert_45_struct_std_pair_char__int__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<()>),
@@ -147,10 +135,7 @@ pub fn test_4(mut bad: (), args_1: (), args_2: (), args_3: (), args_4: ()) {
         (pairs.as_pointer() as Ptr<()>).offset((4_()) as isize),
     ) {
         let p: Ptr<()> = (p).clone();
-        ({
-            let ___x: Ptr<()> = (p).clone();
-            (*map.borrow()).insert_45_struct_std_pair_char__char__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<()>),
@@ -178,10 +163,7 @@ pub fn test_5(mut bad: (), args_1: (), args_2: (), args_3: (), args_4: ()) {
         (pairs.as_pointer() as Ptr<()>).offset((4_()) as isize),
     ) {
         let p: Ptr<()> = (p).clone();
-        ({
-            let ___x: Ptr<()> = (p).clone();
-            (*map.borrow()).insert_45_struct_std_pair_int__struct_E__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<()>),

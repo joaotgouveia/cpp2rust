@@ -100,14 +100,14 @@ pub unsafe fn test_basic_18() {
     {
         {
             let mut x: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
-            let mut ptr: () = std_unique_ptr_char__std_default_delete_char__::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
-            let ptr: () = std_unique_ptr_char__std_default_delete_char__::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -116,17 +116,13 @@ pub unsafe fn test_basic_18() {
     {
         {
             let mut x: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
-            let mut ptr: () = std_unique_ptr_const_char__std_default_delete_const_char__::new({
-                (x).cast_const()
-            });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
-            let ptr: () = std_unique_ptr_const_char__std_default_delete_const_char__::new({
-                (x).cast_const()
-            });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -135,8 +131,7 @@ pub unsafe fn test_basic_18() {
         {
             let mut x: *mut () =
                 Box::leak((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_chararrarr__std_default_delete_chararrarr__::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -144,7 +139,7 @@ pub unsafe fn test_basic_18() {
         {
             let mut x: *mut () =
                 Box::leak((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-            let ptr: () = std_unique_ptr_chararrarr__std_default_delete_chararrarr__::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -154,16 +149,14 @@ pub unsafe fn test_basic_18() {
         {
             let mut x: *mut () =
                 Box::leak((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_const_chararrarr__std_default_delete_const_chararrarr__::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut () =
                 Box::leak((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_const_chararrarr__std_default_delete_const_chararrarr__::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -173,14 +166,14 @@ pub unsafe fn test_basic_19() {
     {
         {
             let mut x: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
-            let mut ptr: () = std_unique_ptr_int__std_default_delete_int__::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
-            let ptr: () = std_unique_ptr_int__std_default_delete_int__::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -189,15 +182,13 @@ pub unsafe fn test_basic_19() {
     {
         {
             let mut x: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
-            let mut ptr: () =
-                std_unique_ptr_const_int__std_default_delete_const_int__::new({ (x).cast_const() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
-            let ptr: () =
-                std_unique_ptr_const_int__std_default_delete_const_int__::new({ (x).cast_const() });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -206,7 +197,7 @@ pub unsafe fn test_basic_19() {
         {
             let mut x: *mut () =
                 Box::leak((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-            let mut ptr: () = std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -214,7 +205,7 @@ pub unsafe fn test_basic_19() {
         {
             let mut x: *mut () =
                 Box::leak((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-            let ptr: () = std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -224,16 +215,14 @@ pub unsafe fn test_basic_19() {
         {
             let mut x: *mut () =
                 Box::leak((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_const_intarrarr__std_default_delete_const_intarrarr__::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut () =
                 Box::leak((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_const_intarrarr__std_default_delete_const_intarrarr__::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -244,8 +233,7 @@ pub unsafe fn test_basic_20() {
         {
             let mut x: *mut WithSize_1_ =
                 (Box::leak(Box::new(<WithSize_1_>::default())) as *mut WithSize_1_);
-            let mut ptr: () =
-                std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -253,7 +241,7 @@ pub unsafe fn test_basic_20() {
         {
             let mut x: *mut WithSize_1_ =
                 (Box::leak(Box::new(<WithSize_1_>::default())) as *mut WithSize_1_);
-            let ptr: () = std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -263,20 +251,14 @@ pub unsafe fn test_basic_20() {
         {
             let mut x: *mut WithSize_1_ =
                 (Box::leak(Box::new(<WithSize_1_>::default())) as *mut WithSize_1_);
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___::new({
-                    (x).cast_const()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut WithSize_1_ =
                 (Box::leak(Box::new(<WithSize_1_>::default())) as *mut WithSize_1_);
-            let ptr: () =
-                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___::new({
-                    (x).cast_const()
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -289,10 +271,7 @@ pub unsafe fn test_basic_20() {
                     .collect::<Box<[WithSize_1_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_WithSize_1_arrarr__std_default_delete_WithSize_1_arrarr__::new({
-                    x
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -304,10 +283,7 @@ pub unsafe fn test_basic_20() {
                     .collect::<Box<[WithSize_1_]>>(),
             )
             .as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_WithSize_1_arrarr__std_default_delete_WithSize_1_arrarr__::new({
-                    x
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -321,7 +297,7 @@ pub unsafe fn test_basic_20() {
                     .collect::<Box<[WithSize_1_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr : () = std_unique_ptr_const_WithSize_1_arrarr__std_default_delete_const_WithSize_1_arrarr__ :: new ( { x } , )  ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -332,7 +308,7 @@ pub unsafe fn test_basic_20() {
                     .collect::<Box<[WithSize_1_]>>(),
             )
             .as_mut_ptr();
-            let ptr : () = std_unique_ptr_const_WithSize_1_arrarr__std_default_delete_const_WithSize_1_arrarr__ :: new ( { x } , )  ;
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -343,8 +319,7 @@ pub unsafe fn test_basic_21() {
         {
             let mut x: *mut WithSize_2_ =
                 (Box::leak(Box::new(<WithSize_2_>::default())) as *mut WithSize_2_);
-            let mut ptr: () =
-                std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -352,7 +327,7 @@ pub unsafe fn test_basic_21() {
         {
             let mut x: *mut WithSize_2_ =
                 (Box::leak(Box::new(<WithSize_2_>::default())) as *mut WithSize_2_);
-            let ptr: () = std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -362,20 +337,14 @@ pub unsafe fn test_basic_21() {
         {
             let mut x: *mut WithSize_2_ =
                 (Box::leak(Box::new(<WithSize_2_>::default())) as *mut WithSize_2_);
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___::new({
-                    (x).cast_const()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut WithSize_2_ =
                 (Box::leak(Box::new(<WithSize_2_>::default())) as *mut WithSize_2_);
-            let ptr: () =
-                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___::new({
-                    (x).cast_const()
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -388,10 +357,7 @@ pub unsafe fn test_basic_21() {
                     .collect::<Box<[WithSize_2_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_WithSize_2_arrarr__std_default_delete_WithSize_2_arrarr__::new({
-                    x
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -403,10 +369,7 @@ pub unsafe fn test_basic_21() {
                     .collect::<Box<[WithSize_2_]>>(),
             )
             .as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_WithSize_2_arrarr__std_default_delete_WithSize_2_arrarr__::new({
-                    x
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -420,7 +383,7 @@ pub unsafe fn test_basic_21() {
                     .collect::<Box<[WithSize_2_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr : () = std_unique_ptr_const_WithSize_2_arrarr__std_default_delete_const_WithSize_2_arrarr__ :: new ( { x } , )  ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -431,7 +394,7 @@ pub unsafe fn test_basic_21() {
                     .collect::<Box<[WithSize_2_]>>(),
             )
             .as_mut_ptr();
-            let ptr : () = std_unique_ptr_const_WithSize_2_arrarr__std_default_delete_const_WithSize_2_arrarr__ :: new ( { x } , )  ;
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -442,8 +405,7 @@ pub unsafe fn test_basic_22() {
         {
             let mut x: *mut WithSize_3_ =
                 (Box::leak(Box::new(<WithSize_3_>::default())) as *mut WithSize_3_);
-            let mut ptr: () =
-                std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -451,7 +413,7 @@ pub unsafe fn test_basic_22() {
         {
             let mut x: *mut WithSize_3_ =
                 (Box::leak(Box::new(<WithSize_3_>::default())) as *mut WithSize_3_);
-            let ptr: () = std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -461,20 +423,14 @@ pub unsafe fn test_basic_22() {
         {
             let mut x: *mut WithSize_3_ =
                 (Box::leak(Box::new(<WithSize_3_>::default())) as *mut WithSize_3_);
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___::new({
-                    (x).cast_const()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut WithSize_3_ =
                 (Box::leak(Box::new(<WithSize_3_>::default())) as *mut WithSize_3_);
-            let ptr: () =
-                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___::new({
-                    (x).cast_const()
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -487,10 +443,7 @@ pub unsafe fn test_basic_22() {
                     .collect::<Box<[WithSize_3_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_WithSize_3_arrarr__std_default_delete_WithSize_3_arrarr__::new({
-                    x
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -502,10 +455,7 @@ pub unsafe fn test_basic_22() {
                     .collect::<Box<[WithSize_3_]>>(),
             )
             .as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_WithSize_3_arrarr__std_default_delete_WithSize_3_arrarr__::new({
-                    x
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -519,7 +469,7 @@ pub unsafe fn test_basic_22() {
                     .collect::<Box<[WithSize_3_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr : () = std_unique_ptr_const_WithSize_3_arrarr__std_default_delete_const_WithSize_3_arrarr__ :: new ( { x } , )  ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -530,7 +480,7 @@ pub unsafe fn test_basic_22() {
                     .collect::<Box<[WithSize_3_]>>(),
             )
             .as_mut_ptr();
-            let ptr : () = std_unique_ptr_const_WithSize_3_arrarr__std_default_delete_const_WithSize_3_arrarr__ :: new ( { x } , )  ;
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -541,8 +491,7 @@ pub unsafe fn test_basic_23() {
         {
             let mut x: *mut WithSize_4_ =
                 (Box::leak(Box::new(<WithSize_4_>::default())) as *mut WithSize_4_);
-            let mut ptr: () =
-                std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -550,7 +499,7 @@ pub unsafe fn test_basic_23() {
         {
             let mut x: *mut WithSize_4_ =
                 (Box::leak(Box::new(<WithSize_4_>::default())) as *mut WithSize_4_);
-            let ptr: () = std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -560,20 +509,14 @@ pub unsafe fn test_basic_23() {
         {
             let mut x: *mut WithSize_4_ =
                 (Box::leak(Box::new(<WithSize_4_>::default())) as *mut WithSize_4_);
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___::new({
-                    (x).cast_const()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut WithSize_4_ =
                 (Box::leak(Box::new(<WithSize_4_>::default())) as *mut WithSize_4_);
-            let ptr: () =
-                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___::new({
-                    (x).cast_const()
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -586,10 +529,7 @@ pub unsafe fn test_basic_23() {
                     .collect::<Box<[WithSize_4_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_WithSize_4_arrarr__std_default_delete_WithSize_4_arrarr__::new({
-                    x
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -601,10 +541,7 @@ pub unsafe fn test_basic_23() {
                     .collect::<Box<[WithSize_4_]>>(),
             )
             .as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_WithSize_4_arrarr__std_default_delete_WithSize_4_arrarr__::new({
-                    x
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -618,7 +555,7 @@ pub unsafe fn test_basic_23() {
                     .collect::<Box<[WithSize_4_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr : () = std_unique_ptr_const_WithSize_4_arrarr__std_default_delete_const_WithSize_4_arrarr__ :: new ( { x } , )  ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -629,7 +566,7 @@ pub unsafe fn test_basic_23() {
                     .collect::<Box<[WithSize_4_]>>(),
             )
             .as_mut_ptr();
-            let ptr : () = std_unique_ptr_const_WithSize_4_arrarr__std_default_delete_const_WithSize_4_arrarr__ :: new ( { x } , )  ;
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -640,8 +577,7 @@ pub unsafe fn test_basic_24() {
         {
             let mut x: *mut WithSize_8_ =
                 (Box::leak(Box::new(<WithSize_8_>::default())) as *mut WithSize_8_);
-            let mut ptr: () =
-                std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -649,7 +585,7 @@ pub unsafe fn test_basic_24() {
         {
             let mut x: *mut WithSize_8_ =
                 (Box::leak(Box::new(<WithSize_8_>::default())) as *mut WithSize_8_);
-            let ptr: () = std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -659,20 +595,14 @@ pub unsafe fn test_basic_24() {
         {
             let mut x: *mut WithSize_8_ =
                 (Box::leak(Box::new(<WithSize_8_>::default())) as *mut WithSize_8_);
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___::new({
-                    (x).cast_const()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut WithSize_8_ =
                 (Box::leak(Box::new(<WithSize_8_>::default())) as *mut WithSize_8_);
-            let ptr: () =
-                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___::new({
-                    (x).cast_const()
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -685,10 +615,7 @@ pub unsafe fn test_basic_24() {
                     .collect::<Box<[WithSize_8_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_WithSize_8_arrarr__std_default_delete_WithSize_8_arrarr__::new({
-                    x
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -700,10 +627,7 @@ pub unsafe fn test_basic_24() {
                     .collect::<Box<[WithSize_8_]>>(),
             )
             .as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_WithSize_8_arrarr__std_default_delete_WithSize_8_arrarr__::new({
-                    x
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -717,7 +641,7 @@ pub unsafe fn test_basic_24() {
                     .collect::<Box<[WithSize_8_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr : () = std_unique_ptr_const_WithSize_8_arrarr__std_default_delete_const_WithSize_8_arrarr__ :: new ( { x } , )  ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -728,7 +652,7 @@ pub unsafe fn test_basic_24() {
                     .collect::<Box<[WithSize_8_]>>(),
             )
             .as_mut_ptr();
-            let ptr : () = std_unique_ptr_const_WithSize_8_arrarr__std_default_delete_const_WithSize_8_arrarr__ :: new ( { x } , )  ;
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -739,8 +663,7 @@ pub unsafe fn test_basic_25() {
         {
             let mut x: *mut WithSize_16_ =
                 (Box::leak(Box::new(<WithSize_16_>::default())) as *mut WithSize_16_);
-            let mut ptr: () =
-                std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -748,8 +671,7 @@ pub unsafe fn test_basic_25() {
         {
             let mut x: *mut WithSize_16_ =
                 (Box::leak(Box::new(<WithSize_16_>::default())) as *mut WithSize_16_);
-            let ptr: () =
-                std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -759,20 +681,14 @@ pub unsafe fn test_basic_25() {
         {
             let mut x: *mut WithSize_16_ =
                 (Box::leak(Box::new(<WithSize_16_>::default())) as *mut WithSize_16_);
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___::new({
-                    (x).cast_const()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut WithSize_16_ =
                 (Box::leak(Box::new(<WithSize_16_>::default())) as *mut WithSize_16_);
-            let ptr: () =
-                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___::new({
-                    (x).cast_const()
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -785,10 +701,7 @@ pub unsafe fn test_basic_25() {
                     .collect::<Box<[WithSize_16_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_WithSize_16_arrarr__std_default_delete_WithSize_16_arrarr__::new({
-                    x
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -800,10 +713,7 @@ pub unsafe fn test_basic_25() {
                     .collect::<Box<[WithSize_16_]>>(),
             )
             .as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_WithSize_16_arrarr__std_default_delete_WithSize_16_arrarr__::new({
-                    x
-                });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -817,7 +727,7 @@ pub unsafe fn test_basic_25() {
                     .collect::<Box<[WithSize_16_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr : () = std_unique_ptr_const_WithSize_16_arrarr__std_default_delete_const_WithSize_16_arrarr__ :: new ( { x } , )  ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -828,7 +738,7 @@ pub unsafe fn test_basic_25() {
                     .collect::<Box<[WithSize_16_]>>(),
             )
             .as_mut_ptr();
-            let ptr : () = std_unique_ptr_const_WithSize_16_arrarr__std_default_delete_const_WithSize_16_arrarr__ :: new ( { x } , )  ;
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -839,8 +749,7 @@ pub unsafe fn test_basic_26() {
         {
             let mut x: *mut WithSize_256_ =
                 (Box::leak(Box::new(<WithSize_256_>::default())) as *mut WithSize_256_);
-            let mut ptr: () =
-                std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___::new({ x });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -848,8 +757,7 @@ pub unsafe fn test_basic_26() {
         {
             let mut x: *mut WithSize_256_ =
                 (Box::leak(Box::new(<WithSize_256_>::default())) as *mut WithSize_256_);
-            let ptr: () =
-                std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___::new({ x });
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -859,20 +767,14 @@ pub unsafe fn test_basic_26() {
         {
             let mut x: *mut WithSize_256_ =
                 (Box::leak(Box::new(<WithSize_256_>::default())) as *mut WithSize_256_);
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___::new(
-                    { (x).cast_const() },
-                );
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: *mut WithSize_256_ =
                 (Box::leak(Box::new(<WithSize_256_>::default())) as *mut WithSize_256_);
-            let ptr: () =
-                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___::new(
-                    { (x).cast_const() },
-                );
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -885,10 +787,7 @@ pub unsafe fn test_basic_26() {
                     .collect::<Box<[WithSize_256_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr: () =
-                std_unique_ptr_WithSize_256_arrarr__std_default_delete_WithSize_256_arrarr__::new(
-                    { x },
-                );
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -900,10 +799,7 @@ pub unsafe fn test_basic_26() {
                     .collect::<Box<[WithSize_256_]>>(),
             )
             .as_mut_ptr();
-            let ptr: () =
-                std_unique_ptr_WithSize_256_arrarr__std_default_delete_WithSize_256_arrarr__::new(
-                    { x },
-                );
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -917,7 +813,7 @@ pub unsafe fn test_basic_26() {
                     .collect::<Box<[WithSize_256_]>>(),
             )
             .as_mut_ptr();
-            let mut ptr : () = std_unique_ptr_const_WithSize_256_arrarr__std_default_delete_const_WithSize_256_arrarr__ :: new ( { x } , )  ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -928,7 +824,7 @@ pub unsafe fn test_basic_26() {
                     .collect::<Box<[WithSize_256_]>>(),
             )
             .as_mut_ptr();
-            let ptr : () = std_unique_ptr_const_WithSize_256_arrarr__std_default_delete_const_WithSize_256_arrarr__ :: new ( { x } , )  ;
+            let ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }

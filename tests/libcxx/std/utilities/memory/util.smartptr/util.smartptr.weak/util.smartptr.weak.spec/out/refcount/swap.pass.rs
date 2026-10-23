@@ -59,11 +59,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut ptr1: Ptr<A> = Ptr::alloc(A::new());
         let mut ptr2: Ptr<A> = Ptr::alloc(A::new());
-        let p1: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({ (ptr1).clone() })));
-        let w1: Value<()> = Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ p1.as_pointer() })));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let w1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
-            let p2: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({ (ptr2).clone() })));
-            let w2: Value<()> = Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ p2.as_pointer() })));
+            let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let w2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();

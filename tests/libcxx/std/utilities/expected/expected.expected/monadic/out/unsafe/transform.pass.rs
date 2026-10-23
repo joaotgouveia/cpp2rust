@@ -7,7 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut () = &mut (*x).i;
+        let ___y: *mut () = &mut (*y).i;
+        swap_1(___x, ___y)
+    });
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -53,7 +57,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -70,7 +74,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_1(
+            operator_eq_2(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -132,7 +136,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -179,7 +183,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -322,7 +326,7 @@ const _: () = assert!(
     true,
     "has_transform<const std::expected<int, MoveOnlyErrorType>&&, int(const int)>"
 );
-pub unsafe fn test_val_types_3() {
+pub unsafe fn test_val_types_4() {
     {
         {
             let mut e: () = unimplemented!();
@@ -384,7 +388,7 @@ pub unsafe fn test_val_types_3() {
         }
     }
 }
-pub unsafe fn test_take_val_return_void_4() {
+pub unsafe fn test_take_val_return_void_5() {
     let mut e: () = unimplemented!();
     let mut val: () = 0_();
     &(unimplemented!());
@@ -438,7 +442,7 @@ pub unsafe fn test_take_val_return_void_4() {
     });
     unimplemented!();
 }
-pub unsafe fn test_direct_non_list_init_5() {
+pub unsafe fn test_direct_non_list_init_6() {
     let mut xform: FnPtr<fn(()) -> NonCopy> =
         FnPtr::<fn(()) -> NonCopy>::new(|mut i: ()| -> NonCopy {
             unsafe {
@@ -449,7 +453,7 @@ pub unsafe fn test_direct_non_list_init_5() {
     let mut n: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_sfinae_6() {
+pub unsafe fn test_sfinae_7() {
     let mut e: () = unimplemented!();
     let mut l: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -479,7 +483,7 @@ pub unsafe fn test_sfinae_6() {
         (*ce1).transform(___f)
     });
 }
-pub unsafe fn test_move_only_error_type_7() {
+pub unsafe fn test_move_only_error_type_8() {
     {
         let mut e: () = unimplemented!();
         let mut l: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut _a0: ()| -> () {
@@ -499,11 +503,11 @@ pub unsafe fn test_move_only_error_type_7() {
         &(unsafe { e.transform(&mut l) });
     }
 }
-pub unsafe fn test_8() -> () {
-    (unsafe { test_sfinae_6() });
-    (unsafe { test_val_types_3() });
-    (unsafe { test_direct_non_list_init_5() });
-    (unsafe { test_move_only_error_type_7() });
+pub unsafe fn test_9() -> () {
+    (unsafe { test_sfinae_7() });
+    (unsafe { test_val_types_4() });
+    (unsafe { test_direct_non_list_init_6() });
+    (unsafe { test_move_only_error_type_8() });
     return true;
 }
 pub fn main() {
@@ -522,7 +526,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_8() });
+    (unsafe { test_9() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

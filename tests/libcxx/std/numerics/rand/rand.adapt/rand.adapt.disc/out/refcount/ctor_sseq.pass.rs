@@ -10,7 +10,7 @@ pub fn test1_0() {
     let mut a : Ptr< ()  >  = Ptr::<() >::from_string_literal(b"13604817 711567 9760686 13278398 3323440 175548 5553651 3028863 10748297 2216688 275779 14778841 14438394 9483441 4229545 14657301 12636508 15978210 1653340 1718567 9272421 14302862 7940348 889045 0 0" )  ;
     let as_: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_()])));
     let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e1 : Value<() > = Rc::new(RefCell::new(std_discard_block_engine_std_subtract_with_carry_engine_unsigned_long__24__10__24___223__23_ :: new_1 ( { sseq .as_pointer()  } , )  )) ;
+    let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -19,7 +19,7 @@ pub fn test2_1() {
     let mut a : Ptr< ()  >  = Ptr::<() >::from_string_literal(b"241408498702289 172342669275054 191026374555184 61020585639411 231929771458953 142769679250755 198672786411514 183712717244841 227473912549724 62843577252444 68782400568421 159248704678140 0 0" )  ;
     let as_: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_()])));
     let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e1 : Value<() > = Rc::new(RefCell::new(std_discard_block_engine_std_subtract_with_carry_engine_unsigned_long__48__5__12___389__11_ :: new_1 ( { sseq .as_pointer()  } , )  )) ;
+    let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();

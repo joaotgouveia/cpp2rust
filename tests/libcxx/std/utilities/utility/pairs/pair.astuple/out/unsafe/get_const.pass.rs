@@ -24,20 +24,12 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let p: () = {
-            let mut __tmp_0: () = 3_();
-            let mut __tmp_1: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p1: () = {
-            let mut __tmp_2: () = 3_();
-            let mut __tmp_3: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let p1: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(p1) == 3");;
         const _: () = assert!(true, "std::get<1>(p1) == 4");;
     }

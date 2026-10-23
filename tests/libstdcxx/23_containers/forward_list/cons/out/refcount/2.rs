@@ -20,13 +20,7 @@ pub fn test01_0() {
         8_(),
         9_(),
     ])));
-    let flccin: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_int__std_allocator_int__::new_1(
-            { (i.as_pointer() as Ptr<()>) },
-            { (i.as_pointer() as Ptr<()>).offset((*ni.borrow()) as isize) },
-            None,
-        ),
-    ));
+    let flccin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let flcc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 }
 pub fn main() {

@@ -963,163 +963,85 @@ thread_local!(
 pub fn test_14() {
     let bad: Value<()> = Rc::new(RefCell::new(-1_()));
     {
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<bare_allocator_void_> =
-                    Rc::new(RefCell::new(bare_allocator_void_::new()));
-                allocate_shared_15(___a.as_pointer())
-            }),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<bare_allocator_void_> =
-                    Rc::new(RefCell::new(bare_allocator_void_::new()));
-                allocate_shared_16(___a.as_pointer(), i.as_pointer())
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<bare_allocator_void_> =
-                    Rc::new(RefCell::new(bare_allocator_void_::new()));
-                allocate_shared_17(___a.as_pointer(), i.as_pointer(), bad.as_pointer())
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<bare_allocator_void_> =
-                    Rc::new(RefCell::new(bare_allocator_void_::new()));
-                let ___args_2: Ptr<()> = bad.as_pointer();
-                let ___args_3: Ptr<()> = bad.as_pointer();
-                allocate_shared_18(___a.as_pointer(), i.as_pointer(), ___args_2, ___args_3)
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
 }
-pub fn test_19() {
+pub fn test_15() {
     let bad: Value<()> = Rc::new(RefCell::new(-1_()));
     {
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<test_allocator_void_> =
-                    Rc::new(RefCell::new(<test_allocator_void_>::default()));
-                allocate_shared_20(___a.as_pointer())
-            }),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<test_allocator_void_> =
-                    Rc::new(RefCell::new(<test_allocator_void_>::default()));
-                allocate_shared_21(___a.as_pointer(), i.as_pointer())
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<test_allocator_void_> =
-                    Rc::new(RefCell::new(<test_allocator_void_>::default()));
-                allocate_shared_22(___a.as_pointer(), i.as_pointer(), bad.as_pointer())
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<test_allocator_void_> =
-                    Rc::new(RefCell::new(<test_allocator_void_>::default()));
-                let ___args_2: Ptr<()> = bad.as_pointer();
-                let ___args_3: Ptr<()> = bad.as_pointer();
-                allocate_shared_23(___a.as_pointer(), i.as_pointer(), ___args_2, ___args_3)
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
 }
-pub fn test_24() {
+pub fn test_16() {
     let bad: Value<()> = Rc::new(RefCell::new(-1_()));
     {
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<complete_type_allocator_int_> =
-                    Rc::new(RefCell::new(complete_type_allocator_int_::new()));
-                allocate_shared_25(___a.as_pointer())
-            }),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<complete_type_allocator_int_> =
-                    Rc::new(RefCell::new(complete_type_allocator_int_::new()));
-                allocate_shared_26(___a.as_pointer(), i.as_pointer())
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<complete_type_allocator_int_> =
-                    Rc::new(RefCell::new(complete_type_allocator_int_::new()));
-                allocate_shared_27(___a.as_pointer(), i.as_pointer(), bad.as_pointer())
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<complete_type_allocator_int_> =
-                    Rc::new(RefCell::new(complete_type_allocator_int_::new()));
-                let ___args_2: Ptr<()> = bad.as_pointer();
-                let ___args_3: Ptr<()> = bad.as_pointer();
-                allocate_shared_28(___a.as_pointer(), i.as_pointer(), ___args_2, ___args_3)
-            }),
-        ));
+        let mut i: () = 42_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
@@ -1146,22 +1068,14 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_14() });
-    ({ test_19() });
-    ({ test_24() });
+    ({ test_15() });
+    ({ test_16() });
     let alloc_stats: Value<test_allocator_statistics> =
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
-        let i: Value<()> = Rc::new(RefCell::new(67_()));
+        let mut i: () = 67_();
         let c: Value<()> = Rc::new(RefCell::new(('e' as ())));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<test_allocator_A_> =
-                    Rc::new(RefCell::new(test_allocator_A_::new_1({ 54_() }, {
-                        (alloc_stats.as_pointer())
-                    })));
-                allocate_shared_29(___a.as_pointer(), i.as_pointer(), c.as_pointer())
-            }),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1170,52 +1084,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(67_()));
+        let mut i: () = 67_();
         let c: Value<()> = Rc::new(RefCell::new(('e' as ())));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<min_allocator_void_> =
-                    Rc::new(RefCell::new(<min_allocator_void_>::default()));
-                allocate_shared_30(___a.as_pointer(), i.as_pointer(), c.as_pointer())
-            }),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let i: Value<()> = Rc::new(RefCell::new(68_()));
+        let mut i: () = 68_();
         let c: Value<()> = Rc::new(RefCell::new(('f' as ())));
-        let p: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<bare_allocator_void_> =
-                    Rc::new(RefCell::new(bare_allocator_void_::new()));
-                allocate_shared_31(___a.as_pointer(), i.as_pointer(), c.as_pointer())
-            }),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let p1: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<min_allocator_operator_hijacker_> =
-                    Rc::new(RefCell::new(<min_allocator_operator_hijacker_>::default()));
-                allocate_shared_32(___a.as_pointer())
-            }),
-        ));
-        let p2: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___a: Value<min_allocator_operator_hijacker_> =
-                    Rc::new(RefCell::new(<min_allocator_operator_hijacker_>::default()));
-                let ___args: Value<operator_hijacker> =
-                    Rc::new(RefCell::new(<operator_hijacker>::default()));
-                allocate_shared_33(___a.as_pointer(), ___args.as_pointer())
-            }),
-        ));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

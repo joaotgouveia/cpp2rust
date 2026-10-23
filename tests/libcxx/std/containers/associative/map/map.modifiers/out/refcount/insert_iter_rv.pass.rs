@@ -247,18 +247,7 @@ impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub struct min_allocator_std_pair_const_int__MoveOnly__ {}
 pub fn do_insert_iter_rv_test_18() -> () {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___pos: ()   = std___map_const_iterator_std___tree_const_iterator_std___value_type_int__MoveOnly___std___tree_node_std___value_type_int__MoveOnly___void_ptr__ptr__long__ :: new_1 ( { unimplemented!()   } , )   ;
-            let ___p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__MoveOnly_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-            }));
-            (*m.borrow())
-                .insert_48_struct_std_pair_int__class_MoveOnly__0(___pos, ___p.as_pointer())
-        }),
-    ));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -306,18 +295,7 @@ pub fn do_insert_iter_rv_test_19() -> () {
 }
 pub fn do_insert_iter_rv_test_20() -> () {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___pos: ()   = std___map_const_iterator_std___tree_const_iterator_std___value_type_int__MoveOnly___min_pointer_std___tree_node_std___value_type_int__MoveOnly___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____long__ :: new_1 ( { unimplemented!()   } , )   ;
-            let ___p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__MoveOnly_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-            }));
-            (*m.borrow())
-                .insert_48_struct_std_pair_int__class_MoveOnly__0(___pos, ___p.as_pointer())
-        }),
-    ));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

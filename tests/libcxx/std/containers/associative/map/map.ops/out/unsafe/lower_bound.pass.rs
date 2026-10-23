@@ -199,46 +199,14 @@ pub unsafe fn test_10() -> () {
     {
         {
             let mut ar: [(); 8] = [
-                {
-                    let mut __tmp_0: () = 5_();
-                    let mut __tmp_1: () = 5_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-                },
-                {
-                    let mut __tmp_2: () = 7_();
-                    let mut __tmp_3: () = 6_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
-                },
-                {
-                    let mut __tmp_4: () = 9_();
-                    let mut __tmp_5: () = 7_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
-                },
-                {
-                    let mut __tmp_6: () = 11_();
-                    let mut __tmp_7: () = 8_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
-                },
-                {
-                    let mut __tmp_8: () = 13_();
-                    let mut __tmp_9: () = 9_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
-                },
-                {
-                    let mut __tmp_10: () = 15_();
-                    let mut __tmp_11: () = 10_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_10 }, { &mut __tmp_11 })
-                },
-                {
-                    let mut __tmp_12: () = 17_();
-                    let mut __tmp_13: () = 11_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_12 }, { &mut __tmp_13 })
-                },
-                {
-                    let mut __tmp_14: () = 19_();
-                    let mut __tmp_15: () = 12_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_14 }, { &mut __tmp_15 })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ];
             let mut m: () = unimplemented!();
             let mut r: () = unimplemented!();
@@ -278,46 +246,14 @@ pub unsafe fn test_10() -> () {
         }
         {
             let mut ar: [(); 8] = [
-                {
-                    let mut __tmp_16: () = 5_();
-                    let mut __tmp_17: () = 5_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_16 }, { &mut __tmp_17 })
-                },
-                {
-                    let mut __tmp_18: () = 7_();
-                    let mut __tmp_19: () = 6_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_18 }, { &mut __tmp_19 })
-                },
-                {
-                    let mut __tmp_20: () = 9_();
-                    let mut __tmp_21: () = 7_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_20 }, { &mut __tmp_21 })
-                },
-                {
-                    let mut __tmp_22: () = 11_();
-                    let mut __tmp_23: () = 8_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_22 }, { &mut __tmp_23 })
-                },
-                {
-                    let mut __tmp_24: () = 13_();
-                    let mut __tmp_25: () = 9_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_24 }, { &mut __tmp_25 })
-                },
-                {
-                    let mut __tmp_26: () = 15_();
-                    let mut __tmp_27: () = 10_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_26 }, { &mut __tmp_27 })
-                },
-                {
-                    let mut __tmp_28: () = 17_();
-                    let mut __tmp_29: () = 11_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_28 }, { &mut __tmp_29 })
-                },
-                {
-                    let mut __tmp_30: () = 19_();
-                    let mut __tmp_31: () = 12_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_30 }, { &mut __tmp_31 })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ];
             let m: () = unimplemented!();
             let mut r: () = unimplemented!();
@@ -359,46 +295,14 @@ pub unsafe fn test_10() -> () {
     {
         {
             let mut ar: [(); 8] = [
-                {
-                    let mut __tmp_32: () = 5_();
-                    let mut __tmp_33: () = 5_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_32 }, { &mut __tmp_33 })
-                },
-                {
-                    let mut __tmp_34: () = 7_();
-                    let mut __tmp_35: () = 6_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_34 }, { &mut __tmp_35 })
-                },
-                {
-                    let mut __tmp_36: () = 9_();
-                    let mut __tmp_37: () = 7_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_36 }, { &mut __tmp_37 })
-                },
-                {
-                    let mut __tmp_38: () = 11_();
-                    let mut __tmp_39: () = 8_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_38 }, { &mut __tmp_39 })
-                },
-                {
-                    let mut __tmp_40: () = 13_();
-                    let mut __tmp_41: () = 9_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_40 }, { &mut __tmp_41 })
-                },
-                {
-                    let mut __tmp_42: () = 15_();
-                    let mut __tmp_43: () = 10_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_42 }, { &mut __tmp_43 })
-                },
-                {
-                    let mut __tmp_44: () = 17_();
-                    let mut __tmp_45: () = 11_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_44 }, { &mut __tmp_45 })
-                },
-                {
-                    let mut __tmp_46: () = 19_();
-                    let mut __tmp_47: () = 12_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_46 }, { &mut __tmp_47 })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ];
             let mut m: () = unimplemented!();
             let mut r: () = unimplemented!();
@@ -438,46 +342,14 @@ pub unsafe fn test_10() -> () {
         }
         {
             let mut ar: [(); 8] = [
-                {
-                    let mut __tmp_48: () = 5_();
-                    let mut __tmp_49: () = 5_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_48 }, { &mut __tmp_49 })
-                },
-                {
-                    let mut __tmp_50: () = 7_();
-                    let mut __tmp_51: () = 6_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_50 }, { &mut __tmp_51 })
-                },
-                {
-                    let mut __tmp_52: () = 9_();
-                    let mut __tmp_53: () = 7_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_52 }, { &mut __tmp_53 })
-                },
-                {
-                    let mut __tmp_54: () = 11_();
-                    let mut __tmp_55: () = 8_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_54 }, { &mut __tmp_55 })
-                },
-                {
-                    let mut __tmp_56: () = 13_();
-                    let mut __tmp_57: () = 9_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_56 }, { &mut __tmp_57 })
-                },
-                {
-                    let mut __tmp_58: () = 15_();
-                    let mut __tmp_59: () = 10_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_58 }, { &mut __tmp_59 })
-                },
-                {
-                    let mut __tmp_60: () = 17_();
-                    let mut __tmp_61: () = 11_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_60 }, { &mut __tmp_61 })
-                },
-                {
-                    let mut __tmp_62: () = 19_();
-                    let mut __tmp_63: () = 12_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_62 }, { &mut __tmp_63 })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ];
             let m: () = unimplemented!();
             let mut r: () = unimplemented!();
@@ -518,46 +390,14 @@ pub unsafe fn test_10() -> () {
     }
     {
         let mut ar: [(); 8] = [
-            {
-                let mut __tmp_64: () = 5_();
-                let mut __tmp_65: () = 5_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_64 }, { &mut __tmp_65 })
-            },
-            {
-                let mut __tmp_66: () = 7_();
-                let mut __tmp_67: () = 6_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_66 }, { &mut __tmp_67 })
-            },
-            {
-                let mut __tmp_68: () = 9_();
-                let mut __tmp_69: () = 7_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_68 }, { &mut __tmp_69 })
-            },
-            {
-                let mut __tmp_70: () = 11_();
-                let mut __tmp_71: () = 8_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_70 }, { &mut __tmp_71 })
-            },
-            {
-                let mut __tmp_72: () = 13_();
-                let mut __tmp_73: () = 9_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_72 }, { &mut __tmp_73 })
-            },
-            {
-                let mut __tmp_74: () = 15_();
-                let mut __tmp_75: () = 10_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_74 }, { &mut __tmp_75 })
-            },
-            {
-                let mut __tmp_76: () = 17_();
-                let mut __tmp_77: () = 11_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_76 }, { &mut __tmp_77 })
-            },
-            {
-                let mut __tmp_78: () = 19_();
-                let mut __tmp_79: () = 12_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_78 }, { &mut __tmp_79 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         let mut r: () = unimplemented!();
@@ -639,10 +479,7 @@ pub unsafe fn test_10() -> () {
         (*unimplemented!()) = 10_();
         (*unimplemented!()) = 11_();
         (*unimplemented!()) = 12_();
-        let mut r: () = (unsafe {
-            let mut ___k: () = 5_();
-            m.lower_bound_88_int_struct_std_less_void__0(&mut ___k)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

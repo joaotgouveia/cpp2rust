@@ -302,23 +302,29 @@ pub fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_8(_i, n)
     });
 }
-pub fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_10(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_11(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -364,7 +370,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_13(
+            operator_cmp_14(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -389,7 +395,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -474,7 +480,7 @@ impl util_iterator_error {
     }
 }
 thread_local!(
-    pub static globalBuff_14: Value<Box<[()]>> = Rc::new(RefCell::new(
+    pub static globalBuff_15: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
 );
@@ -513,7 +519,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeCDataT, DataMember const&&>"
 );
-pub fn testReturnTypes_15() -> () {
+pub fn testReturnTypes_16() -> () {
     {
         let x: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(
             (0..2)
@@ -558,10 +564,10 @@ pub fn testReturnTypes_15() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct D_16 {}
+pub struct D_17 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct NC_17 {}
+pub struct NC_18 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct VoidDataMember {}
@@ -611,7 +617,7 @@ pub struct NonConstDataMember {
 #[byte_size(1)]
 pub struct EnabledBorrowingDataMember {}
 thread_local!(
-    pub static enable_borrowed_range_18: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_19: Value<()> = Rc::new(RefCell::new(true));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -619,7 +625,7 @@ pub struct DataMemberAndBegin {
     #[offset(0)]
     pub x: (),
 }
-pub fn testDataMember_19() -> () {
+pub fn testDataMember_20() -> () {
     let a: Value<DataMember> = Rc::new(RefCell::new(<DataMember>::default()));
     unimplemented!();
     unimplemented!();
@@ -734,7 +740,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeCDataT, const BeginMemberRandomAccess&&>"
 );
-pub fn begin_20(iter: Ptr<BeginFriendContiguousIterator>) -> contiguous_iterator_const_int_ptr_ {
+pub fn begin_21(iter: Ptr<BeginFriendContiguousIterator>) -> contiguous_iterator_const_int_ptr_ {
     return contiguous_iterator_const_int_ptr_::new_1({
         (array_field_ptr!(iter, buff) as Ptr<()>)
     });
@@ -871,7 +877,7 @@ const _: () = assert!(
 #[byte_size(1)]
 pub struct BeginMemberBorrowingEnabled {}
 thread_local!(
-    pub static enable_borrowed_range_21: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_22: Value<()> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(
     true,
@@ -905,7 +911,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeCDataT, BeginMemberBorrowingEnabled const&&>"
 );
-pub fn testViaRangesBegin_22() -> () {
+pub fn testViaRangesBegin_23() -> () {
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
@@ -984,9 +990,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "testReturnTypes()");;
-    ({ testDataMember_19() });
+    ({ testDataMember_20() });
     const _: () = assert!(true, "testDataMember()");;
-    ({ testViaRangesBegin_22() });
+    ({ testViaRangesBegin_23() });
     const _: () = assert!(true, "testViaRangesBegin()");;
     return 0_();
 }
@@ -996,7 +1002,7 @@ pub trait BeginMemberBorrowingEnabledImpl {
 impl BeginMemberBorrowingEnabledImpl for Ptr<BeginMemberBorrowingEnabled> {
     fn begin(&self) -> contiguous_iterator_int_ptr_ {
         return contiguous_iterator_int_ptr_::new_1({
-            ((globalBuff_14.with(|v| v.as_pointer()) as Ptr<()>).offset(1_()))
+            ((globalBuff_15.with(|v| v.as_pointer()) as Ptr<()>).offset(1_()))
         });
     }
 }
@@ -1022,7 +1028,7 @@ pub trait BeginMemberRvalueImpl {
     }
 }
 impl BeginMemberRvalueImpl for Ptr<BeginMemberRvalue> {}
-pub trait D_16Impl {
+pub trait D_17Impl {
     fn data_1(&self) -> Ptr<Ptr<()>> {
         unimplemented!()
     }
@@ -1030,7 +1036,7 @@ pub trait D_16Impl {
         unimplemented!()
     }
 }
-impl D_16Impl for Ptr<D_16> {}
+impl D_17Impl for Ptr<D_17> {}
 pub trait DataMemberImpl {
     fn data(&self) -> Ptr<()>;
 }
@@ -1061,10 +1067,10 @@ pub trait EnabledBorrowingDataMemberImpl {
 }
 impl EnabledBorrowingDataMemberImpl for Ptr<EnabledBorrowingDataMember> {
     fn data(&self) -> Ptr<()> {
-        return ((globalBuff_14.with(|v| v.as_pointer()) as Ptr<()>).offset(0_()));
+        return ((globalBuff_15.with(|v| v.as_pointer()) as Ptr<()>).offset(0_()));
     }
 }
-pub trait NC_17Impl {
+pub trait NC_18Impl {
     fn begin(&self) -> Ptr<()> {
         unimplemented!()
     }
@@ -1075,7 +1081,7 @@ pub trait NC_17Impl {
         unimplemented!()
     }
 }
-impl NC_17Impl for Ptr<NC_17> {}
+impl NC_18Impl for Ptr<NC_18> {}
 pub trait NonConstDataMemberImpl {
     fn data(&self) -> Ptr<()>;
 }
@@ -1503,7 +1509,7 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = globalBuff_14.with(|_| ());
-    let _ = enable_borrowed_range_18.with(|_| ());
-    let _ = enable_borrowed_range_21.with(|_| ());
+    let _ = globalBuff_15.with(|_| ());
+    let _ = enable_borrowed_range_19.with(|_| ());
+    let _ = enable_borrowed_range_22.with(|_| ());
 }

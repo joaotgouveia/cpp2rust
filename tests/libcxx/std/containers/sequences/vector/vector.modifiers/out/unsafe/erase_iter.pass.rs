@@ -930,9 +930,7 @@ pub unsafe fn tests_43() {
     {
         let mut arr: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         {
-            let mut v: () = std_vector_int__std_allocator_int__::new_1({ arr.as_mut_ptr() }, {
-                arr.as_mut_ptr().offset((5_()) as isize)
-            });
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -940,9 +938,7 @@ pub unsafe fn tests_43() {
         }
         {
             let mut expected: [(); 4] = [1_(), 3_(), 4_(), 5_()];
-            let mut v: () = std_vector_int__std_allocator_int__::new_1({ arr.as_mut_ptr() }, {
-                arr.as_mut_ptr().offset((5_()) as isize)
-            });
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -950,9 +946,7 @@ pub unsafe fn tests_43() {
         }
         {
             let mut expected: [(); 4] = [1_(), 2_(), 3_(), 4_()];
-            let mut v: () = std_vector_int__std_allocator_int__::new_1({ arr.as_mut_ptr() }, {
-                arr.as_mut_ptr().offset((5_()) as isize)
-            });
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -992,11 +986,7 @@ pub unsafe fn tests_44() {
             NonTriviallyRelocatable::new_2({ 5_() }),
         ];
         {
-            let mut v: () =
-                std_vector_NonTriviallyRelocatable__std_allocator_NonTriviallyRelocatable__::new_1(
-                    { arr.as_mut_ptr() },
-                    { arr.as_mut_ptr().offset((5_()) as isize) },
-                );
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1009,11 +999,7 @@ pub unsafe fn tests_44() {
                 NonTriviallyRelocatable::new_2({ 4_() }),
                 NonTriviallyRelocatable::new_2({ 5_() }),
             ];
-            let mut v: () =
-                std_vector_NonTriviallyRelocatable__std_allocator_NonTriviallyRelocatable__::new_1(
-                    { arr.as_mut_ptr() },
-                    { arr.as_mut_ptr().offset((5_()) as isize) },
-                );
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1026,11 +1012,7 @@ pub unsafe fn tests_44() {
                 NonTriviallyRelocatable::new_2({ 3_() }),
                 NonTriviallyRelocatable::new_2({ 4_() }),
             ];
-            let mut v: () =
-                std_vector_NonTriviallyRelocatable__std_allocator_NonTriviallyRelocatable__::new_1(
-                    { arr.as_mut_ptr() },
-                    { arr.as_mut_ptr().offset((5_()) as isize) },
-                );
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1064,9 +1046,7 @@ pub unsafe fn tests_45() {
     {
         let mut arr: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         {
-            let mut v: () = std_vector_int__min_allocator_int__::new_1({ arr.as_mut_ptr() }, {
-                arr.as_mut_ptr().offset((5_()) as isize)
-            });
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1074,9 +1054,7 @@ pub unsafe fn tests_45() {
         }
         {
             let mut expected: [(); 4] = [1_(), 3_(), 4_(), 5_()];
-            let mut v: () = std_vector_int__min_allocator_int__::new_1({ arr.as_mut_ptr() }, {
-                arr.as_mut_ptr().offset((5_()) as isize)
-            });
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1084,9 +1062,7 @@ pub unsafe fn tests_45() {
         }
         {
             let mut expected: [(); 4] = [1_(), 2_(), 3_(), 4_()];
-            let mut v: () = std_vector_int__min_allocator_int__::new_1({ arr.as_mut_ptr() }, {
-                arr.as_mut_ptr().offset((5_()) as isize)
-            });
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1126,11 +1102,7 @@ pub unsafe fn tests_46() {
             NonTriviallyRelocatable::new_2({ 5_() }),
         ];
         {
-            let mut v: () =
-                std_vector_NonTriviallyRelocatable__min_allocator_NonTriviallyRelocatable__::new_1(
-                    { arr.as_mut_ptr() },
-                    { arr.as_mut_ptr().offset((5_()) as isize) },
-                );
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1143,11 +1115,7 @@ pub unsafe fn tests_46() {
                 NonTriviallyRelocatable::new_2({ 4_() }),
                 NonTriviallyRelocatable::new_2({ 5_() }),
             ];
-            let mut v: () =
-                std_vector_NonTriviallyRelocatable__min_allocator_NonTriviallyRelocatable__::new_1(
-                    { arr.as_mut_ptr() },
-                    { arr.as_mut_ptr().offset((5_()) as isize) },
-                );
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1160,11 +1128,7 @@ pub unsafe fn tests_46() {
                 NonTriviallyRelocatable::new_2({ 3_() }),
                 NonTriviallyRelocatable::new_2({ 4_() }),
             ];
-            let mut v: () =
-                std_vector_NonTriviallyRelocatable__min_allocator_NonTriviallyRelocatable__::new_1(
-                    { arr.as_mut_ptr() },
-                    { arr.as_mut_ptr().offset((5_()) as isize) },
-                );
+            let mut v: () = unimplemented!();
             let mut it: () = unimplemented!();
             unimplemented!();
             unimplemented!();

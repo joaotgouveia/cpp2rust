@@ -317,9 +317,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let o1: () = unimplemented!();
         let o2: () = unimplemented!();
-        let o3: () = 1_();
-        let o4: () = 2_();
-        let o5: () = 1_();
+        let o3: () = unimplemented!();
+        let o4: () = unimplemented!();
+        let o5: () = unimplemented!();
         const _: () = assert!(true, "!(o1 > o1)");;
         const _: () = assert!(true, "!(o1 > o2)");;
         const _: () = assert!(true, "!(o1 > o3)");;
@@ -347,12 +347,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "!(o5 > o5)");;
     }
     {
-        let o1: () = 42_();
+        let o1: () = unimplemented!();
         const _: () = assert!(true, "o1 > O2(1)");;
         const _: () = assert!(true, "!(O2(42) > o1)");;
     }
     {
-        let o1: () = 42_();
+        let o1: () = unimplemented!();
         const _: () = assert!(true, "o1 > O2(1)");;
         const _: () = assert!(true, "!(O2(42) > o1)");;
     }

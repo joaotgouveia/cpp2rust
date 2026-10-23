@@ -346,42 +346,21 @@ impl std::cmp::PartialEq for min_allocator_int_ {
 impl std::cmp::Eq for min_allocator_int_ {}
 pub fn test_11() -> () {
     {
-        let l: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_1: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_list_int__test_allocator_int__::new_1({ 3_() }, { __tmp_0.as_pointer() }, {
-                __tmp_1.as_pointer()
-            })
-        }));
+        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let l2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let l: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_3: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 5_() })));
-            std_list_int__other_allocator_int__::new_1({ 3_() }, { __tmp_2.as_pointer() }, {
-                __tmp_3.as_pointer()
-            })
-        }));
+        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let l2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let l: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_5: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_list_int__min_allocator_int__::new_1({ 3_() }, { __tmp_4.as_pointer() }, {
-                __tmp_5.as_pointer()
-            })
-        }));
+        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let l2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

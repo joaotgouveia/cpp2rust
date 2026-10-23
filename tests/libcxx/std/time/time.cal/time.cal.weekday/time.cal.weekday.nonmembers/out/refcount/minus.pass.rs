@@ -31,12 +31,12 @@ pub fn euclidian_subtraction_2(mut lhs: (), mut rhs: ()) -> () {
 pub fn test_3() -> () {
     let mut i: () = 0_();
     'loop_: while (i <= 6_()) {
-        let j: Value<()> = Rc::new(RefCell::new(0_()));
-        'loop_: while ((*j.borrow()) <= 6_()) {
+        let mut j: () = 0_();
+        'loop_: while (j <= 6_()) {
             let wd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
-            (*j.borrow_mut()).prefix_inc();
+            j.prefix_inc();
         }
         i.prefix_inc();
     }

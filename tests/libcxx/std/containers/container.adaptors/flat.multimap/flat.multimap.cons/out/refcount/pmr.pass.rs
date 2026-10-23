@@ -316,23 +316,29 @@ pub fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_4(_i, n)
     });
 }
-pub fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_6(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_7(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -378,7 +384,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_9(
+            operator_cmp_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -403,7 +409,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_8(
+            operator_eq_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -530,22 +536,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_10: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_11: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_11: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_12: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_12(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_13(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_13(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_14(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_12(_x, _y)
+        operator_eq_13(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -606,7 +612,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_13(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -662,7 +668,7 @@ impl Tag_X {
         Self {}
     }
 }
-pub fn operator_eq_14(a: Ptr<test_less_int_>, b: Ptr<test_less_int_>) -> () {
+pub fn operator_eq_15(a: Ptr<test_less_int_>, b: Ptr<test_less_int_>) -> () {
     return ({ a.with(|__s| __s.data_) } == { b.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -682,7 +688,7 @@ impl test_less_int_ {
 impl std::cmp::PartialEq for test_less_int_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_14(
+            operator_eq_15(
                 Rc::new(RefCell::new(test_less_int_ {
                     data_: self.data_.clone(),
                 }))
@@ -797,12 +803,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let __decomp_15 : Value<std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int____containers > = Rc::new(RefCell::new(( { (*m.borrow()) . extract ( ) } )  )) ;
+        let __decomp_16 : Value<std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int____containers > = Rc::new(RefCell::new(( { (*m.borrow()) . extract ( ) } )  )) ;
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let __decomp_16 : Value<std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int____containers > = Rc::new(RefCell::new(( { (*mo.borrow()) . extract ( ) } )  )) ;
+        let __decomp_17 : Value<std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int____containers > = Rc::new(RefCell::new(( { (*mo.borrow()) . extract ( ) } )  )) ;
         unimplemented!();
         unimplemented!();
     }
@@ -827,98 +833,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-            },
-            {
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-            },
-            {
-                let __tmp_4: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_5: Value<()> = Rc::new(RefCell::new(3_()));
-                std_pair_int__long_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-            },
-            {
-                let __tmp_6: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_7: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_int__long_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-            },
-            {
-                let __tmp_8: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_9: Value<()> = Rc::new(RefCell::new(5_()));
-                std_pair_int__long_::new_1({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
-            },
-            {
-                let __tmp_10: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_11: Value<()> = Rc::new(RefCell::new(6_()));
-                std_pair_int__long_::new_1({ __tmp_10.as_pointer() }, { __tmp_11.as_pointer() })
-            },
-            {
-                let __tmp_12: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_13: Value<()> = Rc::new(RefCell::new(7_()));
-                std_pair_int__long_::new_1({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
-            },
-            {
-                let __tmp_14: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_15: Value<()> = Rc::new(RefCell::new(8_()));
-                std_pair_int__long_::new_1({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() })
-            },
-            {
-                let __tmp_16: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_17: Value<()> = Rc::new(RefCell::new(9_()));
-                std_pair_int__long_::new_1({ __tmp_16.as_pointer() }, { __tmp_17.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_18: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_19: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_18.as_pointer() }, { __tmp_19.as_pointer() })
-            },
-            {
-                let __tmp_20: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_21: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_20.as_pointer() }, { __tmp_21.as_pointer() })
-            },
-            {
-                let __tmp_22: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_23: Value<()> = Rc::new(RefCell::new(3_()));
-                std_pair_int__long_::new_1({ __tmp_22.as_pointer() }, { __tmp_23.as_pointer() })
-            },
-            {
-                let __tmp_24: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_25: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_int__long_::new_1({ __tmp_24.as_pointer() }, { __tmp_25.as_pointer() })
-            },
-            {
-                let __tmp_26: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_27: Value<()> = Rc::new(RefCell::new(5_()));
-                std_pair_int__long_::new_1({ __tmp_26.as_pointer() }, { __tmp_27.as_pointer() })
-            },
-            {
-                let __tmp_28: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_29: Value<()> = Rc::new(RefCell::new(7_()));
-                std_pair_int__long_::new_1({ __tmp_28.as_pointer() }, { __tmp_29.as_pointer() })
-            },
-            {
-                let __tmp_30: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_31: Value<()> = Rc::new(RefCell::new(6_()));
-                std_pair_int__long_::new_1({ __tmp_30.as_pointer() }, { __tmp_31.as_pointer() })
-            },
-            {
-                let __tmp_32: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_33: Value<()> = Rc::new(RefCell::new(8_()));
-                std_pair_int__long_::new_1({ __tmp_32.as_pointer() }, { __tmp_33.as_pointer() })
-            },
-            {
-                let __tmp_34: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_35: Value<()> = Rc::new(RefCell::new(9_()));
-                std_pair_int__long_::new_1({ __tmp_34.as_pointer() }, { __tmp_35.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         {
             let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -940,26 +874,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_36: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_37: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__int_::new_1({ __tmp_36.as_pointer() }, { __tmp_37.as_pointer() })
-            },
-            {
-                let __tmp_38: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_39: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__int_::new_1({ __tmp_38.as_pointer() }, { __tmp_39.as_pointer() })
-            },
-            {
-                let __tmp_40: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_41: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_40.as_pointer() }, { __tmp_41.as_pointer() })
-            },
-            {
-                let __tmp_42: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_43: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__int_::new_1({ __tmp_42.as_pointer() }, { __tmp_43.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -997,98 +915,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_44: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_45: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_44.as_pointer() }, { __tmp_45.as_pointer() })
-            },
-            {
-                let __tmp_46: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_47: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_46.as_pointer() }, { __tmp_47.as_pointer() })
-            },
-            {
-                let __tmp_48: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_49: Value<()> = Rc::new(RefCell::new(3_()));
-                std_pair_int__long_::new_1({ __tmp_48.as_pointer() }, { __tmp_49.as_pointer() })
-            },
-            {
-                let __tmp_50: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_51: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_int__long_::new_1({ __tmp_50.as_pointer() }, { __tmp_51.as_pointer() })
-            },
-            {
-                let __tmp_52: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_53: Value<()> = Rc::new(RefCell::new(5_()));
-                std_pair_int__long_::new_1({ __tmp_52.as_pointer() }, { __tmp_53.as_pointer() })
-            },
-            {
-                let __tmp_54: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_55: Value<()> = Rc::new(RefCell::new(6_()));
-                std_pair_int__long_::new_1({ __tmp_54.as_pointer() }, { __tmp_55.as_pointer() })
-            },
-            {
-                let __tmp_56: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_57: Value<()> = Rc::new(RefCell::new(7_()));
-                std_pair_int__long_::new_1({ __tmp_56.as_pointer() }, { __tmp_57.as_pointer() })
-            },
-            {
-                let __tmp_58: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_59: Value<()> = Rc::new(RefCell::new(8_()));
-                std_pair_int__long_::new_1({ __tmp_58.as_pointer() }, { __tmp_59.as_pointer() })
-            },
-            {
-                let __tmp_60: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_61: Value<()> = Rc::new(RefCell::new(9_()));
-                std_pair_int__long_::new_1({ __tmp_60.as_pointer() }, { __tmp_61.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_62: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_63: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_62.as_pointer() }, { __tmp_63.as_pointer() })
-            },
-            {
-                let __tmp_64: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_65: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_64.as_pointer() }, { __tmp_65.as_pointer() })
-            },
-            {
-                let __tmp_66: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_67: Value<()> = Rc::new(RefCell::new(3_()));
-                std_pair_int__long_::new_1({ __tmp_66.as_pointer() }, { __tmp_67.as_pointer() })
-            },
-            {
-                let __tmp_68: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_69: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_int__long_::new_1({ __tmp_68.as_pointer() }, { __tmp_69.as_pointer() })
-            },
-            {
-                let __tmp_70: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_71: Value<()> = Rc::new(RefCell::new(5_()));
-                std_pair_int__long_::new_1({ __tmp_70.as_pointer() }, { __tmp_71.as_pointer() })
-            },
-            {
-                let __tmp_72: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_73: Value<()> = Rc::new(RefCell::new(7_()));
-                std_pair_int__long_::new_1({ __tmp_72.as_pointer() }, { __tmp_73.as_pointer() })
-            },
-            {
-                let __tmp_74: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_75: Value<()> = Rc::new(RefCell::new(6_()));
-                std_pair_int__long_::new_1({ __tmp_74.as_pointer() }, { __tmp_75.as_pointer() })
-            },
-            {
-                let __tmp_76: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_77: Value<()> = Rc::new(RefCell::new(8_()));
-                std_pair_int__long_::new_1({ __tmp_76.as_pointer() }, { __tmp_77.as_pointer() })
-            },
-            {
-                let __tmp_78: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_79: Value<()> = Rc::new(RefCell::new(9_()));
-                std_pair_int__long_::new_1({ __tmp_78.as_pointer() }, { __tmp_79.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         {
             let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1134,26 +980,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_80: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_81: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__int_::new_1({ __tmp_80.as_pointer() }, { __tmp_81.as_pointer() })
-            },
-            {
-                let __tmp_82: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_83: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_82.as_pointer() }, { __tmp_83.as_pointer() })
-            },
-            {
-                let __tmp_84: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_85: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_int__int_::new_1({ __tmp_84.as_pointer() }, { __tmp_85.as_pointer() })
-            },
-            {
-                let __tmp_86: Value<()> = Rc::new(RefCell::new(5_()));
-                let __tmp_87: Value<()> = Rc::new(RefCell::new(5_()));
-                std_pair_int__int_::new_1({ __tmp_86.as_pointer() }, { __tmp_87.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         unimplemented!();
         unimplemented!();
@@ -1164,11 +994,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([{
-            let __tmp_88: Value<()> = Rc::new(RefCell::new(42_()));
-            let __tmp_89: Value<()> = Rc::new(RefCell::new(42_()));
-            std_pair_int__int_::new_1({ __tmp_88.as_pointer() }, { __tmp_89.as_pointer() })
-        }])));
+        let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1179,26 +1005,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_90: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_91: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__int_::new_1({ __tmp_90.as_pointer() }, { __tmp_91.as_pointer() })
-            },
-            {
-                let __tmp_92: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_93: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_92.as_pointer() }, { __tmp_93.as_pointer() })
-            },
-            {
-                let __tmp_94: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_95: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_int__int_::new_1({ __tmp_94.as_pointer() }, { __tmp_95.as_pointer() })
-            },
-            {
-                let __tmp_96: Value<()> = Rc::new(RefCell::new(5_()));
-                let __tmp_97: Value<()> = Rc::new(RefCell::new(5_()));
-                std_pair_int__int_::new_1({ __tmp_96.as_pointer() }, { __tmp_97.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         unimplemented!();
         unimplemented!();
@@ -1209,11 +1019,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([{
-            let __tmp_98: Value<()> = Rc::new(RefCell::new(42_()));
-            let __tmp_99: Value<()> = Rc::new(RefCell::new(42_()));
-            std_pair_int__int_::new_1({ __tmp_98.as_pointer() }, { __tmp_99.as_pointer() })
-        }])));
+        let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1626,8 +1432,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_10.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_10.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_11.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_11.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -1651,6 +1457,6 @@ impl test_less_int_Impl for Ptr<test_less_int_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_10.with(|_| ());
-    let _ = moved_value_11.with(|_| ());
+    let _ = destructed_value_11.with(|_| ());
+    let _ = moved_value_12.with(|_| ());
 }

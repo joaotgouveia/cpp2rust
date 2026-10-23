@@ -231,11 +231,7 @@ pub struct min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0
 pub struct min_allocator_min_pointer_const_int__std_integral_constant_unsigned_long__0___ {}
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 pub fn test_17(mut n: (), x: Ptr<()>, a: Ptr<()>) {
-    let d: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
-        { n },
-        { (x).clone() },
-        { (a).clone() },
-    )));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -254,11 +250,7 @@ pub fn test_17(mut n: (), x: Ptr<()>, a: Ptr<()>) {
     }
 }
 pub fn test_18(mut n: (), x: Ptr<()>, a: Ptr<min_allocator_int_>) {
-    let d: Value<()> = Rc::new(RefCell::new(std_deque_int__min_allocator_int__::new_1(
-        { n },
-        { (x).clone() },
-        { (a).clone() },
-    )));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -449,16 +449,40 @@ pub unsafe fn test_12() -> () {
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_1: () = 2_();
-            let mut __tmp_2: () = unimplemented!();
-            std_list_int__std_allocator_int__::new_1({ 3_() }, { &mut __tmp_1 }, { &mut __tmp_2 })
+        let mut l: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = {
+            let mut __tmp_1: () = unimplemented!();
+            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_1 })
         };
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = {
+            let mut __tmp_2: () = unimplemented!();
+            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_2 })
+        };
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut i: () = {
             let mut __tmp_3: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_3 })
+            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_3 } , )
         };
         unimplemented!();
         unimplemented!();
@@ -472,39 +496,7 @@ pub unsafe fn test_12() -> () {
         unimplemented!();
         let mut i: () = {
             let mut __tmp_4: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_4 })
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_5: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_5 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l: () = {
-            let mut __tmp_6: () = 2_();
-            let mut __tmp_7: min_allocator_int_ = <min_allocator_int_>::default();
-            std_list_int__min_allocator_int__::new_1({ 3_() }, { &mut __tmp_6 }, { &mut __tmp_7 })
-        };
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_8: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_8 } , )
+            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_4 } , )
         };
         unimplemented!();
         unimplemented!();

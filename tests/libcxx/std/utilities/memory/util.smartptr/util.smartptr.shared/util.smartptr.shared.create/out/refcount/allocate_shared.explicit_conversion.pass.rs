@@ -29,14 +29,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let ptr: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___a: Value<ExplicitAllocator_int_> =
-                Rc::new(RefCell::new(<ExplicitAllocator_int_>::default()));
-            let ___args: Value<()> = Rc::new(RefCell::new(0_()));
-            allocate_shared_0(___a.as_pointer(), ___args.as_pointer())
-        }),
-    ));
+    let ptr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     &(*ptr.borrow_mut());
     return 0_();
 }

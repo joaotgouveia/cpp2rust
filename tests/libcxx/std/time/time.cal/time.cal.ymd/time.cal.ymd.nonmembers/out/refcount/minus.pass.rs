@@ -41,13 +41,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let January: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "test_constexpr()");;
     let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) <= 10_()) {
+    let mut i: () = 0_();
+    'loop_: while (i <= 10_()) {
         let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
     return 0_();
 }

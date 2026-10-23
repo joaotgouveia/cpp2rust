@@ -484,14 +484,7 @@ pub unsafe fn test_string_15(a: *const ()) {
         unimplemented!();
     }
     {
-        let s: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 3_() },
-                { ('x' as ()) },
-                { &mut __tmp_0 },
-            )
-        };
+        let s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -509,14 +502,7 @@ pub unsafe fn test_string_16(a: *const test_allocator_char_) {
         unimplemented!();
     }
     {
-        let s: () = {
-            let mut __tmp_1: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { 3_() },
-                { ('x' as ()) },
-                { &mut __tmp_1 },
-            )
-        };
+        let s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -534,14 +520,7 @@ pub unsafe fn test_string_17(a: *const min_allocator_char_) {
         unimplemented!();
     }
     {
-        let s: () = {
-            let mut __tmp_2: min_allocator_char_ = (*a);
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { 3_() },
-                { ('x' as ()) },
-                { &mut __tmp_2 },
-            )
-        };
+        let s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -559,14 +538,7 @@ pub unsafe fn test_string_18(a: *const safe_allocator_char_) {
         unimplemented!();
     }
     {
-        let s: () = {
-            let mut __tmp_3: safe_allocator_char_ = (*a);
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { 3_() },
-                { ('x' as ()) },
-                { &mut __tmp_3 },
-            )
-        };
+        let s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -61,12 +61,7 @@ pub unsafe fn test_5() -> () {
     {
         let mut a1: [(); 9] = [2_(), 1_(), 1_(), 4_(), 4_(), 4_(), 4_(), 3_(), 3_()];
         let mut a2: [(); 4] = [2_(), 1_(), 4_(), 3_()];
-        let mut c: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 9]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -74,12 +69,7 @@ pub unsafe fn test_5() -> () {
     {
         let mut a1: [(); 9] = [2_(), 1_(), 1_(), 4_(), 4_(), 4_(), 4_(), 3_(), 3_()];
         let mut a2: [(); 4] = [2_(), 1_(), 4_(), 3_()];
-        let mut c: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 9]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -335,23 +335,9 @@ impl std::cmp::Eq for min_allocator_int_ {}
 pub unsafe fn test_10() -> () {
     {
         let t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut c1: () = {
-            let mut __tmp_0: test_allocator_int_ = test_allocator_int_::new_1({ 1_() }, { 1_() });
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_0 },
-            )
-        };
+        let mut c1: () = unimplemented!();
         let t2: [(); 3] = [10_(), 11_(), 12_()];
-        let mut c2: () = {
-            let mut __tmp_1: test_allocator_int_ = test_allocator_int_::new_1({ 1_() }, { 2_() });
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_1 },
-            )
-        };
+        let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -369,14 +355,7 @@ pub unsafe fn test_10() -> () {
     }
     {
         let t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut c1: () = {
-            let mut __tmp_2: test_allocator_int_ = test_allocator_int_::new_1({ 1_() }, { 1_() });
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_2 },
-            )
-        };
+        let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -393,14 +372,7 @@ pub unsafe fn test_10() -> () {
     {
         let mut c1: () = unimplemented!();
         let t2: [(); 3] = [10_(), 11_(), 12_()];
-        let mut c2: () = {
-            let mut __tmp_3: test_allocator_int_ = test_allocator_int_::new_1({ 1_() }, { 2_() });
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_3 },
-            )
-        };
+        let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -421,23 +393,9 @@ pub unsafe fn test_10() -> () {
     }
     {
         let t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut c1: () = {
-            let mut __tmp_4: other_allocator_int_ = other_allocator_int_::new_1({ 1_() });
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_4 },
-            )
-        };
+        let mut c1: () = unimplemented!();
         let t2: [(); 3] = [10_(), 11_(), 12_()];
-        let mut c2: () = {
-            let mut __tmp_5: other_allocator_int_ = other_allocator_int_::new_1({ 2_() });
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_5 },
-            )
-        };
+        let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -455,14 +413,7 @@ pub unsafe fn test_10() -> () {
     }
     {
         let t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut c1: () = {
-            let mut __tmp_6: other_allocator_int_ = other_allocator_int_::new_1({ 1_() });
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_6 },
-            )
-        };
+        let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -479,14 +430,7 @@ pub unsafe fn test_10() -> () {
     {
         let mut c1: () = unimplemented!();
         let t2: [(); 3] = [10_(), 11_(), 12_()];
-        let mut c2: () = {
-            let mut __tmp_7: other_allocator_int_ = other_allocator_int_::new_1({ 2_() });
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_7 },
-            )
-        };
+        let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -507,23 +451,9 @@ pub unsafe fn test_10() -> () {
     }
     {
         let t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut c1: () = {
-            let mut __tmp_8: min_allocator_int_ = <min_allocator_int_>::default();
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_8 },
-            )
-        };
+        let mut c1: () = unimplemented!();
         let t2: [(); 3] = [10_(), 11_(), 12_()];
-        let mut c2: () = {
-            let mut __tmp_9: min_allocator_int_ = <min_allocator_int_>::default();
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_9 },
-            )
-        };
+        let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -541,14 +471,7 @@ pub unsafe fn test_10() -> () {
     }
     {
         let t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut c1: () = {
-            let mut __tmp_10: min_allocator_int_ = <min_allocator_int_>::default();
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_10 },
-            )
-        };
+        let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -565,14 +488,7 @@ pub unsafe fn test_10() -> () {
     {
         let mut c1: () = unimplemented!();
         let t2: [(); 3] = [10_(), 11_(), 12_()];
-        let mut c2: () = {
-            let mut __tmp_11: min_allocator_int_ = <min_allocator_int_>::default();
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_11 },
-            )
-        };
+        let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

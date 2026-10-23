@@ -341,24 +341,12 @@ impl Tag_X {
     }
 }
 pub fn test_4() {
-    let mut s: () = {
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-            { __tmp_0.as_pointer() },
-            None,
-        )
-    };
+    let mut s: () = unimplemented!();
     let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_5() {
-    let mut s: () = {
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-            { __tmp_1.as_pointer() },
-            None,
-        )
-    };
+    let mut s: () = unimplemented!();
     let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }

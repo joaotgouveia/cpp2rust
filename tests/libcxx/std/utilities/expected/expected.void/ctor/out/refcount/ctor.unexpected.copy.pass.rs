@@ -189,7 +189,11 @@ impl Default for TrivialMoveOnly {
     }
 }
 pub fn swap_14(x: Ptr<ADLSwap>, y: Ptr<ADLSwap>) {
-    unimplemented!();
+    ({
+        let ___x: Ptr<()> = field_ptr!(x, i);
+        let ___y: Ptr<()> = field_ptr!(y, i);
+        swap_15(___x, ___y)
+    });
     field!(x, adlSwapCalled).write(true);
     field!(y, adlSwapCalled).write(true);
 }
@@ -233,7 +237,7 @@ impl MoveOnlyErrorType {
         Self {}
     }
 }
-pub fn operator_eq_15(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) -> () {
+pub fn operator_eq_16(_a0: Ptr<TailClobberer_0_>, _a1: Ptr<TailClobberer_0_>) -> () {
     return ({ _a0.with(|__s| __s.b) } == { _a1.with(|__s| __s.b) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
@@ -252,7 +256,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_15(
+            operator_eq_16(
                 Rc::new(RefCell::new(TailClobberer_0_ { b: self.b.clone() })).as_pointer(),
                 Rc::new(RefCell::new(TailClobberer_0_ { b: other.b.clone() })).as_pointer(),
             )
@@ -260,7 +264,7 @@ impl std::cmp::PartialEq for TailClobberer_0_ {
     }
 }
 impl std::cmp::Eq for TailClobberer_0_ {}
-pub fn operator_eq_16(_a0: Ptr<TailClobberer_1_>, _a1: Ptr<TailClobberer_1_>) -> () {
+pub fn operator_eq_17(_a0: Ptr<TailClobberer_1_>, _a1: Ptr<TailClobberer_1_>) -> () {
     return ({ _a0.with(|__s| __s.b) } == { _a1.with(|__s| __s.b) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor)]
@@ -279,7 +283,7 @@ impl TailClobberer_1_ {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 2usize;
-                memset_17(___s, 1_(), ___n)
+                memset_18(___s, 1_(), ___n)
             });
         }
         field!(this, b).write(false);
@@ -297,7 +301,7 @@ impl TailClobberer_1_ {
 impl std::cmp::PartialEq for TailClobberer_1_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_16(
+            operator_eq_17(
                 Rc::new(RefCell::new(TailClobberer_1_ { b: self.b.clone() })).as_pointer(),
                 Rc::new(RefCell::new(TailClobberer_1_ { b: other.b.clone() })).as_pointer(),
             )
@@ -365,7 +369,7 @@ impl BoolWithPadding {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 8usize;
-                memset_17(___s, 0_(), ___n)
+                memset_18(___s, 0_(), ___n)
             });
         }
         field!(this, val_).write(val);
@@ -412,7 +416,7 @@ impl IntWithoutPadding {
             ({
                 let ___s: () = (this).to_any();
                 let ___n: () = 4usize;
-                memset_17(___s, 0_(), ___n)
+                memset_18(___s, 0_(), ___n)
             });
         }
         field!(this, val_).write(val);
@@ -479,7 +483,7 @@ const _: () = assert!(
     true,
     "!std::is_convertible_v<const std::unexpected<int>&, std::expected<void, NotConvertible>>"
 );
-pub fn operator_eq_18(_a0: Ptr<MyInt>, _a1: Ptr<MyInt>) -> () {
+pub fn operator_eq_19(_a0: Ptr<MyInt>, _a1: Ptr<MyInt>) -> () {
     return ({ _a0.with(|__s| __s.i) } == { _a1.with(|__s| __s.i) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -496,7 +500,7 @@ impl MyInt {
 impl std::cmp::PartialEq for MyInt {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_18(
+            operator_eq_19(
                 Rc::new(RefCell::new(MyInt { i: self.i.clone() })).as_pointer(),
                 Rc::new(RefCell::new(MyInt { i: other.i.clone() })).as_pointer(),
             )
@@ -504,12 +508,6 @@ impl std::cmp::PartialEq for MyInt {
     }
 }
 impl std::cmp::Eq for MyInt {}
-pub fn testUnexpected_19() {
-    let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-}
 pub fn testUnexpected_20() {
     let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -522,13 +520,19 @@ pub fn testUnexpected_21() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_22() -> () {
-    ({ testUnexpected_19() });
+pub fn testUnexpected_22() {
+    let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_23() -> () {
     ({ testUnexpected_20() });
     ({ testUnexpected_21() });
+    ({ testUnexpected_22() });
     return true;
 }
-pub fn testException_23() {}
+pub fn testException_24() {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -549,9 +553,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_22() });
+    ({ test_23() });
     const _: () = assert!(true, "test()");;
-    ({ testException_23() });
+    ({ testException_24() });
     return 0_();
 }
 pub trait BoolWithPaddingImpl {

@@ -50,22 +50,8 @@ pub static mut carr3_8: std::cell::LazyCell<[(); 2]> =
     std::cell::LazyCell::new(|| unsafe { [7_(), 8_()] });
 pub static mut arr_9: std::cell::LazyCell<[(); 4]> =
     std::cell::LazyCell::new(|| unsafe { [5_(), 6_(), 7_(), 9_()] });
-pub static mut strs_10: std::cell::LazyCell<[(); 3]> = std::cell::LazyCell::new(|| unsafe {
-    [
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"ABC".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"DEF".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"GHI".as_ptr() },
-            None,
-        ),
-    ]
-});
+pub static mut strs_10: std::cell::LazyCell<[(); 3]> =
+    std::cell::LazyCell::new(|| unsafe { [unimplemented!(), unimplemented!(), unimplemented!()] });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

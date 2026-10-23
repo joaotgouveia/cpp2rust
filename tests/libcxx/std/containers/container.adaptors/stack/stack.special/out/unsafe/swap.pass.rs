@@ -35,7 +35,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut q2: () = (unsafe { make_0(10_()) });
     let mut q1_save: () = unimplemented!();
     let mut q2_save: () = unimplemented!();
-    (unsafe { swap_1(&mut q1, &mut q2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return 0_();

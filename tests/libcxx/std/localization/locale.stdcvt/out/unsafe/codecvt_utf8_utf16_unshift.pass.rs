@@ -24,8 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut c: std_codecvt_utf8_utf16_wchar_t__1114111__0_ =
-            <std_codecvt_utf8_utf16_wchar_t__1114111__0_>::default();
+        let mut c: () = unimplemented!();
         let mut n: [(); 4] = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
         let mut m: () = unimplemented!();
         let mut np: *mut () = std::ptr::null_mut();
@@ -33,8 +32,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_utf16_char16_t__1114111__0_ =
-            <std_codecvt_utf8_utf16_char16_t__1114111__0_>::default();
+        let mut c: () = unimplemented!();
         let mut n: [(); 4] = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
         let mut m: () = unimplemented!();
         let mut np: *mut () = std::ptr::null_mut();
@@ -42,8 +40,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_utf16_char32_t__1114111__0_ =
-            <std_codecvt_utf8_utf16_char32_t__1114111__0_>::default();
+        let mut c: () = unimplemented!();
         let mut n: [(); 4] = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
         let mut m: () = unimplemented!();
         let mut np: *mut () = std::ptr::null_mut();

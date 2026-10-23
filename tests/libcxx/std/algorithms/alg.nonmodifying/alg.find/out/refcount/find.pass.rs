@@ -10404,23 +10404,29 @@ pub fn operator_add_337(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_336(_i, n)
     });
 }
-pub fn iter_swap_338(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_338(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_339(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_339(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_340(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_340(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_341(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_341(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_342(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -10466,7 +10472,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_341(
+            operator_cmp_342(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -10491,7 +10497,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_340(
+            operator_eq_341(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -10576,7 +10582,7 @@ impl util_iterator_error {
     }
 }
 thread_local!(
-    pub static comparable_data_342: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static comparable_data_343: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -10743,7 +10749,7 @@ pub struct Test_Comparable_char___Comparable_char__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test_Comparable_wchar_t___Comparable_wchar_t__ {}
-pub fn operator_eq_343(lhs: Ptr<Comparable_char_>, rhs: Ptr<Comparable_char_>) -> () {
+pub fn operator_eq_344(lhs: Ptr<Comparable_char_>, rhs: Ptr<Comparable_char_>) -> () {
     return ({ (unimplemented!().read()) } == { (unimplemented!().read()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -10767,7 +10773,7 @@ impl Comparable_char_ {
 impl std::cmp::PartialEq for Comparable_char_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_343(
+            operator_eq_344(
                 Rc::new(RefCell::new(Comparable_char_ {
                     index_: self.index_.clone(),
                 }))
@@ -10781,7 +10787,7 @@ impl std::cmp::PartialEq for Comparable_char_ {
     }
 }
 impl std::cmp::Eq for Comparable_char_ {}
-pub fn operator_eq_344(lhs: Ptr<Comparable_wchar_t_>, rhs: Ptr<Comparable_wchar_t_>) -> () {
+pub fn operator_eq_345(lhs: Ptr<Comparable_wchar_t_>, rhs: Ptr<Comparable_wchar_t_>) -> () {
     return ({ (unimplemented!().read()) } == { (unimplemented!().read()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -10805,7 +10811,7 @@ impl Comparable_wchar_t_ {
 impl std::cmp::PartialEq for Comparable_wchar_t_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_344(
+            operator_eq_345(
                 Rc::new(RefCell::new(Comparable_wchar_t_ {
                     index_: self.index_.clone(),
                 }))
@@ -10884,7 +10890,7 @@ pub struct TestTypes_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestTypes_long_long_ {}
-pub fn test_deque_345() {
+pub fn test_deque_346() {
     {
         let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -10993,7 +10999,7 @@ pub struct TestIntegerPromotions1_bool_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIntegerPromotions {}
-pub fn test_346() -> () {
+pub fn test_347() -> () {
     ({
         for_each_0 ( <types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128_  >::default()  , <TestTypes_char_  >::default()  , )
     });
@@ -11079,8 +11085,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_deque_345() });
-    ({ test_346() });
+    ({ test_deque_346() });
+    ({ test_347() });
     const _: () = assert!(true, "test()");;
     ({
         Test_Comparable_char___Comparable_char__Impl::operator_call_1_class_Comparable_char__ptr(
@@ -56840,5 +56846,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = comparable_data_342.with(|_| ());
+    let _ = comparable_data_343.with(|_| ());
 }

@@ -323,8 +323,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let val: X = X::new({ 2_() });
         let o1: () = unimplemented!();
-        let o2: () = 1_();
-        let o3: () = std_optional_X_::new_1({ &val });
+        let o2: () = unimplemented!();
+        let o3: () = unimplemented!();
         const _: () = assert!(true, "!(o1 == T(1))");;
         const _: () = assert!(true, "(o2 == T(1))");;
         const _: () = assert!(true, "!(o3 == T(1))");;
@@ -337,12 +337,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "(val == o3)");;
     }
     {
-        let o1: () = 42_();
+        let o1: () = unimplemented!();
         const _: () = assert!(true, "o1 == 42l");;
         const _: () = assert!(true, "!(101l == o1)");;
     }
     {
-        let o1: () = 42_();
+        let o1: () = unimplemented!();
         const _: () = assert!(true, "o1 == 42");;
         const _: () = assert!(true, "!(101 == o1)");;
     }

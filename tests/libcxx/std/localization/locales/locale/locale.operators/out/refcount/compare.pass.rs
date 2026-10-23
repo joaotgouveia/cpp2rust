@@ -30,39 +30,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
-            let mut s2: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"aaaaaaA") },
-                    None,
-                );
-            let mut s3: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"BaaaaaA") },
-                    None,
-                );
+            let mut s2: () = unimplemented!();
+            let mut s3: () = unimplemented!();
             unimplemented!();
         }
         {
-            let mut s2: () =
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    {
-                        Ptr::<()>::from_string_literal(&[
-                            97 as (), 97 as (), 97 as (), 97 as (), 97 as (), 97 as (), 65 as (),
-                            0 as (),
-                        ])
-                    },
-                    None,
-                );
-            let mut s3: () =
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    {
-                        Ptr::<()>::from_string_literal(&[
-                            66 as (), 97 as (), 97 as (), 97 as (), 97 as (), 97 as (), 65 as (),
-                            0 as (),
-                        ])
-                    },
-                    None,
-                );
+            let mut s2: () = unimplemented!();
+            let mut s3: () = unimplemented!();
             unimplemented!();
         }
     }

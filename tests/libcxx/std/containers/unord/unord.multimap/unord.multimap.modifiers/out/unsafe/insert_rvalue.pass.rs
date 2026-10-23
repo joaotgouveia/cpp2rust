@@ -299,14 +299,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_0: () = 3.5_f64;
-                let mut __tmp_1: () = 3_();
-                std_pair_double__short_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -325,14 +318,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_2: () = 3_();
-                let mut __tmp_3: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -351,14 +337,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_4: () = 3.5_f64;
-                let mut __tmp_5: () = 3_();
-                std_pair_double__short_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -377,14 +356,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_6: () = 3_();
-                let mut __tmp_7: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

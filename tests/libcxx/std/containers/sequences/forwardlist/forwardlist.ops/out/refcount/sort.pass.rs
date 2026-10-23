@@ -65,11 +65,7 @@ pub fn test_5(mut N: ()) {
         i.prefix_inc();
     }
     unimplemented!();
-    let c: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let j: Value<()> = Rc::new(RefCell::new(
@@ -94,11 +90,7 @@ pub fn test_6(mut N: ()) {
         i.prefix_inc();
     }
     unimplemented!();
-    let c: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let j : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()   } , )  )) ;
@@ -211,11 +203,7 @@ pub fn test_stable_7(mut N: ()) {
         field!(unimplemented!(), side).write(__rhs);
         i.prefix_inc();
     }
-    let c: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_Payload__std_allocator_Payload__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let j: Value<()> = Rc::new(RefCell::new(
@@ -237,7 +225,7 @@ pub fn test_stable_7(mut N: ()) {
         }),
     ));
     'loop_: while unimplemented!() {
-        let next: Value<()> = Rc::new(RefCell::new(({ next_8((*it.borrow()).clone(), None) })));
+        let next: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         if (unimplemented!())
             && ({ ((*it.borrow()).read()).val } == { ((*next.borrow()).read()).val })
         {

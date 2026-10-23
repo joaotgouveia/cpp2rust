@@ -10,22 +10,18 @@ pub fn test1_0() {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_()])));
     let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(
-        std_subtract_with_carry_engine_unsigned_long__24__10__24_::new_1({ sseq.as_pointer() }),
-    ));
+    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ (*e1.borrow()).seed(sseq.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test2_1() {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_()])));
     let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(
-        std_subtract_with_carry_engine_unsigned_long__48__5__12_::new_1({ sseq.as_pointer() }),
-    ));
+    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ (*e1.borrow()).seed(sseq.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn main() {

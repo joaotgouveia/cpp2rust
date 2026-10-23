@@ -10,18 +10,8 @@ pub unsafe fn test_0() -> () {
     let mut a: [(); 7] = [3_(), 5_(), 2_(), 0_(), 6_(), 8_(), 1_()];
     let n: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut v: () = std_vector_int__std_allocator_int__::new_1({ a.as_mut_ptr() }, {
-        a.as_mut_ptr().offset(((n) / (2_())) as isize)
-    });
-    let mut q: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-            { a.as_mut_ptr().offset(((n) / (2_())) as isize) },
-            { a.as_mut_ptr().offset((n) as isize) },
-            { &mut __tmp_0 },
-            { &v },
-        )
-    };
+    let mut v: () = unimplemented!();
+    let mut q: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

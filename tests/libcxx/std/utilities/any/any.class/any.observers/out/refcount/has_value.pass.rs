@@ -593,23 +593,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*a.borrow_mut()) = 42_();
+        unimplemented!();
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(small_type_0_::new_1({ 1_() })));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*a.borrow_mut()) = small_type_0_::new_1({ 1_() });
+        unimplemented!();
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(large_type_0_::new_1({ 1_() })));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*a.borrow_mut()) = large_type_0_::new_1({ 1_() });
+        unimplemented!();
         unimplemented!();
     }
     return 0_();
@@ -619,10 +619,7 @@ pub trait TypeIDImpl {
 }
 impl TypeIDImpl for Ptr<TypeID> {
     fn name(&self) -> () {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (*self).with(|__s| __s.m_id.clone()) },
-            None,
-        );
+        return unimplemented!();
     }
 }
 pub trait large_throws_on_copyImpl {

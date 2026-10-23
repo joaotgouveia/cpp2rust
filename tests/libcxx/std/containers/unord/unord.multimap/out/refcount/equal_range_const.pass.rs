@@ -111,66 +111,16 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut a: [(); 10] = [
-            {
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(10_()));
-                std_pair_int__std_string_::new_1({ __tmp_0.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"ten")
-                })
-            },
-            {
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(20_()));
-                std_pair_int__std_string_::new_2({ __tmp_1.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"twenty")
-                })
-            },
-            {
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(30_()));
-                std_pair_int__std_string_::new_2({ __tmp_2.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"thirty")
-                })
-            },
-            {
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(40_()));
-                std_pair_int__std_string_::new_3({ __tmp_3.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"forty")
-                })
-            },
-            {
-                let __tmp_4: Value<()> = Rc::new(RefCell::new(50_()));
-                std_pair_int__std_string_::new_3({ __tmp_4.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"fifty")
-                })
-            },
-            {
-                let __tmp_5: Value<()> = Rc::new(RefCell::new(50_()));
-                std_pair_int__std_string_::new_2({ __tmp_5.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"fiftyA")
-                })
-            },
-            {
-                let __tmp_6: Value<()> = Rc::new(RefCell::new(50_()));
-                std_pair_int__std_string_::new_2({ __tmp_6.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"fiftyB")
-                })
-            },
-            {
-                let __tmp_7: Value<()> = Rc::new(RefCell::new(60_()));
-                std_pair_int__std_string_::new_3({ __tmp_7.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"sixty")
-                })
-            },
-            {
-                let __tmp_8: Value<()> = Rc::new(RefCell::new(70_()));
-                std_pair_int__std_string_::new_4({ __tmp_8.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"seventy")
-                })
-            },
-            {
-                let __tmp_9: Value<()> = Rc::new(RefCell::new(80_()));
-                std_pair_int__std_string_::new_2({ __tmp_9.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"eighty")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -195,66 +145,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut a: [(); 10] = [
-            {
-                let __tmp_10: Value<()> = Rc::new(RefCell::new(10_()));
-                std_pair_int__std_string_::new_1({ __tmp_10.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"ten")
-                })
-            },
-            {
-                let __tmp_11: Value<()> = Rc::new(RefCell::new(20_()));
-                std_pair_int__std_string_::new_2({ __tmp_11.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"twenty")
-                })
-            },
-            {
-                let __tmp_12: Value<()> = Rc::new(RefCell::new(30_()));
-                std_pair_int__std_string_::new_2({ __tmp_12.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"thirty")
-                })
-            },
-            {
-                let __tmp_13: Value<()> = Rc::new(RefCell::new(40_()));
-                std_pair_int__std_string_::new_3({ __tmp_13.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"forty")
-                })
-            },
-            {
-                let __tmp_14: Value<()> = Rc::new(RefCell::new(50_()));
-                std_pair_int__std_string_::new_3({ __tmp_14.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"fifty")
-                })
-            },
-            {
-                let __tmp_15: Value<()> = Rc::new(RefCell::new(50_()));
-                std_pair_int__std_string_::new_2({ __tmp_15.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"fiftyA")
-                })
-            },
-            {
-                let __tmp_16: Value<()> = Rc::new(RefCell::new(50_()));
-                std_pair_int__std_string_::new_2({ __tmp_16.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"fiftyB")
-                })
-            },
-            {
-                let __tmp_17: Value<()> = Rc::new(RefCell::new(60_()));
-                std_pair_int__std_string_::new_3({ __tmp_17.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"sixty")
-                })
-            },
-            {
-                let __tmp_18: Value<()> = Rc::new(RefCell::new(70_()));
-                std_pair_int__std_string_::new_4({ __tmp_18.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"seventy")
-                })
-            },
-            {
-                let __tmp_19: Value<()> = Rc::new(RefCell::new(80_()));
-                std_pair_int__std_string_::new_2({ __tmp_19.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"eighty")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));

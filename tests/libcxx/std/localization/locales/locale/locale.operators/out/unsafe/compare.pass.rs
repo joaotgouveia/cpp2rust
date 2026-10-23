@@ -26,41 +26,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut l: () = unimplemented!();
         {
-            let mut s2: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"aaaaaaA".as_ptr() },
-                    None,
-                );
-            let mut s3: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"BaaaaaA".as_ptr() },
-                    None,
-                );
+            let mut s2: () = unimplemented!();
+            let mut s3: () = unimplemented!();
             unimplemented!();
         }
         {
-            let mut s2: () =
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    {
-                        [
-                            97 as (), 97 as (), 97 as (), 97 as (), 97 as (), 97 as (), 65 as (),
-                            0 as (),
-                        ]
-                        .as_ptr()
-                    },
-                    None,
-                );
-            let mut s3: () =
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    {
-                        [
-                            66 as (), 97 as (), 97 as (), 97 as (), 97 as (), 97 as (), 65 as (),
-                            0 as (),
-                        ]
-                        .as_ptr()
-                    },
-                    None,
-                );
+            let mut s2: () = unimplemented!();
+            let mut s3: () = unimplemented!();
             unimplemented!();
         }
     }

@@ -20,17 +20,17 @@ impl A_int_0 {
 }
 pub unsafe fn test_int_0_2() {
     {
-        let mut r1: () = std_reference_wrapper_int____::new({ Some(f_int_0_1) });
+        let mut r1: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut fp: Option<unsafe fn() -> ()> = Some(f_int_0_1);
-        let mut r1: () = std_reference_wrapper_int__ptr____::new({ &mut fp });
+        let mut r1: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut a0: A_int_0 = <A_int_0>::default();
-        let mut r1: () = std_reference_wrapper_A_int_0_::new({ &mut a0 });
+        let mut r1: () = unimplemented!();
         unimplemented!();
     }
 }

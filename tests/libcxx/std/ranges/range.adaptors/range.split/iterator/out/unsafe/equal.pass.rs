@@ -584,21 +584,25 @@ pub unsafe fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_18(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_18(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_19(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_21(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -682,7 +686,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_20(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_21(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -692,7 +696,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_19(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_20(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -760,12 +764,12 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn testOne_21() {
+pub unsafe fn testOne_22() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input : std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { forward_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 7_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -775,7 +779,7 @@ pub unsafe fn testOne_21() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_22(&mut b, 2_()) });
+            (unsafe { advance_23(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -785,7 +789,7 @@ pub unsafe fn testOne_21() {
         }
         {
             let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input : std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { forward_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -798,7 +802,7 @@ pub unsafe fn testOne_21() {
         }
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input : std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { forward_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 7_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { & mut buffer } , { ( - 1_()  as () )  } , )  ;
             let mut i1: () = unimplemented!();
             let mut i2: () = unimplemented!();
@@ -807,12 +811,12 @@ pub unsafe fn testOne_21() {
         }
     }
 }
-pub unsafe fn testOne_23() {
+pub unsafe fn testOne_24() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { bidirectional_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { bidirectional_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 7_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -822,7 +826,7 @@ pub unsafe fn testOne_23() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_24(&mut b, 2_()) });
+            (unsafe { advance_25(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -832,7 +836,7 @@ pub unsafe fn testOne_23() {
         }
         {
             let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { bidirectional_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { bidirectional_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -845,7 +849,7 @@ pub unsafe fn testOne_23() {
         }
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input : std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { bidirectional_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { bidirectional_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 7_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { & mut buffer } , { ( - 1_()  as () )  } , )  ;
             let mut i1: () = unimplemented!();
             let mut i2: () = unimplemented!();
@@ -854,12 +858,12 @@ pub unsafe fn testOne_23() {
         }
     }
 }
-pub unsafe fn testOne_25() {
+pub unsafe fn testOne_26() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { random_access_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { random_access_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 7_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -869,7 +873,7 @@ pub unsafe fn testOne_25() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_26(&mut b, 2_()) });
+            (unsafe { advance_27(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -879,7 +883,7 @@ pub unsafe fn testOne_25() {
         }
         {
             let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { random_access_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { random_access_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -892,7 +896,7 @@ pub unsafe fn testOne_25() {
         }
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { random_access_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { random_access_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 7_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { & mut buffer } , { ( - 1_()  as () )  } , )  ;
             let mut i1: () = unimplemented!();
             let mut i2: () = unimplemented!();
@@ -901,12 +905,12 @@ pub unsafe fn testOne_25() {
         }
     }
 }
-pub unsafe fn testOne_27() {
+pub unsafe fn testOne_28() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { contiguous_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { contiguous_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 7_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -916,7 +920,7 @@ pub unsafe fn testOne_27() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_28(&mut b, 2_()) });
+            (unsafe { advance_29(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -926,7 +930,7 @@ pub unsafe fn testOne_27() {
         }
         {
             let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { contiguous_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { contiguous_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 4_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -939,7 +943,7 @@ pub unsafe fn testOne_27() {
         }
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input : std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ = std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { contiguous_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  } , { contiguous_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() . offset ( ( 7_() ) as isize ) } , )  } , )  ;
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { & mut buffer } , { ( - 1_()  as () )  } , )  ;
             let mut i1: () = unimplemented!();
             let mut i2: () = unimplemented!();
@@ -948,16 +952,12 @@ pub unsafe fn testOne_27() {
         }
     }
 }
-pub unsafe fn testOne_29() {
+pub unsafe fn testOne_30() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ =
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                    { buffer.as_mut_ptr() },
-                    { buffer.as_mut_ptr().offset((7_()) as isize) },
-                );
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -967,7 +967,7 @@ pub unsafe fn testOne_29() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_30(&mut b, 2_()) });
+            (unsafe { advance_31(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -977,11 +977,7 @@ pub unsafe fn testOne_29() {
         }
         {
             let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ =
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                    { buffer.as_mut_ptr() },
-                    { buffer.as_mut_ptr().offset((4_()) as isize) },
-                );
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
             let mut b: () = (unsafe { sv.begin() });
             let mut e: () = unimplemented!();
@@ -994,11 +990,7 @@ pub unsafe fn testOne_29() {
         }
         {
             let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ =
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                    { buffer.as_mut_ptr() },
-                    { buffer.as_mut_ptr().offset((7_()) as isize) },
-                );
+            let mut input: () = unimplemented!();
             let mut sv : () = std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { & mut buffer } , { ( - 1_()  as () )  } , )  ;
             let mut i1: () = unimplemented!();
             let mut i2: () = unimplemented!();
@@ -1007,12 +999,12 @@ pub unsafe fn testOne_29() {
         }
     }
 }
-pub unsafe fn test_31() -> () {
-    (unsafe { testOne_21() });
-    (unsafe { testOne_23() });
-    (unsafe { testOne_25() });
-    (unsafe { testOne_27() });
-    (unsafe { testOne_29() });
+pub unsafe fn test_32() -> () {
+    (unsafe { testOne_22() });
+    (unsafe { testOne_24() });
+    (unsafe { testOne_26() });
+    (unsafe { testOne_28() });
+    (unsafe { testOne_30() });
     return true;
 }
 pub fn main() {
@@ -1031,7 +1023,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_31() });
+    (unsafe { test_32() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

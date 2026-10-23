@@ -426,86 +426,18 @@ pub fn test_15(s0: ()) {
 }
 pub fn test_string_16(a: Ptr<()>) {
     ({ test_13(unimplemented!()) });
-    ({
-        test_13({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1") },
-                { Some(__tmp_0.as_pointer()) },
-            )
-        })
-    });
-    ({
-        test_13({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(
-                        b"1234567890123456789012345678901234567890123456789012345678901234567890",
-                    )
-                },
-                { Some(__tmp_1.as_pointer()) },
-            )
-        })
-    });
+    ({ test_13(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
 }
 pub fn test_string_17(a: Ptr<test_allocator_char_>) {
     ({ test_14(unimplemented!()) });
-    ({
-        test_14({
-            let __tmp_2: Value<test_allocator_char_> =
-                Rc::new(RefCell::new(test_allocator_char_::copy_from({
-                    (a).clone()
-                })));
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1") },
-                { __tmp_2.as_pointer() },
-            )
-        })
-    });
-    ({
-        test_14({
-            let __tmp_3: Value<test_allocator_char_> =
-                Rc::new(RefCell::new(test_allocator_char_::copy_from({
-                    (a).clone()
-                })));
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(
-                        b"1234567890123456789012345678901234567890123456789012345678901234567890",
-                    )
-                },
-                { __tmp_3.as_pointer() },
-            )
-        })
-    });
+    ({ test_14(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
 }
 pub fn test_string_18(a: Ptr<min_allocator_char_>) {
     ({ test_15(unimplemented!()) });
-    ({
-        test_15({
-            let __tmp_4: Value<min_allocator_char_> =
-                Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1") },
-                { __tmp_4.as_pointer() },
-            )
-        })
-    });
-    ({
-        test_15({
-            let __tmp_5: Value<min_allocator_char_> =
-                Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(
-                        b"1234567890123456789012345678901234567890123456789012345678901234567890",
-                    )
-                },
-                { __tmp_5.as_pointer() },
-            )
-        })
-    });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
 }
 pub fn test_19() -> () {
     ({

@@ -55,44 +55,40 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(5_()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(<A>::default()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
         let source: Ptr<()> = __tmp_0.as_pointer();
-        let opt: Value<()> = Rc::new(RefCell::new(std_optional_int_::new_1({ (source).clone() })));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let source: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-        let opt: Value<()> = Rc::new(RefCell::new(std_optional_const_int_ptr_::new_1({
-            source.as_pointer()
-        })));
+        let mut source: Ptr<()> = Ptr::<()>::null();
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let source: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let opt: Value<()> = Rc::new(RefCell::new(std_optional_int_ptr_::new_1({
-            source.as_pointer()
-        })));
+        let mut source: [(); 3] = [1_(), 2_(), 3_()];
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let source: Value<()> = Rc::new(RefCell::new(('A' as ())));
+        let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();

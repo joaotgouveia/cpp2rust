@@ -106,7 +106,7 @@ pub unsafe fn checkBeginEndBasic_9() {
         unimplemented!();
     }
     {
-        let p: () = std_filesystem_path::new_1({ &std::mem::transmute(*b"foo\0") }, None);
+        let p: () = unimplemented!();
         let mut default_constructed: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -116,28 +116,24 @@ pub unsafe fn checkBeginEndBasic_9() {
         unimplemented!();
     }
     {
-        let mut p: () = std_filesystem_path::new_2(
-            { &std::mem::transmute(*b"//root_name//first_dir////second_dir\0") },
-            None,
-        );
+        let mut p: () = unimplemented!();
         let expect: [(); 4] = [
-            std_filesystem_path::new_3({ &std::mem::transmute(*b"/\0") }, None),
-            std_filesystem_path::new_4({ &std::mem::transmute(*b"root_name\0") }, None),
-            std_filesystem_path::new_4({ &std::mem::transmute(*b"first_dir\0") }, None),
-            std_filesystem_path::new_5({ &std::mem::transmute(*b"second_dir\0") }, None),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () =
-            std_filesystem_path::new_6({ &std::mem::transmute(*b"////foo/bar/baz///\0") }, None);
+        let mut p: () = unimplemented!();
         let expect: [(); 5] = [
-            std_filesystem_path::new_3({ &std::mem::transmute(*b"/\0") }, None),
-            std_filesystem_path::new_1({ &std::mem::transmute(*b"foo\0") }, None),
-            std_filesystem_path::new_1({ &std::mem::transmute(*b"bar\0") }, None),
-            std_filesystem_path::new_1({ &std::mem::transmute(*b"baz\0") }, None),
-            std_filesystem_path::new_7({ &[0 as libc::c_char; 1] }, None),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
         unimplemented!();

@@ -12,7 +12,7 @@ pub unsafe fn tests_0() -> () {
         ((::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ())))
             as isize,
     );
-    let mut v: () = std_vector_bool__std_allocator_bool__::new_1({ a.as_mut_ptr() }, { an });
+    let mut v: () = unimplemented!();
     let mut r1: () = unimplemented!();
     let mut r2: () = unimplemented!();
     const _: () = assert!(true, "(noexcept(v.swap(r1, r2)))");;

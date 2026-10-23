@@ -168,89 +168,41 @@ pub struct transparent_hash_final {}
 pub struct transparent_equal_final {}
 pub unsafe fn test_transparent_equal_range_5(mut c: ()) {
     let mut conversions: () = 0_();
-    let mut iters: () = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 1_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_72_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ  ( & mut ___k , )
-    });
+    let mut iters: () = unimplemented!();
     unimplemented!();
-    iters = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 2_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_72_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ  ( & mut ___k , )
-    });
+    iters = unimplemented!();
     unimplemented!();
-    iters = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 3_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_72_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ  ( & mut ___k , )
-    });
+    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_transparent_equal_range_6(c: ()) {
     let mut conversions: () = 0_();
-    let mut iters: () = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 1_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_73_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ  ( & mut ___k , )
-    });
+    let mut iters: () = unimplemented!();
     unimplemented!();
-    iters = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 2_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_73_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ  ( & mut ___k , )
-    });
+    iters = unimplemented!();
     unimplemented!();
-    iters = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 3_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_73_struct_SearchedType_int__struct_transparent_hash_struct_std_equal_to_void__targ  ( & mut ___k , )
-    });
+    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_transparent_equal_range_7(mut c: ()) {
     let mut conversions: () = 0_();
-    let mut iters: () = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 1_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_72_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ  ( & mut ___k , )
-    });
+    let mut iters: () = unimplemented!();
     unimplemented!();
-    iters = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 2_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_72_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ  ( & mut ___k , )
-    });
+    iters = unimplemented!();
     unimplemented!();
-    iters = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 3_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_72_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ  ( & mut ___k , )
-    });
+    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_transparent_equal_range_8(c: ()) {
     let mut conversions: () = 0_();
-    let mut iters: () = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 1_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_73_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ  ( & mut ___k , )
-    });
+    let mut iters: () = unimplemented!();
     unimplemented!();
-    iters = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 2_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_73_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ  ( & mut ___k , )
-    });
+    iters = unimplemented!();
     unimplemented!();
-    iters = (unsafe {
-        let mut ___k: SearchedType_int_ =
-            SearchedType_int_::new({ 3_() }, { (&mut conversions as *mut ()) });
-        c . equal_range_73_struct_SearchedType_int__struct_transparent_hash_final_struct_transparent_equal_final_targ  ( & mut ___k , )
-    });
+    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
 }

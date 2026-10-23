@@ -298,15 +298,9 @@ impl std::cmp::PartialEq for min_allocator_int_ {
 impl std::cmp::Eq for min_allocator_int_ {}
 pub fn test_10() -> () {
     {
-        let v: Value<()> = Rc::new(RefCell::new(6_()));
+        let mut v: () = 6_();
         let mut N: () = 10_();
-        let c: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 12_() })));
-            std_forward_list_int__test_allocator_int__::new_1({ N }, { v.as_pointer() }, {
-                __tmp_0.as_pointer()
-            })
-        }));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(
             std___forward_list_const_iterator_std___forward_list_node_int__void_ptr__ptr_::new_1({
@@ -329,15 +323,9 @@ pub fn test_10() -> () {
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(6_()));
+        let mut v: () = 6_();
         let mut N: () = 10_();
-        let c: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_forward_list_int__min_allocator_int__::new_1({ N }, { v.as_pointer() }, {
-                __tmp_1.as_pointer()
-            })
-        }));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = 0_();
         let i : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()   } , )  )) ;
         let e : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()   } , )  )) ;

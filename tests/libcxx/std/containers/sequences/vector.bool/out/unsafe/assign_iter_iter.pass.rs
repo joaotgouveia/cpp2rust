@@ -345,21 +345,25 @@ pub unsafe fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_8(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -443,7 +447,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -453,7 +457,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -521,17 +525,13 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn tests_11() -> () {
+pub unsafe fn tests_12() -> () {
     {
         {
             let mut in_: () = unimplemented!();
             let mut v: () = unimplemented!();
             unimplemented!();
-            (unsafe {
-                let ___first: forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  = forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ :: new_1 ( { unimplemented!()  } , )  ;
-                let ___last: forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  = forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ :: new_1 ( { unimplemented!()  } , )  ;
-                v . assign_25_class_forward_iterator_class_std___bit_iterator_class_std_vector__Bool___false____0  ( ___first , ___last , )
-            });
+            unimplemented!();
             unimplemented!();
         }
         {
@@ -539,13 +539,7 @@ pub unsafe fn tests_11() -> () {
             let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
                 .wrapping_div((::std::mem::size_of::<()>() as ()));
             let mut v: () = unimplemented!();
-            (unsafe {
-                let ___first: forward_iterator_bool_ptr_ =
-                    forward_iterator_bool_ptr_::new_1({ in_.as_mut_ptr() });
-                let ___last: forward_iterator_bool_ptr_ =
-                    forward_iterator_bool_ptr_::new_1({ in_.as_mut_ptr().offset((N) as isize) });
-                v.assign_25_class_forward_iterator__Bool_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (N)) {
@@ -559,13 +553,7 @@ pub unsafe fn tests_11() -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()));
             let mut v: () = unimplemented!();
             unimplemented!();
-            (unsafe {
-                let ___first: forward_iterator_bool_ptr_ =
-                    forward_iterator_bool_ptr_::new_1({ in_.as_mut_ptr() });
-                let ___last: forward_iterator_bool_ptr_ =
-                    forward_iterator_bool_ptr_::new_1({ in_.as_mut_ptr().offset((N) as isize) });
-                v.assign_25_class_forward_iterator__Bool_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (N)) {
@@ -579,11 +567,7 @@ pub unsafe fn tests_11() -> () {
             let mut in_: () = unimplemented!();
             let mut v: () = unimplemented!();
             unimplemented!();
-            (unsafe {
-                let ___first: cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  = cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ :: new ( { unimplemented!()  } , )  ;
-                let ___last: cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  = cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ :: new ( { unimplemented!()  } , )  ;
-                v . assign_24_class_cpp17_input_iterator_class_std___bit_iterator_class_std_vector__Bool___false____0  ( ___first , ___last , )
-            });
+            unimplemented!();
             unimplemented!();
         }
         {
@@ -591,15 +575,7 @@ pub unsafe fn tests_11() -> () {
             let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
                 .wrapping_div((::std::mem::size_of::<()>() as ()));
             let mut v: () = unimplemented!();
-            (unsafe {
-                let ___first: cpp17_input_iterator_bool_ptr__bool_ptr_ =
-                    cpp17_input_iterator_bool_ptr__bool_ptr_::new({ in_.as_mut_ptr() });
-                let ___last: cpp17_input_iterator_bool_ptr__bool_ptr_ =
-                    cpp17_input_iterator_bool_ptr__bool_ptr_::new({
-                        in_.as_mut_ptr().offset((N) as isize)
-                    });
-                v.assign_24_class_cpp17_input_iterator__Bool_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (N)) {
@@ -613,15 +589,7 @@ pub unsafe fn tests_11() -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()));
             let mut v: () = unimplemented!();
             unimplemented!();
-            (unsafe {
-                let ___first: cpp17_input_iterator_bool_ptr__bool_ptr_ =
-                    cpp17_input_iterator_bool_ptr__bool_ptr_::new({ in_.as_mut_ptr() });
-                let ___last: cpp17_input_iterator_bool_ptr__bool_ptr_ =
-                    cpp17_input_iterator_bool_ptr__bool_ptr_::new({
-                        in_.as_mut_ptr().offset((N) as isize)
-                    });
-                v.assign_24_class_cpp17_input_iterator__Bool_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (N)) {
@@ -648,7 +616,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_11() });
+    (unsafe { tests_12() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

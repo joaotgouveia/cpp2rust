@@ -24,9 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let p: () = std_shared_ptr_intarr8arr_::new_1({
-            Box::leak((0..8_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr()
-        });
+        let p: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (8_())) {
             p[(i) as usize] = i;
@@ -46,7 +44,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             (*iptr.offset((i) as isize)) = i;
             i.prefix_inc();
         }
-        let p: () = std_shared_ptr_intarr8arr_::new_1({ iptr });
+        let p: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (8_())) {
             unimplemented!();
@@ -54,9 +52,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         }
     }
     {
-        let p: () = std_shared_ptr_intarrarr_::new_1({
-            Box::leak((0..8_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr()
-        });
+        let p: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (8_())) {
             p[(i) as usize] = i;

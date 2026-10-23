@@ -38,7 +38,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut x: X = X::new();
-    let mut f: () = std_function_void____::new_1({ x });
+    let mut f: () = unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

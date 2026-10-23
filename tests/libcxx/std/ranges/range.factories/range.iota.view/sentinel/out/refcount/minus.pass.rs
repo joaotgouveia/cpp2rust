@@ -250,23 +250,29 @@ pub fn operator_add_3(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_2(_i, n)
     });
 }
-pub fn iter_swap_4(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_4(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_5(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -312,7 +318,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_7(
+            operator_cmp_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -337,7 +343,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_6(
+            operator_eq_7(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -421,50 +427,50 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn operator_add_assign_8(lhs: Ptr<SomeInt>, rhs: Ptr<SomeInt>) -> Ptr<SomeInt> {
+pub fn operator_add_assign_9(lhs: Ptr<SomeInt>, rhs: Ptr<SomeInt>) -> Ptr<SomeInt> {
     {
         let __rhs = { rhs.with(|__s| __s.value_) };
         field!(lhs, value_).with_mut(|__v| *__v = *__v + __rhs)
     };
     return (lhs).clone();
 }
-pub fn operator_sub_assign_9(lhs: Ptr<SomeInt>, rhs: Ptr<SomeInt>) -> Ptr<SomeInt> {
+pub fn operator_sub_assign_10(lhs: Ptr<SomeInt>, rhs: Ptr<SomeInt>) -> Ptr<SomeInt> {
     {
         let __rhs = { rhs.with(|__s| __s.value_) };
         field!(lhs, value_).with_mut(|__v| *__v = *__v - __rhs)
     };
     return (lhs).clone();
 }
-pub fn operator_add_assign_10(lhs: Ptr<SomeInt>, mut rhs: ()) -> Ptr<SomeInt> {
+pub fn operator_add_assign_11(lhs: Ptr<SomeInt>, mut rhs: ()) -> Ptr<SomeInt> {
     {
         let __rhs = rhs;
         field!(lhs, value_).with_mut(|__v| *__v = *__v + __rhs)
     };
     return (lhs).clone();
 }
-pub fn operator_sub_assign_11(lhs: Ptr<SomeInt>, mut rhs: ()) -> Ptr<SomeInt> {
+pub fn operator_sub_assign_12(lhs: Ptr<SomeInt>, mut rhs: ()) -> Ptr<SomeInt> {
     {
         let __rhs = rhs;
         field!(lhs, value_).with_mut(|__v| *__v = *__v - __rhs)
     };
     return (lhs).clone();
 }
-pub fn operator_add_12(mut lhs: SomeInt, mut rhs: SomeInt) -> SomeInt {
+pub fn operator_add_13(mut lhs: SomeInt, mut rhs: SomeInt) -> SomeInt {
     return SomeInt::new({ Some((lhs.value_ + rhs.value_)) });
 }
-pub fn operator_sub_13(mut lhs: SomeInt, mut rhs: SomeInt) -> () {
+pub fn operator_sub_14(mut lhs: SomeInt, mut rhs: SomeInt) -> () {
     return (lhs.value_ - rhs.value_);
 }
-pub fn operator_add_14(mut lhs: SomeInt, mut rhs: ()) -> SomeInt {
+pub fn operator_add_15(mut lhs: SomeInt, mut rhs: ()) -> SomeInt {
     return SomeInt::new({ Some((lhs.value_ + rhs)) });
 }
-pub fn operator_sub_15(mut lhs: SomeInt, mut rhs: ()) -> () {
+pub fn operator_sub_16(mut lhs: SomeInt, mut rhs: ()) -> () {
     return (lhs.value_ - rhs);
 }
-pub fn operator_add_16(mut lhs: (), mut rhs: SomeInt) -> SomeInt {
+pub fn operator_add_17(mut lhs: (), mut rhs: SomeInt) -> SomeInt {
     return SomeInt::new({ Some((lhs + rhs.value_)) });
 }
-pub fn operator_sub_17(mut lhs: (), mut rhs: SomeInt) -> () {
+pub fn operator_sub_18(mut lhs: (), mut rhs: SomeInt) -> () {
     return (lhs - rhs.value_);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -522,7 +528,7 @@ impl Default for SomeInt {
         { SomeInt::new(None) }
     }
 }
-pub fn operator_sub_18(
+pub fn operator_sub_19(
     mut lhs: random_access_iterator_int_ptr_,
     mut rhs: IntSentinelWith_random_access_iterator_int_ptr__,
 ) -> () {
@@ -564,7 +570,7 @@ pub struct IntSentinelWith_int_ {
     pub value_: (),
 }
 impl IntSentinelWith_int_ {}
-pub fn operator_add_assign_19(
+pub fn operator_add_assign_20(
     lhs: Ptr<NotIncrementable>,
     rhs: Ptr<NotIncrementable>,
 ) -> Ptr<NotIncrementable> {
@@ -574,7 +580,7 @@ pub fn operator_add_assign_19(
     };
     return (lhs).clone();
 }
-pub fn operator_sub_assign_20(
+pub fn operator_sub_assign_21(
     lhs: Ptr<NotIncrementable>,
     rhs: Ptr<NotIncrementable>,
 ) -> Ptr<NotIncrementable> {
@@ -584,10 +590,10 @@ pub fn operator_sub_assign_20(
     };
     return (lhs).clone();
 }
-pub fn operator_add_21(mut lhs: NotIncrementable, mut rhs: NotIncrementable) -> NotIncrementable {
+pub fn operator_add_22(mut lhs: NotIncrementable, mut rhs: NotIncrementable) -> NotIncrementable {
     return NotIncrementable::new({ Some((lhs.value_ + rhs.value_)) });
 }
-pub fn operator_sub_22(mut lhs: NotIncrementable, mut rhs: NotIncrementable) -> () {
+pub fn operator_sub_23(mut lhs: NotIncrementable, mut rhs: NotIncrementable) -> () {
     return (lhs.value_ - rhs.value_);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -625,7 +631,7 @@ impl Default for NotIncrementable {
     }
 }
 const _: () = assert!(!(false), "!std::incrementable<NotIncrementable>");
-pub fn operator_add_assign_23(
+pub fn operator_add_assign_24(
     lhs: Ptr<NotDecrementable>,
     rhs: Ptr<NotDecrementable>,
 ) -> Ptr<NotDecrementable> {
@@ -635,7 +641,7 @@ pub fn operator_add_assign_23(
     };
     return (lhs).clone();
 }
-pub fn operator_sub_assign_24(
+pub fn operator_sub_assign_25(
     lhs: Ptr<NotDecrementable>,
     rhs: Ptr<NotDecrementable>,
 ) -> Ptr<NotDecrementable> {
@@ -645,10 +651,10 @@ pub fn operator_sub_assign_24(
     };
     return (lhs).clone();
 }
-pub fn operator_add_25(mut lhs: NotDecrementable, mut rhs: NotDecrementable) -> NotDecrementable {
+pub fn operator_add_26(mut lhs: NotDecrementable, mut rhs: NotDecrementable) -> NotDecrementable {
     return NotDecrementable::new({ Some((lhs.value_ + rhs.value_)) });
 }
-pub fn operator_sub_26(mut lhs: NotDecrementable, mut rhs: NotDecrementable) -> () {
+pub fn operator_sub_27(mut lhs: NotDecrementable, mut rhs: NotDecrementable) -> () {
     return (lhs.value_ - rhs.value_);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -688,7 +694,7 @@ impl Default for NotDecrementable {
 pub type CtorKind = ();
 pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
-pub fn test_27() -> () {
+pub fn test_28() -> () {
     let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         1_(),
         2_(),
@@ -742,7 +748,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_27() });
+    ({ test_28() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

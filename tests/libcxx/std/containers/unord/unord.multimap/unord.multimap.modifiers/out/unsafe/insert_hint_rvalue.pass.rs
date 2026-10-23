@@ -300,14 +300,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
         let mut e : () = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_double__int___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_0: () = 3.5_f64;
-                let mut __tmp_1: () = 3_();
-                std_pair_double__short_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-            };
-            c.insert_46_struct_std_pair_double__short__0(e.clone(), &mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -327,14 +320,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
         let mut e : () = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_2: () = 3_();
-                let mut __tmp_3: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-            };
-            c.insert_46_struct_std_pair_class_MoveOnly__class_MoveOnly__0(e.clone(), &mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -354,14 +340,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
         let mut e : () = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_double__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_4: () = 3.5_f64;
-                let mut __tmp_5: () = 3_();
-                std_pair_double__short_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-            };
-            c.insert_46_struct_std_pair_double__short__0(e.clone(), &mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -381,14 +360,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
         let mut e : () = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_6: () = 3_();
-                let mut __tmp_7: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-            };
-            c.insert_46_struct_std_pair_class_MoveOnly__class_MoveOnly__0(e.clone(), &mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

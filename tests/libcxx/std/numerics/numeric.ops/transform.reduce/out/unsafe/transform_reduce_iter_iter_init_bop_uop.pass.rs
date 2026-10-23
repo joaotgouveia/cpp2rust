@@ -504,21 +504,25 @@ pub unsafe fn operator_add_20(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_21(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_22(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_22(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_23(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_23(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_24(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_24(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_25(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -602,7 +606,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_24(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_25(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -612,7 +616,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_23(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_24(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -699,20 +703,6 @@ impl twice {
         return ((2_()) * (*x));
     }
 }
-pub unsafe fn test_25(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: (),
-    mut bOp: (),
-    mut uOp: identity,
-    mut x: (),
-) {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n                    decltype(std::transform_reduce(first1, last1, init, bOp, uOp))>"
-    );;
-    unimplemented!();
-}
 pub unsafe fn test_26(
     mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
@@ -732,7 +722,7 @@ pub unsafe fn test_27(
     mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     mut init: (),
     mut bOp: (),
-    mut uOp: twice,
+    mut uOp: identity,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -756,11 +746,11 @@ pub unsafe fn test_28(
     unimplemented!();
 }
 pub unsafe fn test_29(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
+    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     mut init: (),
     mut bOp: (),
-    mut uOp: identity,
+    mut uOp: twice,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -788,7 +778,7 @@ pub unsafe fn test_31(
     mut last1: forward_iterator_const_int_ptr_,
     mut init: (),
     mut bOp: (),
-    mut uOp: twice,
+    mut uOp: identity,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -812,11 +802,11 @@ pub unsafe fn test_32(
     unimplemented!();
 }
 pub unsafe fn test_33(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
+    mut first1: forward_iterator_const_int_ptr_,
+    mut last1: forward_iterator_const_int_ptr_,
     mut init: (),
     mut bOp: (),
-    mut uOp: identity,
+    mut uOp: twice,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -844,7 +834,7 @@ pub unsafe fn test_35(
     mut last1: bidirectional_iterator_const_int_ptr_,
     mut init: (),
     mut bOp: (),
-    mut uOp: twice,
+    mut uOp: identity,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -868,11 +858,11 @@ pub unsafe fn test_36(
     unimplemented!();
 }
 pub unsafe fn test_37(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
+    mut first1: bidirectional_iterator_const_int_ptr_,
+    mut last1: bidirectional_iterator_const_int_ptr_,
     mut init: (),
     mut bOp: (),
-    mut uOp: identity,
+    mut uOp: twice,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -900,7 +890,7 @@ pub unsafe fn test_39(
     mut last1: random_access_iterator_const_int_ptr_,
     mut init: (),
     mut bOp: (),
-    mut uOp: twice,
+    mut uOp: identity,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -924,11 +914,11 @@ pub unsafe fn test_40(
     unimplemented!();
 }
 pub unsafe fn test_41(
-    mut first1: *const (),
-    mut last1: *const (),
+    mut first1: random_access_iterator_const_int_ptr_,
+    mut last1: random_access_iterator_const_int_ptr_,
     mut init: (),
     mut bOp: (),
-    mut uOp: identity,
+    mut uOp: twice,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -956,7 +946,7 @@ pub unsafe fn test_43(
     mut last1: *const (),
     mut init: (),
     mut bOp: (),
-    mut uOp: twice,
+    mut uOp: identity,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -980,11 +970,11 @@ pub unsafe fn test_44(
     unimplemented!();
 }
 pub unsafe fn test_45(
-    mut first1: *mut (),
-    mut last1: *mut (),
+    mut first1: *const (),
+    mut last1: *const (),
     mut init: (),
     mut bOp: (),
-    mut uOp: identity,
+    mut uOp: twice,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -1012,7 +1002,7 @@ pub unsafe fn test_47(
     mut last1: *mut (),
     mut init: (),
     mut bOp: (),
-    mut uOp: twice,
+    mut uOp: identity,
     mut x: (),
 ) {
     const _: () = assert!(
@@ -1035,309 +1025,34 @@ pub unsafe fn test_48(
     );;
     unimplemented!();
 }
-pub unsafe fn test_49() {
-    let mut ia: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        test_25(
-            _first1,
-            _last1,
-            0_(),
-            unimplemented!(),
-            <identity>::default(),
-            0_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        test_26(
-            _first1,
-            _last1,
-            1_(),
-            unimplemented!(),
-            <identity>::default(),
-            1_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-            });
-        test_26(
-            _first1,
-            _last1,
-            0_(),
-            unimplemented!(),
-            <identity>::default(),
-            0_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-            });
-        test_25(
-            _first1,
-            _last1,
-            2_(),
-            unimplemented!(),
-            <identity>::default(),
-            3_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-            });
-        test_25(
-            _first1,
-            _last1,
-            0_(),
-            unimplemented!(),
-            <identity>::default(),
-            3_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-            });
-        test_26(
-            _first1,
-            _last1,
-            3_(),
-            unimplemented!(),
-            <identity>::default(),
-            6_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-            });
-        test_26(
-            _first1,
-            _last1,
-            4_(),
-            unimplemented!(),
-            <identity>::default(),
-            2880_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-            });
-        test_25(
-            _first1,
-            _last1,
-            4_(),
-            unimplemented!(),
-            <identity>::default(),
-            25_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        test_27(
-            _first1,
-            _last1,
-            0_(),
-            unimplemented!(),
-            <twice>::default(),
-            0_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        test_28(
-            _first1,
-            _last1,
-            1_(),
-            unimplemented!(),
-            <twice>::default(),
-            1_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-            });
-        test_28(
-            _first1,
-            _last1,
-            0_(),
-            unimplemented!(),
-            <twice>::default(),
-            0_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-            });
-        test_27(
-            _first1,
-            _last1,
-            2_(),
-            unimplemented!(),
-            <twice>::default(),
-            4_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-            });
-        test_27(
-            _first1,
-            _last1,
-            0_(),
-            unimplemented!(),
-            <twice>::default(),
-            6_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-            });
-        test_28(
-            _first1,
-            _last1,
-            3_(),
-            unimplemented!(),
-            <twice>::default(),
-            24_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-            });
-        test_28(
-            _first1,
-            _last1,
-            4_(),
-            unimplemented!(),
-            <twice>::default(),
-            184320_(),
-        )
-    });
-    (unsafe {
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr()).cast_const()
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-            });
-        test_27(
-            _first1,
-            _last1,
-            4_(),
-            unimplemented!(),
-            <twice>::default(),
-            46_(),
-        )
-    });
+pub unsafe fn test_49(
+    mut first1: *mut (),
+    mut last1: *mut (),
+    mut init: (),
+    mut bOp: (),
+    mut uOp: twice,
+    mut x: (),
+) {
+    const _: () = assert!(
+        true,
+        "std::is_same_v<T,\n                    decltype(std::transform_reduce(first1, last1, init, bOp, uOp))>"
+    );;
+    unimplemented!();
 }
 pub unsafe fn test_50() {
     let mut ia: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
     let mut sa: () =
         (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_29(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        test_26(
             _first1,
             _last1,
             0_(),
@@ -1347,11 +1062,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_30(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        test_27(
             _first1,
             _last1,
             1_(),
@@ -1361,12 +1080,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-        });
-        test_30(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+            });
+        test_27(
             _first1,
             _last1,
             0_(),
@@ -1376,12 +1098,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-        });
-        test_29(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+            });
+        test_26(
             _first1,
             _last1,
             2_(),
@@ -1391,12 +1116,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-        });
-        test_29(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+            });
+        test_26(
             _first1,
             _last1,
             0_(),
@@ -1406,12 +1134,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-        });
-        test_30(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+            });
+        test_27(
             _first1,
             _last1,
             3_(),
@@ -1421,12 +1152,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-        });
-        test_30(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+            });
+        test_27(
             _first1,
             _last1,
             4_(),
@@ -1436,12 +1170,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-        });
-        test_29(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+            });
+        test_26(
             _first1,
             _last1,
             4_(),
@@ -1451,11 +1188,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_31(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        test_28(
             _first1,
             _last1,
             0_(),
@@ -1465,11 +1206,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_32(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        test_29(
             _first1,
             _last1,
             1_(),
@@ -1479,12 +1224,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-        });
-        test_32(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+            });
+        test_29(
             _first1,
             _last1,
             0_(),
@@ -1494,12 +1242,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-        });
-        test_31(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+            });
+        test_28(
             _first1,
             _last1,
             2_(),
@@ -1509,12 +1260,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-        });
-        test_31(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+            });
+        test_28(
             _first1,
             _last1,
             0_(),
@@ -1524,12 +1278,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-        });
-        test_32(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+            });
+        test_29(
             _first1,
             _last1,
             3_(),
@@ -1539,12 +1296,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-        });
-        test_32(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+            });
+        test_29(
             _first1,
             _last1,
             4_(),
@@ -1554,12 +1314,15 @@ pub unsafe fn test_50() {
         )
     });
     (unsafe {
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-        });
-        test_31(
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr()).cast_const()
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+            });
+        test_28(
             _first1,
             _last1,
             4_(),
@@ -1574,11 +1337,11 @@ pub unsafe fn test_51() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_33(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_30(
             _first1,
             _last1,
             0_(),
@@ -1588,11 +1351,11 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_34(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_31(
             _first1,
             _last1,
             1_(),
@@ -1602,13 +1365,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-            });
-        test_34(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+        });
+        test_31(
             _first1,
             _last1,
             0_(),
@@ -1618,13 +1380,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-            });
-        test_33(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+        });
+        test_30(
             _first1,
             _last1,
             2_(),
@@ -1634,13 +1395,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-            });
-        test_33(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+        });
+        test_30(
             _first1,
             _last1,
             0_(),
@@ -1650,13 +1410,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-            });
-        test_34(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+        });
+        test_31(
             _first1,
             _last1,
             3_(),
@@ -1666,13 +1425,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-            });
-        test_34(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+        });
+        test_31(
             _first1,
             _last1,
             4_(),
@@ -1682,13 +1440,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-            });
-        test_33(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+        });
+        test_30(
             _first1,
             _last1,
             4_(),
@@ -1698,11 +1455,11 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_35(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_32(
             _first1,
             _last1,
             0_(),
@@ -1712,11 +1469,11 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_36(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_33(
             _first1,
             _last1,
             1_(),
@@ -1726,13 +1483,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-            });
-        test_36(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+        });
+        test_33(
             _first1,
             _last1,
             0_(),
@@ -1742,13 +1498,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
-            });
-        test_35(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+        });
+        test_32(
             _first1,
             _last1,
             2_(),
@@ -1758,13 +1513,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-            });
-        test_35(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+        });
+        test_32(
             _first1,
             _last1,
             0_(),
@@ -1774,13 +1528,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
-            });
-        test_36(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+        });
+        test_33(
             _first1,
             _last1,
             3_(),
@@ -1790,13 +1543,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-            });
-        test_36(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+        });
+        test_33(
             _first1,
             _last1,
             4_(),
@@ -1806,13 +1558,12 @@ pub unsafe fn test_51() {
         )
     });
     (unsafe {
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
-            });
-        test_35(
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+        });
+        test_32(
             _first1,
             _last1,
             4_(),
@@ -1827,11 +1578,11 @@ pub unsafe fn test_52() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_37(
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_34(
             _first1,
             _last1,
             0_(),
@@ -1841,11 +1592,11 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_38(
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_35(
             _first1,
             _last1,
             1_(),
@@ -1855,13 +1606,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
             });
-        test_38(
+        test_35(
             _first1,
             _last1,
             0_(),
@@ -1871,13 +1622,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
             });
-        test_37(
+        test_34(
             _first1,
             _last1,
             2_(),
@@ -1887,13 +1638,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
             });
-        test_37(
+        test_34(
             _first1,
             _last1,
             0_(),
@@ -1903,13 +1654,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
             });
-        test_38(
+        test_35(
             _first1,
             _last1,
             3_(),
@@ -1919,13 +1670,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
             });
-        test_38(
+        test_35(
             _first1,
             _last1,
             4_(),
@@ -1935,13 +1686,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
             });
-        test_37(
+        test_34(
             _first1,
             _last1,
             4_(),
@@ -1951,11 +1702,11 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_39(
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_36(
             _first1,
             _last1,
             0_(),
@@ -1965,11 +1716,11 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        test_40(
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_37(
             _first1,
             _last1,
             1_(),
@@ -1979,13 +1730,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
             });
-        test_40(
+        test_37(
             _first1,
             _last1,
             0_(),
@@ -1995,13 +1746,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
             });
-        test_39(
+        test_36(
             _first1,
             _last1,
             2_(),
@@ -2011,13 +1762,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
             });
-        test_39(
+        test_36(
             _first1,
             _last1,
             0_(),
@@ -2027,13 +1778,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
             });
-        test_40(
+        test_37(
             _first1,
             _last1,
             3_(),
@@ -2043,13 +1794,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
             });
-        test_40(
+        test_37(
             _first1,
             _last1,
             4_(),
@@ -2059,13 +1810,13 @@ pub unsafe fn test_52() {
         )
     });
     (unsafe {
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
             });
-        test_39(
+        test_36(
             _first1,
             _last1,
             4_(),
@@ -2080,9 +1831,11 @@ pub unsafe fn test_53() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr();
-        test_41(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_38(
             _first1,
             _last1,
             0_(),
@@ -2092,9 +1845,11 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr();
-        test_42(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_39(
             _first1,
             _last1,
             1_(),
@@ -2104,9 +1859,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((1_()) as isize);
-        test_42(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+            });
+        test_39(
             _first1,
             _last1,
             0_(),
@@ -2116,9 +1875,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((1_()) as isize);
-        test_41(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+            });
+        test_38(
             _first1,
             _last1,
             2_(),
@@ -2128,9 +1891,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((2_()) as isize);
-        test_41(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+            });
+        test_38(
             _first1,
             _last1,
             0_(),
@@ -2140,9 +1907,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((2_()) as isize);
-        test_42(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+            });
+        test_39(
             _first1,
             _last1,
             3_(),
@@ -2152,9 +1923,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((sa) as isize);
-        test_42(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+            });
+        test_39(
             _first1,
             _last1,
             4_(),
@@ -2164,9 +1939,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((sa) as isize);
-        test_41(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+            });
+        test_38(
             _first1,
             _last1,
             4_(),
@@ -2176,9 +1955,11 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr();
-        test_43(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_40(
             _first1,
             _last1,
             0_(),
@@ -2188,9 +1969,11 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr();
-        test_44(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        test_41(
             _first1,
             _last1,
             1_(),
@@ -2200,9 +1983,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((1_()) as isize);
-        test_44(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+            });
+        test_41(
             _first1,
             _last1,
             0_(),
@@ -2212,9 +1999,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((1_()) as isize);
-        test_43(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((1_()) as isize)).cast_const()
+            });
+        test_40(
             _first1,
             _last1,
             2_(),
@@ -2224,9 +2015,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((2_()) as isize);
-        test_43(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+            });
+        test_40(
             _first1,
             _last1,
             0_(),
@@ -2236,9 +2031,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((2_()) as isize);
-        test_44(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((2_()) as isize)).cast_const()
+            });
+        test_41(
             _first1,
             _last1,
             3_(),
@@ -2248,9 +2047,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((sa) as isize);
-        test_44(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+            });
+        test_41(
             _first1,
             _last1,
             4_(),
@@ -2260,9 +2063,13 @@ pub unsafe fn test_53() {
         )
     });
     (unsafe {
-        let _first1: *const () = ia.as_mut_ptr();
-        let _last1: *const () = ia.as_mut_ptr().offset((sa) as isize);
-        test_43(
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_mut_ptr()).cast_const() });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_mut_ptr().offset((sa) as isize)).cast_const()
+            });
+        test_40(
             _first1,
             _last1,
             4_(),
@@ -2277,9 +2084,206 @@ pub unsafe fn test_54() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr();
+        test_42(
+            _first1,
+            _last1,
+            0_(),
+            unimplemented!(),
+            <identity>::default(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr();
+        test_43(
+            _first1,
+            _last1,
+            1_(),
+            unimplemented!(),
+            <identity>::default(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((1_()) as isize);
+        test_43(
+            _first1,
+            _last1,
+            0_(),
+            unimplemented!(),
+            <identity>::default(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((1_()) as isize);
+        test_42(
+            _first1,
+            _last1,
+            2_(),
+            unimplemented!(),
+            <identity>::default(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((2_()) as isize);
+        test_42(
+            _first1,
+            _last1,
+            0_(),
+            unimplemented!(),
+            <identity>::default(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((2_()) as isize);
+        test_43(
+            _first1,
+            _last1,
+            3_(),
+            unimplemented!(),
+            <identity>::default(),
+            6_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((sa) as isize);
+        test_43(
+            _first1,
+            _last1,
+            4_(),
+            unimplemented!(),
+            <identity>::default(),
+            2880_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((sa) as isize);
+        test_42(
+            _first1,
+            _last1,
+            4_(),
+            unimplemented!(),
+            <identity>::default(),
+            25_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr();
+        test_44(
+            _first1,
+            _last1,
+            0_(),
+            unimplemented!(),
+            <twice>::default(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr();
+        test_45(
+            _first1,
+            _last1,
+            1_(),
+            unimplemented!(),
+            <twice>::default(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((1_()) as isize);
+        test_45(
+            _first1,
+            _last1,
+            0_(),
+            unimplemented!(),
+            <twice>::default(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((1_()) as isize);
+        test_44(
+            _first1,
+            _last1,
+            2_(),
+            unimplemented!(),
+            <twice>::default(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((2_()) as isize);
+        test_44(
+            _first1,
+            _last1,
+            0_(),
+            unimplemented!(),
+            <twice>::default(),
+            6_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((2_()) as isize);
+        test_45(
+            _first1,
+            _last1,
+            3_(),
+            unimplemented!(),
+            <twice>::default(),
+            24_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((sa) as isize);
+        test_45(
+            _first1,
+            _last1,
+            4_(),
+            unimplemented!(),
+            <twice>::default(),
+            184320_(),
+        )
+    });
+    (unsafe {
+        let _first1: *const () = ia.as_mut_ptr();
+        let _last1: *const () = ia.as_mut_ptr().offset((sa) as isize);
+        test_44(
+            _first1,
+            _last1,
+            4_(),
+            unimplemented!(),
+            <twice>::default(),
+            46_(),
+        )
+    });
+}
+pub unsafe fn test_55() {
+    let mut ia: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr();
-        test_45(
+        test_46(
             _first1,
             _last1,
             0_(),
@@ -2291,7 +2295,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr();
-        test_46(
+        test_47(
             _first1,
             _last1,
             1_(),
@@ -2303,7 +2307,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((1_()) as isize);
-        test_46(
+        test_47(
             _first1,
             _last1,
             0_(),
@@ -2315,7 +2319,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((1_()) as isize);
-        test_45(
+        test_46(
             _first1,
             _last1,
             2_(),
@@ -2327,7 +2331,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((2_()) as isize);
-        test_45(
+        test_46(
             _first1,
             _last1,
             0_(),
@@ -2339,7 +2343,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((2_()) as isize);
-        test_46(
+        test_47(
             _first1,
             _last1,
             3_(),
@@ -2351,7 +2355,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((sa) as isize);
-        test_46(
+        test_47(
             _first1,
             _last1,
             4_(),
@@ -2363,7 +2367,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((sa) as isize);
-        test_45(
+        test_46(
             _first1,
             _last1,
             4_(),
@@ -2375,7 +2379,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr();
-        test_47(
+        test_48(
             _first1,
             _last1,
             0_(),
@@ -2387,7 +2391,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr();
-        test_48(
+        test_49(
             _first1,
             _last1,
             1_(),
@@ -2399,7 +2403,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((1_()) as isize);
-        test_48(
+        test_49(
             _first1,
             _last1,
             0_(),
@@ -2411,7 +2415,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((1_()) as isize);
-        test_47(
+        test_48(
             _first1,
             _last1,
             2_(),
@@ -2423,7 +2427,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((2_()) as isize);
-        test_47(
+        test_48(
             _first1,
             _last1,
             0_(),
@@ -2435,7 +2439,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((2_()) as isize);
-        test_48(
+        test_49(
             _first1,
             _last1,
             3_(),
@@ -2447,7 +2451,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((sa) as isize);
-        test_48(
+        test_49(
             _first1,
             _last1,
             4_(),
@@ -2459,7 +2463,7 @@ pub unsafe fn test_54() {
     (unsafe {
         let _first1: *mut () = ia.as_mut_ptr();
         let _last1: *mut () = ia.as_mut_ptr().offset((sa) as isize);
-        test_47(
+        test_48(
             _first1,
             _last1,
             4_(),
@@ -2468,13 +2472,6 @@ pub unsafe fn test_54() {
             46_(),
         )
     });
-}
-pub unsafe fn test_return_type_55() {
-    let mut p: *mut () = std::ptr::null_mut();
-    const _: () = assert!(
-        true,
-        "std::is_same_v<Init,\n         decltype(std::transform_reduce(p, p, Init{{}}, std::plus<>(), identity()))>"
-    );;
 }
 pub unsafe fn test_return_type_56() {
     let mut p: *mut () = std::ptr::null_mut();
@@ -2518,7 +2515,14 @@ pub unsafe fn test_return_type_61() {
         "std::is_same_v<Init,\n         decltype(std::transform_reduce(p, p, Init{{}}, std::plus<>(), identity()))>"
     );;
 }
-pub unsafe fn test_move_only_types_62() {
+pub unsafe fn test_return_type_62() {
+    let mut p: *mut () = std::ptr::null_mut();
+    const _: () = assert!(
+        true,
+        "std::is_same_v<Init,\n         decltype(std::transform_reduce(p, p, Init{{}}, std::plus<>(), identity()))>"
+    );;
+}
+pub unsafe fn test_move_only_types_63() {
     let mut ia: [MoveOnly; 3] = [
         MoveOnly::new({ Some(1_()) }),
         MoveOnly::new({ Some(2_()) }),
@@ -2526,26 +2530,26 @@ pub unsafe fn test_move_only_types_62() {
     ];
     unimplemented!();
 }
-pub unsafe fn test_63() -> () {
-    (unsafe { test_return_type_55() });
+pub unsafe fn test_64() -> () {
     (unsafe { test_return_type_56() });
     (unsafe { test_return_type_57() });
     (unsafe { test_return_type_58() });
     (unsafe { test_return_type_59() });
     (unsafe { test_return_type_60() });
     (unsafe { test_return_type_61() });
-    (unsafe { test_49() });
+    (unsafe { test_return_type_62() });
     (unsafe { test_50() });
     (unsafe { test_51() });
     (unsafe { test_52() });
     (unsafe { test_53() });
     (unsafe { test_54() });
+    (unsafe { test_55() });
     {
         let mut v: () = unimplemented!();
         let mut res: () = unimplemented!();
         unimplemented!();
     }
-    (unsafe { test_move_only_types_62() });
+    (unsafe { test_move_only_types_63() });
     return true;
 }
 pub fn main() {
@@ -2564,7 +2568,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_63() });
+    (unsafe { test_64() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

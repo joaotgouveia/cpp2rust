@@ -7,32 +7,16 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn make_string_0(in_: Ptr<()>) -> () {
-    return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (in_).offset((0_()) as isize) },
-        { (in_).offset(((8_() as ()).wrapping_sub(1_())) as isize) },
-        None,
-    );
+    return unimplemented!();
 }
 pub fn make_string_1(in_: Ptr<()>) -> () {
-    return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (in_).offset((0_()) as isize) },
-        { (in_).offset(((1_() as ()).wrapping_sub(1_())) as isize) },
-        None,
-    );
+    return unimplemented!();
 }
 pub fn make_string_2(in_: Ptr<()>) -> () {
-    return std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { (in_).offset((0_()) as isize) },
-        { (in_).offset(((8_() as ()).wrapping_sub(1_())) as isize) },
-        None,
-    );
+    return unimplemented!();
 }
 pub fn make_string_3(in_: Ptr<()>) -> () {
-    return std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { (in_).offset((0_()) as isize) },
-        { (in_).offset(((1_() as ()).wrapping_sub(1_())) as isize) },
-        None,
-    );
+    return unimplemented!();
 }
 pub fn make_string_stream_4(in_: Ptr<()>) -> () {
     return unimplemented!();

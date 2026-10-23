@@ -376,7 +376,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { AssertComparisonsReturnBool_6() });
     (unsafe { AssertOrderAreNoexcept_8() });
     (unsafe { AssertOrderReturn_9() });
-    let p1: () = std_shared_ptr_int_::new_1({ (Box::leak(Box::new(1_())) as *mut ()) });
+    let p1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -402,9 +402,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let p3: () = std_shared_ptr_intarrarr_::new_1({
-        Box::leak((0..1_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr()
-    });
+    let p3: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

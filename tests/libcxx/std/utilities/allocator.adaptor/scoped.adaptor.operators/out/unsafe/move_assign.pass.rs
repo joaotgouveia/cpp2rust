@@ -168,7 +168,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut a1: () = A1_int_::new({ Some(3_()) });
+        let mut a1: () = unimplemented!();
         let mut aN: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_0)) = false;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_1)) = false;
@@ -178,13 +178,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut a1: () = {
-            let mut __tmp_0: A1_int_ = A1_int_::new({ Some(4_()) });
-            let mut __tmp_1: A2_int_ = A2_int_::new({ Some(5_()) });
-            std_scoped_allocator_adaptor_A1_int___A2_int__::new_1({ &mut __tmp_0 }, {
-                &mut __tmp_1
-            })
-        };
+        let mut a1: () = unimplemented!();
         let mut aN: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_0)) = false;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_1)) = false;
@@ -198,16 +192,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut a1: () = {
-            let mut __tmp_2: A1_int_ = A1_int_::new({ Some(4_()) });
-            let mut __tmp_3: A2_int_ = A2_int_::new({ Some(5_()) });
-            let mut __tmp_4: A3_int_ = A3_int_::new({ Some(6_()) });
-            std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
-                { &mut __tmp_2 },
-                { &mut __tmp_3 },
-                { &mut __tmp_4 },
-            )
-        };
+        let mut a1: () = unimplemented!();
         let mut aN: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_0)) = false;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_1)) = false;

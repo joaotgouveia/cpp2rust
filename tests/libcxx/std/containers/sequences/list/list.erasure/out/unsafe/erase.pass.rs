@@ -366,9 +366,9 @@ pub unsafe fn test1_20() {
     (unsafe { test0_10(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     (unsafe { test0_10(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     (unsafe { test0_11(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_11(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_11(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_11(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_11(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_11(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_11(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test1_21() {
     (unsafe { test0_12(unimplemented!(), 1_(), unimplemented!(), 0_()) });
@@ -392,9 +392,9 @@ pub unsafe fn test1_21() {
     (unsafe { test0_12(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     (unsafe { test0_12(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     (unsafe { test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_13(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_13(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_13(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test1_22() {
     (unsafe { test0_14(unimplemented!(), 1_(), unimplemented!(), 0_()) });
@@ -418,9 +418,9 @@ pub unsafe fn test1_22() {
     (unsafe { test0_14(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     (unsafe { test0_14(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     (unsafe { test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_15(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_15(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_15(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test1_23() {
     (unsafe { test0_16(unimplemented!(), 1_(), unimplemented!(), 0_()) });
@@ -444,9 +444,9 @@ pub unsafe fn test1_23() {
     (unsafe { test0_16(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     (unsafe { test0_16(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     (unsafe { test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_17(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_17(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_17(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test1_24() {
     (unsafe { test0_18(unimplemented!(), 1_(), unimplemented!(), 0_()) });
@@ -470,9 +470,9 @@ pub unsafe fn test1_24() {
     (unsafe { test0_18(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     (unsafe { test0_18(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     (unsafe { test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    (unsafe { test0_19(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    (unsafe { test0_19(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    (unsafe { test0_19(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    (unsafe { test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    (unsafe { test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    (unsafe { test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test_25() -> () {
     (unsafe { test1_20() });

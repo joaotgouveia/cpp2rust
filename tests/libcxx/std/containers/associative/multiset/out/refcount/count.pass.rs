@@ -241,40 +241,19 @@ pub fn test_7() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut r: () = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(4_()));
-            (*m.borrow()).count(___k.as_pointer())
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(5_()));
-            (*m.borrow()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(6_()));
-            (*m.borrow()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(7_()));
-            (*m.borrow()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(8_()));
-            (*m.borrow()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(9_()));
-            (*m.borrow()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(10_()));
-            (*m.borrow()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
     }
     return true;

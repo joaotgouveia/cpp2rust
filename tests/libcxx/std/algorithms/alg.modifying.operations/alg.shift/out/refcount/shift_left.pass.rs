@@ -569,23 +569,29 @@ pub fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_15(_i, n)
     });
 }
-pub fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_17(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_18(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_18(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_19(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_21(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -631,7 +637,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_20(
+            operator_cmp_21(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -656,7 +662,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_19(
+            operator_eq_20(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -740,25 +746,25 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn operator_eq_21(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_eq_22(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_22(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ne_23(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_23(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_lt_24(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_24(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_le_25(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_25(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_gt_26(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_26(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ge_27(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_27(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
+pub fn operator_cmp_28(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
@@ -792,7 +798,7 @@ impl MoveOnly {
 impl std::cmp::Ord for MoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_27(
+            operator_cmp_28(
                 Rc::new(RefCell::new(MoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -813,7 +819,7 @@ impl std::cmp::PartialOrd for MoveOnly {
 impl std::cmp::PartialEq for MoveOnly {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_21(
+            operator_eq_22(
                 Rc::new(RefCell::new(MoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -832,25 +838,25 @@ impl Default for MoveOnly {
         { MoveOnly::new(None) }
     }
 }
-pub fn operator_eq_28(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_eq_29(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_29(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ne_30(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_30(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_lt_31(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_31(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_le_32(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_32(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_gt_33(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_33(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ge_34(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_34(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_cmp_35(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
@@ -882,7 +888,7 @@ impl TrivialMoveOnly {
 impl std::cmp::Ord for TrivialMoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_34(
+            operator_cmp_35(
                 Rc::new(RefCell::new(TrivialMoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -903,7 +909,7 @@ impl std::cmp::PartialOrd for TrivialMoveOnly {
 impl std::cmp::PartialEq for TrivialMoveOnly {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_28(
+            operator_eq_29(
                 Rc::new(RefCell::new(TrivialMoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -922,7 +928,7 @@ impl Default for TrivialMoveOnly {
         { TrivialMoveOnly::new(None) }
     }
 }
-pub fn test_35() -> () {
+pub fn test_36() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -1045,7 +1051,7 @@ pub fn test_35() -> () {
     }
     return true;
 }
-pub fn test_36() -> () {
+pub fn test_37() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -1169,7 +1175,7 @@ pub fn test_36() -> () {
     }
     return true;
 }
-pub fn test_37() -> () {
+pub fn test_38() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -1293,7 +1299,7 @@ pub fn test_37() -> () {
     }
     return true;
 }
-pub fn test_38() -> () {
+pub fn test_39() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -1398,7 +1404,7 @@ pub fn test_38() -> () {
     }
     return true;
 }
-pub fn test_39() -> () {
+pub fn test_40() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -1576,7 +1582,7 @@ pub fn test_39() -> () {
     }
     return true;
 }
-pub fn test_40() -> () {
+pub fn test_41() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -1758,7 +1764,7 @@ pub fn test_40() -> () {
     }
     return true;
 }
-pub fn test_41() -> () {
+pub fn test_42() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -1940,7 +1946,7 @@ pub fn test_41() -> () {
     }
     return true;
 }
-pub fn test_42() -> () {
+pub fn test_43() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -2120,7 +2126,6 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_35() });
     ({ test_36() });
     ({ test_37() });
     ({ test_38() });
@@ -2128,6 +2133,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_40() });
     ({ test_41() });
     ({ test_42() });
+    ({ test_43() });
     const _: () = assert!(true, "test<int, forward_iterator<int*>>()");;
     const _: () = assert!(true, "test<int, bidirectional_iterator<int*>>()");;
     const _: () = assert!(true, "test<int, random_access_iterator<int*>>()");;

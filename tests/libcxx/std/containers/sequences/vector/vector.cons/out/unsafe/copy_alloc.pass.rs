@@ -696,31 +696,19 @@ pub unsafe fn tests_28() -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         (unsafe {
-            let mut _x: () = std_vector_int__std_allocator_int__::new_1({ a.as_mut_ptr() }, { an });
+            let mut _x: () = unimplemented!();
             let mut _a: () = unimplemented!();
             test_25(&mut _x, &mut _a)
         });
     }
     {
-        let mut l: () = {
-            let mut __tmp_0: () = 2_();
-            let mut __tmp_1: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_vector_int__test_allocator_int__::new_1({ 3_() }, { &mut __tmp_0 }, {
-                &mut __tmp_1
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_2: () = 2_();
-            let mut __tmp_3: other_allocator_int_ = other_allocator_int_::new_1({ 5_() });
-            std_vector_int__other_allocator_int__::new_1({ 3_() }, { &mut __tmp_2 }, {
-                &mut __tmp_3
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -758,35 +746,24 @@ pub unsafe fn tests_28() -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         (unsafe {
-            let mut _x: () = std_vector_int__min_allocator_int__::new_1({ a.as_mut_ptr() }, { an });
+            let mut _x: () = unimplemented!();
             let mut _a: min_allocator_int_ = <min_allocator_int_>::default();
             test_26(&mut _x, &mut _a)
         });
         (unsafe {
-            let mut _x: () =
-                std_vector_int__safe_allocator_int__::new_1({ a.as_mut_ptr() }, { an });
+            let mut _x: () = unimplemented!();
             let mut _a: safe_allocator_int_ = safe_allocator_int_::new();
             test_27(&mut _x, &mut _a)
         });
     }
     {
-        let mut l: () = {
-            let mut __tmp_4: () = 2_();
-            let mut __tmp_5: min_allocator_int_ = <min_allocator_int_>::default();
-            std_vector_int__min_allocator_int__::new_2({ 3_() }, { &mut __tmp_4 }, { &mut __tmp_5 })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_6: () = 2_();
-            let mut __tmp_7: safe_allocator_int_ = safe_allocator_int_::new();
-            std_vector_int__safe_allocator_int__::new_2({ 3_() }, { &mut __tmp_6 }, {
-                &mut __tmp_7
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -127,38 +127,17 @@ pub fn operator_lt_0(rhs: Ptr<C2Int>, mut lhs: ()) -> () {
 pub fn test_3() -> () {
     {
         let example: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___k: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_2({ 5_() })));
-                (*example.borrow())
-                    .equal_range_82_struct_C2Int_struct_transparent_less_0(___k.as_pointer())
-            }),
-        ));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let example: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___k: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_2({ 5_() })));
-                (*example.borrow())
-                    .equal_range_82_struct_C2Int_struct_transparent_less_not_referenceable_0(
-                        ___k.as_pointer(),
-                    )
-            }),
-        ));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let example: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___k: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_2({ 5_() })));
-                (*example.borrow()).equal_range_82_struct_C2Int_struct_transparent_less_nonempty_0(
-                    ___k.as_pointer(),
-                )
-            }),
-        ));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;

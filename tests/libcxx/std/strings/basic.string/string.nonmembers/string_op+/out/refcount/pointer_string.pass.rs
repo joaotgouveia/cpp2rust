@@ -149,22 +149,13 @@ pub fn test_string_4() {
             {
                 let mut lhs: Ptr<()> =
                     ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone();
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    );
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
                 let mut lhs: Ptr<()> =
                     ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone();
-                let rhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
             }
             k.prefix_inc();
@@ -220,22 +211,13 @@ pub fn test_string_5() {
             {
                 let mut lhs: Ptr<()> =
                     ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone();
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    );
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
                 let mut lhs: Ptr<()> =
                     ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone();
-                let rhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
             }
             k.prefix_inc();

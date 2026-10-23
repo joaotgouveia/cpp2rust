@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0() -> () {
     let mut d1: () = unimplemented!();
-    let mut d2: () = std_default_delete_const_intarrarr_::new_1({ &d1 });
+    let mut d2: () = unimplemented!();
     (&(d2));
     return true;
 }

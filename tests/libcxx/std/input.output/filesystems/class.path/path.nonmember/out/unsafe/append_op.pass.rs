@@ -23,8 +23,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut p1: () = std_filesystem_path::new_1({ &std::mem::transmute(*b"abc\0") }, None);
-    let mut p2: () = std_filesystem_path::new_1({ &std::mem::transmute(*b"def\0") }, None);
+    let mut p1: () = unimplemented!();
+    let mut p2: () = unimplemented!();
     let mut p3: () = unimplemented!();
     unimplemented!();
     let mut p4: () = unimplemented!();

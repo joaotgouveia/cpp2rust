@@ -89,68 +89,49 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let ns: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({
-                __tmp_0.as_pointer()
-            })
-        }));
-        let __rhs = (*(*ns.borrow()).upgrade().deref()).clone();
+        let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let __rhs = unimplemented!();
         (*ns.borrow_mut()) = __rhs;
         unimplemented!();
-        let __rhs = (*6_().upgrade().deref()).clone();
+        let __rhs = unimplemented!();
         (*ns.borrow_mut()) = __rhs;
         unimplemented!();
     }
     {
-        let ns: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({
-                __tmp_1.as_pointer()
-            })
-        }));
-        let ns2: Value<()> = Rc::new(RefCell::new((*(*ns.borrow()).upgrade().deref()).clone()));
+        let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ns2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "ns2.count() == 15");;
-        let ns3: Value<()> = Rc::new(RefCell::new((*6_().upgrade().deref()).clone()));
+        let ns3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "ns3.count() == 18");;
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(5_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({
-                __tmp_2.as_pointer()
-            })
-        }));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: NotARep = <NotARep>::default();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let __rhs = ({
-            let _d: () = (*d.borrow()).clone();
+            let _d: () = unimplemented!();
             operator_mul_2(_d, (n).clone())
         });
         (*d.borrow_mut()) = __rhs;
         unimplemented!();
         let __rhs = ({
             let _arg0: NotARep = (n).clone();
-            operator_mul_3(_arg0, (*d.borrow()).clone())
+            operator_mul_3(_arg0, unimplemented!())
         });
         (*d.borrow_mut()) = __rhs;
         unimplemented!();
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(8_()));
-            std_chrono_duration_int__std_ratio_1__1__::new_1({ __tmp_3.as_pointer() })
-        }));
-        let x: Value<RepConstConvertibleLWG3050> =
-            Rc::new(RefCell::new(<RepConstConvertibleLWG3050>::default()));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut x: RepConstConvertibleLWG3050 = <RepConstConvertibleLWG3050>::default();
         {
-            let r: Value<()> = Rc::new(RefCell::new((*(*d.borrow()).upgrade().deref()).clone()));
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let r: Value<()> = Rc::new(RefCell::new((*(*x.borrow()).upgrade().deref()).clone()));
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             const _: () = assert!(true, "");;
         }

@@ -146,9 +146,9 @@ pub unsafe fn check_X_4() -> () {
     let mut dtor_called: () = false;
     let mut x: X = X::new_1({ &mut dtor_called });
     let _dtor_x = ScopedDestructorUnsafe::new(&raw mut x, X::destructor);
-    let mut opt: () = std_optional_X_::new_1({ &mut x });
+    let mut opt: () = unimplemented!();
     unimplemented!();
-    let v: *mut X = (unsafe { opt.emplace(unimplemented!(), &mut dtor_called) });
+    let v: *mut X = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<X&, decltype(v)>");;
     unimplemented!();
     unimplemented!();
@@ -157,7 +157,7 @@ pub unsafe fn check_X_4() -> () {
 }
 pub unsafe fn check_Y_5() -> () {
     let mut opt: () = unimplemented!();
-    let v: *mut Y = (unsafe { opt.emplace(unimplemented!()) });
+    let v: *mut Y = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<Y&, decltype(v)>");;
     unimplemented!();
     unimplemented!();
@@ -186,10 +186,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut opt: () = unimplemented!();
-        let v: *mut () = (unsafe {
-            let mut ___args: () = unimplemented!();
-            opt.emplace(unimplemented!(), &mut ___args)
-        });
+        let v: *mut () = unimplemented!();
         const _: () = assert!(true, "std::is_same_v<std::vector<int>&, decltype(v)>");;
         unimplemented!();
         unimplemented!();

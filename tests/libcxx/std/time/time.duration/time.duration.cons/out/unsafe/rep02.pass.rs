@@ -23,15 +23,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut d: () = {
-        let mut __tmp_0: () = 5_();
-        std_chrono_duration_double__std_ratio_1__1__::new_1({ &mut __tmp_0 })
-    };
+    let mut d: () = unimplemented!();
     unimplemented!();
-    let d2: () = {
-        let mut __tmp_1: () = 5_();
-        std_chrono_duration_double__std_ratio_1__1__::new_1({ &mut __tmp_1 })
-    };
+    let d2: () = unimplemented!();
     const _: () = assert!(true, "d2.count() == 5");;
     return 0_();
 }

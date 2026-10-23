@@ -1015,127 +1015,85 @@ pub static mut count_13: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| u
 pub unsafe fn test_14() {
     let bad: () = -1_();
     {
-        let mut p: () = (unsafe {
-            let mut ___a: bare_allocator_void_ = bare_allocator_void_::new();
-            allocate_shared_15(&mut ___a)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: bare_allocator_void_ = bare_allocator_void_::new();
-            allocate_shared_16(&mut ___a, &i)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: bare_allocator_void_ = bare_allocator_void_::new();
-            allocate_shared_17(&mut ___a, &i, &bad)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: bare_allocator_void_ = bare_allocator_void_::new();
-            let ___args_2: *const () = &bad;
-            let ___args_3: *const () = &bad;
-            allocate_shared_18(&mut ___a, &i, ___args_2, ___args_3)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
 }
-pub unsafe fn test_19() {
+pub unsafe fn test_15() {
     let bad: () = -1_();
     {
-        let mut p: () = (unsafe {
-            let mut ___a: test_allocator_void_ = <test_allocator_void_>::default();
-            allocate_shared_20(&mut ___a)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: test_allocator_void_ = <test_allocator_void_>::default();
-            allocate_shared_21(&mut ___a, &i)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: test_allocator_void_ = <test_allocator_void_>::default();
-            allocate_shared_22(&mut ___a, &i, &bad)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: test_allocator_void_ = <test_allocator_void_>::default();
-            let ___args_2: *const () = &bad;
-            let ___args_3: *const () = &bad;
-            allocate_shared_23(&mut ___a, &i, ___args_2, ___args_3)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
 }
-pub unsafe fn test_24() {
+pub unsafe fn test_16() {
     let bad: () = -1_();
     {
-        let mut p: () = (unsafe {
-            let mut ___a: complete_type_allocator_int_ = complete_type_allocator_int_::new();
-            allocate_shared_25(&mut ___a)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: complete_type_allocator_int_ = complete_type_allocator_int_::new();
-            allocate_shared_26(&mut ___a, &i)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: complete_type_allocator_int_ = complete_type_allocator_int_::new();
-            allocate_shared_27(&mut ___a, &i, &bad)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
         let i: () = 42_();
-        let mut p: () = (unsafe {
-            let mut ___a: complete_type_allocator_int_ = complete_type_allocator_int_::new();
-            let ___args_2: *const () = &bad;
-            let ___args_3: *const () = &bad;
-            allocate_shared_28(&mut ___a, &i, ___args_2, ___args_3)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -1158,18 +1116,13 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_14() });
-    (unsafe { test_19() });
-    (unsafe { test_24() });
+    (unsafe { test_15() });
+    (unsafe { test_16() });
     let mut alloc_stats: test_allocator_statistics = <test_allocator_statistics>::default();
     {
         let mut i: () = 67_();
         let mut c: () = ('e' as ());
-        let mut p: () = (unsafe {
-            let mut ___a: test_allocator_A_ = test_allocator_A_::new_1({ 54_() }, {
-                (&mut alloc_stats as *mut test_allocator_statistics)
-            });
-            allocate_shared_29(&mut ___a, &mut i, &mut c)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1180,10 +1133,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut i: () = 67_();
         let mut c: () = ('e' as ());
-        let mut p: () = (unsafe {
-            let mut ___a: min_allocator_void_ = <min_allocator_void_>::default();
-            allocate_shared_30(&mut ___a, &mut i, &mut c)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1192,27 +1142,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut i: () = 68_();
         let mut c: () = ('f' as ());
-        let mut p: () = (unsafe {
-            let mut ___a: bare_allocator_void_ = bare_allocator_void_::new();
-            allocate_shared_31(&mut ___a, &mut i, &mut c)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     unimplemented!();
     {
-        let mut p1: () = (unsafe {
-            let mut ___a: min_allocator_operator_hijacker_ =
-                <min_allocator_operator_hijacker_>::default();
-            allocate_shared_32(&mut ___a)
-        });
-        let mut p2: () = (unsafe {
-            let mut ___a: min_allocator_operator_hijacker_ =
-                <min_allocator_operator_hijacker_>::default();
-            let mut ___args: operator_hijacker = <operator_hijacker>::default();
-            allocate_shared_33(&mut ___a, &mut ___args)
-        });
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

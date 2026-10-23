@@ -28,31 +28,19 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
-        let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"\\(a\\)".as_ptr() },
-            None,
-        );
+        let mut _p: () = unimplemented!();
         test_0(&mut _p, 0_())
     });
     (unsafe {
-        let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"\\(a[bc]\\)".as_ptr() },
-            None,
-        );
+        let mut _p: () = unimplemented!();
         test_0(&mut _p, 0_())
     });
     (unsafe {
-        let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"\\(a\\([bc]\\)\\)".as_ptr() },
-            None,
-        );
+        let mut _p: () = unimplemented!();
         test_0(&mut _p, 0_())
     });
     (unsafe {
-        let mut _p: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"(a([bc]))".as_ptr() },
-            None,
-        );
+        let mut _p: () = unimplemented!();
         test_0(&mut _p, 2_())
     });
     return 0_();

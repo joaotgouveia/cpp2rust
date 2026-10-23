@@ -311,21 +311,25 @@ pub unsafe fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_10(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -409,7 +413,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -419,7 +423,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -487,215 +491,6 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_alloc_13() {
-    {
-        {
-            let mut arr: () = unimplemented!();
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: () = unimplemented!();
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: () = unimplemented!();
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        {
-            let mut arr: [(); 1] = [{
-                let mut __tmp_0: () = 1_();
-                let mut __tmp_1: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-            }];
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [{
-                let mut __tmp_2: () = 1_();
-                let mut __tmp_3: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
-            }];
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [{
-                let mut __tmp_4: () = 1_();
-                let mut __tmp_5: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
-            }];
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [{
-                let mut __tmp_6: () = 1_();
-                let mut __tmp_7: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
-            }];
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        {
-            let mut arr: [(); 3] = [
-                {
-                    let mut __tmp_8: () = 1_();
-                    let mut __tmp_9: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
-                },
-                {
-                    let mut __tmp_10: () = 1_();
-                    let mut __tmp_11: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_10 }, { &mut __tmp_11 })
-                },
-                {
-                    let mut __tmp_12: () = 3_();
-                    let mut __tmp_13: () = 3_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_12 }, { &mut __tmp_13 })
-                },
-            ];
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [
-                {
-                    let mut __tmp_14: () = 1_();
-                    let mut __tmp_15: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_14 }, { &mut __tmp_15 })
-                },
-                {
-                    let mut __tmp_16: () = 1_();
-                    let mut __tmp_17: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_16 }, { &mut __tmp_17 })
-                },
-                {
-                    let mut __tmp_18: () = 3_();
-                    let mut __tmp_19: () = 3_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_18 }, { &mut __tmp_19 })
-                },
-            ];
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [
-                {
-                    let mut __tmp_20: () = 1_();
-                    let mut __tmp_21: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_20 }, { &mut __tmp_21 })
-                },
-                {
-                    let mut __tmp_22: () = 2_();
-                    let mut __tmp_23: () = 2_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_22 }, { &mut __tmp_23 })
-                },
-                {
-                    let mut __tmp_24: () = 3_();
-                    let mut __tmp_25: () = 3_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_24 }, { &mut __tmp_25 })
-                },
-            ];
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [
-                {
-                    let mut __tmp_26: () = 1_();
-                    let mut __tmp_27: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_26 }, { &mut __tmp_27 })
-                },
-                {
-                    let mut __tmp_28: () = 3_();
-                    let mut __tmp_29: () = 3_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_28 }, { &mut __tmp_29 })
-                },
-                {
-                    let mut __tmp_30: () = 4_();
-                    let mut __tmp_31: () = 4_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_30 }, { &mut __tmp_31 })
-                },
-            ];
-            let mut map: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
 pub unsafe fn test_alloc_14() {
     {
         {
@@ -730,11 +525,7 @@ pub unsafe fn test_alloc_14() {
     }
     {
         {
-            let mut arr: [(); 1] = [{
-                let mut __tmp_32: () = 1_();
-                let mut __tmp_33: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_32 }, { &mut __tmp_33 })
-            }];
+            let mut arr: [(); 1] = [unimplemented!()];
             let mut map: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -742,11 +533,7 @@ pub unsafe fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 1] = [{
-                let mut __tmp_34: () = 1_();
-                let mut __tmp_35: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_34 }, { &mut __tmp_35 })
-            }];
+            let mut arr: [(); 1] = [unimplemented!()];
             let mut map: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -756,11 +543,7 @@ pub unsafe fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 1] = [{
-                let mut __tmp_36: () = 1_();
-                let mut __tmp_37: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_36 }, { &mut __tmp_37 })
-            }];
+            let mut arr: [(); 1] = [unimplemented!()];
             let mut map: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -770,11 +553,7 @@ pub unsafe fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 1] = [{
-                let mut __tmp_38: () = 1_();
-                let mut __tmp_39: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_38 }, { &mut __tmp_39 })
-            }];
+            let mut arr: [(); 1] = [unimplemented!()];
             let mut map: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -790,23 +569,7 @@ pub unsafe fn test_alloc_14() {
     }
     {
         {
-            let mut arr: [(); 3] = [
-                {
-                    let mut __tmp_40: () = 1_();
-                    let mut __tmp_41: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_40 }, { &mut __tmp_41 })
-                },
-                {
-                    let mut __tmp_42: () = 1_();
-                    let mut __tmp_43: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_42 }, { &mut __tmp_43 })
-                },
-                {
-                    let mut __tmp_44: () = 3_();
-                    let mut __tmp_45: () = 3_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_44 }, { &mut __tmp_45 })
-                },
-            ];
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
             let mut map: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -816,23 +579,7 @@ pub unsafe fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 3] = [
-                {
-                    let mut __tmp_46: () = 1_();
-                    let mut __tmp_47: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_46 }, { &mut __tmp_47 })
-                },
-                {
-                    let mut __tmp_48: () = 1_();
-                    let mut __tmp_49: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_48 }, { &mut __tmp_49 })
-                },
-                {
-                    let mut __tmp_50: () = 3_();
-                    let mut __tmp_51: () = 3_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_50 }, { &mut __tmp_51 })
-                },
-            ];
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
             let mut map: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -844,23 +591,7 @@ pub unsafe fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 3] = [
-                {
-                    let mut __tmp_52: () = 1_();
-                    let mut __tmp_53: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_52 }, { &mut __tmp_53 })
-                },
-                {
-                    let mut __tmp_54: () = 2_();
-                    let mut __tmp_55: () = 2_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_54 }, { &mut __tmp_55 })
-                },
-                {
-                    let mut __tmp_56: () = 3_();
-                    let mut __tmp_57: () = 3_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_56 }, { &mut __tmp_57 })
-                },
-            ];
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
             let mut map: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -872,23 +603,7 @@ pub unsafe fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 3] = [
-                {
-                    let mut __tmp_58: () = 1_();
-                    let mut __tmp_59: () = 1_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_58 }, { &mut __tmp_59 })
-                },
-                {
-                    let mut __tmp_60: () = 3_();
-                    let mut __tmp_61: () = 3_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_60 }, { &mut __tmp_61 })
-                },
-                {
-                    let mut __tmp_62: () = 4_();
-                    let mut __tmp_63: () = 4_();
-                    std_pair_const_int__int_::new_1({ &mut __tmp_62 }, { &mut __tmp_63 })
-                },
-            ];
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
             let mut map: () = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -905,9 +620,138 @@ pub unsafe fn test_alloc_14() {
         }
     }
 }
-pub unsafe fn test_15() -> () {
-    (unsafe { test_alloc_13() });
+pub unsafe fn test_alloc_15() {
+    {
+        {
+            let mut arr: () = unimplemented!();
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: () = unimplemented!();
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: () = unimplemented!();
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let mut map: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn test_16() -> () {
     (unsafe { test_alloc_14() });
+    (unsafe { test_alloc_15() });
     return true;
 }
 pub fn main() {
@@ -926,7 +770,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_15() });
+    (unsafe { test_16() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

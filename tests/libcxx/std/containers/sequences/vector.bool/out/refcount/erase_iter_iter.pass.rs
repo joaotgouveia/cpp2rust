@@ -132,20 +132,14 @@ pub fn tests_7() -> () {
         (1_() != 0),
     ])));
     {
-        let mut l1: () =
-            std_vector_bool__std_allocator_bool__::new_1({ (a1.as_pointer() as Ptr<()>) }, {
-                (a1.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
+        let mut l1: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l1: () =
-            std_vector_bool__std_allocator_bool__::new_1({ (a1.as_pointer() as Ptr<()>) }, {
-                (a1.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
+        let mut l1: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -153,10 +147,7 @@ pub fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () =
-            std_vector_bool__std_allocator_bool__::new_1({ (a1.as_pointer() as Ptr<()>) }, {
-                (a1.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
+        let mut l1: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -164,30 +155,21 @@ pub fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () =
-            std_vector_bool__std_allocator_bool__::new_1({ (a1.as_pointer() as Ptr<()>) }, {
-                (a1.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
+        let mut l1: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l1: () =
-            std_vector_bool__min_allocator_bool__::new_1({ (a1.as_pointer() as Ptr<()>) }, {
-                (a1.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
+        let mut l1: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l1: () =
-            std_vector_bool__min_allocator_bool__::new_1({ (a1.as_pointer() as Ptr<()>) }, {
-                (a1.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
+        let mut l1: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -195,10 +177,7 @@ pub fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () =
-            std_vector_bool__min_allocator_bool__::new_1({ (a1.as_pointer() as Ptr<()>) }, {
-                (a1.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
+        let mut l1: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -206,10 +185,7 @@ pub fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () =
-            std_vector_bool__min_allocator_bool__::new_1({ (a1.as_pointer() as Ptr<()>) }, {
-                (a1.as_pointer() as Ptr<()>).offset((3_()) as isize)
-            });
+        let mut l1: () = unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

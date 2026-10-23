@@ -658,41 +658,27 @@ pub unsafe fn test_14() -> () {
     {
         let mut items1: [(); 3] = [1_(), 2_(), 1_()];
         let mut items2: [(); 3] = [1_(), 2_(), 2_()];
-        let c1: () = std_vector_int__std_allocator_int__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let c2: () = std_vector_int__std_allocator_int__::new_1({ items2.as_mut_ptr() }, {
-            items2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let c1: () = unimplemented!();
+        let c2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut items1: [(); 3] = [3_(), 2_(), 3_()];
         let mut items2: [(); 3] = [3_(), 1_(), 3_()];
-        let c1: () = std_vector_int__std_allocator_int__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let c2: () = std_vector_int__std_allocator_int__::new_1({ items2.as_mut_ptr() }, {
-            items2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let c1: () = unimplemented!();
+        let c2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut items1: [(); 2] = [1_(), 2_()];
         let mut items2: [(); 3] = [1_(), 2_(), 0_()];
-        let c1: () = std_vector_int__std_allocator_int__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((2_()) as isize)
-        });
-        let c2: () = std_vector_int__std_allocator_int__::new_1({ items2.as_mut_ptr() }, {
-            items2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let c1: () = unimplemented!();
+        let c2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut items1: [(); 3] = [1_(), 2_(), 0_()];
-        let c1: () = std_vector_int__std_allocator_int__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let c1: () = unimplemented!();
         let c2: () = unimplemented!();
         unimplemented!();
     }
@@ -727,14 +713,8 @@ pub unsafe fn test_14() -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 1_() }),
         ];
-        let c1: () = std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items1.as_mut_ptr() },
-            { items1.as_mut_ptr().offset((3_()) as isize) },
-        );
-        let c2: () = std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items2.as_mut_ptr() },
-            { items2.as_mut_ptr().offset((3_()) as isize) },
-        );
+        let c1: () = unimplemented!();
+        let c2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -748,14 +728,8 @@ pub unsafe fn test_14() -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 3_() }),
         ];
-        let c1: () = std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items1.as_mut_ptr() },
-            { items1.as_mut_ptr().offset((3_()) as isize) },
-        );
-        let c2: () = std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items2.as_mut_ptr() },
-            { items2.as_mut_ptr().offset((3_()) as isize) },
-        );
+        let c1: () = unimplemented!();
+        let c2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -766,14 +740,8 @@ pub unsafe fn test_14() -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 0_() }),
         ];
-        let c1: () = std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items1.as_mut_ptr() },
-            { items1.as_mut_ptr().offset((2_()) as isize) },
-        );
-        let c2: () = std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items2.as_mut_ptr() },
-            { items2.as_mut_ptr().offset((3_()) as isize) },
-        );
+        let c1: () = unimplemented!();
+        let c2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -782,10 +750,7 @@ pub unsafe fn test_14() -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 0_() }),
         ];
-        let c1: () = std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items1.as_mut_ptr() },
-            { items1.as_mut_ptr().offset((3_()) as isize) },
-        );
+        let c1: () = unimplemented!();
         let c2: () = unimplemented!();
         unimplemented!();
     }

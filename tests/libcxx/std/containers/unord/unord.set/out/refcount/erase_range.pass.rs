@@ -87,7 +87,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 1_(), 2_()])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(({ next_4((*i.borrow()).clone(), None) })));
+        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -128,7 +128,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 1_(), 2_()])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(({ next_5((*i.borrow()).clone(), None) })));
+        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

@@ -258,14 +258,8 @@ pub fn test04_10() {
     let mut goodbit: () = unimplemented!();
     let mut err: () = unimplemented!();
     let loc_c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut str: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"20000106 Elizabeth Durack") },
-        None,
-    );
-    let mut str2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"0 true 0xbffff74c Durack") },
-        None,
-    );
+    let mut str: () = unimplemented!();
+    let mut str2: () = unimplemented!();
     let iss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let ng: Ptr<()> = ({
@@ -275,11 +269,7 @@ pub fn test04_10() {
     let mut i: () = 0_();
     err = goodbit;
     let end1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rem1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-        { unimplemented!() },
-        { unimplemented!() },
-        None,
-    );
+    let mut rem1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -340,11 +330,7 @@ pub fn test04_10() {
     let mut ld: () = 0_f64;
     err = goodbit;
     let end2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rem2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-        { unimplemented!() },
-        { unimplemented!() },
-        None,
-    );
+    let mut rem2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -406,11 +392,7 @@ pub fn test04_10() {
     unimplemented!();
     err = goodbit;
     let end3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rem3: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-        { unimplemented!() },
-        { unimplemented!() },
-        None,
-    );
+    let mut rem3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -473,11 +455,7 @@ pub fn test04_10() {
     err = goodbit;
     unimplemented!();
     let end4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rem4: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-        { unimplemented!() },
-        { unimplemented!() },
-        None,
-    );
+    let mut rem4: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -540,11 +518,7 @@ pub fn test04_10() {
     err = goodbit;
     unimplemented!();
     let end5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rem5: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-        { unimplemented!() },
-        { unimplemented!() },
-        None,
-    );
+    let mut rem5: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -708,10 +682,7 @@ pub fn verify_demangle_20(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -722,22 +693,14 @@ pub fn run_tests_wrapped_locale_22(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -749,10 +712,7 @@ pub fn run_tests_wrapped_locale_22(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -774,10 +734,7 @@ pub fn run_tests_wrapped_env_23(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

@@ -105,10 +105,7 @@ pub fn checkBeginEndBasic_9() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_1(
-            { Ptr::<()>::from_string_literal(b"foo") },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let default_constructed: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -118,30 +115,24 @@ pub fn checkBeginEndBasic_9() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_2(
-            { Ptr::<()>::from_string_literal(b"//root_name//first_dir////second_dir") },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut expect: [(); 4] = [
-            std_filesystem_path::new_3({ Ptr::<()>::from_string_literal(b"/") }, None),
-            std_filesystem_path::new_4({ Ptr::<()>::from_string_literal(b"root_name") }, None),
-            std_filesystem_path::new_4({ Ptr::<()>::from_string_literal(b"first_dir") }, None),
-            std_filesystem_path::new_5({ Ptr::<()>::from_string_literal(b"second_dir") }, None),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_6(
-            { Ptr::<()>::from_string_literal(b"////foo/bar/baz///") },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut expect: [(); 5] = [
-            std_filesystem_path::new_3({ Ptr::<()>::from_string_literal(b"/") }, None),
-            std_filesystem_path::new_1({ Ptr::<()>::from_string_literal(b"foo") }, None),
-            std_filesystem_path::new_1({ Ptr::<()>::from_string_literal(b"bar") }, None),
-            std_filesystem_path::new_1({ Ptr::<()>::from_string_literal(b"baz") }, None),
-            std_filesystem_path::new_7({ Ptr::<()>::from_string_literal(b"") }, None),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
         unimplemented!();

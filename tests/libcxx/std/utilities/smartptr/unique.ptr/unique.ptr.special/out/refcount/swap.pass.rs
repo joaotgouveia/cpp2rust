@@ -209,22 +209,10 @@ pub fn test_10() -> () {
     {
         let mut p1: Ptr<A> =
             Ptr::alloc_array((0..3_()).map(|_| <A>::default()).collect::<Box<[A]>>());
-        let mut s1: () = {
-            let __tmp_0: Value<Deleter_Aarrarr_> =
-                Rc::new(RefCell::new(Deleter_Aarrarr_::new_1({ 1_() })));
-            std_unique_ptr_Aarrarr__Deleter_Aarrarr__::new({ (p1).clone() }, {
-                __tmp_0.as_pointer()
-            })
-        };
+        let mut s1: () = unimplemented!();
         let mut p2: Ptr<A> =
             Ptr::alloc_array((0..3_()).map(|_| <A>::default()).collect::<Box<[A]>>());
-        let mut s2: () = {
-            let __tmp_1: Value<Deleter_Aarrarr_> =
-                Rc::new(RefCell::new(Deleter_Aarrarr_::new_1({ 2_() })));
-            std_unique_ptr_Aarrarr__Deleter_Aarrarr__::new({ (p2).clone() }, {
-                __tmp_1.as_pointer()
-            })
-        };
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -245,9 +233,9 @@ pub fn test_10() -> () {
         let mut d: NonSwappableDeleter_int_ = NonSwappableDeleter_int_::new({ 42_() });
         let x: Value<()> = Rc::new(RefCell::new(42_()));
         let y: Value<()> = Rc::new(RefCell::new(43_()));
-        let mut p: () = unimplemented!();
-        let mut p2: () = unimplemented!();
-        unimplemented!();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ swap_11(p.as_pointer(), p2.as_pointer()) });
     }
     return true;
 }

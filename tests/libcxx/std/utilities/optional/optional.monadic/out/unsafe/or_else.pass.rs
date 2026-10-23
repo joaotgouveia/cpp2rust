@@ -202,7 +202,7 @@ const _: () = assert!(
     "!has_or_else<std::optional<NonMovable>&&, decltype(return_optional<NonMovable>)>"
 );
 pub unsafe fn take_int_14(mut _a0: ()) -> () {
-    return 0_();
+    return unimplemented!();
 }
 pub unsafe fn take_int_return_void_15(mut _a0: ()) {}
 const _: () = assert!(

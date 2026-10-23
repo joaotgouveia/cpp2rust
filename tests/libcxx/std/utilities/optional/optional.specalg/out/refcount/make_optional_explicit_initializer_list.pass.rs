@@ -103,7 +103,7 @@ impl TestT {
 }
 pub fn test_11() -> () {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(({ make_optional_12(unimplemented!()) })));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -111,12 +111,7 @@ pub fn test_11() -> () {
     }
     {
         let i: Value<()> = Rc::new(RefCell::new(42_()));
-        let opt: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___args: Value<Ptr<()>> = Rc::new(RefCell::new((i.as_pointer())));
-                make_optional_13(unimplemented!(), ___args.as_pointer())
-            }),
-        ));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -124,16 +119,11 @@ pub fn test_11() -> () {
     }
     let test_string: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
         {
-            let opt: Value<()> = Rc::new(RefCell::new(({ make_optional_14(unimplemented!()) })));
+            let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         {
-            let opt: Value<()> = Rc::new(RefCell::new(
-                ({
-                    let ___args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    make_optional_15(unimplemented!(), ___args.as_pointer())
-                }),
-            ));
+            let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
     })));

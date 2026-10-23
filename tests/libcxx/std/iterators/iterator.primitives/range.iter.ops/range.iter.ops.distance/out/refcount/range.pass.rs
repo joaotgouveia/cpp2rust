@@ -682,23 +682,29 @@ pub fn operator_add_27(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_26(_i, n)
     });
 }
-pub fn iter_swap_28(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_28(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_29(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_29(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_30(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_30(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_31(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_31(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_32(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -744,7 +750,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_31(
+            operator_cmp_32(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -769,7 +775,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_30(
+            operator_eq_31(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -853,136 +859,136 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_ordinary_32() {
-    let r: Value<R_33> = Rc::new(RefCell::new(<R_33>::default()));
+pub fn test_ordinary_33() {
+    let r: Value<R_34> = Rc::new(RefCell::new(<R_34>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_34() {
-    let r: Value<R_35> = Rc::new(RefCell::new(<R_35>::default()));
+pub fn test_ordinary_35() {
+    let r: Value<R_36> = Rc::new(RefCell::new(<R_36>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_36() {
-    let r: Value<R_37> = Rc::new(RefCell::new(<R_37>::default()));
+pub fn test_ordinary_37() {
+    let r: Value<R_38> = Rc::new(RefCell::new(<R_38>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_38() {
-    let r: Value<R_39> = Rc::new(RefCell::new(<R_39>::default()));
+pub fn test_ordinary_39() {
+    let r: Value<R_40> = Rc::new(RefCell::new(<R_40>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_40() {
-    let r: Value<R_41> = Rc::new(RefCell::new(<R_41>::default()));
+pub fn test_ordinary_41() {
+    let r: Value<R_42> = Rc::new(RefCell::new(<R_42>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_42() {
-    let r: Value<R_43> = Rc::new(RefCell::new(<R_43>::default()));
+pub fn test_ordinary_43() {
+    let r: Value<R_44> = Rc::new(RefCell::new(<R_44>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_44() {
-    let r: Value<R_45> = Rc::new(RefCell::new(<R_45>::default()));
+pub fn test_ordinary_45() {
+    let r: Value<R_46> = Rc::new(RefCell::new(<R_46>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_46() {
-    let r: Value<R_47> = Rc::new(RefCell::new(<R_47>::default()));
+pub fn test_ordinary_47() {
+    let r: Value<R_48> = Rc::new(RefCell::new(<R_48>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_48() {
-    let r: Value<R_49> = Rc::new(RefCell::new(<R_49>::default()));
+pub fn test_ordinary_49() {
+    let r: Value<R_50> = Rc::new(RefCell::new(<R_50>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_50() {
-    let r: Value<R_51> = Rc::new(RefCell::new(<R_51>::default()));
+pub fn test_ordinary_51() {
+    let r: Value<R_52> = Rc::new(RefCell::new(<R_52>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_52() {
-    let r: Value<R_53> = Rc::new(RefCell::new(<R_53>::default()));
+pub fn test_ordinary_53() {
+    let r: Value<R_54> = Rc::new(RefCell::new(<R_54>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_54() {
-    let r: Value<R_55> = Rc::new(RefCell::new(<R_55>::default()));
+pub fn test_ordinary_55() {
+    let r: Value<R_56> = Rc::new(RefCell::new(<R_56>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_56() {
-    let r: Value<R_57> = Rc::new(RefCell::new(<R_57>::default()));
+pub fn test_ordinary_57() {
+    let r: Value<R_58> = Rc::new(RefCell::new(<R_58>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_58() {
-    let r: Value<R_59> = Rc::new(RefCell::new(<R_59>::default()));
+pub fn test_ordinary_59() {
+    let r: Value<R_60> = Rc::new(RefCell::new(<R_60>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_60() {
-    let r: Value<R_61> = Rc::new(RefCell::new(<R_61>::default()));
+pub fn test_ordinary_61() {
+    let r: Value<R_62> = Rc::new(RefCell::new(<R_62>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_62() {
-    let r: Value<R_63> = Rc::new(RefCell::new(<R_63>::default()));
+pub fn test_ordinary_63() {
+    let r: Value<R_64> = Rc::new(RefCell::new(<R_64>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub fn test_ordinary_64() {
-    let r: Value<R_65> = Rc::new(RefCell::new(<R_65>::default()));
+pub fn test_ordinary_65() {
+    let r: Value<R_66> = Rc::new(RefCell::new(<R_66>::default()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -991,15 +997,15 @@ pub fn test_ordinary_64() {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_33 {
+pub struct R_34 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_33 {
+impl Default for R_34 {
     fn default() -> Self {
         {
-            R_33 {
+            R_34 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1007,15 +1013,15 @@ impl Default for R_33 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_35 {
+pub struct R_36 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_35 {
+impl Default for R_36 {
     fn default() -> Self {
         {
-            R_35 {
+            R_36 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1023,15 +1029,15 @@ impl Default for R_35 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_37 {
+pub struct R_38 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_37 {
+impl Default for R_38 {
     fn default() -> Self {
         {
-            R_37 {
+            R_38 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1039,15 +1045,15 @@ impl Default for R_37 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_39 {
+pub struct R_40 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_39 {
+impl Default for R_40 {
     fn default() -> Self {
         {
-            R_39 {
+            R_40 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1055,15 +1061,15 @@ impl Default for R_39 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_41 {
+pub struct R_42 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_41 {
+impl Default for R_42 {
     fn default() -> Self {
         {
-            R_41 {
+            R_42 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1071,15 +1077,15 @@ impl Default for R_41 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_43 {
+pub struct R_44 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_43 {
+impl Default for R_44 {
     fn default() -> Self {
         {
-            R_43 {
+            R_44 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1087,15 +1093,15 @@ impl Default for R_43 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_45 {
+pub struct R_46 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_45 {
+impl Default for R_46 {
     fn default() -> Self {
         {
-            R_45 {
+            R_46 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1103,15 +1109,15 @@ impl Default for R_45 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_47 {
+pub struct R_48 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_47 {
+impl Default for R_48 {
     fn default() -> Self {
         {
-            R_47 {
+            R_48 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1119,15 +1125,15 @@ impl Default for R_47 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_49 {
+pub struct R_50 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_49 {
+impl Default for R_50 {
     fn default() -> Self {
         {
-            R_49 {
+            R_50 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1135,15 +1141,15 @@ impl Default for R_49 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_51 {
+pub struct R_52 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_51 {
+impl Default for R_52 {
     fn default() -> Self {
         {
-            R_51 {
+            R_52 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1151,15 +1157,15 @@ impl Default for R_51 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_53 {
+pub struct R_54 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_53 {
+impl Default for R_54 {
     fn default() -> Self {
         {
-            R_53 {
+            R_54 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1167,15 +1173,15 @@ impl Default for R_53 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_55 {
+pub struct R_56 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_55 {
+impl Default for R_56 {
     fn default() -> Self {
         {
-            R_55 {
+            R_56 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1183,15 +1189,15 @@ impl Default for R_55 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_57 {
+pub struct R_58 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_57 {
+impl Default for R_58 {
     fn default() -> Self {
         {
-            R_57 {
+            R_58 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1199,15 +1205,15 @@ impl Default for R_57 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_59 {
+pub struct R_60 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_59 {
+impl Default for R_60 {
     fn default() -> Self {
         {
-            R_59 {
+            R_60 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1215,15 +1221,15 @@ impl Default for R_59 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_61 {
+pub struct R_62 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_61 {
+impl Default for R_62 {
     fn default() -> Self {
         {
-            R_61 {
+            R_62 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1231,15 +1237,15 @@ impl Default for R_61 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_63 {
+pub struct R_64 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_63 {
+impl Default for R_64 {
     fn default() -> Self {
         {
-            R_63 {
+            R_64 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
@@ -1247,21 +1253,21 @@ impl Default for R_63 {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(12)]
-pub struct R_65 {
+pub struct R_66 {
     #[offset(0)]
     #[byte_size(12)]
     pub a: Box<[()]>,
 }
-impl Default for R_65 {
+impl Default for R_66 {
     fn default() -> Self {
         {
-            R_65 {
+            R_66 {
                 a: Box::new([1_(), 2_(), 3_()]),
             }
         }
     }
 }
-pub fn test_66() -> () {
+pub fn test_67() -> () {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
         unimplemented!();
@@ -1310,25 +1316,25 @@ pub fn test_66() -> () {
         );;
     }
     {
-        ({ test_ordinary_32() });
+        ({ test_ordinary_33() });
     }
-    ({ test_ordinary_34() });
-    ({ test_ordinary_36() });
-    ({ test_ordinary_38() });
-    ({ test_ordinary_40() });
-    ({ test_ordinary_42() });
-    ({ test_ordinary_44() });
-    ({ test_ordinary_46() });
-    ({ test_ordinary_48() });
-    ({ test_ordinary_50() });
-    ({ test_ordinary_32() });
-    ({ test_ordinary_52() });
-    ({ test_ordinary_54() });
-    ({ test_ordinary_56() });
-    ({ test_ordinary_58() });
-    ({ test_ordinary_60() });
-    ({ test_ordinary_62() });
-    ({ test_ordinary_64() });
+    ({ test_ordinary_35() });
+    ({ test_ordinary_37() });
+    ({ test_ordinary_39() });
+    ({ test_ordinary_41() });
+    ({ test_ordinary_43() });
+    ({ test_ordinary_45() });
+    ({ test_ordinary_47() });
+    ({ test_ordinary_49() });
+    ({ test_ordinary_51() });
+    ({ test_ordinary_33() });
+    ({ test_ordinary_53() });
+    ({ test_ordinary_55() });
+    ({ test_ordinary_57() });
+    ({ test_ordinary_59() });
+    ({ test_ordinary_61() });
+    ({ test_ordinary_63() });
+    ({ test_ordinary_65() });
     const _: () = assert!(
         true,
         "!std::is_invocable_v<decltype(std::ranges::distance), int>"
@@ -1359,15 +1365,15 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_66() });
+    ({ test_67() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
-pub trait R_33Impl {
+pub trait R_34Impl {
     fn begin(&self) -> cpp20_input_iterator_int_ptr_;
     fn end(&self) -> sized_sentinel_cpp20_input_iterator_int_ptr__;
 }
-impl R_33Impl for Ptr<R_33> {
+impl R_34Impl for Ptr<R_34> {
     fn begin(&self) -> cpp20_input_iterator_int_ptr_ {
         return cpp20_input_iterator_int_ptr_::new({ (array_field_ptr!((*self), a) as Ptr<()>) });
     }
@@ -1381,11 +1387,11 @@ impl R_33Impl for Ptr<R_33> {
         };
     }
 }
-pub trait R_35Impl {
+pub trait R_36Impl {
     fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_;
     fn end(&self) -> sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__;
 }
-impl R_35Impl for Ptr<R_35> {
+impl R_36Impl for Ptr<R_36> {
     fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         return cpp17_input_iterator_int_ptr__int_ptr_::new({
             (array_field_ptr!((*self), a) as Ptr<()>)
@@ -1403,11 +1409,11 @@ impl R_35Impl for Ptr<R_35> {
         };
     }
 }
-pub trait R_37Impl {
+pub trait R_38Impl {
     fn begin(&self) -> cpp20_input_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_cpp20_input_iterator_int_ptr__;
 }
-impl R_37Impl for Ptr<R_37> {
+impl R_38Impl for Ptr<R_38> {
     fn begin(&self) -> cpp20_input_iterator_int_ptr_ {
         return cpp20_input_iterator_int_ptr_::new({ (array_field_ptr!((*self), a) as Ptr<()>) });
     }
@@ -1421,11 +1427,11 @@ impl R_37Impl for Ptr<R_37> {
         };
     }
 }
-pub trait R_39Impl {
+pub trait R_40Impl {
     fn begin(&self) -> cpp17_output_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_cpp17_output_iterator_int_ptr__;
 }
-impl R_39Impl for Ptr<R_39> {
+impl R_40Impl for Ptr<R_40> {
     fn begin(&self) -> cpp17_output_iterator_int_ptr_ {
         return cpp17_output_iterator_int_ptr_::new({ (array_field_ptr!((*self), a) as Ptr<()>) });
     }
@@ -1439,11 +1445,11 @@ impl R_39Impl for Ptr<R_39> {
         };
     }
 }
-pub trait R_41Impl {
+pub trait R_42Impl {
     fn begin(&self) -> forward_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_forward_iterator_int_ptr__;
 }
-impl R_41Impl for Ptr<R_41> {
+impl R_42Impl for Ptr<R_42> {
     fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({ (array_field_ptr!((*self), a) as Ptr<()>) });
     }
@@ -1457,11 +1463,11 @@ impl R_41Impl for Ptr<R_41> {
         };
     }
 }
-pub trait R_43Impl {
+pub trait R_44Impl {
     fn begin(&self) -> bidirectional_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_bidirectional_iterator_int_ptr__;
 }
-impl R_43Impl for Ptr<R_43> {
+impl R_44Impl for Ptr<R_44> {
     fn begin(&self) -> bidirectional_iterator_int_ptr_ {
         return bidirectional_iterator_int_ptr_::new_1({
             (array_field_ptr!((*self), a) as Ptr<()>)
@@ -1477,11 +1483,11 @@ impl R_43Impl for Ptr<R_43> {
         };
     }
 }
-pub trait R_45Impl {
+pub trait R_46Impl {
     fn begin(&self) -> random_access_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_random_access_iterator_int_ptr__;
 }
-impl R_45Impl for Ptr<R_45> {
+impl R_46Impl for Ptr<R_46> {
     fn begin(&self) -> random_access_iterator_int_ptr_ {
         return random_access_iterator_int_ptr_::new_1({
             (array_field_ptr!((*self), a) as Ptr<()>)
@@ -1497,11 +1503,11 @@ impl R_45Impl for Ptr<R_45> {
         };
     }
 }
-pub trait R_47Impl {
+pub trait R_48Impl {
     fn begin(&self) -> contiguous_iterator_int_ptr_;
     fn end(&self) -> sentinel_wrapper_contiguous_iterator_int_ptr__;
 }
-impl R_47Impl for Ptr<R_47> {
+impl R_48Impl for Ptr<R_48> {
     fn begin(&self) -> contiguous_iterator_int_ptr_ {
         return contiguous_iterator_int_ptr_::new_1({ (array_field_ptr!((*self), a) as Ptr<()>) });
     }
@@ -1515,11 +1521,11 @@ impl R_47Impl for Ptr<R_47> {
         };
     }
 }
-pub trait R_49Impl {
+pub trait R_50Impl {
     fn begin(&self) -> Ptr<()>;
     fn end(&self) -> sentinel_wrapper_int_ptr_;
 }
-impl R_49Impl for Ptr<R_49> {
+impl R_50Impl for Ptr<R_50> {
     fn begin(&self) -> Ptr<()> {
         return (array_field_ptr!((*self), a) as Ptr<()>);
     }
@@ -1532,11 +1538,11 @@ impl R_49Impl for Ptr<R_49> {
         };
     }
 }
-pub trait R_51Impl {
+pub trait R_52Impl {
     fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_;
     fn end(&self) -> sized_sentinel_cpp17_input_iterator_int_ptr__int_ptr__;
 }
-impl R_51Impl for Ptr<R_51> {
+impl R_52Impl for Ptr<R_52> {
     fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         return cpp17_input_iterator_int_ptr__int_ptr_::new({
             (array_field_ptr!((*self), a) as Ptr<()>)
@@ -1552,11 +1558,11 @@ impl R_51Impl for Ptr<R_51> {
         };
     }
 }
-pub trait R_53Impl {
+pub trait R_54Impl {
     fn begin(&self) -> cpp17_output_iterator_int_ptr_;
     fn end(&self) -> sized_sentinel_cpp17_output_iterator_int_ptr__;
 }
-impl R_53Impl for Ptr<R_53> {
+impl R_54Impl for Ptr<R_54> {
     fn begin(&self) -> cpp17_output_iterator_int_ptr_ {
         return cpp17_output_iterator_int_ptr_::new({ (array_field_ptr!((*self), a) as Ptr<()>) });
     }
@@ -1570,11 +1576,11 @@ impl R_53Impl for Ptr<R_53> {
         };
     }
 }
-pub trait R_55Impl {
+pub trait R_56Impl {
     fn begin(&self) -> forward_iterator_int_ptr_;
     fn end(&self) -> sized_sentinel_forward_iterator_int_ptr__;
 }
-impl R_55Impl for Ptr<R_55> {
+impl R_56Impl for Ptr<R_56> {
     fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({ (array_field_ptr!((*self), a) as Ptr<()>) });
     }
@@ -1588,11 +1594,11 @@ impl R_55Impl for Ptr<R_55> {
         };
     }
 }
-pub trait R_57Impl {
+pub trait R_58Impl {
     fn begin(&self) -> bidirectional_iterator_int_ptr_;
     fn end(&self) -> sized_sentinel_bidirectional_iterator_int_ptr__;
 }
-impl R_57Impl for Ptr<R_57> {
+impl R_58Impl for Ptr<R_58> {
     fn begin(&self) -> bidirectional_iterator_int_ptr_ {
         return bidirectional_iterator_int_ptr_::new_1({
             (array_field_ptr!((*self), a) as Ptr<()>)
@@ -1608,11 +1614,11 @@ impl R_57Impl for Ptr<R_57> {
         };
     }
 }
-pub trait R_59Impl {
+pub trait R_60Impl {
     fn begin(&self) -> random_access_iterator_int_ptr_;
     fn end(&self) -> sized_sentinel_random_access_iterator_int_ptr__;
 }
-impl R_59Impl for Ptr<R_59> {
+impl R_60Impl for Ptr<R_60> {
     fn begin(&self) -> random_access_iterator_int_ptr_ {
         return random_access_iterator_int_ptr_::new_1({
             (array_field_ptr!((*self), a) as Ptr<()>)
@@ -1628,11 +1634,11 @@ impl R_59Impl for Ptr<R_59> {
         };
     }
 }
-pub trait R_61Impl {
+pub trait R_62Impl {
     fn begin(&self) -> contiguous_iterator_int_ptr_;
     fn end(&self) -> sized_sentinel_contiguous_iterator_int_ptr__;
 }
-impl R_61Impl for Ptr<R_61> {
+impl R_62Impl for Ptr<R_62> {
     fn begin(&self) -> contiguous_iterator_int_ptr_ {
         return contiguous_iterator_int_ptr_::new_1({ (array_field_ptr!((*self), a) as Ptr<()>) });
     }
@@ -1646,11 +1652,11 @@ impl R_61Impl for Ptr<R_61> {
         };
     }
 }
-pub trait R_63Impl {
+pub trait R_64Impl {
     fn begin(&self) -> Ptr<()>;
     fn end(&self) -> sized_sentinel_int_ptr_;
 }
-impl R_63Impl for Ptr<R_63> {
+impl R_64Impl for Ptr<R_64> {
     fn begin(&self) -> Ptr<()> {
         return (array_field_ptr!((*self), a) as Ptr<()>);
     }
@@ -1663,11 +1669,11 @@ impl R_63Impl for Ptr<R_63> {
         };
     }
 }
-pub trait R_65Impl {
+pub trait R_66Impl {
     fn begin(&self) -> Ptr<()>;
     fn end(&self) -> Ptr<()>;
 }
-impl R_65Impl for Ptr<R_65> {
+impl R_66Impl for Ptr<R_66> {
     fn begin(&self) -> Ptr<()> {
         return (array_field_ptr!((*self), a) as Ptr<()>);
     }

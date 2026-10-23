@@ -18,27 +18,21 @@ pub struct A_void_0 {}
 pub fn test_void_0_2() {
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
     {
-        let r1: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_void____::new({
-            FnPtr::<fn()>::new(f_void_0_1)
-        })));
+        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ (*r1.borrow_mut())() });
         unimplemented!();
         save_count = count_0.with(|rc| *rc.borrow());
     }
     {
-        let fp: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(f_void_0_1)));
-        let r1: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_void__ptr____::new({
-            fp.as_pointer()
-        })));
+        let mut fp: FnPtr<fn()> = FnPtr::<fn()>::new(f_void_0_1);
+        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ (*r1.borrow_mut())() });
         unimplemented!();
         save_count = count_0.with(|rc| *rc.borrow());
     }
     {
-        let a0: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-        let r1: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_A_void_0_::new({
-            a0.as_pointer()
-        })));
+        let mut a0: A_void_0 = <A_void_0>::default();
+        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ (*r1.borrow_mut())() });
         unimplemented!();
         save_count = count_0.with(|rc| *rc.borrow());

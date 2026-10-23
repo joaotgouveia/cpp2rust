@@ -282,21 +282,21 @@ impl Tag_X {
 pub fn test_9(s: (), sv: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let sv: Value<()> = Rc::new(RefCell::new(sv));
-    ({ (*s.borrow()).assign_84_std_string_view_0(sv.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_10(s: (), sv: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let sv: Value<()> = Rc::new(RefCell::new(sv));
-    ({ (*s.borrow()).assign_84_std_string_view_0(sv.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn testAlloc_11(s: (), sv: (), a: Ptr<()>) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let sv: Value<()> = Rc::new(RefCell::new(sv));
-    ({ (*s.borrow()).assign_84_std_string_view_0(sv.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -304,190 +304,28 @@ pub fn testAlloc_11(s: (), sv: (), a: Ptr<()>) {
 pub fn testAlloc_12(s: (), sv: (), a: Ptr<min_allocator_char_>) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let sv: Value<()> = Rc::new(RefCell::new(sv));
-    ({ (*s.borrow()).assign_84_std_string_view_0(sv.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_string_13() {
     ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({
-        test_9(
-            unimplemented!(),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            unimplemented!(),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            unimplemented!(),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-            unimplemented!(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-            unimplemented!(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-            unimplemented!(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-        )
-    });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         testAlloc_11(unimplemented!(), unimplemented!(), _a.as_pointer())
@@ -507,183 +345,21 @@ pub fn test_string_13() {
 }
 pub fn test_string_14() {
     ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
-    ({
-        test_10(
-            unimplemented!(),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            unimplemented!(),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            unimplemented!(),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-            unimplemented!(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-            unimplemented!(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-            unimplemented!(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-            unimplemented!(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
-        )
-    });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!(), unimplemented!()) });
     ({
         let _a: Value<min_allocator_char_> =
             Rc::new(RefCell::new(<min_allocator_char_>::default()));

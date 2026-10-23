@@ -11,79 +11,37 @@ pub fn is_string_asan_correct_0(_a0: Ptr<()>) -> () {
 }
 pub fn test_1() -> () {
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"hello world") },
-                None,
-            ),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"hello world") },
-                None,
-            ),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"hello world") },
-                None,
-            ),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(
-                        b"Hello world! Hello world! Hello world! Hello world! Hello world!",
-                    )
-                },
-                None,
-            ),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(
-                        b"Hello world! Hello world! Hello world! Hello world! Hello world!",
-                    )
-                },
-                None,
-            ),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(
-                        b"Hello world! Hello world! Hello world! Hello world! Hello world!",
-                    )
-                },
-                None,
-            ),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

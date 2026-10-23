@@ -258,12 +258,12 @@ impl __gnu_test_semaphore {}
 #[byte_size(1)]
 pub struct A {}
 pub fn test01_10() {
-    let a: Value<std_auto_ptr_A_> = Rc::new(RefCell::new(<std_auto_ptr_A_>::default()));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut a2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*a.borrow()).get() }).is_null()) {
+        if !((unimplemented!()).is_null()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

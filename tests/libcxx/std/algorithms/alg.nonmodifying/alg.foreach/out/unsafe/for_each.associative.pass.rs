@@ -96,10 +96,7 @@ pub unsafe fn test_node_container_2(mut conv: FnPtr<fn(()) -> ()>) {
     let mut c: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) != (10_())) {
-        (unsafe {
-            let mut ___p: () = (unsafe { conv.call(i) });
-            c.insert_47_struct_std_pair_int__int__0(&mut ___p)
-        });
+        unimplemented!();
         i.prefix_inc();
     }
     {
@@ -142,10 +139,7 @@ pub unsafe fn test_node_container_3(mut conv: FnPtr<fn(()) -> ()>) {
     let mut c: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) != (10_())) {
-        (unsafe {
-            let mut ___p: () = (unsafe { conv.call(i) });
-            c.insert_41_struct_std_pair_int__int__0(&mut ___p)
-        });
+        unimplemented!();
         i.prefix_inc();
     }
     {

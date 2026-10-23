@@ -26,10 +26,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
     {
         let f: *const () = (unsafe { use_facet_0(&l) });
-        let in_: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c" A\x07.a1".as_ptr() },
-            None,
-        );
+        let in_: () = unimplemented!();
         let mut m: () = unimplemented!();
         let mut h: *const () = unimplemented!();
         unimplemented!();

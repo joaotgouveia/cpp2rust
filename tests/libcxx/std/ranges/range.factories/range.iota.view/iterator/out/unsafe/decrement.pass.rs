@@ -227,8 +227,8 @@ pub const CtorKind_ValueCtor: CtorKind = 1;
 pub unsafe fn test_18() -> () {
     {
         let mut io: () = unimplemented!();
-        let mut iter1: () = (unsafe { next_19((unsafe { io.begin() }), None) });
-        let mut iter2: () = (unsafe { next_19((unsafe { io.begin() }), None) });
+        let mut iter1: () = unimplemented!();
+        let mut iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -241,8 +241,8 @@ pub unsafe fn test_18() -> () {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter1: () = (unsafe { next_20((unsafe { io.begin() }), None) });
-        let mut iter2: () = (unsafe { next_20((unsafe { io.begin() }), None) });
+        let mut iter1: () = unimplemented!();
+        let mut iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

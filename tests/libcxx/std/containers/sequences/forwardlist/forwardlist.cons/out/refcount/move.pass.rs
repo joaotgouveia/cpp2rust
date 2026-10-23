@@ -532,15 +532,7 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = 0_();
         let i : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_std___forward_list_node_MoveOnly__void_ptr__ptr_ :: new_1 ( { unimplemented!()   } , )  )) ;
@@ -569,15 +561,7 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = 0_();
         let i : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_std___forward_list_node_MoveOnly__void_ptr__ptr_ :: new_1 ( { unimplemented!()   } , )  )) ;
@@ -606,15 +590,7 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<min_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(<min_allocator_MoveOnly_>::default()));
-            std_forward_list_MoveOnly__min_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_2.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = 0_();
         let i : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_min_pointer_std___forward_list_node_MoveOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()   } , )  )) ;

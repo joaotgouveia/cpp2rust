@@ -83,7 +83,7 @@ pub fn test_unique_ptr_5() {
         unimplemented!();
         k.prefix_inc();
     }
-    ({ swap_6(i.as_pointer(), j.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -91,11 +91,11 @@ pub fn test_unique_ptr_5() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_7() -> () {
+pub fn test_6() -> () {
     {
-        let i: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let j: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([4_(), 5_(), 6_()])));
-        ({ swap_8(i.as_pointer(), j.as_pointer()) });
+        let mut i: [(); 3] = [1_(), 2_(), 3_()];
+        let mut j: [(); 3] = [4_(), 5_(), 6_()];
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -112,7 +112,7 @@ pub fn test_7() -> () {
             Box::new([9_(), 8_()]),
             Box::new([7_(), 6_()]),
         ])));
-        ({ swap_9(a.as_pointer(), b.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -133,7 +133,7 @@ pub fn test_7() -> () {
             Box::new([6_(), 5_(), 4_()]),
             Box::new([3_(), 2_(), 1_()]),
         ])));
-        ({ swap_10(a.as_pointer(), b.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -157,13 +157,9 @@ pub fn test_7() -> () {
         const _: () = assert!(true, "can_swap<CA&>()");;
         const _: () = assert!(true, "can_swap<MA&>()");;
         const _: () = assert!(true, "!can_swap<NA&>()");;
-        let ca: Value<Box<[CopyOnly]>> =
-            Rc::new(RefCell::new(Box::new(std::array::from_fn::<_, 42, _>(
-                |_| CopyOnly::new(),
-            ))));
-        let ma: Value<Box<[NoexceptMoveOnly]>> = Rc::new(RefCell::new(Box::new(
-            std::array::from_fn::<_, 42, _>(|_| NoexceptMoveOnly::new()),
-        )));
+        let mut ca: [CopyOnly; 42] = std::array::from_fn::<_, 42, _>(|_| CopyOnly::new());
+        let mut ma: [NoexceptMoveOnly; 42] =
+            std::array::from_fn::<_, 42, _>(|_| NoexceptMoveOnly::new());
         const _: () = assert!(true, "!noexcept(std::swap(ca, ca))");;
         const _: () = assert!(true, "noexcept(std::swap(ma, ma))");;
     }
@@ -192,7 +188,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_7() });
+    ({ test_6() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

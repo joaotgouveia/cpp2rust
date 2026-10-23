@@ -20,29 +20,29 @@ pub struct test_macros_detail_is_same_std_chrono_duration_int__std_ratio_2629746
 pub fn test_2() -> () {
     {
         let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        'loop_: while ((*i.borrow()) <= 10_()) {
+        let mut i: () = 0_();
+        'loop_: while (i <= 10_()) {
             let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
-            (*i.borrow_mut()).prefix_inc();
+            i.prefix_inc();
         }
     }
     {
         let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        'loop_: while ((*i.borrow()) <= 10_()) {
+        let mut i: () = 0_();
+        'loop_: while (i <= 10_()) {
             let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
-            (*i.borrow_mut()).prefix_inc();
+            i.prefix_inc();
         }
-        let i: Value<()> = Rc::new(RefCell::new(12_()));
-        'loop_: while ((*i.borrow()) <= 15_()) {
+        let mut i: () = 12_();
+        'loop_: while (i <= 15_()) {
             let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
-            (*i.borrow_mut()).prefix_inc();
+            i.prefix_inc();
         }
     }
     {

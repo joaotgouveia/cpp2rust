@@ -16,10 +16,7 @@ pub fn test_string_ctor_0() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -34,10 +31,7 @@ pub fn test_string_ctor_0() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -52,10 +46,7 @@ pub fn test_string_ctor_0() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -70,10 +61,7 @@ pub fn test_string_ctor_0() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -88,10 +76,7 @@ pub fn test_string_ctor_0() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -116,10 +101,7 @@ pub fn test_string_ctor_1() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -134,10 +116,7 @@ pub fn test_string_ctor_1() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -152,10 +131,7 @@ pub fn test_string_ctor_1() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -170,10 +146,7 @@ pub fn test_string_ctor_1() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -188,10 +161,7 @@ pub fn test_string_ctor_1() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -216,10 +186,7 @@ pub fn test_string_ctor_2() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -234,10 +201,7 @@ pub fn test_string_ctor_2() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -252,10 +216,7 @@ pub fn test_string_ctor_2() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -270,10 +231,7 @@ pub fn test_string_ctor_2() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -288,10 +246,7 @@ pub fn test_string_ctor_2() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -316,10 +271,7 @@ pub fn test_string_ctor_3() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -334,10 +286,7 @@ pub fn test_string_ctor_3() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -352,10 +301,7 @@ pub fn test_string_ctor_3() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -370,10 +316,7 @@ pub fn test_string_ctor_3() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -388,10 +331,7 @@ pub fn test_string_ctor_3() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -416,10 +356,7 @@ pub fn test_string_ctor_4() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -434,10 +371,7 @@ pub fn test_string_ctor_4() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -452,10 +386,7 @@ pub fn test_string_ctor_4() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -470,10 +401,7 @@ pub fn test_string_ctor_4() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -488,10 +416,7 @@ pub fn test_string_ctor_4() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -516,10 +441,7 @@ pub fn test_string_ctor_5() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -534,10 +456,7 @@ pub fn test_string_ctor_5() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -552,10 +471,7 @@ pub fn test_string_ctor_5() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -570,10 +486,7 @@ pub fn test_string_ctor_5() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -588,10 +501,7 @@ pub fn test_string_ctor_5() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -616,10 +526,7 @@ pub fn test_string_ctor_6() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -634,10 +541,7 @@ pub fn test_string_ctor_6() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -652,10 +556,7 @@ pub fn test_string_ctor_6() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -670,10 +571,7 @@ pub fn test_string_ctor_6() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -688,10 +586,7 @@ pub fn test_string_ctor_6() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -716,10 +611,7 @@ pub fn test_string_ctor_7() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -734,10 +626,7 @@ pub fn test_string_ctor_7() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -752,10 +641,7 @@ pub fn test_string_ctor_7() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -770,10 +656,7 @@ pub fn test_string_ctor_7() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -788,10 +671,7 @@ pub fn test_string_ctor_7() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -816,10 +696,7 @@ pub fn test_string_ctor_8() {
         "std::is_constructible<std::bitset<N>, std::string>::value"
     );;
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -834,10 +711,7 @@ pub fn test_string_ctor_8() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -852,10 +726,7 @@ pub fn test_string_ctor_8() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1010101010xxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -870,10 +741,7 @@ pub fn test_string_ctor_8() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxx1a1a1a1a1axxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();
@@ -888,10 +756,7 @@ pub fn test_string_ctor_8() {
         }
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"xxxbababababaxxxx") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut M: () = (unimplemented!().read());
         let mut i: () = 0_();

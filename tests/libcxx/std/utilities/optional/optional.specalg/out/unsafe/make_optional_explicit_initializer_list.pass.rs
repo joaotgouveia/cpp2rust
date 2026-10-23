@@ -91,7 +91,7 @@ impl TestT {
 }
 pub unsafe fn test_11() -> () {
     {
-        let mut opt: () = (unsafe { make_optional_12(unimplemented!()) });
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -99,10 +99,7 @@ pub unsafe fn test_11() -> () {
     }
     {
         let mut i: () = 42_();
-        let mut opt: () = (unsafe {
-            let mut ___args: *mut () = (&mut i as *mut ());
-            make_optional_13(unimplemented!(), &mut ___args)
-        });
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -110,14 +107,11 @@ pub unsafe fn test_11() -> () {
     }
     let test_string: FnPtr<fn()> = FnPtr::<fn()>::new(|| unsafe {
         {
-            let mut opt: () = (unsafe { make_optional_14(unimplemented!()) });
+            let mut opt: () = unimplemented!();
             unimplemented!();
         }
         {
-            let mut opt: () = (unsafe {
-                let mut ___args: () = unimplemented!();
-                make_optional_15(unimplemented!(), &mut ___args)
-            });
+            let mut opt: () = unimplemented!();
             unimplemented!();
         }
     });

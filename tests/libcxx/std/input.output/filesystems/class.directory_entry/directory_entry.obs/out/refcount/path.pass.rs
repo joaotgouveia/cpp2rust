@@ -7,14 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_path_method_0() {
-    let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_1(
-        { Ptr::<()>::from_string_literal(b"foo/bar/baz.exe") },
-        None,
-    )));
-    let p2: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_2(
-        { Ptr::<()>::from_string_literal(b"abc") },
-        None,
-    )));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let nce: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -39,14 +33,8 @@ pub fn test_path_method_0() {
     }
 }
 pub fn test_path_conversion_1() {
-    let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_1(
-        { Ptr::<()>::from_string_literal(b"foo/bar/baz.exe") },
-        None,
-    )));
-    let p2: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_2(
-        { Ptr::<()>::from_string_literal(b"abc") },
-        None,
-    )));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let nce: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));

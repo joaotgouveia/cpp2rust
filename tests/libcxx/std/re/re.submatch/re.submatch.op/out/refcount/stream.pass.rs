@@ -45,21 +45,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({
-        let _s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123") },
-                None,
-            ),
-        ));
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(_s.as_pointer())
     });
     ({
-        let _s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                { Ptr::<()>::from_string_literal(&[49 as (), 50 as (), 51 as (), 0 as ()]) },
-                None,
-            ),
-        ));
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_1(_s.as_pointer())
     });
     return 0_();

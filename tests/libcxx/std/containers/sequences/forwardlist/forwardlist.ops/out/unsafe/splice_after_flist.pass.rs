@@ -118,18 +118,8 @@ pub unsafe fn test_10() -> () {
         'loop_: while ((l) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t2_7))) {
             let mut p: () = 0_();
             'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
-                let mut c1: () =
-                    std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    });
-                let mut c2: () = std_forward_list_int__std_allocator_int__::new_1(
-                    { (*std::cell::LazyCell::force_mut(&mut *&raw mut t2_5)).as_ptr() },
-                    {
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut t2_5))
-                            .as_ptr()
-                            .offset((l) as isize)
-                    },
-                );
+                let mut c1: () = unimplemented!();
+                let mut c2: () = unimplemented!();
                 unimplemented!();
                 (unsafe { testd_8(&c1, p, l) });
                 p.prefix_inc();
@@ -142,18 +132,8 @@ pub unsafe fn test_10() -> () {
         'loop_: while ((l) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t2_7))) {
             let mut p: () = 0_();
             'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
-                let mut c1: () =
-                    std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    });
-                let mut c2: () = std_forward_list_int__min_allocator_int__::new_1(
-                    { (*std::cell::LazyCell::force_mut(&mut *&raw mut t2_5)).as_ptr() },
-                    {
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut t2_5))
-                            .as_ptr()
-                            .offset((l) as isize)
-                    },
-                );
+                let mut c1: () = unimplemented!();
+                let mut c2: () = unimplemented!();
                 unimplemented!();
                 (unsafe { testd_9(&c1, p, l) });
                 p.prefix_inc();

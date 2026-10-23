@@ -252,21 +252,25 @@ pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_6(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -350,7 +354,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -360,7 +364,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -475,11 +479,11 @@ impl Clone for Counted {
         unsafe { Counted::copy_from(self as *const Counted) }
     }
 }
-pub unsafe fn test_9() -> () {
+pub unsafe fn test_10() -> () {
     {
         let mut x: () = 1_();
         let mut result: *mut () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_10))((&mut x as *mut ()))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_11))((&mut x as *mut ()))
         });
         unimplemented!();
         unimplemented!();
@@ -488,7 +492,7 @@ pub unsafe fn test_9() -> () {
         let mut x: () = 1_();
         let mut result: *mut () = (unsafe {
             let mut ___args: () = 42_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_10))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_11))(
                 (&mut x as *mut ()),
                 &mut ___args,
             )
@@ -501,7 +505,7 @@ pub unsafe fn test_9() -> () {
         let mut result: *mut Foo = (unsafe {
             let mut ___args_1: () = 42_();
             let mut ___args_2: () = 123_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_10))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_11))(
                 unimplemented!(),
                 &mut ___args_1,
                 &mut ___args_2,
@@ -516,12 +520,12 @@ pub unsafe fn test_9() -> () {
         let mut out: *mut Counted = unimplemented!();
         let mut count: () = 0_();
         let mut result: *mut Counted = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_10))(out, &mut count)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_11))(out, &mut count)
         });
         unimplemented!();
         unimplemented!();
         result = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_10))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut construct_at_11))(
                 out.offset((1_()) as isize),
                 &mut count,
             )
@@ -533,13 +537,13 @@ pub unsafe fn test_9() -> () {
     }
     return true;
 }
-pub unsafe fn can_construct_at_11(args_0: *mut *mut Foo, args_1: *mut (), args_2: *mut ()) -> () {
+pub unsafe fn can_construct_at_12(args_0: *mut *mut Foo, args_1: *mut (), args_2: *mut ()) -> () {
     return true;
 }
-pub unsafe fn can_construct_at_12(_a0: *mut *mut Foo, _a1: *mut ()) -> () {
+pub unsafe fn can_construct_at_13(_a0: *mut *mut Foo, _a1: *mut ()) -> () {
     return false;
 }
-pub unsafe fn can_construct_at_13(
+pub unsafe fn can_construct_at_14(
     _a0: *mut *mut Foo,
     _a1: *mut (),
     _a2: *mut (),
@@ -547,23 +551,23 @@ pub unsafe fn can_construct_at_13(
 ) -> () {
     return false;
 }
-pub unsafe fn can_construct_at_14(_a0: *mut (), _a1: *mut (), _a2: *mut ()) -> () {
+pub unsafe fn can_construct_at_15(_a0: *mut (), _a1: *mut (), _a2: *mut ()) -> () {
     return false;
 }
-pub unsafe fn can_construct_at_15(_a0: *mut *mut (), _a1: *mut (), _a2: *mut ()) -> () {
+pub unsafe fn can_construct_at_16(_a0: *mut *mut (), _a1: *mut (), _a2: *mut ()) -> () {
     return false;
 }
-pub unsafe fn can_construct_at_16(
+pub unsafe fn can_construct_at_17(
     _a0: *mut contiguous_iterator_Foo_ptr_,
     _a1: *mut (),
     _a2: *mut (),
 ) -> () {
     return false;
 }
-pub unsafe fn can_construct_at_17(_a0: *mut Option<unsafe fn() -> ()>) -> () {
+pub unsafe fn can_construct_at_18(_a0: *mut Option<unsafe fn() -> ()>) -> () {
     return false;
 }
-pub unsafe fn can_construct_at_18(_a0: *mut Option<unsafe fn() -> ()>, _a1: *mut ()) -> () {
+pub unsafe fn can_construct_at_19(_a0: *mut Option<unsafe fn() -> ()>, _a1: *mut ()) -> () {
     return false;
 }
 const _: () = assert!(true, "can_construct_at((Foo*)nullptr, 1, 2)");
@@ -590,7 +594,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_9() });
+    (unsafe { test_10() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

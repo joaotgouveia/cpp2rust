@@ -45,10 +45,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut map: () = unimplemented!();
     let mut it: () = unimplemented!();
     unimplemented!();
-    let mut result: () = (unsafe {
-        let mut ___x: () = unimplemented!();
-        map.insert_45_struct_std_pair_struct_Key__int__0(&mut ___x)
-    });
+    let mut result: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return 0_();

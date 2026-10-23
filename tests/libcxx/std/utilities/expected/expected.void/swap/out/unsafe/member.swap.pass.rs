@@ -95,7 +95,11 @@ impl Default for TracedBase_false__true_ {
     }
 }
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut () = &mut (*x).i;
+        let ___y: *mut () = &mut (*y).i;
+        swap_1(___x, ___y)
+    });
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -141,7 +145,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -158,7 +162,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_1(
+            operator_eq_2(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -166,10 +170,10 @@ impl std::cmp::PartialEq for TailClobberer_0_ {
     }
 }
 impl std::cmp::Eq for TailClobberer_0_ {}
-pub unsafe fn operator_eq_2(_a0: *const TailClobberer_1_, _a1: *const TailClobberer_1_) -> () {
+pub unsafe fn operator_eq_3(_a0: *const TailClobberer_1_, _a1: *const TailClobberer_1_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
-pub unsafe fn swap_3(_a0: *mut TailClobberer_1_, _a1: *mut TailClobberer_1_) {}
+pub unsafe fn swap_4(_a0: *mut TailClobberer_1_, _a1: *mut TailClobberer_1_) {}
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe)]
 pub struct TailClobberer_1_ {
@@ -184,7 +188,7 @@ impl TailClobberer_1_ {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<TailClobberer_1_>();
-                memset_4(___s, 1_(), ___n)
+                memset_5(___s, 1_(), ___n)
             });
         }
         this.b = false;
@@ -198,7 +202,7 @@ impl TailClobberer_1_ {
 impl std::cmp::PartialEq for TailClobberer_1_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_2(
+            operator_eq_3(
                 self as *const TailClobberer_1_,
                 other as *const TailClobberer_1_,
             )
@@ -274,7 +278,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_4(___s, 0_(), ___n)
+                memset_5(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -321,7 +325,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_4(___s, 0_(), ___n)
+                memset_5(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -442,24 +446,24 @@ const _: () = assert!(true, "HasMemberSwap<int>");
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NotSwappable {}
 const _: () = assert!(!(false), "!HasMemberSwap<NotSwappable>");
-pub unsafe fn swap_5(_a0: *mut NotMoveConstructible, _a1: *mut NotMoveConstructible) {}
+pub unsafe fn swap_6(_a0: *mut NotMoveConstructible, _a1: *mut NotMoveConstructible) {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct NotMoveConstructible {}
 const _: () = assert!(!(false), "!HasMemberSwap<NotMoveConstructible>");
-pub unsafe fn swap_6(_a0: *mut MoveMayThrow, _a1: *mut MoveMayThrow) {}
+pub unsafe fn swap_7(_a0: *mut MoveMayThrow, _a1: *mut MoveMayThrow) {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct MoveMayThrow {}
 impl MoveMayThrow {}
 const _: () = assert!(true, "MemberSwapNoexcept<int>");
 const _: () = assert!(!(false), "!MemberSwapNoexcept<MoveMayThrow>");
-pub unsafe fn swap_7(_a0: *mut SwapMayThrow, _a1: *mut SwapMayThrow) {}
+pub unsafe fn swap_8(_a0: *mut SwapMayThrow, _a1: *mut SwapMayThrow) {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct SwapMayThrow {}
 const _: () = assert!(!(false), "!MemberSwapNoexcept<SwapMayThrow>");
-pub unsafe fn test_8() -> () {
+pub unsafe fn test_9() -> () {
     {
         let mut x: () = unimplemented!();
         let mut y: () = unimplemented!();
@@ -529,7 +533,7 @@ pub unsafe fn test_8() -> () {
     }
     return true;
 }
-pub unsafe fn testException_9() {}
+pub unsafe fn testException_10() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -546,9 +550,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_8() });
+    (unsafe { test_9() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_9() });
+    (unsafe { testException_10() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

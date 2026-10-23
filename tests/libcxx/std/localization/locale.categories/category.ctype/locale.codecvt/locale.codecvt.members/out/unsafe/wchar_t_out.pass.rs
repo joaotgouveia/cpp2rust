@@ -26,17 +26,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
     let f: *const () = (unsafe { use_facet_0(&l) });
     {
-        let from: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    [
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let from: () = unimplemented!();
         let mut to: () = unimplemented!();
         let mut mbs: () = unimplemented!();
         let mut from_next: *const () = std::ptr::null();
@@ -48,17 +38,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut from: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    [
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut from: () = unimplemented!();
         (*unimplemented!()) = ('\0' as ());
         let mut to: () = unimplemented!();
         let mut mbs: () = unimplemented!();
@@ -71,17 +51,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut from: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    [
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut to: () = unimplemented!();
         let mut mbs: () = unimplemented!();
         let mut from_next: *const () = std::ptr::null();

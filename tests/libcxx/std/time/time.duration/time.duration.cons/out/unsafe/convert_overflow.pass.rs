@@ -27,15 +27,8 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut r: () = {
-            let mut __tmp_0: () = 1_();
-            std_chrono_duration_int__std_ratio_1000000000000000000__1__::new_1({ &mut __tmp_0 })
-        };
-        (unsafe {
-            f_1(std_chrono_duration_long_long__std_ratio_1__1__::new_1({
-                &r
-            }))
-        });
+        let mut r: () = unimplemented!();
+        (unsafe { f_1(unimplemented!()) });
         unimplemented!();
     }
     return 0_();

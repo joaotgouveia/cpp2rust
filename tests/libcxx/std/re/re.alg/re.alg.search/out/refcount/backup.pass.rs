@@ -28,10 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"aaaa a") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let re: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -44,14 +41,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"aaaa a") },
-            None,
-        );
-        let l: Value<()> = Rc::new(RefCell::new(std_list_char__std_allocator_char__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let mut s: () = unimplemented!();
+        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let re: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));

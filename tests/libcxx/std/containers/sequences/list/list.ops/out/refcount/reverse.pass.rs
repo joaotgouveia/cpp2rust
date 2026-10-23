@@ -92,16 +92,7 @@ pub fn test_4() -> () {
             10_(),
             11_(),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            {
-                (a1.as_pointer() as Ptr<()>).offset(
-                    ((::std::mem::size_of::<[(); 12]>() as ())
-                        .wrapping_div((::std::mem::size_of::<()>() as ())))
-                        as isize,
-                )
-            },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
@@ -134,16 +125,7 @@ pub fn test_4() -> () {
             10_(),
             11_(),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            {
-                (a1.as_pointer() as Ptr<()>).offset(
-                    ((::std::mem::size_of::<[(); 12]>() as ())
-                        .wrapping_div((::std::mem::size_of::<()>() as ())))
-                        as isize,
-                )
-            },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

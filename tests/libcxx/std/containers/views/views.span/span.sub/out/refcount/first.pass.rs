@@ -448,26 +448,11 @@ thread_local!(
 );
 thread_local!(
     pub static sarr_35: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"ABC") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"DEF") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"GHI") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"JKL") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"MNO") },
-            None,
-        ),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
 );
 

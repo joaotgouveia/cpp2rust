@@ -534,14 +534,7 @@ pub unsafe fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let mut c0: () = {
-            let mut __tmp_0: test_allocator_MoveOnly_ = test_allocator_MoveOnly_::new_1({ 10_() });
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_0 },
-            )
-        };
+        let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
         let mut i : () = std___forward_list_const_iterator_std___forward_list_node_MoveOnly__void_ptr__ptr_ :: new_1 ( { unimplemented!()  } , )  ;
@@ -570,15 +563,7 @@ pub unsafe fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let mut c0: () = {
-            let mut __tmp_1: other_allocator_MoveOnly_ =
-                other_allocator_MoveOnly_::new_1({ 10_() });
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_1 },
-            )
-        };
+        let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
         let mut i : () = std___forward_list_const_iterator_std___forward_list_node_MoveOnly__void_ptr__ptr_ :: new_1 ( { unimplemented!()  } , )  ;
@@ -607,14 +592,7 @@ pub unsafe fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let mut c0: () = {
-            let mut __tmp_2: min_allocator_MoveOnly_ = <min_allocator_MoveOnly_>::default();
-            std_forward_list_MoveOnly__min_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_2 },
-            )
-        };
+        let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
         let mut i : () = std___forward_list_const_iterator_min_pointer_std___forward_list_node_MoveOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()  } , )  ;

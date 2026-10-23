@@ -762,22 +762,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         ({
-            let _x: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
-                { (ab.as_pointer() as Ptr<()>) },
-                { (an).clone() },
-            )));
+            let _x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_27(_x.as_pointer())
         });
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_1: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_2({ 5_() })));
-            std_deque_int__test_allocator_int__::new_1({ 3_() }, { __tmp_0.as_pointer() }, {
-                __tmp_1.as_pointer()
-            })
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -785,14 +775,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_3: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_2({ 5_() })));
-            std_deque_int__other_allocator_int__::new_1({ 3_() }, { __tmp_2.as_pointer() }, {
-                __tmp_3.as_pointer()
-            })
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -822,22 +805,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         ({
-            let _x: Value<()> = Rc::new(RefCell::new(std_deque_int__min_allocator_int__::new_1(
-                { (ab.as_pointer() as Ptr<()>) },
-                { (an).clone() },
-            )));
+            let _x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_28(_x.as_pointer())
         });
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_5: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_deque_int__min_allocator_int__::new_2({ 3_() }, { __tmp_4.as_pointer() }, {
-                __tmp_5.as_pointer()
-            })
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

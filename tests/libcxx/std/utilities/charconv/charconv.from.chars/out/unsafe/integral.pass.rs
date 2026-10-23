@@ -359,50 +359,22 @@ impl test_basics_char_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_46(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_47(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_47(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_47(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -420,50 +392,22 @@ impl test_basics_signed_char_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_48(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_49(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_49(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_49(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -481,50 +425,22 @@ impl test_basics_short_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_50(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_51(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_51(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_51(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -542,50 +458,22 @@ impl test_basics_int_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_52(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_53(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_53(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_53(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -603,50 +491,22 @@ impl test_basics_long_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_54(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_55(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_55(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_55(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -664,50 +524,22 @@ impl test_basics_long_long_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_56(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_57(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_57(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_57(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -725,50 +557,22 @@ impl test_basics___int128_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_58(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_59(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_59(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_59(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -786,50 +590,22 @@ impl test_basics_unsigned_char_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_60(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_61(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_61(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_61(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -847,50 +623,22 @@ impl test_basics_unsigned_short_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_62(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_63(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_63(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_63(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -908,50 +656,22 @@ impl test_basics_unsigned_int_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_64(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_65(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_65(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_65(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -969,50 +689,22 @@ impl test_basics_unsigned_long_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_66(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_67(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_67(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_67(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -1030,50 +722,22 @@ impl test_basics_unsigned_long_long_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_68(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_69(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_69(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_69(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -1091,50 +755,22 @@ impl test_basics_unsigned___int128_ {
         let mut x: () = unimplemented!();
         {
             let mut s: [(); 5] = std::mem::transmute(*b"001x\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_70(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 31] = std::mem::transmute(*b"0X7BAtSGHDkEIXZgQRfYChLpOzRnM \0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_71(___first, ___last, &mut x, 36_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_71(___first, ___last, &mut x, 16_())
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 31]>()) as isize))
-                .cast_const();
-                from_chars_71(___first, ___last, &mut x, 12_())
-            });
+            r = unimplemented!();
             {
                 unimplemented!();
                 unimplemented!();
@@ -1152,53 +788,28 @@ impl test_signed_char_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 7]>()) as isize))
-                .cast_const();
-                from_chars_46(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_46(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                from_chars_46(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 4]>()) as isize))
-                .cast_const();
-                from_chars_46(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1214,53 +825,28 @@ impl test_signed_signed_char_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 7]>()) as isize))
-                .cast_const();
-                from_chars_48(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_48(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                from_chars_48(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 4]>()) as isize))
-                .cast_const();
-                from_chars_48(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1276,53 +862,28 @@ impl test_signed_short_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 7]>()) as isize))
-                .cast_const();
-                from_chars_50(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_50(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                from_chars_50(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 4]>()) as isize))
-                .cast_const();
-                from_chars_50(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1338,53 +899,28 @@ impl test_signed_int_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 7]>()) as isize))
-                .cast_const();
-                from_chars_52(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_52(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                from_chars_52(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 4]>()) as isize))
-                .cast_const();
-                from_chars_52(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1400,53 +936,28 @@ impl test_signed_long_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 7]>()) as isize))
-                .cast_const();
-                from_chars_54(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_54(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                from_chars_54(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 4]>()) as isize))
-                .cast_const();
-                from_chars_54(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1462,53 +973,28 @@ impl test_signed_long_long_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 7]>()) as isize))
-                .cast_const();
-                from_chars_56(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_56(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                from_chars_56(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 4]>()) as isize))
-                .cast_const();
-                from_chars_56(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1524,60 +1010,35 @@ impl test_signed___int128_ {
         let mut x: () = 42_();
         {
             let mut s: [(); 7] = std::mem::transmute(*b"- 9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 7]>()) as isize))
-                .cast_const();
-                from_chars_58(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 5] = std::mem::transmute(*b"9+12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 5]>()) as isize))
-                .cast_const();
-                from_chars_58(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 3] = std::mem::transmute(*b"12\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s.as_mut_ptr().offset((2_()) as isize)).cast_const();
-                from_chars_58(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
             let mut s: [(); 4] = std::mem::transmute(*b"+30\0");
-            r = (unsafe {
-                let ___first: *const () = (s.as_mut_ptr()).cast_const();
-                let ___last: *const () = (s
-                    .as_mut_ptr()
-                    .offset((::std::mem::size_of::<[(); 4]>()) as isize))
-                .cast_const();
-                from_chars_58(___first, ___last, &mut x)
-            });
+            r = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
         }
     }
 }
-pub unsafe fn test_72() -> () {
+pub unsafe fn test_46() -> () {
     (unsafe { run_44((*std::cell::LazyCell::force_mut(&mut *&raw mut integrals_42))) });
     (unsafe { run_45((*std::cell::LazyCell::force_mut(&mut *&raw mut all_signed_40))) });
     return true;
@@ -1598,7 +1059,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_72() });
+    (unsafe { test_46() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

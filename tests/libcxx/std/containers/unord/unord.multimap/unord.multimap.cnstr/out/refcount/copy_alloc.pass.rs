@@ -433,26 +433,10 @@ impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_
 pub fn test_alloc_11(new_alloc: Ptr<()>) {
     {
         let mut arr: [(); 4] = [
-            {
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_const_int__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-            },
-            {
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_const_int__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-            },
-            {
-                let __tmp_4: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_5: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-            },
-            {
-                let __tmp_6: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_7: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_const_int__int_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -462,15 +446,9 @@ pub fn test_alloc_11(new_alloc: Ptr<()>) {
         unimplemented!();
         {
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_12({ (*range.borrow()).first.clone() }, 0_()) }),
-            ));
-            let second_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_12({ (*range.borrow()).first.clone() }, 1_()) }),
-            ));
-            let end: Value<()> = Rc::new(RefCell::new(
-                ({ next_12({ (*range.borrow()).first.clone() }, 2_()) }),
-            ));
+            let first_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let second_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -486,15 +464,9 @@ pub fn test_alloc_11(new_alloc: Ptr<()>) {
         unimplemented!();
         {
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_13({ (*range.borrow()).first.clone() }, 0_()) }),
-            ));
-            let second_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_13({ (*range.borrow()).first.clone() }, 1_()) }),
-            ));
-            let end: Value<()> = Rc::new(RefCell::new(
-                ({ next_13({ (*range.borrow()).first.clone() }, 2_()) }),
-            ));
+            let first_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let second_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -502,11 +474,7 @@ pub fn test_alloc_11(new_alloc: Ptr<()>) {
         }
     }
     {
-        let mut arr: [(); 1] = [{
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_const_int__int_::new_1({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
-        }];
+        let mut arr: [(); 1] = [unimplemented!()];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -546,37 +514,13 @@ pub fn test_alloc_11(new_alloc: Ptr<()>) {
         unimplemented!();
     }
 }
-pub fn test_alloc_14(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
+pub fn test_alloc_12(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
     {
         let mut arr: [(); 4] = [
-            {
-                let __tmp_10: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_11: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_const_int__int_::new_1({ __tmp_10.as_pointer() }, {
-                    __tmp_11.as_pointer()
-                })
-            },
-            {
-                let __tmp_12: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_13: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_const_int__int_::new_1({ __tmp_12.as_pointer() }, {
-                    __tmp_13.as_pointer()
-                })
-            },
-            {
-                let __tmp_14: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_15: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_14.as_pointer() }, {
-                    __tmp_15.as_pointer()
-                })
-            },
-            {
-                let __tmp_16: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_17: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_const_int__int_::new_1({ __tmp_16.as_pointer() }, {
-                    __tmp_17.as_pointer()
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -586,15 +530,9 @@ pub fn test_alloc_14(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
         unimplemented!();
         {
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_15({ (*range.borrow()).first.clone() }, 0_()) }),
-            ));
-            let second_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_15({ (*range.borrow()).first.clone() }, 1_()) }),
-            ));
-            let end: Value<()> = Rc::new(RefCell::new(
-                ({ next_15({ (*range.borrow()).first.clone() }, 2_()) }),
-            ));
+            let first_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let second_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -610,15 +548,9 @@ pub fn test_alloc_14(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
         unimplemented!();
         {
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_16({ (*range.borrow()).first.clone() }, 0_()) }),
-            ));
-            let second_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_16({ (*range.borrow()).first.clone() }, 1_()) }),
-            ));
-            let end: Value<()> = Rc::new(RefCell::new(
-                ({ next_16({ (*range.borrow()).first.clone() }, 2_()) }),
-            ));
+            let first_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let second_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -626,11 +558,7 @@ pub fn test_alloc_14(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
         }
     }
     {
-        let mut arr: [(); 1] = [{
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_const_int__int_::new_1({ __tmp_18.as_pointer() }, { __tmp_19.as_pointer() })
-        }];
+        let mut arr: [(); 1] = [unimplemented!()];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -670,37 +598,13 @@ pub fn test_alloc_14(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
         unimplemented!();
     }
 }
-pub fn test_alloc_17(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
+pub fn test_alloc_13(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
     {
         let mut arr: [(); 4] = [
-            {
-                let __tmp_20: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_21: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_const_int__int_::new_1({ __tmp_20.as_pointer() }, {
-                    __tmp_21.as_pointer()
-                })
-            },
-            {
-                let __tmp_22: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_23: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_const_int__int_::new_1({ __tmp_22.as_pointer() }, {
-                    __tmp_23.as_pointer()
-                })
-            },
-            {
-                let __tmp_24: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_25: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_24.as_pointer() }, {
-                    __tmp_25.as_pointer()
-                })
-            },
-            {
-                let __tmp_26: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_27: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_const_int__int_::new_1({ __tmp_26.as_pointer() }, {
-                    __tmp_27.as_pointer()
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -710,15 +614,9 @@ pub fn test_alloc_17(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
         unimplemented!();
         {
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_12({ (*range.borrow()).first.clone() }, 0_()) }),
-            ));
-            let second_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_12({ (*range.borrow()).first.clone() }, 1_()) }),
-            ));
-            let end: Value<()> = Rc::new(RefCell::new(
-                ({ next_12({ (*range.borrow()).first.clone() }, 2_()) }),
-            ));
+            let first_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let second_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -734,15 +632,9 @@ pub fn test_alloc_17(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
         unimplemented!();
         {
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_13({ (*range.borrow()).first.clone() }, 0_()) }),
-            ));
-            let second_element: Value<()> = Rc::new(RefCell::new(
-                ({ next_13({ (*range.borrow()).first.clone() }, 1_()) }),
-            ));
-            let end: Value<()> = Rc::new(RefCell::new(
-                ({ next_13({ (*range.borrow()).first.clone() }, 2_()) }),
-            ));
+            let first_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let second_element: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -750,11 +642,7 @@ pub fn test_alloc_17(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
         }
     }
     {
-        let mut arr: [(); 1] = [{
-            let __tmp_28: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_29: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_const_int__int_::new_1({ __tmp_28.as_pointer() }, { __tmp_29.as_pointer() })
-        }];
+        let mut arr: [(); 1] = [unimplemented!()];
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -794,7 +682,7 @@ pub fn test_alloc_17(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
         unimplemented!();
     }
 }
-pub fn test_18() {
+pub fn test_14() {
     ({
         let _new_alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_alloc_11(_new_alloc.as_pointer())
@@ -803,13 +691,13 @@ pub fn test_18() {
         let _new_alloc: Value<min_allocator_std_pair_const_int__int__> = Rc::new(RefCell::new(
             <min_allocator_std_pair_const_int__int__>::default(),
         ));
-        test_alloc_14(_new_alloc.as_pointer())
+        test_alloc_12(_new_alloc.as_pointer())
     });
     ({
         let _new_alloc: Value<test_allocator_std_pair_const_int__int__> = Rc::new(RefCell::new(
             test_allocator_std_pair_const_int__int__::new_1({ 25_() }),
         ));
-        test_alloc_17(_new_alloc.as_pointer())
+        test_alloc_13(_new_alloc.as_pointer())
     });
 }
 pub fn main() {
@@ -832,7 +720,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_18() });
+    ({ test_14() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]

@@ -13,16 +13,13 @@ pub unsafe fn test_0() -> () {
         (&mut a[(0_()) as usize] as *mut ()),
         (&mut a[(1_()) as usize] as *mut ()),
     ];
-    let mut c : std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ = std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { & mut b } , )  ;
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut d: std_ranges_subrange_int_ptrptr__int_ptrptr__std_ranges_subrange_kind_sized_ =
-        std_ranges_subrange_int_ptrptr__int_ptrptr__std_ranges_subrange_kind_sized_::new_1({
-            &mut b
-        });
+    let mut d: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut e : std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ = std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ :: new_2 ( { & mut d } , )  ;
+    let mut e: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

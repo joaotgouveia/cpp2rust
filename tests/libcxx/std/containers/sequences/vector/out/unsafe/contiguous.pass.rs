@@ -565,13 +565,7 @@ pub unsafe fn tests_19() -> () {
             test_contiguous_16(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_0: () = 9_f64;
-                let mut __tmp_1: test_allocator_double_ = test_allocator_double_::new_1({ 5_() });
-                std_vector_double__test_allocator_double__::new_1({ 7_() }, { &mut __tmp_0 }, {
-                    &mut __tmp_1
-                })
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_16(&mut _c)
         });
     }
@@ -581,13 +575,7 @@ pub unsafe fn tests_19() -> () {
             test_contiguous_17(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_2: () = 11_f64;
-                let mut __tmp_3: min_allocator_double_ = <min_allocator_double_>::default();
-                std_vector_double__min_allocator_double__::new_1({ 9_() }, { &mut __tmp_2 }, {
-                    &mut __tmp_3
-                })
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_17(&mut _c)
         });
     }
@@ -597,13 +585,7 @@ pub unsafe fn tests_19() -> () {
             test_contiguous_18(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_4: () = 11_f64;
-                let mut __tmp_5: safe_allocator_double_ = safe_allocator_double_::new();
-                std_vector_double__safe_allocator_double__::new_1({ 9_() }, { &mut __tmp_4 }, {
-                    &mut __tmp_5
-                })
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_18(&mut _c)
         });
     }

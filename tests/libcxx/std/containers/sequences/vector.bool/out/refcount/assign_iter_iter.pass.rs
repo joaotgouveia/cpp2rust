@@ -314,23 +314,29 @@ pub fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_5(_i, n)
     });
 }
-pub fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_7(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_8(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -376,7 +382,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_10(
+            operator_cmp_11(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -401,7 +407,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_9(
+            operator_eq_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -485,17 +491,13 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn tests_11() -> () {
+pub fn tests_12() -> () {
     {
         {
             let mut in_: () = unimplemented!();
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
-            ({
-                let ___first: forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__   = forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ :: new_1 ( { unimplemented!()   } , )   ;
-                let ___last: forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__   = forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ :: new_1 ( { unimplemented!()   } , )   ;
-                (*v.borrow()) . assign_25_class_forward_iterator_class_std___bit_iterator_class_std_vector__Bool___false____0 ( ___first , ___last , )
-            });
+            unimplemented!();
             unimplemented!();
         }
         {
@@ -503,15 +505,8 @@ pub fn tests_11() -> () {
                 Rc::new(RefCell::new(Box::new([false, true, false, true, true])));
             let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
                 .wrapping_div((::std::mem::size_of::<()>() as ()));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            ({
-                let ___first: forward_iterator_bool_ptr_ =
-                    forward_iterator_bool_ptr_::new_1({ (in_.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_bool_ptr_ = forward_iterator_bool_ptr_::new_1({
-                    (in_.as_pointer() as Ptr<()>).offset((N) as isize)
-                });
-                (*v.borrow()).assign_25_class_forward_iterator__Bool_ptr__0(___first, ___last)
-            });
+            let mut v: () = unimplemented!();
+            unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < N) {
@@ -524,16 +519,9 @@ pub fn tests_11() -> () {
                 Rc::new(RefCell::new(Box::new([false, true, false, true, true])));
             let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
                 .wrapping_div((::std::mem::size_of::<()>() as ()));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
-            ({
-                let ___first: forward_iterator_bool_ptr_ =
-                    forward_iterator_bool_ptr_::new_1({ (in_.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_bool_ptr_ = forward_iterator_bool_ptr_::new_1({
-                    (in_.as_pointer() as Ptr<()>).offset((N) as isize)
-                });
-                (*v.borrow()).assign_25_class_forward_iterator__Bool_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < N) {
@@ -545,13 +533,9 @@ pub fn tests_11() -> () {
     {
         {
             let mut in_: () = unimplemented!();
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
-            ({
-                let ___first: cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__   = cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ :: new ( { unimplemented!()   } , )   ;
-                let ___last: cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__   = cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ :: new ( { unimplemented!()   } , )   ;
-                (*v.borrow()) . assign_24_class_cpp17_input_iterator_class_std___bit_iterator_class_std_vector__Bool___false____0 ( ___first , ___last , )
-            });
+            unimplemented!();
             unimplemented!();
         }
         {
@@ -559,18 +543,8 @@ pub fn tests_11() -> () {
                 Rc::new(RefCell::new(Box::new([false, true, false, true, true])));
             let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
                 .wrapping_div((::std::mem::size_of::<()>() as ()));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            ({
-                let ___first: cpp17_input_iterator_bool_ptr__bool_ptr_ =
-                    cpp17_input_iterator_bool_ptr__bool_ptr_::new({
-                        (in_.as_pointer() as Ptr<()>)
-                    });
-                let ___last: cpp17_input_iterator_bool_ptr__bool_ptr_ =
-                    cpp17_input_iterator_bool_ptr__bool_ptr_::new({
-                        (in_.as_pointer() as Ptr<()>).offset((N) as isize)
-                    });
-                (*v.borrow()).assign_24_class_cpp17_input_iterator__Bool_ptr__0(___first, ___last)
-            });
+            let mut v: () = unimplemented!();
+            unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < N) {
@@ -583,19 +557,9 @@ pub fn tests_11() -> () {
                 Rc::new(RefCell::new(Box::new([false, true, false, true, true])));
             let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
                 .wrapping_div((::std::mem::size_of::<()>() as ()));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
-            ({
-                let ___first: cpp17_input_iterator_bool_ptr__bool_ptr_ =
-                    cpp17_input_iterator_bool_ptr__bool_ptr_::new({
-                        (in_.as_pointer() as Ptr<()>)
-                    });
-                let ___last: cpp17_input_iterator_bool_ptr__bool_ptr_ =
-                    cpp17_input_iterator_bool_ptr__bool_ptr_::new({
-                        (in_.as_pointer() as Ptr<()>).offset((N) as isize)
-                    });
-                (*v.borrow()).assign_24_class_cpp17_input_iterator__Bool_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < N) {
@@ -626,7 +590,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ tests_11() });
+    ({ tests_12() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

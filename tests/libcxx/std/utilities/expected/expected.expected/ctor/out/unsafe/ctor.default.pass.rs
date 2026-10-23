@@ -7,7 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut () = &mut (*x).i;
+        let ___y: *mut () = &mut (*y).i;
+        swap_1(___x, ___y)
+    });
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -53,7 +57,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -70,7 +74,7 @@ impl TailClobberer_0_ {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<TailClobberer_0_>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.b = false;
@@ -84,7 +88,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_1(
+            operator_eq_2(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -151,7 +155,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -198,7 +202,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -253,7 +257,7 @@ const _: () = assert!(
     true,
     "!std::is_default_constructible_v<std::expected<NoDedefaultCtor, int>>"
 );
-pub unsafe fn operator_eq_3(_a0: *const MyInt, _a1: *const MyInt) -> () {
+pub unsafe fn operator_eq_4(_a0: *const MyInt, _a1: *const MyInt) -> () {
     return (((*_a0).i) == ((*_a1).i));
 }
 #[repr(C)]
@@ -263,15 +267,10 @@ pub struct MyInt {
 }
 impl std::cmp::PartialEq for MyInt {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_3(self as *const MyInt, other as *const MyInt) }
+        unsafe { operator_eq_4(self as *const MyInt, other as *const MyInt) }
     }
 }
 impl std::cmp::Eq for MyInt {}
-pub unsafe fn testDefaultCtor_4() {
-    let mut e: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
 pub unsafe fn testDefaultCtor_5() {
     let mut e: () = unimplemented!();
     unimplemented!();
@@ -312,28 +311,33 @@ pub unsafe fn testDefaultCtor_12() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn testTypes_13() {
-    (unsafe { testDefaultCtor_4() });
-    (unsafe { testDefaultCtor_5() });
-    (unsafe { testDefaultCtor_6() });
+pub unsafe fn testDefaultCtor_13() {
+    let mut e: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn testTypes_14() {
+    (unsafe { testDefaultCtor_5() });
+    (unsafe { testDefaultCtor_6() });
     (unsafe { testDefaultCtor_7() });
-    (unsafe { testDefaultCtor_8() });
-    (unsafe { testDefaultCtor_9() });
 }
 pub unsafe fn testTypes_15() {
+    (unsafe { testDefaultCtor_8() });
+    (unsafe { testDefaultCtor_9() });
     (unsafe { testDefaultCtor_10() });
+}
+pub unsafe fn testTypes_16() {
     (unsafe { testDefaultCtor_11() });
     (unsafe { testDefaultCtor_12() });
+    (unsafe { testDefaultCtor_13() });
 }
-pub unsafe fn test_16() -> () {
-    (unsafe { testTypes_13() });
+pub unsafe fn test_17() -> () {
     (unsafe { testTypes_14() });
     (unsafe { testTypes_15() });
+    (unsafe { testTypes_16() });
     return true;
 }
-pub unsafe fn testException_17() {}
+pub unsafe fn testException_18() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -350,9 +354,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_16() });
+    (unsafe { test_17() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_17() });
+    (unsafe { testException_18() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

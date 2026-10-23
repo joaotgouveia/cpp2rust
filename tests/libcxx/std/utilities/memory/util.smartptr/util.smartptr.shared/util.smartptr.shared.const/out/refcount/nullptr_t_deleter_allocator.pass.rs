@@ -523,12 +523,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let alloc_stats: Value<test_allocator_statistics> =
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1(
-            { Default::default() },
-            { test_deleter_A_::new_1({ 3_() }) },
-            { test_allocator_A_::new_1({ 5_() }, { (alloc_stats.as_pointer()) }) },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -547,12 +542,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_2(
-            { Default::default() },
-            { test_deleter_A_::new_1({ 1_() }) },
-            { bare_allocator_void_::new() },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -567,12 +557,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_3(
-            { Default::default() },
-            { test_deleter_A_::new_1({ 1_() }) },
-            { <min_allocator_void_>::default() },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -586,12 +571,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_const_A_::new_1(
-            { Default::default() },
-            { test_deleter_const_A_::new_1({ 3_() }) },
-            { test_allocator_A_::new_1({ 5_() }, { (alloc_stats.as_pointer()) }) },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         &(*p.borrow_mut());
     }
     return 0_();

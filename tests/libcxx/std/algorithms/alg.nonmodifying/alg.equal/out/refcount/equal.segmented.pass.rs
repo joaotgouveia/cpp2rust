@@ -22,19 +22,13 @@ pub fn test_containers_0() {
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!().write(-1_());
         unimplemented!();
     }
@@ -43,15 +37,7 @@ pub fn test_containers_0() {
         unimplemented!();
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({
-            let ___p: () = {
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_0.as_pointer() } , )
-            };
-            let ___f: () = unimplemented!();
-            let ___l: () = unimplemented!();
-            (*rhs.borrow()).insert_72_class_std___wrap_iter_int_ptr__0(___p, ___f, ___l)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -60,15 +46,7 @@ pub fn test_containers_0() {
         unimplemented!();
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({
-            let ___p: () = {
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_1.as_pointer() } , )
-            };
-            let ___f: () = unimplemented!();
-            let ___l: () = unimplemented!();
-            (*rhs.borrow()).insert_72_class_std___wrap_iter_int_ptr__0(___p, ___f, ___l)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!().write(-1_());
         unimplemented!();
@@ -90,59 +68,31 @@ pub fn test_containers_1() {
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut rhs: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut rhs: () = unimplemented!();
         unimplemented!();
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut rhs: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut rhs: () = unimplemented!();
         unimplemented!().write(-1_());
         unimplemented!();
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut rhs: () = unimplemented!();
         unimplemented!();
-        ({
-            let ___position: () = {
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std___wrap_iter_const_int_ptr_::new_1({ __tmp_2.as_pointer() })
-            };
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            (*rhs.borrow())
-                .insert_67_class_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__0(
-                    ___position,
-                    ___first,
-                    ___last,
-                )
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut rhs: () = unimplemented!();
         unimplemented!();
-        ({
-            let ___position: () = {
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std___wrap_iter_const_int_ptr_::new_1({ __tmp_3.as_pointer() })
-            };
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            (*rhs.borrow())
-                .insert_67_class_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__0(
-                    ___position,
-                    ___first,
-                    ___last,
-                )
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!().write(-1_());
         unimplemented!();
@@ -164,19 +114,13 @@ pub fn test_containers_2() {
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_2(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_2(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!().write(-1_());
         unimplemented!();
     }
@@ -185,18 +129,7 @@ pub fn test_containers_2() {
         unimplemented!();
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({
-            let ___p: () = {
-                let __tmp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_4.as_pointer() } , )
-            };
-            let ___f: () = unimplemented!();
-            let ___l: () = unimplemented!();
-            (*rhs.borrow())
-                .insert_72_class_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__0(
-                    ___p, ___f, ___l,
-                )
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -205,18 +138,7 @@ pub fn test_containers_2() {
         unimplemented!();
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({
-            let ___p: () = {
-                let __tmp_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_5.as_pointer() } , )
-            };
-            let ___f: () = unimplemented!();
-            let ___l: () = unimplemented!();
-            (*rhs.borrow())
-                .insert_72_class_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__0(
-                    ___p, ___f, ___l,
-                )
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!().write(-1_());
         unimplemented!();

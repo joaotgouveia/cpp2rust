@@ -1658,12 +1658,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         {},
         |mut expected: (), mut fmt: ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1688,12 +1683,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1718,12 +1708,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1769,12 +1754,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
          args_20: *mut (),
          args_21: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1807,12 +1787,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
          args_7: *mut (),
          args_8: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1837,12 +1812,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1867,12 +1837,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut *const ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1897,12 +1862,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut [(); 8]| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1927,12 +1887,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut [(); 7]| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1957,12 +1912,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1987,12 +1937,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2017,12 +1962,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2047,12 +1987,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2077,12 +2012,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2107,12 +2037,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2137,12 +2062,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2167,12 +2087,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2197,12 +2112,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2227,12 +2137,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2257,12 +2162,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2287,12 +2187,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2317,12 +2212,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2347,12 +2237,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2377,12 +2262,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2407,12 +2287,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2437,12 +2312,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2467,12 +2337,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2497,12 +2362,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2527,12 +2387,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2557,12 +2412,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut status| {
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2593,7 +2443,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
          args_5: *mut (),
          args_6: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2618,7 +2468,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2643,7 +2493,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2668,7 +2518,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args_2: *mut (), args_3: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2714,7 +2564,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
          args_20: *mut (),
          args_21: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2747,7 +2597,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
          args_7: *mut (),
          args_8: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2772,7 +2622,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2797,7 +2647,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut *const ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2822,7 +2672,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut [(); 8]| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2847,7 +2697,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut [(); 7]| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2872,7 +2722,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2897,7 +2747,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2922,7 +2772,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2947,7 +2797,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2972,7 +2822,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -2997,7 +2847,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3022,7 +2872,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3047,7 +2897,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3072,7 +2922,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3097,7 +2947,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3122,7 +2972,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3147,7 +2997,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3172,7 +3022,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3197,7 +3047,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3222,7 +3072,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3247,7 +3097,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3272,7 +3122,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3297,7 +3147,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3322,7 +3172,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3347,7 +3197,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut ()| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -3372,7 +3222,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         },
         |mut expected: (), mut fmt: (), args: *mut status| {
             {
-                let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+                let mut out: () = unimplemented!();
                 let mut it: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();

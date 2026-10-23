@@ -757,26 +757,14 @@ impl Default for MaybePOCCAAllocator_int__true_ {
 }
 pub unsafe fn tests_23() -> () {
     {
-        let mut l: () = {
-            let mut __tmp_0: () = 2_();
-            let mut __tmp_1: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_vector_int__test_allocator_int__::new_1({ 3_() }, { &mut __tmp_0 }, {
-                &mut __tmp_1
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_2: () = 2_();
-            let mut __tmp_3: other_allocator_int_ = other_allocator_int_::new_1({ 5_() });
-            std_vector_int__other_allocator_int__::new_1({ 3_() }, { &mut __tmp_2 }, {
-                &mut __tmp_3
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -784,14 +772,7 @@ pub unsafe fn tests_23() -> () {
     }
     {
         let mut copy_assigned_into: () = false;
-        let mut l: () = {
-            let mut __tmp_4: () = 2_();
-            let mut __tmp_5: MaybePOCCAAllocator_int__false_ =
-                MaybePOCCAAllocator_int__false_::new_1({ 5_() }, { std::ptr::null_mut() });
-            std_vector_int__MaybePOCCAAllocator_int__false__::new_1({ 3_() }, { &mut __tmp_4 }, {
-                &mut __tmp_5
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -801,14 +782,7 @@ pub unsafe fn tests_23() -> () {
     }
     {
         let mut copy_assigned_into: () = false;
-        let mut l: () = {
-            let mut __tmp_6: () = 2_();
-            let mut __tmp_7: MaybePOCCAAllocator_int__true_ =
-                MaybePOCCAAllocator_int__true_::new_1({ 5_() }, { std::ptr::null_mut() });
-            std_vector_int__MaybePOCCAAllocator_int__true__::new_1({ 3_() }, { &mut __tmp_6 }, {
-                &mut __tmp_7
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -818,14 +792,7 @@ pub unsafe fn tests_23() -> () {
     }
     {
         let mut copy_assigned_into: () = false;
-        let mut l: () = {
-            let mut __tmp_8: () = 2_();
-            let mut __tmp_9: MaybePOCCAAllocator_int__true_ =
-                MaybePOCCAAllocator_int__true_::new_1({ 5_() }, { std::ptr::null_mut() });
-            std_vector_int__MaybePOCCAAllocator_int__true__::new_1({ 3_() }, { &mut __tmp_8 }, {
-                &mut __tmp_9
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -834,26 +801,14 @@ pub unsafe fn tests_23() -> () {
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_10: () = 2_();
-            let mut __tmp_11: min_allocator_int_ = <min_allocator_int_>::default();
-            std_vector_int__min_allocator_int__::new_1({ 3_() }, { &mut __tmp_10 }, {
-                &mut __tmp_11
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_12: () = 2_();
-            let mut __tmp_13: safe_allocator_int_ = safe_allocator_int_::new();
-            std_vector_int__safe_allocator_int__::new_1({ 3_() }, { &mut __tmp_12 }, {
-                &mut __tmp_13
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();

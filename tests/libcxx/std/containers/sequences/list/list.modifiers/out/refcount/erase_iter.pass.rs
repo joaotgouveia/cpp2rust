@@ -65,10 +65,7 @@ pub struct min_allocator_int_ {}
 pub fn test_4() -> () {
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let l1: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let l1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new({
             let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             std___list_const_iterator_int__void_ptr_::new_1({ __tmp_0.as_pointer() })
@@ -92,10 +89,7 @@ pub fn test_4() -> () {
     }
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let l1: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let l1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new({
             let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_1.as_pointer() } , )

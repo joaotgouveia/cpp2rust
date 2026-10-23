@@ -362,10 +362,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut t: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-        let c: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -383,10 +380,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut t: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-        let c: Value<()> = Rc::new(RefCell::new(std_deque_int__min_allocator_int__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

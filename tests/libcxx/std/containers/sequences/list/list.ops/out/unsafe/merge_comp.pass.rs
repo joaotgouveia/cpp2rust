@@ -70,30 +70,15 @@ pub unsafe fn test_4() -> () {
             1_(),
             0_(),
         ];
-        let mut c1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 5]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
-        let mut c2: () = std_list_int__std_allocator_int__::new_1({ a2.as_mut_ptr() }, {
-            a2.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 7]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut a1: [(); 5] = [10_(), 9_(), 7_(), 3_(), 1_()];
-        let mut c1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 5]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -114,18 +99,8 @@ pub unsafe fn test_4() -> () {
             1_(),
             0_(),
         ];
-        let mut c1: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 5]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
-        let mut c2: () = std_list_int__min_allocator_int__::new_1({ a2.as_mut_ptr() }, {
-            a2.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 7]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

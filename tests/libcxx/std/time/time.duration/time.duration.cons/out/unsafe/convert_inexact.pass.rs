@@ -24,19 +24,13 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut us: () = {
-            let mut __tmp_0: () = 1_();
-            std_chrono_duration_double__std_ratio_1__1000000__::new_1({ &mut __tmp_0 })
-        };
-        let mut ms: () = std_chrono_duration_double__std_ratio_1__1000__::new_1({ &us });
+        let mut us: () = unimplemented!();
+        let mut ms: () = unimplemented!();
         unimplemented!();
     }
     {
-        let us: () = {
-            let mut __tmp_1: () = 1_();
-            std_chrono_duration_double__std_ratio_1__1000000__::new_1({ &mut __tmp_1 })
-        };
-        let ms: () = std_chrono_duration_double__std_ratio_1__1000__::new_1({ &us });
+        let us: () = unimplemented!();
+        let ms: () = unimplemented!();
         const _: () = assert!(true, "ms.count() == 1./1000");;
     }
     return 0_();

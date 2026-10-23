@@ -372,21 +372,25 @@ pub unsafe fn operator_add_7(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_8(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_9(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -470,7 +474,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -480,7 +484,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -554,24 +558,24 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_13))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_14))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_14))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_15))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_15)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_12)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_13)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_14)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_16)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_13)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_14)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_15)) = 0_();
     }
 }
-pub static mut outstanding_bytes_12: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_13: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_13: std::cell::LazyCell<()> =
+pub static mut alloc_count_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_14: std::cell::LazyCell<()> =
+pub static mut dealloc_count_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_15: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_16: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -591,19 +595,19 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_16(
+pub unsafe fn operator_eq_17(
     mut x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_17(
+pub unsafe fn operator_ne_18(
     mut x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_16(_x, y)
+        operator_eq_17(_x, y)
     });
 }
 #[repr(C)]
@@ -659,11 +663,11 @@ impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
 }
 impl std::cmp::PartialEq for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self.clone(), other.clone()) }
+        unsafe { operator_eq_17(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_18(
+pub unsafe fn operator_eq_19(
     mut x: min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -698,7 +702,7 @@ impl std::cmp::PartialEq
     for min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__
 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_18(self.clone(), other.clone()) }
+        unsafe { operator_eq_19(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_const_unsigned_long__std_integral_constant_unsigned_long__0__ {}
@@ -739,91 +743,91 @@ impl min_allocator_unsigned_long_ {
 }
 impl min_allocator_bool_ {}
 impl min_allocator_unsigned_long_ {}
-pub unsafe fn test_19(
+pub unsafe fn test_20(
     mut first: cpp17_input_iterator_const_bool_ptr__const_bool_ptr_,
     mut last: cpp17_input_iterator_const_bool_ptr__const_bool_ptr_,
 ) {
-    let mut c: () = std_vector_bool__std_allocator_bool__::new_1({ first }, { last });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_20(
-    mut first: forward_iterator_const_bool_ptr_,
-    mut last: forward_iterator_const_bool_ptr_,
-) {
-    let mut c: () = std_vector_bool__std_allocator_bool__::new_2({ first }, { last });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_21(
-    mut first: bidirectional_iterator_const_bool_ptr_,
-    mut last: bidirectional_iterator_const_bool_ptr_,
+    mut first: forward_iterator_const_bool_ptr_,
+    mut last: forward_iterator_const_bool_ptr_,
 ) {
-    let mut c: () = std_vector_bool__std_allocator_bool__::new_3({ first }, { last });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_22(
+    mut first: bidirectional_iterator_const_bool_ptr_,
+    mut last: bidirectional_iterator_const_bool_ptr_,
+) {
+    let mut c: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_23(
     mut first: random_access_iterator_const_bool_ptr_,
     mut last: random_access_iterator_const_bool_ptr_,
 ) {
-    let mut c: () = std_vector_bool__std_allocator_bool__::new_4({ first }, { last });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_23(mut first: *mut (), mut last: *mut ()) {
-    let mut c: () = std_vector_bool__std_allocator_bool__::new_5({ first }, { last });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_24(
-    mut first: cpp17_input_iterator_const_bool_ptr__const_bool_ptr_,
-    mut last: cpp17_input_iterator_const_bool_ptr__const_bool_ptr_,
-) {
-    let mut c: () = std_vector_bool__min_allocator_bool__::new_1({ first }, { last });
+pub unsafe fn test_24(mut first: *mut (), mut last: *mut ()) {
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_25(
-    mut first: forward_iterator_const_bool_ptr_,
-    mut last: forward_iterator_const_bool_ptr_,
+    mut first: cpp17_input_iterator_const_bool_ptr__const_bool_ptr_,
+    mut last: cpp17_input_iterator_const_bool_ptr__const_bool_ptr_,
 ) {
-    let mut c: () = std_vector_bool__min_allocator_bool__::new_2({ first }, { last });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_26(
-    mut first: bidirectional_iterator_const_bool_ptr_,
-    mut last: bidirectional_iterator_const_bool_ptr_,
+    mut first: forward_iterator_const_bool_ptr_,
+    mut last: forward_iterator_const_bool_ptr_,
 ) {
-    let mut c: () = std_vector_bool__min_allocator_bool__::new_3({ first }, { last });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_27(
+    mut first: bidirectional_iterator_const_bool_ptr_,
+    mut last: bidirectional_iterator_const_bool_ptr_,
+) {
+    let mut c: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_28(
     mut first: random_access_iterator_const_bool_ptr_,
     mut last: random_access_iterator_const_bool_ptr_,
 ) {
-    let mut c: () = std_vector_bool__min_allocator_bool__::new_4({ first }, { last });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_28(mut first: *mut (), mut last: *mut ()) {
-    let mut c: () = std_vector_bool__min_allocator_bool__::new_5({ first }, { last });
+pub unsafe fn test_29(mut first: *mut (), mut last: *mut ()) {
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn tests_29() -> () {
+pub unsafe fn tests_30() -> () {
     let mut a: [(); 18] = [
         (0_() != 0),
         (1_() != 0),
@@ -849,34 +853,34 @@ pub unsafe fn tests_29() -> () {
             .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
     );
     (unsafe {
-        test_19(
+        test_20(
             cpp17_input_iterator_const_bool_ptr__const_bool_ptr_::new({
                 (a.as_mut_ptr()).cast_const()
             }),
             cpp17_input_iterator_const_bool_ptr__const_bool_ptr_::new({ (an).cast_const() }),
-        )
-    });
-    (unsafe {
-        test_20(
-            forward_iterator_const_bool_ptr_::new_1({ (a.as_mut_ptr()).cast_const() }),
-            forward_iterator_const_bool_ptr_::new_1({ (an).cast_const() }),
         )
     });
     (unsafe {
         test_21(
+            forward_iterator_const_bool_ptr_::new_1({ (a.as_mut_ptr()).cast_const() }),
+            forward_iterator_const_bool_ptr_::new_1({ (an).cast_const() }),
+        )
+    });
+    (unsafe {
+        test_22(
             bidirectional_iterator_const_bool_ptr_::new_1({ (a.as_mut_ptr()).cast_const() }),
             bidirectional_iterator_const_bool_ptr_::new_1({ (an).cast_const() }),
         )
     });
     (unsafe {
-        test_22(
+        test_23(
             random_access_iterator_const_bool_ptr_::new_1({ (a.as_mut_ptr()).cast_const() }),
             random_access_iterator_const_bool_ptr_::new_1({ (an).cast_const() }),
         )
     });
-    (unsafe { test_23(a.as_mut_ptr(), an) });
+    (unsafe { test_24(a.as_mut_ptr(), an) });
     (unsafe {
-        test_24(
+        test_25(
             cpp17_input_iterator_const_bool_ptr__const_bool_ptr_::new({
                 (a.as_mut_ptr()).cast_const()
             }),
@@ -884,24 +888,24 @@ pub unsafe fn tests_29() -> () {
         )
     });
     (unsafe {
-        test_25(
+        test_26(
             forward_iterator_const_bool_ptr_::new_1({ (a.as_mut_ptr()).cast_const() }),
             forward_iterator_const_bool_ptr_::new_1({ (an).cast_const() }),
         )
     });
     (unsafe {
-        test_26(
+        test_27(
             bidirectional_iterator_const_bool_ptr_::new_1({ (a.as_mut_ptr()).cast_const() }),
             bidirectional_iterator_const_bool_ptr_::new_1({ (an).cast_const() }),
         )
     });
     (unsafe {
-        test_27(
+        test_28(
             random_access_iterator_const_bool_ptr_::new_1({ (a.as_mut_ptr()).cast_const() }),
             random_access_iterator_const_bool_ptr_::new_1({ (an).cast_const() }),
         )
     });
-    (unsafe { test_28(a.as_mut_ptr(), an) });
+    (unsafe { test_29(a.as_mut_ptr(), an) });
     return true;
 }
 pub fn main() {
@@ -920,13 +924,13 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_29() });
+    (unsafe { tests_30() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_12);
-    std::cell::LazyCell::force(&*&raw const alloc_count_13);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_14);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_15);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_13);
+    std::cell::LazyCell::force(&*&raw const alloc_count_14);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_15);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_16);
 }

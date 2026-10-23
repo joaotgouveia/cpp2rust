@@ -801,31 +801,19 @@ const _: () = assert!(
 );
 pub unsafe fn test_6() -> () {
     {
-        let p1: () = {
-            let mut __tmp_0: () = 1_();
-            let mut __tmp_1: () = 2_();
-            std_pair_int__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let p1: () = unimplemented!();
         let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p1: () = {
-            let mut __tmp_2: () = 1_();
-            let mut __tmp_3: () = 2_();
-            std_pair_ConstMove__int_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let p1: () = unimplemented!();
         let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p1: () = {
-            let mut __tmp_4: () = 1_();
-            let mut __tmp_5: () = 2_();
-            std_pair_ConstMove__int_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-        };
+        let p1: () = unimplemented!();
         let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();

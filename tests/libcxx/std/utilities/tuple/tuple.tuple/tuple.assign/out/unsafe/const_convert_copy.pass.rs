@@ -643,20 +643,20 @@ pub unsafe fn test_6() -> () {
         let mut j2: () = 4_();
         let t1: () = std_tuple_int_ref__int_ref_::new({ &mut i1 }, { &mut i2 });
         let t2: () = std_tuple_long_ref__long_ref_::new({ &mut j1 }, { &mut j2 });
-        t2 = (t1).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let t1: () = 1_();
         let t2: () = 2_();
-        t2 = (t1).clone();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut t1: () = unimplemented!();
         let t2: () = unimplemented!();
-        t2 = (t1).clone();
+        unimplemented!();
         unimplemented!();
     }
     return true;

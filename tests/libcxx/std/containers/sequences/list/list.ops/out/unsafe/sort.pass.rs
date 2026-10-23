@@ -113,9 +113,7 @@ pub unsafe fn test_stable_5(mut N: ()) {
         (*unimplemented!()).side = i;
         i.prefix_inc();
     }
-    let mut c: () = std_list_Payload__std_allocator_Payload__::new_1({ unimplemented!() }, {
-        unimplemented!()
-    });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut j: () = {
@@ -135,14 +133,14 @@ pub unsafe fn test_stable_5(mut N: ()) {
         std___list_const_iterator_Payload__void_ptr_::new_1({ &mut __tmp_1 })
     };
     'loop_: while unimplemented!() {
-        let mut next: () = (unsafe { next_6(it.clone(), None) });
+        let mut next: () = unimplemented!();
         if (unimplemented!()) && (((*it).val) == ((*next).val)) {
             unimplemented!();
         }
         unimplemented!();
     }
 }
-pub unsafe fn test_7() -> () {
+pub unsafe fn test_6() -> () {
     {
         let mut a1: [(); 12] = [
             4_(),
@@ -172,12 +170,7 @@ pub unsafe fn test_7() -> () {
             10_(),
             11_(),
         ];
-        let mut c1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 12]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -210,12 +203,7 @@ pub unsafe fn test_7() -> () {
             10_(),
             11_(),
         ];
-        let mut c1: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 12]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

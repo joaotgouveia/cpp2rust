@@ -741,23 +741,29 @@ pub fn operator_add_34(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_33(_i, n)
     });
 }
-pub fn iter_swap_35(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_35(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_36(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_36(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_37(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_37(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_38(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_38(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_39(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -803,7 +809,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_38(
+            operator_cmp_39(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -828,7 +834,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_37(
+            operator_eq_38(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -912,7 +918,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_unsized_39() {
+pub fn test_unsized_40() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -1185,7 +1191,7 @@ pub fn test_unsized_39() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_40() {
+pub fn test_unsized_41() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -1456,7 +1462,7 @@ pub fn test_unsized_40() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_41() {
+pub fn test_unsized_42() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -1695,7 +1701,7 @@ pub fn test_unsized_41() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_42() {
+pub fn test_unsized_43() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -1966,7 +1972,7 @@ pub fn test_unsized_42() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_43() {
+pub fn test_unsized_44() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2237,7 +2243,7 @@ pub fn test_unsized_43() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_44() {
+pub fn test_unsized_45() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2480,7 +2486,7 @@ pub fn test_unsized_44() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_45() {
+pub fn test_unsized_46() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2667,7 +2673,7 @@ pub fn test_unsized_45() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_46() {
+pub fn test_unsized_47() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2854,7 +2860,7 @@ pub fn test_unsized_46() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_47() {
+pub fn test_unsized_48() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -3008,7 +3014,7 @@ pub fn test_unsized_47() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_unsized_48() {
+pub fn test_unsized_49() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -3162,7 +3168,7 @@ pub fn test_unsized_48() {
         ({ (*check.borrow()).spec::<fn()>(15).call() });
     }
 }
-pub fn test_sized_49() {
+pub fn test_sized_50() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -3453,7 +3459,7 @@ pub fn test_sized_49() {
         unimplemented!();
     }
 }
-pub fn test_sized_50() {
+pub fn test_sized_51() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -3708,7 +3714,7 @@ pub fn test_sized_50() {
         unimplemented!();
     }
 }
-pub fn test_sized_51() {
+pub fn test_sized_52() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -3995,7 +4001,7 @@ pub fn test_sized_51() {
         unimplemented!();
     }
 }
-pub fn test_sized_52() {
+pub fn test_sized_53() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -4250,7 +4256,7 @@ pub fn test_sized_52() {
         unimplemented!();
     }
 }
-pub fn test_sized_53() {
+pub fn test_sized_54() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -4537,7 +4543,7 @@ pub fn test_sized_53() {
         unimplemented!();
     }
 }
-pub fn test_sized_54() {
+pub fn test_sized_55() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -4824,7 +4830,7 @@ pub fn test_sized_54() {
         unimplemented!();
     }
 }
-pub fn test_sized_55() {
+pub fn test_sized_56() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -5079,7 +5085,7 @@ pub fn test_sized_55() {
         unimplemented!();
     }
 }
-pub fn test_sized_56() {
+pub fn test_sized_57() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -5260,7 +5266,7 @@ pub fn test_sized_56() {
         unimplemented!();
     }
 }
-pub fn test_sized_57() {
+pub fn test_sized_58() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -5441,131 +5447,6 @@ pub fn test_sized_57() {
         unimplemented!();
     }
 }
-pub fn test_sized_58() {
-    const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    {
-        let check: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-            Generic,
-            {
-                let a: Ptr<()> = a.as_pointer();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            },
-            || {
-                let mut first: Ptr<()> = (a).offset((3_()) as isize);
-                let mut last: Ptr<()> = (a).clone();
-                unimplemented!();
-            }
-        )));
-        ({ (*check.borrow()).spec::<fn()>(0).call() });
-        ({ (*check.borrow()).spec::<fn()>(1).call() });
-        ({ (*check.borrow()).spec::<fn()>(2).call() });
-        ({ (*check.borrow()).spec::<fn()>(3).call() });
-        ({ (*check.borrow()).spec::<fn()>(4).call() });
-        ({ (*check.borrow()).spec::<fn()>(5).call() });
-        ({ (*check.borrow()).spec::<fn()>(6).call() });
-        ({ (*check.borrow()).spec::<fn()>(7).call() });
-        ({ (*check.borrow()).spec::<fn()>(8).call() });
-        ({ (*check.borrow()).spec::<fn()>(9).call() });
-        ({ (*check.borrow()).spec::<fn()>(10).call() });
-        ({ (*check.borrow()).spec::<fn()>(11).call() });
-        ({ (*check.borrow()).spec::<fn()>(12).call() });
-        ({ (*check.borrow()).spec::<fn()>(13).call() });
-        ({ (*check.borrow()).spec::<fn()>(14).call() });
-        ({ (*check.borrow()).spec::<fn()>(15).call() });
-    }
-    {
-        let first: Value<Ptr<()>> = Rc::new(RefCell::new((a.as_pointer() as Ptr<()>)));
-        let mut last: Ptr<()> = (a.as_pointer() as Ptr<()>);
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        const _: () = assert!(true, "");;
-    }
-    {
-        let first: Value<Ptr<()>> = Rc::new(RefCell::new((a.as_pointer() as Ptr<()>)));
-        let mut last: Ptr<()> = (a.as_pointer() as Ptr<()>).offset((3_()) as isize);
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
 pub fn test_sized_59() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
@@ -5692,6 +5573,131 @@ pub fn test_sized_59() {
     }
 }
 pub fn test_sized_60() {
+    const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
+    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+    {
+        let check: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+            Generic,
+            {
+                let a: Ptr<()> = a.as_pointer();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            },
+            || {
+                let mut first: Ptr<()> = (a).offset((3_()) as isize);
+                let mut last: Ptr<()> = (a).clone();
+                unimplemented!();
+            }
+        )));
+        ({ (*check.borrow()).spec::<fn()>(0).call() });
+        ({ (*check.borrow()).spec::<fn()>(1).call() });
+        ({ (*check.borrow()).spec::<fn()>(2).call() });
+        ({ (*check.borrow()).spec::<fn()>(3).call() });
+        ({ (*check.borrow()).spec::<fn()>(4).call() });
+        ({ (*check.borrow()).spec::<fn()>(5).call() });
+        ({ (*check.borrow()).spec::<fn()>(6).call() });
+        ({ (*check.borrow()).spec::<fn()>(7).call() });
+        ({ (*check.borrow()).spec::<fn()>(8).call() });
+        ({ (*check.borrow()).spec::<fn()>(9).call() });
+        ({ (*check.borrow()).spec::<fn()>(10).call() });
+        ({ (*check.borrow()).spec::<fn()>(11).call() });
+        ({ (*check.borrow()).spec::<fn()>(12).call() });
+        ({ (*check.borrow()).spec::<fn()>(13).call() });
+        ({ (*check.borrow()).spec::<fn()>(14).call() });
+        ({ (*check.borrow()).spec::<fn()>(15).call() });
+    }
+    {
+        let first: Value<Ptr<()>> = Rc::new(RefCell::new((a.as_pointer() as Ptr<()>)));
+        let mut last: Ptr<()> = (a.as_pointer() as Ptr<()>);
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        const _: () = assert!(true, "");;
+    }
+    {
+        let first: Value<Ptr<()>> = Rc::new(RefCell::new((a.as_pointer() as Ptr<()>)));
+        let mut last: Ptr<()> = (a.as_pointer() as Ptr<()>).offset((3_()) as isize);
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_sized_61() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -5857,7 +5863,7 @@ pub fn test_sized_60() {
         unimplemented!();
     }
 }
-pub fn test_sized_61() {
+pub fn test_sized_62() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     {
@@ -6069,7 +6075,7 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<SizedStrideCounter, SizedStrideCounter>"
 );
-pub fn test_stride_counting_62() {
+pub fn test_stride_counting_63() {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
         let inc: Value<()> = Rc::new(RefCell::new(0_()));
@@ -6080,7 +6086,7 @@ pub fn test_stride_counting_62() {
                 Ptr::<()>::null()
             });
         let mut result: () =
-            ({ (*distance_63.with(Value::clone).borrow_mut())((first).clone(), (last).clone()) });
+            ({ (*distance_64.with(Value::clone).borrow_mut())((first).clone(), (last).clone()) });
         unimplemented!();
         unimplemented!();
     }
@@ -6096,13 +6102,13 @@ pub fn test_stride_counting_62() {
                 Ptr::<()>::null()
             });
         let mut result: () = ({
-            (*distance_63.with(Value::clone).borrow_mut())(first.as_pointer(), (last).clone())
+            (*distance_64.with(Value::clone).borrow_mut())(first.as_pointer(), (last).clone())
         });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_deque_64() {
+pub fn test_deque_65() {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n: () = 0_();
@@ -6114,14 +6120,13 @@ pub fn test_deque_64() {
     }
     unimplemented!();
 }
-pub fn test_65() -> () {
+pub fn test_66() -> () {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
-    ({ test_unsized_39() });
     ({ test_unsized_40() });
     ({ test_unsized_41() });
     ({ test_unsized_42() });
@@ -6131,7 +6136,7 @@ pub fn test_65() -> () {
     ({ test_unsized_46() });
     ({ test_unsized_47() });
     ({ test_unsized_48() });
-    ({ test_sized_49() });
+    ({ test_unsized_49() });
     ({ test_sized_50() });
     ({ test_sized_51() });
     ({ test_sized_52() });
@@ -6144,6 +6149,7 @@ pub fn test_65() -> () {
     ({ test_sized_59() });
     ({ test_sized_60() });
     ({ test_sized_61() });
+    ({ test_sized_62() });
     {
         const _: () = assert!(true, "!std::is_copy_constructible_v<It>");;
         const _: () = assert!(!(false), "!std::sentinel_for<It, It>");;
@@ -6241,7 +6247,7 @@ pub fn test_65() -> () {
         unimplemented!();
     }
     {
-        ({ test_deque_64() });
+        ({ test_deque_65() });
     }
     return true;
 }
@@ -6265,7 +6271,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_65() });
+    ({ test_66() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

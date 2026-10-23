@@ -1769,14 +1769,7 @@ thread_local!(
     ));
 );
 pub fn test01_28() {
-    let mut v1_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A1_10.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A1_10.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N1_19.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v1_ref: () = unimplemented!();
     let mut v1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1819,14 +1812,7 @@ pub fn test01_28() {
             unimplemented!();
         }
     }
-    let mut v2_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A2_11.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A2_11.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N2_20.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v2_ref: () = unimplemented!();
     let mut v2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1869,14 +1855,7 @@ pub fn test01_28() {
             unimplemented!();
         }
     }
-    let mut v3_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A3_12.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A3_12.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N3_21.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v3_ref: () = unimplemented!();
     let mut v3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1919,14 +1898,7 @@ pub fn test01_28() {
             unimplemented!();
         }
     }
-    let mut v4_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A4_13.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A4_13.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N4_22.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v4_ref: () = unimplemented!();
     let mut v4: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1969,14 +1941,7 @@ pub fn test01_28() {
             unimplemented!();
         }
     }
-    let mut v5_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A5_14.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A5_14.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N5_23.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v5_ref: () = unimplemented!();
     let mut v5: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -2019,14 +1984,7 @@ pub fn test01_28() {
             unimplemented!();
         }
     }
-    let mut v6_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A6_15.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A6_15.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N6_24.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v6_ref: () = unimplemented!();
     let mut v6: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -2069,14 +2027,7 @@ pub fn test01_28() {
             unimplemented!();
         }
     }
-    let mut v7_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A7_16.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A7_16.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N7_25.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v7_ref: () = unimplemented!();
     let mut v7: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -2119,14 +2070,7 @@ pub fn test01_28() {
             unimplemented!();
         }
     }
-    let mut v8_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A8_17.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A8_17.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N8_26.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v8_ref: () = unimplemented!();
     let mut v8: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -2169,14 +2113,7 @@ pub fn test01_28() {
             unimplemented!();
         }
     }
-    let mut v9_ref: () = std_vector_bool__std_allocator_bool__::new_1(
-        { (A9_18.with(|v| v.as_pointer()) as Ptr<()>) },
-        {
-            (A9_18.with(|v| v.as_pointer()) as Ptr<()>)
-                .offset((N9_27.with(|rc| *rc.borrow())) as isize)
-        },
-        None,
-    );
+    let mut v9_ref: () = unimplemented!();
     let mut v9: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -2325,10 +2262,7 @@ pub fn verify_demangle_37(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -2339,22 +2273,14 @@ pub fn run_tests_wrapped_locale_39(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -2366,10 +2292,7 @@ pub fn run_tests_wrapped_locale_39(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -2391,10 +2314,7 @@ pub fn run_tests_wrapped_env_40(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

@@ -901,23 +901,29 @@ pub fn operator_add_39(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_38(_i, n)
     });
 }
-pub fn iter_swap_40(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_40(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_41(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_41(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_42(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_42(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_43(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_43(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_44(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -963,7 +969,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_43(
+            operator_cmp_44(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -988,7 +994,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_42(
+            operator_eq_43(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1078,7 +1084,7 @@ pub struct TestIter {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr {}
-pub fn test_vector_bool_44() -> () {
+pub fn test_vector_bool_45() -> () {
     let mut offset: () = -4_();
     'loop_: while (offset <= 4_()) {
         let mut a: () = unimplemented!();
@@ -1098,7 +1104,7 @@ pub fn test_vector_bool_44() -> () {
     }
     return true;
 }
-pub fn test_vector_bool_45() -> () {
+pub fn test_vector_bool_46() -> () {
     let mut offset: () = -4_();
     'loop_: while (offset <= 4_()) {
         let mut a: () = unimplemented!();
@@ -1118,7 +1124,7 @@ pub fn test_vector_bool_45() -> () {
     }
     return true;
 }
-pub fn test_vector_bool_46() -> () {
+pub fn test_vector_bool_47() -> () {
     let mut offset: () = -4_();
     'loop_: while (offset <= 4_()) {
         let mut a: () = unimplemented!();
@@ -1138,7 +1144,7 @@ pub fn test_vector_bool_46() -> () {
     }
     return true;
 }
-pub fn test_vector_bool_47() -> () {
+pub fn test_vector_bool_48() -> () {
     let mut offset: () = -4_();
     'loop_: while (offset <= 4_()) {
         let mut a: () = unimplemented!();
@@ -1158,7 +1164,7 @@ pub fn test_vector_bool_47() -> () {
     }
     return true;
 }
-pub fn test_vector_bool_48() -> () {
+pub fn test_vector_bool_49() -> () {
     let mut offset: () = -4_();
     'loop_: while (offset <= 4_()) {
         let mut a: () = unimplemented!();
@@ -1178,7 +1184,7 @@ pub fn test_vector_bool_48() -> () {
     }
     return true;
 }
-pub fn test_vector_bool_49() -> () {
+pub fn test_vector_bool_50() -> () {
     let mut offset: () = -4_();
     'loop_: while (offset <= 4_()) {
         let mut a: () = unimplemented!();
@@ -1198,7 +1204,7 @@ pub fn test_vector_bool_49() -> () {
     }
     return true;
 }
-pub fn test_vector_bool_50() -> () {
+pub fn test_vector_bool_51() -> () {
     let mut offset: () = -4_();
     'loop_: while (offset <= 4_()) {
         let mut a: () = unimplemented!();
@@ -1218,7 +1224,7 @@ pub fn test_vector_bool_50() -> () {
     }
     return true;
 }
-pub fn test_51() -> () {
+pub fn test_52() -> () {
     ({
         for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__  >::default()  , <TestIter  >::default()  , )
     });
@@ -1227,13 +1233,13 @@ pub fn test_51() -> () {
             for_each_2 ( <types_type_list_std_unique_ptr_int__std_default_delete_int___ptr__contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr___random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr___bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr___forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__  >::default()  , <TestUniquePtr  >::default()  , )
         });
     }
-    ({ test_vector_bool_44() });
     ({ test_vector_bool_45() });
     ({ test_vector_bool_46() });
     ({ test_vector_bool_47() });
     ({ test_vector_bool_48() });
     ({ test_vector_bool_49() });
     ({ test_vector_bool_50() });
+    ({ test_vector_bool_51() });
     return true;
 }
 pub fn main() {
@@ -1256,7 +1262,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_51() });
+    ({ test_52() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

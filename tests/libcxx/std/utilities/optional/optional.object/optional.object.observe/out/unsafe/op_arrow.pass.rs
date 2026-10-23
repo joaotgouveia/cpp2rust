@@ -122,7 +122,7 @@ pub unsafe fn test_16() -> () {
     (unsafe { test_contract_13() });
     (unsafe { test_contract_14() });
     (unsafe { test_contract_15() });
-    let mut opt: () = <X>::default();
+    let mut opt: () = unimplemented!();
     {
         unimplemented!();
         unimplemented!();

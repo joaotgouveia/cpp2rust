@@ -30,8 +30,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut s: () = std_shared_ptr_A_::new_1({ (Box::leak(Box::new(<A>::default())) as *mut A) });
-    let mut w: () = std_weak_ptr_A_::new_1({ &s });
+    let mut s: () = unimplemented!();
+    let mut w: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();

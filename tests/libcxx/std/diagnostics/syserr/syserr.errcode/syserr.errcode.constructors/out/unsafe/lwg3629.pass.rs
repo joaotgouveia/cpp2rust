@@ -28,7 +28,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut e: () = std_error_code::new_1({ (unimplemented!()) });
+    let mut e: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return 0_();

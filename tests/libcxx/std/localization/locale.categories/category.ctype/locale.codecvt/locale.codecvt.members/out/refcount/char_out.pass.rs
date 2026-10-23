@@ -28,10 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut from: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"some text") },
-        None,
-    );
+    let mut from: () = unimplemented!();
     let mut to: () = unimplemented!();
     let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
     let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));

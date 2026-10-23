@@ -269,9 +269,7 @@ pub unsafe fn is_contiguous_container_asan_correct_16(_a0: *const ()) -> () {
 pub unsafe fn tests_17() -> () {
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut c: () = std_vector_int__std_allocator_int__::new_1({ a.as_mut_ptr() }, {
-            a.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -280,9 +278,7 @@ pub unsafe fn tests_17() -> () {
     }
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut c: () = std_vector_int__min_allocator_int__::new_1({ a.as_mut_ptr() }, {
-            a.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -291,9 +287,7 @@ pub unsafe fn tests_17() -> () {
     }
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut c: () = std_vector_int__safe_allocator_int__::new_1({ a.as_mut_ptr() }, {
-            a.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

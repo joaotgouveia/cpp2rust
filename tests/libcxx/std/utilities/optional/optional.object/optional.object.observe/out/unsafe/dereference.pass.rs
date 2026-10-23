@@ -137,7 +137,7 @@ pub unsafe fn test_contract_18() {
     const _: () = assert!(true, "");;
 }
 pub unsafe fn test_contract_19() {
-    let mut opt: () = <X>::default();
+    let mut opt: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -181,7 +181,7 @@ pub unsafe fn test_contract_22() {
     const _: () = assert!(true, "");;
 }
 pub unsafe fn test_contract_23() {
-    let mut opt: () = <X>::default();
+    let mut opt: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -201,7 +201,7 @@ pub unsafe fn test_24() -> () {
     (unsafe { test_contract_22() });
     (unsafe { test_contract_23() });
     {
-        let mut opt: () = <X>::default();
+        let mut opt: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

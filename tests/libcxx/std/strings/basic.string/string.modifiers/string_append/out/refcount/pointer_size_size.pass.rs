@@ -477,10 +477,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b""),
             1_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -489,10 +486,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345"),
             0_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -501,10 +495,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             4_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"2345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -513,10 +504,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345"),
             3_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"45") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -525,10 +513,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345"),
             5_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -537,10 +522,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345"),
             6_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -558,10 +540,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             1_(),
             1_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"2") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -570,10 +549,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             2_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -582,10 +558,7 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             12_(),
             13_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"34567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -594,134 +567,83 @@ pub fn test_string_19() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             21_(),
             13_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             2_(),
             2_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234534") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"1234567890"),
             0_(),
             100_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123451234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890234") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             5_(),
             10_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678906789012345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890234") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
-        test_15 ( std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { Ptr::<() >::from_string_literal(b"123456789012345678901234567890" )  } , None , )   , Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" )  , 5_()  , 10_()  , std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { Ptr::<() >::from_string_literal(b"1234567890123456789012345678906789012345" )  } , None , )   , )
+        test_15 ( unimplemented!()  , Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" )  , 5_()  , 10_()  , unimplemented!()  , )
     });
 }
 pub fn test_string_20() {
@@ -740,10 +662,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b""),
             1_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -752,10 +671,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345"),
             0_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -764,10 +680,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             4_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"2345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -776,10 +689,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345"),
             3_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"45") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -788,10 +698,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345"),
             5_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -800,10 +707,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345"),
             6_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -821,10 +725,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             1_(),
             1_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"2") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -833,10 +734,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             2_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -845,10 +743,7 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             12_(),
             13_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"34567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -857,134 +752,83 @@ pub fn test_string_20() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             21_(),
             13_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_16(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_16(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             2_(),
             2_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234534") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_16(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"1234567890"),
             0_(),
             100_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123451234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_16(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_16(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890234") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_16(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             5_(),
             10_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678906789012345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_16(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_16(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890234") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
-        test_16 ( std_basic_string_char__std_char_traits_char___min_allocator_char__ :: new_1 ( { Ptr::<() >::from_string_literal(b"123456789012345678901234567890" )  } , None , )   , Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" )  , 5_()  , 10_()  , std_basic_string_char__std_char_traits_char___min_allocator_char__ :: new_1 ( { Ptr::<() >::from_string_literal(b"1234567890123456789012345678906789012345" )  } , None , )   , )
+        test_16 ( unimplemented!()  , Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" )  , 5_()  , 10_()  , unimplemented!()  , )
     });
 }
 pub fn test_string_21() {
@@ -1003,10 +847,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b""),
             1_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1015,10 +856,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345"),
             0_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1027,10 +865,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             4_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"2345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1039,10 +874,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345"),
             3_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"45") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1051,10 +883,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345"),
             5_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1063,10 +892,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345"),
             6_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1084,10 +910,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             1_(),
             1_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"2") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1096,10 +919,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             2_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1108,10 +928,7 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             12_(),
             13_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"34567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1120,134 +937,83 @@ pub fn test_string_21() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             21_(),
             13_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_17(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_17(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             2_(),
             2_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234534") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_17(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"1234567890"),
             0_(),
             100_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123451234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_17(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_17(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890234") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_17(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             5_(),
             10_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678906789012345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_17(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_17(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890234") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
-        test_17 ( std_basic_string_char__std_char_traits_char___safe_allocator_char__ :: new_1 ( { Ptr::<() >::from_string_literal(b"123456789012345678901234567890" )  } , None , )   , Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" )  , 5_()  , 10_()  , std_basic_string_char__std_char_traits_char___safe_allocator_char__ :: new_1 ( { Ptr::<() >::from_string_literal(b"1234567890123456789012345678906789012345" )  } , None , )   , )
+        test_17 ( unimplemented!()  , Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" )  , 5_()  , 10_()  , unimplemented!()  , )
     });
 }
 pub fn test_string_22() {
@@ -1266,10 +1032,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b""),
             1_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1278,10 +1041,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345"),
             0_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"123") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1290,10 +1050,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             4_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"2345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1302,10 +1059,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345"),
             3_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"45") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1314,10 +1068,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345"),
             5_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1326,10 +1077,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345"),
             6_(),
             15_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1347,10 +1095,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             1_(),
             1_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"2") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1359,10 +1104,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             2_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1371,10 +1113,7 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             12_(),
             13_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"34567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
@@ -1383,134 +1122,83 @@ pub fn test_string_22() {
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             21_(),
             13_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"not happening") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_18(
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_18(
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             2_(),
             2_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234534") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_18(
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"1234567890"),
             0_(),
             100_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"123451234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_18(
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_18(
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890234") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_18(
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"12345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
             5_(),
             10_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678906789012345") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_18(
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_18(
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890") },
-                None,
-            ),
+            unimplemented!(),
             Ptr::<()>::from_string_literal(b"12345"),
             1_(),
             3_(),
-            std_basic_string_char__std_char_traits_char___limited_allocator_char__96__::new_1(
-                { Ptr::<()>::from_string_literal(b"123456789012345678901234567890234") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
-        test_18 ( std_basic_string_char__std_char_traits_char___limited_allocator_char__96__ :: new_1 ( { Ptr::<() >::from_string_literal(b"123456789012345678901234567890" )  } , None , )   , Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" )  , 5_()  , 10_()  , std_basic_string_char__std_char_traits_char___limited_allocator_char__96__ :: new_1 ( { Ptr::<() >::from_string_literal(b"1234567890123456789012345678906789012345" )  } , None , )   , )
+        test_18 ( unimplemented!()  , Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" )  , 5_()  , 10_()  , unimplemented!()  , )
     });
 }
 pub fn test_23() -> () {

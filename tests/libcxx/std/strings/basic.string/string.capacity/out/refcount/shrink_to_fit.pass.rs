@@ -234,12 +234,7 @@ pub fn test_16() -> () {
     ({ test_string_14() });
     ({ test_string_15() });
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___increasing_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"String does not fit in the internal buffer") },
-                None,
-            ),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut capacity: () = unimplemented!();
         let mut size: () = unimplemented!();
         unimplemented!();

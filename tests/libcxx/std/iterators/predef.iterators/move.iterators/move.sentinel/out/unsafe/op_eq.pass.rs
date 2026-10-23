@@ -627,21 +627,25 @@ pub unsafe fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_16(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_17(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -725,7 +729,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_19(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -735,7 +739,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_18(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -839,28 +843,9 @@ const _: () = assert!(
     !(false),
     "!HasLess<std::move_iterator<const int*>, std::move_sentinel<int*>>"
 );
-pub unsafe fn test_one_19() {
-    let mut s: [(); 4] = std::mem::transmute(*b"abc\0");
-    let it: () = unimplemented!();
-    let sent1: () = unimplemented!();
-    let sent2: () = unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    const _: () = assert!(!(false), "!HasEquals<decltype(sent1), decltype(sent1)>");;
-    const _: () = assert!(!(false), "!HasLess<decltype(sent1), decltype(sent1)>");;
-}
 pub unsafe fn test_one_20() {
     let mut s: [(); 4] = std::mem::transmute(*b"abc\0");
-    let it: () = std_move_iterator_cpp20_input_iterator_char_ptr__::new_1({
-        cpp20_input_iterator_char_ptr_::new({ s.as_mut_ptr() })
-    });
+    let it: () = unimplemented!();
     let sent1: () = unimplemented!();
     let sent2: () = unimplemented!();
     const _: () = assert!(true, "");;
@@ -877,7 +862,9 @@ pub unsafe fn test_one_20() {
 }
 pub unsafe fn test_one_21() {
     let mut s: [(); 4] = std::mem::transmute(*b"abc\0");
-    let it: () = unimplemented!();
+    let it: () = std_move_iterator_cpp20_input_iterator_char_ptr__::new_1({
+        cpp20_input_iterator_char_ptr_::new({ s.as_mut_ptr() })
+    });
     let sent1: () = unimplemented!();
     let sent2: () = unimplemented!();
     const _: () = assert!(true, "");;
@@ -994,8 +981,24 @@ pub unsafe fn test_one_27() {
     const _: () = assert!(!(false), "!HasEquals<decltype(sent1), decltype(sent1)>");;
     const _: () = assert!(!(false), "!HasLess<decltype(sent1), decltype(sent1)>");;
 }
-pub unsafe fn test_28() -> () {
-    (unsafe { test_one_19() });
+pub unsafe fn test_one_28() {
+    let mut s: [(); 4] = std::mem::transmute(*b"abc\0");
+    let it: () = unimplemented!();
+    let sent1: () = unimplemented!();
+    let sent2: () = unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    const _: () = assert!(!(false), "!HasEquals<decltype(sent1), decltype(sent1)>");;
+    const _: () = assert!(!(false), "!HasLess<decltype(sent1), decltype(sent1)>");;
+}
+pub unsafe fn test_29() -> () {
     (unsafe { test_one_20() });
     (unsafe { test_one_21() });
     (unsafe { test_one_22() });
@@ -1004,6 +1007,7 @@ pub unsafe fn test_28() -> () {
     (unsafe { test_one_25() });
     (unsafe { test_one_26() });
     (unsafe { test_one_27() });
+    (unsafe { test_one_28() });
     return true;
 }
 pub fn main() {
@@ -1022,7 +1026,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_28() });
+    (unsafe { test_29() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

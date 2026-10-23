@@ -393,8 +393,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ AssertOrderReturn_5() });
     let mut ptr1: Ptr<()> = Ptr::alloc(Default::default());
     let mut ptr2: Ptr<()> = Ptr::alloc(Default::default());
-    let p1: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1({ (ptr1).clone() })));
-    let p2: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1({ (ptr2).clone() })));
+    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -403,10 +403,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let p3: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_2(
-        { (ptr2).clone() },
-        { FnPtr::<fn(Ptr<()>)>::new(do_nothing_16) },
-    )));
+    let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

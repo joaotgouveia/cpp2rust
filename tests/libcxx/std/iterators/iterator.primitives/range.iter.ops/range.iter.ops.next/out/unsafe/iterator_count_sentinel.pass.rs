@@ -496,21 +496,25 @@ pub unsafe fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_11(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -594,7 +598,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -604,7 +608,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_13(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -672,7 +676,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn check_14(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_15(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
     let mut it: cpp17_input_iterator_int_ptr__int_ptr_ =
         cpp17_input_iterator_int_ptr__int_ptr_::new({ first });
     let mut sent: sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ = {
@@ -681,7 +685,7 @@ pub unsafe fn check_14(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
         sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ &mut __tmp_0 })
     };
     let mut result: cpp17_input_iterator_int_ptr__int_ptr_ = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_15))(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_16))(
             cpp17_input_iterator_int_ptr__int_ptr_::move_from({ &mut it }),
             n,
             sent,
@@ -689,7 +693,7 @@ pub unsafe fn check_14(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
     });
     unimplemented!();
 }
-pub unsafe fn check_16(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_17(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
     let mut it: cpp20_input_iterator_int_ptr_ = cpp20_input_iterator_int_ptr_::new({ first });
     let mut sent: sentinel_wrapper_cpp20_input_iterator_int_ptr__ = {
         let mut __tmp_1: cpp20_input_iterator_int_ptr_ =
@@ -697,7 +701,7 @@ pub unsafe fn check_16(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_1 })
     };
     let mut result: cpp20_input_iterator_int_ptr_ = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_15))(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_16))(
             cpp20_input_iterator_int_ptr_::move_from({ &mut it }),
             n,
             sent,
@@ -705,14 +709,14 @@ pub unsafe fn check_16(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
     });
     unimplemented!();
 }
-pub unsafe fn check_17(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_18(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
     let mut it: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({ first });
     let mut sent: sentinel_wrapper_forward_iterator_int_ptr__ = {
         let mut __tmp_2: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({ last });
         sentinel_wrapper_forward_iterator_int_ptr__::new_1({ &mut __tmp_2 })
     };
     let mut result: forward_iterator_int_ptr_ = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_15))(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_16))(
             forward_iterator_int_ptr_::move_from({ &mut it }),
             n,
             sent,
@@ -720,7 +724,7 @@ pub unsafe fn check_17(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
     });
     unimplemented!();
 }
-pub unsafe fn check_18(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_19(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
     let mut it: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({ first });
     let mut sent: sentinel_wrapper_bidirectional_iterator_int_ptr__ = {
         let mut __tmp_3: bidirectional_iterator_int_ptr_ =
@@ -728,7 +732,7 @@ pub unsafe fn check_18(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
         sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ &mut __tmp_3 })
     };
     let mut result: bidirectional_iterator_int_ptr_ = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_15))(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_16))(
             bidirectional_iterator_int_ptr_::move_from({ &mut it }),
             n,
             sent,
@@ -736,7 +740,7 @@ pub unsafe fn check_18(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
     });
     unimplemented!();
 }
-pub unsafe fn check_19(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_20(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
     let mut it: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({ first });
     let mut sent: sentinel_wrapper_random_access_iterator_int_ptr__ = {
         let mut __tmp_4: random_access_iterator_int_ptr_ =
@@ -744,7 +748,7 @@ pub unsafe fn check_19(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
         sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_4 })
     };
     let mut result: random_access_iterator_int_ptr_ = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_15))(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_16))(
             random_access_iterator_int_ptr_::move_from({ &mut it }),
             n,
             sent,
@@ -752,7 +756,7 @@ pub unsafe fn check_19(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
     });
     unimplemented!();
 }
-pub unsafe fn check_20(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_21(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
     let mut it: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ first });
     let mut sent: sentinel_wrapper_contiguous_iterator_int_ptr__ = {
         let mut __tmp_5: contiguous_iterator_int_ptr_ =
@@ -760,7 +764,7 @@ pub unsafe fn check_20(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
         sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ &mut __tmp_5 })
     };
     let mut result: contiguous_iterator_int_ptr_ = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_15))(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut next_16))(
             contiguous_iterator_int_ptr_::move_from({ &mut it }),
             n,
             sent,
@@ -768,17 +772,17 @@ pub unsafe fn check_20(mut first: *mut (), mut last: *mut (), mut n: (), mut exp
     });
     unimplemented!();
 }
-pub unsafe fn check_21(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_22(mut first: *mut (), mut last: *mut (), mut n: (), mut expected: *mut ()) {
     let mut it: *mut () = first;
     let mut sent: sentinel_wrapper_int_ptr_ = {
         let mut __tmp_6: *mut () = last;
         sentinel_wrapper_int_ptr_::new_1({ &mut __tmp_6 })
     };
     let mut result: *mut () =
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut next_15))(it, n, sent) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut next_16))(it, n, sent) });
     unimplemented!();
 }
-pub unsafe fn test_22() -> () {
+pub unsafe fn test_23() -> () {
     let mut range: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
     let mut size: () = 0_();
     'loop_: while ((size) != (10_())) {
@@ -792,12 +796,7 @@ pub unsafe fn test_22() -> () {
             (unsafe {
                 let _first: *mut () = range.as_mut_ptr();
                 let _last: *mut () = range.as_mut_ptr().offset((size) as isize);
-                check_14(_first, _last, n, expected)
-            });
-            (unsafe {
-                let _first: *mut () = range.as_mut_ptr();
-                let _last: *mut () = range.as_mut_ptr().offset((size) as isize);
-                check_16(_first, _last, n, expected)
+                check_15(_first, _last, n, expected)
             });
             (unsafe {
                 let _first: *mut () = range.as_mut_ptr();
@@ -823,6 +822,11 @@ pub unsafe fn test_22() -> () {
                 let _first: *mut () = range.as_mut_ptr();
                 let _last: *mut () = range.as_mut_ptr().offset((size) as isize);
                 check_21(_first, _last, n, expected)
+            });
+            (unsafe {
+                let _first: *mut () = range.as_mut_ptr();
+                let _last: *mut () = range.as_mut_ptr().offset((size) as isize);
+                check_22(_first, _last, n, expected)
             });
             n.prefix_inc();
         }

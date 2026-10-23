@@ -563,21 +563,25 @@ pub unsafe fn operator_add_29(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_30(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_31(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_31(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_32(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_32(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_33(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_33(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_34(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -661,7 +665,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_33(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_34(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -671,7 +675,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_32(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_33(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -761,28 +765,6 @@ impl Default for CustomIt {
             }
         }
     }
-}
-pub unsafe fn test_one_34() {
-    let mut arr: [(); 3] = [3_(), 1_(), 4_()];
-    let it_a: () = unimplemented!();
-    let it_b: () = unimplemented!();
-    let sent_a: () = unimplemented!();
-    let sent_b: () = unimplemented!();
-    let sent_c: () = unimplemented!();
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
 }
 pub unsafe fn test_one_35() {
     let mut arr: [(); 3] = [3_(), 1_(), 4_()];
@@ -938,8 +920,29 @@ pub unsafe fn test_one_41() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_42() -> () {
-    (unsafe { test_one_34() });
+pub unsafe fn test_one_42() {
+    let mut arr: [(); 3] = [3_(), 1_(), 4_()];
+    let it_a: () = unimplemented!();
+    let it_b: () = unimplemented!();
+    let sent_a: () = unimplemented!();
+    let sent_b: () = unimplemented!();
+    let sent_c: () = unimplemented!();
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_43() -> () {
     (unsafe { test_one_35() });
     (unsafe { test_one_36() });
     (unsafe { test_one_37() });
@@ -947,6 +950,7 @@ pub unsafe fn test_42() -> () {
     (unsafe { test_one_39() });
     (unsafe { test_one_40() });
     (unsafe { test_one_41() });
+    (unsafe { test_one_42() });
     return true;
 }
 pub fn main() {
@@ -965,7 +969,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_42() });
+    (unsafe { test_43() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

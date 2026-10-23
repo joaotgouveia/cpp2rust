@@ -42,12 +42,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let msg: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"another logic_error message") },
-                None,
-            ),
-        ));
+        let msg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));

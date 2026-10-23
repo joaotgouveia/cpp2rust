@@ -538,24 +538,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(12_()) }),
             MoveOnly::new({ Some(13_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -589,24 +573,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(12_()) }),
             MoveOnly::new({ Some(13_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_2.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 11_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_3.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -640,24 +608,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_4.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_5.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -691,24 +643,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_6.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<test_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 11_() })));
-            std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -742,24 +678,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(12_()) }),
             MoveOnly::new({ Some(13_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_8.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -793,24 +713,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(12_()) }),
             MoveOnly::new({ Some(13_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_10.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 11_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_11.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -844,24 +748,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_12.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_13: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_13.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -895,24 +783,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_14.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_15: Value<other_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 11_() })));
-            std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_15.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -946,24 +818,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(12_()) }),
             MoveOnly::new({ Some(13_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_16: Value<min_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(<min_allocator_MoveOnly_>::default()));
-            std_forward_list_MoveOnly__min_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_16.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_17: Value<min_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(<min_allocator_MoveOnly_>::default()));
-            std_forward_list_MoveOnly__min_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_17.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -997,24 +853,8 @@ pub fn test_25() -> () {
             MoveOnly::new({ Some(8_()) }),
             MoveOnly::new({ Some(9_()) }),
         ];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_18: Value<min_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(<min_allocator_MoveOnly_>::default()));
-            std_forward_list_MoveOnly__min_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_18.as_pointer() },
-            )
-        }));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_19: Value<min_allocator_MoveOnly_> =
-                Rc::new(RefCell::new(<min_allocator_MoveOnly_>::default()));
-            std_forward_list_MoveOnly__min_allocator_MoveOnly__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_19.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));

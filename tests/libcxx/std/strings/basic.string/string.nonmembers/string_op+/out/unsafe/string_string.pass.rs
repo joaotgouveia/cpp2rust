@@ -233,56 +233,24 @@ pub unsafe fn test_string_9() {
         let mut k: () = 0_();
         'loop_: while ((k) != (4_())) {
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
+                let rhs: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();
@@ -336,56 +304,24 @@ pub unsafe fn test_string_10() {
         let mut k: () = 0_();
         'loop_: while ((k) != (4_())) {
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
+                let rhs: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();
@@ -439,56 +375,24 @@ pub unsafe fn test_string_11() {
         let mut k: () = 0_();
         'loop_: while ((k) != (4_())) {
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let rhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
+                let rhs: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let rhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();
@@ -503,11 +407,7 @@ pub unsafe fn test_12() -> () {
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let mut rhs: () =
-            std_basic_string_char__std_char_traits_char___tiny_size_allocator_29__char__::new_1(
-                { c"a".as_ptr() },
-                None,
-            );
+        let mut rhs: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
         unimplemented!();

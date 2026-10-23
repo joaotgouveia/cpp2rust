@@ -19,10 +19,10 @@ pub unsafe fn test_0() {
         Generic,
         {},
         |mut v: ()| -> () {
-            return (unsafe { make_unique_2(&mut *(&raw mut v).cast::<()>()) });
+            return unimplemented!();
         },
         |mut v: ()| -> () {
-            return (unsafe { make_unique_3(&mut *(&raw mut v).cast::<()>()) });
+            return unimplemented!();
         }
     );
     {
@@ -32,7 +32,7 @@ pub unsafe fn test_0() {
             "std::indirectly_unary_invocable<decltype(consume), projected_iter>"
         );;
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut for_each_4))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut for_each_2))(
                 &mut ints,
                 consume.copy_from(),
                 unique_ptr_maker.copy_from(),
@@ -41,7 +41,7 @@ pub unsafe fn test_0() {
         (unsafe {
             let ___first: () = (unsafe { ints.begin() });
             let ___last: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut for_each_4))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut for_each_2))(
                 ___first,
                 ___last,
                 consume.copy_from(),
@@ -91,7 +91,7 @@ pub unsafe fn test_0() {
         );;
         let mut out: () = unimplemented!();
         &(unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut unique_copy_5))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut unique_copy_3))(
                 &mut ints,
                 unimplemented!(),
                 rel.copy_from(),
@@ -101,7 +101,7 @@ pub unsafe fn test_0() {
         &(unsafe {
             let ___first: () = (unsafe { ints.begin() });
             let ___last: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut unique_copy_5))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut unique_copy_3))(
                 ___first,
                 ___last,
                 unimplemented!(),

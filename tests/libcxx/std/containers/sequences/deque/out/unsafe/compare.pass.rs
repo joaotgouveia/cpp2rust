@@ -667,12 +667,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut items: [(); 3] = [1_(), 2_(), 3_()];
-        let d1: () = std_deque_int__std_allocator_int__::new_1({ items.as_mut_ptr() }, {
-            items.as_mut_ptr().offset((3_()) as isize)
-        });
-        let d2: () = std_deque_int__std_allocator_int__::new_1({ items.as_mut_ptr() }, {
-            items.as_mut_ptr().offset((3_()) as isize)
-        });
+        let d1: () = unimplemented!();
+        let d2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -688,23 +684,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut items1: [(); 2] = [1_(), 2_()];
         let mut items2: [(); 2] = [1_(), 3_()];
-        let d1: () = std_deque_int__std_allocator_int__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((2_()) as isize)
-        });
-        let d2: () = std_deque_int__std_allocator_int__::new_1({ items2.as_mut_ptr() }, {
-            items2.as_mut_ptr().offset((2_()) as isize)
-        });
+        let d1: () = unimplemented!();
+        let d2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut items1: [(); 2] = [2_(), 2_()];
         let mut items2: [(); 2] = [1_(), 3_()];
-        let d1: () = std_deque_int__std_allocator_int__::new_1({ items1.as_mut_ptr() }, {
-            items1.as_mut_ptr().offset((2_()) as isize)
-        });
-        let d2: () = std_deque_int__std_allocator_int__::new_1({ items2.as_mut_ptr() }, {
-            items2.as_mut_ptr().offset((2_()) as isize)
-        });
+        let d1: () = unimplemented!();
+        let d2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -723,14 +711,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 3_() }),
         ];
-        let d1: () = std_deque_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items.as_mut_ptr() },
-            { items.as_mut_ptr().offset((3_()) as isize) },
-        );
-        let d2: () = std_deque_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items.as_mut_ptr() },
-            { items.as_mut_ptr().offset((3_()) as isize) },
-        );
+        let d1: () = unimplemented!();
+        let d2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -748,14 +730,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             [LessAndEqComp::new({ 1_() }), LessAndEqComp::new({ 2_() })];
         let mut items2: [LessAndEqComp; 2] =
             [LessAndEqComp::new({ 1_() }), LessAndEqComp::new({ 3_() })];
-        let d1: () = std_deque_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items1.as_mut_ptr() },
-            { items1.as_mut_ptr().offset((2_()) as isize) },
-        );
-        let d2: () = std_deque_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items2.as_mut_ptr() },
-            { items2.as_mut_ptr().offset((2_()) as isize) },
-        );
+        let d1: () = unimplemented!();
+        let d2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -763,14 +739,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             [LessAndEqComp::new({ 2_() }), LessAndEqComp::new({ 2_() })];
         let mut items2: [LessAndEqComp; 2] =
             [LessAndEqComp::new({ 1_() }), LessAndEqComp::new({ 3_() })];
-        let d1: () = std_deque_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items1.as_mut_ptr() },
-            { items1.as_mut_ptr().offset((2_()) as isize) },
-        );
-        let d2: () = std_deque_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-            { items2.as_mut_ptr() },
-            { items2.as_mut_ptr().offset((2_()) as isize) },
-        );
+        let d1: () = unimplemented!();
+        let d2: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

@@ -141,8 +141,7 @@ impl min_allocator_unsigned_long_ {
 pub unsafe fn test_6() {
     const _: () = assert!(true, "");;
     let mut ba: [(); 5] = [true, false, true, true, false];
-    let mut vb: () =
-        std_vector_bool__std_allocator_bool__::new_1({ unimplemented!() }, { unimplemented!() });
+    let mut vb: () = unimplemented!();
     let mut h: () = unimplemented!();
     {
         let hash_value: () = unimplemented!();
@@ -153,8 +152,7 @@ pub unsafe fn test_6() {
 pub unsafe fn test_7() {
     const _: () = assert!(true, "");;
     let mut ba: [(); 5] = [true, false, true, true, false];
-    let mut vb: () =
-        std_vector_bool__min_allocator_bool__::new_1({ unimplemented!() }, { unimplemented!() });
+    let mut vb: () = unimplemented!();
     let mut h: () = unimplemented!();
     {
         let hash_value: () = unimplemented!();

@@ -24,30 +24,21 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut uPtr: () = (unsafe {
-            let mut ___args: () = 84_();
-            make_unique_0(&mut ___args)
-        });
+        let mut uPtr: () = unimplemented!();
         let ioPtr: () = unimplemented!();
         const _: () = assert!(true, "noexcept(ioPtr.operator int**())");;
         let mut pPtr: *mut *mut () = (unsafe { ioPtr() });
         unimplemented!();
     }
     {
-        let mut uPtr: () = (unsafe {
-            let mut ___args: () = 84_();
-            make_unique_0(&mut ___args)
-        });
+        let mut uPtr: () = unimplemented!();
         let ioPtr: () = unimplemented!();
         const _: () = assert!(true, "noexcept(ioPtr.operator int**())");;
         let mut pPtr: *mut *mut () = (unsafe { ioPtr() });
         unimplemented!();
     }
     {
-        let mut uPtr: () = (unsafe {
-            let mut ___args: () = 84_();
-            make_unique_0(&mut ___args)
-        });
+        let mut uPtr: () = unimplemented!();
         let ioPtr: () = unimplemented!();
         const _: () = assert!(true, "noexcept(ioPtr.operator void**())");;
         let mut pPtr: *mut () = (unsafe { ioPtr.to_pmut_4() });

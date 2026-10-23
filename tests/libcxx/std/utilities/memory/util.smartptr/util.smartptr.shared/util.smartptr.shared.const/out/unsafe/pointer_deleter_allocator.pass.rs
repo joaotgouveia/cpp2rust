@@ -648,12 +648,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut alloc_stats: test_allocator_statistics = <test_allocator_statistics>::default();
         {
             let mut ptr: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
-            let mut p: () =
-                std_shared_ptr_A_::new_1({ ptr }, { test_deleter_A_::new_1({ 3_() }) }, {
-                    test_allocator_A_::new_1({ 5_() }, {
-                        (&mut alloc_stats as *mut test_allocator_statistics)
-                    })
-                });
+            let mut p: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -676,15 +671,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut alloc_stats: test_allocator_statistics = <test_allocator_statistics>::default();
         {
             let mut ptr: *const A = (Box::leak(Box::new(A::new())) as *mut A).cast_const();
-            let mut p: () = std_shared_ptr_const_A_::new_1(
-                { ptr },
-                { test_deleter_const_A_::new_1({ 3_() }) },
-                {
-                    test_allocator_A_::new_1({ 5_() }, {
-                        (&mut alloc_stats as *mut test_allocator_statistics)
-                    })
-                },
-            );
+            let mut p: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -705,9 +692,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut ptr: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
-        let mut p: () = std_shared_ptr_A_::new_2({ ptr }, { test_deleter_A_::new_1({ 3_() }) }, {
-            bare_allocator_void_::new()
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -723,9 +708,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0_();
     {
         let mut ptr: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
-        let mut p: () = std_shared_ptr_A_::new_3({ ptr }, { test_deleter_A_::new_1({ 3_() }) }, {
-            <min_allocator_void_>::default()
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -740,17 +723,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     {
         let mut d: move_deleter_int_ = move_deleter_int_::new_1({ 0_() });
-        let mut p2: () = std_shared_ptr_int_::new_1(
-            { (Box::leak(Box::new(unimplemented!())) as *mut ()) },
-            { move_deleter_int_::move_from({ &mut d }) },
-            { unimplemented!() },
-        );
-        let mut p3: () = std_shared_ptr_int_::new_2(
-            { Default::default() },
-            { move_deleter_int_::move_from({ &mut d }) },
-            { unimplemented!() },
-            None,
-        );
+        let mut p2: () = unimplemented!();
+        let mut p3: () = unimplemented!();
     }
     {
         const _: () = assert!(
@@ -767,11 +741,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         );;
     }
     {
-        let mut ptr: () = std_shared_ptr_int_::new_3(
-            { (Box::leak(Box::new(unimplemented!())) as *mut ()) },
-            { unimplemented!() },
-            { complete_type_allocator_int_::new() },
-        );
+        let mut ptr: () = unimplemented!();
     }
     return 0_();
 }

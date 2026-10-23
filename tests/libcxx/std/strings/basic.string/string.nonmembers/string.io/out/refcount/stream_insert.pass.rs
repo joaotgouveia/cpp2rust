@@ -142,20 +142,14 @@ pub struct min_allocator_wchar_t_ {}
 pub fn test_4() {
     {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"some text") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"some text") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -163,32 +157,14 @@ pub fn test_4() {
     };
     {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -198,20 +174,14 @@ pub fn test_4() {
 pub fn test_5() {
     {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"some text") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"some text") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -219,32 +189,14 @@ pub fn test_5() {
     };
     {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t__::new_1(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

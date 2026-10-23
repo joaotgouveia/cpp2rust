@@ -51,39 +51,26 @@ pub struct RepConstConvertibleLWG3050 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotValueConvertible {}
-pub fn check_0(r: ()) {
-    let r: Value<()> = Rc::new(RefCell::new(r));
-    let d: Value<()> = Rc::new(RefCell::new(
-        std_chrono_duration_int__std_ratio_1__1__::new_1({ r.as_pointer() }),
-    ));
+pub fn check_0(mut r: ()) {
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn check_1(r: ()) {
-    let r: Value<()> = Rc::new(RefCell::new(r));
-    let d: Value<()> = Rc::new(RefCell::new(
-        std_chrono_duration_int__std_ratio_3__2__::new_1({ r.as_pointer() }),
-    ));
+pub fn check_1(mut r: ()) {
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn check_2(r: Rep) {
     let r: Value<Rep> = Rc::new(RefCell::new(r));
-    let d: Value<()> = Rc::new(RefCell::new(
-        std_chrono_duration_Rep__std_ratio_3__2__::new_1({ r.as_pointer() }),
-    ));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn check_3(r: ()) {
-    let r: Value<()> = Rc::new(RefCell::new(r));
-    let d: Value<()> = Rc::new(RefCell::new(
-        std_chrono_duration_double__std_ratio_2__3__::new_1({ r.as_pointer() }),
-    ));
+pub fn check_3(mut r: ()) {
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn check_4(r: NotValueConvertible) {
     let r: Value<NotValueConvertible> = Rc::new(RefCell::new(r));
-    let d: Value<()> = Rc::new(RefCell::new(
-        std_chrono_duration_int__std_ratio_1__1__::new_2({ r.as_pointer() }),
-    ));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_5() -> () {
@@ -117,10 +104,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_5() });
     const _: () = assert!(true, "test()");;
     {
-        let d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
-            std_chrono_duration_int__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
-        }));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "d.count() == 5");;
     }
     return 0_();

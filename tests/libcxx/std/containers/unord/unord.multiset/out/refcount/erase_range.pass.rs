@@ -87,7 +87,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 1_(), 2_()])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(({ next_4((*i.borrow()).clone(), 2_()) })));
+        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -143,7 +143,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 1_(), 2_()])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(({ next_6((*i.borrow()).clone(), 2_()) })));
+        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -164,14 +164,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct MyHash_5 {}
+pub struct MyHash_4 {}
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__;
-pub trait MyHash_5Impl {
+pub trait MyHash_4Impl {
     fn operator_call(&self, v: ()) -> ();
 }
-impl MyHash_5Impl for Ptr<MyHash_5> {
+impl MyHash_4Impl for Ptr<MyHash_4> {
     fn operator_call(&self, v: ()) -> () {
         let v: Value<()> = Rc::new(RefCell::new(v));
         return (*v.borrow());

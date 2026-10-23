@@ -56,9 +56,7 @@ pub unsafe fn test_4() -> () {
     let mut a1: [(); 3] = [1_(), 2_(), 3_()];
     let mut a2: [(); 3] = [4_(), 5_(), 6_()];
     {
-        let mut l1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -73,9 +71,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -90,9 +86,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -107,12 +101,8 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut l2: () = std_list_int__std_allocator_int__::new_1({ a2.as_mut_ptr() }, {
-            a2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -134,12 +124,8 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut l2: () = std_list_int__std_allocator_int__::new_1({ a2.as_mut_ptr() }, {
-            a2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -161,12 +147,8 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut l2: () = std_list_int__std_allocator_int__::new_1({ a2.as_mut_ptr() }, {
-            a2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -188,9 +170,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -205,9 +185,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -222,9 +200,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -239,12 +215,8 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut l2: () = std_list_int__min_allocator_int__::new_1({ a2.as_mut_ptr() }, {
-            a2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -266,12 +238,8 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut l2: () = std_list_int__min_allocator_int__::new_1({ a2.as_mut_ptr() }, {
-            a2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -293,12 +261,8 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_list_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut l2: () = std_list_int__min_allocator_int__::new_1({ a2.as_mut_ptr() }, {
-            a2.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

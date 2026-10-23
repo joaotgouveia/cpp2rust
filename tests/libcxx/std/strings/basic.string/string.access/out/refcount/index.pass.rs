@@ -106,12 +106,7 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[byte_size(1)]
 pub struct min_allocator_char_ {}
 pub fn test_string_6() {
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"0123456789") },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cs: Ptr<()> = s.as_pointer();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -128,12 +123,7 @@ pub fn test_string_6() {
     unimplemented!();
 }
 pub fn test_string_7() {
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"0123456789") },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cs: Ptr<()> = s.as_pointer();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -150,12 +140,7 @@ pub fn test_string_7() {
     unimplemented!();
 }
 pub fn test_string_long_8() {
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"0123456789012345678901234567890123456789") },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cs: Ptr<()> = s.as_pointer();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

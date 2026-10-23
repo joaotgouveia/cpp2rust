@@ -21,11 +21,9 @@ pub unsafe fn test_0() {
     let mut h: () = unimplemented!();
     let mut sh: () = unimplemented!();
     let mut s1: () = unimplemented!();
-    let mut ss1: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ &s1 }, None);
+    let mut ss1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    let mut ss2: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ &s2 }, None);
+    let mut ss2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -46,17 +44,9 @@ pub unsafe fn test_1() {
     let mut h: () = unimplemented!();
     let mut sh: () = unimplemented!();
     let mut s1: () = unimplemented!();
-    let mut ss1: () =
-        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
-            { &s1 },
-            None,
-        );
+    let mut ss1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    let mut ss2: () =
-        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
-            { &s2 },
-            None,
-        );
+    let mut ss2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -77,17 +67,9 @@ pub unsafe fn test_2() {
     let mut h: () = unimplemented!();
     let mut sh: () = unimplemented!();
     let mut s1: () = unimplemented!();
-    let mut ss1: () =
-        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
-            { &s1 },
-            None,
-        );
+    let mut ss1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    let mut ss2: () =
-        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
-            { &s2 },
-            None,
-        );
+    let mut ss2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -108,17 +90,9 @@ pub unsafe fn test_3() {
     let mut h: () = unimplemented!();
     let mut sh: () = unimplemented!();
     let mut s1: () = unimplemented!();
-    let mut ss1: () =
-        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
-            { &s1 },
-            None,
-        );
+    let mut ss1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    let mut ss2: () =
-        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
-            { &s2 },
-            None,
-        );
+    let mut ss2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -139,17 +113,9 @@ pub unsafe fn test_4() {
     let mut h: () = unimplemented!();
     let mut sh: () = unimplemented!();
     let mut s1: () = unimplemented!();
-    let mut ss1: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { &s1 },
-            None,
-        );
+    let mut ss1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    let mut ss2: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { &s2 },
-            None,
-        );
+    let mut ss2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

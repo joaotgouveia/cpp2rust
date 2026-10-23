@@ -480,72 +480,17 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a: [(); 11] = [
-            {
-                let mut __tmp_0: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_0 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_1: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_1 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_2: () = 20_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_2 }, {
-                    &std::mem::transmute(*b"twenty 2\0")
-                })
-            },
-            {
-                let mut __tmp_3: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_3 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_4: () = 40_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_4 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_5: () = 50_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_5 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_6: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_6 }, {
-                    &std::mem::transmute(*b"fifty 2\0")
-                })
-            },
-            {
-                let mut __tmp_7: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_7 }, {
-                    &std::mem::transmute(*b"fifty 3\0")
-                })
-            },
-            {
-                let mut __tmp_8: () = 60_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_8 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_9: () = 70_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_9 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_10: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_10 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let c1: () = unimplemented!();
         let c2: () = unimplemented!();
@@ -553,72 +498,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 11] = [
-            {
-                let mut __tmp_11: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_11 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_12: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_12 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_13: () = 20_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_13 }, {
-                    &std::mem::transmute(*b"twenty 2\0")
-                })
-            },
-            {
-                let mut __tmp_14: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_14 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_15: () = 40_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_15 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_16: () = 50_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_16 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_17: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_17 }, {
-                    &std::mem::transmute(*b"fifty 2\0")
-                })
-            },
-            {
-                let mut __tmp_18: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_18 }, {
-                    &std::mem::transmute(*b"fifty 3\0")
-                })
-            },
-            {
-                let mut __tmp_19: () = 60_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_19 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_20: () = 70_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_20 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_21: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_21 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let c1: () = unimplemented!();
         let c2: () = unimplemented!();
@@ -626,258 +516,61 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 11] = [
-            {
-                let mut __tmp_22: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_22 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_23: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_23 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_24: () = 20_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_24 }, {
-                    &std::mem::transmute(*b"twenty 2\0")
-                })
-            },
-            {
-                let mut __tmp_25: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_25 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_26: () = 40_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_26 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_27: () = 50_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_27 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_28: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_28 }, {
-                    &std::mem::transmute(*b"fifty 2\0")
-                })
-            },
-            {
-                let mut __tmp_29: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_29 }, {
-                    &std::mem::transmute(*b"fifty 3\0")
-                })
-            },
-            {
-                let mut __tmp_30: () = 60_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_30 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_31: () = 70_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_31 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_32: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_32 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_33: () = 90_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_33 }, {
-                    &std::mem::transmute(*b"ninety\0")
-                })
-            };
-            c2.insert_45_struct_std_pair_int__std_string__0(&mut ___x)
-        });
         unimplemented!();
-        (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_34: () = 90_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_34 }, {
-                    &std::mem::transmute(*b"ninety\0")
-                })
-            };
-            c1.insert_45_struct_std_pair_int__std_string__0(&mut ___x)
-        });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 11] = [
-            {
-                let mut __tmp_35: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_35 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_36: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_36 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_37: () = 20_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_37 }, {
-                    &std::mem::transmute(*b"twenty 2\0")
-                })
-            },
-            {
-                let mut __tmp_38: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_38 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_39: () = 40_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_39 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_40: () = 50_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_40 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_41: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_41 }, {
-                    &std::mem::transmute(*b"fifty 2\0")
-                })
-            },
-            {
-                let mut __tmp_42: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_42 }, {
-                    &std::mem::transmute(*b"fifty 3\0")
-                })
-            },
-            {
-                let mut __tmp_43: () = 60_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_43 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_44: () = 70_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_44 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_45: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_45 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
-        (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_46: () = 70_();
-                std_pair_int__std_string_::new_6({ &mut __tmp_46 }, {
-                    &std::mem::transmute(*b"seventy 2\0")
-                })
-            };
-            c1.insert_45_struct_std_pair_int__std_string__0(&mut ___x)
-        });
-        (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_47: () = 80_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_47 }, {
-                    &std::mem::transmute(*b"eighty 2\0")
-                })
-            };
-            c2.insert_45_struct_std_pair_int__std_string__0(&mut ___x)
-        });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 11] = [
-            {
-                let mut __tmp_48: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_48 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_49: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_49 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_50: () = 20_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_50 }, {
-                    &std::mem::transmute(*b"twenty 2\0")
-                })
-            },
-            {
-                let mut __tmp_51: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_51 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_52: () = 40_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_52 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_53: () = 50_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_53 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_54: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_54 }, {
-                    &std::mem::transmute(*b"fifty 2\0")
-                })
-            },
-            {
-                let mut __tmp_55: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_55 }, {
-                    &std::mem::transmute(*b"fifty 3\0")
-                })
-            },
-            {
-                let mut __tmp_56: () = 60_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_56 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_57: () = 70_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_57 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_58: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_58 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let c1: () = unimplemented!();
         let c2: () = unimplemented!();
@@ -885,72 +578,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 11] = [
-            {
-                let mut __tmp_59: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_59 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_60: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_60 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_61: () = 20_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_61 }, {
-                    &std::mem::transmute(*b"twenty 2\0")
-                })
-            },
-            {
-                let mut __tmp_62: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_62 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_63: () = 40_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_63 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_64: () = 50_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_64 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_65: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_65 }, {
-                    &std::mem::transmute(*b"fifty 2\0")
-                })
-            },
-            {
-                let mut __tmp_66: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_66 }, {
-                    &std::mem::transmute(*b"fifty 3\0")
-                })
-            },
-            {
-                let mut __tmp_67: () = 60_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_67 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_68: () = 70_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_68 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_69: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_69 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let c1: () = unimplemented!();
         let c2: () = unimplemented!();
@@ -958,239 +596,61 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 11] = [
-            {
-                let mut __tmp_70: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_70 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_71: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_71 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_72: () = 20_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_72 }, {
-                    &std::mem::transmute(*b"twenty 2\0")
-                })
-            },
-            {
-                let mut __tmp_73: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_73 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_74: () = 40_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_74 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_75: () = 50_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_75 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_76: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_76 }, {
-                    &std::mem::transmute(*b"fifty 2\0")
-                })
-            },
-            {
-                let mut __tmp_77: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_77 }, {
-                    &std::mem::transmute(*b"fifty 3\0")
-                })
-            },
-            {
-                let mut __tmp_78: () = 60_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_78 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_79: () = 70_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_79 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_80: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_80 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_81: () = 90_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_81 }, {
-                    &std::mem::transmute(*b"ninety\0")
-                })
-            };
-            c2.insert_45_struct_std_pair_int__std_string__0(&mut ___x)
-        });
         unimplemented!();
-        (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_82: () = 90_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_82 }, {
-                    &std::mem::transmute(*b"ninety\0")
-                })
-            };
-            c1.insert_45_struct_std_pair_int__std_string__0(&mut ___x)
-        });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 11] = [
-            {
-                let mut __tmp_83: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_83 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_84: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_84 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_85: () = 20_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_85 }, {
-                    &std::mem::transmute(*b"twenty 2\0")
-                })
-            },
-            {
-                let mut __tmp_86: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_86 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_87: () = 40_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_87 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_88: () = 50_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_88 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_89: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_89 }, {
-                    &std::mem::transmute(*b"fifty 2\0")
-                })
-            },
-            {
-                let mut __tmp_90: () = 50_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_90 }, {
-                    &std::mem::transmute(*b"fifty 3\0")
-                })
-            },
-            {
-                let mut __tmp_91: () = 60_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_91 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_92: () = 70_();
-                std_pair_int__std_string_::new_5({ &mut __tmp_92 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_93: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_93 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
-        (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_94: () = 70_();
-                std_pair_int__std_string_::new_6({ &mut __tmp_94 }, {
-                    &std::mem::transmute(*b"seventy 2\0")
-                })
-            };
-            c1.insert_45_struct_std_pair_int__std_string__0(&mut ___x)
-        });
-        (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_95: () = 80_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_95 }, {
-                    &std::mem::transmute(*b"eighty 2\0")
-                })
-            };
-            c2.insert_45_struct_std_pair_int__std_string__0(&mut ___x)
-        });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 4] = [
-            {
-                let mut __tmp_96: () = 1_();
-                let mut __tmp_97: () = ('a' as ());
-                std_pair_int__char_::new({ &mut __tmp_96 }, { &mut __tmp_97 })
-            },
-            {
-                let mut __tmp_98: () = 1_();
-                let mut __tmp_99: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_98 }, { &mut __tmp_99 })
-            },
-            {
-                let mut __tmp_100: () = 1_();
-                let mut __tmp_101: () = ('d' as ());
-                std_pair_int__char_::new({ &mut __tmp_100 }, { &mut __tmp_101 })
-            },
-            {
-                let mut __tmp_102: () = 2_();
-                let mut __tmp_103: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_102 }, { &mut __tmp_103 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut b: [(); 5] = [
-            {
-                let mut __tmp_104: () = 1_();
-                let mut __tmp_105: () = ('a' as ());
-                std_pair_int__char_::new({ &mut __tmp_104 }, { &mut __tmp_105 })
-            },
-            {
-                let mut __tmp_106: () = 1_();
-                let mut __tmp_107: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_106 }, { &mut __tmp_107 })
-            },
-            {
-                let mut __tmp_108: () = 1_();
-                let mut __tmp_109: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_108 }, { &mut __tmp_109 })
-            },
-            {
-                let mut __tmp_110: () = 1_();
-                let mut __tmp_111: () = ('d' as ());
-                std_pair_int__char_::new({ &mut __tmp_110 }, { &mut __tmp_111 })
-            },
-            {
-                let mut __tmp_112: () = 2_();
-                let mut __tmp_113: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_112 }, { &mut __tmp_113 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
@@ -1198,48 +658,16 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 4] = [
-            {
-                let mut __tmp_114: () = 1_();
-                let mut __tmp_115: () = ('a' as ());
-                std_pair_int__char_::new({ &mut __tmp_114 }, { &mut __tmp_115 })
-            },
-            {
-                let mut __tmp_116: () = 1_();
-                let mut __tmp_117: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_116 }, { &mut __tmp_117 })
-            },
-            {
-                let mut __tmp_118: () = 1_();
-                let mut __tmp_119: () = ('d' as ());
-                std_pair_int__char_::new({ &mut __tmp_118 }, { &mut __tmp_119 })
-            },
-            {
-                let mut __tmp_120: () = 2_();
-                let mut __tmp_121: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_120 }, { &mut __tmp_121 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut b: [(); 4] = [
-            {
-                let mut __tmp_122: () = 1_();
-                let mut __tmp_123: () = ('a' as ());
-                std_pair_int__char_::new({ &mut __tmp_122 }, { &mut __tmp_123 })
-            },
-            {
-                let mut __tmp_124: () = 1_();
-                let mut __tmp_125: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_124 }, { &mut __tmp_125 })
-            },
-            {
-                let mut __tmp_126: () = 1_();
-                let mut __tmp_127: () = ('E' as ());
-                std_pair_int__char_::new({ &mut __tmp_126 }, { &mut __tmp_127 })
-            },
-            {
-                let mut __tmp_128: () = 2_();
-                let mut __tmp_129: () = ('b' as ());
-                std_pair_int__char_::new({ &mut __tmp_128 }, { &mut __tmp_129 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();

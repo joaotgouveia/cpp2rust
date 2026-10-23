@@ -66,23 +66,23 @@ impl NotValueConvertible {
     }
 }
 pub unsafe fn check_0(mut r: ()) {
-    let mut d: () = std_chrono_duration_int__std_ratio_1__1__::new_1({ &r });
+    let mut d: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn check_1(mut r: ()) {
-    let mut d: () = std_chrono_duration_int__std_ratio_3__2__::new_1({ &r });
+    let mut d: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn check_2(mut r: Rep) {
-    let mut d: () = std_chrono_duration_Rep__std_ratio_3__2__::new_1({ &r });
+    let mut d: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn check_3(mut r: ()) {
-    let mut d: () = std_chrono_duration_double__std_ratio_2__3__::new_1({ &r });
+    let mut d: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn check_4(mut r: NotValueConvertible) {
-    let mut d: () = std_chrono_duration_int__std_ratio_1__1__::new_2({ &r });
+    let mut d: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_5() -> () {
@@ -112,10 +112,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_5() });
     const _: () = assert!(true, "test()");;
     {
-        let d: () = {
-            let mut __tmp_0: () = 5_();
-            std_chrono_duration_int__std_ratio_1__1__::new_1({ &mut __tmp_0 })
-        };
+        let d: () = unimplemented!();
         const _: () = assert!(true, "d.count() == 5");;
     }
     return 0_();

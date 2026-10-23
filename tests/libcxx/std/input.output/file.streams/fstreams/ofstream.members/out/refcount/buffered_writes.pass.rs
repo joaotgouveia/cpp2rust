@@ -353,10 +353,7 @@ pub fn test_require_17(
     unimplemented!();
 }
 pub fn get_temp_file_name_18() -> () {
-    let mut Name: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"libcxx.XXXXXX") },
-        None,
-    );
+    let mut Name: () = unimplemented!();
     let mut FD: () = ({ mkstemp_19((unimplemented!())) });
     if (FD == -1_()) {
         ({ perror_20(Ptr::<()>::from_string_literal(b"mkstemp")) });

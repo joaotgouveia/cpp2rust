@@ -496,23 +496,29 @@ pub fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_7(_i, n)
     });
 }
-pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_9(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_10(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -558,7 +564,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_12(
+            operator_cmp_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -583,7 +589,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_11(
+            operator_eq_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -673,28 +679,28 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_14.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_15.with(|rc| *rc.borrow())));
+        return ((alloc_count_15.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_16.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_16.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_13.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_14.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_15.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_17.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_14.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_15.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_16.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_13: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_14: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_14: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_15: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_15: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_16: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_16: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_17: Value<()> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -753,7 +759,7 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_eq_17(mut _a0: min_allocator_char_, mut _a1: min_allocator_char_) -> () {
+pub fn operator_eq_18(mut _a0: min_allocator_char_, mut _a1: min_allocator_char_) -> () {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -761,24 +767,18 @@ pub fn operator_eq_17(mut _a0: min_allocator_char_, mut _a1: min_allocator_char_
 pub struct min_allocator_char_ {}
 impl std::cmp::PartialEq for min_allocator_char_ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_17(self.clone(), other.clone()) }
+        { operator_eq_18(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_char_ {}
-pub fn is_string_asan_correct_18(_a0: Ptr<()>) -> () {
-    return true;
-}
 pub fn is_string_asan_correct_19(_a0: Ptr<()>) -> () {
     return true;
 }
-pub fn test_20(mut first: Ptr<()>, mut last: Ptr<()>) {
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-            { (first).clone() },
-            { (last).clone() },
-            None,
-        ),
-    ));
+pub fn is_string_asan_correct_20(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn test_21(mut first: Ptr<()>, mut last: Ptr<()>) {
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -792,19 +792,13 @@ pub fn test_20(mut first: Ptr<()>, mut last: Ptr<()>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_21(
+pub fn test_22(
     mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
 ) {
     let last: Value<cpp17_input_iterator_const_char_ptr__const_char_ptr_> =
         Rc::new(RefCell::new(last));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_2(
-            { (first).clone() },
-            { (*last.borrow()).clone() },
-            None,
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -826,14 +820,8 @@ pub fn test_21(
     unimplemented!();
     unimplemented!();
 }
-pub fn test_22(mut first: Ptr<()>, mut last: Ptr<()>) {
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { (first).clone() },
-            { (last).clone() },
-            None,
-        ),
-    ));
+pub fn test_23(mut first: Ptr<()>, mut last: Ptr<()>) {
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -847,19 +835,13 @@ pub fn test_22(mut first: Ptr<()>, mut last: Ptr<()>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_23(
+pub fn test_24(
     mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
 ) {
     let last: Value<cpp17_input_iterator_const_char_ptr__const_char_ptr_> =
         Rc::new(RefCell::new(last));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_2(
-            { (first).clone() },
-            { (*last.borrow()).clone() },
-            None,
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -881,14 +863,8 @@ pub fn test_23(
     unimplemented!();
     unimplemented!();
 }
-pub fn test_24(mut first: Ptr<()>, mut last: Ptr<()>, a: Ptr<test_allocator_char_>) {
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-            { (first).clone() },
-            { (last).clone() },
-            { Some((a).clone()) },
-        ),
-    ));
+pub fn test_25(mut first: Ptr<()>, mut last: Ptr<()>, a: Ptr<test_allocator_char_>) {
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -902,20 +878,14 @@ pub fn test_24(mut first: Ptr<()>, mut last: Ptr<()>, a: Ptr<test_allocator_char
     unimplemented!();
     unimplemented!();
 }
-pub fn test_25(
+pub fn test_26(
     mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     a: Ptr<test_allocator_char_>,
 ) {
     let last: Value<cpp17_input_iterator_const_char_ptr__const_char_ptr_> =
         Rc::new(RefCell::new(last));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_2(
-            { (first).clone() },
-            { (*last.borrow()).clone() },
-            { Some((a).clone()) },
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -937,14 +907,8 @@ pub fn test_25(
     unimplemented!();
     unimplemented!();
 }
-pub fn test_26(mut first: Ptr<()>, mut last: Ptr<()>, a: Ptr<min_allocator_char_>) {
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { (first).clone() },
-            { (last).clone() },
-            { Some((a).clone()) },
-        ),
-    ));
+pub fn test_27(mut first: Ptr<()>, mut last: Ptr<()>, a: Ptr<min_allocator_char_>) {
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -958,20 +922,14 @@ pub fn test_26(mut first: Ptr<()>, mut last: Ptr<()>, a: Ptr<min_allocator_char_
     unimplemented!();
     unimplemented!();
 }
-pub fn test_27(
+pub fn test_28(
     mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     a: Ptr<min_allocator_char_>,
 ) {
     let last: Value<cpp17_input_iterator_const_char_ptr__const_char_ptr_> =
         Rc::new(RefCell::new(last));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_2(
-            { (first).clone() },
-            { (*last.borrow()).clone() },
-            { Some((a).clone()) },
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -993,13 +951,13 @@ pub fn test_27(
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_28(a: Ptr<test_allocator_char_>) {
+pub fn test_string_29(a: Ptr<test_allocator_char_>) {
     let mut s: Ptr<()> =
         Ptr::<()>::from_string_literal(b"12345678901234567890123456789012345678901234567890");
     ({
         let _first: Ptr<()> = (s).clone();
         let _last: Ptr<()> = (s).clone();
-        test_20(_first, _last)
+        test_21(_first, _last)
     });
     ({
         let _first: Ptr<()> = (s).clone();
@@ -1008,67 +966,67 @@ pub fn test_string_28(a: Ptr<test_allocator_char_>) {
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_24(_first, _last, _a.as_pointer())
+        test_25(_first, _last, _a.as_pointer())
     });
     ({
         let _first: Ptr<()> = (s).clone();
         let _last: Ptr<()> = s.offset((1_()) as isize);
-        test_20(_first, _last)
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((1_()) as isize);
-        let _a: Value<test_allocator_char_> =
-            Rc::new(RefCell::new(test_allocator_char_::copy_from({
-                (a).clone()
-            })));
-        test_24(_first, _last, _a.as_pointer())
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((10_()) as isize);
-        test_20(_first, _last)
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((10_()) as isize);
-        let _a: Value<test_allocator_char_> =
-            Rc::new(RefCell::new(test_allocator_char_::copy_from({
-                (a).clone()
-            })));
-        test_24(_first, _last, _a.as_pointer())
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((50_()) as isize);
-        test_20(_first, _last)
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((50_()) as isize);
-        let _a: Value<test_allocator_char_> =
-            Rc::new(RefCell::new(test_allocator_char_::copy_from({
-                (a).clone()
-            })));
-        test_24(_first, _last, _a.as_pointer())
-    });
-    ({
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
         test_21(_first, _last)
     });
     ({
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((1_()) as isize);
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
         test_25(_first, _last, _a.as_pointer())
+    });
+    ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((10_()) as isize);
+        test_21(_first, _last)
+    });
+    ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((10_()) as isize);
+        let _a: Value<test_allocator_char_> =
+            Rc::new(RefCell::new(test_allocator_char_::copy_from({
+                (a).clone()
+            })));
+        test_25(_first, _last, _a.as_pointer())
+    });
+    ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((50_()) as isize);
+        test_21(_first, _last)
+    });
+    ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((50_()) as isize);
+        let _a: Value<test_allocator_char_> =
+            Rc::new(RefCell::new(test_allocator_char_::copy_from({
+                (a).clone()
+            })));
+        test_25(_first, _last, _a.as_pointer())
+    });
+    ({
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+        test_22(_first, _last)
+    });
+    ({
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+        let _a: Value<test_allocator_char_> =
+            Rc::new(RefCell::new(test_allocator_char_::copy_from({
+                (a).clone()
+            })));
+        test_26(_first, _last, _a.as_pointer())
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1077,7 +1035,7 @@ pub fn test_string_28(a: Ptr<test_allocator_char_>) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((1_()) as isize)
             });
-        test_21(_first, _last)
+        test_22(_first, _last)
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1090,7 +1048,7 @@ pub fn test_string_28(a: Ptr<test_allocator_char_>) {
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_25(_first, _last, _a.as_pointer())
+        test_26(_first, _last, _a.as_pointer())
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1099,7 +1057,7 @@ pub fn test_string_28(a: Ptr<test_allocator_char_>) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((10_()) as isize)
             });
-        test_21(_first, _last)
+        test_22(_first, _last)
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1112,7 +1070,7 @@ pub fn test_string_28(a: Ptr<test_allocator_char_>) {
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_25(_first, _last, _a.as_pointer())
+        test_26(_first, _last, _a.as_pointer())
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1121,7 +1079,7 @@ pub fn test_string_28(a: Ptr<test_allocator_char_>) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((50_()) as isize)
             });
-        test_21(_first, _last)
+        test_22(_first, _last)
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1134,70 +1092,70 @@ pub fn test_string_28(a: Ptr<test_allocator_char_>) {
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_25(_first, _last, _a.as_pointer())
+        test_26(_first, _last, _a.as_pointer())
     });
 }
-pub fn test_string_29(a: Ptr<min_allocator_char_>) {
+pub fn test_string_30(a: Ptr<min_allocator_char_>) {
     let mut s: Ptr<()> =
         Ptr::<()>::from_string_literal(b"12345678901234567890123456789012345678901234567890");
     ({
         let _first: Ptr<()> = (s).clone();
         let _last: Ptr<()> = (s).clone();
-        test_22(_first, _last)
+        test_23(_first, _last)
     });
     ({
         let _first: Ptr<()> = (s).clone();
         let _last: Ptr<()> = (s).clone();
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_26(_first, _last, _a.as_pointer())
+        test_27(_first, _last, _a.as_pointer())
     });
     ({
         let _first: Ptr<()> = (s).clone();
         let _last: Ptr<()> = s.offset((1_()) as isize);
-        test_22(_first, _last)
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((1_()) as isize);
-        let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_26(_first, _last, _a.as_pointer())
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((10_()) as isize);
-        test_22(_first, _last)
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((10_()) as isize);
-        let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_26(_first, _last, _a.as_pointer())
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((50_()) as isize);
-        test_22(_first, _last)
-    });
-    ({
-        let _first: Ptr<()> = (s).clone();
-        let _last: Ptr<()> = s.offset((50_()) as isize);
-        let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_26(_first, _last, _a.as_pointer())
-    });
-    ({
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
         test_23(_first, _last)
     });
     ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((1_()) as isize);
+        let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
+        test_27(_first, _last, _a.as_pointer())
+    });
+    ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((10_()) as isize);
+        test_23(_first, _last)
+    });
+    ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((10_()) as isize);
+        let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
+        test_27(_first, _last, _a.as_pointer())
+    });
+    ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((50_()) as isize);
+        test_23(_first, _last)
+    });
+    ({
+        let _first: Ptr<()> = (s).clone();
+        let _last: Ptr<()> = s.offset((50_()) as isize);
+        let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
+        test_27(_first, _last, _a.as_pointer())
+    });
+    ({
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+        test_24(_first, _last)
+    });
+    ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
         let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_27(_first, _last, _a.as_pointer())
+        test_28(_first, _last, _a.as_pointer())
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1206,7 +1164,7 @@ pub fn test_string_29(a: Ptr<min_allocator_char_>) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((1_()) as isize)
             });
-        test_23(_first, _last)
+        test_24(_first, _last)
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1216,7 +1174,7 @@ pub fn test_string_29(a: Ptr<min_allocator_char_>) {
                 s.offset((1_()) as isize)
             });
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_27(_first, _last, _a.as_pointer())
+        test_28(_first, _last, _a.as_pointer())
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1225,7 +1183,7 @@ pub fn test_string_29(a: Ptr<min_allocator_char_>) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((10_()) as isize)
             });
-        test_23(_first, _last)
+        test_24(_first, _last)
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1235,7 +1193,7 @@ pub fn test_string_29(a: Ptr<min_allocator_char_>) {
                 s.offset((10_()) as isize)
             });
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_27(_first, _last, _a.as_pointer())
+        test_28(_first, _last, _a.as_pointer())
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1244,7 +1202,7 @@ pub fn test_string_29(a: Ptr<min_allocator_char_>) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((50_()) as isize)
             });
-        test_23(_first, _last)
+        test_24(_first, _last)
     });
     ({
         let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -1254,24 +1212,24 @@ pub fn test_string_29(a: Ptr<min_allocator_char_>) {
                 s.offset((50_()) as isize)
             });
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_27(_first, _last, _a.as_pointer())
+        test_28(_first, _last, _a.as_pointer())
     });
 }
-pub fn test_30() -> () {
+pub fn test_31() -> () {
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(<test_allocator_char_>::default()));
-        test_string_28(_a.as_pointer())
+        test_string_29(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::new_1({ 2_() })));
-        test_string_28(_a.as_pointer())
+        test_string_29(_a.as_pointer())
     });
     ({
         let _a: Value<min_allocator_char_> =
             Rc::new(RefCell::new(<min_allocator_char_>::default()));
-        test_string_29(_a.as_pointer())
+        test_string_30(_a.as_pointer())
     });
     {
         const _: () = assert!(
@@ -1305,7 +1263,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_30() });
+    ({ test_31() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -1919,8 +1877,8 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
 pub fn __cpp2rust_init_globals() {
     let _ = destructed_value_0.with(|_| ());
     let _ = moved_value_1.with(|_| ());
-    let _ = outstanding_bytes_13.with(|_| ());
-    let _ = alloc_count_14.with(|_| ());
-    let _ = dealloc_count_15.with(|_| ());
-    let _ = disable_default_constructor_16.with(|_| ());
+    let _ = outstanding_bytes_14.with(|_| ());
+    let _ = alloc_count_15.with(|_| ());
+    let _ = dealloc_count_16.with(|_| ());
+    let _ = disable_default_constructor_17.with(|_| ());
 }

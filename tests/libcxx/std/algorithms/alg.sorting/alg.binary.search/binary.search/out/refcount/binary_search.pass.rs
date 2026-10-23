@@ -305,23 +305,29 @@ pub fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_5(_i, n)
     });
 }
-pub fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_7(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_8(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -367,7 +373,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_10(
+            operator_cmp_11(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -392,7 +398,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_9(
+            operator_eq_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -476,17 +482,17 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn lt_11(mut a: (), mut b: ()) -> () {
+pub fn lt_12(mut a: (), mut b: ()) -> () {
     return (a < b);
 }
-pub fn test_constexpr_12() -> () {
+pub fn test_constexpr_13() -> () {
     let mut ia: [(); 5] = [1_(), 3_(), 3_(), 6_(), 7_()];
     return ((unimplemented!()) && (unimplemented!())) && (!(unimplemented!()));
 }
-pub fn test_13(mut first: Ptr<()>, mut last: Ptr<()>, value: Ptr<()>, mut x: ()) {
+pub fn test_14(mut first: Ptr<()>, mut last: Ptr<()>, value: Ptr<()>, mut x: ()) {
     unimplemented!();
 }
-pub fn test_14(
+pub fn test_15(
     mut first: forward_iterator_const_int_ptr_,
     mut last: forward_iterator_const_int_ptr_,
     value: Ptr<()>,
@@ -494,7 +500,7 @@ pub fn test_14(
 ) {
     unimplemented!();
 }
-pub fn test_15(
+pub fn test_16(
     mut first: bidirectional_iterator_const_int_ptr_,
     mut last: bidirectional_iterator_const_int_ptr_,
     value: Ptr<()>,
@@ -502,7 +508,7 @@ pub fn test_15(
 ) {
     unimplemented!();
 }
-pub fn test_16(
+pub fn test_17(
     mut first: random_access_iterator_const_int_ptr_,
     mut last: random_access_iterator_const_int_ptr_,
     value: Ptr<()>,
@@ -510,10 +516,10 @@ pub fn test_16(
 ) {
     unimplemented!();
 }
-pub fn test_17(mut first: Ptr<()>, mut last: Ptr<()>, value: Ptr<()>, mut x: ()) {
+pub fn test_18(mut first: Ptr<()>, mut last: Ptr<()>, value: Ptr<()>, mut x: ()) {
     unimplemented!();
 }
-pub fn test_18() {
+pub fn test_19() {
     let mut N: () = 1000_();
     let M: Value<()> = Rc::new(RefCell::new(10_()));
     let mut v: () = unimplemented!();
@@ -535,7 +541,7 @@ pub fn test_18() {
             let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
                 unimplemented!().offset((unimplemented!()) as isize)
             });
-            test_14(_first, _last, x.as_pointer(), true)
+            test_15(_first, _last, x.as_pointer(), true)
         });
         (*x.borrow_mut()).prefix_inc();
     }
@@ -546,7 +552,7 @@ pub fn test_18() {
             unimplemented!().offset((unimplemented!()) as isize)
         });
         let _value: Value<()> = Rc::new(RefCell::new(-1_()));
-        test_14(_first, _last, _value.as_pointer(), false)
+        test_15(_first, _last, _value.as_pointer(), false)
     });
     ({
         let _first: forward_iterator_const_int_ptr_ =
@@ -554,10 +560,10 @@ pub fn test_18() {
         let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             unimplemented!().offset((unimplemented!()) as isize)
         });
-        test_14(_first, _last, M.as_pointer(), false)
+        test_15(_first, _last, M.as_pointer(), false)
     });
 }
-pub fn test_19() {
+pub fn test_20() {
     let mut N: () = 1000_();
     let M: Value<()> = Rc::new(RefCell::new(10_()));
     let mut v: () = unimplemented!();
@@ -580,72 +586,25 @@ pub fn test_19() {
                 bidirectional_iterator_const_int_ptr_::new_1({
                     unimplemented!().offset((unimplemented!()) as isize)
                 });
-            test_15(_first, _last, x.as_pointer(), true)
-        });
-        (*x.borrow_mut()).prefix_inc();
-    }
-    ({
-        let _first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ unimplemented!() });
-        let _last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                unimplemented!().offset((unimplemented!()) as isize)
-            });
-        let _value: Value<()> = Rc::new(RefCell::new(-1_()));
-        test_15(_first, _last, _value.as_pointer(), false)
-    });
-    ({
-        let _first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ unimplemented!() });
-        let _last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                unimplemented!().offset((unimplemented!()) as isize)
-            });
-        test_15(_first, _last, M.as_pointer(), false)
-    });
-}
-pub fn test_20() {
-    let mut N: () = 1000_();
-    let M: Value<()> = Rc::new(RefCell::new(10_()));
-    let mut v: () = unimplemented!();
-    let x: Value<()> = Rc::new(RefCell::new(0_()));
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        unimplemented!().write((*x.borrow()));
-        if ((*x.borrow_mut()).prefix_inc() == (*M.borrow())) {
-            (*x.borrow_mut()) = 0_();
-        }
-        i.prefix_inc();
-    }
-    unimplemented!();
-    (*x.borrow_mut()) = 0_();
-    'loop_: while ((*x.borrow()) < (*M.borrow())) {
-        ({
-            let _first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
-            let _last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    unimplemented!().offset((unimplemented!()) as isize)
-                });
             test_16(_first, _last, x.as_pointer(), true)
         });
         (*x.borrow_mut()).prefix_inc();
     }
     ({
-        let _first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
-        let _last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ unimplemented!() });
+        let _last: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 unimplemented!().offset((unimplemented!()) as isize)
             });
         let _value: Value<()> = Rc::new(RefCell::new(-1_()));
         test_16(_first, _last, _value.as_pointer(), false)
     });
     ({
-        let _first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
-        let _last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
+        let _first: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ unimplemented!() });
+        let _last: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
                 unimplemented!().offset((unimplemented!()) as isize)
             });
         test_16(_first, _last, M.as_pointer(), false)
@@ -668,9 +627,56 @@ pub fn test_21() {
     (*x.borrow_mut()) = 0_();
     'loop_: while ((*x.borrow()) < (*M.borrow())) {
         ({
+            let _first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
+            let _last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    unimplemented!().offset((unimplemented!()) as isize)
+                });
+            test_17(_first, _last, x.as_pointer(), true)
+        });
+        (*x.borrow_mut()).prefix_inc();
+    }
+    ({
+        let _first: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
+        let _last: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                unimplemented!().offset((unimplemented!()) as isize)
+            });
+        let _value: Value<()> = Rc::new(RefCell::new(-1_()));
+        test_17(_first, _last, _value.as_pointer(), false)
+    });
+    ({
+        let _first: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ unimplemented!() });
+        let _last: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                unimplemented!().offset((unimplemented!()) as isize)
+            });
+        test_17(_first, _last, M.as_pointer(), false)
+    });
+}
+pub fn test_22() {
+    let mut N: () = 1000_();
+    let M: Value<()> = Rc::new(RefCell::new(10_()));
+    let mut v: () = unimplemented!();
+    let x: Value<()> = Rc::new(RefCell::new(0_()));
+    let mut i: () = 0_();
+    'loop_: while (i < unimplemented!()) {
+        unimplemented!().write((*x.borrow()));
+        if ((*x.borrow_mut()).prefix_inc() == (*M.borrow())) {
+            (*x.borrow_mut()) = 0_();
+        }
+        i.prefix_inc();
+    }
+    unimplemented!();
+    (*x.borrow_mut()) = 0_();
+    'loop_: while ((*x.borrow()) < (*M.borrow())) {
+        ({
             let _first: Ptr<()> = unimplemented!();
             let _last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-            test_17(_first, _last, x.as_pointer(), true)
+            test_18(_first, _last, x.as_pointer(), true)
         });
         (*x.borrow_mut()).prefix_inc();
     }
@@ -678,12 +684,12 @@ pub fn test_21() {
         let _first: Ptr<()> = unimplemented!();
         let _last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
         let _value: Value<()> = Rc::new(RefCell::new(-1_()));
-        test_17(_first, _last, _value.as_pointer(), false)
+        test_18(_first, _last, _value.as_pointer(), false)
     });
     ({
         let _first: Ptr<()> = unimplemented!();
         let _last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-        test_17(_first, _last, M.as_pointer(), false)
+        test_18(_first, _last, M.as_pointer(), false)
     });
 }
 pub fn main() {
@@ -719,16 +725,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                     && ({ ((((e).clone() - (d.as_pointer() as Ptr<()>)) as ()) * 2_()) } > {
                         (*x.borrow())
                     });
-                test_13(_first, _last, _value, _x)
+                test_14(_first, _last, _value, _x)
             });
             (*x.borrow_mut()).prefix_inc();
         }
         e.prefix_inc();
     }
-    ({ test_18() });
     ({ test_19() });
     ({ test_20() });
     ({ test_21() });
+    ({ test_22() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }

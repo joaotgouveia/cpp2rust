@@ -21,22 +21,13 @@ pub struct test_macros_detail_is_same_std_pair_std_reference_wrapper_int___void_
 pub fn dummy_2() {}
 pub fn test_decay_3() {
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-    let pr: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<Ptr<()>> = Rc::new(RefCell::new((arr.as_pointer() as Ptr<()>)));
-        let __tmp_1: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(dummy_2)));
-        std_pair_char_ptr__void__ptr____::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let pr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
 }
 pub fn test_unwrap_4() {
     let n: Value<()> = Rc::new(RefCell::new(0_()));
-    let pr: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_pair_std_reference_wrapper_int___void__ptr____::new({ __tmp_2.as_pointer() }, {
-            FnPtr::<fn()>::new(dummy_2)
-        })
-    }));
+    let pr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(
         true,

@@ -926,21 +926,25 @@ pub unsafe fn operator_add_23(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_24(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_25(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_25(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_26(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_26(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_27(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_27(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_28(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1024,7 +1028,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_27(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_28(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1034,7 +1038,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_26(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_27(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1109,7 +1113,7 @@ pub struct sentinel {}
 #[derive(FnPtrArg, Default)]
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
-pub static mut enable_borrowed_range_28: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_29: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
@@ -1184,26 +1188,16 @@ pub struct UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_alloc
 impl UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ { pub unsafe fn new_1 ( adaptor : *mut () , ) -> Self { let mut this = Self { } ;
  this } pub unsafe fn get_container ( &mut self , ) -> *mut () { return & mut ( self . c  )  ;
  } }
-pub static mut ints_29: std::cell::LazyCell<()> =
+pub static mut ints_30: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut chars_30: std::cell::LazyCell<()> =
+pub static mut chars_31: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut pairs_31: std::cell::LazyCell<()> =
+pub static mut pairs_32: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub unsafe fn test_is_equal_32(mut inputs: ()) {
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
-        let mut result: () = unimplemented!();
-        unimplemented!();
-    }
-}
 pub unsafe fn test_is_equal_33(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1211,8 +1205,7 @@ pub unsafe fn test_is_equal_33(mut inputs: ()) {
 pub unsafe fn test_is_equal_34(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1220,8 +1213,7 @@ pub unsafe fn test_is_equal_34(mut inputs: ()) {
 pub unsafe fn test_is_equal_35(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1229,8 +1221,7 @@ pub unsafe fn test_is_equal_35(mut inputs: ()) {
 pub unsafe fn test_is_equal_36(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1238,8 +1229,7 @@ pub unsafe fn test_is_equal_36(mut inputs: ()) {
 pub unsafe fn test_is_equal_37(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1247,8 +1237,7 @@ pub unsafe fn test_is_equal_37(mut inputs: ()) {
 pub unsafe fn test_is_equal_38(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1256,8 +1245,7 @@ pub unsafe fn test_is_equal_38(mut inputs: ()) {
 pub unsafe fn test_is_equal_39(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1265,8 +1253,7 @@ pub unsafe fn test_is_equal_39(mut inputs: ()) {
 pub unsafe fn test_is_equal_40(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1274,8 +1261,7 @@ pub unsafe fn test_is_equal_40(mut inputs: ()) {
 pub unsafe fn test_is_equal_41(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1283,8 +1269,7 @@ pub unsafe fn test_is_equal_41(mut inputs: ()) {
 pub unsafe fn test_is_equal_42(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1292,8 +1277,7 @@ pub unsafe fn test_is_equal_42(mut inputs: ()) {
 pub unsafe fn test_is_equal_43(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1301,10 +1285,7 @@ pub unsafe fn test_is_equal_43(mut inputs: ()) {
 pub unsafe fn test_is_equal_44(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1312,10 +1293,7 @@ pub unsafe fn test_is_equal_44(mut inputs: ()) {
 pub unsafe fn test_is_equal_45(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1323,10 +1301,7 @@ pub unsafe fn test_is_equal_45(mut inputs: ()) {
 pub unsafe fn test_is_equal_46(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1334,10 +1309,7 @@ pub unsafe fn test_is_equal_46(mut inputs: ()) {
 pub unsafe fn test_is_equal_47(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1345,8 +1317,7 @@ pub unsafe fn test_is_equal_47(mut inputs: ()) {
 pub unsafe fn test_is_equal_48(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1354,8 +1325,7 @@ pub unsafe fn test_is_equal_48(mut inputs: ()) {
 pub unsafe fn test_is_equal_49(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1363,8 +1333,7 @@ pub unsafe fn test_is_equal_49(mut inputs: ()) {
 pub unsafe fn test_is_equal_50(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1372,8 +1341,7 @@ pub unsafe fn test_is_equal_50(mut inputs: ()) {
 pub unsafe fn test_is_equal_51(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1381,8 +1349,7 @@ pub unsafe fn test_is_equal_51(mut inputs: ()) {
 pub unsafe fn test_is_equal_52(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1390,8 +1357,7 @@ pub unsafe fn test_is_equal_52(mut inputs: ()) {
 pub unsafe fn test_is_equal_53(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1399,8 +1365,7 @@ pub unsafe fn test_is_equal_53(mut inputs: ()) {
 pub unsafe fn test_is_equal_54(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1408,8 +1373,7 @@ pub unsafe fn test_is_equal_54(mut inputs: ()) {
 pub unsafe fn test_is_equal_55(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1417,8 +1381,7 @@ pub unsafe fn test_is_equal_55(mut inputs: ()) {
 pub unsafe fn test_is_equal_56(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1426,8 +1389,7 @@ pub unsafe fn test_is_equal_56(mut inputs: ()) {
 pub unsafe fn test_is_equal_57(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1435,8 +1397,7 @@ pub unsafe fn test_is_equal_57(mut inputs: ()) {
 pub unsafe fn test_is_equal_58(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1444,8 +1405,7 @@ pub unsafe fn test_is_equal_58(mut inputs: ()) {
 pub unsafe fn test_is_equal_59(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1453,10 +1413,7 @@ pub unsafe fn test_is_equal_59(mut inputs: ()) {
 pub unsafe fn test_is_equal_60(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1464,10 +1421,7 @@ pub unsafe fn test_is_equal_60(mut inputs: ()) {
 pub unsafe fn test_is_equal_61(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1475,10 +1429,7 @@ pub unsafe fn test_is_equal_61(mut inputs: ()) {
 pub unsafe fn test_is_equal_62(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1486,10 +1437,7 @@ pub unsafe fn test_is_equal_62(mut inputs: ()) {
 pub unsafe fn test_is_equal_63(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1497,9 +1445,7 @@ pub unsafe fn test_is_equal_63(mut inputs: ()) {
 pub unsafe fn test_is_equal_64(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () = std_vector_char__std_allocator_char__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1507,12 +1453,7 @@ pub unsafe fn test_is_equal_64(mut inputs: ()) {
 pub unsafe fn test_is_equal_65(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1520,8 +1461,7 @@ pub unsafe fn test_is_equal_65(mut inputs: ()) {
 pub unsafe fn test_is_equal_66(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_char__std_allocator_char__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1529,12 +1469,7 @@ pub unsafe fn test_is_equal_66(mut inputs: ()) {
 pub unsafe fn test_is_equal_67(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1542,8 +1477,7 @@ pub unsafe fn test_is_equal_67(mut inputs: ()) {
 pub unsafe fn test_is_equal_68(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_char__std_allocator_char__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1551,12 +1485,7 @@ pub unsafe fn test_is_equal_68(mut inputs: ()) {
 pub unsafe fn test_is_equal_69(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1564,10 +1493,7 @@ pub unsafe fn test_is_equal_69(mut inputs: ()) {
 pub unsafe fn test_is_equal_70(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_char__std_allocator_char__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1575,21 +1501,15 @@ pub unsafe fn test_is_equal_70(mut inputs: ()) {
 pub unsafe fn test_is_equal_71(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_is_permutation_72(mut inputs: ()) {
+pub unsafe fn test_is_equal_72(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1597,8 +1517,7 @@ pub unsafe fn test_is_permutation_72(mut inputs: ()) {
 pub unsafe fn test_is_permutation_73(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1606,8 +1525,7 @@ pub unsafe fn test_is_permutation_73(mut inputs: ()) {
 pub unsafe fn test_is_permutation_74(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1615,8 +1533,7 @@ pub unsafe fn test_is_permutation_74(mut inputs: ()) {
 pub unsafe fn test_is_permutation_75(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1624,8 +1541,7 @@ pub unsafe fn test_is_permutation_75(mut inputs: ()) {
 pub unsafe fn test_is_permutation_76(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1633,8 +1549,7 @@ pub unsafe fn test_is_permutation_76(mut inputs: ()) {
 pub unsafe fn test_is_permutation_77(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1642,8 +1557,7 @@ pub unsafe fn test_is_permutation_77(mut inputs: ()) {
 pub unsafe fn test_is_permutation_78(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1651,8 +1565,7 @@ pub unsafe fn test_is_permutation_78(mut inputs: ()) {
 pub unsafe fn test_is_permutation_79(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1660,8 +1573,7 @@ pub unsafe fn test_is_permutation_79(mut inputs: ()) {
 pub unsafe fn test_is_permutation_80(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1669,8 +1581,7 @@ pub unsafe fn test_is_permutation_80(mut inputs: ()) {
 pub unsafe fn test_is_permutation_81(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1678,8 +1589,7 @@ pub unsafe fn test_is_permutation_81(mut inputs: ()) {
 pub unsafe fn test_is_permutation_82(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1687,8 +1597,7 @@ pub unsafe fn test_is_permutation_82(mut inputs: ()) {
 pub unsafe fn test_is_permutation_83(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1696,8 +1605,7 @@ pub unsafe fn test_is_permutation_83(mut inputs: ()) {
 pub unsafe fn test_is_permutation_84(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1705,8 +1613,7 @@ pub unsafe fn test_is_permutation_84(mut inputs: ()) {
 pub unsafe fn test_is_permutation_85(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1714,8 +1621,7 @@ pub unsafe fn test_is_permutation_85(mut inputs: ()) {
 pub unsafe fn test_is_permutation_86(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1723,8 +1629,7 @@ pub unsafe fn test_is_permutation_86(mut inputs: ()) {
 pub unsafe fn test_is_permutation_87(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1732,8 +1637,7 @@ pub unsafe fn test_is_permutation_87(mut inputs: ()) {
 pub unsafe fn test_is_permutation_88(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1741,8 +1645,7 @@ pub unsafe fn test_is_permutation_88(mut inputs: ()) {
 pub unsafe fn test_is_permutation_89(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1750,8 +1653,7 @@ pub unsafe fn test_is_permutation_89(mut inputs: ()) {
 pub unsafe fn test_is_permutation_90(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1759,8 +1661,7 @@ pub unsafe fn test_is_permutation_90(mut inputs: ()) {
 pub unsafe fn test_is_permutation_91(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1768,8 +1669,7 @@ pub unsafe fn test_is_permutation_91(mut inputs: ()) {
 pub unsafe fn test_is_permutation_92(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1777,8 +1677,7 @@ pub unsafe fn test_is_permutation_92(mut inputs: ()) {
 pub unsafe fn test_is_permutation_93(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1786,8 +1685,7 @@ pub unsafe fn test_is_permutation_93(mut inputs: ()) {
 pub unsafe fn test_is_permutation_94(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1795,8 +1693,7 @@ pub unsafe fn test_is_permutation_94(mut inputs: ()) {
 pub unsafe fn test_is_permutation_95(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1804,10 +1701,7 @@ pub unsafe fn test_is_permutation_95(mut inputs: ()) {
 pub unsafe fn test_is_permutation_96(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1815,10 +1709,7 @@ pub unsafe fn test_is_permutation_96(mut inputs: ()) {
 pub unsafe fn test_is_permutation_97(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1826,10 +1717,7 @@ pub unsafe fn test_is_permutation_97(mut inputs: ()) {
 pub unsafe fn test_is_permutation_98(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1837,10 +1725,7 @@ pub unsafe fn test_is_permutation_98(mut inputs: ()) {
 pub unsafe fn test_is_permutation_99(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1848,10 +1733,7 @@ pub unsafe fn test_is_permutation_99(mut inputs: ()) {
 pub unsafe fn test_is_permutation_100(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1859,10 +1741,7 @@ pub unsafe fn test_is_permutation_100(mut inputs: ()) {
 pub unsafe fn test_is_permutation_101(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1870,10 +1749,7 @@ pub unsafe fn test_is_permutation_101(mut inputs: ()) {
 pub unsafe fn test_is_permutation_102(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -1881,10 +1757,7 @@ pub unsafe fn test_is_permutation_102(mut inputs: ()) {
 pub unsafe fn test_is_permutation_103(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2148,8 +2021,7 @@ pub unsafe fn test_is_permutation_135(mut inputs: ()) {
 pub unsafe fn test_is_permutation_136(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2157,8 +2029,7 @@ pub unsafe fn test_is_permutation_136(mut inputs: ()) {
 pub unsafe fn test_is_permutation_137(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2166,8 +2037,7 @@ pub unsafe fn test_is_permutation_137(mut inputs: ()) {
 pub unsafe fn test_is_permutation_138(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2175,8 +2045,7 @@ pub unsafe fn test_is_permutation_138(mut inputs: ()) {
 pub unsafe fn test_is_permutation_139(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2184,8 +2053,7 @@ pub unsafe fn test_is_permutation_139(mut inputs: ()) {
 pub unsafe fn test_is_permutation_140(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2193,8 +2061,7 @@ pub unsafe fn test_is_permutation_140(mut inputs: ()) {
 pub unsafe fn test_is_permutation_141(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2202,8 +2069,7 @@ pub unsafe fn test_is_permutation_141(mut inputs: ()) {
 pub unsafe fn test_is_permutation_142(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2211,8 +2077,7 @@ pub unsafe fn test_is_permutation_142(mut inputs: ()) {
 pub unsafe fn test_is_permutation_143(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2220,8 +2085,7 @@ pub unsafe fn test_is_permutation_143(mut inputs: ()) {
 pub unsafe fn test_is_permutation_144(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2229,8 +2093,7 @@ pub unsafe fn test_is_permutation_144(mut inputs: ()) {
 pub unsafe fn test_is_permutation_145(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2238,8 +2101,7 @@ pub unsafe fn test_is_permutation_145(mut inputs: ()) {
 pub unsafe fn test_is_permutation_146(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2247,8 +2109,7 @@ pub unsafe fn test_is_permutation_146(mut inputs: ()) {
 pub unsafe fn test_is_permutation_147(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2256,8 +2117,7 @@ pub unsafe fn test_is_permutation_147(mut inputs: ()) {
 pub unsafe fn test_is_permutation_148(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2265,8 +2125,7 @@ pub unsafe fn test_is_permutation_148(mut inputs: ()) {
 pub unsafe fn test_is_permutation_149(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2274,8 +2133,7 @@ pub unsafe fn test_is_permutation_149(mut inputs: ()) {
 pub unsafe fn test_is_permutation_150(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2283,8 +2141,7 @@ pub unsafe fn test_is_permutation_150(mut inputs: ()) {
 pub unsafe fn test_is_permutation_151(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2292,8 +2149,7 @@ pub unsafe fn test_is_permutation_151(mut inputs: ()) {
 pub unsafe fn test_is_permutation_152(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2301,8 +2157,7 @@ pub unsafe fn test_is_permutation_152(mut inputs: ()) {
 pub unsafe fn test_is_permutation_153(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2310,8 +2165,7 @@ pub unsafe fn test_is_permutation_153(mut inputs: ()) {
 pub unsafe fn test_is_permutation_154(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2319,8 +2173,7 @@ pub unsafe fn test_is_permutation_154(mut inputs: ()) {
 pub unsafe fn test_is_permutation_155(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2328,8 +2181,7 @@ pub unsafe fn test_is_permutation_155(mut inputs: ()) {
 pub unsafe fn test_is_permutation_156(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2337,8 +2189,7 @@ pub unsafe fn test_is_permutation_156(mut inputs: ()) {
 pub unsafe fn test_is_permutation_157(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2346,8 +2197,7 @@ pub unsafe fn test_is_permutation_157(mut inputs: ()) {
 pub unsafe fn test_is_permutation_158(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2355,8 +2205,7 @@ pub unsafe fn test_is_permutation_158(mut inputs: ()) {
 pub unsafe fn test_is_permutation_159(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2364,10 +2213,7 @@ pub unsafe fn test_is_permutation_159(mut inputs: ()) {
 pub unsafe fn test_is_permutation_160(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2375,10 +2221,7 @@ pub unsafe fn test_is_permutation_160(mut inputs: ()) {
 pub unsafe fn test_is_permutation_161(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2386,10 +2229,7 @@ pub unsafe fn test_is_permutation_161(mut inputs: ()) {
 pub unsafe fn test_is_permutation_162(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2397,10 +2237,7 @@ pub unsafe fn test_is_permutation_162(mut inputs: ()) {
 pub unsafe fn test_is_permutation_163(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2408,10 +2245,7 @@ pub unsafe fn test_is_permutation_163(mut inputs: ()) {
 pub unsafe fn test_is_permutation_164(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2419,10 +2253,7 @@ pub unsafe fn test_is_permutation_164(mut inputs: ()) {
 pub unsafe fn test_is_permutation_165(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2430,10 +2261,7 @@ pub unsafe fn test_is_permutation_165(mut inputs: ()) {
 pub unsafe fn test_is_permutation_166(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2441,10 +2269,7 @@ pub unsafe fn test_is_permutation_166(mut inputs: ()) {
 pub unsafe fn test_is_permutation_167(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2708,11 +2533,7 @@ pub unsafe fn test_is_permutation_199(mut inputs: ()) {
 pub unsafe fn test_is_permutation_200(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2720,11 +2541,7 @@ pub unsafe fn test_is_permutation_200(mut inputs: ()) {
 pub unsafe fn test_is_permutation_201(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2732,11 +2549,7 @@ pub unsafe fn test_is_permutation_201(mut inputs: ()) {
 pub unsafe fn test_is_permutation_202(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2744,11 +2557,7 @@ pub unsafe fn test_is_permutation_202(mut inputs: ()) {
 pub unsafe fn test_is_permutation_203(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2756,11 +2565,7 @@ pub unsafe fn test_is_permutation_203(mut inputs: ()) {
 pub unsafe fn test_is_permutation_204(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2768,11 +2573,7 @@ pub unsafe fn test_is_permutation_204(mut inputs: ()) {
 pub unsafe fn test_is_permutation_205(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2780,11 +2581,7 @@ pub unsafe fn test_is_permutation_205(mut inputs: ()) {
 pub unsafe fn test_is_permutation_206(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2792,11 +2589,7 @@ pub unsafe fn test_is_permutation_206(mut inputs: ()) {
 pub unsafe fn test_is_permutation_207(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2804,11 +2597,7 @@ pub unsafe fn test_is_permutation_207(mut inputs: ()) {
 pub unsafe fn test_is_permutation_208(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2816,11 +2605,7 @@ pub unsafe fn test_is_permutation_208(mut inputs: ()) {
 pub unsafe fn test_is_permutation_209(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2828,11 +2613,7 @@ pub unsafe fn test_is_permutation_209(mut inputs: ()) {
 pub unsafe fn test_is_permutation_210(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2840,11 +2621,7 @@ pub unsafe fn test_is_permutation_210(mut inputs: ()) {
 pub unsafe fn test_is_permutation_211(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2852,11 +2629,7 @@ pub unsafe fn test_is_permutation_211(mut inputs: ()) {
 pub unsafe fn test_is_permutation_212(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2864,11 +2637,7 @@ pub unsafe fn test_is_permutation_212(mut inputs: ()) {
 pub unsafe fn test_is_permutation_213(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2876,11 +2645,7 @@ pub unsafe fn test_is_permutation_213(mut inputs: ()) {
 pub unsafe fn test_is_permutation_214(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2888,11 +2653,7 @@ pub unsafe fn test_is_permutation_214(mut inputs: ()) {
 pub unsafe fn test_is_permutation_215(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2900,11 +2661,7 @@ pub unsafe fn test_is_permutation_215(mut inputs: ()) {
 pub unsafe fn test_is_permutation_216(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2912,11 +2669,7 @@ pub unsafe fn test_is_permutation_216(mut inputs: ()) {
 pub unsafe fn test_is_permutation_217(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2924,11 +2677,7 @@ pub unsafe fn test_is_permutation_217(mut inputs: ()) {
 pub unsafe fn test_is_permutation_218(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2936,11 +2685,7 @@ pub unsafe fn test_is_permutation_218(mut inputs: ()) {
 pub unsafe fn test_is_permutation_219(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2948,11 +2693,7 @@ pub unsafe fn test_is_permutation_219(mut inputs: ()) {
 pub unsafe fn test_is_permutation_220(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2960,11 +2701,7 @@ pub unsafe fn test_is_permutation_220(mut inputs: ()) {
 pub unsafe fn test_is_permutation_221(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2972,11 +2709,7 @@ pub unsafe fn test_is_permutation_221(mut inputs: ()) {
 pub unsafe fn test_is_permutation_222(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2984,11 +2717,7 @@ pub unsafe fn test_is_permutation_222(mut inputs: ()) {
 pub unsafe fn test_is_permutation_223(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -2996,11 +2725,7 @@ pub unsafe fn test_is_permutation_223(mut inputs: ()) {
 pub unsafe fn test_is_permutation_224(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3008,11 +2733,7 @@ pub unsafe fn test_is_permutation_224(mut inputs: ()) {
 pub unsafe fn test_is_permutation_225(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3020,11 +2741,7 @@ pub unsafe fn test_is_permutation_225(mut inputs: ()) {
 pub unsafe fn test_is_permutation_226(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3032,11 +2749,7 @@ pub unsafe fn test_is_permutation_226(mut inputs: ()) {
 pub unsafe fn test_is_permutation_227(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3044,11 +2757,7 @@ pub unsafe fn test_is_permutation_227(mut inputs: ()) {
 pub unsafe fn test_is_permutation_228(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3056,11 +2765,7 @@ pub unsafe fn test_is_permutation_228(mut inputs: ()) {
 pub unsafe fn test_is_permutation_229(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3068,11 +2773,7 @@ pub unsafe fn test_is_permutation_229(mut inputs: ()) {
 pub unsafe fn test_is_permutation_230(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3080,11 +2781,7 @@ pub unsafe fn test_is_permutation_230(mut inputs: ()) {
 pub unsafe fn test_is_permutation_231(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3092,11 +2789,7 @@ pub unsafe fn test_is_permutation_231(mut inputs: ()) {
 pub unsafe fn test_is_permutation_232(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3104,11 +2797,7 @@ pub unsafe fn test_is_permutation_232(mut inputs: ()) {
 pub unsafe fn test_is_permutation_233(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3116,11 +2805,7 @@ pub unsafe fn test_is_permutation_233(mut inputs: ()) {
 pub unsafe fn test_is_permutation_234(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3128,11 +2813,7 @@ pub unsafe fn test_is_permutation_234(mut inputs: ()) {
 pub unsafe fn test_is_permutation_235(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3140,7 +2821,7 @@ pub unsafe fn test_is_permutation_235(mut inputs: ()) {
 pub unsafe fn test_is_permutation_236(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3148,7 +2829,7 @@ pub unsafe fn test_is_permutation_236(mut inputs: ()) {
 pub unsafe fn test_is_permutation_237(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3156,7 +2837,7 @@ pub unsafe fn test_is_permutation_237(mut inputs: ()) {
 pub unsafe fn test_is_permutation_238(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3164,7 +2845,7 @@ pub unsafe fn test_is_permutation_238(mut inputs: ()) {
 pub unsafe fn test_is_permutation_239(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3172,7 +2853,7 @@ pub unsafe fn test_is_permutation_239(mut inputs: ()) {
 pub unsafe fn test_is_permutation_240(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3180,7 +2861,7 @@ pub unsafe fn test_is_permutation_240(mut inputs: ()) {
 pub unsafe fn test_is_permutation_241(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3188,7 +2869,7 @@ pub unsafe fn test_is_permutation_241(mut inputs: ()) {
 pub unsafe fn test_is_permutation_242(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3196,7 +2877,7 @@ pub unsafe fn test_is_permutation_242(mut inputs: ()) {
 pub unsafe fn test_is_permutation_243(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3204,7 +2885,7 @@ pub unsafe fn test_is_permutation_243(mut inputs: ()) {
 pub unsafe fn test_is_permutation_244(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3212,7 +2893,7 @@ pub unsafe fn test_is_permutation_244(mut inputs: ()) {
 pub unsafe fn test_is_permutation_245(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3220,7 +2901,7 @@ pub unsafe fn test_is_permutation_245(mut inputs: ()) {
 pub unsafe fn test_is_permutation_246(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -3228,7 +2909,7 @@ pub unsafe fn test_is_permutation_246(mut inputs: ()) {
 pub unsafe fn test_is_permutation_247(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4004,11 +3685,7 @@ pub unsafe fn test_is_permutation_343(mut inputs: ()) {
 pub unsafe fn test_is_permutation_344(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4016,11 +3693,7 @@ pub unsafe fn test_is_permutation_344(mut inputs: ()) {
 pub unsafe fn test_is_permutation_345(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4028,11 +3701,7 @@ pub unsafe fn test_is_permutation_345(mut inputs: ()) {
 pub unsafe fn test_is_permutation_346(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4040,11 +3709,7 @@ pub unsafe fn test_is_permutation_346(mut inputs: ()) {
 pub unsafe fn test_is_permutation_347(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4052,11 +3717,7 @@ pub unsafe fn test_is_permutation_347(mut inputs: ()) {
 pub unsafe fn test_is_permutation_348(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4064,11 +3725,7 @@ pub unsafe fn test_is_permutation_348(mut inputs: ()) {
 pub unsafe fn test_is_permutation_349(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4076,11 +3733,7 @@ pub unsafe fn test_is_permutation_349(mut inputs: ()) {
 pub unsafe fn test_is_permutation_350(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4088,11 +3741,7 @@ pub unsafe fn test_is_permutation_350(mut inputs: ()) {
 pub unsafe fn test_is_permutation_351(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4100,11 +3749,7 @@ pub unsafe fn test_is_permutation_351(mut inputs: ()) {
 pub unsafe fn test_is_permutation_352(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4112,11 +3757,7 @@ pub unsafe fn test_is_permutation_352(mut inputs: ()) {
 pub unsafe fn test_is_permutation_353(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4124,11 +3765,7 @@ pub unsafe fn test_is_permutation_353(mut inputs: ()) {
 pub unsafe fn test_is_permutation_354(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4136,11 +3773,7 @@ pub unsafe fn test_is_permutation_354(mut inputs: ()) {
 pub unsafe fn test_is_permutation_355(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4148,11 +3781,7 @@ pub unsafe fn test_is_permutation_355(mut inputs: ()) {
 pub unsafe fn test_is_permutation_356(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4160,11 +3789,7 @@ pub unsafe fn test_is_permutation_356(mut inputs: ()) {
 pub unsafe fn test_is_permutation_357(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4172,11 +3797,7 @@ pub unsafe fn test_is_permutation_357(mut inputs: ()) {
 pub unsafe fn test_is_permutation_358(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4184,11 +3805,7 @@ pub unsafe fn test_is_permutation_358(mut inputs: ()) {
 pub unsafe fn test_is_permutation_359(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4196,11 +3813,7 @@ pub unsafe fn test_is_permutation_359(mut inputs: ()) {
 pub unsafe fn test_is_permutation_360(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4208,11 +3821,7 @@ pub unsafe fn test_is_permutation_360(mut inputs: ()) {
 pub unsafe fn test_is_permutation_361(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4220,11 +3829,7 @@ pub unsafe fn test_is_permutation_361(mut inputs: ()) {
 pub unsafe fn test_is_permutation_362(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4232,11 +3837,7 @@ pub unsafe fn test_is_permutation_362(mut inputs: ()) {
 pub unsafe fn test_is_permutation_363(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4244,11 +3845,7 @@ pub unsafe fn test_is_permutation_363(mut inputs: ()) {
 pub unsafe fn test_is_permutation_364(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4256,11 +3853,7 @@ pub unsafe fn test_is_permutation_364(mut inputs: ()) {
 pub unsafe fn test_is_permutation_365(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4268,11 +3861,7 @@ pub unsafe fn test_is_permutation_365(mut inputs: ()) {
 pub unsafe fn test_is_permutation_366(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4280,11 +3869,7 @@ pub unsafe fn test_is_permutation_366(mut inputs: ()) {
 pub unsafe fn test_is_permutation_367(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4292,11 +3877,7 @@ pub unsafe fn test_is_permutation_367(mut inputs: ()) {
 pub unsafe fn test_is_permutation_368(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4304,11 +3885,7 @@ pub unsafe fn test_is_permutation_368(mut inputs: ()) {
 pub unsafe fn test_is_permutation_369(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4316,11 +3893,7 @@ pub unsafe fn test_is_permutation_369(mut inputs: ()) {
 pub unsafe fn test_is_permutation_370(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4328,11 +3901,7 @@ pub unsafe fn test_is_permutation_370(mut inputs: ()) {
 pub unsafe fn test_is_permutation_371(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4340,11 +3909,7 @@ pub unsafe fn test_is_permutation_371(mut inputs: ()) {
 pub unsafe fn test_is_permutation_372(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4352,11 +3917,7 @@ pub unsafe fn test_is_permutation_372(mut inputs: ()) {
 pub unsafe fn test_is_permutation_373(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4364,11 +3925,7 @@ pub unsafe fn test_is_permutation_373(mut inputs: ()) {
 pub unsafe fn test_is_permutation_374(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4376,11 +3933,7 @@ pub unsafe fn test_is_permutation_374(mut inputs: ()) {
 pub unsafe fn test_is_permutation_375(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4388,11 +3941,7 @@ pub unsafe fn test_is_permutation_375(mut inputs: ()) {
 pub unsafe fn test_is_permutation_376(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4400,11 +3949,7 @@ pub unsafe fn test_is_permutation_376(mut inputs: ()) {
 pub unsafe fn test_is_permutation_377(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4412,11 +3957,7 @@ pub unsafe fn test_is_permutation_377(mut inputs: ()) {
 pub unsafe fn test_is_permutation_378(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4424,11 +3965,7 @@ pub unsafe fn test_is_permutation_378(mut inputs: ()) {
 pub unsafe fn test_is_permutation_379(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4436,7 +3973,7 @@ pub unsafe fn test_is_permutation_379(mut inputs: ()) {
 pub unsafe fn test_is_permutation_380(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4444,7 +3981,7 @@ pub unsafe fn test_is_permutation_380(mut inputs: ()) {
 pub unsafe fn test_is_permutation_381(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4452,7 +3989,7 @@ pub unsafe fn test_is_permutation_381(mut inputs: ()) {
 pub unsafe fn test_is_permutation_382(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4460,7 +3997,7 @@ pub unsafe fn test_is_permutation_382(mut inputs: ()) {
 pub unsafe fn test_is_permutation_383(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4468,7 +4005,7 @@ pub unsafe fn test_is_permutation_383(mut inputs: ()) {
 pub unsafe fn test_is_permutation_384(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4476,7 +4013,7 @@ pub unsafe fn test_is_permutation_384(mut inputs: ()) {
 pub unsafe fn test_is_permutation_385(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4484,7 +4021,7 @@ pub unsafe fn test_is_permutation_385(mut inputs: ()) {
 pub unsafe fn test_is_permutation_386(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4492,7 +4029,7 @@ pub unsafe fn test_is_permutation_386(mut inputs: ()) {
 pub unsafe fn test_is_permutation_387(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4500,7 +4037,7 @@ pub unsafe fn test_is_permutation_387(mut inputs: ()) {
 pub unsafe fn test_is_permutation_388(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4508,7 +4045,7 @@ pub unsafe fn test_is_permutation_388(mut inputs: ()) {
 pub unsafe fn test_is_permutation_389(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4516,7 +4053,7 @@ pub unsafe fn test_is_permutation_389(mut inputs: ()) {
 pub unsafe fn test_is_permutation_390(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -4524,7 +4061,7 @@ pub unsafe fn test_is_permutation_390(mut inputs: ()) {
 pub unsafe fn test_is_permutation_391(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from : () = std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , )  ;
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
     }
@@ -5297,13 +4834,18 @@ pub unsafe fn test_is_permutation_487(mut inputs: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_488(mut inputs: ()) {
+pub unsafe fn test_is_permutation_488(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
+        let mut result: () = unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_is_equal_for_adaptors_489(mut inputs: ()) {
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: *const () = &(*unimplemented!());
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
@@ -5311,25 +4853,6 @@ pub unsafe fn test_is_equal_for_adaptors_488(mut inputs: ()) {
             });
         let mut unwrap_to: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut *(&raw mut result).cast::<()>()
-            });
-        unimplemented!();
-    }
-}
-pub unsafe fn test_is_equal_for_adaptors_489(mut inputs: ()) {
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
-        let mut result: () = unimplemented!();
-        let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut *(&raw mut from).cast::<()>()
-            });
-        let mut unwrap_to: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
                 &mut *(&raw mut result).cast::<()>()
             });
         unimplemented!();
@@ -5338,10 +4861,23 @@ pub unsafe fn test_is_equal_for_adaptors_489(mut inputs: ()) {
 pub unsafe fn test_is_equal_for_adaptors_490(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
+        let mut from: () = unimplemented!();
+        let mut result: () = unimplemented!();
+        let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
+            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
+                &mut *(&raw mut from).cast::<()>()
             });
+        let mut unwrap_to: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
+                &mut *(&raw mut result).cast::<()>()
+            });
+        unimplemented!();
+    }
+}
+pub unsafe fn test_is_equal_for_adaptors_491(mut inputs: ()) {
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: *const () = &(*unimplemented!());
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
@@ -5351,13 +4887,10 @@ pub unsafe fn test_is_equal_for_adaptors_490(mut inputs: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_491(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_492(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
@@ -5365,25 +4898,6 @@ pub unsafe fn test_is_equal_for_adaptors_491(mut inputs: ()) {
             });
         let mut unwrap_to: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut *(&raw mut result).cast::<()>()
-            });
-        unimplemented!();
-    }
-}
-pub unsafe fn test_is_equal_for_adaptors_492(mut inputs: ()) {
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
-        let mut result: () = unimplemented!();
-        let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut *(&raw mut from).cast::<()>()
-            });
-        let mut unwrap_to: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
                 &mut *(&raw mut result).cast::<()>()
             });
         unimplemented!();
@@ -5392,10 +4906,23 @@ pub unsafe fn test_is_equal_for_adaptors_492(mut inputs: ()) {
 pub unsafe fn test_is_equal_for_adaptors_493(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
+        let mut from: () = unimplemented!();
+        let mut result: () = unimplemented!();
+        let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
+                &mut *(&raw mut from).cast::<()>()
             });
+        let mut unwrap_to: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
+                &mut *(&raw mut result).cast::<()>()
+            });
+        unimplemented!();
+    }
+}
+pub unsafe fn test_is_equal_for_adaptors_494(mut inputs: ()) {
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: *const () = &(*unimplemented!());
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
@@ -5405,15 +4932,10 @@ pub unsafe fn test_is_equal_for_adaptors_493(mut inputs: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_494(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_495(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut *(&raw mut from ).cast::<()>() } , )  ;
         let mut unwrap_to: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
@@ -5423,15 +4945,10 @@ pub unsafe fn test_is_equal_for_adaptors_494(mut inputs: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_495(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_496(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut *(&raw mut from ).cast::<()>() } , )  ;
         let mut unwrap_to: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
@@ -5441,60 +4958,46 @@ pub unsafe fn test_is_equal_for_adaptors_495(mut inputs: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_496(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_497(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut *(&raw mut from ).cast::<()>() } , )  ;
         let mut unwrap_to : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_497(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_498(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
                 &mut *(&raw mut from).cast::<()>()
             });
         let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
-        unimplemented!();
-    }
-}
-pub unsafe fn test_is_equal_for_adaptors_498(mut inputs: ()) {
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
-        let mut result: () = unimplemented!();
-        let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
-                &mut *(&raw mut from).cast::<()>()
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
         unimplemented!();
     }
 }
 pub unsafe fn test_is_equal_for_adaptors_499(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_stack_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
+        let mut from: () = unimplemented!();
+        let mut result: () = unimplemented!();
+        let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
+            UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
+                &mut *(&raw mut from).cast::<()>()
             });
+        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
+        unimplemented!();
+    }
+}
+pub unsafe fn test_is_equal_for_adaptors_500(mut inputs: ()) {
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: *const () = &(*unimplemented!());
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_stack_int__std_deque_int__std_allocator_int____::new_1({
@@ -5504,45 +5007,36 @@ pub unsafe fn test_is_equal_for_adaptors_499(mut inputs: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_500(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_501(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
                 &mut *(&raw mut from).cast::<()>()
             });
         let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
-        unimplemented!();
-    }
-}
-pub unsafe fn test_is_equal_for_adaptors_501(mut inputs: ()) {
-    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
-        let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
-            });
-        let mut result: () = unimplemented!();
-        let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
-            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
-                &mut *(&raw mut from).cast::<()>()
-            });
-        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
         unimplemented!();
     }
 }
 pub unsafe fn test_is_equal_for_adaptors_502(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_queue_int__std_deque_int__std_allocator_int___::new_1({ unimplemented!() }, {
-                unimplemented!()
+        let mut from: () = unimplemented!();
+        let mut result: () = unimplemented!();
+        let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
+            UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
+                &mut *(&raw mut from).cast::<()>()
             });
+        let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
+        unimplemented!();
+    }
+}
+pub unsafe fn test_is_equal_for_adaptors_503(mut inputs: ()) {
+    'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
+        let in_: *const () = &(*unimplemented!());
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from: UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____ =
             UnwrapAdaptor_std_queue_int__std_deque_int__std_allocator_int____::new_1({
@@ -5552,271 +5046,255 @@ pub unsafe fn test_is_equal_for_adaptors_502(mut inputs: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_503(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_504(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut *(&raw mut from ).cast::<()>() } , )  ;
         let mut unwrap_to : UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_stack_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_504(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_505(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut *(&raw mut from ).cast::<()>() } , )  ;
         let mut unwrap_to : UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ = UnwrapAdaptor_std_queue_double__std_deque_double__std_allocator_double____ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
         unimplemented!();
     }
 }
-pub unsafe fn test_is_equal_for_adaptors_505(mut inputs: ()) {
+pub unsafe fn test_is_equal_for_adaptors_506(mut inputs: ()) {
     'loop_: for in_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let in_: *const () = &(*unimplemented!());
-        let mut from: () =
-            std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            );
+        let mut from: () = unimplemented!();
         let mut result: () = unimplemented!();
         let mut unwrap_from : UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ = UnwrapAdaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ :: new_1 ( { & mut *(&raw mut from ).cast::<()>() } , )  ;
         let mut unwrap_to : UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ = UnwrapAdaptor_std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ :: new_1 ( { & mut *(&raw mut result ).cast::<()>() } , )  ;
         unimplemented!();
     }
 }
-pub unsafe fn test_506() {
+pub unsafe fn test_507() {
     {
         {
             (unsafe {
-                for_each_0 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_2 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_32 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_33 ( unimplemented!() , ) } )  ;
+                for_each_0 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_2 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_33 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_34 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_35 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_36 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_507 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_36 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_37 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_508 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_37 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_38 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_39 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_40 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_508 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_40 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_41 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_509 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_41 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_42 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_43 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_44 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_509 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_44 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_45 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_510 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_45 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_46 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_47 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_48 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
  } ) , )
             });
             (unsafe {
-                for_each_3 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_4 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_48 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_49 ( unimplemented!() , ) } )  ;
+                for_each_3 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_4 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_49 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_50 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_51 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_52 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_510 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_52 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_53 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_511 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_53 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_54 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_55 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_56 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_511 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_56 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_57 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_512 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_57 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_58 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_59 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_60 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_512 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_60 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_61 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_513 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_61 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_62 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_63 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_64 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
  } ) , )
             });
         }
         {
             (unsafe {
-                for_each_5 ( <types_type_list_std_vector_char__std_allocator_char____std_deque_char__std_allocator_char____std_list_char__std_allocator_char____std_forward_list_char__std_allocator_char___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_64 ( unimplemented!() , ) } )  ;
- ( unsafe { test_is_equal_65 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_66 ( unimplemented!() , ) } )  ;
- ( unsafe { test_is_equal_67 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_68 ( unimplemented!() , ) } )  ;
- ( unsafe { test_is_equal_69 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_70 ( unimplemented!() , ) } )  ;
- ( unsafe { test_is_equal_71 ( unimplemented!() , ) } )  ;
+                for_each_5 ( <types_type_list_std_vector_char__std_allocator_char____std_deque_char__std_allocator_char____std_list_char__std_allocator_char____std_forward_list_char__std_allocator_char___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_65 ( unimplemented!() , ) } )  ;
+ ( unsafe { test_is_equal_66 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_67 ( unimplemented!() , ) } )  ;
+ ( unsafe { test_is_equal_68 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_69 ( unimplemented!() , ) } )  ;
+ ( unsafe { test_is_equal_70 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_71 ( unimplemented!() , ) } )  ;
+ ( unsafe { test_is_equal_72 ( unimplemented!() , ) } )  ;
  } ) , )
             });
         }
     }
     {
         (unsafe {
-            for_each_6 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_8 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_72 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_73 ( unimplemented!() , ) } )  ;
+            for_each_6 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_8 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_73 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_74 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_75 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_76 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_77 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_78 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_79 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_80 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_513 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_80 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_81 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_514 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_81 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_82 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_83 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_84 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_85 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_86 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_87 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_88 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_514 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_88 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_89 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_515 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_89 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_90 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_91 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_92 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_93 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_94 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_95 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_96 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_515 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_96 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_97 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_516 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_97 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_98 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_99 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_100 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_101 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_102 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_103 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_104 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_516 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_104 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_105 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_517 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_105 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_106 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_107 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_108 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_109 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_110 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_111 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_112 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_517 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_112 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_113 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_518 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_113 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_114 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_115 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_116 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_117 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_118 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_119 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_120 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_518 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_120 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_121 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_519 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_121 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_122 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_123 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_124 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_125 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_126 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_127 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_128 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_519 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_128 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_129 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_520 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_129 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_130 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_131 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_132 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_133 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_134 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_135 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_136 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
  } ) , )
         });
         (unsafe {
-            for_each_9 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_10 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_136 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_137 ( unimplemented!() , ) } )  ;
+            for_each_9 ( <types_type_list_std_vector_int__std_allocator_int____std_deque_int__std_allocator_int____std_list_int__std_allocator_int____std_forward_list_int__std_allocator_int____std_set_int__std_less_int___std_allocator_int____std_multiset_int__std_less_int___std_allocator_int____std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int____std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_10 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_137 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_138 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_139 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_140 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_141 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_142 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_143 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_144 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_520 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_144 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_145 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_521 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_145 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_146 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_147 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_148 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_149 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_150 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_151 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_152 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_521 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_152 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_153 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_522 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_153 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_154 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_155 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_156 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_157 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_158 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_159 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_160 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_522 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_160 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_161 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_523 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_161 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_162 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_163 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_164 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_165 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_166 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_167 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_168 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_523 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_168 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_169 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_524 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_169 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_170 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_171 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_172 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_173 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_174 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_175 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_176 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_524 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_176 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_177 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_525 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_177 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_178 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_179 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_180 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_181 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_182 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_183 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_184 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_525 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_184 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_185 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_526 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_185 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_186 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_187 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_188 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_189 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_190 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_191 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_192 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_526 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_192 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_193 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_527 ( <types_type_list_std_vector_double__std_allocator_double____std_deque_double__std_allocator_double____std_list_double__std_allocator_double____std_forward_list_double__std_allocator_double____std_set_double__std_less_double___std_allocator_double____std_multiset_double__std_less_double___std_allocator_double____std_unordered_set_double__std_hash_double___std_equal_to_double___std_allocator_double____std_unordered_multiset_double__std_hash_double___std_equal_to_double___std_allocator_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_193 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_194 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_195 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_196 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_197 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_198 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_199 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_200 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
  } ) , )
         });
     }
     {
         (unsafe {
-            for_each_11 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_13 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_200 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_201 ( unimplemented!() , ) } )  ;
+            for_each_11 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_13 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_201 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_202 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_203 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_204 ( unimplemented!() , ) } )  ;
@@ -5827,9 +5305,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_209 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_210 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_211 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_212 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_527 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_212 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_213 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_528 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_213 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_214 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_215 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_216 ( unimplemented!() , ) } )  ;
@@ -5840,9 +5318,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_221 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_222 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_223 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_224 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_528 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_224 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_225 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_529 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_225 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_226 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_227 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_228 ( unimplemented!() , ) } )  ;
@@ -5853,9 +5331,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_233 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_234 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_235 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_236 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_529 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_236 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_237 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_530 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_237 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_238 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_239 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_240 ( unimplemented!() , ) } )  ;
@@ -5866,9 +5344,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_245 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_246 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_247 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_248 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_530 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_248 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_249 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_531 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_249 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_250 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_251 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_252 ( unimplemented!() , ) } )  ;
@@ -5879,9 +5357,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_257 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_258 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_259 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_260 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_531 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_260 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_261 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_532 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_261 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_262 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_263 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_264 ( unimplemented!() , ) } )  ;
@@ -5892,9 +5370,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_269 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_270 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_271 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_272 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_532 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_272 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_273 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_533 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_273 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_274 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_275 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_276 ( unimplemented!() , ) } )  ;
@@ -5905,9 +5383,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_281 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_282 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_283 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_284 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_533 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_284 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_285 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_534 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_285 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_286 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_287 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_288 ( unimplemented!() , ) } )  ;
@@ -5918,9 +5396,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_293 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_294 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_295 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_296 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_534 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_296 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_297 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_535 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_297 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_298 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_299 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_300 ( unimplemented!() , ) } )  ;
@@ -5931,9 +5409,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_305 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_306 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_307 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_308 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_535 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_308 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_309 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_536 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_309 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_310 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_311 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_312 ( unimplemented!() , ) } )  ;
@@ -5944,9 +5422,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_317 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_318 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_319 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_320 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_536 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_320 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_321 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_537 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_321 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_322 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_323 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_324 ( unimplemented!() , ) } )  ;
@@ -5957,9 +5435,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_329 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_330 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_331 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_332 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_537 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_332 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_333 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_538 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_333 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_334 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_335 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_336 ( unimplemented!() , ) } )  ;
@@ -5970,12 +5448,12 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_341 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_342 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_343 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_344 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
  } ) , )
         });
         (unsafe {
-            for_each_14 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_15 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_344 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_345 ( unimplemented!() , ) } )  ;
+            for_each_14 ( <types_type_list_std_vector_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_deque_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_forward_list_std_pair_const_int__int___std_allocator_std_pair_const_int__int_____std_set_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_multiset_std_pair_const_int__int___std_less_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_multimap_int__int__std_less_int___std_allocator_std_pair_const_int__int_____std_unordered_set_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_multiset_std_pair_const_int__int___std_hash_std_pair_const_int__int____std_equal_to_std_pair_const_int__int____std_allocator_std_pair_const_int__int_____std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int_____std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_15 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_345 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_346 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_347 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_348 ( unimplemented!() , ) } )  ;
@@ -5986,9 +5464,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_353 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_354 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_355 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_356 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_538 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_356 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_357 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_539 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_357 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_358 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_359 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_360 ( unimplemented!() , ) } )  ;
@@ -5999,9 +5477,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_365 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_366 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_367 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_368 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_539 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_368 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_369 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_540 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_369 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_370 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_371 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_372 ( unimplemented!() , ) } )  ;
@@ -6012,9 +5490,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_377 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_378 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_379 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_380 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_540 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_380 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_381 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_541 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_381 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_382 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_383 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_384 ( unimplemented!() , ) } )  ;
@@ -6025,9 +5503,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_389 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_390 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_391 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_392 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_541 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_392 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_393 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_542 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_393 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_394 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_395 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_396 ( unimplemented!() , ) } )  ;
@@ -6038,9 +5516,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_401 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_402 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_403 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_404 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_542 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_404 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_405 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_543 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_405 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_406 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_407 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_408 ( unimplemented!() , ) } )  ;
@@ -6051,9 +5529,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_413 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_414 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_415 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_416 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_543 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_416 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_417 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_544 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_417 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_418 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_419 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_420 ( unimplemented!() , ) } )  ;
@@ -6064,9 +5542,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_425 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_426 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_427 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_428 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_544 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_428 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_429 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_545 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_429 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_430 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_431 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_432 ( unimplemented!() , ) } )  ;
@@ -6077,9 +5555,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_437 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_438 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_439 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_440 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_545 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_440 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_441 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_546 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_441 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_442 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_443 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_444 ( unimplemented!() , ) } )  ;
@@ -6090,9 +5568,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_449 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_450 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_451 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_452 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_546 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_452 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_453 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_547 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_453 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_454 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_455 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_456 ( unimplemented!() , ) } )  ;
@@ -6103,9 +5581,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_461 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_462 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_463 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_464 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_547 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_464 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_465 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_548 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_465 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_466 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_467 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_468 ( unimplemented!() , ) } )  ;
@@ -6116,9 +5594,9 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_473 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_474 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_475 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_476 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_548 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_476 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_permutation_477 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_549 ( <types_type_list_std_vector_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_deque_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_forward_list_std_pair_const_long__double___std_allocator_std_pair_const_long__double_____std_set_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_multiset_std_pair_const_long__double___std_less_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_map_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_multimap_long__double__std_less_long___std_allocator_std_pair_const_long__double_____std_unordered_set_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_multiset_std_pair_const_long__double___std_hash_std_pair_const_long__double____std_equal_to_std_pair_const_long__double____std_allocator_std_pair_const_long__double_____std_unordered_map_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double_____std_unordered_multimap_long__double__std_hash_long___std_equal_to_long___std_allocator_std_pair_const_long__double____ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_permutation_477 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_478 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_479 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_480 ( unimplemented!() , ) } )  ;
@@ -6129,38 +5607,39 @@ pub unsafe fn test_506() {
  } , | | { ( unsafe { test_is_permutation_485 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_486 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_permutation_487 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_permutation_488 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
  } ) , )
         });
     }
     {
         (unsafe {
-            for_each_16 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_18 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_488 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_for_adaptors_489 ( unimplemented!() , ) } )  ;
+            for_each_16 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_18 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_489 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_for_adaptors_490 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_for_adaptors_491 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_549 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_491 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_for_adaptors_492 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_550 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_492 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_for_adaptors_493 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_for_adaptors_494 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_550 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_494 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_for_adaptors_495 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_551 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_495 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_for_adaptors_496 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_for_adaptors_497 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
  } ) , )
         });
         (unsafe {
-            for_each_19 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_20 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_497 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_for_adaptors_498 ( unimplemented!() , ) } )  ;
+            for_each_19 ( <types_type_list_std_stack_int__std_deque_int__std_allocator_int_____std_queue_int__std_deque_int__std_allocator_int_____std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { for_each_20 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_498 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_for_adaptors_499 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_for_adaptors_500 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_551 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_500 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_for_adaptors_501 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_552 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_501 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_for_adaptors_502 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_for_adaptors_503 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
- } , | | { ( unsafe { for_each_552 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_503 ( unimplemented!() , ) } )  ;
- } , | | { ( unsafe { test_is_equal_for_adaptors_504 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { for_each_553 ( <types_type_list_std_stack_double__std_deque_double__std_allocator_double_____std_queue_double__std_deque_double__std_allocator_double_____std_priority_queue_double__std_vector_double__std_allocator_double____std_less_double___ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_is_equal_for_adaptors_504 ( unimplemented!() , ) } )  ;
  } , | | { ( unsafe { test_is_equal_for_adaptors_505 ( unimplemented!() , ) } )  ;
+ } , | | { ( unsafe { test_is_equal_for_adaptors_506 ( unimplemented!() , ) } )  ;
  } ) , ) } )  ;
  } ) , )
         });
@@ -6182,12 +5661,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_506() });
+    (unsafe { test_507() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_28);
-    std::cell::LazyCell::force(&*&raw const ints_29);
-    std::cell::LazyCell::force(&*&raw const chars_30);
-    std::cell::LazyCell::force(&*&raw const pairs_31);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_29);
+    std::cell::LazyCell::force(&*&raw const ints_30);
+    std::cell::LazyCell::force(&*&raw const chars_31);
+    std::cell::LazyCell::force(&*&raw const pairs_32);
 }

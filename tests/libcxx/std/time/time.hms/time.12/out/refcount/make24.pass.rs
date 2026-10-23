@@ -40,11 +40,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::chrono::make24(hours( 1), true)  == hours(13)");;
     const _: () = assert!(true, "std::chrono::make24(hours(11), true)  == hours(23)");;
     const _: () = assert!(true, "std::chrono::make24(hours(12), true)  == hours(12)");;
-    let i: Value<()> = Rc::new(RefCell::new(1_()));
-    'loop_: while ((*i.borrow()) < 11_()) {
+    let mut i: () = 1_();
+    'loop_: while (i < 11_()) {
         unimplemented!();
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
     unimplemented!();
     unimplemented!();

@@ -33,10 +33,7 @@ const _: () = assert!(
 pub unsafe fn test_0() -> () {
     {
         let mut data: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-        let a: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ =
-            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1({
-                &mut data
-            });
+        let a: () = unimplemented!();
         {
             let mut p: () = (unsafe { a() });
             unimplemented!();
@@ -55,10 +52,7 @@ pub unsafe fn test_0() -> () {
     }
     {
         let mut data: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-        let a: std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_ =
-            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1({
-                &mut data
-            });
+        let a: () = unimplemented!();
         {
             let mut p: () = (unsafe { a() });
             unimplemented!();

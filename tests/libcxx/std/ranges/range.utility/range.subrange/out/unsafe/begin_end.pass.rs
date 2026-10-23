@@ -519,21 +519,25 @@ pub unsafe fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_15(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -617,7 +621,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -627,7 +631,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -695,47 +699,6 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_18() -> () {
-    {
-        let mut array: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
-        let mut rng : std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { unimplemented!()  } , { { let mut __tmp_0 : *mut ()  = ( unimplemented!()  as *mut () ) ; sentinel_wrapper_int_ptr_ :: new_1 ( { & mut __tmp_0 } , )  } } , )  ;
-        let mut beg: *mut () = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_int_ptr_ = (unsafe { rng.end() });
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
-        let mut rng : std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { unimplemented!()  } , { { let mut __tmp_1 : *mut ()  = unimplemented!()  . offset ( - ( ( 3_() ) as isize ) ) ; sentinel_wrapper_int_ptr_ :: new_1 ( { & mut __tmp_1 } , )  } } , )  ;
-        let mut beg: *mut () = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_int_ptr_ = (unsafe { rng.end() });
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
-}
 pub unsafe fn test_19() -> () {
     {
         let mut array: [(); 10] = [
@@ -750,9 +713,9 @@ pub unsafe fn test_19() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut rng : std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr____std_ranges_subrange_kind_unsized_ = std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { contiguous_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_2 : contiguous_iterator_int_ptr_  = contiguous_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  ; sentinel_wrapper_contiguous_iterator_int_ptr__ :: new_1 ( { & mut __tmp_2 } , )  } } , )  ;
-        let mut beg: contiguous_iterator_int_ptr_ = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_contiguous_iterator_int_ptr__ = (unsafe { rng.end() });
+        let mut rng: () = unimplemented!();
+        let mut beg: *mut () = unimplemented!();
+        let mut end: sentinel_wrapper_int_ptr_ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -769,9 +732,9 @@ pub unsafe fn test_19() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut rng : std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr____std_ranges_subrange_kind_unsized_ = std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { contiguous_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_3 : contiguous_iterator_int_ptr_  = contiguous_iterator_int_ptr_ :: new_1 ( { unimplemented!()  . offset ( - ( ( 3_() ) as isize ) ) } , )  ; sentinel_wrapper_contiguous_iterator_int_ptr__ :: new_1 ( { & mut __tmp_3 } , )  } } , )  ;
-        let mut beg: contiguous_iterator_int_ptr_ = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_contiguous_iterator_int_ptr__ = (unsafe { rng.end() });
+        let mut rng: () = unimplemented!();
+        let mut beg: *mut () = unimplemented!();
+        let mut end: sentinel_wrapper_int_ptr_ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -791,9 +754,9 @@ pub unsafe fn test_20() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut rng : std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr____std_ranges_subrange_kind_unsized_ = std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { random_access_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_4 : random_access_iterator_int_ptr_  = random_access_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  ; sentinel_wrapper_random_access_iterator_int_ptr__ :: new_1 ( { & mut __tmp_4 } , )  } } , )  ;
-        let mut beg: random_access_iterator_int_ptr_ = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_random_access_iterator_int_ptr__ = (unsafe { rng.end() });
+        let mut rng: () = unimplemented!();
+        let mut beg: contiguous_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_contiguous_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -810,9 +773,9 @@ pub unsafe fn test_20() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut rng : std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr____std_ranges_subrange_kind_unsized_ = std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { random_access_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_5 : random_access_iterator_int_ptr_  = random_access_iterator_int_ptr_ :: new_1 ( { unimplemented!()  . offset ( - ( ( 3_() ) as isize ) ) } , )  ; sentinel_wrapper_random_access_iterator_int_ptr__ :: new_1 ( { & mut __tmp_5 } , )  } } , )  ;
-        let mut beg: random_access_iterator_int_ptr_ = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_random_access_iterator_int_ptr__ = (unsafe { rng.end() });
+        let mut rng: () = unimplemented!();
+        let mut beg: contiguous_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_contiguous_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -832,9 +795,9 @@ pub unsafe fn test_21() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut rng : std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr____std_ranges_subrange_kind_unsized_ = std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { bidirectional_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_6 : bidirectional_iterator_int_ptr_  = bidirectional_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  ; sentinel_wrapper_bidirectional_iterator_int_ptr__ :: new_1 ( { & mut __tmp_6 } , )  } } , )  ;
-        let mut beg: bidirectional_iterator_int_ptr_ = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_bidirectional_iterator_int_ptr__ = (unsafe { rng.end() });
+        let mut rng: () = unimplemented!();
+        let mut beg: random_access_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_random_access_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -851,9 +814,9 @@ pub unsafe fn test_21() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut rng : std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr____std_ranges_subrange_kind_unsized_ = std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { bidirectional_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_7 : bidirectional_iterator_int_ptr_  = bidirectional_iterator_int_ptr_ :: new_1 ( { unimplemented!()  . offset ( - ( ( 3_() ) as isize ) ) } , )  ; sentinel_wrapper_bidirectional_iterator_int_ptr__ :: new_1 ( { & mut __tmp_7 } , )  } } , )  ;
-        let mut beg: bidirectional_iterator_int_ptr_ = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_bidirectional_iterator_int_ptr__ = (unsafe { rng.end() });
+        let mut rng: () = unimplemented!();
+        let mut beg: random_access_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_random_access_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -873,9 +836,9 @@ pub unsafe fn test_22() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut rng : std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr____std_ranges_subrange_kind_unsized_ = std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_8 : forward_iterator_int_ptr_  = forward_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  ; sentinel_wrapper_forward_iterator_int_ptr__ :: new_1 ( { & mut __tmp_8 } , )  } } , )  ;
-        let mut beg: forward_iterator_int_ptr_ = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_forward_iterator_int_ptr__ = (unsafe { rng.end() });
+        let mut rng: () = unimplemented!();
+        let mut beg: bidirectional_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_bidirectional_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -892,9 +855,50 @@ pub unsafe fn test_22() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut rng : std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr____std_ranges_subrange_kind_unsized_ = std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )  } , { { let mut __tmp_9 : forward_iterator_int_ptr_  = forward_iterator_int_ptr_ :: new_1 ( { unimplemented!()  . offset ( - ( ( 3_() ) as isize ) ) } , )  ; sentinel_wrapper_forward_iterator_int_ptr__ :: new_1 ( { & mut __tmp_9 } , )  } } , )  ;
-        let mut beg: forward_iterator_int_ptr_ = (unsafe { rng.begin_8() });
-        let mut end: sentinel_wrapper_forward_iterator_int_ptr__ = (unsafe { rng.end() });
+        let mut rng: () = unimplemented!();
+        let mut beg: bidirectional_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_bidirectional_iterator_int_ptr__ = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    return true;
+}
+pub unsafe fn test_23() -> () {
+    {
+        let mut array: [(); 10] = [
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+        ];
+        let mut rng: () = unimplemented!();
+        let mut beg: forward_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_forward_iterator_int_ptr__ = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: [(); 10] = [
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+        ];
+        let mut rng: () = unimplemented!();
+        let mut beg: forward_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_forward_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -917,10 +921,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
-        for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_18 ( ) } )  ;
- const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
- ;
- } , | | { ( unsafe { test_19 ( ) } )  ;
+        for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_19 ( ) } )  ;
  const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
  ;
  } , | | { ( unsafe { test_20 ( ) } )  ;
@@ -930,6 +931,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
  const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
  ;
  } , | | { ( unsafe { test_22 ( ) } )  ;
+ const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
+ ;
+ } , | | { ( unsafe { test_23 ( ) } )  ;
  const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
  ;
  } ) , )

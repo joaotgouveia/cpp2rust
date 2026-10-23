@@ -273,21 +273,25 @@ pub unsafe fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_7(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -371,7 +375,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -381,7 +385,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -455,24 +459,24 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_11))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_12))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_12))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_13))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_13)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_10)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_11)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_12)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_14)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_11)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_12)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_13)) = 0_();
     }
 }
-pub static mut outstanding_bytes_10: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_11: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_11: std::cell::LazyCell<()> =
+pub static mut alloc_count_12: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_12: std::cell::LazyCell<()> =
+pub static mut dealloc_count_13: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_13: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -562,42 +566,12 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a: [(); 6] = [
-            {
-                let mut __tmp_0: () = 1_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_0 }, {
-                    &std::mem::transmute(*b"one\0")
-                })
-            },
-            {
-                let mut __tmp_1: () = 2_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_1 }, {
-                    &std::mem::transmute(*b"two\0")
-                })
-            },
-            {
-                let mut __tmp_2: () = 3_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_2 }, {
-                    &std::mem::transmute(*b"three\0")
-                })
-            },
-            {
-                let mut __tmp_3: () = 4_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_3 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_4: () = 1_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_4 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_5: () = 2_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_5 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c: () = unimplemented!();
         unimplemented!();
@@ -636,42 +610,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 6] = [
-            {
-                let mut __tmp_6: () = 1_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_6 }, {
-                    &std::mem::transmute(*b"one\0")
-                })
-            },
-            {
-                let mut __tmp_7: () = 2_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_7 }, {
-                    &std::mem::transmute(*b"two\0")
-                })
-            },
-            {
-                let mut __tmp_8: () = 3_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_8 }, {
-                    &std::mem::transmute(*b"three\0")
-                })
-            },
-            {
-                let mut __tmp_9: () = 4_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_9 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_10: () = 1_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_10 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_11: () = 2_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_11 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c: () = unimplemented!();
         unimplemented!();
@@ -713,8 +657,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
 pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__;
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_10);
-    std::cell::LazyCell::force(&*&raw const alloc_count_11);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_12);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_13);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_11);
+    std::cell::LazyCell::force(&*&raw const alloc_count_12);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_13);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_14);
 }

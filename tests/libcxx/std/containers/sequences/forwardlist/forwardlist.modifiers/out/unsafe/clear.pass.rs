@@ -82,9 +82,7 @@ pub unsafe fn test_5() -> () {
     }
     {
         let t: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-        let mut c: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -99,9 +97,7 @@ pub unsafe fn test_5() -> () {
     }
     {
         let t: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-        let mut c: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

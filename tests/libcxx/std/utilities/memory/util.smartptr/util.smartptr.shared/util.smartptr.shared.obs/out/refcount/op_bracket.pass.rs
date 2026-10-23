@@ -28,9 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_intarr8arr_::new_1({
-            Ptr::alloc_array((0..8_()).map(|_| unimplemented!()).collect::<Box<[()]>>())
-        })));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 8_()) {
             let __rhs = i;
@@ -51,9 +49,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             elem!(iptr, i).write({ i });
             i.prefix_inc();
         }
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_intarr8arr_::new_1({
-            (iptr).clone()
-        })));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 8_()) {
             unimplemented!();
@@ -61,9 +57,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         }
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_intarrarr_::new_1({
-            Ptr::alloc_array((0..8_()).map(|_| unimplemented!()).collect::<Box<[()]>>())
-        })));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 8_()) {
             let __rhs = i;

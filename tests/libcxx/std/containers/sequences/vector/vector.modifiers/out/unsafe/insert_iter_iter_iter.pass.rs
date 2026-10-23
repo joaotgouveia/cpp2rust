@@ -285,8 +285,12 @@ pub unsafe fn make_thread_unsafe_shared_4()
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_308__::destructor,
     );
     let mut alloc: () = unimplemented!();
-    ptr.block = unimplemented!();
-    unimplemented!();
+    ptr.block = (unsafe {
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block__::allocate ( & mut alloc , 1_() , )
+    });
+    (unsafe {
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block__::construct ( & mut alloc , ptr . block  , )
+    });
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_308__::copy_from({ &ptr });
 }
 pub unsafe fn make_thread_unsafe_shared_5()
@@ -298,8 +302,12 @@ pub unsafe fn make_thread_unsafe_shared_5()
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_300__::destructor,
     );
     let mut alloc: () = unimplemented!();
-    ptr.block = unimplemented!();
-    unimplemented!();
+    ptr.block = (unsafe {
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_300___control_block__::allocate ( & mut alloc , 1_() , )
+    });
+    (unsafe {
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_300___control_block__::construct ( & mut alloc , ptr . block  , )
+    });
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_300__::copy_from({ &ptr });
 }
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block {
@@ -348,8 +356,12 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_308__ {
             return;
         };
         let mut alloc: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        (unsafe {
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block__::destroy ( & mut alloc , self . block  , )
+        });
+        (unsafe {
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block__::deallocate ( & mut alloc , self . block  , 1_() , )
+        });
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_308_ {
         return (&mut (*self.block).content as *mut limited_alloc_handle_308_);
@@ -426,8 +438,12 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_300__ {
             return;
         };
         let mut alloc: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        (unsafe {
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_300___control_block__::destroy ( & mut alloc , self . block  , )
+        });
+        (unsafe {
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_300___control_block__::deallocate ( & mut alloc , self . block  , 1_() , )
+        });
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_300_ {
         return (&mut (*self.block).content as *mut limited_alloc_handle_300_);
@@ -1343,7 +1359,7 @@ pub struct adl_S {}
 pub unsafe fn make_move_iterator_33(mut _a0: *mut adl_S) {}
 pub unsafe fn tests_34() -> () {
     {
-        let mut v: () = std_vector_int__std_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         let N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1371,7 +1387,7 @@ pub unsafe fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__std_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         let N: () = (::std::mem::size_of::<[(); 5]>() as ())
@@ -1400,7 +1416,7 @@ pub unsafe fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__std_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         let N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1428,7 +1444,7 @@ pub unsafe fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__std_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         'loop_: while ((unimplemented!()) < (unimplemented!())) {
             unimplemented!();
         }
@@ -1459,7 +1475,7 @@ pub unsafe fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__std_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut sz: () = unimplemented!();
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
@@ -1488,7 +1504,7 @@ pub unsafe fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__limited_allocator_int__308__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         let N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1516,7 +1532,7 @@ pub unsafe fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__limited_allocator_int__300__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         let N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1557,7 +1573,7 @@ pub unsafe fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__min_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         let N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1585,7 +1601,7 @@ pub unsafe fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__min_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
         let N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));

@@ -278,23 +278,29 @@ pub fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_7(_i, n)
     });
 }
-pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_9(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_10(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -340,7 +346,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_12(
+            operator_cmp_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -365,7 +371,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_11(
+            operator_eq_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -486,10 +492,10 @@ impl Default for EmplaceConstructibleMoveableAndAssignable_int_ {
         }
     }
 }
-pub fn operator_eq_13(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
+pub fn operator_eq_14(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
     return ({ LHS.with(|__s| __s.m_id.clone()) } == { RHS.with(|__s| __s.m_id.clone()) });
 }
-pub fn operator_ne_14(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
+pub fn operator_ne_15(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
     return ({ LHS.with(|__s| __s.m_id.clone()) } != { RHS.with(|__s| __s.m_id.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -509,7 +515,7 @@ impl detail_TypeID {
 impl std::cmp::PartialEq for detail_TypeID {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_13(
+            operator_eq_14(
                 Rc::new(RefCell::new(detail_TypeID {
                     m_id: self.m_id.clone(),
                 }))
@@ -554,11 +560,11 @@ impl Default for AllocatorConstructController {
         { AllocatorConstructController::new() }
     }
 }
-pub fn getConstructController_15() -> Ptr<AllocatorConstructController> {
-    return (c_16.with(|v| v.as_pointer()));
+pub fn getConstructController_16() -> Ptr<AllocatorConstructController> {
+    return (c_17.with(|v| v.as_pointer()));
 }
 thread_local!(
-    static c_16: Value<AllocatorConstructController> =
+    static c_17: Value<AllocatorConstructController> =
         Rc::new(RefCell::new(AllocatorConstructController::new()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -587,57 +593,17 @@ pub struct ContainerTestAllocator_float__int_ {
 impl ContainerTestAllocator_float__int_ {}
 const _: () = assert!(true, "std::is_same<A1T::rebind_traits<float>, A2T>::value");
 const _: () = assert!(true, "std::is_same<A2T::rebind_traits<int>, A1T>::value");
-pub fn test_17() -> () {
+pub fn test_18() -> () {
     let arr1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([42_()])));
     let arr2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 101_(), 42_()])));
     {
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            ({
-                let ___first: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ (arr1.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*v.borrow()).assign_23_class_forward_iterator_int_ptr__0(___first, ___last)
-            });
-            unimplemented!();
-        }
-        {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            ({
-                let ___first: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ (arr2.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*v.borrow()).assign_23_class_forward_iterator_int_ptr__0(___first, ___last)
-            });
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            ({
-                let ___first: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ (arr1.as_pointer() as Ptr<()>) });
-                let ___last: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
-                (*v.borrow()).assign_22_class_cpp17_input_iterator_int_ptr__0(___first, ___last)
-            });
+            let mut v: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            ({
-                let ___first: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ (arr2.as_pointer() as Ptr<()>) });
-                let ___last: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
-                (*v.borrow()).assign_22_class_cpp17_input_iterator_int_ptr__0(___first, ___last)
-            });
+            let mut v: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -646,38 +612,14 @@ pub fn test_17() -> () {
     }
     {
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
-            let mut i: () = 0_();
-            'loop_: while (i < unimplemented!()) {
-                unimplemented!();
-                i.prefix_inc();
-            }
-            ({
-                let ___first: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ (arr1.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*v.borrow()).assign_23_class_forward_iterator_int_ptr__0(___first, ___last)
-            });
             unimplemented!();
             unimplemented!();
         }
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
-            let mut i: () = 0_();
-            'loop_: while (i < unimplemented!()) {
-                unimplemented!();
-                i.prefix_inc();
-            }
-            ({
-                let ___first: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ (arr2.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*v.borrow()).assign_23_class_forward_iterator_int_ptr__0(___first, ___last)
-            });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -686,38 +628,26 @@ pub fn test_17() -> () {
     }
     {
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < unimplemented!()) {
                 unimplemented!();
                 i.prefix_inc();
             }
-            ({
-                let ___first: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ (arr1.as_pointer() as Ptr<()>) });
-                let ___last: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
-                (*v.borrow()).assign_22_class_cpp17_input_iterator_int_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < unimplemented!()) {
                 unimplemented!();
                 i.prefix_inc();
             }
-            ({
-                let ___first: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ (arr2.as_pointer() as Ptr<()>) });
-                let ___last: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
-                (*v.borrow()).assign_22_class_cpp17_input_iterator_int_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -726,33 +656,49 @@ pub fn test_17() -> () {
     }
     {
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
-            ({
-                let ___first: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ (arr1.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*v.borrow()).assign_23_class_forward_iterator_int_ptr__0(___first, ___last)
-            });
+            let mut i: () = 0_();
+            'loop_: while (i < unimplemented!()) {
+                unimplemented!();
+                i.prefix_inc();
+            }
+            unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
+            unimplemented!();
+            let mut i: () = 0_();
+            'loop_: while (i < unimplemented!()) {
+                unimplemented!();
+                i.prefix_inc();
+            }
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let mut v: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut v: () = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < 2_()) {
                 unimplemented!();
                 i.prefix_inc();
             }
-            ({
-                let ___first: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ (arr2.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ unimplemented!() });
-                (*v.borrow()).assign_23_class_forward_iterator_int_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -761,33 +707,21 @@ pub fn test_17() -> () {
     }
     {
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
-            ({
-                let ___first: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ (arr1.as_pointer() as Ptr<()>) });
-                let ___last: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
-                (*v.borrow()).assign_22_class_cpp17_input_iterator_int_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut v: () = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < 2_()) {
                 unimplemented!();
                 i.prefix_inc();
             }
-            ({
-                let ___first: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ (arr2.as_pointer() as Ptr<()>) });
-                let ___last: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ unimplemented!() });
-                (*v.borrow()).assign_22_class_cpp17_input_iterator_int_ptr__0(___first, ___last)
-            });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -795,17 +729,10 @@ pub fn test_17() -> () {
         }
     }
     {
-        let dst: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut dst: () = unimplemented!();
         let mut n: () = (unimplemented!()).wrapping_mul(2_());
         let mut src: () = unimplemented!();
-        ({
-            let ___first: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::new_1({ unimplemented!() });
-            let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-                unimplemented!().offset((unimplemented!()) as isize)
-            });
-            (*dst.borrow()).assign_23_class_forward_iterator_int_ptr__0(___first, ___last)
-        });
+        unimplemented!();
         unimplemented!();
     }
     return true;
@@ -830,7 +757,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_17() });
+    ({ test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -864,7 +791,7 @@ impl AllocatorConstructControllerImpl for Ptr<AllocatorConstructController> {
             ({
                 let _LHS: Ptr<detail_TypeID> = (*self).with(|__s| __s.m_expected_args.clone());
                 let _RHS: Ptr<detail_TypeID> = (tid).clone();
-                operator_eq_13(_LHS, _RHS)
+                operator_eq_14(_LHS, _RHS)
             }),
         ));
         if ((*self).with(|__s| __s.m_expected_count) == -1_())

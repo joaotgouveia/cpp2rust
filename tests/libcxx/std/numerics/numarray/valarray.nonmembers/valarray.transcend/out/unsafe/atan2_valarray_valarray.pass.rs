@@ -40,7 +40,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        let mut v3: () = (unsafe { (unsafe { atan2_3(&v1, &v2) })() });
+        let mut v3: () = (unsafe { unimplemented!()() });
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {

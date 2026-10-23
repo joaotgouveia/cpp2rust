@@ -22,15 +22,13 @@ pub unsafe fn test_containers_0() {
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let mut rhs: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut rhs: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let mut rhs: () =
-            std_deque_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut rhs: () = unimplemented!();
         (*unimplemented!()) = -1_();
         unimplemented!();
     }
@@ -39,15 +37,7 @@ pub unsafe fn test_containers_0() {
         unimplemented!();
         let mut rhs: () = unimplemented!();
         unimplemented!();
-        (unsafe {
-            let ___p: () = {
-                let mut __tmp_0: () = unimplemented!();
-                std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_0 } , )
-            };
-            let ___f: () = unimplemented!();
-            let ___l: () = unimplemented!();
-            rhs.insert_72_class_std___wrap_iter_int_ptr__0(___p, ___f, ___l)
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -56,15 +46,7 @@ pub unsafe fn test_containers_0() {
         unimplemented!();
         let mut rhs: () = unimplemented!();
         unimplemented!();
-        (unsafe {
-            let ___p: () = {
-                let mut __tmp_1: () = unimplemented!();
-                std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_1 } , )
-            };
-            let ___f: () = unimplemented!();
-            let ___l: () = unimplemented!();
-            rhs.insert_72_class_std___wrap_iter_int_ptr__0(___p, ___f, ___l)
-        });
+        unimplemented!();
         unimplemented!();
         (*unimplemented!()) = -1_();
         unimplemented!();
@@ -86,15 +68,13 @@ pub unsafe fn test_containers_1() {
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let mut rhs: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut rhs: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let mut rhs: () =
-            std_vector_int__std_allocator_int__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut rhs: () = unimplemented!();
         (*unimplemented!()) = -1_();
         unimplemented!();
     }
@@ -103,19 +83,7 @@ pub unsafe fn test_containers_1() {
         unimplemented!();
         let mut rhs: () = unimplemented!();
         unimplemented!();
-        (unsafe {
-            let ___position: () = {
-                let mut __tmp_2: () = unimplemented!();
-                std___wrap_iter_const_int_ptr_::new_1({ &mut __tmp_2 })
-            };
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            rhs.insert_67_class_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__0(
-                ___position,
-                ___first,
-                ___last,
-            )
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -124,19 +92,7 @@ pub unsafe fn test_containers_1() {
         unimplemented!();
         let mut rhs: () = unimplemented!();
         unimplemented!();
-        (unsafe {
-            let ___position: () = {
-                let mut __tmp_3: () = unimplemented!();
-                std___wrap_iter_const_int_ptr_::new_1({ &mut __tmp_3 })
-            };
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            rhs.insert_67_class_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__0(
-                ___position,
-                ___first,
-                ___last,
-            )
-        });
+        unimplemented!();
         unimplemented!();
         (*unimplemented!()) = -1_();
         unimplemented!();
@@ -158,15 +114,13 @@ pub unsafe fn test_containers_2() {
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let mut rhs: () =
-            std_deque_int__std_allocator_int__::new_2({ unimplemented!() }, { unimplemented!() });
+        let mut rhs: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let mut rhs: () =
-            std_deque_int__std_allocator_int__::new_2({ unimplemented!() }, { unimplemented!() });
+        let mut rhs: () = unimplemented!();
         (*unimplemented!()) = -1_();
         unimplemented!();
     }
@@ -175,17 +129,7 @@ pub unsafe fn test_containers_2() {
         unimplemented!();
         let mut rhs: () = unimplemented!();
         unimplemented!();
-        (unsafe {
-            let ___p: () = {
-                let mut __tmp_4: () = unimplemented!();
-                std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_4 } , )
-            };
-            let ___f: () = unimplemented!();
-            let ___l: () = unimplemented!();
-            rhs.insert_72_class_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__0(
-                ___p, ___f, ___l,
-            )
-        });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -194,17 +138,7 @@ pub unsafe fn test_containers_2() {
         unimplemented!();
         let mut rhs: () = unimplemented!();
         unimplemented!();
-        (unsafe {
-            let ___p: () = {
-                let mut __tmp_5: () = unimplemented!();
-                std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_5 } , )
-            };
-            let ___f: () = unimplemented!();
-            let ___l: () = unimplemented!();
-            rhs.insert_72_class_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__0(
-                ___p, ___f, ___l,
-            )
-        });
+        unimplemented!();
         unimplemented!();
         (*unimplemented!()) = -1_();
         unimplemented!();

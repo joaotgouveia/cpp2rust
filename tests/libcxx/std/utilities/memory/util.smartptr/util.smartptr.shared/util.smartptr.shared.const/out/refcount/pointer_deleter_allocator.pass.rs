@@ -601,11 +601,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(<test_allocator_statistics>::default()));
         {
             let mut ptr: Ptr<A> = Ptr::alloc(A::new());
-            let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1(
-                { (ptr).clone() },
-                { test_deleter_A_::new_1({ 3_() }) },
-                { test_allocator_A_::new_1({ 5_() }, { (alloc_stats.as_pointer()) }) },
-            )));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -629,11 +625,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(<test_allocator_statistics>::default()));
         {
             let mut ptr: Ptr<A> = Ptr::alloc(A::new());
-            let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_const_A_::new_1(
-                { (ptr).clone() },
-                { test_deleter_const_A_::new_1({ 3_() }) },
-                { test_allocator_A_::new_1({ 5_() }, { (alloc_stats.as_pointer()) }) },
-            )));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -654,11 +646,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut ptr: Ptr<A> = Ptr::alloc(A::new());
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_2(
-            { (ptr).clone() },
-            { test_deleter_A_::new_1({ 3_() }) },
-            { bare_allocator_void_::new() },
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -674,11 +662,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
     {
         let mut ptr: Ptr<A> = Ptr::alloc(A::new());
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_3(
-            { (ptr).clone() },
-            { test_deleter_A_::new_1({ 3_() }) },
-            { <min_allocator_void_>::default() },
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -693,17 +677,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     {
         let d: Value<move_deleter_int_> = Rc::new(RefCell::new(move_deleter_int_::new_1({ 0_() })));
-        let p2: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1(
-            { Ptr::alloc(Default::default()) },
-            { move_deleter_int_::move_from({ d.as_pointer() }) },
-            { unimplemented!() },
-        )));
-        let p3: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_2(
-            { Default::default() },
-            { move_deleter_int_::move_from({ d.as_pointer() }) },
-            { unimplemented!() },
-            None,
-        )));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
         const _: () = assert!(
@@ -720,11 +695,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         );;
     }
     {
-        let ptr: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_3(
-            { Ptr::alloc(Default::default()) },
-            { unimplemented!() },
-            { complete_type_allocator_int_::new() },
-        )));
+        let ptr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     return 0_();
 }

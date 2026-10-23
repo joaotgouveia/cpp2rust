@@ -111,30 +111,15 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut a: () = A1_int_::new({ 5_() });
+        let mut a: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: () = {
-            let mut __tmp_0: A1_int_ = A1_int_::new({ 5_() });
-            let mut __tmp_1: A2_int_ = A2_int_::new({ 6_() });
-            std_scoped_allocator_adaptor_A1_int___A2_int__::new_1({ &mut __tmp_0 }, {
-                &mut __tmp_1
-            })
-        };
+        let mut a: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: () = {
-            let mut __tmp_2: A1_int_ = A1_int_::new({ 5_() });
-            let mut __tmp_3: A2_int_ = A2_int_::new({ 6_() });
-            let mut __tmp_4: A3_int_ = A3_int_::new({ 8_() });
-            std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
-                { &mut __tmp_2 },
-                { &mut __tmp_3 },
-                { &mut __tmp_4 },
-            )
-        };
+        let mut a: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

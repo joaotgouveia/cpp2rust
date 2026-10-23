@@ -32,7 +32,7 @@ pub unsafe fn test_basic_0() {
     let mut d: Deleter = Deleter::new();
     unimplemented!();
     {
-        let mut p: () = std_unique_ptr_int__Deleter_ref_::new({ unimplemented!() }, { &mut d });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -42,8 +42,7 @@ pub unsafe fn test_basic_1() {
     let mut d: Deleter = Deleter::new();
     unimplemented!();
     {
-        let mut p: () =
-            std_unique_ptr_intarrarr__Deleter_ref_::new({ Default::default() }, { &mut d });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

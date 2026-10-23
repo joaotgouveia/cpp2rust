@@ -17,35 +17,35 @@ pub fn test_1() -> () {
     let Tuesday: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let ymwd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        'loop_: while ((*i.borrow()) <= 10_()) {
+        let mut i: () = 0_();
+        'loop_: while (i <= 10_()) {
             let ymwd1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (*i.borrow_mut()).prefix_inc();
+            i.prefix_inc();
         }
     }
     {
         let ymwd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(1_()));
-        'loop_: while ((*i.borrow()) <= 10_()) {
+        let mut i: () = 1_();
+        'loop_: while (i <= 10_()) {
             let ymwd1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (*i.borrow_mut()).prefix_inc();
+            i.prefix_inc();
         }
-        let i: Value<()> = Rc::new(RefCell::new(12_()));
-        'loop_: while ((*i.borrow()) <= 15_()) {
+        let mut i: () = 12_();
+        'loop_: while (i <= 15_()) {
             let ymwd1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (*i.borrow_mut()).prefix_inc();
+            i.prefix_inc();
         }
     }
     return true;

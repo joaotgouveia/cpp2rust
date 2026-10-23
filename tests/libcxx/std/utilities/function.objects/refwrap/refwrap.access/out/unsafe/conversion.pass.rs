@@ -10,27 +10,27 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct functor1 {}
 pub unsafe fn test_0(t: *mut Option<unsafe fn()>) {
-    let mut r: () = std_reference_wrapper_void__ptr____::new({ t });
+    let mut r: () = unimplemented!();
     let r2: *mut Option<unsafe fn()> = (unsafe { r() });
     unimplemented!();
 }
 pub unsafe fn test_1(t: Option<unsafe fn()>) {
-    let mut r: () = std_reference_wrapper_void____::new({ t });
+    let mut r: () = unimplemented!();
     let r2: Option<unsafe fn()> = (unsafe { r() });
     unimplemented!();
 }
 pub unsafe fn test_2(t: *mut functor1) {
-    let mut r: () = std_reference_wrapper_functor1_::new({ t });
+    let mut r: () = unimplemented!();
     let r2: *mut functor1 = (unsafe { r() });
     unimplemented!();
 }
 pub unsafe fn test_3(t: *mut ()) {
-    let mut r: () = std_reference_wrapper_int_::new({ t });
+    let mut r: () = unimplemented!();
     let r2: *mut () = (unsafe { r() });
     unimplemented!();
 }
 pub unsafe fn test_4(t: *const ()) {
-    let mut r: () = std_reference_wrapper_const_int_::new({ t });
+    let mut r: () = unimplemented!();
     let r2: *const () = (unsafe { r() });
     unimplemented!();
 }

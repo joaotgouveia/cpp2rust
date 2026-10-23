@@ -32,11 +32,11 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut a: [*mut Holder_Incomplete_; 2] = [std::ptr::null_mut(), std::ptr::null_mut()];
     let mut p: *mut *mut Holder_Incomplete_ = a.as_mut_ptr();
-    p = (unsafe { next_0(p, None) });
-    p = (unsafe { prev_1(p) });
-    p = (unsafe { next_0(p, Some(2_())) });
-    p = (unsafe { prev_2(p, 2_()) });
-    (unsafe { advance_3(&mut p, <Intable_Holder_Incomplete__>::default()) });
+    p = unimplemented!();
+    p = unimplemented!();
+    p = unimplemented!();
+    p = unimplemented!();
+    (unsafe { advance_0(&mut p, <Intable_Holder_Incomplete__>::default()) });
     &(unimplemented!());
     return 0_();
 }

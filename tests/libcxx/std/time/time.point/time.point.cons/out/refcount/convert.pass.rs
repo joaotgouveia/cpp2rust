@@ -29,12 +29,12 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t1 : Value<() > = Rc::new(RefCell::new(std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long_long__std_ratio_1__1000000___ :: new_1 ( { t2 .as_pointer()  } , )  )) ;
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t1 : Value<() > = Rc::new(RefCell::new(std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long_long__std_ratio_1__1000000___ :: new_1 ( { t2 .as_pointer()  } , )  )) ;
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "t1.time_since_epoch() == Duration1(3000)");;
     }
     return 0_();

@@ -146,166 +146,22 @@ pub fn test_11(s: (), mut expected: ()) {
     unimplemented!();
 }
 pub fn test_string_12() {
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    Ptr::<() >::from_string_literal(b"abcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrst" )
-                },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    Ptr::<() >::from_string_literal(b"abcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrs" )
-                },
-                None,
-            ),
-        )
-    });
+    ({ test_9(unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!()) });
 }
 pub fn test_string_13() {
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                {
-                    Ptr::<() >::from_string_literal(b"abcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrst" )
-                },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                {
-                    Ptr::<() >::from_string_literal(b"abcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrs" )
-                },
-                None,
-            ),
-        )
-    });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
 }
 pub fn test_string_14() {
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    Ptr::<() >::from_string_literal(b"abcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrst" )
-                },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    Ptr::<() >::from_string_literal(b"abcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrstabcdefghijklmnopqrs" )
-                },
-                None,
-            ),
-        )
-    });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
 }
 pub fn test_15() -> () {
     ({ test_string_12() });

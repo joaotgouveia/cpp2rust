@@ -8,9 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     let foo: Ptr<Foo> = ({ get_foo_1() });
-    let ref_: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_Foo_::new({
-        (foo).clone()
-    })));
+    let ref_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]

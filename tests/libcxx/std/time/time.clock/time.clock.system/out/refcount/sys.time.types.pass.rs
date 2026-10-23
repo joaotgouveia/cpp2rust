@@ -67,8 +67,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    let s0 : Value<() > = Rc::new(RefCell::new(std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long_long__std_ratio_1__1___ :: new_1 ( { d0 .as_pointer()  } , )  )) ;
-    let s1 : Value<() > = Rc::new(RefCell::new(std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long_long__std_ratio_1__1___ :: new_1 ( { d1 .as_pointer()  } , )  )) ;
+    let s0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();

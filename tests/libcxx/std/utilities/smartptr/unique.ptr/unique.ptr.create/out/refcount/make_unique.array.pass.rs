@@ -24,7 +24,7 @@ impl Default for foo {
 }
 pub fn test_0() -> () {
     {
-        let p1: Value<()> = Rc::new(RefCell::new(({ make_unique_1(5_()) })));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 5_()) {
             unimplemented!();
@@ -32,7 +32,7 @@ pub fn test_0() -> () {
         }
     }
     {
-        let p2: Value<()> = Rc::new(RefCell::new(({ make_unique_2(5_()) })));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 5_()) {
             unimplemented!();
@@ -40,7 +40,7 @@ pub fn test_0() -> () {
         }
     }
     {
-        let p3: Value<()> = Rc::new(RefCell::new(({ make_unique_3(7_()) })));
+        let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 7_()) {
             unimplemented!();

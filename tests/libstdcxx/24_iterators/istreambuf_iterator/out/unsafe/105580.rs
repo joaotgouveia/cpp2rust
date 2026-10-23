@@ -16,11 +16,7 @@ unsafe fn main_0() -> () {
     let mut in_: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut end: () = unimplemented!();
-    let mut ss: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { unimplemented!() },
-        { unimplemented!() },
-        None,
-    );
+    let mut ss: () = unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

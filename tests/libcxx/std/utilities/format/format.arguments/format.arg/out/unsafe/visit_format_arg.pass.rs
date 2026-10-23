@@ -1128,79 +1128,23 @@ pub unsafe fn test_123() {
     }
     {
         (unsafe { test_string_view_103(unimplemented!()) });
-        (unsafe {
-            test_string_view_103(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_string_view_103(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_string_view_103(unimplemented!()) });
+        (unsafe { test_string_view_103(unimplemented!()) });
     }
     {
         (unsafe { test_string_view_105(unimplemented!()) });
-        (unsafe {
-            test_string_view_105(
-                std_basic_string_char__constexpr_char_traits_char___std_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_string_view_105(
-                std_basic_string_char__constexpr_char_traits_char___std_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_string_view_105(unimplemented!()) });
+        (unsafe { test_string_view_105(unimplemented!()) });
     }
     {
         (unsafe { test_string_view_107(unimplemented!()) });
-        (unsafe {
-            test_string_view_107(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_string_view_107(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_string_view_107(unimplemented!()) });
+        (unsafe { test_string_view_107(unimplemented!()) });
     }
     {
         (unsafe { test_string_view_109(unimplemented!()) });
-        (unsafe {
-            test_string_view_109(
-                std_basic_string_char__constexpr_char_traits_char___min_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_string_view_109(
-                std_basic_string_char__constexpr_char_traits_char___min_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_string_view_109(unimplemented!()) });
+        (unsafe { test_string_view_109(unimplemented!()) });
     }
     (unsafe { test_43(Default::default()) });
     let mut i: () = 0_();
@@ -1314,59 +1258,23 @@ pub unsafe fn test_124() {
     }
     {
         (unsafe { test_string_view_115(unimplemented!()) });
-        (unsafe {
-            test_string_view_115(
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_string_view_115(
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_string_view_115(unimplemented!()) });
+        (unsafe { test_string_view_115(unimplemented!()) });
     }
     {
         (unsafe { test_string_view_117(unimplemented!()) });
-        (unsafe {
-            test_string_view_117 ( std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , None , )  , )
-        });
-        (unsafe {
-            test_string_view_117 ( std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , None , )  , )
-        });
+        (unsafe { test_string_view_117(unimplemented!()) });
+        (unsafe { test_string_view_117(unimplemented!()) });
     }
     {
         (unsafe { test_string_view_119(unimplemented!()) });
-        (unsafe {
-            test_string_view_119(
-                std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_string_view_119(
-                std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_string_view_119(unimplemented!()) });
+        (unsafe { test_string_view_119(unimplemented!()) });
     }
     {
         (unsafe { test_string_view_121(unimplemented!()) });
-        (unsafe {
-            test_string_view_121 ( std_basic_string_wchar_t__constexpr_char_traits_wchar_t___min_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , None , )  , )
-        });
-        (unsafe {
-            test_string_view_121 ( std_basic_string_wchar_t__constexpr_char_traits_wchar_t___min_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , None , )  , )
-        });
+        (unsafe { test_string_view_121(unimplemented!()) });
+        (unsafe { test_string_view_121(unimplemented!()) });
     }
     (unsafe { test_85(Default::default()) });
     let mut i: () = 0_();

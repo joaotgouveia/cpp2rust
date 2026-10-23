@@ -170,10 +170,7 @@ pub unsafe fn is_string_asan_correct_8(_a0: *const ()) -> () {
     return true;
 }
 pub unsafe fn test_string_9() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"123".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -185,10 +182,7 @@ pub unsafe fn test_string_9() {
     unimplemented!();
 }
 pub unsafe fn test_string_10() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-        { c"123".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -200,10 +194,7 @@ pub unsafe fn test_string_10() {
     unimplemented!();
 }
 pub unsafe fn test_string_11() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-        { c"123".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -64,10 +64,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let sp0: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
-            Ptr::alloc(A::new())
-        })));
-        let wp: Value<()> = Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ sp0.as_pointer() })));
+        let sp0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -75,10 +73,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     unimplemented!();
     {
-        let sp0: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
-            Ptr::alloc(A::new())
-        })));
-        let wp: Value<()> = Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ sp0.as_pointer() })));
+        let sp0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let sp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();

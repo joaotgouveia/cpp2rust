@@ -19,10 +19,7 @@ pub unsafe fn test_0(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: ()
         pairs.as_mut_ptr().offset((4_()) as isize),
     ) {
         let p: *mut () = &mut (*p);
-        (unsafe {
-            let ___x: *mut () = p;
-            map.insert_45_struct_std_pair_char__int__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
@@ -46,10 +43,7 @@ pub unsafe fn test_1(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: ()
         pairs.as_mut_ptr().offset((4_()) as isize),
     ) {
         let p: *mut () = &mut (*p);
-        (unsafe {
-            let ___x: *mut () = p;
-            map.insert_45_struct_std_pair_char__char__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
@@ -73,10 +67,7 @@ pub unsafe fn test_2(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: ()
         pairs.as_mut_ptr().offset((4_()) as isize),
     ) {
         let p: *mut () = &mut (*p);
-        (unsafe {
-            let ___x: *mut () = p;
-            map.insert_45_struct_std_pair_int__struct_E__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
@@ -100,10 +91,7 @@ pub unsafe fn test_3(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: ()
         pairs.as_mut_ptr().offset((4_()) as isize),
     ) {
         let p: *mut () = &mut (*p);
-        (unsafe {
-            let ___x: *mut () = p;
-            map.insert_45_struct_std_pair_char__int__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
@@ -127,10 +115,7 @@ pub unsafe fn test_4(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: ()
         pairs.as_mut_ptr().offset((4_()) as isize),
     ) {
         let p: *mut () = &mut (*p);
-        (unsafe {
-            let ___x: *mut () = p;
-            map.insert_45_struct_std_pair_char__char__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
@@ -154,10 +139,7 @@ pub unsafe fn test_5(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: ()
         pairs.as_mut_ptr().offset((4_()) as isize),
     ) {
         let p: *mut () = &mut (*p);
-        (unsafe {
-            let ___x: *mut () = p;
-            map.insert_45_struct_std_pair_int__struct_E__ref_0(___x)
-        });
+        unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),

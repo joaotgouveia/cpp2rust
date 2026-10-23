@@ -13,10 +13,7 @@ pub struct StaticInit {
 }
 impl StaticInit {
     pub unsafe fn destructor(&mut self) {
-        let mut str: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { unimplemented!() },
-            None,
-        );
+        let mut str: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -61,10 +58,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut foo_0)).ec = (unimplemented!());
-        let mut m: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { unimplemented!() },
-            None,
-        );
+        let mut m: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

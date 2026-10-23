@@ -28,8 +28,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "noexcept(swap(a, a))");;
     }
     {
-        let mut a1: () = 1_();
-        let mut a2: () = 2_();
+        let mut a1: () = unimplemented!();
+        let mut a2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

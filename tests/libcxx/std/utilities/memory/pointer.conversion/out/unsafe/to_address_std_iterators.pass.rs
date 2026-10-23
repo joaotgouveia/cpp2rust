@@ -65,14 +65,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_container_iterators_0(unimplemented!()) });
     (unsafe { test_container_iterators_1(unimplemented!()) });
-    (unsafe {
-        test_container_iterators_2(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abc".as_ptr() },
-                None,
-            ),
-        )
-    });
+    (unsafe { test_container_iterators_2(unimplemented!()) });
     (unsafe { test_container_iterators_3(unimplemented!()) });
     (unsafe { test_container_iterators_4(unimplemented!()) });
     (unsafe { test_valarray_iterators_5() });

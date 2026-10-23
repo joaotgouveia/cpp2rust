@@ -364,21 +364,25 @@ pub unsafe fn operator_add_7(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_8(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_9(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -462,7 +466,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -472,7 +476,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -540,41 +544,13 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn factorial_12(mut x: ()) -> () {
+pub unsafe fn factorial_13(mut x: ()) -> () {
     let mut r: () = 1_();
     'loop_: while (x != 0) {
         r *= x;
         x.prefix_dec();
     }
     return r;
-}
-pub unsafe fn test_13() -> () {
-    let mut ia: [(); 6] = [6_(), 5_(), 4_(), 3_(), 2_(), 1_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut prev: [(); 6] = [unimplemented!(); 6];
-    let mut e: () = 0_();
-    'loop_: while ((e) <= (sa)) {
-        let mut count: () = 0_();
-        let mut x: () = unimplemented!();
-        let mut __do_while = true;
-        'loop_: while __do_while || (x) {
-            __do_while = false;
-            unimplemented!();
-            x = unimplemented!();
-            if ((e) > (1_())) {
-                if x {
-                    unimplemented!();
-                } else {
-                    unimplemented!();
-                }
-            }
-            count.prefix_inc();
-        }
-        unimplemented!();
-        e.prefix_inc();
-    }
-    return true;
 }
 pub unsafe fn test_14() -> () {
     let mut ia: [(); 6] = [6_(), 5_(), 4_(), 3_(), 2_(), 1_()];
@@ -632,6 +608,34 @@ pub unsafe fn test_15() -> () {
     }
     return true;
 }
+pub unsafe fn test_16() -> () {
+    let mut ia: [(); 6] = [6_(), 5_(), 4_(), 3_(), 2_(), 1_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut prev: [(); 6] = [unimplemented!(); 6];
+    let mut e: () = 0_();
+    'loop_: while ((e) <= (sa)) {
+        let mut count: () = 0_();
+        let mut x: () = unimplemented!();
+        let mut __do_while = true;
+        'loop_: while __do_while || (x) {
+            __do_while = false;
+            unimplemented!();
+            x = unimplemented!();
+            if ((e) > (1_())) {
+                if x {
+                    unimplemented!();
+                } else {
+                    unimplemented!();
+                }
+            }
+            count.prefix_inc();
+        }
+        unimplemented!();
+        e.prefix_inc();
+    }
+    return true;
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -648,9 +652,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_13() });
     (unsafe { test_14() });
     (unsafe { test_15() });
+    (unsafe { test_16() });
     const _: () = assert!(true, "test<bidirectional_iterator<int*>>()");;
     const _: () = assert!(true, "test<random_access_iterator<int*>>()");;
     const _: () = assert!(true, "test<int*>()");;

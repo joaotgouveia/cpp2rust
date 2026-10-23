@@ -34,12 +34,7 @@ pub fn test_0() -> () {
     {
         let data: Value<Box<[()]>> =
             Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
-        let a: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            Rc::new(RefCell::new(
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1({
-                    data.as_pointer()
-                }),
-            ));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
             unimplemented!();
@@ -59,12 +54,7 @@ pub fn test_0() -> () {
     {
         let data: Value<Box<[()]>> =
             Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
-        let a: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            Rc::new(RefCell::new(
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1({
-                    data.as_pointer()
-                }),
-            ));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
             unimplemented!();

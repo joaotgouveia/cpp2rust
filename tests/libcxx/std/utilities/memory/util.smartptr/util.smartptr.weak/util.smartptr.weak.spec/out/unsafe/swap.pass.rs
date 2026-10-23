@@ -58,11 +58,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut ptr1: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
         let mut ptr2: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
-        let mut p1: () = std_shared_ptr_A_::new_1({ ptr1 });
-        let mut w1: () = std_weak_ptr_A_::new_1({ &p1 });
+        let mut p1: () = unimplemented!();
+        let mut w1: () = unimplemented!();
         {
-            let mut p2: () = std_shared_ptr_A_::new_1({ ptr2 });
-            let mut w2: () = std_weak_ptr_A_::new_1({ &p2 });
+            let mut p2: () = unimplemented!();
+            let mut w2: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

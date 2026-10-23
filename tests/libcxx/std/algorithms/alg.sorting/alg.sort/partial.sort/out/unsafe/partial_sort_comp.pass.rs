@@ -402,21 +402,25 @@ pub unsafe fn operator_add_10(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_12(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -500,7 +504,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_14(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -510,7 +514,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -578,25 +582,25 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn operator_eq_15(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_eq_16(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_16(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ne_17(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_17(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_lt_18(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_18(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_le_19(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_19(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_gt_20(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_20(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ge_21(x: *const MoveOnly, y: *const MoveOnly) -> () {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_21(_a0: *const MoveOnly, _a1: *const MoveOnly) -> () {
+pub unsafe fn operator_cmp_22(_a0: *const MoveOnly, _a1: *const MoveOnly) -> () {
     {
         let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
         if !(unimplemented!()) {
@@ -638,7 +642,7 @@ impl MoveOnly {
 }
 impl std::cmp::Ord for MoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_21(self as *const MoveOnly, other as *const MoveOnly) }
+        unsafe { operator_cmp_22(self as *const MoveOnly, other as *const MoveOnly) }
     }
 }
 impl std::cmp::PartialOrd for MoveOnly {
@@ -648,7 +652,7 @@ impl std::cmp::PartialOrd for MoveOnly {
 }
 impl std::cmp::PartialEq for MoveOnly {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_15(self as *const MoveOnly, other as *const MoveOnly) }
+        unsafe { operator_eq_16(self as *const MoveOnly, other as *const MoveOnly) }
     }
 }
 impl std::cmp::Eq for MoveOnly {}
@@ -657,25 +661,25 @@ impl Default for MoveOnly {
         unsafe { MoveOnly::new(None) }
     }
 }
-pub unsafe fn operator_eq_22(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_eq_23(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_23(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ne_24(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_24(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_lt_25(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_25(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_le_26(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_26(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_gt_27(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_27(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ge_28(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_28(_a0: *const TrivialMoveOnly, _a1: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_cmp_29(_a0: *const TrivialMoveOnly, _a1: *const TrivialMoveOnly) -> () {
     {
         let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
         if !(unimplemented!()) {
@@ -718,7 +722,7 @@ impl TrivialMoveOnly {
 impl std::cmp::Ord for TrivialMoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            operator_cmp_28(
+            operator_cmp_29(
                 self as *const TrivialMoveOnly,
                 other as *const TrivialMoveOnly,
             )
@@ -733,7 +737,7 @@ impl std::cmp::PartialOrd for TrivialMoveOnly {
 impl std::cmp::PartialEq for TrivialMoveOnly {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_22(
+            operator_eq_23(
                 self as *const TrivialMoveOnly,
                 other as *const TrivialMoveOnly,
             )
@@ -745,68 +749,6 @@ impl Default for TrivialMoveOnly {
     fn default() -> Self {
         unsafe { TrivialMoveOnly::new(None) }
     }
-}
-pub unsafe fn test_29() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
-    ];
-    let mut work: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
-    ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) <= (n)) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            let mut i: () = m;
-            'loop_: while ((i) < (n)) {
-                unimplemented!();
-                i.prefix_inc();
-            }
-            unimplemented!();
-            m.prefix_inc();
-        }
-        n.prefix_inc();
-    }
-    {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
 }
 pub unsafe fn test_30() -> () {
     let mut orig: [(); 15] = [
@@ -888,6 +830,68 @@ pub unsafe fn test_31() -> () {
         7_(),
         9_(),
     ];
+    let mut work: [(); 15] = [
+        3_(),
+        1_(),
+        4_(),
+        1_(),
+        5_(),
+        9_(),
+        2_(),
+        6_(),
+        5_(),
+        3_(),
+        5_(),
+        8_(),
+        9_(),
+        7_(),
+        9_(),
+    ];
+    let mut n: () = 0_();
+    'loop_: while ((n) < (15_())) {
+        let mut m: () = 0_();
+        'loop_: while ((m) <= (n)) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            let mut i: () = m;
+            'loop_: while ((i) < (n)) {
+                unimplemented!();
+                i.prefix_inc();
+            }
+            unimplemented!();
+            m.prefix_inc();
+        }
+        n.prefix_inc();
+    }
+    {
+        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    return true;
+}
+pub unsafe fn test_32() -> () {
+    let mut orig: [(); 15] = [
+        3_(),
+        1_(),
+        4_(),
+        1_(),
+        5_(),
+        9_(),
+        2_(),
+        6_(),
+        5_(),
+        3_(),
+        5_(),
+        8_(),
+        9_(),
+        7_(),
+        9_(),
+    ];
     let mut work: [MoveOnly; 15] = [
         MoveOnly::new({ Some(3_()) }),
         MoveOnly::new({ Some(1_()) }),
@@ -938,7 +942,7 @@ pub unsafe fn test_31() -> () {
     }
     return true;
 }
-pub unsafe fn test_32() -> () {
+pub unsafe fn test_33() -> () {
     let mut orig: [(); 15] = [
         3_(),
         1_(),
@@ -1025,10 +1029,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut i: () = 42_();
     unimplemented!();
     unimplemented!();
-    (unsafe { test_29() });
     (unsafe { test_30() });
     (unsafe { test_31() });
     (unsafe { test_32() });
+    (unsafe { test_33() });
     const _: () = assert!(true, "test<int, random_access_iterator<int*>>()");;
     const _: () = assert!(true, "test<int, int*>()");;
     const _: () = assert!(true, "test<MoveOnly, random_access_iterator<MoveOnly*>>()");;

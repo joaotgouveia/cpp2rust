@@ -624,7 +624,7 @@ pub fn test_cast_empty_42() {
         unimplemented!();
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(42_()));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -637,7 +637,7 @@ pub fn test_cast_43() {
     unimplemented!();
     ({ small_type_0_::reset() });
     {
-        let a: Value<()> = Rc::new(RefCell::new(small_type_0_::new_1({ 42_() })));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ca: Ptr<()> = a.as_pointer();
         unimplemented!();
         unimplemented!();
@@ -673,7 +673,7 @@ pub fn test_cast_48() {
     unimplemented!();
     ({ large_type_0_::reset() });
     {
-        let a: Value<()> = Rc::new(RefCell::new(large_type_0_::new_1({ 42_() })));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ca: Ptr<()> = a.as_pointer();
         unimplemented!();
         unimplemented!();
@@ -706,7 +706,7 @@ pub fn test_cast_48() {
     unimplemented!();
 }
 pub fn test_cast_non_copyable_type_53() {
-    let a: Value<()> = Rc::new(RefCell::new(42_()));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ca: Ptr<()> = a.as_pointer();
     unimplemented!();
     unimplemented!();
@@ -715,19 +715,15 @@ pub fn test_cast_non_copyable_type_53() {
 #[byte_size(1)]
 pub struct NoCopy_54 {}
 pub fn test_cast_array_55() {
-    let arr: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let a: Value<()> = Rc::new(RefCell::new(std_any::new_1({ arr.as_pointer() })));
+    let mut arr: [(); 3] = [unimplemented!(); 3];
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut p: Ptr<Box<[()]>> = ({ any_cast_56((a.as_pointer())) });
     unimplemented!();
 }
 pub fn test_fn_57() {}
 pub fn test_cast_function_pointer_58() {
-    let a: Value<()> = Rc::new(RefCell::new(std_any::new_2({
-        FnPtr::<fn()>::new(test_fn_57)
-    })));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut fn_ptr: FnPtr<fn()> = unimplemented!();
     unimplemented!();
@@ -768,10 +764,7 @@ pub trait TypeIDImpl {
 }
 impl TypeIDImpl for Ptr<TypeID> {
     fn name(&self) -> () {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (*self).with(|__s| __s.m_id.clone()) },
-            None,
-        );
+        return unimplemented!();
     }
 }
 pub trait large_throws_on_copyImpl {

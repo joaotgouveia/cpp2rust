@@ -84,10 +84,8 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut ptr: () = std_unique_ptr_int__Deleter_int__::new({
-            Pointer_int_::new_2({ (Box::leak(Box::new(unimplemented!())) as *mut ()) })
-        });
-        let mut v: () = ptr;
+        let mut ptr: () = unimplemented!();
+        let mut v: () = unimplemented!();
         unimplemented!();
     }
     unimplemented!();

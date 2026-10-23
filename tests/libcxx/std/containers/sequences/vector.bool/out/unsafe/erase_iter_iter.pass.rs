@@ -199,28 +199,14 @@ impl min_allocator_unsigned_long_ {
 pub unsafe fn tests_7() -> () {
     let mut a1: [(); 3] = [(1_() != 0), (0_() != 0), (1_() != 0)];
     {
-        let mut l1: () = std_vector_bool__std_allocator_bool__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l1: () = std_vector_bool__std_allocator_bool__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut i: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = std_vector_bool__std_allocator_bool__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -228,27 +214,7 @@ pub unsafe fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_vector_bool__std_allocator_bool__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut i: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = std_vector_bool__min_allocator_bool__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
-        let mut i: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = std_vector_bool__min_allocator_bool__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -256,9 +222,21 @@ pub unsafe fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_vector_bool__min_allocator_bool__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -266,9 +244,15 @@ pub unsafe fn tests_7() -> () {
         unimplemented!();
     }
     {
-        let mut l1: () = std_vector_bool__min_allocator_bool__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut l1: () = unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();

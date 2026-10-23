@@ -536,13 +536,13 @@ pub unsafe fn CreateTuple_0(mut _a0: ()) {
     &(t3);
     &(t4);
     &(t5);
-    t1 = (tuple).clone();
-    t1 = (tuple).clone();
-    t1 = (tuple).clone();
-    t1 = (tuple).clone();
-    (unsafe { swap_3(&mut t1, &mut t2) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
-pub unsafe fn test_4() -> () {
+pub unsafe fn test_3() -> () {
     (unsafe { CreateTuple_0(unsafe { std::mem::zeroed::<()>() }) });
     return true;
 }
@@ -562,7 +562,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_4() });
+    (unsafe { test_3() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

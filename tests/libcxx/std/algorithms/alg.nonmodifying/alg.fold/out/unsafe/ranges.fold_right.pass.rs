@@ -222,21 +222,25 @@ pub unsafe fn operator_add_2(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_4(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_4(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_5(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -320,7 +324,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_6(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -330,7 +334,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_5(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -405,7 +409,7 @@ pub struct sentinel {}
 #[derive(FnPtrArg, Default)]
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
-pub static mut enable_borrowed_range_7: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_8: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
@@ -451,7 +455,7 @@ impl invocable_with_telemetry_std_plus_void__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_8(___f, ___args_1, ___args_2)
+            invoke_9(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_ref_int(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -461,7 +465,7 @@ impl invocable_with_telemetry_std_plus_void__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_9(___f, ___args_1, ___args_2)
+            invoke_10(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_double(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -471,7 +475,7 @@ impl invocable_with_telemetry_std_plus_void__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_10(___f, ___args_1, ___args_2)
+            invoke_11(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_double_double(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -481,7 +485,7 @@ impl invocable_with_telemetry_std_plus_void__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_11(___f, ___args_1, ___args_2)
+            invoke_12(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_double_int(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -491,7 +495,7 @@ impl invocable_with_telemetry_std_plus_void__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_12(___f, ___args_1, ___args_2)
+            invoke_13(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -546,7 +550,7 @@ impl invocable_with_telemetry_std_multiplies_void__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_13(___f, ___args_1, ___args_2)
+            invoke_14(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_ref_int(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -556,7 +560,7 @@ impl invocable_with_telemetry_std_multiplies_void__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_14(___f, ___args_1, ___args_2)
+            invoke_15(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -613,7 +617,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ {
             let ___f: *mut FnPtr<Generic> = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_15(___f, ___args_1, ___args_2)
+            invoke_16(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_ref_unsigned_long(
@@ -627,7 +631,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ {
             let ___f: *mut FnPtr<Generic> = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_16(___f, ___args_1, ___args_2)
+            invoke_17(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_ref_int(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -637,7 +641,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ {
             let ___f: *mut FnPtr<Generic> = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_17(___f, ___args_1, ___args_2)
+            invoke_18(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -692,7 +696,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_126_14__ {
             let ___f: *mut FnPtr<Generic> = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_18(___f, ___args_1, ___args_2)
+            invoke_19(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_ref_int(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -702,7 +706,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_126_14__ {
             let ___f: *mut FnPtr<Generic> = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_19(___f, ___args_1, ___args_2)
+            invoke_20(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -755,7 +759,7 @@ impl invocable_with_telemetry_std_plus_long__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_20(___f, ___args_1, ___args_2)
+            invoke_21(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_ref_long(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -765,7 +769,7 @@ impl invocable_with_telemetry_std_plus_long__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_21(___f, ___args_1, ___args_2)
+            invoke_22(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_ref_int(&mut self, args_0: *mut (), args_1: *mut ()) -> () {
@@ -775,7 +779,7 @@ impl invocable_with_telemetry_std_plus_long__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_22(___f, ___args_1, ___args_2)
+            invoke_23(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_int_const_int_ref(
@@ -789,7 +793,7 @@ impl invocable_with_telemetry_std_plus_long__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *const () = args_1;
-            invoke_23(___f, ___args_1, ___args_2)
+            invoke_24(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_const_int_ref_long(
@@ -803,7 +807,7 @@ impl invocable_with_telemetry_std_plus_long__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *const () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_24(___f, ___args_1, ___args_2)
+            invoke_25(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_const_int_ref_int(
@@ -817,7 +821,7 @@ impl invocable_with_telemetry_std_plus_long__ {
             let ___f: *mut () = &mut self.f_;
             let ___args_1: *const () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_25(___f, ___args_1, ___args_2)
+            invoke_26(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -878,7 +882,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_174_27__ {
             let ___f: *mut FnPtr<fn((), ()) -> ()> = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_26(___f, ___args_1, ___args_2)
+            invoke_27(___f, ___args_1, ___args_2)
         });
     }
     pub unsafe fn operator_call_6_double_ref_double(
@@ -892,7 +896,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_174_27__ {
             let ___f: *mut FnPtr<fn((), ()) -> ()> = &mut self.f_;
             let ___args_1: *mut () = args_0;
             let ___args_2: *mut () = args_1;
-            invoke_27(___f, ___args_1, ___args_2)
+            invoke_28(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -917,55 +921,55 @@ impl Default for invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_
         }
     }
 }
-pub unsafe fn triangular_sum_28(input: *const ()) -> () {
+pub unsafe fn triangular_sum_29(input: *const ()) -> () {
     unimplemented!();
-    let mut __decomp_29: () = (unsafe {
+    let mut __decomp_30: () = (unsafe {
         let ___r: *const () = input;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut minmax_element_30))(___r, None, None)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut minmax_element_31))(___r, None, None)
     });
     return (((unsafe {
         let ___r: *const () = input;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_31))(___r)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_32))(___r)
     }) / (2_()))
         * ((*unimplemented!()) + (*unimplemented!())));
 }
-pub unsafe fn triangular_sum_32(input: *mut ()) -> () {
+pub unsafe fn triangular_sum_33(input: *mut ()) -> () {
     unimplemented!();
-    let mut __decomp_33: () = (unsafe {
+    let mut __decomp_34: () = (unsafe {
         let ___r: *mut () = input;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut minmax_element_30))(___r, None, None)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut minmax_element_31))(___r, None, None)
     });
     return ((((unsafe {
         let ___r: *mut () = input;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_31))(___r)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_32))(___r)
     }) / (2_()))
         * ((unimplemented!()) + (unimplemented!()))) as ());
 }
-pub unsafe fn triangular_sum_34(input: *const ()) -> () {
+pub unsafe fn triangular_sum_35(input: *const ()) -> () {
     unimplemented!();
-    let mut __decomp_35: () = (unsafe {
+    let mut __decomp_36: () = (unsafe {
         let ___r: *const () = input;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut minmax_element_30))(___r, None, None)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut minmax_element_31))(___r, None, None)
     });
     return (((unsafe {
         let ___r: *const () = input;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_31))(___r)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_32))(___r)
     }) / (2_()))
         * ((*unimplemented!()) + (*unimplemented!())));
 }
-pub unsafe fn triangular_sum_36(input: *const ()) -> () {
+pub unsafe fn triangular_sum_37(input: *const ()) -> () {
     unimplemented!();
-    let mut __decomp_37: () = (unsafe {
+    let mut __decomp_38: () = (unsafe {
         let ___r: *const () = input;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut minmax_element_30))(___r, None, None)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut minmax_element_31))(___r, None, None)
     });
     return (((unsafe {
         let ___r: *const () = input;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_31))(___r)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_32))(___r)
     }) / (2_()))
         * ((*unimplemented!()) + (*unimplemented!())));
 }
-pub unsafe fn factorial_38(n: ()) -> () {
+pub unsafe fn factorial_39(n: ()) -> () {
     unimplemented!();
     let mut result: () = 1_();
     let mut i: () = 1_();
@@ -975,7 +979,7 @@ pub unsafe fn factorial_38(n: ()) -> () {
     }
     return result;
 }
-pub unsafe fn factorial_39(n: ()) -> () {
+pub unsafe fn factorial_40(n: ()) -> () {
     unimplemented!();
     let mut result: () = 1_();
     let mut i: () = 1_();
@@ -991,7 +995,7 @@ const _: () = assert!(true, "factorial(2) == 2");
 const _: () = assert!(true, "factorial(3) == 6");
 const _: () = assert!(true, "factorial(4) == 24");
 const _: () = assert!(true, "factorial(5) == 120");
-pub unsafe fn fibonacci_40(n: ()) -> () {
+pub unsafe fn fibonacci_41(n: ()) -> () {
     unimplemented!();
     let mut result: () = 0_();
     let mut prev: () = 1_();
@@ -1012,14 +1016,14 @@ const _: () = assert!(true, "fibonacci(6) == 8");
 const _: () = assert!(true, "fibonacci(7) == 13");
 const _: () = assert!(true, "fibonacci(8) == 21");
 const _: () = assert!(true, "fibonacci(9) == 34");
-pub unsafe fn check_iterator_41(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_iterator_42(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
             let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             let ___init: () = (*init);
             let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1035,7 +1039,7 @@ pub unsafe fn check_iterator_41(r: *mut (), init: *const (), mut f: (), expected
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_void__ =
                 invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1045,14 +1049,14 @@ pub unsafe fn check_iterator_41(r: *mut (), init: *const (), mut f: (), expected
         unimplemented!();
     }
 }
-pub unsafe fn check_iterator_43(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_iterator_44(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
             let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             let ___init: () = (*init);
             let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1070,50 +1074,7 @@ pub unsafe fn check_iterator_43(r: *mut (), init: *const (), mut f: (), expected
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_multiplies_void__ =
                 invocable_with_telemetry_std_multiplies_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___first, ___last, ___init, ___func,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn check_iterator_44(
-    r: *mut (),
-    init: *const (),
-    mut f: FnPtr<Generic>,
-    expected: *const (),
-) {
-    {
-        let mut result: () = (unsafe {
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            let ___init: () = (*init);
-            let ___func: FnPtr<Generic> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___first, ___last, ___init, ___func,
-            )
-        });
-        unimplemented!();
-    }
-    {
-        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
-        let mut f2: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
-            invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::new(
-                { f.copy_from() },
-                { &mut telemetry },
-            );
-        let mut result: () = (unsafe {
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            let ___init: () = (*init);
-            let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
-                invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::copy_from(
-                    { &f2 },
-                );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1135,7 +1096,50 @@ pub unsafe fn check_iterator_45(
             let ___last: () = unimplemented!();
             let ___init: () = (*init);
             let ___func: FnPtr<Generic> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___first, ___last, ___init, ___func,
+            )
+        });
+        unimplemented!();
+    }
+    {
+        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
+        let mut f2: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
+            invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::new(
+                { f.copy_from() },
+                { &mut telemetry },
+            );
+        let mut result: () = (unsafe {
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
+            let ___init: () = (*init);
+            let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
+                invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::copy_from(
+                    { &f2 },
+                );
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___first, ___last, ___init, ___func,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn check_iterator_46(
+    r: *mut (),
+    init: *const (),
+    mut f: FnPtr<Generic>,
+    expected: *const (),
+) {
+    {
+        let mut result: () = (unsafe {
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
+            let ___init: () = (*init);
+            let ___func: FnPtr<Generic> = f.copy_from();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1156,7 +1160,7 @@ pub unsafe fn check_iterator_45(
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_126_14__::copy_from(
                     { &f2 },
                 );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1166,14 +1170,14 @@ pub unsafe fn check_iterator_45(
         unimplemented!();
     }
 }
-pub unsafe fn check_iterator_46(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_iterator_47(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
             let ___first: () = (unsafe { (*r).begin_5() });
             let ___last: () = (unsafe { (*r).end_8() });
             let ___init: () = (*init);
             let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1189,7 +1193,7 @@ pub unsafe fn check_iterator_46(r: *mut (), init: *const (), mut f: (), expected
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_void__ =
                 invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1199,14 +1203,14 @@ pub unsafe fn check_iterator_46(r: *mut (), init: *const (), mut f: (), expected
         unimplemented!();
     }
 }
-pub unsafe fn check_iterator_47(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_iterator_48(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
             let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             let ___init: () = (*init);
             let ___func: () = f.clone();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1222,7 +1226,7 @@ pub unsafe fn check_iterator_47(r: *mut (), init: *const (), mut f: (), expected
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_long__ =
                 invocable_with_telemetry_std_plus_long__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1232,7 +1236,7 @@ pub unsafe fn check_iterator_47(r: *mut (), init: *const (), mut f: (), expected
         unimplemented!();
     }
 }
-pub unsafe fn check_iterator_48(
+pub unsafe fn check_iterator_49(
     r: *mut (),
     init: *const (),
     mut f: FnPtr<fn((), ()) -> ()>,
@@ -1244,7 +1248,7 @@ pub unsafe fn check_iterator_48(
             let ___last: () = unimplemented!();
             let ___init: () = (*init);
             let ___func: FnPtr<fn((), ()) -> ()> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1265,7 +1269,7 @@ pub unsafe fn check_iterator_48(
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_174_27__::copy_from(
                     { &f2 },
                 );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1275,14 +1279,14 @@ pub unsafe fn check_iterator_48(
         unimplemented!();
     }
 }
-pub unsafe fn check_iterator_49(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_iterator_50(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
             let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             let ___init: () = (*init);
             let ___func: () = f.clone();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
             )
         });
@@ -1298,39 +1302,8 @@ pub unsafe fn check_iterator_49(r: *mut (), init: *const (), mut f: (), expected
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_long__ =
                 invocable_with_telemetry_std_plus_long__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___first, ___last, ___init, ___func,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn check_lvalue_range_50(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
-    {
-        let mut result: () = (unsafe {
-            let ___range: *mut () = r;
-            let ___init: () = (*init);
-            let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-    }
-    {
-        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
-        let mut f2: invocable_with_telemetry_std_plus_void__ =
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
-        let mut result: () = (unsafe {
-            let ___range: *mut () = r;
-            let ___init: () = (*init);
-            let ___func: invocable_with_telemetry_std_plus_void__ =
-                invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
             )
         });
         unimplemented!();
@@ -1345,7 +1318,38 @@ pub unsafe fn check_lvalue_range_51(r: *mut (), init: *const (), mut f: (), expe
             let ___range: *mut () = r;
             let ___init: () = (*init);
             let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+    }
+    {
+        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
+        let mut f2: invocable_with_telemetry_std_plus_void__ =
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
+        let mut result: () = (unsafe {
+            let ___range: *mut () = r;
+            let ___init: () = (*init);
+            let ___func: invocable_with_telemetry_std_plus_void__ =
+                invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn check_lvalue_range_52(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+    {
+        let mut result: () = (unsafe {
+            let ___range: *mut () = r;
+            let ___init: () = (*init);
+            let ___func: () = unimplemented!();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1362,48 +1366,7 @@ pub unsafe fn check_lvalue_range_51(r: *mut (), init: *const (), mut f: (), expe
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_multiplies_void__ =
                 invocable_with_telemetry_std_multiplies_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn check_lvalue_range_52(
-    r: *mut (),
-    init: *const (),
-    mut f: FnPtr<Generic>,
-    expected: *const (),
-) {
-    {
-        let mut result: () = (unsafe {
-            let ___range: *mut () = r;
-            let ___init: () = (*init);
-            let ___func: FnPtr<Generic> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-    }
-    {
-        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
-        let mut f2: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
-            invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::new(
-                { f.copy_from() },
-                { &mut telemetry },
-            );
-        let mut result: () = (unsafe {
-            let ___range: *mut () = r;
-            let ___init: () = (*init);
-            let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
-                invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::copy_from(
-                    { &f2 },
-                );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1424,7 +1387,48 @@ pub unsafe fn check_lvalue_range_53(
             let ___range: *mut () = r;
             let ___init: () = (*init);
             let ___func: FnPtr<Generic> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+    }
+    {
+        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
+        let mut f2: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
+            invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::new(
+                { f.copy_from() },
+                { &mut telemetry },
+            );
+        let mut result: () = (unsafe {
+            let ___range: *mut () = r;
+            let ___init: () = (*init);
+            let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
+                invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::copy_from(
+                    { &f2 },
+                );
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn check_lvalue_range_54(
+    r: *mut (),
+    init: *const (),
+    mut f: FnPtr<Generic>,
+    expected: *const (),
+) {
+    {
+        let mut result: () = (unsafe {
+            let ___range: *mut () = r;
+            let ___init: () = (*init);
+            let ___func: FnPtr<Generic> = f.copy_from();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1444,38 +1448,7 @@ pub unsafe fn check_lvalue_range_53(
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_126_14__::copy_from(
                     { &f2 },
                 );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn check_lvalue_range_54(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
-    {
-        let mut result: () = (unsafe {
-            let ___range: *mut () = r;
-            let ___init: () = (*init);
-            let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-    }
-    {
-        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
-        let mut f2: invocable_with_telemetry_std_plus_void__ =
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
-        let mut result: () = (unsafe {
-            let ___range: *mut () = r;
-            let ___init: () = (*init);
-            let ___func: invocable_with_telemetry_std_plus_void__ =
-                invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1490,8 +1463,39 @@ pub unsafe fn check_lvalue_range_55(r: *mut (), init: *const (), mut f: (), expe
         let mut result: () = (unsafe {
             let ___range: *mut () = r;
             let ___init: () = (*init);
+            let ___func: () = unimplemented!();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+    }
+    {
+        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
+        let mut f2: invocable_with_telemetry_std_plus_void__ =
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
+        let mut result: () = (unsafe {
+            let ___range: *mut () = r;
+            let ___init: () = (*init);
+            let ___func: invocable_with_telemetry_std_plus_void__ =
+                invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn check_lvalue_range_56(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+    {
+        let mut result: () = (unsafe {
+            let ___range: *mut () = r;
+            let ___init: () = (*init);
             let ___func: () = f.clone();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1506,7 +1510,7 @@ pub unsafe fn check_lvalue_range_55(r: *mut (), init: *const (), mut f: (), expe
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_long__ =
                 invocable_with_telemetry_std_plus_long__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1516,7 +1520,7 @@ pub unsafe fn check_lvalue_range_55(r: *mut (), init: *const (), mut f: (), expe
         unimplemented!();
     }
 }
-pub unsafe fn check_lvalue_range_56(
+pub unsafe fn check_lvalue_range_57(
     r: *mut (),
     init: *const (),
     mut f: FnPtr<fn((), ()) -> ()>,
@@ -1527,7 +1531,7 @@ pub unsafe fn check_lvalue_range_56(
             let ___range: *mut () = r;
             let ___init: () = (*init);
             let ___func: FnPtr<fn((), ()) -> ()> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1547,7 +1551,7 @@ pub unsafe fn check_lvalue_range_56(
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_174_27__::copy_from(
                     { &f2 },
                 );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1557,13 +1561,13 @@ pub unsafe fn check_lvalue_range_56(
         unimplemented!();
     }
 }
-pub unsafe fn check_lvalue_range_57(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_lvalue_range_58(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
             let ___range: *mut () = r;
             let ___init: () = (*init);
             let ___func: () = f.clone();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1578,40 +1582,7 @@ pub unsafe fn check_lvalue_range_57(r: *mut (), init: *const (), mut f: (), expe
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_long__ =
                 invocable_with_telemetry_std_plus_long__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn check_rvalue_range_58(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
-    {
-        let mut r2: () = unimplemented!();
-        let mut result: () = (unsafe {
-            let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
-            let ___init: () = (*init);
-            let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-    }
-    {
-        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
-        let mut f2: invocable_with_telemetry_std_plus_void__ =
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
-        let mut r2: () = unimplemented!();
-        let mut result: () = (unsafe {
-            let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
-            let ___init: () = (*init);
-            let ___func: invocable_with_telemetry_std_plus_void__ =
-                invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1628,7 +1599,40 @@ pub unsafe fn check_rvalue_range_59(r: *mut (), init: *const (), mut f: (), expe
             let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
             let ___init: () = (*init);
             let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+    }
+    {
+        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
+        let mut f2: invocable_with_telemetry_std_plus_void__ =
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
+        let mut r2: () = unimplemented!();
+        let mut result: () = (unsafe {
+            let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
+            let ___init: () = (*init);
+            let ___func: invocable_with_telemetry_std_plus_void__ =
+                invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn check_rvalue_range_60(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+    {
+        let mut r2: () = unimplemented!();
+        let mut result: () = (unsafe {
+            let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
+            let ___init: () = (*init);
+            let ___func: () = unimplemented!();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1646,50 +1650,7 @@ pub unsafe fn check_rvalue_range_59(r: *mut (), init: *const (), mut f: (), expe
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_multiplies_void__ =
                 invocable_with_telemetry_std_multiplies_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn check_rvalue_range_60(
-    r: *mut (),
-    init: *const (),
-    mut f: FnPtr<Generic>,
-    expected: *const (),
-) {
-    {
-        let mut r2: () = unimplemented!();
-        let mut result: () = (unsafe {
-            let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
-            let ___init: () = (*init);
-            let ___func: FnPtr<Generic> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
-                ___range, ___init, ___func,
-            )
-        });
-        unimplemented!();
-    }
-    {
-        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
-        let mut f2: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
-            invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::new(
-                { f.copy_from() },
-                { &mut telemetry },
-            );
-        let mut r2: () = unimplemented!();
-        let mut result: () = (unsafe {
-            let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
-            let ___init: () = (*init);
-            let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
-                invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::copy_from(
-                    { &f2 },
-                );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1711,7 +1672,50 @@ pub unsafe fn check_rvalue_range_61(
             let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
             let ___init: () = (*init);
             let ___func: FnPtr<Generic> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+    }
+    {
+        let mut telemetry: invocable_telemetry = <invocable_telemetry>::default();
+        let mut f2: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
+            invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::new(
+                { f.copy_from() },
+                { &mut telemetry },
+            );
+        let mut r2: () = unimplemented!();
+        let mut result: () = (unsafe {
+            let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
+            let ___init: () = (*init);
+            let ___func: invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__ =
+                invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_119_29__::copy_from(
+                    { &f2 },
+                );
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
+                ___range, ___init, ___func,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn check_rvalue_range_62(
+    r: *mut (),
+    init: *const (),
+    mut f: FnPtr<Generic>,
+    expected: *const (),
+) {
+    {
+        let mut r2: () = unimplemented!();
+        let mut result: () = (unsafe {
+            let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
+            let ___init: () = (*init);
+            let ___func: FnPtr<Generic> = f.copy_from();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1732,7 +1736,7 @@ pub unsafe fn check_rvalue_range_61(
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_126_14__::copy_from(
                     { &f2 },
                 );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1742,14 +1746,14 @@ pub unsafe fn check_rvalue_range_61(
         unimplemented!();
     }
 }
-pub unsafe fn check_rvalue_range_62(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_rvalue_range_63(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut r2: () = (*r).clone();
         let mut result: () = (unsafe {
             let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
             let ___init: () = (*init);
             let ___func: () = unimplemented!();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1765,7 +1769,7 @@ pub unsafe fn check_rvalue_range_62(r: *mut (), init: *const (), mut f: (), expe
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_void__ =
                 invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1775,14 +1779,14 @@ pub unsafe fn check_rvalue_range_62(r: *mut (), init: *const (), mut f: (), expe
         unimplemented!();
     }
 }
-pub unsafe fn check_rvalue_range_63(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_rvalue_range_64(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
             let ___init: () = (*init);
             let ___func: () = f.clone();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1798,7 +1802,7 @@ pub unsafe fn check_rvalue_range_63(r: *mut (), init: *const (), mut f: (), expe
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_long__ =
                 invocable_with_telemetry_std_plus_long__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1808,7 +1812,7 @@ pub unsafe fn check_rvalue_range_63(r: *mut (), init: *const (), mut f: (), expe
         unimplemented!();
     }
 }
-pub unsafe fn check_rvalue_range_64(
+pub unsafe fn check_rvalue_range_65(
     r: *mut (),
     init: *const (),
     mut f: FnPtr<fn((), ()) -> ()>,
@@ -1820,7 +1824,7 @@ pub unsafe fn check_rvalue_range_64(
             let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
             let ___init: () = (*init);
             let ___func: FnPtr<fn((), ()) -> ()> = f.copy_from();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1841,7 +1845,7 @@ pub unsafe fn check_rvalue_range_64(
                 invocable_with_telemetry__lambda_at_ranges_fold_right_pass_cpp_174_27__::copy_from(
                     { &f2 },
                 );
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1851,14 +1855,14 @@ pub unsafe fn check_rvalue_range_64(
         unimplemented!();
     }
 }
-pub unsafe fn check_rvalue_range_65(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_rvalue_range_66(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut r2: () = unimplemented!();
         let mut result: () = (unsafe {
             let ___range: *mut () = &mut *(&raw mut r2).cast::<()>();
             let ___init: () = (*init);
             let ___func: () = f.clone();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1874,7 +1878,7 @@ pub unsafe fn check_rvalue_range_65(r: *mut (), init: *const (), mut f: (), expe
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_long__ =
                 invocable_with_telemetry_std_plus_long__::copy_from({ &f2 });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_42))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
                 ___range, ___init, ___func,
             )
         });
@@ -1884,36 +1888,13 @@ pub unsafe fn check_rvalue_range_65(r: *mut (), init: *const (), mut f: (), expe
         unimplemented!();
     }
 }
-pub unsafe fn check_66(mut r: (), init: *const (), mut f: (), expected: *const ()) {
-    (unsafe {
-        let _r: *mut () = &mut r;
-        let _init: *const () = init;
-        let _f: () = unimplemented!();
-        let _expected: *const () = expected;
-        check_iterator_41(_r, _init, _f, _expected)
-    });
-    (unsafe {
-        let _r: *mut () = &mut r;
-        let _init: *const () = init;
-        let _f: () = unimplemented!();
-        let _expected: *const () = expected;
-        check_lvalue_range_50(_r, _init, _f, _expected)
-    });
-    (unsafe {
-        let _r: *mut () = &mut r;
-        let _init: *const () = init;
-        let _f: () = unimplemented!();
-        let _expected: *const () = expected;
-        check_rvalue_range_58(_r, _init, _f, _expected)
-    });
-}
 pub unsafe fn check_67(mut r: (), init: *const (), mut f: (), expected: *const ()) {
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
         let _f: () = unimplemented!();
         let _expected: *const () = expected;
-        check_iterator_43(_r, _init, _f, _expected)
+        check_iterator_42(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
@@ -1930,25 +1911,25 @@ pub unsafe fn check_67(mut r: (), init: *const (), mut f: (), expected: *const (
         check_rvalue_range_59(_r, _init, _f, _expected)
     });
 }
-pub unsafe fn check_68(mut r: (), init: *const (), mut f: FnPtr<Generic>, expected: *const ()) {
+pub unsafe fn check_68(mut r: (), init: *const (), mut f: (), expected: *const ()) {
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: FnPtr<Generic> = f.copy_from();
+        let _f: () = unimplemented!();
         let _expected: *const () = expected;
         check_iterator_44(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: FnPtr<Generic> = f.copy_from();
+        let _f: () = unimplemented!();
         let _expected: *const () = expected;
         check_lvalue_range_52(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: FnPtr<Generic> = f.copy_from();
+        let _f: () = unimplemented!();
         let _expected: *const () = expected;
         check_rvalue_range_60(_r, _init, _f, _expected)
     });
@@ -1976,25 +1957,25 @@ pub unsafe fn check_69(mut r: (), init: *const (), mut f: FnPtr<Generic>, expect
         check_rvalue_range_61(_r, _init, _f, _expected)
     });
 }
-pub unsafe fn check_70(mut r: (), init: *const (), mut f: (), expected: *const ()) {
+pub unsafe fn check_70(mut r: (), init: *const (), mut f: FnPtr<Generic>, expected: *const ()) {
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: () = unimplemented!();
+        let _f: FnPtr<Generic> = f.copy_from();
         let _expected: *const () = expected;
         check_iterator_46(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: () = unimplemented!();
+        let _f: FnPtr<Generic> = f.copy_from();
         let _expected: *const () = expected;
         check_lvalue_range_54(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: () = unimplemented!();
+        let _f: FnPtr<Generic> = f.copy_from();
         let _expected: *const () = expected;
         check_rvalue_range_62(_r, _init, _f, _expected)
     });
@@ -2003,26 +1984,49 @@ pub unsafe fn check_71(mut r: (), init: *const (), mut f: (), expected: *const (
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: () = f.clone();
+        let _f: () = unimplemented!();
         let _expected: *const () = expected;
         check_iterator_47(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: () = f.clone();
+        let _f: () = unimplemented!();
         let _expected: *const () = expected;
         check_lvalue_range_55(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: () = f.clone();
+        let _f: () = unimplemented!();
         let _expected: *const () = expected;
         check_rvalue_range_63(_r, _init, _f, _expected)
     });
 }
-pub unsafe fn check_72(
+pub unsafe fn check_72(mut r: (), init: *const (), mut f: (), expected: *const ()) {
+    (unsafe {
+        let _r: *mut () = &mut r;
+        let _init: *const () = init;
+        let _f: () = f.clone();
+        let _expected: *const () = expected;
+        check_iterator_48(_r, _init, _f, _expected)
+    });
+    (unsafe {
+        let _r: *mut () = &mut r;
+        let _init: *const () = init;
+        let _f: () = f.clone();
+        let _expected: *const () = expected;
+        check_lvalue_range_56(_r, _init, _f, _expected)
+    });
+    (unsafe {
+        let _r: *mut () = &mut r;
+        let _init: *const () = init;
+        let _f: () = f.clone();
+        let _expected: *const () = expected;
+        check_rvalue_range_64(_r, _init, _f, _expected)
+    });
+}
+pub unsafe fn check_73(
     mut r: (),
     init: *const (),
     mut f: FnPtr<fn((), ()) -> ()>,
@@ -2033,52 +2037,52 @@ pub unsafe fn check_72(
         let _init: *const () = init;
         let _f: FnPtr<fn((), ()) -> ()> = f.copy_from();
         let _expected: *const () = expected;
-        check_iterator_48(_r, _init, _f, _expected)
-    });
-    (unsafe {
-        let _r: *mut () = &mut r;
-        let _init: *const () = init;
-        let _f: FnPtr<fn((), ()) -> ()> = f.copy_from();
-        let _expected: *const () = expected;
-        check_lvalue_range_56(_r, _init, _f, _expected)
-    });
-    (unsafe {
-        let _r: *mut () = &mut r;
-        let _init: *const () = init;
-        let _f: FnPtr<fn((), ()) -> ()> = f.copy_from();
-        let _expected: *const () = expected;
-        check_rvalue_range_64(_r, _init, _f, _expected)
-    });
-}
-pub unsafe fn check_73(mut r: (), init: *const (), mut f: (), expected: *const ()) {
-    (unsafe {
-        let _r: *mut () = &mut r;
-        let _init: *const () = init;
-        let _f: () = f.clone();
-        let _expected: *const () = expected;
         check_iterator_49(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: () = f.clone();
+        let _f: FnPtr<fn((), ()) -> ()> = f.copy_from();
         let _expected: *const () = expected;
         check_lvalue_range_57(_r, _init, _f, _expected)
     });
     (unsafe {
         let _r: *mut () = &mut r;
         let _init: *const () = init;
-        let _f: () = f.clone();
+        let _f: FnPtr<fn((), ()) -> ()> = f.copy_from();
         let _expected: *const () = expected;
         check_rvalue_range_65(_r, _init, _f, _expected)
     });
 }
-pub unsafe fn empty_range_test_case_74() {
+pub unsafe fn check_74(mut r: (), init: *const (), mut f: (), expected: *const ()) {
+    (unsafe {
+        let _r: *mut () = &mut r;
+        let _init: *const () = init;
+        let _f: () = f.clone();
+        let _expected: *const () = expected;
+        check_iterator_50(_r, _init, _f, _expected)
+    });
+    (unsafe {
+        let _r: *mut () = &mut r;
+        let _init: *const () = init;
+        let _f: () = f.clone();
+        let _expected: *const () = expected;
+        check_lvalue_range_58(_r, _init, _f, _expected)
+    });
+    (unsafe {
+        let _r: *mut () = &mut r;
+        let _init: *const () = init;
+        let _f: () = f.clone();
+        let _expected: *const () = expected;
+        check_rvalue_range_66(_r, _init, _f, _expected)
+    });
+}
+pub unsafe fn empty_range_test_case_75() {
     let data: () = unimplemented!();
     (unsafe {
         let mut _init: () = 100_();
         let mut _expected: () = 100_();
-        check_66(
+        check_67(
             unimplemented!(),
             &mut _init,
             unimplemented!(),
@@ -2088,7 +2092,7 @@ pub unsafe fn empty_range_test_case_74() {
     (unsafe {
         let mut _init: () = -100_();
         let mut _expected: () = -100_();
-        check_67(
+        check_68(
             unimplemented!(),
             &mut _init,
             unimplemented!(),
@@ -2096,19 +2100,19 @@ pub unsafe fn empty_range_test_case_74() {
         )
     });
 }
-pub unsafe fn common_range_test_case_75() {
+pub unsafe fn common_range_test_case_76() {
     let data: () = unimplemented!();
     (unsafe {
         let _r: () = unimplemented!();
         let mut _init: () = 0_();
-        let mut _expected: () = ((unsafe { triangular_sum_28(&data) }) as ());
-        check_66(_r, &mut _init, unimplemented!(), &mut _expected)
+        let mut _expected: () = ((unsafe { triangular_sum_29(&data) }) as ());
+        check_67(_r, &mut _init, unimplemented!(), &mut _expected)
     });
     (unsafe {
         let _r: () = unimplemented!();
         let mut _init: () = 1_();
-        let mut _expected: () = (unsafe { factorial_38((*unimplemented!())) });
-        check_67(_r, &mut _init, unimplemented!(), &mut _expected)
+        let mut _expected: () = (unsafe { factorial_39((*unimplemented!())) });
+        check_68(_r, &mut _init, unimplemented!(), &mut _expected)
     });
     let mut multiply_with_next: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -2129,9 +2133,9 @@ pub unsafe fn common_range_test_case_75() {
     (unsafe {
         let _r: () = unimplemented!();
         let mut _init: () = 1_();
-        let mut _expected: () = (unsafe { factorial_39(unimplemented!()) })
-            .wrapping_mul((unsafe { factorial_39(unimplemented!()) }));
-        check_68(
+        let mut _expected: () = (unsafe { factorial_40(unimplemented!()) })
+            .wrapping_mul((unsafe { factorial_40(unimplemented!()) }));
+        check_69(
             _r,
             &mut _init,
             multiply_with_next.copy_from(),
@@ -2153,11 +2157,11 @@ pub unsafe fn common_range_test_case_75() {
     (unsafe {
         let _r: () = unimplemented!();
         let mut _init: () = 0_();
-        let mut _expected: () = (unsafe { fibonacci_40((*unimplemented!())) });
-        check_69(_r, &mut _init, fib.copy_from(), &mut _expected)
+        let mut _expected: () = (unsafe { fibonacci_41((*unimplemented!())) });
+        check_70(_r, &mut _init, fib.copy_from(), &mut _expected)
     });
 }
-pub unsafe fn non_common_range_test_case_76() {
+pub unsafe fn non_common_range_test_case_77() {
     let mut parse: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|s: ()| -> () {
         unsafe {
             return if unimplemented!() {
@@ -2213,25 +2217,25 @@ pub unsafe fn non_common_range_test_case_76() {
             let _r: () = range.clone();
             let mut _init: () = 0_();
             let mut _expected: () =
-                (unsafe { triangular_sum_32(&mut *(&raw mut range).cast::<()>()) });
-            check_70(_r, &mut _init, unimplemented!(), &mut _expected)
+                (unsafe { triangular_sum_33(&mut *(&raw mut range).cast::<()>()) });
+            check_71(_r, &mut _init, unimplemented!(), &mut _expected)
         });
     }
 }
-pub unsafe fn test_case_77() -> () {
-    (unsafe { empty_range_test_case_74() });
-    (unsafe { common_range_test_case_75() });
-    (unsafe { non_common_range_test_case_76() });
+pub unsafe fn test_case_78() -> () {
+    (unsafe { empty_range_test_case_75() });
+    (unsafe { common_range_test_case_76() });
+    (unsafe { non_common_range_test_case_77() });
     return true;
 }
-pub unsafe fn runtime_only_test_case_78() {
+pub unsafe fn runtime_only_test_case_79() {
     {
         let data: () = unimplemented!();
-        let expected: () = (unsafe { triangular_sum_34(&data) });
+        let expected: () = (unsafe { triangular_sum_35(&data) });
         (unsafe {
             let mut _init: () = 0_();
             let mut _expected: () = expected;
-            check_71(
+            check_72(
                 unimplemented!(),
                 &mut _init,
                 unimplemented!(),
@@ -2250,16 +2254,16 @@ pub unsafe fn runtime_only_test_case_78() {
         let expected: () = -21.1_f64;
         (unsafe {
             let mut _init: () = 0_f64;
-            check_72(unimplemented!(), &mut _init, plus.copy_from(), &expected)
+            check_73(unimplemented!(), &mut _init, plus.copy_from(), &expected)
         });
     }
     {
         let data: () = unimplemented!();
-        let expected: () = (unsafe { triangular_sum_36(&data) });
+        let expected: () = (unsafe { triangular_sum_37(&data) });
         (unsafe {
             let mut _init: () = 0_();
             let mut _expected: () = expected;
-            check_73(
+            check_74(
                 unimplemented!(),
                 &mut _init,
                 unimplemented!(),
@@ -2284,11 +2288,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_case_77() });
+    (unsafe { test_case_78() });
     const _: () = assert!(true, "test_case()");;
-    (unsafe { runtime_only_test_case_78() });
+    (unsafe { runtime_only_test_case_79() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_7);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_8);
 }

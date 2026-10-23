@@ -10,18 +10,18 @@ pub unsafe fn test1_0() {
     let mut a: [(); 3] = [3_(), 5_(), 7_()];
     let mut sseq: () = unimplemented!();
     let mut e1: () = unimplemented!();
-    let mut e2 : () = std_independent_bits_engine_std_discard_block_engine_std_subtract_with_carry_engine_unsigned_long__24__10__24___223__23___32__unsigned_int_ :: new_1 ( { & mut sseq } , )  ;
+    let mut e2: () = unimplemented!();
     unimplemented!();
-    (unsafe { e1.seed_10_class_std_seed_seq_0(&mut sseq) });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test2_1() {
     let mut a: [(); 3] = [3_(), 5_(), 7_()];
     let mut sseq: () = unimplemented!();
     let mut e1: () = unimplemented!();
-    let mut e2 : () = std_independent_bits_engine_std_discard_block_engine_std_subtract_with_carry_engine_unsigned_long__48__5__12___389__11___64__unsigned_long_long_ :: new_1 ( { & mut sseq } , )  ;
+    let mut e2: () = unimplemented!();
     unimplemented!();
-    (unsafe { e1.seed_10_class_std_seed_seq_0(&mut sseq) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn main() {

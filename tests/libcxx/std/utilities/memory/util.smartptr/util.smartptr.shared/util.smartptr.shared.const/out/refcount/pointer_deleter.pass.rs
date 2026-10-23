@@ -240,10 +240,7 @@ impl function_pointer_deleter {
 pub fn test_function_type_8() {
     let deleter_called: Value<()> = Rc::new(RefCell::new(false));
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int____::new_1(
-            { (FnPtr::<fn() -> ()>::new(f_7)) },
-            { function_pointer_deleter::new({ deleter_called.as_pointer() }) },
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     unimplemented!();
@@ -270,9 +267,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut ptr: Ptr<A> = Ptr::alloc(A::new());
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({ (ptr).clone() }, {
-            test_deleter_A_::new_1({ 3_() })
-        })));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -287,10 +282,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     {
         let mut ptr: Ptr<A> = Ptr::alloc(A::new());
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_const_A_::new_1(
-            { (ptr).clone() },
-            { test_deleter_const_A_::new_1({ 3_() }) },
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -309,11 +301,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let d: Value<move_deleter_int_> = Rc::new(RefCell::new(move_deleter_int_::new_1({ 0_() })));
-        let p0: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1(
-            { Ptr::alloc(Default::default()) },
-            { move_deleter_int_::move_from({ d.as_pointer() }) },
-        )));
-        let p1: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_2(
+        let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1(
             { Default::default() },
             { move_deleter_int_::move_from({ d.as_pointer() }) },
             None,
@@ -324,23 +313,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut pointer: Ptr<()>| {
                 pointer.delete();
             })));
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_3(
-            { Ptr::alloc(Default::default()) },
-            { (*deleter.borrow()).copy_from() },
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_4(
+        let p: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_2(
             { unimplemented!() },
             { lambda!(Generic, {}, |mut _a0: ()| {}) },
             None,
         )));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(std_shared_ptr_chararrarr_::new_1(
-            { Ptr::alloc_array((0..10_()).map(|_| unimplemented!()).collect::<Box<[()]>>()) },
-            { unimplemented!() },
-        )));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     ({ test_function_type_8() });
     return 0_();

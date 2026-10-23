@@ -210,7 +210,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             i += 2_();
         }
         unimplemented!();
-        let mut it: () = (unsafe { next_0(unimplemented!(), None) });
+        let mut it: () = unimplemented!();
         let mut mvkey1: Moveable = Moveable::new_2({ 2_() }, { 2_f64 });
         let mut mv1: Moveable = Moveable::new_2({ 4_() }, { 4_f64 });
         unimplemented!();

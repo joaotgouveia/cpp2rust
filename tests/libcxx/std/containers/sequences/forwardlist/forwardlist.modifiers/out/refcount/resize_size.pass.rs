@@ -161,11 +161,7 @@ pub fn test_7() -> () {
     }
     {
         let mut t: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-        let c: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -203,11 +199,7 @@ pub fn test_7() -> () {
     }
     {
         let mut t: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-        let c: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

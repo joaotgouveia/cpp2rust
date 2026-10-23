@@ -1030,86 +1030,44 @@ pub fn operator_eq_17(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> Imp
 }
 pub fn test_18() -> () {
     {
-        let s1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
-        }));
-        let s2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ __tmp_1.as_pointer() })
-        }));
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ __tmp_2.as_pointer() })
-        }));
-        let s2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ __tmp_3.as_pointer() })
-        }));
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_4.as_pointer() })
-        }));
-        let s2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(3000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ __tmp_5.as_pointer() })
-        }));
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_6.as_pointer() })
-        }));
-        let s2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(4000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ __tmp_7.as_pointer() })
-        }));
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(9_()));
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ __tmp_8.as_pointer() })
-        }));
-        let s2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(10_()));
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ __tmp_9.as_pointer() })
-        }));
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(10_()));
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ __tmp_10.as_pointer() })
-        }));
-        let s2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(9_()));
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ __tmp_11.as_pointer() })
-        }));
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(9_()));
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ __tmp_12.as_pointer() })
-        }));
-        let s2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(10.1_f64));
-            std_chrono_duration_double__std_ratio_3__5__::new_1({ __tmp_13.as_pointer() })
-        }));
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

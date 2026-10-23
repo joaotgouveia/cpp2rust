@@ -383,23 +383,29 @@ pub fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_13(_i, n)
     });
 }
-pub fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_15(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_16(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_17(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -445,7 +451,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_18(
+            operator_cmp_19(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -470,7 +476,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_17(
+            operator_eq_18(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -554,7 +560,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn do_search_19(
+pub fn do_search_20(
     mut b1: random_access_iterator_const_int_ptr_,
     mut e1: random_access_iterator_const_int_ptr_,
     mut b2: random_access_iterator_const_int_ptr_,
@@ -565,7 +571,7 @@ pub fn do_search_19(
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn do_search_20(
+pub fn do_search_21(
     mut b1: random_access_iterator_const_char_ptr_,
     mut e1: random_access_iterator_const_char_ptr_,
     mut b2: random_access_iterator_const_char_ptr_,
@@ -576,7 +582,7 @@ pub fn do_search_20(
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_21() {
+pub fn test_22() {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -594,7 +600,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -611,7 +617,7 @@ pub fn test_21() {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -632,7 +638,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -651,7 +657,7 @@ pub fn test_21() {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -672,7 +678,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -693,7 +699,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -710,7 +716,7 @@ pub fn test_21() {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -735,7 +741,7 @@ pub fn test_21() {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -760,7 +766,7 @@ pub fn test_21() {
                     .offset((sa) as isize)
                     .offset(-((3_()) as isize))
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -777,7 +783,7 @@ pub fn test_21() {
             });
         let _result: random_access_iterator_const_int_ptr_ =
             random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -800,7 +806,7 @@ pub fn test_21() {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_int_ptr_ =
@@ -819,7 +825,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -855,7 +861,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -875,7 +881,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -895,7 +901,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -915,7 +921,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -951,7 +957,7 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
     let ij: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1004,10 +1010,10 @@ pub fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (ij.as_pointer() as Ptr<()>).offset((6_()) as isize)
             });
-        do_search_19(_b1, _e1, _b2, _e2, _result)
+        do_search_20(_b1, _e1, _b2, _e2, _result)
     });
 }
-pub fn test2_22() {
+pub fn test2_23() {
     let ia: Value<Box<[()]>> =
         Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
     let mut sa: () =
@@ -1025,7 +1031,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1042,7 +1048,7 @@ pub fn test2_22() {
             });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1063,7 +1069,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1082,7 +1088,7 @@ pub fn test2_22() {
             });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1103,7 +1109,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1124,7 +1130,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((2_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1141,7 +1147,7 @@ pub fn test2_22() {
             });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1166,7 +1172,7 @@ pub fn test2_22() {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1191,7 +1197,7 @@ pub fn test2_22() {
                     .offset((sa) as isize)
                     .offset(-((3_()) as isize))
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1208,7 +1214,7 @@ pub fn test2_22() {
             });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1231,7 +1237,7 @@ pub fn test2_22() {
                     .offset((sa) as isize)
                     .offset(-((1_()) as isize))
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     ({
         let _b1: random_access_iterator_const_char_ptr_ =
@@ -1250,7 +1256,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ia.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1286,7 +1292,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
     ({
@@ -1306,7 +1312,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((1_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     ({
@@ -1326,7 +1332,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((4_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     ({
@@ -1346,7 +1352,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ib.as_pointer() as Ptr<()>).offset((8_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1382,7 +1388,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ih.as_pointer() as Ptr<()>).offset((3_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
     let ij: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -1435,7 +1441,7 @@ pub fn test2_22() {
             random_access_iterator_const_char_ptr_::new_1({
                 (ij.as_pointer() as Ptr<()>).offset((6_()) as isize)
             });
-        do_search_20(_b1, _e1, _b2, _e2, _result)
+        do_search_21(_b1, _e1, _b2, _e2, _result)
     });
 }
 pub fn main() {
@@ -1458,8 +1464,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_21() });
-    ({ test2_22() });
+    ({ test_22() });
+    ({ test2_23() });
     return 0_();
 }
 pub trait adl_IteratorImpl {

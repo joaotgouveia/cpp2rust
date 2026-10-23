@@ -145,10 +145,7 @@ pub unsafe fn get_format_types_1() -> () {
     return unimplemented!();
 }
 pub unsafe fn get_temp_file_name_2() -> () {
-    let mut Name: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"libcxx.XXXXXX".as_ptr() },
-        None,
-    );
+    let mut Name: () = unimplemented!();
     let mut FD: () = (unsafe { mkstemp_3((&mut (*unimplemented!()) as *mut ())) });
     if ((FD) == (-1_())) {
         (unsafe { perror_4(c"mkstemp".as_ptr()) });

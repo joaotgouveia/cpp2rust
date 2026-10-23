@@ -406,19 +406,13 @@ pub unsafe fn test_30() {
             std_tuple_int__char_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
         })
     });
-    (unsafe {
-        test_12(unimplemented!(), {
-            let mut __tmp_14: () = 1_();
-            let mut __tmp_15: () = ('1' as ());
-            std_pair_int__char_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-        })
-    });
+    (unsafe { test_12(unimplemented!(), unimplemented!()) });
     (unsafe {
         test_14(unimplemented!(), {
-            let mut __tmp_16: () = 1_();
-            let mut __tmp_17: () = ('1' as ());
-            let mut __tmp_18: () = true;
-            std_tuple_int__char__bool_::new({ &mut __tmp_16 }, { &mut __tmp_17 }, { &mut __tmp_18 })
+            let mut __tmp_14: () = 1_();
+            let mut __tmp_15: () = ('1' as ());
+            let mut __tmp_16: () = true;
+            std_tuple_int__char__bool_::new({ &mut __tmp_14 }, { &mut __tmp_15 }, { &mut __tmp_16 })
         })
     });
     (unsafe { test_assure_parse_is_called_28() });
@@ -427,25 +421,19 @@ pub unsafe fn test_31() {
     (unsafe { test_16(unimplemented!(), 1_()) });
     (unsafe {
         test_18(unimplemented!(), {
-            let mut __tmp_19: () = 1_();
-            let mut __tmp_20: () = ('1' as ());
-            std_tuple_int__wchar_t_::new({ &mut __tmp_19 }, { &mut __tmp_20 })
+            let mut __tmp_17: () = 1_();
+            let mut __tmp_18: () = ('1' as ());
+            std_tuple_int__wchar_t_::new({ &mut __tmp_17 }, { &mut __tmp_18 })
         })
     });
-    (unsafe {
-        test_20(unimplemented!(), {
-            let mut __tmp_21: () = 1_();
-            let mut __tmp_22: () = ('1' as ());
-            std_pair_int__wchar_t_::new({ &mut __tmp_21 }, { &mut __tmp_22 })
-        })
-    });
+    (unsafe { test_20(unimplemented!(), unimplemented!()) });
     (unsafe {
         test_22(unimplemented!(), {
-            let mut __tmp_23: () = 1_();
-            let mut __tmp_24: () = ('1' as ());
-            let mut __tmp_25: () = true;
-            std_tuple_int__wchar_t__bool_::new({ &mut __tmp_23 }, { &mut __tmp_24 }, {
-                &mut __tmp_25
+            let mut __tmp_19: () = 1_();
+            let mut __tmp_20: () = ('1' as ());
+            let mut __tmp_21: () = true;
+            std_tuple_int__wchar_t__bool_::new({ &mut __tmp_19 }, { &mut __tmp_20 }, {
+                &mut __tmp_21
             })
         })
     });

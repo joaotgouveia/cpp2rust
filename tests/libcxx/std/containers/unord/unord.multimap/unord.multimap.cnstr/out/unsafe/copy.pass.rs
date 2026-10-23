@@ -472,26 +472,10 @@ impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_
 pub unsafe fn test_alloc_11() {
     {
         let mut arr: [(); 4] = [
-            {
-                let mut __tmp_0: () = 1_();
-                let mut __tmp_1: () = 2_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-            },
-            {
-                let mut __tmp_2: () = 2_();
-                let mut __tmp_3: () = 4_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
-            },
-            {
-                let mut __tmp_4: () = 3_();
-                let mut __tmp_5: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
-            },
-            {
-                let mut __tmp_6: () = 3_();
-                let mut __tmp_7: () = 2_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
@@ -501,9 +485,9 @@ pub unsafe fn test_alloc_11() {
         unimplemented!();
         {
             let mut range: () = unimplemented!();
-            let mut first_element: () = (unsafe { next_12(range.first.clone(), 0_()) });
-            let mut second_element: () = (unsafe { next_12(range.first.clone(), 1_()) });
-            let mut end: () = (unsafe { next_12(range.first.clone(), 2_()) });
+            let mut first_element: () = unimplemented!();
+            let mut second_element: () = unimplemented!();
+            let mut end: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -518,9 +502,9 @@ pub unsafe fn test_alloc_11() {
         unimplemented!();
         {
             let mut range: () = unimplemented!();
-            let mut first_element: () = (unsafe { next_13(range.first.clone(), 0_()) });
-            let mut second_element: () = (unsafe { next_13(range.first.clone(), 1_()) });
-            let mut end: () = (unsafe { next_13(range.first.clone(), 2_()) });
+            let mut first_element: () = unimplemented!();
+            let mut second_element: () = unimplemented!();
+            let mut end: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -528,11 +512,7 @@ pub unsafe fn test_alloc_11() {
         }
     }
     {
-        let mut arr: [(); 1] = [{
-            let mut __tmp_8: () = 1_();
-            let mut __tmp_9: () = 2_();
-            std_pair_const_int__int_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
-        }];
+        let mut arr: [(); 1] = [unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
         unimplemented!();
@@ -568,29 +548,13 @@ pub unsafe fn test_alloc_11() {
         unimplemented!();
     }
 }
-pub unsafe fn test_alloc_14() {
+pub unsafe fn test_alloc_12() {
     {
         let mut arr: [(); 4] = [
-            {
-                let mut __tmp_10: () = 1_();
-                let mut __tmp_11: () = 2_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_10 }, { &mut __tmp_11 })
-            },
-            {
-                let mut __tmp_12: () = 2_();
-                let mut __tmp_13: () = 4_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_12 }, { &mut __tmp_13 })
-            },
-            {
-                let mut __tmp_14: () = 3_();
-                let mut __tmp_15: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_14 }, { &mut __tmp_15 })
-            },
-            {
-                let mut __tmp_16: () = 3_();
-                let mut __tmp_17: () = 2_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_16 }, { &mut __tmp_17 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
@@ -600,9 +564,9 @@ pub unsafe fn test_alloc_14() {
         unimplemented!();
         {
             let mut range: () = unimplemented!();
-            let mut first_element: () = (unsafe { next_15(range.first.clone(), 0_()) });
-            let mut second_element: () = (unsafe { next_15(range.first.clone(), 1_()) });
-            let mut end: () = (unsafe { next_15(range.first.clone(), 2_()) });
+            let mut first_element: () = unimplemented!();
+            let mut second_element: () = unimplemented!();
+            let mut end: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -617,9 +581,9 @@ pub unsafe fn test_alloc_14() {
         unimplemented!();
         {
             let mut range: () = unimplemented!();
-            let mut first_element: () = (unsafe { next_16(range.first.clone(), 0_()) });
-            let mut second_element: () = (unsafe { next_16(range.first.clone(), 1_()) });
-            let mut end: () = (unsafe { next_16(range.first.clone(), 2_()) });
+            let mut first_element: () = unimplemented!();
+            let mut second_element: () = unimplemented!();
+            let mut end: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -627,11 +591,7 @@ pub unsafe fn test_alloc_14() {
         }
     }
     {
-        let mut arr: [(); 1] = [{
-            let mut __tmp_18: () = 1_();
-            let mut __tmp_19: () = 2_();
-            std_pair_const_int__int_::new_1({ &mut __tmp_18 }, { &mut __tmp_19 })
-        }];
+        let mut arr: [(); 1] = [unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
         unimplemented!();
@@ -667,27 +627,11 @@ pub unsafe fn test_alloc_14() {
         unimplemented!();
     }
 }
-pub unsafe fn test_17() {
+pub unsafe fn test_13() {
     (unsafe { test_alloc_11() });
-    (unsafe { test_alloc_14() });
+    (unsafe { test_alloc_12() });
     {
-        let mut arr: [(); 3] = [
-            {
-                let mut __tmp_20: () = 1_();
-                let mut __tmp_21: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_20 }, { &mut __tmp_21 })
-            },
-            {
-                let mut __tmp_22: () = 2_();
-                let mut __tmp_23: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_22 }, { &mut __tmp_23 })
-            },
-            {
-                let mut __tmp_24: () = 3_();
-                let mut __tmp_25: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_24 }, { &mut __tmp_25 })
-            },
-        ];
+        let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
         unimplemented!();
@@ -697,23 +641,7 @@ pub unsafe fn test_17() {
         unimplemented!();
     }
     {
-        let mut arr: [(); 3] = [
-            {
-                let mut __tmp_26: () = 1_();
-                let mut __tmp_27: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_26 }, { &mut __tmp_27 })
-            },
-            {
-                let mut __tmp_28: () = 2_();
-                let mut __tmp_29: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_28 }, { &mut __tmp_29 })
-            },
-            {
-                let mut __tmp_30: () = 3_();
-                let mut __tmp_31: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_30 }, { &mut __tmp_31 })
-            },
-        ];
+        let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
         unimplemented!();
@@ -738,7 +666,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_17() });
+    (unsafe { test_13() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]

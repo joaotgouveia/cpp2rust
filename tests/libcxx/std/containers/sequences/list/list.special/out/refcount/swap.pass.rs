@@ -356,14 +356,8 @@ pub fn test_11() -> () {
             8_(),
             11_(),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-        )));
-        let c2: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a2.as_pointer() as Ptr<()>) },
-            { (a2.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it2: Value<()> = Rc::new(RefCell::new({
             let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -386,10 +380,7 @@ pub fn test_11() -> () {
             11_(),
         ])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a2.as_pointer() as Ptr<()>) },
-            { (a2.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-        )));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -397,10 +388,7 @@ pub fn test_11() -> () {
     }
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 7_(), 9_(), 10_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -427,24 +415,8 @@ pub fn test_11() -> () {
             8_(),
             11_(),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1_() })));
-            std_list_int__test_allocator_int__::new_1(
-                { (a1.as_pointer() as Ptr<()>) },
-                { (a1.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-                { __tmp_1.as_pointer() },
-            )
-        }));
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1_() })));
-            std_list_int__test_allocator_int__::new_1(
-                { (a2.as_pointer() as Ptr<()>) },
-                { (a2.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-                { __tmp_2.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -462,24 +434,8 @@ pub fn test_11() -> () {
             8_(),
             11_(),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 1_() })));
-            std_list_int__other_allocator_int__::new_1(
-                { (a1.as_pointer() as Ptr<()>) },
-                { (a1.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-                { __tmp_3.as_pointer() },
-            )
-        }));
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2_() })));
-            std_list_int__other_allocator_int__::new_1(
-                { (a2.as_pointer() as Ptr<()>) },
-                { (a2.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-                { __tmp_4.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -497,14 +453,8 @@ pub fn test_11() -> () {
             8_(),
             11_(),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-        )));
-        let c2: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a2.as_pointer() as Ptr<()>) },
-            { (a2.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -520,10 +470,7 @@ pub fn test_11() -> () {
             11_(),
         ])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a2.as_pointer() as Ptr<()>) },
-            { (a2.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-        )));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -531,10 +478,7 @@ pub fn test_11() -> () {
     }
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 7_(), 9_(), 10_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            { (a1.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -561,24 +505,8 @@ pub fn test_11() -> () {
             8_(),
             11_(),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_list_int__min_allocator_int__::new_2(
-                { (a1.as_pointer() as Ptr<()>) },
-                { (a1.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-                { __tmp_5.as_pointer() },
-            )
-        }));
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_list_int__min_allocator_int__::new_2(
-                { (a2.as_pointer() as Ptr<()>) },
-                { (a2.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-                { __tmp_6.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

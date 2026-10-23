@@ -200,16 +200,7 @@ pub fn test_14() -> () {
     ])));
     let mut n: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let q: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(
-            std_vector_MoveOnly__std_allocator_MoveOnly__::new_1(
-                { (a.as_pointer() as Ptr<()>) },
-                { (a.as_pointer() as Ptr<()>).offset((n / 2_()) as isize) },
-            ),
-        ));
-        std_priority_queue_MoveOnly__std_vector_MoveOnly__std_allocator_MoveOnly____std_less_MoveOnly__ :: new_1 ( { ( a .as_pointer()  as Ptr::<()> ) . offset ( ( ( n / 2_() ) ) as isize )  } , { ( a .as_pointer()  as Ptr::<()> ) . offset ( ( n ) as isize )  } , { __tmp_0.as_pointer() } , { __tmp_1.as_pointer() } , )
-    }));
+    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     return true;

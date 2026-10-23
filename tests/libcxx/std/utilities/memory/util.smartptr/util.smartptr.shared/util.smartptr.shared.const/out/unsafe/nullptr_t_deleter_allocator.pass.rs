@@ -566,16 +566,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut alloc_stats: test_allocator_statistics = <test_allocator_statistics>::default();
     {
-        let mut p: () = std_shared_ptr_A_::new_1(
-            { Default::default() },
-            { test_deleter_A_::new_1({ 3_() }) },
-            {
-                test_allocator_A_::new_1({ 5_() }, {
-                    (&mut alloc_stats as *mut test_allocator_statistics)
-                })
-            },
-            None,
-        );
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -594,12 +585,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0_();
     {
-        let mut p: () = std_shared_ptr_A_::new_2(
-            { Default::default() },
-            { test_deleter_A_::new_1({ 1_() }) },
-            { bare_allocator_void_::new() },
-            None,
-        );
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -614,12 +600,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0_();
     {
-        let mut p: () = std_shared_ptr_A_::new_3(
-            { Default::default() },
-            { test_deleter_A_::new_1({ 1_() }) },
-            { <min_allocator_void_>::default() },
-            None,
-        );
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -633,16 +614,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut p: () = std_shared_ptr_const_A_::new_1(
-            { Default::default() },
-            { test_deleter_const_A_::new_1({ 3_() }) },
-            {
-                test_allocator_A_::new_1({ 5_() }, {
-                    (&mut alloc_stats as *mut test_allocator_statistics)
-                })
-            },
-            None,
-        );
+        let mut p: () = unimplemented!();
         &(p);
     }
     return 0_();

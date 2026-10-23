@@ -73,38 +73,22 @@ pub struct min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash
 {}
 pub fn do_insert_const_lvalue_test_4() {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let v1: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(3.5_f64));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(3_()));
-        std_pair_const_double__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v2: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(3.5_f64));
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
-        std_pair_const_double__int_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-    }));
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v3: Value<()> = Rc::new(RefCell::new({
-        let __tmp_4: Value<()> = Rc::new(RefCell::new(4.5_f64));
-        let __tmp_5: Value<()> = Rc::new(RefCell::new(4_()));
-        std_pair_const_double__int_::new({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-    }));
+    let v3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v4: Value<()> = Rc::new(RefCell::new({
-        let __tmp_6: Value<()> = Rc::new(RefCell::new(5.5_f64));
-        let __tmp_7: Value<()> = Rc::new(RefCell::new(4_()));
-        std_pair_const_double__int_::new({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-    }));
+    let v4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -112,38 +96,22 @@ pub fn do_insert_const_lvalue_test_4() {
 }
 pub fn do_insert_const_lvalue_test_5() {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let v1: Value<()> = Rc::new(RefCell::new({
-        let __tmp_8: Value<()> = Rc::new(RefCell::new(3.5_f64));
-        let __tmp_9: Value<()> = Rc::new(RefCell::new(3_()));
-        std_pair_const_double__int_::new({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
-    }));
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v2: Value<()> = Rc::new(RefCell::new({
-        let __tmp_10: Value<()> = Rc::new(RefCell::new(3.5_f64));
-        let __tmp_11: Value<()> = Rc::new(RefCell::new(4_()));
-        std_pair_const_double__int_::new({ __tmp_10.as_pointer() }, { __tmp_11.as_pointer() })
-    }));
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v3: Value<()> = Rc::new(RefCell::new({
-        let __tmp_12: Value<()> = Rc::new(RefCell::new(4.5_f64));
-        let __tmp_13: Value<()> = Rc::new(RefCell::new(4_()));
-        std_pair_const_double__int_::new({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
-    }));
+    let v3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v4: Value<()> = Rc::new(RefCell::new({
-        let __tmp_14: Value<()> = Rc::new(RefCell::new(5.5_f64));
-        let __tmp_15: Value<()> = Rc::new(RefCell::new(4_()));
-        std_pair_const_double__int_::new({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() })
-    }));
+    let v4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

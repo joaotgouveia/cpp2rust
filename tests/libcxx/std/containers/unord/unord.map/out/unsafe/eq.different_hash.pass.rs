@@ -55,10 +55,7 @@ pub unsafe fn populate_15(m: *mut (), mut start: *mut (), mut end: *mut ()) {
     let mut p1: *mut () = start;
     let mut p2: *mut () = end.offset(-((1_()) as isize));
     'loop_: while ((p1) != (end)) {
-        (unsafe {
-            let mut ___x: () = unimplemented!();
-            (*m).insert_45_struct_std_pair_unsigned_long__unsigned_long__0(&mut ___x)
-        });
+        unimplemented!();
         {
             p1.prefix_inc();
             p2.prefix_dec()
@@ -69,10 +66,7 @@ pub unsafe fn populate_16(m: *mut (), mut start: *mut (), mut end: *mut ()) {
     let mut p1: *mut () = start;
     let mut p2: *mut () = end.offset(-((1_()) as isize));
     'loop_: while ((p1) != (end)) {
-        (unsafe {
-            let mut ___x: () = unimplemented!();
-            (*m).insert_45_struct_std_pair__Bool___Bool__0(&mut ___x)
-        });
+        unimplemented!();
         {
             p1.prefix_inc();
             p2.prefix_dec()
@@ -83,10 +77,7 @@ pub unsafe fn populate_17(m: *mut (), mut start: *mut *mut (), mut end: *mut *mu
     let mut p1: *mut *mut () = start;
     let mut p2: *mut *mut () = end.offset(-((1_()) as isize));
     'loop_: while ((p1) != (end)) {
-        (unsafe {
-            let mut ___x: () = unimplemented!();
-            (*m).insert_45_struct_std_pair_char_ptr__char_ptr__0(&mut ___x)
-        });
+        unimplemented!();
         {
             p1.prefix_inc();
             p2.prefix_dec()

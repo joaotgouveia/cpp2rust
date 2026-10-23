@@ -28,32 +28,21 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let mut uPtr: () = ({
-            let ___args: Value<()> = Rc::new(RefCell::new(84_()));
-            make_unique_0(___args.as_pointer())
-        });
+        let mut uPtr: () = unimplemented!();
         let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(ioPtr.operator int**())");;
         let mut pPtr: Ptr<Ptr<()>> = ({ (*ioPtr.borrow())() });
         unimplemented!();
     }
     {
-        let uPtr: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___args: Value<()> = Rc::new(RefCell::new(84_()));
-                make_unique_0(___args.as_pointer())
-            }),
-        ));
+        let uPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(ioPtr.operator int**())");;
         let mut pPtr: Ptr<Ptr<()>> = ({ (*ioPtr.borrow())() });
         unimplemented!();
     }
     {
-        let mut uPtr: () = ({
-            let ___args: Value<()> = Rc::new(RefCell::new(84_()));
-            make_unique_0(___args.as_pointer())
-        });
+        let mut uPtr: () = unimplemented!();
         let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(ioPtr.operator void**())");;
         let mut pPtr: Ptr<()> = ({ (*ioPtr.borrow()).to_pmut_4() });

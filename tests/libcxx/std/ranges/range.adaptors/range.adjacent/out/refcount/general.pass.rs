@@ -8,17 +8,11 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_adjacent_pairs_0() {
     let mut v: () = unimplemented!();
-    let expected_index: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-        std_pair_unsigned_long__unsigned_long_::new({ __tmp_0.as_pointer() }, {
-            __tmp_1.as_pointer()
-        })
-    }));
-    let __tmp_2: Value<
+    let expected_index: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let __tmp_0: Value<
         std_ranges_adjacent_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____2_,
     > = Rc::new(RefCell::new(unimplemented!()));
-    let __range1: Ptr<()> = __tmp_2.as_pointer();
+    let __range1: Ptr<()> = __tmp_0.as_pointer();
     'loop_: for __decomp_1 in IterRange::new(unimplemented!(), unimplemented!()) {
         let __decomp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let x: Ptr<()> = ({ get_2((__decomp_1.as_pointer()).reinterpret_cast::<()>()) });

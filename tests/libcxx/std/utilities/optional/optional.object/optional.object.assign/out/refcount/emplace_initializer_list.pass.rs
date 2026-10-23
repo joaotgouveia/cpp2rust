@@ -188,9 +188,9 @@ pub fn check_X_4() -> () {
     let dtor_called: Value<()> = Rc::new(RefCell::new(false));
     let x: Value<X> = Rc::new(RefCell::new(X::new_1({ dtor_called.as_pointer() })));
     let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-    let opt: Value<()> = Rc::new(RefCell::new(std_optional_X_::new_1({ x.as_pointer() })));
+    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let v: Ptr<X> = ({ (*opt.borrow()).emplace(unimplemented!(), dtor_called.as_pointer()) });
+    let v: Ptr<X> = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<X&, decltype(v)>");;
     unimplemented!();
     unimplemented!();
@@ -199,7 +199,7 @@ pub fn check_X_4() -> () {
 }
 pub fn check_Y_5() -> () {
     let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let v: Ptr<Y> = ({ (*opt.borrow()).emplace(unimplemented!()) });
+    let v: Ptr<Y> = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<Y&, decltype(v)>");;
     unimplemented!();
     unimplemented!();
@@ -232,10 +232,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v: Ptr<()> = ({
-            let ___args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*opt.borrow()).emplace(unimplemented!(), ___args.as_pointer())
-        });
+        let v: Ptr<()> = unimplemented!();
         const _: () = assert!(true, "std::is_same_v<std::vector<int>&, decltype(v)>");;
         unimplemented!();
         unimplemented!();

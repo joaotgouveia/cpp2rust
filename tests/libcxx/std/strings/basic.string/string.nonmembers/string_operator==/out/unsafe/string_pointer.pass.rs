@@ -122,261 +122,133 @@ pub unsafe fn test_5(lhs: *const (), mut rhs: *const (), mut x: ()) {
 }
 pub unsafe fn test_string_6() {
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"".as_ptr(), true)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcde".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcdefghij".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcdefghijklmnopqrst".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcde".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcde".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcde".as_ptr(), true)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcde".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcdefghij".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcde".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcdefghijklmnopqrst".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcdefghij".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcdefghij".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcde".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcdefghij".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcdefghij".as_ptr(), true)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcdefghij".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcdefghijklmnopqrst".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcdefghijklmnopqrst".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcdefghijklmnopqrst".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcde".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcdefghijklmnopqrst".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcdefghij".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"abcdefghijklmnopqrst".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_4(&mut _lhs, c"abcdefghijklmnopqrst".as_ptr(), true)
     });
 }
 pub unsafe fn test_string_7() {
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"".as_ptr(), true)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcde".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcdefghij".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcdefghijklmnopqrst".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcde".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcde".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcde".as_ptr(), true)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcde".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcdefghij".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcde".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcdefghijklmnopqrst".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcdefghij".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcdefghij".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcde".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcdefghij".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcdefghij".as_ptr(), true)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcdefghij".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcdefghijklmnopqrst".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcdefghijklmnopqrst".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcdefghijklmnopqrst".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcde".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcdefghijklmnopqrst".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcdefghij".as_ptr(), false)
     });
     (unsafe {
-        let mut _lhs: () =
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"abcdefghijklmnopqrst".as_ptr() },
-                None,
-            );
+        let mut _lhs: () = unimplemented!();
         test_5(&mut _lhs, c"abcdefghijklmnopqrst".as_ptr(), true)
     });
 }

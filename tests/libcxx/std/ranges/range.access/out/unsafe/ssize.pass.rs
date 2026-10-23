@@ -251,21 +251,25 @@ pub unsafe fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_8(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -349,7 +353,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -359,7 +363,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -443,13 +447,13 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<decltype(std::ranges::ssize), const SizeMember&>"
 );
-pub unsafe fn size_11(mut _a0: SizeFunction) -> () {
+pub unsafe fn size_12(mut _a0: SizeFunction) -> () {
     return 42_();
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct SizeFunction {}
-pub unsafe fn size_12(mut _a0: SizeFunctionSigned) -> () {
+pub unsafe fn size_13(mut _a0: SizeFunctionSigned) -> () {
     return 42_();
 }
 #[repr(C)]
@@ -488,7 +492,7 @@ impl ShortUnsignedReturnType {
         return 42_();
     }
 }
-pub unsafe fn test_13() -> () {
+pub unsafe fn test_14() -> () {
     let mut a: [(); 4] = [unimplemented!(); 4];
     unimplemented!();
     const _: () = assert!(true, "");;
@@ -530,7 +534,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_13() });
+    (unsafe { test_14() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

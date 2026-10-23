@@ -24,22 +24,9 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
-    let from: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"some text".as_ptr() },
-        None,
-    );
-    let expected: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        );
-    let mut to: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_2(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        );
+    let from: () = unimplemented!();
+    let expected: () = unimplemented!();
+    let mut to: () = unimplemented!();
     let f: *const () = (unsafe { use_facet_0(&l) });
     let mut mbs: () = unimplemented!();
     let mut from_next: *const () = std::ptr::null();

@@ -58,7 +58,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         ];
         let mut v1: () = unimplemented!();
         let v2: () = unimplemented!();
-        unimplemented!() = v2[(unimplemented!()) as usize];
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -599,23 +599,29 @@ pub fn operator_add_22(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_21(_i, n)
     });
 }
-pub fn iter_swap_23(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_23(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_24(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_24(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_25(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_27(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -661,7 +667,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_26(
+            operator_cmp_27(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -686,7 +692,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_25(
+            operator_eq_26(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -770,7 +776,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_constexpr_27() -> () {
+pub fn test_constexpr_28() -> () {
     let mut ia: [(); 5] = [0_(), 1_(), 1_(), 3_(), 4_()];
     let mut expected: [(); 4] = [0_(), 1_(), 3_(), 4_()];
     let mut N: () = 4_();
@@ -781,13 +787,13 @@ pub fn test_constexpr_27() -> () {
 #[byte_size(1)]
 pub struct count_equal {}
 thread_local!(
-    pub static count_28: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_29: Value<()> = Rc::new(RefCell::new(0_()));
 );
-pub fn test_29() {
+pub fn test_30() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -795,7 +801,7 @@ pub fn test_29() {
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
     let mut sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -804,7 +810,7 @@ pub fn test_29() {
     let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
     let mut sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -812,7 +818,7 @@ pub fn test_29() {
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
     let mut sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -821,7 +827,7 @@ pub fn test_29() {
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
     let mut se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -831,7 +837,7 @@ pub fn test_29() {
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
     let mut sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -840,7 +846,7 @@ pub fn test_29() {
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
     let mut sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -857,89 +863,7 @@ pub fn test_29() {
     ])));
     let mut si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_30() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    let mut sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
-    let mut sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
-    let mut sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
-    let mut se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
-    let mut sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
-    let mut sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        2_(),
-        2_(),
-        2_(),
-    ])));
-    let mut si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -951,15 +875,15 @@ pub fn test_31() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
     let mut sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -968,7 +892,7 @@ pub fn test_31() {
     let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
     let mut sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -976,7 +900,7 @@ pub fn test_31() {
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
     let mut sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -985,7 +909,7 @@ pub fn test_31() {
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
     let mut se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -995,7 +919,7 @@ pub fn test_31() {
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
     let mut sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1004,7 +928,7 @@ pub fn test_31() {
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
     let mut sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1021,7 +945,7 @@ pub fn test_31() {
     ])));
     let mut si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1033,7 +957,89 @@ pub fn test_32() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
+    let mut sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
+    let mut sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
+    let mut sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
+    let mut se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
+    let mut sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
+    let mut sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        2_(),
+        2_(),
+        2_(),
+    ])));
+    let mut si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_33() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     let mut r: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1041,7 +1047,7 @@ pub fn test_32() {
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
     let mut sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1050,7 +1056,7 @@ pub fn test_32() {
     let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
     let mut sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1058,7 +1064,7 @@ pub fn test_32() {
     let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
     let mut sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1067,7 +1073,7 @@ pub fn test_32() {
     let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
     let mut se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1077,7 +1083,7 @@ pub fn test_32() {
     let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
     let mut sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1086,7 +1092,7 @@ pub fn test_32() {
     let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
     let mut sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1103,7 +1109,7 @@ pub fn test_32() {
     ])));
     let mut si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1114,14 +1120,14 @@ pub fn test_32() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct do_nothing {}
-pub fn test1_33() {
+pub fn test1_34() {
     let one: Value<()> = Rc::new(RefCell::new(1_()));
     let two: Value<()> = Rc::new(RefCell::new(2_()));
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..1).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let mut sa: () = (8usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     let r: Value<forward_iterator_std_unique_ptr_int__do_nothing__ptr_> =
         Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -1132,7 +1138,7 @@ pub fn test1_33() {
     ));
     unimplemented!();
     let mut sb: () = (16usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1142,7 +1148,7 @@ pub fn test1_33() {
         (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let mut sc: () = (16usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1152,7 +1158,7 @@ pub fn test1_33() {
     ));
     unimplemented!();
     let mut sd: () = (24usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1163,7 +1169,7 @@ pub fn test1_33() {
     ));
     unimplemented!();
     let mut se: () = (32usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1176,7 +1182,7 @@ pub fn test1_33() {
     unimplemented!();
     unimplemented!();
     let mut sg: () = (32usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1188,7 +1194,7 @@ pub fn test1_33() {
     unimplemented!();
     unimplemented!();
     let mut sh: () = (24usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1204,105 +1210,7 @@ pub fn test1_33() {
     unimplemented!();
     unimplemented!();
     let mut si: () = (56usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test1_34() {
-    let one: Value<()> = Rc::new(RefCell::new(1_()));
-    let two: Value<()> = Rc::new(RefCell::new(2_()));
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..1).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut sa: () = (8usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    let r: Value<bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_> =
-        Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    unimplemented!();
-    let mut sb: () = (16usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut sc: () = (16usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    unimplemented!();
-    let mut sd: () = (24usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    unimplemented!();
-    let mut se: () = (32usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut sg: () = (32usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut sh: () = (24usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..7).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut si: () = (56usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1317,8 +1225,8 @@ pub fn test1_35() {
         (0..1).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let mut sa: () = (8usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
-    let r: Value<random_access_iterator_std_unique_ptr_int__do_nothing__ptr_> =
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    let r: Value<bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_> =
         Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -1328,7 +1236,7 @@ pub fn test1_35() {
     ));
     unimplemented!();
     let mut sb: () = (16usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1338,7 +1246,7 @@ pub fn test1_35() {
         (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let mut sc: () = (16usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1348,7 +1256,7 @@ pub fn test1_35() {
     ));
     unimplemented!();
     let mut sd: () = (24usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1359,7 +1267,7 @@ pub fn test1_35() {
     ));
     unimplemented!();
     let mut se: () = (32usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1372,7 +1280,7 @@ pub fn test1_35() {
     unimplemented!();
     unimplemented!();
     let mut sg: () = (32usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1384,7 +1292,7 @@ pub fn test1_35() {
     unimplemented!();
     unimplemented!();
     let mut sh: () = (24usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1400,7 +1308,7 @@ pub fn test1_35() {
     unimplemented!();
     unimplemented!();
     let mut si: () = (56usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1415,7 +1323,105 @@ pub fn test1_36() {
         (0..1).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let mut sa: () = (8usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    let r: Value<random_access_iterator_std_unique_ptr_int__do_nothing__ptr_> =
+        Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
+    let mut sb: () = (16usize as ()).wrapping_div((8usize as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut sc: () = (16usize as ()).wrapping_div((8usize as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
+    let mut sd: () = (24usize as ()).wrapping_div((8usize as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
+    let mut se: () = (32usize as ()).wrapping_div((8usize as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
+    unimplemented!();
+    let mut sg: () = (32usize as ()).wrapping_div((8usize as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
+    unimplemented!();
+    let mut sh: () = (24usize as ()).wrapping_div((8usize as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..7).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut si: () = (56usize as ()).wrapping_div((8usize as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test1_37() {
+    let one: Value<()> = Rc::new(RefCell::new(1_()));
+    let two: Value<()> = Rc::new(RefCell::new(2_()));
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(
+        (0..1).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    ));
+    let mut sa: () = (8usize as ()).wrapping_div((8usize as ()));
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     let mut r: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1425,7 +1431,7 @@ pub fn test1_36() {
     ));
     unimplemented!();
     let mut sb: () = (16usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1435,7 +1441,7 @@ pub fn test1_36() {
         (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let mut sc: () = (16usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1445,7 +1451,7 @@ pub fn test1_36() {
     ));
     unimplemented!();
     let mut sd: () = (24usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1456,7 +1462,7 @@ pub fn test1_36() {
     ));
     unimplemented!();
     let mut se: () = (32usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1469,7 +1475,7 @@ pub fn test1_36() {
     unimplemented!();
     unimplemented!();
     let mut sg: () = (32usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1481,7 +1487,7 @@ pub fn test1_36() {
     unimplemented!();
     unimplemented!();
     let mut sh: () = (24usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1497,7 +1503,7 @@ pub fn test1_36() {
     unimplemented!();
     unimplemented!();
     let mut si: () = (56usize as ()).wrapping_div((8usize as ()));
-    count_28.with(|rc| *rc.borrow_mut() = 0_());
+    count_29.with(|rc| *rc.borrow_mut() = 0_());
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1525,14 +1531,14 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_29() });
     ({ test_30() });
     ({ test_31() });
     ({ test_32() });
-    ({ test1_33() });
+    ({ test_33() });
     ({ test1_34() });
     ({ test1_35() });
     ({ test1_36() });
+    ({ test1_37() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }
@@ -1700,7 +1706,7 @@ pub trait count_equalImpl {
 }
 impl count_equalImpl for Ptr<count_equal> {
     fn operator_call_1_int(&self, x: Ptr<()>, y: Ptr<()>) -> () {
-        (*count_28.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_29.with(Value::clone).borrow_mut()).prefix_inc();
         return ({ (x.read()) } == { (y.read()) });
     }
     fn operator_call_1_class_std_unique_ptr_int__struct_do_nothing_(
@@ -1708,7 +1714,7 @@ impl count_equalImpl for Ptr<count_equal> {
         x: Ptr<()>,
         y: Ptr<()>,
     ) -> () {
-        (*count_28.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_29.with(Value::clone).borrow_mut()).prefix_inc();
         return unimplemented!();
     }
 }
@@ -2081,5 +2087,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = count_28.with(|_| ());
+    let _ = count_29.with(|_| ());
 }

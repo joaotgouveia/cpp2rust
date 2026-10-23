@@ -130,21 +130,11 @@ pub fn test_9(s: Ptr<()>, sv: (), mut x: ()) {
 pub fn test_string_10() {
     {
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -153,12 +143,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -167,12 +152,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -181,21 +161,11 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -204,12 +174,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -218,12 +183,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -232,30 +192,15 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -264,12 +209,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -278,30 +218,15 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 1_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -310,12 +235,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -324,30 +244,15 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 2_(), 2_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 2_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -356,12 +261,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -370,30 +270,15 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 4_(), 4_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 4_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -402,12 +287,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -416,30 +296,15 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 5_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 5_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -448,12 +313,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -462,30 +322,15 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 6_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 6_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -494,12 +339,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -508,39 +348,19 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -549,39 +369,19 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 1_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -590,39 +390,19 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 5_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 5_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 5_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -631,39 +411,19 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 9_(), 9_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 9_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 9_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -672,39 +432,19 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 10_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 10_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 10_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -713,39 +453,19 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 11_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 11_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 11_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -754,239 +474,109 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 1_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 10_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 10_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 10_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 10_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 19_(), 19_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 19_(), 15_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 19_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 19_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 20_(), 20_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 20_(), 15_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 20_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 20_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 21_(), 20_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 21_(), 15_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 21_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_4(_s.as_pointer(), unimplemented!(), 21_(), 0_())
         });
     }
     {
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -994,12 +584,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1007,12 +592,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1020,30 +600,15 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1051,12 +616,7 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1064,39 +624,19 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1104,39 +644,19 @@ pub fn test_string_10() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 20_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 15_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_8(_s.as_pointer(), unimplemented!(), 0_())
         });
     }
@@ -1144,21 +664,11 @@ pub fn test_string_10() {
 pub fn test_string_11() {
     {
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1167,12 +677,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1181,12 +686,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1195,21 +695,11 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1218,12 +708,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1232,12 +717,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1246,30 +726,15 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1278,12 +743,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1292,30 +752,15 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 1_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1324,12 +769,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1338,30 +778,15 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 2_(), 2_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 2_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1370,12 +795,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1384,30 +804,15 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 4_(), 4_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 4_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1416,12 +821,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1430,30 +830,15 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 5_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 5_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1462,12 +847,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1476,30 +856,15 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 6_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 6_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1508,12 +873,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1522,39 +882,19 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1563,39 +903,19 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 1_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1604,39 +924,19 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 5_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 5_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 5_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1645,39 +945,19 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 9_(), 9_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 9_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 9_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1686,39 +966,19 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 10_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 10_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 10_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1727,39 +987,19 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 11_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 11_(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 11_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -1768,239 +1008,109 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 0_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 1_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 1_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 10_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 10_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 10_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 10_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 19_(), 19_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 19_(), 15_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 19_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 19_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 20_(), 20_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 20_(), 15_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 20_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 20_(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 21_(), 20_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 21_(), 15_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 21_(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_6(_s.as_pointer(), unimplemented!(), 21_(), 0_())
         });
     }
     {
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -2008,12 +1118,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -2021,12 +1126,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -2034,30 +1134,15 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -2065,12 +1150,7 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -2078,39 +1158,19 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 5_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 0_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(
                 _s.as_pointer(),
                 unimplemented!(),
@@ -2118,39 +1178,19 @@ pub fn test_string_11() {
             )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 20_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 15_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 10_())
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde") },
-                    None,
-                ),
-            ));
+            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_9(_s.as_pointer(), unimplemented!(), 0_())
         });
     }

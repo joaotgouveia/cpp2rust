@@ -689,12 +689,12 @@ pub fn test_14() -> () {
         unimplemented!();
     }
     {
-        let op: Value<()> = Rc::new(RefCell::new(1_()));
+        let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let op: Value<()> = Rc::new(RefCell::new(1_()));
+        let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

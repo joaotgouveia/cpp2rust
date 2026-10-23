@@ -356,23 +356,29 @@ pub fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_12(_i, n)
     });
 }
-pub fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_14(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_15(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -418,7 +424,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_17(
+            operator_cmp_18(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -443,7 +449,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_16(
+            operator_eq_17(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -978,183 +984,183 @@ const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
 thread_local!(
-    pub static SFINAEs_away_18: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_19: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_20: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_21: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_21: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_22: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_22: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_23: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_23: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_24: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_24: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_25: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_25: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_26: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_26: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_27: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_27: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_28: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_28: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_29: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_29: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_30: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_30: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_31: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_31: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_32: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_32: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_33: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_33: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_34: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_34: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_35: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_35: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_36: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_36: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_37: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_37: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_38: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_38: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_39: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_39: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_40: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_40: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_41: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_41: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_42: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_42: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_43: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_43: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_44: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_44: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_45: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_45: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_46: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_46: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_47: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_47: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_48: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_48: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_49: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_49: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_50: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_50: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_51: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_51: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_52: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_52: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_53: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_53: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_54: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_54: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_55: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_55: Value<()> = Rc::new(RefCell::new(value_56.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_56: Value<()> = Rc::new(RefCell::new(value_57.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_57: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_58: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_58: Value<()> = Rc::new(RefCell::new(value_56.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_59: Value<()> = Rc::new(RefCell::new(value_57.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_59: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_60: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_60: Value<()> = Rc::new(RefCell::new(value_56.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_61: Value<()> = Rc::new(RefCell::new(value_57.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_61: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_62: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_62: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_63: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_63: Value<()> = Rc::new(RefCell::new(value_56.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_64: Value<()> = Rc::new(RefCell::new(value_57.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_64: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_65: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_65: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_66: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_66: Value<()> = Rc::new(RefCell::new(value_56.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_67: Value<()> = Rc::new(RefCell::new(value_57.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_67: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_68: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_68: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_69: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_69: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_70: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_70: Value<()> = Rc::new(RefCell::new(value_56.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_71: Value<()> = Rc::new(RefCell::new(value_57.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_71: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_72: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_72: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_73: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_73: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_74: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_74: Value<()> = Rc::new(RefCell::new(value_56.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_75: Value<()> = Rc::new(RefCell::new(value_57.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_75: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_76: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_76: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_77: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    pub static SFINAEs_away_77: Value<()> = Rc::new(RefCell::new(value_19.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_78: Value<()> = Rc::new(RefCell::new(value_20.with(|rc| *rc.borrow())));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
-pub fn UnorderedContainerDeductionGuidesSfinaeAway_78() {
+pub fn UnorderedContainerDeductionGuidesSfinaeAway_79() {
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, OutputIter, OutputIter>");;
     const _: () = assert!(
@@ -1369,7 +1375,7 @@ pub fn UnorderedContainerDeductionGuidesSfinaeAway_78() {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct BadAlloc_79 {}
+pub struct BadAlloc_80 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -1413,22 +1419,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_80: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_81: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_81: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_82: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_82(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_83(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_83(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_84(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_82(_x, _y)
+        operator_eq_83(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -1489,7 +1495,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_82(
+            operator_eq_83(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -1626,54 +1632,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let mut expected_m: [(); 4] = [
-        {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_const_int__long_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        },
-        {
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_const_int__long_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        },
-        {
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_const_int__long_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-        },
-        {
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(2147483647_()));
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_const_int__long_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ];
     {
         let mut arr: [(); 5] = [
-            {
-                let __tmp_8: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_9: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
-            },
-            {
-                let __tmp_10: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_11: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_10.as_pointer() }, { __tmp_11.as_pointer() })
-            },
-            {
-                let __tmp_12: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_13: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
-            },
-            {
-                let __tmp_14: Value<()> = Rc::new(RefCell::new(2147483647_()));
-                let __tmp_15: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() })
-            },
-            {
-                let __tmp_16: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_17: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_16.as_pointer() }, { __tmp_17.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -1681,31 +1651,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let __tmp_18: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_19: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_18.as_pointer() }, { __tmp_19.as_pointer() })
-            },
-            {
-                let __tmp_20: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_21: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_20.as_pointer() }, { __tmp_21.as_pointer() })
-            },
-            {
-                let __tmp_22: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_23: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_22.as_pointer() }, { __tmp_23.as_pointer() })
-            },
-            {
-                let __tmp_24: Value<()> = Rc::new(RefCell::new(2147483647_()));
-                let __tmp_25: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_24.as_pointer() }, { __tmp_25.as_pointer() })
-            },
-            {
-                let __tmp_26: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_27: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_26.as_pointer() }, { __tmp_27.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -1713,31 +1663,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let __tmp_28: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_29: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_28.as_pointer() }, { __tmp_29.as_pointer() })
-            },
-            {
-                let __tmp_30: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_31: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_30.as_pointer() }, { __tmp_31.as_pointer() })
-            },
-            {
-                let __tmp_32: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_33: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_32.as_pointer() }, { __tmp_33.as_pointer() })
-            },
-            {
-                let __tmp_34: Value<()> = Rc::new(RefCell::new(2147483647_()));
-                let __tmp_35: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_34.as_pointer() }, { __tmp_35.as_pointer() })
-            },
-            {
-                let __tmp_36: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_37: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_36.as_pointer() }, { __tmp_37.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -1745,31 +1675,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let __tmp_38: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_39: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_38.as_pointer() }, { __tmp_39.as_pointer() })
-            },
-            {
-                let __tmp_40: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_41: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_40.as_pointer() }, { __tmp_41.as_pointer() })
-            },
-            {
-                let __tmp_42: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_43: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_42.as_pointer() }, { __tmp_43.as_pointer() })
-            },
-            {
-                let __tmp_44: Value<()> = Rc::new(RefCell::new(2147483647_()));
-                let __tmp_45: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_44.as_pointer() }, { __tmp_45.as_pointer() })
-            },
-            {
-                let __tmp_46: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_47: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_46.as_pointer() }, { __tmp_47.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -1777,31 +1687,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let __tmp_48: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_49: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_48.as_pointer() }, { __tmp_49.as_pointer() })
-            },
-            {
-                let __tmp_50: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_51: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_50.as_pointer() }, { __tmp_51.as_pointer() })
-            },
-            {
-                let __tmp_52: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_53: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_52.as_pointer() }, { __tmp_53.as_pointer() })
-            },
-            {
-                let __tmp_54: Value<()> = Rc::new(RefCell::new(2147483647_()));
-                let __tmp_55: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_54.as_pointer() }, { __tmp_55.as_pointer() })
-            },
-            {
-                let __tmp_56: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_57: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_56.as_pointer() }, { __tmp_57.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -1870,31 +1760,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let __tmp_58: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_59: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_58.as_pointer() }, { __tmp_59.as_pointer() })
-            },
-            {
-                let __tmp_60: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_61: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_60.as_pointer() }, { __tmp_61.as_pointer() })
-            },
-            {
-                let __tmp_62: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_63: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_62.as_pointer() }, { __tmp_63.as_pointer() })
-            },
-            {
-                let __tmp_64: Value<()> = Rc::new(RefCell::new(2147483647_()));
-                let __tmp_65: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_64.as_pointer() }, { __tmp_65.as_pointer() })
-            },
-            {
-                let __tmp_66: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_67: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_66.as_pointer() }, { __tmp_67.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -1903,31 +1773,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let __tmp_68: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_69: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_68.as_pointer() }, { __tmp_69.as_pointer() })
-            },
-            {
-                let __tmp_70: Value<()> = Rc::new(RefCell::new(2_()));
-                let __tmp_71: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__long_::new_1({ __tmp_70.as_pointer() }, { __tmp_71.as_pointer() })
-            },
-            {
-                let __tmp_72: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_73: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_72.as_pointer() }, { __tmp_73.as_pointer() })
-            },
-            {
-                let __tmp_74: Value<()> = Rc::new(RefCell::new(2147483647_()));
-                let __tmp_75: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_74.as_pointer() }, { __tmp_75.as_pointer() })
-            },
-            {
-                let __tmp_76: Value<()> = Rc::new(RefCell::new(3_()));
-                let __tmp_77: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__long_::new_1({ __tmp_76.as_pointer() }, { __tmp_77.as_pointer() })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -2024,7 +1874,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let um4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
-    ({ UnorderedContainerDeductionGuidesSfinaeAway_78() });
+    ({ UnorderedContainerDeductionGuidesSfinaeAway_79() });
     return 0_();
 }
 pub trait BidirectionalIteratorNotDecrementableImpl {
@@ -2866,8 +2716,8 @@ impl test_allocator_std_pair_const_int__long__Impl
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_80.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_80.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_81.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_81.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -2881,8 +2731,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_80.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_80.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_81.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_81.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -2917,8 +2767,7 @@ impl test_hash_int_Impl for Ptr<test_hash_int_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = SFINAEs_away_18.with(|_| ());
-    let _ = SFINAEs_away_20.with(|_| ());
+    let _ = SFINAEs_away_19.with(|_| ());
     let _ = SFINAEs_away_21.with(|_| ());
     let _ = SFINAEs_away_22.with(|_| ());
     let _ = SFINAEs_away_23.with(|_| ());
@@ -2954,7 +2803,7 @@ pub fn __cpp2rust_init_globals() {
     let _ = SFINAEs_away_53.with(|_| ());
     let _ = SFINAEs_away_54.with(|_| ());
     let _ = SFINAEs_away_55.with(|_| ());
-    let _ = SFINAEs_away_57.with(|_| ());
+    let _ = SFINAEs_away_56.with(|_| ());
     let _ = SFINAEs_away_58.with(|_| ());
     let _ = SFINAEs_away_59.with(|_| ());
     let _ = SFINAEs_away_60.with(|_| ());
@@ -2975,6 +2824,7 @@ pub fn __cpp2rust_init_globals() {
     let _ = SFINAEs_away_75.with(|_| ());
     let _ = SFINAEs_away_76.with(|_| ());
     let _ = SFINAEs_away_77.with(|_| ());
-    let _ = destructed_value_80.with(|_| ());
-    let _ = moved_value_81.with(|_| ());
+    let _ = SFINAEs_away_78.with(|_| ());
+    let _ = destructed_value_81.with(|_| ());
+    let _ = moved_value_82.with(|_| ());
 }

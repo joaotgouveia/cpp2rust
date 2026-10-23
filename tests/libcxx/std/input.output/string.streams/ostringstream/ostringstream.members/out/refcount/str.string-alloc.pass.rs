@@ -359,13 +359,7 @@ pub fn test_4() {
         let a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::new_1({ 6_() })));
         let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
-        let mut s: () = {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { __tmp_0.as_pointer() },
-                { a.as_pointer() },
-            )
-        };
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -376,13 +370,7 @@ pub fn test_5() {
         let a: Value<test_allocator_wchar_t_> =
             Rc::new(RefCell::new(test_allocator_wchar_t_::new_1({ 6_() })));
         let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
-        let mut s: () = {
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                { __tmp_1.as_pointer() },
-                { a.as_pointer() },
-            )
-        };
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

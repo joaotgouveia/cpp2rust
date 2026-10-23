@@ -89,69 +89,31 @@ pub fn explicit_vs_implicit_brace_init_5(_a0: ()) -> () {
 }
 pub fn test_6() -> () {
     {
-        let p1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<ExplicitT> = Rc::new(RefCell::new(ExplicitT::new({ 42_() })));
-            let __tmp_1: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            std_pair_ExplicitT__BraceInit_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let p2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<ExplicitT> = Rc::new(RefCell::new(ExplicitT::new({ 42_() })));
-            let __tmp_3: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            std_pair_ExplicitT__BraceInit_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        }));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            let __tmp_5: Value<ExplicitT> = Rc::new(RefCell::new(ExplicitT::new({ 42_() })));
-            std_pair_BraceInit__ExplicitT_::new({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-        }));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let p2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            let __tmp_7: Value<ExplicitT> = Rc::new(RefCell::new(ExplicitT::new({ 42_() })));
-            std_pair_BraceInit__ExplicitT_::new({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-        }));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            let __tmp_9: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            std_pair_BraceInit__BraceInit_::new({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         &(*p.borrow_mut());
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(42_()));
-            let __tmp_11: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            std_pair_ImplicitT__BraceInit_::new({ __tmp_10.as_pointer() }, {
-                __tmp_11.as_pointer()
-            })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(42_()));
-            std_pair_BraceInit__ImplicitT_::new({ __tmp_12.as_pointer() }, {
-                __tmp_13.as_pointer()
-            })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            let __tmp_15: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
-            std_pair_BraceInit__BraceInit_::new({ __tmp_14.as_pointer() }, {
-                __tmp_15.as_pointer()
-            })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         &(*p.borrow_mut());
     }
     {

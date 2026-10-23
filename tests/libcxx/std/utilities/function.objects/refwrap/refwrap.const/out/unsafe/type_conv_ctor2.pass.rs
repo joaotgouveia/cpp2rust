@@ -33,19 +33,19 @@ pub unsafe fn test_0() -> () {
     {
         let mut a: A1 = <A1>::default();
         const _: () = assert!(true, "");;
-        let mut b1: () = std_reference_wrapper_B_::new_1({ &mut a });
+        let mut b1: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
-        b1 = std_reference_wrapper_B_::new_1({ &mut a });
+        b1 = unimplemented!();
         unimplemented!();
     }
     {
         let mut a: A2 = <A2>::default();
         const _: () = assert!(true, "");;
-        let mut b2: () = std_reference_wrapper_B_::new_2({ &mut a });
+        let mut b2: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
-        b2 = std_reference_wrapper_B_::new_2({ &mut a });
+        b2 = unimplemented!();
         unimplemented!();
     }
     return true;

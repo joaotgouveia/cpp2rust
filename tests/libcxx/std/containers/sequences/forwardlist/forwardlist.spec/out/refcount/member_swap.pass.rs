@@ -315,25 +315,9 @@ impl std::cmp::Eq for min_allocator_int_ {}
 pub fn test_10() -> () {
     {
         let mut t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1_() }, { 1_() })));
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut t2: [(); 3] = [10_(), 11_(), 12_()];
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1_() }, { 2_() })));
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -351,15 +335,7 @@ pub fn test_10() -> () {
     }
     {
         let mut t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1_() }, { 1_() })));
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_2.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -376,15 +352,7 @@ pub fn test_10() -> () {
     {
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut t2: [(); 3] = [10_(), 11_(), 12_()];
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1_() }, { 2_() })));
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_3.as_pointer() },
-            )
-        }));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -405,25 +373,9 @@ pub fn test_10() -> () {
     }
     {
         let mut t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 1_() })));
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_4.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut t2: [(); 3] = [10_(), 11_(), 12_()];
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2_() })));
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_5.as_pointer() },
-            )
-        }));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -441,15 +393,7 @@ pub fn test_10() -> () {
     }
     {
         let mut t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 1_() })));
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_6.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -466,15 +410,7 @@ pub fn test_10() -> () {
     {
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut t2: [(); 3] = [10_(), 11_(), 12_()];
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2_() })));
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -495,25 +431,9 @@ pub fn test_10() -> () {
     }
     {
         let mut t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_8.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut t2: [(); 3] = [10_(), 11_(), 12_()];
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -531,15 +451,7 @@ pub fn test_10() -> () {
     }
     {
         let mut t1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_10.as_pointer() },
-            )
-        }));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -556,15 +468,7 @@ pub fn test_10() -> () {
     {
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut t2: [(); 3] = [10_(), 11_(), 12_()];
-        let c2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_11.as_pointer() },
-            )
-        }));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

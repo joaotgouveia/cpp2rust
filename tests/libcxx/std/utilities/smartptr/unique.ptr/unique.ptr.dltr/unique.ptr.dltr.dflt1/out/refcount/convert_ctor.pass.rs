@@ -8,9 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     let d1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let d2: Value<()> = Rc::new(RefCell::new(std_default_delete_const_intarrarr_::new_1({
-        d1.as_pointer()
-    })));
+    let d2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (&(*d2.borrow_mut()));
     return true;
 }

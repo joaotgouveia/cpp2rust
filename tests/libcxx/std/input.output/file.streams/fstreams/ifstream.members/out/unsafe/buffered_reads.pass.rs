@@ -404,10 +404,7 @@ pub unsafe fn test_require_16(
     unimplemented!();
 }
 pub unsafe fn get_temp_file_name_17() -> () {
-    let mut Name: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"libcxx.XXXXXX".as_ptr() },
-        None,
-    );
+    let mut Name: () = unimplemented!();
     let mut FD: () = (unsafe { mkstemp_18((&mut (*unimplemented!()) as *mut ())) });
     if ((FD) == (-1_())) {
         (unsafe { perror_19(c"mkstemp".as_ptr()) });

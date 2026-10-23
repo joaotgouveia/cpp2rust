@@ -642,12 +642,12 @@ pub unsafe fn test_14() -> () {
         unimplemented!();
     }
     {
-        let mut op: () = 1_();
+        let mut op: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut op: () = 1_();
+        let mut op: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

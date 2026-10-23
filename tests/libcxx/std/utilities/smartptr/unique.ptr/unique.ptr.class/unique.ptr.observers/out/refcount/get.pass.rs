@@ -100,14 +100,14 @@ pub fn test_basic_18() {
     {
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = std_unique_ptr_char__std_default_delete_char__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = std_unique_ptr_char__std_default_delete_char__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -116,15 +116,13 @@ pub fn test_basic_18() {
     {
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () =
-                std_unique_ptr_const_char__std_default_delete_const_char__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () =
-                std_unique_ptr_const_char__std_default_delete_const_char__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -133,8 +131,7 @@ pub fn test_basic_18() {
         {
             let mut x: Ptr<()> =
                 Ptr::alloc_array((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-            let mut ptr: () =
-                std_unique_ptr_chararrarr__std_default_delete_chararrarr__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -142,8 +139,7 @@ pub fn test_basic_18() {
         {
             let mut x: Ptr<()> =
                 Ptr::alloc_array((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-            let mut ptr: () =
-                std_unique_ptr_chararrarr__std_default_delete_chararrarr__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -153,20 +149,14 @@ pub fn test_basic_18() {
         {
             let mut x: Ptr<()> =
                 Ptr::alloc_array((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-            let mut ptr: () =
-                std_unique_ptr_const_chararrarr__std_default_delete_const_chararrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> =
                 Ptr::alloc_array((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-            let mut ptr: () =
-                std_unique_ptr_const_chararrarr__std_default_delete_const_chararrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -176,14 +166,14 @@ pub fn test_basic_19() {
     {
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = std_unique_ptr_int__std_default_delete_int__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = std_unique_ptr_int__std_default_delete_int__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -192,15 +182,13 @@ pub fn test_basic_19() {
     {
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () =
-                std_unique_ptr_const_int__std_default_delete_const_int__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () =
-                std_unique_ptr_const_int__std_default_delete_const_int__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -209,8 +197,7 @@ pub fn test_basic_19() {
         {
             let mut x: Ptr<()> =
                 Ptr::alloc_array((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-            let mut ptr: () =
-                std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -218,8 +205,7 @@ pub fn test_basic_19() {
         {
             let mut x: Ptr<()> =
                 Ptr::alloc_array((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-            let mut ptr: () =
-                std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -229,20 +215,14 @@ pub fn test_basic_19() {
         {
             let mut x: Ptr<()> =
                 Ptr::alloc_array((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-            let mut ptr: () =
-                std_unique_ptr_const_intarrarr__std_default_delete_const_intarrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> =
                 Ptr::alloc_array((0..3_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-            let mut ptr: () =
-                std_unique_ptr_const_intarrarr__std_default_delete_const_intarrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -252,16 +232,14 @@ pub fn test_basic_20() {
     {
         {
             let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -270,19 +248,13 @@ pub fn test_basic_20() {
     {
         {
             let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -294,10 +266,7 @@ pub fn test_basic_20() {
                     .map(|_| <WithSize_1_>::default())
                     .collect::<Box<[WithSize_1_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_1_arrarr__std_default_delete_WithSize_1_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -308,10 +277,7 @@ pub fn test_basic_20() {
                     .map(|_| <WithSize_1_>::default())
                     .collect::<Box<[WithSize_1_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_1_arrarr__std_default_delete_WithSize_1_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -324,7 +290,7 @@ pub fn test_basic_20() {
                     .map(|_| <WithSize_1_>::default())
                     .collect::<Box<[WithSize_1_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_1_arrarr__std_default_delete_const_WithSize_1_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -334,7 +300,7 @@ pub fn test_basic_20() {
                     .map(|_| <WithSize_1_>::default())
                     .collect::<Box<[WithSize_1_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_1_arrarr__std_default_delete_const_WithSize_1_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -344,16 +310,14 @@ pub fn test_basic_21() {
     {
         {
             let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -362,19 +326,13 @@ pub fn test_basic_21() {
     {
         {
             let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -386,10 +344,7 @@ pub fn test_basic_21() {
                     .map(|_| <WithSize_2_>::default())
                     .collect::<Box<[WithSize_2_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_2_arrarr__std_default_delete_WithSize_2_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -400,10 +355,7 @@ pub fn test_basic_21() {
                     .map(|_| <WithSize_2_>::default())
                     .collect::<Box<[WithSize_2_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_2_arrarr__std_default_delete_WithSize_2_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -416,7 +368,7 @@ pub fn test_basic_21() {
                     .map(|_| <WithSize_2_>::default())
                     .collect::<Box<[WithSize_2_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_2_arrarr__std_default_delete_const_WithSize_2_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -426,7 +378,7 @@ pub fn test_basic_21() {
                     .map(|_| <WithSize_2_>::default())
                     .collect::<Box<[WithSize_2_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_2_arrarr__std_default_delete_const_WithSize_2_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -436,16 +388,14 @@ pub fn test_basic_22() {
     {
         {
             let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -454,19 +404,13 @@ pub fn test_basic_22() {
     {
         {
             let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -478,10 +422,7 @@ pub fn test_basic_22() {
                     .map(|_| <WithSize_3_>::default())
                     .collect::<Box<[WithSize_3_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_3_arrarr__std_default_delete_WithSize_3_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -492,10 +433,7 @@ pub fn test_basic_22() {
                     .map(|_| <WithSize_3_>::default())
                     .collect::<Box<[WithSize_3_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_3_arrarr__std_default_delete_WithSize_3_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -508,7 +446,7 @@ pub fn test_basic_22() {
                     .map(|_| <WithSize_3_>::default())
                     .collect::<Box<[WithSize_3_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_3_arrarr__std_default_delete_const_WithSize_3_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -518,7 +456,7 @@ pub fn test_basic_22() {
                     .map(|_| <WithSize_3_>::default())
                     .collect::<Box<[WithSize_3_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_3_arrarr__std_default_delete_const_WithSize_3_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -528,16 +466,14 @@ pub fn test_basic_23() {
     {
         {
             let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -546,19 +482,13 @@ pub fn test_basic_23() {
     {
         {
             let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -570,10 +500,7 @@ pub fn test_basic_23() {
                     .map(|_| <WithSize_4_>::default())
                     .collect::<Box<[WithSize_4_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_4_arrarr__std_default_delete_WithSize_4_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -584,10 +511,7 @@ pub fn test_basic_23() {
                     .map(|_| <WithSize_4_>::default())
                     .collect::<Box<[WithSize_4_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_4_arrarr__std_default_delete_WithSize_4_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -600,7 +524,7 @@ pub fn test_basic_23() {
                     .map(|_| <WithSize_4_>::default())
                     .collect::<Box<[WithSize_4_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_4_arrarr__std_default_delete_const_WithSize_4_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -610,7 +534,7 @@ pub fn test_basic_23() {
                     .map(|_| <WithSize_4_>::default())
                     .collect::<Box<[WithSize_4_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_4_arrarr__std_default_delete_const_WithSize_4_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -620,16 +544,14 @@ pub fn test_basic_24() {
     {
         {
             let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___::new({ (x).clone() });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -638,19 +560,13 @@ pub fn test_basic_24() {
     {
         {
             let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -662,10 +578,7 @@ pub fn test_basic_24() {
                     .map(|_| <WithSize_8_>::default())
                     .collect::<Box<[WithSize_8_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_8_arrarr__std_default_delete_WithSize_8_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -676,10 +589,7 @@ pub fn test_basic_24() {
                     .map(|_| <WithSize_8_>::default())
                     .collect::<Box<[WithSize_8_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_8_arrarr__std_default_delete_WithSize_8_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -692,7 +602,7 @@ pub fn test_basic_24() {
                     .map(|_| <WithSize_8_>::default())
                     .collect::<Box<[WithSize_8_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_8_arrarr__std_default_delete_const_WithSize_8_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -702,7 +612,7 @@ pub fn test_basic_24() {
                     .map(|_| <WithSize_8_>::default())
                     .collect::<Box<[WithSize_8_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_8_arrarr__std_default_delete_const_WithSize_8_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -712,20 +622,14 @@ pub fn test_basic_25() {
     {
         {
             let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -734,19 +638,13 @@ pub fn test_basic_25() {
     {
         {
             let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -758,10 +656,7 @@ pub fn test_basic_25() {
                     .map(|_| <WithSize_16_>::default())
                     .collect::<Box<[WithSize_16_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_16_arrarr__std_default_delete_WithSize_16_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -772,10 +667,7 @@ pub fn test_basic_25() {
                     .map(|_| <WithSize_16_>::default())
                     .collect::<Box<[WithSize_16_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_16_arrarr__std_default_delete_WithSize_16_arrarr__::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -788,7 +680,7 @@ pub fn test_basic_25() {
                     .map(|_| <WithSize_16_>::default())
                     .collect::<Box<[WithSize_16_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_16_arrarr__std_default_delete_const_WithSize_16_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -798,7 +690,7 @@ pub fn test_basic_25() {
                     .map(|_| <WithSize_16_>::default())
                     .collect::<Box<[WithSize_16_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_16_arrarr__std_default_delete_const_WithSize_16_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -808,20 +700,14 @@ pub fn test_basic_26() {
     {
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: () =
-                std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___::new({
-                    (x).clone()
-                });
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -830,19 +716,13 @@ pub fn test_basic_26() {
     {
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___::new(
-                    { (x).clone() },
-                );
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: () =
-                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___::new(
-                    { (x).clone() },
-                );
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -854,10 +734,7 @@ pub fn test_basic_26() {
                     .map(|_| <WithSize_256_>::default())
                     .collect::<Box<[WithSize_256_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_256_arrarr__std_default_delete_WithSize_256_arrarr__::new(
-                    { (x).clone() },
-                );
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -868,10 +745,7 @@ pub fn test_basic_26() {
                     .map(|_| <WithSize_256_>::default())
                     .collect::<Box<[WithSize_256_]>>(),
             );
-            let mut ptr: () =
-                std_unique_ptr_WithSize_256_arrarr__std_default_delete_WithSize_256_arrarr__::new(
-                    { (x).clone() },
-                );
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -884,7 +758,7 @@ pub fn test_basic_26() {
                     .map(|_| <WithSize_256_>::default())
                     .collect::<Box<[WithSize_256_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_256_arrarr__std_default_delete_const_WithSize_256_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -894,7 +768,7 @@ pub fn test_basic_26() {
                     .map(|_| <WithSize_256_>::default())
                     .collect::<Box<[WithSize_256_]>>(),
             );
-            let mut ptr : ()  = std_unique_ptr_const_WithSize_256_arrarr__std_default_delete_const_WithSize_256_arrarr__ :: new ( { (x ).clone() } , )   ;
+            let mut ptr: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }

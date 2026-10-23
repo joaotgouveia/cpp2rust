@@ -99,10 +99,7 @@ pub fn test_node_container_2(conv: FnPtr<fn(()) -> ()>) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i != 10_()) {
-        ({
-            let ___p: Value<()> = Rc::new(RefCell::new(({ (*conv.borrow()).call(i) })));
-            (*c.borrow()).insert_47_struct_std_pair_int__int__0(___p.as_pointer())
-        });
+        unimplemented!();
         i.prefix_inc();
     }
     {
@@ -146,10 +143,7 @@ pub fn test_node_container_3(conv: FnPtr<fn(()) -> ()>) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i != 10_()) {
-        ({
-            let ___p: Value<()> = Rc::new(RefCell::new(({ (*conv.borrow()).call(i) })));
-            (*c.borrow()).insert_41_struct_std_pair_int__int__0(___p.as_pointer())
-        });
+        unimplemented!();
         i.prefix_inc();
     }
     {

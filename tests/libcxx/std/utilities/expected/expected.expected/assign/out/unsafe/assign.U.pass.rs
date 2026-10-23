@@ -425,7 +425,11 @@ impl Default for TracedBase_false__false_ {
     }
 }
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut () = &mut (*x).i;
+        let ___y: *mut () = &mut (*y).i;
+        swap_1(___x, ___y)
+    });
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -471,7 +475,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -488,7 +492,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_1(
+            operator_eq_2(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -550,7 +554,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -597,7 +601,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -792,7 +796,7 @@ const _: () = assert!(
     true,
     "!std::is_assignable_v<std::expected<MaybeNoexcept<false, false>, MaybeNoexcept<false, false>>&, int>"
 );
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_4() -> () {
     {
         let mut oldState: TracedBase_false__state = <TracedBase_false__state>::default();
         let mut newState: TracedBase_false__state = <TracedBase_false__state>::default();
@@ -954,7 +958,7 @@ pub unsafe fn test_3() -> () {
     }
     {
         {
-            let mut t: MoveOnlyMulti_5 = <MoveOnlyMulti_5>::default();
+            let mut t: MoveOnlyMulti_6 = <MoveOnlyMulti_6>::default();
             let mut e1: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -964,7 +968,7 @@ pub unsafe fn test_3() -> () {
             unimplemented!();
         }
         {
-            let t: MoveOnlyMulti_5 = <MoveOnlyMulti_5>::default();
+            let t: MoveOnlyMulti_6 = <MoveOnlyMulti_6>::default();
             let mut e1: () = unimplemented!();
             const _: () = assert!(
                 true,
@@ -978,11 +982,11 @@ pub unsafe fn test_3() -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Bar_4 {
+pub struct Bar_5 {
     pub i: (),
     pub j: (),
 }
-impl Bar_4 {
+impl Bar_5 {
     pub unsafe fn new(mut ii: (), mut jj: ()) -> Self {
         let mut this = Self { i: ii, j: jj };
         this
@@ -990,30 +994,30 @@ impl Bar_4 {
 }
 #[repr(C)]
 #[derive(FnPtrArg)]
-pub struct MoveOnlyMulti_5 {
+pub struct MoveOnlyMulti_6 {
     pub used_move1: (),
     pub used_move2: (),
 }
-impl MoveOnlyMulti_5 {
-    pub unsafe fn operator_assign_4(&mut self, _a0: *mut MoveOnlyMulti_5) -> *mut MoveOnlyMulti_5 {
+impl MoveOnlyMulti_6 {
+    pub unsafe fn operator_assign_4(&mut self, _a0: *mut MoveOnlyMulti_6) -> *mut MoveOnlyMulti_6 {
         self.used_move1 = true;
-        return &mut (*(self as *mut MoveOnlyMulti_5));
+        return &mut (*(self as *mut MoveOnlyMulti_6));
     }
     pub unsafe fn operator_assign_5(
         &mut self,
-        _a0: *const MoveOnlyMulti_5,
-    ) -> *mut MoveOnlyMulti_5 {
+        _a0: *const MoveOnlyMulti_6,
+    ) -> *mut MoveOnlyMulti_6 {
         self.used_move2 = true;
-        return &mut (*(self as *mut MoveOnlyMulti_5));
+        return &mut (*(self as *mut MoveOnlyMulti_6));
     }
-    pub unsafe fn new_1(_a0: *mut MoveOnlyMulti_5) -> Self {
+    pub unsafe fn new_1(_a0: *mut MoveOnlyMulti_6) -> Self {
         let mut this = Self {
             used_move1: true,
             used_move2: false,
         };
         this
     }
-    pub unsafe fn new_2(_a0: *const MoveOnlyMulti_5) -> Self {
+    pub unsafe fn new_2(_a0: *const MoveOnlyMulti_6) -> Self {
         let mut this = Self {
             used_move1: false,
             used_move2: true,
@@ -1021,17 +1025,17 @@ impl MoveOnlyMulti_5 {
         this
     }
 }
-impl Default for MoveOnlyMulti_5 {
+impl Default for MoveOnlyMulti_6 {
     fn default() -> Self {
         unsafe {
-            MoveOnlyMulti_5 {
+            MoveOnlyMulti_6 {
                 used_move1: false,
                 used_move2: false,
             }
         }
     }
 }
-pub unsafe fn testException_6() {}
+pub unsafe fn testException_7() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -1048,9 +1052,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_3() });
+    (unsafe { test_4() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_6() });
+    (unsafe { testException_7() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

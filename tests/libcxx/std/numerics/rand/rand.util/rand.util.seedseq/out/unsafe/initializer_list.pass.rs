@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut s: () = std_seed_seq::new_1({ unimplemented!() });
+    let mut s: () = unimplemented!();
     unimplemented!();
     let mut b: [(); 5] = [
         0_(),

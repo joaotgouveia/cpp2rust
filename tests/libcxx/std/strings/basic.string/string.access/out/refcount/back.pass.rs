@@ -130,40 +130,12 @@ pub fn test_7(s: ()) {
     unimplemented!();
 }
 pub fn test_string_8() {
-    ({
-        test_6(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_6(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890123456789012345678901234567890") },
-                None,
-            ),
-        )
-    });
+    ({ test_6(unimplemented!()) });
+    ({ test_6(unimplemented!()) });
 }
 pub fn test_string_9() {
-    ({
-        test_7(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_7(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1234567890123456789012345678901234567890") },
-                None,
-            ),
-        )
-    });
+    ({ test_7(unimplemented!()) });
+    ({ test_7(unimplemented!()) });
 }
 pub fn test_10() -> () {
     ({ test_string_8() });

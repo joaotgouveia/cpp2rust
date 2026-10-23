@@ -92,57 +92,45 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut ns: () = {
-            let mut __tmp_0: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({ &mut __tmp_0 })
-        };
-        ns = (*ns).clone();
+        let mut ns: () = unimplemented!();
+        ns = unimplemented!();
         unimplemented!();
-        ns = (*6_());
+        ns = unimplemented!();
         unimplemented!();
     }
     {
-        let ns: () = {
-            let mut __tmp_1: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({ &mut __tmp_1 })
-        };
-        let ns2: () = (*ns);
+        let ns: () = unimplemented!();
+        let ns2: () = unimplemented!();
         const _: () = assert!(true, "ns2.count() == 15");;
-        let ns3: () = (*6_());
+        let ns3: () = unimplemented!();
         const _: () = assert!(true, "ns3.count() == 18");;
     }
     {
-        let mut d: () = {
-            let mut __tmp_2: () = 5_();
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({ &mut __tmp_2 })
-        };
+        let mut d: () = unimplemented!();
         let mut n: NotARep = <NotARep>::default();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         d = (unsafe {
-            let _d: () = d.clone();
+            let _d: () = unimplemented!();
             operator_mul_2(_d, n)
         });
         unimplemented!();
         d = (unsafe {
             let _arg0: NotARep = n;
-            operator_mul_3(_arg0, d.clone())
+            operator_mul_3(_arg0, unimplemented!())
         });
         unimplemented!();
     }
     {
-        let mut d: () = {
-            let mut __tmp_3: () = 8_();
-            std_chrono_duration_int__std_ratio_1__1__::new_1({ &mut __tmp_3 })
-        };
+        let mut d: () = unimplemented!();
         let mut x: RepConstConvertibleLWG3050 = <RepConstConvertibleLWG3050>::default();
         {
-            let mut r: () = (*d);
+            let mut r: () = unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut r: () = (*x);
+            let mut r: () = unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }

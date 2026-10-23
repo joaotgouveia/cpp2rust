@@ -110,10 +110,7 @@ pub unsafe fn test_stable_6(mut N: ()) {
         (*unimplemented!()).side = i;
         i.prefix_inc();
     }
-    let mut c: () =
-        std_forward_list_Payload__std_allocator_Payload__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut j: () =
@@ -133,14 +130,14 @@ pub unsafe fn test_stable_6(mut N: ()) {
             unimplemented!()
         });
     'loop_: while unimplemented!() {
-        let mut next: () = (unsafe { next_7(it.clone(), None) });
+        let mut next: () = unimplemented!();
         if (unimplemented!()) && (((*it).val) == ((*next).val)) {
             unimplemented!();
         }
         unimplemented!();
     }
 }
-pub unsafe fn test_8(mut N: ()) {
+pub unsafe fn test_7(mut N: ()) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
@@ -148,9 +145,7 @@ pub unsafe fn test_8(mut N: ()) {
         i.prefix_inc();
     }
     unimplemented!();
-    let mut c: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-        unimplemented!()
-    });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut j: () =
@@ -166,7 +161,7 @@ pub unsafe fn test_8(mut N: ()) {
         };
     }
 }
-pub unsafe fn test_9(mut N: ()) {
+pub unsafe fn test_8(mut N: ()) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
@@ -174,9 +169,7 @@ pub unsafe fn test_9(mut N: ()) {
         i.prefix_inc();
     }
     unimplemented!();
-    let mut c: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-        unimplemented!()
-    });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut j : () = std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()  } , )  ;
@@ -207,12 +200,12 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (40_())) {
-        (unsafe { test_8(i) });
+        (unsafe { test_7(i) });
         i.prefix_inc();
     }
     let mut i: () = 0_();
     'loop_: while ((i) < (40_())) {
-        (unsafe { test_9(i) });
+        (unsafe { test_8(i) });
         i.prefix_inc();
     }
     let mut i: () = 0_();

@@ -70,7 +70,7 @@ impl std::cmp::Eq for S {}
 pub fn test_0(container: Ptr<()>) {
     {
         let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+        let mut v: S = S::new({ 1_() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -81,7 +81,7 @@ pub fn test_0(container: Ptr<()>) {
     }
     {
         let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+        let mut v: S = S::new({ 1_() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -94,7 +94,7 @@ pub fn test_0(container: Ptr<()>) {
 pub fn test_1(container: Ptr<()>) {
     {
         let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+        let mut v: S = S::new({ 1_() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -105,7 +105,7 @@ pub fn test_1(container: Ptr<()>) {
     }
     {
         let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+        let mut v: S = S::new({ 1_() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -118,7 +118,7 @@ pub fn test_1(container: Ptr<()>) {
 pub fn test_2(container: Ptr<()>) {
     {
         let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+        let mut v: S = S::new({ 1_() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -129,7 +129,7 @@ pub fn test_2(container: Ptr<()>) {
     }
     {
         let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+        let mut v: S = S::new({ 1_() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -142,7 +142,7 @@ pub fn test_2(container: Ptr<()>) {
 pub fn test_3(container: Ptr<()>) {
     {
         let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+        let mut v: S = S::new({ 1_() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -153,7 +153,7 @@ pub fn test_3(container: Ptr<()>) {
     }
     {
         let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1_() })));
+        let mut v: S = S::new({ 1_() });
         unimplemented!();
         unimplemented!();
         unimplemented!();

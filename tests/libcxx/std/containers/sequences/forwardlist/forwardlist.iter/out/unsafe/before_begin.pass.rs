@@ -65,18 +65,14 @@ pub unsafe fn test_4() -> () {
     }
     {
         let t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let mut c: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let c: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let c: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
     }
@@ -98,18 +94,14 @@ pub unsafe fn test_4() -> () {
     }
     {
         let t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let mut c: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let c: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let c: () = unimplemented!();
         let mut i: () = unimplemented!();
         unimplemented!();
     }

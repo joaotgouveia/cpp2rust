@@ -17,7 +17,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let o: Value<()> = Rc::new(RefCell::new(value_type { i: 51_() }));
+    let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "o.value().i == 51");;
     const _: () = assert!(true, "o.value().i == (*o).i");;
     const _: () = assert!(true, "&o.value().i == &(*o).i");;

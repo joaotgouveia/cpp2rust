@@ -575,7 +575,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_1({ <f0_0>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_1({ <f1_0>::default() });
         const _: () = assert!(true, "");;
@@ -583,7 +583,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_1({ <f3_0>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_1({ <f0_0>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_1({ <f1_0>::default() });
         const _: () = assert!(true, "");;
@@ -605,7 +605,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_2({ <f0_1>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_2({ <f1_1>::default() });
         const _: () = assert!(true, "");;
@@ -613,7 +613,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_2({ <f3_1>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_2({ <f0_1>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_2({ <f1_1>::default() });
         const _: () = assert!(true, "");;
@@ -635,7 +635,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_3({ <f0_2>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_3({ <f1_2>::default() });
         const _: () = assert!(true, "");;
@@ -643,7 +643,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_3({ <f3_2>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_3({ <f0_2>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_3({ <f1_2>::default() });
         const _: () = assert!(true, "");;
@@ -665,7 +665,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_4({ <f0_3>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_4({ <f1_3>::default() });
         const _: () = assert!(true, "");;
@@ -673,7 +673,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_4({ <f3_3>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_4({ <f0_3>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_4({ <f1_3>::default() });
         const _: () = assert!(true, "");;
@@ -695,7 +695,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_5({ <f0_4>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_5({ <f1_4>::default() });
         const _: () = assert!(true, "");;
@@ -703,7 +703,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_5({ <f3_4>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_5({ <f0_4>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_5({ <f1_4>::default() });
         const _: () = assert!(true, "");;
@@ -725,7 +725,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_6({ <f0_5>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_6({ <f1_5>::default() });
         const _: () = assert!(true, "");;
@@ -733,7 +733,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_6({ <f3_5>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_6({ <f0_5>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_6({ <f1_5>::default() });
         const _: () = assert!(true, "");;
@@ -755,7 +755,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_7({ <f0_6>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_7({ <f1_6>::default() });
         const _: () = assert!(true, "");;
@@ -763,7 +763,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_7({ <f3_6>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_7({ <f0_6>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_7({ <f1_6>::default() });
         const _: () = assert!(true, "");;
@@ -785,7 +785,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_8({ <f0_7>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_8({ <f1_7>::default() });
         const _: () = assert!(true, "");;
@@ -793,7 +793,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_8({ <f3_7>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_8({ <f0_7>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_8({ <f1_7>::default() });
         const _: () = assert!(true, "");;
@@ -815,7 +815,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_9({ <f0_8>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_9({ <f1_8>::default() });
         const _: () = assert!(true, "");;
@@ -823,7 +823,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_9({ <f3_8>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_9({ <f0_8>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_9({ <f1_8>::default() });
         const _: () = assert!(true, "");;
@@ -845,7 +845,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_10({ <f0_9>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_10({ <f1_9>::default() });
         const _: () = assert!(true, "");;
@@ -853,7 +853,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_10({ <f3_9>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_10({ <f0_9>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_10({ <f1_9>::default() });
         const _: () = assert!(true, "");;
@@ -875,7 +875,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_11({ <f0_10>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_11({ <f1_10>::default() });
         const _: () = assert!(true, "");;
@@ -883,7 +883,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_11({ <f3_10>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_11({ <f0_10>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_11({ <f1_10>::default() });
         const _: () = assert!(true, "");;
@@ -905,7 +905,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_12({ <f0_11>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_12({ <f1_11>::default() });
         const _: () = assert!(true, "");;
@@ -913,7 +913,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_12({ <f3_11>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_12({ <f0_11>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_12({ <f1_11>::default() });
         const _: () = assert!(true, "");;
@@ -935,7 +935,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_13({ <f0_12>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_13({ <f1_12>::default() });
         const _: () = assert!(true, "");;
@@ -943,7 +943,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_13({ <f3_12>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_13({ <f0_12>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_13({ <f1_12>::default() });
         const _: () = assert!(true, "");;
@@ -965,7 +965,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_14({ <f0_13>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_14({ <f1_13>::default() });
         const _: () = assert!(true, "");;
@@ -973,7 +973,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_14({ <f3_13>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_14({ <f0_13>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_14({ <f1_13>::default() });
         const _: () = assert!(true, "");;
@@ -995,7 +995,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_15({ <f0_14>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_15({ <f1_14>::default() });
         const _: () = assert!(true, "");;
@@ -1003,7 +1003,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_15({ <f3_14>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_15({ <f0_14>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_15({ <f1_14>::default() });
         const _: () = assert!(true, "");;
@@ -1025,7 +1025,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        let mut g0: () = std_function_R____::new_16({ <f0_15>::default() });
+        let mut g0: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g1: () = std_function_R__A1__::new_16({ <f1_15>::default() });
         const _: () = assert!(true, "");;
@@ -1033,7 +1033,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         let mut g3: () = std_function_R__A1__A2__A3__::new_16({ <f3_15>::default() });
         const _: () = assert!(true, "");;
-        let mut g4: () = std_function_R____::new_16({ <f0_15>::default() });
+        let mut g4: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut g5: () = std_function_R__A1__::new_16({ <f1_15>::default() });
         const _: () = assert!(true, "");;

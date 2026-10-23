@@ -401,12 +401,7 @@ pub fn is_string_asan_correct_16(_a0: Ptr<()>) -> () {
 }
 pub fn test_17(mut s: Ptr<()>) {
     let mut n: () = unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (s).clone() },
-            None,
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -416,12 +411,7 @@ pub fn test_17(mut s: Ptr<()>) {
 }
 pub fn test_18(mut s: Ptr<()>) {
     let mut n: () = unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-            { (s).clone() },
-            None,
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -431,12 +421,7 @@ pub fn test_18(mut s: Ptr<()>) {
 }
 pub fn test_19(mut s: Ptr<()>) {
     let mut n: () = unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { (s).clone() },
-            None,
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -446,12 +431,7 @@ pub fn test_19(mut s: Ptr<()>) {
 }
 pub fn test_20(mut s: Ptr<()>) {
     let mut n: () = unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-            { (s).clone() },
-            None,
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -461,12 +441,7 @@ pub fn test_20(mut s: Ptr<()>) {
 }
 pub fn test_21(mut s: Ptr<()>, a: Ptr<()>) {
     let mut n: () = unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (s).clone() },
-            { Some((a).clone()) },
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -476,12 +451,7 @@ pub fn test_21(mut s: Ptr<()>, a: Ptr<()>) {
 }
 pub fn test_22(mut s: Ptr<()>, a: Ptr<test_allocator_char_>) {
     let mut n: () = unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-            { (s).clone() },
-            { Some((a).clone()) },
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -491,12 +461,7 @@ pub fn test_22(mut s: Ptr<()>, a: Ptr<test_allocator_char_>) {
 }
 pub fn test_23(mut s: Ptr<()>, a: Ptr<min_allocator_char_>) {
     let mut n: () = unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { (s).clone() },
-            { Some((a).clone()) },
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -506,12 +471,7 @@ pub fn test_23(mut s: Ptr<()>, a: Ptr<min_allocator_char_>) {
 }
 pub fn test_24(mut s: Ptr<()>, a: Ptr<safe_allocator_char_>) {
     let mut n: () = unimplemented!();
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-            { (s).clone() },
-            { Some((a).clone()) },
-        ),
-    ));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

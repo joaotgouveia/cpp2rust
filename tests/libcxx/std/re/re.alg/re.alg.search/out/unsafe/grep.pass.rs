@@ -222,21 +222,25 @@ pub unsafe fn operator_add_2(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_4(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_4(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_5(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -320,7 +324,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_6(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -330,7 +334,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_5(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -398,12 +402,12 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn LLVMFuzzerTestOneInput_7(mut data: *const ()) {
+pub unsafe fn LLVMFuzzerTestOneInput_8(mut data: *const ()) {
     (&(data));
 }
-pub unsafe fn fuzz_tests_8() {
+pub unsafe fn fuzz_tests_9() {
     (unsafe {
-        LLVMFuzzerTestOneInput_7 ( c"\xc3\x95)\x15_%()()((\\8\'\x15_%()\x15_%()\x15_%()\x15_%(()\x15_%()\x15_%()\x15_%(.t;)()\x15\xc2\xa5f\x15()\x15_%()(.)\x15_%;)()\x15!\xc2\xa5f(((()\x15(" .as_ptr() , )
+        LLVMFuzzerTestOneInput_8 ( c"\xc3\x95)\x15_%()()((\\8\'\x15_%()\x15_%()\x15_%()\x15_%(()\x15_%()\x15_%()\x15_%(.t;)()\x15\xc2\xa5f\x15()\x15_%()(.)\x15_%;)()\x15!\xc2\xa5f(((()\x15(" .as_ptr() , )
     });
 }
 pub fn main() {
@@ -452,7 +456,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
     }
-    (unsafe { fuzz_tests_8() });
+    (unsafe { fuzz_tests_9() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

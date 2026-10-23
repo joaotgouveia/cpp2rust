@@ -95,7 +95,7 @@ pub unsafe fn test_unique_ptr_5() {
         unimplemented!();
         k.prefix_inc();
     }
-    (unsafe { swap_6(&mut i, &mut j) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -103,11 +103,11 @@ pub unsafe fn test_unique_ptr_5() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_7() -> () {
+pub unsafe fn test_6() -> () {
     {
         let mut i: [(); 3] = [1_(), 2_(), 3_()];
         let mut j: [(); 3] = [4_(), 5_(), 6_()];
-        (unsafe { swap_8(&mut i, &mut j) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -118,7 +118,7 @@ pub unsafe fn test_7() -> () {
     {
         let mut a: [[(); 2]; 2] = [[0_(), 1_()], [2_(), 3_()]];
         let mut b: [[(); 2]; 2] = [[9_(), 8_()], [7_(), 6_()]];
-        (unsafe { swap_9(&mut a, &mut b) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -131,7 +131,7 @@ pub unsafe fn test_7() -> () {
     {
         let mut a: [[(); 3]; 3] = [[0_(), 1_(), 2_()], [3_(), 4_(), 5_()], [6_(), 7_(), 8_()]];
         let mut b: [[(); 3]; 3] = [[9_(), 8_(), 7_()], [6_(), 5_(), 4_()], [3_(), 2_(), 1_()]];
-        (unsafe { swap_10(&mut a, &mut b) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -182,7 +182,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_7() });
+    (unsafe { test_6() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -297,12 +297,7 @@ pub fn test_7() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let r: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___k: Value<()> = Rc::new(RefCell::new(4_()));
-                (*m.borrow()).upper_bound_75_int_struct_std_less_void__0(___k.as_pointer())
-            }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

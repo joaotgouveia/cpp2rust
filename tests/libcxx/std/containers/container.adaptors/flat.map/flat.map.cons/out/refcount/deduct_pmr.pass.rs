@@ -509,46 +509,16 @@ pub fn test_containers_6() {
     let sorted_ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sorted_vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_int__long_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        },
-        {
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__long_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        },
-        {
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(5_()));
-            std_pair_int__long_::new({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-        },
-        {
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(2147483647_()));
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__long_::new({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
     {
         let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pks: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_8.as_pointer() },
-            )
-        }));
-        let pvs: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_deque_long__std_pmr_polymorphic_allocator_long__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let pks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let pvs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -558,22 +528,8 @@ pub fn test_containers_6() {
     {
         let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pks: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_10.as_pointer() },
-            )
-        }));
-        let pvs: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_deque_long__std_pmr_polymorphic_allocator_long__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_11.as_pointer() },
-            )
-        }));
+        let pks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let pvs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -587,46 +543,16 @@ pub fn test_containers_compare_7() {
     let sorted_ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sorted_vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(2147483647_()));
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__long_::new({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
-        },
-        {
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(5_()));
-            std_pair_int__long_::new({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() })
-        },
-        {
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__long_::new({ __tmp_16.as_pointer() }, { __tmp_17.as_pointer() })
-        },
-        {
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_int__long_::new({ __tmp_18.as_pointer() }, { __tmp_19.as_pointer() })
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
     {
         let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pks: Value<()> = Rc::new(RefCell::new({
-            let __tmp_20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_20.as_pointer() },
-            )
-        }));
-        let pvs: Value<()> = Rc::new(RefCell::new({
-            let __tmp_21: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_deque_long__std_pmr_polymorphic_allocator_long__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_21.as_pointer() },
-            )
-        }));
+        let pks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let pvs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -636,22 +562,8 @@ pub fn test_containers_compare_7() {
     {
         let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pks: Value<()> = Rc::new(RefCell::new({
-            let __tmp_22: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_22.as_pointer() },
-            )
-        }));
-        let pvs: Value<()> = Rc::new(RefCell::new({
-            let __tmp_23: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_deque_long__std_pmr_polymorphic_allocator_long__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_23.as_pointer() },
-            )
-        }));
+        let pks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let pvs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();

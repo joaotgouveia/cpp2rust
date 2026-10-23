@@ -181,40 +181,19 @@ pub unsafe fn test_7() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___k: () = 4_();
-            m.count(&mut ___k)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 5_();
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 6_();
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 7_();
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 8_();
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 9_();
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 10_();
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
     }
     return true;

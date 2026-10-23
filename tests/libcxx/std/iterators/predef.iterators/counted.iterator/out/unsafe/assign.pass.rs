@@ -273,21 +273,25 @@ pub unsafe fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_7(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -371,7 +375,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -381,7 +385,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -449,7 +453,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn base_10(i: *const AssignableFromIter) -> *mut () {
+pub unsafe fn base_11(i: *const AssignableFromIter) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -505,7 +509,7 @@ impl InputOrOutputArchetype {
         return &mut (*(self as *mut InputOrOutputArchetype));
     }
 }
-pub unsafe fn test_11() -> () {
+pub unsafe fn test_12() -> () {
     let mut buffer: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
     {
         const _: () = assert!(
@@ -625,7 +629,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_11() });
+    (unsafe { test_12() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

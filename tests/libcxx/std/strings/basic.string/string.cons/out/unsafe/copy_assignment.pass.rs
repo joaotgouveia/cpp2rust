@@ -200,124 +200,39 @@ pub unsafe fn test_string_12() {
     });
     (unsafe {
         let mut _s2: () = unimplemented!();
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"1".as_ptr() },
-            None,
-        );
         test_9(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"2".as_ptr() },
-            None,
-        );
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"2".as_ptr() },
-            None,
-        );
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            {
-                c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-                    .as_ptr()
-            },
-            None,
-        );
+        let mut _s2: () = unimplemented!();
         test_9(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            {
-                c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-                    .as_ptr()
-            },
-            None,
-        );
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"123456789".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_9(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"123456789".as_ptr() },
-            None,
-        );
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz" .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_9(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            {
-                c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-                    .as_ptr()
-            },
-            None,
-        );
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                        .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_9(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            {
-                c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-                    .as_ptr()
-            },
-            None,
-        );
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                {
-                    c"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_9(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_9(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_9(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_9(unimplemented!(), &mut _s2)
     });
 }
 pub unsafe fn test_string_13() {
@@ -327,124 +242,39 @@ pub unsafe fn test_string_13() {
     });
     (unsafe {
         let mut _s2: () = unimplemented!();
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { c"1".as_ptr() },
-            None,
-        );
         test_10(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { c"2".as_ptr() },
-            None,
-        );
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { c"2".as_ptr() },
-            None,
-        );
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            {
-                c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-                    .as_ptr()
-            },
-            None,
-        );
+        let mut _s2: () = unimplemented!();
         test_10(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            {
-                c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-                    .as_ptr()
-            },
-            None,
-        );
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"123456789".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_10(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { c"123456789".as_ptr() },
-            None,
-        );
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                {
-                    c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz" .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_10(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            {
-                c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-                    .as_ptr()
-            },
-            None,
-        );
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                {
-                    c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                        .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_10(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            {
-                c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-                    .as_ptr()
-            },
-            None,
-        );
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                {
-                    c"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_10(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_10(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_10(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_10(unimplemented!(), &mut _s2)
     });
 }
 pub unsafe fn test_string_14() {
@@ -454,128 +284,39 @@ pub unsafe fn test_string_14() {
     });
     (unsafe {
         let mut _s2: () = unimplemented!();
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () =
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            );
         test_11(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () =
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { c"2".as_ptr() },
-                None,
-            );
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () =
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { c"2".as_ptr() },
-                None,
-            );
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
-    });
-    (unsafe {
-        let mut _s2: () =
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz" .as_ptr()
-                },
-                None,
-            );
+        let mut _s2: () = unimplemented!();
         test_11(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () =
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz" .as_ptr()
-                },
-                None,
-            );
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { c"123456789".as_ptr() },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_11(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () =
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { c"123456789".as_ptr() },
-                None,
-            );
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz" .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_11(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () =
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz" .as_ptr()
-                },
-                None,
-            );
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                        .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_11(unimplemented!(), &mut _s2)
     });
     (unsafe {
-        let mut _s2: () =
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    c"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz" .as_ptr()
-                },
-                None,
-            );
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                {
-                    c"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" .as_ptr()
-                },
-                None,
-            ),
-            &mut _s2,
-        )
+        let mut _s2: () = unimplemented!();
+        test_11(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_11(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_11(unimplemented!(), &mut _s2)
+    });
+    (unsafe {
+        let mut _s2: () = unimplemented!();
+        test_11(unimplemented!(), &mut _s2)
     });
 }
 pub unsafe fn test_15() -> () {

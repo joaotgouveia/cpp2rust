@@ -149,21 +149,12 @@ pub fn test_string_10() {
     let mut i: () = 0_();
     'loop_: while (i != 4_()) {
         {
-            let mut str: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { (test_data[(i) as usize]).clone() },
-                    None,
-                );
+            let mut str: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let str: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { (test_data[(i) as usize]).clone() },
-                    None,
-                ),
-            ));
+            let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         i.prefix_inc();
@@ -185,21 +176,12 @@ pub fn test_string_11() {
     let mut i: () = 0_();
     'loop_: while (i != 4_()) {
         {
-            let mut str: () =
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { (test_data[(i) as usize]).clone() },
-                    None,
-                );
+            let mut str: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let str: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { (test_data[(i) as usize]).clone() },
-                    None,
-                ),
-            ));
+            let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         i.prefix_inc();
@@ -221,21 +203,12 @@ pub fn test_string_12() {
     let mut i: () = 0_();
     'loop_: while (i != 4_()) {
         {
-            let mut str: () =
-                std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                    { (test_data[(i) as usize]).clone() },
-                    None,
-                );
+            let mut str: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let str: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                    { (test_data[(i) as usize]).clone() },
-                    None,
-                ),
-            ));
+            let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         i.prefix_inc();

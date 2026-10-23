@@ -444,24 +444,12 @@ impl Tag_X {
     }
 }
 pub unsafe fn test_4() {
-    let s: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-            { &mut __tmp_0 },
-            None,
-        )
-    };
+    let s: () = unimplemented!();
     let buf: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_5() {
-    let s: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-            { &mut __tmp_1 },
-            None,
-        )
-    };
+    let s: () = unimplemented!();
     let buf: () = unimplemented!();
     unimplemented!();
 }

@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut nested_element: () = unimplemented!();
     let mut element: () = unimplemented!();
-    unimplemented!();
+    nested_element = (element).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -286,7 +286,7 @@ pub struct service_result_int_ {}
 impl service_result_int_ {
     pub unsafe fn get_result() -> () {
         let mut sr: () = unimplemented!();
-        return sr;
+        return unimplemented!();
     }
     pub unsafe fn get_result_with_cond(mut cond: ()) -> () {
         if cond {
@@ -301,7 +301,7 @@ pub struct service_result_std_optional_int__ {}
 impl service_result_std_optional_int__ {
     pub unsafe fn get_result() -> () {
         let mut sr: () = unimplemented!();
-        return sr;
+        return unimplemented!();
     }
     pub unsafe fn get_result_with_cond(mut cond: ()) -> () {
         if cond {
@@ -447,7 +447,7 @@ impl Widget {
 }
 pub unsafe fn test03_13() {
     let mut w: () = unimplemented!();
-    unimplemented!();
+    w = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -471,7 +471,7 @@ pub unsafe fn test03_13() {
         true,
         "!std::is_assignable_v<optional<Widget>&,\n\t\toptional<short>>"
     );;
-    unimplemented!();
+    w = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -535,10 +535,7 @@ pub unsafe fn test03_13() {
             unimplemented!();
         }
     }
-    let mut w4: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std_optional_Widget_::new_1({ &mut __tmp_0 })
-    };
+    let mut w4: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -602,10 +599,7 @@ pub unsafe fn test03_13() {
             unimplemented!();
         }
     }
-    let mut w8: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std_optional_Widget_::new_2({ &mut __tmp_1 })
-    };
+    let mut w8: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -629,10 +623,7 @@ pub unsafe fn test03_13() {
         true,
         "!std::is_convertible_v<optional<optional<short>>&&,\n\t\toptional<Widget>>"
     );;
-    let mut w10: () = {
-        let mut __tmp_2: () = 10_();
-        std_optional_Widget_::new_2({ &mut __tmp_2 })
-    };
+    let mut w10: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -755,7 +746,7 @@ impl Widget2 {
 }
 pub unsafe fn test04_14() {
     let mut w: () = unimplemented!();
-    unimplemented!();
+    w = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -775,7 +766,7 @@ pub unsafe fn test04_14() {
             unimplemented!();
         }
     }
-    unimplemented!();
+    w = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -795,7 +786,7 @@ pub unsafe fn test04_14() {
             unimplemented!();
         }
     }
-    unimplemented!();
+    w = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -815,7 +806,7 @@ pub unsafe fn test04_14() {
             unimplemented!();
         }
     }
-    unimplemented!();
+    w = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -835,7 +826,7 @@ pub unsafe fn test04_14() {
             unimplemented!();
         }
     }
-    unimplemented!();
+    w = unimplemented!();
     let mut w2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -945,7 +936,7 @@ pub unsafe fn test05_15() {
         true,
         "!std::is_assignable_v<optional<Thingy>&,\n\t\toptional<optional<int>>>"
     );;
-    unimplemented!();
+    ot = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -965,10 +956,7 @@ pub unsafe fn test05_15() {
             unimplemented!();
         }
     }
-    let mut ot2: () = {
-        let mut __tmp_3: () = unimplemented!();
-        std_optional_Thingy_::new_1({ &mut __tmp_3 })
-    };
+    let mut ot2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1032,10 +1020,7 @@ pub unsafe fn test05_15() {
             unimplemented!();
         }
     }
-    let mut ot5: () = {
-        let mut __tmp_4: () = unimplemented!();
-        std_optional_Thingy_::new_2({ &mut __tmp_4 })
-    };
+    let mut ot5: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1213,7 +1198,7 @@ pub unsafe fn test06_16() {
         true,
         "!std::is_assignable_v<optional<RvalueConstructible>&,\n\t\toptional<int>&>"
     );;
-    unimplemented!();
+    ori = (*unimplemented!()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1238,7 +1223,7 @@ pub unsafe fn test06_16() {
         true,
         "!std::is_assignable_v<optional<RvalueConstructible>&,\n\t\toptional<optional<int>>&>"
     );;
-    unimplemented!();
+    ori = (*unimplemented!()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1266,7 +1251,7 @@ pub unsafe fn test06_16() {
         true,
         "!std::is_convertible_v<optional<int>&,\n\t\toptional<RvalueConstructible>>"
     );;
-    let mut ori2: () = (*unimplemented!());
+    let mut ori2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1286,7 +1271,7 @@ pub unsafe fn test06_16() {
             unimplemented!();
         }
     }
-    let mut ori3: () = (*unimplemented!());
+    let mut ori3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1314,7 +1299,7 @@ pub unsafe fn test06_16() {
         true,
         "!std::is_convertible_v<optional<optional<int>>&,\n\t\toptional<RvalueConstructible>>"
     );;
-    let mut ori6: () = (*unimplemented!());
+    let mut ori6: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1334,7 +1319,7 @@ pub unsafe fn test06_16() {
             unimplemented!();
         }
     }
-    let mut ori7: () = (*unimplemented!());
+    let mut ori7: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1454,10 +1439,7 @@ impl Thingy2 {
     }
 }
 pub unsafe fn test07_17() {
-    let mut ot: () = {
-        let mut __tmp_5: () = unimplemented!();
-        std_optional_Thingy2_::new_1({ &mut __tmp_5 })
-    };
+    let mut ot: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1481,10 +1463,7 @@ pub unsafe fn test07_17() {
         true,
         "!std::is_convertible_v<optional<int>,\n\t\toptional<Thingy2>>"
     );;
-    let mut ot2: () = {
-        let mut __tmp_6: () = unimplemented!();
-        std_optional_Thingy2_::new_2({ &mut __tmp_6 })
-    };
+    let mut ot2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1508,10 +1487,7 @@ pub unsafe fn test07_17() {
         true,
         "!std::is_convertible_v<optional<short>,\n\t\toptional<Thingy2>>"
     );;
-    let mut ot3: () = {
-        let mut __tmp_7: () = unimplemented!();
-        std_optional_Thingy2_::new_3({ &mut __tmp_7 })
-    };
+    let mut ot3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1535,10 +1511,7 @@ pub unsafe fn test07_17() {
         true,
         "!std::is_convertible_v<optional<optional<int>>,\n\t\toptional<Thingy2>>"
     );;
-    let mut ot4: () = {
-        let mut __tmp_8: () = unimplemented!();
-        std_optional_Thingy2_::new_4({ &mut __tmp_8 })
-    };
+    let mut ot4: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1619,7 +1592,7 @@ pub unsafe fn test07_17() {
         "!std::is_assignable_v<optional<Thingy2>&,\n\t\toptional<optional<short>>>"
     );;
     let mut ot7: () = unimplemented!();
-    unimplemented!();
+    ot = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1747,10 +1720,7 @@ impl Thingy3 {
     }
 }
 pub unsafe fn test08_18() {
-    let mut ot: () = {
-        let mut __tmp_9: () = unimplemented!();
-        std_optional_Thingy3_::new_1({ &mut __tmp_9 })
-    };
+    let mut ot: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1774,10 +1744,7 @@ pub unsafe fn test08_18() {
         true,
         "!std::is_convertible_v<optional<int>,\n\t\toptional<Thingy3>>"
     );;
-    let mut ot2: () = {
-        let mut __tmp_10: () = unimplemented!();
-        std_optional_Thingy3_::new_2({ &mut __tmp_10 })
-    };
+    let mut ot2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1801,10 +1768,7 @@ pub unsafe fn test08_18() {
         true,
         "!std::is_convertible_v<optional<short>,\n\t\toptional<Thingy3>>"
     );;
-    let mut ot3: () = {
-        let mut __tmp_11: () = unimplemented!();
-        std_optional_Thingy3_::new_3({ &mut __tmp_11 })
-    };
+    let mut ot3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1828,10 +1792,7 @@ pub unsafe fn test08_18() {
         true,
         "!std::is_convertible_v<optional<optional<int>>,\n\t\toptional<Thingy3>>"
     );;
-    let mut ot4: () = {
-        let mut __tmp_12: () = unimplemented!();
-        std_optional_Thingy3_::new_4({ &mut __tmp_12 })
-    };
+    let mut ot4: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1912,7 +1873,7 @@ pub unsafe fn test08_18() {
         "!std::is_assignable_v<optional<Thingy3>&,\n\t\toptional<optional<short>>>"
     );;
     let mut ot7: () = unimplemented!();
-    unimplemented!();
+    ot = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -2016,7 +1977,7 @@ pub unsafe fn test08_18() {
 }
 pub unsafe fn test09_19() {
     let mut a: () = 42_();
-    let mut oa2: () = std_optional_std_any_::new_1({ &mut a });
+    let mut oa2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -2298,7 +2259,7 @@ pub unsafe fn test10_20() {
     }
     let mut oi2: () = unimplemented!();
     let mut si: () = 6_();
-    unimplemented!();
+    oi2 = si;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -2438,8 +2399,7 @@ pub unsafe fn verify_demangle_29(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -2450,11 +2410,7 @@ pub unsafe fn run_tests_wrapped_locale_31(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -2462,11 +2418,7 @@ pub unsafe fn run_tests_wrapped_locale_31(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -2478,10 +2430,7 @@ pub unsafe fn run_tests_wrapped_locale_31(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -2504,10 +2453,7 @@ pub unsafe fn run_tests_wrapped_env_32(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

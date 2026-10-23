@@ -410,12 +410,7 @@ const _: () = assert!(
 pub fn test_17(sv: ()) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { sv.as_pointer() },
-                None,
-            ),
-        ));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -425,7 +420,7 @@ pub fn test_17(sv: ()) {
     }
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*s2.borrow_mut()) = (*sv.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -437,12 +432,7 @@ pub fn test_17(sv: ()) {
 pub fn test_18(sv: ()) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { sv.as_pointer() },
-                None,
-            ),
-        ));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -452,7 +442,7 @@ pub fn test_18(sv: ()) {
     }
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*s2.borrow_mut()) = (*sv.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -464,12 +454,7 @@ pub fn test_18(sv: ()) {
 pub fn test_19(sv: ()) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { sv.as_pointer() },
-                None,
-            ),
-        ));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -479,7 +464,7 @@ pub fn test_19(sv: ()) {
     }
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*s2.borrow_mut()) = (*sv.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -491,12 +476,7 @@ pub fn test_19(sv: ()) {
 pub fn test_20(sv: ()) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { sv.as_pointer() },
-                None,
-            ),
-        ));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -506,7 +486,7 @@ pub fn test_20(sv: ()) {
     }
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*s2.borrow_mut()) = (*sv.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -518,12 +498,7 @@ pub fn test_20(sv: ()) {
 pub fn test_21(sv: (), a: Ptr<()>) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { sv.as_pointer() },
-                { Some((a).clone()) },
-            ),
-        ));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -533,7 +508,7 @@ pub fn test_21(sv: (), a: Ptr<()>) {
     }
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*s2.borrow_mut()) = (*sv.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -545,12 +520,7 @@ pub fn test_21(sv: (), a: Ptr<()>) {
 pub fn test_22(sv: (), a: Ptr<test_allocator_char_>) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { sv.as_pointer() },
-                { Some((a).clone()) },
-            ),
-        ));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -560,7 +530,7 @@ pub fn test_22(sv: (), a: Ptr<test_allocator_char_>) {
     }
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*s2.borrow_mut()) = (*sv.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -572,12 +542,7 @@ pub fn test_22(sv: (), a: Ptr<test_allocator_char_>) {
 pub fn test_23(sv: (), a: Ptr<min_allocator_char_>) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { sv.as_pointer() },
-                { Some((a).clone()) },
-            ),
-        ));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -587,7 +552,7 @@ pub fn test_23(sv: (), a: Ptr<min_allocator_char_>) {
     }
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*s2.borrow_mut()) = (*sv.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -599,12 +564,7 @@ pub fn test_23(sv: (), a: Ptr<min_allocator_char_>) {
 pub fn test_24(sv: (), a: Ptr<safe_allocator_char_>) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { sv.as_pointer() },
-                { Some((a).clone()) },
-            ),
-        ));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -614,7 +574,7 @@ pub fn test_24(sv: (), a: Ptr<safe_allocator_char_>) {
     }
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*s2.borrow_mut()) = (*sv.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

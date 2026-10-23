@@ -35,65 +35,29 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
-        let mut _f: () = {
-            let mut __tmp_0: () = 7290000_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_0 })
-        };
-        let mut _d: () = {
-            let mut __tmp_1: () = 2_();
-            std_chrono_duration_long__std_ratio_3600__1__::new_1({ &mut __tmp_1 })
-        };
+        let mut _f: () = unimplemented!();
+        let mut _d: () = unimplemented!();
         test_0(&mut _f, &mut _d)
     });
     (unsafe {
-        let mut _f: () = {
-            let mut __tmp_2: () = -7290000_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_2 })
-        };
-        let mut _d: () = {
-            let mut __tmp_3: () = -2_();
-            std_chrono_duration_long__std_ratio_3600__1__::new_1({ &mut __tmp_3 })
-        };
+        let mut _f: () = unimplemented!();
+        let mut _d: () = unimplemented!();
         test_0(&mut _f, &mut _d)
     });
     (unsafe {
-        let mut _f: () = {
-            let mut __tmp_4: () = 7290000_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_4 })
-        };
-        let mut _d: () = {
-            let mut __tmp_5: () = 122_();
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ &mut __tmp_5 })
-        };
+        let mut _f: () = unimplemented!();
+        let mut _d: () = unimplemented!();
         test_1(&mut _f, &mut _d)
     });
     (unsafe {
-        let mut _f: () = {
-            let mut __tmp_6: () = -7290000_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_6 })
-        };
-        let mut _d: () = {
-            let mut __tmp_7: () = -122_();
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ &mut __tmp_7 })
-        };
+        let mut _f: () = unimplemented!();
+        let mut _d: () = unimplemented!();
         test_1(&mut _f, &mut _d)
     });
     {
-        let h1: () = (unsafe {
-            let mut ___d: () = {
-                let mut __tmp_8: () = 9000000_();
-                std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_8 })
-            };
-            round_2(&mut ___d)
-        });
+        let h1: () = unimplemented!();
         const _: () = assert!(true, "h1.count() == 2");;
-        let h2: () = (unsafe {
-            let mut ___d: () = {
-                let mut __tmp_9: () = -9000000_();
-                std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_9 })
-            };
-            round_2(&mut ___d)
-        });
+        let h2: () = unimplemented!();
         const _: () = assert!(true, "h2.count() == -2");;
     }
     return 0_();

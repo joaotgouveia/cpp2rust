@@ -171,12 +171,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
         }
         {
-            let mut ri: () = {
-                let mut __tmp_1: () = unimplemented!();
-                std_reverse_iterator_std___list_const_iterator_B__void_ptr__::new_1({
-                    &mut __tmp_1
-                })
-            };
+            let mut ri: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

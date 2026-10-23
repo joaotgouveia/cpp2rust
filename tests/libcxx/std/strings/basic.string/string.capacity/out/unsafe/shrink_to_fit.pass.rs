@@ -293,11 +293,7 @@ pub unsafe fn test_16() -> () {
     (unsafe { test_string_14() });
     (unsafe { test_string_15() });
     {
-        let mut s: () =
-            std_basic_string_char__std_char_traits_char___increasing_allocator_char__::new_1(
-                { c"String does not fit in the internal buffer".as_ptr() },
-                None,
-            );
+        let mut s: () = unimplemented!();
         let mut capacity: () = unimplemented!();
         let mut size: () = unimplemented!();
         unimplemented!();

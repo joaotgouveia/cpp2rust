@@ -82,14 +82,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let s1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"Hi Mom!".as_ptr() },
-            None,
-        );
-        let s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"Yo Dad!".as_ptr() },
-            None,
-        );
+        let s1: () = unimplemented!();
+        let s2: () = unimplemented!();
         let mut s3: () = unimplemented!();
         unimplemented!();
         unimplemented!();

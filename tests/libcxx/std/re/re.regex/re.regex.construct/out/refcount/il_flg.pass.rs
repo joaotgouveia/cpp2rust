@@ -32,22 +32,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut s1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"\\(a\\)") },
-        None,
-    );
-    let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"\\(a[bc]\\)") },
-        None,
-    );
-    let mut s3: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"\\(a\\([bc]\\)\\)") },
-        None,
-    );
-    let mut s4: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"(a([bc]))") },
-        None,
-    );
+    let mut s1: () = unimplemented!();
+    let mut s2: () = unimplemented!();
+    let mut s3: () = unimplemented!();
+    let mut s4: () = unimplemented!();
     ({ test_0(unimplemented!(), unimplemented!(), 1_()) });
     ({ test_0(unimplemented!(), unimplemented!(), 1_()) });
     ({ test_0(unimplemented!(), unimplemented!(), 2_()) });

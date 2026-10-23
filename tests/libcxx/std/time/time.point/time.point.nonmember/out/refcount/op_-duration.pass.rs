@@ -7,19 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test2739_0() {
-    let d: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
-        std_chrono_duration_int__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
-    }));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test2739_1() {
-    let d: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(5_()));
-        std_chrono_duration_unsigned_int__std_ratio_1__1__::new_1({ __tmp_1.as_pointer() })
-    }));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

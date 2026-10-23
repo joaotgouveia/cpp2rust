@@ -148,13 +148,7 @@ pub unsafe fn test_0() {
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std_basic_string_char__std_char_traits_char___operator_hijacker_allocator_char__::new_1(
-                { &mut __tmp_0 },
-                None,
-            )
-        };
+        let mut s: () = unimplemented!();
         let ss: () = unimplemented!();
         unimplemented!();
     }
@@ -164,13 +158,7 @@ pub unsafe fn test_0() {
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_1: () = unimplemented!();
-            std_basic_string_char__std_char_traits_char___operator_hijacker_allocator_char__::new_1(
-                { &mut __tmp_1 },
-                None,
-            )
-        };
+        let mut s: () = unimplemented!();
         let ss: () = unimplemented!();
         unimplemented!();
     }
@@ -182,10 +170,7 @@ pub unsafe fn test_1() {
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_2: () = unimplemented!();
-            std_basic_string_wchar_t__std_char_traits_wchar_t___operator_hijacker_allocator_wchar_t__ :: new_1 ( { & mut __tmp_2 } , None , )
-        };
+        let mut s: () = unimplemented!();
         let ss: () = unimplemented!();
         unimplemented!();
     }
@@ -195,10 +180,7 @@ pub unsafe fn test_1() {
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_3: () = unimplemented!();
-            std_basic_string_wchar_t__std_char_traits_wchar_t___operator_hijacker_allocator_wchar_t__ :: new_1 ( { & mut __tmp_3 } , None , )
-        };
+        let mut s: () = unimplemented!();
         let ss: () = unimplemented!();
         unimplemented!();
     }

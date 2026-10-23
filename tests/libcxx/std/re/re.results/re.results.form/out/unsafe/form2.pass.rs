@@ -308,21 +308,25 @@ pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_6(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -406,7 +410,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -416,7 +420,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -534,21 +538,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_9: std::cell::LazyCell<()> =
+pub static mut destructed_value_10: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_10: std::cell::LazyCell<()> =
+pub static mut moved_value_11: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_11(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_12(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_12(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_13(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_11(_x, _y)
+        operator_eq_12(_x, _y)
     });
 }
 #[repr(C)]
@@ -612,8 +616,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -634,7 +638,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_11(
+            operator_eq_12(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -688,8 +692,8 @@ impl test_allocator_char_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -763,8 +767,8 @@ impl test_allocator_wchar_t_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -956,11 +960,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut fmt: () =
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { c"prefix: $`, match: $&, suffix: $\', m[1]: $1, m[2]: $2".as_ptr() },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut r: cpp17_output_iterator_char_ptr_ = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1071,11 +1071,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut fmt: () =
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { c"prefix: $`, match: $&, suffix: $\', m[1]: $1, m[2]: $2".as_ptr() },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut r: cpp17_output_iterator_char_ptr_ = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1186,11 +1182,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut fmt: () =
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { c"match: &, m[1]: \\1, m[2]: \\2".as_ptr() },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut r: cpp17_output_iterator_char_ptr_ = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1304,23 +1296,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut fmt: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                {
-                    [
-                        112 as (), 114 as (), 101 as (), 102 as (), 105 as (), 120 as (), 58 as (),
-                        32 as (), 36 as (), 96 as (), 44 as (), 32 as (), 109 as (), 97 as (),
-                        116 as (), 99 as (), 104 as (), 58 as (), 32 as (), 36 as (), 38 as (),
-                        44 as (), 32 as (), 115 as (), 117 as (), 102 as (), 102 as (), 105 as (),
-                        120 as (), 58 as (), 32 as (), 36 as (), 39 as (), 44 as (), 32 as (),
-                        109 as (), 91 as (), 49 as (), 93 as (), 58 as (), 32 as (), 36 as (),
-                        49 as (), 44 as (), 32 as (), 109 as (), 91 as (), 50 as (), 93 as (),
-                        58 as (), 32 as (), 36 as (), 50 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut r: cpp17_output_iterator_wchar_t_ptr_ = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1434,23 +1410,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut fmt: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                {
-                    [
-                        112 as (), 114 as (), 101 as (), 102 as (), 105 as (), 120 as (), 58 as (),
-                        32 as (), 36 as (), 96 as (), 44 as (), 32 as (), 109 as (), 97 as (),
-                        116 as (), 99 as (), 104 as (), 58 as (), 32 as (), 36 as (), 38 as (),
-                        44 as (), 32 as (), 115 as (), 117 as (), 102 as (), 102 as (), 105 as (),
-                        120 as (), 58 as (), 32 as (), 36 as (), 39 as (), 44 as (), 32 as (),
-                        109 as (), 91 as (), 49 as (), 93 as (), 58 as (), 32 as (), 36 as (),
-                        49 as (), 44 as (), 32 as (), 109 as (), 91 as (), 50 as (), 93 as (),
-                        58 as (), 32 as (), 36 as (), 50 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut r: cpp17_output_iterator_wchar_t_ptr_ = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1564,20 +1524,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut fmt: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                {
-                    [
-                        109 as (), 97 as (), 116 as (), 99 as (), 104 as (), 58 as (), 32 as (),
-                        38 as (), 44 as (), 32 as (), 109 as (), 91 as (), 49 as (), 93 as (),
-                        58 as (), 32 as (), 92 as (), 49 as (), 44 as (), 32 as (), 109 as (),
-                        91 as (), 50 as (), 93 as (), 58 as (), 32 as (), 92 as (), 50 as (),
-                        0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut r: cpp17_output_iterator_wchar_t_ptr_ = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1585,6 +1532,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_9);
-    std::cell::LazyCell::force(&*&raw const moved_value_10);
+    std::cell::LazyCell::force(&*&raw const destructed_value_10);
+    std::cell::LazyCell::force(&*&raw const moved_value_11);
 }

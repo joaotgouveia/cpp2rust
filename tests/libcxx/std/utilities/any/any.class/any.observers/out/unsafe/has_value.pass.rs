@@ -34,10 +34,7 @@ pub struct TypeID {
 }
 impl TypeID {
     pub unsafe fn name(&self) -> () {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { self.m_id },
-            None,
-        );
+        return unimplemented!();
     }
     unsafe fn new(mut xid: *const ()) -> Self {
         let mut this = Self { m_id: xid };
@@ -489,23 +486,23 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        a = 42_();
+        unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: () = small_type_0_::new_1({ 1_() });
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        a = small_type_0_::new_1({ 1_() });
+        unimplemented!();
         unimplemented!();
     }
     {
-        let mut a: () = large_type_0_::new_1({ 1_() });
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        a = large_type_0_::new_1({ 1_() });
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

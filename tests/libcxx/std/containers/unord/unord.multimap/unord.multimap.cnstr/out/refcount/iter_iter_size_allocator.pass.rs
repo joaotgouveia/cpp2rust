@@ -233,23 +233,29 @@ pub fn operator_add_3(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_2(_i, n)
     });
 }
-pub fn iter_swap_4(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_4(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_5(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -295,7 +301,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_7(
+            operator_cmp_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -320,7 +326,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_6(
+            operator_eq_7(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -404,18 +410,6 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn CheckConsecutiveKeys_8(pos: (), end: (), mut key: (), values: Ptr<()>) {
-    let pos: Value<()> = Rc::new(RefCell::new(pos));
-    let end: Value<()> = Rc::new(RefCell::new(end));
-    'loop_: while !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    unimplemented!();
-}
 pub fn CheckConsecutiveKeys_9(pos: (), end: (), mut key: (), values: Ptr<()>) {
     let pos: Value<()> = Rc::new(RefCell::new(pos));
     let end: Value<()> = Rc::new(RefCell::new(end));
@@ -428,7 +422,19 @@ pub fn CheckConsecutiveKeys_9(pos: (), end: (), mut key: (), values: Ptr<()>) {
     }
     unimplemented!();
 }
-pub fn operator_eq_10(a: Ptr<test_equal_to_int_>, b: Ptr<test_equal_to_int_>) -> () {
+pub fn CheckConsecutiveKeys_10(pos: (), end: (), mut key: (), values: Ptr<()>) {
+    let pos: Value<()> = Rc::new(RefCell::new(pos));
+    let end: Value<()> = Rc::new(RefCell::new(end));
+    'loop_: while !(unimplemented!()) {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    unimplemented!();
+}
+pub fn operator_eq_11(a: Ptr<test_equal_to_int_>, b: Ptr<test_equal_to_int_>) -> () {
     return ({ a.with(|__s| __s.data_) } == { b.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -445,7 +451,7 @@ impl test_equal_to_int_ {
 impl std::cmp::PartialEq for test_equal_to_int_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_10(
+            operator_eq_11(
                 Rc::new(RefCell::new(test_equal_to_int_ {
                     data_: self.data_.clone(),
                 }))
@@ -541,22 +547,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_11: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_12: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_12: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_13: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_13(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_14(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_14(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_15(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_13(_x, _y)
+        operator_eq_14(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -617,7 +623,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_13(
+            operator_eq_14(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -656,7 +662,7 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-pub fn operator_eq_15(
+pub fn operator_eq_16(
     x: Ptr<test_allocator_std_pair_const_int__std_string__>,
     y: Ptr<test_allocator_std_pair_const_int__std_string__>,
 ) -> () {
@@ -704,7 +710,7 @@ impl test_allocator_std_pair_const_int__std_string__ {
 impl std::cmp::PartialEq for test_allocator_std_pair_const_int__std_string__ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_15(
+            operator_eq_16(
                 Rc::new(RefCell::new(
                     test_allocator_std_pair_const_int__std_string__ {
                         data_: self.data_.clone(),
@@ -772,28 +778,28 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_17.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_18.with(|rc| *rc.borrow())));
+        return ((alloc_count_18.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_19.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_19.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_16.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_17.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_18.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_20.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_17.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_18.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_19.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_16: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_17: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_17: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_18: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_18: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_19: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_19: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_20: Value<()> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -842,7 +848,7 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[byte_size(8)]
 pub struct min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { #[offset(0)] #[byte_size(8)] ptr_ : Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >  , }
 impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } pub fn new_2 ( mut _a0 : ()  , ) -> Self { Self { ptr_ : Ptr::<min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__>::null()  , }  } }
-pub fn operator_eq_20(
+pub fn operator_eq_21(
     mut _a0: min_allocator_std_pair_const_int__std_string__,
     mut _a1: min_allocator_std_pair_const_int__std_string__,
 ) -> () {
@@ -853,7 +859,7 @@ pub fn operator_eq_20(
 pub struct min_allocator_std_pair_const_int__std_string__ {}
 impl std::cmp::PartialEq for min_allocator_std_pair_const_int__std_string__ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_20(self.clone(), other.clone()) }
+        { operator_eq_21(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_std_pair_const_int__std_string__ {}
@@ -863,7 +869,7 @@ impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_
 pub struct min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___
 {}
 impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { }
-pub fn operator_eq_21(
+pub fn operator_eq_22(
     mut _a0: explicit_allocator_std_pair_const_int__std_string__,
     mut _a1: explicit_allocator_std_pair_const_int__std_string__,
 ) -> () {
@@ -879,7 +885,7 @@ impl explicit_allocator_std_pair_const_int__std_string__ {
 }
 impl std::cmp::PartialEq for explicit_allocator_std_pair_const_int__std_string__ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_21(self.clone(), other.clone()) }
+        { operator_eq_22(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for explicit_allocator_std_pair_const_int__std_string__ {}
@@ -888,44 +894,14 @@ impl Default for explicit_allocator_std_pair_const_int__std_string__ {
         { explicit_allocator_std_pair_const_int__std_string__::new() }
     }
 }
-pub fn test_22(alloc: Ptr<test_allocator_std_pair_const_int__std_string__>) {
+pub fn test_23(alloc: Ptr<test_allocator_std_pair_const_int__std_string__>) {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_int__std_string_::new_1({ __tmp_0.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"one")
-            })
-        },
-        {
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__std_string_::new_1({ __tmp_1.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"two")
-            })
-        },
-        {
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-            std_pair_int__std_string_::new_2({ __tmp_2.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"three")
-            })
-        },
-        {
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__std_string_::new_3({ __tmp_3.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
-        {
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_int__std_string_::new_3({ __tmp_4.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
-        {
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__std_string_::new_3({ __tmp_5.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -938,84 +914,6 @@ pub fn test_22(alloc: Ptr<test_allocator_std_pair_const_int__std_string__>) {
     ({
         let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
         let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        CheckConsecutiveKeys_8(_pos, _end, 1_(), s.as_pointer())
-    });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        CheckConsecutiveKeys_8(_pos, _end, 2_(), s.as_pointer())
-    });
-    unimplemented!();
-    unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({ (*eq.borrow()).first.clone() }));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_23(alloc: Ptr<min_allocator_std_pair_const_int__std_string__>) {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_int__std_string_::new_1({ __tmp_6.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"one")
-            })
-        },
-        {
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__std_string_::new_1({ __tmp_7.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"two")
-            })
-        },
-        {
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(3_()));
-            std_pair_int__std_string_::new_2({ __tmp_8.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"three")
-            })
-        },
-        {
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__std_string_::new_3({ __tmp_9.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
-        {
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_int__std_string_::new_3({ __tmp_10.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
-        {
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__std_string_::new_3({ __tmp_11.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
-    ])));
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    let eq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
         CheckConsecutiveKeys_9(_pos, _end, 1_(), s.as_pointer())
     });
     unimplemented!();
@@ -1023,8 +921,8 @@ pub fn test_23(alloc: Ptr<min_allocator_std_pair_const_int__std_string__>) {
     unimplemented!();
     unimplemented!();
     ({
-        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
-        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
+        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
+        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
         CheckConsecutiveKeys_9(_pos, _end, 2_(), s.as_pointer())
     });
     unimplemented!();
@@ -1044,44 +942,62 @@ pub fn test_23(alloc: Ptr<min_allocator_std_pair_const_int__std_string__>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_24(alloc: Ptr<explicit_allocator_std_pair_const_int__std_string__>) {
+pub fn test_24(alloc: Ptr<min_allocator_std_pair_const_int__std_string__>) {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_int__std_string_::new_1({ __tmp_12.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"one")
-            })
-        },
-        {
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__std_string_::new_1({ __tmp_13.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"two")
-            })
-        },
-        {
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(3_()));
-            std_pair_int__std_string_::new_2({ __tmp_14.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"three")
-            })
-        },
-        {
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__std_string_::new_3({ __tmp_15.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
-        {
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(1_()));
-            std_pair_int__std_string_::new_3({ __tmp_16.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
-        {
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__std_string_::new_3({ __tmp_17.as_pointer() }, {
-                Ptr::<()>::from_string_literal(b"four")
-            })
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let eq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    ({
+        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
+        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
+        CheckConsecutiveKeys_10(_pos, _end, 1_(), s.as_pointer())
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    ({
+        let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
+        let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
+        CheckConsecutiveKeys_10(_pos, _end, 2_(), s.as_pointer())
+    });
+    unimplemented!();
+    unimplemented!();
+    let i: Value<()> = Rc::new(RefCell::new({ (*eq.borrow()).first.clone() }));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_25(alloc: Ptr<explicit_allocator_std_pair_const_int__std_string__>) {
+    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -1094,7 +1010,7 @@ pub fn test_24(alloc: Ptr<explicit_allocator_std_pair_const_int__std_string__>) 
     ({
         let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
         let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        CheckConsecutiveKeys_8(_pos, _end, 1_(), s.as_pointer())
+        CheckConsecutiveKeys_9(_pos, _end, 1_(), s.as_pointer())
     });
     unimplemented!();
     unimplemented!();
@@ -1103,7 +1019,7 @@ pub fn test_24(alloc: Ptr<explicit_allocator_std_pair_const_int__std_string__>) 
     ({
         let _pos: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
         let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
-        CheckConsecutiveKeys_8(_pos, _end, 2_(), s.as_pointer())
+        CheckConsecutiveKeys_9(_pos, _end, 2_(), s.as_pointer())
     });
     unimplemented!();
     unimplemented!();
@@ -1146,19 +1062,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let _alloc: Value<test_allocator_std_pair_const_int__std_string__> = Rc::new(RefCell::new(
             test_allocator_std_pair_const_int__std_string__::new_1({ 10_() }),
         ));
-        test_22(_alloc.as_pointer())
+        test_23(_alloc.as_pointer())
     });
     ({
         let _alloc: Value<min_allocator_std_pair_const_int__std_string__> = Rc::new(RefCell::new(
             <min_allocator_std_pair_const_int__std_string__>::default(),
         ));
-        test_23(_alloc.as_pointer())
+        test_24(_alloc.as_pointer())
     });
     ({
         let _alloc: Value<explicit_allocator_std_pair_const_int__std_string__> = Rc::new(
             RefCell::new(explicit_allocator_std_pair_const_int__std_string__::new()),
         );
-        test_24(_alloc.as_pointer())
+        test_25(_alloc.as_pointer())
     });
     return 0_();
 }
@@ -1769,8 +1685,8 @@ impl test_allocator_std_pair_const_int__std_string__Impl
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_11.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_11.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_12.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_12.with(|rc| *rc.borrow()));
     }
 }
 pub trait test_allocator_void_Impl {
@@ -1781,8 +1697,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_11.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_11.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_12.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_12.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -1818,10 +1734,10 @@ impl test_hash_int_Impl for Ptr<test_hash_int_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_11.with(|_| ());
-    let _ = moved_value_12.with(|_| ());
-    let _ = outstanding_bytes_16.with(|_| ());
-    let _ = alloc_count_17.with(|_| ());
-    let _ = dealloc_count_18.with(|_| ());
-    let _ = disable_default_constructor_19.with(|_| ());
+    let _ = destructed_value_12.with(|_| ());
+    let _ = moved_value_13.with(|_| ());
+    let _ = outstanding_bytes_17.with(|_| ());
+    let _ = alloc_count_18.with(|_| ());
+    let _ = dealloc_count_19.with(|_| ());
+    let _ = disable_default_constructor_20.with(|_| ());
 }

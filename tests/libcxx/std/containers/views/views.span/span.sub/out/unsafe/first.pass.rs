@@ -425,26 +425,11 @@ pub static mut arr_34: std::cell::LazyCell<[(); 3]> =
     std::cell::LazyCell::new(|| unsafe { [5_(), 6_(), 7_()] });
 pub static mut sarr_35: std::cell::LazyCell<[(); 5]> = std::cell::LazyCell::new(|| unsafe {
     [
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"ABC".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"DEF".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"GHI".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"JKL".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"MNO".as_ptr() },
-            None,
-        ),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ]
 });
 

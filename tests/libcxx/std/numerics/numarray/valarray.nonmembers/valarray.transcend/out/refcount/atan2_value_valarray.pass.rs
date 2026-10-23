@@ -44,14 +44,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v3: Value<()> = Rc::new(RefCell::new(
-            ({
-                ({
-                    let ___x: Value<()> = Rc::new(RefCell::new(0.75_f64));
-                    atan2_3(___x.as_pointer(), v1.as_pointer())
-                })()
-            }),
-        ));
+        let v3: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {

@@ -7,10 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_constexpr_0() -> () {
-    let mut h1: () = {
-        let mut __tmp_0: () = 3_();
-        std_chrono_duration_long__std_ratio_3600__1__::new_1({ &mut __tmp_0 })
-    };
+    let mut h1: () = unimplemented!();
     let mut h2: () = unimplemented!();
     return ((unimplemented!()) == (4_())) && ((unimplemented!()) == (3_()));
 }
@@ -31,10 +28,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut h1: () = {
-            let mut __tmp_1: () = 3_();
-            std_chrono_duration_long__std_ratio_3600__1__::new_1({ &mut __tmp_1 })
-        };
+        let mut h1: () = unimplemented!();
         let mut h2: () = unimplemented!();
         unimplemented!();
         unimplemented!();

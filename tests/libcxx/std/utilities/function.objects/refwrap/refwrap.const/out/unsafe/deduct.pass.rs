@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut i: () = 0_();
-    let mut ri: () = std_reference_wrapper_int_::new({ &mut i });
+    let mut ri: () = unimplemented!();
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri), std::reference_wrapper<int>>"
@@ -35,7 +35,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "std::is_same_v<decltype(ri2), std::reference_wrapper<int>>"
     );;
     let j: () = 0_();
-    let mut rj: () = std_reference_wrapper_const_int_::new({ &j });
+    let mut rj: () = unimplemented!();
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj), std::reference_wrapper<const int>>"

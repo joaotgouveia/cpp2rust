@@ -640,21 +640,25 @@ pub unsafe fn operator_add_22(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_23(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_24(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_24(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_25(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_25(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_26(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_26(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_27(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -738,7 +742,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_26(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_27(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -748,7 +752,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_25(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_26(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -816,7 +820,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_constexpr_27() -> () {
+pub unsafe fn test_constexpr_28() -> () {
     let mut ia: [(); 5] = [0_(), 1_(), 1_(), 3_(), 4_()];
     let expected: [(); 4] = [0_(), 1_(), 3_(), 4_()];
     let N: () = 4_();
@@ -828,7 +832,7 @@ pub unsafe fn test_constexpr_27() -> () {
 pub struct count_equal {}
 impl count_equal {
     pub unsafe fn operator_call_1_int(&mut self, x: *const (), y: *const ()) -> () {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)).prefix_inc();
         return ((*x) == (*y));
     }
     pub unsafe fn operator_call_1_class_std_unique_ptr_int__struct_do_nothing_(
@@ -836,16 +840,16 @@ impl count_equal {
         x: *const (),
         y: *const (),
     ) -> () {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)).prefix_inc();
         return unimplemented!();
     }
 }
-pub static mut count_28: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn test_29() {
+pub static mut count_29: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub unsafe fn test_30() {
     let mut ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -853,7 +857,7 @@ pub unsafe fn test_29() {
     let mut ib: [(); 2] = [0_(), 1_()];
     let sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -862,7 +866,7 @@ pub unsafe fn test_29() {
     let mut ic: [(); 2] = [0_(), 0_()];
     let sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -870,7 +874,7 @@ pub unsafe fn test_29() {
     let mut id: [(); 3] = [0_(), 0_(), 1_()];
     let sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -879,7 +883,7 @@ pub unsafe fn test_29() {
     let mut ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
     let se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -889,7 +893,7 @@ pub unsafe fn test_29() {
     let mut ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
     let sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -898,7 +902,7 @@ pub unsafe fn test_29() {
     let mut ih: [(); 3] = [0_(), 1_(), 1_()];
     let sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -907,81 +911,7 @@ pub unsafe fn test_29() {
     let mut ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
     let si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_30() {
-    let mut ia: [(); 1] = [0_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ib: [(); 2] = [0_(), 1_()];
-    let sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ic: [(); 2] = [0_(), 0_()];
-    let sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut id: [(); 3] = [0_(), 0_(), 1_()];
-    let sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
-    let se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
-    let sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ih: [(); 3] = [0_(), 1_(), 1_()];
-    let sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
-    let si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -993,15 +923,15 @@ pub unsafe fn test_31() {
     let mut ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut ib: [(); 2] = [0_(), 1_()];
     let sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1010,7 +940,7 @@ pub unsafe fn test_31() {
     let mut ic: [(); 2] = [0_(), 0_()];
     let sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1018,7 +948,7 @@ pub unsafe fn test_31() {
     let mut id: [(); 3] = [0_(), 0_(), 1_()];
     let sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1027,7 +957,7 @@ pub unsafe fn test_31() {
     let mut ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
     let se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1037,7 +967,7 @@ pub unsafe fn test_31() {
     let mut ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
     let sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1046,7 +976,7 @@ pub unsafe fn test_31() {
     let mut ih: [(); 3] = [0_(), 1_(), 1_()];
     let sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1055,7 +985,7 @@ pub unsafe fn test_31() {
     let mut ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
     let si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1067,7 +997,81 @@ pub unsafe fn test_32() {
     let mut ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ib: [(); 2] = [0_(), 1_()];
+    let sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ic: [(); 2] = [0_(), 0_()];
+    let sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut id: [(); 3] = [0_(), 0_(), 1_()];
+    let sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
+    let se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
+    let sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ih: [(); 3] = [0_(), 1_(), 1_()];
+    let sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
+    let si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_33() {
+    let mut ia: [(); 1] = [0_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1075,7 +1079,7 @@ pub unsafe fn test_32() {
     let mut ib: [(); 2] = [0_(), 1_()];
     let sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1084,7 +1088,7 @@ pub unsafe fn test_32() {
     let mut ic: [(); 2] = [0_(), 0_()];
     let sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1092,7 +1096,7 @@ pub unsafe fn test_32() {
     let mut id: [(); 3] = [0_(), 0_(), 1_()];
     let sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1101,7 +1105,7 @@ pub unsafe fn test_32() {
     let mut ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
     let se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1111,7 +1115,7 @@ pub unsafe fn test_32() {
     let mut ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
     let sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1120,7 +1124,7 @@ pub unsafe fn test_32() {
     let mut ih: [(); 3] = [0_(), 1_(), 1_()];
     let sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1129,7 +1133,7 @@ pub unsafe fn test_32() {
     let mut ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
     let si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1143,13 +1147,13 @@ pub struct do_nothing {}
 impl do_nothing {
     pub unsafe fn operator_call(&self, mut _a0: ()) {}
 }
-pub unsafe fn test1_33() {
+pub unsafe fn test1_34() {
     let mut one: () = 1_();
     let mut two: () = 2_();
     let mut ia: [(); 1] = std::array::from_fn::<_, 1, _>(|_| unimplemented!());
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     let mut r: forward_iterator_std_unique_ptr_int__do_nothing__ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1158,7 +1162,7 @@ pub unsafe fn test1_33() {
     unimplemented!();
     let sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1167,7 +1171,7 @@ pub unsafe fn test1_33() {
     let mut ic: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
     let sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1176,7 +1180,7 @@ pub unsafe fn test1_33() {
     unimplemented!();
     let sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1186,7 +1190,7 @@ pub unsafe fn test1_33() {
     unimplemented!();
     let se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1198,7 +1202,7 @@ pub unsafe fn test1_33() {
     unimplemented!();
     let sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1209,7 +1213,7 @@ pub unsafe fn test1_33() {
     unimplemented!();
     let sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1224,96 +1228,7 @@ pub unsafe fn test1_33() {
     unimplemented!();
     let si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test1_34() {
-    let mut one: () = 1_();
-    let mut two: () = 2_();
-    let mut ia: [(); 1] = std::array::from_fn::<_, 1, _>(|_| unimplemented!());
-    let sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    let mut r: bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ib: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
-    unimplemented!();
-    let sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ic: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
-    let sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut id: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
-    unimplemented!();
-    let sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ie: [(); 4] = std::array::from_fn::<_, 4, _>(|_| unimplemented!());
-    unimplemented!();
-    let se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ig: [(); 4] = std::array::from_fn::<_, 4, _>(|_| unimplemented!());
-    unimplemented!();
-    unimplemented!();
-    let sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ih: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
-    unimplemented!();
-    unimplemented!();
-    let sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ii: [(); 7] = std::array::from_fn::<_, 7, _>(|_| unimplemented!());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1327,8 +1242,8 @@ pub unsafe fn test1_35() {
     let mut ia: [(); 1] = std::array::from_fn::<_, 1, _>(|_| unimplemented!());
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
-    let mut r: random_access_iterator_std_unique_ptr_int__do_nothing__ptr_ = unimplemented!();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    let mut r: bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1336,7 +1251,7 @@ pub unsafe fn test1_35() {
     unimplemented!();
     let sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1345,7 +1260,7 @@ pub unsafe fn test1_35() {
     let mut ic: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
     let sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1354,7 +1269,7 @@ pub unsafe fn test1_35() {
     unimplemented!();
     let sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1364,7 +1279,7 @@ pub unsafe fn test1_35() {
     unimplemented!();
     let se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1376,7 +1291,7 @@ pub unsafe fn test1_35() {
     unimplemented!();
     let sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1387,7 +1302,7 @@ pub unsafe fn test1_35() {
     unimplemented!();
     let sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1402,7 +1317,7 @@ pub unsafe fn test1_35() {
     unimplemented!();
     let si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1416,7 +1331,96 @@ pub unsafe fn test1_36() {
     let mut ia: [(); 1] = std::array::from_fn::<_, 1, _>(|_| unimplemented!());
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    let mut r: random_access_iterator_std_unique_ptr_int__do_nothing__ptr_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ib: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
+    unimplemented!();
+    let sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ic: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
+    let sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut id: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
+    unimplemented!();
+    let sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ie: [(); 4] = std::array::from_fn::<_, 4, _>(|_| unimplemented!());
+    unimplemented!();
+    let se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ig: [(); 4] = std::array::from_fn::<_, 4, _>(|_| unimplemented!());
+    unimplemented!();
+    unimplemented!();
+    let sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ih: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
+    unimplemented!();
+    unimplemented!();
+    let sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ii: [(); 7] = std::array::from_fn::<_, 7, _>(|_| unimplemented!());
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test1_37() {
+    let mut one: () = 1_();
+    let mut two: () = 2_();
+    let mut ia: [(); 1] = std::array::from_fn::<_, 1, _>(|_| unimplemented!());
+    let sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1425,7 +1429,7 @@ pub unsafe fn test1_36() {
     unimplemented!();
     let sb: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1434,7 +1438,7 @@ pub unsafe fn test1_36() {
     let mut ic: [(); 2] = std::array::from_fn::<_, 2, _>(|_| unimplemented!());
     let sc: () =
         (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1443,7 +1447,7 @@ pub unsafe fn test1_36() {
     unimplemented!();
     let sd: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1453,7 +1457,7 @@ pub unsafe fn test1_36() {
     unimplemented!();
     let se: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1465,7 +1469,7 @@ pub unsafe fn test1_36() {
     unimplemented!();
     let sg: () =
         (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1476,7 +1480,7 @@ pub unsafe fn test1_36() {
     unimplemented!();
     let sh: () =
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1491,7 +1495,7 @@ pub unsafe fn test1_36() {
     unimplemented!();
     let si: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_28)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut count_29)) = 0_();
     r = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1515,17 +1519,17 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_29() });
     (unsafe { test_30() });
     (unsafe { test_31() });
     (unsafe { test_32() });
-    (unsafe { test1_33() });
+    (unsafe { test_33() });
     (unsafe { test1_34() });
     (unsafe { test1_35() });
     (unsafe { test1_36() });
+    (unsafe { test1_37() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const count_28);
+    std::cell::LazyCell::force(&*&raw const count_29);
 }

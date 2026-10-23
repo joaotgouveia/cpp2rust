@@ -195,10 +195,9 @@ thread_local!(
     )));
 );
 pub fn TestOutput_2() {
-    let input: Value<Ptr<()>> = Rc::new(RefCell::new(
+    let mut input: Ptr<()> =
         ({ MultiStringTypeImpl::to_pconst_12(&InStr_0.with(|v| v.as_pointer())) })
-            .reinterpret_cast::<()>(),
-    ));
+            .reinterpret_cast::<()>();
     let mut expected_output: Ptr<()> =
         ({ MultiStringTypeImpl::to_pconst_12(&OutStr_1.with(|v| v.as_pointer())) })
             .reinterpret_cast::<()>();
@@ -209,10 +208,9 @@ pub fn TestOutput_2() {
     unimplemented!();
 }
 pub fn TestOutput_3() {
-    let input: Value<Ptr<()>> = Rc::new(RefCell::new(
+    let mut input: Ptr<()> =
         ({ MultiStringTypeImpl::to_pconst_12(&InStr_0.with(|v| v.as_pointer())) })
-            .reinterpret_cast::<()>(),
-    ));
+            .reinterpret_cast::<()>();
     let mut expected_output: Ptr<()> =
         ({ MultiStringTypeImpl::to_pconst_13(&OutStr_1.with(|v| v.as_pointer())) })
             .reinterpret_cast::<()>();

@@ -526,42 +526,12 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a: [(); 6] = [
-            {
-                let mut __tmp_0: () = 1_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_0 }, {
-                    &std::mem::transmute(*b"one\0")
-                })
-            },
-            {
-                let mut __tmp_1: () = 2_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_1 }, {
-                    &std::mem::transmute(*b"two\0")
-                })
-            },
-            {
-                let mut __tmp_2: () = 3_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_2 }, {
-                    &std::mem::transmute(*b"three\0")
-                })
-            },
-            {
-                let mut __tmp_3: () = 4_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_3 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_4: () = 1_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_4 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_5: () = 2_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_5 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
@@ -577,7 +547,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
             CheckConsecutiveKeys_0(_pos, _end, 1_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -586,12 +556,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
             CheckConsecutiveKeys_0(_pos, _end, 2_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         let mut i: () = eq.first.clone();
         unimplemented!();
         unimplemented!();
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -607,42 +577,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 6] = [
-            {
-                let mut __tmp_6: () = 1_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_6 }, {
-                    &std::mem::transmute(*b"one\0")
-                })
-            },
-            {
-                let mut __tmp_7: () = 2_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_7 }, {
-                    &std::mem::transmute(*b"two\0")
-                })
-            },
-            {
-                let mut __tmp_8: () = 3_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_8 }, {
-                    &std::mem::transmute(*b"three\0")
-                })
-            },
-            {
-                let mut __tmp_9: () = 4_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_9 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_10: () = 1_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_10 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_11: () = 2_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_11 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
@@ -658,7 +598,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
             CheckConsecutiveKeys_0(_pos, _end, 1_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -667,12 +607,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
             CheckConsecutiveKeys_0(_pos, _end, 2_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         let mut i: () = eq.first.clone();
         unimplemented!();
         unimplemented!();
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -688,42 +628,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 6] = [
-            {
-                let mut __tmp_12: () = 1_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_12 }, {
-                    &std::mem::transmute(*b"one\0")
-                })
-            },
-            {
-                let mut __tmp_13: () = 2_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_13 }, {
-                    &std::mem::transmute(*b"two\0")
-                })
-            },
-            {
-                let mut __tmp_14: () = 3_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_14 }, {
-                    &std::mem::transmute(*b"three\0")
-                })
-            },
-            {
-                let mut __tmp_15: () = 4_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_15 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_16: () = 1_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_16 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_17: () = 2_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_17 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
@@ -739,7 +649,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
             CheckConsecutiveKeys_1(_pos, _end, 1_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -748,12 +658,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
             CheckConsecutiveKeys_1(_pos, _end, 2_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         let mut i: () = eq.first.clone();
         unimplemented!();
         unimplemented!();
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -769,42 +679,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 6] = [
-            {
-                let mut __tmp_18: () = 1_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_18 }, {
-                    &std::mem::transmute(*b"one\0")
-                })
-            },
-            {
-                let mut __tmp_19: () = 2_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_19 }, {
-                    &std::mem::transmute(*b"two\0")
-                })
-            },
-            {
-                let mut __tmp_20: () = 3_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_20 }, {
-                    &std::mem::transmute(*b"three\0")
-                })
-            },
-            {
-                let mut __tmp_21: () = 4_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_21 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_22: () = 1_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_22 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
-            {
-                let mut __tmp_23: () = 2_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_23 }, {
-                    &std::mem::transmute(*b"four\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
@@ -820,7 +700,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
             CheckConsecutiveKeys_0(_pos, _end, 1_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -829,12 +709,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
             CheckConsecutiveKeys_0(_pos, _end, 2_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         let mut i: () = eq.first.clone();
         unimplemented!();
         unimplemented!();
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

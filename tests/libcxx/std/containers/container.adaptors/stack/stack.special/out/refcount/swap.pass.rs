@@ -39,7 +39,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let q2: Value<()> = Rc::new(RefCell::new(({ make_0(10_()) })));
     let q1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let q2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ swap_1(q1.as_pointer(), q2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return 0_();

@@ -7,10 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn get_temp_file_name_0() -> () {
-    let mut Name: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"libcxx.XXXXXX".as_ptr() },
-        None,
-    );
+    let mut Name: () = unimplemented!();
     let mut FD: () = (unsafe { mkstemp_1((&mut (*unimplemented!()) as *mut ())) });
     if ((FD) == (-1_())) {
         (unsafe { perror_2(c"mkstemp".as_ptr()) });

@@ -172,10 +172,7 @@ impl min_allocator_char_ {
     }
 }
 pub unsafe fn test_string_6() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"0123456789".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let cs: *const () = &s;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -192,10 +189,7 @@ pub unsafe fn test_string_6() {
     unimplemented!();
 }
 pub unsafe fn test_string_7() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-        { c"0123456789".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let cs: *const () = &s;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -212,10 +206,7 @@ pub unsafe fn test_string_7() {
     unimplemented!();
 }
 pub unsafe fn test_string_long_8() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-        { c"0123456789012345678901234567890123456789".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let cs: *const () = &s;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

@@ -40,43 +40,23 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         (unsafe {
-            let mut _token: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"/dev/urandom".as_ptr() },
-                    None,
-                );
+            let mut _token: () = unimplemented!();
             check_random_device_valid_2(&mut _token)
         });
         (unsafe {
-            let mut _token: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"/dev/random".as_ptr() },
-                    None,
-                );
+            let mut _token: () = unimplemented!();
             check_random_device_valid_2(&mut _token)
         });
         (unsafe {
-            let mut _token: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"/dev/null".as_ptr() },
-                    None,
-                );
+            let mut _token: () = unimplemented!();
             check_random_device_valid_2(&mut _token)
         });
         (unsafe {
-            let mut _token: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"/dev/nonexistent".as_ptr() },
-                    None,
-                );
+            let mut _token: () = unimplemented!();
             check_random_device_invalid_3(&mut _token)
         });
         (unsafe {
-            let mut _token: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"wrong file".as_ptr() },
-                    None,
-                );
+            let mut _token: () = unimplemented!();
             check_random_device_invalid_3(&mut _token)
         });
     }

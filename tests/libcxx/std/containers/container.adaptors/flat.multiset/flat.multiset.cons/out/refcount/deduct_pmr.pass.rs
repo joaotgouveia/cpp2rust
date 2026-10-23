@@ -377,14 +377,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let pks: Value<()> = Rc::new(RefCell::new({
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { __tmp_0.as_pointer() },
-                )
-            }));
+            let pks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -394,14 +387,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let pks: Value<()> = Rc::new(RefCell::new({
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { __tmp_1.as_pointer() },
-                )
-            }));
+            let pks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -422,14 +408,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let pks: Value<()> = Rc::new(RefCell::new({
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { __tmp_2.as_pointer() },
-                )
-            }));
+            let pks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -439,14 +418,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let mr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mr2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let pks: Value<()> = Rc::new(RefCell::new({
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { __tmp_3.as_pointer() },
-                )
-            }));
+            let pks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();

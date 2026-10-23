@@ -57,7 +57,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut x: X = <X>::default();
             let _dtor_x = ScopedDestructorUnsafe::new(&raw mut x, X::destructor);
-            let mut opt: () = std_optional_X_::new_1({ &mut x });
+            let mut opt: () = unimplemented!();
             unimplemented!();
         }
         unimplemented!();

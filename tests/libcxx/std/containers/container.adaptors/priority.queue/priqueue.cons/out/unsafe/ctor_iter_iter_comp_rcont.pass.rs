@@ -178,14 +178,7 @@ pub unsafe fn test_14() -> () {
     let mut a: [(); 7] = [3_(), 5_(), 2_(), 0_(), 6_(), 8_(), 1_()];
     let n: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut q: () = {
-        let mut __tmp_0: () = unimplemented!();
-        let mut __tmp_1: () =
-            std_vector_MoveOnly__std_allocator_MoveOnly__::new_1({ a.as_mut_ptr() }, {
-                a.as_mut_ptr().offset(((n) / (2_())) as isize)
-            });
-        std_priority_queue_MoveOnly__std_vector_MoveOnly__std_allocator_MoveOnly____std_less_MoveOnly__ :: new_1 ( { a .as_mut_ptr() . offset ( ( ( ( n ) / ( 2_() ) ) ) as isize ) } , { a .as_mut_ptr() . offset ( ( n ) as isize ) } , { & mut __tmp_0 } , { & mut __tmp_1 } , )
-    };
+    let mut q: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

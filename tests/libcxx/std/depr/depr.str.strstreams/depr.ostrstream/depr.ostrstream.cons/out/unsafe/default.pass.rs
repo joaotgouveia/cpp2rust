@@ -26,10 +26,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut out: () = unimplemented!();
     let mut i: () = 123_();
     let mut d: () = 4.5_f64;
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"dog".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

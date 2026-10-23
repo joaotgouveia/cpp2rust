@@ -255,9 +255,9 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test_convert_contained_value_to_bool_10() {
-    let f: Value<False_11> = Rc::new(RefCell::new(<False_11>::default()));
-    let o: Value<()> = Rc::new(RefCell::new(std_optional_False_::new_1({ f.as_pointer() })));
-    let o2: Value<()> = Rc::new(RefCell::new(std_optional_bool_::new_1({ o.as_pointer() })));
+    let mut f: False_11 = <False_11>::default();
+    let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let o2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -281,9 +281,7 @@ pub fn test_convert_contained_value_to_bool_10() {
         }
     }
     let o3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let o4: Value<()> = Rc::new(RefCell::new(std_optional_const_bool_::new_1({
-        o3.as_pointer()
-    })));
+    let o4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -311,9 +309,9 @@ pub fn test_convert_contained_value_to_bool_10() {
 #[byte_size(1)]
 pub struct False_11 {}
 pub fn test_convert_contained_value_to_bool_explicit_13() {
-    let f: Value<False_14> = Rc::new(RefCell::new(<False_14>::default()));
-    let o: Value<()> = Rc::new(RefCell::new(std_optional_False_::new_1({ f.as_pointer() })));
-    let o2: Value<()> = Rc::new(RefCell::new(std_optional_bool_::new_2({ o.as_pointer() })));
+    let mut f: False_14 = <False_14>::default();
+    let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let o2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -337,9 +335,7 @@ pub fn test_convert_contained_value_to_bool_explicit_13() {
         }
     }
     let o3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let o4: Value<()> = Rc::new(RefCell::new(std_optional_const_bool_::new_2({
-        o3.as_pointer()
-    })));
+    let o4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -472,10 +468,7 @@ pub fn verify_demangle_22(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -486,22 +479,14 @@ pub fn run_tests_wrapped_locale_24(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -513,10 +498,7 @@ pub fn run_tests_wrapped_locale_24(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -538,10 +520,7 @@ pub fn run_tests_wrapped_env_25(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

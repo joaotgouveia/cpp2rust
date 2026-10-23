@@ -122,12 +122,7 @@ pub fn is_string_asan_correct_8(_a0: Ptr<()>) -> () {
     return true;
 }
 pub fn test_string_9() {
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"123") },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -139,12 +134,7 @@ pub fn test_string_9() {
     unimplemented!();
 }
 pub fn test_string_10() {
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"123") },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -156,12 +146,7 @@ pub fn test_string_10() {
     unimplemented!();
 }
 pub fn test_string_11() {
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"123") },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

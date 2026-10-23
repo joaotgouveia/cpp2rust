@@ -316,10 +316,7 @@ pub unsafe fn test_7() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___k: () = 5_();
-            m.lower_bound_71_int_struct_std_less_void__0(&mut ___k)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

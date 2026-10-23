@@ -140,12 +140,8 @@ pub unsafe fn test_11() -> () {
     {
         let t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let t2: [(); 3] = [5_(), 5_(), 5_()];
-        let mut c1: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
@@ -158,9 +154,7 @@ pub unsafe fn test_11() -> () {
     }
     {
         let t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
-        let mut c1: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
@@ -175,12 +169,8 @@ pub unsafe fn test_11() -> () {
     {
         let t1: [(); 3] = [5_(), 5_(), 5_()];
         let t2: [(); 3] = [5_(), 5_(), 5_()];
-        let mut c1: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
@@ -207,12 +197,8 @@ pub unsafe fn test_11() -> () {
     {
         let t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
         let t2: [(); 3] = [5_(), 5_(), 5_()];
-        let mut c1: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
@@ -226,10 +212,7 @@ pub unsafe fn test_11() -> () {
     {
         let mut a1: [(); 7] = [1_(), 2_(), 1_(), 3_(), 5_(), 8_(), 11_()];
         let mut a2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
-        let mut c: () =
-            std_forward_list_PredLWG526__std_allocator_PredLWG526__::new_1({ a1.as_mut_ptr() }, {
-                a1.as_mut_ptr().offset((7_()) as isize)
-            });
+        let mut c: () = unimplemented!();
         (unsafe {
             let _l: *mut () = &mut c;
             let _pred: () = unimplemented!();
@@ -247,12 +230,8 @@ pub unsafe fn test_11() -> () {
     {
         let t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let t2: [(); 3] = [5_(), 5_(), 5_()];
-        let mut c1: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
@@ -265,9 +244,7 @@ pub unsafe fn test_11() -> () {
     }
     {
         let t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
-        let mut c1: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
@@ -282,12 +259,8 @@ pub unsafe fn test_11() -> () {
     {
         let t1: [(); 3] = [5_(), 5_(), 5_()];
         let t2: [(); 3] = [5_(), 5_(), 5_()];
-        let mut c1: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
         let _dtor_cp = ScopedDestructorUnsafe::new(
@@ -314,12 +287,8 @@ pub unsafe fn test_11() -> () {
     {
         let t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
         let t2: [(); 3] = [5_(), 5_(), 5_()];
-        let mut c1: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         let mut cp: unary_counting_predicate_bool__ptr__int___int_ =
             unary_counting_predicate_bool__ptr__int___int_::new({ Some(g_10) });
         let _dtor_cp = ScopedDestructorUnsafe::new(

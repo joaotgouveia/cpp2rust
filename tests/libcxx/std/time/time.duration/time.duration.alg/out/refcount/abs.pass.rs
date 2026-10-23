@@ -53,89 +53,38 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(7290000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_0.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(7290000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_1.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_2(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(-7290000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_2.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(7290000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_3.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_2(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(122_()));
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_4.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(122_()));
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_5.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_3(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(-122_()));
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_6.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(122_()));
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_7.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_3(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(0_()));
-            std_chrono_duration_long__std_ratio_3600__1__::new_1({ __tmp_8.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(0_()));
-            std_chrono_duration_long__std_ratio_3600__1__::new_1({ __tmp_9.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_4(_f.as_pointer(), _d.as_pointer())
     });
     {
-        let h1: Value<()> = Rc::new(RefCell::new(
-            ({
-                abs_5({
-                    let __tmp_10: Value<()> = Rc::new(RefCell::new(-3_()));
-                    std_chrono_duration_long__std_ratio_3600__1__::new_1({ __tmp_10.as_pointer() })
-                })
-            }),
-        ));
+        let h1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "h1.count() == 3");;
-        let h2: Value<()> = Rc::new(RefCell::new(
-            ({
-                abs_5({
-                    let __tmp_11: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_chrono_duration_long__std_ratio_3600__1__::new_1({ __tmp_11.as_pointer() })
-                })
-            }),
-        ));
+        let h2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "h2.count() == 3");;
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new(
-            ({
-                abs_6({
-                    let __tmp_12: Value<()> = Rc::new(RefCell::new(2_()));
-                    std_chrono_duration_int__std_ratio_60__100__::new_1({ __tmp_12.as_pointer() })
-                })
-            }),
-        ));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "d.count() == 2");;
     }
     return 0_();

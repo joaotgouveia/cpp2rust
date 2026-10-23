@@ -84,10 +84,9 @@ impl MultiStringType {
         }
     }
 }
-pub fn test_4(fmt: (), arg: (), expected: (), mut offset: ()) {
+pub fn test_4(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -112,18 +111,13 @@ pub fn test_4(fmt: (), arg: (), expected: (), mut offset: ()) {
     });
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = { unimplemented!().ptr.clone() };
-            (*expected.borrow()).append_75_char_ptr_0(___first, ___last)
-        });
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn test_6(fmt: (), arg: (), expected: (), mut offset: ()) {
+pub fn test_6(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -148,18 +142,13 @@ pub fn test_6(fmt: (), arg: (), expected: (), mut offset: ()) {
     });
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = { unimplemented!().ptr.clone() };
-            (*expected.borrow()).append_75_char_ptr_0(___first, ___last)
-        });
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn test_8(fmt: (), arg: (), expected: (), mut offset: ()) {
+pub fn test_8(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -184,18 +173,13 @@ pub fn test_8(fmt: (), arg: (), expected: (), mut offset: ()) {
     });
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = { unimplemented!().ptr.clone() };
-            (*expected.borrow()).append_75_char_ptr_0(___first, ___last)
-        });
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn test_10(fmt: (), arg: (), expected: (), mut offset: ()) {
+pub fn test_10(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -220,18 +204,13 @@ pub fn test_10(fmt: (), arg: (), expected: (), mut offset: ()) {
     });
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = { unimplemented!().ptr.clone() };
-            (*expected.borrow()).append_75_char_ptr_0(___first, ___last)
-        });
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn test_12(fmt: (), arg: (), expected: (), mut offset: ()) {
+pub fn test_12(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -256,18 +235,13 @@ pub fn test_12(fmt: (), arg: (), expected: (), mut offset: ()) {
     });
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = { unimplemented!().ptr.clone() };
-            (*expected.borrow()).append_75_char_ptr_0(___first, ___last)
-        });
+        unimplemented!();
     }
     unimplemented!();
 }
-pub fn test_14(fmt: (), arg: (), expected: (), mut offset: ()) {
+pub fn test_14(fmt: (), arg: (), mut expected: (), mut offset: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
     let arg: Value<()> = Rc::new(RefCell::new(arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -292,11 +266,7 @@ pub fn test_14(fmt: (), arg: (), expected: (), mut offset: ()) {
     });
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = { unimplemented!().ptr.clone() };
-            (*expected.borrow()).append_75_char_ptr_0(___first, ___last)
-        });
+        unimplemented!();
     }
     unimplemented!();
 }
@@ -360,160 +330,40 @@ pub fn test_hex_lower_case_precision_22(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_hex_lower_case_precision_24(mut value: ()) {
@@ -522,160 +372,40 @@ pub fn test_hex_lower_case_precision_24(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_hex_lower_case_precision_26(mut value: ()) {
@@ -684,60 +414,40 @@ pub fn test_hex_lower_case_precision_26(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_hex_lower_case_precision_27(mut value: ()) {
@@ -746,60 +456,40 @@ pub fn test_hex_lower_case_precision_27(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_hex_upper_case_precision_28(mut value: ()) {
@@ -809,80 +499,20 @@ pub fn test_hex_upper_case_precision_28(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -890,80 +520,20 @@ pub fn test_hex_upper_case_precision_28(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_hex_upper_case_precision_29(mut value: ()) {
@@ -973,80 +543,20 @@ pub fn test_hex_upper_case_precision_29(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1054,80 +564,20 @@ pub fn test_hex_upper_case_precision_29(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_hex_upper_case_precision_30(mut value: ()) {
@@ -1137,30 +587,20 @@ pub fn test_hex_upper_case_precision_30(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1168,30 +608,20 @@ pub fn test_hex_upper_case_precision_30(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_hex_upper_case_precision_31(mut value: ()) {
@@ -1201,30 +631,20 @@ pub fn test_hex_upper_case_precision_31(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1232,30 +652,20 @@ pub fn test_hex_upper_case_precision_31(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_scientific_lower_case_precision_32(mut value: ()) {
@@ -1264,160 +674,40 @@ pub fn test_scientific_lower_case_precision_32(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_scientific_lower_case_precision_33(mut value: ()) {
@@ -1426,160 +716,40 @@ pub fn test_scientific_lower_case_precision_33(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_scientific_lower_case_precision_34(mut value: ()) {
@@ -1588,60 +758,40 @@ pub fn test_scientific_lower_case_precision_34(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_scientific_lower_case_precision_35(mut value: ()) {
@@ -1650,60 +800,40 @@ pub fn test_scientific_lower_case_precision_35(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_scientific_upper_case_precision_36(mut value: ()) {
@@ -1713,80 +843,20 @@ pub fn test_scientific_upper_case_precision_36(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1794,80 +864,20 @@ pub fn test_scientific_upper_case_precision_36(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_scientific_upper_case_precision_37(mut value: ()) {
@@ -1877,80 +887,20 @@ pub fn test_scientific_upper_case_precision_37(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1958,80 +908,20 @@ pub fn test_scientific_upper_case_precision_37(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_scientific_upper_case_precision_38(mut value: ()) {
@@ -2041,30 +931,20 @@ pub fn test_scientific_upper_case_precision_38(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2072,30 +952,20 @@ pub fn test_scientific_upper_case_precision_38(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_scientific_upper_case_precision_39(mut value: ()) {
@@ -2105,30 +975,20 @@ pub fn test_scientific_upper_case_precision_39(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2136,30 +996,20 @@ pub fn test_scientific_upper_case_precision_39(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_fixed_lower_case_precision_40(mut value: ()) {
@@ -2168,160 +1018,40 @@ pub fn test_fixed_lower_case_precision_40(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_fixed_lower_case_precision_41(mut value: ()) {
@@ -2330,160 +1060,40 @@ pub fn test_fixed_lower_case_precision_41(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_fixed_lower_case_precision_42(mut value: ()) {
@@ -2492,60 +1102,40 @@ pub fn test_fixed_lower_case_precision_42(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_fixed_lower_case_precision_43(mut value: ()) {
@@ -2554,60 +1144,40 @@ pub fn test_fixed_lower_case_precision_43(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_fixed_upper_case_precision_44(mut value: ()) {
@@ -2617,80 +1187,20 @@ pub fn test_fixed_upper_case_precision_44(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2698,80 +1208,20 @@ pub fn test_fixed_upper_case_precision_44(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_fixed_upper_case_precision_45(mut value: ()) {
@@ -2781,80 +1231,20 @@ pub fn test_fixed_upper_case_precision_45(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2862,80 +1252,20 @@ pub fn test_fixed_upper_case_precision_45(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_fixed_upper_case_precision_46(mut value: ()) {
@@ -2945,30 +1275,20 @@ pub fn test_fixed_upper_case_precision_46(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -2976,30 +1296,20 @@ pub fn test_fixed_upper_case_precision_46(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_fixed_upper_case_precision_47(mut value: ()) {
@@ -3009,30 +1319,20 @@ pub fn test_fixed_upper_case_precision_47(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3040,30 +1340,20 @@ pub fn test_fixed_upper_case_precision_47(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_general_lower_case_precision_48(mut value: ()) {
@@ -3072,160 +1362,40 @@ pub fn test_general_lower_case_precision_48(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_general_lower_case_precision_49(mut value: ()) {
@@ -3234,160 +1404,40 @@ pub fn test_general_lower_case_precision_49(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_general_lower_case_precision_50(mut value: ()) {
@@ -3396,60 +1446,40 @@ pub fn test_general_lower_case_precision_50(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_general_lower_case_precision_51(mut value: ()) {
@@ -3458,60 +1488,40 @@ pub fn test_general_lower_case_precision_51(mut value: ()) {
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut end_ptr: Ptr<()> = { unimplemented!().ptr.clone() };
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_general_upper_case_precision_52(mut value: ()) {
@@ -3521,80 +1531,20 @@ pub fn test_general_upper_case_precision_52(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3602,80 +1552,20 @@ pub fn test_general_upper_case_precision_52(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_16(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_16(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_general_upper_case_precision_53(mut value: ()) {
@@ -3685,80 +1575,20 @@ pub fn test_general_upper_case_precision_53(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3766,80 +1596,20 @@ pub fn test_general_upper_case_precision_53(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { (end).clone() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_17(
-                unimplemented!(),
-                value,
-                Some(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { unimplemented!() },
-                        { unimplemented!() },
-                        None,
-                    ),
-                ),
-            )
-        });
+        ({ test_termination_condition_17(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_general_upper_case_precision_54(mut value: ()) {
@@ -3849,30 +1619,20 @@ pub fn test_general_upper_case_precision_54(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3880,30 +1640,20 @@ pub fn test_general_upper_case_precision_54(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_23(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_19 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_19(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_general_upper_case_precision_55(mut value: ()) {
@@ -3913,30 +1663,20 @@ pub fn test_general_upper_case_precision_55(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
     {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -3944,30 +1684,20 @@ pub fn test_general_upper_case_precision_55(mut value: ()) {
         let mut size: () = ((end_ptr).clone() - unimplemented!()) as ();
         let mut end: () = unimplemented!().offset((size) as isize);
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { (end ).clone() } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         let mut unused: () = (unimplemented!() - (end).clone()) as ();
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
         unimplemented!();
         if ({ signbit_25(value) }) {
             unimplemented!().write(('-' as ()));
             unimplemented!().write(('0' as ()));
         }
-        ({
-            test_termination_condition_20 ( unimplemented!()  , value  , Some ( std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )   ) , )
-        });
+        ({ test_termination_condition_20(unimplemented!(), value, Some(unimplemented!())) });
     }
 }
 pub fn test_value_56(mut value: ()) {

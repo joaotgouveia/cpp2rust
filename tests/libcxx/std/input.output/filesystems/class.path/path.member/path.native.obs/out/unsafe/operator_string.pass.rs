@@ -70,23 +70,17 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let value: *const () = c"hello world".as_ptr();
-    let mut value_str: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ value }, None);
-    let mut pathstr_value: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        );
+    let mut value_str: () = unimplemented!();
+    let mut pathstr_value: () = unimplemented!();
     {
-        let mut p: () = std_filesystem_path::new_1({ &value }, None);
+        let mut p: () = unimplemented!();
         const _: () = assert!(true, "std::is_convertible<path, string_type>::value");;
         const _: () = assert!(true, "std::is_constructible<string_type, path>::value");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let mut p: () = std_filesystem_path::new_1({ &value }, None);
+        let mut p: () = unimplemented!();
         unimplemented!();
         let mut s: () = unimplemented!();
         unimplemented!();

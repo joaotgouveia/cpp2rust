@@ -23,12 +23,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut p: () = std_unique_ptr_int__std_default_delete_int__::new({
-        (Box::leak(Box::new(3_())) as *mut ())
-    });
+    let mut p: () = unimplemented!();
     let mut os: () = unimplemented!();
     unimplemented!();
-    write!(os, "{:}", p,);
+    unimplemented!();
     unimplemented!();
     return 0_();
 }

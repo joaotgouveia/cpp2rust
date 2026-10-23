@@ -28,23 +28,13 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let us: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            std_chrono_duration_double__std_ratio_1__1000000__::new_1({ __tmp_0.as_pointer() })
-        }));
-        let ms: Value<()> = Rc::new(RefCell::new(
-            std_chrono_duration_double__std_ratio_1__1000__::new_1({ us.as_pointer() }),
-        ));
+        let us: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ms: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let us: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-            std_chrono_duration_double__std_ratio_1__1000000__::new_1({ __tmp_1.as_pointer() })
-        }));
-        let ms: Value<()> = Rc::new(RefCell::new(
-            std_chrono_duration_double__std_ratio_1__1000__::new_1({ us.as_pointer() }),
-        ));
+        let us: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ms: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "ms.count() == 1./1000");;
     }
     return 0_();

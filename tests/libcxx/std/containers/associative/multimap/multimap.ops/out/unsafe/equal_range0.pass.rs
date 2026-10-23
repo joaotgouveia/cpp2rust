@@ -165,27 +165,17 @@ pub unsafe fn operator_lt_0(rhs: *const C2Int, mut lhs: ()) -> () {
 pub unsafe fn test_3() -> () {
     {
         let mut example: () = unimplemented!();
-        let mut result: () = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 5_() });
-            example.equal_range_82_struct_C2Int_struct_transparent_less_0(&mut ___k)
-        });
+        let mut result: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut example: () = unimplemented!();
-        let mut result: () = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 5_() });
-            example
-                .equal_range_82_struct_C2Int_struct_transparent_less_not_referenceable_0(&mut ___k)
-        });
+        let mut result: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut example: () = unimplemented!();
-        let mut result: () = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 5_() });
-            example.equal_range_82_struct_C2Int_struct_transparent_less_nonempty_0(&mut ___k)
-        });
+        let mut result: () = unimplemented!();
         unimplemented!();
     }
     return true;

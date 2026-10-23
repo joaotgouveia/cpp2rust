@@ -28,20 +28,12 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__short_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__short_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        }));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::get<0>(p1) == 3");;
         const _: () = assert!(true, "std::get<1>(p1) == 4");;
     }

@@ -22,10 +22,7 @@ impl Comp {
 }
 pub unsafe fn test_0() -> () {
     let mut s: () = unimplemented!();
-    let mut cnt: () = (unsafe {
-        let mut ___k: () = 1_();
-        s.count(&mut ___k)
-    });
+    let mut cnt: () = unimplemented!();
     unimplemented!();
     return true;
 }

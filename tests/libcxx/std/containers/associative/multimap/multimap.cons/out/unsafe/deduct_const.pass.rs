@@ -382,178 +382,58 @@ impl Tag_X {
 pub unsafe fn test_11() -> () {
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_0: () = 1_();
-                let mut __tmp_1: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-            },
-            {
-                let mut __tmp_2: () = 2_();
-                let mut __tmp_3: () = 2_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-            },
-            {
-                let mut __tmp_4: () = 1_();
-                let mut __tmp_5: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-            },
-            {
-                let mut __tmp_6: () = 2147483647_();
-                let mut __tmp_7: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-            },
-            {
-                let mut __tmp_8: () = 3_();
-                let mut __tmp_9: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         let expected_m: [(); 5] = [
-            {
-                let mut __tmp_10: () = 1_();
-                let mut __tmp_11: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-            },
-            {
-                let mut __tmp_12: () = 1_();
-                let mut __tmp_13: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-            },
-            {
-                let mut __tmp_14: () = 2_();
-                let mut __tmp_15: () = 2_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-            },
-            {
-                let mut __tmp_16: () = 3_();
-                let mut __tmp_17: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_16 }, { &mut __tmp_17 })
-            },
-            {
-                let mut __tmp_18: () = 2147483647_();
-                let mut __tmp_19: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_18 }, { &mut __tmp_19 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
     }
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_20: () = 1_();
-                let mut __tmp_21: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_20 }, { &mut __tmp_21 })
-            },
-            {
-                let mut __tmp_22: () = 2_();
-                let mut __tmp_23: () = 2_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_22 }, { &mut __tmp_23 })
-            },
-            {
-                let mut __tmp_24: () = 1_();
-                let mut __tmp_25: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_24 }, { &mut __tmp_25 })
-            },
-            {
-                let mut __tmp_26: () = 2147483647_();
-                let mut __tmp_27: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_26 }, { &mut __tmp_27 })
-            },
-            {
-                let mut __tmp_28: () = 3_();
-                let mut __tmp_29: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_28 }, { &mut __tmp_29 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         let expected_m: [(); 5] = [
-            {
-                let mut __tmp_30: () = 2147483647_();
-                let mut __tmp_31: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_30 }, { &mut __tmp_31 })
-            },
-            {
-                let mut __tmp_32: () = 3_();
-                let mut __tmp_33: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_32 }, { &mut __tmp_33 })
-            },
-            {
-                let mut __tmp_34: () = 2_();
-                let mut __tmp_35: () = 2_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_34 }, { &mut __tmp_35 })
-            },
-            {
-                let mut __tmp_36: () = 1_();
-                let mut __tmp_37: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_36 }, { &mut __tmp_37 })
-            },
-            {
-                let mut __tmp_38: () = 1_();
-                let mut __tmp_39: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_38 }, { &mut __tmp_39 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
     }
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_40: () = 1_();
-                let mut __tmp_41: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_40 }, { &mut __tmp_41 })
-            },
-            {
-                let mut __tmp_42: () = 2_();
-                let mut __tmp_43: () = 2_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_42 }, { &mut __tmp_43 })
-            },
-            {
-                let mut __tmp_44: () = 1_();
-                let mut __tmp_45: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_44 }, { &mut __tmp_45 })
-            },
-            {
-                let mut __tmp_46: () = 2147483647_();
-                let mut __tmp_47: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_46 }, { &mut __tmp_47 })
-            },
-            {
-                let mut __tmp_48: () = 3_();
-                let mut __tmp_49: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_48 }, { &mut __tmp_49 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         let expected_m: [(); 5] = [
-            {
-                let mut __tmp_50: () = 2147483647_();
-                let mut __tmp_51: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_50 }, { &mut __tmp_51 })
-            },
-            {
-                let mut __tmp_52: () = 3_();
-                let mut __tmp_53: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_52 }, { &mut __tmp_53 })
-            },
-            {
-                let mut __tmp_54: () = 2_();
-                let mut __tmp_55: () = 2_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_54 }, { &mut __tmp_55 })
-            },
-            {
-                let mut __tmp_56: () = 1_();
-                let mut __tmp_57: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_56 }, { &mut __tmp_57 })
-            },
-            {
-                let mut __tmp_58: () = 1_();
-                let mut __tmp_59: () = 1_();
-                std_pair_const_int__const_long_::new({ &mut __tmp_58 }, { &mut __tmp_59 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
         unimplemented!();
@@ -562,31 +442,11 @@ pub unsafe fn test_11() -> () {
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         let expected_m: [(); 5] = [
-            {
-                let mut __tmp_60: () = 1_();
-                let mut __tmp_61: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_60 }, { &mut __tmp_61 })
-            },
-            {
-                let mut __tmp_62: () = 1_();
-                let mut __tmp_63: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_62 }, { &mut __tmp_63 })
-            },
-            {
-                let mut __tmp_64: () = 2_();
-                let mut __tmp_65: () = 2_();
-                std_pair_const_int__long_::new({ &mut __tmp_64 }, { &mut __tmp_65 })
-            },
-            {
-                let mut __tmp_66: () = 3_();
-                let mut __tmp_67: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_66 }, { &mut __tmp_67 })
-            },
-            {
-                let mut __tmp_68: () = 2147483647_();
-                let mut __tmp_69: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_68 }, { &mut __tmp_69 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
     }
@@ -594,31 +454,11 @@ pub unsafe fn test_11() -> () {
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         let expected_m: [(); 5] = [
-            {
-                let mut __tmp_70: () = 2147483647_();
-                let mut __tmp_71: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_70 }, { &mut __tmp_71 })
-            },
-            {
-                let mut __tmp_72: () = 3_();
-                let mut __tmp_73: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_72 }, { &mut __tmp_73 })
-            },
-            {
-                let mut __tmp_74: () = 2_();
-                let mut __tmp_75: () = 2_();
-                std_pair_const_int__long_::new({ &mut __tmp_74 }, { &mut __tmp_75 })
-            },
-            {
-                let mut __tmp_76: () = 1_();
-                let mut __tmp_77: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_76 }, { &mut __tmp_77 })
-            },
-            {
-                let mut __tmp_78: () = 1_();
-                let mut __tmp_79: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_78 }, { &mut __tmp_79 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
     }
@@ -626,31 +466,11 @@ pub unsafe fn test_11() -> () {
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         let expected_m: [(); 5] = [
-            {
-                let mut __tmp_80: () = 2147483647_();
-                let mut __tmp_81: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_80 }, { &mut __tmp_81 })
-            },
-            {
-                let mut __tmp_82: () = 3_();
-                let mut __tmp_83: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_82 }, { &mut __tmp_83 })
-            },
-            {
-                let mut __tmp_84: () = 2_();
-                let mut __tmp_85: () = 2_();
-                std_pair_const_int__long_::new({ &mut __tmp_84 }, { &mut __tmp_85 })
-            },
-            {
-                let mut __tmp_86: () = 1_();
-                let mut __tmp_87: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_86 }, { &mut __tmp_87 })
-            },
-            {
-                let mut __tmp_88: () = 1_();
-                let mut __tmp_89: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_88 }, { &mut __tmp_89 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
         unimplemented!();
@@ -659,31 +479,11 @@ pub unsafe fn test_11() -> () {
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         let expected_m: [(); 5] = [
-            {
-                let mut __tmp_90: () = 1_();
-                let mut __tmp_91: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_90 }, { &mut __tmp_91 })
-            },
-            {
-                let mut __tmp_92: () = 1_();
-                let mut __tmp_93: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_92 }, { &mut __tmp_93 })
-            },
-            {
-                let mut __tmp_94: () = 2_();
-                let mut __tmp_95: () = 2_();
-                std_pair_const_int__long_::new({ &mut __tmp_94 }, { &mut __tmp_95 })
-            },
-            {
-                let mut __tmp_96: () = 3_();
-                let mut __tmp_97: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_96 }, { &mut __tmp_97 })
-            },
-            {
-                let mut __tmp_98: () = 2147483647_();
-                let mut __tmp_99: () = 1_();
-                std_pair_const_int__long_::new({ &mut __tmp_98 }, { &mut __tmp_99 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         unimplemented!();
         unimplemented!();

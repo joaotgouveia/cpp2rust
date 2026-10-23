@@ -290,23 +290,29 @@ pub fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_7(_i, n)
     });
 }
-pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_9(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_10(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -352,7 +358,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_12(
+            operator_cmp_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -377,7 +383,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_11(
+            operator_eq_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -462,7 +468,7 @@ impl util_iterator_error {
     }
 }
 thread_local!(
-    pub static globalBuff_13: Value<Box<[()]>> = Rc::new(RefCell::new(
+    pub static globalBuff_14: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
 );
@@ -546,7 +552,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeCBeginT, BeginMember const&&>"
 );
-pub fn testReturnTypes_14() -> () {
+pub fn testReturnTypes_15() -> () {
     {
         let x: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(
             (0..2)
@@ -566,7 +572,7 @@ pub fn testReturnTypes_14() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let x: Value<Different_15> = Rc::new(RefCell::new(<Different_15>::default()));
+        let x: Value<Different_16> = Rc::new(RefCell::new(<Different_16>::default()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
@@ -574,8 +580,8 @@ pub fn testReturnTypes_14() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct Different_15 {}
-pub fn testArray_16() -> () {
+pub struct Different_16 {}
+pub fn testArray_17() -> () {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
@@ -657,7 +663,7 @@ const _: () = assert!(
 #[byte_size(1)]
 pub struct EnabledBorrowingBeginMember {}
 thread_local!(
-    pub static enable_borrowed_range_17: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_18: Value<()> = Rc::new(RefCell::new(true));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -675,7 +681,7 @@ pub struct EmptyPtrBeginMember {
     #[byte_size(1)]
     pub x: EmptyPtrBeginMember_Empty,
 }
-pub fn testBeginMember_18() -> () {
+pub fn testBeginMember_19() -> () {
     let a: Value<BeginMember> = Rc::new(RefCell::new(<BeginMember>::default()));
     unimplemented!();
     unimplemented!();
@@ -701,7 +707,7 @@ pub fn testBeginMember_18() -> () {
     unimplemented!();
     return true;
 }
-pub fn begin_19(bf: Ptr<BeginFunction>) -> Ptr<()> {
+pub fn begin_20(bf: Ptr<BeginFunction>) -> Ptr<()> {
     return (field_ptr!(bf, x));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -745,8 +751,8 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeBeginT, BeginFunctionReturnsPtrConvertible const&>"
 );
-pub fn begin_20(mut _a0: BeginFunctionByValue) -> Ptr<()> {
-    return ((globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>).offset(1_()));
+pub fn begin_21(mut _a0: BeginFunctionByValue) -> Ptr<()> {
+    return ((globalBuff_14.with(|v| v.as_pointer()) as Ptr<()>).offset(1_()));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -755,16 +761,16 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeCBeginT, BeginFunctionByValue>"
 );
-pub fn begin_21(mut _a0: BeginFunctionEnabledBorrowing) -> Ptr<()> {
-    return ((globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>).offset(2_()));
+pub fn begin_22(mut _a0: BeginFunctionEnabledBorrowing) -> Ptr<()> {
+    return ((globalBuff_14.with(|v| v.as_pointer()) as Ptr<()>).offset(2_()));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BeginFunctionEnabledBorrowing {}
 thread_local!(
-    pub static enable_borrowed_range_22: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_23: Value<()> = Rc::new(RefCell::new(true));
 );
-pub fn begin_23(bf: Ptr<BeginFunctionReturnsEmptyPtr>) -> Ptr<BeginFunctionReturnsEmptyPtr_Empty> {
+pub fn begin_24(bf: Ptr<BeginFunctionReturnsEmptyPtr>) -> Ptr<BeginFunctionReturnsEmptyPtr_Empty> {
     return (field_ptr!(bf, x));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -777,7 +783,7 @@ pub struct BeginFunctionReturnsEmptyPtr {
     #[byte_size(1)]
     pub x: BeginFunctionReturnsEmptyPtr_Empty,
 }
-pub fn begin_24(bf: Ptr<BeginFunctionWithDataMember>) -> Ptr<()> {
+pub fn begin_25(bf: Ptr<BeginFunctionWithDataMember>) -> Ptr<()> {
     return (field_ptr!(bf, x));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -788,7 +794,7 @@ pub struct BeginFunctionWithDataMember {
     #[offset(4)]
     pub begin: (),
 }
-pub fn begin_25(bf: Ptr<BeginFunctionWithPrivateBeginMember>) -> Ptr<()> {
+pub fn begin_26(bf: Ptr<BeginFunctionWithPrivateBeginMember>) -> Ptr<()> {
     return (field_ptr!(bf, y));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -797,7 +803,7 @@ pub struct BeginFunctionWithPrivateBeginMember {
     #[offset(0)]
     pub y: (),
 }
-pub fn testBeginFunction_26() -> () {
+pub fn testBeginFunction_27() -> () {
     let a: Value<BeginFunction> = Rc::new(RefCell::new(<BeginFunction>::default()));
     let aa: Value<BeginFunction> = Rc::new(RefCell::new(<BeginFunction>::default()));
     unimplemented!();
@@ -852,7 +858,7 @@ const _: () = assert!(true, "");
 #[byte_size(1)]
 pub struct NoThrowMemberBegin {}
 thread_local!(
-    pub static ntmb_27: Value<NoThrowMemberBegin> =
+    pub static ntmb_28: Value<NoThrowMemberBegin> =
         Rc::new(RefCell::new(<NoThrowMemberBegin>::default()));
 );
 const _: () = assert!(true, "noexcept(std::ranges::begin(ntmb))");
@@ -861,7 +867,7 @@ const _: () = assert!(true, "noexcept(std::ranges::cbegin(ntmb))");
 #[byte_size(1)]
 pub struct NoThrowADLBegin {}
 thread_local!(
-    pub static ntab_28: Value<NoThrowADLBegin> =
+    pub static ntab_29: Value<NoThrowADLBegin> =
         Rc::new(RefCell::new(<NoThrowADLBegin>::default()));
 );
 const _: () = assert!(true, "noexcept(std::ranges::begin(ntab))");
@@ -870,7 +876,7 @@ const _: () = assert!(true, "noexcept(std::ranges::cbegin(ntab))");
 #[byte_size(1)]
 pub struct NoThrowMemberBeginReturnsRef {}
 thread_local!(
-    pub static ntmbrr_29: Value<NoThrowMemberBeginReturnsRef> =
+    pub static ntmbrr_30: Value<NoThrowMemberBeginReturnsRef> =
         Rc::new(RefCell::new(<NoThrowMemberBeginReturnsRef>::default()));
 );
 const _: () = assert!(true, "!noexcept(std::ranges::begin(ntmbrr))");
@@ -879,7 +885,7 @@ const _: () = assert!(true, "!noexcept(std::ranges::cbegin(ntmbrr))");
 #[byte_size(1)]
 pub struct BeginReturnsArrayRef {}
 thread_local!(
-    pub static brar_30: Value<BeginReturnsArrayRef> =
+    pub static brar_31: Value<BeginReturnsArrayRef> =
         Rc::new(RefCell::new(<BeginReturnsArrayRef>::default()));
 );
 const _: () = assert!(true, "noexcept(std::ranges::begin(brar))");
@@ -921,11 +927,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "testReturnTypes()");;
-    ({ testArray_16() });
+    ({ testArray_17() });
     const _: () = assert!(true, "testArray()");;
-    ({ testBeginMember_18() });
+    ({ testBeginMember_19() });
     const _: () = assert!(true, "testBeginMember()");;
-    ({ testBeginFunction_26() });
+    ({ testBeginFunction_27() });
     const _: () = assert!(true, "testBeginFunction()");;
     return 0_();
 }
@@ -978,7 +984,7 @@ pub trait BeginReturnsArrayRefImpl {
     }
 }
 impl BeginReturnsArrayRefImpl for Ptr<BeginReturnsArrayRef> {}
-pub trait Different_15Impl {
+pub trait Different_16Impl {
     fn begin_1(&self) -> Ptr<Ptr<()>> {
         unimplemented!()
     }
@@ -986,7 +992,7 @@ pub trait Different_15Impl {
         unimplemented!()
     }
 }
-impl Different_15Impl for Ptr<Different_15> {}
+impl Different_16Impl for Ptr<Different_16> {}
 pub trait EmptyBeginMemberImpl {
     fn begin(&self) -> EmptyBeginMember_iterator {
         unimplemented!()
@@ -1006,7 +1012,7 @@ pub trait EnabledBorrowingBeginMemberImpl {
 }
 impl EnabledBorrowingBeginMemberImpl for Ptr<EnabledBorrowingBeginMember> {
     fn begin(&self) -> Ptr<()> {
-        return ((globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>).offset(0_()));
+        return ((globalBuff_14.with(|v| v.as_pointer()) as Ptr<()>).offset(0_()));
     }
 }
 pub trait NoThrowMemberBeginImpl {
@@ -1330,11 +1336,11 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = globalBuff_13.with(|_| ());
-    let _ = enable_borrowed_range_17.with(|_| ());
-    let _ = enable_borrowed_range_22.with(|_| ());
-    let _ = ntmb_27.with(|_| ());
-    let _ = ntab_28.with(|_| ());
-    let _ = ntmbrr_29.with(|_| ());
-    let _ = brar_30.with(|_| ());
+    let _ = globalBuff_14.with(|_| ());
+    let _ = enable_borrowed_range_18.with(|_| ());
+    let _ = enable_borrowed_range_23.with(|_| ());
+    let _ = ntmb_28.with(|_| ());
+    let _ = ntab_29.with(|_| ());
+    let _ = ntmbrr_30.with(|_| ());
+    let _ = brar_31.with(|_| ());
 }

@@ -39,15 +39,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::chrono::make12(hours(12)) == hours(12)");;
     const _: () = assert!(true, "std::chrono::make12(hours(23)) == hours(11)");;
     unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new(1_()));
-    'loop_: while ((*i.borrow()) < 13_()) {
+    let mut i: () = 1_();
+    'loop_: while (i < 13_()) {
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
-    let i: Value<()> = Rc::new(RefCell::new(13_()));
-    'loop_: while ((*i.borrow()) < 24_()) {
+    let mut i: () = 13_();
+    'loop_: while (i < 24_()) {
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
     return 0_();
 }

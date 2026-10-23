@@ -264,7 +264,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     {
-        let mut o: () = std_optional_int_::new_1({ unimplemented!() });
+        let mut o: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -309,10 +309,7 @@ unsafe fn main_0() -> () {
         );;
     }
     {
-        let mut o: () = {
-            let mut __tmp_0: () = 42_();
-            std_optional_int_::new_2({ unimplemented!() }, { &mut __tmp_0 })
-        };
+        let mut o: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -353,15 +350,7 @@ unsafe fn main_0() -> () {
         }
     }
     {
-        let mut o: () = {
-            let mut __tmp_1: () = 18_();
-            let mut __tmp_2: () = 4_();
-            std_optional_std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                { &mut __tmp_1 },
-                { &mut __tmp_2 },
-            )
-        };
+        let mut o: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -421,10 +410,7 @@ unsafe fn main_0() -> () {
         }
     }
     {
-        let mut o: () =
-            std_optional_std_vector_int__std_allocator_int___::new_2({ unimplemented!() }, {
-                unimplemented!()
-            });
+        let mut o: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -484,14 +470,7 @@ unsafe fn main_0() -> () {
         }
     }
     {
-        let mut o: () = {
-            let mut __tmp_3: () = unimplemented!();
-            std_optional_std_vector_int__std_allocator_int___::new_3(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_3 },
-            )
-        };
+        let mut o: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -668,8 +647,7 @@ pub unsafe fn verify_demangle_18(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -680,11 +658,7 @@ pub unsafe fn run_tests_wrapped_locale_20(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -692,11 +666,7 @@ pub unsafe fn run_tests_wrapped_locale_20(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -708,10 +678,7 @@ pub unsafe fn run_tests_wrapped_locale_20(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -734,10 +701,7 @@ pub unsafe fn run_tests_wrapped_env_21(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

@@ -59,7 +59,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let x: Value<X> = Rc::new(RefCell::new(<X>::default()));
             let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-            let opt: Value<()> = Rc::new(RefCell::new(std_optional_X_::new_1({ x.as_pointer() })));
+            let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         unimplemented!();

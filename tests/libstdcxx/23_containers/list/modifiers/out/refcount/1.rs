@@ -356,7 +356,7 @@ pub fn modifiers1_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unimplemented!())
-            && (({ __gnu_test_copy_trackerImpl::id(&b.as_pointer()) }) == 11_()))
+            && (({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 11_()))
         {
             ({
                 __builtin_fprintf_11(
@@ -402,7 +402,7 @@ pub fn modifiers1_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ __gnu_test_copy_trackerImpl::id(&m.as_pointer()) }) == 11_()) {
+        if !(({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 11_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -472,7 +472,7 @@ pub fn modifiers1_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unimplemented!())
-            && (({ __gnu_test_copy_trackerImpl::id(&b.as_pointer()) }) == 11_()))
+            && (({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 11_()))
         {
             ({
                 __builtin_fprintf_11(
@@ -518,7 +518,7 @@ pub fn modifiers1_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ __gnu_test_copy_trackerImpl::id(&m.as_pointer()) }) == 13_()) {
+        if !(({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 13_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -587,7 +587,7 @@ pub fn modifiers1_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unimplemented!())
-            && (({ __gnu_test_copy_trackerImpl::id(&b.as_pointer()) }) == 11_()))
+            && (({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 11_()))
         {
             ({
                 __builtin_fprintf_11(
@@ -633,7 +633,7 @@ pub fn modifiers1_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ __gnu_test_copy_trackerImpl::id(&m.as_pointer()) }) == 13_()) {
+        if !(({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 13_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -701,7 +701,7 @@ pub fn modifiers1_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ __gnu_test_copy_trackerImpl::id(&m.as_pointer()) }) == 13_()) {
+        if !(({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 13_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -725,11 +725,7 @@ pub fn modifiers1_10() {
         (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     ({ __gnu_test_copy_tracker::reset() });
     unimplemented!();
-    ({
-        let ___first: Ptr<()> = (A.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (A.as_pointer() as Ptr<()>).offset((N) as isize);
-        (*list0301.borrow()).insert_56_const_int_ptr_void(unimplemented!(), ___first, ___last)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -777,7 +773,7 @@ pub fn modifiers1_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ __gnu_test_copy_trackerImpl::id(&m.as_pointer()) }) == 13_()) {
+        if !(({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 13_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -797,11 +793,7 @@ pub fn modifiers1_10() {
         }
     }
     ({ __gnu_test_copy_tracker::reset() });
-    ({
-        let ___first: Ptr<()> = (A.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (A.as_pointer() as Ptr<()>).offset((N) as isize);
-        (*list0301.borrow()).insert_56_const_int_ptr_void(unimplemented!(), ___first, ___last)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -871,7 +863,7 @@ pub fn modifiers1_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ __gnu_test_copy_trackerImpl::id(&m.as_pointer()) }) == 13_()) {
+        if !(({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 13_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -891,11 +883,7 @@ pub fn modifiers1_10() {
         }
     }
     ({ __gnu_test_copy_tracker::reset() });
-    ({
-        let ___first: Ptr<()> = (A.as_pointer() as Ptr<()>);
-        let ___last: Ptr<()> = (A.as_pointer() as Ptr<()>).offset((N) as isize);
-        (*list0301.borrow()).insert_56_const_int_ptr_void(unimplemented!(), ___first, ___last)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -965,7 +953,7 @@ pub fn modifiers1_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ __gnu_test_copy_trackerImpl::id(&m.as_pointer()) }) == 13_()) {
+        if !(({ __gnu_test_copy_trackerImpl::id(&unimplemented!()) }) == 13_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1158,10 +1146,7 @@ pub fn verify_demangle_19(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -1172,22 +1157,14 @@ pub fn run_tests_wrapped_locale_21(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1199,10 +1176,7 @@ pub fn run_tests_wrapped_locale_21(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1224,10 +1198,7 @@ pub fn run_tests_wrapped_env_22(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

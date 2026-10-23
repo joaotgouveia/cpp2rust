@@ -65,10 +65,7 @@ pub struct min_allocator_int_ {}
 pub fn test_4() -> () {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a.as_pointer() as Ptr<()>) },
-            { (a.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -78,10 +75,7 @@ pub fn test_4() -> () {
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-            { (a.as_pointer() as Ptr<()>) },
-            { (a.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

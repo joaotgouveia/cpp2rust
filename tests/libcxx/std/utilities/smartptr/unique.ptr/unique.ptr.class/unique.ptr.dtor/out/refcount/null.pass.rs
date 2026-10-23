@@ -26,8 +26,7 @@ pub fn test_basic_0() {
     let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
     unimplemented!();
     {
-        let mut p: () =
-            std_unique_ptr_int__Deleter_ref_::new({ unimplemented!() }, { d.as_pointer() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -37,8 +36,7 @@ pub fn test_basic_1() {
     let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
     unimplemented!();
     {
-        let mut p: () =
-            std_unique_ptr_intarrarr__Deleter_ref_::new({ Default::default() }, { d.as_pointer() });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -802,23 +802,29 @@ pub fn operator_add_19(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_18(_i, n)
     });
 }
-pub fn iter_swap_20(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_20(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_21(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_21(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_22(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_22(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -864,7 +870,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_23(
+            operator_cmp_24(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -889,7 +895,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_22(
+            operator_eq_23(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -973,70 +979,70 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn operator_sub_24(
+pub fn operator_sub_25(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_25(
+pub fn operator_sub_26(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<cpp20_input_iterator_int_ptr_>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_26(
+pub fn operator_sub_27(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<forward_iterator_int_ptr_>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_27(
+pub fn operator_sub_28(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<operation_counting_iterator_forward_iterator_int_ptr__>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_28(
+pub fn operator_sub_29(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<bidirectional_iterator_int_ptr_>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_29(
+pub fn operator_sub_30(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<operation_counting_iterator_bidirectional_iterator_int_ptr__>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_30(
+pub fn operator_sub_31(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_31(
+pub fn operator_sub_32(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<operation_counting_iterator_random_access_iterator_int_ptr__>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_32(
+pub fn operator_sub_33(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<contiguous_iterator_int_ptr_>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_33(
+pub fn operator_sub_34(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<operation_counting_iterator_contiguous_iterator_int_ptr__>,
 ) -> () {
     return x.count_;
 }
-pub fn operator_sub_34(mut x: distance_apriori_sentinel, _a1: Ptr<Ptr<()>>) -> () {
+pub fn operator_sub_35(mut x: distance_apriori_sentinel, _a1: Ptr<Ptr<()>>) -> () {
     return x.count_;
 }
-pub fn operator_sub_35(
+pub fn operator_sub_36(
     mut x: distance_apriori_sentinel,
     _a1: Ptr<operation_counting_iterator_int_ptr_>,
 ) -> () {
@@ -1226,7 +1232,7 @@ impl assignable_sentinel_operation_counting_iterator_int_ptr__ {
         }
     }
 }
-pub fn check_assignable_36(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_assignable_37(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     {
         let it: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
             Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
@@ -1241,13 +1247,13 @@ pub fn check_assignable_36(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 __tmp_0.as_pointer()
             })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {}
 }
-pub fn check_assignable_38(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_assignable_39(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     {
         let it: Value<cpp20_input_iterator_int_ptr_> =
             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
@@ -1260,13 +1266,13 @@ pub fn check_assignable_38(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 })));
             assignable_sentinel_cpp20_input_iterator_int_ptr__::new_1({ __tmp_1.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {}
 }
-pub fn check_assignable_39(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_assignable_40(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     {
         let it: Value<forward_iterator_int_ptr_> =
             Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
@@ -1279,7 +1285,7 @@ pub fn check_assignable_39(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 })));
             assignable_sentinel_forward_iterator_int_ptr__::new_1({ __tmp_2.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1312,12 +1318,12 @@ pub fn check_assignable_39(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 __tmp_4.as_pointer()
             })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_assignable_40(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_assignable_41(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     {
         let it: Value<bidirectional_iterator_int_ptr_> =
             Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
@@ -1330,7 +1336,7 @@ pub fn check_assignable_40(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 })));
             assignable_sentinel_bidirectional_iterator_int_ptr__::new_1({ __tmp_6.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1348,12 +1354,12 @@ pub fn check_assignable_40(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 )
             }));
         let mut sent : assignable_sentinel_operation_counting_iterator_bidirectional_iterator_int_ptr___  = { let __tmp_8 : Value<operation_counting_iterator_bidirectional_iterator_int_ptr__ > = Rc::new(RefCell::new({ let __tmp_9 : Value<bidirectional_iterator_int_ptr_ > = Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ :: new_1 ( { (last ).clone() } , )  )); operation_counting_iterator_bidirectional_iterator_int_ptr__ :: new_1 ( { __tmp_9.as_pointer() } , { Some ( ( ops .as_pointer()  )  ) } , )  } )); assignable_sentinel_operation_counting_iterator_bidirectional_iterator_int_ptr___ :: new_1 ( { __tmp_8.as_pointer() } , )  }  ;
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_assignable_41(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_assignable_42(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     {
         let it: Value<random_access_iterator_int_ptr_> =
             Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
@@ -1366,7 +1372,7 @@ pub fn check_assignable_41(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 })));
             assignable_sentinel_random_access_iterator_int_ptr__::new_1({ __tmp_10.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1384,12 +1390,12 @@ pub fn check_assignable_41(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 )
             }));
         let mut sent : assignable_sentinel_operation_counting_iterator_random_access_iterator_int_ptr___  = { let __tmp_12 : Value<operation_counting_iterator_random_access_iterator_int_ptr__ > = Rc::new(RefCell::new({ let __tmp_13 : Value<random_access_iterator_int_ptr_ > = Rc::new(RefCell::new(random_access_iterator_int_ptr_ :: new_1 ( { (last ).clone() } , )  )); operation_counting_iterator_random_access_iterator_int_ptr__ :: new_1 ( { __tmp_13.as_pointer() } , { Some ( ( ops .as_pointer()  )  ) } , )  } )); assignable_sentinel_operation_counting_iterator_random_access_iterator_int_ptr___ :: new_1 ( { __tmp_12.as_pointer() } , )  }  ;
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_assignable_42(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_assignable_43(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     {
         let it: Value<contiguous_iterator_int_ptr_> =
             Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
@@ -1402,7 +1408,7 @@ pub fn check_assignable_42(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 })));
             assignable_sentinel_contiguous_iterator_int_ptr__::new_1({ __tmp_14.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1420,19 +1426,19 @@ pub fn check_assignable_42(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 )
             }));
         let mut sent : assignable_sentinel_operation_counting_iterator_contiguous_iterator_int_ptr___  = { let __tmp_16 : Value<operation_counting_iterator_contiguous_iterator_int_ptr__ > = Rc::new(RefCell::new({ let __tmp_17 : Value<contiguous_iterator_int_ptr_ > = Rc::new(RefCell::new(contiguous_iterator_int_ptr_ :: new_1 ( { (last ).clone() } , )  )); operation_counting_iterator_contiguous_iterator_int_ptr__ :: new_1 ( { __tmp_17.as_pointer() } , { Some ( ( ops .as_pointer()  )  ) } , )  } )); assignable_sentinel_operation_counting_iterator_contiguous_iterator_int_ptr___ :: new_1 ( { __tmp_16.as_pointer() } , )  }  ;
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_assignable_43(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_assignable_44(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     {
         let it: Value<Ptr<()>> = Rc::new(RefCell::new((first).clone()));
         let mut sent: assignable_sentinel_int_ptr_ = {
             let __tmp_18: Value<Ptr<()>> = Rc::new(RefCell::new((last).clone()));
             assignable_sentinel_int_ptr_::new_1({ __tmp_18.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1455,12 +1461,12 @@ pub fn check_assignable_43(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: 
                 __tmp_20.as_pointer()
             })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_sized_sentinel_44(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sized_sentinel_45(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -1469,22 +1475,7 @@ pub fn check_sized_sentinel_44(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
             })));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {}
-}
-pub fn check_sized_sentinel_45(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
-    let mut size: () = (((last).clone() - (first).clone()) as ());
-    {
-        let it: Value<cpp20_input_iterator_int_ptr_> =
-            Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
-                (first).clone()
-            })));
-        let mut sent: distance_apriori_sentinel =
-            distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1493,13 +1484,28 @@ pub fn check_sized_sentinel_45(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
 pub fn check_sized_sentinel_46(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
+        let it: Value<cpp20_input_iterator_int_ptr_> =
+            Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
+                (first).clone()
+            })));
+        let mut sent: distance_apriori_sentinel =
+            distance_apriori_sentinel::new_1({ (size as ()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {}
+}
+pub fn check_sized_sentinel_47(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+    let mut size: () = (((last).clone() - (first).clone()) as ());
+    {
         let it: Value<forward_iterator_int_ptr_> =
             Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
                 (first).clone()
             })));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1518,7 +1524,7 @@ pub fn check_sized_sentinel_46(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
             }));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         {
             let mut big: () = (unimplemented!().read());
             let mut small: () = (unimplemented!().read());
@@ -1527,7 +1533,7 @@ pub fn check_sized_sentinel_46(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
         }
     }
 }
-pub fn check_sized_sentinel_47(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sized_sentinel_48(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<bidirectional_iterator_int_ptr_> =
@@ -1536,7 +1542,7 @@ pub fn check_sized_sentinel_47(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
             })));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1555,7 +1561,7 @@ pub fn check_sized_sentinel_47(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
             }));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         {
             let mut big: () = (unimplemented!().read());
             let mut small: () = (unimplemented!().read());
@@ -1564,7 +1570,7 @@ pub fn check_sized_sentinel_47(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
         }
     }
 }
-pub fn check_sized_sentinel_48(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sized_sentinel_49(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<random_access_iterator_int_ptr_> =
@@ -1573,7 +1579,7 @@ pub fn check_sized_sentinel_48(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
             })));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1592,13 +1598,13 @@ pub fn check_sized_sentinel_48(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
             }));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         {
             unimplemented!();
         }
     }
 }
-pub fn check_sized_sentinel_49(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sized_sentinel_50(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<contiguous_iterator_int_ptr_> =
@@ -1607,7 +1613,7 @@ pub fn check_sized_sentinel_49(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
             })));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1626,19 +1632,19 @@ pub fn check_sized_sentinel_49(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
             }));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         {
             unimplemented!();
         }
     }
 }
-pub fn check_sized_sentinel_50(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sized_sentinel_51(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<Ptr<()>> = Rc::new(RefCell::new((first).clone()));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1652,13 +1658,13 @@ pub fn check_sized_sentinel_50(mut first: Ptr<()>, mut last: Ptr<()>, mut expect
         }));
         let mut sent: distance_apriori_sentinel =
             distance_apriori_sentinel::new_1({ (size as ()) });
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         {
             unimplemented!();
         }
     }
 }
-pub fn check_sentinel_51(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sentinel_52(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
@@ -1674,13 +1680,13 @@ pub fn check_sentinel_51(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 __tmp_27.as_pointer()
             })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {}
 }
-pub fn check_sentinel_52(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sentinel_53(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<cpp20_input_iterator_int_ptr_> =
@@ -1694,13 +1700,13 @@ pub fn check_sentinel_52(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 })));
             sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ __tmp_28.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {}
 }
-pub fn check_sentinel_53(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sentinel_54(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<forward_iterator_int_ptr_> =
@@ -1714,7 +1720,7 @@ pub fn check_sentinel_53(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 })));
             sentinel_wrapper_forward_iterator_int_ptr__::new_1({ __tmp_29.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1747,14 +1753,14 @@ pub fn check_sentinel_53(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 __tmp_31.as_pointer()
             })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         let mut big: () = (unimplemented!().read());
         let mut small: () = (unimplemented!().read());
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_sentinel_54(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sentinel_55(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<bidirectional_iterator_int_ptr_> =
@@ -1768,7 +1774,7 @@ pub fn check_sentinel_54(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 })));
             sentinel_wrapper_bidirectional_iterator_int_ptr__::new_1({ __tmp_33.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1786,14 +1792,14 @@ pub fn check_sentinel_54(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 )
             }));
         let mut sent : sentinel_wrapper_operation_counting_iterator_bidirectional_iterator_int_ptr___  = { let __tmp_35 : Value<operation_counting_iterator_bidirectional_iterator_int_ptr__ > = Rc::new(RefCell::new({ let __tmp_36 : Value<bidirectional_iterator_int_ptr_ > = Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ :: new_1 ( { (last ).clone() } , )  )); operation_counting_iterator_bidirectional_iterator_int_ptr__ :: new_1 ( { __tmp_36.as_pointer() } , { Some ( ( ops .as_pointer()  )  ) } , )  } )); sentinel_wrapper_operation_counting_iterator_bidirectional_iterator_int_ptr___ :: new_1 ( { __tmp_35.as_pointer() } , )  }  ;
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         let mut big: () = (unimplemented!().read());
         let mut small: () = (unimplemented!().read());
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_sentinel_55(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sentinel_56(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<random_access_iterator_int_ptr_> =
@@ -1807,7 +1813,7 @@ pub fn check_sentinel_55(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 })));
             sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ __tmp_37.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1825,14 +1831,14 @@ pub fn check_sentinel_55(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 )
             }));
         let mut sent : sentinel_wrapper_operation_counting_iterator_random_access_iterator_int_ptr___  = { let __tmp_39 : Value<operation_counting_iterator_random_access_iterator_int_ptr__ > = Rc::new(RefCell::new({ let __tmp_40 : Value<random_access_iterator_int_ptr_ > = Rc::new(RefCell::new(random_access_iterator_int_ptr_ :: new_1 ( { (last ).clone() } , )  )); operation_counting_iterator_random_access_iterator_int_ptr__ :: new_1 ( { __tmp_40.as_pointer() } , { Some ( ( ops .as_pointer()  )  ) } , )  } )); sentinel_wrapper_operation_counting_iterator_random_access_iterator_int_ptr___ :: new_1 ( { __tmp_39.as_pointer() } , )  }  ;
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         let mut big: () = (unimplemented!().read());
         let mut small: () = (unimplemented!().read());
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_sentinel_56(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sentinel_57(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<contiguous_iterator_int_ptr_> =
@@ -1846,7 +1852,7 @@ pub fn check_sentinel_56(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 })));
             sentinel_wrapper_contiguous_iterator_int_ptr__::new_1({ __tmp_41.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1879,14 +1885,14 @@ pub fn check_sentinel_56(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
                 __tmp_43.as_pointer()
             })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         let mut big: () = (unimplemented!().read());
         let mut small: () = (unimplemented!().read());
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn check_sentinel_57(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
+pub fn check_sentinel_58(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Ptr<()>) {
     let mut size: () = (((last).clone() - (first).clone()) as ());
     {
         let it: Value<Ptr<()>> = Rc::new(RefCell::new((first).clone()));
@@ -1894,7 +1900,7 @@ pub fn check_sentinel_57(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
             let __tmp_45: Value<Ptr<()>> = Rc::new(RefCell::new((last).clone()));
             sentinel_wrapper_int_ptr_::new_1({ __tmp_45.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1915,14 +1921,14 @@ pub fn check_sentinel_57(mut first: Ptr<()>, mut last: Ptr<()>, mut expected: Pt
             }));
             sentinel_wrapper_operation_counting_iterator_int_ptr__::new_1({ __tmp_47.as_pointer() })
         };
-        ({ (*advance_37.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
+        ({ (*advance_38.with(Value::clone).borrow_mut())(it.as_pointer(), (sent).clone()) });
         let mut big: () = (unimplemented!().read());
         let mut small: () = (unimplemented!().read());
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_58() -> () {
+pub fn test_59() -> () {
     let range: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
         1_(),
@@ -1941,13 +1947,7 @@ pub fn test_58() -> () {
             let _first: Ptr<()> = (range.as_pointer() as Ptr<()>);
             let _last: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
             let _expected: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
-            check_assignable_36(_first, _last, _expected)
-        });
-        ({
-            let _first: Ptr<()> = (range.as_pointer() as Ptr<()>);
-            let _last: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
-            let _expected: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
-            check_assignable_38(_first, _last, _expected)
+            check_assignable_37(_first, _last, _expected)
         });
         ({
             let _first: Ptr<()> = (range.as_pointer() as Ptr<()>);
@@ -1983,7 +1983,7 @@ pub fn test_58() -> () {
             let _first: Ptr<()> = (range.as_pointer() as Ptr<()>);
             let _last: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
             let _expected: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
-            check_sized_sentinel_44(_first, _last, _expected)
+            check_assignable_44(_first, _last, _expected)
         });
         ({
             let _first: Ptr<()> = (range.as_pointer() as Ptr<()>);
@@ -2025,7 +2025,7 @@ pub fn test_58() -> () {
             let _first: Ptr<()> = (range.as_pointer() as Ptr<()>);
             let _last: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
             let _expected: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
-            check_sentinel_51(_first, _last, _expected)
+            check_sized_sentinel_51(_first, _last, _expected)
         });
         ({
             let _first: Ptr<()> = (range.as_pointer() as Ptr<()>);
@@ -2062,6 +2062,12 @@ pub fn test_58() -> () {
             let _last: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
             let _expected: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
             check_sentinel_57(_first, _last, _expected)
+        });
+        ({
+            let _first: Ptr<()> = (range.as_pointer() as Ptr<()>);
+            let _last: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
+            let _expected: Ptr<()> = (range.as_pointer() as Ptr<()>).offset((n) as isize);
+            check_sentinel_58(_first, _last, _expected)
         });
         n.prefix_inc();
     }

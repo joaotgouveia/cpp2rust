@@ -7,8 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_path_method_0() {
-    let p: () = std_filesystem_path::new_1({ &std::mem::transmute(*b"foo/bar/baz.exe\0") }, None);
-    let p2: () = std_filesystem_path::new_2({ &std::mem::transmute(*b"abc\0") }, None);
+    let p: () = unimplemented!();
+    let p2: () = unimplemented!();
     {
         let mut nce: () = unimplemented!();
         let e: () = unimplemented!();
@@ -33,8 +33,8 @@ pub unsafe fn test_path_method_0() {
     }
 }
 pub unsafe fn test_path_conversion_1() {
-    let p: () = std_filesystem_path::new_1({ &std::mem::transmute(*b"foo/bar/baz.exe\0") }, None);
-    let p2: () = std_filesystem_path::new_2({ &std::mem::transmute(*b"abc\0") }, None);
+    let p: () = unimplemented!();
+    let p2: () = unimplemented!();
     {
         let mut nce: () = unimplemented!();
         let e: () = unimplemented!();

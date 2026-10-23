@@ -330,23 +330,29 @@ pub fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_3(_i, n)
     });
 }
-pub fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_5(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_6(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -392,7 +398,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_8(
+            operator_cmp_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -417,7 +423,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_7(
+            operator_eq_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -541,7 +547,7 @@ const _: () = assert!(
     !(false),
     "!HasSpaceship<std::move_iterator<three_way_contiguous_iterator<int*>>, std::move_sentinel<three_way_contiguous_iterator<int*>>>"
 );
-pub fn test_spaceshippable_but_not_three_way_comparable_9() {
+pub fn test_spaceshippable_but_not_three_way_comparable_10() {
     const _: () = assert!(true, "std::input_iterator<A>");;
     const _: () = assert!(true, "std::input_iterator<B>");;
     const _: () = assert!(true, "HasEquals<A, B>");;
@@ -558,25 +564,10 @@ pub fn test_spaceshippable_but_not_three_way_comparable_9() {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct A_10 {}
+pub struct A_11 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct B_11 {}
-pub fn test_two_12() {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 1_(), 4_()])));
-    let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let j1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let j2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
+pub struct B_12 {}
 pub fn test_two_13() {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 1_(), 4_()])));
     let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -637,12 +628,27 @@ pub fn test_two_16() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_17() -> () {
-    ({ test_two_12() });
+pub fn test_two_17() {
+    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 1_(), 4_()])));
+    let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let j1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let j2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_18() -> () {
     ({ test_two_13() });
     ({ test_two_14() });
     ({ test_two_15() });
     ({ test_two_16() });
+    ({ test_two_17() });
     return true;
 }
 pub fn main() {
@@ -669,42 +675,42 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test()");;
     return 0_();
 }
-pub trait A_10Impl {
+pub trait A_11Impl {
     fn operator_deref(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_inc_2(&self) -> Ptr<A_10> {
+    fn operator_inc_2(&self) -> Ptr<A_11> {
         unimplemented!()
     }
-    fn operator_post_inc_3(&self, mut _a0: ()) -> A_10 {
+    fn operator_post_inc_3(&self, mut _a0: ()) -> A_11 {
         unimplemented!()
     }
-    fn operator_cmp(&self, _a0: Ptr<A_10>) -> () {
+    fn operator_cmp(&self, _a0: Ptr<A_11>) -> () {
         unimplemented!()
     }
 }
-impl A_10Impl for Ptr<A_10> {}
-pub trait B_11Impl {
+impl A_11Impl for Ptr<A_11> {}
+pub trait B_12Impl {
     fn operator_deref(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_inc_2(&self) -> Ptr<B_11> {
+    fn operator_inc_2(&self) -> Ptr<B_12> {
         unimplemented!()
     }
-    fn operator_post_inc_3(&self, mut _a0: ()) -> B_11 {
+    fn operator_post_inc_3(&self, mut _a0: ()) -> B_12 {
         unimplemented!()
     }
-    fn operator_cmp_4(&self, _a0: Ptr<B_11>) -> () {
+    fn operator_cmp_4(&self, _a0: Ptr<B_12>) -> () {
         unimplemented!()
     }
-    fn operator_eq(&self, _a0: Ptr<A_10>) -> () {
+    fn operator_eq(&self, _a0: Ptr<A_11>) -> () {
         unimplemented!()
     }
-    fn operator_cmp_6(&self, _a0: Ptr<A_10>) -> () {
+    fn operator_cmp_6(&self, _a0: Ptr<A_11>) -> () {
         unimplemented!()
     }
 }
-impl B_11Impl for Ptr<B_11> {}
+impl B_12Impl for Ptr<B_12> {}
 pub trait adl_IteratorImpl {
     fn iter_moves(&self) -> ();
     fn iter_swaps(&self) -> ();

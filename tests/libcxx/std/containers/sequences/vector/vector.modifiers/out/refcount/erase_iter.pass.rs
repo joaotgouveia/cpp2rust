@@ -694,10 +694,7 @@ pub fn tests_43() {
     {
         let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         {
-            let v: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-                { (arr.as_pointer() as Ptr<()>) },
-                { (arr.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-            )));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -706,10 +703,7 @@ pub fn tests_43() {
         {
             let expected: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([1_(), 3_(), 4_(), 5_()])));
-            let v: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-                { (arr.as_pointer() as Ptr<()>) },
-                { (arr.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-            )));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -718,10 +712,7 @@ pub fn tests_43() {
         {
             let expected: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-            let v: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-                { (arr.as_pointer() as Ptr<()>) },
-                { (arr.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-            )));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -761,12 +752,7 @@ pub fn tests_44() {
             NonTriviallyRelocatable::new_2({ 5_() }),
         ])));
         {
-            let v: Value<()> = Rc::new(RefCell::new(
-                std_vector_NonTriviallyRelocatable__std_allocator_NonTriviallyRelocatable__::new_1(
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>) },
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5_()) as isize) },
-                ),
-            ));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -780,12 +766,7 @@ pub fn tests_44() {
                     NonTriviallyRelocatable::new_2({ 4_() }),
                     NonTriviallyRelocatable::new_2({ 5_() }),
                 ])));
-            let v: Value<()> = Rc::new(RefCell::new(
-                std_vector_NonTriviallyRelocatable__std_allocator_NonTriviallyRelocatable__::new_1(
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>) },
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5_()) as isize) },
-                ),
-            ));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -799,12 +780,7 @@ pub fn tests_44() {
                     NonTriviallyRelocatable::new_2({ 3_() }),
                     NonTriviallyRelocatable::new_2({ 4_() }),
                 ])));
-            let v: Value<()> = Rc::new(RefCell::new(
-                std_vector_NonTriviallyRelocatable__std_allocator_NonTriviallyRelocatable__::new_1(
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>) },
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5_()) as isize) },
-                ),
-            ));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -838,10 +814,7 @@ pub fn tests_45() {
     {
         let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         {
-            let v: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1(
-                { (arr.as_pointer() as Ptr<()>) },
-                { (arr.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-            )));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -850,10 +823,7 @@ pub fn tests_45() {
         {
             let expected: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([1_(), 3_(), 4_(), 5_()])));
-            let v: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1(
-                { (arr.as_pointer() as Ptr<()>) },
-                { (arr.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-            )));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -862,10 +832,7 @@ pub fn tests_45() {
         {
             let expected: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-            let v: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1(
-                { (arr.as_pointer() as Ptr<()>) },
-                { (arr.as_pointer() as Ptr<()>).offset((5_()) as isize) },
-            )));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -905,12 +872,7 @@ pub fn tests_46() {
             NonTriviallyRelocatable::new_2({ 5_() }),
         ])));
         {
-            let v: Value<()> = Rc::new(RefCell::new(
-                std_vector_NonTriviallyRelocatable__min_allocator_NonTriviallyRelocatable__::new_1(
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>) },
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5_()) as isize) },
-                ),
-            ));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -924,12 +886,7 @@ pub fn tests_46() {
                     NonTriviallyRelocatable::new_2({ 4_() }),
                     NonTriviallyRelocatable::new_2({ 5_() }),
                 ])));
-            let v: Value<()> = Rc::new(RefCell::new(
-                std_vector_NonTriviallyRelocatable__min_allocator_NonTriviallyRelocatable__::new_1(
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>) },
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5_()) as isize) },
-                ),
-            ));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -943,12 +900,7 @@ pub fn tests_46() {
                     NonTriviallyRelocatable::new_2({ 3_() }),
                     NonTriviallyRelocatable::new_2({ 4_() }),
                 ])));
-            let v: Value<()> = Rc::new(RefCell::new(
-                std_vector_NonTriviallyRelocatable__min_allocator_NonTriviallyRelocatable__::new_1(
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>) },
-                    { (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5_()) as isize) },
-                ),
-            ));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();

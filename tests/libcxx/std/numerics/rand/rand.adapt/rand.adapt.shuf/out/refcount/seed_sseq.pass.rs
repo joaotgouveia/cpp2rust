@@ -10,9 +10,9 @@ pub fn test1_0() {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_()])));
     let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2 : Value<() > = Rc::new(RefCell::new(std_shuffle_order_engine_std_linear_congruential_engine_unsigned_long__16807__0__2147483647___256_ :: new_1 ( { sseq .as_pointer()  } , )  )) ;
+    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ (*e1.borrow()).seed_10_class_std_seed_seq_0(sseq.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn main() {

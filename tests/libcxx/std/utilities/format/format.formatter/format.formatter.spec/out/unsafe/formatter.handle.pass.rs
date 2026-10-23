@@ -57,45 +57,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe {
-        test_termination_condition_5(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"black".as_ptr() },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"}".as_ptr() },
-                None,
-            ),
-            color_black,
-        )
-    });
-    (unsafe {
-        test_termination_condition_5(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"red".as_ptr() },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"}".as_ptr() },
-                None,
-            ),
-            color_red,
-        )
-    });
-    (unsafe {
-        test_termination_condition_5(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"gold".as_ptr() },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"}".as_ptr() },
-                None,
-            ),
-            color_gold,
-        )
-    });
+    (unsafe { test_termination_condition_5(unimplemented!(), unimplemented!(), color_black) });
+    (unsafe { test_termination_condition_5(unimplemented!(), unimplemented!(), color_red) });
+    (unsafe { test_termination_condition_5(unimplemented!(), unimplemented!(), color_gold) });
     return 0_();
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]

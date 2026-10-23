@@ -317,14 +317,8 @@ pub unsafe fn test_14() -> () {
             {
                 let mut p: () = 0_();
                 'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_8))) {
-                    let mut c1: () =
-                        std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        });
-                    let mut c2: () =
-                        std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        });
+                    let mut c1: () = unimplemented!();
+                    let mut c2: () = unimplemented!();
                     unimplemented!();
                     (unsafe { testd_10(&c1, p, f, l) });
                     p.prefix_inc();
@@ -341,20 +335,14 @@ pub unsafe fn test_14() -> () {
             'loop_: while ((l) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_8))) {
                 let mut p: () = 0_();
                 'loop_: while ((p) <= (f)) {
-                    let mut c1: () =
-                        std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        });
+                    let mut c1: () = unimplemented!();
                     unimplemented!();
                     (unsafe { tests_12(&c1, p, f, l) });
                     p.prefix_inc();
                 }
                 let mut p: () = l;
                 'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_8))) {
-                    let mut c1: () =
-                        std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        });
+                    let mut c1: () = unimplemented!();
                     unimplemented!();
                     (unsafe { tests_12(&c1, p, f, l) });
                     p.prefix_inc();
@@ -375,14 +363,8 @@ pub unsafe fn test_14() -> () {
             {
                 let mut p: () = 0_();
                 'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_8))) {
-                    let mut c1: () =
-                        std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        });
-                    let mut c2: () =
-                        std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        });
+                    let mut c1: () = unimplemented!();
+                    let mut c2: () = unimplemented!();
                     unimplemented!();
                     (unsafe { testd_11(&c1, p, f, l) });
                     p.prefix_inc();
@@ -399,20 +381,14 @@ pub unsafe fn test_14() -> () {
             'loop_: while ((l) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_8))) {
                 let mut p: () = 0_();
                 'loop_: while ((p) <= (f)) {
-                    let mut c1: () =
-                        std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        });
+                    let mut c1: () = unimplemented!();
                     unimplemented!();
                     (unsafe { tests_13(&c1, p, f, l) });
                     p.prefix_inc();
                 }
                 let mut p: () = l;
                 'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_8))) {
-                    let mut c1: () =
-                        std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        });
+                    let mut c1: () = unimplemented!();
                     unimplemented!();
                     (unsafe { tests_13(&c1, p, f, l) });
                     p.prefix_inc();

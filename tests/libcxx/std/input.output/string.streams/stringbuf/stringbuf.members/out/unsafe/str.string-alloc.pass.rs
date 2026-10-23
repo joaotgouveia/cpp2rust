@@ -463,13 +463,7 @@ pub unsafe fn test_4() {
     {
         let mut a: test_allocator_char_ = test_allocator_char_::new_1({ 6_() });
         let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_char_::destructor);
-        let s: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { &mut __tmp_0 },
-                { &a },
-            )
-        };
+        let s: () = unimplemented!();
         let mut buf: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -479,13 +473,7 @@ pub unsafe fn test_5() {
     {
         let mut a: test_allocator_wchar_t_ = test_allocator_wchar_t_::new_1({ 6_() });
         let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, test_allocator_wchar_t_::destructor);
-        let s: () = {
-            let mut __tmp_1: () = unimplemented!();
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                { &mut __tmp_1 },
-                { &a },
-            )
-        };
+        let s: () = unimplemented!();
         let mut buf: () = unimplemented!();
         unimplemented!();
         unimplemented!();

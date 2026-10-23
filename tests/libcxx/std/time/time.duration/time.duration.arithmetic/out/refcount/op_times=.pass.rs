@@ -52,10 +52,7 @@ pub fn operator_mul_assign_0(d: Ptr<()>, mut _a1: NotARep) -> Ptr<()> {
     return (d).clone();
 }
 pub fn test_constexpr_1() -> () {
-    let s: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(3_()));
-        std_chrono_duration_long_long__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
-    }));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return (unimplemented!() == 15_());
 }
@@ -80,23 +77,13 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let ns: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({
-                __tmp_1.as_pointer()
-            })
-        }));
+        let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     const _: () = assert!(true, "test_constexpr()");;
     {
-        let d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(5_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({
-                __tmp_2.as_pointer()
-            })
-        }));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: NotARep = <NotARep>::default();
         ({
             let _d: Ptr<()> = d.as_pointer();

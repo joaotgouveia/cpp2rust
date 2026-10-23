@@ -13,9 +13,13 @@ pub struct ConstSwappable {
     pub i: (),
 }
 pub fn swap_0(lhs: Ptr<ConstSwappable>, rhs: Ptr<ConstSwappable>) {
-    unimplemented!();
+    ({
+        let ___x: Ptr<()> = field_ptr!(lhs, i);
+        let ___y: Ptr<()> = field_ptr!(rhs, i);
+        swap_1(___x, ___y)
+    });
 }
-pub fn test_1() -> () {
+pub fn test_2() -> () {
     {
         let t0: Value<()> = Rc::new(RefCell::new(ConstSwappable { i: 0_() }));
         let t1: Value<()> = Rc::new(RefCell::new(ConstSwappable { i: 1_() }));
@@ -95,7 +99,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_1() });
+    ({ test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

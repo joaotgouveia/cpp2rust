@@ -29,54 +29,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 8] = [
-            {
-                let mut __tmp_0: () = 10_();
-                std_pair_int__std_string_::new_1({ &mut __tmp_0 }, {
-                    &std::mem::transmute(*b"ten\0")
-                })
-            },
-            {
-                let mut __tmp_1: () = 20_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_1 }, {
-                    &std::mem::transmute(*b"twenty\0")
-                })
-            },
-            {
-                let mut __tmp_2: () = 30_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_2 }, {
-                    &std::mem::transmute(*b"thirty\0")
-                })
-            },
-            {
-                let mut __tmp_3: () = 40_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_3 }, {
-                    &std::mem::transmute(*b"forty\0")
-                })
-            },
-            {
-                let mut __tmp_4: () = 50_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_4 }, {
-                    &std::mem::transmute(*b"fifty\0")
-                })
-            },
-            {
-                let mut __tmp_5: () = 60_();
-                std_pair_int__std_string_::new_3({ &mut __tmp_5 }, {
-                    &std::mem::transmute(*b"sixty\0")
-                })
-            },
-            {
-                let mut __tmp_6: () = 70_();
-                std_pair_int__std_string_::new_4({ &mut __tmp_6 }, {
-                    &std::mem::transmute(*b"seventy\0")
-                })
-            },
-            {
-                let mut __tmp_7: () = 80_();
-                std_pair_int__std_string_::new_2({ &mut __tmp_7 }, {
-                    &std::mem::transmute(*b"eighty\0")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let c: () = unimplemented!();
         unimplemented!();

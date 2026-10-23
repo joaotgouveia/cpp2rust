@@ -12,10 +12,7 @@ pub fn tests_0() -> () {
         ((::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ())))
             as isize,
     );
-    let v: Value<()> = Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
-        { (a.as_pointer() as Ptr<()>) },
-        { (an).clone() },
-    )));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "(noexcept(v.swap(r1, r2)))");;

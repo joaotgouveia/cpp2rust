@@ -81,7 +81,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 1_(), 2_()];
         let mut c: () = unimplemented!();
         let mut i: () = unimplemented!();
-        let mut j: () = (unsafe { next_4(i.clone(), 2_()) });
+        let mut j: () = unimplemented!();
         let mut k: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -136,7 +136,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 1_(), 2_()];
         let mut c: () = unimplemented!();
         let mut i: () = unimplemented!();
-        let mut j: () = (unsafe { next_6(i.clone(), 2_()) });
+        let mut j: () = unimplemented!();
         let mut k: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -157,8 +157,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct MyHash_5 {}
-impl MyHash_5 {
+pub struct MyHash_4 {}
+impl MyHash_4 {
     pub unsafe fn operator_call(&self, mut v: ()) -> () {
         return v;
     }

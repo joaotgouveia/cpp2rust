@@ -21,21 +21,21 @@ impl A_void_0 {
 pub unsafe fn test_void_0_2() {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
     {
-        let mut r1: () = std_reference_wrapper_void____::new({ Some(f_void_0_1) });
+        let mut r1: () = unimplemented!();
         (unsafe { r1() });
         unimplemented!();
         save_count = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
     }
     {
         let mut fp: Option<unsafe fn()> = Some(f_void_0_1);
-        let mut r1: () = std_reference_wrapper_void__ptr____::new({ &mut fp });
+        let mut r1: () = unimplemented!();
         (unsafe { r1() });
         unimplemented!();
         save_count = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
     }
     {
         let mut a0: A_void_0 = <A_void_0>::default();
-        let mut r1: () = std_reference_wrapper_A_void_0_::new({ &mut a0 });
+        let mut r1: () = unimplemented!();
         (unsafe { r1() });
         unimplemented!();
         save_count = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));

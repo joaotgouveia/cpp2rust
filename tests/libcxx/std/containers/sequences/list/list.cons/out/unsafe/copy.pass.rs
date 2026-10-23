@@ -408,21 +408,13 @@ pub unsafe fn test_14() -> () {
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_0: () = 2_();
-            let mut __tmp_1: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_list_int__test_allocator_int__::new_1({ 3_() }, { &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_2: () = 2_();
-            let mut __tmp_3: other_allocator_int_ = other_allocator_int_::new_1({ 5_() });
-            std_list_int__other_allocator_int__::new_1({ 3_() }, { &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -433,11 +425,7 @@ pub unsafe fn test_14() -> () {
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let mut __tmp_4: () = 2_();
-            let mut __tmp_5: min_allocator_int_ = <min_allocator_int_>::default();
-            std_list_int__min_allocator_int__::new_1({ 3_() }, { &mut __tmp_4 }, { &mut __tmp_5 })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -27,12 +27,8 @@ pub fn test_0() {
     let mut state_size: () = 1_();
     let mut shift_size: () = 1_();
     let mut tempering_l: () = 3_();
-    let q: Value<all_zero_seed_seq> = Rc::new(RefCell::new(all_zero_seed_seq::new_1()));
-    let e: Value<()> = Rc::new(RefCell::new(
-        std_mersenne_twister_engine_unsigned_short__3__1__1__0__0__0__0__0__0__0__0__3__0_::new_1(
-            { q.as_pointer() },
-        ),
-    ));
+    let mut q: all_zero_seed_seq = all_zero_seed_seq::new_1();
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut Xneg1: () = (1_() << ((3_() as ()).wrapping_sub(1_())));
     let mut Y: () = Xneg1;
     let mut X0: () = (Xneg1 ^ (Y >> 1_()));
@@ -42,8 +38,8 @@ pub fn test_1() {
     let mut state_size: () = 1_();
     let mut shift_size: () = 1_();
     let mut tempering_l: () = 33_();
-    let q: Value<all_zero_seed_seq> = Rc::new(RefCell::new(all_zero_seed_seq::new_1()));
-    let e : Value<() > = Rc::new(RefCell::new(std_mersenne_twister_engine_unsigned_long_long__33__1__1__0__0__0__0__0__0__0__0__33__0_ :: new_1 ( { q .as_pointer()  } , )  )) ;
+    let mut q: all_zero_seed_seq = all_zero_seed_seq::new_1();
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut Xneg1: () = (1_() << ((33_() as ()).wrapping_sub(1_())));
     let mut Y: () = Xneg1;
     let mut X0: () = (Xneg1 ^ (Y >> 1_()));

@@ -1157,12 +1157,7 @@ pub unsafe fn tests_46() -> () {
     }
     {
         let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut c1: () = std_vector_int__std_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 5]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c1: () = unimplemented!();
         unimplemented!();
         let mut i: () = {
             let mut __tmp_0: () = unimplemented!();
@@ -1195,12 +1190,7 @@ pub unsafe fn tests_46() -> () {
     }
     {
         let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut c1: () = std_vector_int__min_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 5]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c1: () = unimplemented!();
         unimplemented!();
         let mut i: () = {
             let mut __tmp_1: () = unimplemented!();
@@ -1235,12 +1225,7 @@ pub unsafe fn tests_46() -> () {
     }
     {
         let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut c1: () = std_vector_int__safe_allocator_int__::new_1({ a1.as_mut_ptr() }, {
-            a1.as_mut_ptr().offset(
-                ((::std::mem::size_of::<[(); 5]>() as ())
-                    .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-            )
-        });
+        let mut c1: () = unimplemented!();
         unimplemented!();
         let mut i: () = {
             let mut __tmp_2: () = unimplemented!();

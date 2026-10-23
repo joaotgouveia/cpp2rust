@@ -551,23 +551,29 @@ pub fn operator_add_21(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_20(_i, n)
     });
 }
-pub fn iter_swap_22(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_22(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_23(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_23(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_24(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -613,7 +619,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_25(
+            operator_cmp_26(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -638,7 +644,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_24(
+            operator_eq_25(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -759,18 +765,18 @@ pub struct Counted {
 }
 impl Counted {
     pub fn reset() {
-        count_26.with(|rc| {
+        count_27.with(|rc| {
             *rc.borrow_mut() = {
-                constructed_27.with(|rc| *rc.borrow_mut() = 0_());
-                constructed_27.with(|rc| *rc.borrow())
+                constructed_28.with(|rc| *rc.borrow_mut() = 0_());
+                constructed_28.with(|rc| *rc.borrow())
             }
         });
     }
     pub fn new(x: Ptr<()>) -> Self {
         let __this: Counted = Self { value: (x.read()) };
         x.write(0_());
-        (*count_26.with(Value::clone).borrow_mut()).prefix_inc();
-        (*constructed_27.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_27.with(Value::clone).borrow_mut()).prefix_inc();
+        (*constructed_28.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(_a0: Ptr<Counted>) -> Self {
@@ -790,37 +796,37 @@ impl Clone for Counted {
     }
 }
 thread_local!(
-    pub static count_26: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_27: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static constructed_27: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static constructed_28: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor, Default)]
 #[byte_size(1)]
 pub struct ThrowsCounted {}
 impl ThrowsCounted {
     pub fn reset() {
-        throw_after_30.with(|rc| {
+        throw_after_31.with(|rc| {
             *rc.borrow_mut() = {
-                count_28.with(|rc| {
+                count_29.with(|rc| {
                     *rc.borrow_mut() = {
-                        constructed_29.with(|rc| *rc.borrow_mut() = 0_());
-                        constructed_29.with(|rc| *rc.borrow())
+                        constructed_30.with(|rc| *rc.borrow_mut() = 0_());
+                        constructed_30.with(|rc| *rc.borrow())
                     }
                 });
-                count_28.with(|rc| *rc.borrow())
+                count_29.with(|rc| *rc.borrow())
             }
         });
     }
     pub fn new(x: Ptr<()>) -> Self {
         let __this: ThrowsCounted = Self {};
-        (*constructed_29.with(Value::clone).borrow_mut()).prefix_inc();
-        if (throw_after_30.with(|rc| *rc.borrow()) > 0_())
-            && ((*throw_after_30.with(Value::clone).borrow_mut()).prefix_dec() == 0_())
+        (*constructed_30.with(Value::clone).borrow_mut()).prefix_inc();
+        if (throw_after_31.with(|rc| *rc.borrow()) > 0_())
+            && ((*throw_after_31.with(Value::clone).borrow_mut()).prefix_dec() == 0_())
         {
             unimplemented!();
         }
-        (*count_28.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_29.with(Value::clone).borrow_mut()).prefix_inc();
         x.write(0_());
         __this
     }
@@ -837,13 +843,13 @@ impl Clone for ThrowsCounted {
     }
 }
 thread_local!(
-    pub static count_28: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_29: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static constructed_29: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static constructed_30: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static throw_after_30: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static throw_after_31: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -856,10 +862,10 @@ impl NoMoveNoCopy {
         Self { value: x }
     }
 }
-pub fn operator_eq_31(mut a: PrvalueIterator, mut b: PrvalueIterator) -> () {
+pub fn operator_eq_32(mut a: PrvalueIterator, mut b: PrvalueIterator) -> () {
     return ({ (a.ptr_).clone() } == { (b.ptr_).clone() });
 }
-pub fn operator_ne_32(mut a: PrvalueIterator, mut b: PrvalueIterator) -> () {
+pub fn operator_ne_33(mut a: PrvalueIterator, mut b: PrvalueIterator) -> () {
     return ({ (a.ptr_).clone() } != { (b.ptr_).clone() });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -878,11 +884,11 @@ impl PrvalueIterator {
 }
 impl std::cmp::PartialEq for PrvalueIterator {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_31(self.clone(), other.clone()) }
+        { operator_eq_32(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for PrvalueIterator {}
-pub fn test_33() -> () {
+pub fn test_34() -> () {
     let n: Value<()> = Rc::new(RefCell::new(3_()));
     let in_: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
         MoveOnly::new({ Some(1_()) }),
@@ -904,8 +910,8 @@ pub fn test_33() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_ctor_throws_34() {}
-pub fn test_copy_elision_35() -> () {
+pub fn test_ctor_throws_35() {}
+pub fn test_copy_elision_36() -> () {
     let N: Value<()> = Rc::new(RefCell::new(5_()));
     let values: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -930,7 +936,7 @@ pub fn test_copy_elision_35() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_counted_36() {
+pub fn test_counted_37() {
     let N: Value<()> = Rc::new(RefCell::new(5_()));
     let values: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
     let pool: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -999,9 +1005,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_counted_36() });
-    ({ test_ctor_throws_34() });
-    ({ test_copy_elision_35() });
+    ({ test_counted_37() });
+    ({ test_ctor_throws_35() });
+    ({ test_copy_elision_36() });
     {
         let N: Value<()> = Rc::new(RefCell::new(5_()));
         {
@@ -1071,7 +1077,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             }
         }
     }
-    ({ test_33() });
+    ({ test_34() });
     return 0_();
 }
 pub trait CountedImpl {
@@ -1081,7 +1087,7 @@ pub trait CountedImpl {
 impl CountedImpl for Ptr<Counted> {
     fn destructor(&self) {
         unimplemented!();
-        (*count_26.with(Value::clone).borrow_mut()).prefix_dec();
+        (*count_27.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn copy_assign(&self, _a0: Ptr<Counted>) -> Ptr<Counted> {
         field!((*self), value).write({ _a0.with(|__s| __s.value) });
@@ -1134,7 +1140,7 @@ pub trait ThrowsCountedImpl {
 impl ThrowsCountedImpl for Ptr<ThrowsCounted> {
     fn destructor(&self) {
         unimplemented!();
-        (*count_28.with(Value::clone).borrow_mut()).prefix_dec();
+        (*count_29.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn copy_assign(&self, _a0: Ptr<ThrowsCounted>) -> Ptr<ThrowsCounted> {
         return (*self).clone();
@@ -1541,9 +1547,9 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = count_26.with(|_| ());
-    let _ = constructed_27.with(|_| ());
-    let _ = count_28.with(|_| ());
-    let _ = constructed_29.with(|_| ());
-    let _ = throw_after_30.with(|_| ());
+    let _ = count_27.with(|_| ());
+    let _ = constructed_28.with(|_| ());
+    let _ = count_29.with(|_| ());
+    let _ = constructed_30.with(|_| ());
+    let _ = throw_after_31.with(|_| ());
 }

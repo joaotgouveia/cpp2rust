@@ -25,19 +25,12 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
     {
-        let mut x: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"1234".as_ptr() },
-            None,
-        );
+        let mut x: () = unimplemented!();
         let f: *const () = (unsafe { use_facet_0(&l) });
         unimplemented!();
     }
     {
-        let mut x: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                { [49 as (), 50 as (), 51 as (), 52 as (), 0 as ()].as_ptr() },
-                None,
-            );
+        let mut x: () = unimplemented!();
         let f: *const () = (unsafe { use_facet_1(&l) });
         unimplemented!();
     }

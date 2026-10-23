@@ -199,51 +199,15 @@ pub unsafe fn test_10() -> () {
     {
         {
             let mut ar: [(); 9] = [
-                {
-                    let mut __tmp_0: () = 5_();
-                    let mut __tmp_1: () = 1_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-                },
-                {
-                    let mut __tmp_2: () = 5_();
-                    let mut __tmp_3: () = 2_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
-                },
-                {
-                    let mut __tmp_4: () = 5_();
-                    let mut __tmp_5: () = 3_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
-                },
-                {
-                    let mut __tmp_6: () = 7_();
-                    let mut __tmp_7: () = 1_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
-                },
-                {
-                    let mut __tmp_8: () = 7_();
-                    let mut __tmp_9: () = 2_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
-                },
-                {
-                    let mut __tmp_10: () = 7_();
-                    let mut __tmp_11: () = 3_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_10 }, { &mut __tmp_11 })
-                },
-                {
-                    let mut __tmp_12: () = 9_();
-                    let mut __tmp_13: () = 1_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_12 }, { &mut __tmp_13 })
-                },
-                {
-                    let mut __tmp_14: () = 9_();
-                    let mut __tmp_15: () = 2_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_14 }, { &mut __tmp_15 })
-                },
-                {
-                    let mut __tmp_16: () = 9_();
-                    let mut __tmp_17: () = 3_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_16 }, { &mut __tmp_17 })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ];
             let m: () = unimplemented!();
             let mut r: () = unimplemented!();
@@ -265,51 +229,15 @@ pub unsafe fn test_10() -> () {
     {
         {
             let mut ar: [(); 9] = [
-                {
-                    let mut __tmp_18: () = 5_();
-                    let mut __tmp_19: () = 1_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_18 }, { &mut __tmp_19 })
-                },
-                {
-                    let mut __tmp_20: () = 5_();
-                    let mut __tmp_21: () = 2_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_20 }, { &mut __tmp_21 })
-                },
-                {
-                    let mut __tmp_22: () = 5_();
-                    let mut __tmp_23: () = 3_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_22 }, { &mut __tmp_23 })
-                },
-                {
-                    let mut __tmp_24: () = 7_();
-                    let mut __tmp_25: () = 1_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_24 }, { &mut __tmp_25 })
-                },
-                {
-                    let mut __tmp_26: () = 7_();
-                    let mut __tmp_27: () = 2_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_26 }, { &mut __tmp_27 })
-                },
-                {
-                    let mut __tmp_28: () = 7_();
-                    let mut __tmp_29: () = 3_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_28 }, { &mut __tmp_29 })
-                },
-                {
-                    let mut __tmp_30: () = 9_();
-                    let mut __tmp_31: () = 1_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_30 }, { &mut __tmp_31 })
-                },
-                {
-                    let mut __tmp_32: () = 9_();
-                    let mut __tmp_33: () = 2_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_32 }, { &mut __tmp_33 })
-                },
-                {
-                    let mut __tmp_34: () = 9_();
-                    let mut __tmp_35: () = 3_();
-                    std_pair_const_int__double_::new_1({ &mut __tmp_34 }, { &mut __tmp_35 })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ];
             let m: () = unimplemented!();
             let mut r: () = unimplemented!();
@@ -330,51 +258,15 @@ pub unsafe fn test_10() -> () {
     }
     {
         let mut ar: [(); 9] = [
-            {
-                let mut __tmp_36: () = 5_();
-                let mut __tmp_37: () = 1_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_36 }, { &mut __tmp_37 })
-            },
-            {
-                let mut __tmp_38: () = 5_();
-                let mut __tmp_39: () = 2_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_38 }, { &mut __tmp_39 })
-            },
-            {
-                let mut __tmp_40: () = 5_();
-                let mut __tmp_41: () = 3_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_40 }, { &mut __tmp_41 })
-            },
-            {
-                let mut __tmp_42: () = 7_();
-                let mut __tmp_43: () = 1_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_42 }, { &mut __tmp_43 })
-            },
-            {
-                let mut __tmp_44: () = 7_();
-                let mut __tmp_45: () = 2_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_44 }, { &mut __tmp_45 })
-            },
-            {
-                let mut __tmp_46: () = 7_();
-                let mut __tmp_47: () = 3_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_46 }, { &mut __tmp_47 })
-            },
-            {
-                let mut __tmp_48: () = 9_();
-                let mut __tmp_49: () = 1_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_48 }, { &mut __tmp_49 })
-            },
-            {
-                let mut __tmp_50: () = 9_();
-                let mut __tmp_51: () = 2_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_50 }, { &mut __tmp_51 })
-            },
-            {
-                let mut __tmp_52: () = 9_();
-                let mut __tmp_53: () = 3_();
-                std_pair_const_int__double_::new_1({ &mut __tmp_52 }, { &mut __tmp_53 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let m: () = unimplemented!();
         let mut r: () = unimplemented!();
@@ -391,114 +283,45 @@ pub unsafe fn test_10() -> () {
         unimplemented!();
         r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 4_() });
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 5_() });
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 6_() });
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 7_() });
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 8_() });
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 9_() });
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: C2Int = C2Int::new_2({ 10_() });
-            m.count(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
     }
     {
         let mut m: () = unimplemented!();
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        (unsafe {
-            let mut ___p: () = unimplemented!();
-            m.insert_41_struct_std_pair_struct_PrivateConstructor__double__0(&mut ___p)
-        });
-        let mut r: () = (unsafe {
-            let mut ___k: () = 4_();
-            m.count(&mut ___k)
-        });
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 5_();
-            m.count(&mut ___k)
-        });
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 6_();
-            m.count(&mut ___k)
-        });
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 7_();
-            m.count(&mut ___k)
-        });
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 8_();
-            m.count(&mut ___k)
-        });
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 9_();
-            m.count(&mut ___k)
-        });
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 10_();
-            m.count(&mut ___k)
-        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        r = unimplemented!();
+        unimplemented!();
+        r = unimplemented!();
+        unimplemented!();
+        r = unimplemented!();
+        unimplemented!();
+        r = unimplemented!();
+        unimplemented!();
+        r = unimplemented!();
+        unimplemented!();
+        r = unimplemented!();
         unimplemented!();
     }
     return true;

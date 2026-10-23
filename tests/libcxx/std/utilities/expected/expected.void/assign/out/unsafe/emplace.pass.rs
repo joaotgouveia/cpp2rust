@@ -71,7 +71,11 @@ impl Default for TracedBase_false__true_ {
     }
 }
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut () = &mut (*x).i;
+        let ___y: *mut () = &mut (*y).i;
+        swap_1(___x, ___y)
+    });
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -117,7 +121,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -134,7 +138,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_1(
+            operator_eq_2(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -196,7 +200,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -243,7 +247,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_2(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -289,7 +293,7 @@ pub struct CheckForInvalidWritesBaseImpl_true__true_ {}
 pub struct CheckForInvalidWritesBaseImpl_false__true_ {}
 const _: () = assert!(!(false), "!EmplaceNoexcept<int>");
 const _: () = assert!(true, "EmplaceNoexcept<std::expected<void, int>>");
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_4() -> () {
     {
         let mut e: () = unimplemented!();
         unimplemented!();
@@ -320,7 +324,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_3() });
+    (unsafe { test_4() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

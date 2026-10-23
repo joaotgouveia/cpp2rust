@@ -1087,16 +1087,7 @@ pub fn tests_46() -> () {
     }
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 7_(), 9_(), 10_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            {
-                (a1.as_pointer() as Ptr<()>).offset(
-                    ((::std::mem::size_of::<[(); 5]>() as ())
-                        .wrapping_div((::std::mem::size_of::<()>() as ())))
-                        as isize,
-                )
-            },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new({
             let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1129,16 +1120,7 @@ pub fn tests_46() -> () {
     }
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 7_(), 9_(), 10_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            {
-                (a1.as_pointer() as Ptr<()>).offset(
-                    ((::std::mem::size_of::<[(); 5]>() as ())
-                        .wrapping_div((::std::mem::size_of::<()>() as ())))
-                        as isize,
-                )
-            },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new({
             let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1173,16 +1155,7 @@ pub fn tests_46() -> () {
     }
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 7_(), 9_(), 10_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_vector_int__safe_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            {
-                (a1.as_pointer() as Ptr<()>).offset(
-                    ((::std::mem::size_of::<[(); 5]>() as ())
-                        .wrapping_div((::std::mem::size_of::<()>() as ())))
-                        as isize,
-                )
-            },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let i: Value<()> = Rc::new(RefCell::new({
             let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));

@@ -194,40 +194,12 @@ pub unsafe fn test_7(mut s: ()) {
     unimplemented!();
 }
 pub unsafe fn test_string_8() {
-    (unsafe {
-        test_6(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-        )
-    });
-    (unsafe {
-        test_6(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"1234567890123456789012345678901234567890".as_ptr() },
-                None,
-            ),
-        )
-    });
+    (unsafe { test_6(unimplemented!()) });
+    (unsafe { test_6(unimplemented!()) });
 }
 pub unsafe fn test_string_9() {
-    (unsafe {
-        test_7(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"1".as_ptr() },
-                None,
-            ),
-        )
-    });
-    (unsafe {
-        test_7(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"1234567890123456789012345678901234567890".as_ptr() },
-                None,
-            ),
-        )
-    });
+    (unsafe { test_7(unimplemented!()) });
+    (unsafe { test_7(unimplemented!()) });
 }
 pub unsafe fn test_10() -> () {
     (unsafe { test_string_8() });

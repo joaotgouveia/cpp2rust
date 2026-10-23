@@ -61,11 +61,7 @@ pub fn populate_15(m: Ptr<()>, mut start: Ptr<()>, mut end: Ptr<()>) {
     let mut p1: Ptr<()> = (start).clone();
     let mut p2: Ptr<()> = end.offset(-((1_()) as isize));
     'loop_: while ({ (p1).clone() } != { (end).clone() }) {
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.upgrade().deref())
-                .insert_45_struct_std_pair_unsigned_long__unsigned_long__0(___x.as_pointer())
-        });
+        unimplemented!();
         {
             p1.prefix_inc();
             p2.prefix_dec()
@@ -76,10 +72,7 @@ pub fn populate_16(m: Ptr<()>, mut start: Ptr<()>, mut end: Ptr<()>) {
     let mut p1: Ptr<()> = (start).clone();
     let mut p2: Ptr<()> = end.offset(-((1_()) as isize));
     'loop_: while ({ (p1).clone() } != { (end).clone() }) {
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.upgrade().deref()).insert_45_struct_std_pair__Bool___Bool__0(___x.as_pointer())
-        });
+        unimplemented!();
         {
             p1.prefix_inc();
             p2.prefix_dec()
@@ -90,11 +83,7 @@ pub fn populate_17(m: Ptr<()>, mut start: Ptr<Ptr<()>>, mut end: Ptr<Ptr<()>>) {
     let mut p1: Ptr<Ptr<()>> = (start).clone();
     let mut p2: Ptr<Ptr<()>> = end.offset(-((1_()) as isize));
     'loop_: while ({ (p1).clone() } != { (end).clone() }) {
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.upgrade().deref())
-                .insert_45_struct_std_pair_char_ptr__char_ptr__0(___x.as_pointer())
-        });
+        unimplemented!();
         {
             p1.prefix_inc();
             p2.prefix_dec()

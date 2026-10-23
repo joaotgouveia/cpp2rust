@@ -64,20 +64,10 @@ pub fn test_0() -> () {
     }
     {
         let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                (*map.borrow()).insert_47_struct_std_pair_struct_Key__int__0(___p.as_pointer())
-            }),
-        ));
+        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let result2: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                (*map.borrow()).insert_47_struct_std_pair_struct_Key__int__0(___p.as_pointer())
-            }),
-        ));
+        let result2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

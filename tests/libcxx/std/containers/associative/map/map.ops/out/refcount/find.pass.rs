@@ -263,62 +263,14 @@ pub fn test_10() -> () {
     {
         {
             let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                {
-                    let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
-                    let __tmp_1: Value<()> = Rc::new(RefCell::new(5_()));
-                    std_pair_const_int__double_::new_1({ __tmp_0.as_pointer() }, {
-                        __tmp_1.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_2: Value<()> = Rc::new(RefCell::new(6_()));
-                    let __tmp_3: Value<()> = Rc::new(RefCell::new(6_()));
-                    std_pair_const_int__double_::new_1({ __tmp_2.as_pointer() }, {
-                        __tmp_3.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_4: Value<()> = Rc::new(RefCell::new(7_()));
-                    let __tmp_5: Value<()> = Rc::new(RefCell::new(7_()));
-                    std_pair_const_int__double_::new_1({ __tmp_4.as_pointer() }, {
-                        __tmp_5.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_6: Value<()> = Rc::new(RefCell::new(8_()));
-                    let __tmp_7: Value<()> = Rc::new(RefCell::new(8_()));
-                    std_pair_const_int__double_::new_1({ __tmp_6.as_pointer() }, {
-                        __tmp_7.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_8: Value<()> = Rc::new(RefCell::new(9_()));
-                    let __tmp_9: Value<()> = Rc::new(RefCell::new(9_()));
-                    std_pair_const_int__double_::new_1({ __tmp_8.as_pointer() }, {
-                        __tmp_9.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_10: Value<()> = Rc::new(RefCell::new(10_()));
-                    let __tmp_11: Value<()> = Rc::new(RefCell::new(10_()));
-                    std_pair_const_int__double_::new_1({ __tmp_10.as_pointer() }, {
-                        __tmp_11.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_12: Value<()> = Rc::new(RefCell::new(11_()));
-                    let __tmp_13: Value<()> = Rc::new(RefCell::new(11_()));
-                    std_pair_const_int__double_::new_1({ __tmp_12.as_pointer() }, {
-                        __tmp_13.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_14: Value<()> = Rc::new(RefCell::new(12_()));
-                    let __tmp_15: Value<()> = Rc::new(RefCell::new(12_()));
-                    std_pair_const_int__double_::new_1({ __tmp_14.as_pointer() }, {
-                        __tmp_15.as_pointer()
-                    })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ])));
             let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -342,62 +294,14 @@ pub fn test_10() -> () {
         }
         {
             let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                {
-                    let __tmp_16: Value<()> = Rc::new(RefCell::new(5_()));
-                    let __tmp_17: Value<()> = Rc::new(RefCell::new(5_()));
-                    std_pair_const_int__double_::new_1({ __tmp_16.as_pointer() }, {
-                        __tmp_17.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_18: Value<()> = Rc::new(RefCell::new(6_()));
-                    let __tmp_19: Value<()> = Rc::new(RefCell::new(6_()));
-                    std_pair_const_int__double_::new_1({ __tmp_18.as_pointer() }, {
-                        __tmp_19.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_20: Value<()> = Rc::new(RefCell::new(7_()));
-                    let __tmp_21: Value<()> = Rc::new(RefCell::new(7_()));
-                    std_pair_const_int__double_::new_1({ __tmp_20.as_pointer() }, {
-                        __tmp_21.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_22: Value<()> = Rc::new(RefCell::new(8_()));
-                    let __tmp_23: Value<()> = Rc::new(RefCell::new(8_()));
-                    std_pair_const_int__double_::new_1({ __tmp_22.as_pointer() }, {
-                        __tmp_23.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_24: Value<()> = Rc::new(RefCell::new(9_()));
-                    let __tmp_25: Value<()> = Rc::new(RefCell::new(9_()));
-                    std_pair_const_int__double_::new_1({ __tmp_24.as_pointer() }, {
-                        __tmp_25.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_26: Value<()> = Rc::new(RefCell::new(10_()));
-                    let __tmp_27: Value<()> = Rc::new(RefCell::new(10_()));
-                    std_pair_const_int__double_::new_1({ __tmp_26.as_pointer() }, {
-                        __tmp_27.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_28: Value<()> = Rc::new(RefCell::new(11_()));
-                    let __tmp_29: Value<()> = Rc::new(RefCell::new(11_()));
-                    std_pair_const_int__double_::new_1({ __tmp_28.as_pointer() }, {
-                        __tmp_29.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_30: Value<()> = Rc::new(RefCell::new(12_()));
-                    let __tmp_31: Value<()> = Rc::new(RefCell::new(12_()));
-                    std_pair_const_int__double_::new_1({ __tmp_30.as_pointer() }, {
-                        __tmp_31.as_pointer()
-                    })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ])));
             let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -422,62 +326,14 @@ pub fn test_10() -> () {
     }
     {
         let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_32: Value<()> = Rc::new(RefCell::new(5_()));
-                let __tmp_33: Value<()> = Rc::new(RefCell::new(5_()));
-                std_pair_const_int__int_::new_1({ __tmp_32.as_pointer() }, {
-                    __tmp_33.as_pointer()
-                })
-            },
-            {
-                let __tmp_34: Value<()> = Rc::new(RefCell::new(6_()));
-                let __tmp_35: Value<()> = Rc::new(RefCell::new(6_()));
-                std_pair_const_int__int_::new_1({ __tmp_34.as_pointer() }, {
-                    __tmp_35.as_pointer()
-                })
-            },
-            {
-                let __tmp_36: Value<()> = Rc::new(RefCell::new(7_()));
-                let __tmp_37: Value<()> = Rc::new(RefCell::new(7_()));
-                std_pair_const_int__int_::new_1({ __tmp_36.as_pointer() }, {
-                    __tmp_37.as_pointer()
-                })
-            },
-            {
-                let __tmp_38: Value<()> = Rc::new(RefCell::new(8_()));
-                let __tmp_39: Value<()> = Rc::new(RefCell::new(8_()));
-                std_pair_const_int__int_::new_1({ __tmp_38.as_pointer() }, {
-                    __tmp_39.as_pointer()
-                })
-            },
-            {
-                let __tmp_40: Value<()> = Rc::new(RefCell::new(9_()));
-                let __tmp_41: Value<()> = Rc::new(RefCell::new(9_()));
-                std_pair_const_int__int_::new_1({ __tmp_40.as_pointer() }, {
-                    __tmp_41.as_pointer()
-                })
-            },
-            {
-                let __tmp_42: Value<()> = Rc::new(RefCell::new(10_()));
-                let __tmp_43: Value<()> = Rc::new(RefCell::new(10_()));
-                std_pair_const_int__int_::new_1({ __tmp_42.as_pointer() }, {
-                    __tmp_43.as_pointer()
-                })
-            },
-            {
-                let __tmp_44: Value<()> = Rc::new(RefCell::new(11_()));
-                let __tmp_45: Value<()> = Rc::new(RefCell::new(11_()));
-                std_pair_const_int__int_::new_1({ __tmp_44.as_pointer() }, {
-                    __tmp_45.as_pointer()
-                })
-            },
-            {
-                let __tmp_46: Value<()> = Rc::new(RefCell::new(12_()));
-                let __tmp_47: Value<()> = Rc::new(RefCell::new(12_()));
-                std_pair_const_int__int_::new_1({ __tmp_46.as_pointer() }, {
-                    __tmp_47.as_pointer()
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -494,62 +350,14 @@ pub fn test_10() -> () {
     {
         {
             let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                {
-                    let __tmp_48: Value<()> = Rc::new(RefCell::new(5_()));
-                    let __tmp_49: Value<()> = Rc::new(RefCell::new(5_()));
-                    std_pair_const_int__double_::new_1({ __tmp_48.as_pointer() }, {
-                        __tmp_49.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_50: Value<()> = Rc::new(RefCell::new(6_()));
-                    let __tmp_51: Value<()> = Rc::new(RefCell::new(6_()));
-                    std_pair_const_int__double_::new_1({ __tmp_50.as_pointer() }, {
-                        __tmp_51.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_52: Value<()> = Rc::new(RefCell::new(7_()));
-                    let __tmp_53: Value<()> = Rc::new(RefCell::new(7_()));
-                    std_pair_const_int__double_::new_1({ __tmp_52.as_pointer() }, {
-                        __tmp_53.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_54: Value<()> = Rc::new(RefCell::new(8_()));
-                    let __tmp_55: Value<()> = Rc::new(RefCell::new(8_()));
-                    std_pair_const_int__double_::new_1({ __tmp_54.as_pointer() }, {
-                        __tmp_55.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_56: Value<()> = Rc::new(RefCell::new(9_()));
-                    let __tmp_57: Value<()> = Rc::new(RefCell::new(9_()));
-                    std_pair_const_int__double_::new_1({ __tmp_56.as_pointer() }, {
-                        __tmp_57.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_58: Value<()> = Rc::new(RefCell::new(10_()));
-                    let __tmp_59: Value<()> = Rc::new(RefCell::new(10_()));
-                    std_pair_const_int__double_::new_1({ __tmp_58.as_pointer() }, {
-                        __tmp_59.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_60: Value<()> = Rc::new(RefCell::new(11_()));
-                    let __tmp_61: Value<()> = Rc::new(RefCell::new(11_()));
-                    std_pair_const_int__double_::new_1({ __tmp_60.as_pointer() }, {
-                        __tmp_61.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_62: Value<()> = Rc::new(RefCell::new(12_()));
-                    let __tmp_63: Value<()> = Rc::new(RefCell::new(12_()));
-                    std_pair_const_int__double_::new_1({ __tmp_62.as_pointer() }, {
-                        __tmp_63.as_pointer()
-                    })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ])));
             &((*ar.borrow())[(0_()) as usize].second);
             let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -574,62 +382,14 @@ pub fn test_10() -> () {
         }
         {
             let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                {
-                    let __tmp_64: Value<()> = Rc::new(RefCell::new(5_()));
-                    let __tmp_65: Value<()> = Rc::new(RefCell::new(5_()));
-                    std_pair_const_int__double_::new_1({ __tmp_64.as_pointer() }, {
-                        __tmp_65.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_66: Value<()> = Rc::new(RefCell::new(6_()));
-                    let __tmp_67: Value<()> = Rc::new(RefCell::new(6_()));
-                    std_pair_const_int__double_::new_1({ __tmp_66.as_pointer() }, {
-                        __tmp_67.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_68: Value<()> = Rc::new(RefCell::new(7_()));
-                    let __tmp_69: Value<()> = Rc::new(RefCell::new(7_()));
-                    std_pair_const_int__double_::new_1({ __tmp_68.as_pointer() }, {
-                        __tmp_69.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_70: Value<()> = Rc::new(RefCell::new(8_()));
-                    let __tmp_71: Value<()> = Rc::new(RefCell::new(8_()));
-                    std_pair_const_int__double_::new_1({ __tmp_70.as_pointer() }, {
-                        __tmp_71.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_72: Value<()> = Rc::new(RefCell::new(9_()));
-                    let __tmp_73: Value<()> = Rc::new(RefCell::new(9_()));
-                    std_pair_const_int__double_::new_1({ __tmp_72.as_pointer() }, {
-                        __tmp_73.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_74: Value<()> = Rc::new(RefCell::new(10_()));
-                    let __tmp_75: Value<()> = Rc::new(RefCell::new(10_()));
-                    std_pair_const_int__double_::new_1({ __tmp_74.as_pointer() }, {
-                        __tmp_75.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_76: Value<()> = Rc::new(RefCell::new(11_()));
-                    let __tmp_77: Value<()> = Rc::new(RefCell::new(11_()));
-                    std_pair_const_int__double_::new_1({ __tmp_76.as_pointer() }, {
-                        __tmp_77.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_78: Value<()> = Rc::new(RefCell::new(12_()));
-                    let __tmp_79: Value<()> = Rc::new(RefCell::new(12_()));
-                    std_pair_const_int__double_::new_1({ __tmp_78.as_pointer() }, {
-                        __tmp_79.as_pointer()
-                    })
-                },
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
+                unimplemented!(),
             ])));
             let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -654,62 +414,14 @@ pub fn test_10() -> () {
     }
     {
         let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_80: Value<()> = Rc::new(RefCell::new(5_()));
-                let __tmp_81: Value<()> = Rc::new(RefCell::new(5_()));
-                std_pair_const_int__double_::new_1({ __tmp_80.as_pointer() }, {
-                    __tmp_81.as_pointer()
-                })
-            },
-            {
-                let __tmp_82: Value<()> = Rc::new(RefCell::new(6_()));
-                let __tmp_83: Value<()> = Rc::new(RefCell::new(6_()));
-                std_pair_const_int__double_::new_1({ __tmp_82.as_pointer() }, {
-                    __tmp_83.as_pointer()
-                })
-            },
-            {
-                let __tmp_84: Value<()> = Rc::new(RefCell::new(7_()));
-                let __tmp_85: Value<()> = Rc::new(RefCell::new(7_()));
-                std_pair_const_int__double_::new_1({ __tmp_84.as_pointer() }, {
-                    __tmp_85.as_pointer()
-                })
-            },
-            {
-                let __tmp_86: Value<()> = Rc::new(RefCell::new(8_()));
-                let __tmp_87: Value<()> = Rc::new(RefCell::new(8_()));
-                std_pair_const_int__double_::new_1({ __tmp_86.as_pointer() }, {
-                    __tmp_87.as_pointer()
-                })
-            },
-            {
-                let __tmp_88: Value<()> = Rc::new(RefCell::new(9_()));
-                let __tmp_89: Value<()> = Rc::new(RefCell::new(9_()));
-                std_pair_const_int__double_::new_1({ __tmp_88.as_pointer() }, {
-                    __tmp_89.as_pointer()
-                })
-            },
-            {
-                let __tmp_90: Value<()> = Rc::new(RefCell::new(10_()));
-                let __tmp_91: Value<()> = Rc::new(RefCell::new(10_()));
-                std_pair_const_int__double_::new_1({ __tmp_90.as_pointer() }, {
-                    __tmp_91.as_pointer()
-                })
-            },
-            {
-                let __tmp_92: Value<()> = Rc::new(RefCell::new(11_()));
-                let __tmp_93: Value<()> = Rc::new(RefCell::new(11_()));
-                std_pair_const_int__double_::new_1({ __tmp_92.as_pointer() }, {
-                    __tmp_93.as_pointer()
-                })
-            },
-            {
-                let __tmp_94: Value<()> = Rc::new(RefCell::new(12_()));
-                let __tmp_95: Value<()> = Rc::new(RefCell::new(12_()));
-                std_pair_const_int__double_::new_1({ __tmp_94.as_pointer() }, {
-                    __tmp_95.as_pointer()
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -759,12 +471,7 @@ pub fn test_10() -> () {
         unimplemented!().write(10_());
         unimplemented!().write(11_());
         unimplemented!().write(12_());
-        let r: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___k: Value<()> = Rc::new(RefCell::new(5_()));
-                (*m.borrow()).find_80_int_struct_std_less_void__0(___k.as_pointer())
-            }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -391,21 +391,25 @@ pub unsafe fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_11(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -489,7 +493,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -499,7 +503,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_13(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -567,13 +571,13 @@ impl util_iterator_error {
         this
     }
 }
-pub static mut comparison_count_14: std::cell::LazyCell<()> =
+pub static mut comparison_count_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn counting_equals_15(a: *const (), b: *const ()) -> () {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_14)).prefix_inc();
+pub unsafe fn counting_equals_16(a: *const (), b: *const ()) -> () {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_15)).prefix_inc();
     return ((*a) == (*b));
 }
-pub unsafe fn test_constexpr_16() -> () {
+pub unsafe fn test_constexpr_17() -> () {
     let mut ia: [(); 3] = [0_(), 0_(), 0_()];
     let mut ib: [(); 3] = [1_(), 1_(), 0_()];
     let mut ic: [(); 3] = [1_(), 0_(), 1_()];
@@ -922,10 +926,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_14)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_15)) = 0_();
         unimplemented!();
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_14)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_15)) = 0_();
         unimplemented!();
         unimplemented!();
     }
@@ -949,5 +953,5 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const comparison_count_14);
+    std::cell::LazyCell::force(&*&raw const comparison_count_15);
 }

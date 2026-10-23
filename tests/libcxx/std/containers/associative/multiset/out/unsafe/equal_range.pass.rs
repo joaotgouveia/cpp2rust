@@ -252,46 +252,25 @@ pub unsafe fn test_7() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___k: () = 4_();
-            m.equal_range_79_int_struct_std_less_void__0(&mut ___k)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 5_();
-            m.equal_range_79_int_struct_std_less_void__0(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 6_();
-            m.equal_range_79_int_struct_std_less_void__0(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 7_();
-            m.equal_range_79_int_struct_std_less_void__0(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 8_();
-            m.equal_range_79_int_struct_std_less_void__0(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 9_();
-            m.equal_range_79_int_struct_std_less_void__0(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___k: () = 10_();
-            m.equal_range_79_int_struct_std_less_void__0(&mut ___k)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

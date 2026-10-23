@@ -282,14 +282,8 @@ pub unsafe fn test_12() -> () {
         {
             let mut p: () = 0_();
             'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
-                let mut c1: () =
-                    std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    });
-                let mut c2: () =
-                    std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    });
+                let mut c1: () = unimplemented!();
+                let mut c2: () = unimplemented!();
                 unimplemented!();
                 (unsafe { testd_8(&c1, p, f) });
                 p.prefix_inc();
@@ -302,10 +296,7 @@ pub unsafe fn test_12() -> () {
         {
             let mut p: () = 0_();
             'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
-                let mut c1: () =
-                    std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    });
+                let mut c1: () = unimplemented!();
                 unimplemented!();
                 (unsafe { tests_10(&c1, p, f) });
                 p.prefix_inc();
@@ -320,14 +311,8 @@ pub unsafe fn test_12() -> () {
         {
             let mut p: () = 0_();
             'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
-                let mut c1: () =
-                    std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    });
-                let mut c2: () =
-                    std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    });
+                let mut c1: () = unimplemented!();
+                let mut c2: () = unimplemented!();
                 unimplemented!();
                 (unsafe { testd_9(&c1, p, f) });
                 p.prefix_inc();
@@ -340,10 +325,7 @@ pub unsafe fn test_12() -> () {
         {
             let mut p: () = 0_();
             'loop_: while ((p) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut size_t1_6))) {
-                let mut c1: () =
-                    std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    });
+                let mut c1: () = unimplemented!();
                 unimplemented!();
                 (unsafe { tests_11(&c1, p, f) });
                 p.prefix_inc();

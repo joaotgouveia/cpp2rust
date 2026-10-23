@@ -524,21 +524,25 @@ pub unsafe fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_16(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_17(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -622,7 +626,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_19(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -632,7 +636,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_18(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -711,13 +715,13 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<decltype(std::ranges::uninitialized_default_construct_n),\n    NotDefaultCtrable*, int>"
 );
-pub unsafe fn test_19() -> () {
+pub unsafe fn test_20() -> () {
     {
         let n: () = 3_();
         let mut alloc: () = unimplemented!();
         let mut data: *mut () = unimplemented!();
         let mut result: *mut () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_20))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_21))(
                 data, n,
             )
         });
@@ -728,7 +732,7 @@ pub unsafe fn test_19() -> () {
             unimplemented!();
             i.prefix_inc();
         }
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_21))(data, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_22))(data, n) });
         unimplemented!();
     }
     {
@@ -736,7 +740,7 @@ pub unsafe fn test_19() -> () {
         let mut alloc: () = unimplemented!();
         let mut data: *mut IntWrapper_11 = unimplemented!();
         let mut result: *mut IntWrapper_11 = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_20))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_21))(
                 data, n,
             )
         });
@@ -746,7 +750,7 @@ pub unsafe fn test_19() -> () {
             unimplemented!();
             i.prefix_inc();
         }
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_21))(data, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_22))(data, n) });
         unimplemented!();
     }
     {
@@ -754,14 +758,14 @@ pub unsafe fn test_19() -> () {
         let mut pool: [(); 5] = [-1_(), -1_(), -1_(), -1_(), -1_()];
         let mut p: *mut () = pool.as_mut_ptr();
         let mut end1: forward_iterator_int_ptr_ = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_20))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_21))(
                 forward_iterator_int_ptr_::new_1({ p }),
                 1_(),
             )
         });
         unimplemented!();
         let mut end2: forward_iterator_int_ptr_ = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_20))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_21))(
                 forward_iterator_int_ptr_::new_1({ p.offset((1_()) as isize) }),
                 4_(),
             )
@@ -785,7 +789,7 @@ pub unsafe fn test_19() -> () {
         ];
         let mut p: *mut IntWrapper_11 = pool.as_mut_ptr();
         let mut end1: forward_iterator_IntWrapper_ptr_ = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_20))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_21))(
                 forward_iterator_IntWrapper_ptr_::new_1({ p }),
                 1_(),
             )
@@ -794,7 +798,7 @@ pub unsafe fn test_19() -> () {
         unimplemented!();
         unimplemented!();
         let mut end2: forward_iterator_IntWrapper_ptr_ = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_20))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_21))(
                 forward_iterator_IntWrapper_ptr_::new_1({ p.offset((1_()) as isize) }),
                 4_(),
             )
@@ -836,7 +840,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut buf: Buffer_Counted__1_ = <Buffer_Counted__1_>::default();
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_20))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_21))(
                 (unsafe { Buffer_Counted__1_::begin(&mut buf) }),
                 0_(),
             )
@@ -848,7 +852,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let N: () = 5_();
         let mut buf: Buffer_Counted__5_ = <Buffer_Counted__5_>::default();
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_20))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_default_construct_n_21))(
                 (unsafe { Buffer_Counted__5_::begin(&mut buf) }),
                 N,
             )
@@ -858,7 +862,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         (unsafe { Counted::reset() });
     }
-    (unsafe { test_19() });
+    (unsafe { test_20() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

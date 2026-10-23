@@ -123,40 +123,29 @@ const _: () = assert!(
 );
 pub unsafe fn test_ref_23() {
     let mut i: () = 0_();
-    let mut opt: () = (unsafe { make_optional_24(&mut i) });
+    let mut opt: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
 }
-pub unsafe fn test_ref_25() {
+pub unsafe fn test_ref_24() {
     let mut i: () = 0_();
-    let mut opt: () = (unsafe { make_optional_26(&mut i) });
+    let mut opt: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
 }
-pub unsafe fn test_27() -> () {
+pub unsafe fn test_25() -> () {
     {
-        let opt: () = (unsafe {
-            let mut ___args: () = ('a' as ());
-            make_optional_28(&mut ___args)
-        });
+        let opt: () = unimplemented!();
         const _: () = assert!(true, "*opt == int(\'a\')");;
     }
     let test_string: FnPtr<fn()> = FnPtr::<fn()>::new(|| unsafe {
         {
-            let mut s: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"123".as_ptr() },
-                    None,
-                );
-            let mut opt: () = (unsafe { make_optional_29(&mut s) });
+            let mut s: () = unimplemented!();
+            let mut opt: () = unimplemented!();
             unimplemented!();
         }
         {
-            let mut opt: () = (unsafe {
-                let mut ___args_0: () = 4_();
-                let mut ___args_1: () = ('X' as ());
-                make_optional_30(&mut ___args_0, &mut ___args_1)
-            });
+            let mut opt: () = unimplemented!();
             unimplemented!();
         }
     });
@@ -164,11 +153,8 @@ pub unsafe fn test_27() -> () {
         (unsafe { test_string.call() });
     }
     let test_unique_ptr: FnPtr<fn()> = FnPtr::<fn()>::new(|| unsafe {
-        let mut s: () = (unsafe {
-            let mut ___args: () = 3_();
-            make_unique_31(&mut ___args)
-        });
-        let mut opt: () = (unsafe { make_optional_32(&mut *(&raw mut s).cast::<()>()) });
+        let mut s: () = unimplemented!();
+        let mut opt: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     });
@@ -176,7 +162,7 @@ pub unsafe fn test_27() -> () {
         (unsafe { test_unique_ptr.call() });
     }
     (unsafe { test_ref_23() });
-    (unsafe { test_ref_25() });
+    (unsafe { test_ref_24() });
     return true;
 }
 pub fn main() {
@@ -195,7 +181,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_27() });
+    (unsafe { test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

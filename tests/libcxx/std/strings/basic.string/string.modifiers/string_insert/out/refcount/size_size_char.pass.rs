@@ -155,3608 +155,536 @@ pub fn test_11(s: (), mut pos: (), mut n: (), mut str: (), mut expected: ()) {
     }
 }
 pub fn test_string_12() {
+    ({ test_9(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 2_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 2_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 2_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 2_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 4_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 4_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 4_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 4_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 5_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 5_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 5_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 5_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 6_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 6_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 6_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 6_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 5_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 5_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 5_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 5_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 9_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 9_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 9_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 9_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 10_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 10_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab11111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab1111111111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab11111111111111111111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd11111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd1111111111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd11111111111111111111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde1111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111111111111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde1111111111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111111111111111111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi11111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi1111111111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi11111111111111111111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            10_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            10_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij1111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111111111111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_9(unimplemented!(), 11_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 11_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            11_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            11_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             11_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             11_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_9(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 10_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 10_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            10_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            10_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111klmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij1111111111klmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111111111111111111klmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_9(unimplemented!(), 19_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 19_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            19_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            19_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs11111t") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             19_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs1111111111t") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             19_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs11111111111111111111t") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_9(unimplemented!(), 20_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 20_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            20_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            20_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             20_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst1111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             20_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst11111111111111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_9(unimplemented!(), 21_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 21_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            21_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            21_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             21_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_9(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             21_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
 }
 pub fn test_string_13() {
+    ({ test_10(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 2_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 2_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 2_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 2_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 4_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 4_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 4_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 4_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 5_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 5_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 5_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 5_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 6_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 6_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 6_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 6_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 5_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 5_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 5_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 5_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 9_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 9_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 9_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 9_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 10_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 10_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab11111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab1111111111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab11111111111111111111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd11111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd1111111111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd11111111111111111111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde1111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111111111111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde1111111111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111111111111111111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi11111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi1111111111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi11111111111111111111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            10_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            10_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij1111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111111111111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_10(unimplemented!(), 11_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 11_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            11_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            11_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             11_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             11_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_10(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 10_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 10_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            10_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            10_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111klmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij1111111111klmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111111111111111111klmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_10(unimplemented!(), 19_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 19_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            19_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            19_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs11111t") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             19_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs1111111111t") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             19_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs11111111111111111111t") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_10(unimplemented!(), 20_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 20_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            20_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            20_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             20_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst1111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             20_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst11111111111111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_10(unimplemented!(), 21_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 21_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            21_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            21_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             21_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_10(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             21_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
 }
 pub fn test_string_14() {
+    ({ test_11(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 2_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 2_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 2_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 2_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 4_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 4_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 4_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 4_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 5_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 5_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 5_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 5_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 6_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 6_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 6_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 6_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 5_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 5_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 5_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 5_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 9_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 9_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 9_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 9_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 10_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 10_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab11111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab1111111111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            2_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab11111111111111111111cde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd11111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd1111111111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            4_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcd11111111111111111111e") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde1111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            5_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111111111111111111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde") },
-                None,
-            ),
-            6_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde1111111111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            5_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcde11111111111111111111fghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi11111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi1111111111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            9_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghi11111111111111111111j") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            10_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            10_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij1111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111111111111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_11(unimplemented!(), 11_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 11_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            11_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
-            11_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             11_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij") },
-                None,
-            ),
+            unimplemented!(),
             11_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_11(unimplemented!(), 0_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 0_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 5_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 10_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 1_(), 20_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 10_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 10_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"1111111111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            0_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"11111111111111111111abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            10_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a1111111111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            1_(),
-            20_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a11111111111111111111bcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            10_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            10_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111klmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij1111111111klmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             10_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghij11111111111111111111klmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_11(unimplemented!(), 19_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 19_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            19_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            19_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs11111t") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             19_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs1111111111t") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             19_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrs11111111111111111111t") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_11(unimplemented!(), 20_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 20_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            20_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            20_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst11111") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             20_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst1111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             20_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst11111111111111111111") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
+    ({ test_11(unimplemented!(), 21_(), 0_(), ('1' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 21_(), 5_(), ('1' as ()), unimplemented!()) });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            21_(),
-            0_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
-            21_(),
-            5_(),
-            ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             21_(),
             10_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
     ({
         test_11(
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst") },
-                None,
-            ),
+            unimplemented!(),
             21_(),
             20_(),
             ('1' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"can\'t happen") },
-                None,
-            ),
+            unimplemented!(),
         )
     });
 }

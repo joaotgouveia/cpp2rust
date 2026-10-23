@@ -35,10 +35,7 @@ pub unsafe fn test_0() {
     let shift_size: () = 1_();
     let tempering_l: () = 3_();
     let mut q: all_zero_seed_seq = all_zero_seed_seq::new_1();
-    let mut e: () =
-        std_mersenne_twister_engine_unsigned_short__3__1__1__0__0__0__0__0__0__0__0__3__0_::new_1(
-            { &mut q },
-        );
+    let mut e: () = unimplemented!();
     let Xneg1: () = ((1_()) << ((3_() as ()).wrapping_sub(1_())));
     let Y: () = Xneg1;
     let X0: () = ((Xneg1) ^ ((Y) >> (1_())));
@@ -49,7 +46,7 @@ pub unsafe fn test_1() {
     let shift_size: () = 1_();
     let tempering_l: () = 33_();
     let mut q: all_zero_seed_seq = all_zero_seed_seq::new_1();
-    let mut e : () = std_mersenne_twister_engine_unsigned_long_long__33__1__1__0__0__0__0__0__0__0__0__33__0_ :: new_1 ( { & mut q } , )  ;
+    let mut e: () = unimplemented!();
     let Xneg1: () = ((1_()) << ((33_() as ()).wrapping_sub(1_())));
     let Y: () = Xneg1;
     let X0: () = ((Xneg1) ^ ((Y) >> (1_())));

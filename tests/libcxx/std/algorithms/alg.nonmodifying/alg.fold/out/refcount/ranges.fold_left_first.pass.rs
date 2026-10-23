@@ -209,23 +209,29 @@ pub fn operator_add_2(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_1(_i, n)
     });
 }
-pub fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_3(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_4(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_4(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_5(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -271,7 +277,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_6(
+            operator_cmp_7(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -296,7 +302,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_5(
+            operator_eq_6(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -388,7 +394,7 @@ pub struct sentinel {}
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
 thread_local!(
-    pub static enable_borrowed_range_7: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_8: Value<()> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
@@ -750,87 +756,87 @@ impl Default for invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass
         }
     }
 }
-pub fn triangular_sum_20(input: Ptr<()>) -> () {
+pub fn triangular_sum_21(input: Ptr<()>) -> () {
     unimplemented!();
-    let __decomp_21: Value<()> = Rc::new(RefCell::new(
+    let __decomp_22: Value<()> = Rc::new(RefCell::new(
         ({
             let ___r: Ptr<()> = (input).clone();
-            (*minmax_element_22.with(Value::clone).borrow_mut())(___r, None, None)
+            (*minmax_element_23.with(Value::clone).borrow_mut())(___r, None, None)
         })
         .clone(),
     ));
     return ({
         (({
             let ___r: Ptr<()> = (input).clone();
-            (*distance_23.with(Value::clone).borrow_mut())(___r)
+            (*distance_24.with(Value::clone).borrow_mut())(___r)
         }) / 2_())
     } * { ((unimplemented!().read()) + (unimplemented!().read())) });
 }
-pub fn triangular_sum_24(input: Ptr<()>) -> () {
+pub fn triangular_sum_25(input: Ptr<()>) -> () {
     unimplemented!();
-    let __decomp_25: Value<()> = Rc::new(RefCell::new(
+    let __decomp_26: Value<()> = Rc::new(RefCell::new(
         ({
             let ___r: Ptr<()> = (input).clone();
-            (*minmax_element_22.with(Value::clone).borrow_mut())(___r, None, None)
+            (*minmax_element_23.with(Value::clone).borrow_mut())(___r, None, None)
         })
         .clone(),
     ));
     return (({
         (({
             let ___r: Ptr<()> = (input).clone();
-            (*distance_23.with(Value::clone).borrow_mut())(___r)
+            (*distance_24.with(Value::clone).borrow_mut())(___r)
         }) / 2_())
     } * { (unimplemented!() + unimplemented!()) }) as ());
 }
-pub fn triangular_sum_26(input: Ptr<()>) -> () {
+pub fn triangular_sum_27(input: Ptr<()>) -> () {
     unimplemented!();
-    let __decomp_27: Value<()> = Rc::new(RefCell::new(
+    let __decomp_28: Value<()> = Rc::new(RefCell::new(
         ({
             let ___r: Ptr<()> = (input).clone();
-            (*minmax_element_22.with(Value::clone).borrow_mut())(___r, None, None)
+            (*minmax_element_23.with(Value::clone).borrow_mut())(___r, None, None)
         })
         .clone(),
     ));
     return (({
         (({
             let ___r: Ptr<()> = (input).clone();
-            (*distance_23.with(Value::clone).borrow_mut())(___r)
+            (*distance_24.with(Value::clone).borrow_mut())(___r)
         }) / 2_())
     } * { (unimplemented!() + unimplemented!()) }) as ());
 }
-pub fn triangular_sum_28(input: Ptr<()>) -> () {
+pub fn triangular_sum_29(input: Ptr<()>) -> () {
     unimplemented!();
-    let __decomp_29: Value<()> = Rc::new(RefCell::new(
+    let __decomp_30: Value<()> = Rc::new(RefCell::new(
         ({
             let ___r: Ptr<()> = (input).clone();
-            (*minmax_element_22.with(Value::clone).borrow_mut())(___r, None, None)
+            (*minmax_element_23.with(Value::clone).borrow_mut())(___r, None, None)
         })
         .clone(),
     ));
     return ({
         (({
             let ___r: Ptr<()> = (input).clone();
-            (*distance_23.with(Value::clone).borrow_mut())(___r)
+            (*distance_24.with(Value::clone).borrow_mut())(___r)
         }) / 2_())
     } * { ((unimplemented!().read()) + (unimplemented!().read())) });
 }
-pub fn triangular_sum_30(input: Ptr<()>) -> () {
+pub fn triangular_sum_31(input: Ptr<()>) -> () {
     unimplemented!();
-    let __decomp_31: Value<()> = Rc::new(RefCell::new(
+    let __decomp_32: Value<()> = Rc::new(RefCell::new(
         ({
             let ___r: Ptr<()> = (input).clone();
-            (*minmax_element_22.with(Value::clone).borrow_mut())(___r, None, None)
+            (*minmax_element_23.with(Value::clone).borrow_mut())(___r, None, None)
         })
         .clone(),
     ));
     return ({
         (({
             let ___r: Ptr<()> = (input).clone();
-            (*distance_23.with(Value::clone).borrow_mut())(___r)
+            (*distance_24.with(Value::clone).borrow_mut())(___r)
         }) / 2_())
     } * { ((unimplemented!().read()) + (unimplemented!().read())) });
 }
-pub fn factorial_32(mut n: ()) -> () {
+pub fn factorial_33(mut n: ()) -> () {
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(1_()));
     let mut i: () = 1_();
@@ -840,7 +846,7 @@ pub fn factorial_32(mut n: ()) -> () {
     }
     return (*result.borrow());
 }
-pub fn factorial_33(mut n: ()) -> () {
+pub fn factorial_34(mut n: ()) -> () {
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(1_()));
     let mut i: () = 1_();
@@ -856,7 +862,7 @@ const _: () = assert!(true, "factorial(2) == 2");
 const _: () = assert!(true, "factorial(3) == 6");
 const _: () = assert!(true, "factorial(4) == 24");
 const _: () = assert!(true, "factorial(5) == 120");
-pub fn fibonacci_34(mut n: ()) -> () {
+pub fn fibonacci_35(mut n: ()) -> () {
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(0_()));
     let mut prev: () = 1_();
@@ -878,14 +884,14 @@ const _: () = assert!(true, "fibonacci(6) == 8");
 const _: () = assert!(true, "fibonacci(7) == 13");
 const _: () = assert!(true, "fibonacci(8) == 21");
 const _: () = assert!(true, "fibonacci(9) == 34");
-pub fn check_iterator_35(r: Ptr<()>, f: (), expected: Ptr<()>) {
+pub fn check_iterator_36(r: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     unimplemented!(),
@@ -907,7 +913,7 @@ pub fn check_iterator_35(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
@@ -929,7 +935,7 @@ pub fn check_iterator_35(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     unimplemented!(),
@@ -950,96 +956,7 @@ pub fn check_iterator_35(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
-                    ___first,
-                    ___last,
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
-                )
-            }),
-        ));
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn check_iterator_38(r: Ptr<()>, f: (), expected: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    {
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___first: () = unimplemented!();
-                let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_   = unimplemented!()   ;
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
-                    ___first,
-                    ___last,
-                    unimplemented!(),
-                )
-            }),
-        ));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
-        ));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___first: () = unimplemented!();
-                let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_   = unimplemented!()   ;
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
-                    ___first,
-                    ___last,
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
-                )
-            }),
-        ));
-        unimplemented!();
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___first: () = unimplemented!();
-                let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_   = unimplemented!()   ;
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
-                    ___first,
-                    ___last,
-                    unimplemented!(),
-                )
-            }),
-        ));
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
-        ));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___first: () = unimplemented!();
-                let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_   = unimplemented!()   ;
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
@@ -1062,8 +979,8 @@ pub fn check_iterator_39(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
-                let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_   = unimplemented!()   ;
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     unimplemented!(),
@@ -1076,19 +993,19 @@ pub fn check_iterator_39(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
                 telemetry.as_pointer()
             }),
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
-                let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_   = unimplemented!()   ;
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
-                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() }),
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
             }),
         ));
@@ -1106,8 +1023,8 @@ pub fn check_iterator_39(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
-                let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_   = unimplemented!()   ;
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     unimplemented!(),
@@ -1119,19 +1036,19 @@ pub fn check_iterator_39(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
                 telemetry.as_pointer()
             }),
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
-                let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                let ___last: std_ranges_take_while_view_std_ranges_ref_view_const_std_vector_int_____lambda_at_ranges_fold_left_first_pass_cpp_200_39_____sentinel_true_   = unimplemented!()   ;
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
-                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() }),
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
             }),
         ));
@@ -1145,17 +1062,17 @@ pub fn check_iterator_39(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
 }
-pub fn check_iterator_40(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
-    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
+pub fn check_iterator_40(r: Ptr<()>, f: (), expected: Ptr<()>) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
-                    (*f.borrow()).copy_from(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -1165,26 +1082,26 @@ pub fn check_iterator_40(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
-        > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
-                { (*f.borrow()).copy_from() },
-                { telemetry.as_pointer() },
-            ),
+        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
+                    ___first,
+                    ___last,
+                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() }),
+                )
             }),
         ));
         unimplemented!();
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1196,10 +1113,10 @@ pub fn check_iterator_40(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
-                    (*f.borrow()).copy_from(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -1208,25 +1125,25 @@ pub fn check_iterator_40(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
-        > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
-                { (*f.borrow()).copy_from() },
-                { telemetry.as_pointer() },
-            ),
+        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
+                    ___first,
+                    ___last,
+                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() }),
+                )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1241,7 +1158,7 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*f.borrow()).copy_from(),
@@ -1255,9 +1172,9 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
         let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__,
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
         > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
                 { (*f.borrow()).copy_from() },
                 { telemetry.as_pointer() },
             ),
@@ -1266,13 +1183,14 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
+                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1284,7 +1202,7 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*f.borrow()).copy_from(),
@@ -1297,9 +1215,9 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
         let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__,
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
         > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
                 { (*f.borrow()).copy_from() },
                 { telemetry.as_pointer() },
             ),
@@ -1308,12 +1226,13 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
+                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1321,17 +1240,17 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         }
     }
 }
-pub fn check_iterator_42(r: Ptr<()>, f: (), expected: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
+pub fn check_iterator_42(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
+    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
-                    unimplemented!(),
+                    (*f.borrow()).copy_from(),
                 )
             }),
         ));
@@ -1341,27 +1260,25 @@ pub fn check_iterator_42(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
+        let f2: Value<
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__,
+        > = Rc::new(RefCell::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__::new(
+                { (*f.borrow()).copy_from() },
+                { telemetry.as_pointer() },
+            ),
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
-                    ___first,
-                    ___last,
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
-                )
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1371,12 +1288,12 @@ pub fn check_iterator_42(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
-                    unimplemented!(),
+                    (*f.borrow()).copy_from(),
                 )
             }),
         ));
@@ -1385,26 +1302,24 @@ pub fn check_iterator_42(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
+        let f2: Value<
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__,
+        > = Rc::new(RefCell::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__::new(
+                { (*f.borrow()).copy_from() },
+                { telemetry.as_pointer() },
+            ),
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
-                    ___first,
-                    ___last,
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
-                )
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
+                (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1419,7 +1334,7 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
                 let ___last: () = ({ (*r.upgrade().deref()).end_8() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     unimplemented!(),
@@ -1441,7 +1356,7 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
                 let ___last: () = ({ (*r.upgrade().deref()).end_8() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
@@ -1464,7 +1379,7 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
                 let ___last: () = ({ (*r.upgrade().deref()).end_8() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     unimplemented!(),
@@ -1485,7 +1400,7 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
                 let ___last: () = ({ (*r.upgrade().deref()).end_8() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
@@ -1508,9 +1423,9 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = unimplemented!();
-                let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
+                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     unimplemented!(),
@@ -1530,9 +1445,9 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = unimplemented!();
-                let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
+                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
@@ -1542,7 +1457,8 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
         unimplemented!();
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
+                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1552,9 +1468,9 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = unimplemented!();
-                let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
+                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     unimplemented!(),
@@ -1573,9 +1489,9 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = unimplemented!();
-                let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
+                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
@@ -1584,7 +1500,8 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
+                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1599,7 +1516,96 @@ pub fn check_iterator_45(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
+                    ___first,
+                    ___last,
+                    unimplemented!(),
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
+                    ___first,
+                    ___last,
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
+                )
+            }),
+        ));
+        unimplemented!();
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
+                    ___first,
+                    ___last,
+                    unimplemented!(),
+                )
+            }),
+        ));
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
+                    ___first,
+                    ___last,
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
+                )
+            }),
+        ));
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn check_iterator_46(r: Ptr<()>, f: (), expected: Ptr<()>) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    {
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*f.borrow()).clone(),
@@ -1621,7 +1627,7 @@ pub fn check_iterator_45(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() }),
@@ -1643,7 +1649,7 @@ pub fn check_iterator_45(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*f.borrow()).clone(),
@@ -1664,7 +1670,7 @@ pub fn check_iterator_45(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() }),
@@ -1681,14 +1687,14 @@ pub fn check_iterator_45(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
 }
-pub fn check_iterator_46(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<()>) {
+pub fn check_iterator_47(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<()>) {
     let f: Value<FnPtr<fn((), ()) -> ()>> = Rc::new(RefCell::new(f));
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*f.borrow()).copy_from(),
@@ -1713,7 +1719,7 @@ pub fn check_iterator_46(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
@@ -1732,7 +1738,7 @@ pub fn check_iterator_46(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*f.borrow()).copy_from(),
@@ -1756,7 +1762,7 @@ pub fn check_iterator_46(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
@@ -1770,14 +1776,14 @@ pub fn check_iterator_46(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<(
         }
     }
 }
-pub fn check_iterator_47(r: Ptr<()>, f: (), expected: Ptr<()>) {
+pub fn check_iterator_48(r: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*f.borrow()).clone(),
@@ -1799,7 +1805,7 @@ pub fn check_iterator_47(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() }),
@@ -1821,7 +1827,7 @@ pub fn check_iterator_47(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     (*f.borrow()).clone(),
@@ -1842,7 +1848,7 @@ pub fn check_iterator_47(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() }),
@@ -1852,84 +1858,6 @@ pub fn check_iterator_47(r: Ptr<()>, f: (), expected: Ptr<()>) {
         unimplemented!();
         if ({
             ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn check_lvalue_range_48(r: Ptr<()>, f: (), expected: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    {
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
-        ));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: invocable_with_telemetry_std_plus_void__ =
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
-        ));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: invocable_with_telemetry_std_plus_void__ =
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -1944,7 +1872,7 @@ pub fn check_lvalue_range_49(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -1964,7 +1892,7 @@ pub fn check_lvalue_range_49(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_void__ =
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -1982,7 +1910,7 @@ pub fn check_lvalue_range_49(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2001,7 +1929,7 @@ pub fn check_lvalue_range_49(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_void__ =
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2022,7 +1950,7 @@ pub fn check_lvalue_range_50(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2032,17 +1960,17 @@ pub fn check_lvalue_range_50(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
                 telemetry.as_pointer()
             }),
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___range: Ptr<()> = (r).clone();
-                let ___func: invocable_with_telemetry_std_multiplies_void__ =
-                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                let ___func: invocable_with_telemetry_std_plus_void__ =
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2060,7 +1988,85 @@ pub fn check_lvalue_range_50(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: invocable_with_telemetry_std_plus_void__ =
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn check_lvalue_range_51(r: Ptr<()>, f: (), expected: Ptr<()>) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    {
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: () = unimplemented!();
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: invocable_with_telemetry_std_multiplies_void__ =
+                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() });
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: () = unimplemented!();
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2079,83 +2085,13 @@ pub fn check_lvalue_range_50(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_multiplies_void__ =
                     invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
         unimplemented!();
         if ({
             ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn check_lvalue_range_51(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
-    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
-    {
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: FnPtr<Generic> = (*f.borrow()).copy_from();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
-        > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
-                { (*f.borrow()).copy_from() },
-                { telemetry.as_pointer() },
-            ),
-        ));
-        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: FnPtr<Generic> = (*f.borrow()).copy_from();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
-        > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
-                { (*f.borrow()).copy_from() },
-                { telemetry.as_pointer() },
-            ),
-        ));
-        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -2170,7 +2106,77 @@ pub fn check_lvalue_range_52(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: FnPtr<Generic> = (*f.borrow()).copy_from();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
+        > = Rc::new(RefCell::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
+                { (*f.borrow()).copy_from() },
+                { telemetry.as_pointer() },
+            ),
+        ));
+        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
+                .has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: FnPtr<Generic> = (*f.borrow()).copy_from();
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
+        > = Rc::new(RefCell::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
+                { (*f.borrow()).copy_from() },
+                { telemetry.as_pointer() },
+            ),
+        ));
+        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
+                .has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn check_lvalue_range_53(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
+    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
+    {
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: FnPtr<Generic> = (*f.borrow()).copy_from();
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2188,7 +2194,7 @@ pub fn check_lvalue_range_52(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
                 { telemetry.as_pointer() },
             ),
         ));
-        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
+        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
         if ({
             ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
@@ -2203,7 +2209,7 @@ pub fn check_lvalue_range_52(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: FnPtr<Generic> = (*f.borrow()).copy_from();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2220,90 +2226,10 @@ pub fn check_lvalue_range_52(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
                 { telemetry.as_pointer() },
             ),
         ));
-        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
+        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
         if ({
             ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn check_lvalue_range_53(r: Ptr<()>, f: (), expected: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    {
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
-        ));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: invocable_with_telemetry_std_plus_void__ =
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
-        ));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___range: Ptr<()> = (r).clone();
-                let ___func: invocable_with_telemetry_std_plus_void__ =
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
-            })
-            .clone(),
-        ));
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -2318,7 +2244,7 @@ pub fn check_lvalue_range_54(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2338,7 +2264,7 @@ pub fn check_lvalue_range_54(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_void__ =
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2357,7 +2283,7 @@ pub fn check_lvalue_range_54(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2376,7 +2302,7 @@ pub fn check_lvalue_range_54(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_void__ =
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2398,7 +2324,7 @@ pub fn check_lvalue_range_55(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = unimplemented!();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2418,7 +2344,87 @@ pub fn check_lvalue_range_55(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_void__ =
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
+                .has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: () = unimplemented!();
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: invocable_with_telemetry_std_plus_void__ =
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
+                .has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn check_lvalue_range_56(r: Ptr<()>, f: (), expected: Ptr<()>) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    {
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: () = unimplemented!();
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
+            })
+            .clone(),
+        ));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
+        ));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___range: Ptr<()> = (r).clone();
+                let ___func: invocable_with_telemetry_std_plus_void__ =
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2436,7 +2442,7 @@ pub fn check_lvalue_range_55(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = unimplemented!();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2455,7 +2461,7 @@ pub fn check_lvalue_range_55(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_void__ =
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2469,14 +2475,14 @@ pub fn check_lvalue_range_55(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
 }
-pub fn check_lvalue_range_56(r: Ptr<()>, f: (), expected: Ptr<()>) {
+pub fn check_lvalue_range_57(r: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = (*f.borrow()).clone();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2496,7 +2502,7 @@ pub fn check_lvalue_range_56(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_long__ =
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2514,7 +2520,7 @@ pub fn check_lvalue_range_56(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = (*f.borrow()).clone();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2533,7 +2539,7 @@ pub fn check_lvalue_range_56(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_long__ =
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2547,14 +2553,14 @@ pub fn check_lvalue_range_56(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
 }
-pub fn check_lvalue_range_57(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<()>) {
+pub fn check_lvalue_range_58(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<()>) {
     let f: Value<FnPtr<fn((), ()) -> ()>> = Rc::new(RefCell::new(f));
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2572,7 +2578,7 @@ pub fn check_lvalue_range_57(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
                 { telemetry.as_pointer() },
             ),
         ));
-        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
+        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
         if ({
             ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
@@ -2588,7 +2594,7 @@ pub fn check_lvalue_range_57(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2605,7 +2611,7 @@ pub fn check_lvalue_range_57(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
                 { telemetry.as_pointer() },
             ),
         ));
-        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
+        let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
         if ({
             ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
@@ -2617,14 +2623,14 @@ pub fn check_lvalue_range_57(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
         }
     }
 }
-pub fn check_lvalue_range_58(r: Ptr<()>, f: (), expected: Ptr<()>) {
+pub fn check_lvalue_range_59(r: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = (*f.borrow()).clone();
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2644,7 +2650,7 @@ pub fn check_lvalue_range_58(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_long__ =
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2662,7 +2668,7 @@ pub fn check_lvalue_range_58(r: Ptr<()>, f: (), expected: Ptr<()>) {
             ({
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: () = (*f.borrow()).clone();
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
@@ -2681,92 +2687,13 @@ pub fn check_lvalue_range_58(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 let ___range: Ptr<()> = (r).clone();
                 let ___func: invocable_with_telemetry_std_plus_long__ =
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() });
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(___range, ___func)
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(___range, ___func)
             })
             .clone(),
         ));
         unimplemented!();
         if ({
             ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn check_rvalue_range_59(r: Ptr<()>, f: (), expected: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    {
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
-                    (r2.as_pointer()).reinterpret_cast::<()>(),
-                    unimplemented!(),
-                )
-            }),
-        ));
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
-        ));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
-                    (r2.as_pointer()).reinterpret_cast::<()>(),
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
-                )
-            }),
-        ));
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
-                    (r2.as_pointer()).reinterpret_cast::<()>(),
-                    unimplemented!(),
-                )
-            }),
-        ));
-        unimplemented!();
-    }
-    {
-        let telemetry: Value<invocable_telemetry> =
-            Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
-        ));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
-                    (r2.as_pointer()).reinterpret_cast::<()>(),
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
-                )
-            }),
-        ));
-        unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -2777,10 +2704,10 @@ pub fn check_rvalue_range_59(r: Ptr<()>, f: (), expected: Ptr<()>) {
 pub fn check_rvalue_range_60(r: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
-        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     unimplemented!(),
                 )
@@ -2796,10 +2723,10 @@ pub fn check_rvalue_range_60(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 telemetry.as_pointer()
             }),
         ));
-        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
@@ -2815,10 +2742,10 @@ pub fn check_rvalue_range_60(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
     {
-        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     unimplemented!(),
                 )
@@ -2834,10 +2761,10 @@ pub fn check_rvalue_range_60(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 telemetry.as_pointer()
             }),
         ));
-        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
@@ -2856,10 +2783,10 @@ pub fn check_rvalue_range_60(r: Ptr<()>, f: (), expected: Ptr<()>) {
 pub fn check_rvalue_range_61(r: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     unimplemented!(),
                 )
@@ -2870,17 +2797,17 @@ pub fn check_rvalue_range_61(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
                 telemetry.as_pointer()
             }),
         ));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
-                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() }),
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
             }),
         ));
@@ -2894,10 +2821,10 @@ pub fn check_rvalue_range_61(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
     {
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     unimplemented!(),
                 )
@@ -2908,17 +2835,17 @@ pub fn check_rvalue_range_61(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
                 telemetry.as_pointer()
             }),
         ));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
-                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() }),
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
             }),
         ));
@@ -2932,15 +2859,15 @@ pub fn check_rvalue_range_61(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
 }
-pub fn check_rvalue_range_62(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
-    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
+pub fn check_rvalue_range_62(r: Ptr<()>, f: (), expected: Ptr<()>) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
     {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
-                    (*f.borrow()).copy_from(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -2949,24 +2876,23 @@ pub fn check_rvalue_range_62(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
-        > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
-                { (*f.borrow()).copy_from() },
-                { telemetry.as_pointer() },
-            ),
+        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
         ));
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
+                    (r2.as_pointer()).reinterpret_cast::<()>(),
+                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() }),
+                )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -2977,9 +2903,9 @@ pub fn check_rvalue_range_62(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
-                    (*f.borrow()).copy_from(),
+                    unimplemented!(),
                 )
             }),
         ));
@@ -2988,24 +2914,23 @@ pub fn check_rvalue_range_62(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
-        > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
-                { (*f.borrow()).copy_from() },
-                { telemetry.as_pointer() },
-            ),
+        let f2: Value<invocable_with_telemetry_std_multiplies_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_multiplies_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
         ));
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
+                    (r2.as_pointer()).reinterpret_cast::<()>(),
+                    invocable_with_telemetry_std_multiplies_void__::copy_from({ f2.as_pointer() }),
+                )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -3019,7 +2944,7 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     (*f.borrow()).copy_from(),
                 )
@@ -3031,9 +2956,9 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
         let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__,
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
         > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
                 { (*f.borrow()).copy_from() },
                 { telemetry.as_pointer() },
             ),
@@ -3041,12 +2966,13 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
+                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -3057,7 +2983,7 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     (*f.borrow()).copy_from(),
                 )
@@ -3069,9 +2995,9 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
         let f2: Value<
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__,
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__,
         > = Rc::new(RefCell::new(
-            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__::new(
                 { (*f.borrow()).copy_from() },
                 { telemetry.as_pointer() },
             ),
@@ -3079,12 +3005,13 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_38.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
+                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -3092,15 +3019,15 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         }
     }
 }
-pub fn check_rvalue_range_64(r: Ptr<()>, f: (), expected: Ptr<()>) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
+pub fn check_rvalue_range_64(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
+    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
     {
-        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
-                    unimplemented!(),
+                    (*f.borrow()).copy_from(),
                 )
             }),
         ));
@@ -3109,24 +3036,23 @@ pub fn check_rvalue_range_64(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
+        let f2: Value<
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__,
+        > = Rc::new(RefCell::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__::new(
+                { (*f.borrow()).copy_from() },
+                { telemetry.as_pointer() },
+            ),
         ));
-        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
-                    (r2.as_pointer()).reinterpret_cast::<()>(),
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
-                )
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -3134,12 +3060,12 @@ pub fn check_rvalue_range_64(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
     {
-        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
-                    unimplemented!(),
+                    (*f.borrow()).copy_from(),
                 )
             }),
         ));
@@ -3148,24 +3074,23 @@ pub fn check_rvalue_range_64(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let telemetry: Value<invocable_telemetry> =
             Rc::new(RefCell::new(<invocable_telemetry>::default()));
-        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
-            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
-                telemetry.as_pointer()
-            }),
+        let f2: Value<
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__,
+        > = Rc::new(RefCell::new(
+            invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__::new(
+                { (*f.borrow()).copy_from() },
+                { telemetry.as_pointer() },
+            ),
         ));
-        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
-                    (r2.as_pointer()).reinterpret_cast::<()>(),
-                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
-                )
+                (*fold_left_first_38.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -3179,7 +3104,7 @@ pub fn check_rvalue_range_65(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     unimplemented!(),
                 )
@@ -3198,7 +3123,7 @@ pub fn check_rvalue_range_65(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
@@ -3218,7 +3143,7 @@ pub fn check_rvalue_range_65(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     unimplemented!(),
                 )
@@ -3237,7 +3162,7 @@ pub fn check_rvalue_range_65(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
@@ -3257,10 +3182,10 @@ pub fn check_rvalue_range_65(r: Ptr<()>, f: (), expected: Ptr<()>) {
 pub fn check_rvalue_range_66(r: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     unimplemented!(),
                 )
@@ -3276,10 +3201,10 @@ pub fn check_rvalue_range_66(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 telemetry.as_pointer()
             }),
         ));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
@@ -3287,7 +3212,8 @@ pub fn check_rvalue_range_66(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
+                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -3295,10 +3221,10 @@ pub fn check_rvalue_range_66(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
     {
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     unimplemented!(),
                 )
@@ -3314,10 +3240,10 @@ pub fn check_rvalue_range_66(r: Ptr<()>, f: (), expected: Ptr<()>) {
                 telemetry.as_pointer()
             }),
         ));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r2: Value<()> = Rc::new(RefCell::new((*r.upgrade().deref()).clone()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
                 )
@@ -3325,7 +3251,8 @@ pub fn check_rvalue_range_66(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
+                .has_value()
         }) {
             unimplemented!();
             unimplemented!();
@@ -3339,7 +3266,86 @@ pub fn check_rvalue_range_67(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
+                    (r2.as_pointer()).reinterpret_cast::<()>(),
+                    unimplemented!(),
+                )
+            }),
+        ));
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
+        ));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
+                    (r2.as_pointer()).reinterpret_cast::<()>(),
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
+                )
+            }),
+        ));
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
+                    (r2.as_pointer()).reinterpret_cast::<()>(),
+                    unimplemented!(),
+                )
+            }),
+        ));
+        unimplemented!();
+    }
+    {
+        let telemetry: Value<invocable_telemetry> =
+            Rc::new(RefCell::new(<invocable_telemetry>::default()));
+        let f2: Value<invocable_with_telemetry_std_plus_void__> = Rc::new(RefCell::new(
+            invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, {
+                telemetry.as_pointer()
+            }),
+        ));
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
+                    (r2.as_pointer()).reinterpret_cast::<()>(),
+                    invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() }),
+                )
+            }),
+        ));
+        unimplemented!();
+        if ({
+            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
+        }) {
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn check_rvalue_range_68(r: Ptr<()>, f: (), expected: Ptr<()>) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    {
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let result: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     (*f.borrow()).clone(),
                 )
@@ -3358,7 +3364,7 @@ pub fn check_rvalue_range_67(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() }),
                 )
@@ -3377,7 +3383,7 @@ pub fn check_rvalue_range_67(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     (*f.borrow()).clone(),
                 )
@@ -3396,7 +3402,7 @@ pub fn check_rvalue_range_67(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() }),
                 )
@@ -3412,13 +3418,13 @@ pub fn check_rvalue_range_67(r: Ptr<()>, f: (), expected: Ptr<()>) {
         }
     }
 }
-pub fn check_rvalue_range_68(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<()>) {
+pub fn check_rvalue_range_69(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<()>) {
     let f: Value<FnPtr<fn((), ()) -> ()>> = Rc::new(RefCell::new(f));
     {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     (*f.borrow()).copy_from(),
                 )
@@ -3440,7 +3446,7 @@ pub fn check_rvalue_range_68(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
@@ -3457,7 +3463,7 @@ pub fn check_rvalue_range_68(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     (*f.borrow()).copy_from(),
                 )
@@ -3479,7 +3485,7 @@ pub fn check_rvalue_range_68(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   , )
+                (*fold_left_first_38.with(Value::clone).borrow_mut()) ( (r2 .as_pointer() ).reinterpret_cast::<()  >()  , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   , )
             }),
         ));
         unimplemented!();
@@ -3493,13 +3499,13 @@ pub fn check_rvalue_range_68(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
         }
     }
 }
-pub fn check_rvalue_range_69(r: Ptr<()>, f: (), expected: Ptr<()>) {
+pub fn check_rvalue_range_70(r: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     (*f.borrow()).clone(),
                 )
@@ -3518,7 +3524,7 @@ pub fn check_rvalue_range_69(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() }),
                 )
@@ -3537,7 +3543,7 @@ pub fn check_rvalue_range_69(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     (*f.borrow()).clone(),
                 )
@@ -3556,7 +3562,7 @@ pub fn check_rvalue_range_69(r: Ptr<()>, f: (), expected: Ptr<()>) {
         let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                (*fold_left_first_37.with(Value::clone).borrow_mut())(
+                (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     (r2.as_pointer()).reinterpret_cast::<()>(),
                     invocable_with_telemetry_std_plus_long__::copy_from({ f2.as_pointer() }),
                 )
@@ -3571,28 +3577,6 @@ pub fn check_rvalue_range_69(r: Ptr<()>, f: (), expected: Ptr<()>) {
             unimplemented!();
         }
     }
-}
-pub fn check_70(r: (), f: (), expected: Ptr<()>) {
-    let r: Value<()> = Rc::new(RefCell::new(r));
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    ({
-        let _r: Ptr<()> = r.as_pointer();
-        let _f: () = unimplemented!();
-        let _expected: Ptr<()> = (expected).clone();
-        check_iterator_35(_r, _f, _expected)
-    });
-    ({
-        let _r: Ptr<()> = r.as_pointer();
-        let _f: () = unimplemented!();
-        let _expected: Ptr<()> = (expected).clone();
-        check_lvalue_range_48(_r, _f, _expected)
-    });
-    ({
-        let _r: Ptr<()> = r.as_pointer();
-        let _f: () = unimplemented!();
-        let _expected: Ptr<()> = (expected).clone();
-        check_rvalue_range_59(_r, _f, _expected)
-    });
 }
 pub fn check_71(r: (), f: (), expected: Ptr<()>) {
     let r: Value<()> = Rc::new(RefCell::new(r));
@@ -3601,7 +3585,7 @@ pub fn check_71(r: (), f: (), expected: Ptr<()>) {
         let _r: Ptr<()> = r.as_pointer();
         let _f: () = unimplemented!();
         let _expected: Ptr<()> = (expected).clone();
-        check_iterator_38(_r, _f, _expected)
+        check_iterator_36(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
@@ -3638,24 +3622,24 @@ pub fn check_72(r: (), f: (), expected: Ptr<()>) {
         check_rvalue_range_61(_r, _f, _expected)
     });
 }
-pub fn check_73(r: (), f: FnPtr<Generic>, expected: Ptr<()>) {
+pub fn check_73(r: (), f: (), expected: Ptr<()>) {
     let r: Value<()> = Rc::new(RefCell::new(r));
-    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
+    let f: Value<()> = Rc::new(RefCell::new(f));
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: FnPtr<Generic> = (*f.borrow()).copy_from();
+        let _f: () = unimplemented!();
         let _expected: Ptr<()> = (expected).clone();
         check_iterator_40(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: FnPtr<Generic> = (*f.borrow()).copy_from();
+        let _f: () = unimplemented!();
         let _expected: Ptr<()> = (expected).clone();
         check_lvalue_range_51(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: FnPtr<Generic> = (*f.borrow()).copy_from();
+        let _f: () = unimplemented!();
         let _expected: Ptr<()> = (expected).clone();
         check_rvalue_range_62(_r, _f, _expected)
     });
@@ -3682,24 +3666,24 @@ pub fn check_74(r: (), f: FnPtr<Generic>, expected: Ptr<()>) {
         check_rvalue_range_63(_r, _f, _expected)
     });
 }
-pub fn check_75(r: (), f: (), expected: Ptr<()>) {
+pub fn check_75(r: (), f: FnPtr<Generic>, expected: Ptr<()>) {
     let r: Value<()> = Rc::new(RefCell::new(r));
-    let f: Value<()> = Rc::new(RefCell::new(f));
+    let f: Value<FnPtr<Generic>> = Rc::new(RefCell::new(f));
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: () = unimplemented!();
+        let _f: FnPtr<Generic> = (*f.borrow()).copy_from();
         let _expected: Ptr<()> = (expected).clone();
         check_iterator_42(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: () = unimplemented!();
+        let _f: FnPtr<Generic> = (*f.borrow()).copy_from();
         let _expected: Ptr<()> = (expected).clone();
         check_lvalue_range_53(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: () = unimplemented!();
+        let _f: FnPtr<Generic> = (*f.borrow()).copy_from();
         let _expected: Ptr<()> = (expected).clone();
         check_rvalue_range_64(_r, _f, _expected)
     });
@@ -3753,91 +3737,111 @@ pub fn check_78(r: (), f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: () = (*f.borrow()).clone();
+        let _f: () = unimplemented!();
         let _expected: Ptr<()> = (expected).clone();
         check_iterator_45(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: () = (*f.borrow()).clone();
+        let _f: () = unimplemented!();
         let _expected: Ptr<()> = (expected).clone();
         check_lvalue_range_56(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: () = (*f.borrow()).clone();
+        let _f: () = unimplemented!();
         let _expected: Ptr<()> = (expected).clone();
         check_rvalue_range_67(_r, _f, _expected)
     });
 }
-pub fn check_79(r: (), f: FnPtr<fn((), ()) -> ()>, expected: Ptr<()>) {
-    let r: Value<()> = Rc::new(RefCell::new(r));
-    let f: Value<FnPtr<fn((), ()) -> ()>> = Rc::new(RefCell::new(f));
-    ({
-        let _r: Ptr<()> = r.as_pointer();
-        let _f: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
-        let _expected: Ptr<()> = (expected).clone();
-        check_iterator_46(_r, _f, _expected)
-    });
-    ({
-        let _r: Ptr<()> = r.as_pointer();
-        let _f: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
-        let _expected: Ptr<()> = (expected).clone();
-        check_lvalue_range_57(_r, _f, _expected)
-    });
-    ({
-        let _r: Ptr<()> = r.as_pointer();
-        let _f: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
-        let _expected: Ptr<()> = (expected).clone();
-        check_rvalue_range_68(_r, _f, _expected)
-    });
-}
-pub fn check_80(r: (), f: (), expected: Ptr<()>) {
+pub fn check_79(r: (), f: (), expected: Ptr<()>) {
     let r: Value<()> = Rc::new(RefCell::new(r));
     let f: Value<()> = Rc::new(RefCell::new(f));
     ({
         let _r: Ptr<()> = r.as_pointer();
         let _f: () = (*f.borrow()).clone();
         let _expected: Ptr<()> = (expected).clone();
-        check_iterator_47(_r, _f, _expected)
+        check_iterator_46(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
         let _f: () = (*f.borrow()).clone();
+        let _expected: Ptr<()> = (expected).clone();
+        check_lvalue_range_57(_r, _f, _expected)
+    });
+    ({
+        let _r: Ptr<()> = r.as_pointer();
+        let _f: () = (*f.borrow()).clone();
+        let _expected: Ptr<()> = (expected).clone();
+        check_rvalue_range_68(_r, _f, _expected)
+    });
+}
+pub fn check_80(r: (), f: FnPtr<fn((), ()) -> ()>, expected: Ptr<()>) {
+    let r: Value<()> = Rc::new(RefCell::new(r));
+    let f: Value<FnPtr<fn((), ()) -> ()>> = Rc::new(RefCell::new(f));
+    ({
+        let _r: Ptr<()> = r.as_pointer();
+        let _f: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
+        let _expected: Ptr<()> = (expected).clone();
+        check_iterator_47(_r, _f, _expected)
+    });
+    ({
+        let _r: Ptr<()> = r.as_pointer();
+        let _f: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
         let _expected: Ptr<()> = (expected).clone();
         check_lvalue_range_58(_r, _f, _expected)
     });
     ({
         let _r: Ptr<()> = r.as_pointer();
-        let _f: () = (*f.borrow()).clone();
+        let _f: FnPtr<fn((), ()) -> ()> = (*f.borrow()).copy_from();
         let _expected: Ptr<()> = (expected).clone();
         check_rvalue_range_69(_r, _f, _expected)
     });
 }
-pub fn empty_range_test_case_81() {
-    let mut data: () = unimplemented!();
+pub fn check_81(r: (), f: (), expected: Ptr<()>) {
+    let r: Value<()> = Rc::new(RefCell::new(r));
+    let f: Value<()> = Rc::new(RefCell::new(f));
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        check_70(unimplemented!(), unimplemented!(), _expected.as_pointer())
+        let _r: Ptr<()> = r.as_pointer();
+        let _f: () = (*f.borrow()).clone();
+        let _expected: Ptr<()> = (expected).clone();
+        check_iterator_48(_r, _f, _expected)
     });
+    ({
+        let _r: Ptr<()> = r.as_pointer();
+        let _f: () = (*f.borrow()).clone();
+        let _expected: Ptr<()> = (expected).clone();
+        check_lvalue_range_59(_r, _f, _expected)
+    });
+    ({
+        let _r: Ptr<()> = r.as_pointer();
+        let _f: () = (*f.borrow()).clone();
+        let _expected: Ptr<()> = (expected).clone();
+        check_rvalue_range_70(_r, _f, _expected)
+    });
+}
+pub fn empty_range_test_case_82() {
+    let mut data: () = unimplemented!();
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         check_71(unimplemented!(), unimplemented!(), _expected.as_pointer())
     });
+    ({
+        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        check_72(unimplemented!(), unimplemented!(), _expected.as_pointer())
+    });
 }
-pub fn common_range_test_case_82() {
+pub fn common_range_test_case_83() {
     let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let _r: () = unimplemented!();
-        let _expected: Value<()> =
-            Rc::new(RefCell::new(({ triangular_sum_20(data.as_pointer()) })));
-        check_70(_r, unimplemented!(), _expected.as_pointer())
+        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        check_71(_r, unimplemented!(), _expected.as_pointer())
     });
     ({
         let _r: () = unimplemented!();
-        let _expected: Value<()> =
-            Rc::new(RefCell::new(({ factorial_32((unimplemented!().read())) })));
-        check_72(_r, unimplemented!(), _expected.as_pointer())
+        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        check_73(_r, unimplemented!(), _expected.as_pointer())
     });
     let multiply_with_prev: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
@@ -3857,11 +3861,8 @@ pub fn common_range_test_case_82() {
     )));
     ({
         let _r: () = unimplemented!();
-        let _expected: Value<()> = Rc::new(RefCell::new(
-            ({ factorial_33(unimplemented!()) })
-                .wrapping_mul(({ factorial_33((unimplemented!()).wrapping_sub(1_())) })),
-        ));
-        check_73(
+        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        check_74(
             _r,
             (*multiply_with_prev.borrow()).copy_from(),
             _expected.as_pointer(),
@@ -3881,12 +3882,11 @@ pub fn common_range_test_case_82() {
     )));
     ({
         let _r: () = unimplemented!();
-        let _expected: Value<()> =
-            Rc::new(RefCell::new(({ fibonacci_34((unimplemented!().read())) })));
-        check_74(_r, (*fib.borrow()).copy_from(), _expected.as_pointer())
+        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        check_75(_r, (*fib.borrow()).copy_from(), _expected.as_pointer())
     });
 }
-pub fn non_common_range_test_case_83() {
+pub fn non_common_range_test_case_84() {
     let parse: Value<FnPtr<fn(()) -> ()>> =
         Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|s: ()| -> () {
             {
@@ -3942,24 +3942,17 @@ pub fn non_common_range_test_case_83() {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _r: () = (*range.borrow()).clone();
-            let _expected: Value<()> = Rc::new(RefCell::new(
-                ({ triangular_sum_24((range.as_pointer()).reinterpret_cast::<()>()) }),
-            ));
-            check_75(_r, unimplemented!(), _expected.as_pointer())
+            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            check_76(_r, unimplemented!(), _expected.as_pointer())
         });
     }
     {
-        let data: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"five three two six one four") },
-                None,
-            ),
-        ));
-        let to_string_view : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { } , | r : Ptr< std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_false__value_type  > , | -> ()  { let mut n : ()  = (( { let ___r: Ptr< std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_false__value_type  >  = (r ).clone() ; (*distance_23.with(Value::clone).borrow_mut()) ( ___r , ) } ) ).clone() ;
+        let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let to_string_view : Value<FnPtr<Generic> > = Rc::new(RefCell::new(lambda! ( Generic , { } , | r : Ptr< std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_false__value_type  > , | -> ()  { let mut n : ()  = (( { let ___r: Ptr< std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_false__value_type  >  = (r ).clone() ; (*distance_24.with(Value::clone).borrow_mut()) ( ___r , ) } ) ).clone() ;
   ;
  ;
  return unimplemented!()   ;
- } , | r : Ptr< std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_true__value_type  > , | -> ()  { let mut n : ()  = (( { let ___r: Ptr< std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_true__value_type  >  = (r ).clone() ; (*distance_23.with(Value::clone).borrow_mut()) ( ___r , ) } ) ).clone() ;
+ } , | r : Ptr< std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_true__value_type  > , | -> ()  { let mut n : ()  = (( { let ___r: Ptr< std_ranges_lazy_split_view_std_ranges_ref_view_std_string___std_ranges_single_view_char_____outer_iterator_true__value_type  >  = (r ).clone() ; (*distance_24.with(Value::clone).borrow_mut()) ( ___r , ) } ) ).clone() ;
   ;
  ;
  return unimplemented!()   ;
@@ -3967,20 +3960,18 @@ pub fn non_common_range_test_case_83() {
         let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _r: () = (*range.borrow()).clone();
-            let _expected: Value<()> = Rc::new(RefCell::new(
-                ({ triangular_sum_26((range.as_pointer()).reinterpret_cast::<()>()) }),
-            ));
-            check_76(_r, unimplemented!(), _expected.as_pointer())
+            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            check_77(_r, unimplemented!(), _expected.as_pointer())
         });
     }
 }
-pub fn test_case_84() -> () {
-    ({ empty_range_test_case_81() });
-    ({ common_range_test_case_82() });
-    ({ non_common_range_test_case_83() });
+pub fn test_case_85() -> () {
+    ({ empty_range_test_case_82() });
+    ({ common_range_test_case_83() });
+    ({ non_common_range_test_case_84() });
     return true;
 }
-pub fn runtime_only_test_case_85() {
+pub fn runtime_only_test_case_86() {
     {
         let mut raw_data: Ptr<()> =
             Ptr::<()>::from_string_literal(b"Shells Orange Syrup Baratie Cocoyashi Loguetown");
@@ -3989,13 +3980,13 @@ pub fn runtime_only_test_case_85() {
         {
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let data: Value<()> = Rc::new(RefCell::new(
-                ({ (*istream_86.with(Value::clone).borrow_mut())(input.as_pointer()) }),
+                ({ (*istream_87.with(Value::clone).borrow_mut())(input.as_pointer()) }),
             ));
             let result: Value<()> = Rc::new(RefCell::new(
                 ({
                     let ___first: () = unimplemented!();
                     let ___last: () = unimplemented!();
-                    (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                    (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         unimplemented!(),
@@ -4008,11 +3999,11 @@ pub fn runtime_only_test_case_85() {
         {
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let data: Value<()> = Rc::new(RefCell::new(
-                ({ (*istream_86.with(Value::clone).borrow_mut())(input.as_pointer()) }),
+                ({ (*istream_87.with(Value::clone).borrow_mut())(input.as_pointer()) }),
             ));
             let result: Value<()> = Rc::new(RefCell::new(
                 ({
-                    (*fold_left_first_with_iter_36.with(Value::clone).borrow_mut())(
+                    (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                         data.as_pointer(),
                         unimplemented!(),
                     )
@@ -4024,33 +4015,33 @@ pub fn runtime_only_test_case_85() {
         {
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let data: Value<()> = Rc::new(RefCell::new(
-                ({ (*istream_86.with(Value::clone).borrow_mut())(input.as_pointer()) }),
+                ({ (*istream_87.with(Value::clone).borrow_mut())(input.as_pointer()) }),
             ));
             unimplemented!();
         }
         {
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let data: Value<()> = Rc::new(RefCell::new(
-                ({ (*istream_86.with(Value::clone).borrow_mut())(input.as_pointer()) }),
+                ({ (*istream_87.with(Value::clone).borrow_mut())(input.as_pointer()) }),
             ));
             unimplemented!();
         }
     }
     {
         let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut n: () = ({ (*distance_23.with(Value::clone).borrow_mut())(data.as_pointer()) });
+        let mut n: () = ({ (*distance_24.with(Value::clone).borrow_mut())(data.as_pointer()) });
         let mut expected: () = (n * n);
         ({
-            let _expected: Value<()> = Rc::new(RefCell::new(expected));
-            check_77(unimplemented!(), unimplemented!(), _expected.as_pointer())
+            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            check_78(unimplemented!(), unimplemented!(), _expected.as_pointer())
         });
     }
     {
         let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = ({ triangular_sum_28(data.as_pointer()) });
+        let mut expected: () = ({ triangular_sum_29(data.as_pointer()) });
         ({
-            let _expected: Value<()> = Rc::new(RefCell::new(expected));
-            check_78(unimplemented!(), unimplemented!(), _expected.as_pointer())
+            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            check_79(unimplemented!(), unimplemented!(), _expected.as_pointer())
         });
     }
     {
@@ -4062,12 +4053,10 @@ pub fn runtime_only_test_case_85() {
                 }
             }),
         ));
-        let expected: Value<()> = Rc::new(RefCell::new(-21.6_f64));
+        let mut expected: () = -21.6_f64;
         ({
-            let _expected: Value<()> = Rc::new(RefCell::new(std_optional_double_::new_1({
-                expected.as_pointer()
-            })));
-            check_79(
+            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            check_80(
                 unimplemented!(),
                 (*plus.borrow()).copy_from(),
                 _expected.as_pointer(),
@@ -4076,10 +4065,10 @@ pub fn runtime_only_test_case_85() {
     }
     {
         let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = ({ triangular_sum_30(data.as_pointer()) });
+        let mut expected: () = ({ triangular_sum_31(data.as_pointer()) });
         ({
-            let _expected: Value<()> = Rc::new(RefCell::new(expected));
-            check_80(unimplemented!(), unimplemented!(), _expected.as_pointer())
+            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            check_81(unimplemented!(), unimplemented!(), _expected.as_pointer())
         });
     }
 }
@@ -4103,9 +4092,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_case_84() });
+    ({ test_case_85() });
     const _: () = assert!(true, "test_case()");;
-    ({ runtime_only_test_case_85() });
+    ({ runtime_only_test_case_86() });
     return 0_();
 }
 pub trait BorrowedRange_int_Impl {
@@ -4340,7 +4329,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29_
             let ___f: Ptr<FnPtr<Generic>> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_12(___f, ___args_1, ___args_2)
+            invoke_13(___f, ___args_1, ___args_2)
         });
     }
     fn operator_call_6_unsigned_long_int_ref(&self, args_0: Ptr<()>, args_1: Ptr<()>) -> () {
@@ -4351,7 +4340,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29_
             let ___f: Ptr<FnPtr<Generic>> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_13(___f, ___args_1, ___args_2)
+            invoke_14(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -4381,7 +4370,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14_
             let ___f: Ptr<FnPtr<Generic>> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_14(___f, ___args_1, ___args_2)
+            invoke_15(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -4411,7 +4400,7 @@ impl invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27_
             let ___f: Ptr<FnPtr<fn((), ()) -> ()>> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_19(___f, ___args_1, ___args_2)
+            invoke_20(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -4441,7 +4430,7 @@ impl invocable_with_telemetry_std_multiplies_void__Impl
             let ___f: Ptr<()> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_11(___f, ___args_1, ___args_2)
+            invoke_12(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -4474,7 +4463,7 @@ impl invocable_with_telemetry_std_plus_long__Impl
             let ___f: Ptr<()> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_15(___f, ___args_1, ___args_2)
+            invoke_16(___f, ___args_1, ___args_2)
         });
     }
     fn operator_call_6_long_int_ref(&self, args_0: Ptr<()>, args_1: Ptr<()>) -> () {
@@ -4485,7 +4474,7 @@ impl invocable_with_telemetry_std_plus_long__Impl
             let ___f: Ptr<()> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_16(___f, ___args_1, ___args_2)
+            invoke_17(___f, ___args_1, ___args_2)
         });
     }
     fn operator_call_6_int_const_int_ref(&self, args_0: Ptr<()>, args_1: Ptr<()>) -> () {
@@ -4496,7 +4485,7 @@ impl invocable_with_telemetry_std_plus_long__Impl
             let ___f: Ptr<()> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_17(___f, ___args_1, ___args_2)
+            invoke_18(___f, ___args_1, ___args_2)
         });
     }
     fn operator_call_6_long_const_int_ref(&self, args_0: Ptr<()>, args_1: Ptr<()>) -> () {
@@ -4507,7 +4496,7 @@ impl invocable_with_telemetry_std_plus_long__Impl
             let ___f: Ptr<()> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_18(___f, ___args_1, ___args_2)
+            invoke_19(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -4539,7 +4528,7 @@ impl invocable_with_telemetry_std_plus_void__Impl
             let ___f: Ptr<()> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_8(___f, ___args_1, ___args_2)
+            invoke_9(___f, ___args_1, ___args_2)
         });
     }
     fn operator_call_6_int_const_int_ref(&self, args_0: Ptr<()>, args_1: Ptr<()>) -> () {
@@ -4550,7 +4539,7 @@ impl invocable_with_telemetry_std_plus_void__Impl
             let ___f: Ptr<()> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_9(___f, ___args_1, ___args_2)
+            invoke_10(___f, ___args_1, ___args_2)
         });
     }
     fn operator_call_6_double_double(&self, args_0: Ptr<()>, args_1: Ptr<()>) -> () {
@@ -4561,7 +4550,7 @@ impl invocable_with_telemetry_std_plus_void__Impl
             let ___f: Ptr<()> = field_ptr!((*self), f_);
             let ___args_1: Ptr<()> = (args_0).clone();
             let ___args_2: Ptr<()> = (args_1).clone();
-            invoke_10(___f, ___args_1, ___args_2)
+            invoke_11(___f, ___args_1, ___args_2)
         });
     }
 }
@@ -4637,5 +4626,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = enable_borrowed_range_7.with(|_| ());
+    let _ = enable_borrowed_range_8.with(|_| ());
 }

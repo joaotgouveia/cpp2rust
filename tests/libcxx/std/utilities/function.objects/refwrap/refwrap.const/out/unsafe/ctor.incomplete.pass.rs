@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0() {
     let foo: *mut Foo = (unsafe { get_foo_1() });
-    let mut ref_: () = std_reference_wrapper_Foo_::new({ foo });
+    let mut ref_: () = unimplemented!();
     unimplemented!();
 }
 #[repr(C)]

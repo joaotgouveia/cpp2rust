@@ -28,24 +28,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let c: Value<std_codecvt_utf16_wchar_t__1114111__0_> = Rc::new(RefCell::new(
-            <std_codecvt_utf16_wchar_t__1114111__0_>::default(),
-        ));
-        let mut r: () = ({ ((*c.borrow()) as ()).always_noconv() });
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut r: () = ({ (*c.borrow()).always_noconv() });
         unimplemented!();
     }
     {
-        let c: Value<std_codecvt_utf16_char16_t__1114111__0_> = Rc::new(RefCell::new(
-            <std_codecvt_utf16_char16_t__1114111__0_>::default(),
-        ));
-        let mut r: () = ({ ((*c.borrow()) as ()).always_noconv() });
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut r: () = ({ (*c.borrow()).always_noconv() });
         unimplemented!();
     }
     {
-        let c: Value<std_codecvt_utf16_char32_t__1114111__0_> = Rc::new(RefCell::new(
-            <std_codecvt_utf16_char32_t__1114111__0_>::default(),
-        ));
-        let mut r: () = ({ ((*c.borrow()) as ()).always_noconv() });
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut r: () = ({ (*c.borrow()).always_noconv() });
         unimplemented!();
     }
     return 0_();

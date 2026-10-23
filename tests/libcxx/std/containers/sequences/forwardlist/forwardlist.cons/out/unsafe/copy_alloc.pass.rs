@@ -346,14 +346,7 @@ impl std::cmp::Eq for min_allocator_int_ {}
 pub unsafe fn test_11() -> () {
     {
         let t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let mut c0: () = {
-            let mut __tmp_0: test_allocator_int_ = test_allocator_int_::new_1({ 10_() });
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_0 },
-            )
-        };
+        let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
         let mut i: () =
@@ -377,14 +370,7 @@ pub unsafe fn test_11() -> () {
     }
     {
         let t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let mut c0: () = {
-            let mut __tmp_1: other_allocator_int_ = other_allocator_int_::new_1({ 10_() });
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_1 },
-            )
-        };
+        let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
         let mut i: () =
@@ -408,14 +394,7 @@ pub unsafe fn test_11() -> () {
     }
     {
         let t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let mut c0: () = {
-            let mut __tmp_2: min_allocator_int_ = <min_allocator_int_>::default();
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_2 },
-            )
-        };
+        let mut c0: () = unimplemented!();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
         let mut i : () = std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()  } , )  ;

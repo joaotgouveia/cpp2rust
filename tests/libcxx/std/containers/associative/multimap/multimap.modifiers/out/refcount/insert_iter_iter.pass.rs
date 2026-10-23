@@ -300,23 +300,29 @@ pub fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_7(_i, n)
     });
 }
-pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_9(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_10(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -362,7 +368,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_12(
+            operator_cmp_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -387,7 +393,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_11(
+            operator_eq_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -471,239 +477,6 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_alloc_13() {
-    {
-        {
-            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        {
-            let mut arr: [(); 1] = [{
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-            }];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [{
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-            }];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [{
-                let __tmp_4: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_5: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-            }];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [{
-                let __tmp_6: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_7: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-            }];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        {
-            let mut arr: [(); 3] = [
-                {
-                    let __tmp_8: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_9: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_8.as_pointer() }, {
-                        __tmp_9.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_10: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_11: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_10.as_pointer() }, {
-                        __tmp_11.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_12: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_13: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_const_int__int_::new_1({ __tmp_12.as_pointer() }, {
-                        __tmp_13.as_pointer()
-                    })
-                },
-            ];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [
-                {
-                    let __tmp_14: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_15: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_14.as_pointer() }, {
-                        __tmp_15.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_16: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_17: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_16.as_pointer() }, {
-                        __tmp_17.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_18: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_19: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_const_int__int_::new_1({ __tmp_18.as_pointer() }, {
-                        __tmp_19.as_pointer()
-                    })
-                },
-            ];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [
-                {
-                    let __tmp_20: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_21: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_20.as_pointer() }, {
-                        __tmp_21.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_22: Value<()> = Rc::new(RefCell::new(2_()));
-                    let __tmp_23: Value<()> = Rc::new(RefCell::new(2_()));
-                    std_pair_const_int__int_::new_1({ __tmp_22.as_pointer() }, {
-                        __tmp_23.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_24: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_25: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_const_int__int_::new_1({ __tmp_24.as_pointer() }, {
-                        __tmp_25.as_pointer()
-                    })
-                },
-            ];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [
-                {
-                    let __tmp_26: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_27: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_26.as_pointer() }, {
-                        __tmp_27.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_28: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_29: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_const_int__int_::new_1({ __tmp_28.as_pointer() }, {
-                        __tmp_29.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_30: Value<()> = Rc::new(RefCell::new(4_()));
-                    let __tmp_31: Value<()> = Rc::new(RefCell::new(4_()));
-                    std_pair_const_int__int_::new_1({ __tmp_30.as_pointer() }, {
-                        __tmp_31.as_pointer()
-                    })
-                },
-            ];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
 pub fn test_alloc_14() {
     {
         {
@@ -738,13 +511,7 @@ pub fn test_alloc_14() {
     }
     {
         {
-            let mut arr: [(); 1] = [{
-                let __tmp_32: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_33: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_32.as_pointer() }, {
-                    __tmp_33.as_pointer()
-                })
-            }];
+            let mut arr: [(); 1] = [unimplemented!()];
             let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -752,13 +519,7 @@ pub fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 1] = [{
-                let __tmp_34: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_35: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_34.as_pointer() }, {
-                    __tmp_35.as_pointer()
-                })
-            }];
+            let mut arr: [(); 1] = [unimplemented!()];
             let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -768,13 +529,7 @@ pub fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 1] = [{
-                let __tmp_36: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_37: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_36.as_pointer() }, {
-                    __tmp_37.as_pointer()
-                })
-            }];
+            let mut arr: [(); 1] = [unimplemented!()];
             let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -784,13 +539,7 @@ pub fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 1] = [{
-                let __tmp_38: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_39: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_const_int__int_::new_1({ __tmp_38.as_pointer() }, {
-                    __tmp_39.as_pointer()
-                })
-            }];
+            let mut arr: [(); 1] = [unimplemented!()];
             let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -806,29 +555,7 @@ pub fn test_alloc_14() {
     }
     {
         {
-            let mut arr: [(); 3] = [
-                {
-                    let __tmp_40: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_41: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_40.as_pointer() }, {
-                        __tmp_41.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_42: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_43: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_42.as_pointer() }, {
-                        __tmp_43.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_44: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_45: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_const_int__int_::new_1({ __tmp_44.as_pointer() }, {
-                        __tmp_45.as_pointer()
-                    })
-                },
-            ];
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
             let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -838,29 +565,7 @@ pub fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 3] = [
-                {
-                    let __tmp_46: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_47: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_46.as_pointer() }, {
-                        __tmp_47.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_48: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_49: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_48.as_pointer() }, {
-                        __tmp_49.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_50: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_51: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_const_int__int_::new_1({ __tmp_50.as_pointer() }, {
-                        __tmp_51.as_pointer()
-                    })
-                },
-            ];
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
             let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -872,29 +577,7 @@ pub fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 3] = [
-                {
-                    let __tmp_52: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_53: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_52.as_pointer() }, {
-                        __tmp_53.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_54: Value<()> = Rc::new(RefCell::new(2_()));
-                    let __tmp_55: Value<()> = Rc::new(RefCell::new(2_()));
-                    std_pair_const_int__int_::new_1({ __tmp_54.as_pointer() }, {
-                        __tmp_55.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_56: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_57: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_const_int__int_::new_1({ __tmp_56.as_pointer() }, {
-                        __tmp_57.as_pointer()
-                    })
-                },
-            ];
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
             let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -906,29 +589,7 @@ pub fn test_alloc_14() {
             unimplemented!();
         }
         {
-            let mut arr: [(); 3] = [
-                {
-                    let __tmp_58: Value<()> = Rc::new(RefCell::new(1_()));
-                    let __tmp_59: Value<()> = Rc::new(RefCell::new(1_()));
-                    std_pair_const_int__int_::new_1({ __tmp_58.as_pointer() }, {
-                        __tmp_59.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_60: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_61: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_const_int__int_::new_1({ __tmp_60.as_pointer() }, {
-                        __tmp_61.as_pointer()
-                    })
-                },
-                {
-                    let __tmp_62: Value<()> = Rc::new(RefCell::new(4_()));
-                    let __tmp_63: Value<()> = Rc::new(RefCell::new(4_()));
-                    std_pair_const_int__int_::new_1({ __tmp_62.as_pointer() }, {
-                        __tmp_63.as_pointer()
-                    })
-                },
-            ];
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
             let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -945,9 +606,138 @@ pub fn test_alloc_14() {
         }
     }
 }
-pub fn test_15() -> () {
-    ({ test_alloc_13() });
+pub fn test_alloc_15() {
+    {
+        {
+            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn test_16() -> () {
     ({ test_alloc_14() });
+    ({ test_alloc_15() });
     return true;
 }
 pub fn main() {
@@ -970,7 +760,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_15() });
+    ({ test_16() });
     return 0_();
 }
 pub trait adl_IteratorImpl {

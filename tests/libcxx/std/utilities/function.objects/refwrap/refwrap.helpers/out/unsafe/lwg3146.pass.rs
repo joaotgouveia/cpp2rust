@@ -21,34 +21,32 @@ pub struct test_macros_detail_is_same_std_reference_wrapper_const_std_reference_
 pub unsafe fn test_2() -> () {
     {
         let mut i: () = 0_();
-        let mut ri: () = std_reference_wrapper_int_::new({ &mut i });
-        let mut rri: () = std_reference_wrapper_std_reference_wrapper_int__::new({ &mut ri });
+        let mut ri: () = unimplemented!();
+        let mut rri: () = unimplemented!();
         let mut rrj: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let mut i: () = 0_();
-        let mut ri: () = std_reference_wrapper_int_::new({ &mut i });
-        let mut rri: () =
-            std_reference_wrapper_const_std_reference_wrapper_int__::new_1({ &mut ri });
+        let mut ri: () = unimplemented!();
+        let mut rri: () = unimplemented!();
         let mut rrj: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let mut i: () = 0_();
-        let mut ri: () = std_reference_wrapper_int_::new({ &mut i });
-        let mut rri: () = std_reference_wrapper_std_reference_wrapper_int__::new({ &mut ri });
+        let mut ri: () = unimplemented!();
+        let mut rri: () = unimplemented!();
         let mut rrj: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let mut i: () = 0_();
-        let mut ri: () = std_reference_wrapper_int_::new({ &mut i });
-        let mut rri: () =
-            std_reference_wrapper_const_std_reference_wrapper_int__::new_1({ &mut ri });
+        let mut ri: () = unimplemented!();
+        let mut rri: () = unimplemented!();
         let mut rrj: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();

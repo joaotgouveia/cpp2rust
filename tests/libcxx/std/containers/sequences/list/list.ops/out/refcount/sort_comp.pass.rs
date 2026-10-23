@@ -168,11 +168,7 @@ pub fn test_stable_6(mut N: ()) {
         field!(unimplemented!(), side).write(__rhs);
         i.prefix_inc();
     }
-    let c: Value<()> = Rc::new(RefCell::new(
-        std_list_Payload__std_allocator_Payload__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let j: Value<()> = Rc::new(RefCell::new({
@@ -192,7 +188,7 @@ pub fn test_stable_6(mut N: ()) {
         std___list_const_iterator_Payload__void_ptr_::new_1({ __tmp_1.as_pointer() })
     }));
     'loop_: while unimplemented!() {
-        let next: Value<()> = Rc::new(RefCell::new(({ next_7((*it.borrow()).clone(), None) })));
+        let next: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         if (unimplemented!())
             && ({ ((*it.borrow()).read()).val } == { ((*next.borrow()).read()).val })
         {
@@ -201,7 +197,7 @@ pub fn test_stable_6(mut N: ()) {
         unimplemented!();
     }
 }
-pub fn test_8() -> () {
+pub fn test_7() -> () {
     {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
             4_(),
@@ -231,16 +227,7 @@ pub fn test_8() -> () {
             1_(),
             0_(),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
-            { (a1.as_pointer() as Ptr<()>) },
-            {
-                (a1.as_pointer() as Ptr<()>).offset(
-                    ((::std::mem::size_of::<[(); 12]>() as ())
-                        .wrapping_div((::std::mem::size_of::<()>() as ())))
-                        as isize,
-                )
-            },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
@@ -274,16 +261,7 @@ pub fn test_8() -> () {
                 1_(),
                 0_(),
             ])));
-            let c1: Value<()> = Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
-                { (a1.as_pointer() as Ptr<()>) },
-                {
-                    (a1.as_pointer() as Ptr<()>).offset(
-                        ((::std::mem::size_of::<[(); 12]>() as ())
-                            .wrapping_div((::std::mem::size_of::<()>() as ())))
-                            as isize,
-                    )
-                },
-            )));
+            let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
         }

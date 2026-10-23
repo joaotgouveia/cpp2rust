@@ -546,10 +546,7 @@ pub trait TypeIDImpl {
 }
 impl TypeIDImpl for Ptr<TypeID> {
     fn name(&self) -> () {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (*self).with(|__s| __s.m_id.clone()) },
-            None,
-        );
+        return unimplemented!();
     }
 }
 pub trait X_7Impl {

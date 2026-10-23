@@ -338,9 +338,7 @@ pub unsafe fn test_18() -> () {
         (unsafe { AssertOrderReturn_4() });
         (unsafe { AssertOrderReturn_5() });
     }
-    let p1: () = std_unique_ptr_int__std_default_delete_int__::new_1({
-        (Box::leak(Box::new(1_())) as *mut ())
-    });
+    let p1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -368,9 +366,7 @@ pub unsafe fn test_18() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let p3: () = std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new_1({
-        Box::leak((0..1_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr()
-    });
+    let p3: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     {

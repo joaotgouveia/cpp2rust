@@ -79,17 +79,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t: Value<convertible_to_int_ref> =
             Rc::new(RefCell::new(<convertible_to_int_ref>::default()));
-        let r: Value<()> = Rc::new(RefCell::new(
-            std_reference_wrapper_convertible_to_int_ref_::new({ t.as_pointer() }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let t: Value<convertible_to_int_ref> =
             Rc::new(RefCell::new(<convertible_to_int_ref>::default()));
-        let r: Value<()> = Rc::new(RefCell::new(
-            std_reference_wrapper_const_convertible_to_int_ref_::new({ t.as_pointer() }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -99,20 +95,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ meow_2(convertible_from_int::new({ 0_() })) });
     const _: () = assert!(true, "");;
     {
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        let ri: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-            i.as_pointer()
-        })));
+        let mut i: () = 0_();
+        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "(std::is_same<decltype(ri), std::reference_wrapper<int>>::value)"
         );;
     }
     {
-        let j: Value<()> = Rc::new(RefCell::new(0_()));
-        let rj: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_const_int_::new({
-            j.as_pointer()
-        })));
+        let mut j: () = 0_();
+        let rj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "(std::is_same<decltype(rj), std::reference_wrapper<const int>>::value)"

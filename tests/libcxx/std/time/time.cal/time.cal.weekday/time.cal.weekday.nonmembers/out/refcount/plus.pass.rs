@@ -22,14 +22,14 @@ pub fn euclidian_addition_1(mut rhs: (), mut lhs: ()) -> () {
 pub fn test_2() -> () {
     let mut i: () = 0_();
     'loop_: while (i <= 6_()) {
-        let j: Value<()> = Rc::new(RefCell::new(0_()));
-        'loop_: while ((*j.borrow()) <= 6_()) {
+        let mut j: () = 0_();
+        'loop_: while (j <= 6_()) {
             let wd1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let wd2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (*j.borrow_mut()).prefix_inc();
+            j.prefix_inc();
         }
         i.prefix_inc();
     }

@@ -59,16 +59,10 @@ pub unsafe fn test_0() -> () {
     }
     {
         let mut map: () = unimplemented!();
-        let mut result: () = (unsafe {
-            let mut ___p: () = unimplemented!();
-            map.insert_47_struct_std_pair_struct_Key__int__0(&mut ___p)
-        });
+        let mut result: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut result2: () = (unsafe {
-            let mut ___p: () = unimplemented!();
-            map.insert_47_struct_std_pair_struct_Key__int__0(&mut ___p)
-        });
+        let mut result2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

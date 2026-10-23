@@ -64,12 +64,12 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let opt: () = 2_();
+        let opt: () = unimplemented!();
         let y: Y = Y::new({ 3_() });
         const _: () = assert!(true, "opt.value_or(y) == 2");;
     }
     {
-        let opt: () = 2_();
+        let opt: () = unimplemented!();
         const _: () = assert!(true, "opt.value_or(Y(3)) == 2");;
     }
     {
@@ -82,12 +82,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "opt.value_or(Y(3)) == 4");;
     }
     {
-        let opt: () = 2_();
+        let opt: () = unimplemented!();
         let y: Y = Y::new({ 3_() });
         unimplemented!();
     }
     {
-        let opt: () = 2_();
+        let opt: () = unimplemented!();
         unimplemented!();
     }
     {

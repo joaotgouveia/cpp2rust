@@ -31,16 +31,8 @@ impl Default for S {
 }
 pub unsafe fn test_0() -> () {
     {
-        let mut p1: () = {
-            let mut __tmp_0: () = 3_();
-            let mut __tmp_1: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        let mut p2: () = {
-            let mut __tmp_2: () = 5_();
-            let mut __tmp_3: () = 6_();
-            std_pair_int__short_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -48,16 +40,8 @@ pub unsafe fn test_0() -> () {
         unimplemented!();
     }
     {
-        let mut p1: () = {
-            let mut __tmp_4: () = 3_();
-            let mut __tmp_5: S = S::new_2({ 4_() });
-            std_pair_int__S_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-        };
-        let mut p2: () = {
-            let mut __tmp_6: () = 5_();
-            let mut __tmp_7: S = S::new_2({ 6_() });
-            std_pair_int__S_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-        };
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

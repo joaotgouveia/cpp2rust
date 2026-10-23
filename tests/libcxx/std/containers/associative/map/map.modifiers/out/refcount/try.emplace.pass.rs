@@ -203,7 +203,7 @@ pub fn test_0() -> () {
             i += 2_();
         }
         unimplemented!();
-        let it: Value<()> = Rc::new(RefCell::new(({ next_1(unimplemented!(), None) })));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mvkey1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 2_() }, { 2_f64 })));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 4_() }, { 4_f64 })));
         unimplemented!();

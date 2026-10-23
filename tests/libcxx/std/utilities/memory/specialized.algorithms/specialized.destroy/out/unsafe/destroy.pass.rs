@@ -262,21 +262,25 @@ pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_6(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -360,7 +364,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -370,7 +374,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -469,7 +473,7 @@ impl Clone for Counted {
         unsafe { Counted::copy_from(self as *const Counted) }
     }
 }
-pub unsafe fn test_arrays_9() -> () {
+pub unsafe fn test_arrays_10() -> () {
     {
         let mut counter: () = 0_();
         let mut alloc: () = unimplemented!();
@@ -542,25 +546,6 @@ pub unsafe fn test_arrays_9() -> () {
     }
     return true;
 }
-pub unsafe fn test_10() {
-    let mut counter: () = 0_();
-    let mut alloc: () = unimplemented!();
-    let mut pool: *mut Counted =
-        (unsafe { std_allocator_traits_std_allocator_Counted__::allocate(&mut alloc, 5_()) });
-    let mut p: *mut Counted = pool;
-    'loop_: while ((p) != (pool.offset((5_()) as isize))) {
-        (unsafe {
-            let mut ___args: *mut () = (&mut counter as *mut ());
-            std_allocator_traits_std_allocator_Counted__::construct(&mut alloc, p, &mut ___args)
-        });
-        p.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, pool, 5_()) });
-}
 pub unsafe fn test_11() {
     let mut counter: () = 0_();
     let mut alloc: () = unimplemented!();
@@ -580,9 +565,28 @@ pub unsafe fn test_11() {
     unimplemented!();
     (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, pool, 5_()) });
 }
-pub unsafe fn tests_12() -> () {
-    (unsafe { test_10() });
+pub unsafe fn test_12() {
+    let mut counter: () = 0_();
+    let mut alloc: () = unimplemented!();
+    let mut pool: *mut Counted =
+        (unsafe { std_allocator_traits_std_allocator_Counted__::allocate(&mut alloc, 5_()) });
+    let mut p: *mut Counted = pool;
+    'loop_: while ((p) != (pool.offset((5_()) as isize))) {
+        (unsafe {
+            let mut ___args: *mut () = (&mut counter as *mut ());
+            std_allocator_traits_std_allocator_Counted__::construct(&mut alloc, p, &mut ___args)
+        });
+        p.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, pool, 5_()) });
+}
+pub unsafe fn tests_13() -> () {
     (unsafe { test_11() });
+    (unsafe { test_12() });
     return true;
 }
 pub fn main() {
@@ -601,8 +605,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_12() });
-    (unsafe { test_arrays_9() });
+    (unsafe { tests_13() });
+    (unsafe { test_arrays_10() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

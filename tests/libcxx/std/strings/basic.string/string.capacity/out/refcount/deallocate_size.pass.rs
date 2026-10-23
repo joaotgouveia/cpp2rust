@@ -48,7 +48,7 @@ pub fn test_2() {
     let mut i: () = 1_();
     'loop_: while (i < 1000_()) {
         {
-            let mut s : ()  = std_basic_string_char__std_char_traits_char___test_alloc_char__unsigned_int__ :: new_1 ( { i  } , { ( 't' as ()  )  } , None , )   ;
+            let mut s: () = unimplemented!();
             &(s);
         }
         unimplemented!();
@@ -59,7 +59,7 @@ pub fn test_3() {
     let mut i: () = 1_();
     'loop_: while (i < 1000_()) {
         {
-            let mut s : ()  = std_basic_string_char__std_char_traits_char___test_alloc_char__unsigned_long__ :: new_1 ( { i  } , { ( 't' as ()  )  } , None , )   ;
+            let mut s: () = unimplemented!();
             &(s);
         }
         unimplemented!();

@@ -24,51 +24,31 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut target: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"foo".as_ptr() },
-                None,
-            );
+        let mut target: () = unimplemented!();
         let mut re: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut target: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"foo".as_ptr() },
-                None,
-            );
+        let mut target: () = unimplemented!();
         let mut re: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut target: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"refoo".as_ptr() },
-                None,
-            );
+        let mut target: () = unimplemented!();
         let mut re: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut target: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"refoo".as_ptr() },
-                None,
-            );
+        let mut target: () = unimplemented!();
         let mut re: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut target: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"foo".as_ptr() },
-                None,
-            );
+        let mut target: () = unimplemented!();
         let mut re: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -80,11 +60,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut target: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"foo".as_ptr() },
-                None,
-            );
+        let mut target: () = unimplemented!();
         let mut re: () = unimplemented!();
         let mut match_: () = unimplemented!();
         unimplemented!();
@@ -94,21 +70,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut target: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"foo".as_ptr() },
-                None,
-            );
+        let mut target: () = unimplemented!();
         let mut re: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut target: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"a".as_ptr() },
-                None,
-            );
+        let mut target: () = unimplemented!();
         let mut re: () = unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -229,53 +229,25 @@ impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub struct min_allocator_std_pair_const_int__MoveOnly__ {}
 pub unsafe fn do_insert_rv_test_18() -> () {
     let mut m: () = unimplemented!();
-    let mut r: () = (unsafe {
-        let mut ___p: () = {
-            let mut __tmp_0: () = 2_();
-            let mut __tmp_1: () = 2_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        m.insert_47_struct_std_pair_int__class_MoveOnly__0(&mut ___p)
-    });
+    let mut r: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    r = (unsafe {
-        let mut ___p: () = {
-            let mut __tmp_2: () = 1_();
-            let mut __tmp_3: () = 1_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
-        m.insert_47_struct_std_pair_int__class_MoveOnly__0(&mut ___p)
-    });
+    r = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    r = (unsafe {
-        let mut ___p: () = {
-            let mut __tmp_4: () = 3_();
-            let mut __tmp_5: () = 3_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-        };
-        m.insert_47_struct_std_pair_int__class_MoveOnly__0(&mut ___p)
-    });
+    r = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    r = (unsafe {
-        let mut ___p: () = {
-            let mut __tmp_6: () = 3_();
-            let mut __tmp_7: () = 3_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-        };
-        m.insert_47_struct_std_pair_int__class_MoveOnly__0(&mut ___p)
-    });
+    r = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -313,53 +285,25 @@ pub unsafe fn do_insert_rv_test_19() -> () {
 }
 pub unsafe fn do_insert_rv_test_20() -> () {
     let mut m: () = unimplemented!();
-    let mut r: () = (unsafe {
-        let mut ___p: () = {
-            let mut __tmp_8: () = 2_();
-            let mut __tmp_9: () = 2_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-        };
-        m.insert_47_struct_std_pair_int__class_MoveOnly__0(&mut ___p)
-    });
+    let mut r: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    r = (unsafe {
-        let mut ___p: () = {
-            let mut __tmp_10: () = 1_();
-            let mut __tmp_11: () = 1_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-        };
-        m.insert_47_struct_std_pair_int__class_MoveOnly__0(&mut ___p)
-    });
+    r = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    r = (unsafe {
-        let mut ___p: () = {
-            let mut __tmp_12: () = 3_();
-            let mut __tmp_13: () = 3_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-        };
-        m.insert_47_struct_std_pair_int__class_MoveOnly__0(&mut ___p)
-    });
+    r = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    r = (unsafe {
-        let mut ___p: () = {
-            let mut __tmp_14: () = 3_();
-            let mut __tmp_15: () = 3_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-        };
-        m.insert_47_struct_std_pair_int__class_MoveOnly__0(&mut ___p)
-    });
+    r = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

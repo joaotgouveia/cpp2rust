@@ -24,10 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"aaaa a".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         let mut re: () = unimplemented!();
         let mut it: () = unimplemented!();
         let mut end: () = unimplemented!();
@@ -40,12 +37,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"aaaa a".as_ptr() },
-            None,
-        );
-        let mut l: () =
-            std_list_char__std_allocator_char__::new_1({ unimplemented!() }, { unimplemented!() });
+        let mut s: () = unimplemented!();
+        let mut l: () = unimplemented!();
         let mut re: () = unimplemented!();
         let mut it: () = unimplemented!();
         let mut end: () = unimplemented!();

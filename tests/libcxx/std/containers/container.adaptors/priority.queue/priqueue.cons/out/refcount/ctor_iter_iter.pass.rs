@@ -20,13 +20,7 @@ pub fn test_0() -> () {
         ((::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ())))
             as isize,
     );
-    let q: Value<()> = Rc::new(RefCell::new(
-        std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-            { (a.as_pointer() as Ptr<()>) },
-            { (an).clone() },
-            None,
-        ),
-    ));
+    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     return true;

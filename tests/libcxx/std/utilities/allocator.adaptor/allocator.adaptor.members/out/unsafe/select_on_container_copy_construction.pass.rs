@@ -137,7 +137,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut a1: () = A1_int_::new({ 3_() });
+        let mut a1: () = unimplemented!();
         unimplemented!();
         let mut a2: () = (unsafe {
             std_allocator_traits_std_scoped_allocator_adaptor_A1_int___::select_on_container_copy_construction ( & a1 , )
@@ -145,7 +145,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut a1: () = A3_int_::new({ 3_() });
+        let mut a1: () = unimplemented!();
         unimplemented!();
         let mut a2: () = (unsafe {
             std_allocator_traits_std_scoped_allocator_adaptor_A3_int___::select_on_container_copy_construction ( & a1 , )
@@ -153,16 +153,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut a1: () = {
-            let mut __tmp_0: A1_int_ = A1_int_::new({ 1_() });
-            let mut __tmp_1: A2_int_ = A2_int_::new({ 2_() });
-            let mut __tmp_2: A3_int_ = A3_int_::new({ 3_() });
-            std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
-                { &mut __tmp_0 },
-                { &mut __tmp_1 },
-                { &mut __tmp_2 },
-            )
-        };
+        let mut a1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -55,9 +55,7 @@ pub struct min_allocator_int_ {}
 pub unsafe fn test_4() -> () {
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut c: () = std_list_int__std_allocator_int__::new_1({ a.as_mut_ptr() }, {
-            a.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut c: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -67,9 +65,7 @@ pub unsafe fn test_4() -> () {
     }
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut c: () = std_list_int__min_allocator_int__::new_1({ a.as_mut_ptr() }, {
-            a.as_mut_ptr().offset((3_()) as isize)
-        });
+        let mut c: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

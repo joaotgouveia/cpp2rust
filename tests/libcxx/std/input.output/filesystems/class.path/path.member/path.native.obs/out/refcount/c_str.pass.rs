@@ -72,33 +72,16 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let value: Value<Ptr<()>> =
-        Rc::new(RefCell::new(Ptr::<()>::from_string_literal(b"hello world")));
-    let mut str_value: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (*value.borrow()).clone() },
-            None,
-        );
-    let pathstr_value: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let mut value: Ptr<()> = Ptr::<()>::from_string_literal(b"hello world");
+    let mut str_value: () = unimplemented!();
+    let pathstr_value: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_1(
-            { value.as_pointer() },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_1(
-            { value.as_pointer() },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

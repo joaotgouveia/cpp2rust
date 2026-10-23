@@ -25,11 +25,8 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "std::is_copy_assignable<path>::value");;
     const _: () = assert!(true, "!std::is_nothrow_copy_assignable<path>::value");;
-    let s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"foo".as_ptr() },
-        None,
-    );
-    let p: () = std_filesystem_path::new_1({ &s }, None);
+    let s: () = unimplemented!();
+    let p: () = unimplemented!();
     let mut p2: () = unimplemented!();
     let pref: *mut () = &mut ({
         p2 = (p).clone();

@@ -306,19 +306,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_double__int___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )  )) ;
-        let r: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___x: Value<()> = Rc::new(RefCell::new({
-                    let __tmp_0: Value<()> = Rc::new(RefCell::new(3.5_f64));
-                    let __tmp_1: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_double__short_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-                }));
-                (*c.borrow()).insert_46_struct_std_pair_double__short__0(
-                    (*e.borrow()).clone(),
-                    ___x.as_pointer(),
-                )
-            }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -338,21 +326,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )  )) ;
-        let r: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___x: Value<()> = Rc::new(RefCell::new({
-                    let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_3: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_MoveOnly__MoveOnly_::new({ __tmp_2.as_pointer() }, {
-                        __tmp_3.as_pointer()
-                    })
-                }));
-                (*c.borrow()).insert_46_struct_std_pair_class_MoveOnly__class_MoveOnly__0(
-                    (*e.borrow()).clone(),
-                    ___x.as_pointer(),
-                )
-            }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -372,19 +346,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_double__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )  )) ;
-        let r: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___x: Value<()> = Rc::new(RefCell::new({
-                    let __tmp_4: Value<()> = Rc::new(RefCell::new(3.5_f64));
-                    let __tmp_5: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_double__short_::new({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-                }));
-                (*c.borrow()).insert_46_struct_std_pair_double__short__0(
-                    (*e.borrow()).clone(),
-                    ___x.as_pointer(),
-                )
-            }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -404,21 +366,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_MoveOnly__MoveOnly___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )  )) ;
-        let r: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___x: Value<()> = Rc::new(RefCell::new({
-                    let __tmp_6: Value<()> = Rc::new(RefCell::new(3_()));
-                    let __tmp_7: Value<()> = Rc::new(RefCell::new(3_()));
-                    std_pair_MoveOnly__MoveOnly_::new({ __tmp_6.as_pointer() }, {
-                        __tmp_7.as_pointer()
-                    })
-                }));
-                (*c.borrow()).insert_46_struct_std_pair_class_MoveOnly__class_MoveOnly__0(
-                    (*e.borrow()).clone(),
-                    ___x.as_pointer(),
-                )
-            }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -18,7 +18,11 @@ const _: () = assert!(
     "!MemberSwapNoexcept<std::unexpected<MayThrowSwap>>"
 );
 pub fn swap_0(x: Ptr<ADLSwap>, y: Ptr<ADLSwap>) {
-    unimplemented!();
+    ({
+        let ___x: Ptr<()> = field_ptr!(x, i);
+        let ___y: Ptr<()> = field_ptr!(y, i);
+        swap_1(___x, ___y)
+    });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -31,7 +35,7 @@ impl ADLSwap {
         Self { i: ii }
     }
 }
-pub fn test_1() -> () {
+pub fn test_2() -> () {
     {
         let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -68,7 +72,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_1() });
+    ({ test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

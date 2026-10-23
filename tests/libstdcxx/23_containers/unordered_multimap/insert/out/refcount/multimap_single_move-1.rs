@@ -833,7 +833,7 @@ pub fn test01_20() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ((*i.borrow()).read()).first } == 1_()) {
+        if !({ unimplemented!().first } == 1_()) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -852,7 +852,7 @@ pub fn test01_20() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (((*i.borrow()).read()).second).val } == 3_()) {
+        if !({ (unimplemented!().second).val } == 3_()) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -937,7 +937,7 @@ pub fn test02_21() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ((*i1.borrow()).read()).first } == 2_()) {
+        if !({ unimplemented!().first } == 2_()) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -956,7 +956,7 @@ pub fn test02_21() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ((*i2.borrow()).read()).first } == 2_()) {
+        if !({ unimplemented!().first } == 2_()) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -975,10 +975,10 @@ pub fn test02_21() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ (((*i1.borrow()).read()).second).val } == 3_())
-            && ({ (((*i2.borrow()).read()).second).val } == 7_()))
-            || (({ (((*i1.borrow()).read()).second).val } == 7_())
-                && ({ (((*i2.borrow()).read()).second).val } == 3_())))
+        if !((({ (unimplemented!().second).val } == 3_())
+            && ({ (unimplemented!().second).val } == 7_()))
+            || (({ (unimplemented!().second).val } == 7_())
+                && ({ (unimplemented!().second).val } == 3_())))
         {
             ({
                 __builtin_fprintf_10 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"multimap_single_move-1.cc" )  ) .into() , ( 70_() ) .into() , ( Ptr::<() >::from_string_literal(b"void test02()" )  ) .into() , ( Ptr::<() >::from_string_literal(b"((i1->second).val == 3 && (i2->second).val == 7) || ((i1->second).val == 7 && (i2->second).val == 3)" )  ) .into() , ] ) )
@@ -1093,10 +1093,7 @@ pub fn verify_demangle_29(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -1107,22 +1104,14 @@ pub fn run_tests_wrapped_locale_31(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1134,10 +1123,7 @@ pub fn run_tests_wrapped_locale_31(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1159,10 +1145,7 @@ pub fn run_tests_wrapped_env_32(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

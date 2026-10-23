@@ -996,21 +996,25 @@ pub unsafe fn operator_add_39(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_40(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_41(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_41(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_42(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_42(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_43(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_43(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_44(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1094,7 +1098,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_43(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_44(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1104,7 +1108,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_42(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_43(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -3230,7 +3234,7 @@ impl TestUniquePtr {
         unimplemented!();
     }
 }
-pub unsafe fn test_vector_bool_44() -> () {
+pub unsafe fn test_vector_bool_45() -> () {
     let mut offset: () = -4_();
     'loop_: while ((offset) <= (4_())) {
         let mut a: () = unimplemented!();
@@ -3250,7 +3254,7 @@ pub unsafe fn test_vector_bool_44() -> () {
     }
     return true;
 }
-pub unsafe fn test_vector_bool_45() -> () {
+pub unsafe fn test_vector_bool_46() -> () {
     let mut offset: () = -4_();
     'loop_: while ((offset) <= (4_())) {
         let mut a: () = unimplemented!();
@@ -3270,7 +3274,7 @@ pub unsafe fn test_vector_bool_45() -> () {
     }
     return true;
 }
-pub unsafe fn test_vector_bool_46() -> () {
+pub unsafe fn test_vector_bool_47() -> () {
     let mut offset: () = -4_();
     'loop_: while ((offset) <= (4_())) {
         let mut a: () = unimplemented!();
@@ -3290,7 +3294,7 @@ pub unsafe fn test_vector_bool_46() -> () {
     }
     return true;
 }
-pub unsafe fn test_vector_bool_47() -> () {
+pub unsafe fn test_vector_bool_48() -> () {
     let mut offset: () = -4_();
     'loop_: while ((offset) <= (4_())) {
         let mut a: () = unimplemented!();
@@ -3310,7 +3314,7 @@ pub unsafe fn test_vector_bool_47() -> () {
     }
     return true;
 }
-pub unsafe fn test_vector_bool_48() -> () {
+pub unsafe fn test_vector_bool_49() -> () {
     let mut offset: () = -4_();
     'loop_: while ((offset) <= (4_())) {
         let mut a: () = unimplemented!();
@@ -3330,7 +3334,7 @@ pub unsafe fn test_vector_bool_48() -> () {
     }
     return true;
 }
-pub unsafe fn test_vector_bool_49() -> () {
+pub unsafe fn test_vector_bool_50() -> () {
     let mut offset: () = -4_();
     'loop_: while ((offset) <= (4_())) {
         let mut a: () = unimplemented!();
@@ -3350,7 +3354,7 @@ pub unsafe fn test_vector_bool_49() -> () {
     }
     return true;
 }
-pub unsafe fn test_vector_bool_50() -> () {
+pub unsafe fn test_vector_bool_51() -> () {
     let mut offset: () = -4_();
     'loop_: while ((offset) <= (4_())) {
         let mut a: () = unimplemented!();
@@ -3370,7 +3374,7 @@ pub unsafe fn test_vector_bool_50() -> () {
     }
     return true;
 }
-pub unsafe fn test_51() -> () {
+pub unsafe fn test_52() -> () {
     (unsafe {
         for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__ >::default() , <TestIter >::default() , )
     });
@@ -3379,13 +3383,13 @@ pub unsafe fn test_51() -> () {
             for_each_2 ( <types_type_list_std_unique_ptr_int__std_default_delete_int___ptr__contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr___random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr___bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr___forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ >::default() , <TestUniquePtr >::default() , )
         });
     }
-    (unsafe { test_vector_bool_44() });
     (unsafe { test_vector_bool_45() });
     (unsafe { test_vector_bool_46() });
     (unsafe { test_vector_bool_47() });
     (unsafe { test_vector_bool_48() });
     (unsafe { test_vector_bool_49() });
     (unsafe { test_vector_bool_50() });
+    (unsafe { test_vector_bool_51() });
     return true;
 }
 pub fn main() {
@@ -3404,7 +3408,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_51() });
+    (unsafe { test_52() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

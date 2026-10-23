@@ -27,15 +27,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let d: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
-        std_chrono_duration_double__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
-    }));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let d2: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(5_()));
-        std_chrono_duration_double__std_ratio_1__1__::new_1({ __tmp_1.as_pointer() })
-    }));
+    let d2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "d2.count() == 5");;
     return 0_();
 }

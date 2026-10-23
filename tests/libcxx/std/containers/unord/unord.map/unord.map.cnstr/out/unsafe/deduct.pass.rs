@@ -363,21 +363,25 @@ pub unsafe fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_15(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -461,7 +465,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -471,7 +475,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1033,184 +1037,184 @@ pub struct RangeT_std_pair_const_int__long__ {}
 const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
-pub static mut SFINAEs_away_18: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
-});
-pub static mut SFINAEs_away_20: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+pub static mut SFINAEs_away_19: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_21: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_22: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_23: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_24: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_25: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_26: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_27: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_28: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_29: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_30: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_31: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_32: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_33: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_34: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_35: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_36: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_37: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_38: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_39: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_40: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_41: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_42: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_43: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_44: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_45: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_46: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_47: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_48: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_49: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_50: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_51: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_52: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_53: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_54: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_55: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_56))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
-pub static mut SFINAEs_away_57: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+pub static mut SFINAEs_away_56: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_57))
 });
 pub static mut SFINAEs_away_58: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_56))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_59: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_57))
 });
 pub static mut SFINAEs_away_60: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_56))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_61: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_57))
 });
 pub static mut SFINAEs_away_62: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_63: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_56))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_64: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_57))
 });
 pub static mut SFINAEs_away_65: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_66: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_56))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_67: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_57))
 });
 pub static mut SFINAEs_away_68: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_69: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_70: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_56))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_71: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_57))
 });
 pub static mut SFINAEs_away_72: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_73: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_74: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_56))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_75: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_57))
 });
 pub static mut SFINAEs_away_76: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 pub static mut SFINAEs_away_77: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_19))
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
+});
+pub static mut SFINAEs_away_78: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_20))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Empty {}
-pub unsafe fn UnorderedContainerDeductionGuidesSfinaeAway_78() {
+pub unsafe fn UnorderedContainerDeductionGuidesSfinaeAway_79() {
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, OutputIter, OutputIter>");;
     const _: () = assert!(
@@ -1425,7 +1429,7 @@ pub unsafe fn UnorderedContainerDeductionGuidesSfinaeAway_78() {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct BadAlloc_79 {}
+pub struct BadAlloc_80 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {
@@ -1476,21 +1480,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_80: std::cell::LazyCell<()> =
+pub static mut destructed_value_81: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_81: std::cell::LazyCell<()> =
+pub static mut moved_value_82: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_82(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_83(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_83(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_84(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_82(_x, _y)
+        operator_eq_83(_x, _y)
     });
 }
 #[repr(C)]
@@ -1554,8 +1558,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_80));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_80));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_81));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_81));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -1576,7 +1580,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_82(
+            operator_eq_83(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -1638,8 +1642,8 @@ impl test_allocator_std_pair_const_int__long__ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_80));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_80));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_81));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_81));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -1708,54 +1712,18 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let expected_m: [(); 4] = [
-        {
-            let mut __tmp_0: () = 1_();
-            let mut __tmp_1: () = 1_();
-            std_pair_const_int__long_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-        },
-        {
-            let mut __tmp_2: () = 2_();
-            let mut __tmp_3: () = 2_();
-            std_pair_const_int__long_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
-        },
-        {
-            let mut __tmp_4: () = 3_();
-            let mut __tmp_5: () = 1_();
-            std_pair_const_int__long_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
-        },
-        {
-            let mut __tmp_6: () = 2147483647_();
-            let mut __tmp_7: () = 1_();
-            std_pair_const_int__long_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ];
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_8: () = 1_();
-                let mut __tmp_9: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
-            },
-            {
-                let mut __tmp_10: () = 2_();
-                let mut __tmp_11: () = 2_();
-                std_pair_int__long_::new_1({ &mut __tmp_10 }, { &mut __tmp_11 })
-            },
-            {
-                let mut __tmp_12: () = 1_();
-                let mut __tmp_13: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_12 }, { &mut __tmp_13 })
-            },
-            {
-                let mut __tmp_14: () = 2147483647_();
-                let mut __tmp_15: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_14 }, { &mut __tmp_15 })
-            },
-            {
-                let mut __tmp_16: () = 3_();
-                let mut __tmp_17: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_16 }, { &mut __tmp_17 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -1763,31 +1731,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_18: () = 1_();
-                let mut __tmp_19: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_18 }, { &mut __tmp_19 })
-            },
-            {
-                let mut __tmp_20: () = 2_();
-                let mut __tmp_21: () = 2_();
-                std_pair_int__long_::new_1({ &mut __tmp_20 }, { &mut __tmp_21 })
-            },
-            {
-                let mut __tmp_22: () = 1_();
-                let mut __tmp_23: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_22 }, { &mut __tmp_23 })
-            },
-            {
-                let mut __tmp_24: () = 2147483647_();
-                let mut __tmp_25: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_24 }, { &mut __tmp_25 })
-            },
-            {
-                let mut __tmp_26: () = 3_();
-                let mut __tmp_27: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_26 }, { &mut __tmp_27 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -1795,31 +1743,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_28: () = 1_();
-                let mut __tmp_29: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_28 }, { &mut __tmp_29 })
-            },
-            {
-                let mut __tmp_30: () = 2_();
-                let mut __tmp_31: () = 2_();
-                std_pair_int__long_::new_1({ &mut __tmp_30 }, { &mut __tmp_31 })
-            },
-            {
-                let mut __tmp_32: () = 1_();
-                let mut __tmp_33: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_32 }, { &mut __tmp_33 })
-            },
-            {
-                let mut __tmp_34: () = 2147483647_();
-                let mut __tmp_35: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_34 }, { &mut __tmp_35 })
-            },
-            {
-                let mut __tmp_36: () = 3_();
-                let mut __tmp_37: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_36 }, { &mut __tmp_37 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -1827,31 +1755,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_38: () = 1_();
-                let mut __tmp_39: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_38 }, { &mut __tmp_39 })
-            },
-            {
-                let mut __tmp_40: () = 2_();
-                let mut __tmp_41: () = 2_();
-                std_pair_int__long_::new_1({ &mut __tmp_40 }, { &mut __tmp_41 })
-            },
-            {
-                let mut __tmp_42: () = 1_();
-                let mut __tmp_43: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_42 }, { &mut __tmp_43 })
-            },
-            {
-                let mut __tmp_44: () = 2147483647_();
-                let mut __tmp_45: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_44 }, { &mut __tmp_45 })
-            },
-            {
-                let mut __tmp_46: () = 3_();
-                let mut __tmp_47: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_46 }, { &mut __tmp_47 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -1859,31 +1767,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_48: () = 1_();
-                let mut __tmp_49: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_48 }, { &mut __tmp_49 })
-            },
-            {
-                let mut __tmp_50: () = 2_();
-                let mut __tmp_51: () = 2_();
-                std_pair_int__long_::new_1({ &mut __tmp_50 }, { &mut __tmp_51 })
-            },
-            {
-                let mut __tmp_52: () = 1_();
-                let mut __tmp_53: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_52 }, { &mut __tmp_53 })
-            },
-            {
-                let mut __tmp_54: () = 2147483647_();
-                let mut __tmp_55: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_54 }, { &mut __tmp_55 })
-            },
-            {
-                let mut __tmp_56: () = 3_();
-                let mut __tmp_57: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_56 }, { &mut __tmp_57 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -1956,31 +1844,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_58: () = 1_();
-                let mut __tmp_59: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_58 }, { &mut __tmp_59 })
-            },
-            {
-                let mut __tmp_60: () = 2_();
-                let mut __tmp_61: () = 2_();
-                std_pair_int__long_::new_1({ &mut __tmp_60 }, { &mut __tmp_61 })
-            },
-            {
-                let mut __tmp_62: () = 1_();
-                let mut __tmp_63: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_62 }, { &mut __tmp_63 })
-            },
-            {
-                let mut __tmp_64: () = 2147483647_();
-                let mut __tmp_65: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_64 }, { &mut __tmp_65 })
-            },
-            {
-                let mut __tmp_66: () = 3_();
-                let mut __tmp_67: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_66 }, { &mut __tmp_67 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -1989,31 +1857,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let arr: [(); 5] = [
-            {
-                let mut __tmp_68: () = 1_();
-                let mut __tmp_69: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_68 }, { &mut __tmp_69 })
-            },
-            {
-                let mut __tmp_70: () = 2_();
-                let mut __tmp_71: () = 2_();
-                std_pair_int__long_::new_1({ &mut __tmp_70 }, { &mut __tmp_71 })
-            },
-            {
-                let mut __tmp_72: () = 1_();
-                let mut __tmp_73: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_72 }, { &mut __tmp_73 })
-            },
-            {
-                let mut __tmp_74: () = 2147483647_();
-                let mut __tmp_75: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_74 }, { &mut __tmp_75 })
-            },
-            {
-                let mut __tmp_76: () = 3_();
-                let mut __tmp_77: () = 1_();
-                std_pair_int__long_::new_1({ &mut __tmp_76 }, { &mut __tmp_77 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -2110,12 +1958,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut um4: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
-    (unsafe { UnorderedContainerDeductionGuidesSfinaeAway_78() });
+    (unsafe { UnorderedContainerDeductionGuidesSfinaeAway_79() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const SFINAEs_away_18);
-    std::cell::LazyCell::force(&*&raw const SFINAEs_away_20);
+    std::cell::LazyCell::force(&*&raw const SFINAEs_away_19);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_21);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_22);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_23);
@@ -2151,7 +1998,7 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_53);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_54);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_55);
-    std::cell::LazyCell::force(&*&raw const SFINAEs_away_57);
+    std::cell::LazyCell::force(&*&raw const SFINAEs_away_56);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_58);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_59);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_60);
@@ -2172,6 +2019,7 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_75);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_76);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_77);
-    std::cell::LazyCell::force(&*&raw const destructed_value_80);
-    std::cell::LazyCell::force(&*&raw const moved_value_81);
+    std::cell::LazyCell::force(&*&raw const SFINAEs_away_78);
+    std::cell::LazyCell::force(&*&raw const destructed_value_81);
+    std::cell::LazyCell::force(&*&raw const moved_value_82);
 }

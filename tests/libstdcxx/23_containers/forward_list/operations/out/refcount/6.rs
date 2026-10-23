@@ -319,43 +319,13 @@ pub fn test01_10() {
             0_(),
         ]),
     ])));
-    let sorted: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_int__std_allocator_int__::new_1(
-            {
-                (((order.as_pointer() as Ptr<Box<[()]>>)
-                    .offset(0_())
-                    .as_pointer()) as Ptr<()>)
-            },
-            {
-                (((order.as_pointer() as Ptr<Box<[()]>>)
-                    .offset(0_())
-                    .as_pointer()) as Ptr<()>)
-                    .offset((*n.borrow()) as isize)
-            },
-            None,
-        ),
-    ));
+    let sorted: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i
         < (::std::mem::size_of::<[[(); 13]; 3]>() as ())
             .wrapping_div((::std::mem::size_of::<[(); 13]>() as ())))
     {
-        let head: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1(
-                {
-                    (((order.as_pointer() as Ptr<Box<[()]>>)
-                        .offset(i)
-                        .as_pointer()) as Ptr<()>)
-                },
-                {
-                    (((order.as_pointer() as Ptr<Box<[()]>>)
-                        .offset(i)
-                        .as_pointer()) as Ptr<()>)
-                        .offset((*n.borrow()) as isize)
-                },
-                None,
-            ),
-        ));
+        let head: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -378,43 +348,13 @@ pub fn test01_10() {
         }
         i.prefix_inc();
     }
-    let reversed: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_int__std_allocator_int__::new_1(
-            {
-                (((order.as_pointer() as Ptr<Box<[()]>>)
-                    .offset(2_())
-                    .as_pointer()) as Ptr<()>)
-            },
-            {
-                (((order.as_pointer() as Ptr<Box<[()]>>)
-                    .offset(2_())
-                    .as_pointer()) as Ptr<()>)
-                    .offset((*n.borrow()) as isize)
-            },
-            None,
-        ),
-    ));
+    let reversed: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i
         < (::std::mem::size_of::<[[(); 13]; 3]>() as ())
             .wrapping_div((::std::mem::size_of::<[(); 13]>() as ())))
     {
-        let head: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1(
-                {
-                    (((order.as_pointer() as Ptr<Box<[()]>>)
-                        .offset(i)
-                        .as_pointer()) as Ptr<()>)
-                },
-                {
-                    (((order.as_pointer() as Ptr<Box<[()]>>)
-                        .offset(i)
-                        .as_pointer()) as Ptr<()>)
-                        .offset((*n.borrow()) as isize)
-                },
-                None,
-            ),
-        ));
+        let head: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut comp: Comp_int_ = {
             let __tmp_0: Value<()> = Rc::new(RefCell::new(-1_()));
             Comp_int_::new({ __tmp_0.as_pointer() })
@@ -547,10 +487,7 @@ pub fn verify_demangle_19(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -561,22 +498,14 @@ pub fn run_tests_wrapped_locale_21(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -588,10 +517,7 @@ pub fn run_tests_wrapped_locale_21(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -613,10 +539,7 @@ pub fn run_tests_wrapped_env_22(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

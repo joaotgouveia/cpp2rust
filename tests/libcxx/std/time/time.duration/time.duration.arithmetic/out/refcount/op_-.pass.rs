@@ -28,30 +28,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_0.as_pointer() })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(3_()));
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_1.as_pointer() })
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "m2.count() == -m.count()");;
     }
     {
-        let zero: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(0_()));
-            std_chrono_duration_int__std_ratio_10__10__::new_1({ __tmp_2.as_pointer() })
-        }));
-        let one: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(1_()));
-            std_chrono_duration_int__std_ratio_10__10__::new_1({ __tmp_3.as_pointer() })
-        }));
+        let zero: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let one: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "(std::is_same< decltype(-one), decltype(zero-one) >::value)"

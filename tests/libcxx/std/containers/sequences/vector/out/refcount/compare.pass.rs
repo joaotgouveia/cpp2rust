@@ -693,48 +693,27 @@ pub fn test_14() -> () {
     {
         let items1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 1_()])));
         let items2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 2_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (items1.as_pointer() as Ptr<()>) },
-            { (items1.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
-        let c2: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (items2.as_pointer() as Ptr<()>) },
-            { (items2.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let items1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 2_(), 3_()])));
         let items2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 1_(), 3_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (items1.as_pointer() as Ptr<()>) },
-            { (items1.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
-        let c2: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (items2.as_pointer() as Ptr<()>) },
-            { (items2.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let items1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
         let items2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 0_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (items1.as_pointer() as Ptr<()>) },
-            { (items1.as_pointer() as Ptr<()>).offset((2_()) as isize) },
-        )));
-        let c2: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (items2.as_pointer() as Ptr<()>) },
-            { (items2.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let items1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 0_()])));
-        let c1: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (items1.as_pointer() as Ptr<()>) },
-            { (items1.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -769,18 +748,8 @@ pub fn test_14() -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 1_() }),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-                { (items1.as_pointer() as Ptr<LessAndEqComp>) },
-                { (items1.as_pointer() as Ptr<LessAndEqComp>).offset((3_()) as isize) },
-            ),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-                { (items2.as_pointer() as Ptr<LessAndEqComp>) },
-                { (items2.as_pointer() as Ptr<LessAndEqComp>).offset((3_()) as isize) },
-            ),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -794,18 +763,8 @@ pub fn test_14() -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 3_() }),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-                { (items1.as_pointer() as Ptr<LessAndEqComp>) },
-                { (items1.as_pointer() as Ptr<LessAndEqComp>).offset((3_()) as isize) },
-            ),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-                { (items2.as_pointer() as Ptr<LessAndEqComp>) },
-                { (items2.as_pointer() as Ptr<LessAndEqComp>).offset((3_()) as isize) },
-            ),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -818,18 +777,8 @@ pub fn test_14() -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 0_() }),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-                { (items1.as_pointer() as Ptr<LessAndEqComp>) },
-                { (items1.as_pointer() as Ptr<LessAndEqComp>).offset((2_()) as isize) },
-            ),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-                { (items2.as_pointer() as Ptr<LessAndEqComp>) },
-                { (items2.as_pointer() as Ptr<LessAndEqComp>).offset((3_()) as isize) },
-            ),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -838,12 +787,7 @@ pub fn test_14() -> () {
             LessAndEqComp::new({ 2_() }),
             LessAndEqComp::new({ 0_() }),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_vector_LessAndEqComp__std_allocator_LessAndEqComp__::new_1(
-                { (items1.as_pointer() as Ptr<LessAndEqComp>) },
-                { (items1.as_pointer() as Ptr<LessAndEqComp>).offset((3_()) as isize) },
-            ),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

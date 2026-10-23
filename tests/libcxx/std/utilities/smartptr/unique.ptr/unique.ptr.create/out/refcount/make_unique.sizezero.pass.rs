@@ -44,25 +44,19 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p: Value<()> = Rc::new(RefCell::new(std_unique_ptr_A__std_default_delete_A__::new(
-            { Ptr::alloc(<A>::default()) },
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(
-            std_unique_ptr_Aarrarr__std_default_delete_Aarrarr__::new({
-                Ptr::alloc_array((0..1_()).map(|_| <A>::default()).collect::<Box<[A]>>())
-            }),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(({ make_unique_0() })));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(({ make_unique_1(1_()) })));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return 0_();

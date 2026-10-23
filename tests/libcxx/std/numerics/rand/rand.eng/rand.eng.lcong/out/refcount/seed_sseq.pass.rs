@@ -33,18 +33,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        ({ (*e1.borrow()).seed(sseq.as_pointer()) });
+        unimplemented!();
         unimplemented!();
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_(), 9_(), 11_()])));
         let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let e2: Value<()> = Rc::new(RefCell::new(
-            std_linear_congruential_engine_unsigned_long_long__1__1__8589934593_::new_1({
-                sseq.as_pointer()
-            }),
-        ));
+        let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return 0_();

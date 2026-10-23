@@ -239,21 +239,25 @@ pub unsafe fn operator_add_3(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_4(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_5(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -337,7 +341,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -347,7 +351,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -415,12 +419,12 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn iter_swap_8(lhs: *const IterSwappingIt_0_, rhs: *const IterSwappingIt_0_) -> () {
+pub unsafe fn iter_swap_9(lhs: *const IterSwappingIt_0_, rhs: *const IterSwappingIt_0_) -> () {
     (*(*lhs).swaps_) += 10_();
     (*(*rhs).swaps_) += 1_();
     return 42_();
 }
-pub unsafe fn iter_swap_9(lhs: *const IterSwappingIt_0_, rhs: *const IterSwappingIt_1_) -> () {
+pub unsafe fn iter_swap_10(lhs: *const IterSwappingIt_0_, rhs: *const IterSwappingIt_1_) -> () {
     (*(*lhs).swaps_) += 10_();
     (*(*rhs).swaps_) += 1_();
     return 42_();
@@ -486,7 +490,7 @@ const _: () = assert!(
     true,
     "std::indirectly_swappable<IterSwappingIt<0>, IterSwappingIt<1>>"
 );
-pub unsafe fn test_10() -> () {
+pub unsafe fn test_11() -> () {
     {
         const _: () = assert!(true, "std::indirectly_swappable<CommonIt, CommonIt>");;
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
@@ -494,7 +498,7 @@ pub unsafe fn test_10() -> () {
         let mut jt: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        (unsafe { iter_swap_11(&it, &jt) });
+        (unsafe { iter_swap_12(&it, &jt) });
         unimplemented!();
         unimplemented!();
     }
@@ -509,18 +513,18 @@ pub unsafe fn test_10() -> () {
         let mut jt: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        (unsafe { iter_swap_12(&it, &jt) });
+        (unsafe { iter_swap_13(&it, &jt) });
         unimplemented!();
         unimplemented!();
         (unsafe {
             let mut ___x: () = unimplemented!();
             let mut ___y: () = unimplemented!();
-            iter_swap_12(&mut ___x, &mut ___y)
+            iter_swap_13(&mut ___x, &mut ___y)
         });
         unimplemented!();
         unimplemented!();
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_13))(&mut it, &mut jt)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_14))(&mut it, &mut jt)
         });
         unimplemented!();
         unimplemented!();
@@ -534,18 +538,18 @@ pub unsafe fn test_10() -> () {
         let mut jt: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        (unsafe { iter_swap_14(&it, &jt) });
+        (unsafe { iter_swap_15(&it, &jt) });
         unimplemented!();
         unimplemented!();
         (unsafe {
             let mut ___x: () = unimplemented!();
             let mut ___y: () = unimplemented!();
-            iter_swap_14(&mut ___x, &mut ___y)
+            iter_swap_15(&mut ___x, &mut ___y)
         });
         unimplemented!();
         unimplemented!();
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_13))(&mut it, &mut jt)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_14))(&mut it, &mut jt)
         });
         unimplemented!();
         unimplemented!();
@@ -568,7 +572,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_10() });
+    (unsafe { test_11() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

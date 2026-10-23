@@ -254,8 +254,7 @@ pub unsafe fn test_edges_14() -> () {
     'loop_: while ((i) < (N)) {
         let mut j: () = 0_();
         'loop_: while ((j) < (N)) {
-            let mut r: () =
-                (*(*std::cell::LazyCell::force_mut(&mut *&raw mut testcases_0))[(i) as usize]);
+            let mut r: () = unimplemented!();
             'switch: {
                 match { classification[(i) as usize] } {
                     __v if __v == (anon_1_zero as ()) => {

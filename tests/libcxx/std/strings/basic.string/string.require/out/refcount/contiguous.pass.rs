@@ -356,23 +356,11 @@ pub fn test_string_11(a: Ptr<()>) {
             test_contiguous_8(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    None,
-                ),
-            ));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_8(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    None,
-                ),
-            ));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_8(_c.as_pointer())
         });
     }
@@ -382,25 +370,11 @@ pub fn test_string_11(a: Ptr<()>) {
             test_contiguous_8(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    { Some(__tmp_0.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_8(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    { Some(__tmp_1.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_8(_c.as_pointer())
         });
     }
@@ -410,25 +384,11 @@ pub fn test_string_11(a: Ptr<()>) {
             test_contiguous_8(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    { Some(__tmp_2.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_8(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    { Some(__tmp_3.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_8(_c.as_pointer())
         });
     }
@@ -440,23 +400,11 @@ pub fn test_string_12(a: Ptr<test_allocator_char_>) {
             test_contiguous_9(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    None,
-                ),
-            ));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_9(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    None,
-                ),
-            ));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_9(_c.as_pointer())
         });
     }
@@ -466,27 +414,11 @@ pub fn test_string_12(a: Ptr<test_allocator_char_>) {
             test_contiguous_9(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_4: Value<test_allocator_char_> =
-                    Rc::new(RefCell::new(<test_allocator_char_>::default()));
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    { Some(__tmp_4.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_9(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_5: Value<test_allocator_char_> =
-                    Rc::new(RefCell::new(<test_allocator_char_>::default()));
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    { Some(__tmp_5.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_9(_c.as_pointer())
         });
     }
@@ -496,31 +428,11 @@ pub fn test_string_12(a: Ptr<test_allocator_char_>) {
             test_contiguous_9(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_6: Value<test_allocator_char_> =
-                    Rc::new(RefCell::new(test_allocator_char_::copy_from({
-                        (a).clone()
-                    })));
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    { Some(__tmp_6.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_9(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_7: Value<test_allocator_char_> =
-                    Rc::new(RefCell::new(test_allocator_char_::copy_from({
-                        (a).clone()
-                    })));
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    { Some(__tmp_7.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_9(_c.as_pointer())
         });
     }
@@ -532,23 +444,11 @@ pub fn test_string_13(a: Ptr<min_allocator_char_>) {
             test_contiguous_10(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    None,
-                ),
-            ));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_10(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    None,
-                ),
-            ));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_10(_c.as_pointer())
         });
     }
@@ -558,27 +458,11 @@ pub fn test_string_13(a: Ptr<min_allocator_char_>) {
             test_contiguous_10(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_8: Value<min_allocator_char_> =
-                    Rc::new(RefCell::new(<min_allocator_char_>::default()));
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    { Some(__tmp_8.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_10(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_9: Value<min_allocator_char_> =
-                    Rc::new(RefCell::new(<min_allocator_char_>::default()));
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    { Some(__tmp_9.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_10(_c.as_pointer())
         });
     }
@@ -588,27 +472,11 @@ pub fn test_string_13(a: Ptr<min_allocator_char_>) {
             test_contiguous_10(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_10: Value<min_allocator_char_> =
-                    Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"1") },
-                    { Some(__tmp_10.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_10(_c.as_pointer())
         });
         ({
-            let _c: Value<()> = Rc::new(RefCell::new({
-                let __tmp_11: Value<min_allocator_char_> =
-                    Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    {
-                        Ptr::<() >::from_string_literal(b"1234567890123456789012345678901234567890123456789012345678901234567890" )
-                    },
-                    { Some(__tmp_11.as_pointer()) },
-                )
-            }));
+            let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test_contiguous_10(_c.as_pointer())
         });
     }

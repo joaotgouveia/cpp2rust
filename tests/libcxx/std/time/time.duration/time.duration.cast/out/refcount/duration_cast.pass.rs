@@ -75,107 +75,47 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(7265000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_0.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-            std_chrono_duration_long__std_ratio_3600__1__::new_1({ __tmp_1.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(7265000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_2.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(121_()));
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_3.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_1(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(7265000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_4.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(7265_()));
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ __tmp_5.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_2(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(7265000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_6.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(7265000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_7.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_3(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(7265000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_8.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(7265000000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ __tmp_9.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_4(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(7265000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_10.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(7265000000000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({
-                __tmp_11.as_pointer()
-            })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_5(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(7265000_()));
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ __tmp_12.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_13: Value<()> = Rc::new(RefCell::new((7265_f64 / 3600_())));
-            std_chrono_duration_double__std_ratio_3600__1__::new_1({ __tmp_13.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_6(_f.as_pointer(), _d.as_pointer())
     });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(9_()));
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ __tmp_14.as_pointer() })
-        }));
-        let _d: Value<()> = Rc::new(RefCell::new({
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(10_()));
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ __tmp_15.as_pointer() })
-        }));
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_7(_f.as_pointer(), _d.as_pointer())
     });
     {
-        let h: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___fd: Value<()> = Rc::new(RefCell::new({
-                    let __tmp_16: Value<()> = Rc::new(RefCell::new(7265000_()));
-                    std_chrono_duration_long_long__std_ratio_1__1000__::new_1({
-                        __tmp_16.as_pointer()
-                    })
-                }));
-                duration_cast_8(___fd.as_pointer())
-            }),
-        ));
+        let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "h.count() == 2");;
     }
     return 0_();

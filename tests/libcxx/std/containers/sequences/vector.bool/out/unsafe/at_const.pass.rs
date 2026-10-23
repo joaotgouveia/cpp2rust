@@ -446,12 +446,7 @@ pub unsafe fn test_10() {
         (0_() != 0),
         (1_() != 0),
     ];
-    let v: () = std_vector_bool__std_allocator_bool__::new_1({ a.as_mut_ptr() }, {
-        a.as_mut_ptr().offset(
-            ((::std::mem::size_of::<[(); 5]>() as ())
-                .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-        )
-    });
+    let v: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
@@ -467,12 +462,7 @@ pub unsafe fn test_11() {
         (0_() != 0),
         (1_() != 0),
     ];
-    let v: () = std_vector_bool__min_allocator_bool__::new_1({ a.as_mut_ptr() }, {
-        a.as_mut_ptr().offset(
-            ((::std::mem::size_of::<[(); 5]>() as ())
-                .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-        )
-    });
+    let v: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
@@ -488,12 +478,7 @@ pub unsafe fn test_12() {
         (0_() != 0),
         (1_() != 0),
     ];
-    let v: () = std_vector_bool__test_allocator_bool__::new_1({ a.as_mut_ptr() }, {
-        a.as_mut_ptr().offset(
-            ((::std::mem::size_of::<[(); 5]>() as ())
-                .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
-        )
-    });
+    let v: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();

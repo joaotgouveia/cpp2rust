@@ -41,18 +41,11 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
-        let mut _s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"123".as_ptr() },
-            None,
-        );
+        let mut _s: () = unimplemented!();
         test_0(&mut _s)
     });
     (unsafe {
-        let mut _s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                { [49 as (), 50 as (), 51 as (), 0 as ()].as_ptr() },
-                None,
-            );
+        let mut _s: () = unimplemented!();
         test_1(&mut _s)
     });
     return 0_();

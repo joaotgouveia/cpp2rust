@@ -367,10 +367,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let val: Value<X> = Rc::new(RefCell::new(X::new({ 2_() })));
+        let mut val: X = X::new({ 2_() });
         let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let o2: Value<()> = Rc::new(RefCell::new(1_()));
-        let o3: Value<()> = Rc::new(RefCell::new(std_optional_X_::new_1({ val.as_pointer() })));
+        let o2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let o3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "(o1 != T(1))");;
         const _: () = assert!(true, "!(o2 != T(1))");;
         const _: () = assert!(true, "(o3 != T(1))");;
@@ -383,12 +383,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "!(val != o3)");;
     }
     {
-        let o1: Value<()> = Rc::new(RefCell::new(42_()));
+        let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "o1 != 101l");;
         const _: () = assert!(true, "!(42l != o1)");;
     }
     {
-        let o1: Value<()> = Rc::new(RefCell::new(42_()));
+        let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "o1 != 101");;
         const _: () = assert!(true, "!(42 != o1)");;
     }

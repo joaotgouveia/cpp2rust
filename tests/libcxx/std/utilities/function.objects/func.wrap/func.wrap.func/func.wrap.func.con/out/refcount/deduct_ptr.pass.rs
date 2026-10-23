@@ -76,21 +76,13 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let a: Value<()> = Rc::new(RefCell::new(std_function_R____::new_1({
-            FnPtr::<fn() -> R>::new(f0_4)
-        })));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let b: Value<()> = Rc::new(RefCell::new(std_function_R____::new_1({
-            (FnPtr::<fn() -> R>::new(f0_4))
-        })));
+        let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let c: Value<()> = Rc::new(RefCell::new(std_function_R____::new_1({
-            FnPtr::<fn() -> R>::new(f0_4)
-        })));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let d: Value<()> = Rc::new(RefCell::new(std_function_R____::new_1({
-            (FnPtr::<fn() -> R>::new(f0_4))
-        })));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {

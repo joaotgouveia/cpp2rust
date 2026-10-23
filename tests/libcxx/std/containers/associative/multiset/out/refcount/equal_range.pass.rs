@@ -332,48 +332,25 @@ pub fn test_7() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let r: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___k: Value<()> = Rc::new(RefCell::new(4_()));
-                (*m.borrow()).equal_range_79_int_struct_std_less_void__0(___k.as_pointer())
-            }),
-        ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(5_()));
-            (*m.borrow()).equal_range_79_int_struct_std_less_void__0(___k.as_pointer())
-        });
+        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(6_()));
-            (*m.borrow()).equal_range_79_int_struct_std_less_void__0(___k.as_pointer())
-        });
+        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(7_()));
-            (*m.borrow()).equal_range_79_int_struct_std_less_void__0(___k.as_pointer())
-        });
+        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(8_()));
-            (*m.borrow()).equal_range_79_int_struct_std_less_void__0(___k.as_pointer())
-        });
+        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(9_()));
-            (*m.borrow()).equal_range_79_int_struct_std_less_void__0(___k.as_pointer())
-        });
+        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(10_()));
-            (*m.borrow()).equal_range_79_int_struct_std_less_void__0(___k.as_pointer())
-        });
+        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

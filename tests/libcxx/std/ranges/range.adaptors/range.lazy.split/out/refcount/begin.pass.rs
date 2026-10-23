@@ -425,23 +425,29 @@ pub fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_7(_i, n)
     });
 }
-pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_9(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_10(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -487,7 +493,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_12(
+            operator_cmp_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -512,7 +518,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_11(
+            operator_eq_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -604,7 +610,7 @@ pub struct sentinel {}
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
 thread_local!(
-    pub static enable_borrowed_range_13: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_14: Value<()> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
@@ -690,12 +696,11 @@ impl ForwardDiffView {
     }
     pub fn new_2(v: ()) -> Self {
         let v: Value<()> = Rc::new(RefCell::new(v));
-        let __this: Value<ForwardDiffView> = Rc::new(RefCell::new(Self {
+        let __this: ForwardDiffView = Self {
             buffer_: unimplemented!(),
-        }));
-        let this: Ptr<ForwardDiffView> = __this.as_pointer();
-        field!(this, buffer_).write((*v.borrow()).clone());
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+        };
+        unimplemented!();
+        __this
     }
 }
 impl Default for ForwardDiffView {
@@ -722,13 +727,13 @@ pub struct almost_forward_iterator_int_ptr_ {
     it_: Ptr<()>,
 }
 impl almost_forward_iterator_int_ptr_ {}
-pub fn operator_eq_14(
+pub fn operator_eq_15(
     x: Ptr<almost_forward_iterator_const_char_ptr_>,
     y: Ptr<almost_forward_iterator_const_char_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_15(
+pub fn operator_ne_16(
     x: Ptr<almost_forward_iterator_const_char_ptr_>,
     y: Ptr<almost_forward_iterator_const_char_ptr_>,
 ) -> () {
@@ -749,7 +754,7 @@ impl almost_forward_iterator_const_char_ptr_ {
 impl std::cmp::PartialEq for almost_forward_iterator_const_char_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_14(
+            operator_eq_15(
                 Rc::new(RefCell::new(almost_forward_iterator_const_char_ptr_ {
                     it_: self.it_.clone(),
                 }))
@@ -797,7 +802,7 @@ const _: () = assert!(
     "!std::ranges::forward_range<const ForwardOnlyIfNonConstView>"
 );
 const _: () = assert!(true, "std::ranges::view<ForwardOnlyIfNonConstView>");
-pub fn operator_eq_16(lhs: Ptr<InputView>, rhs: Ptr<InputView>) -> () {
+pub fn operator_eq_17(lhs: Ptr<InputView>, rhs: Ptr<InputView>) -> () {
     return unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -813,18 +818,17 @@ impl InputView {
     }
     pub fn new_2(v: ()) -> Self {
         let v: Value<()> = Rc::new(RefCell::new(v));
-        let __this: Value<InputView> = Rc::new(RefCell::new(Self {
+        let __this: InputView = Self {
             buffer_: unimplemented!(),
-        }));
-        let this: Ptr<InputView> = __this.as_pointer();
-        field!(this, buffer_).write((*v.borrow()).clone());
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+        };
+        unimplemented!();
+        __this
     }
 }
 impl std::cmp::PartialEq for InputView {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_16(
+            operator_eq_17(
                 Rc::new(RefCell::new(InputView {
                     buffer_: self.buffer_.clone(),
                 }))
@@ -884,7 +888,7 @@ const _: () = assert!(true, "std::ranges::view<ForwardTinyView>");
 const _: () = assert!(true, "std::ranges::__tiny_range<ForwardTinyView>");
 const _: () = assert!(!(false), "!std::same_as<OuterIterConst, OuterIterNonConst>");
 const _: () = assert!(!(false), "!std::same_as<InnerIterConst, InnerIterNonConst>");
-pub fn test_17() -> () {
+pub fn test_18() -> () {
     {
         const _: () = assert!(true, "std::ranges::forward_range<V>");;
         const _: () = assert!(true, "std::ranges::forward_range<const V>");;
@@ -1023,7 +1027,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_17() });
+    ({ test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -1570,5 +1574,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = enable_borrowed_range_13.with(|_| ());
+    let _ = enable_borrowed_range_14.with(|_| ());
 }

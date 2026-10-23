@@ -436,22 +436,11 @@ pub unsafe fn test_string_11(a: *const ()) {
             test_contiguous_8(&mut _c)
         });
         (unsafe {
-            let mut _c: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    None,
-                );
+            let mut _c: () = unimplemented!();
             test_contiguous_8(&mut _c)
         });
         (unsafe {
-            let mut _c: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    None,
-                );
+            let mut _c: () = unimplemented!();
             test_contiguous_8(&mut _c)
         });
     }
@@ -461,26 +450,11 @@ pub unsafe fn test_string_11(a: *const ()) {
             test_contiguous_8(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_0: () = unimplemented!();
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    { Some(&mut __tmp_0) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_8(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_1: () = unimplemented!();
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    { Some(&mut __tmp_1) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_8(&mut _c)
         });
     }
@@ -490,26 +464,11 @@ pub unsafe fn test_string_11(a: *const ()) {
             test_contiguous_8(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_2: () = unimplemented!();
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    { Some(&mut __tmp_2) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_8(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_3: () = unimplemented!();
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    { Some(&mut __tmp_3) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_8(&mut _c)
         });
     }
@@ -521,22 +480,11 @@ pub unsafe fn test_string_12(a: *const test_allocator_char_) {
             test_contiguous_9(&mut _c)
         });
         (unsafe {
-            let mut _c: () =
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    None,
-                );
+            let mut _c: () = unimplemented!();
             test_contiguous_9(&mut _c)
         });
         (unsafe {
-            let mut _c: () =
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    None,
-                );
+            let mut _c: () = unimplemented!();
             test_contiguous_9(&mut _c)
         });
     }
@@ -546,26 +494,11 @@ pub unsafe fn test_string_12(a: *const test_allocator_char_) {
             test_contiguous_9(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_4: test_allocator_char_ = <test_allocator_char_>::default();
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    { Some(&mut __tmp_4) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_9(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_5: test_allocator_char_ = <test_allocator_char_>::default();
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    { Some(&mut __tmp_5) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_9(&mut _c)
         });
     }
@@ -575,26 +508,11 @@ pub unsafe fn test_string_12(a: *const test_allocator_char_) {
             test_contiguous_9(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_6: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    { Some(&mut __tmp_6) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_9(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_7: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    { Some(&mut __tmp_7) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_9(&mut _c)
         });
     }
@@ -606,22 +524,11 @@ pub unsafe fn test_string_13(a: *const min_allocator_char_) {
             test_contiguous_10(&mut _c)
         });
         (unsafe {
-            let mut _c: () =
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    None,
-                );
+            let mut _c: () = unimplemented!();
             test_contiguous_10(&mut _c)
         });
         (unsafe {
-            let mut _c: () =
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    None,
-                );
+            let mut _c: () = unimplemented!();
             test_contiguous_10(&mut _c)
         });
     }
@@ -631,26 +538,11 @@ pub unsafe fn test_string_13(a: *const min_allocator_char_) {
             test_contiguous_10(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_8: min_allocator_char_ = <min_allocator_char_>::default();
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    { Some(&mut __tmp_8) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_10(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_9: min_allocator_char_ = <min_allocator_char_>::default();
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    { Some(&mut __tmp_9) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_10(&mut _c)
         });
     }
@@ -660,26 +552,11 @@ pub unsafe fn test_string_13(a: *const min_allocator_char_) {
             test_contiguous_10(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_10: min_allocator_char_ = (*a);
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { c"1".as_ptr() },
-                    { Some(&mut __tmp_10) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_10(&mut _c)
         });
         (unsafe {
-            let mut _c: () = {
-                let mut __tmp_11: min_allocator_char_ = (*a);
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    {
-                        c"1234567890123456789012345678901234567890123456789012345678901234567890"
-                            .as_ptr()
-                    },
-                    { Some(&mut __tmp_11) },
-                )
-            };
+            let mut _c: () = unimplemented!();
             test_contiguous_10(&mut _c)
         });
     }

@@ -160,11 +160,7 @@ pub fn test_stable_6(mut N: ()) {
         field!(unimplemented!(), side).write(__rhs);
         i.prefix_inc();
     }
-    let c: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_Payload__std_allocator_Payload__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let j: Value<()> = Rc::new(RefCell::new(
@@ -186,7 +182,7 @@ pub fn test_stable_6(mut N: ()) {
         }),
     ));
     'loop_: while unimplemented!() {
-        let next: Value<()> = Rc::new(RefCell::new(({ next_7((*it.borrow()).clone(), None) })));
+        let next: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         if (unimplemented!())
             && ({ ((*it.borrow()).read()).val } == { ((*next.borrow()).read()).val })
         {
@@ -195,7 +191,7 @@ pub fn test_stable_6(mut N: ()) {
         unimplemented!();
     }
 }
-pub fn test_8(mut N: ()) {
+pub fn test_7(mut N: ()) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < N) {
@@ -203,11 +199,7 @@ pub fn test_8(mut N: ()) {
         i.prefix_inc();
     }
     unimplemented!();
-    let c: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let j: Value<()> = Rc::new(RefCell::new(
@@ -224,7 +216,7 @@ pub fn test_8(mut N: ()) {
         };
     }
 }
-pub fn test_9(mut N: ()) {
+pub fn test_8(mut N: ()) {
     let mut v: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < N) {
@@ -232,11 +224,7 @@ pub fn test_9(mut N: ()) {
         i.prefix_inc();
     }
     unimplemented!();
-    let c: Value<()> = Rc::new(RefCell::new(
-        std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let j : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()   } , )  )) ;
@@ -271,12 +259,12 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 40_()) {
-        ({ test_8(i) });
+        ({ test_7(i) });
         i.prefix_inc();
     }
     let mut i: () = 0_();
     'loop_: while (i < 40_()) {
-        ({ test_9(i) });
+        ({ test_8(i) });
         i.prefix_inc();
     }
     let mut i: () = 0_();

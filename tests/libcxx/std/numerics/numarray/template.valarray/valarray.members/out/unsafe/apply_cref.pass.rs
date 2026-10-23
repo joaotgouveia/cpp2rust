@@ -42,7 +42,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let N1: () = (::std::mem::size_of::<[(); 10]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let mut v1: () = unimplemented!();
-        let mut v2: () = (unsafe { v1.apply_70(Some(f_0)) });
+        let mut v2: () = unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (N1)) {
@@ -53,7 +53,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let N1: () = 0_();
         let mut v1: () = unimplemented!();
-        let mut v2: () = (unsafe { v1.apply_70(Some(f_0)) });
+        let mut v2: () = unimplemented!();
         unimplemented!();
     }
     {

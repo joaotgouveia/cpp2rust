@@ -179,20 +179,12 @@ pub unsafe fn test_string_4() {
         'loop_: while ((k) != (4_())) {
             {
                 let mut lhs: *const () = test_data[(0_()) as usize][(i) as usize];
-                let rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
                 let mut lhs: *const () = test_data[(0_()) as usize][(i) as usize];
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();
@@ -247,20 +239,12 @@ pub unsafe fn test_string_5() {
         'loop_: while ((k) != (4_())) {
             {
                 let mut lhs: *const () = test_data[(0_()) as usize][(i) as usize];
-                let rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
                 let mut lhs: *const () = test_data[(0_()) as usize][(i) as usize];
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(1_()) as usize][(k) as usize] },
-                        None,
-                    );
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();

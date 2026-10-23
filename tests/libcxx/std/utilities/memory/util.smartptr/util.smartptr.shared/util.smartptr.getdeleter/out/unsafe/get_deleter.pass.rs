@@ -132,7 +132,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         {
             let mut ptr: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
-            let mut p: () = std_shared_ptr_A_::new_1({ ptr }, { test_deleter_A_::new_1({ 3_() }) });
+            let mut p: () = unimplemented!();
             let mut d: *mut test_deleter_A_ = unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -146,7 +146,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0_();
     {
         {
-            let mut p: () = std_shared_ptr_A_::new_2(
+            let mut p: () = std_shared_ptr_A_::new_1(
                 { Default::default() },
                 { test_deleter_A_::new_1({ 3_() }) },
                 None,
@@ -163,7 +163,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0_();
     {
-        let mut p: () = std_shared_ptr_A_::new_2(
+        let mut p: () = std_shared_ptr_A_::new_1(
             { Default::default() },
             { test_deleter_A_::new_1({ 3_() }) },
             None,

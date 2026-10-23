@@ -7,53 +7,29 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
-    let mut re: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"\\{a\\}") },
-        None,
-    );
-    let mut target: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"{a}") },
-        None,
-    );
+    let mut re: () = unimplemented!();
+    let mut target: () = unimplemented!();
     let regex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let smatch: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test2_1() {
-    let mut re: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"\\{a\\}") },
-        None,
-    );
-    let mut target: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"{a}") },
-        None,
-    );
+    let mut re: () = unimplemented!();
+    let mut target: () = unimplemented!();
     let regex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let smatch: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test3_2() {
-    let mut re: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"\\{a\\}") },
-        None,
-    );
-    let mut target: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"{a}") },
-        None,
-    );
+    let mut re: () = unimplemented!();
+    let mut target: () = unimplemented!();
     let regex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let smatch: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test4_3() {
-    let mut re: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"\\{a\\}") },
-        None,
-    );
-    let mut target: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"{a}") },
-        None,
-    );
+    let mut re: () = unimplemented!();
+    let mut target: () = unimplemented!();
     let regex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let smatch: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

@@ -339,15 +339,7 @@ impl std::cmp::Eq for min_allocator_int_ {}
 pub fn test_11() -> () {
     {
         let mut t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 10_() })));
-            std_forward_list_int__test_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(
@@ -373,15 +365,7 @@ pub fn test_11() -> () {
     }
     {
         let mut t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 10_() })));
-            std_forward_list_int__other_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = 0_();
         let i: Value<()> = Rc::new(RefCell::new(
@@ -407,15 +391,7 @@ pub fn test_11() -> () {
     }
     {
         let mut t: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-        let c0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_forward_list_int__min_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { __tmp_2.as_pointer() },
-            )
-        }));
+        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut n: () = 0_();
         let i : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()   } , )  )) ;

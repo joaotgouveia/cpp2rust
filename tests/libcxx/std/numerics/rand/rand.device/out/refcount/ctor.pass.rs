@@ -44,48 +44,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         ({
-            let _token: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"/dev/urandom") },
-                    None,
-                ),
-            ));
+            let _token: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             check_random_device_valid_2(_token.as_pointer())
         });
         ({
-            let _token: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"/dev/random") },
-                    None,
-                ),
-            ));
+            let _token: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             check_random_device_valid_2(_token.as_pointer())
         });
         ({
-            let _token: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"/dev/null") },
-                    None,
-                ),
-            ));
+            let _token: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             check_random_device_valid_2(_token.as_pointer())
         });
         ({
-            let _token: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"/dev/nonexistent") },
-                    None,
-                ),
-            ));
+            let _token: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             check_random_device_invalid_3(_token.as_pointer())
         });
         ({
-            let _token: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"wrong file") },
-                    None,
-                ),
-            ));
+            let _token: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             check_random_device_invalid_3(_token.as_pointer())
         });
     }

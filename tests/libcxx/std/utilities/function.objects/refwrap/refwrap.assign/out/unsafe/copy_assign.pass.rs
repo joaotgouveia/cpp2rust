@@ -28,52 +28,52 @@ impl Default for convertible_to_int_ref {
     }
 }
 pub unsafe fn test_0(t: *mut Option<unsafe fn()>) {
-    let mut r: () = std_reference_wrapper_void__ptr____::new({ t });
+    let mut r: () = unimplemented!();
     let mut t2: Option<unsafe fn()> = (*t);
-    let mut r2: () = std_reference_wrapper_void__ptr____::new({ &mut t2 });
+    let mut r2: () = unimplemented!();
     r2 = (r).clone();
     unimplemented!();
 }
 pub unsafe fn test_1(t: *mut functor1) {
-    let mut r: () = std_reference_wrapper_functor1_::new({ t });
+    let mut r: () = unimplemented!();
     let mut t2: functor1 = (*t);
-    let mut r2: () = std_reference_wrapper_functor1_::new({ &mut t2 });
+    let mut r2: () = unimplemented!();
     r2 = (r).clone();
     unimplemented!();
 }
 pub unsafe fn test_2(t: *mut ()) {
-    let mut r: () = std_reference_wrapper_int_::new({ t });
+    let mut r: () = unimplemented!();
     let mut t2: () = (*t);
-    let mut r2: () = std_reference_wrapper_int_::new({ &mut t2 });
+    let mut r2: () = unimplemented!();
     r2 = (r).clone();
     unimplemented!();
 }
 pub unsafe fn test_3(t: *const ()) {
-    let mut r: () = std_reference_wrapper_const_int_::new({ t });
+    let mut r: () = unimplemented!();
     let t2: () = (*t);
-    let mut r2: () = std_reference_wrapper_const_int_::new({ &t2 });
+    let mut r2: () = unimplemented!();
     r2 = (r).clone();
     unimplemented!();
 }
 pub unsafe fn test_4(t: *mut convertible_to_int_ref) {
-    let mut r: () = std_reference_wrapper_convertible_to_int_ref_::new({ t });
+    let mut r: () = unimplemented!();
     let mut t2: convertible_to_int_ref = (*t);
-    let mut r2: () = std_reference_wrapper_convertible_to_int_ref_::new({ &mut t2 });
+    let mut r2: () = unimplemented!();
     r2 = (r).clone();
     unimplemented!();
 }
 pub unsafe fn test_5(t: *const convertible_to_int_ref) {
-    let mut r: () = std_reference_wrapper_const_convertible_to_int_ref_::new({ t });
+    let mut r: () = unimplemented!();
     let t2: convertible_to_int_ref = (*t);
-    let mut r2: () = std_reference_wrapper_const_convertible_to_int_ref_::new({ &t2 });
+    let mut r2: () = unimplemented!();
     r2 = (r).clone();
     unimplemented!();
 }
 pub unsafe fn f_6() {}
 pub unsafe fn g_7() {}
 pub unsafe fn test_function_8() {
-    let mut r: () = std_reference_wrapper_void____::new({ Some(f_6) });
-    let mut r2: () = std_reference_wrapper_void____::new({ Some(g_7) });
+    let mut r: () = unimplemented!();
+    let mut r2: () = unimplemented!();
     r2 = (r).clone();
     unimplemented!();
 }

@@ -87,18 +87,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ tuple_cat_0() });
-    ({
-        let ___tpls: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        tuple_cat_1(___tpls.as_pointer())
-    });
-    ({
-        let ___tpls_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ___tpls_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        tuple_cat_2(___tpls_0.as_pointer(), ___tpls_1.as_pointer())
-    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let a3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ tuple_cat_3(a3.as_pointer()) });
+    unimplemented!();
     let pdb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -109,51 +102,18 @@ fn main_0() -> () {
             pi.as_pointer()
         }),
     ));
-    ({ tuple_cat_4(pdb.as_pointer()) });
-    ({ tuple_cat_5(to.as_pointer()) });
-    ({
-        let ___tpls_0: Ptr<()> = to.as_pointer();
-        let ___tpls_1: Ptr<()> = to.as_pointer();
-        tuple_cat_6(___tpls_0, ___tpls_1)
-    });
-    ({ tuple_cat_7(a3.as_pointer(), pdb.as_pointer()) });
-    ({ tuple_cat_8(a3.as_pointer(), pdb.as_pointer(), t.as_pointer()) });
-    ({
-        let ___tpls_0: Ptr<()> = a3.as_pointer();
-        let ___tpls_3: Ptr<()> = a3.as_pointer();
-        tuple_cat_9(___tpls_0, pdb.as_pointer(), t.as_pointer(), ___tpls_3)
-    });
-    ({
-        let ___tpls_0: Ptr<()> = a3.as_pointer();
-        let ___tpls_1: Ptr<()> = pdb.as_pointer();
-        let ___tpls_2: Ptr<()> = t.as_pointer();
-        let ___tpls_3: Ptr<()> = a3.as_pointer();
-        let ___tpls_4: Ptr<()> = pdb.as_pointer();
-        let ___tpls_5: Ptr<()> = t.as_pointer();
-        tuple_cat_10(
-            ___tpls_0, ___tpls_1, ___tpls_2, ___tpls_3, ___tpls_4, ___tpls_5,
-        )
-    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     const _: () = assert!(
         true,
         "std::is_same<decltype\n\t\t(std::tuple_cat(a3, pdb, t, a3, pdb, t)),\n                std::tuple<int, int, int, double, bool,\n\t\tunsigned, float, std::nullptr_t, void*,\n\t\tint, int, int, double, bool, unsigned,\n\t\tfloat, std::nullptr_t, void*>\n                >::value"
     );;
-    ({
-        let ___tpls_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ___tpls_1: Ptr<()> = to.as_pointer();
-        let ___tpls_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ___tpls_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ___tpls_6: Ptr<()> = to.as_pointer();
-        tuple_cat_11(
-            ___tpls_0.as_pointer(),
-            ___tpls_1,
-            a3.as_pointer(),
-            ___tpls_3.as_pointer(),
-            ___tpls_4.as_pointer(),
-            pdb.as_pointer(),
-            ___tpls_6,
-        )
-    });
+    unimplemented!();
     0
 }
 pub fn __cpp2rust_init_globals() {}

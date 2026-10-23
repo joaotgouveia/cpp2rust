@@ -129,38 +129,23 @@ pub fn test_20() -> () {
             unimplemented!(),
             unimplemented!(),
         ])));
-        let opt: Value<()> = Rc::new(RefCell::new(({ make_optional_21(arr.as_pointer()) })));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___v: Value<()> = Rc::new(RefCell::new(2_()));
-                make_optional_22(___v.as_pointer())
-            }),
-        ));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "opt.value() == 2");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___v: Value<()> = Rc::new(RefCell::new(2_()));
-                make_optional_22(___v.as_pointer())
-            }),
-        ));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     let test_string: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123") },
-                None,
-            ),
-        ));
-        let opt: Value<()> = Rc::new(RefCell::new(({ make_optional_23(s.as_pointer()) })));
+        let mut s: () = unimplemented!();
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     })));
@@ -168,15 +153,8 @@ pub fn test_20() -> () {
         ({ (*test_string.borrow()).call() });
     }
     let test_unique_ptr: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
-        let s: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___args: Value<()> = Rc::new(RefCell::new(3_()));
-                make_unique_24(___args.as_pointer())
-            }),
-        ));
-        let opt: Value<()> = Rc::new(RefCell::new(
-            ({ make_optional_25((s.as_pointer()).reinterpret_cast::<()>()) }),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

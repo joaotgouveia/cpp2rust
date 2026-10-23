@@ -10,37 +10,27 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct functor1 {}
 pub fn test_0(t: Ptr<FnPtr<fn()>>) {
-    let r: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_void__ptr____::new({
-        (t).clone()
-    })));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r2: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
     unimplemented!();
 }
 pub fn test_1(t: FnPtr<fn()>) {
-    let r: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_void____::new({
-        (t).clone()
-    })));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r2: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
     unimplemented!();
 }
 pub fn test_2(t: Ptr<functor1>) {
-    let r: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_functor1_::new({
-        (t).clone()
-    })));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r2: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
     unimplemented!();
 }
 pub fn test_3(t: Ptr<()>) {
-    let r: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-        (t).clone()
-    })));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r2: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
     unimplemented!();
 }
 pub fn test_4(t: Ptr<()>) {
-    let r: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_const_int_::new({
-        (t).clone()
-    })));
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r2: Value<()> = Rc::new(RefCell::new((*r.borrow()).clone()));
     unimplemented!();
 }

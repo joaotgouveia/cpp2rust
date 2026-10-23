@@ -74,14 +74,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_container_iterators_0(unimplemented!()) });
     ({ test_container_iterators_1(unimplemented!()) });
-    ({
-        test_container_iterators_2(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
-        )
-    });
+    ({ test_container_iterators_2(unimplemented!()) });
     ({ test_container_iterators_3(unimplemented!()) });
     ({ test_container_iterators_4(unimplemented!()) });
     ({ test_valarray_iterators_5() });

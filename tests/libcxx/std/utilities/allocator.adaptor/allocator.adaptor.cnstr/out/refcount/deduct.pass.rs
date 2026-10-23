@@ -142,37 +142,24 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let outer: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 3_() })));
-        let a: Value<()> = Rc::new(RefCell::new(std_scoped_allocator_adaptor_A1_int__::new_1(
-            { outer.as_pointer() },
-        )));
+        let mut outer: A1_int_ = A1_int_::new({ 3_() });
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(A1_int_::new({ 3_() })));
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let outer: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 3_() })));
-        let inner: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 4_() })));
-        let a: Value<()> = Rc::new(RefCell::new(
-            std_scoped_allocator_adaptor_A1_int___A2_int__::new_1({ outer.as_pointer() }, {
-                inner.as_pointer()
-            }),
-        ));
+        let mut outer: A1_int_ = A1_int_::new({ 3_() });
+        let mut inner: A2_int_ = A2_int_::new({ 4_() });
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let outer: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 3_() })));
-        let inner: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 4_() })));
-        let a: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<A2_float_> = Rc::new(RefCell::new(A2_float_::new({ 5_() })));
-            std_scoped_allocator_adaptor_A1_int___A2_int___A2_float__::new_1(
-                { outer.as_pointer() },
-                { inner.as_pointer() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
+        let mut outer: A1_int_ = A1_int_::new({ 3_() });
+        let mut inner: A2_int_ = A2_int_::new({ 4_() });
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     return 0_();

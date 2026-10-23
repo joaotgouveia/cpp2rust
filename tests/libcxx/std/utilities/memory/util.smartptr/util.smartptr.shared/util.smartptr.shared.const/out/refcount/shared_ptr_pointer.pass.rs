@@ -86,9 +86,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let pA: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
-            Ptr::alloc(A::new())
-        })));
+        let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         {
             let b: Value<B> = Rc::new(RefCell::new(B::new()));
@@ -107,9 +105,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     {
-        let pA: Value<()> = Rc::new(RefCell::new(std_shared_ptr_const_A_::new_1({
-            Ptr::alloc(A::new())
-        })));
+        let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         {
             let b: Value<B> = Rc::new(RefCell::new(B::new()));
@@ -135,16 +131,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     pi.delete();
     {
-        let p1: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1({
-            Ptr::alloc(Default::default())
-        })));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let pA: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
-            Ptr::alloc(A::new())
-        })));
+        let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         {
             let b: Value<B> = Rc::new(RefCell::new(B::new()));

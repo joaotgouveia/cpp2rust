@@ -17,8 +17,8 @@ pub fn test_ym_plus_y_1() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) <= 10_()) {
+    let mut i: () = 0_();
+    'loop_: while (i <= 10_()) {
         let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ym2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -26,7 +26,7 @@ pub fn test_ym_plus_y_1() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
     return true;
 }
@@ -37,16 +37,13 @@ pub fn test_ym_plus_m_2() -> () {
     const _: () = assert!(true, "");;
     {
         let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let dm: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
-            std_chrono_duration_int__std_ratio_2629746__1__::new_1({ __tmp_0.as_pointer() })
-        }));
+        let dm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) <= 11_()) {
+    let mut i: () = 0_();
+    'loop_: while (i <= 11_()) {
         let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ym2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -54,10 +51,10 @@ pub fn test_ym_plus_m_2() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
-    let i: Value<()> = Rc::new(RefCell::new(12_()));
-    'loop_: while ((*i.borrow()) < 23_()) {
+    let mut i: () = 12_();
+    'loop_: while (i < 23_()) {
         let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ym2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -65,7 +62,7 @@ pub fn test_ym_plus_m_2() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*i.borrow_mut()).prefix_inc();
+        i.prefix_inc();
     }
     return true;
 }

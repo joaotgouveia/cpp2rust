@@ -378,21 +378,25 @@ pub unsafe fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_8(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -476,7 +480,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -486,7 +490,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -554,23 +558,23 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_11(mut i: cpp17_input_iterator_char_ptr__char_ptr_) {
+pub unsafe fn test_12(mut i: cpp17_input_iterator_char_ptr__char_ptr_) {
     let r: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_12(mut i: forward_iterator_char_ptr_) {
+pub unsafe fn test_13(mut i: forward_iterator_char_ptr_) {
     let r: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_13(mut i: bidirectional_iterator_char_ptr_) {
+pub unsafe fn test_14(mut i: bidirectional_iterator_char_ptr_) {
     let r: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_14(mut i: random_access_iterator_char_ptr_) {
+pub unsafe fn test_15(mut i: random_access_iterator_char_ptr_) {
     let r: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_15(mut i: *mut ()) {
+pub unsafe fn test_16(mut i: *mut ()) {
     let r: () = unimplemented!();
     unimplemented!();
 }
@@ -593,26 +597,26 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut s: [(); 11] = std::mem::transmute(*b"1234567890\0");
         (unsafe {
-            test_11(cpp17_input_iterator_char_ptr__char_ptr_::new({
+            test_12(cpp17_input_iterator_char_ptr__char_ptr_::new({
                 s.as_mut_ptr().offset((5_()) as isize)
             }))
         });
         (unsafe {
-            test_12(forward_iterator_char_ptr_::new_1({
+            test_13(forward_iterator_char_ptr_::new_1({
                 s.as_mut_ptr().offset((5_()) as isize)
             }))
         });
         (unsafe {
-            test_13(bidirectional_iterator_char_ptr_::new_1({
+            test_14(bidirectional_iterator_char_ptr_::new_1({
                 s.as_mut_ptr().offset((5_()) as isize)
             }))
         });
         (unsafe {
-            test_14(random_access_iterator_char_ptr_::new_1({
+            test_15(random_access_iterator_char_ptr_::new_1({
                 s.as_mut_ptr().offset((5_()) as isize)
             }))
         });
-        (unsafe { test_15(s.as_mut_ptr().offset((5_()) as isize)) });
+        (unsafe { test_16(s.as_mut_ptr().offset((5_()) as isize)) });
     }
     {
         let mut a: [(); 4] = [1_(), 2_(), 3_(), 4_()];

@@ -299,50 +299,22 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_0: () = 3.5_f64;
-                let mut __tmp_1: () = 3_();
-                std_pair_double__short_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_2: () = 3.5_f64;
-                let mut __tmp_3: () = 4_();
-                std_pair_double__short_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_4: () = 4.5_f64;
-                let mut __tmp_5: () = 4_();
-                std_pair_double__short_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_6: () = 5.5_f64;
-                let mut __tmp_7: () = 4_();
-                std_pair_double__short_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -350,50 +322,22 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_8: () = 3_();
-                let mut __tmp_9: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_10: () = 3_();
-                let mut __tmp_11: () = 4_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_12: () = 4_();
-                let mut __tmp_13: () = 4_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_14: () = 5_();
-                let mut __tmp_15: () = 4_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -401,50 +345,22 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_16: () = 3.5_f64;
-                let mut __tmp_17: () = 3_();
-                std_pair_double__short_::new({ &mut __tmp_16 }, { &mut __tmp_17 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_18: () = 3.5_f64;
-                let mut __tmp_19: () = 4_();
-                std_pair_double__short_::new({ &mut __tmp_18 }, { &mut __tmp_19 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_20: () = 4.5_f64;
-                let mut __tmp_21: () = 4_();
-                std_pair_double__short_::new({ &mut __tmp_20 }, { &mut __tmp_21 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_22: () = 5.5_f64;
-                let mut __tmp_23: () = 4_();
-                std_pair_double__short_::new({ &mut __tmp_22 }, { &mut __tmp_23 })
-            };
-            c.insert_45_struct_std_pair_double__short__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -452,50 +368,22 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_24: () = 3_();
-                let mut __tmp_25: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_24 }, { &mut __tmp_25 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_26: () = 3_();
-                let mut __tmp_27: () = 4_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_26 }, { &mut __tmp_27 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_28: () = 4_();
-                let mut __tmp_29: () = 4_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_28 }, { &mut __tmp_29 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = (unsafe {
-            let mut ___x: () = {
-                let mut __tmp_30: () = 5_();
-                let mut __tmp_31: () = 4_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_30 }, { &mut __tmp_31 })
-            };
-            c.insert_45_struct_std_pair_class_MoveOnly__class_MoveOnly__0(&mut ___x)
-        });
+        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

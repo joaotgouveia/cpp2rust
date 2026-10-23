@@ -25,11 +25,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut ptr: () = (unsafe {
-        let mut ___a: ExplicitAllocator_int_ = <ExplicitAllocator_int_>::default();
-        let mut ___args: () = 0_();
-        allocate_shared_0(&mut ___a, &mut ___args)
-    });
+    let mut ptr: () = unimplemented!();
     &(ptr);
     return 0_();
 }

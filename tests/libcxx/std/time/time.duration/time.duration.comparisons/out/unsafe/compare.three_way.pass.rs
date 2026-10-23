@@ -981,86 +981,44 @@ pub unsafe fn operator_eq_17(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2)
 }
 pub unsafe fn test_18() -> () {
     {
-        let mut s1: () = {
-            let mut __tmp_0: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_0 })
-        };
-        let mut s2: () = {
-            let mut __tmp_1: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_1 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_2: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_2 })
-        };
-        let mut s2: () = {
-            let mut __tmp_3: () = 4_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_3 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_4: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_4 })
-        };
-        let mut s2: () = {
-            let mut __tmp_5: () = 3000_();
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ &mut __tmp_5 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_6: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_6 })
-        };
-        let mut s2: () = {
-            let mut __tmp_7: () = 4000_();
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ &mut __tmp_7 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_8: () = 9_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_8 })
-        };
-        let mut s2: () = {
-            let mut __tmp_9: () = 10_();
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ &mut __tmp_9 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_10: () = 10_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_10 })
-        };
-        let mut s2: () = {
-            let mut __tmp_11: () = 9_();
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ &mut __tmp_11 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_12: () = 9_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_12 })
-        };
-        let mut s2: () = {
-            let mut __tmp_13: () = 10.1_f64;
-            std_chrono_duration_double__std_ratio_3__5__::new_1({ &mut __tmp_13 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

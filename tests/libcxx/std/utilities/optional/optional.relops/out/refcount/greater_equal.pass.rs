@@ -369,9 +369,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let o2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let o3: Value<()> = Rc::new(RefCell::new(1_()));
-        let o4: Value<()> = Rc::new(RefCell::new(2_()));
-        let o5: Value<()> = Rc::new(RefCell::new(1_()));
+        let o3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let o4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let o5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "(o1 >= o1)");;
         const _: () = assert!(true, "(o1 >= o2)");;
         const _: () = assert!(true, "!(o1 >= o3)");;
@@ -399,12 +399,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "(o5 >= o5)");;
     }
     {
-        let o1: Value<()> = Rc::new(RefCell::new(42_()));
+        let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "o1 >= O2(42)");;
         const _: () = assert!(true, "!(O2(11) >= o1)");;
     }
     {
-        let o1: Value<()> = Rc::new(RefCell::new(42_()));
+        let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "o1 >= O2(42)");;
         const _: () = assert!(true, "!(O2(1) >= o1)");;
     }

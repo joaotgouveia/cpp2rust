@@ -10,7 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct NonConstSwappable {}
 pub fn swap_0(lhs: Ptr<ConstSwappable>, rhs: Ptr<ConstSwappable>) {
-    unimplemented!();
+    ({
+        let ___x: Ptr<()> = field_ptr!(lhs, i);
+        let ___y: Ptr<()> = field_ptr!(rhs, i);
+        swap_1(___x, ___y)
+    });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -56,22 +60,10 @@ const _: () = assert!(
     !(false),
     "!NonMemberSwapNoexcept<const std::pair<SwapMayThrow<true>, SwapMayThrow<true>>>"
 );
-pub fn test_1() -> () {
+pub fn test_2() -> () {
     {
-        let p1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 0_() }));
-            let __tmp_1: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 1_() }));
-            std_pair_const_ConstSwappable__const_ConstSwappable_::new({ __tmp_0.as_pointer() }, {
-                __tmp_1.as_pointer()
-            })
-        }));
-        let p2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 2_() }));
-            let __tmp_3: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 3_() }));
-            std_pair_const_ConstSwappable__const_ConstSwappable_::new({ __tmp_2.as_pointer() }, {
-                __tmp_3.as_pointer()
-            })
-        }));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -79,18 +71,12 @@ pub fn test_1() -> () {
         unimplemented!();
     }
     {
-        let i1: Value<()> = Rc::new(RefCell::new(0_()));
-        let i2: Value<()> = Rc::new(RefCell::new(1_()));
-        let i3: Value<()> = Rc::new(RefCell::new(2_()));
-        let i4: Value<()> = Rc::new(RefCell::new(3_()));
-        let p1: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new_1(
-            { i1.as_pointer() },
-            { i2.as_pointer() },
-        )));
-        let p2: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new_1(
-            { i3.as_pointer() },
-            { i4.as_pointer() },
-        )));
+        let mut i1: () = 0_();
+        let mut i2: () = 1_();
+        let mut i3: () = 2_();
+        let mut i4: () = 3_();
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -119,7 +105,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_1() });
+    ({ test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

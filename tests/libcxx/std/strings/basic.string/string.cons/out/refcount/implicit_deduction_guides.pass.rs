@@ -641,23 +641,29 @@ pub fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_15(_i, n)
     });
 }
-pub fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_17(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_18(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_18(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_19(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_21(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -703,7 +709,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_20(
+            operator_cmp_21(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -728,7 +734,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_19(
+            operator_eq_20(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -885,101 +891,61 @@ impl constexpr_char_traits_wchar_t_ {
         return (*r.borrow()).clone();
     }
 }
-pub fn test_21() -> () {
+pub fn test_22() -> () {
     {}
     {}
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 6_() },
-                { ('a' as ()) },
-                None,
-            ),
-        ));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        let w: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                { 2_() },
-                { (98 as ()) },
-                None,
-            ),
-        ));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_char_> =
-                Rc::new(RefCell::new(<test_allocator_char_>::default()));
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { 6_() },
-                { ('a' as ()) },
-                { __tmp_0.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        let w: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_allocator_wchar_t_> =
-                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                { 2_() },
-                { (98 as ()) },
-                { __tmp_1.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { Ptr::<()>::from_string_literal(b"abc") },
-            None,
-        );
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut win : ()  = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] )  } , None , )   ;
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { Ptr::<()>::from_string_literal(b"abc") },
-            None,
-        );
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut win : ()  = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] )  } , None , )   ;
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { Ptr::<()>::from_string_literal(b"abc") },
-            None,
-        );
+        let mut sin: () = unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut win : ()  = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] )  } , None , )   ;
+        let mut win: () = unimplemented!();
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { Ptr::<()>::from_string_literal(b"abc") },
-            None,
-        );
+        let mut sin: () = unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut win : ()  = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] )  } , None , )   ;
+        let mut win: () = unimplemented!();
+        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut sin: () = unimplemented!();
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        let mut win: () = unimplemented!();
+        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut sin: () = unimplemented!();
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        let mut win: () = unimplemented!();
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -1001,89 +967,31 @@ pub fn test_21() -> () {
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let w: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_2(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
-                    ])
-                },
-                None,
-            ),
-        ));
+        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                { Some(__tmp_2.as_pointer()) },
-            )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let w: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_allocator_wchar_t_> =
-                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_2(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
-                    ])
-                },
-                { Some(__tmp_3.as_pointer()) },
-            )
-        }));
+        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let mut input: Ptr<()> = Ptr::<()>::from_string_literal(b"abcdef");
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_3(
-                { cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (input).clone() }) },
-                {
-                    cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                        input.offset((3_()) as isize)
-                    })
-                },
-                { __tmp_4.as_pointer() },
-            )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         {
             let mut input: Ptr<()> = Ptr::<()>::from_string_literal(b"abcdef");
-            let s: Value<()> = Rc::new(RefCell::new({
-                let __tmp_5: Value<test_allocator_char_> =
-                    Rc::new(RefCell::new(<test_allocator_char_>::default()));
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_2(
-                    {
-                        cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                            (input).clone()
-                        })
-                    },
-                    {
-                        cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                            input.offset((3_()) as isize)
-                        })
-                    },
-                    { __tmp_5.as_pointer() },
-                )
-            }));
+            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -1091,79 +999,47 @@ pub fn test_21() -> () {
             let mut input: Ptr<()> = Ptr::<()>::from_string_literal(&[
                 97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
             ]);
-            let s: Value<()> = Rc::new(RefCell::new({
-                let __tmp_6: Value<test_allocator_wchar_t_> =
-                    Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
-                std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_3(
-                    {
-                        cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_::new({
-                            (input).clone()
-                        })
-                    },
-                    {
-                        cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_::new({
-                            input.offset((3_()) as isize)
-                        })
-                    },
-                    { __tmp_6.as_pointer() },
-                )
-            }));
+            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             const _: () = assert!(true, "");;
             unimplemented!();
         }
     }
     {
-        let mut sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { Ptr::<()>::from_string_literal(b"abc") },
-            None,
-        );
+        let mut sin: () = unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut win : ()  = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] )  } , None , )   ;
+        let mut win: () = unimplemented!();
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { Ptr::<()>::from_string_literal(b"abc") },
-            None,
-        );
+        let mut sin: () = unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut win : ()  = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] )  } , None , )   ;
+        let mut win: () = unimplemented!();
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let sin: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
-        ));
+        let sin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let win : Value<() > = Rc::new(RefCell::new(std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] )  } , None , )  )) ;
+        let win: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let sin: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
-        ));
+        let sin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let win : Value<() > = Rc::new(RefCell::new(std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] )  } , None , )  )) ;
+        let win: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -1186,78 +1062,40 @@ pub fn test_21() -> () {
     }
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_4(
-                { sv.as_pointer() },
-                None,
-            ),
-        ));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        let BSV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w : Value<() > = Rc::new(RefCell::new(std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { BSV .as_pointer()  } , None , )  )) ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<test_allocator_char_> =
-                Rc::new(RefCell::new(<test_allocator_char_>::default()));
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_3(
-                { sv.as_pointer() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        let BSV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<test_allocator_wchar_t_> =
-                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
-            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_2 ( { BSV .as_pointer()  } , { __tmp_8.as_pointer() } , )
-        }));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut s0: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { Ptr::<()>::from_string_literal(b"abc") },
-            None,
-        );
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut w0: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_2(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let BSV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut s0: () = std_basic_string_char__std_char_traits_char___test_allocator_char__::new_4(
-            { Ptr::<()>::from_string_literal(b"abc") },
-            None,
-        );
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut w0: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_2(
-                {
-                    Ptr::<()>::from_string_literal(&[
-                        97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
-                    ])
-                },
-                None,
-            );
+        let BSV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut s0: () = unimplemented!();
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        let mut w0: () = unimplemented!();
+        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut s0: () = unimplemented!();
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        let mut w0: () = unimplemented!();
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -1284,7 +1122,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_21() });
+    ({ test_22() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

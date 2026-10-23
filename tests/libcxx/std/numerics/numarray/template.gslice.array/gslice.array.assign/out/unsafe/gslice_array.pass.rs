@@ -110,7 +110,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let v2: () = unimplemented!();
     let mut sz: [(); 3] = [2_(), 4_(), 3_()];
     let mut st: [(); 3] = [19_(), 4_(), 1_()];
-    unimplemented!() = v2[(unimplemented!()) as usize];
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

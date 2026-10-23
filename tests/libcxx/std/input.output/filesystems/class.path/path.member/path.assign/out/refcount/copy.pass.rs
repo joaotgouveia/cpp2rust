@@ -29,16 +29,8 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::is_copy_assignable<path>::value");;
     const _: () = assert!(true, "!std::is_nothrow_copy_assignable<path>::value");;
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"foo") },
-            None,
-        ),
-    ));
-    let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_1(
-        { s.as_pointer() },
-        None,
-    )));
+    let mut s: () = unimplemented!();
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pref: Ptr<()> = ((*p2.borrow_mut()) = (*p.borrow()).clone());
     unimplemented!();

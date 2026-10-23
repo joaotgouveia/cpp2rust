@@ -81,45 +81,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({
-        test_termination_condition_5(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"black") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"}") },
-                None,
-            ),
-            color_black,
-        )
-    });
-    ({
-        test_termination_condition_5(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"red") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"}") },
-                None,
-            ),
-            color_red,
-        )
-    });
-    ({
-        test_termination_condition_5(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"gold") },
-                None,
-            ),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"}") },
-                None,
-            ),
-            color_gold,
-        )
-    });
+    ({ test_termination_condition_5(unimplemented!(), unimplemented!(), color_black) });
+    ({ test_termination_condition_5(unimplemented!(), unimplemented!(), color_red) });
+    ({ test_termination_condition_5(unimplemented!(), unimplemented!(), color_gold) });
     return 0_();
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]

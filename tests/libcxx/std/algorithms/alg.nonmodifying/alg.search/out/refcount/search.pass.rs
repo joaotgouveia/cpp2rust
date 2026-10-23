@@ -518,23 +518,29 @@ pub fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_12(_i, n)
     });
 }
-pub fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_14(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_15(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -580,7 +586,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_17(
+            operator_cmp_18(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -605,7 +611,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_16(
+            operator_eq_17(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -692,7 +698,7 @@ impl util_iterator_error {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MySearcherC {}
-pub fn test_constexpr_18() -> () {
+pub fn test_constexpr_19() -> () {
     let mut ia: [(); 4] = [0_(), 1_(), 2_(), 3_()];
     let mut ib: [(); 4] = [0_(), 1_(), 5_(), 3_()];
     let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -714,7 +720,7 @@ pub fn test_constexpr_18() -> () {
         && (unimplemented!() == unimplemented!());
 }
 thread_local!(
-    pub static searcher_called_19: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static searcher_called_20: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -732,107 +738,12 @@ impl User_S {
 }
 impl std::cmp::PartialEq for User_S {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_20(self.clone(), other.clone()) }
+        { operator_eq_21(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for User_S {}
-pub fn operator_eq_20(mut lhs: User_S, mut rhs: User_S) -> () {
+pub fn operator_eq_21(mut lhs: User_S, mut rhs: User_S) -> () {
     return (lhs.x_ == rhs.x_);
-}
-pub fn test_21() {
-    let ia: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-    ])));
-    let mut sb: () =
-        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_()])));
-    unimplemented!();
-    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
-    unimplemented!();
-    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    unimplemented!();
-    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-    unimplemented!();
-    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        1_(),
-        2_(),
-        3_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-    ])));
-    let mut sh: () =
-        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 1_(), 2_()])));
-    unimplemented!();
-    let ij: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        0_(),
-        0_(),
-        1_(),
-        0_(),
-        0_(),
-        0_(),
-        0_(),
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        1_(),
-        0_(),
-        0_(),
-    ])));
-    let mut sj: () =
-        (::std::mem::size_of::<[(); 16]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ik: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        0_(),
-        0_(),
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        1_(),
-        0_(),
-        0_(),
-    ])));
-    let mut sk: () =
-        (::std::mem::size_of::<[(); 10]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    unimplemented!();
 }
 pub fn test_22() {
     let ia: Value<Box<[()]>> =
@@ -1594,11 +1505,106 @@ pub fn test_29() {
         (::std::mem::size_of::<[(); 10]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     unimplemented!();
 }
-pub fn adl_test_30() {
-    let ua: Value<Box<[User_S]>> = Rc::new(RefCell::new(Box::new([User_S::new({ 1_() })])));
+pub fn test_30() {
+    let ia: Value<Box<[()]>> =
+        Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        2_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+    ])));
+    let mut sb: () =
+        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_()])));
+    unimplemented!();
+    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_()])));
+    unimplemented!();
+    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+    unimplemented!();
+    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+    unimplemented!();
+    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        1_(),
+        2_(),
+        3_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+    ])));
+    let mut sh: () =
+        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 1_(), 2_()])));
+    unimplemented!();
+    let ij: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        0_(),
+        0_(),
+        1_(),
+        0_(),
+        0_(),
+        0_(),
+        0_(),
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        1_(),
+        0_(),
+        0_(),
+    ])));
+    let mut sj: () =
+        (::std::mem::size_of::<[(); 16]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ik: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        0_(),
+        0_(),
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        1_(),
+        0_(),
+        0_(),
+    ])));
+    let mut sk: () =
+        (::std::mem::size_of::<[(); 10]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     unimplemented!();
 }
 pub fn adl_test_31() {
+    let ua: Value<Box<[User_S]>> = Rc::new(RefCell::new(Box::new([User_S::new({ 1_() })])));
+    unimplemented!();
+}
+pub fn adl_test_32() {
     let ua: Value<Box<[User_S]>> = Rc::new(RefCell::new(Box::new([User_S::new({ 1_() })])));
     unimplemented!();
 }
@@ -1622,7 +1628,6 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_21() });
     ({ test_22() });
     ({ test_23() });
     ({ test_24() });
@@ -1631,8 +1636,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_27() });
     ({ test_28() });
     ({ test_29() });
-    ({ adl_test_30() });
+    ({ test_30() });
     ({ adl_test_31() });
+    ({ adl_test_32() });
     {
         const _: () = assert!(
             true,
@@ -1650,7 +1656,7 @@ pub trait MySearcherImpl {
 }
 impl MySearcherImpl for Ptr<MySearcher> {
     fn operator_call_1_int_ptr(&self, mut b: Ptr<()>, mut e: Ptr<()>) -> () {
-        (*searcher_called_19.with(Value::clone).borrow_mut()).prefix_inc();
+        (*searcher_called_20.with(Value::clone).borrow_mut()).prefix_inc();
         return unimplemented!();
     }
 }
@@ -2066,5 +2072,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = searcher_called_19.with(|_| ());
+    let _ = searcher_called_20.with(|_| ());
 }

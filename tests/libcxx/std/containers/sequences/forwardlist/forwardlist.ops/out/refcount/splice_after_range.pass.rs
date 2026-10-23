@@ -341,16 +341,8 @@ pub fn test_14() -> () {
             'loop_: while (l <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
                 let mut p: () = 0_();
                 'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
-                    let c1: Value<()> = Rc::new(RefCell::new(
-                        std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        }),
-                    ));
-                    let c2: Value<()> = Rc::new(RefCell::new(
-                        std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        }),
-                    ));
+                    let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
                     ({ testd_10(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
@@ -365,22 +357,14 @@ pub fn test_14() -> () {
             'loop_: while (l <= size_t1_8.with(|rc| *rc.borrow())) {
                 let mut p: () = 0_();
                 'loop_: while (p <= f) {
-                    let c1: Value<()> = Rc::new(RefCell::new(
-                        std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        }),
-                    ));
+                    let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
                     ({ tests_12(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 let mut p: () = l;
                 'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
-                    let c1: Value<()> = Rc::new(RefCell::new(
-                        std_forward_list_long__std_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        }),
-                    ));
+                    let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
                     ({ tests_12(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
@@ -397,16 +381,8 @@ pub fn test_14() -> () {
             'loop_: while (l <= (size_t2_9.with(|rc| *rc.borrow()) + 1_())) {
                 let mut p: () = 0_();
                 'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
-                    let c1: Value<()> = Rc::new(RefCell::new(
-                        std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        }),
-                    ));
-                    let c2: Value<()> = Rc::new(RefCell::new(
-                        std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        }),
-                    ));
+                    let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
                     ({ testd_11(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
@@ -421,22 +397,14 @@ pub fn test_14() -> () {
             'loop_: while (l <= size_t1_8.with(|rc| *rc.borrow())) {
                 let mut p: () = 0_();
                 'loop_: while (p <= f) {
-                    let c1: Value<()> = Rc::new(RefCell::new(
-                        std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        }),
-                    ));
+                    let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
                     ({ tests_13(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();
                 }
                 let mut p: () = l;
                 'loop_: while (p <= size_t1_8.with(|rc| *rc.borrow())) {
-                    let c1: Value<()> = Rc::new(RefCell::new(
-                        std_forward_list_long__min_allocator_long__::new_1({ unimplemented!() }, {
-                            unimplemented!()
-                        }),
-                    ));
+                    let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                     unimplemented!();
                     ({ tests_13(c1.as_pointer(), p, f, l) });
                     p.prefix_inc();

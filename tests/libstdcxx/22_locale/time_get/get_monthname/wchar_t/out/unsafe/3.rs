@@ -267,29 +267,11 @@ pub unsafe fn test03_10() {
         let mut ___loc: () = unimplemented!();
         use_facet_11(&mut ___loc)
     });
-    let str: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            {
-                [
-                    83 as (), 101 as (), 112 as (), 116 as (), 101 as (), 109 as (), 98 as (),
-                    101 as (), 114 as (), 32 as (), 49 as (), 57 as (), 57 as (), 55 as (),
-                    32 as (), 67 as (), 105 as (), 110 as (), 100 as (), 121 as (), 32 as (),
-                    83 as (), 104 as (), 101 as (), 114 as (), 109 as (), 97 as (), 110 as (),
-                    0 as (),
-                ]
-                .as_ptr()
-            },
-            None,
-        );
+    let str: () = unimplemented!();
     let mut res4: () = unimplemented!();
     err = goodbit;
     let mut end4: () = unimplemented!();
-    let mut rem4: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_2(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        );
+    let mut rem4: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -474,8 +456,7 @@ pub unsafe fn verify_demangle_20(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -486,11 +467,7 @@ pub unsafe fn run_tests_wrapped_locale_22(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -498,11 +475,7 @@ pub unsafe fn run_tests_wrapped_locale_22(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -514,10 +487,7 @@ pub unsafe fn run_tests_wrapped_locale_22(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -540,10 +510,7 @@ pub unsafe fn run_tests_wrapped_env_23(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

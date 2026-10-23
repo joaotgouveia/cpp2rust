@@ -79,12 +79,12 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(2_()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut y: Y = Y::new({ 3_() });
         const _: () = assert!(true, "opt.value_or(y) == 2");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(2_()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "opt.value_or(Y(3)) == 2");;
     }
     {
@@ -97,12 +97,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "opt.value_or(Y(3)) == 4");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(2_()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut y: Y = Y::new({ 3_() });
         unimplemented!();
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(2_()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {

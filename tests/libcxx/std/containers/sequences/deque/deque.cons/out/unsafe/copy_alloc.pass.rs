@@ -1045,12 +1045,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         (unsafe {
-            let mut _x: () = {
-                let mut __tmp_0: test_allocator_int_ = test_allocator_int_::new_1({ 3_() });
-                std_deque_int__test_allocator_int__::new_1({ ab.as_mut_ptr() }, { an }, {
-                    &mut __tmp_0
-                })
-            };
+            let mut _x: () = unimplemented!();
             let mut _a: test_allocator_int_ = test_allocator_int_::new_1({ 4_() });
             test_30(&mut _x, &mut _a)
         });
@@ -1078,12 +1073,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         (unsafe {
-            let mut _x: () = {
-                let mut __tmp_1: other_allocator_int_ = other_allocator_int_::new_1({ 3_() });
-                std_deque_int__other_allocator_int__::new_1({ ab.as_mut_ptr() }, { an }, {
-                    &mut __tmp_1
-                })
-            };
+            let mut _x: () = unimplemented!();
             let mut _a: other_allocator_int_ = other_allocator_int_::new_1({ 4_() });
             test_31(&mut _x, &mut _a)
         });
@@ -1111,12 +1101,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         (unsafe {
-            let mut _x: () = {
-                let mut __tmp_2: min_allocator_int_ = <min_allocator_int_>::default();
-                std_deque_int__min_allocator_int__::new_1({ ab.as_mut_ptr() }, { an }, {
-                    &mut __tmp_2
-                })
-            };
+            let mut _x: () = unimplemented!();
             let mut _a: min_allocator_int_ = <min_allocator_int_>::default();
             test_32(&mut _x, &mut _a)
         });
@@ -1144,12 +1129,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 .wrapping_div((::std::mem::size_of::<()>() as ()))) as isize,
         );
         (unsafe {
-            let mut _x: () = {
-                let mut __tmp_3: safe_allocator_int_ = safe_allocator_int_::new();
-                std_deque_int__safe_allocator_int__::new_1({ ab.as_mut_ptr() }, { an }, {
-                    &mut __tmp_3
-                })
-            };
+            let mut _x: () = unimplemented!();
             let mut _a: safe_allocator_int_ = safe_allocator_int_::new();
             test_33(&mut _x, &mut _a)
         });

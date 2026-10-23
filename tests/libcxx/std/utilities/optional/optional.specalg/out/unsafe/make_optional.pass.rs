@@ -118,32 +118,23 @@ pub unsafe fn test_20() -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut opt: () = (unsafe { make_optional_21(&mut arr) });
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let opt: () = (unsafe {
-            let mut ___v: () = 2_();
-            make_optional_22(&mut ___v)
-        });
+        let opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "opt.value() == 2");;
     }
     {
-        let mut opt: () = (unsafe {
-            let mut ___v: () = 2_();
-            make_optional_22(&mut ___v)
-        });
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     let test_string: FnPtr<fn()> = FnPtr::<fn()>::new(|| unsafe {
-        let s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"123".as_ptr() },
-            None,
-        );
-        let mut opt: () = (unsafe { make_optional_23(&s) });
+        let s: () = unimplemented!();
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     });
@@ -151,11 +142,8 @@ pub unsafe fn test_20() -> () {
         (unsafe { test_string.call() });
     }
     let test_unique_ptr: FnPtr<fn()> = FnPtr::<fn()>::new(|| unsafe {
-        let mut s: () = (unsafe {
-            let mut ___args: () = 3_();
-            make_unique_24(&mut ___args)
-        });
-        let mut opt: () = (unsafe { make_optional_25(&mut *(&raw mut s).cast::<()>()) });
+        let mut s: () = unimplemented!();
+        let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

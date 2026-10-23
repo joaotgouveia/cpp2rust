@@ -658,33 +658,29 @@ pub unsafe fn test_6() -> () {
         let mut i2: () = 2_();
         let mut j1: () = 3_();
         let mut j2: () = 4_();
-        let mut t1: () = std_pair_int_ref__int_ref_::new_1({ &mut i1 }, { &mut i2 });
+        let mut t1: () = unimplemented!();
         let t2: () = std_tuple_long_ref__long_ref_::new({ &mut j1 }, { &mut j2 });
-        t2 = (t1).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_0: () = 1_();
-            let mut __tmp_1: () = 2_();
-            std_pair_ConstMoveAssign__ConstMoveAssign_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let mut t1: () = unimplemented!();
         let t2: () = {
-            let mut __tmp_2: () = 3_();
-            let mut __tmp_3: () = 4_();
-            std_tuple_AssignableFrom_ConstMoveAssign___ConstMoveAssign_::new({ &mut __tmp_2 }, {
-                &mut __tmp_3
+            let mut __tmp_0: () = 3_();
+            let mut __tmp_1: () = 4_();
+            std_tuple_AssignableFrom_ConstMoveAssign___ConstMoveAssign_::new({ &mut __tmp_0 }, {
+                &mut __tmp_1
             })
         };
-        t2 = (t1).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut t1: () = unimplemented!();
         let t2: () = unimplemented!();
-        t2 = (t1).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }

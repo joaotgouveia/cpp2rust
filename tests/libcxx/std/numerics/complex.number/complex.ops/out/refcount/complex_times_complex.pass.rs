@@ -254,12 +254,7 @@ pub fn test_edges_14() -> () {
     'loop_: while (i < (*N.borrow())) {
         let mut j: () = 0_();
         'loop_: while (j < (*N.borrow())) {
-            let r: Value<()> = Rc::new(RefCell::new(
-                (*(*testcases_0.with(Value::clone).borrow())[(i) as usize]
-                    .upgrade()
-                    .deref())
-                .clone(),
-            ));
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             'switch: {
                 match { classification[(i) as usize] } {
                     __v if __v == (anon_1_zero as ()) => {

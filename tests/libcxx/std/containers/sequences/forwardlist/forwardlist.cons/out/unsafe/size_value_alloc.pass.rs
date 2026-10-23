@@ -313,10 +313,7 @@ pub unsafe fn test_10() -> () {
     {
         let mut v: () = 6_();
         let mut N: () = 10_();
-        let mut c: () = {
-            let mut __tmp_0: test_allocator_int_ = test_allocator_int_::new_1({ 12_() });
-            std_forward_list_int__test_allocator_int__::new_1({ N }, { &v }, { &mut __tmp_0 })
-        };
+        let mut c: () = unimplemented!();
         let mut n: () = 0_();
         let mut i: () =
             std___forward_list_const_iterator_std___forward_list_node_int__void_ptr__ptr_::new_1({
@@ -339,10 +336,7 @@ pub unsafe fn test_10() -> () {
     {
         let mut v: () = 6_();
         let mut N: () = 10_();
-        let mut c: () = {
-            let mut __tmp_1: min_allocator_int_ = <min_allocator_int_>::default();
-            std_forward_list_int__min_allocator_int__::new_1({ N }, { &v }, { &mut __tmp_1 })
-        };
+        let mut c: () = unimplemented!();
         let mut n: () = 0_();
         let mut i : () = std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()  } , )  ;
         let mut e : () = std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()  } , )  ;

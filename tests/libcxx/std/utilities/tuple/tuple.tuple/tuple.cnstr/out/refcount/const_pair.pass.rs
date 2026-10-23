@@ -28,11 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(('a' as ())));
-            std_pair_long__char_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(std_tuple_long_long__short_::new_1({
             t0.as_pointer()
         })));
@@ -40,11 +36,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let p0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(('a' as ())));
-            std_pair_long__char_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        }));
+        let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(std_tuple_long_long__short_::new_2({
             p0.as_pointer()
         })));

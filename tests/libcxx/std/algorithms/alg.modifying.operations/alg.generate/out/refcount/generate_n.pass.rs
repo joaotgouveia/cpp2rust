@@ -365,23 +365,29 @@ pub fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_4(_i, n)
     });
 }
-pub fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_6(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_7(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -427,7 +433,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_9(
+            operator_cmp_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -452,7 +458,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_8(
+            operator_eq_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -550,27 +556,13 @@ impl UserDefinedIntegral_unsigned_int_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct gen_test {}
-pub fn test_constexpr_10() -> () {
+pub fn test_constexpr_11() -> () {
     let mut N: () = 5_();
     let mut ib: [(); 6] = [0_(), 0_(), 0_(), 0_(), 0_(), 0_()];
     let mut it: Ptr<()> = unimplemented!();
     return (({ (it).clone() } == { (unimplemented!().offset((N) as isize)) })
         && (unimplemented!()))
         && ((it.read()) == 0_());
-}
-pub fn test2_11() {
-    let mut n: () = 4_();
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
 }
 pub fn test2_12() {
     let mut n: () = 4_();
@@ -1006,8 +998,21 @@ pub fn test2_42() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_43() {
-    ({ test2_11() });
+pub fn test2_43() {
+    let mut n: () = 4_();
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_44() {
     ({ test2_12() });
     ({ test2_13() });
     ({ test2_14() });
@@ -1015,9 +1020,9 @@ pub fn test_43() {
     ({ test2_16() });
     ({ test2_17() });
     ({ test2_18() });
-}
-pub fn test_44() {
     ({ test2_19() });
+}
+pub fn test_45() {
     ({ test2_20() });
     ({ test2_21() });
     ({ test2_22() });
@@ -1025,9 +1030,9 @@ pub fn test_44() {
     ({ test2_24() });
     ({ test2_25() });
     ({ test2_26() });
-}
-pub fn test_45() {
     ({ test2_27() });
+}
+pub fn test_46() {
     ({ test2_28() });
     ({ test2_29() });
     ({ test2_30() });
@@ -1035,9 +1040,9 @@ pub fn test_45() {
     ({ test2_32() });
     ({ test2_33() });
     ({ test2_34() });
-}
-pub fn test_46() {
     ({ test2_35() });
+}
+pub fn test_47() {
     ({ test2_36() });
     ({ test2_37() });
     ({ test2_38() });
@@ -1045,8 +1050,9 @@ pub fn test_46() {
     ({ test2_40() });
     ({ test2_41() });
     ({ test2_42() });
+    ({ test2_43() });
 }
-pub fn deque_test_47() {
+pub fn deque_test_48() {
     let sizes: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
         1_(),
@@ -1088,11 +1094,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_43() });
     ({ test_44() });
     ({ test_45() });
     ({ test_46() });
-    ({ deque_test_47() });
+    ({ test_47() });
+    ({ deque_test_48() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }

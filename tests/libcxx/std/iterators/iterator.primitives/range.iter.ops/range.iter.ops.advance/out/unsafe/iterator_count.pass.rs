@@ -799,21 +799,25 @@ pub unsafe fn operator_add_11(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_12(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_13(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -897,7 +901,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_15(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -907,7 +911,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_14(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -975,24 +979,13 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn check_16(mut first: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_17(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: cpp17_input_iterator_int_ptr__int_ptr_ =
             cpp17_input_iterator_int_ptr__int_ptr_::new({ first });
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
-        unimplemented!();
-        const _: () = assert!(true, "");;
-    }
-    {}
-}
-pub unsafe fn check_18(mut first: *mut (), mut n: (), mut expected: *mut ()) {
-    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
-    let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
-    {
-        let mut it: cpp20_input_iterator_int_ptr_ = cpp20_input_iterator_int_ptr_::new({ first });
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -1000,12 +993,23 @@ pub unsafe fn check_18(mut first: *mut (), mut n: (), mut expected: *mut ()) {
 }
 pub unsafe fn check_19(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
+    let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
+    {
+        let mut it: cpp20_input_iterator_int_ptr_ = cpp20_input_iterator_int_ptr_::new({ first });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
+        unimplemented!();
+        const _: () = assert!(true, "");;
+    }
+    {}
+}
+pub unsafe fn check_20(mut first: *mut (), mut n: (), mut expected: *mut ()) {
+    let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
         return if ((x) < (0_())) { -x } else { x };
     });
     {
         let mut it: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({ first });
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -1018,7 +1022,7 @@ pub unsafe fn check_19(mut first: *mut (), mut n: (), mut expected: *mut ()) {
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         {
             let big: () = (*unimplemented!());
             let small: () = (*unimplemented!());
@@ -1027,7 +1031,7 @@ pub unsafe fn check_19(mut first: *mut (), mut n: (), mut expected: *mut ()) {
         }
     }
 }
-pub unsafe fn check_20(mut first: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_21(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
         return if ((x) < (0_())) { -x } else { x };
@@ -1035,7 +1039,7 @@ pub unsafe fn check_20(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     {
         let mut it: bidirectional_iterator_int_ptr_ =
             bidirectional_iterator_int_ptr_::new_1({ first });
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -1048,7 +1052,7 @@ pub unsafe fn check_20(mut first: *mut (), mut n: (), mut expected: *mut ()) {
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         {
             let big: () = (*unimplemented!());
             let small: () = (*unimplemented!());
@@ -1057,13 +1061,13 @@ pub unsafe fn check_20(mut first: *mut (), mut n: (), mut expected: *mut ()) {
         }
     }
 }
-pub unsafe fn check_21(mut first: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_22(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ first });
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -1076,18 +1080,18 @@ pub unsafe fn check_21(mut first: *mut (), mut n: (), mut expected: *mut ()) {
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         {
             unimplemented!();
         }
     }
 }
-pub unsafe fn check_22(mut first: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_23(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({ first });
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -1100,18 +1104,18 @@ pub unsafe fn check_22(mut first: *mut (), mut n: (), mut expected: *mut ()) {
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         {
             unimplemented!();
         }
     }
 }
-pub unsafe fn check_23(mut first: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_24(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {});
     {
         let mut it: *mut () = first;
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -1123,20 +1127,20 @@ pub unsafe fn check_23(mut first: *mut (), mut n: (), mut expected: *mut ()) {
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         {
             unimplemented!();
         }
     }
 }
-pub unsafe fn check_24(mut first: *mut (), mut n: (), mut expected: *mut ()) {
+pub unsafe fn check_25(mut first: *mut (), mut n: (), mut expected: *mut ()) {
     let M: () = (((expected as usize - first as usize) / ::std::mem::size_of::<()>()) as ());
     let mut abs: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
         return if ((x) < (0_())) { -x } else { x };
     });
     {
         let mut it: cpp17_output_iterator_int_ptr_ = cpp17_output_iterator_int_ptr_::new({ first });
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -1149,7 +1153,7 @@ pub unsafe fn check_24(mut first: *mut (), mut n: (), mut expected: *mut ()) {
                 (&mut ops as *mut IteratorOpCounts)
             })
         };
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_17))(&mut it, n) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut advance_18))(&mut it, n) });
         {
             let big: () = (*unimplemented!());
             let small: () = (*unimplemented!());
@@ -1158,7 +1162,7 @@ pub unsafe fn check_24(mut first: *mut (), mut n: (), mut expected: *mut ()) {
         }
     }
 }
-pub unsafe fn test_25() -> () {
+pub unsafe fn test_26() -> () {
     let mut range: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
     let mut n: () = 0_();
     'loop_: while ((n) != (10_())) {
@@ -1166,13 +1170,7 @@ pub unsafe fn test_25() -> () {
             let _first: *mut () = range.as_mut_ptr();
             let _n: () = n;
             let _expected: *mut () = range.as_mut_ptr().offset((n) as isize);
-            check_16(_first, _n, _expected)
-        });
-        (unsafe {
-            let _first: *mut () = range.as_mut_ptr();
-            let _n: () = n;
-            let _expected: *mut () = range.as_mut_ptr().offset((n) as isize);
-            check_18(_first, _n, _expected)
+            check_17(_first, _n, _expected)
         });
         (unsafe {
             let _first: *mut () = range.as_mut_ptr();
@@ -1210,19 +1208,16 @@ pub unsafe fn test_25() -> () {
             let _expected: *mut () = range.as_mut_ptr().offset((n) as isize);
             check_24(_first, _n, _expected)
         });
+        (unsafe {
+            let _first: *mut () = range.as_mut_ptr();
+            let _n: () = n;
+            let _expected: *mut () = range.as_mut_ptr().offset((n) as isize);
+            check_25(_first, _n, _expected)
+        });
         n.prefix_inc();
     }
     let mut n: () = 0_();
     'loop_: while ((n) != (10_())) {
-        (unsafe {
-            let _first: *mut () = range.as_mut_ptr().offset((9_()) as isize);
-            let _n: () = -n;
-            let _expected: *mut () = range
-                .as_mut_ptr()
-                .offset((9_()) as isize)
-                .offset(-((n) as isize));
-            check_20(_first, _n, _expected)
-        });
         (unsafe {
             let _first: *mut () = range.as_mut_ptr().offset((9_()) as isize);
             let _n: () = -n;
@@ -1249,6 +1244,15 @@ pub unsafe fn test_25() -> () {
                 .offset((9_()) as isize)
                 .offset(-((n) as isize));
             check_23(_first, _n, _expected)
+        });
+        (unsafe {
+            let _first: *mut () = range.as_mut_ptr().offset((9_()) as isize);
+            let _n: () = -n;
+            let _expected: *mut () = range
+                .as_mut_ptr()
+                .offset((9_()) as isize)
+                .offset(-((n) as isize));
+            check_24(_first, _n, _expected)
         });
         n.prefix_inc();
     }

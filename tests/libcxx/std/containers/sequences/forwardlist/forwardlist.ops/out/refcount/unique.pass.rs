@@ -96,48 +96,24 @@ pub fn test_9() -> () {
     {
         let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let mut t2: [(); 4] = [0_(), 5_(), 0_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ do_unique_7(c1.as_pointer(), 3_()) });
         unimplemented!();
     }
     {
         let mut t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
         let mut t2: [(); 1] = [0_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ do_unique_7(c1.as_pointer(), 3_()) });
         unimplemented!();
     }
     {
         let mut t1: [(); 3] = [5_(), 5_(), 5_()];
         let mut t2: [(); 1] = [5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ do_unique_7(c1.as_pointer(), 2_()) });
         unimplemented!();
     }
@@ -150,64 +126,32 @@ pub fn test_9() -> () {
     {
         let mut t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
         let mut t2: [(); 2] = [5_(), 0_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ do_unique_7(c1.as_pointer(), 2_()) });
         unimplemented!();
     }
     {
         let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let mut t2: [(); 4] = [0_(), 5_(), 0_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ do_unique_8(c1.as_pointer(), 3_()) });
         unimplemented!();
     }
     {
         let mut t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
         let mut t2: [(); 1] = [0_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ do_unique_8(c1.as_pointer(), 3_()) });
         unimplemented!();
     }
     {
         let mut t1: [(); 3] = [5_(), 5_(), 5_()];
         let mut t2: [(); 1] = [5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ do_unique_8(c1.as_pointer(), 2_()) });
         unimplemented!();
     }
@@ -220,16 +164,8 @@ pub fn test_9() -> () {
     {
         let mut t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
         let mut t2: [(); 2] = [5_(), 0_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ do_unique_8(c1.as_pointer(), 2_()) });
         unimplemented!();
     }

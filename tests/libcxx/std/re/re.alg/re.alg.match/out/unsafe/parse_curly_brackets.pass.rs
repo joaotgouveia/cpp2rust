@@ -7,53 +7,29 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test1_0() {
-    let mut re: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"\\{a\\}".as_ptr() },
-        None,
-    );
-    let mut target: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"{a}".as_ptr() },
-        None,
-    );
+    let mut re: () = unimplemented!();
+    let mut target: () = unimplemented!();
     let mut regex: () = unimplemented!();
     let mut smatch: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test2_1() {
-    let mut re: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"\\{a\\}".as_ptr() },
-        None,
-    );
-    let mut target: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"{a}".as_ptr() },
-        None,
-    );
+    let mut re: () = unimplemented!();
+    let mut target: () = unimplemented!();
     let mut regex: () = unimplemented!();
     let mut smatch: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test3_2() {
-    let mut re: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"\\{a\\}".as_ptr() },
-        None,
-    );
-    let mut target: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"{a}".as_ptr() },
-        None,
-    );
+    let mut re: () = unimplemented!();
+    let mut target: () = unimplemented!();
     let mut regex: () = unimplemented!();
     let mut smatch: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test4_3() {
-    let mut re: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"\\{a\\}".as_ptr() },
-        None,
-    );
-    let mut target: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"{a}".as_ptr() },
-        None,
-    );
+    let mut re: () = unimplemented!();
+    let mut target: () = unimplemented!();
     let mut regex: () = unimplemented!();
     let mut smatch: () = unimplemented!();
     unimplemented!();

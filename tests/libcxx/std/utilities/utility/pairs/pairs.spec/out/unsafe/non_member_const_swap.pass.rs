@@ -10,7 +10,11 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NonConstSwappable {}
 pub unsafe fn swap_0(lhs: *const ConstSwappable, rhs: *const ConstSwappable) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut () = &mut (*lhs).i;
+        let ___y: *mut () = &mut (*rhs).i;
+        swap_1(___x, ___y)
+    });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -55,22 +59,10 @@ const _: () = assert!(
     !(false),
     "!NonMemberSwapNoexcept<const std::pair<SwapMayThrow<true>, SwapMayThrow<true>>>"
 );
-pub unsafe fn test_1() -> () {
+pub unsafe fn test_2() -> () {
     {
-        let p1: () = {
-            let mut __tmp_0: ConstSwappable = ConstSwappable { i: 0_() };
-            let mut __tmp_1: ConstSwappable = ConstSwappable { i: 1_() };
-            std_pair_const_ConstSwappable__const_ConstSwappable_::new({ &mut __tmp_0 }, {
-                &mut __tmp_1
-            })
-        };
-        let p2: () = {
-            let mut __tmp_2: ConstSwappable = ConstSwappable { i: 2_() };
-            let mut __tmp_3: ConstSwappable = ConstSwappable { i: 3_() };
-            std_pair_const_ConstSwappable__const_ConstSwappable_::new({ &mut __tmp_2 }, {
-                &mut __tmp_3
-            })
-        };
+        let p1: () = unimplemented!();
+        let p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -82,8 +74,8 @@ pub unsafe fn test_1() -> () {
         let mut i2: () = 1_();
         let mut i3: () = 2_();
         let mut i4: () = 3_();
-        let p1: () = std_pair_int_ref__int_ref_::new_1({ &mut i1 }, { &mut i2 });
-        let p2: () = std_pair_int_ref__int_ref_::new_1({ &mut i3 }, { &mut i4 });
+        let p1: () = unimplemented!();
+        let p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -108,7 +100,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_1() });
+    (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

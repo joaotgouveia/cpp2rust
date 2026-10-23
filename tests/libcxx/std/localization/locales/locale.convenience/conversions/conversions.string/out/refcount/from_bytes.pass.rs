@@ -14,11 +14,7 @@ impl TestHelper_wchar_t__4_ {
         const _: () = assert!(true, "(std::is_same<CharT, wchar_t>::value)");;
         {
             let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut bs: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"\xf1\x80\x80\x83") },
-                    None,
-                );
+            let mut bs: () = unimplemented!();
             let mut ws: () = unimplemented!();
             unimplemented!();
             unimplemented!();

@@ -849,99 +849,27 @@ impl std::cmp::Eq for min_allocator_std_pair_const_CopyConstructible__MoveOnly__
 pub unsafe fn test_move_assign_37() -> () {
     {
         let mut a1: [(); 9] = [
-            {
-                let mut __tmp_0: () = 1_();
-                let mut __tmp_1: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-            },
-            {
-                let mut __tmp_2: () = 1_();
-                let mut __tmp_3: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-            },
-            {
-                let mut __tmp_4: () = 1_();
-                let mut __tmp_5: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-            },
-            {
-                let mut __tmp_6: () = 2_();
-                let mut __tmp_7: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-            },
-            {
-                let mut __tmp_8: () = 2_();
-                let mut __tmp_9: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-            },
-            {
-                let mut __tmp_10: () = 2_();
-                let mut __tmp_11: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-            },
-            {
-                let mut __tmp_12: () = 3_();
-                let mut __tmp_13: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-            },
-            {
-                let mut __tmp_14: () = 3_();
-                let mut __tmp_15: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-            },
-            {
-                let mut __tmp_16: () = 3_();
-                let mut __tmp_17: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_16 }, { &mut __tmp_17 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m1: () = unimplemented!();
         let mut a2: [(); 9] = [
-            {
-                let mut __tmp_18: () = 1_();
-                let mut __tmp_19: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_18 }, { &mut __tmp_19 })
-            },
-            {
-                let mut __tmp_20: () = 1_();
-                let mut __tmp_21: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_20 }, { &mut __tmp_21 })
-            },
-            {
-                let mut __tmp_22: () = 1_();
-                let mut __tmp_23: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_22 }, { &mut __tmp_23 })
-            },
-            {
-                let mut __tmp_24: () = 2_();
-                let mut __tmp_25: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_24 }, { &mut __tmp_25 })
-            },
-            {
-                let mut __tmp_26: () = 2_();
-                let mut __tmp_27: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_26 }, { &mut __tmp_27 })
-            },
-            {
-                let mut __tmp_28: () = 2_();
-                let mut __tmp_29: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_28 }, { &mut __tmp_29 })
-            },
-            {
-                let mut __tmp_30: () = 3_();
-                let mut __tmp_31: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_30 }, { &mut __tmp_31 })
-            },
-            {
-                let mut __tmp_32: () = 3_();
-                let mut __tmp_33: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_32 }, { &mut __tmp_33 })
-            },
-            {
-                let mut __tmp_34: () = 3_();
-                let mut __tmp_35: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_34 }, { &mut __tmp_35 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m2: () = unimplemented!();
         let mut m3: () = unimplemented!();
@@ -953,99 +881,27 @@ pub unsafe fn test_move_assign_37() -> () {
     }
     {
         let mut a1: [(); 9] = [
-            {
-                let mut __tmp_36: () = 1_();
-                let mut __tmp_37: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_36 }, { &mut __tmp_37 })
-            },
-            {
-                let mut __tmp_38: () = 1_();
-                let mut __tmp_39: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_38 }, { &mut __tmp_39 })
-            },
-            {
-                let mut __tmp_40: () = 1_();
-                let mut __tmp_41: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_40 }, { &mut __tmp_41 })
-            },
-            {
-                let mut __tmp_42: () = 2_();
-                let mut __tmp_43: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_42 }, { &mut __tmp_43 })
-            },
-            {
-                let mut __tmp_44: () = 2_();
-                let mut __tmp_45: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_44 }, { &mut __tmp_45 })
-            },
-            {
-                let mut __tmp_46: () = 2_();
-                let mut __tmp_47: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_46 }, { &mut __tmp_47 })
-            },
-            {
-                let mut __tmp_48: () = 3_();
-                let mut __tmp_49: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_48 }, { &mut __tmp_49 })
-            },
-            {
-                let mut __tmp_50: () = 3_();
-                let mut __tmp_51: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_50 }, { &mut __tmp_51 })
-            },
-            {
-                let mut __tmp_52: () = 3_();
-                let mut __tmp_53: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_52 }, { &mut __tmp_53 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m1: () = unimplemented!();
         let mut a2: [(); 9] = [
-            {
-                let mut __tmp_54: () = 1_();
-                let mut __tmp_55: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_54 }, { &mut __tmp_55 })
-            },
-            {
-                let mut __tmp_56: () = 1_();
-                let mut __tmp_57: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_56 }, { &mut __tmp_57 })
-            },
-            {
-                let mut __tmp_58: () = 1_();
-                let mut __tmp_59: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_58 }, { &mut __tmp_59 })
-            },
-            {
-                let mut __tmp_60: () = 2_();
-                let mut __tmp_61: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_60 }, { &mut __tmp_61 })
-            },
-            {
-                let mut __tmp_62: () = 2_();
-                let mut __tmp_63: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_62 }, { &mut __tmp_63 })
-            },
-            {
-                let mut __tmp_64: () = 2_();
-                let mut __tmp_65: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_64 }, { &mut __tmp_65 })
-            },
-            {
-                let mut __tmp_66: () = 3_();
-                let mut __tmp_67: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_66 }, { &mut __tmp_67 })
-            },
-            {
-                let mut __tmp_68: () = 3_();
-                let mut __tmp_69: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_68 }, { &mut __tmp_69 })
-            },
-            {
-                let mut __tmp_70: () = 3_();
-                let mut __tmp_71: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_70 }, { &mut __tmp_71 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m2: () = unimplemented!();
         let mut m3: () = unimplemented!();
@@ -1057,99 +913,27 @@ pub unsafe fn test_move_assign_37() -> () {
     }
     {
         let mut a1: [(); 9] = [
-            {
-                let mut __tmp_72: () = 1_();
-                let mut __tmp_73: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_72 }, { &mut __tmp_73 })
-            },
-            {
-                let mut __tmp_74: () = 1_();
-                let mut __tmp_75: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_74 }, { &mut __tmp_75 })
-            },
-            {
-                let mut __tmp_76: () = 1_();
-                let mut __tmp_77: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_76 }, { &mut __tmp_77 })
-            },
-            {
-                let mut __tmp_78: () = 2_();
-                let mut __tmp_79: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_78 }, { &mut __tmp_79 })
-            },
-            {
-                let mut __tmp_80: () = 2_();
-                let mut __tmp_81: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_80 }, { &mut __tmp_81 })
-            },
-            {
-                let mut __tmp_82: () = 2_();
-                let mut __tmp_83: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_82 }, { &mut __tmp_83 })
-            },
-            {
-                let mut __tmp_84: () = 3_();
-                let mut __tmp_85: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_84 }, { &mut __tmp_85 })
-            },
-            {
-                let mut __tmp_86: () = 3_();
-                let mut __tmp_87: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_86 }, { &mut __tmp_87 })
-            },
-            {
-                let mut __tmp_88: () = 3_();
-                let mut __tmp_89: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_88 }, { &mut __tmp_89 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m1: () = unimplemented!();
         let mut a2: [(); 9] = [
-            {
-                let mut __tmp_90: () = 1_();
-                let mut __tmp_91: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_90 }, { &mut __tmp_91 })
-            },
-            {
-                let mut __tmp_92: () = 1_();
-                let mut __tmp_93: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_92 }, { &mut __tmp_93 })
-            },
-            {
-                let mut __tmp_94: () = 1_();
-                let mut __tmp_95: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_94 }, { &mut __tmp_95 })
-            },
-            {
-                let mut __tmp_96: () = 2_();
-                let mut __tmp_97: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_96 }, { &mut __tmp_97 })
-            },
-            {
-                let mut __tmp_98: () = 2_();
-                let mut __tmp_99: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_98 }, { &mut __tmp_99 })
-            },
-            {
-                let mut __tmp_100: () = 2_();
-                let mut __tmp_101: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_100 }, { &mut __tmp_101 })
-            },
-            {
-                let mut __tmp_102: () = 3_();
-                let mut __tmp_103: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_102 }, { &mut __tmp_103 })
-            },
-            {
-                let mut __tmp_104: () = 3_();
-                let mut __tmp_105: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_104 }, { &mut __tmp_105 })
-            },
-            {
-                let mut __tmp_106: () = 3_();
-                let mut __tmp_107: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_106 }, { &mut __tmp_107 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m2: () = unimplemented!();
         let mut m3: () = unimplemented!();
@@ -1161,99 +945,27 @@ pub unsafe fn test_move_assign_37() -> () {
     }
     {
         let mut a1: [(); 9] = [
-            {
-                let mut __tmp_108: () = 1_();
-                let mut __tmp_109: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_108 }, { &mut __tmp_109 })
-            },
-            {
-                let mut __tmp_110: () = 1_();
-                let mut __tmp_111: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_110 }, { &mut __tmp_111 })
-            },
-            {
-                let mut __tmp_112: () = 1_();
-                let mut __tmp_113: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_112 }, { &mut __tmp_113 })
-            },
-            {
-                let mut __tmp_114: () = 2_();
-                let mut __tmp_115: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_114 }, { &mut __tmp_115 })
-            },
-            {
-                let mut __tmp_116: () = 2_();
-                let mut __tmp_117: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_116 }, { &mut __tmp_117 })
-            },
-            {
-                let mut __tmp_118: () = 2_();
-                let mut __tmp_119: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_118 }, { &mut __tmp_119 })
-            },
-            {
-                let mut __tmp_120: () = 3_();
-                let mut __tmp_121: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_120 }, { &mut __tmp_121 })
-            },
-            {
-                let mut __tmp_122: () = 3_();
-                let mut __tmp_123: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_122 }, { &mut __tmp_123 })
-            },
-            {
-                let mut __tmp_124: () = 3_();
-                let mut __tmp_125: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_124 }, { &mut __tmp_125 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m1: () = unimplemented!();
         let mut a2: [(); 9] = [
-            {
-                let mut __tmp_126: () = 1_();
-                let mut __tmp_127: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_126 }, { &mut __tmp_127 })
-            },
-            {
-                let mut __tmp_128: () = 1_();
-                let mut __tmp_129: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_128 }, { &mut __tmp_129 })
-            },
-            {
-                let mut __tmp_130: () = 1_();
-                let mut __tmp_131: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_130 }, { &mut __tmp_131 })
-            },
-            {
-                let mut __tmp_132: () = 2_();
-                let mut __tmp_133: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_132 }, { &mut __tmp_133 })
-            },
-            {
-                let mut __tmp_134: () = 2_();
-                let mut __tmp_135: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_134 }, { &mut __tmp_135 })
-            },
-            {
-                let mut __tmp_136: () = 2_();
-                let mut __tmp_137: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_136 }, { &mut __tmp_137 })
-            },
-            {
-                let mut __tmp_138: () = 3_();
-                let mut __tmp_139: () = 1_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_138 }, { &mut __tmp_139 })
-            },
-            {
-                let mut __tmp_140: () = 3_();
-                let mut __tmp_141: () = 2_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_140 }, { &mut __tmp_141 })
-            },
-            {
-                let mut __tmp_142: () = 3_();
-                let mut __tmp_143: () = 3_();
-                std_pair_MoveOnly__MoveOnly_::new({ &mut __tmp_142 }, { &mut __tmp_143 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m2: () = unimplemented!();
         let mut m3: () = unimplemented!();
@@ -1268,99 +980,27 @@ pub unsafe fn test_move_assign_37() -> () {
 pub unsafe fn test_move_assign_38() -> () {
     {
         let mut a1: [(); 9] = [
-            {
-                let mut __tmp_144: () = 1_();
-                let mut __tmp_145: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_144 }, { &mut __tmp_145 })
-            },
-            {
-                let mut __tmp_146: () = 1_();
-                let mut __tmp_147: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_146 }, { &mut __tmp_147 })
-            },
-            {
-                let mut __tmp_148: () = 1_();
-                let mut __tmp_149: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_148 }, { &mut __tmp_149 })
-            },
-            {
-                let mut __tmp_150: () = 2_();
-                let mut __tmp_151: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_150 }, { &mut __tmp_151 })
-            },
-            {
-                let mut __tmp_152: () = 2_();
-                let mut __tmp_153: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_152 }, { &mut __tmp_153 })
-            },
-            {
-                let mut __tmp_154: () = 2_();
-                let mut __tmp_155: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_154 }, { &mut __tmp_155 })
-            },
-            {
-                let mut __tmp_156: () = 3_();
-                let mut __tmp_157: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_156 }, { &mut __tmp_157 })
-            },
-            {
-                let mut __tmp_158: () = 3_();
-                let mut __tmp_159: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_158 }, { &mut __tmp_159 })
-            },
-            {
-                let mut __tmp_160: () = 3_();
-                let mut __tmp_161: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_160 }, { &mut __tmp_161 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m1: () = unimplemented!();
         let mut a2: [(); 9] = [
-            {
-                let mut __tmp_162: () = 1_();
-                let mut __tmp_163: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_162 }, { &mut __tmp_163 })
-            },
-            {
-                let mut __tmp_164: () = 1_();
-                let mut __tmp_165: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_164 }, { &mut __tmp_165 })
-            },
-            {
-                let mut __tmp_166: () = 1_();
-                let mut __tmp_167: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_166 }, { &mut __tmp_167 })
-            },
-            {
-                let mut __tmp_168: () = 2_();
-                let mut __tmp_169: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_168 }, { &mut __tmp_169 })
-            },
-            {
-                let mut __tmp_170: () = 2_();
-                let mut __tmp_171: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_170 }, { &mut __tmp_171 })
-            },
-            {
-                let mut __tmp_172: () = 2_();
-                let mut __tmp_173: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_172 }, { &mut __tmp_173 })
-            },
-            {
-                let mut __tmp_174: () = 3_();
-                let mut __tmp_175: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_174 }, { &mut __tmp_175 })
-            },
-            {
-                let mut __tmp_176: () = 3_();
-                let mut __tmp_177: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_176 }, { &mut __tmp_177 })
-            },
-            {
-                let mut __tmp_178: () = 3_();
-                let mut __tmp_179: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_178 }, { &mut __tmp_179 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m2: () = unimplemented!();
         let mut m3: () = unimplemented!();
@@ -1372,99 +1012,27 @@ pub unsafe fn test_move_assign_38() -> () {
     }
     {
         let mut a1: [(); 9] = [
-            {
-                let mut __tmp_180: () = 1_();
-                let mut __tmp_181: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_180 }, { &mut __tmp_181 })
-            },
-            {
-                let mut __tmp_182: () = 1_();
-                let mut __tmp_183: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_182 }, { &mut __tmp_183 })
-            },
-            {
-                let mut __tmp_184: () = 1_();
-                let mut __tmp_185: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_184 }, { &mut __tmp_185 })
-            },
-            {
-                let mut __tmp_186: () = 2_();
-                let mut __tmp_187: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_186 }, { &mut __tmp_187 })
-            },
-            {
-                let mut __tmp_188: () = 2_();
-                let mut __tmp_189: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_188 }, { &mut __tmp_189 })
-            },
-            {
-                let mut __tmp_190: () = 2_();
-                let mut __tmp_191: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_190 }, { &mut __tmp_191 })
-            },
-            {
-                let mut __tmp_192: () = 3_();
-                let mut __tmp_193: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_192 }, { &mut __tmp_193 })
-            },
-            {
-                let mut __tmp_194: () = 3_();
-                let mut __tmp_195: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_194 }, { &mut __tmp_195 })
-            },
-            {
-                let mut __tmp_196: () = 3_();
-                let mut __tmp_197: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_196 }, { &mut __tmp_197 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m1: () = unimplemented!();
         let mut a2: [(); 9] = [
-            {
-                let mut __tmp_198: () = 1_();
-                let mut __tmp_199: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_198 }, { &mut __tmp_199 })
-            },
-            {
-                let mut __tmp_200: () = 1_();
-                let mut __tmp_201: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_200 }, { &mut __tmp_201 })
-            },
-            {
-                let mut __tmp_202: () = 1_();
-                let mut __tmp_203: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_202 }, { &mut __tmp_203 })
-            },
-            {
-                let mut __tmp_204: () = 2_();
-                let mut __tmp_205: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_204 }, { &mut __tmp_205 })
-            },
-            {
-                let mut __tmp_206: () = 2_();
-                let mut __tmp_207: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_206 }, { &mut __tmp_207 })
-            },
-            {
-                let mut __tmp_208: () = 2_();
-                let mut __tmp_209: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_208 }, { &mut __tmp_209 })
-            },
-            {
-                let mut __tmp_210: () = 3_();
-                let mut __tmp_211: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_210 }, { &mut __tmp_211 })
-            },
-            {
-                let mut __tmp_212: () = 3_();
-                let mut __tmp_213: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_212 }, { &mut __tmp_213 })
-            },
-            {
-                let mut __tmp_214: () = 3_();
-                let mut __tmp_215: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_214 }, { &mut __tmp_215 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m2: () = unimplemented!();
         let mut m3: () = unimplemented!();
@@ -1476,99 +1044,27 @@ pub unsafe fn test_move_assign_38() -> () {
     }
     {
         let mut a1: [(); 9] = [
-            {
-                let mut __tmp_216: () = 1_();
-                let mut __tmp_217: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_216 }, { &mut __tmp_217 })
-            },
-            {
-                let mut __tmp_218: () = 1_();
-                let mut __tmp_219: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_218 }, { &mut __tmp_219 })
-            },
-            {
-                let mut __tmp_220: () = 1_();
-                let mut __tmp_221: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_220 }, { &mut __tmp_221 })
-            },
-            {
-                let mut __tmp_222: () = 2_();
-                let mut __tmp_223: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_222 }, { &mut __tmp_223 })
-            },
-            {
-                let mut __tmp_224: () = 2_();
-                let mut __tmp_225: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_224 }, { &mut __tmp_225 })
-            },
-            {
-                let mut __tmp_226: () = 2_();
-                let mut __tmp_227: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_226 }, { &mut __tmp_227 })
-            },
-            {
-                let mut __tmp_228: () = 3_();
-                let mut __tmp_229: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_228 }, { &mut __tmp_229 })
-            },
-            {
-                let mut __tmp_230: () = 3_();
-                let mut __tmp_231: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_230 }, { &mut __tmp_231 })
-            },
-            {
-                let mut __tmp_232: () = 3_();
-                let mut __tmp_233: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_232 }, { &mut __tmp_233 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m1: () = unimplemented!();
         let mut a2: [(); 9] = [
-            {
-                let mut __tmp_234: () = 1_();
-                let mut __tmp_235: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_234 }, { &mut __tmp_235 })
-            },
-            {
-                let mut __tmp_236: () = 1_();
-                let mut __tmp_237: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_236 }, { &mut __tmp_237 })
-            },
-            {
-                let mut __tmp_238: () = 1_();
-                let mut __tmp_239: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_238 }, { &mut __tmp_239 })
-            },
-            {
-                let mut __tmp_240: () = 2_();
-                let mut __tmp_241: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_240 }, { &mut __tmp_241 })
-            },
-            {
-                let mut __tmp_242: () = 2_();
-                let mut __tmp_243: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_242 }, { &mut __tmp_243 })
-            },
-            {
-                let mut __tmp_244: () = 2_();
-                let mut __tmp_245: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_244 }, { &mut __tmp_245 })
-            },
-            {
-                let mut __tmp_246: () = 3_();
-                let mut __tmp_247: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_246 }, { &mut __tmp_247 })
-            },
-            {
-                let mut __tmp_248: () = 3_();
-                let mut __tmp_249: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_248 }, { &mut __tmp_249 })
-            },
-            {
-                let mut __tmp_250: () = 3_();
-                let mut __tmp_251: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_250 }, { &mut __tmp_251 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m2: () = unimplemented!();
         let mut m3: () = unimplemented!();
@@ -1580,99 +1076,27 @@ pub unsafe fn test_move_assign_38() -> () {
     }
     {
         let mut a1: [(); 9] = [
-            {
-                let mut __tmp_252: () = 1_();
-                let mut __tmp_253: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_252 }, { &mut __tmp_253 })
-            },
-            {
-                let mut __tmp_254: () = 1_();
-                let mut __tmp_255: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_254 }, { &mut __tmp_255 })
-            },
-            {
-                let mut __tmp_256: () = 1_();
-                let mut __tmp_257: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_256 }, { &mut __tmp_257 })
-            },
-            {
-                let mut __tmp_258: () = 2_();
-                let mut __tmp_259: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_258 }, { &mut __tmp_259 })
-            },
-            {
-                let mut __tmp_260: () = 2_();
-                let mut __tmp_261: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_260 }, { &mut __tmp_261 })
-            },
-            {
-                let mut __tmp_262: () = 2_();
-                let mut __tmp_263: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_262 }, { &mut __tmp_263 })
-            },
-            {
-                let mut __tmp_264: () = 3_();
-                let mut __tmp_265: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_264 }, { &mut __tmp_265 })
-            },
-            {
-                let mut __tmp_266: () = 3_();
-                let mut __tmp_267: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_266 }, { &mut __tmp_267 })
-            },
-            {
-                let mut __tmp_268: () = 3_();
-                let mut __tmp_269: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_268 }, { &mut __tmp_269 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m1: () = unimplemented!();
         let mut a2: [(); 9] = [
-            {
-                let mut __tmp_270: () = 1_();
-                let mut __tmp_271: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_270 }, { &mut __tmp_271 })
-            },
-            {
-                let mut __tmp_272: () = 1_();
-                let mut __tmp_273: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_272 }, { &mut __tmp_273 })
-            },
-            {
-                let mut __tmp_274: () = 1_();
-                let mut __tmp_275: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_274 }, { &mut __tmp_275 })
-            },
-            {
-                let mut __tmp_276: () = 2_();
-                let mut __tmp_277: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_276 }, { &mut __tmp_277 })
-            },
-            {
-                let mut __tmp_278: () = 2_();
-                let mut __tmp_279: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_278 }, { &mut __tmp_279 })
-            },
-            {
-                let mut __tmp_280: () = 2_();
-                let mut __tmp_281: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_280 }, { &mut __tmp_281 })
-            },
-            {
-                let mut __tmp_282: () = 3_();
-                let mut __tmp_283: () = 1_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_282 }, { &mut __tmp_283 })
-            },
-            {
-                let mut __tmp_284: () = 3_();
-                let mut __tmp_285: () = 2_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_284 }, { &mut __tmp_285 })
-            },
-            {
-                let mut __tmp_286: () = 3_();
-                let mut __tmp_287: () = 3_();
-                std_pair_CopyConstructible__MoveOnly_::new({ &mut __tmp_286 }, { &mut __tmp_287 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let mut m2: () = unimplemented!();
         let mut m3: () = unimplemented!();

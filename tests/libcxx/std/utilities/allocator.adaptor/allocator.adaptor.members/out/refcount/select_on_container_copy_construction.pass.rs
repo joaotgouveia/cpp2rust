@@ -144,7 +144,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let a1: Value<()> = Rc::new(RefCell::new(A1_int_::new({ 3_() })));
+        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let a2: Value<()> = Rc::new(RefCell::new(
             ({
@@ -154,7 +154,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let a1: Value<()> = Rc::new(RefCell::new(A3_int_::new({ 3_() })));
+        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let a2: Value<()> = Rc::new(RefCell::new(
             ({
@@ -164,16 +164,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let a1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 1_() })));
-            let __tmp_1: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 2_() })));
-            let __tmp_2: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ 3_() })));
-            std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
-                { __tmp_0.as_pointer() },
-                { __tmp_1.as_pointer() },
-                { __tmp_2.as_pointer() },
-            )
-        }));
+        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

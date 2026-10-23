@@ -382,24 +382,12 @@ pub fn test_4() {
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { __tmp_0.as_pointer() },
-                None,
-            )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { __tmp_1.as_pointer() },
-                None,
-            )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
@@ -416,24 +404,12 @@ pub fn test_5() {
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                { __tmp_2.as_pointer() },
-                None,
-            )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                { __tmp_3.as_pointer() },
-                None,
-            )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

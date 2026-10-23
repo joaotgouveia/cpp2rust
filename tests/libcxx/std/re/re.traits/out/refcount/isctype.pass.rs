@@ -29,10 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"w") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -148,11 +145,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                { Ptr::<()>::from_string_literal(&[119 as (), 0 as ()]) },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

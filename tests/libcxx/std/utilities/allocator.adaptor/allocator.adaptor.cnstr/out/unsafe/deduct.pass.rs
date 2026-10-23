@@ -135,31 +135,23 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut outer: A1_int_ = A1_int_::new({ 3_() });
-        let mut a: () = std_scoped_allocator_adaptor_A1_int__::new_1({ &mut outer });
+        let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut a: () = A1_int_::new({ 3_() });
-        const _: () = assert!(true, "");;
-    }
-    {
-        let mut outer: A1_int_ = A1_int_::new({ 3_() });
-        let mut inner: A2_int_ = A2_int_::new({ 4_() });
-        let mut a: () =
-            std_scoped_allocator_adaptor_A1_int___A2_int__::new_1({ &mut outer }, { &inner });
+        let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
         let mut outer: A1_int_ = A1_int_::new({ 3_() });
         let mut inner: A2_int_ = A2_int_::new({ 4_() });
-        let mut a: () = {
-            let mut __tmp_0: A2_float_ = A2_float_::new({ 5_() });
-            std_scoped_allocator_adaptor_A1_int___A2_int___A2_float__::new_1(
-                { &mut outer },
-                { &inner },
-                { &mut __tmp_0 },
-            )
-        };
+        let mut a: () = unimplemented!();
+        const _: () = assert!(true, "");;
+    }
+    {
+        let mut outer: A1_int_ = A1_int_::new({ 3_() });
+        let mut inner: A2_int_ = A2_int_::new({ 4_() });
+        let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
     return 0_();

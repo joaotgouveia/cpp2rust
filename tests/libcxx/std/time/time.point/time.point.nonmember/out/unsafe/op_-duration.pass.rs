@@ -7,19 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test2739_0() {
-    let d: () = {
-        let mut __tmp_0: () = 5_();
-        std_chrono_duration_int__std_ratio_1__1__::new_1({ &mut __tmp_0 })
-    };
+    let d: () = unimplemented!();
     let mut t0: () = unimplemented!();
     let mut t1: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test2739_1() {
-    let d: () = {
-        let mut __tmp_1: () = 5_();
-        std_chrono_duration_unsigned_int__std_ratio_1__1__::new_1({ &mut __tmp_1 })
-    };
+    let d: () = unimplemented!();
     let mut t0: () = unimplemented!();
     let mut t1: () = unimplemented!();
     unimplemented!();

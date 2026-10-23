@@ -75,19 +75,13 @@ impl std::cmp::PartialEq for Z {
 impl std::cmp::Eq for Z {}
 pub unsafe fn test_2() -> () {
     {
-        let mut opt: () = {
-            let mut __tmp_0: () = 2_();
-            std_optional_X_::new_1({ unimplemented!() }, { &mut __tmp_0 })
-        };
+        let mut opt: () = unimplemented!();
         let mut y: Y = Y::new({ 3_() });
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut opt: () = {
-            let mut __tmp_1: () = 2_();
-            std_optional_X_::new_1({ unimplemented!() }, { &mut __tmp_1 })
-        };
+        let mut opt: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

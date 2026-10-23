@@ -87,47 +87,23 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
-        let mut _df: () = {
-            let mut __tmp_0: () = 7290000_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_0 })
-        };
-        let mut _d: () = {
-            let mut __tmp_1: () = 2_();
-            std_chrono_duration_long__std_ratio_3600__1__::new_1({ &mut __tmp_1 })
-        };
+        let mut _df: () = unimplemented!();
+        let mut _d: () = unimplemented!();
         test_2(&mut _df, &mut _d)
     });
     (unsafe {
-        let mut _df: () = {
-            let mut __tmp_2: () = -7290000_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_2 })
-        };
-        let mut _d: () = {
-            let mut __tmp_3: () = -2_();
-            std_chrono_duration_long__std_ratio_3600__1__::new_1({ &mut __tmp_3 })
-        };
+        let mut _df: () = unimplemented!();
+        let mut _d: () = unimplemented!();
         test_2(&mut _df, &mut _d)
     });
     (unsafe {
-        let mut _df: () = {
-            let mut __tmp_4: () = 7290000_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_4 })
-        };
-        let mut _d: () = {
-            let mut __tmp_5: () = 122_();
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ &mut __tmp_5 })
-        };
+        let mut _df: () = unimplemented!();
+        let mut _d: () = unimplemented!();
         test_3(&mut _df, &mut _d)
     });
     (unsafe {
-        let mut _df: () = {
-            let mut __tmp_6: () = -7290000_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_6 })
-        };
-        let mut _d: () = {
-            let mut __tmp_7: () = -122_();
-            std_chrono_duration_long__std_ratio_60__1__::new_1({ &mut __tmp_7 })
-        };
+        let mut _df: () = unimplemented!();
+        let mut _d: () = unimplemented!();
         test_3(&mut _df, &mut _d)
     });
     (unsafe { test_constexpr_4() });

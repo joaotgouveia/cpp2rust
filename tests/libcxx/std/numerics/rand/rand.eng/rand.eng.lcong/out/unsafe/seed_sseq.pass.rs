@@ -29,17 +29,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut e1: () = unimplemented!();
         let mut e2: () = unimplemented!();
         unimplemented!();
-        (unsafe { e1.seed(&mut sseq) });
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 5] = [3_(), 5_(), 7_(), 9_(), 11_()];
         let mut sseq: () = unimplemented!();
         let mut e1: () = unimplemented!();
-        let mut e2: () =
-            std_linear_congruential_engine_unsigned_long_long__1__1__8589934593_::new_1({
-                &mut sseq
-            });
+        let mut e2: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

@@ -554,11 +554,7 @@ pub unsafe fn test01_29() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"a narrow string".as_ptr() },
-                    None,
-                );
+            let mut _s: () = unimplemented!();
             test_17(&mut _s)
         }) {
             (unsafe {
@@ -580,7 +576,7 @@ pub unsafe fn test01_29() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__ :: new_1 ( { [97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 49 as () , 54 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_18(&mut _s)
         }) {
             (unsafe {
@@ -602,7 +598,7 @@ pub unsafe fn test01_29() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__ :: new_1 ( { [97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 51 as () , 50 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_19(&mut _s)
         }) {
             (unsafe {
@@ -624,18 +620,7 @@ pub unsafe fn test01_29() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s: () =
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    {
-                        [
-                            97 as (), 32 as (), 119 as (), 105 as (), 100 as (), 101 as (),
-                            32 as (), 115 as (), 116 as (), 114 as (), 105 as (), 110 as (),
-                            103 as (), 0 as (),
-                        ]
-                        .as_ptr()
-                    },
-                    None,
-                );
+            let mut _s: () = unimplemented!();
             test_20(&mut _s)
         }) {
             (unsafe {
@@ -659,7 +644,7 @@ pub unsafe fn test02_31() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char__ :: new_1 ( { c"a narrow string, but with PMR!" .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_21(&mut _s)
         }) {
             (unsafe {
@@ -682,7 +667,7 @@ pub unsafe fn test02_31() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_char16_t__std_char_traits_char16_t___std_pmr_polymorphic_allocator_char16_t__ :: new_1 ( { [97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 49 as () , 54 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 44 as () , 32 as () , 98 as () , 117 as () , 116 as () , 32 as () , 119 as () , 105 as () , 116 as () , 104 as () , 32 as () , 80 as () , 77 as () , 82 as () , 33 as () , 0 as () , ] .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_22(&mut _s)
         }) {
             (unsafe {
@@ -706,7 +691,7 @@ pub unsafe fn test02_31() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_char32_t__std_char_traits_char32_t___std_pmr_polymorphic_allocator_char32_t__ :: new_1 ( { [97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 51 as () , 50 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 44 as () , 32 as () , 98 as () , 117 as () , 116 as () , 32 as () , 119 as () , 105 as () , 116 as () , 104 as () , 32 as () , 80 as () , 77 as () , 82 as () , 33 as () , 0 as () , ] .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_23(&mut _s)
         }) {
             (unsafe {
@@ -730,7 +715,7 @@ pub unsafe fn test02_31() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_pmr_polymorphic_allocator_wchar_t__ :: new_1 ( { [97 as () , 32 as () , 119 as () , 105 as () , 100 as () , 101 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 44 as () , 32 as () , 98 as () , 117 as () , 116 as () , 32 as () , 119 as () , 105 as () , 116 as () , 104 as () , 32 as () , 80 as () , 77 as () , 82 as () , 33 as () , 0 as () , ] .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_24(&mut _s)
         }) {
             (unsafe {
@@ -755,7 +740,7 @@ pub unsafe fn test03_32() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_char__std_char_traits_char_____gnu_test_SimpleAllocator_char__ :: new_1 ( { c"a narrow string" .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_25(&mut _s)
         }) {
             (unsafe {
@@ -777,7 +762,7 @@ pub unsafe fn test03_32() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_char16_t__std_char_traits_char16_t_____gnu_test_SimpleAllocator_char16_t__ :: new_1 ( { [97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 49 as () , 54 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_26(&mut _s)
         }) {
             (unsafe {
@@ -799,7 +784,7 @@ pub unsafe fn test03_32() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_char32_t__std_char_traits_char32_t_____gnu_test_SimpleAllocator_char32_t__ :: new_1 ( { [97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 51 as () , 50 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_27(&mut _s)
         }) {
             (unsafe {
@@ -821,7 +806,7 @@ pub unsafe fn test03_32() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe {
-            let mut _s : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t_____gnu_test_SimpleAllocator_wchar_t__ :: new_1 ( { [97 as () , 32 as () , 119 as () , 105 as () , 100 as () , 101 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] .as_ptr() } , None , )  ;
+            let mut _s: () = unimplemented!();
             test_28(&mut _s)
         }) {
             (unsafe {
@@ -968,8 +953,7 @@ pub unsafe fn verify_demangle_40(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -980,11 +964,7 @@ pub unsafe fn run_tests_wrapped_locale_42(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -992,11 +972,7 @@ pub unsafe fn run_tests_wrapped_locale_42(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1008,10 +984,7 @@ pub unsafe fn run_tests_wrapped_locale_42(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1034,10 +1007,7 @@ pub unsafe fn run_tests_wrapped_env_43(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

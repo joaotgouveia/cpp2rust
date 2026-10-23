@@ -9,11 +9,7 @@ use std::rc::Rc;
 pub unsafe fn test01_0() {
     let ni: () = 10_();
     let mut i: [(); 10] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()];
-    let mut flccin: () = std_forward_list_int__std_allocator_int__::new_1(
-        { i.as_mut_ptr() },
-        { i.as_mut_ptr().offset((ni) as isize) },
-        None,
-    );
+    let mut flccin: () = unimplemented!();
     let mut flcc: () = unimplemented!();
 }
 pub fn main() {

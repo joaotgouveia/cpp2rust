@@ -8,13 +8,9 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_adjacent_pairs_0() {
     let mut v: () = unimplemented!();
-    let mut expected_index: () = {
-        let mut __tmp_0: () = 0_();
-        let mut __tmp_1: () = 1_();
-        std_pair_unsigned_long__unsigned_long_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
-    let mut __tmp_2 : std_ranges_adjacent_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____2_  = unimplemented!()  ;
-    let __range1 : *mut std_ranges_adjacent_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____2_ = & mut __tmp_2 ;
+    let mut expected_index: () = unimplemented!();
+    let mut __tmp_0 : std_ranges_adjacent_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____2_  = unimplemented!()  ;
+    let __range1 : *mut std_ranges_adjacent_view_std_ranges_ref_view_std_vector_int__std_allocator_int_____2_ = & mut __tmp_0 ;
     'loop_: for __decomp_1 in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut __decomp_1: std_tuple_int_ref__int_ref_ = unimplemented!();
         let x: *mut () = (unsafe { get_2(&mut *(&raw mut __decomp_1).cast::<()>()) });

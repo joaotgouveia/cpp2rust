@@ -224,20 +224,12 @@ pub unsafe fn test_string_6() {
         let mut k: () = 0_();
         'loop_: while ((k) != (4_())) {
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
                 let mut rhs: *const () = test_data[(1_()) as usize][(k) as usize];
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
                 let mut rhs: *const () = test_data[(1_()) as usize][(k) as usize];
                 unimplemented!();
             }
@@ -292,20 +284,12 @@ pub unsafe fn test_string_7() {
         let mut k: () = 0_();
         'loop_: while ((k) != (4_())) {
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
                 let mut rhs: *const () = test_data[(1_()) as usize][(k) as usize];
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
                 let mut rhs: *const () = test_data[(1_()) as usize][(k) as usize];
                 unimplemented!();
             }
@@ -360,20 +344,12 @@ pub unsafe fn test_string_8() {
         let mut k: () = 0_();
         'loop_: while ((k) != (4_())) {
             {
-                let lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
+                let lhs: () = unimplemented!();
                 let mut rhs: *const () = test_data[(1_()) as usize][(k) as usize];
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { test_data[(0_()) as usize][(i) as usize] },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
                 let mut rhs: *const () = test_data[(1_()) as usize][(k) as usize];
                 unimplemented!();
             }

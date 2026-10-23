@@ -20,49 +20,33 @@ pub struct test_macros_detail_is_same_std_reference_wrapper_const_std_reference_
 {}
 pub fn test_2() -> () {
     {
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        let ri: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-            i.as_pointer()
-        })));
-        let rri: Value<()> = Rc::new(RefCell::new(
-            std_reference_wrapper_std_reference_wrapper_int__::new({ ri.as_pointer() }),
-        ));
+        let mut i: () = 0_();
+        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rrj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        let ri: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-            i.as_pointer()
-        })));
-        let rri: Value<()> = Rc::new(RefCell::new(
-            std_reference_wrapper_const_std_reference_wrapper_int__::new_1({ ri.as_pointer() }),
-        ));
+        let mut i: () = 0_();
+        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rrj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        let ri: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-            i.as_pointer()
-        })));
-        let rri: Value<()> = Rc::new(RefCell::new(
-            std_reference_wrapper_std_reference_wrapper_int__::new({ ri.as_pointer() }),
-        ));
+        let mut i: () = 0_();
+        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rrj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        let ri: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-            i.as_pointer()
-        })));
-        let rri: Value<()> = Rc::new(RefCell::new(
-            std_reference_wrapper_const_std_reference_wrapper_int__::new_1({ ri.as_pointer() }),
-        ));
+        let mut i: () = 0_();
+        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rrj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();

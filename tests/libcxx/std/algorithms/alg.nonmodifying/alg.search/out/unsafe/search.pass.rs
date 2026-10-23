@@ -520,21 +520,25 @@ pub unsafe fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_15(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -618,7 +622,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -628,7 +632,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -704,7 +708,7 @@ impl MySearcherC {
         return unimplemented!();
     }
 }
-pub unsafe fn test_constexpr_18() -> () {
+pub unsafe fn test_constexpr_19() -> () {
     let mut ia: [(); 4] = [0_(), 1_(), 2_(), 3_()];
     let mut ib: [(); 4] = [0_(), 1_(), 5_(), 3_()];
     let mut ic: [(); 12] = [
@@ -725,14 +729,14 @@ pub unsafe fn test_constexpr_18() -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && ((unimplemented!()) == (unimplemented!()));
 }
-pub static mut searcher_called_19: std::cell::LazyCell<()> =
+pub static mut searcher_called_20: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MySearcher {}
 impl MySearcher {
     pub unsafe fn operator_call_1_int_ptr(&self, mut b: *mut (), mut e: *mut ()) -> () {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut searcher_called_19)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut searcher_called_20)).prefix_inc();
         return unimplemented!();
     }
 }
@@ -749,95 +753,12 @@ impl User_S {
 }
 impl std::cmp::PartialEq for User_S {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_20(self.clone(), other.clone()) }
+        unsafe { operator_eq_21(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for User_S {}
-pub unsafe fn operator_eq_20(mut lhs: User_S, mut rhs: User_S) -> () {
+pub unsafe fn operator_eq_21(mut lhs: User_S, mut rhs: User_S) -> () {
     return ((lhs.x_) == (rhs.x_));
-}
-pub unsafe fn test_21() {
-    let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut ib: [(); 12] = [
-        0_(),
-        1_(),
-        2_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-    ];
-    let sb: () =
-        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ic: [(); 1] = [1_()];
-    unimplemented!();
-    let mut id: [(); 2] = [1_(), 2_()];
-    unimplemented!();
-    let mut ie: [(); 3] = [1_(), 2_(), 3_()];
-    unimplemented!();
-    let mut ig: [(); 4] = [1_(), 2_(), 3_(), 4_()];
-    unimplemented!();
-    let mut ih: [(); 12] = [
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        1_(),
-        2_(),
-        3_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-    ];
-    let sh: () =
-        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ii: [(); 3] = [1_(), 1_(), 2_()];
-    unimplemented!();
-    let mut ij: [(); 16] = [
-        0_(),
-        1_(),
-        0_(),
-        0_(),
-        1_(),
-        0_(),
-        0_(),
-        0_(),
-        0_(),
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        1_(),
-        0_(),
-        0_(),
-    ];
-    let sj: () =
-        (::std::mem::size_of::<[(); 16]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ik: [(); 10] = [0_(), 0_(), 0_(), 0_(), 1_(), 1_(), 1_(), 1_(), 0_(), 0_()];
-    let sk: () =
-        (::std::mem::size_of::<[(); 10]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    unimplemented!();
 }
 pub unsafe fn test_22() {
     let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
@@ -1503,11 +1424,94 @@ pub unsafe fn test_29() {
         (::std::mem::size_of::<[(); 10]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     unimplemented!();
 }
-pub unsafe fn adl_test_30() {
-    let mut ua: [User_S; 1] = [User_S::new({ 1_() })];
+pub unsafe fn test_30() {
+    let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 6]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut ib: [(); 12] = [
+        0_(),
+        1_(),
+        2_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+    ];
+    let sb: () =
+        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ic: [(); 1] = [1_()];
+    unimplemented!();
+    let mut id: [(); 2] = [1_(), 2_()];
+    unimplemented!();
+    let mut ie: [(); 3] = [1_(), 2_(), 3_()];
+    unimplemented!();
+    let mut ig: [(); 4] = [1_(), 2_(), 3_(), 4_()];
+    unimplemented!();
+    let mut ih: [(); 12] = [
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        1_(),
+        2_(),
+        3_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+    ];
+    let sh: () =
+        (::std::mem::size_of::<[(); 12]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ii: [(); 3] = [1_(), 1_(), 2_()];
+    unimplemented!();
+    let mut ij: [(); 16] = [
+        0_(),
+        1_(),
+        0_(),
+        0_(),
+        1_(),
+        0_(),
+        0_(),
+        0_(),
+        0_(),
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        1_(),
+        0_(),
+        0_(),
+    ];
+    let sj: () =
+        (::std::mem::size_of::<[(); 16]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ik: [(); 10] = [0_(), 0_(), 0_(), 0_(), 1_(), 1_(), 1_(), 1_(), 0_(), 0_()];
+    let sk: () =
+        (::std::mem::size_of::<[(); 10]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     unimplemented!();
 }
 pub unsafe fn adl_test_31() {
+    let mut ua: [User_S; 1] = [User_S::new({ 1_() })];
+    unimplemented!();
+}
+pub unsafe fn adl_test_32() {
     let mut ua: [User_S; 1] = [User_S::new({ 1_() })];
     unimplemented!();
 }
@@ -1527,7 +1531,6 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_21() });
     (unsafe { test_22() });
     (unsafe { test_23() });
     (unsafe { test_24() });
@@ -1536,8 +1539,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_27() });
     (unsafe { test_28() });
     (unsafe { test_29() });
-    (unsafe { adl_test_30() });
+    (unsafe { test_30() });
     (unsafe { adl_test_31() });
+    (unsafe { adl_test_32() });
     {
         const _: () = assert!(
             true,
@@ -1551,5 +1555,5 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const searcher_called_19);
+    std::cell::LazyCell::force(&*&raw const searcher_called_20);
 }

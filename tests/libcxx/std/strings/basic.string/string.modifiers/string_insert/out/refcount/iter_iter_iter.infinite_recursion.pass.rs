@@ -44,15 +44,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ch: Value<char_ascii> = Rc::new(RefCell::new(char_ascii::new_1({ ('A' as ()) })));
-    ({
-        let ___pos: () = {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___wrap_iter_const_char_ascii_ptr_::new_1({ __tmp_0.as_pointer() })
-        };
-        let ___first: Ptr<char_ascii> = (ch.as_pointer());
-        let ___last: Ptr<char_ascii> = (ch.as_pointer()).offset((1_()) as isize);
-        (*str.borrow()).insert_109_struct_char_ascii_ptr_0(___pos, ___first, ___last)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

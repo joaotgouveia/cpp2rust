@@ -27,23 +27,19 @@ pub fn test_0() -> () {
     {
         let a: Value<A1> = Rc::new(RefCell::new(<A1>::default()));
         const _: () = assert!(true, "");;
-        let b1: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_B_::new_1({
-            a.as_pointer()
-        })));
+        let b1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
-        (*b1.borrow_mut()) = std_reference_wrapper_B_::new_1({ a.as_pointer() });
+        (*b1.borrow_mut()) = unimplemented!();
         unimplemented!();
     }
     {
         let a: Value<A2> = Rc::new(RefCell::new(<A2>::default()));
         const _: () = assert!(true, "");;
-        let b2: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_B_::new_2({
-            a.as_pointer()
-        })));
+        let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
-        (*b2.borrow_mut()) = std_reference_wrapper_B_::new_2({ a.as_pointer() });
+        (*b2.borrow_mut()) = unimplemented!();
         unimplemented!();
     }
     return true;

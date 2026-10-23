@@ -246,50 +246,23 @@ pub fn test_7() -> () {
         unimplemented!();
         unimplemented!();
         let mc: Ptr<()> = m.as_pointer();
-        let mut r: () = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(5_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(6_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(7_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(8_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(9_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(10_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(11_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(12_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
-        r = ({
-            let ___k: Value<()> = Rc::new(RefCell::new(4_()));
-            (*mc.upgrade().deref()).count(___k.as_pointer())
-        });
+        r = unimplemented!();
         unimplemented!();
     }
     return true;

@@ -12,9 +12,13 @@ pub struct ConstSwappable {
     pub i: (),
 }
 pub unsafe fn swap_0(lhs: *const ConstSwappable, rhs: *const ConstSwappable) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut () = &mut (*lhs).i;
+        let ___y: *mut () = &mut (*rhs).i;
+        swap_1(___x, ___y)
+    });
 }
-pub unsafe fn test_1() -> () {
+pub unsafe fn test_2() -> () {
     {
         let t0: () = ConstSwappable { i: 0_() };
         let mut t1: () = ConstSwappable { i: 1_() };
@@ -86,7 +90,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_1() });
+    (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

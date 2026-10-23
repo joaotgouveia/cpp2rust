@@ -24,15 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let p: () = {
-            let mut __tmp_0: () = std_unique_ptr_int__std_default_delete_int__::new({
-                (Box::leak(Box::new(3_())) as *mut ())
-            });
-            let mut __tmp_1: () = 4_();
-            std_pair_std_unique_ptr_int__std_default_delete_int____short_::new({ &mut __tmp_0 }, {
-                &mut __tmp_1
-            })
-        };
+        let p: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same<const std::unique_ptr<int>&&, decltype(std::get<0>(std::move(p)))>::value"
@@ -44,7 +36,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut x: () = 42_();
         let y: () = 43_();
-        let p: () = std_pair_int_ref__const_int_ref_::new_1({ &mut x }, { &y });
+        let p: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<0>(std::move(p)))>::value"
@@ -59,10 +51,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut x: () = 42_();
         let y: () = 43_();
-        let p: () =
-            std_pair_int_refref__const_int_refref_::new({ &mut *(&raw mut x).cast::<()>() }, {
-                &y
-            });
+        let p: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same<int&&, decltype(std::get<0>(std::move(p)))>::value"
@@ -75,11 +64,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let p1: () = {
-            let mut __tmp_2: () = 3_();
-            let mut __tmp_3: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let p1: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(std::move(p1)) == 3");;
         const _: () = assert!(true, "std::get<1>(std::move(p1)) == 4");;
     }

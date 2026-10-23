@@ -84,63 +84,31 @@ pub unsafe fn explicit_vs_implicit_brace_init_5(mut _a0: ()) -> () {
 }
 pub unsafe fn test_6() -> () {
     {
-        let mut p1: () = {
-            let mut __tmp_0: ExplicitT = ExplicitT::new({ 42_() });
-            let mut __tmp_1: BraceInit = <BraceInit>::default();
-            std_pair_ExplicitT__BraceInit_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let mut p1: () = unimplemented!();
         unimplemented!();
-        let mut p2: () = {
-            let mut __tmp_2: ExplicitT = ExplicitT::new({ 42_() });
-            let mut __tmp_3: BraceInit = <BraceInit>::default();
-            std_pair_ExplicitT__BraceInit_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let mut p2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p1: () = {
-            let mut __tmp_4: BraceInit = <BraceInit>::default();
-            let mut __tmp_5: ExplicitT = ExplicitT::new({ 42_() });
-            std_pair_BraceInit__ExplicitT_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-        };
+        let mut p1: () = unimplemented!();
         unimplemented!();
-        let mut p2: () = {
-            let mut __tmp_6: BraceInit = <BraceInit>::default();
-            let mut __tmp_7: ExplicitT = ExplicitT::new({ 42_() });
-            std_pair_BraceInit__ExplicitT_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-        };
+        let mut p2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = {
-            let mut __tmp_8: BraceInit = <BraceInit>::default();
-            let mut __tmp_9: BraceInit = <BraceInit>::default();
-            std_pair_BraceInit__BraceInit_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-        };
+        let mut p: () = unimplemented!();
         &(p);
     }
     {
-        let mut p: () = {
-            let mut __tmp_10: () = 42_();
-            let mut __tmp_11: BraceInit = <BraceInit>::default();
-            std_pair_ImplicitT__BraceInit_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-        };
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = {
-            let mut __tmp_12: BraceInit = <BraceInit>::default();
-            let mut __tmp_13: () = 42_();
-            std_pair_BraceInit__ImplicitT_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-        };
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = {
-            let mut __tmp_14: BraceInit = <BraceInit>::default();
-            let mut __tmp_15: BraceInit = <BraceInit>::default();
-            std_pair_BraceInit__BraceInit_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-        };
+        let mut p: () = unimplemented!();
         &(p);
     }
     {

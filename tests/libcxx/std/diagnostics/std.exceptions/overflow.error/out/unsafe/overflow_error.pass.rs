@@ -38,10 +38,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut msg: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"another overflow_error message".as_ptr() },
-            None,
-        );
+        let mut msg: () = unimplemented!();
         let mut e: () = unimplemented!();
         unimplemented!();
         let mut e2: () = unimplemented!();

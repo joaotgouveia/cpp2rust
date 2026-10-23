@@ -160,42 +160,12 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__std_string_::new_1({ __tmp_0.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"one")
-                })
-            },
-            {
-                let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__std_string_::new_1({ __tmp_1.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"two")
-                })
-            },
-            {
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-                std_pair_int__std_string_::new_2({ __tmp_2.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"three")
-                })
-            },
-            {
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_int__std_string_::new_3({ __tmp_3.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"four")
-                })
-            },
-            {
-                let __tmp_4: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__std_string_::new_3({ __tmp_4.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"four")
-                })
-            },
-            {
-                let __tmp_5: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__std_string_::new_3({ __tmp_5.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"four")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )  )) ;
@@ -215,17 +185,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()   } , )   ;
             CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
         });
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         let k: Value<()> = Rc::new(RefCell::new({ (*eq.borrow()).first.clone() }));
         unimplemented!();
         unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -235,42 +205,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            {
-                let __tmp_6: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__std_string_::new_1({ __tmp_6.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"one")
-                })
-            },
-            {
-                let __tmp_7: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__std_string_::new_1({ __tmp_7.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"two")
-                })
-            },
-            {
-                let __tmp_8: Value<()> = Rc::new(RefCell::new(3_()));
-                std_pair_int__std_string_::new_2({ __tmp_8.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"three")
-                })
-            },
-            {
-                let __tmp_9: Value<()> = Rc::new(RefCell::new(4_()));
-                std_pair_int__std_string_::new_3({ __tmp_9.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"four")
-                })
-            },
-            {
-                let __tmp_10: Value<()> = Rc::new(RefCell::new(1_()));
-                std_pair_int__std_string_::new_3({ __tmp_10.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"four")
-                })
-            },
-            {
-                let __tmp_11: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__std_string_::new_3({ __tmp_11.as_pointer() }, {
-                    Ptr::<()>::from_string_literal(b"four")
-                })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i : Value<() > = Rc::new(RefCell::new(std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )  )) ;
@@ -290,17 +230,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _end: ()   = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()   } , )   ;
             CheckConsecutiveKeys_1(_pos, _end, 1_(), s.as_pointer())
         });
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         let k: Value<()> = Rc::new(RefCell::new({ (*eq.borrow()).first.clone() }));
         unimplemented!();
         unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -311,8 +251,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut a: TemplateConstructor = {
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(0_()));
-            TemplateConstructor::new({ __tmp_12.as_pointer() })
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
+            TemplateConstructor::new({ __tmp_0.as_pointer() })
         };
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         if !(unimplemented!()) {

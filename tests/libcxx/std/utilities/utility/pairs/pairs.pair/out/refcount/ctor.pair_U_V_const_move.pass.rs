@@ -769,31 +769,19 @@ const _: () = assert!(
 );
 pub fn test_6() -> () {
     {
-        let p1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_ConstMove__int_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        }));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_ConstMove__int_::new({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-        }));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

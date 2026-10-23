@@ -11,10 +11,7 @@ use std::rc::{Rc, Weak};
 pub struct Comp {}
 pub fn test_0() -> () {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut cnt: () = ({
-        let ___k: Value<()> = Rc::new(RefCell::new(1_()));
-        (*s.borrow()).count(___k.as_pointer())
-    });
+    let mut cnt: () = unimplemented!();
     unimplemented!();
     return true;
 }

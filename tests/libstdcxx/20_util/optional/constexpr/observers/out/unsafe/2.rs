@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let o: () = value_type { i: 51_() };
+    let o: () = unimplemented!();
     const _: () = assert!(true, "o->i == 51");;
     const _: () = assert!(true, "o->i == (*o).i");;
     const _: () = assert!(true, "&o->i == &(*o).i");;

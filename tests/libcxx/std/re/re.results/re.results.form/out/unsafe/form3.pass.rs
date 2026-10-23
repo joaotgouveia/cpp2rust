@@ -404,11 +404,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut m: () = unimplemented!();
         let s: [(); 12] = std::mem::transmute(*b"abcdefghijk\0");
         unimplemented!();
-        let mut fmt: () =
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { c"prefix: $`, match: $&, suffix: $\', m[1]: $1, m[2]: $2".as_ptr() },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut out: () = unimplemented!();
         unimplemented!();
     }
@@ -416,11 +412,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut m: () = unimplemented!();
         let s: [(); 12] = std::mem::transmute(*b"abcdefghijk\0");
         unimplemented!();
-        let mut fmt: () =
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { c"prefix: $`, match: $&, suffix: $\', m[1]: $1, m[2]: $2".as_ptr() },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut out: () = unimplemented!();
         unimplemented!();
     }
@@ -428,11 +420,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut m: () = unimplemented!();
         let s: [(); 12] = std::mem::transmute(*b"abcdefghijk\0");
         unimplemented!();
-        let mut fmt: () =
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { c"match: &, m[1]: \\1, m[2]: \\2".as_ptr() },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut out: () = unimplemented!();
         unimplemented!();
     };
@@ -443,23 +431,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             105 as (), 106 as (), 107 as (), 0 as (),
         ];
         unimplemented!();
-        let mut fmt: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                {
-                    [
-                        112 as (), 114 as (), 101 as (), 102 as (), 105 as (), 120 as (), 58 as (),
-                        32 as (), 36 as (), 96 as (), 44 as (), 32 as (), 109 as (), 97 as (),
-                        116 as (), 99 as (), 104 as (), 58 as (), 32 as (), 36 as (), 38 as (),
-                        44 as (), 32 as (), 115 as (), 117 as (), 102 as (), 102 as (), 105 as (),
-                        120 as (), 58 as (), 32 as (), 36 as (), 39 as (), 44 as (), 32 as (),
-                        109 as (), 91 as (), 49 as (), 93 as (), 58 as (), 32 as (), 36 as (),
-                        49 as (), 44 as (), 32 as (), 109 as (), 91 as (), 50 as (), 93 as (),
-                        58 as (), 32 as (), 36 as (), 50 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut out: () = unimplemented!();
         unimplemented!();
     }
@@ -470,23 +442,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             105 as (), 106 as (), 107 as (), 0 as (),
         ];
         unimplemented!();
-        let mut fmt: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                {
-                    [
-                        112 as (), 114 as (), 101 as (), 102 as (), 105 as (), 120 as (), 58 as (),
-                        32 as (), 36 as (), 96 as (), 44 as (), 32 as (), 109 as (), 97 as (),
-                        116 as (), 99 as (), 104 as (), 58 as (), 32 as (), 36 as (), 38 as (),
-                        44 as (), 32 as (), 115 as (), 117 as (), 102 as (), 102 as (), 105 as (),
-                        120 as (), 58 as (), 32 as (), 36 as (), 39 as (), 44 as (), 32 as (),
-                        109 as (), 91 as (), 49 as (), 93 as (), 58 as (), 32 as (), 36 as (),
-                        49 as (), 44 as (), 32 as (), 109 as (), 91 as (), 50 as (), 93 as (),
-                        58 as (), 32 as (), 36 as (), 50 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut out: () = unimplemented!();
         unimplemented!();
     }
@@ -497,20 +453,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             105 as (), 106 as (), 107 as (), 0 as (),
         ];
         unimplemented!();
-        let mut fmt: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                {
-                    [
-                        109 as (), 97 as (), 116 as (), 99 as (), 104 as (), 58 as (), 32 as (),
-                        38 as (), 44 as (), 32 as (), 109 as (), 91 as (), 49 as (), 93 as (),
-                        58 as (), 32 as (), 92 as (), 49 as (), 44 as (), 32 as (), 109 as (),
-                        91 as (), 50 as (), 93 as (), 58 as (), 32 as (), 92 as (), 50 as (),
-                        0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut fmt: () = unimplemented!();
         let mut out: () = unimplemented!();
         unimplemented!();
     }

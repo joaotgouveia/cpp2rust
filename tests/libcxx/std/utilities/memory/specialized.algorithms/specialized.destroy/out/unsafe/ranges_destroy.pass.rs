@@ -257,21 +257,25 @@ pub unsafe fn operator_add_3(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_4(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_5(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -355,7 +359,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -365,7 +369,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -471,7 +475,7 @@ impl Clone for Counted {
         unsafe { Counted::copy_from(self as *const Counted) }
     }
 }
-pub unsafe fn test_8() {
+pub unsafe fn test_9() {
     {
         let N: () = 5_();
         let mut alloc: () = unimplemented!();
@@ -493,7 +497,7 @@ pub unsafe fn test_8() {
         (unsafe {
             let ___first: *mut Counted = out;
             let ___last: *mut Counted = out.offset((N) as isize);
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_9))(___first, ___last)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
         (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, out, N) });
@@ -516,13 +520,13 @@ pub unsafe fn test_8() {
             i.prefix_inc();
         }
         unimplemented!();
-        let mut range : std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_ = std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { out } , { out . offset ( ( N ) as isize ) } , )  ;
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_9))(&mut range) });
+        let mut range: () = unimplemented!();
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(&mut range) });
         unimplemented!();
         (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, out, N) });
     }
 }
-pub unsafe fn test_10() {
+pub unsafe fn test_11() {
     {
         let N: () = 5_();
         let mut alloc: () = unimplemented!();
@@ -546,7 +550,7 @@ pub unsafe fn test_10() {
                 forward_iterator_Counted_ptr_::new_1({ out });
             let ___last: forward_iterator_Counted_ptr_ =
                 forward_iterator_Counted_ptr_::new_1({ out.offset((N) as isize) });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_9))(___first, ___last)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
         (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, out, N) });
@@ -569,18 +573,18 @@ pub unsafe fn test_10() {
             i.prefix_inc();
         }
         unimplemented!();
-        let mut range : std_ranges_subrange_forward_iterator_Counted_ptr___forward_iterator_Counted_ptr___std_ranges_subrange_kind_unsized_ = std_ranges_subrange_forward_iterator_Counted_ptr___forward_iterator_Counted_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_Counted_ptr_ :: new_1 ( { out } , )  } , { forward_iterator_Counted_ptr_ :: new_1 ( { out . offset ( ( N ) as isize ) } , )  } , )  ;
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_9))(&mut range) });
+        let mut range: () = unimplemented!();
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(&mut range) });
         unimplemented!();
         (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, out, N) });
     }
 }
-pub unsafe fn tests_11() -> () {
-    (unsafe { test_8() });
-    (unsafe { test_10() });
+pub unsafe fn tests_12() -> () {
+    (unsafe { test_9() });
+    (unsafe { test_11() });
     return true;
 }
-pub unsafe fn test_arrays_12() -> () {
+pub unsafe fn test_arrays_13() -> () {
     {
         let N: () = 5_();
         let M: () = 3_();
@@ -609,7 +613,7 @@ pub unsafe fn test_arrays_12() -> () {
         (unsafe {
             let ___first: *mut [Counted; 3] = buffer;
             let ___last: *mut [Counted; 3] = buffer.offset((N) as isize);
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_9))(___first, ___last)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
         (unsafe {
@@ -641,8 +645,8 @@ pub unsafe fn test_arrays_12() -> () {
             i.prefix_inc();
         }
         unimplemented!();
-        let mut range : std_ranges_subrange_Counted__ptr_arr3arr__Counted__ptr_arr3arr__std_ranges_subrange_kind_sized_ = std_ranges_subrange_Counted__ptr_arr3arr__Counted__ptr_arr3arr__std_ranges_subrange_kind_sized_ :: new_1 ( { buffer } , { buffer . offset ( ( N ) as isize ) } , )  ;
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_9))(&mut range) });
+        let mut range: () = unimplemented!();
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(&mut range) });
         unimplemented!();
         (unsafe {
             std_allocator_traits_std_allocator_Countedarr3arr__::deallocate(&mut alloc, buffer, N)
@@ -681,7 +685,7 @@ pub unsafe fn test_arrays_12() -> () {
         (unsafe {
             let ___first: *mut [[Counted; 3]; 3] = buffer;
             let ___last: *mut [[Counted; 3]; 3] = buffer.offset((N) as isize);
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_9))(___first, ___last)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
         (unsafe {
@@ -723,7 +727,7 @@ pub unsafe fn test_arrays_12() -> () {
         (unsafe {
             let ___first: *mut [[Counted; 3]; 3] = buffer;
             let ___last: *mut [[Counted; 3]; 3] = buffer.offset((N) as isize);
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_9))(___first, ___last)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
         (unsafe {
@@ -750,8 +754,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_11() });
-    (unsafe { test_arrays_12() });
+    (unsafe { tests_12() });
+    (unsafe { test_arrays_13() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

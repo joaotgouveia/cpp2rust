@@ -88,36 +88,24 @@ pub unsafe fn test_9() -> () {
     {
         let t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let t2: [(); 4] = [0_(), 5_(), 0_(), 5_()];
-        let mut c1: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         (unsafe { do_unique_7(&mut c1, 3_()) });
         unimplemented!();
     }
     {
         let t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
         let t2: [(); 1] = [0_()];
-        let mut c1: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         (unsafe { do_unique_7(&mut c1, 3_()) });
         unimplemented!();
     }
     {
         let t1: [(); 3] = [5_(), 5_(), 5_()];
         let t2: [(); 1] = [5_()];
-        let mut c1: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         (unsafe { do_unique_7(&mut c1, 2_()) });
         unimplemented!();
     }
@@ -130,48 +118,32 @@ pub unsafe fn test_9() -> () {
     {
         let t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
         let t2: [(); 2] = [5_(), 0_()];
-        let mut c1: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         (unsafe { do_unique_7(&mut c1, 2_()) });
         unimplemented!();
     }
     {
         let t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let t2: [(); 4] = [0_(), 5_(), 0_(), 5_()];
-        let mut c1: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         (unsafe { do_unique_8(&mut c1, 3_()) });
         unimplemented!();
     }
     {
         let t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
         let t2: [(); 1] = [0_()];
-        let mut c1: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         (unsafe { do_unique_8(&mut c1, 3_()) });
         unimplemented!();
     }
     {
         let t1: [(); 3] = [5_(), 5_(), 5_()];
         let t2: [(); 1] = [5_()];
-        let mut c1: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         (unsafe { do_unique_8(&mut c1, 2_()) });
         unimplemented!();
     }
@@ -184,12 +156,8 @@ pub unsafe fn test_9() -> () {
     {
         let t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
         let t2: [(); 2] = [5_(), 0_()];
-        let mut c1: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
-        let mut c2: () = std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut c1: () = unimplemented!();
+        let mut c2: () = unimplemented!();
         (unsafe { do_unique_8(&mut c1, 2_()) });
         unimplemented!();
     }

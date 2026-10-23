@@ -27,10 +27,10 @@ pub fn test_unordered_map_1() {
         i.postfix_inc();
     }
     tmp = Ptr::alloc(unimplemented!());
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((*i.borrow()) < 150000_()) {
+    let mut i: () = 0_();
+    'loop_: while (i < 150000_()) {
         unimplemented!();
-        (*i.borrow_mut()).postfix_inc();
+        i.postfix_inc();
     }
     unimplemented!();
     tmp.delete();

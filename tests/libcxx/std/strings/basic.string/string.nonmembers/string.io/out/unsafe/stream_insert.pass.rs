@@ -250,20 +250,14 @@ impl min_allocator_wchar_t_ {
 pub unsafe fn test_4() {
     {
         let mut out: () = unimplemented!();
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"some text".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut out: () = unimplemented!();
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"some text".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -271,34 +265,14 @@ pub unsafe fn test_4() {
     };
     {
         let mut out: () = unimplemented!();
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    [
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut out: () = unimplemented!();
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                {
-                    [
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -308,20 +282,14 @@ pub unsafe fn test_4() {
 pub unsafe fn test_5() {
     {
         let mut out: () = unimplemented!();
-        let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { c"some text".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut out: () = unimplemented!();
-        let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { c"some text".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -329,34 +297,14 @@ pub unsafe fn test_5() {
     };
     {
         let mut out: () = unimplemented!();
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t__::new_1(
-                {
-                    [
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut out: () = unimplemented!();
-        let mut s: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t__::new_1(
-                {
-                    [
-                        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (),
-                        120 as (), 116 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

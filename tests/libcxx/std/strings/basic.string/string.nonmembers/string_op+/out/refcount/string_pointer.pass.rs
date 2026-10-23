@@ -164,22 +164,13 @@ pub fn test_string_6() {
         let mut k: () = 0_();
         'loop_: while (k != 4_()) {
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();
@@ -235,22 +226,13 @@ pub fn test_string_7() {
         let mut k: () = 0_();
         'loop_: while (k != 4_()) {
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();
@@ -306,22 +288,13 @@ pub fn test_string_8() {
         let mut k: () = 0_();
         'loop_: while (k != 4_()) {
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();

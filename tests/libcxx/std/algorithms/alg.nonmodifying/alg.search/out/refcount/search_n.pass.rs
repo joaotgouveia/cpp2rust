@@ -411,23 +411,29 @@ pub fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_12(_i, n)
     });
 }
-pub fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_14(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_15(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -473,7 +479,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_17(
+            operator_cmp_18(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -498,7 +504,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_16(
+            operator_eq_17(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -582,150 +588,47 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_18() -> () {
-    {
-        let a: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_(), 6_()])));
-        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        let a: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([7_(), 7_(), 3_(), 7_(), 3_(), 6_()])));
-        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([9_(), 3_(), 6_(), 4_(), 4_()])));
-        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([9_(), 3_(), 6_(), 4_(), 8_()])));
-        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 1_(), 1_(), 1_()])));
-        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 3_(), 3_()])));
-        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([6_(), 7_(), 8_()])));
-        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        {
-            let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                6_(),
-                6_(),
-                8_(),
-                6_(),
-                6_(),
-                8_(),
-                6_(),
-                6_(),
-                8_(),
-            ])));
-            let ret: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-        }
-        {
-            let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                6_(),
-                8_(),
-                8_(),
-                6_(),
-                6_(),
-                8_(),
-                6_(),
-                6_(),
-                8_(),
-            ])));
-            let ret: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-        }
-        {
-            let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                6_(),
-                6_(),
-                8_(),
-                6_(),
-                6_(),
-                8_(),
-                6_(),
-                6_(),
-                6_(),
-            ])));
-            let ret: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-        }
-    }
-    return true;
-}
 pub fn test_19() -> () {
     {
         let a: Value<Box<[()]>> =
             Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_(), 6_()])));
-        let ret: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let a: Value<Box<[()]>> =
             Rc::new(RefCell::new(Box::new([7_(), 7_(), 3_(), 7_(), 3_(), 6_()])));
-        let ret: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([9_(), 3_(), 6_(), 4_(), 4_()])));
-        let ret: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([9_(), 3_(), 6_(), 4_(), 8_()])));
-        let ret: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 1_(), 1_(), 1_()])));
-        let ret: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 3_(), 3_()])));
-        let ret: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([6_(), 7_(), 8_()])));
-        let ret: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ret: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -741,7 +644,7 @@ pub fn test_19() -> () {
                 6_(),
                 8_(),
             ])));
-            let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            let ret: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
@@ -757,7 +660,7 @@ pub fn test_19() -> () {
                 6_(),
                 8_(),
             ])));
-            let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            let ret: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
@@ -773,7 +676,7 @@ pub fn test_19() -> () {
                 6_(),
                 6_(),
             ])));
-            let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            let ret: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
@@ -781,6 +684,109 @@ pub fn test_19() -> () {
     return true;
 }
 pub fn test_20() -> () {
+    {
+        let a: Value<Box<[()]>> =
+            Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_(), 6_()])));
+        let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        let a: Value<Box<[()]>> =
+            Rc::new(RefCell::new(Box::new([7_(), 7_(), 3_(), 7_(), 3_(), 6_()])));
+        let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([9_(), 3_(), 6_(), 4_(), 4_()])));
+        let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([9_(), 3_(), 6_(), 4_(), 8_()])));
+        let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 1_(), 1_(), 1_()])));
+        let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 3_(), 3_()])));
+        let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([6_(), 7_(), 8_()])));
+        let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ret: Value<bidirectional_iterator_const_int_ptr_> =
+            Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+    }
+    {
+        {
+            let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+                6_(),
+                6_(),
+                8_(),
+                6_(),
+                6_(),
+                8_(),
+                6_(),
+                6_(),
+                8_(),
+            ])));
+            let ret: Value<bidirectional_iterator_const_int_ptr_> =
+                Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+        }
+        {
+            let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+                6_(),
+                8_(),
+                8_(),
+                6_(),
+                6_(),
+                8_(),
+                6_(),
+                6_(),
+                8_(),
+            ])));
+            let ret: Value<bidirectional_iterator_const_int_ptr_> =
+                Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+        }
+        {
+            let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+                6_(),
+                6_(),
+                8_(),
+                6_(),
+                6_(),
+                8_(),
+                6_(),
+                6_(),
+                6_(),
+            ])));
+            let ret: Value<bidirectional_iterator_const_int_ptr_> =
+                Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+        }
+    }
+    return true;
+}
+pub fn test_21() -> () {
     {
         let a: Value<Box<[()]>> =
             Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_(), 6_()])));
@@ -903,9 +909,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_18() });
     ({ test_19() });
     ({ test_20() });
+    ({ test_21() });
     const _: () = assert!(true, "test<forward_iterator<const int*> >()");;
     const _: () = assert!(true, "test<bidirectional_iterator<const int*> >()");;
     const _: () = assert!(true, "test<random_access_iterator<const int*> >()");;

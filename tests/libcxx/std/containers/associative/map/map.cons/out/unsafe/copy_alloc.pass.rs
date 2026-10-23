@@ -345,23 +345,7 @@ impl std::cmp::PartialEq for min_allocator_std_pair_const_int__int__ {
 impl std::cmp::Eq for min_allocator_std_pair_const_int__int__ {}
 pub unsafe fn test_alloc_11(new_alloc: *const ()) -> () {
     {
-        let mut arr: [(); 3] = [
-            {
-                let mut __tmp_0: () = 1_();
-                let mut __tmp_1: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-            },
-            {
-                let mut __tmp_2: () = 2_();
-                let mut __tmp_3: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
-            },
-            {
-                let mut __tmp_4: () = 3_();
-                let mut __tmp_5: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
-            },
-        ];
+        let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
         unimplemented!();
@@ -386,31 +370,11 @@ pub unsafe fn test_alloc_11(new_alloc: *const ()) -> () {
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let mut __tmp_6: () = 1_();
-                let mut __tmp_7: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
-            },
-            {
-                let mut __tmp_8: () = 2_();
-                let mut __tmp_9: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
-            },
-            {
-                let mut __tmp_10: () = 3_();
-                let mut __tmp_11: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_10 }, { &mut __tmp_11 })
-            },
-            {
-                let mut __tmp_12: () = 4_();
-                let mut __tmp_13: () = 7_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_12 }, { &mut __tmp_13 })
-            },
-            {
-                let mut __tmp_14: () = 5_();
-                let mut __tmp_15: () = 0_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_14 }, { &mut __tmp_15 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
@@ -433,23 +397,7 @@ pub unsafe fn test_alloc_11(new_alloc: *const ()) -> () {
 }
 pub unsafe fn test_alloc_12(new_alloc: *const test_allocator_std_pair_const_int__int__) -> () {
     {
-        let mut arr: [(); 3] = [
-            {
-                let mut __tmp_16: () = 1_();
-                let mut __tmp_17: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_16 }, { &mut __tmp_17 })
-            },
-            {
-                let mut __tmp_18: () = 2_();
-                let mut __tmp_19: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_18 }, { &mut __tmp_19 })
-            },
-            {
-                let mut __tmp_20: () = 3_();
-                let mut __tmp_21: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_20 }, { &mut __tmp_21 })
-            },
-        ];
+        let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
         unimplemented!();
@@ -474,31 +422,11 @@ pub unsafe fn test_alloc_12(new_alloc: *const test_allocator_std_pair_const_int_
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let mut __tmp_22: () = 1_();
-                let mut __tmp_23: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_22 }, { &mut __tmp_23 })
-            },
-            {
-                let mut __tmp_24: () = 2_();
-                let mut __tmp_25: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_24 }, { &mut __tmp_25 })
-            },
-            {
-                let mut __tmp_26: () = 3_();
-                let mut __tmp_27: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_26 }, { &mut __tmp_27 })
-            },
-            {
-                let mut __tmp_28: () = 4_();
-                let mut __tmp_29: () = 7_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_28 }, { &mut __tmp_29 })
-            },
-            {
-                let mut __tmp_30: () = 5_();
-                let mut __tmp_31: () = 0_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_30 }, { &mut __tmp_31 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
@@ -521,23 +449,7 @@ pub unsafe fn test_alloc_12(new_alloc: *const test_allocator_std_pair_const_int_
 }
 pub unsafe fn test_alloc_13(new_alloc: *const min_allocator_std_pair_const_int__int__) -> () {
     {
-        let mut arr: [(); 3] = [
-            {
-                let mut __tmp_32: () = 1_();
-                let mut __tmp_33: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_32 }, { &mut __tmp_33 })
-            },
-            {
-                let mut __tmp_34: () = 2_();
-                let mut __tmp_35: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_34 }, { &mut __tmp_35 })
-            },
-            {
-                let mut __tmp_36: () = 3_();
-                let mut __tmp_37: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_36 }, { &mut __tmp_37 })
-            },
-        ];
+        let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
         unimplemented!();
@@ -562,31 +474,11 @@ pub unsafe fn test_alloc_13(new_alloc: *const min_allocator_std_pair_const_int__
     }
     {
         let mut arr: [(); 5] = [
-            {
-                let mut __tmp_38: () = 1_();
-                let mut __tmp_39: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_38 }, { &mut __tmp_39 })
-            },
-            {
-                let mut __tmp_40: () = 2_();
-                let mut __tmp_41: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_40 }, { &mut __tmp_41 })
-            },
-            {
-                let mut __tmp_42: () = 3_();
-                let mut __tmp_43: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_42 }, { &mut __tmp_43 })
-            },
-            {
-                let mut __tmp_44: () = 4_();
-                let mut __tmp_45: () = 7_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_44 }, { &mut __tmp_45 })
-            },
-            {
-                let mut __tmp_46: () = 5_();
-                let mut __tmp_47: () = 0_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_46 }, { &mut __tmp_47 })
-            },
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
         ];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
@@ -623,23 +515,7 @@ pub unsafe fn test_14() -> () {
         test_alloc_13(&mut _new_alloc)
     });
     {
-        let mut arr: [(); 3] = [
-            {
-                let mut __tmp_48: () = 1_();
-                let mut __tmp_49: () = 1_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_48 }, { &mut __tmp_49 })
-            },
-            {
-                let mut __tmp_50: () = 2_();
-                let mut __tmp_51: () = 3_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_50 }, { &mut __tmp_51 })
-            },
-            {
-                let mut __tmp_52: () = 3_();
-                let mut __tmp_53: () = 6_();
-                std_pair_const_int__int_::new_1({ &mut __tmp_52 }, { &mut __tmp_53 })
-            },
-        ];
+        let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
         let orig: () = unimplemented!();
         let mut copy: () = unimplemented!();
         unimplemented!();

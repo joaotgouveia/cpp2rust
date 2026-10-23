@@ -81,7 +81,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 1_(), 2_()];
         let mut c: () = unimplemented!();
         let mut i: () = unimplemented!();
-        let mut j: () = (unsafe { next_4(i.clone(), None) });
+        let mut j: () = unimplemented!();
         let mut k: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -121,7 +121,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 1_(), 2_()];
         let mut c: () = unimplemented!();
         let mut i: () = unimplemented!();
-        let mut j: () = (unsafe { next_5(i.clone(), None) });
+        let mut j: () = unimplemented!();
         let mut k: () = unimplemented!();
         unimplemented!();
         unimplemented!();

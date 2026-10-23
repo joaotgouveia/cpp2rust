@@ -1034,23 +1034,29 @@ pub fn operator_add_37(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_36(_i, n)
     });
 }
-pub fn iter_swap_38(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_38(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_39(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_39(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_40(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_40(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_41(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_41(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_42(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -1096,7 +1102,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_41(
+            operator_cmp_42(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1121,7 +1127,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_40(
+            operator_eq_41(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1205,25 +1211,25 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn operator_eq_42(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_eq_43(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_43(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ne_44(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_44(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_lt_45(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_45(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_le_46(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_46(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_gt_47(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_47(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ge_48(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_48(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
+pub fn operator_cmp_49(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
@@ -1257,7 +1263,7 @@ impl MoveOnly {
 impl std::cmp::Ord for MoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_48(
+            operator_cmp_49(
                 Rc::new(RefCell::new(MoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -1278,7 +1284,7 @@ impl std::cmp::PartialOrd for MoveOnly {
 impl std::cmp::PartialEq for MoveOnly {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_42(
+            operator_eq_43(
                 Rc::new(RefCell::new(MoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -1297,25 +1303,25 @@ impl Default for MoveOnly {
         { MoveOnly::new(None) }
     }
 }
-pub fn operator_eq_49(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_eq_50(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_50(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ne_51(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_51(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_lt_52(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_52(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_le_53(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_53(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_gt_54(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_54(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ge_55(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_55(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_cmp_56(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
@@ -1347,7 +1353,7 @@ impl TrivialMoveOnly {
 impl std::cmp::Ord for TrivialMoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_55(
+            operator_cmp_56(
                 Rc::new(RefCell::new(TrivialMoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -1368,7 +1374,7 @@ impl std::cmp::PartialOrd for TrivialMoveOnly {
 impl std::cmp::PartialEq for TrivialMoveOnly {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_49(
+            operator_eq_50(
                 Rc::new(RefCell::new(TrivialMoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -1388,40 +1394,8 @@ impl Default for TrivialMoveOnly {
     }
 }
 thread_local!(
-    pub static LargeN_56: Value<()> = Rc::new(RefCell::new(128_()));
+    pub static LargeN_57: Value<()> = Rc::new(RefCell::new(128_()));
 );
-pub fn test_57() -> () {
-    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while (i < 7_()) {
-        x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
-        (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let work: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
 pub fn test_58() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
@@ -1463,257 +1437,15 @@ pub fn test_59() -> () {
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
     ])));
     let mut x: () = 1_();
     let mut i: () = 0_();
-    'loop_: while (i < 128_()) {
+    'loop_: while (i < 7_()) {
         x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
         (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
         i.prefix_inc();
     }
     let work: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -2011,70 +1743,6 @@ pub fn test_61() -> () {
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-    ])));
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while (i < 7_()) {
-        x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
-        (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let work: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_62() -> () {
-    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while (i < 7_()) {
-        x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
-        (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let work: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_63() -> () {
-    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -2204,6 +1872,159 @@ pub fn test_63() -> () {
         (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
         i.prefix_inc();
     }
+    let work: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub fn test_62() -> () {
+    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while (i < 7_()) {
+        x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
+        (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
     let work: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
         MoveOnly::new(None),
         MoveOnly::new(None),
@@ -2212,120 +2033,31 @@ pub fn test_63() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
         MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
-        MoveOnly::new(None),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub fn test_63() -> () {
+    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while (i < 7_()) {
+        x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
+        (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
+    let work: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
         MoveOnly::new(None),
         MoveOnly::new(None),
         MoveOnly::new(None),
@@ -2623,38 +2355,6 @@ pub fn test_65() -> () {
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-    ])));
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while (i < 7_()) {
-        x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
-        (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
-        i.prefix_inc();
-    }
-    let work: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_66() -> () {
-    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -2784,128 +2484,160 @@ pub fn test_66() -> () {
         (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
         i.prefix_inc();
     }
+    let work: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+        MoveOnly::new(None),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub fn test_66() -> () {
+    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while (i < 7_()) {
+        x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
+        (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
     let work: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
@@ -2929,6 +2661,280 @@ pub fn test_67() -> () {
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while (i < 128_()) {
+        x = { ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_()) };
+        (*orig.borrow_mut())[(i) as usize] = (x).wrapping_rem(1000_());
+        i.prefix_inc();
+    }
+    let work: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub fn test_68() -> () {
+    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
     let mut x: () = 1_();
     let mut i: () = 0_();
@@ -2952,7 +2958,7 @@ pub fn test_67() -> () {
     unimplemented!();
     return true;
 }
-pub fn test_68() -> () {
+pub fn test_69() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
         unimplemented!(),
@@ -3219,77 +3225,6 @@ pub fn test_68() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
         MoveOnly::new(None),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_pointers_69() -> () {
-    let data: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    let orig: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(Box::new([
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-    ])));
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while (i < 17_()) {
-        (*orig.borrow_mut())[(i) as usize] =
-            ((data.as_pointer() as Ptr<()>).offset((x).wrapping_rem(258_())));
-        i.prefix_inc();
-    }
-    let work: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(Box::new([
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
-        Ptr::<()>::null(),
     ])));
     unimplemented!();
     unimplemented!();
@@ -3865,6 +3800,77 @@ pub fn test_pointers_77() -> () {
     unimplemented!();
     return true;
 }
+pub fn test_pointers_78() -> () {
+    let data: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let orig: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(Box::new([
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+    ])));
+    let mut x: () = 1_();
+    let mut i: () = 0_();
+    'loop_: while (i < 17_()) {
+        (*orig.borrow_mut())[(i) as usize] =
+            ((data.as_pointer() as Ptr<()>).offset((x).wrapping_rem(258_())));
+        i.prefix_inc();
+    }
+    let work: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(Box::new([
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+        Ptr::<()>::null(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -3885,7 +3891,6 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_57() });
     ({ test_58() });
     ({ test_59() });
     ({ test_60() });
@@ -3893,19 +3898,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_62() });
     ({ test_63() });
     ({ test_64() });
-    ({ test_pointers_69() });
+    ({ test_65() });
     ({ test_pointers_70() });
     ({ test_pointers_71() });
     ({ test_pointers_72() });
     ({ test_pointers_73() });
     ({ test_pointers_74() });
-    ({ test_65() });
+    ({ test_pointers_75() });
     ({ test_66() });
     ({ test_67() });
     ({ test_68() });
-    ({ test_pointers_75() });
+    ({ test_69() });
     ({ test_pointers_76() });
     ({ test_pointers_77() });
+    ({ test_pointers_78() });
     const _: () = assert!(true, "test<7, int, int*>()");;
     const _: () = assert!(true, "test<7, int, random_access_iterator<int*>>()");;
     const _: () = assert!(true, "test<7, int, contiguous_iterator<int*>>()");;
@@ -4744,5 +4750,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = LargeN_56.with(|_| ());
+    let _ = LargeN_57.with(|_| ());
 }

@@ -173,60 +173,24 @@ pub fn test_string_9() {
         let mut k: () = 0_();
         'loop_: while (k != 4_()) {
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    );
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
-                let rhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let mut lhs: () = unimplemented!();
+                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
-                let rhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
             }
             k.prefix_inc();
@@ -280,60 +244,24 @@ pub fn test_string_10() {
         let mut k: () = 0_();
         'loop_: while (k != 4_()) {
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    );
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
-                let rhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let mut lhs: () = unimplemented!();
+                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
-                let rhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
             }
             k.prefix_inc();
@@ -387,60 +315,24 @@ pub fn test_string_11() {
         let mut k: () = 0_();
         'loop_: while (k != 4_()) {
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    );
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
-                let mut rhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    );
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let mut lhs: () =
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    );
-                let rhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let mut lhs: () = unimplemented!();
+                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone() },
-                        None,
-                    ),
-                ));
-                let rhs: Value<()> = Rc::new(RefCell::new(
-                    std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                        { ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone() },
-                        None,
-                    ),
-                ));
+                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
             }
             k.prefix_inc();
@@ -455,11 +347,7 @@ pub fn test_12() -> () {
     {
         let mut lhs: () = unimplemented!();
         unimplemented!();
-        let mut rhs: () =
-            std_basic_string_char__std_char_traits_char___tiny_size_allocator_29__char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            );
+        let mut rhs: () = unimplemented!();
         let mut result: () = unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -383,9 +383,9 @@ pub fn test_22() {
     ({ test0_12(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     ({ test0_12(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     ({ test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    ({ test0_13(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    ({ test0_13(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    ({ test0_13(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    ({ test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    ({ test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    ({ test0_13(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub fn test_23() {
     ({ test0_14(unimplemented!(), 1_(), unimplemented!(), 0_()) });
@@ -409,9 +409,9 @@ pub fn test_23() {
     ({ test0_14(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     ({ test0_14(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     ({ test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    ({ test0_15(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    ({ test0_15(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    ({ test0_15(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    ({ test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    ({ test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    ({ test0_15(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub fn test_24() {
     ({ test0_16(unimplemented!(), 1_(), unimplemented!(), 0_()) });
@@ -435,9 +435,9 @@ pub fn test_24() {
     ({ test0_16(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     ({ test0_16(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     ({ test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    ({ test0_17(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    ({ test0_17(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    ({ test0_17(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    ({ test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    ({ test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    ({ test0_17(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub fn test_25() {
     ({ test0_18(unimplemented!(), 1_(), unimplemented!(), 0_()) });
@@ -461,9 +461,9 @@ pub fn test_25() {
     ({ test0_18(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     ({ test0_18(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     ({ test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    ({ test0_19(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    ({ test0_19(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    ({ test0_19(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    ({ test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    ({ test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    ({ test0_19(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub fn test_26() {
     ({ test0_20(unimplemented!(), 1_(), unimplemented!(), 0_()) });
@@ -487,9 +487,9 @@ pub fn test_26() {
     ({ test0_20(unimplemented!(), 2_(), unimplemented!(), 2_()) });
     ({ test0_20(unimplemented!(), 3_(), unimplemented!(), 0_()) });
     ({ test0_21(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
-    ({ test0_21(unimplemented!(), 1_(), unimplemented!(), 2_()) });
-    ({ test0_21(unimplemented!(), 2_(), unimplemented!(), 1_()) });
-    ({ test0_21(unimplemented!(), 3_(), unimplemented!(), 0_()) });
+    ({ test0_21(unimplemented!(), unimplemented!(), unimplemented!(), 2_()) });
+    ({ test0_21(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
+    ({ test0_21(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub fn test_27() -> () {
     ({ test_22() });

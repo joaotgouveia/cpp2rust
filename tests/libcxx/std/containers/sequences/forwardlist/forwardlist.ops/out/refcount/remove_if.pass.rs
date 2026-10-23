@@ -136,16 +136,8 @@ pub fn test_11() -> () {
     {
         let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(g_10)
@@ -158,11 +150,7 @@ pub fn test_11() -> () {
     }
     {
         let mut t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
@@ -177,16 +165,8 @@ pub fn test_11() -> () {
     {
         let mut t1: [(); 3] = [5_(), 5_(), 5_()];
         let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(g_10)
@@ -213,16 +193,8 @@ pub fn test_11() -> () {
     {
         let mut t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
         let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(g_10)
@@ -244,12 +216,7 @@ pub fn test_11() -> () {
             11_(),
         ])));
         let mut a2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
-        let c: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_PredLWG526__std_allocator_PredLWG526__::new_1(
-                { (a1.as_pointer() as Ptr<()>) },
-                { (a1.as_pointer() as Ptr<()>).offset((7_()) as isize) },
-            ),
-        ));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _l: Ptr<()> = c.as_pointer();
             let _pred: () = unimplemented!();
@@ -267,16 +234,8 @@ pub fn test_11() -> () {
     {
         let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
         let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(g_10)
@@ -289,11 +248,7 @@ pub fn test_11() -> () {
     }
     {
         let mut t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
@@ -308,16 +263,8 @@ pub fn test_11() -> () {
     {
         let mut t1: [(); 3] = [5_(), 5_(), 5_()];
         let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(g_10)
@@ -344,16 +291,8 @@ pub fn test_11() -> () {
     {
         let mut t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
         let mut t2: [(); 3] = [5_(), 5_(), 5_()];
-        let c1: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
-        let c2: Value<()> = Rc::new(RefCell::new(
-            std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                unimplemented!()
-            }),
-        ));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
                 FnPtr::<fn(()) -> ()>::new(g_10)

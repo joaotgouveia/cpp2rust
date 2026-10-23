@@ -39,15 +39,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut str: () = unimplemented!();
     let mut ch: char_ascii = char_ascii::new_1({ ('A' as ()) });
-    (unsafe {
-        let ___pos: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___wrap_iter_const_char_ascii_ptr_::new_1({ &mut __tmp_0 })
-        };
-        let ___first: *mut char_ascii = (&mut ch as *mut char_ascii);
-        let ___last: *mut char_ascii = (&mut ch as *mut char_ascii).offset((1_()) as isize);
-        str.insert_109_struct_char_ascii_ptr_0(___pos, ___first, ___last)
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

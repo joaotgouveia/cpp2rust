@@ -736,21 +736,25 @@ pub unsafe fn operator_add_26(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_27(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_28(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_28(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_29(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_29(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_30(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_30(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_31(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -834,7 +838,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_30(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_31(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -844,7 +848,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_29(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_30(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -945,7 +949,7 @@ impl Default for AssignableFromMoveOnly {
         unsafe { AssignableFromMoveOnly::new_2() }
     }
 }
-pub unsafe fn test_constexpr_31() -> () {
+pub unsafe fn test_constexpr_32() -> () {
     let mut ia: [(); 5] = [0_(), 1_(), 2_(), 2_(), 4_()];
     let mut ib: [(); 5] = [0_(), 0_(), 0_(), 0_(), 0_()];
     let expected: [(); 4] = [0_(), 1_(), 2_(), 4_()];
@@ -953,7 +957,7 @@ pub unsafe fn test_constexpr_31() -> () {
     return (((it) == (unimplemented!().offset((unimplemented!()) as isize))) && ((*it) == (0_())))
         && (unimplemented!());
 }
-pub unsafe fn test_32() {
+pub unsafe fn test_33() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1027,86 +1031,12 @@ pub unsafe fn test_32() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_33() {
-    let ia: [(); 1] = [0_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ja: [(); 1] = [-1_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ib: [(); 2] = [0_(), 1_()];
-    let sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jb: [(); 2] = [-1_(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: [(); 2] = [0_(), 0_()];
-    let sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jc: [(); 2] = [-1_(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: [(); 3] = [0_(), 0_(), 1_()];
-    let sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jd: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
-    let se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut je: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
-    let sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jg: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: [(); 3] = [0_(), 1_(), 1_()];
-    let sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jh: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
-    let si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ji: [(); 7] = [
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
 pub unsafe fn test_34() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -1180,7 +1110,7 @@ pub unsafe fn test_35() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -1254,7 +1184,7 @@ pub unsafe fn test_36() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -1328,6 +1258,80 @@ pub unsafe fn test_37() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ib: [(); 2] = [0_(), 1_()];
+    let sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jb: [(); 2] = [-1_(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: [(); 2] = [0_(), 0_()];
+    let sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jc: [(); 2] = [-1_(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: [(); 3] = [0_(), 0_(), 1_()];
+    let sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jd: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
+    let se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut je: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
+    let sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jg: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: [(); 3] = [0_(), 1_(), 1_()];
+    let sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jh: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
+    let si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ji: [(); 7] = [
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_38() {
+    let ia: [(); 1] = [0_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ja: [(); 1] = [-1_()];
     let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1397,86 +1401,12 @@ pub unsafe fn test_37() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_38() {
-    let ia: [(); 1] = [0_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ja: [(); 1] = [-1_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ib: [(); 2] = [0_(), 1_()];
-    let sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jb: [(); 2] = [-1_(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: [(); 2] = [0_(), 0_()];
-    let sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jc: [(); 2] = [-1_(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: [(); 3] = [0_(), 0_(), 1_()];
-    let sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jd: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
-    let se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut je: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
-    let sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jg: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: [(); 3] = [0_(), 1_(), 1_()];
-    let sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jh: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
-    let si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ji: [(); 7] = [
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
 pub unsafe fn test_39() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -1550,7 +1480,7 @@ pub unsafe fn test_40() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -1624,7 +1554,7 @@ pub unsafe fn test_41() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -1698,6 +1628,80 @@ pub unsafe fn test_42() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ib: [(); 2] = [0_(), 1_()];
+    let sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jb: [(); 2] = [-1_(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: [(); 2] = [0_(), 0_()];
+    let sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jc: [(); 2] = [-1_(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: [(); 3] = [0_(), 0_(), 1_()];
+    let sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jd: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
+    let se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut je: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
+    let sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jg: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: [(); 3] = [0_(), 1_(), 1_()];
+    let sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jh: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
+    let si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ji: [(); 7] = [
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_43() {
+    let ia: [(); 1] = [0_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ja: [(); 1] = [-1_()];
     let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1767,86 +1771,12 @@ pub unsafe fn test_42() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_43() {
-    let ia: [(); 1] = [0_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ja: [(); 1] = [-1_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ib: [(); 2] = [0_(), 1_()];
-    let sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jb: [(); 2] = [-1_(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: [(); 2] = [0_(), 0_()];
-    let sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jc: [(); 2] = [-1_(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: [(); 3] = [0_(), 0_(), 1_()];
-    let sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jd: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
-    let se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut je: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
-    let sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jg: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: [(); 3] = [0_(), 1_(), 1_()];
-    let sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jh: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
-    let si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ji: [(); 7] = [
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
 pub unsafe fn test_44() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -1920,7 +1850,7 @@ pub unsafe fn test_45() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -1994,7 +1924,7 @@ pub unsafe fn test_46() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -2068,6 +1998,80 @@ pub unsafe fn test_47() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ib: [(); 2] = [0_(), 1_()];
+    let sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jb: [(); 2] = [-1_(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: [(); 2] = [0_(), 0_()];
+    let sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jc: [(); 2] = [-1_(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: [(); 3] = [0_(), 0_(), 1_()];
+    let sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jd: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
+    let se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut je: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
+    let sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jg: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: [(); 3] = [0_(), 1_(), 1_()];
+    let sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jh: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
+    let si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ji: [(); 7] = [
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_48() {
+    let ia: [(); 1] = [0_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ja: [(); 1] = [-1_()];
     let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2137,86 +2141,12 @@ pub unsafe fn test_47() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_48() {
-    let ia: [(); 1] = [0_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ja: [(); 1] = [-1_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ib: [(); 2] = [0_(), 1_()];
-    let sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jb: [(); 2] = [-1_(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: [(); 2] = [0_(), 0_()];
-    let sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jc: [(); 2] = [-1_(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: [(); 3] = [0_(), 0_(), 1_()];
-    let sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jd: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
-    let se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut je: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
-    let sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jg: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: [(); 3] = [0_(), 1_(), 1_()];
-    let sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut jh: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
-    let si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ji: [(); 7] = [
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
 pub unsafe fn test_49() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -2290,7 +2220,7 @@ pub unsafe fn test_50() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -2364,7 +2294,7 @@ pub unsafe fn test_51() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     let ib: [(); 2] = [0_(), 1_()];
@@ -2438,6 +2368,80 @@ pub unsafe fn test_52() {
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ja: [(); 1] = [-1_()];
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ib: [(); 2] = [0_(), 1_()];
+    let sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jb: [(); 2] = [-1_(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: [(); 2] = [0_(), 0_()];
+    let sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jc: [(); 2] = [-1_(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: [(); 3] = [0_(), 0_(), 1_()];
+    let sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jd: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: [(); 4] = [0_(), 0_(), 1_(), 0_()];
+    let se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut je: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: [(); 4] = [0_(), 0_(), 1_(), 1_()];
+    let sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jg: [(); 4] = [-1_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: [(); 3] = [0_(), 1_(), 1_()];
+    let sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut jh: [(); 3] = [-1_(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: [(); 7] = [0_(), 1_(), 1_(), 1_(), 2_(), 2_(), 2_()];
+    let si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ji: [(); 7] = [
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_53() {
+    let ia: [(); 1] = [0_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ja: [(); 1] = [-1_()];
     let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2507,7 +2511,7 @@ pub unsafe fn test_52() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_53() {
+pub unsafe fn test_54() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -2581,7 +2585,7 @@ pub unsafe fn test_53() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_54() {
+pub unsafe fn test_55() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -2655,7 +2659,7 @@ pub unsafe fn test_54() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_55() {
+pub unsafe fn test_56() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -2729,7 +2733,7 @@ pub unsafe fn test_55() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_56() {
+pub unsafe fn test_57() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -2803,7 +2807,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_57() {
+pub unsafe fn test_58() {
     let ia: [(); 1] = [0_()];
     let sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -2893,7 +2897,6 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_32() });
     (unsafe { test_33() });
     (unsafe { test_34() });
     (unsafe { test_35() });
@@ -2919,6 +2922,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_55() });
     (unsafe { test_56() });
     (unsafe { test_57() });
+    (unsafe { test_58() });
     {
         let mut in_: [MoveOnly; 5] = [
             MoveOnly::new({ Some(1_()) }),

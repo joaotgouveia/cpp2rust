@@ -281,9 +281,7 @@ impl function_pointer_deleter {
 pub unsafe fn test_function_type_8() {
     let mut deleter_called: () = false;
     {
-        let mut p: () = std_shared_ptr_int____::new_1({ (Some(f_7)) }, {
-            function_pointer_deleter::new({ &mut deleter_called })
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     unimplemented!();
@@ -306,7 +304,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut ptr: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
-        let mut p: () = std_shared_ptr_A_::new_1({ ptr }, { test_deleter_A_::new_1({ 3_() }) });
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -321,8 +319,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     {
         let mut ptr: *const A = (Box::leak(Box::new(A::new())) as *mut A).cast_const();
-        let mut p: () =
-            std_shared_ptr_const_A_::new_1({ ptr }, { test_deleter_const_A_::new_1({ 3_() }) });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -341,11 +338,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut d: move_deleter_int_ = move_deleter_int_::new_1({ 0_() });
-        let mut p0: () =
-            std_shared_ptr_int_::new_1({ (Box::leak(Box::new(unimplemented!())) as *mut ()) }, {
-                move_deleter_int_::move_from({ &mut d })
-            });
-        let mut p1: () = std_shared_ptr_int_::new_2(
+        let mut p0: () = unimplemented!();
+        let mut p1: () = std_shared_ptr_int_::new_1(
             { Default::default() },
             { move_deleter_int_::move_from({ &mut d }) },
             None,
@@ -360,23 +354,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 }
             };
         });
-        let mut p: () =
-            std_shared_ptr_int_::new_3({ (Box::leak(Box::new(unimplemented!())) as *mut ()) }, {
-                deleter.copy_from()
-            });
+        let mut p: () = unimplemented!();
     }
     {
-        let mut p: () = std_shared_ptr_int_::new_4(
+        let mut p: () = std_shared_ptr_int_::new_2(
             { unimplemented!() },
             { lambda_unsafe!(Generic, {}, |mut _a0: ()| {}) },
             None,
         );
     }
     {
-        let mut a: () = std_shared_ptr_chararrarr_::new_1(
-            { Box::leak((0..10_()).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr() },
-            { unimplemented!() },
-        );
+        let mut a: () = unimplemented!();
     }
     (unsafe { test_function_type_8() });
     return 0_();

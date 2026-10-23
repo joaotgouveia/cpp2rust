@@ -37,10 +37,7 @@ pub unsafe fn test_ym_plus_m_2() -> () {
     const _: () = assert!(true, "");;
     {
         let mut ym: () = unimplemented!();
-        let mut dm: () = {
-            let mut __tmp_0: () = 42_();
-            std_chrono_duration_int__std_ratio_2629746__1__::new_1({ &mut __tmp_0 })
-        };
+        let mut dm: () = unimplemented!();
         let mut z: () = unimplemented!();
         unimplemented!();
     }

@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let f32_8: Ptr<()> = ({ use_facet_0(unimplemented!()) });
-    let f32_16: Ptr<std_codecvt_utf16_char32_t__1114111__0_> = ({ use_facet_1(l.as_pointer()) });
+    let f32_16: Ptr<()> = ({ use_facet_1(l.as_pointer()) });
     let f16_8: Ptr<()> = ({ use_facet_2(unimplemented!()) });
     let mbs32_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mbs16_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));

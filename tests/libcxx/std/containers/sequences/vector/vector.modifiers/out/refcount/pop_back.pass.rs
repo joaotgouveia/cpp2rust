@@ -317,10 +317,7 @@ pub fn tests_13() -> () {
     {
         let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
         let mut sz: () = 5_();
-        let mut c: () =
-            std_vector_int__std_allocator_int__::new_1({ (arr.as_pointer() as Ptr<()>) }, {
-                (arr.as_pointer() as Ptr<()>).offset((sz) as isize)
-            });
+        let mut c: () = unimplemented!();
         'loop_: while (unimplemented!() < unimplemented!()) {
             unimplemented!();
         }

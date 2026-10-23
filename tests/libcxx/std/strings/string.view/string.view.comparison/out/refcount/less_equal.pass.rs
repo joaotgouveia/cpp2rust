@@ -226,12 +226,12 @@ impl ConvertibleTo_std_u8string_view_ {
     }
 }
 pub fn test_0() -> () {
-    let v: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    let mut v: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-    ])));
+    ];
     let mut i: () = 0_();
     'loop_: while (i < 4_()) {
         let mut j: () = 0_();
@@ -268,12 +268,12 @@ pub fn test_0() -> () {
     return true;
 }
 pub fn test_1() -> () {
-    let v: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    let mut v: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-    ])));
+    ];
     let mut i: () = 0_();
     'loop_: while (i < 4_()) {
         let mut j: () = 0_();
@@ -310,12 +310,12 @@ pub fn test_1() -> () {
     return true;
 }
 pub fn test_2() -> () {
-    let v: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    let mut v: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-    ])));
+    ];
     let mut i: () = 0_();
     'loop_: while (i < 4_()) {
         let mut j: () = 0_();
@@ -352,12 +352,12 @@ pub fn test_2() -> () {
     return true;
 }
 pub fn test_3() -> () {
-    let v: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    let mut v: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-    ])));
+    ];
     let mut i: () = 0_();
     'loop_: while (i < 4_()) {
         let mut j: () = 0_();
@@ -394,12 +394,12 @@ pub fn test_3() -> () {
     return true;
 }
 pub fn test_4() -> () {
-    let v: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    let mut v: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-    ])));
+    ];
     let mut i: () = 0_();
     'loop_: while (i < 4_()) {
         let mut j: () = 0_();
@@ -436,12 +436,12 @@ pub fn test_4() -> () {
     return true;
 }
 pub fn test_5() -> () {
-    let v: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    let mut v: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
         unimplemented!(),
-    ])));
+    ];
     let mut i: () = 0_();
     'loop_: while (i < 4_()) {
         let mut j: () = 0_();

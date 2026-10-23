@@ -23,7 +23,7 @@ impl Default for A {
     }
 }
 pub fn test_0() -> () {
-    let mut p: () = std_unique_ptr_A__std_default_delete_A__::new({ Ptr::alloc(A::new()) });
+    let mut p: () = unimplemented!();
     unimplemented!();
     return true;
 }

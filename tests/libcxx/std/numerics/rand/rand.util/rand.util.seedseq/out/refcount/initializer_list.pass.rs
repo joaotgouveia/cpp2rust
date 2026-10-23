@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let s: Value<()> = Rc::new(RefCell::new(std_seed_seq::new_1({ unimplemented!() })));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),

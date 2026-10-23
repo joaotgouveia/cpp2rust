@@ -139,46 +139,30 @@ const _: () = assert!(
     "!can_make_optional_explicit<std::unique_ptr<const int>, const std::unique_ptr<int>&>"
 );
 pub fn test_ref_23() {
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    let opt: Value<()> = Rc::new(RefCell::new(({ make_optional_24(i.as_pointer()) })));
+    let mut i: () = 0_();
+    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
 }
-pub fn test_ref_25() {
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    let opt: Value<()> = Rc::new(RefCell::new(({ make_optional_26(i.as_pointer()) })));
+pub fn test_ref_24() {
+    let mut i: () = 0_();
+    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
 }
-pub fn test_27() -> () {
+pub fn test_25() -> () {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___args: Value<()> = Rc::new(RefCell::new(('a' as ())));
-                make_optional_28(___args.as_pointer())
-            }),
-        ));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "*opt == int(\'a\')");;
     }
     let test_string: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
         {
-            let s: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"123") },
-                    None,
-                ),
-            ));
-            let opt: Value<()> = Rc::new(RefCell::new(({ make_optional_29(s.as_pointer()) })));
+            let mut s: () = unimplemented!();
+            let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         {
-            let opt: Value<()> = Rc::new(RefCell::new(
-                ({
-                    let ___args_0: Value<()> = Rc::new(RefCell::new(4_()));
-                    let ___args_1: Value<()> = Rc::new(RefCell::new(('X' as ())));
-                    make_optional_30(___args_0.as_pointer(), ___args_1.as_pointer())
-                }),
-            ));
+            let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
     })));
@@ -186,15 +170,8 @@ pub fn test_27() -> () {
         ({ (*test_string.borrow()).call() });
     }
     let test_unique_ptr: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
-        let s: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___args: Value<()> = Rc::new(RefCell::new(3_()));
-                make_unique_31(___args.as_pointer())
-            }),
-        ));
-        let opt: Value<()> = Rc::new(RefCell::new(
-            ({ make_optional_32((s.as_pointer()).reinterpret_cast::<()>()) }),
-        ));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     })));
@@ -202,7 +179,7 @@ pub fn test_27() -> () {
         ({ (*test_unique_ptr.borrow()).call() });
     }
     ({ test_ref_23() });
-    ({ test_ref_25() });
+    ({ test_ref_24() });
     return true;
 }
 pub fn main() {
@@ -225,7 +202,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_27() });
+    ({ test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

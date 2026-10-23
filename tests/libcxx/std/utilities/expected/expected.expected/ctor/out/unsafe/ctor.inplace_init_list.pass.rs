@@ -175,7 +175,11 @@ impl Default for TrivialMoveOnly {
     }
 }
 pub unsafe fn swap_14(x: *mut ADLSwap, y: *mut ADLSwap) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut () = &mut (*x).i;
+        let ___y: *mut () = &mut (*y).i;
+        swap_15(___x, ___y)
+    });
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -221,7 +225,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_15(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_16(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -238,7 +242,7 @@ impl TailClobberer_0_ {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<TailClobberer_0_>();
-                memset_16(___s, 0_(), ___n)
+                memset_17(___s, 0_(), ___n)
             });
         }
         this.b = false;
@@ -256,7 +260,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_15(
+            operator_eq_16(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -323,7 +327,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_16(___s, 0_(), ___n)
+                memset_17(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -370,7 +374,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_16(___s, 0_(), ___n)
+                memset_17(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -513,7 +517,7 @@ impl Data_int_ref__int_refref__MoveOnly_ {
         return &mut (*(self as *mut Data_int_ref__int_refref__MoveOnly_));
     }
 }
-pub unsafe fn test_17() -> () {
+pub unsafe fn test_18() -> () {
     {
         let mut e: () = unimplemented!();
         unimplemented!();
@@ -546,7 +550,7 @@ pub unsafe fn test_17() -> () {
     }
     return true;
 }
-pub unsafe fn testException_18() {}
+pub unsafe fn testException_19() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -563,9 +567,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_17() });
+    (unsafe { test_18() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_18() });
+    (unsafe { testException_19() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

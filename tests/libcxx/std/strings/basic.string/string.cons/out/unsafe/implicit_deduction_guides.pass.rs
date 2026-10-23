@@ -741,21 +741,25 @@ pub unsafe fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_18(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_18(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_19(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_21(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -839,7 +843,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_20(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_21(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -849,7 +853,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_19(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_20(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -990,96 +994,61 @@ impl constexpr_char_traits_wchar_t_ {
         return r;
     }
 }
-pub unsafe fn test_21() -> () {
+pub unsafe fn test_22() -> () {
     {}
     {}
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { 6_() },
-            { ('a' as ()) },
-            None,
-        );
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        let mut w: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                { 2_() },
-                { (98 as ()) },
-                None,
-            );
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut s: () = {
-            let mut __tmp_0: test_allocator_char_ = <test_allocator_char_>::default();
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { 6_() },
-                { ('a' as ()) },
-                { &mut __tmp_0 },
-            )
-        };
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        let mut w: () = {
-            let mut __tmp_1: test_allocator_wchar_t_ = <test_allocator_wchar_t_>::default();
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
-                { 2_() },
-                { (98 as ()) },
-                { &mut __tmp_1 },
-            )
-        };
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let win : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { [97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] .as_ptr() } , None , )  ;
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let win : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { [97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] .as_ptr() } , None , )  ;
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
+        let sin: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let win : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { [97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] .as_ptr() } , None , )  ;
+        let win: () = unimplemented!();
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
+        let sin: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let win : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { [97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] .as_ptr() } , None , )  ;
+        let win: () = unimplemented!();
+        let mut w: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let sin: () = unimplemented!();
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        let win: () = unimplemented!();
+        let mut w: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let sin: () = unimplemented!();
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        let win: () = unimplemented!();
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -1101,82 +1070,31 @@ pub unsafe fn test_21() -> () {
         unimplemented!();
     }
     {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut w: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_2(
-                {
-                    [
-                        97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_2: () = unimplemented!();
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-                { c"abc".as_ptr() },
-                { Some(&mut __tmp_2) },
-            )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut w: () = {
-            let mut __tmp_3: test_allocator_wchar_t_ = <test_allocator_wchar_t_>::default();
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_2(
-                {
-                    [
-                        97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                { Some(&mut __tmp_3) },
-            )
-        };
+        let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let mut input: *const () = c"abcdef".as_ptr();
-        let mut s: () = {
-            let mut __tmp_4: () = unimplemented!();
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_3(
-                { cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ input }) },
-                {
-                    cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                        input.offset((3_()) as isize)
-                    })
-                },
-                { &mut __tmp_4 },
-            )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         {
             let mut input: *const () = c"abcdef".as_ptr();
-            let mut s: () = {
-                let mut __tmp_5: test_allocator_char_ = <test_allocator_char_>::default();
-                std_basic_string_char__std_char_traits_char___test_allocator_char__::new_2(
-                    { cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ input }) },
-                    {
-                        cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                            input.offset((3_()) as isize)
-                        })
-                    },
-                    { &mut __tmp_5 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -1185,70 +1103,47 @@ pub unsafe fn test_21() -> () {
                 97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
             ]
             .as_ptr();
-            let mut s: () = {
-                let mut __tmp_6: test_allocator_wchar_t_ = <test_allocator_wchar_t_>::default();
-                std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_3(
-                    { cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_::new({ input }) },
-                    {
-                        cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_::new({
-                            input.offset((3_()) as isize)
-                        })
-                    },
-                    { &mut __tmp_6 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
     }
     {
-        let sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
+        let sin: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let win : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { [97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] .as_ptr() } , None , )  ;
+        let win: () = unimplemented!();
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
+        let sin: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let win : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { [97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] .as_ptr() } , None , )  ;
+        let win: () = unimplemented!();
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
+        let mut sin: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut win : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { [97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] .as_ptr() } , None , )  ;
+        let mut win: () = unimplemented!();
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut sin: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
+        let mut sin: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut win : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { [97 as () , 98 as () , 99 as () , 100 as () , 101 as () , 102 as () , 0 as () , ] .as_ptr() } , None , )  ;
+        let mut win: () = unimplemented!();
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -1271,75 +1166,40 @@ pub unsafe fn test_21() -> () {
     }
     {
         let mut sv: () = unimplemented!();
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_4(
-            { &sv },
-            None,
-        );
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        let mut BSV: () = unimplemented!();
-        let mut w : () = std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { & BSV } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut sv: () = unimplemented!();
-        let mut s: () = {
-            let mut __tmp_7: test_allocator_char_ = <test_allocator_char_>::default();
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_3({ &sv }, {
-                &mut __tmp_7
-            })
-        };
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        let mut BSV: () = unimplemented!();
-        let mut w: () = {
-            let mut __tmp_8: test_allocator_wchar_t_ = <test_allocator_wchar_t_>::default();
-            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_2 ( { & BSV } , { & mut __tmp_8 } , )
-        };
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut s0: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"abc".as_ptr() },
-            None,
-        );
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut w0: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_2(
-                {
-                    [
-                        97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut BSV: () = unimplemented!();
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut s0: () = std_basic_string_char__std_char_traits_char___test_allocator_char__::new_4(
-            { c"abc".as_ptr() },
-            None,
-        );
+        let mut sv: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut w0: () =
-            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_2(
-                {
-                    [
-                        97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 0 as (),
-                    ]
-                    .as_ptr()
-                },
-                None,
-            );
+        let mut BSV: () = unimplemented!();
+        let mut w: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut s0: () = unimplemented!();
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        let mut w0: () = unimplemented!();
+        let mut w: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut s0: () = unimplemented!();
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        let mut w0: () = unimplemented!();
         let mut w: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -1362,7 +1222,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_21() });
+    (unsafe { test_22() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

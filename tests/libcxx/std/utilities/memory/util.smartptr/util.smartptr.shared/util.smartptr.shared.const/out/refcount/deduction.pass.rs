@@ -43,73 +43,51 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let s0: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
-            Ptr::alloc(<A>::default())
-        })));
-        let w: Value<()> = Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ s0.as_pointer() })));
-        let s: Value<()> = Rc::new(RefCell::new(std_shared_ptr_A_::new_2({ w.as_pointer() })));
+        let s0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s0: Value<()> = Rc::new(RefCell::new(std_shared_ptr_const_A_::new_1({
-            Ptr::alloc(<A>::default())
-        })));
-        let w: Value<()> = Rc::new(RefCell::new(std_weak_ptr_const_A_::new_1({
-            s0.as_pointer()
-        })));
-        let s: Value<()> = Rc::new(RefCell::new(std_shared_ptr_const_A_::new_2({
-            w.as_pointer()
-        })));
+        let s0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let u: Value<()> = Rc::new(RefCell::new(std_unique_ptr_A__std_default_delete_A__::new(
-            { Ptr::alloc(<A>::default()) },
-        )));
+        let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut uPointee: Ptr<A> = unimplemented!();
-        let s: Value<()> = Rc::new(RefCell::new((*u.borrow_mut()).clone()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let u: Value<()> = Rc::new(RefCell::new(
-            std_unique_ptr_const_A__std_default_delete_const_A__::new({
-                Ptr::alloc(<A>::default())
-            }),
-        ));
+        let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut uPointee: Ptr<A> = unimplemented!();
-        let s: Value<()> = Rc::new(RefCell::new((*u.borrow_mut()).clone()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let u: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<D> = Rc::new(RefCell::new(<D>::default()));
-            std_unique_ptr_A__D_::new({ Ptr::alloc(<A>::default()) }, { __tmp_0.as_pointer() })
-        }));
+        let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut uPointee: Ptr<A> = unimplemented!();
-        let s: Value<()> = Rc::new(RefCell::new((*u.borrow_mut()).clone()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let u: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<D> = Rc::new(RefCell::new(<D>::default()));
-            std_unique_ptr_const_A__D_::new({ Ptr::alloc(<A>::default()) }, {
-                __tmp_1.as_pointer()
-            })
-        }));
+        let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut uPointee: Ptr<A> = unimplemented!();
-        let s: Value<()> = Rc::new(RefCell::new((*u.borrow_mut()).clone()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

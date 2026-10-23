@@ -276,26 +276,11 @@ pub fn test01_10() {
         }
     }
     let A: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_1 ( { Ptr::<() >::from_string_literal(b"red" ) } , { __tmp_0.as_pointer() } , )
-        },
-        {
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(9_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_2 ( { Ptr::<() >::from_string_literal(b"green" ) } , { __tmp_1.as_pointer() } , )
-        },
-        {
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_3 ( { Ptr::<() >::from_string_literal(b"blue" ) } , { __tmp_2.as_pointer() } , )
-        },
-        {
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(8_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_3 ( { Ptr::<() >::from_string_literal(b"cyan" ) } , { __tmp_3.as_pointer() } , )
-        },
-        {
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(7_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_4 ( { Ptr::<() >::from_string_literal(b"magenta" ) } , { __tmp_4.as_pointer() } , )
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
     unimplemented!();
     let mut __do_while = true;
@@ -455,42 +440,15 @@ pub fn test02_12() {
         }
     }
     let A: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(5_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_1 ( { Ptr::<() >::from_string_literal(b"red" ) } , { __tmp_5.as_pointer() } , )
-        },
-        {
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(9_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_2 ( { Ptr::<() >::from_string_literal(b"green" ) } , { __tmp_6.as_pointer() } , )
-        },
-        {
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(19_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_1 ( { Ptr::<() >::from_string_literal(b"red" ) } , { __tmp_7.as_pointer() } , )
-        },
-        {
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(3_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_3 ( { Ptr::<() >::from_string_literal(b"blue" ) } , { __tmp_8.as_pointer() } , )
-        },
-        {
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(60_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_3 ( { Ptr::<() >::from_string_literal(b"blue" ) } , { __tmp_9.as_pointer() } , )
-        },
-        {
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(8_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_3 ( { Ptr::<() >::from_string_literal(b"cyan" ) } , { __tmp_10.as_pointer() } , )
-        },
-        {
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(7_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_4 ( { Ptr::<() >::from_string_literal(b"magenta" ) } , { __tmp_11.as_pointer() } , )
-        },
-        {
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(99_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_3 ( { Ptr::<() >::from_string_literal(b"blue" ) } , { __tmp_12.as_pointer() } , )
-        },
-        {
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(33_()));
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_2 ( { Ptr::<() >::from_string_literal(b"green" ) } , { __tmp_13.as_pointer() } , )
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
     unimplemented!();
     let mut __do_while = true;
@@ -734,10 +692,7 @@ pub fn verify_demangle_20(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -748,22 +703,14 @@ pub fn run_tests_wrapped_locale_22(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -775,10 +722,7 @@ pub fn run_tests_wrapped_locale_22(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -800,10 +744,7 @@ pub fn run_tests_wrapped_env_23(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

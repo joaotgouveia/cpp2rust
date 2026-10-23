@@ -211,12 +211,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ swap_14(t0.as_pointer(), t1.as_pointer()) });
+        unimplemented!();
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
         let t1: Value<()> = Rc::new(RefCell::new(MoveOnly::new({ Some(1_()) })));
-        ({ swap_15(t0.as_pointer(), t1.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -231,7 +231,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let __tmp_3: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3_()) })));
             std_tuple_MoveOnly__MoveOnly_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
         }));
-        ({ swap_16(t0.as_pointer(), t1.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -258,7 +258,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 { __tmp_9.as_pointer() },
             )
         }));
-        ({ swap_17(t0.as_pointer(), t1.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

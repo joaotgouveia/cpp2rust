@@ -263,21 +263,25 @@ pub unsafe fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_7(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -361,7 +365,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -371,7 +375,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -474,7 +478,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeEmptyT, const NonConstEmpty&>"
 );
-pub unsafe fn empty_11(_a0: *const HasMemberAndFunction) -> () {
+pub unsafe fn empty_12(_a0: *const HasMemberAndFunction) -> () {
     return false;
 }
 #[repr(C)]
@@ -525,7 +529,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeEmptyT, const InputIterators&>"
 );
-pub unsafe fn testEmptyMember_12() -> () {
+pub unsafe fn testEmptyMember_13() -> () {
     let mut a: HasMemberAndFunction = <HasMemberAndFunction>::default();
     unimplemented!();
     let mut b: BoolConvertibleReturnType = <BoolConvertibleReturnType>::default();
@@ -542,7 +546,7 @@ impl SizeMember {
         return self.size_;
     }
 }
-pub unsafe fn size_13(mut sf: SizeFunction) -> () {
+pub unsafe fn size_14(mut sf: SizeFunction) -> () {
     return sf.size_;
 }
 #[repr(C)]
@@ -566,7 +570,7 @@ impl BeginEndSizedSentinel {
 }
 const _: () = assert!(true, "std::ranges::forward_range<BeginEndSizedSentinel>");
 const _: () = assert!(true, "std::ranges::sized_range<BeginEndSizedSentinel>");
-pub unsafe fn testUsingRangesSize_14() -> () {
+pub unsafe fn testUsingRangesSize_15() -> () {
     let mut a: SizeMember = SizeMember { size_: 1_() };
     unimplemented!();
     let mut b: SizeMember = SizeMember { size_: 0_() };
@@ -612,7 +616,7 @@ impl DisabledSizeRangeWithBeginEnd {
         };
     }
 }
-pub static mut disable_sized_range_15: std::cell::LazyCell<()> =
+pub static mut disable_sized_range_16: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 const _: () = assert!(
     true,
@@ -650,7 +654,7 @@ impl EvilBeginEnd {
         return std::ptr::null_mut();
     }
 }
-pub unsafe fn testBeginEqualsEnd_16() -> () {
+pub unsafe fn testBeginEqualsEnd_17() -> () {
     let mut a: BeginEndNotSizedSentinel = <BeginEndNotSizedSentinel>::default();
     unimplemented!();
     let mut d: DisabledSizeRangeWithBeginEnd = <DisabledSizeRangeWithBeginEnd>::default();
@@ -685,14 +689,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { testEmptyMember_12() });
+    (unsafe { testEmptyMember_13() });
     const _: () = assert!(true, "testEmptyMember()");;
-    (unsafe { testUsingRangesSize_14() });
+    (unsafe { testUsingRangesSize_15() });
     const _: () = assert!(true, "testUsingRangesSize()");;
-    (unsafe { testBeginEqualsEnd_16() });
+    (unsafe { testBeginEqualsEnd_17() });
     const _: () = assert!(true, "testBeginEqualsEnd()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const disable_sized_range_15);
+    std::cell::LazyCell::force(&*&raw const disable_sized_range_16);
 }

@@ -102,18 +102,12 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[byte_size(1)]
 pub struct min_allocator_char_ {}
 pub fn test_string_5() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"123def456") },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_string_6() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"123def456") },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }

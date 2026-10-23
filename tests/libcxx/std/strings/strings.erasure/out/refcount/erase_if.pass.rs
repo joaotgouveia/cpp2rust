@@ -526,309 +526,177 @@ pub fn test_31() {
         })));
     ({
         test0_13(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_13(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_14(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_13(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"b") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_14(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_13(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_13(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"bc") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_14(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ac") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_16(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isD.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_13(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"b") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_14(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_13(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"bb") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_14(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_15(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_13(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             3_(),
         )
     });
     ({
         test0_14(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_17(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             (*False.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_18(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             (*True.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             3_(),
         )
     });
@@ -860,309 +728,177 @@ pub fn test_32() {
         })));
     ({
         test0_19(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_19(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_20(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_19(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"b") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_20(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_21(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_19(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_21(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_19(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"bc") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_20(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ac") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_21(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_22(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isD.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_19(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"b") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_20(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_21(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_19(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"bb") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_20(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_21(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_19(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             3_(),
         )
     });
     ({
         test0_20(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_23(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             (*False.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_24(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             (*True.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             3_(),
         )
     });
@@ -1194,309 +930,177 @@ pub fn test_33() {
         })));
     ({
         test0_25(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_25(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_26(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_25(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"b") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_26(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_27(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_25(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_27(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_25(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"bc") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_26(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ac") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_27(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ab") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_28(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             (*isD.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abc") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_25(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"b") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_26(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aa") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_27(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aab") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_25(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"bb") },
-                None,
-            ),
+            unimplemented!(),
             1_(),
         )
     });
     ({
         test0_26(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
+            unimplemented!(),
             2_(),
         )
     });
     ({
         test0_27(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             (*isC.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"abb") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_25(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             (*isA.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             3_(),
         )
     });
     ({
         test0_26(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             (*isB.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aaa") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_29(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             (*False.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             0_(),
         )
     });
     ({
         test0_30(
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"aba") },
-                None,
-            ),
+            unimplemented!(),
             (*True.borrow()).copy_from(),
-            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
+            unimplemented!(),
             3_(),
         )
     });

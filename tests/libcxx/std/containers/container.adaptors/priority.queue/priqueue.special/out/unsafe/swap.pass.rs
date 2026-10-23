@@ -12,7 +12,7 @@ pub unsafe fn test_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_1(&mut q1, &mut q2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

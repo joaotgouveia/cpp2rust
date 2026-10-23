@@ -1283,79 +1283,23 @@ pub fn test_123() {
     }
     {
         ({ test_string_view_103(unimplemented!()) });
-        ({
-            test_string_view_103(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        ({
-            test_string_view_103(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        ({ test_string_view_103(unimplemented!()) });
+        ({ test_string_view_103(unimplemented!()) });
     }
     {
         ({ test_string_view_105(unimplemented!()) });
-        ({
-            test_string_view_105(
-                std_basic_string_char__constexpr_char_traits_char___std_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        ({
-            test_string_view_105(
-                std_basic_string_char__constexpr_char_traits_char___std_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        ({ test_string_view_105(unimplemented!()) });
+        ({ test_string_view_105(unimplemented!()) });
     }
     {
         ({ test_string_view_107(unimplemented!()) });
-        ({
-            test_string_view_107(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        ({
-            test_string_view_107(
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        ({ test_string_view_107(unimplemented!()) });
+        ({ test_string_view_107(unimplemented!()) });
     }
     {
         ({ test_string_view_109(unimplemented!()) });
-        ({
-            test_string_view_109(
-                std_basic_string_char__constexpr_char_traits_char___min_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        ({
-            test_string_view_109(
-                std_basic_string_char__constexpr_char_traits_char___min_allocator_char__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        ({ test_string_view_109(unimplemented!()) });
+        ({ test_string_view_109(unimplemented!()) });
     }
     ({ test_43(Default::default()) });
     let i: Value<()> = Rc::new(RefCell::new(0_()));
@@ -1469,59 +1413,23 @@ pub fn test_124() {
     }
     {
         ({ test_string_view_115(unimplemented!()) });
-        ({
-            test_string_view_115(
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        ({
-            test_string_view_115(
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        ({ test_string_view_115(unimplemented!()) });
+        ({ test_string_view_115(unimplemented!()) });
     }
     {
         ({ test_string_view_117(unimplemented!()) });
-        ({
-            test_string_view_117 ( std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , None , )   , )
-        });
-        ({
-            test_string_view_117 ( std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , None , )   , )
-        });
+        ({ test_string_view_117(unimplemented!()) });
+        ({ test_string_view_117(unimplemented!()) });
     }
     {
         ({ test_string_view_119(unimplemented!()) });
-        ({
-            test_string_view_119(
-                std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
-        ({
-            test_string_view_119(
-                std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t__::new_1(
-                    { unimplemented!() },
-                    None,
-                ),
-            )
-        });
+        ({ test_string_view_119(unimplemented!()) });
+        ({ test_string_view_119(unimplemented!()) });
     }
     {
         ({ test_string_view_121(unimplemented!()) });
-        ({
-            test_string_view_121 ( std_basic_string_wchar_t__constexpr_char_traits_wchar_t___min_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , None , )   , )
-        });
-        ({
-            test_string_view_121 ( std_basic_string_wchar_t__constexpr_char_traits_wchar_t___min_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , None , )   , )
-        });
+        ({ test_string_view_121(unimplemented!()) });
+        ({ test_string_view_121(unimplemented!()) });
     }
     ({ test_85(Default::default()) });
     let i: Value<()> = Rc::new(RefCell::new(0_()));

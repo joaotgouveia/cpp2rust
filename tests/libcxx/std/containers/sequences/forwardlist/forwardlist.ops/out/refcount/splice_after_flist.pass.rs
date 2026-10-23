@@ -146,17 +146,8 @@ pub fn test_10() -> () {
         'loop_: while (l <= size_t2_7.with(|rc| *rc.borrow())) {
             let mut p: () = 0_();
             'loop_: while (p <= size_t1_6.with(|rc| *rc.borrow())) {
-                let c1: Value<()> = Rc::new(RefCell::new(
-                    std_forward_list_int__std_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    }),
-                ));
-                let c2: Value<()> = Rc::new(RefCell::new(
-                    std_forward_list_int__std_allocator_int__::new_1(
-                        { (t2_5.with(|v| v.as_pointer()) as Ptr<()>) },
-                        { (t2_5.with(|v| v.as_pointer()) as Ptr<()>).offset((l) as isize) },
-                    ),
-                ));
+                let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 ({ testd_8(c1.as_pointer(), p, l) });
                 p.prefix_inc();
@@ -169,17 +160,8 @@ pub fn test_10() -> () {
         'loop_: while (l <= size_t2_7.with(|rc| *rc.borrow())) {
             let mut p: () = 0_();
             'loop_: while (p <= size_t1_6.with(|rc| *rc.borrow())) {
-                let c1: Value<()> = Rc::new(RefCell::new(
-                    std_forward_list_int__min_allocator_int__::new_1({ unimplemented!() }, {
-                        unimplemented!()
-                    }),
-                ));
-                let c2: Value<()> = Rc::new(RefCell::new(
-                    std_forward_list_int__min_allocator_int__::new_1(
-                        { (t2_5.with(|v| v.as_pointer()) as Ptr<()>) },
-                        { (t2_5.with(|v| v.as_pointer()) as Ptr<()>).offset((l) as isize) },
-                    ),
-                ));
+                let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 ({ testd_9(c1.as_pointer(), p, l) });
                 p.prefix_inc();

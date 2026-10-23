@@ -9,136 +9,46 @@ use std::rc::{Rc, Weak};
 pub fn test_0() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567890") },
-        None,
-    );
-    let mut g2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567891") },
-        None,
-    );
-    let s1: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let mut g1: () = unimplemented!();
+    let mut g2: () = unimplemented!();
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_1() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567890") },
-        None,
-    );
-    let mut g2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567891") },
-        None,
-    );
-    let s1: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let mut g1: () = unimplemented!();
+    let mut g2: () = unimplemented!();
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_2() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567890") },
-        None,
-    );
-    let mut g2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567891") },
-        None,
-    );
-    let s1: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let mut g1: () = unimplemented!();
+    let mut g2: () = unimplemented!();
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_3() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567890") },
-        None,
-    );
-    let mut g2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567891") },
-        None,
-    );
-    let s1: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let mut g1: () = unimplemented!();
+    let mut g2: () = unimplemented!();
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn test_4() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567890") },
-        None,
-    );
-    let mut g2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"1234567891") },
-        None,
-    );
-    let s1: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
-    let s2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        ),
-    ));
+    let mut g1: () = unimplemented!();
+    let mut g2: () = unimplemented!();
+    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn main() {

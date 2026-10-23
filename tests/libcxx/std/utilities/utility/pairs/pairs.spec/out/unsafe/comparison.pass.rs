@@ -301,16 +301,8 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p1: () = {
-            let mut __tmp_0: () = 3_();
-            let mut __tmp_1: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        let mut p2: () = {
-            let mut __tmp_2: () = 3_();
-            let mut __tmp_3: () = 4_();
-            std_pair_long__long_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -319,16 +311,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut p1: () = {
-            let mut __tmp_4: () = 3_();
-            let mut __tmp_5: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-        };
-        let mut p2: () = {
-            let mut __tmp_6: () = 3_();
-            let mut __tmp_7: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-        };
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -337,16 +321,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut p1: () = {
-            let mut __tmp_8: () = 2_();
-            let mut __tmp_9: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-        };
-        let mut p2: () = {
-            let mut __tmp_10: () = 3_();
-            let mut __tmp_11: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-        };
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -355,16 +331,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut p1: () = {
-            let mut __tmp_12: () = 3_();
-            let mut __tmp_13: () = 2_();
-            std_pair_int__short_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-        };
-        let mut p2: () = {
-            let mut __tmp_14: () = 3_();
-            let mut __tmp_15: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-        };
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -373,16 +341,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut p1: () = {
-            let mut __tmp_16: () = 3_();
-            let mut __tmp_17: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_16 }, { &mut __tmp_17 })
-        };
-        let mut p2: () = {
-            let mut __tmp_18: () = 2_();
-            let mut __tmp_19: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_18 }, { &mut __tmp_19 })
-        };
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -391,16 +351,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut p1: () = {
-            let mut __tmp_20: () = 3_();
-            let mut __tmp_21: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_20 }, { &mut __tmp_21 })
-        };
-        let mut p2: () = {
-            let mut __tmp_22: () = 3_();
-            let mut __tmp_23: () = 2_();
-            std_pair_int__short_::new({ &mut __tmp_22 }, { &mut __tmp_23 })
-        };
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -409,16 +361,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let p1: () = {
-            let mut __tmp_24: () = 3_();
-            let mut __tmp_25: () = 4_();
-            std_pair_int__short_::new({ &mut __tmp_24 }, { &mut __tmp_25 })
-        };
-        let p2: () = {
-            let mut __tmp_26: () = 3_();
-            let mut __tmp_27: () = 2_();
-            std_pair_int__short_::new({ &mut __tmp_26 }, { &mut __tmp_27 })
-        };
+        let p1: () = unimplemented!();
+        let p2: () = unimplemented!();
         const _: () = assert!(true, "!(p1 == p2)");;
         const _: () = assert!(true, "(p1 != p2)");;
         const _: () = assert!(true, "!(p1 <  p2)");;

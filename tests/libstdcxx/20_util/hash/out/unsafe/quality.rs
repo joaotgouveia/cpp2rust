@@ -263,11 +263,7 @@ pub static mut num_strings_for_quality_tests_11: std::cell::LazyCell<()> =
 pub static mut string_size_12: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 42_() });
 pub unsafe fn random_strings_13(mut n: (), mut len: ()) -> () {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { len },
-        { ('\0' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let mut result_set: () = unimplemented!();
     'loop_: while ((unimplemented!()) < (n)) {
         unimplemented!();
@@ -275,7 +271,7 @@ pub unsafe fn random_strings_13(mut n: (), mut len: ()) -> () {
         tmp = (tmp).wrapping_rem((len).wrapping_mul(256_()));
         (*unimplemented!()) = (tmp).wrapping_rem(256_());
     }
-    return std_vector_std_basic_string_char__std_char_traits_char___std_allocator_char____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , None , )   ;
+    return unimplemented!();
 }
 pub unsafe fn score_from_varying_position_15(mut s: (), mut index: ()) -> () {
     let mut bits_in_hash_code: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
@@ -555,8 +551,7 @@ pub unsafe fn verify_demangle_28(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -567,11 +562,7 @@ pub unsafe fn run_tests_wrapped_locale_30(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -579,11 +570,7 @@ pub unsafe fn run_tests_wrapped_locale_30(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -595,10 +582,7 @@ pub unsafe fn run_tests_wrapped_locale_30(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -621,10 +605,7 @@ pub unsafe fn run_tests_wrapped_env_31(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

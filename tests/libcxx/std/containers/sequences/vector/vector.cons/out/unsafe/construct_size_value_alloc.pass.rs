@@ -307,7 +307,7 @@ pub unsafe fn is_contiguous_container_asan_correct_19(_a0: *const ()) -> () {
     return true;
 }
 pub unsafe fn test_20(mut n: (), x: *const (), a: *const ()) {
-    let mut c: () = std_vector_int__std_allocator_int__::new_1({ n }, { x }, { a });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -320,7 +320,7 @@ pub unsafe fn test_20(mut n: (), x: *const (), a: *const ()) {
     }
 }
 pub unsafe fn test_21(mut n: (), x: *const (), a: *const min_allocator_int_) {
-    let mut c: () = std_vector_int__min_allocator_int__::new_1({ n }, { x }, { a });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -333,7 +333,7 @@ pub unsafe fn test_21(mut n: (), x: *const (), a: *const min_allocator_int_) {
     }
 }
 pub unsafe fn test_22(mut n: (), x: *const (), a: *const safe_allocator_int_) {
-    let mut c: () = std_vector_int__safe_allocator_int__::new_1({ n }, { x }, { a });
+    let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

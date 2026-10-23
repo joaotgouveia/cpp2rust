@@ -232,19 +232,12 @@ pub unsafe fn test_string_9() {
     let mut i: () = 0_();
     'loop_: while ((i) != (4_())) {
         {
-            let str: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { test_data[(i) as usize] },
-                None,
-            );
+            let str: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut str: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { test_data[(i) as usize] },
-                    None,
-                );
+            let mut str: () = unimplemented!();
             unimplemented!();
         }
         i.prefix_inc();
@@ -266,19 +259,12 @@ pub unsafe fn test_string_10() {
     let mut i: () = 0_();
     'loop_: while ((i) != (4_())) {
         {
-            let str: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { test_data[(i) as usize] },
-                None,
-            );
+            let str: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut str: () =
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { test_data[(i) as usize] },
-                    None,
-                );
+            let mut str: () = unimplemented!();
             unimplemented!();
         }
         i.prefix_inc();
@@ -300,20 +286,12 @@ pub unsafe fn test_string_11() {
     let mut i: () = 0_();
     'loop_: while ((i) != (4_())) {
         {
-            let str: () =
-                std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                    { test_data[(i) as usize] },
-                    None,
-                );
+            let str: () = unimplemented!();
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut str: () =
-                std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                    { test_data[(i) as usize] },
-                    None,
-                );
+            let mut str: () = unimplemented!();
             unimplemented!();
         }
         i.prefix_inc();

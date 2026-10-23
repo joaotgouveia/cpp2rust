@@ -39,10 +39,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let e_cat1: Ptr<()> = unimplemented!();
-        let mut m1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { unimplemented!() },
-            None,
-        );
+        let mut m1: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -56,10 +53,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         (*foo_0.with(Value::clone).borrow_mut()).ec = (unimplemented!());
-        let mut m2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { unimplemented!() },
-            None,
-        );
+        let mut m2: () = unimplemented!();
         unimplemented!();
     }
     return 0_();
@@ -69,10 +63,7 @@ pub trait StaticInitImpl {
 }
 impl StaticInitImpl for Ptr<StaticInit> {
     fn destructor(&self) {
-        let mut str: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { unimplemented!() },
-            None,
-        );
+        let mut str: () = unimplemented!();
         unimplemented!();
     }
 }

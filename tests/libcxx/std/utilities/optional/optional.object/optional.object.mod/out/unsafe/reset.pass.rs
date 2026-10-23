@@ -24,7 +24,7 @@ pub unsafe fn check_reset_1() -> () {
         unimplemented!();
     }
     {
-        let mut opt: () = 3_();
+        let mut opt: () = unimplemented!();
         (unsafe { (opt as std___optional_destruct_base_int__true_).reset() });
         unimplemented!();
     }
@@ -57,7 +57,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut opt: () = <X>::default();
+        let mut opt: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) = false;
         (unsafe { (opt as std___optional_destruct_base_X__false_).reset() });
         unimplemented!();

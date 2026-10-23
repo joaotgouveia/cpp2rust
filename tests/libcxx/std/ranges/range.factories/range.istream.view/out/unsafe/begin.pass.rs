@@ -7,48 +7,16 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn make_string_0(in_: *const [(); 8]) -> () {
-    return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (*in_).as_ptr().offset((0_()) as isize) },
-        {
-            (*in_)
-                .as_ptr()
-                .offset(((8_() as ()).wrapping_sub(1_())) as isize)
-        },
-        None,
-    );
+    return unimplemented!();
 }
 pub unsafe fn make_string_1(in_: *const [(); 1]) -> () {
-    return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (*in_).as_ptr().offset((0_()) as isize) },
-        {
-            (*in_)
-                .as_ptr()
-                .offset(((1_() as ()).wrapping_sub(1_())) as isize)
-        },
-        None,
-    );
+    return unimplemented!();
 }
 pub unsafe fn make_string_2(in_: *const [(); 8]) -> () {
-    return std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { (*in_).as_ptr().offset((0_()) as isize) },
-        {
-            (*in_)
-                .as_ptr()
-                .offset(((8_() as ()).wrapping_sub(1_())) as isize)
-        },
-        None,
-    );
+    return unimplemented!();
 }
 pub unsafe fn make_string_3(in_: *const [(); 1]) -> () {
-    return std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { (*in_).as_ptr().offset((0_()) as isize) },
-        {
-            (*in_)
-                .as_ptr()
-                .offset(((1_() as ()).wrapping_sub(1_())) as isize)
-        },
-        None,
-    );
+    return unimplemented!();
 }
 pub unsafe fn make_string_stream_4(in_: *const [(); 8]) -> () {
     return unimplemented!();

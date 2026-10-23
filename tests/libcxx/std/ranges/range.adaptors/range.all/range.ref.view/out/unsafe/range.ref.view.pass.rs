@@ -278,21 +278,25 @@ pub unsafe fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_8(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -376,7 +380,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -386,7 +390,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -454,25 +458,25 @@ impl util_iterator_error {
         this
     }
 }
-pub static mut globalBuff_11: std::cell::LazyCell<[(); 8]> =
+pub static mut globalBuff_12: std::cell::LazyCell<[(); 8]> =
     std::cell::LazyCell::new(|| unsafe { [unimplemented!(); 8] });
-pub unsafe fn begin_12(range: *const Range) -> *mut () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11))
+pub unsafe fn begin_13(range: *const Range) -> *mut () {
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
         .as_mut_ptr()
         .offset(((*range).start) as isize);
 }
-pub unsafe fn end_13(_a0: *const Range) -> *mut () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11))
+pub unsafe fn end_14(_a0: *const Range) -> *mut () {
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
         .as_mut_ptr()
         .offset((8_()) as isize);
 }
-pub unsafe fn begin_14(range: *mut Range) -> *mut () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11))
+pub unsafe fn begin_15(range: *mut Range) -> *mut () {
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
         .as_mut_ptr()
         .offset(((*range).start) as isize);
 }
-pub unsafe fn end_15(_a0: *mut Range) -> *mut () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11))
+pub unsafe fn end_16(_a0: *mut Range) -> *mut () {
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
         .as_mut_ptr()
         .offset((8_()) as isize);
 }
@@ -536,33 +540,33 @@ pub struct ForwardRange {}
 impl ForwardRange {
     pub unsafe fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr()
         });
     }
     pub unsafe fn end(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
                 .as_mut_ptr()
                 .offset((8_()) as isize)
         });
     }
 }
-pub unsafe fn operator_eq_16(
+pub unsafe fn operator_eq_17(
     mut _a0: Cpp17InputRange_sentinel,
     mut iter: cpp17_input_iterator_int_ptr__int_ptr_,
 ) -> () {
     return ((unsafe { base_0(&iter) })
-        == ((*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11))
+        == ((*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
             .as_mut_ptr()
             .offset((8_()) as isize)));
 }
-pub unsafe fn operator_sub_17(
+pub unsafe fn operator_sub_18(
     mut _a0: Cpp17InputRange_sentinel,
     mut _a1: cpp17_input_iterator_int_ptr__int_ptr_,
 ) -> () {
     return -8_();
 }
-pub unsafe fn operator_sub_18(
+pub unsafe fn operator_sub_19(
     mut _a0: cpp17_input_iterator_int_ptr__int_ptr_,
     mut _a1: Cpp17InputRange_sentinel,
 ) -> () {
@@ -577,23 +581,23 @@ pub struct Cpp17InputRange {}
 impl Cpp17InputRange {
     pub unsafe fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         return cpp17_input_iterator_int_ptr__int_ptr_::new({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr()
         });
     }
     pub unsafe fn end(&self) -> Cpp17InputRange_sentinel {
         return <Cpp17InputRange_sentinel>::default();
     }
 }
-pub unsafe fn operator_eq_19(
+pub unsafe fn operator_eq_20(
     mut _a0: Cpp20InputRange_sentinel,
     iter: *const cpp20_input_iterator_int_ptr_,
 ) -> () {
     return ((unsafe { base_3(iter) })
-        == ((*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11))
+        == ((*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12))
             .as_mut_ptr()
             .offset((8_()) as isize)));
 }
-pub unsafe fn operator_sub_20(
+pub unsafe fn operator_sub_21(
     mut _a0: Cpp20InputRange_sentinel,
     _a1: *const cpp20_input_iterator_int_ptr_,
 ) -> () {
@@ -608,20 +612,20 @@ pub struct Cpp20InputRange {}
 impl Cpp20InputRange {
     pub unsafe fn begin(&self) -> cpp20_input_iterator_int_ptr_ {
         return cpp20_input_iterator_int_ptr_::new({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_11)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_12)).as_mut_ptr()
         });
     }
     pub unsafe fn end(&self) -> Cpp20InputRange_sentinel {
         return <Cpp20InputRange_sentinel>::default();
     }
 }
-pub static mut enable_borrowed_range_21: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_22: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 const _: () = assert!(
     true,
     "std::same_as<decltype(std::ranges::ref_view(std::declval<Range&>())),\n              std::ranges::ref_view<Range>>"
 );
-pub unsafe fn test_22() -> () {
+pub unsafe fn test_23() -> () {
     {
         let mut range: Range = <Range>::default();
         let mut view: () = unimplemented!();
@@ -703,11 +707,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_22() });
+    (unsafe { test_23() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const globalBuff_11);
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_21);
+    std::cell::LazyCell::force(&*&raw const globalBuff_12);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_22);
 }

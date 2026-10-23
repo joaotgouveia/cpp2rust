@@ -140,10 +140,7 @@ pub unsafe fn test_string_7() {
         test_5(&mut _s)
     });
     (unsafe {
-        let mut _s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"123".as_ptr() },
-            None,
-        );
+        let mut _s: () = unimplemented!();
         test_5(&mut _s)
     });
 }
@@ -153,10 +150,7 @@ pub unsafe fn test_string_8() {
         test_6(&mut _s)
     });
     (unsafe {
-        let mut _s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { c"123".as_ptr() },
-            None,
-        );
+        let mut _s: () = unimplemented!();
         test_6(&mut _s)
     });
 }

@@ -527,48 +527,27 @@ pub fn test_12() -> () {
     {
         let items1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([false, true, false])));
         let items2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([false, true, true])));
-        let v1: Value<()> = Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
-            { (items1.as_pointer() as Ptr<()>) },
-            { (items1.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
-        let v2: Value<()> = Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
-            { (items2.as_pointer() as Ptr<()>) },
-            { (items2.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let items1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([false, false, false])));
         let items2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([false, true, false])));
-        let v1: Value<()> = Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
-            { (items1.as_pointer() as Ptr<()>) },
-            { (items1.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
-        let v2: Value<()> = Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
-            { (items2.as_pointer() as Ptr<()>) },
-            { (items2.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let items1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([false, true])));
         let items2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([false, true, false])));
-        let v1: Value<()> = Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
-            { (items1.as_pointer() as Ptr<()>) },
-            { (items1.as_pointer() as Ptr<()>).offset((2_()) as isize) },
-        )));
-        let v2: Value<()> = Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
-            { (items2.as_pointer() as Ptr<()>) },
-            { (items2.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let items: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([false, true, false])));
-        let v1: Value<()> = Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
-            { (items.as_pointer() as Ptr<()>) },
-            { (items.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

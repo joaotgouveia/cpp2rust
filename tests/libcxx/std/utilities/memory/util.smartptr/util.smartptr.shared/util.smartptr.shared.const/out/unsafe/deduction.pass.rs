@@ -49,68 +49,51 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut s0: () =
-            std_shared_ptr_A_::new_1({ (Box::leak(Box::new(<A>::default())) as *mut A) });
-        let mut w: () = std_weak_ptr_A_::new_1({ &s0 });
-        let mut s: () = std_shared_ptr_A_::new_2({ &w });
+        let mut s0: () = unimplemented!();
+        let mut w: () = unimplemented!();
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s0: () =
-            std_shared_ptr_const_A_::new_1({ (Box::leak(Box::new(<A>::default())) as *mut A) });
-        let mut w: () = std_weak_ptr_const_A_::new_1({ &s0 });
-        let mut s: () = std_shared_ptr_const_A_::new_2({ &w });
+        let mut s0: () = unimplemented!();
+        let mut w: () = unimplemented!();
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut u: () = std_unique_ptr_A__std_default_delete_A__::new({
-            (Box::leak(Box::new(<A>::default())) as *mut A)
-        });
+        let mut u: () = unimplemented!();
         let mut uPointee: *mut A = unimplemented!();
-        let mut s: () = u;
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut u: () = std_unique_ptr_const_A__std_default_delete_const_A__::new({
-            (Box::leak(Box::new(<A>::default())) as *mut A).cast_const()
-        });
+        let mut u: () = unimplemented!();
         let mut uPointee: *const A = unimplemented!();
-        let mut s: () = u;
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut u: () = {
-            let mut __tmp_0: D = <D>::default();
-            std_unique_ptr_A__D_::new({ (Box::leak(Box::new(<A>::default())) as *mut A) }, {
-                &mut __tmp_0
-            })
-        };
+        let mut u: () = unimplemented!();
         let mut uPointee: *mut A = unimplemented!();
-        let mut s: () = u;
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut u: () = {
-            let mut __tmp_1: D = <D>::default();
-            std_unique_ptr_const_A__D_::new(
-                { (Box::leak(Box::new(<A>::default())) as *mut A).cast_const() },
-                { &mut __tmp_1 },
-            )
-        };
+        let mut u: () = unimplemented!();
         let mut uPointee: *const A = unimplemented!();
-        let mut s: () = u;
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

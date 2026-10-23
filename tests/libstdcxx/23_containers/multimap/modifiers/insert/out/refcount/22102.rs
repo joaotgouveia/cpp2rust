@@ -259,11 +259,7 @@ pub fn test01_10() {
     let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let vt1: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-        std_pair_const_int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let vt1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -381,11 +377,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let vt2: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(0_()));
-        std_pair_const_int__int_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-    }));
+    let vt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -503,11 +495,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let vt3: Value<()> = Rc::new(RefCell::new({
-        let __tmp_4: Value<()> = Rc::new(RefCell::new(2_()));
-        let __tmp_5: Value<()> = Rc::new(RefCell::new(-1_()));
-        std_pair_const_int__int_::new({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-    }));
+    let vt3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it12: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -625,11 +613,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let vt4: Value<()> = Rc::new(RefCell::new({
-        let __tmp_6: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_7: Value<()> = Rc::new(RefCell::new(1_()));
-        std_pair_const_int__int_::new({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-    }));
+    let vt4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it13: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -747,11 +731,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let vt5: Value<()> = Rc::new(RefCell::new({
-        let __tmp_8: Value<()> = Rc::new(RefCell::new(1_()));
-        let __tmp_9: Value<()> = Rc::new(RefCell::new(0_()));
-        std_pair_const_int__int_::new({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
-    }));
+    let vt5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it16: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it17: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it18: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -869,11 +849,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let vt6: Value<()> = Rc::new(RefCell::new({
-        let __tmp_10: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_11: Value<()> = Rc::new(RefCell::new(-1_()));
-        std_pair_const_int__int_::new({ __tmp_10.as_pointer() }, { __tmp_11.as_pointer() })
-    }));
+    let vt6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it19: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
@@ -971,11 +947,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let vt7: Value<()> = Rc::new(RefCell::new({
-        let __tmp_12: Value<()> = Rc::new(RefCell::new(3_()));
-        let __tmp_13: Value<()> = Rc::new(RefCell::new(3_()));
-        std_pair_const_int__int_::new({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
-    }));
+    let vt7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it21: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it22: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it23: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1074,11 +1046,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let vt8: Value<()> = Rc::new(RefCell::new({
-        let __tmp_14: Value<()> = Rc::new(RefCell::new(2_()));
-        let __tmp_15: Value<()> = Rc::new(RefCell::new(3_()));
-        std_pair_const_int__int_::new({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() })
-    }));
+    let vt8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it24: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it25: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it26: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1196,11 +1164,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let vt9: Value<()> = Rc::new(RefCell::new({
-        let __tmp_16: Value<()> = Rc::new(RefCell::new(3_()));
-        let __tmp_17: Value<()> = Rc::new(RefCell::new(2_()));
-        std_pair_const_int__int_::new({ __tmp_16.as_pointer() }, { __tmp_17.as_pointer() })
-    }));
+    let vt9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it27: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it28: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it29: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1424,10 +1388,7 @@ pub fn verify_demangle_19(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -1438,22 +1399,14 @@ pub fn run_tests_wrapped_locale_21(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1465,10 +1418,7 @@ pub fn run_tests_wrapped_locale_21(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1490,10 +1440,7 @@ pub fn run_tests_wrapped_env_22(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

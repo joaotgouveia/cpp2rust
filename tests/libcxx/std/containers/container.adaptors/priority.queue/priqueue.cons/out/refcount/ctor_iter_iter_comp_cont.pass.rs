@@ -18,19 +18,8 @@ pub fn test_0() -> () {
     ])));
     let mut n: () =
         (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let v: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-        { (a.as_pointer() as Ptr<()>) },
-        { (a.as_pointer() as Ptr<()>).offset((n / 2_()) as isize) },
-    )));
-    let q: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-            { (a.as_pointer() as Ptr<()>).offset((n / 2_()) as isize) },
-            { (a.as_pointer() as Ptr<()>).offset((n) as isize) },
-            { __tmp_0.as_pointer() },
-            { v.as_pointer() },
-        )
-    }));
+    let mut v: () = unimplemented!();
+    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     return true;

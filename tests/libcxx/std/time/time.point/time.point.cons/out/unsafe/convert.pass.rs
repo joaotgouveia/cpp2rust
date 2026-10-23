@@ -25,12 +25,12 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut t2: () = unimplemented!();
-        let mut t1 : () = std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long_long__std_ratio_1__1000000___ :: new_1 ( { & t2 } , )  ;
+        let mut t1: () = unimplemented!();
         unimplemented!();
     }
     {
         let t2: () = unimplemented!();
-        let t1 : () = std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long_long__std_ratio_1__1000000___ :: new_1 ( { & t2 } , )  ;
+        let t1: () = unimplemented!();
         const _: () = assert!(true, "t1.time_since_epoch() == Duration1(3000)");;
     }
     return 0_();

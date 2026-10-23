@@ -428,23 +428,29 @@ pub fn operator_add_10(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_9(_i, n)
     });
 }
-pub fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_11(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_12(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_13(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_15(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -490,7 +496,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_14(
+            operator_cmp_15(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -515,7 +521,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_13(
+            operator_eq_14(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -610,43 +616,6 @@ impl DifferentFrom {
         Self { v: val }
     }
 }
-pub fn test_iter_15() {
-    let range: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-    ])));
-    {
-        {
-            let result: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-        }
-        {
-            let result: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-        }
-    }
-    let mut size: () = 1_();
-    'loop_: while (size != 10_()) {
-        let mut i: () = 0_();
-        'loop_: while (i != (size - 1_())) {
-            let result: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            i.prefix_inc();
-        }
-        size.prefix_inc();
-    }
-}
 pub fn test_iter_16() {
     let range: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -662,11 +631,13 @@ pub fn test_iter_16() {
     ])));
     {
         {
-            let result: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+            let result: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+                Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         {
-            let result: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+            let result: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+                Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
     }
@@ -674,7 +645,8 @@ pub fn test_iter_16() {
     'loop_: while (size != 10_()) {
         let mut i: () = 0_();
         'loop_: while (i != (size - 1_())) {
-            let result: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+            let result: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
+                Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             i.prefix_inc();
         }
@@ -696,6 +668,40 @@ pub fn test_iter_17() {
     ])));
     {
         {
+            let result: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+        }
+        {
+            let result: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+        }
+    }
+    let mut size: () = 1_();
+    'loop_: while (size != 10_()) {
+        let mut i: () = 0_();
+        'loop_: while (i != (size - 1_())) {
+            let result: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            i.prefix_inc();
+        }
+        size.prefix_inc();
+    }
+}
+pub fn test_iter_18() {
+    let range: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+        5_(),
+        6_(),
+        7_(),
+        8_(),
+        9_(),
+    ])));
+    {
+        {
             let result: Value<bidirectional_iterator_int_ptr_> =
                 Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
@@ -718,7 +724,7 @@ pub fn test_iter_17() {
         size.prefix_inc();
     }
 }
-pub fn test_iter_18() {
+pub fn test_iter_19() {
     let range: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
         1_(),
@@ -755,11 +761,11 @@ pub fn test_iter_18() {
         size.prefix_inc();
     }
 }
-pub fn test_19() -> () {
-    ({ test_iter_15() });
+pub fn test_20() -> () {
     ({ test_iter_16() });
     ({ test_iter_17() });
     ({ test_iter_18() });
+    ({ test_iter_19() });
     return true;
 }
 pub fn main() {
@@ -782,7 +788,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_19() });
+    ({ test_20() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

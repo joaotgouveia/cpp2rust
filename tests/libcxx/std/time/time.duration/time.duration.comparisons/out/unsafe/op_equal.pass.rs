@@ -24,170 +24,86 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut s1: () = {
-            let mut __tmp_0: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_0 })
-        };
-        let mut s2: () = {
-            let mut __tmp_1: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_1 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_2: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_2 })
-        };
-        let mut s2: () = {
-            let mut __tmp_3: () = 4_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_3 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_4: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_4 })
-        };
-        let mut s2: () = {
-            let mut __tmp_5: () = 3000_();
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ &mut __tmp_5 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_6: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_6 })
-        };
-        let mut s2: () = {
-            let mut __tmp_7: () = 4000_();
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ &mut __tmp_7 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_8: () = 9_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_8 })
-        };
-        let mut s2: () = {
-            let mut __tmp_9: () = 10_();
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ &mut __tmp_9 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_10: () = 10_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_10 })
-        };
-        let mut s2: () = {
-            let mut __tmp_11: () = 9_();
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ &mut __tmp_11 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s1: () = {
-            let mut __tmp_12: () = 9_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_12 })
-        };
-        let mut s2: () = {
-            let mut __tmp_13: () = 10_();
-            std_chrono_duration_double__std_ratio_3__5__::new_1({ &mut __tmp_13 })
-        };
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s1: () = {
-            let mut __tmp_14: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_14 })
-        };
-        let s2: () = {
-            let mut __tmp_15: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_15 })
-        };
+        let s1: () = unimplemented!();
+        let s2: () = unimplemented!();
         const _: () = assert!(true, "s1 == s2");;
         const _: () = assert!(true, "!(s1 != s2)");;
     }
     {
-        let s1: () = {
-            let mut __tmp_16: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_16 })
-        };
-        let s2: () = {
-            let mut __tmp_17: () = 4_();
-            std_chrono_duration_long_long__std_ratio_1__1__::new_1({ &mut __tmp_17 })
-        };
+        let s1: () = unimplemented!();
+        let s2: () = unimplemented!();
         const _: () = assert!(true, "!(s1 == s2)");;
         const _: () = assert!(true, "s1 != s2");;
     }
     {
-        let s1: () = {
-            let mut __tmp_18: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_18 })
-        };
-        let s2: () = {
-            let mut __tmp_19: () = 3000_();
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ &mut __tmp_19 })
-        };
+        let s1: () = unimplemented!();
+        let s2: () = unimplemented!();
         const _: () = assert!(true, "s1 == s2");;
         const _: () = assert!(true, "!(s1 != s2)");;
     }
     {
-        let s1: () = {
-            let mut __tmp_20: () = 3_();
-            std_chrono_duration_long_long__std_ratio_1__1000__::new_1({ &mut __tmp_20 })
-        };
-        let s2: () = {
-            let mut __tmp_21: () = 4000_();
-            std_chrono_duration_long_long__std_ratio_1__1000000__::new_1({ &mut __tmp_21 })
-        };
+        let s1: () = unimplemented!();
+        let s2: () = unimplemented!();
         const _: () = assert!(true, "!(s1 == s2)");;
         const _: () = assert!(true, "s1 != s2");;
     }
     {
-        let s1: () = {
-            let mut __tmp_22: () = 9_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_22 })
-        };
-        let s2: () = {
-            let mut __tmp_23: () = 10_();
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ &mut __tmp_23 })
-        };
+        let s1: () = unimplemented!();
+        let s2: () = unimplemented!();
         const _: () = assert!(true, "s1 == s2");;
         const _: () = assert!(true, "!(s1 != s2)");;
     }
     {
-        let s1: () = {
-            let mut __tmp_24: () = 10_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_24 })
-        };
-        let s2: () = {
-            let mut __tmp_25: () = 9_();
-            std_chrono_duration_int__std_ratio_3__5__::new_1({ &mut __tmp_25 })
-        };
+        let s1: () = unimplemented!();
+        let s2: () = unimplemented!();
         const _: () = assert!(true, "!(s1 == s2)");;
         const _: () = assert!(true, "s1 != s2");;
     }
     {
-        let s1: () = {
-            let mut __tmp_26: () = 9_();
-            std_chrono_duration_int__std_ratio_2__3__::new_1({ &mut __tmp_26 })
-        };
-        let s2: () = {
-            let mut __tmp_27: () = 10_();
-            std_chrono_duration_double__std_ratio_3__5__::new_1({ &mut __tmp_27 })
-        };
+        let s1: () = unimplemented!();
+        let s2: () = unimplemented!();
         const _: () = assert!(true, "s1 == s2");;
         const _: () = assert!(true, "!(s1 != s2)");;
     }

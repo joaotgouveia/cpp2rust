@@ -658,61 +658,19 @@ pub unsafe fn test_containers_6() {
     let mut sorted_ks: () = unimplemented!();
     let mut sorted_vs: () = unimplemented!();
     let expected: [(); 7] = [
-        {
-            let mut __tmp_0: () = 1_();
-            let mut __tmp_1: () = 1_();
-            std_pair_int__long_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        },
-        {
-            let mut __tmp_2: () = 1_();
-            let mut __tmp_3: () = 3_();
-            std_pair_int__long_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        },
-        {
-            let mut __tmp_4: () = 2_();
-            let mut __tmp_5: () = 2_();
-            std_pair_int__long_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-        },
-        {
-            let mut __tmp_6: () = 2_();
-            let mut __tmp_7: () = 4_();
-            std_pair_int__long_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-        },
-        {
-            let mut __tmp_8: () = 2_();
-            let mut __tmp_9: () = 5_();
-            std_pair_int__long_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-        },
-        {
-            let mut __tmp_10: () = 3_();
-            let mut __tmp_11: () = 4_();
-            std_pair_int__long_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-        },
-        {
-            let mut __tmp_12: () = 2147483647_();
-            let mut __tmp_13: () = 3_();
-            std_pair_int__long_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ];
     {
         let mut mr: () = unimplemented!();
         let mut mr2: () = unimplemented!();
-        let mut pks: () = {
-            let mut __tmp_14: () = unimplemented!();
-            std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_14 },
-            )
-        };
-        let mut pvs: () = {
-            let mut __tmp_15: () = unimplemented!();
-            std_deque_long__std_pmr_polymorphic_allocator_long__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_15 },
-            )
-        };
+        let mut pks: () = unimplemented!();
+        let mut pvs: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -722,22 +680,8 @@ pub unsafe fn test_containers_6() {
     {
         let mut mr: () = unimplemented!();
         let mut mr2: () = unimplemented!();
-        let mut pks: () = {
-            let mut __tmp_16: () = unimplemented!();
-            std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_16 },
-            )
-        };
-        let mut pvs: () = {
-            let mut __tmp_17: () = unimplemented!();
-            std_deque_long__std_pmr_polymorphic_allocator_long__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_17 },
-            )
-        };
+        let mut pks: () = unimplemented!();
+        let mut pvs: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -751,61 +695,19 @@ pub unsafe fn test_containers_compare_7() {
     let mut sorted_ks: () = unimplemented!();
     let mut sorted_vs: () = unimplemented!();
     let expected: [(); 7] = [
-        {
-            let mut __tmp_18: () = 2147483647_();
-            let mut __tmp_19: () = 3_();
-            std_pair_int__long_::new({ &mut __tmp_18 }, { &mut __tmp_19 })
-        },
-        {
-            let mut __tmp_20: () = 3_();
-            let mut __tmp_21: () = 4_();
-            std_pair_int__long_::new({ &mut __tmp_20 }, { &mut __tmp_21 })
-        },
-        {
-            let mut __tmp_22: () = 2_();
-            let mut __tmp_23: () = 2_();
-            std_pair_int__long_::new({ &mut __tmp_22 }, { &mut __tmp_23 })
-        },
-        {
-            let mut __tmp_24: () = 2_();
-            let mut __tmp_25: () = 4_();
-            std_pair_int__long_::new({ &mut __tmp_24 }, { &mut __tmp_25 })
-        },
-        {
-            let mut __tmp_26: () = 2_();
-            let mut __tmp_27: () = 5_();
-            std_pair_int__long_::new({ &mut __tmp_26 }, { &mut __tmp_27 })
-        },
-        {
-            let mut __tmp_28: () = 1_();
-            let mut __tmp_29: () = 1_();
-            std_pair_int__long_::new({ &mut __tmp_28 }, { &mut __tmp_29 })
-        },
-        {
-            let mut __tmp_30: () = 1_();
-            let mut __tmp_31: () = 3_();
-            std_pair_int__long_::new({ &mut __tmp_30 }, { &mut __tmp_31 })
-        },
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ];
     {
         let mut mr: () = unimplemented!();
         let mut mr2: () = unimplemented!();
-        let mut pks: () = {
-            let mut __tmp_32: () = unimplemented!();
-            std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_32 },
-            )
-        };
-        let mut pvs: () = {
-            let mut __tmp_33: () = unimplemented!();
-            std_deque_long__std_pmr_polymorphic_allocator_long__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_33 },
-            )
-        };
+        let mut pks: () = unimplemented!();
+        let mut pvs: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -815,22 +717,8 @@ pub unsafe fn test_containers_compare_7() {
     {
         let mut mr: () = unimplemented!();
         let mut mr2: () = unimplemented!();
-        let mut pks: () = {
-            let mut __tmp_34: () = unimplemented!();
-            std_deque_int__std_pmr_polymorphic_allocator_int__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_34 },
-            )
-        };
-        let mut pvs: () = {
-            let mut __tmp_35: () = unimplemented!();
-            std_deque_long__std_pmr_polymorphic_allocator_long__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                { &mut __tmp_35 },
-            )
-        };
+        let mut pks: () = unimplemented!();
+        let mut pvs: () = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();

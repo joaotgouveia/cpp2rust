@@ -10,18 +10,18 @@ pub fn test1_0() {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_()])));
     let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2 : Value<() > = Rc::new(RefCell::new(std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_ :: new_1 ( { sseq .as_pointer()  } , )  )) ;
+    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ (*e1.borrow()).seed(sseq.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test2_1() {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 5_(), 7_()])));
     let sseq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2 : Value<() > = Rc::new(RefCell::new(std_mersenne_twister_engine_unsigned_long__64__312__156__31__13043109905998158313__29__6148914691236517205__17__8202884508482404352__37__18444473444759240704__43__6364136223846793005_ :: new_1 ( { sseq .as_pointer()  } , )  )) ;
+    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ (*e1.borrow()).seed(sseq.as_pointer()) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn main() {

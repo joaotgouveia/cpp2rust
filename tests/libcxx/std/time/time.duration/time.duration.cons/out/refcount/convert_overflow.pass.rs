@@ -34,17 +34,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let r: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            std_chrono_duration_int__std_ratio_1000000000000000000__1__::new_1({
-                __tmp_0.as_pointer()
-            })
-        }));
-        ({
-            f_1(std_chrono_duration_long_long__std_ratio_1__1__::new_1({
-                r.as_pointer()
-            }))
-        });
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ f_1(unimplemented!()) });
         unimplemented!();
     }
     return 0_();

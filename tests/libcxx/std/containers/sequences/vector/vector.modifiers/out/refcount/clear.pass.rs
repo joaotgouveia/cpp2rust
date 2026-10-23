@@ -195,10 +195,7 @@ pub fn is_contiguous_container_asan_correct_16(_a0: Ptr<()>) -> () {
 pub fn tests_17() -> () {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
-            { (a.as_pointer() as Ptr<()>) },
-            { (a.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -207,10 +204,7 @@ pub fn tests_17() -> () {
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1(
-            { (a.as_pointer() as Ptr<()>) },
-            { (a.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -219,10 +213,7 @@ pub fn tests_17() -> () {
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let c: Value<()> = Rc::new(RefCell::new(std_vector_int__safe_allocator_int__::new_1(
-            { (a.as_pointer() as Ptr<()>) },
-            { (a.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

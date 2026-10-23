@@ -14,7 +14,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut w: () = unimplemented!();
     &(unimplemented!());
     &(unimplemented!());
@@ -23,12 +23,7 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({
-        let ___position: () = unimplemented!();
-        let ___first: () = unimplemented!();
-        let ___last: () = unimplemented!();
-        (*v.borrow()) . insert_66_class___gnu_cxx___normal_iterator_class___gnu_cxx__Pointer_adapter_class___gnu_cxx__Relative_pointer_impl_const_struct_N_X_____class_std_vector_struct_N_X__class___gnu_cxx__ExtPtr_allocator_struct_N_X______void ( ___position , ___first , ___last , )
-    });
+    unimplemented!();
     unimplemented!();
     return 0_();
 }

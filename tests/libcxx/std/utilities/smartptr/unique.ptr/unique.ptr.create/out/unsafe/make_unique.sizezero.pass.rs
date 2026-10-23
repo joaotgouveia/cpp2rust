@@ -29,23 +29,19 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p: () = std_unique_ptr_A__std_default_delete_A__::new({
-            (Box::leak(Box::new(<A>::default())) as *mut A)
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = std_unique_ptr_Aarrarr__std_default_delete_Aarrarr__::new({
-            Box::leak((0..1_()).map(|_| <A>::default()).collect::<Box<[A]>>()).as_mut_ptr()
-        });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = (unsafe { make_unique_0() });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: () = (unsafe { make_unique_1(1_()) });
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

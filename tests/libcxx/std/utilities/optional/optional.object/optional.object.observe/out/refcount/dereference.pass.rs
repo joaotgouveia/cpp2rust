@@ -123,7 +123,7 @@ pub fn test_contract_18() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_19() {
-    let opt: Value<()> = Rc::new(RefCell::new(<X>::default()));
+    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -167,7 +167,7 @@ pub fn test_contract_22() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_23() {
-    let opt: Value<()> = Rc::new(RefCell::new(<X>::default()));
+    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -187,7 +187,7 @@ pub fn test_24() -> () {
     ({ test_contract_22() });
     ({ test_contract_23() });
     {
-        let opt: Value<()> = Rc::new(RefCell::new(<X>::default()));
+        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

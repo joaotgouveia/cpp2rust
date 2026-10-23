@@ -229,15 +229,7 @@ impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub struct min_allocator_std_pair_const_int__MoveOnly__ {}
 pub unsafe fn do_insert_rv_test_18() {
     let mut m: () = unimplemented!();
-    let mut r: () = (unsafe {
-        let ___pos: () = unimplemented!();
-        let mut ___p: () = {
-            let mut __tmp_0: () = 2_();
-            let mut __tmp_1: () = 2_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        m.insert_42_struct_std_pair_int__class_MoveOnly__0(___pos, &mut ___p)
-    });
+    let mut r: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -283,15 +275,7 @@ pub unsafe fn do_insert_rv_test_19() {
 }
 pub unsafe fn do_insert_rv_test_20() {
     let mut m: () = unimplemented!();
-    let mut r: () = (unsafe {
-        let ___pos: () = unimplemented!();
-        let mut ___p: () = {
-            let mut __tmp_2: () = 2_();
-            let mut __tmp_3: () = 2_();
-            std_pair_int__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
-        m.insert_42_struct_std_pair_int__class_MoveOnly__0(___pos, &mut ___p)
-    });
+    let mut r: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

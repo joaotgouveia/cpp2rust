@@ -12,12 +12,7 @@ pub unsafe fn test_0() -> () {
         ((::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ())))
             as isize,
     );
-    let mut q: () =
-        std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
-            { a.as_mut_ptr() },
-            { an },
-            None,
-        );
+    let mut q: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;

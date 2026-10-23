@@ -8,20 +8,13 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     {
-        let p1: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___args: Value<()> = Rc::new(RefCell::new(1_()));
-                make_unique_1(___args.as_pointer())
-            }),
-        ));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p2: Value<()> = Rc::new(RefCell::new(
-            ({ make_unique_2(Ptr::<()>::from_string_literal(b"Meow!")) }),
-        ));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

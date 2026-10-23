@@ -27,7 +27,7 @@ impl Default for foo {
 }
 pub unsafe fn test_0() -> () {
     {
-        let mut p1: () = (unsafe { make_unique_1(5_()) });
+        let mut p1: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (5_())) {
             unimplemented!();
@@ -35,7 +35,7 @@ pub unsafe fn test_0() -> () {
         }
     }
     {
-        let mut p2: () = (unsafe { make_unique_2(5_()) });
+        let mut p2: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (5_())) {
             unimplemented!();
@@ -43,7 +43,7 @@ pub unsafe fn test_0() -> () {
         }
     }
     {
-        let mut p3: () = (unsafe { make_unique_3(7_()) });
+        let mut p3: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (7_())) {
             unimplemented!();

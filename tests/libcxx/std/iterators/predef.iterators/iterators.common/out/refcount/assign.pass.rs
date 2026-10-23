@@ -371,23 +371,29 @@ pub fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_8(_i, n)
     });
 }
-pub fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_10(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_11(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -433,7 +439,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_13(
+            operator_cmp_14(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -458,7 +464,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -542,7 +548,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn base_14(i: Ptr<assignable_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_15(i: Ptr<assignable_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -562,47 +568,47 @@ impl assignable_iterator_int_ptr_ {
         }
     }
 }
-pub fn operator_eq_15(
+pub fn operator_eq_16(
     lhs: Ptr<sentinel_type_int_ptr_>,
     rhs: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
 ) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_1((rhs).clone()) }) });
 }
-pub fn operator_eq_16(lhs: Ptr<sentinel_type_int_ptr_>, rhs: Ptr<forward_iterator_int_ptr_>) -> () {
+pub fn operator_eq_17(lhs: Ptr<sentinel_type_int_ptr_>, rhs: Ptr<forward_iterator_int_ptr_>) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_3((rhs).clone()) }) });
 }
-pub fn operator_eq_17(
+pub fn operator_eq_18(
     lhs: Ptr<sentinel_type_int_ptr_>,
     rhs: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_6((rhs).clone()) }) });
 }
-pub fn operator_eq_18(
+pub fn operator_eq_19(
     lhs: Ptr<sentinel_type_int_ptr_>,
     rhs: Ptr<assignable_iterator_int_ptr_>,
 ) -> () {
-    return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_14((rhs).clone()) }) });
+    return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_15((rhs).clone()) }) });
 }
-pub fn operator_eq_19(
+pub fn operator_eq_20(
     lhs: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
     rhs: Ptr<sentinel_type_int_ptr_>,
 ) -> () {
     return ({ ({ base_1((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
-pub fn operator_eq_20(lhs: Ptr<forward_iterator_int_ptr_>, rhs: Ptr<sentinel_type_int_ptr_>) -> () {
+pub fn operator_eq_21(lhs: Ptr<forward_iterator_int_ptr_>, rhs: Ptr<sentinel_type_int_ptr_>) -> () {
     return ({ ({ base_3((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
-pub fn operator_eq_21(
+pub fn operator_eq_22(
     lhs: Ptr<random_access_iterator_int_ptr_>,
     rhs: Ptr<sentinel_type_int_ptr_>,
 ) -> () {
     return ({ ({ base_6((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
-pub fn operator_eq_22(
+pub fn operator_eq_23(
     lhs: Ptr<assignable_iterator_int_ptr_>,
     rhs: Ptr<sentinel_type_int_ptr_>,
 ) -> () {
-    return ({ ({ base_14((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
+    return ({ ({ base_15((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -611,7 +617,7 @@ pub struct sentinel_type_int_ptr_ {
     #[byte_size(8)]
     pub base_: Ptr<()>,
 }
-pub fn test_23() {
+pub fn test_24() {
     let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         1_(),
         2_(),
@@ -724,7 +730,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_23() });
+    ({ test_24() });
     return 0_();
 }
 pub trait adl_IteratorImpl {

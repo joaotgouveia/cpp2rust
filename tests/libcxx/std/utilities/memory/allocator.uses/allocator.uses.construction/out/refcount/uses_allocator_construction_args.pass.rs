@@ -682,7 +682,7 @@ pub fn test_uses_allocator_construction_args_42(
 }
 pub fn test_uses_allocator_construction_args_44(
     args_0: Ptr<test_allocator_int_>,
-    args_1: Ptr<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_>,
+    args_1: Ptr<()>,
 ) -> () {
     const _: () = assert!(
         true,
@@ -690,8 +690,7 @@ pub fn test_uses_allocator_construction_args_44(
     );;
     return ({
         let ___alloc: Ptr<test_allocator_int_> = (args_0).clone();
-        let ___args: Ptr<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            (args_1).clone();
+        let ___args: Ptr<()> = (args_1).clone();
         uses_allocator_construction_args_45(___alloc, ___args)
     });
 }
@@ -873,7 +872,7 @@ pub fn test_uses_allocator_construction_args_72(
 }
 pub fn test_uses_allocator_construction_args_74(
     args_0: Ptr<test_allocator_int_>,
-    args_1: Ptr<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_>,
+    args_1: Ptr<()>,
 ) -> () {
     const _: () = assert!(
         true,
@@ -881,8 +880,7 @@ pub fn test_uses_allocator_construction_args_74(
     );;
     return ({
         let ___alloc: Ptr<test_allocator_int_> = (args_0).clone();
-        let ___args: Ptr<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            (args_1).clone();
+        let ___args: Ptr<()> = (args_1).clone();
         uses_allocator_construction_args_75(___alloc, ___args)
     });
 }
@@ -1064,7 +1062,7 @@ pub fn test_uses_allocator_construction_args_102(
 }
 pub fn test_uses_allocator_construction_args_104(
     args_0: Ptr<test_allocator_int_>,
-    args_1: Ptr<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_>,
+    args_1: Ptr<()>,
 ) -> () {
     const _: () = assert!(
         true,
@@ -1072,8 +1070,7 @@ pub fn test_uses_allocator_construction_args_104(
     );;
     return ({
         let ___alloc: Ptr<test_allocator_int_> = (args_0).clone();
-        let ___args: Ptr<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            (args_1).clone();
+        let ___args: Ptr<()> = (args_1).clone();
         uses_allocator_construction_args_105(___alloc, ___args)
     });
 }
@@ -1255,7 +1252,7 @@ pub fn test_uses_allocator_construction_args_132(
 }
 pub fn test_uses_allocator_construction_args_134(
     args_0: Ptr<test_allocator_int_>,
-    args_1: Ptr<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_>,
+    args_1: Ptr<()>,
 ) -> () {
     const _: () = assert!(
         true,
@@ -1263,8 +1260,7 @@ pub fn test_uses_allocator_construction_args_134(
     );;
     return ({
         let ___alloc: Ptr<test_allocator_int_> = (args_0).clone();
-        let ___args: Ptr<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            (args_1).clone();
+        let ___args: Ptr<()> = (args_1).clone();
         uses_allocator_construction_args_135(___alloc, ___args)
     });
 }
@@ -1341,11 +1337,7 @@ pub fn testOne_136() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_30(a.as_pointer(), p.as_pointer()) }),
         ));
@@ -1355,11 +1347,7 @@ pub fn testOne_136() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_32(a.as_pointer(), unimplemented!()) }),
         ));
@@ -1369,11 +1357,7 @@ pub fn testOne_136() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 test_uses_allocator_construction_args_34(
@@ -1413,22 +1397,14 @@ pub fn testOne_136() {
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_8: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_9: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({ test_uses_allocator_construction_args_10(a.as_pointer(), p.as_pointer()) }),
             ));
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_10: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_11: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_10.as_pointer() }, { __tmp_11.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({
                     test_uses_allocator_construction_args_12(
@@ -1440,11 +1416,7 @@ pub fn testOne_136() {
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_12: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_13: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({ test_uses_allocator_construction_args_14(a.as_pointer(), p.as_pointer()) }),
             ));
@@ -1452,11 +1424,7 @@ pub fn testOne_136() {
         }
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_36(a.as_pointer(), unimplemented!()) }),
         ));
@@ -1498,13 +1466,7 @@ pub fn testOne_136() {
     }
     {
         let i: Value<()> = Rc::new(RefCell::new(5_()));
-        let r: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            Rc::new(RefCell::new(
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                    { (i.as_pointer()) },
-                    { (i.as_pointer()) },
-                ),
-            ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_44(a.as_pointer(), r.as_pointer()) }),
         ));
@@ -1586,11 +1548,7 @@ pub fn testOne_142() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_16.as_pointer() }, { __tmp_17.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_60(a.as_pointer(), p.as_pointer()) }),
         ));
@@ -1600,11 +1558,7 @@ pub fn testOne_142() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_18.as_pointer() }, { __tmp_19.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_62(a.as_pointer(), unimplemented!()) }),
         ));
@@ -1614,11 +1568,7 @@ pub fn testOne_142() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_20: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_21: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_20.as_pointer() }, { __tmp_21.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 test_uses_allocator_construction_args_64(
@@ -1658,22 +1608,14 @@ pub fn testOne_142() {
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_22: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_23: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_22.as_pointer() }, { __tmp_23.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({ test_uses_allocator_construction_args_10(a.as_pointer(), p.as_pointer()) }),
             ));
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_24: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_25: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_24.as_pointer() }, { __tmp_25.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({
                     test_uses_allocator_construction_args_12(
@@ -1685,11 +1627,7 @@ pub fn testOne_142() {
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_26: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_27: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_26.as_pointer() }, { __tmp_27.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({ test_uses_allocator_construction_args_14(a.as_pointer(), p.as_pointer()) }),
             ));
@@ -1697,11 +1635,7 @@ pub fn testOne_142() {
         }
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_28: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_29: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_28.as_pointer() }, { __tmp_29.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_66(a.as_pointer(), unimplemented!()) }),
         ));
@@ -1743,13 +1677,7 @@ pub fn testOne_142() {
     }
     {
         let i: Value<()> = Rc::new(RefCell::new(5_()));
-        let r: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            Rc::new(RefCell::new(
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                    { (i.as_pointer()) },
-                    { (i.as_pointer()) },
-                ),
-            ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_74(a.as_pointer(), r.as_pointer()) }),
         ));
@@ -1831,11 +1759,7 @@ pub fn testOne_147() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_30: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_31: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_30.as_pointer() }, { __tmp_31.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_90(a.as_pointer(), p.as_pointer()) }),
         ));
@@ -1845,11 +1769,7 @@ pub fn testOne_147() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_32: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_33: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_32.as_pointer() }, { __tmp_33.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_92(a.as_pointer(), unimplemented!()) }),
         ));
@@ -1859,11 +1779,7 @@ pub fn testOne_147() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_34: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_35: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_34.as_pointer() }, { __tmp_35.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 test_uses_allocator_construction_args_94(
@@ -1903,22 +1819,14 @@ pub fn testOne_147() {
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_36: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_37: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_36.as_pointer() }, { __tmp_37.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({ test_uses_allocator_construction_args_10(a.as_pointer(), p.as_pointer()) }),
             ));
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_38: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_39: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_38.as_pointer() }, { __tmp_39.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({
                     test_uses_allocator_construction_args_12(
@@ -1930,11 +1838,7 @@ pub fn testOne_147() {
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_40: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_41: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_40.as_pointer() }, { __tmp_41.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({ test_uses_allocator_construction_args_14(a.as_pointer(), p.as_pointer()) }),
             ));
@@ -1942,11 +1846,7 @@ pub fn testOne_147() {
         }
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_42: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_43: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_42.as_pointer() }, { __tmp_43.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_96(a.as_pointer(), unimplemented!()) }),
         ));
@@ -1988,13 +1888,7 @@ pub fn testOne_147() {
     }
     {
         let i: Value<()> = Rc::new(RefCell::new(5_()));
-        let r: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            Rc::new(RefCell::new(
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                    { (i.as_pointer()) },
-                    { (i.as_pointer()) },
-                ),
-            ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_104(a.as_pointer(), r.as_pointer()) }),
         ));
@@ -2076,11 +1970,7 @@ pub fn testOne_152() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_44: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_45: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_44.as_pointer() }, { __tmp_45.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_120(a.as_pointer(), p.as_pointer()) }),
         ));
@@ -2090,11 +1980,7 @@ pub fn testOne_152() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_46: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_47: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_46.as_pointer() }, { __tmp_47.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_122(a.as_pointer(), unimplemented!()) }),
         ));
@@ -2104,11 +1990,7 @@ pub fn testOne_152() {
         unimplemented!();
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_48: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_49: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_48.as_pointer() }, { __tmp_49.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({
                 test_uses_allocator_construction_args_124(
@@ -2148,22 +2030,14 @@ pub fn testOne_152() {
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_50: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_51: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_50.as_pointer() }, { __tmp_51.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({ test_uses_allocator_construction_args_10(a.as_pointer(), p.as_pointer()) }),
             ));
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_52: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_53: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_52.as_pointer() }, { __tmp_53.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({
                     test_uses_allocator_construction_args_12(
@@ -2175,11 +2049,7 @@ pub fn testOne_152() {
             &(*ret.borrow_mut());
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new({
-                let __tmp_54: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_55: Value<()> = Rc::new(RefCell::new(2_()));
-                std_pair_int__int_::new_1({ __tmp_54.as_pointer() }, { __tmp_55.as_pointer() })
-            }));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<()> = Rc::new(RefCell::new(
                 ({ test_uses_allocator_construction_args_14(a.as_pointer(), p.as_pointer()) }),
             ));
@@ -2187,11 +2057,7 @@ pub fn testOne_152() {
         }
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new({
-            let __tmp_56: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_57: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__int_::new_1({ __tmp_56.as_pointer() }, { __tmp_57.as_pointer() })
-        }));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_126(a.as_pointer(), unimplemented!()) }),
         ));
@@ -2233,13 +2099,7 @@ pub fn testOne_152() {
     }
     {
         let i: Value<()> = Rc::new(RefCell::new(5_()));
-        let r: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
-            Rc::new(RefCell::new(
-                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                    { (i.as_pointer()) },
-                    { (i.as_pointer()) },
-                ),
-            ));
+        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ret: Value<()> = Rc::new(RefCell::new(
             ({ test_uses_allocator_construction_args_134(a.as_pointer(), r.as_pointer()) }),
         ));
@@ -2372,11 +2232,7 @@ pub trait ConvertibleToPairImpl {
 }
 impl ConvertibleToPairImpl for Ptr<ConvertibleToPair> {
     fn to_(&self) -> () {
-        return {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-            std_pair_int__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        };
+        return unimplemented!();
     }
 }
 pub trait Tag_XImpl {

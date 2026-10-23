@@ -24,21 +24,18 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut c: std_codecvt_utf8_wchar_t__1114111__0_ =
-            <std_codecvt_utf8_wchar_t__1114111__0_>::default();
-        let mut r: () = (unsafe { (c as ()).encoding() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.encoding() });
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_char16_t__1114111__0_ =
-            <std_codecvt_utf8_char16_t__1114111__0_>::default();
-        let mut r: () = (unsafe { (c as ()).encoding() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.encoding() });
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_char32_t__1114111__0_ =
-            <std_codecvt_utf8_char32_t__1114111__0_>::default();
-        let mut r: () = (unsafe { (c as ()).encoding() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.encoding() });
         unimplemented!();
     }
     return 0_();

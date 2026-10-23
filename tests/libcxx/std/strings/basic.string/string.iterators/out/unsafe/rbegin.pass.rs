@@ -216,25 +216,11 @@ pub unsafe fn test_6(mut s: ()) {
 }
 pub unsafe fn test_string_7() {
     (unsafe { test_5(unimplemented!()) });
-    (unsafe {
-        test_5(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"123".as_ptr() },
-                None,
-            ),
-        )
-    });
+    (unsafe { test_5(unimplemented!()) });
 }
 pub unsafe fn test_string_8() {
     (unsafe { test_6(unimplemented!()) });
-    (unsafe {
-        test_6(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { c"123".as_ptr() },
-                None,
-            ),
-        )
-    });
+    (unsafe { test_6(unimplemented!()) });
 }
 pub unsafe fn test_9() -> () {
     (unsafe { test_string_7() });

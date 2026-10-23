@@ -430,21 +430,25 @@ pub unsafe fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_15(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -528,7 +532,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -538,7 +542,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -606,127 +610,127 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_18() -> () {
-    {
-        let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
-        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 6] = [7_(), 7_(), 3_(), 7_(), 3_(), 6_()];
-        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 5] = [9_(), 3_(), 6_(), 4_(), 4_()];
-        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 5] = [9_(), 3_(), 6_(), 4_(), 8_()];
-        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 4] = [1_(), 1_(), 1_(), 1_()];
-        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 3] = [3_(), 3_(), 3_()];
-        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 3] = [6_(), 7_(), 8_()];
-        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: () = unimplemented!();
-        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-        unimplemented!();
-    }
-    {
-        {
-            let mut a: [(); 9] = [6_(), 6_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 8_()];
-            let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut a: [(); 9] = [6_(), 8_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 8_()];
-            let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut a: [(); 9] = [6_(), 6_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 6_()];
-            let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
-            unimplemented!();
-        }
-    }
-    return true;
-}
 pub unsafe fn test_19() -> () {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
-        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 6] = [7_(), 7_(), 3_(), 7_(), 3_(), 6_()];
-        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 5] = [9_(), 3_(), 6_(), 4_(), 4_()];
-        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 5] = [9_(), 3_(), 6_(), 4_(), 8_()];
-        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 4] = [1_(), 1_(), 1_(), 1_()];
-        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 3] = [3_(), 3_(), 3_()];
-        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
         unimplemented!();
     }
     {
         let mut a: [(); 3] = [6_(), 7_(), 8_()];
-        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
         unimplemented!();
     }
     {
         let mut a: () = unimplemented!();
-        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
         unimplemented!();
     }
     {
         {
             let mut a: [(); 9] = [6_(), 6_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 8_()];
-            let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+            let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
             unimplemented!();
         }
         {
             let mut a: [(); 9] = [6_(), 8_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 8_()];
-            let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+            let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
             unimplemented!();
         }
         {
             let mut a: [(); 9] = [6_(), 6_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 6_()];
-            let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+            let mut ret: forward_iterator_const_int_ptr_ = unimplemented!();
             unimplemented!();
         }
     }
     return true;
 }
 pub unsafe fn test_20() -> () {
+    {
+        let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
+        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut a: [(); 6] = [7_(), 7_(), 3_(), 7_(), 3_(), 6_()];
+        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut a: [(); 5] = [9_(), 3_(), 6_(), 4_(), 4_()];
+        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut a: [(); 5] = [9_(), 3_(), 6_(), 4_(), 8_()];
+        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut a: [(); 4] = [1_(), 1_(), 1_(), 1_()];
+        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut a: [(); 3] = [3_(), 3_(), 3_()];
+        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut a: [(); 3] = [6_(), 7_(), 8_()];
+        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut a: () = unimplemented!();
+        let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+        unimplemented!();
+    }
+    {
+        {
+            let mut a: [(); 9] = [6_(), 6_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 8_()];
+            let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut a: [(); 9] = [6_(), 8_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 8_()];
+            let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut a: [(); 9] = [6_(), 6_(), 8_(), 6_(), 6_(), 8_(), 6_(), 6_(), 6_()];
+            let mut ret: bidirectional_iterator_const_int_ptr_ = unimplemented!();
+            unimplemented!();
+        }
+    }
+    return true;
+}
+pub unsafe fn test_21() -> () {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         let mut ret: random_access_iterator_const_int_ptr_ = unimplemented!();
@@ -802,9 +806,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
     (unsafe { test_19() });
     (unsafe { test_20() });
+    (unsafe { test_21() });
     const _: () = assert!(true, "test<forward_iterator<const int*> >()");;
     const _: () = assert!(true, "test<bidirectional_iterator<const int*> >()");;
     const _: () = assert!(true, "test<random_access_iterator<const int*> >()");;

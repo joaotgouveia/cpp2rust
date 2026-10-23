@@ -25,61 +25,37 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut phone_numbers: () = unimplemented!();
-        let mut phone_book: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"555-1234, 555-2345, 555-3456".as_ptr() },
-                None,
-            );
+        let mut phone_book: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut phone_numbers: () = unimplemented!();
-        let mut phone_book: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"555-1234, 555-2345, 555-3456".as_ptr() },
-                None,
-            );
+        let mut phone_book: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut phone_numbers: () = unimplemented!();
-        let mut phone_book: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"555-1234, 555-2345, 555-3456".as_ptr() },
-                None,
-            );
+        let mut phone_book: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut phone_numbers: () = unimplemented!();
-        let mut phone_book: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"555-1234, 555-2345, 555-3456".as_ptr() },
-                None,
-            );
+        let mut phone_book: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut phone_numbers: () = unimplemented!();
-        let mut phone_book: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"555-1234, 555-2345, 555-3456".as_ptr() },
-                None,
-            );
+        let mut phone_book: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut phone_numbers: () = unimplemented!();
-        let mut phone_book: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"555-1234, 555-2345, 555-3456".as_ptr() },
-                None,
-            );
+        let mut phone_book: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
     }

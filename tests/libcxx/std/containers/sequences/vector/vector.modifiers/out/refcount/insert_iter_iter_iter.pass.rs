@@ -225,8 +225,12 @@ pub fn make_thread_unsafe_shared_4() -> detail_thread_unsafe_shared_ptr_limited_
     );
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ptr.borrow_mut()).block = unimplemented!();
-    unimplemented!();
+    (*ptr.borrow_mut()).block = ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block__::allocate ( alloc .as_pointer()  , 1_()  , )
+    });
+    ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
+    });
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_308__::copy_from({
         ptr.as_pointer()
     });
@@ -237,8 +241,12 @@ pub fn make_thread_unsafe_shared_5() -> detail_thread_unsafe_shared_ptr_limited_
     );
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ptr.borrow_mut()).block = unimplemented!();
-    unimplemented!();
+    (*ptr.borrow_mut()).block = ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_300___control_block__::allocate ( alloc .as_pointer()  , 1_()  , )
+    });
+    ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_300___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
+    });
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_300__::copy_from({
         ptr.as_pointer()
     });
@@ -1117,9 +1125,7 @@ pub struct adl_S {}
 pub fn make_move_iterator_33(mut _a0: Ptr<adl_S>) {}
 pub fn tests_34() -> () {
     {
-        let v: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1({
-            100_()
-        })));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1147,9 +1153,7 @@ pub fn tests_34() -> () {
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1({
-            100_()
-        })));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
@@ -1178,9 +1182,7 @@ pub fn tests_34() -> () {
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1({
-            100_()
-        })));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1208,7 +1210,7 @@ pub fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__std_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         'loop_: while (unimplemented!() < unimplemented!()) {
             unimplemented!();
         }
@@ -1239,7 +1241,7 @@ pub fn tests_34() -> () {
         }
     }
     {
-        let mut v: () = std_vector_int__std_allocator_int__::new_1({ 100_() });
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut sz: () = unimplemented!();
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
@@ -1268,9 +1270,7 @@ pub fn tests_34() -> () {
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(
-            std_vector_int__limited_allocator_int__308__::new_1({ 100_() }),
-        ));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1298,9 +1298,7 @@ pub fn tests_34() -> () {
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(
-            std_vector_int__limited_allocator_int__300__::new_1({ 100_() }),
-        ));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1341,9 +1339,7 @@ pub fn tests_34() -> () {
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1({
-            100_()
-        })));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1371,9 +1367,7 @@ pub fn tests_34() -> () {
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1({
-            100_()
-        })));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
         let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -1718,8 +1712,12 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_300__Impl
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_300___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
+        });
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_300___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_()  , )
+        });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_300_> {
         return (field_ptr!((*self).with(|__s| __s.block.clone()), content));
@@ -1768,8 +1766,12 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_308__Impl
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
+        });
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_308___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_()  , )
+        });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_308_> {
         return (field_ptr!((*self).with(|__s| __s.block.clone()), content));

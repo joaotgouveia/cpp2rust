@@ -13,18 +13,13 @@ pub fn test_0() -> () {
         ((a.as_pointer() as Ptr<()>).offset(0_())),
         ((a.as_pointer() as Ptr<()>).offset(1_())),
     ])));
-    let c : Value<std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { b .as_pointer()  } , )  )) ;
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let d: Value<std_ranges_subrange_int_ptrptr__int_ptrptr__std_ranges_subrange_kind_sized_> =
-        Rc::new(RefCell::new(
-            std_ranges_subrange_int_ptrptr__int_ptrptr__std_ranges_subrange_kind_sized_::new_1({
-                b.as_pointer()
-            }),
-        ));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let e : Value<std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ :: new_2 ( { d .as_pointer()  } , )  )) ;
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     return true;

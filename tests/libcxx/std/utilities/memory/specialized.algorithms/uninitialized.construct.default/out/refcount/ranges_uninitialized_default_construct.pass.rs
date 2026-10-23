@@ -521,23 +521,29 @@ pub fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_13(_i, n)
     });
 }
-pub fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
-    if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_15(a: adl_Iterator, b: adl_Iterator) {
+    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
+    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
+    ({
+        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
+        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
+        swap_16(___x, ___y)
+    });
+    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
+        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_17(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -583,7 +589,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_18(
+            operator_cmp_19(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -608,7 +614,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_17(
+            operator_eq_18(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -703,14 +709,14 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<decltype(std::ranges::uninitialized_default_construct),\n    NotDefaultCtrable*, NotDefaultCtrable*>"
 );
-pub fn test_19() -> () {
+pub fn test_20() -> () {
     {
         let mut n: () = 3_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut data: Ptr<()> = unimplemented!();
         let mut last: Ptr<()> = data.offset((n) as isize);
         ({
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())((data).clone(), (last).clone())
         });
@@ -720,7 +726,7 @@ pub fn test_19() -> () {
             unimplemented!();
             i.prefix_inc();
         }
-        ({ (*destroy_21.with(Value::clone).borrow_mut())((data).clone(), (last).clone()) });
+        ({ (*destroy_22.with(Value::clone).borrow_mut())((data).clone(), (last).clone()) });
         unimplemented!();
     }
     {
@@ -729,7 +735,7 @@ pub fn test_19() -> () {
         let mut data: Ptr<()> = unimplemented!();
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(r.as_pointer())
         });
@@ -740,7 +746,7 @@ pub fn test_19() -> () {
             unimplemented!();
             i.prefix_inc();
         }
-        ({ (*destroy_21.with(Value::clone).borrow_mut())(r.as_pointer()) });
+        ({ (*destroy_22.with(Value::clone).borrow_mut())(r.as_pointer()) });
         unimplemented!();
     }
     {
@@ -749,7 +755,7 @@ pub fn test_19() -> () {
         let mut data: Ptr<IntWrapper_9> = unimplemented!();
         let mut last: Ptr<IntWrapper_9> = data.offset((n) as isize);
         ({
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())((data).clone(), (last).clone())
         });
@@ -758,7 +764,7 @@ pub fn test_19() -> () {
             unimplemented!();
             i.prefix_inc();
         }
-        ({ (*destroy_21.with(Value::clone).borrow_mut())((data).clone(), (last).clone()) });
+        ({ (*destroy_22.with(Value::clone).borrow_mut())((data).clone(), (last).clone()) });
         unimplemented!();
     }
     {
@@ -767,7 +773,7 @@ pub fn test_19() -> () {
         let mut data: Ptr<IntWrapper_9> = unimplemented!();
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(r.as_pointer())
         });
@@ -776,7 +782,7 @@ pub fn test_19() -> () {
             unimplemented!();
             i.prefix_inc();
         }
-        ({ (*destroy_21.with(Value::clone).borrow_mut())(r.as_pointer()) });
+        ({ (*destroy_22.with(Value::clone).borrow_mut())(r.as_pointer()) });
         unimplemented!();
     }
     {
@@ -786,7 +792,7 @@ pub fn test_19() -> () {
         let mut p: Ptr<()> = (pool.as_pointer() as Ptr<()>);
         let mut pend: Ptr<()> = p.offset((*n.borrow()) as isize);
         ({
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(
                 forward_iterator_int_ptr_::new_1({ (p).clone() }),
@@ -807,8 +813,8 @@ pub fn test_19() -> () {
         let mut p: Ptr<()> = (pool.as_pointer() as Ptr<()>);
         let mut pend: Ptr<()> = p.offset((*n.borrow()) as isize);
         ({
-            let ___range : Value<std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_1 ( { (p ).clone() } , )   } , { forward_iterator_int_ptr_ :: new_1 ( { (pend ).clone() } , )   } , )  ));
-            (*uninitialized_default_construct_20
+            let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___range.as_pointer())
         });
@@ -834,7 +840,7 @@ pub fn test_19() -> () {
                 forward_iterator_IntWrapper_ptr_::new_1({ (p).clone() });
             let ___last: forward_iterator_IntWrapper_ptr_ =
                 forward_iterator_IntWrapper_ptr_::new_1({ p.offset((1_()) as isize) });
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___first, ___last)
         });
@@ -845,7 +851,7 @@ pub fn test_19() -> () {
                 forward_iterator_IntWrapper_ptr_::new_1({ p.offset((1_()) as isize) });
             let ___last: forward_iterator_IntWrapper_ptr_ =
                 forward_iterator_IntWrapper_ptr_::new_1({ p.offset((*n.borrow()) as isize) });
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___first, ___last)
         });
@@ -865,16 +871,16 @@ pub fn test_19() -> () {
         ])));
         let mut p: Ptr<IntWrapper_9> = (pool.as_pointer() as Ptr<IntWrapper_9>);
         ({
-            let ___range : Value<std_ranges_subrange_forward_iterator_IntWrapper_ptr___forward_iterator_IntWrapper_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_IntWrapper_ptr___forward_iterator_IntWrapper_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_IntWrapper_ptr_ :: new_1 ( { (p ).clone() } , )   } , { forward_iterator_IntWrapper_ptr_ :: new_1 ( { p . offset ( ( 1_() ) as isize )  } , )   } , )  ));
-            (*uninitialized_default_construct_20
+            let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___range.as_pointer())
         });
         unimplemented!();
         unimplemented!();
         ({
-            let ___range : Value<std_ranges_subrange_forward_iterator_IntWrapper_ptr___forward_iterator_IntWrapper_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_IntWrapper_ptr___forward_iterator_IntWrapper_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_IntWrapper_ptr_ :: new_1 ( { p . offset ( ( 1_() ) as isize )  } , )   } , { forward_iterator_IntWrapper_ptr_ :: new_1 ( { p . offset ( ( (*n.borrow()) ) as isize )  } , )   } , )  ));
-            (*uninitialized_default_construct_20
+            let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___range.as_pointer())
         });
@@ -921,7 +927,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let ___first: Ptr<Counted> = ({ Buffer_Counted__1_Impl::begin(&buf.as_pointer()) });
             let ___last: Ptr<Counted> = ({ Buffer_Counted__1_Impl::begin(&buf.as_pointer()) });
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___first, ___last)
         });
@@ -929,7 +935,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         ({
             let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___range.as_pointer())
         });
@@ -939,19 +945,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(forward_iterator_Counted_ptr_::new_1({
                 ({ Buffer_Counted__1_Impl::begin(&buf.as_pointer()) })
             })));
-        let range : Value<std_ranges_subrange_forward_iterator_Counted_ptr___sentinel_wrapper_forward_iterator_Counted_ptr____std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_Counted_ptr___sentinel_wrapper_forward_iterator_Counted_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { ((*it.borrow()) ).clone()  } , { sentinel_wrapper_forward_iterator_Counted_ptr__ :: new_1 ( { it .as_pointer()  } , )   } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            let ___first: forward_iterator_Counted_ptr_ = ({ (*range.borrow()).begin_8() });
-            let ___last: sentinel_wrapper_forward_iterator_Counted_ptr__ =
-                ({ (*range.borrow()).end() });
-            (*uninitialized_default_construct_20
+            let ___first: forward_iterator_Counted_ptr_ = unimplemented!();
+            let ___last: sentinel_wrapper_forward_iterator_Counted_ptr__ = unimplemented!();
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___first, ___last)
         });
         unimplemented!();
         unimplemented!();
         ({
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(range.as_pointer())
         });
@@ -964,7 +969,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let ___first: Ptr<Counted> = ({ Buffer_Counted__5_Impl::begin(&buf.as_pointer()) });
             let ___last: Ptr<Counted> = ({ Buffer_Counted__5_Impl::end(&buf.as_pointer()) });
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___first, ___last)
         });
@@ -976,16 +981,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut N: () = 5_();
         let buf: Value<Buffer_Counted__5_> = Rc::new(RefCell::new(<Buffer_Counted__5_>::default()));
-        let range: Value<
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_,
-        > = Rc::new(RefCell::new(
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { ({ Buffer_Counted__5_Impl::begin(&buf.as_pointer()) }) },
-                { ({ Buffer_Counted__5_Impl::end(&buf.as_pointer()) }) },
-            ),
-        ));
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(range.as_pointer())
         });
@@ -998,7 +996,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut N: () = 3_();
         let buf: Value<Buffer_Counted__5_> = Rc::new(RefCell::new(<Buffer_Counted__5_>::default()));
         ({
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(
                 std_counted_iterator_Counted_ptr_::new_1(
@@ -1022,13 +1020,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                     let ___it: Value<Ptr<Counted>> = Rc::new(RefCell::new(
                         ({ Buffer_Counted__5_Impl::begin(&buf.as_pointer()) }),
                     ));
-                    (*counted_22.with(Value::clone).borrow_mut())(
+                    (*counted_23.with(Value::clone).borrow_mut())(
                         ___it.as_pointer(),
                         N.as_pointer(),
                     )
                 }),
             ));
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___range.as_pointer())
         });
@@ -1040,17 +1038,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut N: () = 3_();
         let buf: Value<Buffer_Counted__5_> = Rc::new(RefCell::new(<Buffer_Counted__5_>::default()));
-        let range: Value<
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_,
-        > = Rc::new(RefCell::new(
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { ({ Buffer_Counted__5_Impl::begin(&buf.as_pointer()) }) },
-                { ({ Buffer_Counted__5_Impl::begin(&buf.as_pointer()) }).offset((N) as isize) },
-            ),
-        ));
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*uninitialized_default_construct_20
+            (*uninitialized_default_construct_21
                 .with(Value::clone)
                 .borrow_mut())(___range.as_pointer())
         });
@@ -1059,7 +1050,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         ({ Counted::reset() });
     }
-    ({ test_19() });
+    ({ test_20() });
     return 0_();
 }
 pub trait Buffer_Counted__1_Impl {

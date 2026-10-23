@@ -27,10 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    let ri: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-        i.as_pointer()
-    })));
+    let mut i: () = 0_();
+    let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri), std::reference_wrapper<int>>"
@@ -40,10 +38,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::is_same_v<decltype(ri2), std::reference_wrapper<int>>"
     );;
-    let j: Value<()> = Rc::new(RefCell::new(0_()));
-    let rj: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_const_int_::new({
-        j.as_pointer()
-    })));
+    let mut j: () = 0_();
+    let rj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj), std::reference_wrapper<const int>>"

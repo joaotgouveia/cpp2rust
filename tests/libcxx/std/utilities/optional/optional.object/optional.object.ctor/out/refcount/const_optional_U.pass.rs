@@ -12,7 +12,7 @@ pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(std_optional_int_::new_1({ (rhs).clone() })));
+    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     if rhs_engaged {
         unimplemented!();
@@ -24,7 +24,7 @@ pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(std_optional_X_::new_1({ (rhs).clone() })));
+    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     if rhs_engaged {
         unimplemented!();
@@ -36,7 +36,7 @@ pub fn test_2(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(std_optional_Y_::new_1({ (rhs).clone() })));
+    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     if rhs_engaged {
         unimplemented!();
@@ -48,7 +48,7 @@ pub fn test_3(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(std_optional_Z_::new_1({ (rhs).clone() })));
+    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     if rhs_engaged {
         unimplemented!();
@@ -171,7 +171,7 @@ pub fn test_all_8() -> () {
         ({ test_0(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(3_()));
+        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_0(rhs.as_pointer(), None) });
     }
     return true;
@@ -182,7 +182,7 @@ pub fn test_all_9() -> () {
         ({ test_1(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(3_()));
+        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_1(rhs.as_pointer(), None) });
     }
     return true;
@@ -193,7 +193,7 @@ pub fn test_all_10() -> () {
         ({ test_2(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(3_()));
+        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_2(rhs.as_pointer(), None) });
     }
     return true;
@@ -229,7 +229,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({ test_3(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(3_()));
+        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_3(rhs.as_pointer(), Some(true)) });
     }
     const _: () = assert!(

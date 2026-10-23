@@ -692,28 +692,14 @@ impl Default for MaybePOCCAAllocator_unsigned_long__true_ {
 }
 pub fn tests_23() -> () {
     {
-        let mut l: () = {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_1: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_1({ 5_() })));
-            std_vector_int__test_allocator_int__::new_1({ 3_() }, { __tmp_0.as_pointer() }, {
-                __tmp_1.as_pointer()
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_3: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 5_() })));
-            std_vector_int__other_allocator_int__::new_1({ 3_() }, { __tmp_2.as_pointer() }, {
-                __tmp_3.as_pointer()
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -721,17 +707,7 @@ pub fn tests_23() -> () {
     }
     {
         let copy_assigned_into: Value<()> = Rc::new(RefCell::new(false));
-        let mut l: () = {
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_5: Value<MaybePOCCAAllocator_int__false_> = Rc::new(RefCell::new(
-                MaybePOCCAAllocator_int__false_::new_1({ 5_() }, { Ptr::<()>::null() }),
-            ));
-            std_vector_int__MaybePOCCAAllocator_int__false__::new_1(
-                { 3_() },
-                { __tmp_4.as_pointer() },
-                { __tmp_5.as_pointer() },
-            )
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -741,17 +717,7 @@ pub fn tests_23() -> () {
     }
     {
         let copy_assigned_into: Value<()> = Rc::new(RefCell::new(false));
-        let mut l: () = {
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_7: Value<MaybePOCCAAllocator_int__true_> = Rc::new(RefCell::new(
-                MaybePOCCAAllocator_int__true_::new_1({ 5_() }, { Ptr::<()>::null() }),
-            ));
-            std_vector_int__MaybePOCCAAllocator_int__true__::new_1(
-                { 3_() },
-                { __tmp_6.as_pointer() },
-                { __tmp_7.as_pointer() },
-            )
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -761,17 +727,7 @@ pub fn tests_23() -> () {
     }
     {
         let copy_assigned_into: Value<()> = Rc::new(RefCell::new(false));
-        let mut l: () = {
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_9: Value<MaybePOCCAAllocator_int__true_> = Rc::new(RefCell::new(
-                MaybePOCCAAllocator_int__true_::new_1({ 5_() }, { Ptr::<()>::null() }),
-            ));
-            std_vector_int__MaybePOCCAAllocator_int__true__::new_1(
-                { 3_() },
-                { __tmp_8.as_pointer() },
-                { __tmp_9.as_pointer() },
-            )
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -780,28 +736,14 @@ pub fn tests_23() -> () {
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_11: Value<min_allocator_int_> =
-                Rc::new(RefCell::new(<min_allocator_int_>::default()));
-            std_vector_int__min_allocator_int__::new_1({ 3_() }, { __tmp_10.as_pointer() }, {
-                __tmp_11.as_pointer()
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut l: () = {
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_13: Value<safe_allocator_int_> =
-                Rc::new(RefCell::new(safe_allocator_int_::new()));
-            std_vector_int__safe_allocator_int__::new_1({ 3_() }, { __tmp_12.as_pointer() }, {
-                __tmp_13.as_pointer()
-            })
-        };
+        let mut l: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
         unimplemented!();

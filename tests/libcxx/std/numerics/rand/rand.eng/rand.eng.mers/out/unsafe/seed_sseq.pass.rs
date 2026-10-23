@@ -10,18 +10,18 @@ pub unsafe fn test1_0() {
     let mut a: [(); 3] = [3_(), 5_(), 7_()];
     let mut sseq: () = unimplemented!();
     let mut e1: () = unimplemented!();
-    let mut e2 : () = std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_ :: new_1 ( { & mut sseq } , )  ;
+    let mut e2: () = unimplemented!();
     unimplemented!();
-    (unsafe { e1.seed(&mut sseq) });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test2_1() {
     let mut a: [(); 3] = [3_(), 5_(), 7_()];
     let mut sseq: () = unimplemented!();
     let mut e1: () = unimplemented!();
-    let mut e2 : () = std_mersenne_twister_engine_unsigned_long__64__312__156__31__13043109905998158313__29__6148914691236517205__17__8202884508482404352__37__18444473444759240704__43__6364136223846793005_ :: new_1 ( { & mut sseq } , )  ;
+    let mut e2: () = unimplemented!();
     unimplemented!();
-    (unsafe { e1.seed(&mut sseq) });
+    unimplemented!();
     unimplemented!();
 }
 pub fn main() {

@@ -114,7 +114,7 @@ pub fn test_16() -> () {
     ({ test_contract_13() });
     ({ test_contract_14() });
     ({ test_contract_15() });
-    let opt: Value<()> = Rc::new(RefCell::new(<X>::default()));
+    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         unimplemented!();
         unimplemented!();

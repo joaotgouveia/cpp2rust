@@ -77,38 +77,22 @@ impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_
 pub unsafe fn do_insert_hint_const_lvalue_test_4() {
     let mut c: () = unimplemented!();
     let mut e : () = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_double__int___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
-    let v1: () = {
-        let mut __tmp_0: () = 3.5_f64;
-        let mut __tmp_1: () = 3_();
-        std_pair_const_double__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let v1: () = unimplemented!();
     let mut r: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v2: () = {
-        let mut __tmp_2: () = 3.5_f64;
-        let mut __tmp_3: () = 4_();
-        std_pair_const_double__int_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-    };
+    let v2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v3: () = {
-        let mut __tmp_4: () = 4.5_f64;
-        let mut __tmp_5: () = 4_();
-        std_pair_const_double__int_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-    };
+    let v3: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v4: () = {
-        let mut __tmp_6: () = 5.5_f64;
-        let mut __tmp_7: () = 4_();
-        std_pair_const_double__int_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-    };
+    let v4: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -117,38 +101,22 @@ pub unsafe fn do_insert_hint_const_lvalue_test_4() {
 pub unsafe fn do_insert_hint_const_lvalue_test_5() {
     let mut c: () = unimplemented!();
     let mut e : () = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_double__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
-    let v1: () = {
-        let mut __tmp_8: () = 3.5_f64;
-        let mut __tmp_9: () = 3_();
-        std_pair_const_double__int_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-    };
+    let v1: () = unimplemented!();
     let mut r: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v2: () = {
-        let mut __tmp_10: () = 3.5_f64;
-        let mut __tmp_11: () = 4_();
-        std_pair_const_double__int_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-    };
+    let v2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v3: () = {
-        let mut __tmp_12: () = 4.5_f64;
-        let mut __tmp_13: () = 4_();
-        std_pair_const_double__int_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-    };
+    let v3: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let v4: () = {
-        let mut __tmp_14: () = 5.5_f64;
-        let mut __tmp_15: () = 4_();
-        std_pair_const_double__int_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-    };
+    let v4: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

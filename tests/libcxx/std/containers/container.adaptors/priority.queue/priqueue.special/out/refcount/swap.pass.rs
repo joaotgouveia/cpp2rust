@@ -12,7 +12,7 @@ pub fn test_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_1(q1.as_pointer(), q2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

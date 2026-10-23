@@ -44,10 +44,7 @@ pub struct TypeID {
 }
 impl TypeID {
     pub unsafe fn name(&self) -> () {
-        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { self.m_id },
-            None,
-        );
+        return unimplemented!();
     }
     unsafe fn new(mut xid: *const ()) -> Self {
         let mut this = Self { m_id: xid };
@@ -522,7 +519,7 @@ pub unsafe fn test_cast_empty_42() {
         unimplemented!();
     }
     {
-        let mut a: () = 42_();
+        let mut a: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -535,7 +532,7 @@ pub unsafe fn test_cast_43() {
     unimplemented!();
     (unsafe { small_type_0_::reset() });
     {
-        let mut a: () = small_type_0_::new_1({ 42_() });
+        let mut a: () = unimplemented!();
         let ca: *const () = &a;
         unimplemented!();
         unimplemented!();
@@ -571,7 +568,7 @@ pub unsafe fn test_cast_48() {
     unimplemented!();
     (unsafe { large_type_0_::reset() });
     {
-        let mut a: () = large_type_0_::new_1({ 42_() });
+        let mut a: () = unimplemented!();
         let ca: *const () = &a;
         unimplemented!();
         unimplemented!();
@@ -604,7 +601,7 @@ pub unsafe fn test_cast_48() {
     unimplemented!();
 }
 pub unsafe fn test_cast_non_copyable_type_53() {
-    let mut a: () = 42_();
+    let mut a: () = unimplemented!();
     let ca: *const () = &a;
     unimplemented!();
     unimplemented!();
@@ -614,14 +611,14 @@ pub unsafe fn test_cast_non_copyable_type_53() {
 pub struct NoCopy_54 {}
 pub unsafe fn test_cast_array_55() {
     let mut arr: [(); 3] = [unimplemented!(); 3];
-    let mut a: () = std_any::new_1({ &mut arr });
+    let mut a: () = unimplemented!();
     unimplemented!();
     let mut p: *mut [(); 3] = (unsafe { any_cast_56((&mut a as *mut ())) });
     unimplemented!();
 }
 pub unsafe fn test_fn_57() {}
 pub unsafe fn test_cast_function_pointer_58() {
-    let mut a: () = std_any::new_2({ Some(test_fn_57) });
+    let mut a: () = unimplemented!();
     unimplemented!();
     let mut fn_ptr: Option<unsafe fn()> = unimplemented!();
     unimplemented!();

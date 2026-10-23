@@ -432,20 +432,14 @@ pub fn test_30() {
             std_tuple_int__char_::new({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
         })
     });
-    ({
-        test_12(unimplemented!(), {
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            std_pair_int__char_::new({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() })
-        })
-    });
+    ({ test_12(unimplemented!(), unimplemented!()) });
     ({
         test_14(unimplemented!(), {
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(true));
-            std_tuple_int__char__bool_::new({ __tmp_16.as_pointer() }, { __tmp_17.as_pointer() }, {
-                __tmp_18.as_pointer()
+            let __tmp_14: Value<()> = Rc::new(RefCell::new(1_()));
+            let __tmp_15: Value<()> = Rc::new(RefCell::new(('1' as ())));
+            let __tmp_16: Value<()> = Rc::new(RefCell::new(true));
+            std_tuple_int__char__bool_::new({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() }, {
+                __tmp_16.as_pointer()
             })
         })
     });
@@ -455,27 +449,21 @@ pub fn test_31() {
     ({ test_16(unimplemented!(), 1_()) });
     ({
         test_18(unimplemented!(), {
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_20: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            std_tuple_int__wchar_t_::new({ __tmp_19.as_pointer() }, { __tmp_20.as_pointer() })
+            let __tmp_17: Value<()> = Rc::new(RefCell::new(1_()));
+            let __tmp_18: Value<()> = Rc::new(RefCell::new(('1' as ())));
+            std_tuple_int__wchar_t_::new({ __tmp_17.as_pointer() }, { __tmp_18.as_pointer() })
         })
     });
-    ({
-        test_20(unimplemented!(), {
-            let __tmp_21: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_22: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            std_pair_int__wchar_t_::new({ __tmp_21.as_pointer() }, { __tmp_22.as_pointer() })
-        })
-    });
+    ({ test_20(unimplemented!(), unimplemented!()) });
     ({
         test_22(unimplemented!(), {
-            let __tmp_23: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_24: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            let __tmp_25: Value<()> = Rc::new(RefCell::new(true));
+            let __tmp_19: Value<()> = Rc::new(RefCell::new(1_()));
+            let __tmp_20: Value<()> = Rc::new(RefCell::new(('1' as ())));
+            let __tmp_21: Value<()> = Rc::new(RefCell::new(true));
             std_tuple_int__wchar_t__bool_::new(
-                { __tmp_23.as_pointer() },
-                { __tmp_24.as_pointer() },
-                { __tmp_25.as_pointer() },
+                { __tmp_19.as_pointer() },
+                { __tmp_20.as_pointer() },
+                { __tmp_21.as_pointer() },
             )
         })
     });

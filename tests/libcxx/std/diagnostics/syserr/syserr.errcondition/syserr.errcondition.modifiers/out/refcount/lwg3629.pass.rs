@@ -34,7 +34,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*e.borrow_mut()) = <User_Err>::default();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return 0_();
