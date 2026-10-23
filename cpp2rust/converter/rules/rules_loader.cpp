@@ -595,8 +595,8 @@ void PragmaHandler::HandlePragma(clang::Preprocessor &PP,
 
   auto text =
       BuildRulesEpilogue(keys, ctx.getLangOpts(),
-                         CI_.getHeaderSearchOpts().UseLibcxx ? "libcxx"
-                                                             : "libstdcxx");
+                         PP.isMacroDefined("_LIBCPP_VERSION") ? "libcxx"
+                                                              : "libstdcxx");
   log() << "rules loaded for this translation unit:\n" << text;
   auto rules_file = src_mgr.createFileID(
       llvm::MemoryBuffer::getMemBufferCopy(text, "<cpp2rust-rules>"),
