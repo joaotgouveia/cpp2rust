@@ -313,9 +313,23 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
           .getCanonicalType()
           .getUnqualifiedType());
   auto last = static_cast<unsigned>(deducible.find_last_unset());
+  // parameters deduced from the operands or with a default (T2 = T1, the SFINAE
+  // parameter) need no binding here
+  auto defaulted = [](const clang::NamedDecl *param) {
+    if (auto type = llvm::dyn_cast<clang::TemplateTypeParmDecl>(param)) {
+      return type->hasDefaultArgument();
+    }
+    if (auto value = llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
+      return value->hasDefaultArgument();
+    }
+    auto tmpl = llvm::cast<clang::TemplateTemplateParmDecl>(param);
+    return tmpl->hasDefaultArgument();
+  };
   auto bound = [&](const auto &args) {
     for (unsigned i = 0; i < params->size() && i <= last; ++i) {
-      if (!params->getParam(i)->isParameterPack() && args[i].isNull()) {
+      auto param = params->getParam(i);
+      if (!param->isParameterPack() && !deducible[i] && !defaulted(param) &&
+          args[i].isNull()) {
         return false;
       }
     }
