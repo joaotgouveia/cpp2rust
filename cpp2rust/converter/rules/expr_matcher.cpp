@@ -417,41 +417,6 @@ MatchResult matchVar(clang::ASTContext &ctx, const ResolvedDecl &usage_decl,
   return llvm::ArrayRef<clang::TemplateArgument>();
 }
 
-MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
-                          const ResolvedDecl &usage_decl,
-                          clang::FunctionDecl *rule) {
-  auto &ctx = sema.Context;
-  auto returned = RuleDecls::GetReturned(rule);
-  if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl ||
-      !hasSameArgTypes(ctx, use, returned)) {
-    return std::nullopt;
-  }
-  checkCallable(sema, use, rule);
-  return llvm::ArrayRef<clang::TemplateArgument>();
-}
-
-bool constructsReturnType(const clang::Expr *returned, clang::QualType ret,
-                          const ResolvedDecl &usage_decl) {
-  auto list =
-      llvm::dyn_cast<clang::InitListExpr>(RuleDecls::SkipImplicit(returned));
-  if (!list || list->getType()->isRecordType()) {
-    return false;
-  }
-  auto record = ret->getAsCXXRecordDecl();
-  if (!record) {
-    return false;
-  }
-  if (auto decl = std::get_if<const clang::Decl *>(&usage_decl)) {
-    auto ctor = llvm::dyn_cast<clang::CXXConstructorDecl>(*decl);
-    return ctor &&
-           ctor->getParent()->getCanonicalDecl() == record->getCanonicalDecl();
-  }
-  if (auto aggregate = std::get_if<AggregateUsage>(&usage_decl)) {
-    return RuleKeys::GetTypeKey(ret) == aggregate->type;
-  }
-  return false;
-}
-
 // A static member named through a class (std::numeric_limits<T>::min()) is
 // the use of that class: numeric_limits<const volatile T1>::min() reaches the
 // same member through its base, but names another class.
@@ -483,6 +448,42 @@ bool sameNamingClass(clang::ASTContext &ctx, const clang::Expr *use,
   auto ruled = naming(returned);
   return used.isNull() || ruled.isNull() ||
          ctx.hasSameUnqualifiedType(used, ruled);
+}
+
+MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
+                          const ResolvedDecl &usage_decl,
+                          clang::FunctionDecl *rule) {
+  auto &ctx = sema.Context;
+  auto returned = RuleDecls::GetReturned(rule);
+  if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl ||
+      !hasSameArgTypes(ctx, use, returned) ||
+      !sameNamingClass(ctx, use, returned)) {
+    return std::nullopt;
+  }
+  checkCallable(sema, use, rule);
+  return llvm::ArrayRef<clang::TemplateArgument>();
+}
+
+bool constructsReturnType(const clang::Expr *returned, clang::QualType ret,
+                          const ResolvedDecl &usage_decl) {
+  auto list =
+      llvm::dyn_cast<clang::InitListExpr>(RuleDecls::SkipImplicit(returned));
+  if (!list || list->getType()->isRecordType()) {
+    return false;
+  }
+  auto record = ret->getAsCXXRecordDecl();
+  if (!record) {
+    return false;
+  }
+  if (auto decl = std::get_if<const clang::Decl *>(&usage_decl)) {
+    auto ctor = llvm::dyn_cast<clang::CXXConstructorDecl>(*decl);
+    return ctor &&
+           ctor->getParent()->getCanonicalDecl() == record->getCanonicalDecl();
+  }
+  if (auto aggregate = std::get_if<AggregateUsage>(&usage_decl)) {
+    return RuleKeys::GetTypeKey(ret) == aggregate->type;
+  }
+  return false;
 }
 
 MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
