@@ -10,6 +10,7 @@
 #include <clang/Lex/Lexer.h>
 #include <clang/Sema/EnterExpressionEvaluationContext.h>
 #include <clang/Sema/Overload.h>
+#include <clang/Sema/SemaConcept.h>
 #include <clang/Sema/Template.h>
 #include <clang/Sema/TemplateDeduction.h>
 #include <llvm/ADT/STLExtras.h>
@@ -481,6 +482,51 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
   return specialization->getTemplateSpecializationArgs()->asArray();
 }
 
+// Whether the constraints of a subsume those of b. Two rules spell the same
+// library constraint at two places, so atoms are matched by their canonical
+// profile instead of by their appearance in the source.
+bool subsumes(clang::Sema &sema, const clang::FunctionTemplateDecl *a,
+              const clang::FunctionTemplateDecl *b) {
+  llvm::SmallVector<clang::AssociatedConstraint, 4> a_constraints;
+  llvm::SmallVector<clang::AssociatedConstraint, 4> b_constraints;
+  a->getAssociatedConstraints(a_constraints);
+  b->getAssociatedConstraints(b_constraints);
+  auto identical = [&](const clang::AtomicConstraint &lhs,
+                       const clang::AtomicConstraint &rhs) {
+    if (!lhs.hasMatchingParameterMapping(sema.Context, rhs)) {
+      return false;
+    }
+    llvm::FoldingSetNodeID lhs_id;
+    llvm::FoldingSetNodeID rhs_id;
+    lhs.getConstraintExpr()->Profile(lhs_id, sema.Context, /*Canonical=*/true);
+    rhs.getConstraintExpr()->Profile(rhs_id, sema.Context, /*Canonical=*/true);
+    return lhs_id == rhs_id;
+  };
+  clang::SubsumptionChecker checker(sema, identical);
+  return checker.Subsumes(a, a_constraints, b, b_constraints).value_or(false);
+}
+
+// The more constrained of two rules that differ only in their constraints.
+const clang::NamedDecl *moreConstrained(clang::Sema &sema,
+                                        const clang::NamedDecl *a,
+                                        clang::FunctionTemplateDecl *a_tmpl,
+                                        const clang::NamedDecl *b,
+                                        clang::FunctionTemplateDecl *b_tmpl) {
+  if (!sema.Context.hasSameType(a_tmpl->getTemplatedDecl()->getType(),
+                                b_tmpl->getTemplatedDecl()->getType()) ||
+      !sema.TemplateParameterListsAreEqual(
+          a_tmpl->getTemplateParameters(), b_tmpl->getTemplateParameters(),
+          /*Complain=*/false, clang::Sema::TPL_TemplateMatch)) {
+    return nullptr;
+  }
+  auto a_subsumes = subsumes(sema, a_tmpl, b_tmpl);
+  auto b_subsumes = subsumes(sema, b_tmpl, a_tmpl);
+  if (a_subsumes == b_subsumes) {
+    return nullptr;
+  }
+  return a_subsumes ? a : b;
+}
+
 } // namespace
 
 MatchResult Match(clang::Sema &sema, const clang::Expr *use,
@@ -561,7 +607,10 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
   if (better == a_tmpl) {
     return a;
   }
-  return better == b_tmpl ? b : nullptr;
+  if (better == b_tmpl) {
+    return b;
+  }
+  return moreConstrained(sema, a, a_tmpl, b, b_tmpl);
 }
 
 } // namespace cpp2rust::AstMatcher
