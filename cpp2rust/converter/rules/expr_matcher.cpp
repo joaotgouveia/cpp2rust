@@ -346,12 +346,23 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
   }
   for (unsigned i = 0; i < params->size() && i <= last; ++i) {
     auto param = params->getParam(i);
-    if (param->isParameterPack() || (*deduced)[i].isNull()) {
+    if ((*deduced)[i].isNull()) {
       break;
     }
     clang::QualType nttp_type;
     if (auto nttp = llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
       nttp_type = nttp->getType();
+    }
+    // the class's pack (variant<T1...>) takes all the explicit arguments; the
+    // parameters after it are deduced from the operands
+    if (param->isParameterPack()) {
+      if ((*deduced)[i].getKind() == clang::TemplateArgument::Pack) {
+        for (const auto &element : (*deduced)[i].pack_elements()) {
+          explicit_args.addArgument(
+              sema.getTrivialTemplateArgumentLoc(element, nttp_type, loc));
+        }
+      }
+      break;
     }
     explicit_args.addArgument(
         sema.getTrivialTemplateArgumentLoc((*deduced)[i], nttp_type, loc));
