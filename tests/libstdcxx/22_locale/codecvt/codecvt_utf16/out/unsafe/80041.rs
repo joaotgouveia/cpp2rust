@@ -263,21 +263,7 @@ pub unsafe fn test01_10() {
     let mut wcnext: *const () = std::ptr::null();
     let mut st: () = unimplemented!();
     let mut next: *mut () = std::ptr::null_mut();
-    let mut res: () = (unsafe {
-        let ___from: *const () = (&wc as *const ());
-        let ___from_end: *const () = (&wc as *const ()).offset((1_()) as isize);
-        let ___to: *mut () = bytes.as_mut_ptr();
-        let ___to_end: *mut () = unimplemented!();
-        (conv as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).out(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut wcnext,
-            ___to,
-            ___to_end,
-            &mut next,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -376,15 +362,9 @@ pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (conv as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).length(
-                &mut *(&raw mut st).cast::<__mbstate_t>(),
-                (bytes.as_mut_ptr()).cast_const(),
-                (next).cast_const(),
-                1_(),
-            )
-        }) == (((next as usize - bytes.as_mut_ptr() as usize) / ::std::mem::size_of::<()>())
-            as ()))
+        if !((unimplemented!())
+            == (((next as usize - bytes.as_mut_ptr() as usize) / ::std::mem::size_of::<()>())
+                as ()))
         {
             (unsafe {
                 __builtin_fprintf_11(
@@ -405,19 +385,7 @@ pub unsafe fn test01_10() {
     let mut wnext: *mut () = std::ptr::null_mut();
     let mut cnext: *const () = std::ptr::null();
     st = unsafe { std::mem::zeroed::<__mbstate_t>() };
-    res = (unsafe {
-        let ___to: *mut () = (&mut w as *mut ());
-        let ___to_end: *mut () = (&mut w as *mut ()).offset((1_()) as isize);
-        (conv as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).in_(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            (bytes.as_mut_ptr()).cast_const(),
-            (next).cast_const(),
-            &mut cnext,
-            ___to,
-            ___to_end,
-            &mut wnext,
-        )
-    });
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -502,21 +470,7 @@ pub unsafe fn test02_12() {
     let mut wcnext: *const () = std::ptr::null();
     let mut st: () = unimplemented!();
     let mut next: *mut () = std::ptr::null_mut();
-    let mut res: () = (unsafe {
-        let ___from: *const () = (&mut wc as *mut ()).cast_const();
-        let ___from_end: *const () = ((&mut wc as *mut ()).offset((1_()) as isize)).cast_const();
-        let ___to: *mut () = bytes.as_mut_ptr();
-        let ___to_end: *mut () = unimplemented!();
-        (conv as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).out(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut wcnext,
-            ___to,
-            ___to_end,
-            &mut next,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -615,15 +569,9 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (conv as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).length(
-                &mut *(&raw mut st).cast::<__mbstate_t>(),
-                (bytes.as_mut_ptr()).cast_const(),
-                (next).cast_const(),
-                1_(),
-            )
-        }) == (((next as usize - bytes.as_mut_ptr() as usize) / ::std::mem::size_of::<()>())
-            as ()))
+        if !((unimplemented!())
+            == (((next as usize - bytes.as_mut_ptr() as usize) / ::std::mem::size_of::<()>())
+                as ()))
         {
             (unsafe {
                 __builtin_fprintf_11(
@@ -644,19 +592,7 @@ pub unsafe fn test02_12() {
     let mut wnext: *mut () = std::ptr::null_mut();
     let mut cnext: *const () = std::ptr::null();
     st = unsafe { std::mem::zeroed::<__mbstate_t>() };
-    res = (unsafe {
-        let ___to: *mut () = (&mut w as *mut ());
-        let ___to_end: *mut () = (&mut w as *mut ()).offset((1_()) as isize);
-        (conv as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).in_(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            (bytes.as_mut_ptr()).cast_const(),
-            (next).cast_const(),
-            &mut cnext,
-            ___to,
-            ___to_end,
-            &mut wnext,
-        )
-    });
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

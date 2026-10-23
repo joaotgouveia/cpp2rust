@@ -4837,16 +4837,16 @@ pub unsafe fn test_1241() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = (i != 0);
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_bool__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1243() {
+pub unsafe fn test_1242() {
     (unsafe { test_hash_disabled_1193() });
     (unsafe { test_hash_disabled_1194() });
     (unsafe { test_hash_disabled_1195() });
@@ -4855,16 +4855,16 @@ pub unsafe fn test_1243() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_char__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1244() {
+pub unsafe fn test_1243() {
     (unsafe { test_hash_disabled_1196() });
     (unsafe { test_hash_disabled_1197() });
     (unsafe { test_hash_disabled_1198() });
@@ -4873,16 +4873,16 @@ pub unsafe fn test_1244() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_signed_char__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1245() {
+pub unsafe fn test_1244() {
     (unsafe { test_hash_disabled_1199() });
     (unsafe { test_hash_disabled_1200() });
     (unsafe { test_hash_disabled_1201() });
@@ -4891,16 +4891,16 @@ pub unsafe fn test_1245() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_unsigned_char__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1246() {
+pub unsafe fn test_1245() {
     (unsafe { test_hash_disabled_1202() });
     (unsafe { test_hash_disabled_1203() });
     (unsafe { test_hash_disabled_1204() });
@@ -4909,16 +4909,16 @@ pub unsafe fn test_1246() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_char16_t__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1247() {
+pub unsafe fn test_1246() {
     (unsafe { test_hash_disabled_1205() });
     (unsafe { test_hash_disabled_1206() });
     (unsafe { test_hash_disabled_1207() });
@@ -4927,16 +4927,16 @@ pub unsafe fn test_1247() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_char32_t__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1248() {
+pub unsafe fn test_1247() {
     (unsafe { test_hash_disabled_1208() });
     (unsafe { test_hash_disabled_1209() });
     (unsafe { test_hash_disabled_1210() });
@@ -4945,16 +4945,16 @@ pub unsafe fn test_1248() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_wchar_t__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1249() {
+pub unsafe fn test_1248() {
     (unsafe { test_hash_disabled_1211() });
     (unsafe { test_hash_disabled_1212() });
     (unsafe { test_hash_disabled_1213() });
@@ -4963,16 +4963,16 @@ pub unsafe fn test_1249() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_short__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1250() {
+pub unsafe fn test_1249() {
     (unsafe { test_hash_disabled_1214() });
     (unsafe { test_hash_disabled_1215() });
     (unsafe { test_hash_disabled_1216() });
@@ -4981,16 +4981,16 @@ pub unsafe fn test_1250() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_unsigned_short__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1251() {
+pub unsafe fn test_1250() {
     (unsafe { test_hash_disabled_1217() });
     (unsafe { test_hash_disabled_1218() });
     (unsafe { test_hash_disabled_1219() });
@@ -4999,16 +4999,16 @@ pub unsafe fn test_1251() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = (i as ());
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_int__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1252() {
+pub unsafe fn test_1251() {
     (unsafe { test_hash_disabled_1220() });
     (unsafe { test_hash_disabled_1221() });
     (unsafe { test_hash_disabled_1222() });
@@ -5017,16 +5017,16 @@ pub unsafe fn test_1252() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_unsigned_int__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1253() {
+pub unsafe fn test_1252() {
     (unsafe { test_hash_disabled_1223() });
     (unsafe { test_hash_disabled_1224() });
     (unsafe { test_hash_disabled_1225() });
@@ -5035,16 +5035,16 @@ pub unsafe fn test_1253() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_long__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1254() {
+pub unsafe fn test_1253() {
     (unsafe { test_hash_disabled_1226() });
     (unsafe { test_hash_disabled_1227() });
     (unsafe { test_hash_disabled_1228() });
@@ -5053,16 +5053,16 @@ pub unsafe fn test_1254() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_unsigned_long__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1255() {
+pub unsafe fn test_1254() {
     (unsafe { test_hash_disabled_1229() });
     (unsafe { test_hash_disabled_1230() });
     (unsafe { test_hash_disabled_1231() });
@@ -5071,16 +5071,16 @@ pub unsafe fn test_1255() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_long_long__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1256() {
+pub unsafe fn test_1255() {
     (unsafe { test_hash_disabled_1232() });
     (unsafe { test_hash_disabled_1233() });
     (unsafe { test_hash_disabled_1234() });
@@ -5089,16 +5089,16 @@ pub unsafe fn test_1256() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1242));
+        let small: () = unimplemented!();
         {
-            let result: () = (unsafe { (h as std___hash_impl_unsigned_long_long__void_)(t) });
+            let result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1257() {
+pub unsafe fn test_1256() {
     (unsafe { test_hash_disabled_1235() });
     (unsafe { test_hash_disabled_1236() });
     (unsafe { test_hash_disabled_1237() });
@@ -5107,12 +5107,12 @@ pub unsafe fn test_1257() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1258));
+        let small: () = unimplemented!();
         {}
         i.prefix_inc();
     }
 }
-pub unsafe fn test_1259() {
+pub unsafe fn test_1257() {
     (unsafe { test_hash_disabled_1238() });
     (unsafe { test_hash_disabled_1239() });
     (unsafe { test_hash_disabled_1240() });
@@ -5121,7 +5121,7 @@ pub unsafe fn test_1259() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: () = i;
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1258));
+        let small: () = unimplemented!();
         {}
         i.prefix_inc();
     }
@@ -5143,6 +5143,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_1241() });
+    (unsafe { test_1242() });
     (unsafe { test_1243() });
     (unsafe { test_1244() });
     (unsafe { test_1245() });
@@ -5156,39 +5157,38 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_1253() });
     (unsafe { test_1254() });
     (unsafe { test_1255() });
+    (unsafe { test_1252() });
+    (unsafe { test_1253() });
+    (unsafe { test_1243() });
+    (unsafe { test_1248() });
+    (unsafe { test_1250() });
+    (unsafe { test_1252() });
+    (unsafe { test_1243() });
+    (unsafe { test_1252() });
+    (unsafe { test_1252() });
+    (unsafe { test_1252() });
+    (unsafe { test_1243() });
+    (unsafe { test_1248() });
+    (unsafe { test_1250() });
+    (unsafe { test_1252() });
+    (unsafe { test_1252() });
+    (unsafe { test_1252() });
+    (unsafe { test_1244() });
+    (unsafe { test_1249() });
+    (unsafe { test_1251() });
+    (unsafe { test_1253() });
+    (unsafe { test_1244() });
+    (unsafe { test_1253() });
+    (unsafe { test_1253() });
+    (unsafe { test_1253() });
+    (unsafe { test_1244() });
+    (unsafe { test_1249() });
+    (unsafe { test_1251() });
+    (unsafe { test_1253() });
+    (unsafe { test_1253() });
+    (unsafe { test_1253() });
     (unsafe { test_1256() });
-    (unsafe { test_1253() });
-    (unsafe { test_1254() });
-    (unsafe { test_1244() });
-    (unsafe { test_1249() });
-    (unsafe { test_1251() });
-    (unsafe { test_1253() });
-    (unsafe { test_1244() });
-    (unsafe { test_1253() });
-    (unsafe { test_1253() });
-    (unsafe { test_1253() });
-    (unsafe { test_1244() });
-    (unsafe { test_1249() });
-    (unsafe { test_1251() });
-    (unsafe { test_1253() });
-    (unsafe { test_1253() });
-    (unsafe { test_1253() });
-    (unsafe { test_1245() });
-    (unsafe { test_1250() });
-    (unsafe { test_1252() });
-    (unsafe { test_1254() });
-    (unsafe { test_1245() });
-    (unsafe { test_1254() });
-    (unsafe { test_1254() });
-    (unsafe { test_1254() });
-    (unsafe { test_1245() });
-    (unsafe { test_1250() });
-    (unsafe { test_1252() });
-    (unsafe { test_1254() });
-    (unsafe { test_1254() });
-    (unsafe { test_1254() });
     (unsafe { test_1257() });
-    (unsafe { test_1259() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -357,7 +357,7 @@ fn main_0() -> () {
     {
         let gen_: Value<()> = Rc::new(RefCell::new(({ foo_12() })));
         let i: Value<std_generator_const_copy_max_1__ref___Iterator> =
-            Rc::new(RefCell::new(({ (*gen_.borrow()).begin() })));
+            Rc::new(RefCell::new(unimplemented!()));
         (*(*i.borrow_mut()).upgrade().deref());
         (*(*i.borrow_mut()).upgrade().deref());
         let mut is: copy_max_1_ = copy_max_1_::copy_from({ i.as_pointer() });
@@ -384,7 +384,7 @@ fn main_0() -> () {
     {
         let gen2: Value<()> = Rc::new(RefCell::new(({ foo_13() })));
         let i: Value<std_generator_copy_max_0__refref___Iterator> =
-            Rc::new(RefCell::new(({ (*gen2.borrow()).begin() })));
+            Rc::new(RefCell::new(unimplemented!()));
         (*(*i.borrow_mut()).upgrade().deref());
         (*(*i.borrow_mut()).upgrade().deref());
         let mut is: copy_max_0_ = copy_max_0_::move_from({ i.as_pointer() });
@@ -392,7 +392,7 @@ fn main_0() -> () {
     {
         let gen_: Value<()> = Rc::new(RefCell::new(({ foo_14() })));
         let i: Value<std_generator_copy_max_0____Iterator> =
-            Rc::new(RefCell::new(({ (*gen_.borrow()).begin() })));
+            Rc::new(RefCell::new(unimplemented!()));
         (*(*i.borrow_mut()).upgrade().deref());
         (*(*i.borrow_mut()).upgrade().deref());
         let mut is: copy_max_0_ = copy_max_0_::move_from({ i.as_pointer() });

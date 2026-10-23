@@ -282,9 +282,7 @@ pub unsafe fn score_from_varying_position_15(mut s: (), mut index: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (256_())) {
         (*unimplemented!()) = i;
-        let mut h: () = (unsafe {
-            ( unimplemented!() as std___str_hash_base_char__std_allocator_char___std_basic_string_char__std_char_traits_char___std_allocator_char___ ) ( & s , )
-        });
+        let mut h: () = unimplemented!();
         let mut j: () = 0_();
         'loop_: while ((h) != (0_())) {
             if (((h) & (1_())) != 0) {

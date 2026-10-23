@@ -20,8 +20,8 @@ impl Tuple_signed_char_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_signed_char_::min() });
-        this.max = (unsafe { std_numeric_limits_signed_char_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -45,8 +45,8 @@ impl Tuple_unsigned_char_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_unsigned_char_::min() });
-        this.max = (unsafe { std_numeric_limits_unsigned_char_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -70,8 +70,8 @@ impl Tuple_short_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_short_::min() });
-        this.max = (unsafe { std_numeric_limits_short_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -95,8 +95,8 @@ impl Tuple_unsigned_short_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_unsigned_short_::min() });
-        this.max = (unsafe { std_numeric_limits_unsigned_short_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -120,8 +120,8 @@ impl Tuple_int_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_int_::min() });
-        this.max = (unsafe { std_numeric_limits_int_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -145,8 +145,8 @@ impl Tuple_unsigned_int_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_unsigned_int_::min() });
-        this.max = (unsafe { std_numeric_limits_unsigned_int_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -170,8 +170,8 @@ impl Tuple_long_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_long_::min() });
-        this.max = (unsafe { std_numeric_limits_long_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -195,8 +195,8 @@ impl Tuple_unsigned_long_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_unsigned_long_::min() });
-        this.max = (unsafe { std_numeric_limits_unsigned_long_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -220,8 +220,8 @@ impl Tuple_long_long_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_long_long_::min() });
-        this.max = (unsafe { std_numeric_limits_long_long_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -245,8 +245,8 @@ impl Tuple_unsigned_long_long_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_unsigned_long_long_::min() });
-        this.max = (unsafe { std_numeric_limits_unsigned_long_long_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -270,8 +270,8 @@ impl Tuple_unsigned___int128_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits_unsigned___int128_::min() });
-        this.max = (unsafe { std_numeric_limits_unsigned___int128_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }
@@ -295,8 +295,8 @@ impl Tuple___int128_ {
             max: unimplemented!(),
             mid: unimplemented!(),
         };
-        this.min = (unsafe { std_numeric_limits___int128_::min() });
-        this.max = (unsafe { std_numeric_limits___int128_::max() });
+        this.min = unimplemented!();
+        this.max = unimplemented!();
         this.mid = unimplemented!();
         this
     }

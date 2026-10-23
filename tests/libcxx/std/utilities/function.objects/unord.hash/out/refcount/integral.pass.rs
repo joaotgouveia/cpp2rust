@@ -4837,16 +4837,16 @@ pub fn test_1241() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = (i != 0);
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_bool__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1243() {
+pub fn test_1242() {
     ({ test_hash_disabled_1193() });
     ({ test_hash_disabled_1194() });
     ({ test_hash_disabled_1195() });
@@ -4855,16 +4855,16 @@ pub fn test_1243() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_char__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1244() {
+pub fn test_1243() {
     ({ test_hash_disabled_1196() });
     ({ test_hash_disabled_1197() });
     ({ test_hash_disabled_1198() });
@@ -4873,16 +4873,16 @@ pub fn test_1244() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_signed_char__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1245() {
+pub fn test_1244() {
     ({ test_hash_disabled_1199() });
     ({ test_hash_disabled_1200() });
     ({ test_hash_disabled_1201() });
@@ -4891,17 +4891,16 @@ pub fn test_1245() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () =
-                ({ ((*h.borrow_mut()) as std___hash_impl_unsigned_char__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1246() {
+pub fn test_1245() {
     ({ test_hash_disabled_1202() });
     ({ test_hash_disabled_1203() });
     ({ test_hash_disabled_1204() });
@@ -4910,16 +4909,16 @@ pub fn test_1246() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_char16_t__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1247() {
+pub fn test_1246() {
     ({ test_hash_disabled_1205() });
     ({ test_hash_disabled_1206() });
     ({ test_hash_disabled_1207() });
@@ -4928,16 +4927,16 @@ pub fn test_1247() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_char32_t__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1248() {
+pub fn test_1247() {
     ({ test_hash_disabled_1208() });
     ({ test_hash_disabled_1209() });
     ({ test_hash_disabled_1210() });
@@ -4946,16 +4945,16 @@ pub fn test_1248() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_wchar_t__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1249() {
+pub fn test_1248() {
     ({ test_hash_disabled_1211() });
     ({ test_hash_disabled_1212() });
     ({ test_hash_disabled_1213() });
@@ -4964,16 +4963,16 @@ pub fn test_1249() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_short__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1250() {
+pub fn test_1249() {
     ({ test_hash_disabled_1214() });
     ({ test_hash_disabled_1215() });
     ({ test_hash_disabled_1216() });
@@ -4982,17 +4981,16 @@ pub fn test_1250() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () =
-                ({ ((*h.borrow_mut()) as std___hash_impl_unsigned_short__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1251() {
+pub fn test_1250() {
     ({ test_hash_disabled_1217() });
     ({ test_hash_disabled_1218() });
     ({ test_hash_disabled_1219() });
@@ -5001,16 +4999,16 @@ pub fn test_1251() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = (i as ());
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_int__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1252() {
+pub fn test_1251() {
     ({ test_hash_disabled_1220() });
     ({ test_hash_disabled_1221() });
     ({ test_hash_disabled_1222() });
@@ -5019,17 +5017,16 @@ pub fn test_1252() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () =
-                ({ ((*h.borrow_mut()) as std___hash_impl_unsigned_int__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1253() {
+pub fn test_1252() {
     ({ test_hash_disabled_1223() });
     ({ test_hash_disabled_1224() });
     ({ test_hash_disabled_1225() });
@@ -5038,16 +5035,16 @@ pub fn test_1253() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_long__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1254() {
+pub fn test_1253() {
     ({ test_hash_disabled_1226() });
     ({ test_hash_disabled_1227() });
     ({ test_hash_disabled_1228() });
@@ -5056,17 +5053,16 @@ pub fn test_1254() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () =
-                ({ ((*h.borrow_mut()) as std___hash_impl_unsigned_long__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1255() {
+pub fn test_1254() {
     ({ test_hash_disabled_1229() });
     ({ test_hash_disabled_1230() });
     ({ test_hash_disabled_1231() });
@@ -5075,16 +5071,16 @@ pub fn test_1255() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () = ({ ((*h.borrow_mut()) as std___hash_impl_long_long__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1256() {
+pub fn test_1255() {
     ({ test_hash_disabled_1232() });
     ({ test_hash_disabled_1233() });
     ({ test_hash_disabled_1234() });
@@ -5093,17 +5089,16 @@ pub fn test_1256() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1242.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
-            let mut result: () =
-                ({ ((*h.borrow_mut()) as std___hash_impl_unsigned_long_long__void_)(t) });
+            let mut result: () = unimplemented!();
             unimplemented!();
             (&(result));
         }
         i.prefix_inc();
     }
 }
-pub fn test_1257() {
+pub fn test_1256() {
     ({ test_hash_disabled_1235() });
     ({ test_hash_disabled_1236() });
     ({ test_hash_disabled_1237() });
@@ -5112,12 +5107,12 @@ pub fn test_1257() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1258.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {}
         i.prefix_inc();
     }
 }
-pub fn test_1259() {
+pub fn test_1257() {
     ({ test_hash_disabled_1238() });
     ({ test_hash_disabled_1239() });
     ({ test_hash_disabled_1240() });
@@ -5126,7 +5121,7 @@ pub fn test_1259() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: () = i;
-        let mut small: () = value_1258.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {}
         i.prefix_inc();
     }
@@ -5152,6 +5147,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_1241() });
+    ({ test_1242() });
     ({ test_1243() });
     ({ test_1244() });
     ({ test_1245() });
@@ -5165,39 +5161,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_1253() });
     ({ test_1254() });
     ({ test_1255() });
+    ({ test_1252() });
+    ({ test_1253() });
+    ({ test_1243() });
+    ({ test_1248() });
+    ({ test_1250() });
+    ({ test_1252() });
+    ({ test_1243() });
+    ({ test_1252() });
+    ({ test_1252() });
+    ({ test_1252() });
+    ({ test_1243() });
+    ({ test_1248() });
+    ({ test_1250() });
+    ({ test_1252() });
+    ({ test_1252() });
+    ({ test_1252() });
+    ({ test_1244() });
+    ({ test_1249() });
+    ({ test_1251() });
+    ({ test_1253() });
+    ({ test_1244() });
+    ({ test_1253() });
+    ({ test_1253() });
+    ({ test_1253() });
+    ({ test_1244() });
+    ({ test_1249() });
+    ({ test_1251() });
+    ({ test_1253() });
+    ({ test_1253() });
+    ({ test_1253() });
     ({ test_1256() });
-    ({ test_1253() });
-    ({ test_1254() });
-    ({ test_1244() });
-    ({ test_1249() });
-    ({ test_1251() });
-    ({ test_1253() });
-    ({ test_1244() });
-    ({ test_1253() });
-    ({ test_1253() });
-    ({ test_1253() });
-    ({ test_1244() });
-    ({ test_1249() });
-    ({ test_1251() });
-    ({ test_1253() });
-    ({ test_1253() });
-    ({ test_1253() });
-    ({ test_1245() });
-    ({ test_1250() });
-    ({ test_1252() });
-    ({ test_1254() });
-    ({ test_1245() });
-    ({ test_1254() });
-    ({ test_1254() });
-    ({ test_1254() });
-    ({ test_1245() });
-    ({ test_1250() });
-    ({ test_1252() });
-    ({ test_1254() });
-    ({ test_1254() });
-    ({ test_1254() });
     ({ test_1257() });
-    ({ test_1259() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

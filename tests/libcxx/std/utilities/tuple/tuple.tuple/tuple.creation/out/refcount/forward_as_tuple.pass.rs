@@ -39,7 +39,7 @@ pub fn test2a_3(t: Ptr<()>) {
     unimplemented!();
 }
 pub fn test3_4(_a0: Ptr<()>) -> () {
-    return value_5.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

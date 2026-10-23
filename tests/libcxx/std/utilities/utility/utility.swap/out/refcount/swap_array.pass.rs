@@ -58,15 +58,15 @@ impl Default for NotMoveConstructible {
     }
 }
 pub fn can_swap_0() -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
+}
+pub fn can_swap_1() -> () {
+    return unimplemented!();
 }
 pub fn can_swap_2() -> () {
-    return value_1.with(|rc| *rc.borrow());
+    return unimplemented!();
 }
-pub fn can_swap_3() -> () {
-    return value_4.with(|rc| *rc.borrow());
-}
-pub fn test_unique_ptr_5() {
+pub fn test_unique_ptr_3() {
     let i: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
@@ -91,7 +91,7 @@ pub fn test_unique_ptr_5() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_6() -> () {
+pub fn test_4() -> () {
     {
         let mut i: [(); 3] = [1_(), 2_(), 3_()];
         let mut j: [(); 3] = [4_(), 5_(), 6_()];
@@ -164,7 +164,7 @@ pub fn test_6() -> () {
         const _: () = assert!(true, "noexcept(std::swap(ma, ma))");;
     }
     {
-        ({ test_unique_ptr_5() });
+        ({ test_unique_ptr_3() });
     }
     return true;
 }
@@ -188,7 +188,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_6() });
+    ({ test_4() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

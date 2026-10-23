@@ -364,7 +364,7 @@ unsafe fn main_0() -> () {
     const _: () = assert!(!(false), "!std::copy_constructible<std::generator<int>>");;
     {
         let mut gen_: () = (unsafe { foo_12() });
-        let mut i: std_generator_const_copy_max_1__ref___Iterator = (unsafe { gen_.begin() });
+        let mut i: std_generator_const_copy_max_1__ref___Iterator = unimplemented!();
         (*i);
         (*i);
         let mut is: copy_max_1_ = copy_max_1_::copy_from({ &(*i) });
@@ -390,14 +390,14 @@ unsafe fn main_0() -> () {
     }
     {
         let mut gen2: () = (unsafe { foo_13() });
-        let mut i: std_generator_copy_max_0__refref___Iterator = (unsafe { gen2.begin() });
+        let mut i: std_generator_copy_max_0__refref___Iterator = unimplemented!();
         (*i);
         (*i);
         let mut is: copy_max_0_ = copy_max_0_::move_from({ &mut (*i) });
     }
     {
         let mut gen_: () = (unsafe { foo_14() });
-        let mut i: std_generator_copy_max_0____Iterator = (unsafe { gen_.begin() });
+        let mut i: std_generator_copy_max_0____Iterator = unimplemented!();
         (*i);
         (*i);
         let mut is: copy_max_0_ = copy_max_0_::move_from({ &mut (*i) });

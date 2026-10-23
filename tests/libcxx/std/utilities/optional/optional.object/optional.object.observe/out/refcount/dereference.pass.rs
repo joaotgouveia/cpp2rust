@@ -192,9 +192,9 @@ pub fn test_24() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let x: Ptr<X> = (opt.as_pointer() as std___optional_storage_base_X__false_);
+        let x: Ptr<X> = unimplemented!();
         unimplemented!();
-        let x2: Ptr<X> = (unimplemented!() as std___optional_storage_base_X__false_);
+        let x2: Ptr<X> = unimplemented!();
         unimplemented!();
     }
     return true;

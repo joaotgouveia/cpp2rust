@@ -536,14 +536,10 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_15(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if (lhs.value == ({ std_numeric_limits_int_::min() }))
-        || (rhs.value == ({ std_numeric_limits_int_::min() }))
-    {
+    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
     }
-    if (lhs.value == ({ std_numeric_limits_int_::max() }))
-        || (rhs.value == ({ std_numeric_limits_int_::max() }))
-    {
+    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
     }
     return unimplemented!();
@@ -901,7 +897,7 @@ pub fn test_three_way_25() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let nan: Value<()> = Rc::new(RefCell::new(({ std_numeric_limits_double_::quiet_NaN() })));
+        let nan: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let v1: Value<()> = Rc::new(RefCell::new({
                 let __tmp_20: Value<()> = Rc::new(RefCell::new(1_()));

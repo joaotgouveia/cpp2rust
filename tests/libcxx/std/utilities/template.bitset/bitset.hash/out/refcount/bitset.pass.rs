@@ -10,7 +10,7 @@ pub fn test_0() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = ({ (*h.borrow_mut())(bs.as_pointer()) });
+    let mut result: () = unimplemented!();
     unimplemented!();
     (&(result));
 }
@@ -18,7 +18,7 @@ pub fn test_1() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = ({ (*h.borrow_mut())(bs.as_pointer()) });
+    let mut result: () = unimplemented!();
     unimplemented!();
     (&(result));
 }
@@ -26,7 +26,7 @@ pub fn test_2() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = ({ (*h.borrow_mut())(bs.as_pointer()) });
+    let mut result: () = unimplemented!();
     unimplemented!();
     (&(result));
 }
@@ -34,7 +34,7 @@ pub fn test_3() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = ({ (*h.borrow_mut())(bs.as_pointer()) });
+    let mut result: () = unimplemented!();
     unimplemented!();
     (&(result));
 }

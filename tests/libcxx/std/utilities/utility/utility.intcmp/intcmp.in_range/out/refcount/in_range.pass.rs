@@ -24,8 +24,8 @@ impl Tuple_unsigned_char_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_unsigned_char_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_unsigned_char_::min() }));
-        field!(this, max).write(({ std_numeric_limits_unsigned_char_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -53,8 +53,8 @@ impl Tuple_signed_char_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_signed_char_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_signed_char_::min() }));
-        field!(this, max).write(({ std_numeric_limits_signed_char_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -82,8 +82,8 @@ impl Tuple_short_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_short_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_short_::min() }));
-        field!(this, max).write(({ std_numeric_limits_short_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -111,8 +111,8 @@ impl Tuple_unsigned_short_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_unsigned_short_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_unsigned_short_::min() }));
-        field!(this, max).write(({ std_numeric_limits_unsigned_short_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -140,8 +140,8 @@ impl Tuple_int_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_int_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_int_::min() }));
-        field!(this, max).write(({ std_numeric_limits_int_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -169,8 +169,8 @@ impl Tuple_unsigned_int_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_unsigned_int_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_unsigned_int_::min() }));
-        field!(this, max).write(({ std_numeric_limits_unsigned_int_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -198,8 +198,8 @@ impl Tuple_long_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_long_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_long_::min() }));
-        field!(this, max).write(({ std_numeric_limits_long_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -227,8 +227,8 @@ impl Tuple_unsigned_long_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_unsigned_long_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_unsigned_long_::min() }));
-        field!(this, max).write(({ std_numeric_limits_unsigned_long_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -256,8 +256,8 @@ impl Tuple_long_long_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_long_long_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_long_long_::min() }));
-        field!(this, max).write(({ std_numeric_limits_long_long_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -285,8 +285,8 @@ impl Tuple_unsigned_long_long_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_unsigned_long_long_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_unsigned_long_long_::min() }));
-        field!(this, max).write(({ std_numeric_limits_unsigned_long_long_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -314,8 +314,8 @@ impl Tuple_unsigned___int128_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple_unsigned___int128_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits_unsigned___int128_::min() }));
-        field!(this, max).write(({ std_numeric_limits_unsigned___int128_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -343,8 +343,8 @@ impl Tuple___int128_ {
             mid: unimplemented!(),
         }));
         let this: Ptr<Tuple___int128_> = __this.as_pointer();
-        field!(this, min).write(({ std_numeric_limits___int128_::min() }));
-        field!(this, max).write(({ std_numeric_limits___int128_::max() }));
+        field!(this, min).write(unimplemented!());
+        field!(this, max).write(unimplemented!());
         field!(this, mid).write(unimplemented!());
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }

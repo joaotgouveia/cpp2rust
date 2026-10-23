@@ -263,21 +263,7 @@ pub unsafe fn test01_10() {
     let mut st: () = unimplemented!();
     let mut no: *const () = std::ptr::null();
     let mut ni: *mut () = std::ptr::null_mut();
-    let mut res: () = (unsafe {
-        let ___from: *const () = out.as_ptr();
-        let ___from_end: *const () = out.as_ptr().offset((3_()) as isize);
-        let ___to: *mut () = in_.as_mut_ptr();
-        let ___to_end: *mut () = in_.as_mut_ptr().offset((3_()) as isize);
-        (cvt as std___codecvt_abstract_base_char16_t__char____mbstate_t_).in_(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut no,
-            ___to,
-            ___to_end,
-            &mut ni,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -362,21 +348,7 @@ pub unsafe fn test02_12() {
     let mut st: () = unimplemented!();
     let mut no: *const () = std::ptr::null();
     let mut ni: *mut () = std::ptr::null_mut();
-    let mut res: () = (unsafe {
-        let ___from: *const () = out.as_ptr();
-        let ___from_end: *const () = out.as_ptr().offset((3_()) as isize);
-        let ___to: *mut () = in_.as_mut_ptr();
-        let ___to_end: *mut () = in_.as_mut_ptr().offset((3_()) as isize);
-        (cvt as std___codecvt_abstract_base_char16_t__char____mbstate_t_).in_(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut no,
-            ___to,
-            ___to_end,
-            &mut ni,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -461,21 +433,7 @@ pub unsafe fn test03_13() {
     let mut st: () = unimplemented!();
     let mut no: *const () = std::ptr::null();
     let mut ni: *mut () = std::ptr::null_mut();
-    let mut res: () = (unsafe {
-        let ___from: *const () = out.as_ptr();
-        let ___from_end: *const () = out.as_ptr().offset((3_()) as isize);
-        let ___to: *mut () = in_.as_mut_ptr();
-        let ___to_end: *mut () = in_.as_mut_ptr().offset((3_()) as isize);
-        (cvt as std___codecvt_abstract_base_char32_t__char____mbstate_t_).in_(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut no,
-            ___to,
-            ___to_end,
-            &mut ni,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -560,21 +518,7 @@ pub unsafe fn test04_14() {
     let mut st: () = unimplemented!();
     let mut no: *const () = std::ptr::null();
     let mut ni: *mut () = std::ptr::null_mut();
-    let mut res: () = (unsafe {
-        let ___from: *const () = out.as_ptr();
-        let ___from_end: *const () = out.as_ptr().offset((3_()) as isize);
-        let ___to: *mut () = in_.as_mut_ptr();
-        let ___to_end: *mut () = in_.as_mut_ptr().offset((3_()) as isize);
-        (cvt as std___codecvt_abstract_base_char32_t__char____mbstate_t_).in_(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut no,
-            ___to,
-            ___to_end,
-            &mut ni,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

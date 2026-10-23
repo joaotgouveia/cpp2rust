@@ -274,16 +274,7 @@ pub unsafe fn test01_12() {
     (unsafe { strcpy_15(e_arr, e_lit) });
     let mut state03: () = unimplemented!();
     (unsafe { zero_state_10(&mut state03) });
-    let mut r3: () = (unsafe {
-        let ___to: *mut () = e_arr;
-        let ___to_end: *mut () = e_arr.offset((size) as isize);
-        (*(cvt as *const std___codecvt_abstract_base_wchar_t__char____mbstate_t_)).unshift(
-            &mut *(&raw mut state03).cast::<__mbstate_t>(),
-            ___to,
-            ___to_end,
-            &mut eto_next,
-        )
-    });
+    let mut r3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

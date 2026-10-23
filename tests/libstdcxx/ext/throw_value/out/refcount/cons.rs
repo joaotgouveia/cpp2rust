@@ -14,7 +14,7 @@ pub fn foo1_0() {
         Rc::new(RefCell::new(<__gnu_cxx_throw_value_limit>::default()));
 }
 pub fn foo2_1() -> () {
-    let mut b: () = value_2.with(|rc| *rc.borrow());
+    let mut b: () = unimplemented!();
     return b;
 }
 pub fn main() {

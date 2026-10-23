@@ -1780,14 +1780,14 @@ pub unsafe fn test_438() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: Cardinals = ((i) as Cardinals);
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_439));
+        let small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_440() {
+pub unsafe fn test_439() {
     (unsafe { test_hash_disabled_423() });
     (unsafe { test_hash_disabled_424() });
     (unsafe { test_hash_disabled_425() });
@@ -1797,14 +1797,14 @@ pub unsafe fn test_440() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: Colors = ((i) as Colors);
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_439));
+        let small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_441() {
+pub unsafe fn test_440() {
     (unsafe { test_hash_disabled_426() });
     (unsafe { test_hash_disabled_427() });
     (unsafe { test_hash_disabled_428() });
@@ -1814,14 +1814,14 @@ pub unsafe fn test_441() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: ShortColors = ((i) as ShortColors);
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_439));
+        let small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_442() {
+pub unsafe fn test_441() {
     (unsafe { test_hash_disabled_429() });
     (unsafe { test_hash_disabled_430() });
     (unsafe { test_hash_disabled_431() });
@@ -1831,14 +1831,14 @@ pub unsafe fn test_442() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: LongColors = ((i) as LongColors);
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_439));
+        let small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_443() {
+pub unsafe fn test_442() {
     (unsafe { test_hash_disabled_432() });
     (unsafe { test_hash_disabled_433() });
     (unsafe { test_hash_disabled_434() });
@@ -1848,14 +1848,14 @@ pub unsafe fn test_443() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: EightBitColors = ((i) as EightBitColors);
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_439));
+        let small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub unsafe fn test_444() {
+pub unsafe fn test_443() {
     (unsafe { test_hash_disabled_435() });
     (unsafe { test_hash_disabled_436() });
     (unsafe { test_hash_disabled_437() });
@@ -1865,7 +1865,7 @@ pub unsafe fn test_444() {
     let mut i: () = 0_();
     'loop_: while ((i) <= (5_())) {
         let mut t: Fruits = ((i) as Fruits);
-        let small: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_439));
+        let small: () = unimplemented!();
         {
             unimplemented!();
         }
@@ -1889,11 +1889,11 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_438() });
+    (unsafe { test_439() });
     (unsafe { test_440() });
     (unsafe { test_441() });
     (unsafe { test_442() });
     (unsafe { test_443() });
-    (unsafe { test_444() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

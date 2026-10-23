@@ -263,10 +263,7 @@ pub unsafe fn test01_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c as std___codecvt_abstract_base_char16_t__char____mbstate_t_).always_noconv()
-        }) == (false))
-        {
+        if !((unimplemented!()) == (false)) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -285,10 +282,7 @@ pub unsafe fn test01_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c as std___codecvt_abstract_base_char16_t__char____mbstate_t_).encoding()
-        }) == (0_()))
-        {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -307,10 +301,7 @@ pub unsafe fn test01_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c as std___codecvt_abstract_base_char16_t__char____mbstate_t_).max_length()
-        }) == (*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11)))
-        {
+        if !((unimplemented!()) == (*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -330,10 +321,7 @@ pub unsafe fn test01_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_char16_t__char____mbstate_t_).always_noconv()
-        }) == (false))
-        {
+        if !((unimplemented!()) == (false)) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -352,10 +340,7 @@ pub unsafe fn test01_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_char16_t__char____mbstate_t_).encoding()
-        }) == (0_()))
-        {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -374,10 +359,9 @@ pub unsafe fn test01_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_char16_t__char____mbstate_t_).max_length()
-        }) == ((*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))
-            + (*std::cell::LazyCell::force_mut(&mut *&raw mut bomlen_10))))
+        if !((unimplemented!())
+            == ((*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))
+                + (*std::cell::LazyCell::force_mut(&mut *&raw mut bomlen_10))))
         {
             (unsafe {
                 __builtin_fprintf_13(
@@ -400,10 +384,7 @@ pub unsafe fn test02_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c as std___codecvt_abstract_base_char32_t__char____mbstate_t_).always_noconv()
-        }) == (false))
-        {
+        if !((unimplemented!()) == (false)) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -422,10 +403,7 @@ pub unsafe fn test02_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c as std___codecvt_abstract_base_char32_t__char____mbstate_t_).encoding()
-        }) == (0_()))
-        {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -444,10 +422,7 @@ pub unsafe fn test02_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c as std___codecvt_abstract_base_char32_t__char____mbstate_t_).max_length()
-        }) == (*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11)))
-        {
+        if !((unimplemented!()) == (*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -467,10 +442,7 @@ pub unsafe fn test02_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_char32_t__char____mbstate_t_).always_noconv()
-        }) == (false))
-        {
+        if !((unimplemented!()) == (false)) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -489,10 +461,7 @@ pub unsafe fn test02_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_char32_t__char____mbstate_t_).encoding()
-        }) == (0_()))
-        {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -511,10 +480,9 @@ pub unsafe fn test02_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_char32_t__char____mbstate_t_).max_length()
-        }) == ((*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))
-            + (*std::cell::LazyCell::force_mut(&mut *&raw mut bomlen_10))))
+        if !((unimplemented!())
+            == ((*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))
+                + (*std::cell::LazyCell::force_mut(&mut *&raw mut bomlen_10))))
         {
             (unsafe {
                 __builtin_fprintf_13(
@@ -537,10 +505,7 @@ pub unsafe fn test03_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).always_noconv()
-        }) == (false))
-        {
+        if !((unimplemented!()) == (false)) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -559,9 +524,7 @@ pub unsafe fn test03_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (c as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).encoding() })
-            == (0_()))
-        {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -580,10 +543,7 @@ pub unsafe fn test03_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).max_length()
-        }) == (*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11)))
-        {
+        if !((unimplemented!()) == (*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -603,10 +563,7 @@ pub unsafe fn test03_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).always_noconv()
-        }) == (false))
-        {
+        if !((unimplemented!()) == (false)) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -625,10 +582,7 @@ pub unsafe fn test03_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).encoding()
-        }) == (0_()))
-        {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -647,10 +601,9 @@ pub unsafe fn test03_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            (c_bom as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).max_length()
-        }) == ((*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))
-            + (*std::cell::LazyCell::force_mut(&mut *&raw mut bomlen_10))))
+        if !((unimplemented!())
+            == ((*std::cell::LazyCell::force_mut(&mut *&raw mut maxlen_11))
+                + (*std::cell::LazyCell::force_mut(&mut *&raw mut bomlen_10))))
         {
             (unsafe {
                 __builtin_fprintf_13(

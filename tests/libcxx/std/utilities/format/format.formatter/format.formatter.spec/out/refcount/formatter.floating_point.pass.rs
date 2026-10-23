@@ -102,10 +102,7 @@ pub fn test_4(fmt: (), arg: (), mut expected: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_floating_point_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -130,10 +127,7 @@ pub fn test_6(fmt: (), arg: (), mut expected: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_floating_point_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -158,10 +152,7 @@ pub fn test_8(fmt: (), arg: (), mut expected: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_floating_point_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -186,10 +177,7 @@ pub fn test_10(fmt: (), arg: (), mut expected: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_floating_point_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -214,10 +202,7 @@ pub fn test_12(fmt: (), arg: (), mut expected: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_floating_point_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -242,10 +227,7 @@ pub fn test_14(fmt: (), arg: (), mut expected: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_floating_point_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     if unimplemented!() {
         let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();

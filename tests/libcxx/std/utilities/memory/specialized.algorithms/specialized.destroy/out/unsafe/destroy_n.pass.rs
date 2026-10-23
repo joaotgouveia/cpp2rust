@@ -504,9 +504,7 @@ pub unsafe fn test_arrays_13() -> () {
     {
         let mut counter: () = 0_();
         let mut alloc: () = unimplemented!();
-        let mut pool: *mut [Counted; 3] = (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arr__::allocate(&mut alloc, 5_())
-        });
+        let mut pool: *mut [Counted; 3] = unimplemented!();
         let mut p: *mut [Counted; 3] = pool;
         'loop_: while ((p) != (pool.offset((5_()) as isize))) {
             let arr: *mut [Counted; 3] = &mut (*p);
@@ -529,16 +527,12 @@ pub unsafe fn test_arrays_13() -> () {
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arr__::deallocate(&mut alloc, pool, 5_())
-        });
+        unimplemented!();
     }
     {
         let mut counter: () = 0_();
         let mut alloc: () = unimplemented!();
-        let mut pool: *mut [[Counted; 2]; 3] = (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arrarr2arr__::allocate(&mut alloc, 5_())
-        });
+        let mut pool: *mut [[Counted; 2]; 3] = unimplemented!();
         let mut p: *mut [[Counted; 2]; 3] = pool;
         'loop_: while ((p) != (pool.offset((5_()) as isize))) {
             let arr: *mut [[Counted; 2]; 3] = &mut (*p);
@@ -565,21 +559,14 @@ pub unsafe fn test_arrays_13() -> () {
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arrarr2arr__::deallocate(
-                &mut alloc,
-                pool,
-                5_(),
-            )
-        });
+        unimplemented!();
     }
     return true;
 }
 pub unsafe fn test_14() {
     let mut counter: () = 0_();
     let mut alloc: () = unimplemented!();
-    let mut pool: *mut Counted =
-        (unsafe { std_allocator_traits_std_allocator_Counted__::allocate(&mut alloc, 5_()) });
+    let mut pool: *mut Counted = unimplemented!();
     let mut p: *mut Counted = pool;
     'loop_: while ((p) != (pool.offset((5_()) as isize))) {
         (unsafe {
@@ -593,13 +580,12 @@ pub unsafe fn test_14() {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, pool, 5_()) });
+    unimplemented!();
 }
 pub unsafe fn test_15() {
     let mut counter: () = 0_();
     let mut alloc: () = unimplemented!();
-    let mut pool: *mut Counted =
-        (unsafe { std_allocator_traits_std_allocator_Counted__::allocate(&mut alloc, 5_()) });
+    let mut pool: *mut Counted = unimplemented!();
     let mut p: *mut Counted = pool;
     'loop_: while ((p) != (pool.offset((5_()) as isize))) {
         (unsafe {
@@ -613,7 +599,7 @@ pub unsafe fn test_15() {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, pool, 5_()) });
+    unimplemented!();
 }
 pub unsafe fn tests_16() -> () {
     (unsafe { test_14() });

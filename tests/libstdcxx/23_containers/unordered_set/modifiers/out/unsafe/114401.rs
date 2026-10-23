@@ -748,9 +748,7 @@ pub unsafe fn test_alloc_lifetime_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (a.id as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
-            == (2_()))
-        {
+        if !((unimplemented!()) == (2_())) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -770,9 +768,7 @@ pub unsafe fn test_alloc_lifetime_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (a.id as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
-            == (2_()))
-        {
+        if !((unimplemented!()) == (2_())) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -792,9 +788,7 @@ pub unsafe fn test_alloc_lifetime_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (a.id as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
-            == (2_()))
-        {
+        if !((unimplemented!()) == (2_())) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -814,9 +808,7 @@ pub unsafe fn test_alloc_lifetime_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (a.id as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
-            == (3_()))
-        {
+        if !((unimplemented!()) == (3_())) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -836,9 +828,7 @@ pub unsafe fn test_alloc_lifetime_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (a.id as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
-            == (2_()))
-        {
+        if !((unimplemented!()) == (2_())) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -858,9 +848,7 @@ pub unsafe fn test_alloc_lifetime_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (a.id as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
-            == (2_()))
-        {
+        if !((unimplemented!()) == (2_())) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -880,9 +868,7 @@ pub unsafe fn test_alloc_lifetime_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (a.id as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
-            == (2_()))
-        {
+        if !((unimplemented!()) == (2_())) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -902,9 +888,7 @@ pub unsafe fn test_alloc_lifetime_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (a.id as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
-            == (2_()))
-        {
+        if !((unimplemented!()) == (2_())) {
             (unsafe {
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),

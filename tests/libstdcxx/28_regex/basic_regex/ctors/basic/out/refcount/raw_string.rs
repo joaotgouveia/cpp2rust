@@ -46,26 +46,20 @@ pub fn show_regex_error_codes_2() {
     unimplemented!();
 }
 pub fn regex_sanity_check_3(__res: Ptr<()>, __f: Option<()>, __error: Option<()>) {
-    let mut __f: () = __f.unwrap_or_else(|| basic_4.with(|rc| *rc.borrow()));
+    let mut __f: () = __f.unwrap_or_else(|| unimplemented!());
     let mut __error: () = __error.unwrap_or_else(|| regex_error_internal_0.with(|rc| *rc.borrow()));
     let reo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n: () = unimplemented!();
     unimplemented!();
 }
-pub fn test01_5() {
+pub fn test01_4() {
     let sre0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sre1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sre2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let re0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let re1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let re2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        regex_sanity_check_3(
-            sre0.as_pointer(),
-            Some(ECMAScript_6.with(|rc| *rc.borrow())),
-            None,
-        )
-    });
+    ({ regex_sanity_check_3(sre0.as_pointer(), Some(unimplemented!()), None) });
     ({ regex_sanity_check_3(sre1.as_pointer(), None, None) });
     ({ regex_sanity_check_3(sre2.as_pointer(), None, None) });
 }
@@ -74,7 +68,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_5() });
+    ({ test01_4() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

@@ -256,36 +256,19 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let mut c_lit: Ptr<()> = Ptr::<()>::from_string_literal(b"black pearl jasmine tea");
-    let from_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut from_next: Ptr<()> = Ptr::<()>::null();
     let mut size: () = 23_();
     let mut c_arr: Ptr<()> =
         Ptr::alloc_array((0..size).map(|_| unimplemented!()).collect::<Box<[()]>>());
     let mut c_ref: Ptr<()> =
         Ptr::alloc_array((0..size).map(|_| unimplemented!()).collect::<Box<[()]>>());
-    let to_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut to_next: Ptr<()> = Ptr::<()>::null();
     let loc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let state: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut cvt: Ptr<()> = ({ use_facet_11(loc.as_pointer()) });
     ({ memset_12((c_ref).to_any(), ('X' as ()), size) });
     ({ memset_12((c_arr).to_any(), ('X' as ()), size) });
-    let mut r1: () = ({
-        let ___from: Ptr<()> = (c_lit).clone();
-        let ___from_end: Ptr<()> = c_lit.offset((size) as isize);
-        let ___to: Ptr<()> = (c_arr).clone();
-        let ___to_end: Ptr<()> = c_arr.offset((size) as isize);
-        (*(cvt as *const std___codecvt_abstract_base_char__char____mbstate_t_)
-            .upgrade()
-            .deref())
-        .in_(
-            (state.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            from_next.as_pointer(),
-            ___to,
-            ___to_end,
-            to_next.as_pointer(),
-        )
-    });
+    let mut r1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -327,7 +310,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*from_next.borrow()).clone() } == { (c_lit).clone() }) {
+        if !({ (from_next).clone() } == { (c_lit).clone() }) {
             ({
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -346,7 +329,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*to_next.borrow()).clone() } == { (c_arr).clone() }) {
+        if !({ (to_next).clone() } == { (c_arr).clone() }) {
             ({
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),

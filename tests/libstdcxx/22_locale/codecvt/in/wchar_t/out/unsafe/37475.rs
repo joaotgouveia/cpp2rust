@@ -263,21 +263,7 @@ pub unsafe fn test_pr37475_10() {
     let mut to: () = 0_();
     let mut to_next: *mut () = std::ptr::null_mut();
     let mut st: () = unimplemented!();
-    let mut res: () = (unsafe {
-        let ___from: *const () = (&from as *const ());
-        let ___from_end: *const () = (&from as *const ()).offset((1_()) as isize);
-        let ___to: *mut () = (&mut to as *mut ());
-        let ___to_end: *mut () = (&mut to as *mut ());
-        ((*cvt) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).in_(
-            &mut *(&raw mut st).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut from_next,
-            ___to,
-            ___to_end,
-            &mut to_next,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

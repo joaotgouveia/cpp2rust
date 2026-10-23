@@ -113,7 +113,7 @@ pub unsafe fn test_4(mut fmt: (), mut arg: (), mut expected: (), mut offset: ())
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { & mut __tmp_0 } , )
         })
     });
-    (unsafe { (formatter as std___formatter_floating_point_char_).format(arg, &mut format_ctx) });
+    unimplemented!();
     if unimplemented!() {
         let mut buffer: () = unimplemented!();
         unimplemented!();
@@ -134,7 +134,7 @@ pub unsafe fn test_6(mut fmt: (), mut arg: (), mut expected: (), mut offset: ())
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { & mut __tmp_1 } , )
         })
     });
-    (unsafe { (formatter as std___formatter_floating_point_char_).format(arg, &mut format_ctx) });
+    unimplemented!();
     if unimplemented!() {
         let mut buffer: () = unimplemented!();
         unimplemented!();
@@ -155,7 +155,7 @@ pub unsafe fn test_8(mut fmt: (), mut arg: (), mut expected: (), mut offset: ())
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_3 ( { & mut __tmp_2 } , )
         })
     });
-    (unsafe { (formatter as std___formatter_floating_point_char_).format(arg, &mut format_ctx) });
+    unimplemented!();
     if unimplemented!() {
         let mut buffer: () = unimplemented!();
         unimplemented!();
@@ -176,9 +176,7 @@ pub unsafe fn test_10(mut fmt: (), mut arg: (), mut expected: (), mut offset: ()
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_3 } , )
         })
     });
-    (unsafe {
-        (formatter as std___formatter_floating_point_wchar_t_).format(arg, &mut format_ctx)
-    });
+    unimplemented!();
     if unimplemented!() {
         let mut buffer: () = unimplemented!();
         unimplemented!();
@@ -199,9 +197,7 @@ pub unsafe fn test_12(mut fmt: (), mut arg: (), mut expected: (), mut offset: ()
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { & mut __tmp_4 } , )
         })
     });
-    (unsafe {
-        (formatter as std___formatter_floating_point_wchar_t_).format(arg, &mut format_ctx)
-    });
+    unimplemented!();
     if unimplemented!() {
         let mut buffer: () = unimplemented!();
         unimplemented!();
@@ -222,9 +218,7 @@ pub unsafe fn test_14(mut fmt: (), mut arg: (), mut expected: (), mut offset: ()
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_3 ( { & mut __tmp_5 } , )
         })
     });
-    (unsafe {
-        (formatter as std___formatter_floating_point_wchar_t_).format(arg, &mut format_ctx)
-    });
+    unimplemented!();
     if unimplemented!() {
         let mut buffer: () = unimplemented!();
         unimplemented!();

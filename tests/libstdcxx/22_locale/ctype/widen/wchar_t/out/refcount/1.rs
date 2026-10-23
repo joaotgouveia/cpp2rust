@@ -262,10 +262,7 @@ pub fn test01_10() {
     let mut wide_chars: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
-        let mut c: () = ({
-            ((*ctype_c.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
-                .widen_9((unimplemented!().read()))
-        });
+        let mut c: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

@@ -39,10 +39,7 @@ pub unsafe fn call_pred_1(mut pred: unary_counting_predicate_bool__ptr__int___in
     });
 }
 pub unsafe fn call_pred_2(mut pred: ()) -> () {
-    return ((unsafe {
-        let mut ___args: () = 5_();
-        pred(&mut ___args)
-    }) as ());
+    return (unimplemented!() as ());
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]

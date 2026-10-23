@@ -1780,14 +1780,14 @@ pub fn test_438() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: Cardinals = ((i) as Cardinals);
-        let mut small: () = value_439.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub fn test_440() {
+pub fn test_439() {
     ({ test_hash_disabled_423() });
     ({ test_hash_disabled_424() });
     ({ test_hash_disabled_425() });
@@ -1797,14 +1797,14 @@ pub fn test_440() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: Colors = ((i) as Colors);
-        let mut small: () = value_439.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub fn test_441() {
+pub fn test_440() {
     ({ test_hash_disabled_426() });
     ({ test_hash_disabled_427() });
     ({ test_hash_disabled_428() });
@@ -1814,14 +1814,14 @@ pub fn test_441() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: ShortColors = ((i) as ShortColors);
-        let mut small: () = value_439.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub fn test_442() {
+pub fn test_441() {
     ({ test_hash_disabled_429() });
     ({ test_hash_disabled_430() });
     ({ test_hash_disabled_431() });
@@ -1831,14 +1831,14 @@ pub fn test_442() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: LongColors = ((i) as LongColors);
-        let mut small: () = value_439.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub fn test_443() {
+pub fn test_442() {
     ({ test_hash_disabled_432() });
     ({ test_hash_disabled_433() });
     ({ test_hash_disabled_434() });
@@ -1848,14 +1848,14 @@ pub fn test_443() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: EightBitColors = ((i) as EightBitColors);
-        let mut small: () = value_439.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
             unimplemented!();
         }
         i.prefix_inc();
     }
 }
-pub fn test_444() {
+pub fn test_443() {
     ({ test_hash_disabled_435() });
     ({ test_hash_disabled_436() });
     ({ test_hash_disabled_437() });
@@ -1865,7 +1865,7 @@ pub fn test_444() {
     let mut i: () = 0_();
     'loop_: while (i <= 5_()) {
         let mut t: Fruits = ((i) as Fruits);
-        let mut small: () = value_439.with(|rc| *rc.borrow());
+        let mut small: () = unimplemented!();
         {
             unimplemented!();
         }
@@ -1893,11 +1893,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_438() });
+    ({ test_439() });
     ({ test_440() });
     ({ test_441() });
     ({ test_442() });
     ({ test_443() });
-    ({ test_444() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -22,21 +22,21 @@ pub unsafe fn test_void_0_2() {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
     {
         let mut r1: () = unimplemented!();
-        (unsafe { r1() });
+        unimplemented!();
         unimplemented!();
         save_count = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
     }
     {
         let mut fp: Option<unsafe fn()> = Some(f_void_0_1);
         let mut r1: () = unimplemented!();
-        (unsafe { r1() });
+        unimplemented!();
         unimplemented!();
         save_count = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
     }
     {
         let mut a0: A_void_0 = <A_void_0>::default();
         let mut r1: () = unimplemented!();
-        (unsafe { r1() });
+        unimplemented!();
         unimplemented!();
         save_count = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
     }

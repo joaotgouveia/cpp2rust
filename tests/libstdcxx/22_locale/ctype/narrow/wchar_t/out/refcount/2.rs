@@ -289,16 +289,7 @@ pub fn test02_10() {
         }
         i.prefix_inc();
     }
-    ({
-        let ___lo: Ptr<()> = (unimplemented!());
-        let ___hi: Ptr<()> = (unimplemented!()).offset((unimplemented!()) as isize);
-        ((*ctype_c.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).narrow_12(
-            ___lo,
-            ___hi,
-            dfault,
-            (unimplemented!()),
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

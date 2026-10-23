@@ -287,18 +287,7 @@ pub unsafe fn test01_10() {
         }
         i.prefix_inc();
     }
-    (unsafe {
-        let ___lo: *const () = (&mut (*unimplemented!()) as *mut ()).cast_const();
-        let ___hi: *const () = ((&mut (*unimplemented!()) as *mut ())
-            .offset((unimplemented!()) as isize))
-        .cast_const();
-        ((*ctype_c) as std___ctype_abstract_base_wchar_t_).narrow_12(
-            ___lo,
-            ___hi,
-            dfault,
-            (&mut (*unimplemented!()) as *mut ()),
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

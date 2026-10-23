@@ -12,7 +12,7 @@ pub fn test_to_ullong_0() {
     } else {
         0_()
     };
-    let mut is_M_zero: () = value_1.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -49,13 +49,13 @@ pub fn test_to_ullong_0() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_2() {
+pub fn test_to_ullong_1() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 1_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
         1_()
     };
-    let mut is_M_zero: () = value_3.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -92,13 +92,13 @@ pub fn test_to_ullong_2() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_4() {
+pub fn test_to_ullong_2() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 31_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
         31_()
     };
-    let mut is_M_zero: () = value_3.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -135,13 +135,13 @@ pub fn test_to_ullong_4() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_5() {
+pub fn test_to_ullong_3() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 32_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
         32_()
     };
-    let mut is_M_zero: () = value_3.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -178,13 +178,13 @@ pub fn test_to_ullong_5() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_6() {
+pub fn test_to_ullong_4() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 33_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
         33_()
     };
-    let mut is_M_zero: () = value_3.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -221,13 +221,13 @@ pub fn test_to_ullong_6() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_7() {
+pub fn test_to_ullong_5() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 63_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
         63_()
     };
-    let mut is_M_zero: () = value_3.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -264,13 +264,13 @@ pub fn test_to_ullong_7() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_8() {
+pub fn test_to_ullong_6() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 64_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
         64_()
     };
-    let mut is_M_zero: () = value_3.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -307,13 +307,13 @@ pub fn test_to_ullong_8() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_9() {
+pub fn test_to_ullong_7() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 65_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
         65_()
     };
-    let mut is_M_zero: () = value_3.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -350,13 +350,13 @@ pub fn test_to_ullong_9() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_10() {
+pub fn test_to_ullong_8() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 1000_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
         1000_()
     };
-    let mut is_M_zero: () = value_3.with(|rc| *rc.borrow());
+    let mut is_M_zero: () = unimplemented!();
     let mut X: () = if is_M_zero {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(1_())
     } else {
@@ -393,16 +393,16 @@ pub fn test_to_ullong_10() {
         unimplemented!();
     }
 }
-pub fn test_11() -> () {
+pub fn test_9() -> () {
     ({ test_to_ullong_0() });
+    ({ test_to_ullong_1() });
     ({ test_to_ullong_2() });
+    ({ test_to_ullong_3() });
     ({ test_to_ullong_4() });
     ({ test_to_ullong_5() });
     ({ test_to_ullong_6() });
     ({ test_to_ullong_7() });
     ({ test_to_ullong_8() });
-    ({ test_to_ullong_9() });
-    ({ test_to_ullong_10() });
     return true;
 }
 pub fn main() {
@@ -425,7 +425,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_11() });
+    ({ test_9() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

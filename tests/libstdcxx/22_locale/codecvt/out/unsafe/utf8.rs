@@ -286,17 +286,7 @@ pub unsafe fn test_12(mut from: *const ()) {
     let mut from_next: *const () = from;
     let mut buf_end: *mut () = unimplemented!();
     let mut buf_next: *mut () = buf.as_mut_ptr();
-    let mut res: () = (unsafe {
-        ((*cvt) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).out(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            from,
-            from_end,
-            &mut from_next,
-            buf.as_mut_ptr(),
-            buf_end,
-            &mut buf_next,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -384,17 +374,7 @@ pub unsafe fn test_12(mut from: *const ()) {
     let mut exp_next: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut expected_10));
     let mut buf2_end: *mut () = unimplemented!();
     let mut buf2_next: *mut () = buf2.as_mut_ptr();
-    res = (unsafe {
-        ((*cvt) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).in_(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut expected_10)),
-            exp_end,
-            &mut exp_next,
-            buf2.as_mut_ptr(),
-            buf2_end,
-            &mut buf2_next,
-        )
-    });
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -501,17 +481,7 @@ pub unsafe fn test_15(mut from: *const ()) {
     let mut from_next: *const () = from;
     let mut buf_end: *mut () = unimplemented!();
     let mut buf_next: *mut () = buf.as_mut_ptr();
-    let mut res: () = (unsafe {
-        ((*cvt) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).out(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            from,
-            from_end,
-            &mut from_next,
-            buf.as_mut_ptr(),
-            buf_end,
-            &mut buf_next,
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -599,17 +569,7 @@ pub unsafe fn test_15(mut from: *const ()) {
     let mut exp_next: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut expected_10));
     let mut buf2_end: *mut () = unimplemented!();
     let mut buf2_next: *mut () = buf2.as_mut_ptr();
-    res = (unsafe {
-        ((*cvt) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).in_(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut expected_10)),
-            exp_end,
-            &mut exp_next,
-            buf2.as_mut_ptr(),
-            buf2_end,
-            &mut buf2_next,
-        )
-    });
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -38,10 +38,7 @@ pub fn call_pred_1(pred: unary_counting_predicate_bool__ptr__int___int_) -> () {
 }
 pub fn call_pred_2(pred: ()) -> () {
     let pred: Value<()> = Rc::new(RefCell::new(pred));
-    return (({
-        let ___args: Value<()> = Rc::new(RefCell::new(5_()));
-        (*pred.borrow_mut())(___args.as_pointer())
-    }) as ());
+    return (unimplemented!() as ());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]

@@ -206,9 +206,9 @@ pub unsafe fn test_24() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let x: *mut X = &mut (*(opt as std___optional_storage_base_X__false_));
+        let x: *mut X = &mut (*unimplemented!());
         unimplemented!();
-        let x2: *const X = &(*((*unimplemented!()) as std___optional_storage_base_X__false_));
+        let x2: *const X = &(*unimplemented!());
         unimplemented!();
     }
     return true;

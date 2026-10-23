@@ -24,7 +24,7 @@ unsafe fn main_0() -> () {
             ::std::mem::drop(Box::from_raw(__p.cast_mut()))
         }
     };
-    let mut b: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_0));
+    let mut b: () = unimplemented!();
     let mut ilisti: () = unimplemented!();
     return 0_();
 }

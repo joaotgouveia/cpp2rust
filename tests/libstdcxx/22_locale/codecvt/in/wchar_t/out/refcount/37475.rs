@@ -257,25 +257,11 @@ impl __gnu_test_semaphore {}
 pub fn test_pr37475_10() {
     let cvt: Ptr<()> = ({ use_facet_11(unimplemented!()) });
     let from: Value<()> = Rc::new(RefCell::new(('a' as ())));
-    let from_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut from_next: Ptr<()> = Ptr::<()>::null();
     let to: Value<()> = Rc::new(RefCell::new(0_()));
-    let to_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut to_next: Ptr<()> = Ptr::<()>::null();
     let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut res: () = ({
-        let ___from: Ptr<()> = (from.as_pointer());
-        let ___from_end: Ptr<()> = (from.as_pointer()).offset((1_()) as isize);
-        let ___to: Ptr<()> = (to.as_pointer());
-        let ___to_end: Ptr<()> = (to.as_pointer());
-        ((*cvt.upgrade().deref()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).in_(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            from_next.as_pointer(),
-            ___to,
-            ___to_end,
-            to_next.as_pointer(),
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

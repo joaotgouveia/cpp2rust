@@ -19,21 +19,21 @@ pub fn test_void_0_2() {
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
     {
         let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*r1.borrow_mut())() });
+        unimplemented!();
         unimplemented!();
         save_count = count_0.with(|rc| *rc.borrow());
     }
     {
         let mut fp: FnPtr<fn()> = FnPtr::<fn()>::new(f_void_0_1);
         let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*r1.borrow_mut())() });
+        unimplemented!();
         unimplemented!();
         save_count = count_0.with(|rc| *rc.borrow());
     }
     {
         let mut a0: A_void_0 = <A_void_0>::default();
         let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*r1.borrow_mut())() });
+        unimplemented!();
         unimplemented!();
         save_count = count_0.with(|rc| *rc.borrow());
     }

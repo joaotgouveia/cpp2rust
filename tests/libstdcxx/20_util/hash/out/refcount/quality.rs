@@ -275,8 +275,7 @@ pub fn random_strings_13(mut n: (), mut len: ()) -> () {
     }
     return unimplemented!();
 }
-pub fn score_from_varying_position_15(s: (), mut index: ()) -> () {
-    let s: Value<()> = Rc::new(RefCell::new(s));
+pub fn score_from_varying_position_15(mut s: (), mut index: ()) -> () {
     let mut bits_in_hash_code: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut jj: () = 2_();
     let mut kk: () = (jj).wrapping_mul(bits_in_hash_code);
@@ -285,9 +284,7 @@ pub fn score_from_varying_position_15(s: (), mut index: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 256_()) {
         unimplemented!().write(i);
-        let mut h: () = ({
-            ( unimplemented!() as std___str_hash_base_char__std_allocator_char___std_basic_string_char__std_char_traits_char___std_allocator_char___ ) ( s .as_pointer()  , )
-        });
+        let mut h: () = unimplemented!();
         let mut j: () = 0_();
         'loop_: while (h != 0_()) {
             if ((h & 1_()) != 0) {

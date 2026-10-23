@@ -886,15 +886,13 @@ pub fn test_219() {
     ({ test_hash_disabled_212() });
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut t0: () = ({ ((*h.borrow_mut()) as std___hash_impl_float__void_)(0_f64) });
-    let mut tn0: () = ({ ((*h.borrow_mut()) as std___hash_impl_float__void_)(-0_f64) });
-    let mut tp1: () = ({ ((*h.borrow_mut()) as std___hash_impl_float__void_)(0.1_f64) });
-    let mut t1: () = ({ ((*h.borrow_mut()) as std___hash_impl_float__void_)(1_()) });
-    let mut tn1: () = ({ ((*h.borrow_mut()) as std___hash_impl_float__void_)(-1_()) });
-    let mut pinf: () =
-        ({ ((*h.borrow_mut()) as std___hash_impl_float__void_)((unimplemented!())) });
-    let mut ninf: () =
-        ({ ((*h.borrow_mut()) as std___hash_impl_float__void_)(-(unimplemented!())) });
+    let mut t0: () = unimplemented!();
+    let mut tn0: () = unimplemented!();
+    let mut tp1: () = unimplemented!();
+    let mut t1: () = unimplemented!();
+    let mut tn1: () = unimplemented!();
+    let mut pinf: () = unimplemented!();
+    let mut ninf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -918,15 +916,13 @@ pub fn test_220() {
     ({ test_hash_disabled_215() });
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut t0: () = ({ ((*h.borrow_mut()) as std___hash_impl_double__void_)(0_f64) });
-    let mut tn0: () = ({ ((*h.borrow_mut()) as std___hash_impl_double__void_)(-0_f64) });
-    let mut tp1: () = ({ ((*h.borrow_mut()) as std___hash_impl_double__void_)((0.1_f64 as ())) });
-    let mut t1: () = ({ ((*h.borrow_mut()) as std___hash_impl_double__void_)(1_()) });
-    let mut tn1: () = ({ ((*h.borrow_mut()) as std___hash_impl_double__void_)(-1_()) });
-    let mut pinf: () =
-        ({ ((*h.borrow_mut()) as std___hash_impl_double__void_)((unimplemented!())) });
-    let mut ninf: () =
-        ({ ((*h.borrow_mut()) as std___hash_impl_double__void_)(-(unimplemented!())) });
+    let mut t0: () = unimplemented!();
+    let mut tn0: () = unimplemented!();
+    let mut tp1: () = unimplemented!();
+    let mut t1: () = unimplemented!();
+    let mut tn1: () = unimplemented!();
+    let mut pinf: () = unimplemented!();
+    let mut ninf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -950,15 +946,13 @@ pub fn test_221() {
     ({ test_hash_disabled_218() });
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut t0: () = ({ ((*h.borrow_mut()) as std___hash_impl_long_double__void_)(0_f64) });
-    let mut tn0: () = ({ ((*h.borrow_mut()) as std___hash_impl_long_double__void_)(-0_f64) });
-    let mut tp1: () = ({ ((*h.borrow_mut()) as std___hash_impl_long_double__void_)(0.1_f64) });
-    let mut t1: () = ({ ((*h.borrow_mut()) as std___hash_impl_long_double__void_)(1_()) });
-    let mut tn1: () = ({ ((*h.borrow_mut()) as std___hash_impl_long_double__void_)(-1_()) });
-    let mut pinf: () =
-        ({ ((*h.borrow_mut()) as std___hash_impl_long_double__void_)((unimplemented!())) });
-    let mut ninf: () =
-        ({ ((*h.borrow_mut()) as std___hash_impl_long_double__void_)(-(unimplemented!())) });
+    let mut t0: () = unimplemented!();
+    let mut tn0: () = unimplemented!();
+    let mut tp1: () = unimplemented!();
+    let mut t1: () = unimplemented!();
+    let mut tn1: () = unimplemented!();
+    let mut pinf: () = unimplemented!();
+    let mut ninf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

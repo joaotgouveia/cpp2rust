@@ -270,21 +270,7 @@ pub unsafe fn test01_10() {
     let mut cvt: *const () = (unsafe { use_facet_12(&loc) });
     (unsafe { memset_13((c_ref as ()), ('X' as ()), size) });
     (unsafe { memset_13((c_arr as ()), ('X' as ()), size) });
-    let mut r1: () = (unsafe {
-        let ___from: *const () = c_lit;
-        let ___from_end: *const () = c_lit.offset((size) as isize);
-        let ___to: *mut () = c_arr;
-        let ___to_end: *mut () = c_arr.offset((size) as isize);
-        (*(cvt as *const std___codecvt_abstract_base_char__char____mbstate_t_)).in_(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut from_next,
-            ___to,
-            ___to_end,
-            &mut to_next,
-        )
-    });
+    let mut r1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -362,21 +348,7 @@ pub unsafe fn test01_10() {
         }
     }
     (unsafe { memset_13((c_arr as ()), ('X' as ()), size) });
-    let mut r2: () = (unsafe {
-        let ___from: *const () = c_lit;
-        let ___from_end: *const () = c_lit.offset((size) as isize);
-        let ___to: *mut () = c_arr;
-        let ___to_end: *mut () = c_arr.offset((size) as isize);
-        (*(cvt as *const std___codecvt_abstract_base_char__char____mbstate_t_)).out(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut from_next,
-            ___to,
-            ___to_end,
-            &mut to_next,
-        )
-    });
+    let mut r2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -454,16 +426,7 @@ pub unsafe fn test01_10() {
         }
     }
     (unsafe { memcpy_16((c_arr as ()), (c_lit as ()), size) });
-    let mut r3: () = (unsafe {
-        let ___to: *mut () = c_arr;
-        let ___to_end: *mut () = c_arr.offset((size) as isize);
-        (*(cvt as *const std___codecvt_abstract_base_char__char____mbstate_t_)).unshift(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            ___to,
-            ___to_end,
-            &mut to_next,
-        )
-    });
+    let mut r3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

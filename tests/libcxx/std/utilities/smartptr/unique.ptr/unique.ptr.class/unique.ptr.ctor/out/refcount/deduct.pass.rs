@@ -867,22 +867,22 @@ const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
 thread_local!(
-    pub static SFINAEs_away_8: Value<()> = Rc::new(RefCell::new(value_9.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_10: Value<()> = Rc::new(RefCell::new(value_9.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_11: Value<()> = Rc::new(RefCell::new(value_9.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_12: Value<()> = Rc::new(RefCell::new(value_9.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_13: Value<()> = Rc::new(RefCell::new(value_9.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_12: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_14: Value<()> = Rc::new(RefCell::new(value_9.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_13: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -1650,9 +1650,9 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
 }
 pub fn __cpp2rust_init_globals() {
     let _ = SFINAEs_away_8.with(|_| ());
+    let _ = SFINAEs_away_9.with(|_| ());
     let _ = SFINAEs_away_10.with(|_| ());
     let _ = SFINAEs_away_11.with(|_| ());
     let _ = SFINAEs_away_12.with(|_| ());
     let _ = SFINAEs_away_13.with(|_| ());
-    let _ = SFINAEs_away_14.with(|_| ());
 }

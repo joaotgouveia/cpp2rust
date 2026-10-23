@@ -53,7 +53,7 @@ pub fn test_3() -> () {
         unimplemented!();
     }
     {
-        let mut nan: () = ({ std_numeric_limits_double_::quiet_NaN() });
+        let mut nan: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -64,7 +64,7 @@ pub fn test_3() -> () {
         unimplemented!();
     }
     {
-        let mut nan: () = ({ std_numeric_limits_double_::quiet_NaN() });
+        let mut nan: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -82,11 +82,11 @@ pub fn test_3() -> () {
     }
     {
         {
-            let mut nan: () = ({ std_numeric_limits_double_::quiet_NaN() });
+            let mut nan: () = unimplemented!();
             unimplemented!();
         }
         {
-            let mut nan: () = ({ std_numeric_limits_double_::quiet_NaN() });
+            let mut nan: () = unimplemented!();
             unimplemented!();
         }
     }

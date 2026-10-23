@@ -264,21 +264,7 @@ pub unsafe fn test01_10() {
     let mut from_next: *const () = std::ptr::null();
     let mut to: [(); 100] = [unimplemented!(); 100];
     let mut to_next: *mut () = std::ptr::null_mut();
-    (unsafe {
-        let ___from: *const () = from;
-        let ___from_end: *const () = from.offset((3_()) as isize);
-        let ___to: *mut () = to.as_mut_ptr();
-        let ___to_end: *mut () = to.as_mut_ptr().offset((100_()) as isize);
-        (cvt as std___codecvt_abstract_base_char32_t__char____mbstate_t_).out(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut from_next,
-            ___to,
-            ___to_end,
-            &mut to_next,
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -440,21 +426,7 @@ pub unsafe fn test02_12() {
     let mut from_next: *const () = std::ptr::null();
     let mut to: [(); 100] = [unimplemented!(); 100];
     let mut to_next: *mut () = std::ptr::null_mut();
-    (unsafe {
-        let ___from: *const () = from;
-        let ___from_end: *const () = from.offset((3_()) as isize);
-        let ___to: *mut () = to.as_mut_ptr();
-        let ___to_end: *mut () = to.as_mut_ptr().offset((100_()) as isize);
-        (cvt as std___codecvt_abstract_base_char32_t__char____mbstate_t_).out(
-            &mut *(&raw mut state).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut from_next,
-            ___to,
-            ___to_end,
-            &mut to_next,
-        )
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

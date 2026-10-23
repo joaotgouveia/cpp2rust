@@ -454,100 +454,88 @@ impl __gnu_test_default_resource_mgr {
 static mut alloc_map_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn test_17(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char__std_allocator_char___std_basic_string_char__std_char_traits_char___std_allocator_char___ ) ( s , )
-    }) == (unsafe {
-        let mut ___str: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___str)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___str: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___str)
+        }));
 }
 pub unsafe fn test_18(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char16_t__std_allocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test_19(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char32_t__std_allocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test_20(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_wchar_t__std_allocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test_21(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char__std_pmr_polymorphic_allocator_char___std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char___ ) ( s , )
-    }) == (unsafe {
-        let mut ___str: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___str)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___str: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___str)
+        }));
 }
 pub unsafe fn test_22(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char16_t__std_pmr_polymorphic_allocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t___std_pmr_polymorphic_allocator_char16_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test_23(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char32_t__std_pmr_polymorphic_allocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t___std_pmr_polymorphic_allocator_char32_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test_24(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_wchar_t__std_pmr_polymorphic_allocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___std_pmr_polymorphic_allocator_wchar_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test_25(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char____gnu_test_SimpleAllocator_char___std_basic_string_char__std_char_traits_char_____gnu_test_SimpleAllocator_char___ ) ( s , )
-    }) == (unsafe {
-        let mut ___str: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___str)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___str: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___str)
+        }));
 }
 pub unsafe fn test_26(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char16_t____gnu_test_SimpleAllocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t_____gnu_test_SimpleAllocator_char16_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test_27(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char32_t____gnu_test_SimpleAllocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t_____gnu_test_SimpleAllocator_char32_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test_28(s: *const ()) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_wchar_t____gnu_test_SimpleAllocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t_____gnu_test_SimpleAllocator_wchar_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { (*s)() });
-        unimplemented!()(&mut ___s)
-    }));
+    return ((unimplemented!())
+        == (unsafe {
+            let mut ___s: () = (unsafe { (*s)() });
+            unimplemented!()(&mut ___s)
+        }));
 }
 pub unsafe fn test01_29() {
     let mut __do_while = true;

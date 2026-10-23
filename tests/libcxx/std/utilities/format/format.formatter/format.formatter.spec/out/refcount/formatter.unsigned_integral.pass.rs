@@ -102,10 +102,7 @@ pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -126,10 +123,7 @@ pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -150,10 +144,7 @@ pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_10(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -174,10 +165,7 @@ pub fn test_10(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_12(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -198,10 +186,7 @@ pub fn test_12(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_14(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -222,10 +207,7 @@ pub fn test_14(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_char_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_16(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -246,10 +228,7 @@ pub fn test_16(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_18(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -270,10 +249,7 @@ pub fn test_18(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_20(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -294,10 +270,7 @@ pub fn test_20(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_22(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -318,10 +291,7 @@ pub fn test_22(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_24(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -342,10 +312,7 @@ pub fn test_24(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_26(mut expected: (), fmt: (), arg: (), mut offset: ()) {
@@ -366,10 +333,7 @@ pub fn test_26(mut expected: (), fmt: (), arg: (), mut offset: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_)
-            .format((*arg.borrow()), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_termination_condition_28(mut expected: (), f: (), mut arg: ()) {

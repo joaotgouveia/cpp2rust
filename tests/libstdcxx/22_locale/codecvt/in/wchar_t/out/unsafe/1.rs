@@ -296,21 +296,7 @@ pub unsafe fn test01_12() {
     let mut cvt: *const () = (unsafe { use_facet_15(&loc) });
     let mut state01: () = unimplemented!();
     (unsafe { zero_state_10(&mut state01) });
-    let mut r1: () = (unsafe {
-        let ___from: *const () = e_lit;
-        let ___from_end: *const () = e_lit.offset((size) as isize);
-        let ___to: *mut () = i_arr;
-        let ___to_end: *mut () = i_arr.offset((size) as isize);
-        (*(cvt as *const std___codecvt_abstract_base_wchar_t__char____mbstate_t_)).in_(
-            &mut *(&raw mut state01).cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            &mut efrom_next,
-            ___to,
-            ___to_end,
-            &mut ito_next,
-        )
-    });
+    let mut r1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

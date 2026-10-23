@@ -268,23 +268,9 @@ pub fn test01_10() {
     ])));
     let cvt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let no: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let ni: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let mut res: () = ({
-        let ___from: Ptr<()> = (out).clone();
-        let ___from_end: Ptr<()> = out.offset((6_()) as isize);
-        let ___to: Ptr<()> = (in_.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = (in_.as_pointer() as Ptr<()>).offset((8_()) as isize);
-        ((*cvt.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).in_(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            no.as_pointer(),
-            ___to,
-            ___to_end,
-            ni.as_pointer(),
-        )
-    });
+    let mut no: Ptr<()> = Ptr::<()>::null();
+    let mut ni: Ptr<()> = Ptr::<()>::null();
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -390,21 +376,9 @@ pub fn test01_10() {
         unimplemented!(),
         unimplemented!(),
     ])));
-    let no2: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let ni2: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    res = ({
-        let ___to: Ptr<()> = (out2.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = (out2.as_pointer() as Ptr<()>).offset((8_()) as isize);
-        ((*cvt.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).out(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (in_.as_pointer() as Ptr<()>),
-            (*ni.borrow()).clone(),
-            ni2.as_pointer(),
-            ___to,
-            ___to_end,
-            no2.as_pointer(),
-        )
-    });
+    let mut no2: Ptr<()> = Ptr::<()>::null();
+    let mut ni2: Ptr<()> = Ptr::<()>::null();
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

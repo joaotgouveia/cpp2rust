@@ -64,12 +64,7 @@ impl MultiStringType {
 }
 pub fn test_0() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        ((*formatter.borrow()) as std___formatter_tuple_char__std_tuple_int___int_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -77,12 +72,7 @@ pub fn test_0() {
 }
 pub fn test_1() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        ((*formatter.borrow()) as std___formatter_tuple_char__std_tuple_int__char___int__char_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -90,12 +80,7 @@ pub fn test_1() {
 }
 pub fn test_2() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        ((*formatter.borrow()) as std___formatter_tuple_char__std_pair_int__char___int__char_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -103,13 +88,7 @@ pub fn test_2() {
 }
 pub fn test_3() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        ((*formatter.borrow())
-            as std___formatter_tuple_char__std_tuple_int__char__bool___int__char__bool_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -117,12 +96,7 @@ pub fn test_3() {
 }
 pub fn test_4() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        ((*formatter.borrow()) as std___formatter_tuple_wchar_t__std_tuple_int___int_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -130,13 +104,7 @@ pub fn test_4() {
 }
 pub fn test_5() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        ((*formatter.borrow())
-            as std___formatter_tuple_wchar_t__std_tuple_int__wchar_t___int__wchar_t_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -144,13 +112,7 @@ pub fn test_5() {
 }
 pub fn test_6() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        ((*formatter.borrow())
-            as std___formatter_tuple_wchar_t__std_pair_int__wchar_t___int__wchar_t_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -158,13 +120,7 @@ pub fn test_6() {
 }
 pub fn test_7() {
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        ((*formatter.borrow())
-            as std___formatter_tuple_wchar_t__std_tuple_int__wchar_t__bool___int__wchar_t__bool_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"

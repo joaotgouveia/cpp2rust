@@ -265,25 +265,13 @@ pub fn test01_12() {
             .map(|_| unimplemented!())
             .collect::<Box<[()]>>(),
     );
-    let eto_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut eto_next: Ptr<()> = Ptr::<()>::null();
     let loc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut cvt: Ptr<()> = ({ use_facet_14(loc.as_pointer()) });
     ({ strcpy_15((e_arr).clone(), (e_lit).clone()) });
     let state03: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ zero_state_10(state03.as_pointer()) });
-    let mut r3: () = ({
-        let ___to: Ptr<()> = (e_arr).clone();
-        let ___to_end: Ptr<()> = e_arr.offset((size) as isize);
-        (*(cvt as *const std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
-            .upgrade()
-            .deref())
-        .unshift(
-            (state03.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___to,
-            ___to_end,
-            eto_next.as_pointer(),
-        )
-    });
+    let mut r3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -325,7 +313,7 @@ pub fn test01_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*eto_next.borrow()).clone() } == { (e_arr).clone() }) {
+        if !({ (eto_next).clone() } == { (e_arr).clone() }) {
             ({
                 __builtin_fprintf_16(
                     libcc2rs::stderr_unsafe(),

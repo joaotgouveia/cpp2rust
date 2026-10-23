@@ -53,7 +53,7 @@ pub unsafe fn test_3() -> () {
         unimplemented!();
     }
     {
-        let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+        let nan: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -64,7 +64,7 @@ pub unsafe fn test_3() -> () {
         unimplemented!();
     }
     {
-        let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+        let nan: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -82,11 +82,11 @@ pub unsafe fn test_3() -> () {
     }
     {
         {
-            let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+            let nan: () = unimplemented!();
             unimplemented!();
         }
         {
-            let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+            let nan: () = unimplemented!();
             unimplemented!();
         }
     }

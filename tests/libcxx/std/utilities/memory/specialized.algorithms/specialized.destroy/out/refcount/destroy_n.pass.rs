@@ -499,9 +499,7 @@ pub fn test_arrays_13() -> () {
     {
         let counter: Value<()> = Rc::new(RefCell::new(0_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut pool: Ptr<Box<[Counted]>> = ({
-            std_allocator_traits_std_allocator_Countedarr3arr__::allocate(alloc.as_pointer(), 5_())
-        });
+        let mut pool: Ptr<Box<[Counted]>> = unimplemented!();
         let mut p: Ptr<Box<[Counted]>> = (pool).clone();
         'loop_: while ({ (p).clone() } != { pool.offset((5_()) as isize) }) {
             let arr: Ptr<Counted> = ((p).as_pointer()).clone();
@@ -524,23 +522,12 @@ pub fn test_arrays_13() -> () {
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
-        ({
-            std_allocator_traits_std_allocator_Countedarr3arr__::deallocate(
-                alloc.as_pointer(),
-                (pool).clone(),
-                5_(),
-            )
-        });
+        unimplemented!();
     }
     {
         let counter: Value<()> = Rc::new(RefCell::new(0_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut pool: Ptr<Box<[Box<[Counted]>]>> = ({
-            std_allocator_traits_std_allocator_Countedarr3arrarr2arr__::allocate(
-                alloc.as_pointer(),
-                5_(),
-            )
-        });
+        let mut pool: Ptr<Box<[Box<[Counted]>]>> = unimplemented!();
         let mut p: Ptr<Box<[Box<[Counted]>]>> = (pool).clone();
         'loop_: while ({ (p).clone() } != { pool.offset((5_()) as isize) }) {
             let arr: Ptr<Box<[Counted]>> = ((p).as_pointer()).clone();
@@ -567,21 +554,14 @@ pub fn test_arrays_13() -> () {
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
-        ({
-            std_allocator_traits_std_allocator_Countedarr3arrarr2arr__::deallocate(
-                alloc.as_pointer(),
-                (pool).clone(),
-                5_(),
-            )
-        });
+        unimplemented!();
     }
     return true;
 }
 pub fn test_14() {
     let counter: Value<()> = Rc::new(RefCell::new(0_()));
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut pool: Ptr<Counted> =
-        ({ std_allocator_traits_std_allocator_Counted__::allocate(alloc.as_pointer(), 5_()) });
+    let mut pool: Ptr<Counted> = unimplemented!();
     let mut p: Ptr<Counted> = (pool).clone();
     'loop_: while ({ (p).clone() } != { pool.offset((5_()) as isize) }) {
         ({
@@ -599,19 +579,12 @@ pub fn test_14() {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    ({
-        std_allocator_traits_std_allocator_Counted__::deallocate(
-            alloc.as_pointer(),
-            (pool).clone(),
-            5_(),
-        )
-    });
+    unimplemented!();
 }
 pub fn test_15() {
     let counter: Value<()> = Rc::new(RefCell::new(0_()));
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut pool: Ptr<Counted> =
-        ({ std_allocator_traits_std_allocator_Counted__::allocate(alloc.as_pointer(), 5_()) });
+    let mut pool: Ptr<Counted> = unimplemented!();
     let mut p: Ptr<Counted> = (pool).clone();
     'loop_: while ({ (p).clone() } != { pool.offset((5_()) as isize) }) {
         ({
@@ -629,13 +602,7 @@ pub fn test_15() {
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
-    ({
-        std_allocator_traits_std_allocator_Counted__::deallocate(
-            alloc.as_pointer(),
-            (pool).clone(),
-            5_(),
-        )
-    });
+    unimplemented!();
 }
 pub fn tests_16() -> () {
     ({ test_14() });

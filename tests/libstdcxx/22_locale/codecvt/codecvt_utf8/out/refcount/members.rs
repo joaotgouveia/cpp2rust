@@ -263,11 +263,7 @@ pub fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
-                .always_noconv()
-        }) == false)
-        {
+        if !(unimplemented!() == false) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -286,10 +282,7 @@ pub fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).encoding()
-        }) == 0_())
-        {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -308,10 +301,7 @@ pub fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).max_length()
-        }) == maxlen)
-        {
+        if !(unimplemented!() == maxlen) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -331,11 +321,7 @@ pub fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
-                .always_noconv()
-        }) == false)
-        {
+        if !(unimplemented!() == false) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -354,11 +340,7 @@ pub fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
-                .encoding()
-        }) == 0_())
-        {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -377,11 +359,7 @@ pub fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
-                .max_length()
-        }) == (maxlen + bomlen_10.with(|rc| *rc.borrow())))
-        {
+        if !(unimplemented!() == (maxlen + bomlen_10.with(|rc| *rc.borrow()))) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -407,11 +385,7 @@ pub fn test02_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
-                .always_noconv()
-        }) == false)
-        {
+        if !(unimplemented!() == false) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -430,10 +404,7 @@ pub fn test02_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).encoding()
-        }) == 0_())
-        {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -452,10 +423,7 @@ pub fn test02_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).max_length()
-        }) == maxlen)
-        {
+        if !(unimplemented!() == maxlen) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -475,11 +443,7 @@ pub fn test02_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
-                .always_noconv()
-        }) == false)
-        {
+        if !(unimplemented!() == false) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -498,11 +462,7 @@ pub fn test02_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
-                .encoding()
-        }) == 0_())
-        {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -521,11 +481,7 @@ pub fn test02_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
-                .max_length()
-        }) == (maxlen + bomlen_10.with(|rc| *rc.borrow())))
-        {
+        if !(unimplemented!() == (maxlen + bomlen_10.with(|rc| *rc.borrow()))) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -555,11 +511,7 @@ pub fn test03_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
-                .always_noconv()
-        }) == false)
-        {
+        if !(unimplemented!() == false) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -578,10 +530,7 @@ pub fn test03_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).encoding()
-        }) == 0_())
-        {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -600,10 +549,7 @@ pub fn test03_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).max_length()
-        }) == maxlen)
-        {
+        if !(unimplemented!() == maxlen) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -623,11 +569,7 @@ pub fn test03_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
-                .always_noconv()
-        }) == false)
-        {
+        if !(unimplemented!() == false) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -646,11 +588,7 @@ pub fn test03_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
-                .encoding()
-        }) == 0_())
-        {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -669,11 +607,7 @@ pub fn test03_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            ((*c_bom.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
-                .max_length()
-        }) == (maxlen + bomlen_10.with(|rc| *rc.borrow())))
-        {
+        if !(unimplemented!() == (maxlen + bomlen_10.with(|rc| *rc.borrow()))) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

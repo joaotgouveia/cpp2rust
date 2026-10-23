@@ -263,27 +263,13 @@ pub fn test01_10() {
         50724 as (),
         0 as (),
     ])));
-    let nf16: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut nf16: Ptr<()> = Ptr::<()>::null();
     let utf8: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..16).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let nt8: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut nt8: Ptr<()> = Ptr::<()>::null();
     let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut res: () = ({
-        let ___from: Ptr<()> = (utf16.as_pointer() as Ptr<()>);
-        let ___from_end: Ptr<()> = (utf16.as_pointer() as Ptr<()>).offset((4_()) as isize);
-        let ___to: Ptr<()> = (utf8.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = (utf8.as_pointer() as Ptr<()>).offset((16_()) as isize);
-        ((*cvt.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).out(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            nf16.as_pointer(),
-            ___to,
-            ___to_end,
-            nt8.as_pointer(),
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -310,23 +296,9 @@ pub fn test01_10() {
         unimplemented!(),
         unimplemented!(),
     ])));
-    let nf8: Value<Ptr<()>> = Rc::new(RefCell::new((*nt8.borrow()).clone()));
-    let nt16: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    res = ({
-        let ___from_end: Ptr<()> = (*nf8.borrow()).clone();
-        let ___from_next: Ptr<Ptr<()>> = nf8.as_pointer();
-        let ___to: Ptr<()> = (buf.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = (buf.as_pointer() as Ptr<()>).offset((4_()) as isize);
-        ((*cvt.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).in_(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (utf8.as_pointer() as Ptr<()>),
-            ___from_end,
-            ___from_next,
-            ___to,
-            ___to_end,
-            nt16.as_pointer(),
-        )
-    });
+    let mut nf8: Ptr<()> = (nt8).clone();
+    let mut nt16: Ptr<()> = Ptr::<()>::null();
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -349,9 +321,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*nt16.borrow()).clone() } == {
-            (buf.as_pointer() as Ptr<()>).offset((4_()) as isize)
-        }) {
+        if !({ (nt16).clone() } == { (buf.as_pointer() as Ptr<()>).offset((4_()) as isize) }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -453,27 +423,13 @@ pub fn test02_12() {
         50724 as (),
         0 as (),
     ])));
-    let nf16: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut nf16: Ptr<()> = Ptr::<()>::null();
     let utf8: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..16).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let nt8: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut nt8: Ptr<()> = Ptr::<()>::null();
     let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut res: () = ({
-        let ___from: Ptr<()> = (utf16.as_pointer() as Ptr<()>);
-        let ___from_end: Ptr<()> = (utf16.as_pointer() as Ptr<()>).offset((4_()) as isize);
-        let ___to: Ptr<()> = (utf8.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = (utf8.as_pointer() as Ptr<()>).offset((16_()) as isize);
-        ((*cvt.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).out(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            nf16.as_pointer(),
-            ___to,
-            ___to_end,
-            nt8.as_pointer(),
-        )
-    });
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -500,23 +456,9 @@ pub fn test02_12() {
         unimplemented!(),
         unimplemented!(),
     ])));
-    let nf8: Value<Ptr<()>> = Rc::new(RefCell::new((*nt8.borrow()).clone()));
-    let nt16: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    res = ({
-        let ___from_end: Ptr<()> = (*nf8.borrow()).clone();
-        let ___from_next: Ptr<Ptr<()>> = nf8.as_pointer();
-        let ___to: Ptr<()> = (buf.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = (buf.as_pointer() as Ptr<()>).offset((4_()) as isize);
-        ((*cvt.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).in_(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (utf8.as_pointer() as Ptr<()>),
-            ___from_end,
-            ___from_next,
-            ___to,
-            ___to_end,
-            nt16.as_pointer(),
-        )
-    });
+    let mut nf8: Ptr<()> = (nt8).clone();
+    let mut nt16: Ptr<()> = Ptr::<()>::null();
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -539,9 +481,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*nt16.borrow()).clone() } == {
-            (buf.as_pointer() as Ptr<()>).offset((4_()) as isize)
-        }) {
+        if !({ (nt16).clone() } == { (buf.as_pointer() as Ptr<()>).offset((4_()) as isize) }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

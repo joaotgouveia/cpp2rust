@@ -260,26 +260,12 @@ pub fn test01_10() {
     let state: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut from: Ptr<()> =
         Ptr::<()>::from_string_literal(&[65 as (), 66 as (), 67 as (), 0 as ()]);
-    let from_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut from_next: Ptr<()> = Ptr::<()>::null();
     let to: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..100).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let to_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    ({
-        let ___from: Ptr<()> = (from).clone();
-        let ___from_end: Ptr<()> = from.offset((3_()) as isize);
-        let ___to: Ptr<()> = (to.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = (to.as_pointer() as Ptr<()>).offset((100_()) as isize);
-        ((*cvt.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).out(
-            (state.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            from_next.as_pointer(),
-            ___to,
-            ___to_end,
-            to_next.as_pointer(),
-        )
-    });
+    let mut to_next: Ptr<()> = Ptr::<()>::null();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -439,26 +425,12 @@ pub fn test02_12() {
     let state: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut from: Ptr<()> =
         Ptr::<()>::from_string_literal(&[65 as (), 66 as (), 67 as (), 0 as ()]);
-    let from_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut from_next: Ptr<()> = Ptr::<()>::null();
     let to: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..100).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let to_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    ({
-        let ___from: Ptr<()> = (from).clone();
-        let ___from_end: Ptr<()> = from.offset((3_()) as isize);
-        let ___to: Ptr<()> = (to.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = (to.as_pointer() as Ptr<()>).offset((100_()) as isize);
-        ((*cvt.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).out(
-            (state.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            from_next.as_pointer(),
-            ___to,
-            ___to_end,
-            to_next.as_pointer(),
-        )
-    });
+    let mut to_next: Ptr<()> = Ptr::<()>::null();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

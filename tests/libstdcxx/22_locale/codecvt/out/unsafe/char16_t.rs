@@ -404,17 +404,7 @@ pub unsafe fn test01_10() {
         let mut to_next: *mut () = std::ptr::null_mut();
         let mut state01: () = unimplemented!();
         state01 = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut res: () = (unsafe {
-            (*(cvt as *const std___codecvt_abstract_base_char16_t__char____mbstate_t_)).in_(
-                &mut *(&raw mut state01).cast::<__mbstate_t>(),
-                u8dat,
-                u8dat_end,
-                &mut from_next,
-                buffer,
-                buffer_end,
-                &mut to_next,
-            )
-        });
+        let mut res: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -501,17 +491,7 @@ pub unsafe fn test01_10() {
         let mut to_next: *mut () = std::ptr::null_mut();
         let mut state01: () = unimplemented!();
         state01 = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut res: () = (unsafe {
-            (*(cvt as *const std___codecvt_abstract_base_char16_t__char____mbstate_t_)).out(
-                &mut *(&raw mut state01).cast::<__mbstate_t>(),
-                u16dat.as_ptr(),
-                u16dat_end,
-                &mut from_next,
-                buffer,
-                buffer_end,
-                &mut to_next,
-            )
-        });
+        let mut res: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

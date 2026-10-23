@@ -258,24 +258,10 @@ pub fn test01_10() {
     let conv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let wc: Value<()> = Rc::new(RefCell::new(25943_()));
     let bytes: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), unimplemented!()])));
-    let wcnext: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut wcnext: Ptr<()> = Ptr::<()>::null();
     let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let mut res: () = ({
-        let ___from: Ptr<()> = (wc.as_pointer());
-        let ___from_end: Ptr<()> = (wc.as_pointer()).offset((1_()) as isize);
-        let ___to: Ptr<()> = (bytes.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = unimplemented!();
-        ((*conv.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).out(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            wcnext.as_pointer(),
-            ___to,
-            ___to_end,
-            next.as_pointer(),
-        )
-    });
+    let mut next: Ptr<()> = Ptr::<()>::null();
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -298,7 +284,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*wcnext.borrow()).clone() } == { (wc.as_pointer()).offset((1_()) as isize) }) {
+        if !({ (wcnext).clone() } == { (wc.as_pointer()).offset((1_()) as isize) }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -317,7 +303,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*next.borrow()).clone() } == { unimplemented!() }) {
+        if !({ (next).clone() } == { unimplemented!() }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -374,17 +360,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({
-            ({
-                ((*conv.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
-                    .length(
-                        (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-                        (bytes.as_pointer() as Ptr<()>),
-                        (*next.borrow()).clone(),
-                        1_(),
-                    )
-            })
-        } == { (((*next.borrow()).clone() - (bytes.as_pointer() as Ptr<()>)) as ()) })
+        if !({ unimplemented!() } == { (((next).clone() - (bytes.as_pointer() as Ptr<()>)) as ()) })
         {
             ({
                 __builtin_fprintf_11(
@@ -405,22 +381,10 @@ pub fn test01_10() {
         }
     }
     let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let wnext: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let cnext: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut wnext: Ptr<()> = Ptr::<()>::null();
+    let mut cnext: Ptr<()> = Ptr::<()>::null();
     (*st.borrow_mut()) = <__mbstate_t>::default();
-    res = ({
-        let ___to: Ptr<()> = (w.as_pointer());
-        let ___to_end: Ptr<()> = (w.as_pointer()).offset((1_()) as isize);
-        ((*conv.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).in_(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (bytes.as_pointer() as Ptr<()>),
-            (*next.borrow()).clone(),
-            cnext.as_pointer(),
-            ___to,
-            ___to_end,
-            wnext.as_pointer(),
-        )
-    });
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -443,7 +407,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*wnext.borrow()).clone() } == { (w.as_pointer()).offset((1_()) as isize) }) {
+        if !({ (wnext).clone() } == { (w.as_pointer()).offset((1_()) as isize) }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -462,7 +426,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*cnext.borrow()).clone() } == { (*next.borrow()).clone() }) {
+        if !({ (cnext).clone() } == { (next).clone() }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -502,24 +466,10 @@ pub fn test02_12() {
     let conv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let wc: Value<()> = Rc::new(RefCell::new(25943_()));
     let bytes: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), unimplemented!()])));
-    let wcnext: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut wcnext: Ptr<()> = Ptr::<()>::null();
     let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let mut res: () = ({
-        let ___from: Ptr<()> = (wc.as_pointer());
-        let ___from_end: Ptr<()> = (wc.as_pointer()).offset((1_()) as isize);
-        let ___to: Ptr<()> = (bytes.as_pointer() as Ptr<()>);
-        let ___to_end: Ptr<()> = unimplemented!();
-        ((*conv.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).out(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            ___from,
-            ___from_end,
-            wcnext.as_pointer(),
-            ___to,
-            ___to_end,
-            next.as_pointer(),
-        )
-    });
+    let mut next: Ptr<()> = Ptr::<()>::null();
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -542,7 +492,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*wcnext.borrow()).clone() } == { (wc.as_pointer()).offset((1_()) as isize) }) {
+        if !({ (wcnext).clone() } == { (wc.as_pointer()).offset((1_()) as isize) }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -561,7 +511,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*next.borrow()).clone() } == { unimplemented!() }) {
+        if !({ (next).clone() } == { unimplemented!() }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -618,17 +568,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({
-            ({
-                ((*conv.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
-                    .length(
-                        (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-                        (bytes.as_pointer() as Ptr<()>),
-                        (*next.borrow()).clone(),
-                        1_(),
-                    )
-            })
-        } == { (((*next.borrow()).clone() - (bytes.as_pointer() as Ptr<()>)) as ()) })
+        if !({ unimplemented!() } == { (((next).clone() - (bytes.as_pointer() as Ptr<()>)) as ()) })
         {
             ({
                 __builtin_fprintf_11(
@@ -649,22 +589,10 @@ pub fn test02_12() {
         }
     }
     let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let wnext: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let cnext: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut wnext: Ptr<()> = Ptr::<()>::null();
+    let mut cnext: Ptr<()> = Ptr::<()>::null();
     (*st.borrow_mut()) = <__mbstate_t>::default();
-    res = ({
-        let ___to: Ptr<()> = (w.as_pointer());
-        let ___to_end: Ptr<()> = (w.as_pointer()).offset((1_()) as isize);
-        ((*conv.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).in_(
-            (st.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (bytes.as_pointer() as Ptr<()>),
-            (*next.borrow()).clone(),
-            cnext.as_pointer(),
-            ___to,
-            ___to_end,
-            wnext.as_pointer(),
-        )
-    });
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -687,7 +615,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*wnext.borrow()).clone() } == { (w.as_pointer()).offset((1_()) as isize) }) {
+        if !({ (wnext).clone() } == { (w.as_pointer()).offset((1_()) as isize) }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -706,7 +634,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*cnext.borrow()).clone() } == { (*next.borrow()).clone() }) {
+        if !({ (cnext).clone() } == { (next).clone() }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

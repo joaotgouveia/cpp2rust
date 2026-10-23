@@ -480,8 +480,7 @@ pub unsafe fn test_9() {
         let N: () = 5_();
         let mut alloc: () = unimplemented!();
         let mut counter: () = 0_();
-        let mut out: *mut Counted =
-            (unsafe { std_allocator_traits_std_allocator_Counted__::allocate(&mut alloc, N) });
+        let mut out: *mut Counted = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
             (unsafe {
@@ -500,14 +499,13 @@ pub unsafe fn test_9() {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
-        (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, out, N) });
+        unimplemented!();
     }
     {
         let N: () = 5_();
         let mut alloc: () = unimplemented!();
         let mut counter: () = 0_();
-        let mut out: *mut Counted =
-            (unsafe { std_allocator_traits_std_allocator_Counted__::allocate(&mut alloc, N) });
+        let mut out: *mut Counted = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
             (unsafe {
@@ -523,7 +521,7 @@ pub unsafe fn test_9() {
         let mut range: () = unimplemented!();
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(&mut range) });
         unimplemented!();
-        (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, out, N) });
+        unimplemented!();
     }
 }
 pub unsafe fn test_11() {
@@ -531,8 +529,7 @@ pub unsafe fn test_11() {
         let N: () = 5_();
         let mut alloc: () = unimplemented!();
         let mut counter: () = 0_();
-        let mut out: *mut Counted =
-            (unsafe { std_allocator_traits_std_allocator_Counted__::allocate(&mut alloc, N) });
+        let mut out: *mut Counted = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
             (unsafe {
@@ -553,14 +550,13 @@ pub unsafe fn test_11() {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
-        (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, out, N) });
+        unimplemented!();
     }
     {
         let N: () = 5_();
         let mut alloc: () = unimplemented!();
         let mut counter: () = 0_();
-        let mut out: *mut Counted =
-            (unsafe { std_allocator_traits_std_allocator_Counted__::allocate(&mut alloc, N) });
+        let mut out: *mut Counted = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
             (unsafe {
@@ -576,7 +572,7 @@ pub unsafe fn test_11() {
         let mut range: () = unimplemented!();
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(&mut range) });
         unimplemented!();
-        (unsafe { std_allocator_traits_std_allocator_Counted__::deallocate(&mut alloc, out, N) });
+        unimplemented!();
     }
 }
 pub unsafe fn tests_12() -> () {
@@ -590,9 +586,7 @@ pub unsafe fn test_arrays_13() -> () {
         let M: () = 3_();
         let mut alloc: () = unimplemented!();
         let mut counter: () = 0_();
-        let mut buffer: *mut [Counted; 3] = (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arr__::allocate(&mut alloc, N)
-        });
+        let mut buffer: *mut [Counted; 3] = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
             let array_ref: *mut [Counted; 3] = &mut (*(buffer.offset((i) as isize)));
@@ -616,18 +610,14 @@ pub unsafe fn test_arrays_13() -> () {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arr__::deallocate(&mut alloc, buffer, N)
-        });
+        unimplemented!();
     }
     {
         let N: () = 5_();
         let A: () = 3_();
         let mut alloc: () = unimplemented!();
         let mut counter: () = 0_();
-        let mut buffer: *mut [Counted; 3] = (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arr__::allocate(&mut alloc, N)
-        });
+        let mut buffer: *mut [Counted; 3] = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
             let array_ref: *mut [Counted; 3] = &mut (*(buffer.offset((i) as isize)));
@@ -648,9 +638,7 @@ pub unsafe fn test_arrays_13() -> () {
         let mut range: () = unimplemented!();
         (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(&mut range) });
         unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arr__::deallocate(&mut alloc, buffer, N)
-        });
+        unimplemented!();
     }
     {
         let N: () = 5_();
@@ -658,9 +646,7 @@ pub unsafe fn test_arrays_13() -> () {
         let B: () = 3_();
         let mut alloc: () = unimplemented!();
         let mut counter: () = 0_();
-        let mut buffer: *mut [[Counted; 3]; 3] = (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::allocate(&mut alloc, N)
-        });
+        let mut buffer: *mut [[Counted; 3]; 3] = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
             let array_ref: *mut [[Counted; 3]; 3] = &mut (*(buffer.offset((i) as isize)));
@@ -688,11 +674,7 @@ pub unsafe fn test_arrays_13() -> () {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::deallocate(
-                &mut alloc, buffer, N,
-            )
-        });
+        unimplemented!();
     }
     {
         let N: () = 5_();
@@ -700,9 +682,7 @@ pub unsafe fn test_arrays_13() -> () {
         let B: () = 3_();
         let mut alloc: () = unimplemented!();
         let mut counter: () = 0_();
-        let mut buffer: *mut [[Counted; 3]; 3] = (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::allocate(&mut alloc, N)
-        });
+        let mut buffer: *mut [[Counted; 3]; 3] = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
             let array_ref: *mut [[Counted; 3]; 3] = &mut (*(buffer.offset((i) as isize)));
@@ -730,11 +710,7 @@ pub unsafe fn test_arrays_13() -> () {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_10))(___first, ___last)
         });
         unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::deallocate(
-                &mut alloc, buffer, N,
-            )
-        });
+        unimplemented!();
     }
     return true;
 }

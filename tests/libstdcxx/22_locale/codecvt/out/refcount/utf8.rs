@@ -285,20 +285,10 @@ pub fn test_12(mut from: Ptr<()>) {
     ])));
     let cvt: Ptr<()> = ({ use_facet_13(unimplemented!()) });
     let mut from_end: Ptr<()> = from.offset((len) as isize);
-    let from_next: Value<Ptr<()>> = Rc::new(RefCell::new((from).clone()));
+    let mut from_next: Ptr<()> = (from).clone();
     let mut buf_end: Ptr<()> = unimplemented!();
-    let buf_next: Value<Ptr<()>> = Rc::new(RefCell::new((buf.as_pointer() as Ptr<()>)));
-    let mut res: () = ({
-        ((*cvt.upgrade().deref()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).out(
-            (state.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (from).clone(),
-            (from_end).clone(),
-            from_next.as_pointer(),
-            (buf.as_pointer() as Ptr<()>),
-            (buf_end).clone(),
-            buf_next.as_pointer(),
-        )
-    });
+    let mut buf_next: Ptr<()> = (buf.as_pointer() as Ptr<()>);
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -322,7 +312,7 @@ pub fn test_12(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*from_next.borrow()).clone() } == { (from_end).clone() }) {
+        if !({ (from_next).clone() } == { (from_end).clone() }) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -342,7 +332,7 @@ pub fn test_12(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (((*buf_next.borrow()).clone() - (buf.as_pointer() as Ptr<()>)) as ()) } == {
+        if !({ (((buf_next).clone() - (buf.as_pointer() as Ptr<()>)) as ()) } == {
             expected_len_11.with(|rc| *rc.borrow())
         }) {
             ({
@@ -390,22 +380,10 @@ pub fn test_12(mut from: Ptr<()>) {
     ));
     let mut exp_end: Ptr<()> = (*expected_10.with(Value::clone).borrow())
         .offset((expected_len_11.with(|rc| *rc.borrow())) as isize);
-    let exp_next: Value<Ptr<()>> = Rc::new(RefCell::new(
-        (*expected_10.with(Value::clone).borrow()).clone(),
-    ));
+    let mut exp_next: Ptr<()> = (*expected_10.with(Value::clone).borrow()).clone();
     let mut buf2_end: Ptr<()> = unimplemented!();
-    let buf2_next: Value<Ptr<()>> = Rc::new(RefCell::new((buf2.as_pointer() as Ptr<()>)));
-    res = ({
-        ((*cvt.upgrade().deref()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).in_(
-            (state.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (*expected_10.with(Value::clone).borrow()).clone(),
-            (exp_end).clone(),
-            exp_next.as_pointer(),
-            (buf2.as_pointer() as Ptr<()>),
-            (buf2_end).clone(),
-            buf2_next.as_pointer(),
-        )
-    });
+    let mut buf2_next: Ptr<()> = (buf2.as_pointer() as Ptr<()>);
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -429,7 +407,7 @@ pub fn test_12(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*exp_next.borrow()).clone() } == { (exp_end).clone() }) {
+        if !({ (exp_next).clone() } == { (exp_end).clone() }) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -449,9 +427,7 @@ pub fn test_12(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (((*buf2_next.borrow()).clone() - (buf2.as_pointer() as Ptr<()>)) as ()) } == {
-            len
-        }) {
+        if !({ (((buf2_next).clone() - (buf2.as_pointer() as Ptr<()>)) as ()) } == { len }) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -515,20 +491,10 @@ pub fn test_15(mut from: Ptr<()>) {
     ])));
     let cvt: Ptr<()> = ({ use_facet_16(unimplemented!()) });
     let mut from_end: Ptr<()> = from.offset((len) as isize);
-    let from_next: Value<Ptr<()>> = Rc::new(RefCell::new((from).clone()));
+    let mut from_next: Ptr<()> = (from).clone();
     let mut buf_end: Ptr<()> = unimplemented!();
-    let buf_next: Value<Ptr<()>> = Rc::new(RefCell::new((buf.as_pointer() as Ptr<()>)));
-    let mut res: () = ({
-        ((*cvt.upgrade().deref()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).out(
-            (state.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (from).clone(),
-            (from_end).clone(),
-            from_next.as_pointer(),
-            (buf.as_pointer() as Ptr<()>),
-            (buf_end).clone(),
-            buf_next.as_pointer(),
-        )
-    });
+    let mut buf_next: Ptr<()> = (buf.as_pointer() as Ptr<()>);
+    let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -552,7 +518,7 @@ pub fn test_15(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*from_next.borrow()).clone() } == { (from_end).clone() }) {
+        if !({ (from_next).clone() } == { (from_end).clone() }) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -572,7 +538,7 @@ pub fn test_15(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (((*buf_next.borrow()).clone() - (buf.as_pointer() as Ptr<()>)) as ()) } == {
+        if !({ (((buf_next).clone() - (buf.as_pointer() as Ptr<()>)) as ()) } == {
             expected_len_11.with(|rc| *rc.borrow())
         }) {
             ({
@@ -620,22 +586,10 @@ pub fn test_15(mut from: Ptr<()>) {
     ));
     let mut exp_end: Ptr<()> = (*expected_10.with(Value::clone).borrow())
         .offset((expected_len_11.with(|rc| *rc.borrow())) as isize);
-    let exp_next: Value<Ptr<()>> = Rc::new(RefCell::new(
-        (*expected_10.with(Value::clone).borrow()).clone(),
-    ));
+    let mut exp_next: Ptr<()> = (*expected_10.with(Value::clone).borrow()).clone();
     let mut buf2_end: Ptr<()> = unimplemented!();
-    let buf2_next: Value<Ptr<()>> = Rc::new(RefCell::new((buf2.as_pointer() as Ptr<()>)));
-    res = ({
-        ((*cvt.upgrade().deref()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).in_(
-            (state.as_pointer()).reinterpret_cast::<__mbstate_t>(),
-            (*expected_10.with(Value::clone).borrow()).clone(),
-            (exp_end).clone(),
-            exp_next.as_pointer(),
-            (buf2.as_pointer() as Ptr<()>),
-            (buf2_end).clone(),
-            buf2_next.as_pointer(),
-        )
-    });
+    let mut buf2_next: Ptr<()> = (buf2.as_pointer() as Ptr<()>);
+    res = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -659,7 +613,7 @@ pub fn test_15(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*exp_next.borrow()).clone() } == { (exp_end).clone() }) {
+        if !({ (exp_next).clone() } == { (exp_end).clone() }) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -679,9 +633,7 @@ pub fn test_15(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (((*buf2_next.borrow()).clone() - (buf2.as_pointer() as Ptr<()>)) as ()) } == {
-            len
-        }) {
+        if !({ (((buf2_next).clone() - (buf2.as_pointer() as Ptr<()>)) as ()) } == { len }) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),

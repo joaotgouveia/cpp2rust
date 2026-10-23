@@ -95,12 +95,7 @@ impl MultiStringType {
 }
 pub unsafe fn test_0() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        (formatter as std___formatter_tuple_char__std_tuple_int___int_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -108,12 +103,7 @@ pub unsafe fn test_0() {
 }
 pub unsafe fn test_1() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        (formatter as std___formatter_tuple_char__std_tuple_int__char___int__char_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -121,12 +111,7 @@ pub unsafe fn test_1() {
 }
 pub unsafe fn test_2() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        (formatter as std___formatter_tuple_char__std_pair_int__char___int__char_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -134,12 +119,7 @@ pub unsafe fn test_2() {
 }
 pub unsafe fn test_3() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        (formatter as std___formatter_tuple_char__std_tuple_int__char__bool___int__char__bool_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -147,12 +127,7 @@ pub unsafe fn test_3() {
 }
 pub unsafe fn test_4() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        (formatter as std___formatter_tuple_wchar_t__std_tuple_int___int_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -160,12 +135,7 @@ pub unsafe fn test_4() {
 }
 pub unsafe fn test_5() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        (formatter as std___formatter_tuple_wchar_t__std_tuple_int__wchar_t___int__wchar_t_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -173,12 +143,7 @@ pub unsafe fn test_5() {
 }
 pub unsafe fn test_6() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        (formatter as std___formatter_tuple_wchar_t__std_pair_int__wchar_t___int__wchar_t_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"
@@ -186,13 +151,7 @@ pub unsafe fn test_6() {
 }
 pub unsafe fn test_7() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        let ___opening_bracket: () = unimplemented!();
-        let ___closing_bracket: () = unimplemented!();
-        (formatter
-            as std___formatter_tuple_wchar_t__std_tuple_int__wchar_t__bool___int__wchar_t__bool_)
-            .set_brackets(___opening_bracket, ___closing_bracket)
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_brackets(std::basic_string_view<CharT>{{}}, std::basic_string_view<CharT>{{}}))"

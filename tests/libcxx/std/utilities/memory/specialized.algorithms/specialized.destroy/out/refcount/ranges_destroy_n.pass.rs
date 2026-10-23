@@ -458,8 +458,7 @@ pub fn test_8() {
         let mut N: () = 5_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let counter: Value<()> = Rc::new(RefCell::new(0_()));
-        let mut out: Ptr<Counted> =
-            ({ std_allocator_traits_std_allocator_Counted__::allocate(alloc.as_pointer(), N) });
+        let mut out: Ptr<Counted> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
             ({
@@ -474,13 +473,7 @@ pub fn test_8() {
         unimplemented!();
         ({ (*destroy_n_9.with(Value::clone).borrow_mut())((out).clone(), N) });
         unimplemented!();
-        ({
-            std_allocator_traits_std_allocator_Counted__::deallocate(
-                alloc.as_pointer(),
-                (out).clone(),
-                N,
-            )
-        });
+        unimplemented!();
     }
 }
 pub fn test_10() {
@@ -488,8 +481,7 @@ pub fn test_10() {
         let mut N: () = 5_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let counter: Value<()> = Rc::new(RefCell::new(0_()));
-        let mut out: Ptr<Counted> =
-            ({ std_allocator_traits_std_allocator_Counted__::allocate(alloc.as_pointer(), N) });
+        let mut out: Ptr<Counted> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
             ({
@@ -509,13 +501,7 @@ pub fn test_10() {
             )
         });
         unimplemented!();
-        ({
-            std_allocator_traits_std_allocator_Counted__::deallocate(
-                alloc.as_pointer(),
-                (out).clone(),
-                N,
-            )
-        });
+        unimplemented!();
     }
 }
 pub fn tests_11() -> () {
@@ -529,9 +515,7 @@ pub fn test_arrays_12() -> () {
         let M: Value<()> = Rc::new(RefCell::new(3_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let counter: Value<()> = Rc::new(RefCell::new(0_()));
-        let mut buffer: Ptr<Box<[Counted]>> = ({
-            std_allocator_traits_std_allocator_Countedarr3arr__::allocate(alloc.as_pointer(), N)
-        });
+        let mut buffer: Ptr<Box<[Counted]>> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
             let array_ref: Ptr<Counted> = (buffer.offset((i) as isize)).as_pointer();
@@ -551,13 +535,7 @@ pub fn test_arrays_12() -> () {
         unimplemented!();
         ({ (*destroy_n_9.with(Value::clone).borrow_mut())((buffer).clone(), N) });
         unimplemented!();
-        ({
-            std_allocator_traits_std_allocator_Countedarr3arr__::deallocate(
-                alloc.as_pointer(),
-                (buffer).clone(),
-                N,
-            )
-        });
+        unimplemented!();
     }
     {
         let mut N: () = 5_();
@@ -565,12 +543,7 @@ pub fn test_arrays_12() -> () {
         let B: Value<()> = Rc::new(RefCell::new(3_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let counter: Value<()> = Rc::new(RefCell::new(0_()));
-        let mut buffer: Ptr<Box<[Box<[Counted]>]>> = ({
-            std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::allocate(
-                alloc.as_pointer(),
-                N,
-            )
-        });
+        let mut buffer: Ptr<Box<[Box<[Counted]>]>> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
             let array_ref: Ptr<Box<[Counted]>> = (buffer.offset((i) as isize)).as_pointer();
@@ -594,13 +567,7 @@ pub fn test_arrays_12() -> () {
         unimplemented!();
         ({ (*destroy_n_9.with(Value::clone).borrow_mut())((buffer).clone(), N) });
         unimplemented!();
-        ({
-            std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::deallocate(
-                alloc.as_pointer(),
-                (buffer).clone(),
-                N,
-            )
-        });
+        unimplemented!();
     }
     return true;
 }

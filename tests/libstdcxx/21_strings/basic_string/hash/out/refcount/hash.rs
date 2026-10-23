@@ -424,11 +424,7 @@ thread_local!(
     static alloc_map_14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub fn test_17(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char__std_allocator_char___std_basic_string_char__std_char_traits_char___std_allocator_char___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___str: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___str.as_pointer())
@@ -436,11 +432,7 @@ pub fn test_17(s: Ptr<()>) -> () {
     });
 }
 pub fn test_18(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char16_t__std_allocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
@@ -448,11 +440,7 @@ pub fn test_18(s: Ptr<()>) -> () {
     });
 }
 pub fn test_19(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char32_t__std_allocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
@@ -460,11 +448,7 @@ pub fn test_19(s: Ptr<()>) -> () {
     });
 }
 pub fn test_20(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_wchar_t__std_allocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
@@ -472,11 +456,7 @@ pub fn test_20(s: Ptr<()>) -> () {
     });
 }
 pub fn test_21(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char__std_pmr_polymorphic_allocator_char___std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___str: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___str.as_pointer())
@@ -484,11 +464,7 @@ pub fn test_21(s: Ptr<()>) -> () {
     });
 }
 pub fn test_22(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char16_t__std_pmr_polymorphic_allocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t___std_pmr_polymorphic_allocator_char16_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
@@ -496,11 +472,7 @@ pub fn test_22(s: Ptr<()>) -> () {
     });
 }
 pub fn test_23(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char32_t__std_pmr_polymorphic_allocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t___std_pmr_polymorphic_allocator_char32_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
@@ -508,11 +480,7 @@ pub fn test_23(s: Ptr<()>) -> () {
     });
 }
 pub fn test_24(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_wchar_t__std_pmr_polymorphic_allocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___std_pmr_polymorphic_allocator_wchar_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
@@ -520,11 +488,7 @@ pub fn test_24(s: Ptr<()>) -> () {
     });
 }
 pub fn test_25(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char____gnu_test_SimpleAllocator_char___std_basic_string_char__std_char_traits_char_____gnu_test_SimpleAllocator_char___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___str: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___str.as_pointer())
@@ -532,11 +496,7 @@ pub fn test_25(s: Ptr<()>) -> () {
     });
 }
 pub fn test_26(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char16_t____gnu_test_SimpleAllocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t_____gnu_test_SimpleAllocator_char16_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
@@ -544,11 +504,7 @@ pub fn test_26(s: Ptr<()>) -> () {
     });
 }
 pub fn test_27(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char32_t____gnu_test_SimpleAllocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t_____gnu_test_SimpleAllocator_char32_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
@@ -556,11 +512,7 @@ pub fn test_27(s: Ptr<()>) -> () {
     });
 }
 pub fn test_28(s: Ptr<()>) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_wchar_t____gnu_test_SimpleAllocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t_____gnu_test_SimpleAllocator_wchar_t___ ) ( (s ).clone() , )
-        })
-    } == {
+    return ({ unimplemented!() } == {
         ({
             let ___s: Value<()> = Rc::new(RefCell::new(({ (*s.upgrade().deref())() })));
             unimplemented!()(___s.as_pointer())
