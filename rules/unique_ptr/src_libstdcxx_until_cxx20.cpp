@@ -23,6 +23,7 @@ template <
         bool>::type,
     typename std::enable_if<
         (!(std::is_same<T3, std::unique_ptr<T1[], T2> &&>::value) &&
+         !(std::is_same<T3, std::nullptr_t>::value) &&
          !(std::is_same<T3, const std::unique_ptr<T1[], T2> &>::value)),
         int>::type T7 = 0>
 std::unique_ptr<T1[], T2> f52(T3 a0) {

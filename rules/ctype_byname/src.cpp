@@ -45,6 +45,8 @@ const std::ctype_base::mask *f8(const std::ctype_byname<char> &a0) {
   return a0.table();
 }
 
-const std::ctype_base::mask *f9() { return std::ctype<char>::classic_table(); }
+const std::ctype_base::mask *f9() {
+  return std::ctype_byname<char>::classic_table();
+}
 
 using t2 = std::ctype_byname<wchar_t>;

@@ -82,7 +82,10 @@ template <
         std::_PCC<true, T1, T2>::template _MoveConstructiblePair<T3, T4>() &&
             std::_PCC<true, T1,
                       T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
-        bool>::type T5 = true>
+        bool>::type T5 = true,
+    typename std::enable_if<(!(std::is_same<T3, const T1 &>::value &&
+                               std::is_same<T4, const T2 &>::value)),
+                            int>::type T6 = 0>
 std::pair<T1, T2> f11(T3 &&a0, T4 &&a1) {
   return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }
@@ -93,7 +96,10 @@ template <
         std::_PCC<true, T1, T2>::template _MoveConstructiblePair<T3, T4>() &&
             !std::_PCC<true, T1,
                        T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
-        bool>::type T5 = false>
+        bool>::type T5 = false,
+    typename std::enable_if<(!(std::is_same<T3, const T1 &>::value &&
+                               std::is_same<T4, const T2 &>::value)),
+                            int>::type T6 = 0>
 std::pair<T1, T2> f12(T3 &&a0, T4 &&a1) {
   return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }

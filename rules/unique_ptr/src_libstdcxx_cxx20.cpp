@@ -37,6 +37,7 @@ template <
         bool>::type>
 std::unique_ptr<T1[], T2> f61(T3 a0)
   requires(!(std::is_same<T3, std::unique_ptr<T1[], T2> &&>::value) &&
+           !(std::is_same<T3, std::nullptr_t>::value) &&
            !(std::is_same<T3, const std::unique_ptr<T1[], T2> &>::value))
 {
   return std::unique_ptr<T1[], T2>(a0);

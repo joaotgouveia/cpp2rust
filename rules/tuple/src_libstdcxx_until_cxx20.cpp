@@ -25,7 +25,10 @@ template <typename T1, typename T2, typename T3, typename T4,
                   !std::tuple<T1, T2>::template __is_alloc_arg<T3>(), T1,
                   T2>::template __is_implicitly_constructible<T3, T4>(),
               bool>
-              T5 = true>
+              T5 = true,
+          typename std::enable_if<(!(std::is_same<T3, const T1 &>::value &&
+                                     std::is_same<T4, const T2 &>::value)),
+                                  int>::type T6 = 0>
 std::tuple<T1, T2> f35(T3 &&a0, T4 &&a1) {
   return std::tuple<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }
@@ -36,7 +39,10 @@ template <typename T1, typename T2, typename T3, typename T4,
                   !std::tuple<T1, T2>::template __is_alloc_arg<T3>(), T1,
                   T2>::template __is_explicitly_constructible<T3, T4>(),
               bool>
-              T5 = false>
+              T5 = false,
+          typename std::enable_if<(!(std::is_same<T3, const T1 &>::value &&
+                                     std::is_same<T4, const T2 &>::value)),
+                                  int>::type T6 = 0>
 std::tuple<T1, T2> f36(T3 &&a0, T4 &&a1) {
   return std::tuple<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }

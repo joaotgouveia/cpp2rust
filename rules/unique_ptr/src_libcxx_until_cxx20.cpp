@@ -13,10 +13,40 @@ template <
                        int>
         T6 = 0,
     typename std::enable_if<
-        (!(std::is_same<T3, std::unique_ptr<T1[], T2> &&>::value)), int>::type
-        T7 = 0>
-std::unique_ptr<T1[], T2> f78(T3 a0) {
+        (!(std::is_same<T3, std::nullptr_t>::value) &&
+         !(std::is_same<T3, std::unique_ptr<T1[], T2> &&>::value)),
+        int>::type T7 = 0>
+std::unique_ptr<T1[], T2> f76(T3 a0) {
   return std::unique_ptr<T1[], T2>(a0);
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4 = T2,
+    std::__enable_if_t<std::is_copy_constructible<T2>::value, int> T5 = 0,
+    std::__enable_if_t<std::unique_ptr<T1[], T2>::
+                           template _CheckArrayPointerConversion<T3>::value,
+                       int>
+        T6 = 0,
+    typename std::enable_if<(!(std::is_same<T3, std::nullptr_t>::value)),
+                            int>::type T7 = 0>
+std::unique_ptr<T1[], T2> f77(T3 a0, const T2 &a1) {
+  return std::unique_ptr<T1[], T2>(a0, a1);
+}
+
+template <
+    typename T1, typename T2, typename T3, typename T4 = T2,
+    std::__enable_if_t<!std::is_reference<T2>::value &&
+                           std::is_move_constructible<T2>::value,
+                       int>
+        T5 = 0,
+    std::__enable_if_t<std::unique_ptr<T1[], T2>::
+                           template _CheckArrayPointerConversion<T3>::value,
+                       int>
+        T6 = 0,
+    typename std::enable_if<(!(std::is_same<T3, std::nullptr_t>::value)),
+                            int>::type T7 = 0>
+std::unique_ptr<T1[], T2> f78(T3 a0, T2 &&a1) {
+  return std::unique_ptr<T1[], T2>(a0, std::move(a1));
 }
 
 template <

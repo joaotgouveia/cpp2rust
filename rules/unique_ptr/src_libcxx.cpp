@@ -34,35 +34,10 @@ std::unique_ptr<T1[], T2> f68(T3 a0, T4 a1, std::size_t a2) {
   return std::unique_ptr<T1[], T2>(a0, a1, a2);
 }
 
-template <
-    typename T1, typename T2, typename T3, typename T4 = T2,
-    std::__enable_if_t<std::is_copy_constructible<T2>::value, int> T5 = 0,
-    std::__enable_if_t<std::unique_ptr<T1[], T2>::
-                           template _CheckArrayPointerConversion<T3>::value,
-                       int>
-        T6 = 0>
-std::unique_ptr<T1[], T2> f69(T3 a0, const T2 &a1) {
-  return std::unique_ptr<T1[], T2>(a0, a1);
-}
-
 template <typename T1, typename T2, typename T3 = T2,
           std::__enable_if_t<std::is_copy_constructible<T2>::value, int> T4 = 0>
-std::unique_ptr<T1[], T2> f70(std::nullptr_t a0, const T2 &a1) {
+std::unique_ptr<T1[], T2> f69(std::nullptr_t a0, const T2 &a1) {
   return std::unique_ptr<T1[], T2>(a0, a1);
-}
-
-template <
-    typename T1, typename T2, typename T3, typename T4 = T2,
-    std::__enable_if_t<!std::is_reference<T2>::value &&
-                           std::is_move_constructible<T2>::value,
-                       int>
-        T5 = 0,
-    std::__enable_if_t<std::unique_ptr<T1[], T2>::
-                           template _CheckArrayPointerConversion<T3>::value,
-                       int>
-        T6 = 0>
-std::unique_ptr<T1[], T2> f71(T3 a0, T2 &&a1) {
-  return std::unique_ptr<T1[], T2>(a0, std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3 = T2,
@@ -70,7 +45,7 @@ template <typename T1, typename T2, typename T3 = T2,
                                  std::is_move_constructible<T2>::value,
                              int>
               T4 = 0>
-std::unique_ptr<T1[], T2> f72(std::nullptr_t a0, T2 &&a1) {
+std::unique_ptr<T1[], T2> f70(std::nullptr_t a0, T2 &&a1) {
   return std::unique_ptr<T1[], T2>(a0, std::move(a1));
 }
 
@@ -79,7 +54,7 @@ template <typename T1, typename T2, typename T3 = T2,
                                  !std::is_pointer<T2>::value,
                              int>
               T4 = 0>
-std::unique_ptr<T1, T2> f73() {
+std::unique_ptr<T1, T2> f71() {
   return std::unique_ptr<T1, T2>();
 }
 
@@ -88,13 +63,13 @@ template <typename T1, typename T2, typename T3 = T2,
                                  !std::is_pointer<T2>::value,
                              int>
               T4 = 0>
-std::unique_ptr<T1, T2> f74(std::nullptr_t a0) {
+std::unique_ptr<T1, T2> f72(std::nullptr_t a0) {
   return std::unique_ptr<T1, T2>(a0);
 }
 
 template <typename T1, typename T2, typename T3 = T2,
           std::__enable_if_t<std::is_copy_constructible<T2>::value, int> T4 = 0>
-std::unique_ptr<T1, T2> f75(T1 *a0, const T2 &a1) {
+std::unique_ptr<T1, T2> f73(T1 *a0, const T2 &a1) {
   return std::unique_ptr<T1, T2>(a0, a1);
 }
 
@@ -103,7 +78,7 @@ template <typename T1, typename T2, typename T3 = T2,
                                  std::is_move_constructible<T2>::value,
                              int>
               T4 = 0>
-std::unique_ptr<T1, T2> f76(T1 *a0, T2 &&a1) {
+std::unique_ptr<T1, T2> f74(T1 *a0, T2 &&a1) {
   return std::unique_ptr<T1, T2>(a0, std::move(a1));
 }
 
@@ -112,6 +87,6 @@ template <
     std::__enable_if_t<std::__can_dereference<std::__pointer<T1, T2>>, int> T4 =
         0>
 typename std::add_lvalue_reference<T1>::type
-f77(const std::unique_ptr<T1, T2> &a0) {
+f75(const std::unique_ptr<T1, T2> &a0) {
   return a0.operator*();
 }
