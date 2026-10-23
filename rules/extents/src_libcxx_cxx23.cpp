@@ -38,17 +38,40 @@ template <typename T1, std::size_t... T2> std::extents<T1, T2...> f5() {
 }
 
 template <typename T1, std::size_t... T2, typename... T3>
-std::extents<T1, T2...> f6(T3... a0) {
+std::extents<T1, T2...> f6(T3... a0)
+  requires(((std::is_convertible_v<
+                 T3, typename std::extents<T1, T2...>::index_type> &&
+             ...) &&
+            (std::is_nothrow_constructible_v<
+                 typename std::extents<T1, T2...>::index_type, T3> &&
+             ...) &&
+            (sizeof...(T3) == std::extents<T1, T2...>::__rank_ ||
+             sizeof...(T3) == std::extents<T1, T2...>::__rank_dynamic_)))
+{
   return std::extents<T1, T2...>(a0...);
 }
 
 template <typename T1, std::size_t... T2, typename T3, std::size_t T4>
-std::extents<T1, T2...> f7(const std::array<T3, T4> &a0) {
+std::extents<T1, T2...> f7(const std::array<T3, T4> &a0)
+  requires((std::is_convertible_v<
+                const T3 &, typename std::extents<T1, T2...>::index_type> &&
+            std::is_nothrow_constructible_v<
+                typename std::extents<T1, T2...>::index_type, const T3 &> &&
+            (T4 == std::extents<T1, T2...>::__rank_ ||
+             T4 == std::extents<T1, T2...>::__rank_dynamic_)))
+{
   return std::extents<T1, T2...>(a0);
 }
 
 template <typename T1, std::size_t... T2, typename T3, std::size_t T4>
-std::extents<T1, T2...> f8(const std::span<T3, T4> &a0) {
+std::extents<T1, T2...> f8(const std::span<T3, T4> &a0)
+  requires((std::is_convertible_v<
+                const T3 &, typename std::extents<T1, T2...>::index_type> &&
+            std::is_nothrow_constructible_v<
+                typename std::extents<T1, T2...>::index_type, const T3 &> &&
+            (T4 == std::extents<T1, T2...>::__rank_ ||
+             T4 == std::extents<T1, T2...>::__rank_dynamic_)))
+{
   return std::extents<T1, T2...>(a0);
 }
 

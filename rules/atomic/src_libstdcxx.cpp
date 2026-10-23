@@ -501,48 +501,46 @@ template <typename T1> std::atomic<T1 *> f170(T1 *a0) { return {a0}; }
 
 template <typename T1> using t21 = typename std::atomic<T1>::value_type;
 
-template <typename T1> std::atomic<T1> f171() { return {}; }
+template <typename T1> std::atomic<T1> f171(T1 a0) { return {a0}; }
 
-template <typename T1> std::atomic<T1> f172(T1 a0) { return {a0}; }
-
-template <typename T1> T1 f173(const std::atomic<T1> &a0) {
+template <typename T1> T1 f172(const std::atomic<T1> &a0) {
   return static_cast<T1>(a0);
 }
 
 template <typename T1>
-void f174(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
+void f173(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
   return a0.store(a1, a2);
 }
 
 template <typename T1>
-T1 f175(const std::atomic<T1> &a0, std::memory_order a1) {
+T1 f174(const std::atomic<T1> &a0, std::memory_order a1) {
   return a0.load(a1);
 }
 
 template <typename T1>
-T1 f176(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
+T1 f175(std::atomic<T1> &a0, T1 a1, std::memory_order a2) {
   return a0.exchange(a1, a2);
 }
 
 template <typename T1>
-bool f177(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+bool f176(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f178(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+bool f177(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
 template <typename T1>
-bool f179(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
+bool f178(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return a0.compare_exchange_strong(a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f180(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
+bool f179(std::atomic<T1> &a0, T1 &a1, T1 a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
@@ -554,95 +552,95 @@ using t24 = std::atomic_char16_t;
 
 using t25 = std::atomic_char32_t;
 
-template <typename T1> bool f181(volatile std::atomic<T1> *a0, T1 *a1, T1 a2) {
+template <typename T1> bool f180(volatile std::atomic<T1> *a0, T1 *a1, T1 a2) {
   return std::atomic_compare_exchange_strong<T1>(a0, a1, a2);
 }
 
-template <typename T1> bool f182(std::atomic<T1> *a0, T1 *a1, T1 a2) {
+template <typename T1> bool f181(std::atomic<T1> *a0, T1 *a1, T1 a2) {
   return std::atomic_compare_exchange_strong<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-bool f183(volatile std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
+bool f182(volatile std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return std::atomic_compare_exchange_strong_explicit<T1>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f184(std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
+bool f183(std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return std::atomic_compare_exchange_strong_explicit<T1>(a0, a1, a2, a3, a4);
 }
 
-template <typename T1> bool f185(volatile std::atomic<T1> *a0, T1 *a1, T1 a2) {
+template <typename T1> bool f184(volatile std::atomic<T1> *a0, T1 *a1, T1 a2) {
   return std::atomic_compare_exchange_weak<T1>(a0, a1, a2);
 }
 
-template <typename T1> bool f186(std::atomic<T1> *a0, T1 *a1, T1 a2) {
+template <typename T1> bool f185(std::atomic<T1> *a0, T1 *a1, T1 a2) {
   return std::atomic_compare_exchange_weak<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-bool f187(volatile std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
+bool f186(volatile std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return std::atomic_compare_exchange_weak_explicit<T1>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f188(std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
+bool f187(std::atomic<T1> *a0, T1 *a1, T1 a2, std::memory_order a3,
           std::memory_order a4) {
   return std::atomic_compare_exchange_weak_explicit<T1>(a0, a1, a2, a3, a4);
 }
 
-template <typename T1> T1 f189(volatile std::atomic<T1> *a0, T1 a1) {
+template <typename T1> T1 f188(volatile std::atomic<T1> *a0, T1 a1) {
   return std::atomic_exchange<T1>(a0, a1);
 }
 
-template <typename T1> T1 f190(std::atomic<T1> *a0, T1 a1) {
+template <typename T1> T1 f189(std::atomic<T1> *a0, T1 a1) {
   return std::atomic_exchange<T1>(a0, a1);
 }
 
 template <typename T1>
-T1 f191(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+T1 f190(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_exchange_explicit<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-T1 f192(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+T1 f191(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_exchange_explicit<T1>(a0, a1, a2);
 }
 
-void f193(std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
+void f192(std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
 
-void f194(volatile std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
+void f193(volatile std::atomic_flag *a0) { return std::atomic_flag_clear(a0); }
 
-void f195(std::atomic_flag *a0, std::memory_order a1) {
+void f194(std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_clear_explicit(a0, a1);
 }
 
-void f196(volatile std::atomic_flag *a0, std::memory_order a1) {
+void f195(volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_clear_explicit(a0, a1);
 }
 
-bool f197(std::atomic_flag *a0) { return std::atomic_flag_test_and_set(a0); }
+bool f196(std::atomic_flag *a0) { return std::atomic_flag_test_and_set(a0); }
 
-bool f198(volatile std::atomic_flag *a0) {
+bool f197(volatile std::atomic_flag *a0) {
   return std::atomic_flag_test_and_set(a0);
 }
 
-bool f199(std::atomic_flag *a0, std::memory_order a1) {
+bool f198(std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_and_set_explicit(a0, a1);
 }
 
-bool f200(volatile std::atomic_flag *a0, std::memory_order a1) {
+bool f199(volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_and_set_explicit(a0, a1);
 }
 
-template <typename T1> void f201(volatile std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f200(volatile std::atomic<T1> *a0, T1 a1) {
   return std::atomic_init<T1>(a0, a1);
 }
 
-template <typename T1> void f202(std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f201(std::atomic<T1> *a0, T1 a1) {
   return std::atomic_init<T1>(a0, a1);
 }
 
@@ -688,21 +686,21 @@ using t45 = std::atomic_short;
 
 using t46 = std::atomic_size_t;
 
-template <typename T1> void f203(volatile std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f202(volatile std::atomic<T1> *a0, T1 a1) {
   return std::atomic_store<T1>(a0, a1);
 }
 
-template <typename T1> void f204(std::atomic<T1> *a0, T1 a1) {
+template <typename T1> void f203(std::atomic<T1> *a0, T1 a1) {
   return std::atomic_store<T1>(a0, a1);
 }
 
 template <typename T1>
-void f205(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+void f204(volatile std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_store_explicit<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-void f206(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
+void f205(std::atomic<T1> *a0, T1 a1, std::memory_order a2) {
   return std::atomic_store_explicit<T1>(a0, a1, a2);
 }
 

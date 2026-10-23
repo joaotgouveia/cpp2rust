@@ -102,7 +102,10 @@ f38(std::basic_ostream<T1, T2> &a0,
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f39(std::basic_ostream<T1, T2> &a0,
-                                const std::chrono::sys_time<T3> &a1) {
+                                const std::chrono::sys_time<T3> &a1)
+  requires((!std::chrono::treat_as_floating_point_v<typename T3::rep> &&
+            T3{1} < std::chrono::days{1}))
+{
   return std::chrono::operator<< <T1, T2, T3>(a0, a1);
 }
 

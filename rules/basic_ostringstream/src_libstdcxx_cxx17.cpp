@@ -5,6 +5,6 @@
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostringstream<T1, T2, T3> &
-f72(std::basic_ostringstream<T1, T2, T3> &a0, std::nullptr_t a1) {
+f70(std::basic_ostringstream<T1, T2, T3> &a0, std::nullptr_t a1) {
   return a0.operator<<(a1);
 }

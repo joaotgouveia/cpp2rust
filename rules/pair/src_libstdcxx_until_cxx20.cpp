@@ -7,7 +7,7 @@ template <
         std::__and_<std::__is_implicitly_default_constructible<T1>,
                     std::__is_implicitly_default_constructible<T2>>::value,
         bool>::type T5 = true>
-std::pair<T1, T2> f11() {
+std::pair<T1, T2> f5() {
   return std::pair<T1, T2>();
 }
 
@@ -20,7 +20,7 @@ template <typename T1, typename T2, typename T3 = T1, typename T4 = T2,
                       std::__is_implicitly_default_constructible<T1>,
                       std::__is_implicitly_default_constructible<T2>>>>::value,
               bool>::type T5 = false>
-std::pair<T1, T2> f12() {
+std::pair<T1, T2> f6() {
   return std::pair<T1, T2>();
 }
 
@@ -30,7 +30,7 @@ template <typename T1, typename T2, typename T3 = T1, typename T4 = T2,
                   std::_PCC<true, T1,
                             T2>::template _ImplicitlyConvertiblePair<T1, T2>(),
               bool>::type T5 = true>
-std::pair<T1, T2> f13(const T1 &a0, const T2 &a1) {
+std::pair<T1, T2> f7(const T1 &a0, const T2 &a1) {
   return std::pair<T1, T2>(a0, a1);
 }
 
@@ -40,7 +40,7 @@ template <typename T1, typename T2, typename T3 = T1, typename T4 = T2,
                   !std::_PCC<true, T1,
                              T2>::template _ImplicitlyConvertiblePair<T1, T2>(),
               bool>::type T5 = false>
-std::pair<T1, T2> f14(const T1 &a0, const T2 &a1) {
+std::pair<T1, T2> f8(const T1 &a0, const T2 &a1) {
   return std::pair<T1, T2>(a0, a1);
 }
 
@@ -53,7 +53,7 @@ template <
                           !std::is_same<T2, T4>::value,
                       T1, T2>::template _ImplicitlyConvertiblePair<T3, T4>(),
         bool>::type T5 = true>
-std::pair<T1, T2> f15(const std::pair<T3, T4> &a0) {
+std::pair<T1, T2> f9(const std::pair<T3, T4> &a0) {
   return std::pair<T1, T2>(a0);
 }
 
@@ -66,7 +66,7 @@ template <
                            !std::is_same<T2, T4>::value,
                        T1, T2>::template _ImplicitlyConvertiblePair<T3, T4>(),
         bool>::type T5 = false>
-std::pair<T1, T2> f16(const std::pair<T3, T4> &a0) {
+std::pair<T1, T2> f10(const std::pair<T3, T4> &a0) {
   return std::pair<T1, T2>(a0);
 }
 
@@ -77,7 +77,7 @@ template <
             std::_PCC<true, T1,
                       T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
         bool>::type T5 = true>
-std::pair<T1, T2> f17(T3 &&a0, T4 &&a1) {
+std::pair<T1, T2> f11(T3 &&a0, T4 &&a1) {
   return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }
 
@@ -88,7 +88,7 @@ template <
             !std::_PCC<true, T1,
                        T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
         bool>::type T5 = false>
-std::pair<T1, T2> f18(T3 &&a0, T4 &&a1) {
+std::pair<T1, T2> f12(T3 &&a0, T4 &&a1) {
   return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }
 
@@ -101,7 +101,7 @@ template <
                 !std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
                 T1, T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
         bool>::type T5 = true>
-std::pair<T1, T2> f19(std::pair<T3, T4> &&a0) {
+std::pair<T1, T2> f13(std::pair<T3, T4> &&a0) {
   return std::pair<T1, T2>(std::move(a0));
 }
 
@@ -114,6 +114,6 @@ template <
                 !std::is_same<T1, T3>::value || !std::is_same<T2, T4>::value,
                 T1, T2>::template _ImplicitlyMoveConvertiblePair<T3, T4>(),
         bool>::type T5 = false>
-std::pair<T1, T2> f20(std::pair<T3, T4> &&a0) {
+std::pair<T1, T2> f14(std::pair<T3, T4> &&a0) {
   return std::pair<T1, T2>(std::move(a0));
 }

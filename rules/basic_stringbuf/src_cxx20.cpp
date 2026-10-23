@@ -59,21 +59,3 @@ std::basic_stringbuf<T1, T2, T3> f32(const std::basic_string<T1, T2, T4> &a0,
                                      std::ios_base::openmode a1, const T3 &a2) {
   return std::basic_stringbuf<T1, T2, T3>(a0, a1, a2);
 }
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::basic_stringbuf<T1, T2, T3> f33(const std::basic_string<T1, T2, T4> &a0,
-                                     std::ios_base::openmode a1) {
-  return std::basic_stringbuf<T1, T2, T3>(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string<T1, T2, T4> f34(const std::basic_stringbuf<T1, T2, T3> &a0,
-                                  const T4 &a1) {
-  return a0.template str<T4>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-void f35(std::basic_stringbuf<T1, T2, T3> &a0,
-         const std::basic_string<T1, T2, T4> &a1) {
-  return a0.template str<T4>(a1);
-}

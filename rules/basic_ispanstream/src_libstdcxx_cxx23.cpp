@@ -60,12 +60,20 @@ void f7(std::basic_ispanstream<T1, T2> &a0, std::span<T1> a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_ispanstream<T1, T2> f8(T3 &&a0) {
+std::basic_ispanstream<T1, T2> f8(T3 &&a0)
+  requires(std::ranges::borrowed_range<T3> &&
+           (!std::convertible_to<T3, std::span<T1>>) &&
+           std::convertible_to<T3, std::span<const T1>>)
+{
   return std::basic_ispanstream<T1, T2>(std::forward<T3>(a0));
 }
 
 template <typename T1, typename T2, typename T3>
-void f9(std::basic_ispanstream<T1, T2> &a0, T3 &&a1) {
+void f9(std::basic_ispanstream<T1, T2> &a0, T3 &&a1)
+  requires(std::ranges::borrowed_range<T3> &&
+           (!std::convertible_to<T3, std::span<T1>>) &&
+           std::convertible_to<T3, std::span<const T1>>)
+{
   return a0.template span<T3>(std::forward<T3>(a1));
 }
 

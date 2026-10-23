@@ -1,52 +1,178 @@
 #include <ranges>
 #include <utility>
 
+template <typename T1>
+std::ranges::enumerate_view<T1> f29()
+  requires(std::default_initializable<T1>) &&
+          (std::ranges::__range_with_movable_references<T1>)
+{
+  return std::ranges::enumerate_view<T1>();
+}
+
+template <typename T1>
+std::ranges::enumerate_view<T1> f30(T1 a0)
+  requires(std::ranges::__range_with_movable_references<T1>)
+{
+  return std::ranges::enumerate_view<T1>(a0);
+}
+
+template <typename T1>
+auto f31(std::ranges::enumerate_view<T1> &a0)
+  requires((!std::ranges::__simple_view<T1>)) &&
+          (std::ranges::__range_with_movable_references<T1>)
+{
+  return a0.begin();
+}
+
+template <typename T1>
+auto f32(const std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::__range_with_movable_references<const T1>) &&
+          (std::ranges::__range_with_movable_references<T1>)
+{
+  return a0.begin();
+}
+
+template <typename T1>
+auto f33(std::ranges::enumerate_view<T1> &a0)
+  requires((!std::ranges::__simple_view<T1>)) &&
+          (std::ranges::__range_with_movable_references<T1>)
+{
+  return a0.end();
+}
+
+template <typename T1>
+auto f34(const std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::__range_with_movable_references<const T1>) &&
+          (std::ranges::__range_with_movable_references<T1>)
+{
+  return a0.end();
+}
+
+template <typename T1>
+auto f35(std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::sized_range<T1>) &&
+          (std::ranges::__range_with_movable_references<T1>)
+{
+  return a0.size();
+}
+
+template <typename T1>
+auto f36(const std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::sized_range<const T1>) &&
+          (std::ranges::__range_with_movable_references<T1>)
+{
+  return a0.size();
+}
+
+template <typename T1>
+T1 f37(const std::ranges::enumerate_view<T1> &a0)
+  requires(std::copy_constructible<T1>) &&
+          (std::ranges::__range_with_movable_references<T1>)
+{
+  return a0.base();
+}
+
+template <typename T1>
+T1 f38(std::ranges::enumerate_view<T1> &&a0)
+  requires(std::ranges::__range_with_movable_references<T1>)
+{
+  return std::move(a0).base();
+}
+
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-bool f27(std::ranges::enumerate_view<T1> &a0) {
+bool f39(std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::sized_range<std::ranges::enumerate_view<T1>> ||
+           std::ranges::forward_range<std::ranges::enumerate_view<T1>>) &&
+          (std::is_class_v<std::ranges::enumerate_view<T1>> &&
+           std::same_as<std::ranges::enumerate_view<T1>,
+                        std::remove_cv_t<std::ranges::enumerate_view<T1>>>)
+{
   return a0.empty();
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-bool f28(const std::ranges::enumerate_view<T1> &a0) {
+bool f40(const std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::sized_range<std::ranges::enumerate_view<T1> const> ||
+           std::ranges::forward_range<std::ranges::enumerate_view<T1> const>) &&
+          (std::is_class_v<std::ranges::enumerate_view<T1>> &&
+           std::same_as<std::ranges::enumerate_view<T1>,
+                        std::remove_cv_t<std::ranges::enumerate_view<T1>>>)
+{
   return a0.empty();
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-bool f29(std::ranges::enumerate_view<T1> &a0) {
+bool f41(std::ranges::enumerate_view<T1> &a0) {
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-bool f30(const std::ranges::enumerate_view<T1> &a0) {
+bool f42(const std::ranges::enumerate_view<T1> &a0) {
   return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-auto f31(std::ranges::enumerate_view<T1> &a0) {
+auto f43(std::ranges::enumerate_view<T1> &a0)
+  requires(std::contiguous_iterator<
+              std::ranges::iterator_t<std::ranges::enumerate_view<T1>>>) &&
+          (std::is_class_v<std::ranges::enumerate_view<T1>> &&
+           std::same_as<std::ranges::enumerate_view<T1>,
+                        std::remove_cv_t<std::ranges::enumerate_view<T1>>>)
+{
   return a0.data();
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-auto f32(const std::ranges::enumerate_view<T1> &a0) {
+auto f44(const std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::range<std::ranges::enumerate_view<T1> const> &&
+           std::contiguous_iterator<std::ranges::iterator_t<
+               std::ranges::enumerate_view<T1> const>>) &&
+          (std::is_class_v<std::ranges::enumerate_view<T1>> &&
+           std::same_as<std::ranges::enumerate_view<T1>,
+                        std::remove_cv_t<std::ranges::enumerate_view<T1>>>)
+{
   return a0.data();
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-decltype(auto) f33(std::ranges::enumerate_view<T1> &a0) {
+decltype(auto) f45(std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::forward_range<std::ranges::enumerate_view<T1>>) &&
+          (std::is_class_v<std::ranges::enumerate_view<T1>> &&
+           std::same_as<std::ranges::enumerate_view<T1>,
+                        std::remove_cv_t<std::ranges::enumerate_view<T1>>>)
+{
   return a0.front();
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-decltype(auto) f34(const std::ranges::enumerate_view<T1> &a0) {
+decltype(auto) f46(const std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::forward_range<std::ranges::enumerate_view<T1> const>) &&
+          (std::is_class_v<std::ranges::enumerate_view<T1>> &&
+           std::same_as<std::ranges::enumerate_view<T1>,
+                        std::remove_cv_t<std::ranges::enumerate_view<T1>>>)
+{
   return a0.front();
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-decltype(auto) f35(std::ranges::enumerate_view<T1> &a0) {
+decltype(auto) f47(std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::bidirectional_range<std::ranges::enumerate_view<T1>> &&
+           std::ranges::common_range<std::ranges::enumerate_view<T1>>) &&
+          (std::is_class_v<std::ranges::enumerate_view<T1>> &&
+           std::same_as<std::ranges::enumerate_view<T1>,
+                        std::remove_cv_t<std::ranges::enumerate_view<T1>>>)
+{
   return a0.back();
 }
 
 template <typename T1, typename T2 = std::ranges::enumerate_view<T1>>
-decltype(auto) f36(const std::ranges::enumerate_view<T1> &a0) {
+decltype(auto) f48(const std::ranges::enumerate_view<T1> &a0)
+  requires(std::ranges::bidirectional_range<
+               std::ranges::enumerate_view<T1> const> &&
+           std::ranges::common_range<std::ranges::enumerate_view<T1> const>) &&
+          (std::is_class_v<std::ranges::enumerate_view<T1>> &&
+           std::same_as<std::ranges::enumerate_view<T1>,
+                        std::remove_cv_t<std::ranges::enumerate_view<T1>>>)
+{
   return a0.back();
 }

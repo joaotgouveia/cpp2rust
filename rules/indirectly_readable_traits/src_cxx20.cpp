@@ -9,4 +9,8 @@ template <typename T1> using t2 = std::indirectly_readable_traits<const T1>;
 template <typename T1> using t3 = std::indirectly_readable_traits<T1>;
 
 template <typename T1>
-using t4 = typename std::indirectly_readable_traits<T1>::value_type;
+  requires(std::is_array_v<T1>)
+using t4 = std::indirectly_readable_traits<T1>;
+
+template <typename T1>
+using t5 = typename std::indirectly_readable_traits<T1>::value_type;

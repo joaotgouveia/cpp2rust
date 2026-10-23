@@ -2,7 +2,9 @@
 #include <iterator>
 #include <utility>
 
-template <typename T1> using t1 = std::incrementable_traits<T1 *>;
+template <typename T1>
+  requires(std::is_object_v<T1>)
+using t1 = std::incrementable_traits<T1 *>;
 
 template <typename T1>
 using t2 = typename std::incrementable_traits<T1 *>::difference_type;

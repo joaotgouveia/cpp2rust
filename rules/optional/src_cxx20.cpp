@@ -15,9 +15,3 @@ std::compare_three_way_result_t<T1, T2> f31(const std::optional<T1> &a0,
                                             const std::optional<T2> &a1) {
   return std::operator<=> <T1, T2>(a0, a1);
 }
-
-template <typename T1, typename T2>
-std::compare_three_way_result_t<T1, T2> f32(const std::optional<T1> &a0,
-                                            const T2 &a1) {
-  return std::operator<=> <T1, T2>(a0, a1);
-}

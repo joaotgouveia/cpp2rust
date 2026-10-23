@@ -2,8 +2,6 @@
 #include <iterator>
 #include <utility>
 
-template <typename T1> using t1 = std::iterator_traits<T1 *>;
-
 template <typename T1>
 using t2 = typename std::iterator_traits<T1 *>::iterator_category;
 

@@ -3,10 +3,11 @@
 #include <utility>
 
 template <typename T1>
-using t8 = typename std::iterator_traits<T1 *>::iterator_concept;
+  requires(std::is_object_v<T1>)
+using t8 = std::iterator_traits<T1 *>;
 
 template <typename T1>
-using t9 = std::iterator_traits<std::counted_iterator<T1>>;
+using t9 = typename std::iterator_traits<T1 *>::iterator_concept;
 
 template <typename T1>
 using t10 = typename std::iterator_traits<std::counted_iterator<T1>>::pointer;

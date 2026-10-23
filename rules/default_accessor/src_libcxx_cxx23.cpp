@@ -30,6 +30,9 @@ T1 *f3(const std::default_accessor<T1> &a0, T1 *a1, std::size_t a2) {
 }
 
 template <typename T1, typename T2>
-std::default_accessor<T1> f4(std::default_accessor<T2> a0) {
+std::default_accessor<T1> f4(std::default_accessor<T2> a0)
+  requires((std::is_convertible_v<
+            T2 (*)[], typename std::default_accessor<T1>::element_type (*)[]>))
+{
   return std::default_accessor<T1>(a0);
 }

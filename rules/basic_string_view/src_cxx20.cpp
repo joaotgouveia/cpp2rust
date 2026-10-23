@@ -35,8 +35,3 @@ template <typename T1, typename T2>
 bool f6(const std::basic_string_view<T1, T2> &a0, const T1 *a1) {
   return a0.ends_with(a1);
 }
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::basic_string_view<T1, T2> f7(T3 a0, T4 a1) {
-  return std::basic_string_view<T1, T2>(a0, a1);
-}

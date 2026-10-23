@@ -38,7 +38,10 @@ bool f12(std::jthread &a0) { return a0.request_stop(); }
 
 unsigned int f13() { return std::jthread::hardware_concurrency(); }
 
-template <typename T1, typename... T2> std::jthread f14(T1 &&a0, T2 &&...a1) {
+template <typename T1, typename... T2>
+std::jthread f14(T1 &&a0, T2 &&...a1)
+  requires((!std::is_same_v<std::remove_cvref_t<T1>, std::jthread>))
+{
   return std::jthread(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 

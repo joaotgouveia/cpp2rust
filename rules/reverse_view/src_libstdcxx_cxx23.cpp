@@ -2,18 +2,42 @@
 #include <ranges>
 #include <utility>
 
-template <typename T1> auto f24(std::ranges::reverse_view<T1> &a0) {
+template <typename T1>
+auto f26(std::ranges::reverse_view<T1> &a0)
+  requires(std::ranges::input_range<std::ranges::reverse_view<T1>>) &&
+          (std::is_class_v<std::ranges::reverse_view<T1>> &&
+           std::same_as<std::ranges::reverse_view<T1>,
+                        std::remove_cv_t<std::ranges::reverse_view<T1>>>)
+{
   return a0.cbegin();
 }
 
-template <typename T1> auto f25(const std::ranges::reverse_view<T1> &a0) {
+template <typename T1>
+auto f27(const std::ranges::reverse_view<T1> &a0)
+  requires(std::ranges::input_range<const std::ranges::reverse_view<T1>>) &&
+          (std::is_class_v<std::ranges::reverse_view<T1>> &&
+           std::same_as<std::ranges::reverse_view<T1>,
+                        std::remove_cv_t<std::ranges::reverse_view<T1>>>)
+{
   return a0.cbegin();
 }
 
-template <typename T1> auto f26(std::ranges::reverse_view<T1> &a0) {
+template <typename T1>
+auto f28(std::ranges::reverse_view<T1> &a0)
+  requires(std::ranges::input_range<std::ranges::reverse_view<T1>>) &&
+          (std::is_class_v<std::ranges::reverse_view<T1>> &&
+           std::same_as<std::ranges::reverse_view<T1>,
+                        std::remove_cv_t<std::ranges::reverse_view<T1>>>)
+{
   return a0.cend();
 }
 
-template <typename T1> auto f27(const std::ranges::reverse_view<T1> &a0) {
+template <typename T1>
+auto f29(const std::ranges::reverse_view<T1> &a0)
+  requires(std::ranges::input_range<const std::ranges::reverse_view<T1>>) &&
+          (std::is_class_v<std::ranges::reverse_view<T1>> &&
+           std::same_as<std::ranges::reverse_view<T1>,
+                        std::remove_cv_t<std::ranges::reverse_view<T1>>>)
+{
   return a0.cend();
 }

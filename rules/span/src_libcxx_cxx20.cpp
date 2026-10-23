@@ -3,11 +3,17 @@
 #include <span>
 #include <utility>
 
-template <typename T1, std::size_t T2> auto f35(std::span<T1, T2> a0) {
+template <typename T1, std::size_t T2>
+auto f35(std::span<T1, T2> a0)
+  requires((!std::is_volatile_v<T1>))
+{
   return std::as_bytes<T1, T2>(a0);
 }
 
-template <typename T1, std::size_t T2> auto f36(std::span<T1, T2> a0) {
+template <typename T1, std::size_t T2>
+auto f36(std::span<T1, T2> a0)
+  requires((!std::is_const_v<T1> && !std::is_volatile_v<T1>))
+{
   return std::as_writable_bytes<T1, T2>(a0);
 }
 
@@ -150,7 +156,10 @@ std::span<T1, std::dynamic_extent> f57(std::array<T2, T3> &a0) {
 }
 
 template <typename T1, typename T2, std::size_t T3>
-std::span<T1, std::dynamic_extent> f58(const std::array<T2, T3> &a0) {
+std::span<T1, std::dynamic_extent> f58(const std::array<T2, T3> &a0)
+  requires(std::__span_array_convertible<
+           const T2, typename std::span<T1, std::dynamic_extent>::element_type>)
+{
   return std::span<T1, std::dynamic_extent>(a0);
 }
 
@@ -209,23 +218,31 @@ std::span<T1, T2> f65(typename std::type_identity<T1>::type (&a0)[T2]) {
   return std::span<T1, T2>(a0);
 }
 
+template <typename T1, std::size_t T2, std::size_t T3 = T2>
+std::span<T1, T2> f66() {
+  return std::span<T1, T2>();
+}
+
 template <typename T1, std::size_t T2, typename T3>
-std::span<T1, T2> f66(std::array<T3, T2> &a0) {
+std::span<T1, T2> f67(std::array<T3, T2> &a0) {
   return std::span<T1, T2>(a0);
 }
 
 template <typename T1, std::size_t T2, typename T3>
-std::span<T1, T2> f67(const std::array<T3, T2> &a0) {
+std::span<T1, T2> f68(const std::array<T3, T2> &a0)
+  requires(std::__span_array_convertible<
+           const T3, typename std::span<T1, T2>::element_type>)
+{
   return std::span<T1, T2>(a0);
 }
 
 template <typename T1, std::size_t T2, typename T3>
-std::span<T1, T2> f68(const std::span<T3, T2> &a0) {
+std::span<T1, T2> f69(const std::span<T3, T2> &a0) {
   return std::span<T1, T2>(a0);
 }
 
 template <typename T1, std::size_t T2, typename T3>
-std::span<T1, T2> f69(const std::span<T3, std::dynamic_extent> &a0) {
+std::span<T1, T2> f70(const std::span<T3, std::dynamic_extent> &a0) {
   return std::span<T1, T2>(a0);
 }
 

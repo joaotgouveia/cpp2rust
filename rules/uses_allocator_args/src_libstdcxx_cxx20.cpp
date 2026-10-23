@@ -19,7 +19,9 @@ template <typename T1, typename T2> auto f3(const T2 &a0) {
 }
 
 template <typename T1, typename T2, typename... T3>
-auto f4(const T2 &a0, T3 &&...a1) {
+auto f4(const T2 &a0, T3 &&...a1)
+  requires((!std::_Std_pair<T1>))
+{
   return std::uses_allocator_construction_args<T1, T2, T3...>(
       a0, std::forward<T3>(a1)...);
 }

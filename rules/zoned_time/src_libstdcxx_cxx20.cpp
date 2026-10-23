@@ -123,19 +123,28 @@ std::chrono::sys_info f20(const std::chrono::zoned_time<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::chrono::zoned_time<T1, T2> f21(const std::chrono::zoned_time<T3, T2> &a0) {
+std::chrono::zoned_time<T1, T2> f21(const std::chrono::zoned_time<T3, T2> &a0)
+  requires(std::is_convertible_v<std::chrono::sys_time<T3>,
+                                 std::chrono::sys_time<T1>>)
+{
   return std::chrono::zoned_time<T1, T2>(a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::chrono::zoned_time<T1, T2> f22(T2 a0,
-                                    const std::chrono::zoned_time<T3, T4> &a1) {
+                                    const std::chrono::zoned_time<T3, T4> &a1)
+  requires(std::is_convertible_v<std::chrono::sys_time<T3>,
+                                 std::chrono::sys_time<T1>>)
+{
   return std::chrono::zoned_time<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::chrono::zoned_time<T1, T2>
-f23(T2 a0, const std::chrono::zoned_time<T3, T4> &a1, std::chrono::choose a2) {
+f23(T2 a0, const std::chrono::zoned_time<T3, T4> &a1, std::chrono::choose a2)
+  requires(std::is_convertible_v<std::chrono::sys_time<T3>,
+                                 std::chrono::sys_time<T1>>)
+{
   return std::chrono::zoned_time<T1, T2>(a0, a1, a2);
 }
 

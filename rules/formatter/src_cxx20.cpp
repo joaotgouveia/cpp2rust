@@ -84,6 +84,3 @@ template <typename T1, typename T2>
 using t23 = std::formatter<std::chrono::local_time<T1>, T2>;
 
 template <typename T1, typename T2> using t24 = std::formatter<T1, T2>;
-
-template <typename T1, typename T2, typename T3>
-using t25 = std::formatter<std::chrono::duration<T1, T2>, T3>;

@@ -230,7 +230,12 @@ std::basic_ostream<T1, T2> &f34(std::basic_ostream<T1, T2> &a0,
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f35(std::basic_ostream<T1, T2> &a0,
-                                const std::chrono::sys_time<T3> &a1) {
+                                const std::chrono::sys_time<T3> &a1)
+  requires(
+      (!std::chrono::treat_as_floating_point_v<typename T3::rep>) &&
+      std::ratio_less_v<typename T3::period,
+                        std::chrono::duration<long, std::ratio<86400>>::period>)
+{
   return std::chrono::operator<< <T1, T2, T3>(a0, a1);
 }
 

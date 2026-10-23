@@ -28,7 +28,9 @@ std::compare_three_way &f5(std::compare_three_way &a0,
 }
 
 template <typename T1, typename T2>
-auto f6(const std::compare_three_way &a0, T1 &&a1, T2 &&a2) {
+auto f6(const std::compare_three_way &a0, T1 &&a1, T2 &&a2)
+  requires(std::three_way_comparable_with<T1, T2>)
+{
   return a0.template operator()<T1, T2>(std::forward<T1>(a1),
                                         std::forward<T2>(a2));
 }

@@ -507,31 +507,38 @@ template <typename T1> bool f356() {
   return std::atomic<std::weak_ptr<T1>>::is_always_lock_free;
 }
 
+template <typename T1>
+std::atomic<T1> f357()
+  requires(std::is_default_constructible_v<T1>)
+{
+  return {};
+}
+
 using t75 = std::atomic_char8_t;
 
-void f357(std::atomic_flag *a0) { return std::atomic_flag_notify_all(a0); }
+void f358(std::atomic_flag *a0) { return std::atomic_flag_notify_all(a0); }
 
-void f358(std::atomic_flag *a0) { return std::atomic_flag_notify_one(a0); }
+void f359(std::atomic_flag *a0) { return std::atomic_flag_notify_one(a0); }
 
-bool f359(const std::atomic_flag *a0) { return std::atomic_flag_test(a0); }
+bool f360(const std::atomic_flag *a0) { return std::atomic_flag_test(a0); }
 
-bool f360(const volatile std::atomic_flag *a0) {
+bool f361(const volatile std::atomic_flag *a0) {
   return std::atomic_flag_test(a0);
 }
 
-bool f361(const std::atomic_flag *a0, std::memory_order a1) {
+bool f362(const std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_explicit(a0, a1);
 }
 
-bool f362(const volatile std::atomic_flag *a0, std::memory_order a1) {
+bool f363(const volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_explicit(a0, a1);
 }
 
-void f363(std::atomic_flag *a0, bool a1) {
+void f364(std::atomic_flag *a0, bool a1) {
   return std::atomic_flag_wait(a0, a1);
 }
 
-void f364(std::atomic_flag *a0, bool a1, std::memory_order a2) {
+void f365(std::atomic_flag *a0, bool a1, std::memory_order a2) {
   return std::atomic_flag_wait_explicit(a0, a1, a2);
 }
 

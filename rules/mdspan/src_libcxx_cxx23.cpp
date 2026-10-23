@@ -120,7 +120,15 @@ f19(const std::mdspan<T1, T2, T3, T4> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::mdspan<T1, T2, T3, T4> f20() {
+std::mdspan<T1, T2, T3, T4> f20()
+  requires(((std::mdspan<T1, T2, T3, T4>::extents_type::rank_dynamic() > 0) &&
+            std::is_default_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::data_handle_type> &&
+            std::is_default_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::mapping_type> &&
+            std::is_default_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
+{
   return std::mdspan<T1, T2, T3, T4>();
 }
 
@@ -136,14 +144,23 @@ std::mdspan<T1, T2, T3, T4> f22(std::mdspan<T1, T2, T3, T4> &&a0) {
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::mdspan<T1, T2, T3, T4>
-f23(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0, const T2 &a1) {
+f23(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0, const T2 &a1)
+  requires((std::is_default_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::accessor_type> &&
+            std::is_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::mapping_type,
+                const typename std::mdspan<T1, T2, T3, T4>::extents_type &>))
+{
   return std::mdspan<T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::mdspan<T1, T2, T3, T4>
 f24(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
-    const typename std::mdspan<T1, T2, T3, T4>::mapping_type &a1) {
+    const typename std::mdspan<T1, T2, T3, T4>::mapping_type &a1)
+  requires((std::is_default_constructible_v<
+            typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
+{
   return std::mdspan<T1, T2, T3, T4>(a0, a1);
 }
 
@@ -236,7 +253,21 @@ f40(const std::mdspan<T1, T2, T3, T4> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename... T5>
 std::mdspan<T1, T2, T3, T4>
-f41(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0, T5... a1) {
+f41(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0, T5... a1)
+  requires(((std::is_convertible_v<
+                 T5, typename std::mdspan<T1, T2, T3, T4>::index_type> &&
+             ...) &&
+            (std::is_nothrow_constructible_v<
+                 typename std::mdspan<T1, T2, T3, T4>::index_type, T5> &&
+             ...) &&
+            ((sizeof...(T5) == std::mdspan<T1, T2, T3, T4>::rank()) ||
+             (sizeof...(T5) == std::mdspan<T1, T2, T3, T4>::rank_dynamic())) &&
+            std::is_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::mapping_type,
+                typename std::mdspan<T1, T2, T3, T4>::extents_type> &&
+            std::is_default_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
+{
   return std::mdspan<T1, T2, T3, T4>(a0, a1...);
 }
 
@@ -244,7 +275,19 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           std::size_t T6>
 std::mdspan<T1, T2, T3, T4>
 f42(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
-    const std::array<T5, T6> &a1) {
+    const std::array<T5, T6> &a1)
+  requires((std::is_convertible_v<
+                const T5 &, typename std::mdspan<T1, T2, T3, T4>::index_type> &&
+            std::is_nothrow_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::index_type, const T5 &> &&
+            ((T6 == std::mdspan<T1, T2, T3, T4>::rank()) ||
+             (T6 == std::mdspan<T1, T2, T3, T4>::rank_dynamic())) &&
+            std::is_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::mapping_type,
+                typename std::mdspan<T1, T2, T3, T4>::extents_type> &&
+            std::is_default_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
+{
   return std::mdspan<T1, T2, T3, T4>(a0, a1);
 }
 
@@ -252,33 +295,70 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           std::size_t T6>
 std::mdspan<T1, T2, T3, T4>
 f43(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
-    std::span<T5, T6> a1) {
+    std::span<T5, T6> a1)
+  requires((std::is_convertible_v<
+                const T5 &, typename std::mdspan<T1, T2, T3, T4>::index_type> &&
+            std::is_nothrow_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::index_type, const T5 &> &&
+            ((T6 == std::mdspan<T1, T2, T3, T4>::rank()) ||
+             (T6 == std::mdspan<T1, T2, T3, T4>::rank_dynamic())) &&
+            std::is_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::mapping_type,
+                typename std::mdspan<T1, T2, T3, T4>::extents_type> &&
+            std::is_default_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::accessor_type>))
+{
   return std::mdspan<T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6, typename T7, typename T8>
-std::mdspan<T1, T2, T3, T4> f44(const std::mdspan<T5, T6, T7, T8> &a0) {
+std::mdspan<T1, T2, T3, T4> f44(const std::mdspan<T5, T6, T7, T8> &a0)
+  requires(
+      (std::is_constructible_v<
+           typename std::mdspan<T1, T2, T3, T4>::mapping_type,
+           const typename T7::template mapping<T6> &> &&
+       std::is_constructible_v<
+           typename std::mdspan<T1, T2, T3, T4>::accessor_type, const T8 &>))
+{
   return std::mdspan<T1, T2, T3, T4>(a0);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename... T5>
 typename std::mdspan<T1, T2, T3, T4>::reference
-f45(const std::mdspan<T1, T2, T3, T4> &a0, T5... a1) {
+f45(const std::mdspan<T1, T2, T3, T4> &a0, T5... a1)
+  requires(((std::is_convertible_v<
+                 T5, typename std::mdspan<T1, T2, T3, T4>::index_type> &&
+             ...) &&
+            (std::is_nothrow_constructible_v<
+                 typename std::mdspan<T1, T2, T3, T4>::index_type, T5> &&
+             ...) &&
+            (sizeof...(T5) == std::mdspan<T1, T2, T3, T4>::rank())))
+{
   return a0.template operator[]<T5...>(a1...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::mdspan<T1, T2, T3, T4>::reference
 f46(const std::mdspan<T1, T2, T3, T4> &a0,
-    const std::array<T5, std::mdspan<T1, T2, T3, T4>::rank()> &a1) {
+    const std::array<T5, std::mdspan<T1, T2, T3, T4>::rank()> &a1)
+  requires((std::is_convertible_v<
+                const T5 &, typename std::mdspan<T1, T2, T3, T4>::index_type> &&
+            std::is_nothrow_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::index_type, const T5 &>))
+{
   return a0.template operator[]<T5>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::mdspan<T1, T2, T3, T4>::reference
 f47(const std::mdspan<T1, T2, T3, T4> &a0,
-    std::span<T5, std::mdspan<T1, T2, T3, T4>::rank()> a1) {
+    std::span<T5, std::mdspan<T1, T2, T3, T4>::rank()> a1)
+  requires((std::is_convertible_v<
+                const T5 &, typename std::mdspan<T1, T2, T3, T4>::index_type> &&
+            std::is_nothrow_constructible_v<
+                typename std::mdspan<T1, T2, T3, T4>::index_type, const T5 &>))
+{
   return a0.template operator[]<T5>(a1);
 }
 

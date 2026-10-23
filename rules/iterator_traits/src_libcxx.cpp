@@ -1,7 +1,7 @@
 #include <iterator>
 #include <utility>
 
-using t24 = std::bidirectional_iterator_tag;
+using t25 = std::bidirectional_iterator_tag;
 
 std::bidirectional_iterator_tag f1() {
   return std::bidirectional_iterator_tag();
@@ -25,7 +25,7 @@ std::bidirectional_iterator_tag &f5(std::bidirectional_iterator_tag &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t25 = std::forward_iterator_tag;
+using t26 = std::forward_iterator_tag;
 
 std::forward_iterator_tag f6() { return std::forward_iterator_tag(); }
 
@@ -47,7 +47,7 @@ std::forward_iterator_tag &f10(std::forward_iterator_tag &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t26 = std::input_iterator_tag;
+using t27 = std::input_iterator_tag;
 
 std::input_iterator_tag f11() { return std::input_iterator_tag(); }
 
@@ -69,7 +69,7 @@ std::input_iterator_tag &f15(std::input_iterator_tag &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t27 = std::output_iterator_tag;
+using t28 = std::output_iterator_tag;
 
 std::output_iterator_tag f16() { return std::output_iterator_tag(); }
 
@@ -91,7 +91,7 @@ std::output_iterator_tag &f20(std::output_iterator_tag &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t28 = std::random_access_iterator_tag;
+using t29 = std::random_access_iterator_tag;
 
 std::random_access_iterator_tag f21() {
   return std::random_access_iterator_tag();

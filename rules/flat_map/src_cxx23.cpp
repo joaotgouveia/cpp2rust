@@ -50,39 +50,3 @@ using t12 = typename std::flat_map<T1, T2, T3, T4, T5>::value_compare;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 using t13 = typename std::flat_map<T1, T2, T3, T4, T5>::containers;
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6, typename... T7>
-std::pair<typename std::flat_map<T1, T2, T3, T4, T5>::iterator, bool>
-f2(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1, T7 &&...a2) {
-  return a0.template try_emplace<T6, T7...>(std::forward<T6>(a1),
-                                            std::forward<T7>(a2)...);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6, typename... T7>
-typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f3(std::flat_map<T1, T2, T3, T4, T5> &a0,
-   typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a1, T6 &&a2,
-   T7 &&...a3) {
-  return a0.template try_emplace<T6, T7...>(a1, std::forward<T6>(a2),
-                                            std::forward<T7>(a3)...);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6, typename T7>
-std::pair<typename std::flat_map<T1, T2, T3, T4, T5>::iterator, bool>
-f4(std::flat_map<T1, T2, T3, T4, T5> &a0, T6 &&a1, T7 &&a2) {
-  return a0.template insert_or_assign<T6, T7>(std::forward<T6>(a1),
-                                              std::forward<T7>(a2));
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6, typename T7>
-typename std::flat_map<T1, T2, T3, T4, T5>::iterator
-f5(std::flat_map<T1, T2, T3, T4, T5> &a0,
-   typename std::flat_map<T1, T2, T3, T4, T5>::const_iterator a1, T6 &&a2,
-   T7 &&a3) {
-  return a0.template insert_or_assign<T6, T7>(a1, std::forward<T6>(a2),
-                                              std::forward<T7>(a3));
-}

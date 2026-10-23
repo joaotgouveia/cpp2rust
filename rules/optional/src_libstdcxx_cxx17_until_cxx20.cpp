@@ -16,7 +16,7 @@ template <
                          template __not_constructing_bool_from_optional<T2>>,
         bool>
         T3 = true>
-std::optional<T1> f59(T2 &&a0) {
+std::optional<T1> f56(T2 &&a0) {
   return std::optional<T1>(std::forward<T2>(a0));
 }
 
@@ -33,7 +33,7 @@ template <
                          template __not_constructing_bool_from_optional<T2>>,
         bool>
         T3 = false>
-std::optional<T1> f60(T2 &&a0) {
+std::optional<T1> f57(T2 &&a0) {
   return std::optional<T1>(std::forward<T2>(a0));
 }
 
@@ -46,7 +46,7 @@ template <typename T1, typename T2,
                                template __construct_from_contained_value<T2>>,
               bool>
               T3 = true>
-std::optional<T1> f61(const std::optional<T2> &a0) {
+std::optional<T1> f58(const std::optional<T2> &a0) {
   return std::optional<T1>(a0);
 }
 
@@ -59,7 +59,7 @@ template <typename T1, typename T2,
                                template __construct_from_contained_value<T2>>,
               bool>
               T3 = false>
-std::optional<T1> f62(const std::optional<T2> &a0) {
+std::optional<T1> f59(const std::optional<T2> &a0) {
   return std::optional<T1>(a0);
 }
 
@@ -72,7 +72,7 @@ template <
                          T1>::template __construct_from_contained_value<T2>>,
         bool>
         T3 = true>
-std::optional<T1> f63(std::optional<T2> &&a0) {
+std::optional<T1> f60(std::optional<T2> &&a0) {
   return std::optional<T1>(std::move(a0));
 }
 
@@ -85,14 +85,14 @@ template <typename T1, typename T2,
                                template __construct_from_contained_value<T2>>,
               bool>
               T3 = false>
-std::optional<T1> f64(std::optional<T2> &&a0) {
+std::optional<T1> f61(std::optional<T2> &&a0) {
   return std::optional<T1>(std::move(a0));
 }
 
 template <typename T1, typename... T2,
           std::enable_if_t<std::__and_v<std::is_constructible<T1, T2...>>, bool>
               T3 = false>
-std::optional<T1> f65(std::in_place_t a0, T2 &&...a1) {
+std::optional<T1> f62(std::in_place_t a0, T2 &&...a1) {
   return std::optional<T1>(std::move(a0), std::forward<T2>(a1)...);
 }
 
@@ -101,7 +101,7 @@ template <typename T1, typename T2, typename... T3,
                                T1, std::initializer_list<T2> &, T3...>>,
                            bool>
               T4 = false>
-std::optional<T1> f66(std::in_place_t a0, std::initializer_list<T2> a1,
+std::optional<T1> f63(std::in_place_t a0, std::initializer_list<T2> a1,
                       T3 &&...a2) {
   return std::optional<T1>(std::move(a0), a1, std::forward<T3>(a2)...);
 }

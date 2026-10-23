@@ -26,7 +26,9 @@ std::ranges::equal_to &f5(std::ranges::equal_to &a0,
 }
 
 template <typename T1, typename T2>
-bool f6(const std::ranges::equal_to &a0, T1 &&a1, T2 &&a2) {
+bool f6(const std::ranges::equal_to &a0, T1 &&a1, T2 &&a2)
+  requires(std::equality_comparable_with<T1, T2>)
+{
   return a0.template operator()<T1, T2>(std::forward<T1>(a1),
                                         std::forward<T2>(a2));
 }
@@ -55,7 +57,9 @@ std::ranges::greater &f11(std::ranges::greater &a0, std::ranges::greater &&a1) {
 }
 
 template <typename T1, typename T2>
-bool f12(const std::ranges::greater &a0, T1 &&a1, T2 &&a2) {
+bool f12(const std::ranges::greater &a0, T1 &&a1, T2 &&a2)
+  requires(std::totally_ordered_with<T1, T2>)
+{
   return a0.template operator()<T1, T2>(std::forward<T1>(a1),
                                         std::forward<T2>(a2));
 }
@@ -85,7 +89,9 @@ std::ranges::greater_equal &f17(std::ranges::greater_equal &a0,
 }
 
 template <typename T1, typename T2>
-bool f18(const std::ranges::greater_equal &a0, T1 &&a1, T2 &&a2) {
+bool f18(const std::ranges::greater_equal &a0, T1 &&a1, T2 &&a2)
+  requires(std::totally_ordered_with<T1, T2>)
+{
   return a0.template operator()<T1, T2>(std::forward<T1>(a1),
                                         std::forward<T2>(a2));
 }
@@ -113,7 +119,9 @@ std::ranges::less &f23(std::ranges::less &a0, std::ranges::less &&a1) {
 }
 
 template <typename T1, typename T2>
-bool f24(const std::ranges::less &a0, T1 &&a1, T2 &&a2) {
+bool f24(const std::ranges::less &a0, T1 &&a1, T2 &&a2)
+  requires(std::totally_ordered_with<T1, T2>)
+{
   return a0.template operator()<T1, T2>(std::forward<T1>(a1),
                                         std::forward<T2>(a2));
 }
@@ -143,7 +151,9 @@ std::ranges::less_equal &f29(std::ranges::less_equal &a0,
 }
 
 template <typename T1, typename T2>
-bool f30(const std::ranges::less_equal &a0, T1 &&a1, T2 &&a2) {
+bool f30(const std::ranges::less_equal &a0, T1 &&a1, T2 &&a2)
+  requires(std::totally_ordered_with<T1, T2>)
+{
   return a0.template operator()<T1, T2>(std::forward<T1>(a1),
                                         std::forward<T2>(a2));
 }
@@ -173,7 +183,9 @@ std::ranges::not_equal_to &f35(std::ranges::not_equal_to &a0,
 }
 
 template <typename T1, typename T2>
-bool f36(const std::ranges::not_equal_to &a0, T1 &&a1, T2 &&a2) {
+bool f36(const std::ranges::not_equal_to &a0, T1 &&a1, T2 &&a2)
+  requires(std::equality_comparable_with<T1, T2>)
+{
   return a0.template operator()<T1, T2>(std::forward<T1>(a1),
                                         std::forward<T2>(a2));
 }

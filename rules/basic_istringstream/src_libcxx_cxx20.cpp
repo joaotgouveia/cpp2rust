@@ -25,3 +25,17 @@ std::basic_istringstream<T1, T2, T3>
 f107(const std::basic_string<T1, T2, T4> &a0, unsigned int a1) {
   return std::basic_istringstream<T1, T2, T3>(a0, a1);
 }
+
+template <typename T1, typename T2, typename T3, typename T4>
+std::basic_string<T1, T2, T4>
+f108(const std::basic_istringstream<T1, T2, T3> &a0, const T4 &a1)
+  requires(std::__is_allocator_v<T4>)
+{
+  return a0.template str<T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f109(std::basic_istringstream<T1, T2, T3> &a0,
+          const std::basic_string<T1, T2, T4> &a1) {
+  return a0.template str<T4>(a1);
+}

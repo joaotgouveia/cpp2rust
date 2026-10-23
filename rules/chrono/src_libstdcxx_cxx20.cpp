@@ -45,7 +45,13 @@ std::chrono::choose f44() { return std::chrono::choose::earliest; }
 std::chrono::choose f45() { return std::chrono::choose::latest; }
 
 template <typename T1, typename T2, typename T3>
-auto f46(const std::chrono::time_point<T2, T3> &a0) {
+auto f46(const std::chrono::time_point<T2, T3> &a0)
+  requires(std::chrono::__detail::__clock_convs<T1, T2, T3> ||
+           std::chrono::__detail::__clock_convs_sys<T1, T2, T3> ||
+           std::chrono::__detail::__clock_convs_utc<T1, T2, T3> ||
+           std::chrono::__detail::__clock_convs_sys_utc<T1, T2, T3> ||
+           std::chrono::__detail::__clock_convs_utc_sys<T1, T2, T3>)
+{
   return std::chrono::clock_cast<T1, T2, T3>(a0);
 }
 
@@ -695,7 +701,9 @@ auto f193(const std::chrono::time_point<T1, T2> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4>
 auto f194(const std::chrono::duration<T1, T2> &a0,
-          const std::chrono::duration<T3, T4> &a1) {
+          const std::chrono::duration<T3, T4> &a1)
+  requires(std::three_way_comparable<std::common_type_t<T1, T3>>)
+{
   return std::chrono::operator<=> <T1, T2, T3, T4>(a0, a1);
 }
 

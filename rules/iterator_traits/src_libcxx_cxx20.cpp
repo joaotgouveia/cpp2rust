@@ -1,7 +1,7 @@
 #include <iterator>
 #include <utility>
 
-using t29 = std::contiguous_iterator_tag;
+using t30 = std::contiguous_iterator_tag;
 
 std::contiguous_iterator_tag f26() { return std::contiguous_iterator_tag(); }
 
@@ -23,6 +23,10 @@ std::contiguous_iterator_tag &f30(std::contiguous_iterator_tag &a0,
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1> using t30 = std::iter_reference_t<T1>;
+template <typename T1> using t31 = std::iter_reference_t<T1>;
 
-template <typename T1> using t31 = std::iter_value_t<T1>;
+template <typename T1> using t32 = std::iter_value_t<T1>;
+
+template <typename T1>
+  requires(std::same_as<std::_ITER_TRAITS<T1>, std::iterator_traits<T1>>)
+using t33 = std::iterator_traits<std::counted_iterator<T1>>;
