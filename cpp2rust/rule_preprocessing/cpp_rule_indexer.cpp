@@ -198,12 +198,23 @@ std::set<std::string> TemplateParameterNames(const clang::Decl *rule) {
   return std::move(visitor.names);
 }
 
+// A use has the type an alias template names, never the alias
+// (std::iter_difference_t<T1> arrives as long).
+bool IsAliasTemplateSpecialization(clang::QualType type) {
+  auto spec = type.getNonReferenceType()
+                  ->getAs<clang::TemplateSpecializationType>();
+  return spec && spec->isTypeAlias();
+}
+
 std::string ClassOfParameters(const clang::Decl *rule) {
   auto fn = rule->getAsFunction();
   if (!fn) {
     return {};
   }
   for (const auto *param : fn->parameters()) {
+    if (IsAliasTemplateSpecialization(param->getType())) {
+      continue;
+    }
     if (auto class_key = ClassOf(param->getType()); !class_key.empty()) {
       return class_key;
     }
@@ -357,7 +368,8 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
     if (key.empty()) {
       key = ClassOfParameters(decl);
     }
-    if (auto fn = decl->getAsFunction(); key.empty() && fn) {
+    if (auto fn = decl->getAsFunction(); key.empty() && fn &&
+        !IsAliasTemplateSpecialization(fn->getReturnType())) {
       key = ClassOf(fn->getReturnType());
     }
     bool any_class = key.empty() && llvm::isa<clang::TemplateDecl>(decl);
