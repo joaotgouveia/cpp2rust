@@ -14,7 +14,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let v : Value<() > = Rc::new(RefCell::new(std_unique_ptr_std_vector_unsigned_char__std_allocator_unsigned_char____std_default_delete_std_vector_unsigned_char__std_allocator_unsigned_char____ :: new ( { Ptr::alloc( unimplemented!() )  } , )  )) ;
     let mut p: Ptr<u8> = (unimplemented!()).reinterpret_cast::<u8>();
     elem!(p, 2_()).write(1_u8);
     elem!(({ first_0(v.as_pointer(),) }), 0_()).write(5_u8);

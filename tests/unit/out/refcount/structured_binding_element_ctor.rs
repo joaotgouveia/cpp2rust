@@ -7,33 +7,33 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static copies_0: Value<i32> = Rc::new(RefCell::new(0));
+    pub static copies_0: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static moves_1: Value<i32> = Rc::new(RefCell::new(0));
+    pub static moves_1: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct Elem {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 impl Elem {
-    pub fn new(mut v: i32) -> Self {
+    pub fn new(mut v: ()) -> Self {
         Self { v: v }
     }
     pub fn copy_from(other: Ptr<Elem>) -> Self {
         let __this: Elem = Self {
-            v: (other.with(|__s| __s.v) + 100),
+            v: (other.with(|__s| __s.v) + 100_()),
         };
         (*copies_0.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn move_from(other: Ptr<Elem>) -> Self {
         let __this: Elem = Self {
-            v: (other.with(|__s| __s.v) + 1000),
+            v: (other.with(|__s| __s.v) + 1000_()),
         };
-        field!(other, v).write(-1_i32);
+        field!(other, v).write(-1_());
         (*moves_1.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
@@ -64,61 +64,55 @@ impl Two {
 }
 pub fn make_two_2() -> Two {
     return Two {
-        a: Elem::new({ 1 }),
-        b: Elem::new({ 2 }),
+        a: Elem::new({ 1_() }),
+        b: Elem::new({ 2_() }),
     };
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
+fn main_0() -> () {
     let t: Value<Two> = Rc::new(RefCell::new(Two {
-        a: Elem::new({ 1 }),
-        b: Elem::new({ 2 }),
+        a: Elem::new({ 1_() }),
+        b: Elem::new({ 2_() }),
     }));
-    let mut base_copies: i32 = copies_0.with(|rc| *rc.borrow());
-    let mut base_moves: i32 = moves_1.with(|rc| *rc.borrow());
+    let mut base_copies: () = copies_0.with(|rc| *rc.borrow());
+    let mut base_moves: () = moves_1.with(|rc| *rc.borrow());
     let __decomp_3: Value<Two> = Rc::new(RefCell::new((*t.borrow()).clone()));
-    assert!((copies_0.with(|rc| *rc.borrow()) == (base_copies + 2)));
-    assert!((moves_1.with(|rc| *rc.borrow()) == base_moves));
-    assert!(({ (*__decomp_3.borrow()).a.v } == 101));
-    assert!(({ (*__decomp_3.borrow()).b.v } == 102));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let __decomp_4: Ptr<Two> = t.as_pointer();
-    assert!((copies_0.with(|rc| *rc.borrow()) == (base_copies + 2)));
-    assert!(({ (*__decomp_4.upgrade().deref()).a.v } == 1));
-    field!(field!(__decomp_4, a), v).write(50);
-    assert!(({ (*t.borrow()).a.v } == 50));
-    let __decomp_5: Value<Two> = Rc::new(RefCell::new(Two::move_from({ t.as_pointer() })));
-    assert!((moves_1.with(|rc| *rc.borrow()) == (base_moves + 2)));
-    assert!(({ (*__decomp_5.borrow()).a.v } == 1050));
-    assert!(({ (*__decomp_5.borrow()).b.v } == 1002));
-    assert!(({ (*t.borrow()).a.v } == -1_i32));
-    let mut before_copies: i32 = copies_0.with(|rc| *rc.borrow());
-    let mut before_moves: i32 = moves_1.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+    field!(field!(__decomp_4, a), v).write(50_());
+    unimplemented!();
+    let __decomp_5: Value<Two> = Rc::new(RefCell::new(Two::move_from({ unimplemented!() })));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut before_copies: () = copies_0.with(|rc| *rc.borrow());
+    let mut before_moves: () = moves_1.with(|rc| *rc.borrow());
     let __decomp_6: Value<Two> = Rc::new(RefCell::new(({ make_two_2() })));
-    assert!((copies_0.with(|rc| *rc.borrow()) == before_copies));
-    assert!((moves_1.with(|rc| *rc.borrow()) == before_moves));
-    assert!(({ (*__decomp_6.borrow()).a.v } == 1));
-    let p: Value<(Value<Elem>, Value<Elem>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(
-            Elem::new({ 7 }).try_into().expect("failed conversion"),
-        )),
-        Rc::new(RefCell::new(
-            Elem::new({ 8 }).try_into().expect("failed conversion"),
-        )),
-    )));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let p: Value<()> = Rc::new(RefCell::new({
+        let __tmp_0: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 7_() })));
+        let __tmp_1: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 8_() })));
+        std_pair_Elem__Elem_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+    }));
     before_copies = copies_0.with(|rc| *rc.borrow());
-    let __decomp_7: Value<(Value<Elem>, Value<Elem>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new((*p.borrow()).0.borrow().clone())),
-        Rc::new(RefCell::new((*p.borrow()).1.borrow().clone())),
-    )));
-    let x: Ptr<Elem> = (*__decomp_7.borrow()).0.as_pointer();
-    let y: Ptr<Elem> = (*__decomp_7.borrow()).1.as_pointer();
-    assert!((copies_0.with(|rc| *rc.borrow()) == (before_copies + 2)));
-    assert!(({ (*x.upgrade().deref()).v } == ({ (*(*p.borrow()).0.borrow()).v } + 100)));
-    assert!(({ (*y.upgrade().deref()).v } == ({ (*(*p.borrow()).1.borrow()).v } + 100)));
-    return 0;
+    let __decomp_7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let x: Ptr<Elem> = ({ get_8(__decomp_7.as_pointer()) });
+    let y: Ptr<Elem> = ({ get_9(__decomp_7.as_pointer()) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {
     let _ = copies_0.with(|_| ());

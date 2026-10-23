@@ -19,7 +19,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     (*unimplemented!()) = 4_();
-    let mut v: () = unimplemented!();
+    let mut v : () = std_unique_ptr_std_vector_unsigned_char__std_allocator_unsigned_char____std_default_delete_std_vector_unsigned_char__std_allocator_unsigned_char____ :: new ( { (Box::leak(Box::new(unimplemented!() )) as *mut () ) } , )  ;
     (*unimplemented!()) = 5_();
     unimplemented!();
     unimplemented!();

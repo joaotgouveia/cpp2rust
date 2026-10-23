@@ -17,7 +17,7 @@ unsafe fn main_0() -> () {
     let mut d: () = unimplemented!();
     unimplemented!();
     let mut name: *const () = c"dir/file.txt".as_ptr();
-    let mut p: () = unimplemented!();
+    let mut p: () = std_filesystem_path::new_1({ &name }, None);
     let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();

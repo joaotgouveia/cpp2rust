@@ -96,7 +96,11 @@ unsafe fn main_0() -> () {
     unimplemented!();
     let mut other_map: () = unimplemented!();
     unimplemented!();
-    let mut key0: () = unimplemented!();
+    let mut key0: () = {
+        let mut __tmp_0: () = 1_();
+        let mut __tmp_1: () = 1_();
+        std_pair_int__long_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
+    };
     let mut value: () = 2_();
     (*unimplemented!()) = value;
     value = (*unimplemented!());

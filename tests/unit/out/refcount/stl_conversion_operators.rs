@@ -14,8 +14,13 @@ fn main_0() -> () {
     let mut n: () = 17_();
     let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let mut name: Ptr<()> = Ptr::<()>::from_string_literal(b"dir/file.txt");
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let name: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::from_string_literal(
+        b"dir/file.txt",
+    )));
+    let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_1(
+        { name.as_pointer() },
+        None,
+    )));
     let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();

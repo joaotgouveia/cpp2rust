@@ -145,24 +145,44 @@ fn main_0() -> () {
     unimplemented!();
     ({ fn_1(v7.as_pointer(), unimplemented!()) });
     let src: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([1_u32, 2_u32, 3_u32])));
-    let mut v9: () = unimplemented!();
+    let mut v9: () = std_vector_unsigned_int__std_allocator_unsigned_int__::new_1(
+        { (src.as_pointer() as Ptr<u32>).reinterpret_cast::<()>() },
+        { ((src.as_pointer() as Ptr<u32>).offset((3_()) as isize)).reinterpret_cast::<()>() },
+        None,
+    );
     unimplemented!();
     unimplemented!();
-    let mut v10: () = unimplemented!();
+    let mut v10: () = std_vector_unsigned_long__std_allocator_unsigned_long__::new_1(
+        { (src.as_pointer() as Ptr<u32>).reinterpret_cast::<()>() },
+        { ((src.as_pointer() as Ptr<u32>).offset((3_()) as isize)).reinterpret_cast::<()>() },
+        None,
+    );
     unimplemented!();
     unimplemented!();
-    let mut v11: () = unimplemented!();
+    let mut v11: () = std_vector_int__std_allocator_int__::new_1(
+        { (src.as_pointer() as Ptr<u32>).reinterpret_cast::<()>() },
+        { ((src.as_pointer() as Ptr<u32>).offset((3_()) as isize)).reinterpret_cast::<()>() },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let src1: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([1_u32, 2_u32, 3_u32])));
-    let mut v12: () = unimplemented!();
+    let mut v12: () = std_vector_unsigned_int__std_allocator_unsigned_int__::new_2(
+        { (src1.as_pointer() as Ptr<u32>).reinterpret_cast::<()>() },
+        { unimplemented!() },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let buf: Value<Box<[u8]>> =
         Rc::new(RefCell::new(Box::new([10_u8, 20_u8, 30_u8, 40_u8, 50_u8])));
     let mut start: Ptr<u8> = (buf.as_pointer() as Ptr<u8>);
     let mut len: () = 5_();
-    let mut v13: () = unimplemented!();
+    let mut v13: () = std_vector_unsigned_char__std_allocator_unsigned_char__::new_1(
+        { (start).reinterpret_cast::<()>() },
+        { (start.offset((len) as isize)).reinterpret_cast::<()>() },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -15,7 +15,10 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut empty: () = unimplemented!();
     unimplemented!();
-    let mut s1: () = unimplemented!();
+    let mut s1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { c"hello".as_ptr() },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -32,7 +35,11 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
+        { 10_() },
+        { ('a' as ()) },
+        None,
+    );
     let mut p2: *const () = (unimplemented!()).cast_const();
     let mut i: () = 0_();
     'loop_: while ((i) < (unimplemented!())) {
@@ -163,7 +170,11 @@ unsafe fn main_0() -> () {
     unimplemented!();
     pos = unimplemented!();
     unimplemented!();
-    let mut string_to_cast: () = unimplemented!();
+    let mut string_to_cast: () =
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { c"cast".as_ptr() },
+            None,
+        );
     let mut output_data: *mut u8 = ((&mut (*unimplemented!()) as *mut ()) as *mut () as *mut u8);
     unimplemented!();
     unimplemented!();

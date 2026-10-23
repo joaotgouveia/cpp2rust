@@ -19,7 +19,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut p: () = unimplemented!();
+    let mut p: () = {
+        let mut __tmp_0: () = 1.5_f64;
+        let mut __tmp_1: () = 2_();
+        std_pair_double__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
+    };
     unimplemented!();
     unimplemented!();
     unimplemented!();

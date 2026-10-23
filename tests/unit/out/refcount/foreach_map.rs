@@ -10,70 +10,36 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
-    let mut i: i32 = 0;
-    let mut k: i32 = 100;
-    'loop_: while (i < 100) {
-        Map::subscript(m.as_pointer(), &i).write(((k as f64) / 2_f64));
+fn main_0() -> () {
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: () = 0_();
+    let mut k: () = 100_();
+    'loop_: while (i < 100_()) {
+        unimplemented!().write((k / 2_f64));
         {
             i.prefix_inc();
             k.prefix_dec()
         };
     }
-    let mut sum: f64 = 0_f64;
-    'loop_: for i in IterRange::new(
-        m.as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-        m.as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-    ) {
-        let i: Ptr<(Value<i32>, Value<f64>)> = i.iter_deref();
-        sum += (*(*i.upgrade().deref()).1.borrow());
+    let mut sum: () = 0_();
+    'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
+        let i: Ptr<()> = unimplemented!();
+        sum += i.with(|__s| __s.second);
     }
-    'loop_: for i in IterRange::new(
-        m.as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-        m.as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-    ) {
-        let i: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(
-                (*i.iter_deref().upgrade().deref()).0.borrow().clone(),
-            )),
-            Rc::new(RefCell::new(
-                (*i.iter_deref().upgrade().deref()).1.borrow().clone(),
-            )),
-        )));
-        sum += ((*(*i.borrow()).0.borrow()) as f64);
+    'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        sum += { (*i.borrow()).first };
     }
-    assert!((sum == 7475_f64));
-    'loop_: for i in IterRange::new(
-        m.as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-        m.as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-    ) {
-        let i: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(
-                (*i.iter_deref().upgrade().deref()).0.borrow().clone(),
-            )),
-            Rc::new(RefCell::new(
-                (*i.iter_deref().upgrade().deref()).1.borrow().clone(),
-            )),
-        )));
-        (*(*i.borrow()).1.borrow_mut()) = (-1_i32 as f64);
-        assert!(((*(*i.borrow()).1.borrow()) == (-1_i32 as f64)));
+    unimplemented!();
+    'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        (*i.borrow_mut()).second = -1_();
+        unimplemented!();
     }
-    'loop_: for i in IterRange::new(
-        m.as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-        m.as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-    ) {
-        let i: Ptr<(Value<i32>, Value<f64>)> = i.iter_deref();
-        assert!(((*(*i.upgrade().deref()).1.borrow()) != (-1_i32 as f64)));
+    'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
+        let i: Ptr<()> = unimplemented!();
+        unimplemented!();
     }
-    return 0;
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

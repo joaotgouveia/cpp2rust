@@ -13,7 +13,10 @@ pub fn main() {
 fn main_0() -> () {
     let mut empty: () = unimplemented!();
     unimplemented!();
-    let mut s1: () = unimplemented!();
+    let mut s1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { Ptr::<()>::from_string_literal(b"hello") },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -30,7 +33,11 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
+        { 10_() },
+        { ('a' as ()) },
+        None,
+    );
     let mut p2: Ptr<()> = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {
@@ -161,7 +168,11 @@ fn main_0() -> () {
     unimplemented!();
     pos = unimplemented!();
     unimplemented!();
-    let mut string_to_cast: () = unimplemented!();
+    let mut string_to_cast: () =
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { Ptr::<()>::from_string_literal(b"cast") },
+            None,
+        );
     let mut output_data: Ptr<u8> = (unimplemented!()).reinterpret_cast::<u8>();
     unimplemented!();
     unimplemented!();

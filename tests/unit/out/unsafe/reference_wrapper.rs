@@ -27,21 +27,21 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut i1: () = 10_();
-    let mut ref_1: () = unimplemented!();
+    let mut ref_1: () = std_reference_wrapper_int_::new({ &mut i1 });
     (*unimplemented!()) = 20_();
     let i2: *mut () = (unsafe { ref_1() });
     (*i2) += 5_();
     unimplemented!();
     let mut i3: () = 1_();
     let mut i4: () = 2_();
-    let mut ref_3: () = unimplemented!();
-    let mut ref_4: () = unimplemented!();
+    let mut ref_3: () = std_reference_wrapper_int_::new({ &mut i3 });
+    let mut ref_4: () = std_reference_wrapper_int_::new({ &mut i4 });
     (*unimplemented!()) = (*unimplemented!());
     unimplemented!();
     (unsafe { set_0(unimplemented!(), 99_()) });
     unimplemented!();
     let mut point: Point = Point { x: 3_(), y: 4_() };
-    let mut point_ref: () = unimplemented!();
+    let mut point_ref: () = std_reference_wrapper_Point_::new({ &mut point });
     (*unimplemented!()).x = 30_();
     (*(unsafe { point_ref() })).y = 40_();
     unimplemented!();

@@ -9,23 +9,23 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Inner {
-    pub x: i32,
-    pub y: i32,
+    pub x: (),
+    pub y: (),
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct Outer {
-    pub inner: Option<Box<Inner>>,
+    pub inner: (),
 }
 impl Outer {
     pub unsafe fn move_from(_a0: *mut Outer) -> Self {
         let mut this = Self {
-            inner: (*_a0).inner.take(),
+            inner: unimplemented!(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut Outer) -> *mut Outer {
-        self.inner = (*_a0).inner.take();
+        unimplemented!();
         return &mut (*(self as *mut Outer));
     }
 }
@@ -35,43 +35,14 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut o: std_unique_ptr_Outer__std_default_delete_Outer__ = Some(Box::new(Outer {
-        inner: Some(Box::new(Inner { x: 10, y: 20 })),
-    }));
-    (*(*o
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const Outer as *mut Outer))
-    .inner
-    .as_deref()
-    .map_or(::std::ptr::null_mut(), |v| v as *const Inner as *mut Inner))
-    .x += 5;
-    let mut sum: i32 = (((*(*o
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const Outer as *mut Outer))
-    .inner
-    .as_deref()
-    .map_or(::std::ptr::null_mut(), |v| v as *const Inner as *mut Inner))
-    .x) + ((*(*o
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const Outer as *mut Outer))
-    .inner
-    .as_deref()
-    .map_or(::std::ptr::null_mut(), |v| v as *const Inner as *mut Inner))
-    .y));
-    let mut a: std_unique_ptr_int__std_default_delete_int__ = Some(Box::new(100));
-    let mut b: std_unique_ptr_int__std_default_delete_int__ = Some(Box::new(0));
-    (*b.as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)) = (*a
-        .as_deref()
-        .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32));
-    assert!(
-        (((sum)
-            + (*b
-                .as_deref()
-                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)))
-            == (135))
-    );
-    return 0;
+unsafe fn main_0() -> () {
+    let mut o: std_unique_ptr_Outer__std_default_delete_Outer__ = unimplemented!();
+    (*unimplemented!()).x += 5_();
+    let mut sum: () = (((*unimplemented!()).x) + ((*unimplemented!()).y));
+    let mut a: std_unique_ptr_int__std_default_delete_int__ = unimplemented!();
+    let mut b: std_unique_ptr_int__std_default_delete_int__ = unimplemented!();
+    (*unimplemented!()) = (*unimplemented!());
+    unimplemented!();
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -49,8 +49,12 @@ pub static mut default_ctor_7: std::cell::LazyCell<Ctor> =
     std::cell::LazyCell::new(|| unsafe { Ctor::new_1() });
 pub static mut arg_ctor_8: std::cell::LazyCell<Ctor> =
     std::cell::LazyCell::new(|| unsafe { Ctor::new_2({ 7_() }) });
-pub static mut str_9: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut str_9: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { c"abc".as_ptr() },
+        None,
+    )
+});
 pub static mut inline_member_11: std::cell::LazyCell<Ctor> =
     std::cell::LazyCell::new(|| unsafe { Ctor::new_2({ 5_() }) });
 #[repr(C)]

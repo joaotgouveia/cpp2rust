@@ -11,12 +11,12 @@ use std::rc::{Rc, Weak};
 pub struct SafePointer {
     #[offset(0)]
     #[byte_size(8)]
-    pub ptr: Option<Value<i32>>,
+    pub ptr: (),
 }
 impl SafePointer {
     pub fn move_from(_a0: Ptr<SafePointer>) -> Self {
         Self {
-            ptr: field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
+            ptr: unimplemented!(),
         }
     }
 }
@@ -24,147 +24,94 @@ impl SafePointer {
 #[byte_size(8)]
 pub struct Pair {
     #[offset(0)]
-    pub x: i32,
+    pub x: (),
     #[offset(4)]
-    pub y: i32,
+    pub y: (),
 }
-pub fn DoStuffWithSafePointer_0(safe_ptr: Ptr<Option<Value<SafePointer>>>) {
-    let x1: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(0)))));
-    let x2: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(0)))));
-    (*x2.borrow()).as_pointer().write(1);
-    x1.as_pointer().write((*x2.borrow_mut()).take());
-    let mut raw_ptr1: Ptr<i32> = ((*x1.borrow()).as_pointer());
+pub fn DoStuffWithSafePointer_0(safe_ptr: Ptr<()>) {
+    let mut x1: () = unimplemented!();
+    let mut x2: () = unimplemented!();
+    unimplemented!().write(1_());
+    unimplemented!();
+    let mut raw_ptr1: Ptr<()> = (unimplemented!());
     raw_ptr1.with_mut(|__v| __v.prefix_inc());
-    field_ptr!(((*safe_ptr.upgrade().deref()).as_pointer()), ptr).write((*x1.borrow_mut()).take());
-    ({ SafePointerImpl::inc(&((*safe_ptr.upgrade().deref()).as_pointer())) });
-    ({ SafePointerImpl::inc(&((*safe_ptr.upgrade().deref()).as_pointer())) });
-    let x3: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(10)))));
-    let x4: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(20)))));
-    let __rhs = (((*x3.borrow()).as_pointer().read()) + ((*x4.borrow()).as_pointer().read()));
-    (*x3.borrow()).as_pointer().write(__rhs);
-    x4.as_pointer().write((*x3.borrow_mut()).take());
-    let mut raw_ptr2: Ptr<i32> = ((*x4.borrow()).as_pointer());
+    unimplemented!();
+    ({ SafePointerImpl::inc(&(unimplemented!())) });
+    ({ SafePointerImpl::inc(&(unimplemented!())) });
+    let mut x3: () = unimplemented!();
+    let mut x4: () = unimplemented!();
+    let __rhs = ((unimplemented!().read()) + (unimplemented!().read()));
+    unimplemented!().write(__rhs);
+    unimplemented!();
+    let mut raw_ptr2: Ptr<()> = (unimplemented!());
     {
-        raw_ptr2.with_mut(|__v| *__v = *__v + 1)
+        raw_ptr2.with_mut(|__v| *__v = *__v + 1_())
     };
-    let mut pair: Option<Value<Pair>> = Some(Rc::new(RefCell::new(Pair {
-        x: (raw_ptr2.read()),
-        y: 5,
-    })));
-    ({ PairImpl::inc(&(pair.as_pointer()), 10) });
-    let __rhs = ({
-        ({
-            ((*safe_ptr.upgrade().deref())
-                .as_pointer()
-                .with(|__s| (__s).ptr.clone())
-                .as_pointer()
-                .read())
-        } + { pair.as_pointer().with(|__s| (__s).x) })
-    } + { pair.as_pointer().with(|__s| (__s).y) });
-    (*safe_ptr.upgrade().deref())
-        .as_pointer()
-        .with(|__s| (__s).ptr.clone())
-        .as_pointer()
-        .write(__rhs);
+    let mut pair: () = unimplemented!();
+    ({ PairImpl::inc(&(unimplemented!()), 10_()) });
+    let __rhs = ({ ({ (unimplemented!().read()) } + { unimplemented!().with(|__s| (__s).x) }) }
+        + { unimplemented!().with(|__s| (__s).y) });
+    unimplemented!().write(__rhs);
 }
-pub fn Consume_1(safe_ptr: Option<Value<SafePointer>>) -> i32 {
-    let safe_ptr: Value<Option<Value<SafePointer>>> = Rc::new(RefCell::new(safe_ptr));
-    let mut x: Option<Value<SafePointer>> = (*safe_ptr.borrow_mut()).take();
-    let mut p: Option<Value<Pair>> = Ptr::alloc(<Pair>::default()).to_owned_opt();
-    return ((x
-        .as_pointer()
-        .with(|__s| (__s).ptr.clone())
-        .as_pointer()
-        .read())
-        + p.as_pointer().with(|__s| __s.x));
+pub fn Consume_1(mut safe_ptr: ()) -> () {
+    let mut x: () = unimplemented!();
+    let mut p: () =
+        std_unique_ptr_Pair__std_default_delete_Pair__::new({ Ptr::alloc(<Pair>::default()) });
+    return ((unimplemented!().read()) + { unimplemented!().x });
 }
 pub fn RndStuff_2() {
-    let mut x1: Option<Value<Box<[i32]>>> = None;
-    let x2: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(
-        Ptr::alloc_array((0..100_usize).map(|_| 0_i32).collect::<Box<[i32]>>()).to_owned_opt(),
-    ));
-    let mut i: i32 = 0;
-    'loop_: while (i < 100) {
-        ((*x2.borrow()).as_pointer() as Ptr<i32>)
-            .offset((i as usize) as isize)
-            .write(1);
+    let mut x1: () = unimplemented!();
+    let mut x2: () = std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new_1({
+        Ptr::alloc_array((0..100_()).map(|_| unimplemented!()).collect::<Box<[()]>>())
+    });
+    let mut i: () = 0_();
+    'loop_: while (i < 100_()) {
+        unimplemented!().write(1_());
         i.prefix_inc();
     }
-    x2.as_pointer().write(
-        Ptr::alloc_array((0..200_usize).map(|_| 0_i32).collect::<Box<[i32]>>()).to_owned_opt(),
-    );
-    let mut i: i32 = 0;
-    'loop_: while (i < 200) {
-        ((*x2.borrow()).as_pointer() as Ptr<i32>)
-            .offset((i as usize) as isize)
-            .write(2);
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < 200_()) {
+        unimplemented!().write(2_());
         i.prefix_inc();
     }
-    let mut p2: Ptr<i32> = (*x2.borrow()).as_pointer();
-    let mut i: i32 = 0;
-    'loop_: while (i < 200) {
-        assert!(((elem!(p2, i).read()) == 2));
+    let mut p2: Ptr<()> = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < 200_()) {
+        unimplemented!();
         i.prefix_inc();
     }
-    let x3: Value<Option<Value<Box<[Pair]>>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(
-        (0..10_usize)
-            .map(|_| <Pair>::default())
-            .collect::<Box<[_]>>(),
-    )))));
-    let mut i: i32 = 0;
-    'loop_: while (i < 10) {
-        ((*x3.borrow()).as_pointer() as Ptr<Pair>)
-            .offset((i as usize) as isize)
-            .write(Pair { x: 1, y: 2 });
+    let mut x3: () = ({ make_unique_3(10_()) });
+    let mut i: () = 0_();
+    'loop_: while (i < 10_()) {
+        unimplemented!().write(Pair { x: 1_(), y: 2_() });
         i.prefix_inc();
     }
-    let mut p3_0: Ptr<Pair> = (*x3.borrow()).as_pointer();
-    let mut i: i32 = 0;
-    'loop_: while (i < 10) {
-        assert!((elem!(p3_0, i).with(|__s| __s.x) == 1));
-        assert!((elem!(p3_0, i).with(|__s| __s.y) == 2));
-        ({
-            PairImpl::inc(
-                &((*x3.borrow()).as_pointer() as Ptr<Pair>).offset((i as usize) as isize),
-                10,
-            )
-        });
-        assert!((elem!(p3_0, i).with(|__s| __s.x) == 11));
-        assert!((elem!(p3_0, i).with(|__s| __s.y) == 12));
+    let mut p3_0: Ptr<Pair> = unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < 10_()) {
+        unimplemented!();
+        unimplemented!();
+        ({ PairImpl::inc(&unimplemented!(), 10_()) });
+        unimplemented!();
+        unimplemented!();
         i.prefix_inc();
     }
-    x3.as_pointer().write(
-        Ptr::alloc_array(
-            (0..50_usize)
-                .map(|_| <Pair>::default())
-                .collect::<Box<[Pair]>>(),
-        )
-        .to_owned_opt(),
-    );
-    let mut i: i32 = 0;
-    'loop_: while (i < 50) {
-        ((*x3.borrow()).as_pointer() as Ptr<Pair>)
-            .offset((i as usize) as isize)
-            .write(Pair {
-                x: -1_i32,
-                y: -2_i32,
-            });
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < 50_()) {
+        unimplemented!().write(Pair { x: -1_(), y: -2_() });
         i.prefix_inc();
     }
-    let mut p3_1: Ptr<Pair> = (*x3.borrow()).as_pointer();
-    assert!(({ (p3_0).clone() } != { (p3_1).clone() }));
-    let mut i: i32 = 0;
-    'loop_: while (i < 50) {
-        assert!((elem!(p3_1, i).with(|__s| __s.x) == -1_i32));
-        assert!((elem!(p3_1, i).with(|__s| __s.y) == -2_i32));
-        ({
-            PairImpl::inc(
-                &((*x3.borrow()).as_pointer() as Ptr<Pair>).offset((i as usize) as isize),
-                -10_i32,
-            )
-        });
-        assert!((elem!(p3_1, i).with(|__s| __s.x) == -11_i32));
-        assert!((elem!(p3_1, i).with(|__s| __s.y) == -12_i32));
+    let mut p3_1: Ptr<Pair> = unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while (i < 50_()) {
+        unimplemented!();
+        unimplemented!();
+        ({ PairImpl::inc(&unimplemented!(), -10_()) });
+        unimplemented!();
+        unimplemented!();
         i.prefix_inc();
     }
 }
@@ -172,29 +119,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let x: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(0)))));
-    let safe_ptr: Value<Option<Value<SafePointer>>> =
-        Rc::new(RefCell::new(Some(Rc::new(RefCell::new(SafePointer {
-            ptr: (*x.borrow_mut()).take(),
-        })))));
+fn main_0() -> () {
+    let mut x: () = unimplemented!();
+    let safe_ptr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ DoStuffWithSafePointer_0(safe_ptr.as_pointer()) });
-    assert!((({ Consume_1((*safe_ptr.borrow_mut()).take(),) }) == 60));
-    let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Ptr::alloc(1).to_owned_opt()));
-    {
-        let _p: Ptr<_> = Ptr::alloc(2);
-        p.as_pointer().write(_p.to_owned_opt())
-    };
-    assert!((((*p.borrow()).as_pointer().read()) == 2));
-    p.as_pointer().write(None);
-    assert!((*p.borrow()).is_none());
-    return 0;
+    unimplemented!();
+    let mut p: () = std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(1_()) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub trait PairImpl {
-    fn inc(&self, k: i32);
+    fn inc(&self, k: ());
 }
 impl PairImpl for Ptr<Pair> {
-    fn inc(&self, mut k: i32) {
+    fn inc(&self, mut k: ()) {
         {
             let __rhs = k;
             field!((*self), x).with_mut(|__v| *__v = *__v + __rhs)
@@ -211,14 +152,10 @@ pub trait SafePointerImpl {
 }
 impl SafePointerImpl for Ptr<SafePointer> {
     fn inc(&self) {
-        (*self)
-            .with(|__s| __s.ptr.clone())
-            .as_pointer()
-            .with_mut(|__v| __v.prefix_inc());
+        unimplemented!().with_mut(|__v| __v.prefix_inc());
     }
     fn move_assign(&self, _a0: Ptr<SafePointer>) -> Ptr<SafePointer> {
-        field_ptr!((*self), ptr)
-            .write(field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+        unimplemented!();
         return (*self).clone();
     }
 }

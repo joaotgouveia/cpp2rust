@@ -28,25 +28,33 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let mut i1: () = 10_();
-    let ref_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i1: Value<()> = Rc::new(RefCell::new(10_()));
+    let ref_1: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
+        i1.as_pointer()
+    })));
     unimplemented!().write(20_());
     let i2: Ptr<()> = ({ (*ref_1.borrow())() });
     {
         i2.with_mut(|__v| *__v = *__v + 5_())
     };
     unimplemented!();
-    let mut i3: () = 1_();
-    let mut i4: () = 2_();
-    let ref_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ref_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i3: Value<()> = Rc::new(RefCell::new(1_()));
+    let i4: Value<()> = Rc::new(RefCell::new(2_()));
+    let ref_3: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
+        i3.as_pointer()
+    })));
+    let ref_4: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
+        i4.as_pointer()
+    })));
     let __rhs = (unimplemented!().read());
     unimplemented!().write(__rhs);
     unimplemented!();
     ({ set_0(unimplemented!(), 99_()) });
     unimplemented!();
-    let mut point: Point = Point { x: 3_(), y: 4_() };
-    let point_ref: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let point: Value<Point> = Rc::new(RefCell::new(Point { x: 3_(), y: 4_() }));
+    let point_ref: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_Point_::new({
+        point.as_pointer()
+    })));
     field!(unimplemented!(), x).write(30_());
     field!(({ (*point_ref.borrow())() }), y).write(40_());
     unimplemented!();

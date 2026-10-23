@@ -13,13 +13,19 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut arr: () = unimplemented!();
+    let mut arr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { c"foo".as_ptr() },
+        None,
+    );
     (*unimplemented!()) = ('b' as ());
     let mut p: *const () = unimplemented!().offset((1_()) as isize);
     unimplemented!();
     unimplemented!();
     let mut names: [*mut (); 1] = [unimplemented!()];
-    let copy: () = unimplemented!();
+    let copy: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { (names[(0_()) as usize]).cast_const() },
+        None,
+    );
     unimplemented!();
     return 0_();
 }

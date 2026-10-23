@@ -6,9 +6,9 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn sum_0(mut p: Ptr<i32>, mut n: i32) -> i32 {
-    let mut total: i32 = 0;
-    let mut i: i32 = 0;
+pub fn sum_0(mut p: Ptr<()>, mut n: ()) -> () {
+    let mut total: () = 0_();
+    let mut i: () = 0_();
     'loop_: while (i < n) {
         total += { (elem!(p, i).read()) };
         i.prefix_inc();
@@ -19,25 +19,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let mut array: Ptr<i32> =
-        Ptr::alloc_array((0..100_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
+fn main_0() -> () {
+    let mut array: Ptr<()> =
+        Ptr::alloc_array((0..100_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
     array.delete();
-    let mut filled: Ptr<i32> =
-        Ptr::alloc_array((0..4_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
-    let mut i: i32 = 0;
-    'loop_: while (i < 4) {
-        elem!(filled, i).write({ (i + 1) });
+    let mut filled: Ptr<()> =
+        Ptr::alloc_array((0..4_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
+    let mut i: () = 0_();
+    'loop_: while (i < 4_()) {
+        elem!(filled, i).write({ (i + 1_()) });
         i.prefix_inc();
     }
     if (({
-        let _p: Ptr<i32> = (filled).clone();
-        sum_0(_p, 4)
-    }) != 10)
+        let _p: Ptr<()> = (filled).clone();
+        sum_0(_p, 4_())
+    }) != 10_())
     {
-        return 1;
+        return 1_();
     }
     filled.delete();
-    return 0;
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

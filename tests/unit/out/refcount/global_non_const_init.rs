@@ -58,7 +58,12 @@ thread_local!(
     pub static arg_ctor_8: Value<Ctor> = Rc::new(RefCell::new(Ctor::new_2({ 7_() })));
 );
 thread_local!(
-    pub static str_9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static str_9: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { Ptr::<()>::from_string_literal(b"abc") },
+            None,
+        ),
+    ));
 );
 thread_local!(
     pub static inline_member_11: Value<Ctor> = Rc::new(RefCell::new(Ctor::new_2({ 5_() })));

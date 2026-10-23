@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
-    pub v: i32,
+    pub v: (),
 }
 impl std::cmp::Ord for S {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -42,42 +42,32 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let a: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
-    let b: Value<S> = Rc::new(RefCell::new(S { v: 2 }));
-    assert!(
-        ({ SImpl::operator_cmp(&a.as_pointer(), b.as_pointer(),) }) == std::cmp::Ordering::Less
-    );
-    assert!(
-        ({ SImpl::operator_cmp(&b.as_pointer(), a.as_pointer(),) }) == std::cmp::Ordering::Greater
-    );
-    assert!(
-        ({ SImpl::operator_cmp(&a.as_pointer(), b.as_pointer(),) }) != std::cmp::Ordering::Greater
-    );
-    assert!(
-        ({ SImpl::operator_cmp(&b.as_pointer(), a.as_pointer(),) }) != std::cmp::Ordering::Less
-    );
-    assert!(!({ SImpl::operator_eq(&a.as_pointer(), b.as_pointer(),) }));
-    assert!(
-        ({ SImpl::operator_cmp(&a.as_pointer(), b.as_pointer(),) }) == std::cmp::Ordering::Less
-    );
-    return 0;
+fn main_0() -> () {
+    let a: Value<S> = Rc::new(RefCell::new(S { v: 1_() }));
+    let b: Value<S> = Rc::new(RefCell::new(S { v: 2_() }));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub trait SImpl {
-    fn operator_cmp(&self, o: Ptr<S>) -> std::cmp::Ordering;
-    fn operator_eq(&self, o: Ptr<S>) -> bool;
+    fn operator_cmp(&self, o: Ptr<S>) -> ();
+    fn operator_eq(&self, o: Ptr<S>) -> ();
 }
 impl SImpl for Ptr<S> {
-    fn operator_cmp(&self, o: Ptr<S>) -> std::cmp::Ordering {
+    fn operator_cmp(&self, o: Ptr<S>) -> () {
         if ({ (*self).with(|__s| __s.v) } < { o.with(|__s| __s.v) }) {
-            return std::cmp::Ordering::Less;
+            return unimplemented!();
         }
         if ({ (*self).with(|__s| __s.v) } > { o.with(|__s| __s.v) }) {
-            return std::cmp::Ordering::Greater;
+            return unimplemented!();
         }
-        return std::cmp::Ordering::Equal;
+        return unimplemented!();
     }
-    fn operator_eq(&self, o: Ptr<S>) -> bool {
+    fn operator_eq(&self, o: Ptr<S>) -> () {
         return ({ (*self).with(|__s| __s.v) } == { o.with(|__s| __s.v) });
     }
 }

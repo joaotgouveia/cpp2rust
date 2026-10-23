@@ -22,7 +22,10 @@ fn main_0() -> () {
     libc::fputs((buf.as_pointer() as Ptr<()>), libcc2rs::stdout_unsafe());
     libc::fputc(('|' as ()), libcc2rs::stdout_unsafe());
     libc::puts((buf.as_pointer() as Ptr<()>));
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { (buf.as_pointer() as Ptr<()>) },
+        None,
+    );
     println!("{}", unimplemented!());
     println!(
         "{} {}",
@@ -30,7 +33,10 @@ fn main_0() -> () {
         unimplemented!()
     );
     let mut lit: Ptr<()> = Ptr::<()>::from_string_literal(b"xy\0zw");
-    let mut t: () = unimplemented!();
+    let mut t: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { (lit).clone() },
+        None,
+    );
     println!("{}", unimplemented!());
     return 0_();
 }

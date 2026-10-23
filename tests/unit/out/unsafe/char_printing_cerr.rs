@@ -15,7 +15,10 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut vec_: () = unimplemented!();
     let mut i: () = 27_();
-    let mut str: () = unimplemented!();
+    let mut str: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { c"bar.".as_ptr() },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     unimplemented!();

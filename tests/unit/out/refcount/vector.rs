@@ -33,7 +33,7 @@ fn main_0() -> () {
     unimplemented!().write(50_());
     unimplemented!();
     unimplemented!();
-    let mut v2: () = unimplemented!();
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -68,7 +68,17 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut src: () = unimplemented!();
-    unimplemented!();
+    ({
+        let ___position: () = unimplemented!();
+        let ___first: () = unimplemented!();
+        let ___last: () = unimplemented!();
+        (*v2.borrow())
+            .insert_66_class___gnu_cxx___normal_iterator_int_ptr__class_std_vector_int____void(
+                ___position,
+                ___first,
+                ___last,
+            )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();

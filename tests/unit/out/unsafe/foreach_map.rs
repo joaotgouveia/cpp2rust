@@ -12,36 +12,36 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> i32 {
-    let mut m: UnsafeMap<i32, (i32, f64)> = UnsafeMap::new();
-    let mut i: i32 = 0;
-    let mut k: i32 = 100;
-    'loop_: while ((i) < (100)) {
-        (*m.subscript(&i)) = ((k as f64) / (2_f64));
+unsafe fn main_0() -> () {
+    let mut m: () = unimplemented!();
+    let mut i: () = 0_();
+    let mut k: () = 100_();
+    'loop_: while ((i) < (100_())) {
+        (*unimplemented!()) = ((k) / (2_f64));
         {
             i.prefix_inc();
             k.prefix_dec()
         };
     }
-    let mut sum: f64 = 0_f64;
-    'loop_: for i in IterRange::new(m.begin(), m.end()) {
-        let i: *const (i32, f64) = &(*i.iter_deref());
-        sum += (*i).1;
+    let mut sum: () = 0_();
+    'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
+        let i: *const () = &(*unimplemented!());
+        sum += (*i).second;
     }
-    'loop_: for i in IterRange::new(m.begin(), m.end()) {
-        let mut i: (i32, f64) = (*i.iter_deref()).clone();
-        sum += (i.0 as f64);
+    'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut i: () = unimplemented!();
+        sum += i.first;
     }
-    assert!(((sum) == (7475_f64)));
-    'loop_: for i in IterRange::new(m.begin(), m.end()) {
-        let mut i: (i32, f64) = (*i.iter_deref()).clone();
-        i.1 = (-1_i32 as f64);
-        assert!(((i.1) == (-1_i32 as f64)));
+    unimplemented!();
+    'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut i: () = unimplemented!();
+        i.second = -1_();
+        unimplemented!();
     }
-    'loop_: for i in IterRange::new(m.begin(), m.end()) {
-        let i: *const (i32, f64) = &(*i.iter_deref());
-        assert!((((*i).1) != (-1_i32 as f64)));
+    'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
+        let i: *const () = &(*unimplemented!());
+        unimplemented!();
     }
-    return 0;
+    return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}
