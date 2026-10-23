@@ -18,20 +18,30 @@
 namespace cpp2rust::RuleDecls {
 class Trial {
 public:
+  // Rules name the library's private members in their SFINAE, as the library
+  // does, so access is not checked while a rule is substituted.
   explicit Trial(clang::Sema &sema)
       : diagnostics_(sema.getDiagnostics()),
         suppressed_(diagnostics_.getSuppressAllDiagnostics()),
+        lang_opts_(const_cast<clang::LangOptions &>(sema.getLangOpts())),
+        access_control_(lang_opts_.AccessControl),
         trap_(sema, /*ForValidityCheck=*/true) {
     diagnostics_.setSuppressAllDiagnostics(true);
+    lang_opts_.AccessControl = false;
   }
 
-  ~Trial() { diagnostics_.setSuppressAllDiagnostics(suppressed_); }
+  ~Trial() {
+    lang_opts_.AccessControl = access_control_;
+    diagnostics_.setSuppressAllDiagnostics(suppressed_);
+  }
 
   bool failed() const { return trap_.hasErrorOccurred(); }
 
 private:
   clang::DiagnosticsEngine &diagnostics_;
   bool suppressed_;
+  clang::LangOptions &lang_opts_;
+  bool access_control_;
   clang::Sema::SFINAETrap trap_;
 };
 
