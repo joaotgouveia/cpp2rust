@@ -640,6 +640,10 @@ void PragmaHandler::HandlePragma(clang::Preprocessor &PP,
   auto rules_file = src_mgr.createFileID(
       llvm::MemoryBuffer::getMemBufferCopy(text, "<cpp2rust-rules>"),
       clang::SrcMgr::C_System);
+  // Rules name the library's private and protected members, as the library
+  // does. The user's code and its pending instantiations are done by now.
+  const_cast<clang::LangOptions &>(CI_.getSema().getLangOpts()).AccessControl =
+      false;
   PP.EnterSourceFile(rules_file, nullptr, tok.getLocation());
 }
 

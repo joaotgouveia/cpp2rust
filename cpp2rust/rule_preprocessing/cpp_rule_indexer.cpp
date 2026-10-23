@@ -393,6 +393,9 @@ void Index(const fs::path &src_path, bool is_c, const std::string &dir_name,
   if (!is_c) {
     flags.push_back("-xc++");
     flags.insert(flags.end(), cxx_flags.begin(), cxx_flags.end());
+    // rules name the library's private and protected members, as the
+    // library does
+    flags.insert(flags.end(), {"-Xclang", "-fno-access-control"});
   }
   auto end_flags = getPlatformClangEndFlags();
   flags.insert(flags.end(), end_flags.begin(), end_flags.end());
