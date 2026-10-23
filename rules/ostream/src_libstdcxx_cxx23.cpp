@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <barrier>
 #include <ostream>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename... T1>
 void f18(std::ostream &a0, std::format_string<T1...> a1, T1 &&...a2) {

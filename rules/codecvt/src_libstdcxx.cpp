@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <codecvt>
 #include <ios>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 int f9(const std::codecvt<char, char, std::mbstate_t> &a0, __mbstate_t &a1,
        const char *a2, const char *a3, std::size_t a4) {

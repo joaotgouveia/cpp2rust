@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <barrier>
 #include <chrono>
@@ -10,6 +8,9 @@
 #include <string_view>
 #include <thread>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t38 = std::formatter<std::stacktrace_entry>;
 

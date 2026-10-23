@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <initializer_list>
 #include <optional>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, std::enable_if_t<(std::is_move_constructible_v<T1> &&
                                          std::is_swappable_v<T1>),

@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <iterator>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> auto f1(const T1 &a0) -> decltype(std::begin<T1>(a0)) {
   return std::begin<T1>(a0);

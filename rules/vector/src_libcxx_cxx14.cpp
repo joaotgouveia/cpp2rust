@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <initializer_list>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename... T2>
 void f230(std::vector<bool, T1> &a0, T2 &&...a1) {

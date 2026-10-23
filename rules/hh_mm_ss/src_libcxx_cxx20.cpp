@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f11(const std::chrono::hours &a0) { return std::chrono::is_am(a0); }
 

@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <iosfwd>
 #include <sstream>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t1 = std::istringstream;
 

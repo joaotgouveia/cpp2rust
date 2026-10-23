@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <compare>
 #include <cstddef>
 #include <memory>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, std::enable_if_t<!std::is_array_v<T1>, int> T2 = 0>
 std::unique_ptr<T1> f71() {

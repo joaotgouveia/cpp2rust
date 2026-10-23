@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <limits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> std::float_denorm_style f798() {
   return std::numeric_limits<T1>::has_denorm;

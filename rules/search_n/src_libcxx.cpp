@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename T3>
 T1 f1(T1 a0, T1 a1, T2 a2, const T3 &a3) {

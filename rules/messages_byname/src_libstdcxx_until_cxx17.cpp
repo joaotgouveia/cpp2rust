@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <ios>
 #include <locale>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 typename std::messages_byname<T1>::string_type

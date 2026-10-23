@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <forward_list>
 #include <initializer_list>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename T3>
 std::forward_list<T1, T2> f82(std::from_range_t a0, T3 &&a1, const T2 &a2) {

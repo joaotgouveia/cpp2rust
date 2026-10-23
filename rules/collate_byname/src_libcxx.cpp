@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ios>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t13 = std::collate_byname<char>;
 

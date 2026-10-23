@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename T3>
 typename std::vector<T1, T2>::size_type f1(std::vector<T1, T2> &a0,

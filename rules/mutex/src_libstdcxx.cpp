@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <ios>
 #include <mutex>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename... T2>
 void f17(std::once_flag &a0, T1 &&a1, T2 &&...a2) {

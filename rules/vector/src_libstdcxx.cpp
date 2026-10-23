@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <initializer_list>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> using t43 = typename std::vector<bool, T1>::reference;
 

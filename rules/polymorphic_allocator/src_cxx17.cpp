@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <cstddef>
 #include <memory_resource>
 #include <string>
 #include <tuple>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> using t1 = std::pmr::polymorphic_allocator<T1>;
 

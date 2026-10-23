@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f34(const std::char_traits<char>::char_type &a0,
          const std::char_traits<char>::char_type &a1) {

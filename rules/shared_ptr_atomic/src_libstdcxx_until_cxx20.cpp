@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <atomic>
 #include <condition_variable>
 #include <memory>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 bool f1(std::shared_ptr<T1> *a0, std::shared_ptr<T1> *a1,

@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <flat_map>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t1 = std::sorted_unique_t;
 

@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 std::compare_three_way_result_t<T1> f34(const std::move_iterator<T1> &a0,

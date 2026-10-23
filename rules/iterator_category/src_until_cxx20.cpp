@@ -1,7 +1,8 @@
-#include "../common/init.h"
 #include <iterator>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
 
 template <
     typename It, typename T1 = typename std::iterator_traits<It>::value_type,

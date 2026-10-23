@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <string>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t2 = std::error_category;
 

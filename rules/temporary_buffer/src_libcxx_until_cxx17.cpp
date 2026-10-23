@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <memory>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> std::pair<T1 *, std::ptrdiff_t> f1(std::ptrdiff_t a0) {
   return std::get_temporary_buffer<T1>(a0);

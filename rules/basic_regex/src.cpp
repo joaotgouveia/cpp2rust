@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <cstddef>
 #include <initializer_list>
 #include <regex>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2> using t1 = std::basic_regex<T1, T2>;
 

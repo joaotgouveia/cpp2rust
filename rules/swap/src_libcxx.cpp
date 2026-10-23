@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 typename std::enable_if<std::is_move_constructible<T1>::value &&

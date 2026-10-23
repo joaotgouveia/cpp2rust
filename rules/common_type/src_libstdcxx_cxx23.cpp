@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <chrono>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2>
 using t19 = std::common_type<std::basic_const_iterator<T1>,

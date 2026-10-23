@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <any>
 #include <initializer_list>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename... T2, typename T3 = std::decay_t<T1>,
           std::enable_if_t<std::is_constructible_v<std::decay_t<T1>, T2...> &&

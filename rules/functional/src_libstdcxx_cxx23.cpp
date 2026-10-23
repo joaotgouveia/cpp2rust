@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <functional>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename... T2> auto f7(T1 &&a0, T2 &&...a1) {
   return std::bind_back<T1, T2...>(std::forward<T1>(a0),

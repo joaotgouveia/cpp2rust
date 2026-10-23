@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <cstddef>
 #include <istream>
 #include <ostream>
 #include <random>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, std::size_t T2>
 using t1 = std::shuffle_order_engine<T1, T2>;

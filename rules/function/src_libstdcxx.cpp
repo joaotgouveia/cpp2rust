@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <exception>
 #include <functional>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename... T2, typename T3>
 std::function<T1(T2...)> &f14(std::function<T1(T2...)> &a0,

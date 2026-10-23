@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <initializer_list>
 #include <optional>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 bool f13(std::nullopt_t a0, const std::optional<T1> &a1) {

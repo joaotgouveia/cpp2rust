@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <condition_variable>
 #include <ios>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t1 = std::adopt_lock_t;
 

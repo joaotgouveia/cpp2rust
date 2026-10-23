@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ios>
 #include <iosfwd>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t15 = std::ios_base::io_state;
 

@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <compare>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f1(std::partial_ordering a0) { return std::is_eq(std::move(a0)); }
 

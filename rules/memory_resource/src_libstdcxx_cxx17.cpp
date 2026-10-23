@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <memory_resource>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t2 = std::pmr::monotonic_buffer_resource;
 

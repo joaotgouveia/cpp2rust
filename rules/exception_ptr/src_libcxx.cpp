@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <exception>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t1 = std::exception_ptr;
 

@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <initializer_list>
 #include <ranges>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2>
 void f85(std::vector<bool, T1> &a0, T2 &&a1) {

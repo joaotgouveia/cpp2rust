@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <iterator>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t29 = std::contiguous_iterator_tag;
 

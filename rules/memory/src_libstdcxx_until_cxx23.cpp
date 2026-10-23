@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <memory>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 void f1(char *a0, std::size_t a1) { return std::declare_no_pointers(a0, a1); }
 

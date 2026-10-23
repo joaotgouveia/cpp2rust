@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ios>
 #include <iosfwd>
 #include <ostream>
 #include <streambuf>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2> using t1 = std::basic_ios<T1, T2>;
 

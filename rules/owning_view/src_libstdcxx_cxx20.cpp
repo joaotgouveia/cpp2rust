@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <ranges>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> bool f19(std::ranges::owning_view<T1> &a0) {
   return static_cast<bool>(a0);

@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <compare>
 #include <coroutine>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::strong_ordering f1(std::coroutine_handle<> a0,
                         std::coroutine_handle<> a1) {

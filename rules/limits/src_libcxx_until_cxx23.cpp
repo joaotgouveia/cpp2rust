@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <limits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t3 = std::float_denorm_style;
 

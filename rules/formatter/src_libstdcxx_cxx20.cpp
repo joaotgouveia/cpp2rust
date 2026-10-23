@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <chrono>
 #include <format>
 #include <string>
 #include <string_view>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t22 = std::formatter<char, wchar_t>;
 

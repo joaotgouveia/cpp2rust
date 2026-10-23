@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <filesystem>
 #include <fstream>
 #include <ios>
 #include <ostream>
 #include <string.h>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2>
 void f113(std::basic_fstream<T1, T2> &a0, const std::filesystem::path &a1,

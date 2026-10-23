@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <atomic>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 void f1(std::memory_order a0) { return std::atomic_signal_fence(a0); }
 

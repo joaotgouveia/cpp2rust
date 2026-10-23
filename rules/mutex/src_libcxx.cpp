@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <atomic>
 #include <mutex>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2> void f24(T1 &a0, T2 &a1) {
   return std::lock<T1, T2>(a0, a1);

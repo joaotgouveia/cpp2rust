@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <barrier>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> std::unique_ptr<T1> f54() {
   return std::make_unique_for_overwrite<T1>();

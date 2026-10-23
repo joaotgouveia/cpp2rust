@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <array>
 #include <tuple>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename... T1> std::tuple<T1 &&...> f1(T1 &&...a0) {
   return std::forward_as_tuple<T1...>(std::forward<T1>(a0)...);

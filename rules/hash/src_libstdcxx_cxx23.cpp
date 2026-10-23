@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <barrier>
 #include <bitset>
@@ -14,6 +12,9 @@
 #include <typeindex>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t40 = std::hash<std::stacktrace_entry>;
 

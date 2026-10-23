@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <new>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 void f34(void *a0, std::align_val_t a1) { return operator delete(a0, a1); }
 

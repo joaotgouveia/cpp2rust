@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ios>
 #include <string.h>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t13 = std::numpunct_byname<char>;
 

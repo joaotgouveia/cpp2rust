@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <atomic>
 #include <barrier>
@@ -13,6 +11,9 @@
 #include <typeindex>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t38 = std::hash<std::u8string_view>;
 

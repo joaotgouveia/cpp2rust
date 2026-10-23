@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstdlib>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 long double f1(long double a0) { return std::abs(a0); }
 

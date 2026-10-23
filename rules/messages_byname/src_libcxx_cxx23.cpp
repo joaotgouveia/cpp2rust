@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <initializer_list>
 #include <ios>
@@ -9,6 +7,9 @@
 #include <string>
 #include <string_view>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 typename std::messages_byname<T1>::string_type

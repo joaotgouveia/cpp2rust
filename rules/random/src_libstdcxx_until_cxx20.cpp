@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <istream>
 #include <ostream>
 #include <random>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f81(const std::bernoulli_distribution &a0,
          const std::bernoulli_distribution &a1) {

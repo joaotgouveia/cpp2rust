@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <codecvt>
 #include <cstddef>
 #include <ios>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::codecvt_base::result
 f48(const std::codecvt<char, char, std::mbstate_t> &a0,

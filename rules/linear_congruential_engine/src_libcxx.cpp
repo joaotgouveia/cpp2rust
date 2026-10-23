@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <istream>
 #include <ostream>
 #include <random>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
 bool f15(const std::linear_congruential_engine<T1, T2, T3, T4> &a0,

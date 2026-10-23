@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <atomic>
 #include <compare>
 #include <cstddef>
 #include <memory>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <
     typename T1, typename T2,

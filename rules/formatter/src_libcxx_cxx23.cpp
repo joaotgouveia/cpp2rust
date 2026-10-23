@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <format>
 #include <string>
 #include <string_view>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2>
 void f143(std::formatter<std::basic_string_view<T1, T2>, T1> &a0) {

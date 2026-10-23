@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <codecvt>
 #include <cstddef>
 #include <ios>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t1 = std::codecvt<char, char, std::mbstate_t>;
 

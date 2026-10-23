@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <format>
 #include <print>
 #include <string_view>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 void f5() { return std::println(); }
 

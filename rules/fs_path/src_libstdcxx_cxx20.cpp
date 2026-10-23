@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <filesystem>
 #include <iosfwd>
@@ -7,6 +5,9 @@
 #include <string_view>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::u8string f85(const std::filesystem::path &a0) { return a0.u8string(); }
 

@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ios>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> bool f1(T1 a0, const std::locale &a1) {
   return std::isalnum<T1>(a0, a1);

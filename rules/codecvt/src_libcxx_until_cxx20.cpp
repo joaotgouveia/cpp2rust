@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <codecvt>
 #include <cstddef>
 #include <ios>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t33 = std::codecvt<char16_t, char, std::mbstate_t>;
 

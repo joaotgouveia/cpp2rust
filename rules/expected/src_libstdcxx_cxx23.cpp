@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <expected>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t5 = std::unexpect_t;
 

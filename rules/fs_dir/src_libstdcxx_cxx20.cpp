@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <compare>
 #include <filesystem>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::strong_ordering f100(const std::filesystem::directory_entry &a0,
                           const std::filesystem::directory_entry &a1) {

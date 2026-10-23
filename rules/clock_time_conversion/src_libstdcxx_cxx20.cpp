@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t1 = std::chrono::clock_time_conversion<std::chrono::system_clock,
                                               std::chrono::utc_clock>;

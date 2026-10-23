@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <shared_mutex>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t2 = std::shared_mutex;
 

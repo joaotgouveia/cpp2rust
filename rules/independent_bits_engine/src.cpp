@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <istream>
 #include <ostream>
 #include <random>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, std::size_t T2, typename T3>
 using t1 = std::independent_bits_engine<T1, T2, T3>;

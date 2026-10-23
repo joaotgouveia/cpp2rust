@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <deque>
 #include <initializer_list>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2>
 std::deque<T1, T2> f56(typename std::deque<T1, T2>::size_type a0,

@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <chrono>
 #include <cstddef>
 #include <semaphore>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <std::ptrdiff_t T1> using t1 = std::counting_semaphore<T1>;
 

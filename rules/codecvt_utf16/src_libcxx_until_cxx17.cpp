@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <codecvt>
 #include <cstddef>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, unsigned long T2, std::codecvt_mode T3>
 using t2 = std::codecvt_utf16<T1, T2, T3>;

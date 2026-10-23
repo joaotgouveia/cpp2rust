@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <cstddef>
 #include <functional>
@@ -8,6 +6,9 @@
 #include <typeindex>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t42 = std::hash<std::error_condition>;
 

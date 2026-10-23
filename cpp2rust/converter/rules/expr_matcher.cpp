@@ -347,7 +347,8 @@ MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
 
 bool constructsReturnType(const clang::Expr *returned, clang::QualType ret,
                           const ResolvedDecl &usage_decl) {
-  auto list = llvm::dyn_cast<clang::InitListExpr>(RuleDecls::SkipImplicit(returned));
+  auto list =
+      llvm::dyn_cast<clang::InitListExpr>(RuleDecls::SkipImplicit(returned));
   if (!list || list->getType()->isRecordType()) {
     return false;
   }
@@ -357,8 +358,8 @@ bool constructsReturnType(const clang::Expr *returned, clang::QualType ret,
   }
   if (auto decl = std::get_if<const clang::Decl *>(&usage_decl)) {
     auto ctor = llvm::dyn_cast<clang::CXXConstructorDecl>(*decl);
-    return ctor && ctor->getParent()->getCanonicalDecl() ==
-                       record->getCanonicalDecl();
+    return ctor &&
+           ctor->getParent()->getCanonicalDecl() == record->getCanonicalDecl();
   }
   if (auto aggregate = std::get_if<AggregateUsage>(&usage_decl)) {
     return RuleKeys::GetTypeKey(ret) == aggregate->type;

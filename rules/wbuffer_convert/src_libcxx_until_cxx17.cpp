@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ios>
 #include <iosfwd>
 #include <locale>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename T3>
 using t3 = typename std::wbuffer_convert<T1, T2, T3>::char_type;

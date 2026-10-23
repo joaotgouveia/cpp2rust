@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <utility>
 #include <valarray>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 auto f1(const std::valarray<T1> &a0) -> decltype(std::abs<T1>(a0)) {

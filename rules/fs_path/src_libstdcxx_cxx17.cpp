@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <filesystem>
 #include <string>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> void f1(std::filesystem::path::iterator &a0, T1 a1) {
   return std::advance<T1>(a0, a1);

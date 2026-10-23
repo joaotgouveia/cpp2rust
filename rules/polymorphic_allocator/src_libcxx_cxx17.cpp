@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <memory_resource>
 #include <tuple>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2>
 bool f25(const std::pmr::polymorphic_allocator<T1> &a0,

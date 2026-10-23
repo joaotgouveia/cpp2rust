@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <future>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename... T2>
 auto f1(std::launch a0, T1 &&a1, T2 &&...a2)

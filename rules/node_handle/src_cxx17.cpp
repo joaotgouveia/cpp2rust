@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <map>
 #include <set>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename N,
           typename =

@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <array>
 #include <span>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, std::size_t T2> auto f34(std::span<T1, T2> a0) {
   return std::as_bytes<T1, T2>(a0);

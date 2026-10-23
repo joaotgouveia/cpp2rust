@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ios>
 #include <iosfwd>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::ios_base &f1(std::ios_base &a0) { return std::boolalpha(a0); }
 

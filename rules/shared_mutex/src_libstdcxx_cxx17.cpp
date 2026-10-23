@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <shared_mutex>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t3 = std::shared_mutex::native_handle_type;
 

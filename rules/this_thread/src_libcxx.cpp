@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <thread>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 void f1(const std::chrono::nanoseconds &a0) {
   return std::this_thread::sleep_for(a0);

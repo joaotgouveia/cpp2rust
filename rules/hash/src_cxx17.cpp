@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <bitset>
 #include <condition_variable>
@@ -15,6 +13,9 @@
 #include <utility>
 #include <variant>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t7 = std::hash<std::filesystem::path>;
 

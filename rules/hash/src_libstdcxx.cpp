@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <bitset>
 #include <condition_variable>
@@ -9,6 +7,9 @@
 #include <typeindex>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t10 = std::hash<std::bitset<0>>;
 

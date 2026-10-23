@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <any>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t3 = std::bad_any_cast;
 

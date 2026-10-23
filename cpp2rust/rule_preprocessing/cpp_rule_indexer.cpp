@@ -38,7 +38,8 @@ std::string ClassOf(clang::QualType type) {
   }
   if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
     auto decl = spec->getTemplateName().getAsTemplateDecl();
-    if (auto alias = llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(decl)) {
+    if (auto alias =
+            llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(decl)) {
       return RulesLoader::DeclKey(alias);
     }
     if (decl && llvm::isa<clang::ClassTemplateDecl>(decl)) {

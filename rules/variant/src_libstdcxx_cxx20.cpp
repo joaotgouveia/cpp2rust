@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <compare>
 #include <type_traits>
 #include <utility>
 #include <variant>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename... T1> std::variant<T1...> f36() {
   return std::variant<T1...>();

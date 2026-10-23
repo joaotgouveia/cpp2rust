@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <iterator>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::istream_iterator<T1, T2, T3, T4> f11(std::default_sentinel_t a0) {

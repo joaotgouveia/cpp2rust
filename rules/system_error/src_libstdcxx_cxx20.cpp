@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <compare>
 #include <iosfwd>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::strong_ordering f57(const std::error_category &a0,
                          const std::error_category &a1) {

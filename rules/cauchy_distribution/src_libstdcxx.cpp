@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <random>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> std::cauchy_distribution<T1> f11(T1 a0, T1 a1) {
   return std::cauchy_distribution<T1>(a0, a1);

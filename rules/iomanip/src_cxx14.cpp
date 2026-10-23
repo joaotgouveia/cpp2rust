@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <iomanip>
 #include <ios>
 #include <istream>
@@ -7,6 +5,9 @@
 #include <string>
 #include <string_view>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> auto f6(const T1 *a0, T1 a1, T1 a2) {
   return std::quoted<T1>(a0, a1, a2);

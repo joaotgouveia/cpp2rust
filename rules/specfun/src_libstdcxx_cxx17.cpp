@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cmath>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> double f1(unsigned int a0, unsigned int a1, T1 a2) {
   return std::assoc_laguerre<T1>(a0, a1, a2);

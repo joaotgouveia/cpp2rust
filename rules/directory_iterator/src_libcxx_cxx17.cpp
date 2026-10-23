@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <filesystem>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::filesystem::directory_iterator f1(std::filesystem::directory_iterator a0) {
   return std::filesystem::begin(std::move(a0));

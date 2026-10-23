@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <utility>
 #include <variant>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f7(std::monostate a0, std::monostate a1) {
   return std::move(a0) != std::move(a1);

@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <iomanip>
 #include <ios>
 #include <string>
 #include <string_view>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 auto f25(std::ios_base::fmtflags a0) { return std::resetiosflags(a0); }
 

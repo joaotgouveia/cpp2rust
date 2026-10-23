@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <fstream>
 #include <ios>
 #include <ostream>
 #include <string.h>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2>
 std::basic_ostream<typename std::basic_ifstream<T1, T2>::char_type,

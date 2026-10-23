@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <std::size_t... T1> using t3 = std::index_sequence<T1...>;
 

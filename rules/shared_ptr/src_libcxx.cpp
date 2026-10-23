@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <atomic>
 #include <cstddef>
 #include <memory>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename... T3,
           typename std::enable_if<!std::is_array<T1>::value, int>::type T4 = 0>

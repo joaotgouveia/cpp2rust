@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <atomic>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f207() { return std::atomic<char>::is_always_lock_free; }
 

@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <memory>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::allocator<void> f1(std::allocator<void> &&a0) {
   return std::allocator<void>(std::move(a0));

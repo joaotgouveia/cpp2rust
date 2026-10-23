@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <charconv>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::to_chars_result f1(char *a0, char *a1, long double a2) {
   return std::to_chars(a0, a1, a2);

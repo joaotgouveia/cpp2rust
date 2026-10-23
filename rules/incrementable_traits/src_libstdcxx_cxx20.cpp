@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t7 = std::incrementable_traits<unsigned __int128>;
 

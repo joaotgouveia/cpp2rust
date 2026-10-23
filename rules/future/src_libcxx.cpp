@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <future>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> void f36(std::future<T1> &a0, std::future<T1> &a1) {
   return std::swap<T1>(a0, a1);

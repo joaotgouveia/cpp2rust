@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <atomic>
 #include <chrono>
 #include <condition_variable>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2>
 bool f22(std::condition_variable_any &a0, T1 &a1, std::stop_token a2, T2 a3) {

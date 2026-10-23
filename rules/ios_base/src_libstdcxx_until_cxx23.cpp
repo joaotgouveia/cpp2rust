@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ios>
 #include <iosfwd>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::ios_base::fmtflags f76(std::ios_base::fmtflags a0,
                             std::ios_base::fmtflags a1) {

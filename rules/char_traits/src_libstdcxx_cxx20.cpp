@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <ios>
 #include <iosfwd>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t28 = std::char_traits<wchar_t>::comparison_category;
 

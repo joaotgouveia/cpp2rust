@@ -593,10 +593,9 @@ void PragmaHandler::HandlePragma(clang::Preprocessor &PP,
   RuleUsageCollector collector(CI_.getSema(), keys);
   collector.TraverseDecl(ctx.getTranslationUnitDecl());
 
-  auto text =
-      BuildRulesEpilogue(keys, ctx.getLangOpts(),
-                         PP.isMacroDefined("_LIBCPP_VERSION") ? "libcxx"
-                                                              : "libstdcxx");
+  auto text = BuildRulesEpilogue(
+      keys, ctx.getLangOpts(),
+      PP.isMacroDefined("_LIBCPP_VERSION") ? "libcxx" : "libstdcxx");
   log() << "rules loaded for this translation unit:\n" << text;
   auto rules_file = src_mgr.createFileID(
       llvm::MemoryBuffer::getMemBufferCopy(text, "<cpp2rust-rules>"),

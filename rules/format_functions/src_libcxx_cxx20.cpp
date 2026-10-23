@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <format>
 #include <ios>
@@ -7,6 +5,9 @@
 #include <string.h>
 #include <string_view>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename... T1>
 std::string f1(std::locale a0, std::format_string<T1...> a1, T1 &&...a2) {

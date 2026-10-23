@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ostream>
 #include <regex>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f40(std::basic_ostream<T1, T2> &a0,

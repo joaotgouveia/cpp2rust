@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <chrono>
 #include <compare>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::chrono::year_month_day f1(const std::chrono::months &a0,
                                const std::chrono::year_month_day &a1) {

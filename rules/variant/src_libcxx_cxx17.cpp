@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <tuple>
 #include <type_traits>
 #include <utility>
 #include <variant>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename... T1>
 auto f44(std::variant<T1...> &a0, std::variant<T1...> &a1) {

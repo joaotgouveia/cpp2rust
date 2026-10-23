@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <ios>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f35(const std::ctype<char> &a0, std::ctype_base::mask a1,
          std::ctype<char>::char_type a2) {

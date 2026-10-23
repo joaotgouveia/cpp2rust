@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <charconv>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::chars_format f1(std::chars_format a0, std::chars_format a1) {
   return a0 & a1;

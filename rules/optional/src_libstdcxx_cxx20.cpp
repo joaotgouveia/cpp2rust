@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <compare>
 #include <initializer_list>
 #include <optional>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2> std::optional<T1> f82(T2 &&a0) {
   return std::optional<T1>(std::forward<T2>(a0));

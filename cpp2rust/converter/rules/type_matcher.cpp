@@ -57,8 +57,8 @@ bool satisfiesConstraints(clang::Sema &sema,
   RuleDecls::Trial trial(sema);
   clang::MultiLevelTemplateArgumentList arg_lists(mutable_tmpl, args,
                                                   /*Final=*/true);
-  return !sema.EnsureTemplateArgumentListConstraints(
-             mutable_tmpl, arg_lists, tmpl->getSourceRange()) &&
+  return !sema.EnsureTemplateArgumentListConstraints(mutable_tmpl, arg_lists,
+                                                     tmpl->getSourceRange()) &&
          !trial.failed();
 }
 

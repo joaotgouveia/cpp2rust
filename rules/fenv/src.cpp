@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <fenv.h>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 int f1(int a0) { return feclearexcept(a0); }
 

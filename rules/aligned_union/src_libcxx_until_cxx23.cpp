@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <type_traits>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <std::size_t T1, typename T2, typename... T3>
 using t3 = std::aligned_union<T1, T2, T3...>;

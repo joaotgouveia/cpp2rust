@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <bitset>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <std::size_t T1> using t2 = typename std::bitset<T1>::reference;
 

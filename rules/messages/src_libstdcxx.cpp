@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <initializer_list>
 #include <ios>
 #include <locale>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 typename std::messages<T1>::catalog f12(const std::messages<T1> &a0,

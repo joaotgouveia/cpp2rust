@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <filesystem>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::filesystem::perm_options f1(std::filesystem::perm_options a0,
                                  std::filesystem::perm_options a1) {

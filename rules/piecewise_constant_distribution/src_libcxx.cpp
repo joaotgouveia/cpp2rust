@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <initializer_list>
 #include <istream>
@@ -7,6 +5,9 @@
 #include <random>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &

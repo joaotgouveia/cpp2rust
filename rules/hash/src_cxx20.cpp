@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <atomic>
 #include <barrier>
@@ -18,6 +16,9 @@
 #include <utility>
 #include <variant>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> using t9 = std::hash<std::coroutine_handle<T1>>;
 

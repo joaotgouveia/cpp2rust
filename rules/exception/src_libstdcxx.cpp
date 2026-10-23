@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <exception>
 #include <new>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::exception f9(std::exception &&a0) { return std::exception(std::move(a0)); }
 

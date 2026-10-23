@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <coroutine>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::noop_coroutine_handle f1() { return std::noop_coroutine(); }
 

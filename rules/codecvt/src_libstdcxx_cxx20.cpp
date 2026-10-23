@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <codecvt>
 #include <cwchar>
 #include <ios>
 #include <locale>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t25 = std::codecvt<char16_t, char8_t, std::mbstate_t>;
 

@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <exception>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::unexpected_handler f6() { return std::get_unexpected(); }
 

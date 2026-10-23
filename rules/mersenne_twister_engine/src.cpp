@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <cstddef>
 #include <istream>
 #include <ostream>
 #include <random>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,

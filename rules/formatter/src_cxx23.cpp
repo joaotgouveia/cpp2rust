@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <barrier>
 #include <chrono>
@@ -11,6 +9,9 @@
 #include <thread>
 #include <utility>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> void f1(std::formatter<const T1 *, T1> &a0) {
   return a0.set_debug_format();

@@ -80,8 +80,7 @@ matchingDefinitions(clang::Sema &sema, clang::ClassTemplateDecl *tmpl,
   records.push_back(tmpl->getTemplatedDecl());
   if (!tmpl->getTemplatedDecl()->hasDefinition()) {
     for (auto spec : tmpl->specializations()) {
-      if (spec->getSpecializationKind() ==
-          clang::TSK_ExplicitSpecialization) {
+      if (spec->getSpecializationKind() == clang::TSK_ExplicitSpecialization) {
         records.push_back(spec);
       }
     }
@@ -347,8 +346,7 @@ std::vector<TypeKey> GetTypeKeys(const clang::NamedDecl *rule) {
   if (!key) {
     llvm::errs() << "type rule " << rule->getQualifiedNameAsString()
                  << " has no key: pattern " << pattern.getAsString()
-                 << " (canonical "
-                 << pattern.getCanonicalType().getAsString()
+                 << " (canonical " << pattern.getCanonicalType().getAsString()
                  << ") is neither a class, a member type, nor an alias "
                     "template\n";
     rule->dump(llvm::errs());

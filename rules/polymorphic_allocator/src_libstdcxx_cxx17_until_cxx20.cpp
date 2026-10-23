@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, typename T3, typename... T4, typename... T5>
 void f19(std::pmr::polymorphic_allocator<T1> &a0, std::pair<T2, T3> *a1,

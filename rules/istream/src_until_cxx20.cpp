@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <bitset>
 #include <iosfwd>
 #include <istream>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 std::basic_istream<char, T1> &f5(std::basic_istream<char, T1> &a0,

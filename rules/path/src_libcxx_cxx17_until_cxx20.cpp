@@ -1,11 +1,12 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <filesystem>
 #include <string.h>
 #include <string>
 #include <string_view>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 std::string f71(const std::filesystem::path &a0) { return a0.u8string(); }
 

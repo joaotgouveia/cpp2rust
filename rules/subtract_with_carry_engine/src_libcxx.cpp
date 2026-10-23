@@ -1,10 +1,11 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <istream>
 #include <ostream>
 #include <random>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
 bool f15(const std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,

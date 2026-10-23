@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <filesystem>
 #include <iterator>
 #include <system_error>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f18(const std::filesystem::directory_iterator &a0,
          std::default_sentinel_t a1) {

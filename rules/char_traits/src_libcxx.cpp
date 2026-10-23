@@ -1,9 +1,10 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <cstddef>
 #include <string.h>
 #include <string>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 bool f170(std::char_traits<char>::char_type a0,
           std::char_traits<char>::char_type a1) {

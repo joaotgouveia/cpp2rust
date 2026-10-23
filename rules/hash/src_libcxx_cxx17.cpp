@@ -1,5 +1,3 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <cstddef>
 #include <filesystem>
@@ -11,6 +9,9 @@
 #include <utility>
 #include <variant>
 #include <vector>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 using t53 = std::hash<

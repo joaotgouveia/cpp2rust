@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <ranges>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1, typename T2, std::size_t T3>
 bool f11(std::ranges::adjacent_transform_view<T1, T2, T3> &a0) {

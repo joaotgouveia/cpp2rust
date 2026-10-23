@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <atomic>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t4 = std::atomic<char>;
 

@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <new>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t6 = std::destroying_delete_t;
 

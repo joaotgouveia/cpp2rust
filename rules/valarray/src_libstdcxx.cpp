@@ -1,8 +1,9 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <utility>
 #include <valarray>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1>
 auto f15(const std::valarray<T1> &a0,

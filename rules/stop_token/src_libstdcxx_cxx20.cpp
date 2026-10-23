@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <stop_token>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 using t2 = std::nostopstate_t;
 

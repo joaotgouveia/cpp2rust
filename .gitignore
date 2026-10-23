@@ -19,5 +19,3 @@ __pycache__
 
 tmp
 *.swp
-
-tests/lib*/**/out

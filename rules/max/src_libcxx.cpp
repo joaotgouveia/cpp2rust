@@ -1,7 +1,8 @@
-#include "../common/init.h"
-#include "../common/traits.h"
 #include <algorithm>
 #include <utility>
+
+#include "../common/init.h"
+#include "../common/traits.h"
 
 template <typename T1> const T1 &f1(const T1 &a0, const T1 &a1) {
   return std::max<T1>(a0, a1);
