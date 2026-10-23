@@ -121,9 +121,20 @@ void f110(std::formatter<std::basic_string<wchar_t, T1, T2>, wchar_t> &a0) {
   return a0.set_debug_format();
 }
 
+template <typename T1, typename T2>
+void f111(std::formatter<T1, T2> &a0, std::basic_string_view<T2> a1) {
+  return a0.set_separator(a1);
+}
+
+template <typename T1, typename T2>
+void f112(std::formatter<T1, T2> &a0, std::basic_string_view<T2> a1,
+          std::basic_string_view<T2> a2) {
+  return a0.set_brackets(a1, a2);
+}
+
 template <typename T1, typename... T2>
 typename std::basic_format_parse_context<T1>::iterator
-f111(std::formatter<std::tuple<T2...>, T1> &a0,
+f113(std::formatter<std::tuple<T2...>, T1> &a0,
      std::basic_format_parse_context<T1> &a1) {
   return a0.parse(a1);
 }
@@ -132,41 +143,41 @@ template <typename T1, typename T2, typename T3>
 using t49 = std::formatter<std::pair<T2, T3>, T1>;
 
 template <typename T1, typename T2, typename T3>
-void f112(std::formatter<std::pair<T2, T3>, T1> &a0,
+void f114(std::formatter<std::pair<T2, T3>, T1> &a0,
           std::basic_string_view<T1> a1) {
   return a0.set_separator(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f113(std::formatter<std::pair<T2, T3>, T1> &a0,
+void f115(std::formatter<std::pair<T2, T3>, T1> &a0,
           std::basic_string_view<T1> a1, std::basic_string_view<T1> a2) {
   return a0.set_brackets(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_format_parse_context<T1>::iterator
-f114(std::formatter<std::pair<T2, T3>, T1> &a0,
+f116(std::formatter<std::pair<T2, T3>, T1> &a0,
      std::basic_format_parse_context<T1> &a1) {
   return a0.parse(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_format_parse_context<T1>::iterator
-f115(std::formatter<std::queue<T2, T3>, T1> &a0,
+f117(std::formatter<std::queue<T2, T3>, T1> &a0,
      std::basic_format_parse_context<T1> &a1) {
   return a0.parse(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_format_parse_context<T1>::iterator
-f116(std::formatter<std::stack<T2, T3>, T1> &a0,
+f118(std::formatter<std::stack<T2, T3>, T1> &a0,
      std::basic_format_parse_context<T1> &a1) {
   return a0.parse(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::basic_format_parse_context<T1>::iterator
-f117(std::formatter<std::priority_queue<T2, T3, T4>, T1> &a0,
+f119(std::formatter<std::priority_queue<T2, T3, T4>, T1> &a0,
      std::basic_format_parse_context<T1> &a1) {
   return a0.parse(a1);
 }

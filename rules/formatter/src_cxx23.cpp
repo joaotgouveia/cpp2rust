@@ -11,6 +11,7 @@
 #include <tuple>
 #include <type_traits>
 #include <utility>
+#include <vector>
 
 void f6(std::formatter<char, wchar_t> &a0) { return a0.set_debug_format(); }
 
