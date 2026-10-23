@@ -499,6 +499,13 @@ bool subsumes(clang::Sema &sema, const clang::FunctionTemplateDecl *a,
   llvm::SmallVector<clang::AssociatedConstraint, 4> b_constraints;
   a->getAssociatedConstraints(a_constraints);
   b->getAssociatedConstraints(b_constraints);
+  // anything subsumes no constraints, and no constraints subsume nothing else
+  if (b_constraints.empty()) {
+    return true;
+  }
+  if (a_constraints.empty()) {
+    return false;
+  }
   auto identical = [&](const clang::AtomicConstraint &lhs,
                        const clang::AtomicConstraint &rhs) {
     if (!lhs.hasMatchingParameterMapping(sema.Context, rhs)) {
