@@ -514,6 +514,24 @@ bool subsumes(clang::Sema &sema, const clang::FunctionTemplateDecl *a,
   return checker.Subsumes(a, a_constraints, b, b_constraints).value_or(false);
 }
 
+// Whether a parameter of the rule is a class or a specialization of a class
+// template, rather than a template parameter of the rule. An alias template
+// (std::iter_difference_t<T1>) names no class of its own.
+bool namesClass(const clang::FunctionDecl *rule) {
+  return llvm::any_of(rule->parameters(), [](const clang::ParmVarDecl *param) {
+    auto type = param->getType().getNonReferenceType();
+    while (type->isPointerType()) {
+      type = type->getPointeeType();
+    }
+    if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
+      return !spec->isTypeAlias() &&
+             llvm::isa_and_nonnull<clang::ClassTemplateDecl>(
+                 spec->getTemplateName().getAsTemplateDecl());
+    }
+    return type->getAsCXXRecordDecl() != nullptr;
+  });
+}
+
 // The more constrained of two rules that differ only in their constraints.
 const clang::NamedDecl *moreConstrained(clang::Sema &sema,
                                         const clang::NamedDecl *a,
@@ -565,12 +583,17 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
   // A rule that takes default arguments of the use matches it only because of
   // them, as C++ would not call it with the arguments that are written.
   if (a_function && b_function) {
-    auto a_operands =
-        getOperands(sema.Context, use, a_function->getNumParams()).size();
-    auto b_operands =
-        getOperands(sema.Context, use, b_function->getNumParams()).size();
-    if (a_operands != b_operands) {
-      return a_operands < b_operands ? a : b;
+    auto defaulted = [&](const clang::FunctionDecl *function) {
+      return llvm::count_if(
+          getOperands(sema.Context, use, function->getNumParams()),
+          [](const clang::Expr *operand) {
+            return llvm::isa<clang::CXXDefaultArgExpr>(operand);
+          });
+    };
+    auto a_defaulted = defaulted(a_function);
+    auto b_defaulted = defaulted(b_function);
+    if (a_defaulted != b_defaulted) {
+      return a_defaulted < b_defaulted ? a : b;
     }
   }
   auto a_tmpl =
@@ -618,7 +641,17 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
   if (better == b_tmpl) {
     return b;
   }
-  return moreConstrained(sema, a, a_tmpl, b, b_tmpl);
+  if (auto constrained = moreConstrained(sema, a, a_tmpl, b, b_tmpl)) {
+    return constrained;
+  }
+  // A rule written for a class (reverse_iterator<T1>) beats a generic rule
+  // over any iterator (forward_iterator<T1>).
+  auto a_class = namesClass(a_function);
+  auto b_class = namesClass(b_function);
+  if (a_class != b_class) {
+    return a_class ? a : b;
+  }
+  return nullptr;
 }
 
 } // namespace cpp2rust::AstMatcher
