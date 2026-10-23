@@ -452,6 +452,39 @@ bool constructsReturnType(const clang::Expr *returned, clang::QualType ret,
   return false;
 }
 
+// A static member named through a class (std::numeric_limits<T>::min()) is
+// the use of that class: numeric_limits<const volatile T1>::min() reaches the
+// same member through its base, but names another class.
+bool sameNamingClass(clang::ASTContext &ctx, const clang::Expr *use,
+                     const clang::Expr *returned) {
+  // the class written before :: or, for obj.min(), the class of the object
+  auto naming = [](const clang::Expr *expr) -> clang::QualType {
+    expr = RuleDecls::SkipImplicit(expr);
+    if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
+      expr = call->getCallee()->IgnoreParenImpCasts();
+    }
+    if (auto member = llvm::dyn_cast<clang::MemberExpr>(expr);
+        member && llvm::isa<clang::VarDecl, clang::CXXMethodDecl>(
+                      member->getMemberDecl()) &&
+        (llvm::isa<clang::VarDecl>(member->getMemberDecl()) ||
+         llvm::cast<clang::CXXMethodDecl>(member->getMemberDecl())
+             ->isStatic())) {
+      auto base = member->getBase()->getType();
+      return member->isArrow() ? base->getPointeeType() : base;
+    }
+    auto ref = llvm::dyn_cast<clang::DeclRefExpr>(expr);
+    if (!ref ||
+        ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
+      return {};
+    }
+    return clang::QualType(ref->getQualifier().getAsType(), 0);
+  };
+  auto used = naming(use);
+  auto ruled = naming(returned);
+  return used.isNull() || ruled.isNull() ||
+         ctx.hasSameUnqualifiedType(used, ruled);
+}
+
 MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
                           const ResolvedDecl &usage_decl,
                           clang::FunctionTemplateDecl *rule) {
@@ -483,7 +516,8 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
     checkCallable(sema, use, rule->getTemplatedDecl());
     return specialization->getTemplateSpecializationArgs()->asArray();
   }
-  if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl) {
+  if (getResolvedDecl(ctx, returned, /*must_resolve=*/true) != usage_decl ||
+      !sameNamingClass(ctx, use, returned)) {
     return std::nullopt;
   }
   checkCallable(sema, use, rule->getTemplatedDecl());
