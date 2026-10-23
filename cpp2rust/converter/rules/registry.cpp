@@ -295,9 +295,6 @@ ExprMatch findExpr(const clang::Expr *use) {
     return {};
   }
   consider(*key);
-  if (auto object = RuleKeys::GetObjectMemberKey(use); object && *object != *key) {
-    consider(*object);
-  }
   if (auto member = std::get_if<RuleKeys::Member>(&*key)) {
     consider(RuleKeys::Unqualified{member->name});
   }
@@ -307,6 +304,13 @@ ExprMatch findExpr(const clang::Expr *use) {
         record && !type->isDependentType() && !IsUserDefinedDecl(record)) {
       consider(RuleKeys::kAnyConstructor);
     }
+  }
+  // An inherited member without a rule on the class declaring it (an internal
+  // base such as __optional_storage_base) uses the rule written on the class
+  // of the object.
+  if (auto object = RuleKeys::GetObjectMemberKey(use);
+      matches.empty() && object && *object != *key) {
+    consider(*object);
   }
   return most_specialized();
 }
