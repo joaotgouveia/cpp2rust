@@ -61,11 +61,11 @@ impl constexpr_char_traits_char_ {
 pub fn test_0(s: Ptr<()>, mut str: Ptr<()>, mut pos: (), mut n: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_1.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         unimplemented!();
     }
 }
-pub fn test0_2() {
+pub fn test0_1() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
@@ -93,7 +93,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -103,7 +103,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -113,7 +113,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -123,7 +123,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -143,7 +143,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -153,7 +153,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -163,7 +163,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -173,7 +173,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -193,7 +193,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -203,7 +203,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -213,7 +213,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -223,7 +223,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -233,7 +233,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b""),
             1_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -243,7 +243,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -253,7 +253,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -263,7 +263,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -273,7 +273,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -283,7 +283,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -293,7 +293,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -303,7 +303,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -313,7 +313,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -323,7 +323,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -333,7 +333,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -343,7 +343,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -353,7 +353,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -363,7 +363,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -373,7 +373,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -383,7 +383,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -483,7 +483,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -493,7 +493,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -523,7 +523,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -533,7 +533,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -543,7 +543,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -573,7 +573,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -583,7 +583,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -593,7 +593,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -603,7 +603,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -623,7 +623,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -633,7 +633,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -643,7 +643,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -653,7 +653,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -673,7 +673,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -683,7 +683,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -693,7 +693,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -703,7 +703,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -733,7 +733,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             2_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -743,7 +743,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             2_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -753,7 +753,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             2_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -763,7 +763,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             2_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -783,7 +783,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             2_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -793,7 +793,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             2_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -803,7 +803,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             2_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -813,7 +813,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             2_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -833,7 +833,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             2_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -843,7 +843,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             2_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -853,7 +853,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             2_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -863,7 +863,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             2_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -893,7 +893,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             4_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -903,7 +903,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             4_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -913,7 +913,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             4_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -923,7 +923,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             4_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -943,7 +943,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             4_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -953,7 +953,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             4_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -963,7 +963,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             4_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -973,7 +973,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             4_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -993,7 +993,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             4_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1003,7 +1003,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             4_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1013,7 +1013,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             4_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1023,7 +1023,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             4_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1053,7 +1053,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             5_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1063,11 +1063,11 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"abcde"),
             5_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
 }
-pub fn test1_3() {
+pub fn test1_2() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
@@ -1075,7 +1075,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             5_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1085,7 +1085,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             5_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1105,7 +1105,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1115,7 +1115,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1125,7 +1125,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1135,7 +1135,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1155,7 +1155,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1165,7 +1165,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1175,7 +1175,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1185,7 +1185,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1195,7 +1195,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b""),
             6_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1205,7 +1205,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             6_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1215,7 +1215,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             6_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1225,7 +1225,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             6_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1235,7 +1235,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             6_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1245,7 +1245,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             6_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1255,7 +1255,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             6_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1265,7 +1265,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             6_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1275,7 +1275,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             6_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1285,7 +1285,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             6_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1295,7 +1295,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             6_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1305,7 +1305,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             6_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1315,7 +1315,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             6_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1325,7 +1325,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             6_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1335,7 +1335,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             6_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1345,7 +1345,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             6_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1495,7 +1495,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1505,7 +1505,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1605,7 +1605,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1615,7 +1615,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1645,7 +1645,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1655,7 +1655,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1665,7 +1665,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1765,7 +1765,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1775,7 +1775,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1805,7 +1805,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1815,7 +1815,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1825,7 +1825,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1855,7 +1855,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             9_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1865,7 +1865,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             9_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1875,7 +1875,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             9_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1885,7 +1885,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             9_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1905,7 +1905,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             9_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1915,7 +1915,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             9_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1925,7 +1925,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             9_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1935,7 +1935,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             9_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1955,7 +1955,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             9_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1965,7 +1965,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             9_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1975,7 +1975,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             9_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1985,7 +1985,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             9_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2015,7 +2015,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             10_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2025,7 +2025,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             10_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2035,7 +2035,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             10_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2045,7 +2045,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcde"),
             10_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2065,11 +2065,11 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             10_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
 }
-pub fn test2_4() {
+pub fn test2_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
@@ -2077,7 +2077,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             10_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2087,7 +2087,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             10_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2097,7 +2097,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             10_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2117,7 +2117,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2127,7 +2127,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2137,7 +2137,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2147,7 +2147,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2157,7 +2157,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b""),
             11_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2167,7 +2167,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             11_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2177,7 +2177,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             11_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2187,7 +2187,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             11_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2197,7 +2197,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             11_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2207,7 +2207,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             11_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2217,7 +2217,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             11_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2227,7 +2227,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             11_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2237,7 +2237,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             11_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2247,7 +2247,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             11_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2257,7 +2257,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             11_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2267,7 +2267,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             11_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2277,7 +2277,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             11_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2287,7 +2287,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             11_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2297,7 +2297,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             11_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2307,7 +2307,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             11_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2617,7 +2617,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2627,7 +2627,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2777,7 +2777,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2787,7 +2787,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2817,7 +2817,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             19_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2827,7 +2827,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             19_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2837,7 +2837,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             19_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2847,7 +2847,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             19_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2867,7 +2867,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             19_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2877,7 +2877,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             19_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2887,7 +2887,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             19_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2897,7 +2897,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             19_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2917,7 +2917,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             19_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2927,7 +2927,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             19_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2937,7 +2937,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             19_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2947,7 +2947,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             19_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2977,7 +2977,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             20_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2987,7 +2987,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             20_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2997,7 +2997,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             20_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3007,7 +3007,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcde"),
             20_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3027,7 +3027,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             20_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3037,7 +3037,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             20_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3047,7 +3047,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             20_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3057,7 +3057,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             20_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3071,7 +3071,7 @@ pub fn test2_4() {
         )
     });
 }
-pub fn test3_5() {
+pub fn test3_4() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
@@ -3079,7 +3079,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             20_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3089,7 +3089,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             20_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3099,7 +3099,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             20_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3109,7 +3109,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             20_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3119,7 +3119,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b""),
             21_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3129,7 +3129,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcde"),
             21_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3139,7 +3139,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcde"),
             21_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3149,7 +3149,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcde"),
             21_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3159,7 +3159,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcde"),
             21_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3169,7 +3169,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcde"),
             21_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3179,7 +3179,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             21_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3189,7 +3189,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             21_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3199,7 +3199,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             21_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3209,7 +3209,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             21_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3219,7 +3219,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             21_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3229,7 +3229,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             21_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3239,7 +3239,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             21_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3249,7 +3249,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             21_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3259,7 +3259,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             21_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3269,7 +3269,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             21_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
 }
@@ -3294,10 +3294,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        ({ test0_2() });
-        ({ test1_3() });
-        ({ test2_4() });
-        ({ test3_5() });
+        ({ test0_1() });
+        ({ test1_2() });
+        ({ test2_3() });
+        ({ test3_4() });
     }
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));

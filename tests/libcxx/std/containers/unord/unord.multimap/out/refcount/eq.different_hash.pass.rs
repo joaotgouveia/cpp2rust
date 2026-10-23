@@ -15,10 +15,10 @@ pub fn hash_identity_1(val: ()) -> () {
     return (*val.borrow());
 }
 pub fn hash_neg_2(mut val: ()) -> () {
-    return (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(val);
+    return (unimplemented!() as ()).wrapping_sub(val);
 }
 pub fn hash_neg_3(mut val: ()) -> () {
-    return (({ std_numeric_limits_bool_::max() }) - val);
+    return (unimplemented!() - val);
 }
 pub fn hash_scale_4(mut val: ()) -> () {
     return ((val << 1_()) as ());
@@ -45,7 +45,7 @@ pub fn hash_identity_11(mut val: Ptr<()>) -> () {
     return (val.read());
 }
 pub fn hash_neg_12(mut val: Ptr<()>) -> () {
-    return ({ ({ std_numeric_limits_char_::max() }) } - { (val.read()) });
+    return ({ unimplemented!() } - { (val.read()) });
 }
 pub fn hash_scale_13(mut val: Ptr<()>) -> () {
     return ((val.read()) << 1_());

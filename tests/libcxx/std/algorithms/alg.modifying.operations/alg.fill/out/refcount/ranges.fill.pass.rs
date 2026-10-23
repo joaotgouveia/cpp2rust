@@ -3241,8 +3241,7 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_Impl
         unimplemented!();
     }
     fn max_size(&self) -> () {
-        return ({ std_numeric_limits_unsigned_char_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub trait sized_allocator_unsigned_int__unsigned_int__int_Impl {
@@ -3263,8 +3262,7 @@ impl sized_allocator_unsigned_int__unsigned_int__int_Impl
         unimplemented!();
     }
     fn max_size(&self) -> () {
-        return ({ std_numeric_limits_unsigned_int_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub trait sized_allocator_unsigned_long__unsigned_long__long_Impl {
@@ -3285,8 +3283,7 @@ impl sized_allocator_unsigned_long__unsigned_long__long_Impl
         unimplemented!();
     }
     fn max_size(&self) -> () {
-        return (({ std_numeric_limits_unsigned_long_::max() }) as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub trait sized_allocator_unsigned_short__unsigned_short__short_Impl {
@@ -3307,8 +3304,7 @@ impl sized_allocator_unsigned_short__unsigned_short__short_Impl
         unimplemented!();
     }
     fn max_size(&self) -> () {
-        return ({ std_numeric_limits_unsigned_short_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub trait support_double_move_trackerImpl {

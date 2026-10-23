@@ -13,10 +13,10 @@ pub unsafe fn hash_identity_1(mut val: ()) -> () {
     return val;
 }
 pub unsafe fn hash_neg_2(mut val: ()) -> () {
-    return ((unsafe { std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(val);
+    return (unimplemented!() as ()).wrapping_sub(val);
 }
 pub unsafe fn hash_neg_3(mut val: ()) -> () {
-    return ((unsafe { std_numeric_limits_bool_::max() }) - (val));
+    return ((unimplemented!()) - (val));
 }
 pub unsafe fn hash_scale_4(mut val: ()) -> () {
     return (((val) << (1_())) as ());
@@ -43,7 +43,7 @@ pub unsafe fn hash_identity_11(mut val: *mut ()) -> () {
     return (*val);
 }
 pub unsafe fn hash_neg_12(mut val: *mut ()) -> () {
-    return ((unsafe { std_numeric_limits_char_::max() }) - (*val));
+    return ((unimplemented!()) - (*val));
 }
 pub unsafe fn hash_scale_13(mut val: *mut ()) -> () {
     return ((*val) << (1_()));

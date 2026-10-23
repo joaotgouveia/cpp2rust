@@ -629,7 +629,7 @@ pub unsafe fn tests_21() -> () {
     (unsafe { test_13(cs, s.as_mut_ptr(), unimplemented!()) });
     (unsafe { test_13(cs, s.as_mut_ptr().offset((1_()) as isize), unimplemented!()) });
     (unsafe { test_13(cs.offset((1_()) as isize), s.as_mut_ptr(), unimplemented!()) });
-    let nan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+    let nan: () = unimplemented!();
     (unsafe {
         test_14(
             Iter::new({ 0_() }),

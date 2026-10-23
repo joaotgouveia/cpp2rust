@@ -58,35 +58,31 @@ pub unsafe fn _fits_in_16(mut _a0: (), mut _a1: (), __args: Box<[VaArg]>) -> () 
     return true;
 }
 pub unsafe fn _fits_in_17(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((unsafe { std_numeric_limits_char_::lowest() }) <= (v))
-        && ((v) <= (unsafe { (std_numeric_limits_char_::max)() }));
+    return ((unimplemented!()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn _fits_in_18(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((unsafe { std_numeric_limits_signed_char_::lowest() }) <= (v))
-        && ((v) <= (unsafe { (std_numeric_limits_signed_char_::max)() }));
+    return ((unimplemented!()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn _fits_in_19(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((unsafe { std_numeric_limits_short_::lowest() }) <= (v))
-        && ((v) <= (unsafe { (std_numeric_limits_short_::max)() }));
+    return ((unimplemented!()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn _fits_in_20(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((0_()) <= (v)) && ((v) <= (unsafe { (std_numeric_limits_unsigned_char_::max)() }));
+    return ((0_()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn _fits_in_21(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((0_()) <= (v)) && ((v) <= (unsafe { (std_numeric_limits_unsigned_short_::max)() }));
+    return ((0_()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn _fits_in_22(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((0_()) <= (v)) && ((v) <= (unsafe { (std_numeric_limits_unsigned_int_::max)() }));
+    return ((0_()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn _fits_in_23(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((0_()) <= (v)) && ((v) <= (unsafe { (std_numeric_limits_unsigned_long_::max)() }));
+    return ((0_()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn _fits_in_24(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((0_()) <= (v))
-        && ((v) <= (unsafe { (std_numeric_limits_unsigned_long_long_::max)() }));
+    return ((0_()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn _fits_in_25(mut v: (), mut _a1: (), mut _a2: (), mut _a3: ()) -> () {
-    return ((0_()) <= (v)) && ((v) <= (unsafe { (std_numeric_limits_unsigned___int128_::max)() }));
+    return ((0_()) <= (v)) && ((v) <= (unimplemented!()));
 }
 pub unsafe fn fits_in_26(mut v: ()) -> () {
     return (unsafe {

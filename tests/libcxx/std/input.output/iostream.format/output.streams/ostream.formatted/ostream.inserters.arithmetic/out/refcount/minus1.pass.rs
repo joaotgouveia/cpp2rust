@@ -209,8 +209,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_octal_4(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
     ({ test_octal_5(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
     ({ test_octal_4(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
-    let mut long_is_64: () = value_25.with(|rc| *rc.borrow());
-    let mut long_long_is_64: () = value_25.with(|rc| *rc.borrow());
+    let mut long_is_64: () = unimplemented!();
+    let mut long_long_is_64: () = unimplemented!();
     {
         ({ test_octal_4(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
         ({ test_octal_5(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });

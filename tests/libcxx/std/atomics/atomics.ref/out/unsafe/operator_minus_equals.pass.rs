@@ -691,7 +691,7 @@ impl TestOperatorMinusEquals_float_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_float_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_29(minus_equals.copy_from(), load.copy_from()) });
@@ -721,7 +721,7 @@ impl TestOperatorMinusEquals_double_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_double_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_30(minus_equals.copy_from(), load.copy_from()) });
@@ -751,7 +751,7 @@ impl TestOperatorMinusEquals_char_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_char_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_14(minus_equals.copy_from(), load.copy_from()) });
@@ -781,9 +781,7 @@ impl TestOperatorMinusEquals_signed_char_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_base_signed_char_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_15(minus_equals.copy_from(), load.copy_from()) });
@@ -813,9 +811,7 @@ impl TestOperatorMinusEquals_unsigned_char_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_base_unsigned_char_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_16(minus_equals.copy_from(), load.copy_from()) });
@@ -845,7 +841,7 @@ impl TestOperatorMinusEquals_short_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_short_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_17(minus_equals.copy_from(), load.copy_from()) });
@@ -875,9 +871,7 @@ impl TestOperatorMinusEquals_unsigned_short_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_base_unsigned_short_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_18(minus_equals.copy_from(), load.copy_from()) });
@@ -907,7 +901,7 @@ impl TestOperatorMinusEquals_int_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_int_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_19(minus_equals.copy_from(), load.copy_from()) });
@@ -937,9 +931,7 @@ impl TestOperatorMinusEquals_unsigned_int_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_base_unsigned_int_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_20(minus_equals.copy_from(), load.copy_from()) });
@@ -969,7 +961,7 @@ impl TestOperatorMinusEquals_long_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_long_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_21(minus_equals.copy_from(), load.copy_from()) });
@@ -999,9 +991,7 @@ impl TestOperatorMinusEquals_unsigned_long_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_base_unsigned_long_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_22(minus_equals.copy_from(), load.copy_from()) });
@@ -1031,7 +1021,7 @@ impl TestOperatorMinusEquals_long_long_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_long_long_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_23(minus_equals.copy_from(), load.copy_from()) });
@@ -1061,9 +1051,7 @@ impl TestOperatorMinusEquals_unsigned_long_long_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_base_unsigned_long_long_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_24(minus_equals.copy_from(), load.copy_from()) });
@@ -1093,7 +1081,7 @@ impl TestOperatorMinusEquals_wchar_t_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_wchar_t_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_25(minus_equals.copy_from(), load.copy_from()) });
@@ -1123,7 +1111,7 @@ impl TestOperatorMinusEquals_char8_t_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_char8_t_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_26(minus_equals.copy_from(), load.copy_from()) });
@@ -1153,7 +1141,7 @@ impl TestOperatorMinusEquals_char16_t_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_char16_t_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_27(minus_equals.copy_from(), load.copy_from()) });
@@ -1183,7 +1171,7 @@ impl TestOperatorMinusEquals_char32_t_ {
             let mut load: FnPtr<fn(*const ()) -> ()> =
                 FnPtr::<fn(*const ()) -> ()>::new(|x: *const ()| -> () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_char32_t_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_28(minus_equals.copy_from(), load.copy_from()) });
@@ -1226,7 +1214,7 @@ impl TestOperatorMinusEquals_int_ptr_ {
             let mut load: FnPtr<fn(*const ()) -> *mut ()> =
                 FnPtr::<fn(*const ()) -> *mut ()>::new(|x: *const ()| -> *mut () {
                     unsafe {
-                        return (unsafe { ((*x) as std___atomic_ref_base_int_ptr_).load(None) });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_31(minus_equals.copy_from(), load.copy_from()) });
@@ -1269,9 +1257,7 @@ impl TestOperatorMinusEquals_const_int_ptr_ {
             let mut load: FnPtr<fn(*const ()) -> *const ()> =
                 FnPtr::<fn(*const ()) -> *const ()>::new(|x: *const ()| -> *const () {
                     unsafe {
-                        return (unsafe {
-                            ((*x) as std___atomic_ref_base_const_int_ptr_).load(None)
-                        });
+                        return unimplemented!();
                     }
                 });
             (unsafe { test_seq_cst_32(minus_equals.copy_from(), load.copy_from()) });

@@ -21,8 +21,29 @@ pub const E2_red: E2 = 0;
 pub unsafe fn test_1() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_char_::max() });
-    let mut dig: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_2));
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {}
+    return true;
+}
+pub unsafe fn test_2() -> () {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -42,8 +63,29 @@ pub unsafe fn test_1() -> () {
 pub unsafe fn test_3() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_short_::max() });
-    let mut dig: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_4));
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {}
+    return true;
+}
+pub unsafe fn test_4() -> () {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -63,8 +105,8 @@ pub unsafe fn test_3() -> () {
 pub unsafe fn test_5() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_int_::max() });
-    let mut dig: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_6));
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -81,53 +123,11 @@ pub unsafe fn test_5() -> () {
     {}
     return true;
 }
-pub unsafe fn test_7() -> () {
+pub unsafe fn test_6() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_long_::max() });
-    let mut dig: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_8));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {}
-    return true;
-}
-pub unsafe fn test_9() -> () {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_long_long_::max() });
-    let mut dig: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_10));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {}
-    return true;
-}
-pub unsafe fn test_11() -> () {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned___int128_::max() });
-    let mut dig: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_12));
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -209,18 +209,18 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "test<std::uintptr_t>()");;
     const _: () = assert!(true, "test<std::size_t>()");;
     (unsafe { test_1() });
+    (unsafe { test_2() });
     (unsafe { test_3() });
+    (unsafe { test_4() });
     (unsafe { test_5() });
-    (unsafe { test_7() });
-    (unsafe { test_9() });
-    (unsafe { test_11() });
+    (unsafe { test_6() });
     (unsafe { test_1() });
+    (unsafe { test_2() });
     (unsafe { test_3() });
-    (unsafe { test_5() });
-    (unsafe { test_7() });
-    (unsafe { test_7() });
-    (unsafe { test_7() });
-    (unsafe { test_7() });
+    (unsafe { test_4() });
+    (unsafe { test_4() });
+    (unsafe { test_4() });
+    (unsafe { test_4() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

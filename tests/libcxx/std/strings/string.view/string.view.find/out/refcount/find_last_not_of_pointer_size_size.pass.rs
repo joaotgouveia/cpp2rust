@@ -32,11 +32,11 @@ impl constexpr_char_traits_char_ {
 pub fn test_0(s: Ptr<()>, mut str: Ptr<()>, mut pos: (), mut n: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_1.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         unimplemented!();
     }
 }
-pub fn test0_2() {
+pub fn test0_1() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
@@ -44,7 +44,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b""),
             0_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -54,7 +54,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"irkhs"),
             0_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -64,7 +64,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"kante"),
             0_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -74,7 +74,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"oknlr"),
             0_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -84,7 +84,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"pcdro"),
             0_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -94,7 +94,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"bnrpe"),
             0_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -104,7 +104,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"jtdaefblso"),
             0_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -114,7 +114,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"oselktgbca"),
             0_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -124,7 +124,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"eqgaplhckj"),
             0_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -134,7 +134,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"bjahtcmnlp"),
             0_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -144,7 +144,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"hjlcmgpket"),
             0_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -154,7 +154,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"htaobedqikfplcgjsmrn"),
             0_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -164,7 +164,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"hpqiarojkcdlsgnmfetb"),
             0_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -174,7 +174,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"dfkaprhjloqetcsimnbg"),
             0_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -184,7 +184,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"ihqrfebgadntlpmjksoc"),
             0_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -194,7 +194,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"ngtjfcalbseiqrphmkdo"),
             0_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -204,7 +204,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b""),
             1_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -214,7 +214,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"lbtqd"),
             1_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -224,7 +224,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"tboim"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -234,7 +234,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"slcer"),
             1_(),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -244,7 +244,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"cbjfs"),
             1_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -254,7 +254,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"aqibs"),
             1_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -264,7 +264,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"gtfblmqinc"),
             1_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -274,7 +274,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"mkqpbtdalg"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -284,7 +284,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"kphatlimcd"),
             1_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -294,7 +294,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"pblasqogic"),
             1_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -304,7 +304,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"arosdhcfme"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -314,7 +314,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"blkhjeogicatqfnpdmsr"),
             1_(),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -324,7 +324,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"bmhineprjcoadgstflqk"),
             1_(),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -334,7 +334,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"djkqcmetslnghpbarfoi"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -344,7 +344,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"lgokshjtpbemarcdqnfi"),
             1_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -354,7 +354,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"bqjhtkfepimcnsgrlado"),
             1_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -404,7 +404,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"sgkec"),
             0_(),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -454,7 +454,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"dabckmepqj"),
             0_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -504,7 +504,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"aenmqplidhkofrjbctsg"),
             0_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -514,7 +514,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"osjmbtcadhiklegrpqnf"),
             0_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -654,7 +654,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"joflqbdkhtegimscpanr"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -664,7 +664,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"adpmcohetfbsrjinlqkg"),
             1_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -674,7 +674,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"iacldqjpfnogbsrhmetk"),
             1_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -824,7 +824,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"ljqncehgmfktroapidbs"),
             2_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -834,7 +834,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"rtcfodilamkbenjghqps"),
             2_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -994,7 +994,7 @@ pub fn test0_2() {
             Ptr::<()>::from_string_literal(b"dmasojntqleribkgfchp"),
             4_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1038,7 +1038,7 @@ pub fn test0_2() {
         )
     });
 }
-pub fn test1_3() {
+pub fn test1_2() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
@@ -1156,7 +1156,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"mongjratcskbhqiepfdl"),
             5_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1306,7 +1306,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"tpdshainjkbfoemlrgcq"),
             6_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1316,7 +1316,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"oldpfgeakrnitscbjmqh"),
             6_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1406,7 +1406,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"qcpjibosfl"),
             0_(),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1416,7 +1416,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"lrhmefnjcq"),
             0_(),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1466,7 +1466,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"cpmajdqnolikhgsbretf"),
             0_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1476,7 +1476,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"jcflkntmgiqrphdosaeb"),
             0_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1586,7 +1586,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"sqcflrgtim"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1616,7 +1616,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"oakgtnldpsefihqmjcbr"),
             1_(),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1626,7 +1626,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"gbnaelosidmcjqktfhpr"),
             1_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1636,7 +1636,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"akbripjhlosndcmqgfet"),
             1_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1786,7 +1786,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"qahoegcmplkfsjbdnitr"),
             5_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1796,7 +1796,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"dpteiajrqmsognhlfbkc"),
             5_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -1956,7 +1956,7 @@ pub fn test1_3() {
             Ptr::<()>::from_string_literal(b"nmotklspigjrdhcfaebq"),
             9_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2040,7 +2040,7 @@ pub fn test1_3() {
         )
     });
 }
-pub fn test2_4() {
+pub fn test2_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
@@ -2118,7 +2118,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"ldobhmqcafnjtkeisgrp"),
             10_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2268,7 +2268,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"egpscmahijlfnkrodqtb"),
             11_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2278,7 +2278,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"kmqbfepjthgilscrndoa"),
             11_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2428,7 +2428,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"prabcjfqnoeskilmtgdh"),
             0_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2438,7 +2438,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"dtrgmchilkasqoebfpjn"),
             0_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2588,7 +2588,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"lsimqfnjarbopedkhcgt"),
             1_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2598,7 +2598,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"abedmfjlghniorcqptks"),
             1_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2748,7 +2748,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"oihcetflbjagdsrkmqpn"),
             10_(),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2758,7 +2758,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"adtclebmnpjsrqfkigoh"),
             10_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -2918,7 +2918,7 @@ pub fn test2_4() {
             Ptr::<()>::from_string_literal(b"fjhdsctkqeiolagrnmbp"),
             19_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3042,7 +3042,7 @@ pub fn test2_4() {
         )
     });
 }
-pub fn test3_5() {
+pub fn test3_4() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
@@ -3080,7 +3080,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"dlbrteoisgphmkncajfq"),
             20_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -3240,7 +3240,7 @@ pub fn test3_5() {
             Ptr::<()>::from_string_literal(b"qprlsfojamgndekthibc"),
             21_(),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
 }
@@ -3265,10 +3265,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        ({ test0_2() });
-        ({ test1_3() });
-        ({ test2_4() });
-        ({ test3_5() });
+        ({ test0_1() });
+        ({ test1_2() });
+        ({ test2_3() });
+        ({ test3_4() });
     }
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));

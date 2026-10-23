@@ -5312,14 +5312,10 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub unsafe fn operator_cmp_78(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if ((lhs.value) == (unsafe { std_numeric_limits_int_::min() }))
-        || ((rhs.value) == (unsafe { std_numeric_limits_int_::min() }))
-    {
+    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
         return unimplemented!();
     }
-    if ((lhs.value) == (unsafe { std_numeric_limits_int_::max() }))
-        || ((rhs.value) == (unsafe { std_numeric_limits_int_::max() }))
-    {
+    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
         return unimplemented!();
     }
     return unimplemented!();

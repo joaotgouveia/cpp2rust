@@ -51,8 +51,7 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
         unimplemented!();
     }
     pub unsafe fn max_size(&self) -> () {
-        return (unsafe { std_numeric_limits_unsigned_char_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 impl sized_allocator_bool__unsigned_short__short_ {
@@ -96,8 +95,7 @@ impl sized_allocator_unsigned_short__unsigned_short__short_ {
         unimplemented!();
     }
     pub unsafe fn max_size(&self) -> () {
-        return (unsafe { std_numeric_limits_unsigned_short_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 impl sized_allocator_bool__unsigned_int__int_ {
@@ -139,8 +137,7 @@ impl sized_allocator_unsigned_int__unsigned_int__int_ {
         unimplemented!();
     }
     pub unsafe fn max_size(&self) -> () {
-        return (unsafe { std_numeric_limits_unsigned_int_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 impl sized_allocator_bool__unsigned_long__long_ {
@@ -183,8 +180,7 @@ impl sized_allocator_unsigned_long__unsigned_long__long_ {
         unimplemented!();
     }
     pub unsafe fn max_size(&self) -> () {
-        return ((unsafe { std_numeric_limits_unsigned_long_::max() }) as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub unsafe fn tests_0() -> () {

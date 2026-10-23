@@ -274,14 +274,7 @@ impl MoveableImpl for Ptr<Moveable> {
                 && ({ (*self).with(|__s| __s.double_) } < { x.with(|__s| __s.double_) }));
     }
     fn hash(&self) -> () {
-        return ({
-            (unimplemented!() as std___hash_impl_int__void_)((*self).with(|__s| __s.int_))
-        })
-        .wrapping_add(
-            ({
-                (unimplemented!() as std___hash_impl_double__void_)((*self).with(|__s| __s.double_))
-            }),
-        );
+        return (unimplemented!()).wrapping_add(unimplemented!());
     }
     fn get(&self) -> () {
         return (*self).with(|__s| __s.int_);

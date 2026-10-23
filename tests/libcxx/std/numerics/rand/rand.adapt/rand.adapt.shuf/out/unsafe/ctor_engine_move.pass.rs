@@ -28,7 +28,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut e0: () = e.clone();
         let mut a: () = unimplemented!();
         let mut k: () = 0_();
-        'loop_: while ((k) <= (*std::cell::LazyCell::force_mut(&mut *&raw mut table_size_0))) {
+        'loop_: while ((k) <= (unimplemented!())) {
             &(unimplemented!());
             k.prefix_inc();
         }

@@ -15,7 +15,7 @@ pub unsafe fn test_construction_0() {
     unimplemented!();
     let mut expected_size: () = 1_();
     let mut r: () = 0_();
-    'loop_: while ((r) < (unsafe { std_extents_int_::rank() })) {
+    'loop_: while ((r) < (unimplemented!())) {
         expected_size *= unimplemented!();
         r.postfix_inc();
     }

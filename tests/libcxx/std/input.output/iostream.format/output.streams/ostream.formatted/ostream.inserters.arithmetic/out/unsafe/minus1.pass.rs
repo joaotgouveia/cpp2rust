@@ -197,8 +197,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_octal_4(c"1777777777777777777777".as_ptr()) });
     (unsafe { test_octal_5(c"1777777777777777777777".as_ptr()) });
     (unsafe { test_octal_4(c"1777777777777777777777".as_ptr()) });
-    let long_is_64: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_25));
-    let long_long_is_64: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_25));
+    let long_is_64: () = unimplemented!();
+    let long_long_is_64: () = unimplemented!();
     {
         (unsafe { test_octal_4(c"1777777777777777777777".as_ptr()) });
         (unsafe { test_octal_5(c"1777777777777777777777".as_ptr()) });

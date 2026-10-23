@@ -916,99 +916,68 @@ pub struct RangeT_int_ {}
 const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
-pub static mut SFINAEs_away_8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_11: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_12: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_13: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_14: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_15: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_16: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_17: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_18: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_19: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_20: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_21: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_22: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_23: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_24: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_25: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_26: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_27: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_28: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_29: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_30: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_31: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_32: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_33: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_34: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_35: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_36: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_37: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_38: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
-pub static mut SFINAEs_away_39: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9))
-});
+pub static mut SFINAEs_away_8: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_9: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_10: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_11: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_12: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_13: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_14: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_15: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_16: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_17: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_18: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_19: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_20: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_21: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_22: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_23: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_24: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_25: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_26: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_27: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_28: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_29: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_30: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_31: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_32: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_33: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_34: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_35: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_36: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_37: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_38: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Empty {}
@@ -1062,21 +1031,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_40: std::cell::LazyCell<()> =
+pub static mut destructed_value_39: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_41: std::cell::LazyCell<()> =
+pub static mut moved_value_40: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_42(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_41(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_43(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_42(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_42(_x, _y)
+        operator_eq_41(_x, _y)
     });
 }
 #[repr(C)]
@@ -1140,8 +1109,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -1162,7 +1131,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_42(
+            operator_eq_41(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -1224,8 +1193,8 @@ impl test_allocator_long_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1288,7 +1257,7 @@ impl test_allocator_short_ {
         this
     }
 }
-pub unsafe fn operator_eq_44(
+pub unsafe fn operator_eq_43(
     x: *const test_allocator_short_,
     y: *const test_allocator_short_,
 ) -> () {
@@ -1338,8 +1307,8 @@ impl test_allocator_short_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1399,7 +1368,7 @@ impl test_allocator_short_ {
 impl std::cmp::PartialEq for test_allocator_short_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_44(
+            operator_eq_43(
                 self as *const test_allocator_short_,
                 other as *const test_allocator_short_,
             )
@@ -1445,8 +1414,8 @@ impl test_allocator_int_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
     }
 }
 impl Default for test_allocator_int_ {
@@ -1474,7 +1443,7 @@ impl test_allocator_short_ptr_ {
         this
     }
 }
-pub unsafe fn operator_eq_45(
+pub unsafe fn operator_eq_44(
     x: *const test_allocator_short_ptr_,
     y: *const test_allocator_short_ptr_,
 ) -> () {
@@ -1507,8 +1476,8 @@ impl test_allocator_short_ptr_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_40));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_39));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1552,7 +1521,7 @@ impl test_allocator_short_ptr_ {
 impl std::cmp::PartialEq for test_allocator_short_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_45(
+            operator_eq_44(
                 self as *const test_allocator_short_ptr_,
                 other as *const test_allocator_short_ptr_,
             )
@@ -1994,23 +1963,24 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct OutputIter_46 {}
-impl OutputIter_46 {
-    pub unsafe fn operator_deref(&self) -> *const OutputIter_46 {
-        return &(*(self as *const OutputIter_46));
+pub struct OutputIter_45 {}
+impl OutputIter_45 {
+    pub unsafe fn operator_deref(&self) -> *const OutputIter_45 {
+        return &(*(self as *const OutputIter_45));
     }
-    pub unsafe fn operator_inc_2(&mut self) -> *const OutputIter_46 {
-        return &(*(self as *mut OutputIter_46));
+    pub unsafe fn operator_inc_2(&mut self) -> *const OutputIter_45 {
+        return &(*(self as *mut OutputIter_45));
     }
-    pub unsafe fn operator_post_inc_3(&self, mut _a0: ()) -> OutputIter_46 {
-        return (*(self as *const OutputIter_46));
+    pub unsafe fn operator_post_inc_3(&self, mut _a0: ()) -> OutputIter_45 {
+        return (*(self as *const OutputIter_45));
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct BadAlloc_47 {}
+pub struct BadAlloc_46 {}
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_8);
+    std::cell::LazyCell::force(&*&raw const SFINAEs_away_9);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_10);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_11);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_12);
@@ -2040,7 +2010,6 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_36);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_37);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_38);
-    std::cell::LazyCell::force(&*&raw const SFINAEs_away_39);
-    std::cell::LazyCell::force(&*&raw const destructed_value_40);
-    std::cell::LazyCell::force(&*&raw const moved_value_41);
+    std::cell::LazyCell::force(&*&raw const destructed_value_39);
+    std::cell::LazyCell::force(&*&raw const moved_value_40);
 }

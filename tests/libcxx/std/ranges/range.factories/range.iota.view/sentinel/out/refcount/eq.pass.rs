@@ -279,7 +279,7 @@ pub const CtorKind_ValueCtor: CtorKind = 1;
 pub fn test_20() -> () {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sent: Value<std_ranges_iota_view_int__IntComparableWith_int_____sentinel> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -287,7 +287,7 @@ pub fn test_20() -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sent: Value<std_ranges_iota_view_int__IntComparableWith_int_____sentinel> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -295,7 +295,7 @@ pub fn test_20() -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sent: Value<std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt_____sentinel> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -303,7 +303,7 @@ pub fn test_20() -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sent: Value<std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt_____sentinel> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();

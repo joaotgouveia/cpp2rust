@@ -164,7 +164,7 @@ pub fn test_string_12() {
     ({
         test_9(
             unimplemented!(),
-            npos_13.with(|rc| *rc.borrow()),
+            unimplemented!(),
             ('a' as ()),
             unimplemented!(),
         )
@@ -179,7 +179,7 @@ pub fn test_string_12() {
     ({ test_9(unimplemented!(), 32_(), ('a' as ()), unimplemented!()) });
     ({ test_9(unimplemented!(), 33_(), ('a' as ()), unimplemented!()) });
 }
-pub fn test_string_14() {
+pub fn test_string_13() {
     ({ test_10(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
     ({ test_10(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
     ({ test_10(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
@@ -195,7 +195,7 @@ pub fn test_string_14() {
     ({
         test_10(
             unimplemented!(),
-            npos_15.with(|rc| *rc.borrow()),
+            unimplemented!(),
             ('a' as ()),
             unimplemented!(),
         )
@@ -210,7 +210,7 @@ pub fn test_string_14() {
     ({ test_10(unimplemented!(), 32_(), ('a' as ()), unimplemented!()) });
     ({ test_10(unimplemented!(), 33_(), ('a' as ()), unimplemented!()) });
 }
-pub fn test_string_16() {
+pub fn test_string_14() {
     ({ test_11(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
     ({ test_11(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
     ({ test_11(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
@@ -226,7 +226,7 @@ pub fn test_string_16() {
     ({
         test_11(
             unimplemented!(),
-            npos_17.with(|rc| *rc.borrow()),
+            unimplemented!(),
             ('a' as ()),
             unimplemented!(),
         )
@@ -241,10 +241,10 @@ pub fn test_string_16() {
     ({ test_11(unimplemented!(), 32_(), ('a' as ()), unimplemented!()) });
     ({ test_11(unimplemented!(), 33_(), ('a' as ()), unimplemented!()) });
 }
-pub fn test_18() -> () {
+pub fn test_15() -> () {
     ({ test_string_12() });
+    ({ test_string_13() });
     ({ test_string_14() });
-    ({ test_string_16() });
     return true;
 }
 pub fn main() {
@@ -267,7 +267,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_18() });
+    ({ test_15() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

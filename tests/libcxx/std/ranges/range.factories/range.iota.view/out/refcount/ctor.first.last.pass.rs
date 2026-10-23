@@ -293,7 +293,7 @@ pub fn test_26() -> () {
     {
         let commonView: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let io: Value<()> = Rc::new(RefCell::new(std_ranges_iota_view_SomeInt__SomeInt_::new_1(
-            { ({ (*commonView.borrow()).begin() }) },
+            { unimplemented!() },
             { unimplemented!() },
         )));
         unimplemented!();
@@ -302,7 +302,7 @@ pub fn test_26() -> () {
         let unreachableSent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let io: Value<()> = Rc::new(RefCell::new(
             std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1(
-                { ({ (*unreachableSent.borrow()).begin() }) },
+                { unimplemented!() },
                 { unimplemented!() },
             ),
         ));
@@ -312,7 +312,7 @@ pub fn test_26() -> () {
         let differentTypes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let io: Value<()> = Rc::new(RefCell::new(
             std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt__::new_1(
-                { ({ (*differentTypes.borrow()).begin() }) },
+                { unimplemented!() },
                 { unimplemented!() },
             ),
         ));
@@ -321,10 +321,9 @@ pub fn test_26() -> () {
     {
         let iv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iv2: Value<()> = Rc::new(RefCell::new(
-            std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1(
-                { ({ (*iv1.borrow()).begin() }) },
-                { unimplemented!() },
-            ),
+            std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ unimplemented!() }, {
+                unimplemented!()
+            }),
         ));
     }
     return true;

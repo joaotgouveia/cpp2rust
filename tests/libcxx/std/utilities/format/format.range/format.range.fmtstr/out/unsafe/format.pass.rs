@@ -308,9 +308,7 @@ pub unsafe fn test_format_13(mut expected: (), mut arg: test_range_format_string
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { & mut __tmp_0 } , )
         })
     });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_string__test_range_format_string_std_string___char_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_format_15(
@@ -326,9 +324,7 @@ pub unsafe fn test_format_15(
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { & mut __tmp_1 } , )
         })
     });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_string___char_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_format_17(mut expected: (), mut arg: test_range_format_string_std_wstring_) {
@@ -341,9 +337,7 @@ pub unsafe fn test_format_17(mut expected: (), mut arg: test_range_format_string
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_2 } , )
         })
     });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_string__test_range_format_string_std_wstring___wchar_t_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_format_19(
@@ -359,9 +353,7 @@ pub unsafe fn test_format_19(
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { & mut __tmp_3 } , )
         })
     });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_wstring___wchar_t_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_fmt_21() {

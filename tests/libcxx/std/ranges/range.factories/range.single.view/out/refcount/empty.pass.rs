@@ -92,7 +92,7 @@ impl Default for BigType {
 }
 pub fn test_empty_0(mut value: ()) {
     {
-        let mut result: () = ({ std_ranges_single_view_int_::empty() });
+        let mut result: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "noexcept(SingleView::empty())");;
     }
@@ -111,7 +111,7 @@ pub fn test_empty_0(mut value: ()) {
 }
 pub fn test_empty_2(mut value: Empty) {
     {
-        let mut result: () = ({ std_ranges_single_view_Empty_::empty() });
+        let mut result: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "noexcept(SingleView::empty())");;
     }
@@ -130,7 +130,7 @@ pub fn test_empty_2(mut value: Empty) {
 }
 pub fn test_empty_3(mut value: BigType) {
     {
-        let mut result: () = ({ std_ranges_single_view_BigType_::empty() });
+        let mut result: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "noexcept(SingleView::empty())");;
     }

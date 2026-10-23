@@ -272,36 +272,28 @@ pub unsafe fn test_parse_9(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_string__test_range_format_string_std_string___char_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_10(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_string___char_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_11(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_string__test_range_format_string_std_wstring___wchar_t_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_12(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_wstring___wchar_t_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_formatters_13(mut fmt: (), mut offset: ()) {

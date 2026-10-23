@@ -36,8 +36,8 @@ pub fn constexpr_test_5() -> () {
 pub fn test_6() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut maxV: () = ({ std_numeric_limits_float_::max() });
-    let mut inf: () = ({ std_numeric_limits_float_::infinity() });
+    let mut maxV: () = unimplemented!();
+    let mut inf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -55,8 +55,8 @@ pub fn test_6() {
 pub fn test_7() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut maxV: () = ({ std_numeric_limits_double_::max() });
-    let mut inf: () = ({ std_numeric_limits_double_::infinity() });
+    let mut maxV: () = unimplemented!();
+    let mut inf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -74,8 +74,8 @@ pub fn test_7() {
 pub fn test_8() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut maxV: () = ({ std_numeric_limits_long_double_::max() });
-    let mut inf: () = ({ std_numeric_limits_long_double_::infinity() });
+    let mut maxV: () = unimplemented!();
+    let mut inf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

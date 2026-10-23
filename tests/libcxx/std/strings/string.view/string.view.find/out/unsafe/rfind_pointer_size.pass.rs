@@ -29,42 +29,32 @@ impl constexpr_char_traits_char_ {
 pub unsafe fn test_0(s: *const (), mut str: *const (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if ((x) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1))) {
+    if ((x) != (unimplemented!())) {
         let mut n: () = unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_2(s: *const (), mut str: *const (), mut x: ()) {
+pub unsafe fn test_1(s: *const (), mut str: *const (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if ((x) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1))) {
+    if ((x) != (unimplemented!())) {
         let mut pos: () = unimplemented!();
         let mut n: () = unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test0_3() {
+pub unsafe fn test0_2() {
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(&mut _s, c"".as_ptr(), 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcde".as_ptr(),
-            0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcde".as_ptr(), 0_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -72,7 +62,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -81,21 +71,11 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcde".as_ptr(),
-            1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcde".as_ptr(), 1_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -103,7 +83,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -116,12 +96,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -129,7 +104,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -142,12 +117,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -155,7 +125,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -168,12 +138,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            2_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcdeabcde".as_ptr(), 2_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -181,7 +146,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             2_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -194,12 +159,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            4_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcdeabcde".as_ptr(), 4_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -207,7 +167,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             4_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -220,12 +180,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            5_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcdeabcde".as_ptr(), 5_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -233,7 +188,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             5_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -246,12 +201,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            6_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"abcdeabcde".as_ptr(), 6_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -259,7 +209,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             6_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -280,7 +230,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -301,7 +251,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -322,7 +272,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             5_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -343,7 +293,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             9_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -364,7 +314,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             10_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -385,7 +335,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"abcdeabcdeabcdeabcde".as_ptr(),
             11_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -485,94 +435,70 @@ pub unsafe fn test0_3() {
         test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 21_(), 0_())
     });
 }
-pub unsafe fn test1_4() {
+pub unsafe fn test1_3() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"".as_ptr(), 0_())
+        test_1(&mut _s, c"".as_ptr(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"abcde".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"abcde".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"abcdeabcde".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"".as_ptr(), 5_())
+        test_1(&mut _s, c"".as_ptr(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"abcde".as_ptr(), 0_())
+        test_1(&mut _s, c"abcde".as_ptr(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"abcdeabcde".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"".as_ptr(), 10_())
+        test_1(&mut _s, c"".as_ptr(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"abcde".as_ptr(), 5_())
+        test_1(&mut _s, c"abcde".as_ptr(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"abcdeabcde".as_ptr(), 0_())
+        test_1(&mut _s, c"abcdeabcde".as_ptr(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"".as_ptr(), 20_())
+        test_1(&mut _s, c"".as_ptr(), 20_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"abcde".as_ptr(), 15_())
+        test_1(&mut _s, c"abcde".as_ptr(), 15_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"abcdeabcde".as_ptr(), 10_())
+        test_1(&mut _s, c"abcdeabcde".as_ptr(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_())
+        test_1(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_())
     });
 }
 pub fn main() {
@@ -592,8 +518,8 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        (unsafe { test0_3() });
-        (unsafe { test1_4() });
+        (unsafe { test0_2() });
+        (unsafe { test1_3() });
     }
     {
         let sv1: () = unimplemented!();

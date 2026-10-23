@@ -89,9 +89,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_3(o, Ptr::<()>::from_string_literal(b"037777777777")) });
     ({ test_3(d, Ptr::<()>::from_string_literal(b"4294967295")) });
     ({ test_3(x, Ptr::<()>::from_string_literal(b"0xffffffff")) });
-    let mut long_is_32: () = value_8.with(|rc| *rc.borrow());
-    let mut long_is_64: () = value_9.with(|rc| *rc.borrow());
-    let mut long_long_is_64: () = value_9.with(|rc| *rc.borrow());
+    let mut long_is_32: () = unimplemented!();
+    let mut long_is_64: () = unimplemented!();
+    let mut long_long_is_64: () = unimplemented!();
     {
         {
             ({

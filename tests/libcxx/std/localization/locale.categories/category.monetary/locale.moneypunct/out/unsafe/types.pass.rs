@@ -39,8 +39,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "(std::is_same<std::moneypunct<char>::string_type, std::string>::value)"
     );;
-    (unsafe { test_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut intl_1))) });
-    (unsafe { test_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut intl_2))) });
+    (unsafe { test_0(&unimplemented!()) });
+    (unsafe { test_0(&unimplemented!()) });
     const _: () = assert!(
         true,
         "(std::is_base_of<std::locale::facet, std::moneypunct<wchar_t> >::value)"
@@ -57,8 +57,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "(std::is_same<std::moneypunct<wchar_t>::string_type, std::wstring>::value)"
     );;
-    (unsafe { test_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut intl_3))) });
-    (unsafe { test_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut intl_4))) });
+    (unsafe { test_0(&unimplemented!()) });
+    (unsafe { test_0(&unimplemented!()) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

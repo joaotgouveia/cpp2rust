@@ -211,9 +211,7 @@ pub fn test_parse_9(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_string__test_range_format_string_std_string___char_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_10(fmt: (), mut offset: ()) {
@@ -221,9 +219,7 @@ pub fn test_parse_10(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_string___char_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_11(fmt: (), mut offset: ()) {
@@ -231,9 +227,7 @@ pub fn test_parse_11(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_string__test_range_format_string_std_wstring___wchar_t_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_12(fmt: (), mut offset: ()) {
@@ -241,9 +235,7 @@ pub fn test_parse_12(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_wstring___wchar_t_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_formatters_13(fmt: (), mut offset: ()) {

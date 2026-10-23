@@ -17,14 +17,14 @@ impl constexpr_char_traits_char_ {
 pub unsafe fn test_0(s: *const (), mut c: (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if ((x) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1))) {
+    if ((x) != (unimplemented!())) {
         unimplemented!();
     }
 }
-pub unsafe fn test_2(s: *const (), mut c: (), mut x: ()) {
+pub unsafe fn test_1(s: *const (), mut c: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if ((x) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1))) {
+    if ((x) != (unimplemented!())) {
         unimplemented!();
     }
 }
@@ -47,21 +47,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(
-                &mut _s,
-                ('q' as ()),
-                0_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_0(&mut _s, ('q' as ()), 0_(), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(
-                &mut _s,
-                ('q' as ()),
-                1_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_0(&mut _s, ('q' as ()), 1_(), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
@@ -81,21 +71,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(
-                &mut _s,
-                ('q' as ()),
-                5_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_0(&mut _s, ('q' as ()), 5_(), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(
-                &mut _s,
-                ('q' as ()),
-                6_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_0(&mut _s, ('q' as ()), 6_(), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
@@ -115,21 +95,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(
-                &mut _s,
-                ('q' as ()),
-                10_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_0(&mut _s, ('q' as ()), 10_(), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(
-                &mut _s,
-                ('q' as ()),
-                11_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_0(&mut _s, ('q' as ()), 11_(), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
@@ -149,57 +119,35 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(
-                &mut _s,
-                ('q' as ()),
-                20_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_0(&mut _s, ('q' as ()), 20_(), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(
-                &mut _s,
-                ('q' as ()),
-                21_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_0(&mut _s, ('q' as ()), 21_(), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_2(
-                &mut _s,
-                ('q' as ()),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_1(&mut _s, ('q' as ()), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_2(
-                &mut _s,
-                ('q' as ()),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_1(&mut _s, ('q' as ()), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_2(
-                &mut _s,
-                ('q' as ()),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-            )
+            test_1(&mut _s, ('q' as ()), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_2(&mut _s, ('q' as ()), 0_())
+            test_1(&mut _s, ('q' as ()), 0_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_2(&mut _s, ('q' as ()), 0_())
+            test_1(&mut _s, ('q' as ()), 0_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_2(&mut _s, ('q' as ()), 0_())
+            test_1(&mut _s, ('q' as ()), 0_())
         });
     }
     {

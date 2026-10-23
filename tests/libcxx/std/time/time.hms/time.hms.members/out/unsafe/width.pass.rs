@@ -7,52 +7,52 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn check_width_0() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_1)) == (0_()));
+    return ((unimplemented!()) == (0_()));
+}
+pub unsafe fn check_width_1() -> () {
+    return ((unimplemented!()) == (0_()));
 }
 pub unsafe fn check_width_2() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_3)) == (0_()));
+    return ((unimplemented!()) == (0_()));
+}
+pub unsafe fn check_width_3() -> () {
+    return ((unimplemented!()) == (3_()));
 }
 pub unsafe fn check_width_4() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_5)) == (0_()));
+    return ((unimplemented!()) == (6_()));
+}
+pub unsafe fn check_width_5() -> () {
+    return ((unimplemented!()) == (9_()));
 }
 pub unsafe fn check_width_6() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_7)) == (3_()));
+    return ((unimplemented!()) == (1_()));
+}
+pub unsafe fn check_width_7() -> () {
+    return ((unimplemented!()) == (6_()));
 }
 pub unsafe fn check_width_8() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_9)) == (6_()));
+    return ((unimplemented!()) == (2_()));
+}
+pub unsafe fn check_width_9() -> () {
+    return ((unimplemented!()) == (1_()));
 }
 pub unsafe fn check_width_10() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_11)) == (9_()));
+    return ((unimplemented!()) == (6_()));
+}
+pub unsafe fn check_width_11() -> () {
+    return ((unimplemented!()) == (6_()));
 }
 pub unsafe fn check_width_12() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_13)) == (1_()));
+    return ((unimplemented!()) == (3_()));
+}
+pub unsafe fn check_width_13() -> () {
+    return ((unimplemented!()) == (6_()));
 }
 pub unsafe fn check_width_14() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_15)) == (6_()));
+    return ((unimplemented!()) == (1_()));
 }
-pub unsafe fn check_width_16() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_17)) == (2_()));
-}
-pub unsafe fn check_width_18() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_19)) == (1_()));
-}
-pub unsafe fn check_width_20() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_21)) == (6_()));
-}
-pub unsafe fn check_width_22() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_23)) == (6_()));
-}
-pub unsafe fn check_width_24() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_25)) == (3_()));
-}
-pub unsafe fn check_width_26() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_27)) == (6_()));
-}
-pub unsafe fn check_width_28() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_29)) == (1_()));
-}
-pub unsafe fn check_width_30() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut fractional_width_31)) == (4_()));
+pub unsafe fn check_width_15() -> () {
+    return ((unimplemented!()) == (4_()));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

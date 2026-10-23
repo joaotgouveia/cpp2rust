@@ -206,9 +206,7 @@ pub fn make_thread_unsafe_shared_4() -> detail_thread_unsafe_shared_ptr_limited_
     );
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ptr.borrow_mut()).block = ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::allocate ( alloc .as_pointer()  , 1_()  , )
-    });
+    (*ptr.borrow_mut()).block = unimplemented!();
     ({
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
     });
@@ -393,9 +391,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl
         ({
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
         });
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_()  , )
-        });
+        unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_10_> {
         return (field_ptr!((*self).with(|__s| __s.block.clone()), content));

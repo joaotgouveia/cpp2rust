@@ -128,22 +128,22 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe { test_0(&value) });
         (unsafe {
             let mut _rhs: std___val_expr_std___slice_expr_const_std_valarray_int__ref__ =
-                value[(unimplemented!()) as usize];
+                unimplemented!();
             test_6(&mut _rhs)
         });
         (unsafe {
             let mut _rhs: std___val_expr_std___indirect_expr_const_std_valarray_int__ref__ =
-                value[(unimplemented!()) as usize];
+                unimplemented!();
             test_7(&mut _rhs)
         });
         (unsafe {
             let mut _rhs: std___val_expr_std___mask_expr_const_std_valarray_int__ref__ =
-                value[(mask) as usize];
+                unimplemented!();
             test_8(&mut _rhs)
         });
         (unsafe {
             let mut _rhs: std___val_expr_std___indirect_expr_const_std_valarray_int__ref__ =
-                value[(indirect) as usize];
+                unimplemented!();
             test_7(&mut _rhs)
         });
         (unsafe {

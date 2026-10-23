@@ -9,7 +9,7 @@ use std::rc::Rc;
 pub unsafe fn test_0() -> () {
     {
         let mut v: () = unimplemented!();
-        let mut iter: () = (unsafe { v.begin() });
+        let mut iter: () = unimplemented!();
         let val: *const () = &(*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
@@ -25,14 +25,14 @@ pub unsafe fn test_0() -> () {
     }
     {
         let mut v: () = unimplemented!();
-        let mut iter: () = (unsafe { v.begin() });
+        let mut iter: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "noexcept(*iter)");;
         const _: () = assert!(true, "std::same_as<decltype(*iter), const int&>");;
     }
     {
         let mut v: () = unimplemented!();
-        let mut iter: () = (unsafe { v.begin() });
+        let mut iter: () = unimplemented!();
         let val: *const () = &(*unimplemented!());
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
@@ -54,7 +54,7 @@ pub unsafe fn test_0() -> () {
             )
         });
         let __range1: *mut () = &mut __tmp_0;
-        'loop_: for val in IterRange::new((unsafe { (*__range1).begin() }), unimplemented!()) {
+        'loop_: for val in IterRange::new(unimplemented!(), unimplemented!()) {
             let val: *const () = &(*unimplemented!());
             unimplemented!();
         }

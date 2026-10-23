@@ -270,9 +270,7 @@ pub fn test_format_13(expected: (), arg: test_range_format_string_std_string_) {
             })
         }),
     ));
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_string__test_range_format_string_std_string___char_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_format_15(expected: (), arg: test_range_format_debug_string_std_string_) {
@@ -289,9 +287,7 @@ pub fn test_format_15(expected: (), arg: test_range_format_debug_string_std_stri
             })
         }),
     ));
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_string___char_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_format_17(expected: (), arg: test_range_format_string_std_wstring_) {
@@ -308,9 +304,7 @@ pub fn test_format_17(expected: (), arg: test_range_format_string_std_wstring_) 
             })
         }),
     ));
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_string__test_range_format_string_std_wstring___wchar_t_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_format_19(expected: (), arg: test_range_format_debug_string_std_wstring_) {
@@ -327,9 +321,7 @@ pub fn test_format_19(expected: (), arg: test_range_format_debug_string_std_wstr
             })
         }),
     ));
-    ({
-        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_wstring___wchar_t_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_fmt_21() {

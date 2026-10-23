@@ -206,23 +206,21 @@ pub fn test_1_3_14() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let nan: Value<()> = Rc::new(RefCell::new(({ std_numeric_limits_float_::quiet_NaN() })));
+        let nan: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let nan: Value<()> = Rc::new(RefCell::new(({ std_numeric_limits_double_::quiet_NaN() })));
+        let nan: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let nan: Value<()> = Rc::new(RefCell::new(
-            ({ std_numeric_limits_long_double_::quiet_NaN() }),
-        ));
+        let nan: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

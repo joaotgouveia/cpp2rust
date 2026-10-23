@@ -459,7 +459,7 @@ pub fn test_21() -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut imax: () = ({ std_numeric_limits_int_::max() });
+        let mut imax: () = unimplemented!();
         unimplemented!();
     }
     {

@@ -7,52 +7,52 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn check_width_0() -> () {
-    return (fractional_width_1.with(|rc| *rc.borrow()) == 0_());
+    return (unimplemented!() == 0_());
+}
+pub fn check_width_1() -> () {
+    return (unimplemented!() == 0_());
 }
 pub fn check_width_2() -> () {
-    return (fractional_width_3.with(|rc| *rc.borrow()) == 0_());
+    return (unimplemented!() == 0_());
+}
+pub fn check_width_3() -> () {
+    return (unimplemented!() == 3_());
 }
 pub fn check_width_4() -> () {
-    return (fractional_width_5.with(|rc| *rc.borrow()) == 0_());
+    return (unimplemented!() == 6_());
+}
+pub fn check_width_5() -> () {
+    return (unimplemented!() == 9_());
 }
 pub fn check_width_6() -> () {
-    return (fractional_width_7.with(|rc| *rc.borrow()) == 3_());
+    return (unimplemented!() == 1_());
+}
+pub fn check_width_7() -> () {
+    return (unimplemented!() == 6_());
 }
 pub fn check_width_8() -> () {
-    return (fractional_width_9.with(|rc| *rc.borrow()) == 6_());
+    return (unimplemented!() == 2_());
+}
+pub fn check_width_9() -> () {
+    return (unimplemented!() == 1_());
 }
 pub fn check_width_10() -> () {
-    return (fractional_width_11.with(|rc| *rc.borrow()) == 9_());
+    return (unimplemented!() == 6_());
+}
+pub fn check_width_11() -> () {
+    return (unimplemented!() == 6_());
 }
 pub fn check_width_12() -> () {
-    return (fractional_width_13.with(|rc| *rc.borrow()) == 1_());
+    return (unimplemented!() == 3_());
+}
+pub fn check_width_13() -> () {
+    return (unimplemented!() == 6_());
 }
 pub fn check_width_14() -> () {
-    return (fractional_width_15.with(|rc| *rc.borrow()) == 6_());
+    return (unimplemented!() == 1_());
 }
-pub fn check_width_16() -> () {
-    return (fractional_width_17.with(|rc| *rc.borrow()) == 2_());
-}
-pub fn check_width_18() -> () {
-    return (fractional_width_19.with(|rc| *rc.borrow()) == 1_());
-}
-pub fn check_width_20() -> () {
-    return (fractional_width_21.with(|rc| *rc.borrow()) == 6_());
-}
-pub fn check_width_22() -> () {
-    return (fractional_width_23.with(|rc| *rc.borrow()) == 6_());
-}
-pub fn check_width_24() -> () {
-    return (fractional_width_25.with(|rc| *rc.borrow()) == 3_());
-}
-pub fn check_width_26() -> () {
-    return (fractional_width_27.with(|rc| *rc.borrow()) == 6_());
-}
-pub fn check_width_28() -> () {
-    return (fractional_width_29.with(|rc| *rc.borrow()) == 1_());
-}
-pub fn check_width_30() -> () {
-    return (fractional_width_31.with(|rc| *rc.borrow()) == 4_());
+pub fn check_width_15() -> () {
+    return (unimplemented!() == 4_());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

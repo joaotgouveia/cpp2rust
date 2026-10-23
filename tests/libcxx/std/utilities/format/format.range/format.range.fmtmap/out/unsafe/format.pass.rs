@@ -202,9 +202,7 @@ pub unsafe fn test_format_8(mut expected: (), mut arg: ()) {
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { & mut __tmp_0 } , )
         })
     });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_map__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____char_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_format_10(mut expected: (), mut arg: ()) {
@@ -217,9 +215,7 @@ pub unsafe fn test_format_10(mut expected: (), mut arg: ()) {
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_1 } , )
         })
     });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_map__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____wchar_t_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_12(mut fmt: ()) {
@@ -234,12 +230,8 @@ pub unsafe fn test_assure_parse_is_called_12(mut fmt: ()) {
     });
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_map__std_map_parse_call_validator__parse_call_validator__std_less_parse_call_validator___std_allocator_std_pair_const_parse_call_validator__parse_call_validator_____char_ ) . parse  ( & mut ctx , )
-    });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_map__std_map_parse_call_validator__parse_call_validator__std_less_parse_call_validator___std_allocator_std_pair_const_parse_call_validator__parse_call_validator_____char_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_14(mut fmt: ()) {
     let mut arg: () = unimplemented!();
@@ -253,12 +245,8 @@ pub unsafe fn test_assure_parse_is_called_14(mut fmt: ()) {
     });
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_map__std_map_parse_call_validator__parse_call_validator__std_less_parse_call_validator___std_allocator_std_pair_const_parse_call_validator__parse_call_validator_____wchar_t_ ) . parse  ( & mut ctx , )
-    });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_map__std_map_parse_call_validator__parse_call_validator__std_less_parse_call_validator___std_allocator_std_pair_const_parse_call_validator__parse_call_validator_____wchar_t_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_16() {
     let mut arg: () = unimplemented!();

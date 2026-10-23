@@ -9,14 +9,14 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "noexcept(iter[0])");;
         const _: () = assert!(true, "std::same_as<decltype(iter[0]), const int&>");;
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "noexcept(iter[0])");;
         const _: () = assert!(true, "std::same_as<decltype(iter[0]), const int&>");;

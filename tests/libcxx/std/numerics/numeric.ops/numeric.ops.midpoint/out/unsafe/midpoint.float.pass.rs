@@ -226,11 +226,11 @@ pub unsafe fn test_ppc_edge_cases_28() -> () {
 pub unsafe fn test_floating_points_30() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let max_v: () = (unsafe { std_numeric_limits_float_::max() });
-    let min_v: () = (unsafe { std_numeric_limits_float_::min() });
-    let denorm_min: () = (unsafe { std_numeric_limits_float_::denorm_min() });
-    let inf: () = (unsafe { std_numeric_limits_float_::infinity() });
-    let qnan: () = (unsafe { std_numeric_limits_float_::quiet_NaN() });
+    let max_v: () = unimplemented!();
+    let min_v: () = unimplemented!();
+    let denorm_min: () = unimplemented!();
+    let inf: () = unimplemented!();
+    let qnan: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -276,11 +276,11 @@ pub unsafe fn test_floating_points_30() -> () {
 pub unsafe fn test_floating_points_31() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let max_v: () = (unsafe { std_numeric_limits_double_::max() });
-    let min_v: () = (unsafe { std_numeric_limits_double_::min() });
-    let denorm_min: () = (unsafe { std_numeric_limits_double_::denorm_min() });
-    let inf: () = (unsafe { std_numeric_limits_double_::infinity() });
-    let qnan: () = (unsafe { std_numeric_limits_double_::quiet_NaN() });
+    let max_v: () = unimplemented!();
+    let min_v: () = unimplemented!();
+    let denorm_min: () = unimplemented!();
+    let inf: () = unimplemented!();
+    let qnan: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -326,11 +326,11 @@ pub unsafe fn test_floating_points_31() -> () {
 pub unsafe fn test_floating_points_32() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let max_v: () = (unsafe { std_numeric_limits_long_double_::max() });
-    let min_v: () = (unsafe { std_numeric_limits_long_double_::min() });
-    let denorm_min: () = (unsafe { std_numeric_limits_long_double_::denorm_min() });
-    let inf: () = (unsafe { std_numeric_limits_long_double_::infinity() });
-    let qnan: () = (unsafe { std_numeric_limits_long_double_::quiet_NaN() });
+    let max_v: () = unimplemented!();
+    let min_v: () = unimplemented!();
+    let denorm_min: () = unimplemented!();
+    let inf: () = unimplemented!();
+    let qnan: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

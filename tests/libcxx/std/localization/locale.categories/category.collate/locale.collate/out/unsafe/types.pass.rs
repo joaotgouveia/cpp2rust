@@ -29,7 +29,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let f: *const () = (unsafe { use_facet_0(&l) });
         (&(*f));
         {
-            &(*std::cell::LazyCell::force_mut(&mut *&raw mut id_1));
+            &(*unimplemented!());
         }
         const _: () = assert!(
             true,
@@ -46,10 +46,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         unimplemented!();
-        let f: *const () = (unsafe { use_facet_2(&l) });
+        let f: *const () = (unsafe { use_facet_1(&l) });
         (&(*f));
         {
-            &(*std::cell::LazyCell::force_mut(&mut *&raw mut id_3));
+            &(*unimplemented!());
         }
         const _: () = assert!(
             true,

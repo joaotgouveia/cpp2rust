@@ -181,7 +181,7 @@ pub fn invalid_types_11(valid: ()) -> () {
     let types: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for type_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut type_: () = (type_.read());
-        if (unimplemented!() != npos_12.with(|rc| *rc.borrow())) {
+        if (unimplemented!() != unimplemented!()) {
             continue 'loop_;
         }
         switch!(match type_ {
@@ -271,13 +271,13 @@ pub fn invalid_types_11(valid: ()) -> () {
     }
     return unimplemented!();
 }
-pub fn invalid_types_13(valid: ()) -> () {
+pub fn invalid_types_12(valid: ()) -> () {
     let valid: Value<()> = Rc::new(RefCell::new(valid));
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let types: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for type_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut type_: () = (type_.read());
-        if (unimplemented!() != npos_12.with(|rc| *rc.borrow())) {
+        if (unimplemented!() != unimplemented!()) {
             continue 'loop_;
         }
         switch!(match type_ {
@@ -367,7 +367,7 @@ pub fn invalid_types_13(valid: ()) -> () {
     }
     return unimplemented!();
 }
-pub fn format_test_handle_14(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
+pub fn format_test_handle_13(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     let check: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check));
     let check_exception: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check_exception));
     ({
@@ -504,7 +504,7 @@ pub fn format_test_handle_14(check: FnPtr<Generic>, check_exception: FnPtr<Gener
         });
     }
 }
-pub fn format_test_handle_15(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
+pub fn format_test_handle_14(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     let check: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check));
     let check_exception: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check_exception));
     ({
@@ -627,7 +627,7 @@ pub fn format_test_handle_15(check: FnPtr<Generic>, check_exception: FnPtr<Gener
             _args.as_pointer(),
         )
     });
-    let __tmp_1: Value<()> = Rc::new(RefCell::new(({ invalid_types_13(unimplemented!()) })));
+    let __tmp_1: Value<()> = Rc::new(RefCell::new(({ invalid_types_12(unimplemented!()) })));
     let __range1: Ptr<()> = __tmp_1.as_pointer();
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let fmt: Ptr<()> = unimplemented!();
@@ -640,7 +640,7 @@ pub fn format_test_handle_15(check: FnPtr<Generic>, check_exception: FnPtr<Gener
         });
     }
 }
-pub fn format_tests_16(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
+pub fn format_tests_15(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     let check: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check));
     let check_exception: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check_exception));
     ({
@@ -1142,14 +1142,14 @@ pub fn format_tests_16(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     {}
     ({
-        format_test_handle_14(
+        format_test_handle_13(
             (*check.borrow()).copy_from(),
             (*check_exception.borrow()).copy_from(),
         )
     });
     {}
 }
-pub fn format_tests_17(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
+pub fn format_tests_16(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     let check: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check));
     let check_exception: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check_exception));
     ({
@@ -1651,14 +1651,14 @@ pub fn format_tests_17(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     {}
     ({
-        format_test_handle_15(
+        format_test_handle_14(
             (*check.borrow()).copy_from(),
             (*check_exception.borrow()).copy_from(),
         )
     });
     {}
 }
-pub fn format_tests_char_to_wchar_t_18(check: FnPtr<Generic>) {
+pub fn format_tests_char_to_wchar_t_17(check: FnPtr<Generic>) {
     let check: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check));
     ({
         let _expected: () = unimplemented!();
@@ -1682,7 +1682,7 @@ pub fn format_tests_char_to_wchar_t_18(check: FnPtr<Generic>) {
     });
 }
 thread_local!(
-    pub static test_19: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+    pub static test_18: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
         |expected: (), fmt: ()| {
@@ -3399,7 +3399,7 @@ thread_local!(
     )));
 );
 thread_local!(
-    pub static test_exception_20: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+    pub static test_exception_19: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
         |what: (), fmt: ()| {
@@ -3450,16 +3450,16 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({
-        format_tests_16(
-            (*test_19.with(Value::clone).borrow()).copy_from(),
-            (*test_exception_20.with(Value::clone).borrow()).copy_from(),
+        format_tests_15(
+            (*test_18.with(Value::clone).borrow()).copy_from(),
+            (*test_exception_19.with(Value::clone).borrow()).copy_from(),
         )
     });
-    ({ format_tests_char_to_wchar_t_18((*test_19.with(Value::clone).borrow()).copy_from()) });
+    ({ format_tests_char_to_wchar_t_17((*test_18.with(Value::clone).borrow()).copy_from()) });
     ({
-        format_tests_17(
-            (*test_19.with(Value::clone).borrow()).copy_from(),
-            (*test_exception_20.with(Value::clone).borrow()).copy_from(),
+        format_tests_16(
+            (*test_18.with(Value::clone).borrow()).copy_from(),
+            (*test_exception_19.with(Value::clone).borrow()).copy_from(),
         )
     });
     return 0_();
@@ -3530,6 +3530,6 @@ impl MultiStringTypeImpl for Ptr<MultiStringType> {
 }
 pub fn __cpp2rust_init_globals() {
     let _ = test_replacement_character_7.with(|_| ());
-    let _ = test_19.with(|_| ());
-    let _ = test_exception_20.with(|_| ());
+    let _ = test_18.with(|_| ());
+    let _ = test_exception_19.with(|_| ());
 }

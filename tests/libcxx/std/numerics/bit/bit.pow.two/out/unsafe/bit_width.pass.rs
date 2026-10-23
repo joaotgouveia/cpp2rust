@@ -21,7 +21,7 @@ pub const E2_red: E2 = 0;
 pub unsafe fn test_1() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_char_::max() });
+    let mut max: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -46,7 +46,7 @@ pub unsafe fn test_1() -> () {
 pub unsafe fn test_2() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_short_::max() });
+    let mut max: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -71,7 +71,7 @@ pub unsafe fn test_2() -> () {
 pub unsafe fn test_3() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_int_::max() });
+    let mut max: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -96,7 +96,7 @@ pub unsafe fn test_3() -> () {
 pub unsafe fn test_4() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_long_::max() });
+    let mut max: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -121,7 +121,7 @@ pub unsafe fn test_4() -> () {
 pub unsafe fn test_5() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned_long_long_::max() });
+    let mut max: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -146,7 +146,7 @@ pub unsafe fn test_5() -> () {
 pub unsafe fn test_6() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = (unsafe { std_numeric_limits_unsigned___int128_::max() });
+    let mut max: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

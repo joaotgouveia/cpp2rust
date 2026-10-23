@@ -187,10 +187,7 @@ pub fn test_8(expected: (), arg: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_tuple_char__std_tuple_int___int_)
-            .format(arg.as_pointer(), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_10(expected: (), arg: ()) {
@@ -207,10 +204,7 @@ pub fn test_10(expected: (), arg: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_tuple_char__std_tuple_int__char___int__char_)
-            .format(arg.as_pointer(), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_12(expected: (), arg: ()) {
@@ -227,10 +221,7 @@ pub fn test_12(expected: (), arg: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_tuple_char__std_pair_int__char___int__char_)
-            .format(arg.as_pointer(), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_14(expected: (), arg: ()) {
@@ -247,11 +238,7 @@ pub fn test_14(expected: (), arg: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow())
-            as std___formatter_tuple_char__std_tuple_int__char__bool___int__char__bool_)
-            .format(arg.as_pointer(), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_16(expected: (), arg: ()) {
@@ -268,10 +255,7 @@ pub fn test_16(expected: (), arg: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow()) as std___formatter_tuple_wchar_t__std_tuple_int___int_)
-            .format(arg.as_pointer(), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_18(expected: (), arg: ()) {
@@ -288,11 +272,7 @@ pub fn test_18(expected: (), arg: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow())
-            as std___formatter_tuple_wchar_t__std_tuple_int__wchar_t___int__wchar_t_)
-            .format(arg.as_pointer(), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_20(expected: (), arg: ()) {
@@ -309,11 +289,7 @@ pub fn test_20(expected: (), arg: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow())
-            as std___formatter_tuple_wchar_t__std_pair_int__wchar_t___int__wchar_t_)
-            .format(arg.as_pointer(), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_22(expected: (), arg: ()) {
@@ -330,11 +306,7 @@ pub fn test_22(expected: (), arg: ()) {
             })
         }),
     ));
-    ({
-        ((*formatter.borrow())
-            as std___formatter_tuple_wchar_t__std_tuple_int__wchar_t__bool___int__wchar_t__bool_)
-            .format(arg.as_pointer(), format_ctx.as_pointer())
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub fn test_assure_parse_is_called_24(fmt: ()) {
@@ -352,12 +324,8 @@ pub fn test_assure_parse_is_called_24(fmt: ()) {
     ));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        ( (*formatter.borrow()) as std___formatter_tuple_char__std_pair_parse_call_validator__parse_call_validator___parse_call_validator__parse_call_validator_ ) . parse ( ctx .as_pointer()  , )
-    });
-    ({
-        ( (*formatter.borrow()) as std___formatter_tuple_char__std_pair_parse_call_validator__parse_call_validator___parse_call_validator__parse_call_validator_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
+    unimplemented!();
 }
 pub fn test_assure_parse_is_called_26(fmt: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
@@ -374,12 +342,8 @@ pub fn test_assure_parse_is_called_26(fmt: ()) {
     ));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        ( (*formatter.borrow()) as std___formatter_tuple_wchar_t__std_pair_parse_call_validator__parse_call_validator___parse_call_validator__parse_call_validator_ ) . parse ( ctx .as_pointer()  , )
-    });
-    ({
-        ( (*formatter.borrow()) as std___formatter_tuple_wchar_t__std_pair_parse_call_validator__parse_call_validator___parse_call_validator__parse_call_validator_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
-    });
+    unimplemented!();
+    unimplemented!();
 }
 pub fn test_assure_parse_is_called_28() {
     let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));

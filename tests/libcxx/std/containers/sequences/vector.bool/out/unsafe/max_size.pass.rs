@@ -141,8 +141,7 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_ {
         unimplemented!();
     }
     pub unsafe fn max_size(&self) -> () {
-        return (unsafe { std_numeric_limits_unsigned_char_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 impl Default for sized_allocator_unsigned_char__unsigned_char__signed_char_ {
@@ -183,8 +182,7 @@ impl sized_allocator_unsigned_short__unsigned_short__short_ {
         unimplemented!();
     }
     pub unsafe fn max_size(&self) -> () {
-        return (unsafe { std_numeric_limits_unsigned_short_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 impl Default for sized_allocator_unsigned_short__unsigned_short__short_ {
@@ -225,8 +223,7 @@ impl sized_allocator_unsigned_int__unsigned_int__int_ {
         unimplemented!();
     }
     pub unsafe fn max_size(&self) -> () {
-        return (unsafe { std_numeric_limits_unsigned_int_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 impl Default for sized_allocator_unsigned_int__unsigned_int__int_ {
@@ -267,8 +264,7 @@ impl sized_allocator_unsigned_long__unsigned_long__long_ {
         unimplemented!();
     }
     pub unsafe fn max_size(&self) -> () {
-        return ((unsafe { std_numeric_limits_unsigned_long_::max() }) as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 impl Default for sized_allocator_unsigned_long__unsigned_long__long_ {
@@ -749,9 +745,7 @@ pub unsafe fn make_thread_unsafe_shared_10()
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::destructor,
     );
     let mut alloc: () = unimplemented!();
-    ptr.block = (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::allocate ( & mut alloc , 1_() , )
-    });
+    ptr.block = unimplemented!();
     (unsafe {
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::construct ( & mut alloc , ptr . block  , )
     });
@@ -766,9 +760,7 @@ pub unsafe fn make_thread_unsafe_shared_11()
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::destructor,
     );
     let mut alloc: () = unimplemented!();
-    ptr.block = (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::allocate ( & mut alloc , 1_() , )
-    });
+    ptr.block = unimplemented!();
     (unsafe {
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::construct ( & mut alloc , ptr . block  , )
     });
@@ -785,9 +777,7 @@ pub unsafe fn make_thread_unsafe_shared_12()
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__::destructor,
     );
     let mut alloc: () = unimplemented!();
-    ptr.block = (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::allocate ( & mut alloc , 1_() , )
-    });
+    ptr.block = unimplemented!();
     (unsafe {
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::construct ( & mut alloc , ptr . block  , )
     });
@@ -804,9 +794,7 @@ pub unsafe fn make_thread_unsafe_shared_13()
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__::destructor,
     );
     let mut alloc: () = unimplemented!();
-    ptr.block = (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::allocate ( & mut alloc , 1_() , )
-    });
+    ptr.block = unimplemented!();
     (unsafe {
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::construct ( & mut alloc , ptr . block  , )
     });
@@ -863,9 +851,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
         (unsafe {
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::destroy ( & mut alloc , self . block  , )
         });
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::deallocate ( & mut alloc , self . block  , 1_() , )
-        });
+        unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_10_ {
         return (&mut (*self.block).content as *mut limited_alloc_handle_10_);
@@ -942,9 +928,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
         (unsafe {
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::destroy ( & mut alloc , self . block  , )
         });
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::deallocate ( & mut alloc , self . block  , 1_() , )
-        });
+        unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_18446744073709551615_ {
         return (&mut (*self.block).content as *mut limited_alloc_handle_18446744073709551615_);
@@ -1020,9 +1004,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__ {
         (unsafe {
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::destroy ( & mut alloc , self . block  , )
         });
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::deallocate ( & mut alloc , self . block  , 1_() , )
-        });
+        unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_302405640552615600_ {
         return (&mut (*self.block).content as *mut limited_alloc_handle_302405640552615600_);
@@ -1098,9 +1080,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__ {
         (unsafe {
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::destroy ( & mut alloc , self . block  , )
         });
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::deallocate ( & mut alloc , self . block  , 1_() , )
-        });
+        unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_292805461487453200_ {
         return (&mut (*self.block).content as *mut limited_alloc_handle_292805461487453200_);
@@ -1419,7 +1399,7 @@ impl Default for limited_allocator_unsigned_long__292805461487453200_ {
     }
 }
 pub unsafe fn test_14(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_long_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut _arg0: () = unimplemented!();
@@ -1435,7 +1415,7 @@ pub unsafe fn test_14(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_15(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_long_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut _arg0: min_allocator_unsigned_long_ =
@@ -1452,7 +1432,7 @@ pub unsafe fn test_15(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_16(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_int_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut ___a: test_allocator_unsigned_int_ = {
@@ -1471,7 +1451,7 @@ pub unsafe fn test_16(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_17(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_long_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut _arg0: other_allocator_unsigned_long_ = {
@@ -1490,7 +1470,7 @@ pub unsafe fn test_17(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_18(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_signed_char_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut ___a: sized_allocator_unsigned_char__unsigned_char__signed_char_ = {
@@ -1511,7 +1491,7 @@ pub unsafe fn test_18(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_19(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_short_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut ___a: sized_allocator_unsigned_short__unsigned_short__short_ = {
@@ -1532,7 +1512,7 @@ pub unsafe fn test_19(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_20(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_int_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut ___a: sized_allocator_unsigned_int__unsigned_int__int_ = {
@@ -1551,7 +1531,7 @@ pub unsafe fn test_20(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_21(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_long_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut ___a: sized_allocator_unsigned_long__unsigned_long__long_ = {
@@ -1572,7 +1552,7 @@ pub unsafe fn test_21(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_22(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_long_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut ___a: limited_allocator_unsigned_long__18446744073709551615_ = {
@@ -1593,7 +1573,7 @@ pub unsafe fn test_22(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_23(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_long_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut ___a: limited_allocator_unsigned_long__302405640552615600_ = {
@@ -1614,7 +1594,7 @@ pub unsafe fn test_23(v: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_24(v: *const ()) {
-    let max_dist: () = (unsafe { std_numeric_limits_long_::max() });
+    let max_dist: () = unimplemented!();
     unimplemented!();
     let max_alloc: () = (unsafe {
         let mut ___a: limited_allocator_unsigned_long__292805461487453200_ = {

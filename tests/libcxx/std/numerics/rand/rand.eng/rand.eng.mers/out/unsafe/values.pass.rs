@@ -24,24 +24,22 @@ pub unsafe fn test1_1() {
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFF)");;
     const _: () = assert!(true, "(E::default_seed == 5489u)");;
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut word_size_2))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut state_size_3))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut shift_size_4))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut mask_bits_5))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut xor_mask_6))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_u_7))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_d_8))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_s_9))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_b_10))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_t_11))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_c_12))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_l_13))) });
-    (unsafe {
-        where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut initialization_multiplier_14)))
-    });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut default_seed_15))) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
 }
-pub unsafe fn test2_16() {
+pub unsafe fn test2_2() {
     const _: () = assert!(true, "(E::word_size == 64)");;
     const _: () = assert!(true, "(E::state_size == 312)");;
     const _: () = assert!(true, "(E::shift_size == 156)");;
@@ -61,22 +59,20 @@ pub unsafe fn test2_16() {
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFFFFFFFFFFull)");;
     const _: () = assert!(true, "(E::default_seed == 5489u)");;
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut word_size_17))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut state_size_18))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut shift_size_19))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut mask_bits_20))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut xor_mask_21))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_u_22))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_d_23))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_s_24))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_b_25))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_t_26))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_c_27))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut tempering_l_28))) });
-    (unsafe {
-        where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut initialization_multiplier_29)))
-    });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut default_seed_30))) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -95,7 +91,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test1_1() });
-    (unsafe { test2_16() });
+    (unsafe { test2_2() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

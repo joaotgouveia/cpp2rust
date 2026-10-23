@@ -103,8 +103,7 @@ pub unsafe fn test_4(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_char_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -121,8 +120,7 @@ pub unsafe fn test_6(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_char_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -139,8 +137,7 @@ pub unsafe fn test_8(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_char_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -157,8 +154,7 @@ pub unsafe fn test_10(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_char_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -175,8 +171,7 @@ pub unsafe fn test_12(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_char_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -193,8 +188,7 @@ pub unsafe fn test_14(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_char_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -211,8 +205,7 @@ pub unsafe fn test_16(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_wchar_t_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -229,8 +222,7 @@ pub unsafe fn test_18(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_wchar_t_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -247,8 +239,7 @@ pub unsafe fn test_20(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_wchar_t_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -265,8 +256,7 @@ pub unsafe fn test_22(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_wchar_t_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -283,8 +273,7 @@ pub unsafe fn test_24(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_wchar_t_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -301,8 +290,7 @@ pub unsafe fn test_26(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_integer_wchar_t_).parse(&mut parse_ctx) });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -539,20 +527,12 @@ pub unsafe fn test_signed_integral_type_43() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_31(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::min() }),
-            )
+            test_termination_condition_31(_expected, _f, unimplemented!())
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_31(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::max() }),
-            )
+            test_termination_condition_31(_expected, _f, unimplemented!())
         });
     }
     {}
@@ -601,20 +581,12 @@ pub unsafe fn test_signed_integral_type_44() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_32(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::min() }),
-            )
+            test_termination_condition_32(_expected, _f, unimplemented!())
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_32(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::max() }),
-            )
+            test_termination_condition_32(_expected, _f, unimplemented!())
         });
     }
     {}
@@ -663,40 +635,24 @@ pub unsafe fn test_signed_integral_type_45() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::min() }),
-            )
+            test_termination_condition_33(_expected, _f, unimplemented!())
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::max() }),
-            )
+            test_termination_condition_33(_expected, _f, unimplemented!())
         });
     }
     {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits___int128_::min() }),
-            )
+            test_termination_condition_33(_expected, _f, unimplemented!())
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits___int128_::max() }),
-            )
+            test_termination_condition_33(_expected, _f, unimplemented!())
         });
     }
 }
@@ -840,20 +796,12 @@ pub unsafe fn test_signed_integral_type_49() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_37(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::min() }),
-            )
+            test_termination_condition_37(_expected, _f, unimplemented!())
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_37(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::max() }),
-            )
+            test_termination_condition_37(_expected, _f, unimplemented!())
         });
     }
     {}
@@ -902,20 +850,12 @@ pub unsafe fn test_signed_integral_type_50() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_38(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::min() }),
-            )
+            test_termination_condition_38(_expected, _f, unimplemented!())
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_38(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::max() }),
-            )
+            test_termination_condition_38(_expected, _f, unimplemented!())
         });
     }
     {}
@@ -964,40 +904,24 @@ pub unsafe fn test_signed_integral_type_51() {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::min() }),
-            )
+            test_termination_condition_39(_expected, _f, unimplemented!())
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits_long_::max() }),
-            )
+            test_termination_condition_39(_expected, _f, unimplemented!())
         });
     }
     {
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits___int128_::min() }),
-            )
+            test_termination_condition_39(_expected, _f, unimplemented!())
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(
-                _expected,
-                _f,
-                (unsafe { std_numeric_limits___int128_::max() }),
-            )
+            test_termination_condition_39(_expected, _f, unimplemented!())
         });
     }
 }

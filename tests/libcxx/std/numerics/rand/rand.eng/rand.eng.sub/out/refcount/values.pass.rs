@@ -14,22 +14,22 @@ pub fn test1_1() {
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFF)");;
     const _: () = assert!(true, "(E::default_seed == 19780503u)");;
-    ({ where_0(word_size_2.with(|v| v.as_pointer())) });
-    ({ where_0(short_lag_3.with(|v| v.as_pointer())) });
-    ({ where_0(long_lag_4.with(|v| v.as_pointer())) });
-    ({ where_0(default_seed_5.with(|v| v.as_pointer())) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
 }
-pub fn test2_6() {
+pub fn test2_2() {
     const _: () = assert!(true, "(E::word_size == 48)");;
     const _: () = assert!(true, "(E::short_lag == 5)");;
     const _: () = assert!(true, "(E::long_lag == 12)");;
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFFFFFFull)");;
     const _: () = assert!(true, "(E::default_seed == 19780503u)");;
-    ({ where_0(word_size_7.with(|v| v.as_pointer())) });
-    ({ where_0(short_lag_8.with(|v| v.as_pointer())) });
-    ({ where_0(long_lag_9.with(|v| v.as_pointer())) });
-    ({ where_0(default_seed_10.with(|v| v.as_pointer())) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -52,7 +52,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test1_1() });
-    ({ test2_6() });
+    ({ test2_2() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

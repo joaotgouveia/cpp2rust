@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let iter: Value<()> = Rc::new(RefCell::new(({ (*rv.borrow()).begin() })));
+    let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "std::same_as<decltype(iter++), Iter>");;

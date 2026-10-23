@@ -228,9 +228,7 @@ pub fn make_thread_unsafe_shared_5() -> detail_thread_unsafe_shared_ptr_limited_
     );
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ptr.borrow_mut()).block = ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::allocate ( alloc .as_pointer()  , 1_()  , )
-    });
+    (*ptr.borrow_mut()).block = unimplemented!();
     ({
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
     });
@@ -247,9 +245,7 @@ pub fn make_thread_unsafe_shared_6()
         ));
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ptr.borrow_mut()).block = ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::allocate ( alloc .as_pointer()  , 1_()  , )
-    });
+    (*ptr.borrow_mut()).block = unimplemented!();
     ({
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
     });
@@ -441,13 +437,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let mut max_dist: () = ({ std_numeric_limits_long_::max() });
+        let mut max_dist: () = unimplemented!();
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut max_dist: () = ({ std_numeric_limits_long_::max() });
+        let mut max_dist: () = unimplemented!();
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -505,9 +501,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl
         ({
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
         });
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_()  , )
-        });
+        unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_10_> {
         return (field_ptr!((*self).with(|__s| __s.block.clone()), content));
@@ -559,9 +553,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
         ({
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
         });
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_()  , )
-        });
+        unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
         return (field_ptr!((*self).with(|__s| __s.block.clone()), content));

@@ -169,13 +169,7 @@ pub unsafe fn test_string_8() {
         (unsafe { test_6(100_(), 50_(), 50_()) });
         (unsafe { test_6(100_(), 50_(), 100_()) });
         (unsafe { test_6(100_(), 50_(), 1000_()) });
-        (unsafe {
-            test_6(
-                100_(),
-                50_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_9)),
-            )
-        });
+        (unsafe { test_6(100_(), 50_(), unimplemented!()) });
     }
     {
         let mut str: () = unimplemented!();
@@ -186,7 +180,7 @@ pub unsafe fn test_string_8() {
         unimplemented!();
     }
 }
-pub unsafe fn test_string_10() {
+pub unsafe fn test_string_9() {
     {
         (unsafe { test_7(0_(), 0_(), 5_()) });
         (unsafe { test_7(0_(), 0_(), 10_()) });
@@ -199,13 +193,7 @@ pub unsafe fn test_string_10() {
         (unsafe { test_7(100_(), 50_(), 50_()) });
         (unsafe { test_7(100_(), 50_(), 100_()) });
         (unsafe { test_7(100_(), 50_(), 1000_()) });
-        (unsafe {
-            test_7(
-                100_(),
-                50_(),
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_11)),
-            )
-        });
+        (unsafe { test_7(100_(), 50_(), unimplemented!()) });
     }
     {
         let mut str: () = unimplemented!();
@@ -216,9 +204,9 @@ pub unsafe fn test_string_10() {
         unimplemented!();
     }
 }
-pub unsafe fn test_12() -> () {
+pub unsafe fn test_10() -> () {
     (unsafe { test_string_8() });
-    (unsafe { test_string_10() });
+    (unsafe { test_string_9() });
     return true;
 }
 pub fn main() {
@@ -237,7 +225,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_12() });
+    (unsafe { test_10() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

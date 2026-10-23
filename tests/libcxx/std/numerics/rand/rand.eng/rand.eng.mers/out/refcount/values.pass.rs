@@ -24,22 +24,22 @@ pub fn test1_1() {
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFF)");;
     const _: () = assert!(true, "(E::default_seed == 5489u)");;
-    ({ where_0(word_size_2.with(|v| v.as_pointer())) });
-    ({ where_0(state_size_3.with(|v| v.as_pointer())) });
-    ({ where_0(shift_size_4.with(|v| v.as_pointer())) });
-    ({ where_0(mask_bits_5.with(|v| v.as_pointer())) });
-    ({ where_0(xor_mask_6.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_u_7.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_d_8.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_s_9.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_b_10.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_t_11.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_c_12.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_l_13.with(|v| v.as_pointer())) });
-    ({ where_0(initialization_multiplier_14.with(|v| v.as_pointer())) });
-    ({ where_0(default_seed_15.with(|v| v.as_pointer())) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
 }
-pub fn test2_16() {
+pub fn test2_2() {
     const _: () = assert!(true, "(E::word_size == 64)");;
     const _: () = assert!(true, "(E::state_size == 312)");;
     const _: () = assert!(true, "(E::shift_size == 156)");;
@@ -59,20 +59,20 @@ pub fn test2_16() {
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFFFFFFFFFFull)");;
     const _: () = assert!(true, "(E::default_seed == 5489u)");;
-    ({ where_0(word_size_17.with(|v| v.as_pointer())) });
-    ({ where_0(state_size_18.with(|v| v.as_pointer())) });
-    ({ where_0(shift_size_19.with(|v| v.as_pointer())) });
-    ({ where_0(mask_bits_20.with(|v| v.as_pointer())) });
-    ({ where_0(xor_mask_21.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_u_22.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_d_23.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_s_24.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_b_25.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_t_26.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_c_27.with(|v| v.as_pointer())) });
-    ({ where_0(tempering_l_28.with(|v| v.as_pointer())) });
-    ({ where_0(initialization_multiplier_29.with(|v| v.as_pointer())) });
-    ({ where_0(default_seed_30.with(|v| v.as_pointer())) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -95,7 +95,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test1_1() });
-    ({ test2_16() });
+    ({ test2_2() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

@@ -9,7 +9,7 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Ptr<()> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
@@ -25,14 +25,14 @@ pub fn test_0() -> () {
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "noexcept(*iter)");;
         const _: () = assert!(true, "std::same_as<decltype(*iter), const int&>");;
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Ptr<()> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
@@ -57,10 +57,7 @@ pub fn test_0() -> () {
             .clone(),
         ));
         let __range1: Ptr<()> = __tmp_0.as_pointer();
-        'loop_: for val in IterRange::new(
-            ({ (*__range1.upgrade().deref()).begin() }),
-            unimplemented!(),
-        ) {
+        'loop_: for val in IterRange::new(unimplemented!(), unimplemented!()) {
             let val: Ptr<()> = unimplemented!();
             unimplemented!();
         }

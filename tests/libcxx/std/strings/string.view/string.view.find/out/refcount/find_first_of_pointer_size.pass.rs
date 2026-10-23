@@ -29,25 +29,25 @@ impl constexpr_char_traits_char_ {
 pub fn test_0(s: Ptr<()>, mut str: Ptr<()>, mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_1.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         unimplemented!();
     }
 }
-pub fn test_2(s: Ptr<()>, mut str: Ptr<()>, mut x: ()) {
+pub fn test_1(s: Ptr<()>, mut str: Ptr<()>, mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_1.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         unimplemented!();
     }
 }
-pub fn test0_3() {
+pub fn test0_2() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -56,7 +56,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"laenf"),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -65,7 +65,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"pqlnkmbdjo"),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -74,7 +74,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"qkamfogpnljdcshbreti"),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -83,7 +83,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -92,7 +92,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"bjaht"),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -101,7 +101,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"hjlcmgpket"),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -110,7 +110,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"htaobedqikfplcgjsmrn"),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -119,7 +119,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -155,7 +155,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -164,7 +164,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"ikcrq"),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -191,7 +191,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             2_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -227,7 +227,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -236,7 +236,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"aobjd"),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -245,7 +245,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"pcbahntsje"),
             4_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -263,7 +263,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -272,7 +272,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"kocgb"),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -281,7 +281,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"fbslrjiqkm"),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -290,7 +290,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"jeidpcmalhfnqbgtrsko"),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -299,7 +299,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             6_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -308,7 +308,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"qngpd"),
             6_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -317,7 +317,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"rodhqklgmb"),
             6_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -326,7 +326,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"thdjgafrlbkoiqcspmne"),
             6_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -335,7 +335,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -371,7 +371,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -407,7 +407,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -416,7 +416,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"prqgn"),
             5_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -443,7 +443,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -461,7 +461,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"ktsrmnqagd"),
             9_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -479,7 +479,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -488,7 +488,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"dplqa"),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -497,7 +497,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"dkacjoptns"),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -506,7 +506,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"hqfimtrgnbekpdcsjalo"),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -515,7 +515,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             11_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -524,7 +524,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"lofbc"),
             11_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -533,7 +533,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"astoegbfpn"),
             11_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -542,7 +542,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"pdgreqomsncafklhtibj"),
             11_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -551,7 +551,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -587,7 +587,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -623,7 +623,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             10_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -659,7 +659,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -668,7 +668,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"djkqc"),
             19_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -695,7 +695,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -704,7 +704,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"nocfa"),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -713,7 +713,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"bgtajmiedc"),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -722,7 +722,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"lsckfnqgdahejiopbtmr"),
             20_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -731,7 +731,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             21_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -740,7 +740,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"gfsrt"),
             21_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -749,7 +749,7 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"pfsocbhjtm"),
             21_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -758,54 +758,54 @@ pub fn test0_3() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"tpflmdnoicjgkberhqsa"),
             21_(),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
 }
-pub fn test1_4() {
+pub fn test1_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"laenf"),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"pqlnkmbdjo"),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"qkamfogpnljdcshbreti"),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"irkhs"),
             2_(),
@@ -813,7 +813,7 @@ pub fn test1_4() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"kantesmpgj"),
             0_(),
@@ -821,7 +821,7 @@ pub fn test1_4() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"oknlrstdpiqmjbaghcfe"),
             0_(),
@@ -829,15 +829,15 @@ pub fn test1_4() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"bnrpe"),
             0_(),
@@ -845,7 +845,7 @@ pub fn test1_4() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"jtdaefblso"),
             0_(),
@@ -853,7 +853,7 @@ pub fn test1_4() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"oselktgbcapndfjihrmq"),
             0_(),
@@ -861,15 +861,15 @@ pub fn test1_4() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
-            npos_1.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"bjaht"),
             1_(),
@@ -877,7 +877,7 @@ pub fn test1_4() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"hjlcmgpket"),
             0_(),
@@ -885,7 +885,7 @@ pub fn test1_4() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
+        test_1(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"htaobedqikfplcgjsmrn"),
             0_(),
@@ -913,8 +913,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        ({ test0_3() });
-        ({ test1_4() });
+        ({ test0_2() });
+        ({ test1_3() });
     }
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));

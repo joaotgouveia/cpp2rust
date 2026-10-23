@@ -7,16 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn is_close_0(mut v: (), mut comp: ()) -> () {
-    return (v <= (comp + ({ std_numeric_limits_float_::epsilon() })))
-        && (v >= (comp - ({ std_numeric_limits_float_::epsilon() })));
+    return (v <= (comp + unimplemented!())) && (v >= (comp - unimplemented!()));
 }
 pub fn is_close_1(mut v: (), mut comp: ()) -> () {
-    return (v <= (comp + ({ std_numeric_limits_double_::epsilon() })))
-        && (v >= (comp - ({ std_numeric_limits_double_::epsilon() })));
+    return (v <= (comp + unimplemented!())) && (v >= (comp - unimplemented!()));
 }
 pub fn is_close_2(mut v: (), mut comp: ()) -> () {
-    return (v <= (comp + ({ std_numeric_limits_long_double_::epsilon() })))
-        && (v >= (comp - ({ std_numeric_limits_long_double_::epsilon() })));
+    return (v <= (comp + unimplemented!())) && (v >= (comp - unimplemented!()));
 }
 pub fn test_3() -> () {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));

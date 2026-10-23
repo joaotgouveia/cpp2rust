@@ -33,7 +33,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
         (&(*f.upgrade().deref()));
         {
-            &(*id_1.with(Value::clone).borrow_mut());
+            &(unimplemented!());
         }
         const _: () = assert!(
             true,
@@ -50,10 +50,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         unimplemented!();
-        let f: Ptr<()> = ({ use_facet_2(l.as_pointer()) });
+        let f: Ptr<()> = ({ use_facet_1(l.as_pointer()) });
         (&(*f.upgrade().deref()));
         {
-            &(*id_3.with(Value::clone).borrow_mut());
+            &(unimplemented!());
         }
         const _: () = assert!(
             true,

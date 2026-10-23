@@ -214,7 +214,7 @@ pub unsafe fn invalid_types_11(mut valid: ()) -> () {
     let types: () = unimplemented!();
     'loop_: for type_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut type_: () = (*type_);
-        if ((unimplemented!()) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_12))) {
+        if ((unimplemented!()) != (unimplemented!())) {
             continue 'loop_;
         }
         switch!(match type_ {
@@ -304,12 +304,12 @@ pub unsafe fn invalid_types_11(mut valid: ()) -> () {
     }
     return unimplemented!();
 }
-pub unsafe fn invalid_types_13(mut valid: ()) -> () {
+pub unsafe fn invalid_types_12(mut valid: ()) -> () {
     let mut result: () = unimplemented!();
     let types: () = unimplemented!();
     'loop_: for type_ in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut type_: () = (*type_);
-        if ((unimplemented!()) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_12))) {
+        if ((unimplemented!()) != (unimplemented!())) {
             continue 'loop_;
         }
         switch!(match type_ {
@@ -399,7 +399,7 @@ pub unsafe fn invalid_types_13(mut valid: ()) -> () {
     }
     return unimplemented!();
 }
-pub unsafe fn format_test_handle_14(
+pub unsafe fn format_test_handle_13(
     mut check: FnPtr<Generic>,
     mut check_exception: FnPtr<Generic>,
 ) {
@@ -513,7 +513,7 @@ pub unsafe fn format_test_handle_14(
         });
     }
 }
-pub unsafe fn format_test_handle_15(
+pub unsafe fn format_test_handle_14(
     mut check: FnPtr<Generic>,
     mut check_exception: FnPtr<Generic>,
 ) {
@@ -613,7 +613,7 @@ pub unsafe fn format_test_handle_15(
             .spec::<fn((), (), *mut status)>(60)
             .call(_expected, _fmt, &mut _args)
     });
-    let mut __tmp_1: () = (unsafe { invalid_types_13(unimplemented!()) });
+    let mut __tmp_1: () = (unsafe { invalid_types_12(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_1;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let fmt: *const () = &(*unimplemented!());
@@ -628,7 +628,7 @@ pub unsafe fn format_test_handle_15(
         });
     }
 }
-pub unsafe fn format_tests_16(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+pub unsafe fn format_tests_15(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -1126,10 +1126,10 @@ pub unsafe fn format_tests_16(mut check: FnPtr<Generic>, mut check_exception: Fn
             .call(_expected, _fmt, &mut _args)
     });
     {}
-    (unsafe { format_test_handle_14(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { format_test_handle_13(check.copy_from(), check_exception.copy_from()) });
     {}
 }
-pub unsafe fn format_tests_17(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
+pub unsafe fn format_tests_16(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -1627,10 +1627,10 @@ pub unsafe fn format_tests_17(mut check: FnPtr<Generic>, mut check_exception: Fn
             .call(_expected, _fmt, &mut _args)
     });
     {}
-    (unsafe { format_test_handle_15(check.copy_from(), check_exception.copy_from()) });
+    (unsafe { format_test_handle_14(check.copy_from(), check_exception.copy_from()) });
     {}
 }
-pub unsafe fn format_tests_char_to_wchar_t_18(mut check: FnPtr<Generic>) {
+pub unsafe fn format_tests_char_to_wchar_t_17(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -1652,7 +1652,7 @@ pub unsafe fn format_tests_char_to_wchar_t_18(mut check: FnPtr<Generic>) {
             )
     });
 }
-pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCell::new(|| unsafe {
+pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCell::new(|| unsafe {
     lambda_unsafe!(
         Generic,
         {},
@@ -3247,7 +3247,7 @@ pub static mut test_19: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
         }
     )
 });
-pub static mut test_exception_20: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut test_exception_19: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(
             Generic,
@@ -3278,26 +3278,26 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
+        format_tests_15(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_18)).copy_from(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_19)).copy_from(),
+        )
+    });
+    (unsafe {
+        format_tests_char_to_wchar_t_17(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_18)).copy_from(),
+        )
+    });
+    (unsafe {
         format_tests_16(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_19)).copy_from(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_20)).copy_from(),
-        )
-    });
-    (unsafe {
-        format_tests_char_to_wchar_t_18(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_19)).copy_from(),
-        )
-    });
-    (unsafe {
-        format_tests_17(
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_19)).copy_from(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_20)).copy_from(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_18)).copy_from(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_19)).copy_from(),
         )
     });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const test_replacement_character_7);
-    std::cell::LazyCell::force(&*&raw const test_19);
-    std::cell::LazyCell::force(&*&raw const test_exception_20);
+    std::cell::LazyCell::force(&*&raw const test_18);
+    std::cell::LazyCell::force(&*&raw const test_exception_19);
 }

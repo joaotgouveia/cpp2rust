@@ -973,7 +973,7 @@ pub unsafe fn check_iterator_36(r: *mut (), mut f: (), expected: *const ()) {
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1005,7 +1005,7 @@ pub unsafe fn check_iterator_36(r: *mut (), mut f: (), expected: *const ()) {
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1041,7 +1041,7 @@ pub unsafe fn check_iterator_39(r: *mut (), mut f: (), expected: *const ()) {
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1073,7 +1073,7 @@ pub unsafe fn check_iterator_39(r: *mut (), mut f: (), expected: *const ()) {
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1111,7 +1111,7 @@ pub unsafe fn check_iterator_40(r: *mut (), mut f: (), expected: *const ()) {
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1145,7 +1145,7 @@ pub unsafe fn check_iterator_40(r: *mut (), mut f: (), expected: *const ()) {
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1180,9 +1180,7 @@ pub unsafe fn check_iterator_41(r: *mut (), mut f: FnPtr<Generic>, expected: *co
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe {
-            ((*expected) as std___optional_storage_base_unsigned_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1213,9 +1211,7 @@ pub unsafe fn check_iterator_41(r: *mut (), mut f: FnPtr<Generic>, expected: *co
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38)) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe {
-            ((*expected) as std___optional_storage_base_unsigned_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1250,7 +1246,7 @@ pub unsafe fn check_iterator_42(r: *mut (), mut f: FnPtr<Generic>, expected: *co
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1281,7 +1277,7 @@ pub unsafe fn check_iterator_42(r: *mut (), mut f: FnPtr<Generic>, expected: *co
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38)) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1291,8 +1287,8 @@ pub unsafe fn check_iterator_42(r: *mut (), mut f: FnPtr<Generic>, expected: *co
 pub unsafe fn check_iterator_43(r: *mut (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_37))(
                 ___first,
                 ___last,
@@ -1307,8 +1303,8 @@ pub unsafe fn check_iterator_43(r: *mut (), mut f: (), expected: *const ()) {
         let mut f2: invocable_with_telemetry_std_plus_void__ =
             invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_37))(
                 ___first,
                 ___last,
@@ -1317,7 +1313,7 @@ pub unsafe fn check_iterator_43(r: *mut (), mut f: (), expected: *const ()) {
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1325,8 +1321,8 @@ pub unsafe fn check_iterator_43(r: *mut (), mut f: (), expected: *const ()) {
     }
     {
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(
                 ___first,
                 ___last,
@@ -1340,8 +1336,8 @@ pub unsafe fn check_iterator_43(r: *mut (), mut f: (), expected: *const ()) {
         let mut f2: invocable_with_telemetry_std_plus_void__ =
             invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(
                 ___first,
                 ___last,
@@ -1349,7 +1345,7 @@ pub unsafe fn check_iterator_43(r: *mut (), mut f: (), expected: *const ()) {
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1359,8 +1355,8 @@ pub unsafe fn check_iterator_43(r: *mut (), mut f: (), expected: *const ()) {
 pub unsafe fn check_iterator_44(r: *mut (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_37))(
                 ___first,
                 ___last,
@@ -1375,8 +1371,8 @@ pub unsafe fn check_iterator_44(r: *mut (), mut f: (), expected: *const ()) {
         let mut f2: invocable_with_telemetry_std_plus_void__ =
             invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_37))(
                 ___first,
                 ___last,
@@ -1385,7 +1381,7 @@ pub unsafe fn check_iterator_44(r: *mut (), mut f: (), expected: *const ()) {
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1393,8 +1389,8 @@ pub unsafe fn check_iterator_44(r: *mut (), mut f: (), expected: *const ()) {
     }
     {
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(
                 ___first,
                 ___last,
@@ -1408,8 +1404,8 @@ pub unsafe fn check_iterator_44(r: *mut (), mut f: (), expected: *const ()) {
         let mut f2: invocable_with_telemetry_std_plus_void__ =
             invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(
                 ___first,
                 ___last,
@@ -1417,7 +1413,7 @@ pub unsafe fn check_iterator_44(r: *mut (), mut f: (), expected: *const ()) {
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1453,7 +1449,7 @@ pub unsafe fn check_iterator_45(r: *mut (), mut f: (), expected: *const ()) {
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1485,7 +1481,7 @@ pub unsafe fn check_iterator_45(r: *mut (), mut f: (), expected: *const ()) {
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1521,7 +1517,7 @@ pub unsafe fn check_iterator_46(r: *mut (), mut f: (), expected: *const ()) {
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1553,7 +1549,7 @@ pub unsafe fn check_iterator_46(r: *mut (), mut f: (), expected: *const ()) {
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1588,7 +1584,7 @@ pub unsafe fn check_iterator_47(r: *mut (), mut f: FnPtr<fn((), ()) -> ()>, expe
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1619,7 +1615,7 @@ pub unsafe fn check_iterator_47(r: *mut (), mut f: FnPtr<fn((), ()) -> ()>, expe
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38)) ( ___first , ___last , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1655,7 +1651,7 @@ pub unsafe fn check_iterator_48(r: *mut (), mut f: (), expected: *const ()) {
         });
         unimplemented!();
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1687,7 +1683,7 @@ pub unsafe fn check_iterator_48(r: *mut (), mut f: (), expected: *const ()) {
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1719,7 +1715,7 @@ pub unsafe fn check_lvalue_range_49(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1744,7 +1740,7 @@ pub unsafe fn check_lvalue_range_49(r: *mut (), mut f: (), expected: *const ()) 
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1776,7 +1772,7 @@ pub unsafe fn check_lvalue_range_50(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1801,7 +1797,7 @@ pub unsafe fn check_lvalue_range_50(r: *mut (), mut f: (), expected: *const ()) 
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1835,7 +1831,7 @@ pub unsafe fn check_lvalue_range_51(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1862,7 +1858,7 @@ pub unsafe fn check_lvalue_range_51(r: *mut (), mut f: (), expected: *const ()) 
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1896,9 +1892,7 @@ pub unsafe fn check_lvalue_range_52(r: *mut (), mut f: FnPtr<Generic>, expected:
             )
         });
         unimplemented!();
-        if (unsafe {
-            ((*expected) as std___optional_storage_base_unsigned_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1925,9 +1919,7 @@ pub unsafe fn check_lvalue_range_52(r: *mut (), mut f: FnPtr<Generic>, expected:
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe {
-            ((*expected) as std___optional_storage_base_unsigned_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1961,7 +1953,7 @@ pub unsafe fn check_lvalue_range_53(r: *mut (), mut f: FnPtr<Generic>, expected:
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1988,7 +1980,7 @@ pub unsafe fn check_lvalue_range_53(r: *mut (), mut f: FnPtr<Generic>, expected:
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2020,7 +2012,7 @@ pub unsafe fn check_lvalue_range_54(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2045,7 +2037,7 @@ pub unsafe fn check_lvalue_range_54(r: *mut (), mut f: (), expected: *const ()) 
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2077,7 +2069,7 @@ pub unsafe fn check_lvalue_range_55(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2102,7 +2094,7 @@ pub unsafe fn check_lvalue_range_55(r: *mut (), mut f: (), expected: *const ()) 
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2134,7 +2126,7 @@ pub unsafe fn check_lvalue_range_56(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2159,7 +2151,7 @@ pub unsafe fn check_lvalue_range_56(r: *mut (), mut f: (), expected: *const ()) 
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2191,7 +2183,7 @@ pub unsafe fn check_lvalue_range_57(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2216,7 +2208,7 @@ pub unsafe fn check_lvalue_range_57(r: *mut (), mut f: (), expected: *const ()) 
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2254,7 +2246,7 @@ pub unsafe fn check_lvalue_range_58(
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2281,7 +2273,7 @@ pub unsafe fn check_lvalue_range_58(
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2313,7 +2305,7 @@ pub unsafe fn check_lvalue_range_59(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2338,7 +2330,7 @@ pub unsafe fn check_lvalue_range_59(r: *mut (), mut f: (), expected: *const ()) 
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38))(___range, ___func)
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2368,7 +2360,7 @@ pub unsafe fn check_rvalue_range_60(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2396,7 +2388,7 @@ pub unsafe fn check_rvalue_range_60(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2426,7 +2418,7 @@ pub unsafe fn check_rvalue_range_61(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2454,7 +2446,7 @@ pub unsafe fn check_rvalue_range_61(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2486,7 +2478,7 @@ pub unsafe fn check_rvalue_range_62(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2516,7 +2508,7 @@ pub unsafe fn check_rvalue_range_62(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2546,9 +2538,7 @@ pub unsafe fn check_rvalue_range_63(r: *mut (), mut f: FnPtr<Generic>, expected:
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_37)) ( & mut *(&raw mut r2 ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe {
-            ((*expected) as std___optional_storage_base_unsigned_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2576,9 +2566,7 @@ pub unsafe fn check_rvalue_range_63(r: *mut (), mut f: FnPtr<Generic>, expected:
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38)) ( & mut *(&raw mut r2 ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe {
-            ((*expected) as std___optional_storage_base_unsigned_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2608,7 +2596,7 @@ pub unsafe fn check_rvalue_range_64(r: *mut (), mut f: FnPtr<Generic>, expected:
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_37)) ( & mut *(&raw mut r2 ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2636,7 +2624,7 @@ pub unsafe fn check_rvalue_range_64(r: *mut (), mut f: FnPtr<Generic>, expected:
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38)) ( & mut *(&raw mut r2 ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2666,7 +2654,7 @@ pub unsafe fn check_rvalue_range_65(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2694,7 +2682,7 @@ pub unsafe fn check_rvalue_range_65(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2724,7 +2712,7 @@ pub unsafe fn check_rvalue_range_66(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2752,7 +2740,7 @@ pub unsafe fn check_rvalue_range_66(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2782,7 +2770,7 @@ pub unsafe fn check_rvalue_range_67(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2810,7 +2798,7 @@ pub unsafe fn check_rvalue_range_67(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_int__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2840,7 +2828,7 @@ pub unsafe fn check_rvalue_range_68(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2868,7 +2856,7 @@ pub unsafe fn check_rvalue_range_68(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2902,7 +2890,7 @@ pub unsafe fn check_rvalue_range_69(
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_with_iter_37)) ( & mut *(&raw mut r2 ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2930,7 +2918,7 @@ pub unsafe fn check_rvalue_range_69(
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_left_first_38)) ( & mut *(&raw mut r2 ).cast::<()>() , invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { & f2 } , )  , )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_double__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2960,7 +2948,7 @@ pub unsafe fn check_rvalue_range_70(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2988,7 +2976,7 @@ pub unsafe fn check_rvalue_range_70(r: *mut (), mut f: (), expected: *const ()) 
             )
         });
         unimplemented!();
-        if (unsafe { ((*expected) as std___optional_storage_base_long__false_).has_value() }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();

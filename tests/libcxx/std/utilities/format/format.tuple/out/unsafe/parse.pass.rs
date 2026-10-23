@@ -97,79 +97,56 @@ pub unsafe fn test_0(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        (formatter as std___formatter_tuple_char__std_tuple_int___int_).parse(&mut parse_ctx)
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_1(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        (formatter as std___formatter_tuple_char__std_tuple_int__char___int__char_)
-            .parse(&mut parse_ctx)
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_2(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        (formatter as std___formatter_tuple_char__std_pair_int__char___int__char_)
-            .parse(&mut parse_ctx)
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_3(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        (formatter as std___formatter_tuple_char__std_tuple_int__char__bool___int__char__bool_)
-            .parse(&mut parse_ctx)
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_4(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        (formatter as std___formatter_tuple_wchar_t__std_tuple_int___int_).parse(&mut parse_ctx)
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_5(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        (formatter as std___formatter_tuple_wchar_t__std_tuple_int__wchar_t___int__wchar_t_)
-            .parse(&mut parse_ctx)
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_6(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        (formatter as std___formatter_tuple_wchar_t__std_pair_int__wchar_t___int__wchar_t_)
-            .parse(&mut parse_ctx)
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_7(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        (formatter
-            as std___formatter_tuple_wchar_t__std_tuple_int__wchar_t__bool___int__wchar_t__bool_)
-            .parse(&mut parse_ctx)
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_8() {

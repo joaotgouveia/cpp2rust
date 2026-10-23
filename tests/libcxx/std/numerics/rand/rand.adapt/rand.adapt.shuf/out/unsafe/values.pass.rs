@@ -11,7 +11,7 @@ pub unsafe fn test1_1() {
     const _: () = assert!(true, "E::table_size == 256");;
     const _: () = assert!(true, "(E::min() == 1)");;
     const _: () = assert!(true, "(E::max() == 2147483646)");;
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut table_size_2))) });
+    (unsafe { where_0(&unimplemented!()) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

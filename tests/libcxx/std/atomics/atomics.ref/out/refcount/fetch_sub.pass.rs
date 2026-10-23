@@ -1139,10 +1139,7 @@ impl TestFetchSub_char16_t_Impl for Ptr<TestFetchSub_char16_t_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_char16_t_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1166,17 +1163,14 @@ impl TestFetchSub_char16_t_Impl for Ptr<TestFetchSub_char16_t_> {
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_char16_t_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_40(
                     (*fetch_sub_no_arg.borrow()).copy_from(),
@@ -1224,10 +1218,7 @@ impl TestFetchSub_char32_t_Impl for Ptr<TestFetchSub_char32_t_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_char32_t_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1251,17 +1242,14 @@ impl TestFetchSub_char32_t_Impl for Ptr<TestFetchSub_char32_t_> {
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_char32_t_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_42(
                     (*fetch_sub_no_arg.borrow()).copy_from(),
@@ -1309,10 +1297,7 @@ impl TestFetchSub_char8_t_Impl for Ptr<TestFetchSub_char8_t_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_char8_t_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1336,17 +1321,14 @@ impl TestFetchSub_char8_t_Impl for Ptr<TestFetchSub_char8_t_> {
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_char8_t_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_38(
                     (*fetch_sub_no_arg.borrow()).copy_from(),
@@ -1394,10 +1376,7 @@ impl TestFetchSub_char_Impl for Ptr<TestFetchSub_char_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_char_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1425,9 +1404,7 @@ impl TestFetchSub_char_Impl for Ptr<TestFetchSub_char_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_char_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1491,10 +1468,7 @@ impl TestFetchSub_const_int_ptr_Impl for Ptr<TestFetchSub_const_int_ptr_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> Ptr<()>>::new(
                     |x: Ptr<()>| -> Ptr<()> {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_const_int_ptr_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1522,10 +1496,7 @@ impl TestFetchSub_const_int_ptr_Impl for Ptr<TestFetchSub_const_int_ptr_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> Ptr<()>>::new(
                     |x: Ptr<()>| -> Ptr<()> {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_const_int_ptr_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1576,10 +1547,7 @@ impl TestFetchSub_double_Impl for Ptr<TestFetchSub_double_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_double_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1607,9 +1575,7 @@ impl TestFetchSub_double_Impl for Ptr<TestFetchSub_double_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_double_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1660,10 +1626,7 @@ impl TestFetchSub_float_Impl for Ptr<TestFetchSub_float_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_float_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1691,9 +1654,7 @@ impl TestFetchSub_float_Impl for Ptr<TestFetchSub_float_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_float_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1744,10 +1705,7 @@ impl TestFetchSub_int_Impl for Ptr<TestFetchSub_int_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_int_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1775,9 +1733,7 @@ impl TestFetchSub_int_Impl for Ptr<TestFetchSub_int_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_int_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1841,10 +1797,7 @@ impl TestFetchSub_int_ptr_Impl for Ptr<TestFetchSub_int_ptr_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> Ptr<()>>::new(
                     |x: Ptr<()>| -> Ptr<()> {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_int_ptr_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1868,17 +1821,14 @@ impl TestFetchSub_int_ptr_Impl for Ptr<TestFetchSub_int_ptr_> {
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> Ptr<()>>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> Ptr<()>,
-            >::new(
-                |x: Ptr<()>| -> Ptr<()> {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_int_ptr_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> Ptr<()>>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> Ptr<()>>::new(
+                    |x: Ptr<()>| -> Ptr<()> {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_48(
                     (*fetch_sub_no_arg.borrow()).copy_from(),
@@ -1926,10 +1876,7 @@ impl TestFetchSub_long_Impl for Ptr<TestFetchSub_long_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_long_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1957,9 +1904,7 @@ impl TestFetchSub_long_Impl for Ptr<TestFetchSub_long_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_long_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2010,10 +1955,7 @@ impl TestFetchSub_long_long_Impl for Ptr<TestFetchSub_long_long_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_long_long_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2037,17 +1979,14 @@ impl TestFetchSub_long_long_Impl for Ptr<TestFetchSub_long_long_> {
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_long_long_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_32(
                     (*fetch_sub_no_arg.borrow()).copy_from(),
@@ -2095,10 +2034,7 @@ impl TestFetchSub_short_Impl for Ptr<TestFetchSub_short_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_short_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2126,9 +2062,7 @@ impl TestFetchSub_short_Impl for Ptr<TestFetchSub_short_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_short_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2179,10 +2113,7 @@ impl TestFetchSub_signed_char_Impl for Ptr<TestFetchSub_signed_char_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_signed_char_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2210,10 +2141,7 @@ impl TestFetchSub_signed_char_Impl for Ptr<TestFetchSub_signed_char_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_signed_char_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2264,10 +2192,7 @@ impl TestFetchSub_unsigned_char_Impl for Ptr<TestFetchSub_unsigned_char_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_char_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2295,10 +2220,7 @@ impl TestFetchSub_unsigned_char_Impl for Ptr<TestFetchSub_unsigned_char_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_char_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2349,10 +2271,7 @@ impl TestFetchSub_unsigned_int_Impl for Ptr<TestFetchSub_unsigned_int_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_int_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2380,10 +2299,7 @@ impl TestFetchSub_unsigned_int_Impl for Ptr<TestFetchSub_unsigned_int_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_int_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2434,10 +2350,7 @@ impl TestFetchSub_unsigned_long_Impl for Ptr<TestFetchSub_unsigned_long_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_long_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2465,10 +2378,7 @@ impl TestFetchSub_unsigned_long_Impl for Ptr<TestFetchSub_unsigned_long_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_long_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2515,18 +2425,14 @@ impl TestFetchSub_unsigned_long_long_Impl for Ptr<TestFetchSub_unsigned_long_lon
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_long_long_)
-                                .load(Some(unimplemented!()))
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_acquire_release_62(
                     (*fetch_sub.borrow()).copy_from(),
@@ -2547,18 +2453,14 @@ impl TestFetchSub_unsigned_long_long_Impl for Ptr<TestFetchSub_unsigned_long_lon
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_long_long_)
-                                .load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_34(
                     (*fetch_sub_no_arg.borrow()).copy_from(),
@@ -2606,10 +2508,7 @@ impl TestFetchSub_unsigned_short_Impl for Ptr<TestFetchSub_unsigned_short_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_short_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2637,10 +2536,7 @@ impl TestFetchSub_unsigned_short_Impl for Ptr<TestFetchSub_unsigned_short_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_short_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2691,10 +2587,7 @@ impl TestFetchSub_wchar_t_Impl for Ptr<TestFetchSub_wchar_t_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_wchar_t_)
-                                    .load(Some(unimplemented!()))
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -2718,17 +2611,14 @@ impl TestFetchSub_wchar_t_Impl for Ptr<TestFetchSub_wchar_t_> {
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_wchar_t_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_36(
                     (*fetch_sub_no_arg.borrow()).copy_from(),

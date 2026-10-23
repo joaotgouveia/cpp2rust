@@ -21,8 +21,29 @@ pub const E2_red: E2 = 0;
 pub fn test_1() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = ({ std_numeric_limits_unsigned_char_::max() });
-    let mut dig: () = digits_2.with(|rc| *rc.borrow());
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {}
+    return true;
+}
+pub fn test_2() -> () {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -42,8 +63,29 @@ pub fn test_1() -> () {
 pub fn test_3() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = ({ std_numeric_limits_unsigned_short_::max() });
-    let mut dig: () = digits_4.with(|rc| *rc.borrow());
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {}
+    return true;
+}
+pub fn test_4() -> () {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -63,8 +105,8 @@ pub fn test_3() -> () {
 pub fn test_5() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = ({ std_numeric_limits_unsigned_int_::max() });
-    let mut dig: () = digits_6.with(|rc| *rc.borrow());
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -81,53 +123,11 @@ pub fn test_5() -> () {
     {}
     return true;
 }
-pub fn test_7() -> () {
+pub fn test_6() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max: () = ({ std_numeric_limits_unsigned_long_::max() });
-    let mut dig: () = digits_8.with(|rc| *rc.borrow());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {}
-    return true;
-}
-pub fn test_9() -> () {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let mut max: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-    let mut dig: () = digits_10.with(|rc| *rc.borrow());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {}
-    return true;
-}
-pub fn test_11() -> () {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let mut max: () = ({ std_numeric_limits_unsigned___int128_::max() });
-    let mut dig: () = digits_12.with(|rc| *rc.borrow());
+    let mut max: () = unimplemented!();
+    let mut dig: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -213,18 +213,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test<std::uintptr_t>()");;
     const _: () = assert!(true, "test<std::size_t>()");;
     ({ test_1() });
+    ({ test_2() });
     ({ test_3() });
+    ({ test_4() });
     ({ test_5() });
-    ({ test_7() });
-    ({ test_9() });
-    ({ test_11() });
+    ({ test_6() });
     ({ test_1() });
+    ({ test_2() });
     ({ test_3() });
-    ({ test_5() });
-    ({ test_7() });
-    ({ test_7() });
-    ({ test_7() });
-    ({ test_7() });
+    ({ test_4() });
+    ({ test_4() });
+    ({ test_4() });
+    ({ test_4() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

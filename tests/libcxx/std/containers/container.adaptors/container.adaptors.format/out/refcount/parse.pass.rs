@@ -67,9 +67,7 @@ pub fn test_parse_0(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___formatter_container_adaptor_std_queue_int__std_deque_int__std_allocator_int_____char_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_1(fmt: (), mut offset: ()) {
@@ -77,9 +75,7 @@ pub fn test_parse_1(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___formatter_container_adaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int____char_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_2(fmt: (), mut offset: ()) {
@@ -87,9 +83,7 @@ pub fn test_parse_2(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___formatter_container_adaptor_std_stack_int__std_deque_int__std_allocator_int_____char_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_3(fmt: (), mut offset: ()) {
@@ -97,9 +91,7 @@ pub fn test_parse_3(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___formatter_container_adaptor_std_queue_int__std_deque_int__std_allocator_int_____wchar_t_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_4(fmt: (), mut offset: ()) {
@@ -107,9 +99,7 @@ pub fn test_parse_4(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___formatter_container_adaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int____wchar_t_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_5(fmt: (), mut offset: ()) {
@@ -117,9 +107,7 @@ pub fn test_parse_5(fmt: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ( (*formatter.borrow()) as std___formatter_container_adaptor_std_stack_int__std_deque_int__std_allocator_int_____wchar_t_ ) . parse ( parse_ctx .as_pointer()  , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_parse_6(fmt: (), mut offset: ()) {

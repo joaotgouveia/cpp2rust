@@ -307,7 +307,7 @@ impl Default for NotNoexceptCopy {
 pub fn testType_22() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -320,7 +320,7 @@ pub fn testType_22() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -332,7 +332,7 @@ pub fn testType_22() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -344,7 +344,7 @@ pub fn testType_22() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -358,7 +358,7 @@ pub fn testType_22() {
 pub fn testType_23() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -371,7 +371,7 @@ pub fn testType_23() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -383,7 +383,7 @@ pub fn testType_23() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -395,7 +395,7 @@ pub fn testType_23() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -409,7 +409,7 @@ pub fn testType_23() {
 pub fn testType_24() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -422,7 +422,7 @@ pub fn testType_24() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -434,7 +434,7 @@ pub fn testType_24() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -446,7 +446,7 @@ pub fn testType_24() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -460,7 +460,7 @@ pub fn testType_24() {
 pub fn testType_25() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -473,7 +473,7 @@ pub fn testType_25() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -485,7 +485,7 @@ pub fn testType_25() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -497,7 +497,7 @@ pub fn testType_25() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -511,7 +511,7 @@ pub fn testType_25() {
 pub fn testType_26() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -524,7 +524,7 @@ pub fn testType_26() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -536,7 +536,7 @@ pub fn testType_26() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -548,7 +548,7 @@ pub fn testType_26() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -562,7 +562,7 @@ pub fn testType_26() {
 pub fn testType_27() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -575,7 +575,7 @@ pub fn testType_27() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -587,7 +587,7 @@ pub fn testType_27() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -599,7 +599,7 @@ pub fn testType_27() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -613,7 +613,7 @@ pub fn testType_27() {
 pub fn testType_28() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -626,7 +626,7 @@ pub fn testType_28() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -638,7 +638,7 @@ pub fn testType_28() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -650,7 +650,7 @@ pub fn testType_28() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -664,7 +664,7 @@ pub fn testType_28() {
 pub fn testType_29() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -677,7 +677,7 @@ pub fn testType_29() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -689,7 +689,7 @@ pub fn testType_29() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -701,7 +701,7 @@ pub fn testType_29() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -715,7 +715,7 @@ pub fn testType_29() {
 pub fn testType_30() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -728,7 +728,7 @@ pub fn testType_30() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -740,7 +740,7 @@ pub fn testType_30() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -752,7 +752,7 @@ pub fn testType_30() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -766,7 +766,7 @@ pub fn testType_30() {
 pub fn testType_31() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -779,7 +779,7 @@ pub fn testType_31() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -791,7 +791,7 @@ pub fn testType_31() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -803,7 +803,7 @@ pub fn testType_31() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -817,7 +817,7 @@ pub fn testType_31() {
 pub fn testType_32() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -830,7 +830,7 @@ pub fn testType_32() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -842,7 +842,7 @@ pub fn testType_32() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -854,7 +854,7 @@ pub fn testType_32() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -868,7 +868,7 @@ pub fn testType_32() {
 pub fn testType_33() {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -881,7 +881,7 @@ pub fn testType_33() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -893,7 +893,7 @@ pub fn testType_33() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -905,7 +905,7 @@ pub fn testType_33() {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 10_();
         'loop_: while (i < 100_()) {
             unimplemented!();
@@ -931,7 +931,7 @@ pub fn test_34() -> () {
     ({ testType_33() });
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 10_()) {
             unimplemented!();

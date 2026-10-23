@@ -11,8 +11,8 @@ pub fn test_0() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut g1: () = unimplemented!();
     let mut g2: () = unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s1: () = unimplemented!();
+    let mut s2: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_1() {
@@ -20,8 +20,8 @@ pub fn test_1() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut g1: () = unimplemented!();
     let mut g2: () = unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s1: () = unimplemented!();
+    let mut s2: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_2() {
@@ -29,8 +29,8 @@ pub fn test_2() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut g1: () = unimplemented!();
     let mut g2: () = unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s1: () = unimplemented!();
+    let mut s2: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_3() {
@@ -38,8 +38,8 @@ pub fn test_3() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut g1: () = unimplemented!();
     let mut g2: () = unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s1: () = unimplemented!();
+    let mut s2: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_4() {
@@ -47,8 +47,8 @@ pub fn test_4() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut g1: () = unimplemented!();
     let mut g2: () = unimplemented!();
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s1: () = unimplemented!();
+    let mut s2: () = unimplemented!();
     unimplemented!();
 }
 pub fn main() {

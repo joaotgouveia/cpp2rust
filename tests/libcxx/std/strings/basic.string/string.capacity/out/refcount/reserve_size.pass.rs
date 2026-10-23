@@ -150,7 +150,7 @@ pub fn test_string_8() {
         ({ test_6(100_(), 50_(), 50_()) });
         ({ test_6(100_(), 50_(), 100_()) });
         ({ test_6(100_(), 50_(), 1000_()) });
-        ({ test_6(100_(), 50_(), npos_9.with(|rc| *rc.borrow())) });
+        ({ test_6(100_(), 50_(), unimplemented!()) });
     }
     {
         let mut str: () = unimplemented!();
@@ -161,7 +161,7 @@ pub fn test_string_8() {
         unimplemented!();
     }
 }
-pub fn test_string_10() {
+pub fn test_string_9() {
     {
         ({ test_7(0_(), 0_(), 5_()) });
         ({ test_7(0_(), 0_(), 10_()) });
@@ -174,7 +174,7 @@ pub fn test_string_10() {
         ({ test_7(100_(), 50_(), 50_()) });
         ({ test_7(100_(), 50_(), 100_()) });
         ({ test_7(100_(), 50_(), 1000_()) });
-        ({ test_7(100_(), 50_(), npos_11.with(|rc| *rc.borrow())) });
+        ({ test_7(100_(), 50_(), unimplemented!()) });
     }
     {
         let mut str: () = unimplemented!();
@@ -185,9 +185,9 @@ pub fn test_string_10() {
         unimplemented!();
     }
 }
-pub fn test_12() -> () {
+pub fn test_10() -> () {
     ({ test_string_8() });
-    ({ test_string_10() });
+    ({ test_string_9() });
     return true;
 }
 pub fn main() {
@@ -210,7 +210,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_12() });
+    ({ test_10() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

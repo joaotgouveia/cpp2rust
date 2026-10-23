@@ -223,11 +223,11 @@ pub fn test_ppc_edge_cases_28() -> () {
 pub fn test_floating_points_30() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max_v: () = ({ std_numeric_limits_float_::max() });
-    let mut min_v: () = ({ std_numeric_limits_float_::min() });
-    let mut denorm_min: () = ({ std_numeric_limits_float_::denorm_min() });
-    let mut inf: () = ({ std_numeric_limits_float_::infinity() });
-    let mut qnan: () = ({ std_numeric_limits_float_::quiet_NaN() });
+    let mut max_v: () = unimplemented!();
+    let mut min_v: () = unimplemented!();
+    let mut denorm_min: () = unimplemented!();
+    let mut inf: () = unimplemented!();
+    let mut qnan: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -273,11 +273,11 @@ pub fn test_floating_points_30() -> () {
 pub fn test_floating_points_31() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max_v: () = ({ std_numeric_limits_double_::max() });
-    let mut min_v: () = ({ std_numeric_limits_double_::min() });
-    let mut denorm_min: () = ({ std_numeric_limits_double_::denorm_min() });
-    let mut inf: () = ({ std_numeric_limits_double_::infinity() });
-    let mut qnan: () = ({ std_numeric_limits_double_::quiet_NaN() });
+    let mut max_v: () = unimplemented!();
+    let mut min_v: () = unimplemented!();
+    let mut denorm_min: () = unimplemented!();
+    let mut inf: () = unimplemented!();
+    let mut qnan: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -323,11 +323,11 @@ pub fn test_floating_points_31() -> () {
 pub fn test_floating_points_32() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut max_v: () = ({ std_numeric_limits_long_double_::max() });
-    let mut min_v: () = ({ std_numeric_limits_long_double_::min() });
-    let mut denorm_min: () = ({ std_numeric_limits_long_double_::denorm_min() });
-    let mut inf: () = ({ std_numeric_limits_long_double_::infinity() });
-    let mut qnan: () = ({ std_numeric_limits_long_double_::quiet_NaN() });
+    let mut max_v: () = unimplemented!();
+    let mut min_v: () = unimplemented!();
+    let mut denorm_min: () = unimplemented!();
+    let mut inf: () = unimplemented!();
+    let mut qnan: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -71,7 +71,7 @@ impl test_hash_int_ {
         this
     }
     pub unsafe fn operator_call(&self, x: *const ()) -> () {
-        return (unsafe { (unimplemented!() as std___hash_impl_int__void_)((*x)) });
+        return unimplemented!();
     }
     pub unsafe fn operator_eq(&self, c: *const test_hash_int_) -> () {
         return ((self.data_) == ((*c).data_));

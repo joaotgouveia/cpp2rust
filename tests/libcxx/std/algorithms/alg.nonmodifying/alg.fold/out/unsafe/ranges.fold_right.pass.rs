@@ -1173,8 +1173,8 @@ pub unsafe fn check_iterator_46(
 pub unsafe fn check_iterator_47(r: *mut (), init: *const (), mut f: (), expected: *const ()) {
     {
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             let ___init: () = (*init);
             let ___func: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut fold_right_43))(
@@ -1188,8 +1188,8 @@ pub unsafe fn check_iterator_47(r: *mut (), init: *const (), mut f: (), expected
         let mut f2: invocable_with_telemetry_std_plus_void__ =
             invocable_with_telemetry_std_plus_void__::new({ unimplemented!() }, { &mut telemetry });
         let mut result: () = (unsafe {
-            let ___first: () = (unsafe { (*r).begin_5() });
-            let ___last: () = (unsafe { (*r).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             let ___init: () = (*init);
             let ___func: invocable_with_telemetry_std_plus_void__ =
                 invocable_with_telemetry_std_plus_void__::copy_from({ &f2 });

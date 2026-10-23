@@ -7,16 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn is_close_0(mut v: (), mut comp: ()) -> () {
-    return (v <= (comp + ({ std_numeric_limits_float_::epsilon() })))
-        && (v >= (comp - ({ std_numeric_limits_float_::epsilon() })));
+    return (v <= (comp + unimplemented!())) && (v >= (comp - unimplemented!()));
 }
 pub fn is_close_1(mut v: (), mut comp: ()) -> () {
-    return (v <= (comp + ({ std_numeric_limits_double_::epsilon() })))
-        && (v >= (comp - ({ std_numeric_limits_double_::epsilon() })));
+    return (v <= (comp + unimplemented!())) && (v >= (comp - unimplemented!()));
 }
 pub fn is_close_2(mut v: (), mut comp: ()) -> () {
-    return (v <= (comp + ({ std_numeric_limits_long_double_::epsilon() })))
-        && (v >= (comp - ({ std_numeric_limits_long_double_::epsilon() })));
+    return (v <= (comp + unimplemented!())) && (v >= (comp - unimplemented!()));
 }
 thread_local!(
     pub static testcases_3: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -182,8 +179,7 @@ pub const anon_4_inf: anon_4 = 2;
 pub const anon_4_NaN: anon_4 = 3;
 pub const anon_4_non_zero_nan: anon_4 = 4;
 pub fn test_isinf_5(mut v: ()) -> () {
-    return (v == ({ std_numeric_limits_double_::infinity() }))
-        || (v == -({ std_numeric_limits_double_::infinity() }));
+    return (v == unimplemented!()) || (v == -unimplemented!());
 }
 pub fn test_isnan_6(mut v: ()) -> () {
     return (v != v);

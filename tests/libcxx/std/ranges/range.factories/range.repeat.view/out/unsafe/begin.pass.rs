@@ -9,22 +9,22 @@ use std::rc::Rc;
 pub unsafe fn test_0() -> () {
     {
         let mut rv: () = unimplemented!();
-        let mut iter: () = (unsafe { rv.begin() });
+        let mut iter: () = unimplemented!();
         unimplemented!();
     }
     {
         let rv: () = unimplemented!();
-        let mut iter: () = (unsafe { rv.begin() });
+        let mut iter: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut rv: () = unimplemented!();
-        let mut iter: () = (unsafe { rv.begin() });
+        let mut iter: () = unimplemented!();
         unimplemented!();
     }
     {
         let rv: () = unimplemented!();
-        let mut iter: () = (unsafe { rv.begin() });
+        let mut iter: () = unimplemented!();
         unimplemented!();
     }
     return true;

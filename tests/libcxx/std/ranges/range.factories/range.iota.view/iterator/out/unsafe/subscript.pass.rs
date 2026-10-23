@@ -227,7 +227,7 @@ pub const CtorKind_ValueCtor: CtorKind = 1;
 pub unsafe fn testType_18() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -236,7 +236,7 @@ pub unsafe fn testType_18() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -245,7 +245,7 @@ pub unsafe fn testType_18() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -254,7 +254,7 @@ pub unsafe fn testType_18() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -265,7 +265,7 @@ pub unsafe fn testType_18() {
 pub unsafe fn testType_19() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -274,7 +274,7 @@ pub unsafe fn testType_19() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -283,7 +283,7 @@ pub unsafe fn testType_19() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -292,7 +292,7 @@ pub unsafe fn testType_19() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -303,7 +303,7 @@ pub unsafe fn testType_19() {
 pub unsafe fn testType_20() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -312,7 +312,7 @@ pub unsafe fn testType_20() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -321,7 +321,7 @@ pub unsafe fn testType_20() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -330,7 +330,7 @@ pub unsafe fn testType_20() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -341,7 +341,7 @@ pub unsafe fn testType_20() {
 pub unsafe fn testType_21() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -350,7 +350,7 @@ pub unsafe fn testType_21() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -359,7 +359,7 @@ pub unsafe fn testType_21() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -368,7 +368,7 @@ pub unsafe fn testType_21() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -379,7 +379,7 @@ pub unsafe fn testType_21() {
 pub unsafe fn testType_22() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -388,7 +388,7 @@ pub unsafe fn testType_22() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -397,7 +397,7 @@ pub unsafe fn testType_22() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -406,7 +406,7 @@ pub unsafe fn testType_22() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -417,7 +417,7 @@ pub unsafe fn testType_22() {
 pub unsafe fn testType_23() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -426,7 +426,7 @@ pub unsafe fn testType_23() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -435,7 +435,7 @@ pub unsafe fn testType_23() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -444,7 +444,7 @@ pub unsafe fn testType_23() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -455,7 +455,7 @@ pub unsafe fn testType_23() {
 pub unsafe fn testType_24() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -464,7 +464,7 @@ pub unsafe fn testType_24() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -473,7 +473,7 @@ pub unsafe fn testType_24() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -482,7 +482,7 @@ pub unsafe fn testType_24() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -493,7 +493,7 @@ pub unsafe fn testType_24() {
 pub unsafe fn testType_25() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -502,7 +502,7 @@ pub unsafe fn testType_25() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -511,7 +511,7 @@ pub unsafe fn testType_25() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -520,7 +520,7 @@ pub unsafe fn testType_25() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -531,7 +531,7 @@ pub unsafe fn testType_25() {
 pub unsafe fn testType_26() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -540,7 +540,7 @@ pub unsafe fn testType_26() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -549,7 +549,7 @@ pub unsafe fn testType_26() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -558,7 +558,7 @@ pub unsafe fn testType_26() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -569,7 +569,7 @@ pub unsafe fn testType_26() {
 pub unsafe fn testType_27() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -578,7 +578,7 @@ pub unsafe fn testType_27() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -587,7 +587,7 @@ pub unsafe fn testType_27() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -596,7 +596,7 @@ pub unsafe fn testType_27() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -607,7 +607,7 @@ pub unsafe fn testType_27() {
 pub unsafe fn testType_28() {
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -616,7 +616,7 @@ pub unsafe fn testType_28() {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -625,7 +625,7 @@ pub unsafe fn testType_28() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();
@@ -634,7 +634,7 @@ pub unsafe fn testType_28() {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (100_())) {
             unimplemented!();

@@ -102,20 +102,20 @@ pub unsafe fn test_1_2_11() {
 pub unsafe fn test_1_3_12() -> () {
     const _: () = assert!(true, "");;
     let mut v: [(); 14] = [
-        -(unsafe { std_numeric_limits_float_::infinity() }),
-        (unsafe { std_numeric_limits_float_::lowest() }),
+        -unimplemented!(),
+        unimplemented!(),
         -1_f64,
         -0.1_f64,
-        -(unsafe { std_numeric_limits_float_::min() }),
+        -unimplemented!(),
         -0_f64,
         0_f64,
-        (unsafe { std_numeric_limits_float_::min() }),
+        unimplemented!(),
         0.1_f64,
         1_f64,
         2_f64,
         3.14_f64,
-        (unsafe { std_numeric_limits_float_::max() }),
-        (unsafe { std_numeric_limits_float_::infinity() }),
+        unimplemented!(),
+        unimplemented!(),
     ];
     const _: () = assert!(true, "std::size(v) == 14");;
     let mut i: () = 0_();
@@ -329,22 +329,10 @@ pub unsafe fn test_1_3_12() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut nq: () =
-            (unsafe { copysign_13((unsafe { std_numeric_limits_float_::quiet_NaN() }), -1_()) });
-        let mut ns: () = (unsafe {
-            copysign_13(
-                (unsafe { std_numeric_limits_float_::signaling_NaN() }),
-                -1_(),
-            )
-        });
-        let mut ps: () = (unsafe {
-            copysign_13(
-                (unsafe { std_numeric_limits_float_::signaling_NaN() }),
-                1_(),
-            )
-        });
-        let mut pq: () =
-            (unsafe { copysign_13((unsafe { std_numeric_limits_float_::quiet_NaN() }), 1_()) });
+        let mut nq: () = (unsafe { copysign_13(unimplemented!(), -1_()) });
+        let mut ns: () = (unsafe { copysign_13(unimplemented!(), -1_()) });
+        let mut ps: () = (unsafe { copysign_13(unimplemented!(), 1_()) });
+        let mut pq: () = (unsafe { copysign_13(unimplemented!(), 1_()) });
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -387,20 +375,20 @@ pub unsafe fn test_1_3_12() -> () {
 pub unsafe fn test_1_3_14() -> () {
     const _: () = assert!(true, "");;
     let mut v: [(); 14] = [
-        -(unsafe { std_numeric_limits_double_::infinity() }),
-        (unsafe { std_numeric_limits_double_::lowest() }),
+        -unimplemented!(),
+        unimplemented!(),
         -1_f64,
         -0.1_f64,
-        -(unsafe { std_numeric_limits_double_::min() }),
+        -unimplemented!(),
         -0_f64,
         0_f64,
-        (unsafe { std_numeric_limits_double_::min() }),
+        unimplemented!(),
         0.1_f64,
         1_f64,
         2_f64,
         3.14_f64,
-        (unsafe { std_numeric_limits_double_::max() }),
-        (unsafe { std_numeric_limits_double_::infinity() }),
+        unimplemented!(),
+        unimplemented!(),
     ];
     const _: () = assert!(true, "std::size(v) == 14");;
     let mut i: () = 0_();
@@ -614,22 +602,10 @@ pub unsafe fn test_1_3_14() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut nq: () =
-            (unsafe { copysign_15((unsafe { std_numeric_limits_double_::quiet_NaN() }), -1_()) });
-        let mut ns: () = (unsafe {
-            copysign_15(
-                (unsafe { std_numeric_limits_double_::signaling_NaN() }),
-                -1_(),
-            )
-        });
-        let mut ps: () = (unsafe {
-            copysign_15(
-                (unsafe { std_numeric_limits_double_::signaling_NaN() }),
-                1_(),
-            )
-        });
-        let mut pq: () =
-            (unsafe { copysign_15((unsafe { std_numeric_limits_double_::quiet_NaN() }), 1_()) });
+        let mut nq: () = (unsafe { copysign_15(unimplemented!(), -1_()) });
+        let mut ns: () = (unsafe { copysign_15(unimplemented!(), -1_()) });
+        let mut ps: () = (unsafe { copysign_15(unimplemented!(), 1_()) });
+        let mut pq: () = (unsafe { copysign_15(unimplemented!(), 1_()) });
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();
@@ -672,20 +648,20 @@ pub unsafe fn test_1_3_14() -> () {
 pub unsafe fn test_1_3_16() -> () {
     const _: () = assert!(true, "");;
     let mut v: [(); 14] = [
-        -(unsafe { std_numeric_limits_long_double_::infinity() }),
-        (unsafe { std_numeric_limits_long_double_::lowest() }),
+        -unimplemented!(),
+        unimplemented!(),
         -1_f64,
         -0.1_f64,
-        -(unsafe { std_numeric_limits_long_double_::min() }),
+        -unimplemented!(),
         -0_f64,
         0_f64,
-        (unsafe { std_numeric_limits_long_double_::min() }),
+        unimplemented!(),
         0.1_f64,
         1_f64,
         2_f64,
         3.14_f64,
-        (unsafe { std_numeric_limits_long_double_::max() }),
-        (unsafe { std_numeric_limits_long_double_::infinity() }),
+        unimplemented!(),
+        unimplemented!(),
     ];
     const _: () = assert!(true, "std::size(v) == 14");;
     let mut i: () = 0_();
@@ -899,30 +875,10 @@ pub unsafe fn test_1_3_16() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut nq: () = (unsafe {
-            copysign_17(
-                (unsafe { std_numeric_limits_long_double_::quiet_NaN() }),
-                -1_(),
-            )
-        });
-        let mut ns: () = (unsafe {
-            copysign_17(
-                (unsafe { std_numeric_limits_long_double_::signaling_NaN() }),
-                -1_(),
-            )
-        });
-        let mut ps: () = (unsafe {
-            copysign_17(
-                (unsafe { std_numeric_limits_long_double_::signaling_NaN() }),
-                1_(),
-            )
-        });
-        let mut pq: () = (unsafe {
-            copysign_17(
-                (unsafe { std_numeric_limits_long_double_::quiet_NaN() }),
-                1_(),
-            )
-        });
+        let mut nq: () = (unsafe { copysign_17(unimplemented!(), -1_()) });
+        let mut ns: () = (unsafe { copysign_17(unimplemented!(), -1_()) });
+        let mut ps: () = (unsafe { copysign_17(unimplemented!(), 1_()) });
+        let mut pq: () = (unsafe { copysign_17(unimplemented!(), 1_()) });
         unimplemented!();
         unimplemented!();
         let mut i: () = 0_();

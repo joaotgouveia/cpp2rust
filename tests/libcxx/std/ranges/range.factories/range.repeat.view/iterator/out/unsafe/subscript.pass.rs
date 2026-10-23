@@ -9,14 +9,14 @@ use std::rc::Rc;
 pub unsafe fn test_0() -> () {
     {
         let mut v: () = unimplemented!();
-        let mut iter: () = (unsafe { v.begin() });
+        let mut iter: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "noexcept(iter[0])");;
         const _: () = assert!(true, "std::same_as<decltype(iter[0]), const int&>");;
     }
     {
         let mut v: () = unimplemented!();
-        let mut iter: () = (unsafe { v.begin() });
+        let mut iter: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "noexcept(iter[0])");;
         const _: () = assert!(true, "std::same_as<decltype(iter[0]), const int&>");;

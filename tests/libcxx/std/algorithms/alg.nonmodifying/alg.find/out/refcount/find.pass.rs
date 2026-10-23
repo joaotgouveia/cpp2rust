@@ -11355,45 +11355,29 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -11410,45 +11394,33 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -11465,45 +11437,33 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -11520,45 +11480,33 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -11575,45 +11523,33 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1___int128_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -11631,44 +11567,36 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_signed_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_signed_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_signed_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1___int128_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_signed_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -11685,45 +11613,33 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -11740,45 +11656,29 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -11795,45 +11695,29 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -11850,45 +11734,33 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_long_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -11905,45 +11777,33 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1___int128(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1___int128_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -11961,44 +11821,36 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -12019,41 +11871,41 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -12071,46 +11923,36 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -12128,48 +11970,36 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
+            TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -12196,45 +12026,41 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -12261,45 +12087,41 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
             TestIntegerPromotions1___int128_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1___int128_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -12316,45 +12138,33 @@ impl TestIntegerPromotions1___int128_Impl for Ptr<TestIntegerPromotions1___int12
         ({ TestIntegerPromotions1___int128_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1___int128_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1___int128_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1___int128_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1___int128_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1___int128_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1___int128_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1___int128_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1___int128_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1___int128_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1___int128_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -12501,45 +12311,33 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_char(self, (255_() != 0), -1_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_char(self, (256_() != 0), 0_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_char(self, (257_() != 0), 1_()) });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_char(self, (0_() != 0), unimplemented!()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_char(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_char(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_char_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_bool_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_char(self, (0_() != 0), unimplemented!()) });
+        ({
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_char(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_bool_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ((({ std_numeric_limits_char_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -12556,45 +12354,33 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, (255_() != 0), 255_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, (256_() != 0), 256_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, (257_() != 0), 257_()) });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, (0_() != 0), unimplemented!()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_wchar_t(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_wchar_t(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_wchar_t_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, (0_() != 0), unimplemented!()) });
+        ({
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_wchar_t(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ((({ std_numeric_limits_wchar_t_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -12611,45 +12397,33 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, (255_() != 0), 255_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, (256_() != 0), 0_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, (257_() != 0), 1_()) });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, (0_() != 0), unimplemented!()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_char8_t(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_char8_t(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_char8_t_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, (0_() != 0), unimplemented!()) });
+        ({
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_char8_t(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ((({ std_numeric_limits_char8_t_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -12667,44 +12441,36 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_char16_t(self, (256_() != 0), 256_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_char16_t(self, (257_() != 0), 257_()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_char16_t(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
+            TestIntegerPromotions1_bool_Impl::test_1_char16_t(self, (0_() != 0), unimplemented!())
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_char16_t(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_char16_t_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_bool_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_char16_t(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
+            TestIntegerPromotions1_bool_Impl::test_1_char16_t(self, (0_() != 0), unimplemented!())
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            let _val: () = ((({ std_numeric_limits_char16_t_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -12722,44 +12488,36 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_char32_t(self, (256_() != 0), 256_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_char32_t(self, (257_() != 0), 257_()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_char32_t(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
+            TestIntegerPromotions1_bool_Impl::test_1_char32_t(self, (0_() != 0), unimplemented!())
         });
         ({
-            let _val: () = (({ std_numeric_limits_char32_t_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_char32_t(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()) != 0);
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = ((unimplemented!()).wrapping_add(1_()) != 0);
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
             TestIntegerPromotions1_bool_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_char32_t(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
+            TestIntegerPromotions1_bool_Impl::test_1_char32_t(self, (0_() != 0), unimplemented!())
         });
         ({
-            let _val: () = (({ std_numeric_limits_char32_t_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_()) != 0);
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = ((unimplemented!()).wrapping_sub(1_()) != 0);
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_bool_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -12780,41 +12538,41 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
             TestIntegerPromotions1_bool_Impl::test_1_signed_char(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_signed_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_signed_char(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_signed_char_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_bool_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_signed_char(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_signed_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = ((({ std_numeric_limits_signed_char_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -12831,45 +12589,33 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_short(self, (255_() != 0), 255_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_short(self, (256_() != 0), 256_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_short(self, (257_() != 0), 257_()) });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_short(self, (0_() != 0), unimplemented!()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_short(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_short(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_short_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_bool_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_short(self, (0_() != 0), unimplemented!()) });
+        ({
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_short(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_bool_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ((({ std_numeric_limits_short_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -12886,45 +12632,33 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_int(self, (255_() != 0), 255_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_int(self, (256_() != 0), 256_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_int(self, (257_() != 0), 257_()) });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_int(self, (0_() != 0), unimplemented!()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_int(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_int(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_int_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_bool_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_int(self, (0_() != 0), unimplemented!()) });
+        ({
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_int(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_bool_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ((({ std_numeric_limits_int_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -12941,45 +12675,33 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_long(self, (255_() != 0), 255_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_long(self, (256_() != 0), 256_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_long(self, (257_() != 0), 257_()) });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_long(self, (0_() != 0), unimplemented!()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_long(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_long(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_long_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_bool_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_bool_Impl::test_1_long(self, (0_() != 0), unimplemented!()) });
+        ({
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_long(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_bool_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ((({ std_numeric_limits_long_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -12997,44 +12719,36 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1_long_long(self, (256_() != 0), 256_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1_long_long(self, (257_() != 0), 257_()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_long_long(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
+            TestIntegerPromotions1_bool_Impl::test_1_long_long(self, (0_() != 0), unimplemented!())
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_long_long(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_long_long_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_bool_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1_long_long(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
+            TestIntegerPromotions1_bool_Impl::test_1_long_long(self, (0_() != 0), unimplemented!())
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = ((({ std_numeric_limits_long_long_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -13052,44 +12766,36 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1___int128(self, (256_() != 0), 256_()) });
         ({ TestIntegerPromotions1_bool_Impl::test_1___int128(self, (257_() != 0), 257_()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1___int128(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits___int128_::min() }),
-            )
+            TestIntegerPromotions1_bool_Impl::test_1___int128(self, (0_() != 0), unimplemented!())
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1___int128(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits___int128_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_bool_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1___int128(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits___int128_::max() }),
-            )
+            TestIntegerPromotions1_bool_Impl::test_1___int128(self, (0_() != 0), unimplemented!())
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = ((({ std_numeric_limits___int128_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -13110,41 +12816,41 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_char(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_char(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_unsigned_char_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_char(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = ((({ std_numeric_limits_unsigned_char_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -13171,41 +12877,41 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_short(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_short(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_unsigned_short_::min() }) + 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_short(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = ((({ std_numeric_limits_unsigned_short_::max() }) - 1_()) != 0);
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -13226,45 +12932,41 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_int(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_int_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_int(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                ((({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()) != 0);
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = ((unimplemented!() as ()).wrapping_add(1_()) != 0);
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_int(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_int_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                ((({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_()) != 0);
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = ((unimplemented!() as ()).wrapping_sub(1_()) != 0);
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -13285,45 +12987,41 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_long_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                ((({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()) != 0);
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = ((unimplemented!() as ()).wrapping_add(1_()) != 0);
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_long_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                ((({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_()) != 0);
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = ((unimplemented!() as ()).wrapping_sub(1_()) != 0);
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -13372,47 +13070,41 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long_long(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_long_long_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long_long(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_unsigned_long_long_::min() }) as ())
-                .wrapping_add(1_())
-                != 0);
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = ((unimplemented!() as ()).wrapping_add(1_()) != 0);
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long_long(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_long_long_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = ((({ std_numeric_limits_unsigned_long_long_::max() }) as ())
-                .wrapping_sub(1_())
-                != 0);
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = ((unimplemented!() as ()).wrapping_sub(1_()) != 0);
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -13459,47 +13151,41 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
             TestIntegerPromotions1_bool_Impl::test_1_unsigned___int128(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned___int128_::min() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned___int128(
                 self,
                 (0_() != 0),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_unsigned___int128_::min() }) as ())
-                .wrapping_add(1_())
-                != 0);
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = ((unimplemented!() as ()).wrapping_add(1_()) != 0);
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1_unsigned___int128(
                 self,
                 (0_() != 0),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned___int128_::max() }) != 0);
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = (unimplemented!() != 0);
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = ((({ std_numeric_limits_unsigned___int128_::max() }) as ())
-                .wrapping_sub(1_())
-                != 0);
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = ((unimplemented!() as ()).wrapping_sub(1_()) != 0);
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_bool_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -13516,45 +13202,33 @@ impl TestIntegerPromotions1_bool_Impl for Ptr<TestIntegerPromotions1_bool_> {
         ({ TestIntegerPromotions1_bool_Impl::test_1__Bool(self, (255_() != 0), (255_() != 0)) });
         ({ TestIntegerPromotions1_bool_Impl::test_1__Bool(self, (256_() != 0), (256_() != 0)) });
         ({ TestIntegerPromotions1_bool_Impl::test_1__Bool(self, (257_() != 0), (257_() != 0)) });
+        ({ TestIntegerPromotions1_bool_Impl::test_1__Bool(self, (0_() != 0), unimplemented!()) });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1__Bool(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_bool_Impl::test_1__Bool(
                 self,
                 (0_() != 0),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = ((unimplemented!() + 1_()) != 0);
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_bool_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_bool_Impl::test_1__Bool(self, (0_() != 0), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_bool_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_bool_Impl::test_1__Bool(
-                self,
-                (0_() != 0),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_bool_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = ((unimplemented!() - 1_()) != 0);
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_bool_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -13701,45 +13375,29 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -13756,45 +13414,33 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -13811,45 +13457,33 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -13866,45 +13500,33 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -13921,45 +13543,33 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -13977,44 +13587,36 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -14031,45 +13633,33 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -14086,45 +13676,29 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -14141,45 +13715,29 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -14196,45 +13754,33 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -14251,45 +13797,33 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -14307,44 +13841,36 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -14365,41 +13891,41 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -14417,46 +13943,36 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -14474,48 +13990,36 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
+            TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -14542,45 +14046,41 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -14607,45 +14107,41 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char16_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -14662,45 +14158,33 @@ impl TestIntegerPromotions1_char16_t_Impl for Ptr<TestIntegerPromotions1_char16_
         ({ TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char16_t_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char16_t_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_char16_t_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -14847,45 +14331,29 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -14902,45 +14370,33 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -14957,45 +14413,33 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -15012,45 +14456,33 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -15067,45 +14499,33 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -15123,44 +14543,36 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -15177,45 +14589,33 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -15232,45 +14632,29 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -15287,45 +14671,29 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -15342,45 +14710,33 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -15397,45 +14753,33 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -15453,44 +14797,36 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -15511,41 +14847,41 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -15563,46 +14899,36 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -15620,48 +14946,36 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
+            TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -15688,45 +15002,41 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -15753,45 +15063,41 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char32_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -15808,45 +15114,33 @@ impl TestIntegerPromotions1_char32_t_Impl for Ptr<TestIntegerPromotions1_char32_
         ({ TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char32_t_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char32_t_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_char32_t_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -15993,45 +15287,29 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -16048,45 +15326,33 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -16103,45 +15369,33 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -16158,45 +15412,33 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -16213,45 +15455,33 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -16268,45 +15498,33 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -16323,45 +15541,29 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_short(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_short(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_short(
-                self,
-                0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_short(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -16378,45 +15580,29 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_int(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_int(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -16433,45 +15619,29 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_long(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -16488,45 +15658,33 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -16543,45 +15701,33 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -16599,44 +15745,36 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(self, 1_(), 1_()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -16654,44 +15792,36 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -16709,46 +15839,36 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -16766,48 +15886,36 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
+            TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -16834,45 +15942,41 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -16893,45 +15997,41 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char8_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -16948,45 +16048,33 @@ impl TestIntegerPromotions1_char8_t_Impl for Ptr<TestIntegerPromotions1_char8_t_
         ({ TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, 0_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, 1_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char8_t_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char8_t_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_char8_t_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -17133,45 +16221,27 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_char(self, -1_(), -1_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_char(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_char(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_char_Impl::test_1_char(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            TestIntegerPromotions1_char_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_char_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -17188,45 +16258,29 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -17243,45 +16297,29 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_char8_t(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_char8_t(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_char8_t(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char8_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char_Impl::test_1_char8_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -17298,45 +16336,29 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_char16_t(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_char16_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_char16_t(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char16_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char_Impl::test_1_char16_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -17353,45 +16375,33 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_char32_t(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_char32_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_char32_t(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_char_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -17408,45 +16418,33 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_signed_char(self, -1_(), -1_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_signed_char(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_signed_char(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_signed_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_signed_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -17463,45 +16461,27 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_short(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_short(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_short(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_char_Impl::test_1_short(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_char_Impl::test_1_short(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_short(
-                self,
-                0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            TestIntegerPromotions1_char_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_char_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -17518,45 +16498,27 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_int(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_int(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_int(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_char_Impl::test_1_int(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_char_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            TestIntegerPromotions1_char_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_char_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -17573,45 +16535,27 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_long(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_long(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_char_Impl::test_1_long(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_char_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            TestIntegerPromotions1_char_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_char_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -17628,45 +16572,33 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_long_long(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_long_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_long_long(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -17683,45 +16615,29 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1___int128(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1___int128(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1___int128(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1___int128(
-                self,
-                0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_char_Impl::test_1___int128(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_char_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -17738,45 +16654,33 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -17793,45 +16697,33 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -17848,47 +16740,33 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
+            TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -17905,49 +16783,33 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
+            TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
-            TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -17968,45 +16830,41 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -18024,48 +16882,36 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
-            )
+            TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
-            )
+            TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_char_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -18082,45 +16928,33 @@ impl TestIntegerPromotions1_char_Impl for Ptr<TestIntegerPromotions1_char_> {
         ({ TestIntegerPromotions1_char_Impl::test_1__Bool(self, -1_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_char_Impl::test_1__Bool(self, 0_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_char_Impl::test_1__Bool(self, 1_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_char_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_char_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_char_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_char_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_char_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_char_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_char_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_char_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_char_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -18267,45 +17101,27 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_int_Impl::test_1_char(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            TestIntegerPromotions1_int_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_int_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -18322,45 +17138,29 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -18377,45 +17177,29 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_char8_t(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char8_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_int_Impl::test_1_char8_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -18432,45 +17216,29 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_char16_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char16_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_int_Impl::test_1_char16_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -18487,45 +17255,33 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_char32_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_int_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_int_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -18542,45 +17298,33 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_signed_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_signed_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_signed_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_signed_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_signed_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -18597,45 +17341,27 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_int_Impl::test_1_short(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_int_Impl::test_1_short(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_short(
-                self,
-                0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            TestIntegerPromotions1_int_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_int_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -18652,45 +17378,27 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_int_Impl::test_1_int(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_int_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            TestIntegerPromotions1_int_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_int_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -18707,45 +17415,27 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_int_Impl::test_1_long(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_int_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            TestIntegerPromotions1_int_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_int_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -18762,45 +17452,29 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_long_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_long_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_int_Impl::test_1_long_long(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -18817,45 +17491,29 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1___int128(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1___int128(
-                self,
-                0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_int_Impl::test_1___int128(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_int_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -18872,45 +17530,33 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -18927,45 +17573,33 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_int_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -18982,47 +17616,33 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
+            TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_int_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -19039,49 +17659,33 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
+            TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -19099,48 +17703,36 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
-            )
+            TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
-            )
+            TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_int_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -19158,48 +17750,36 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
-            )
+            TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
-            )
+            TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_int_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -19216,45 +17796,33 @@ impl TestIntegerPromotions1_int_Impl for Ptr<TestIntegerPromotions1_int_> {
         ({ TestIntegerPromotions1_int_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_int_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_int_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_int_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_int_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_int_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_int_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_int_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_int_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_int_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_int_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_int_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -19401,45 +17969,27 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_long_Impl::test_1_char(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            TestIntegerPromotions1_long_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_long_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -19456,45 +18006,29 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -19511,45 +18045,29 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_char8_t(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char8_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_long_Impl::test_1_char8_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -19566,45 +18084,29 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_char16_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char16_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_long_Impl::test_1_char16_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -19621,45 +18123,33 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_char32_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_long_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -19676,45 +18166,33 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_signed_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_signed_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_signed_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_signed_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_signed_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -19731,45 +18209,27 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_long_Impl::test_1_short(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_long_Impl::test_1_short(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_short(
-                self,
-                0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            TestIntegerPromotions1_long_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_long_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -19786,45 +18246,27 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_long_Impl::test_1_int(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_long_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            TestIntegerPromotions1_long_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_long_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -19841,45 +18283,27 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_long_Impl::test_1_long(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_long_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            TestIntegerPromotions1_long_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_long_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -19896,45 +18320,33 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_long_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -19951,45 +18363,29 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1___int128(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1___int128(
-                self,
-                0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_long_Impl::test_1___int128(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_long_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -20006,45 +18402,33 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -20061,45 +18445,33 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -20116,47 +18488,33 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
+            TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -20173,49 +18531,33 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
+            TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
-            TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -20236,45 +18578,41 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_long_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -20292,48 +18630,36 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
-            )
+            TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
-            )
+            TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_long_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -20350,45 +18676,33 @@ impl TestIntegerPromotions1_long_Impl for Ptr<TestIntegerPromotions1_long_> {
         ({ TestIntegerPromotions1_long_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_long_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_long_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_long_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_long_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_long_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_long_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -20535,45 +18849,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -20590,45 +18892,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -20645,45 +18935,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -20700,45 +18978,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -20755,45 +19021,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -20811,44 +19065,36 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_signed_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_signed_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
+            TestIntegerPromotions1_long_long_Impl::test_1_signed_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
+            TestIntegerPromotions1_long_long_Impl::test_1_signed_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -20865,45 +19111,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -20920,45 +19154,29 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_long_long_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -20975,45 +19193,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -21030,45 +19236,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -21085,45 +19279,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1___int128(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_long_long_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -21144,41 +19326,41 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -21199,41 +19381,41 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -21251,46 +19433,36 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
+            TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
+            TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -21311,45 +19483,41 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -21382,45 +19550,41 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -21447,45 +19611,41 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_long_long_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -21502,45 +19662,33 @@ impl TestIntegerPromotions1_long_long_Impl for Ptr<TestIntegerPromotions1_long_l
         ({ TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_long_long_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_long_long_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_long_long_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -21687,45 +19835,27 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_short_Impl::test_1_char(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            TestIntegerPromotions1_short_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_short_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -21742,45 +19872,29 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -21797,45 +19911,29 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_char8_t(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char8_t(
-                self,
-                0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_short_Impl::test_1_char8_t(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -21852,45 +19950,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_char16_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -21907,45 +19993,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_char32_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_short_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_short_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -21962,45 +20036,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_signed_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_signed_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_signed_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_signed_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_signed_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -22017,45 +20079,29 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_short(
-                self,
-                0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_short_Impl::test_1_short(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -22072,45 +20118,27 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_short_Impl::test_1_int(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_short_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            TestIntegerPromotions1_short_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_short_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -22127,45 +20155,27 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
+            TestIntegerPromotions1_short_Impl::test_1_long(self, _val, _to_find)
         });
+        ({ TestIntegerPromotions1_short_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_())) });
         ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            TestIntegerPromotions1_short_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            TestIntegerPromotions1_short_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -22182,45 +20192,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_long_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -22237,45 +20235,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1___int128(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_short_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -22292,45 +20278,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -22348,44 +20322,36 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_short(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
-            )
+            TestIntegerPromotions1_short_Impl::test_1_unsigned_short(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
-            )
+            TestIntegerPromotions1_short_Impl::test_1_unsigned_short(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -22402,47 +20368,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
+            TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -22459,49 +20411,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
+            TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
-            TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -22522,45 +20458,41 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -22581,45 +20513,41 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
             TestIntegerPromotions1_short_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_short_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -22636,45 +20564,33 @@ impl TestIntegerPromotions1_short_Impl for Ptr<TestIntegerPromotions1_short_> {
         ({ TestIntegerPromotions1_short_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_short_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_short_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_short_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_short_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_short_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_short_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_short_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_short_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_short_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_short_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_short_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -22821,45 +20737,33 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char(self, -1_(), -1_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_signed_char_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_signed_char_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -22876,45 +20780,33 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -22931,45 +20823,33 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -22987,44 +20867,36 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
+            TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
+            TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -23042,44 +20914,36 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
+            TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
+            TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -23100,41 +20964,41 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
             TestIntegerPromotions1_signed_char_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -23151,45 +21015,33 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_short(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_short(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_short(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_signed_char_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_signed_char_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -23206,45 +21058,33 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_int(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_int(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_int(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_signed_char_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_signed_char_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -23261,45 +21101,33 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_long(self, -1_(), 255_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_long(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_signed_char_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_signed_char_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -23317,44 +21145,36 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_long_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1_long_long(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
+            TestIntegerPromotions1_signed_char_Impl::test_1_long_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
+            TestIntegerPromotions1_signed_char_Impl::test_1_long_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -23372,44 +21192,36 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1___int128(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1___int128(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
+            TestIntegerPromotions1_signed_char_Impl::test_1___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
+            TestIntegerPromotions1_signed_char_Impl::test_1___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -23430,41 +21242,41 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -23491,41 +21303,41 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -23546,43 +21358,41 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -23603,45 +21413,41 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -23690,45 +21496,41 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -23771,45 +21573,41 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_signed_char_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -23826,45 +21624,33 @@ impl TestIntegerPromotions1_signed_char_Impl for Ptr<TestIntegerPromotions1_sign
         ({ TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, -1_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, 0_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, 1_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_signed_char_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_signed_char_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_signed_char_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -24014,44 +21800,36 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
         ({ TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
+            TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
+            TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -24072,41 +21850,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -24127,41 +21905,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char8_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char8_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -24188,41 +21966,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char16_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char16_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -24249,41 +22027,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -24326,41 +22104,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -24381,41 +22159,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -24433,44 +22211,36 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
         ({ TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
+            TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
+            TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -24488,44 +22258,36 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
         ({ TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
+            TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
+            TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -24552,41 +22314,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -24613,41 +22375,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -24702,12 +22464,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_char(
                 self, _val, _to_find,
             )
@@ -24716,12 +22478,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_char(
                 self, _val, _to_find,
             )
@@ -24730,19 +22492,19 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_char(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_char(
                 self, _val, _to_find,
             )
@@ -24817,12 +22579,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_short(
                 self, _val, _to_find,
             )
@@ -24831,12 +22593,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_short(
                 self, _val, _to_find,
             )
@@ -24845,19 +22607,19 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_short(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_short(
                 self, _val, _to_find,
             )
@@ -24908,43 +22670,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -25007,12 +22767,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long(
                 self, _val, _to_find,
             )
@@ -25021,14 +22781,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long(
                 self, _val, _to_find,
             )
@@ -25037,21 +22795,19 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long(
                 self, _val, _to_find,
             )
@@ -25146,12 +22902,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -25160,14 +22916,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -25176,21 +22930,19 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -25285,12 +23037,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -25299,14 +23051,12 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -25315,21 +23065,19 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned___int128_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -25380,41 +23128,41 @@ impl TestIntegerPromotions1_unsigned___int128_Impl
             TestIntegerPromotions1_unsigned___int128_Impl::test_1__Bool(
                 self,
                 0_(),
-                ({ std_numeric_limits_bool_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
             TestIntegerPromotions1_unsigned___int128_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned___int128_Impl::test_1__Bool(
                 self,
                 0_(),
-                ({ std_numeric_limits_bool_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned___int128_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_unsigned___int128_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -25561,45 +23309,33 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, 1_(), 1_()) });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -25617,44 +23353,36 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -25672,44 +23400,36 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(self, 0_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(self, 1_(), 1_()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -25727,44 +23447,36 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -25782,44 +23494,36 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -25840,41 +23544,41 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -25891,45 +23595,33 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -25946,45 +23638,33 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -26001,45 +23681,33 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, 1_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -26060,41 +23728,41 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -26112,44 +23780,36 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(self, 0_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(self, 1_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -26176,41 +23836,41 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -26239,41 +23899,41 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -26300,43 +23960,41 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -26363,45 +24021,41 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -26466,12 +24120,12 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -26480,14 +24134,12 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -26496,21 +24148,19 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -26567,12 +24217,12 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -26581,14 +24231,12 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -26597,21 +24245,19 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_char_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -26636,45 +24282,33 @@ impl TestIntegerPromotions1_unsigned_char_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, 0_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, 1_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_unsigned_char_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -26821,45 +24455,33 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -26877,44 +24499,36 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -26932,44 +24546,36 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -26987,44 +24593,36 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -27042,44 +24640,36 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -27100,41 +24690,41 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -27151,45 +24741,33 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -27206,45 +24784,33 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -27261,45 +24827,33 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -27317,44 +24871,36 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -27372,44 +24918,36 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -27436,41 +24974,41 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -27497,41 +25035,41 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -27552,43 +25090,41 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -27615,45 +25151,41 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -27716,12 +25248,12 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -27730,14 +25262,12 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -27746,21 +25276,19 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -27811,45 +25339,41 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_int_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -27866,45 +25390,33 @@ impl TestIntegerPromotions1_unsigned_int_Impl for Ptr<TestIntegerPromotions1_uns
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_unsigned_int_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -28051,45 +25563,33 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -28107,44 +25607,36 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -28162,44 +25654,36 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -28217,44 +25701,36 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -28272,44 +25748,36 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -28330,41 +25798,41 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -28381,45 +25849,33 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -28436,45 +25892,33 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -28491,45 +25935,33 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -28550,41 +25982,41 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -28602,44 +26034,36 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -28666,41 +26090,41 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -28733,41 +26157,41 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -28794,43 +26218,41 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -28857,45 +26279,41 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -28968,12 +26386,12 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -28982,14 +26400,12 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -28998,21 +26414,19 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -29077,12 +26491,12 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -29091,14 +26505,12 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -29107,21 +26519,19 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -29146,45 +26556,33 @@ impl TestIntegerPromotions1_unsigned_long_Impl for Ptr<TestIntegerPromotions1_un
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_unsigned_long_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -29337,41 +26735,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -29398,41 +26796,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -29459,41 +26857,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char8_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char8_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -29520,41 +26918,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char16_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char16_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -29581,41 +26979,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -29664,41 +27062,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -29719,41 +27117,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -29771,44 +27169,36 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
         ({ TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -29829,41 +27219,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -29896,41 +27286,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -29957,41 +27347,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -30056,12 +27446,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_char(
                 self, _val, _to_find,
             )
@@ -30070,12 +27460,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_char(
                 self, _val, _to_find,
             )
@@ -30084,19 +27474,19 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_char(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_char(
                 self, _val, _to_find,
             )
@@ -30175,12 +27565,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_short(
                 self, _val, _to_find,
             )
@@ -30189,12 +27579,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_short(
                 self, _val, _to_find,
             )
@@ -30203,19 +27593,19 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_short(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_short(
                 self, _val, _to_find,
             )
@@ -30280,12 +27670,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_int(
                 self, _val, _to_find,
             )
@@ -30294,13 +27684,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_int(
                 self, _val, _to_find,
             )
@@ -30309,20 +27698,19 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_int(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_int(
                 self, _val, _to_find,
             )
@@ -30397,12 +27785,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long(
                 self, _val, _to_find,
             )
@@ -30411,14 +27799,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long(
                 self, _val, _to_find,
             )
@@ -30427,21 +27813,19 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long(
                 self, _val, _to_find,
             )
@@ -30536,12 +27920,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -30550,14 +27934,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -30566,21 +27948,19 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -30675,12 +28055,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -30689,14 +28069,12 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -30705,21 +28083,19 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -30784,41 +28160,41 @@ impl TestIntegerPromotions1_unsigned_long_long_Impl
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1__Bool(
                 self,
                 0_(),
-                ({ std_numeric_limits_bool_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1__Bool(
                 self,
                 0_(),
-                ({ std_numeric_limits_bool_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_unsigned_long_long_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -30965,45 +28341,33 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -31021,44 +28385,36 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -31076,44 +28432,36 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -31134,41 +28482,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char16_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char16_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -31189,41 +28537,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -31250,41 +28598,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_signed_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -31302,44 +28650,36 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_short(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_short(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_short(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -31356,45 +28696,33 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -31411,45 +28739,33 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -31470,41 +28786,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -31525,41 +28841,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -31588,41 +28904,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -31669,41 +28985,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -31730,43 +29046,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -31799,45 +29113,41 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -31914,12 +29224,12 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -31928,14 +29238,12 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -31944,21 +29252,19 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned_long_long(
                 self, _val, _to_find,
             )
@@ -32033,12 +29339,12 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -32047,14 +29353,12 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -32063,21 +29367,19 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_unsigned_short_Impl::test_1_unsigned___int128(
                 self, _val, _to_find,
             )
@@ -32103,44 +29405,36 @@ impl TestIntegerPromotions1_unsigned_short_Impl for Ptr<TestIntegerPromotions1_u
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
+            TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
             TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
+            TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_unsigned_short_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -32287,45 +29581,29 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char(
-                self,
-                0_(),
-                (({ std_numeric_limits_char_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_char_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_char(self, _val, _to_find)
         });
     }
@@ -32342,45 +29620,33 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_wchar_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_wchar_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_wchar_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_wchar_t_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_wchar_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_wchar_t(self, _val, _to_find)
         });
     }
@@ -32397,45 +29663,33 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char8_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char8_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char8_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char8_t_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char8_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_char8_t(self, _val, _to_find)
         });
     }
@@ -32452,45 +29706,33 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(
                 self,
                 0_(),
-                (({ std_numeric_limits_char16_t_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char16_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char16_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char16_t_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_char16_t_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_char16_t(self, _val, _to_find)
         });
     }
@@ -32507,45 +29749,33 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(
                 self,
                 0_(),
-                ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_()),
+                (unimplemented!()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::min() }).wrapping_add(1_());
+            let _val: () = (unimplemented!()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!()).wrapping_add(1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(
-                self,
-                0_(),
-                ({ std_numeric_limits_char32_t_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() });
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, _val, _to_find)
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
-            let _to_find: () = ({ std_numeric_limits_char32_t_::max() }).wrapping_sub(1_());
+            let _val: () = (unimplemented!()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!()).wrapping_sub(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_char32_t(self, _val, _to_find)
         });
     }
@@ -32562,45 +29792,33 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, 255_(), -1_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, 257_(), 1_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_signed_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_signed_char_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_signed_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_signed_char_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_signed_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_signed_char(self, _val, _to_find)
         });
     }
@@ -32617,45 +29835,29 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_short(
-                self,
-                0_(),
-                (({ std_numeric_limits_short_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_short_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_short_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_short(self, _val, _to_find)
         });
     }
@@ -32672,45 +29874,29 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_int(
-                self,
-                0_(),
-                (({ std_numeric_limits_int_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_int_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_int_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_int_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_int_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_int_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_int(self, _val, _to_find)
         });
     }
@@ -32727,45 +29913,29 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_long(
-                self,
-                0_(),
-                (({ std_numeric_limits_long_::min() }) + 1_()),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, 0_(), (unimplemented!() + 1_()))
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_long(self, _val, _to_find)
         });
     }
@@ -32782,45 +29952,33 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_long_long_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_long_long_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_long_long_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_long_long_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_long_long(self, _val, _to_find)
         });
     }
@@ -32837,45 +29995,33 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, 255_(), 255_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, 257_(), 257_()) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits___int128_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits___int128_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
+            TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1___int128(
-                self,
-                0_(),
-                ({ std_numeric_limits___int128_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits___int128_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits___int128_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits___int128_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1___int128(self, _val, _to_find)
         });
     }
@@ -32893,44 +30039,36 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(self, 256_(), 0_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(self, 257_(), 1_()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::min() }),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_char_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_char_::max() }),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_char_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_char_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_char_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_char(self, _val, _to_find)
         });
     }
@@ -32948,44 +30086,36 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::min() }),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_short_::min() }) + 1_()),
+                (unimplemented!() + 1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::min() }) + 1_());
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = (unimplemented!() + 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_short_::max() }),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_short_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_short_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
-            let _to_find: () = (({ std_numeric_limits_unsigned_short_::max() }) - 1_());
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = (unimplemented!() - 1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_short(self, _val, _to_find)
         });
     }
@@ -33003,46 +30133,36 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::min() }),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_int_::max() }),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_int_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_int_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
         ({
-            let _val: () = (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_int_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_int(self, _val, _to_find)
         });
     }
@@ -33060,48 +30180,36 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(self, 256_(), 256_()) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(self, 257_(), 257_()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::min() }),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(
-                self,
-                0_(),
-                ({ std_numeric_limits_unsigned_long_::max() }),
-            )
+            TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(self, 0_(), unimplemented!())
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long(self, _val, _to_find)
         });
     }
@@ -33128,45 +30236,41 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long_long(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned_long_long_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned_long_long_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned_long_long_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned_long_long_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned_long_long(self, _val, _to_find)
         });
     }
@@ -33187,45 +30291,41 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::min() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::min() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_()),
+                (unimplemented!() as ()).wrapping_add(1_()),
             )
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::min() }) as ()).wrapping_add(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_add(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_add(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned___int128(
                 self,
                 0_(),
-                ({ std_numeric_limits_unsigned___int128_::max() }),
+                unimplemented!(),
             )
         });
         ({
-            let _val: () = ({ std_numeric_limits_unsigned___int128_::max() });
-            let _to_find: () = ({ std_numeric_limits_unsigned___int128_::max() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
         ({
-            let _val: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
-            let _to_find: () =
-                (({ std_numeric_limits_unsigned___int128_::max() }) as ()).wrapping_sub(1_());
+            let _val: () = (unimplemented!() as ()).wrapping_sub(1_());
+            let _to_find: () = (unimplemented!() as ()).wrapping_sub(1_());
             TestIntegerPromotions1_wchar_t_Impl::test_1_unsigned___int128(self, _val, _to_find)
         });
     }
@@ -33242,45 +30342,33 @@ impl TestIntegerPromotions1_wchar_t_Impl for Ptr<TestIntegerPromotions1_wchar_t_
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, 255_(), (255_() != 0)) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, 256_(), (256_() != 0)) });
         ({ TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, 257_(), (257_() != 0)) });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::min() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::min() });
-            let _to_find: () = ({ std_numeric_limits_bool_::min() });
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
             TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(
                 self,
                 0_(),
-                ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0),
+                ((unimplemented!() + 1_()) != 0),
             )
         });
         ({
-            let _val: () = (({ std_numeric_limits_bool_::min() }) + 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::min() }) + 1_()) != 0);
+            let _val: () = (unimplemented!() + 1_());
+            let _to_find: () = ((unimplemented!() + 1_()) != 0);
+            TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, _val, _to_find)
+        });
+        ({ TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, 0_(), unimplemented!()) });
+        ({
+            let _val: () = unimplemented!();
+            let _to_find: () = unimplemented!();
             TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, _val, _to_find)
         });
         ({
-            TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(
-                self,
-                0_(),
-                ({ std_numeric_limits_bool_::max() }),
-            )
-        });
-        ({
-            let _val: () = ({ std_numeric_limits_bool_::max() });
-            let _to_find: () = ({ std_numeric_limits_bool_::max() });
-            TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, _val, _to_find)
-        });
-        ({
-            let _val: () = (({ std_numeric_limits_bool_::max() }) - 1_());
-            let _to_find: () = ((({ std_numeric_limits_bool_::max() }) - 1_()) != 0);
+            let _val: () = (unimplemented!() - 1_());
+            let _to_find: () = ((unimplemented!() - 1_()) != 0);
             TestIntegerPromotions1_wchar_t_Impl::test_1__Bool(self, _val, _to_find)
         });
     }
@@ -56758,8 +53846,7 @@ impl sized_allocator_unsigned_char__unsigned_char__signed_char_Impl
         unimplemented!();
     }
     fn max_size(&self) -> () {
-        return ({ std_numeric_limits_unsigned_char_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub trait sized_allocator_unsigned_int__unsigned_int__int_Impl {
@@ -56780,8 +53867,7 @@ impl sized_allocator_unsigned_int__unsigned_int__int_Impl
         unimplemented!();
     }
     fn max_size(&self) -> () {
-        return ({ std_numeric_limits_unsigned_int_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub trait sized_allocator_unsigned_long__unsigned_long__long_Impl {
@@ -56802,8 +53888,7 @@ impl sized_allocator_unsigned_long__unsigned_long__long_Impl
         unimplemented!();
     }
     fn max_size(&self) -> () {
-        return (({ std_numeric_limits_unsigned_long_::max() }) as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub trait sized_allocator_unsigned_short__unsigned_short__short_Impl {
@@ -56824,8 +53909,7 @@ impl sized_allocator_unsigned_short__unsigned_short__short_Impl
         unimplemented!();
     }
     fn max_size(&self) -> () {
-        return ({ std_numeric_limits_unsigned_short_::max() })
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        return (unimplemented!()).wrapping_div((::std::mem::size_of::<()>() as ()));
     }
 }
 pub trait support_double_move_trackerImpl {

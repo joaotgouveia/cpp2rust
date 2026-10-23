@@ -265,14 +265,10 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub fn operator_cmp_10(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if (lhs.value == ({ std_numeric_limits_int_::min() }))
-        || (rhs.value == ({ std_numeric_limits_int_::min() }))
-    {
+    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
     }
-    if (lhs.value == ({ std_numeric_limits_int_::max() }))
-        || (rhs.value == ({ std_numeric_limits_int_::max() }))
-    {
+    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
     }
     return unimplemented!();
@@ -634,7 +630,7 @@ pub trait HashModuloOddness_16Impl {
 }
 impl HashModuloOddness_16Impl for Ptr<HashModuloOddness_16> {
     fn operator_call(&self, mut x: ()) -> () {
-        return ({ (unimplemented!() as std___hash_impl_int__void_)((x % 2_())) });
+        return unimplemented!();
     }
 }
 pub trait ImplicitBoolImpl {

@@ -85,9 +85,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_3(o, c"037777777777".as_ptr()) });
     (unsafe { test_3(d, c"4294967295".as_ptr()) });
     (unsafe { test_3(x, c"0xffffffff".as_ptr()) });
-    let long_is_32: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_8));
-    let long_is_64: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9));
-    let long_long_is_64: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut value_9));
+    let long_is_32: () = unimplemented!();
+    let long_is_64: () = unimplemented!();
+    let long_long_is_64: () = unimplemented!();
     {
         {
             (unsafe { test_4(o, c"01000000000000000000000".as_ptr()) });

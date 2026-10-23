@@ -1701,7 +1701,7 @@ pub unsafe fn expected_size_213() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1725,7 +1725,7 @@ pub unsafe fn expected_size_214() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1749,7 +1749,7 @@ pub unsafe fn expected_size_215() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1788,7 +1788,7 @@ pub unsafe fn expected_size_217() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1812,7 +1812,7 @@ pub unsafe fn expected_size_218() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1836,7 +1836,7 @@ pub unsafe fn expected_size_219() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1875,7 +1875,7 @@ pub unsafe fn expected_size_221() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1899,7 +1899,7 @@ pub unsafe fn expected_size_222() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1923,7 +1923,7 @@ pub unsafe fn expected_size_223() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1962,7 +1962,7 @@ pub unsafe fn expected_size_225() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -1986,7 +1986,7 @@ pub unsafe fn expected_size_226() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2010,7 +2010,7 @@ pub unsafe fn expected_size_227() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2058,7 +2058,7 @@ pub unsafe fn expected_size_229() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2091,7 +2091,7 @@ pub unsafe fn expected_size_230() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2124,7 +2124,7 @@ pub unsafe fn expected_size_231() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2181,7 +2181,7 @@ pub unsafe fn expected_size_233() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2214,7 +2214,7 @@ pub unsafe fn expected_size_234() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2247,7 +2247,7 @@ pub unsafe fn expected_size_235() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2304,7 +2304,7 @@ pub unsafe fn expected_size_237() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2337,7 +2337,7 @@ pub unsafe fn expected_size_238() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2370,7 +2370,7 @@ pub unsafe fn expected_size_239() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2427,7 +2427,7 @@ pub unsafe fn expected_size_241() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2460,7 +2460,7 @@ pub unsafe fn expected_size_242() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2493,7 +2493,7 @@ pub unsafe fn expected_size_243() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_int_>();
@@ -2541,7 +2541,7 @@ pub unsafe fn expected_size_245() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2565,7 +2565,7 @@ pub unsafe fn expected_size_246() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2589,7 +2589,7 @@ pub unsafe fn expected_size_247() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2628,7 +2628,7 @@ pub unsafe fn expected_size_249() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2652,7 +2652,7 @@ pub unsafe fn expected_size_250() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2676,7 +2676,7 @@ pub unsafe fn expected_size_251() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2715,7 +2715,7 @@ pub unsafe fn expected_size_253() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2739,7 +2739,7 @@ pub unsafe fn expected_size_254() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2763,7 +2763,7 @@ pub unsafe fn expected_size_255() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2802,7 +2802,7 @@ pub unsafe fn expected_size_257() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2826,7 +2826,7 @@ pub unsafe fn expected_size_258() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2850,7 +2850,7 @@ pub unsafe fn expected_size_259() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -2898,7 +2898,7 @@ pub unsafe fn expected_size_261() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -2931,7 +2931,7 @@ pub unsafe fn expected_size_262() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -2964,7 +2964,7 @@ pub unsafe fn expected_size_263() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3021,7 +3021,7 @@ pub unsafe fn expected_size_265() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3054,7 +3054,7 @@ pub unsafe fn expected_size_266() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3087,7 +3087,7 @@ pub unsafe fn expected_size_267() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3144,7 +3144,7 @@ pub unsafe fn expected_size_269() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3177,7 +3177,7 @@ pub unsafe fn expected_size_270() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3210,7 +3210,7 @@ pub unsafe fn expected_size_271() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3267,7 +3267,7 @@ pub unsafe fn expected_size_273() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3300,7 +3300,7 @@ pub unsafe fn expected_size_274() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3333,7 +3333,7 @@ pub unsafe fn expected_size_275() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_int_>();
@@ -3381,7 +3381,7 @@ pub unsafe fn expected_size_277() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3405,7 +3405,7 @@ pub unsafe fn expected_size_278() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3429,7 +3429,7 @@ pub unsafe fn expected_size_279() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3468,7 +3468,7 @@ pub unsafe fn expected_size_281() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3492,7 +3492,7 @@ pub unsafe fn expected_size_282() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3516,7 +3516,7 @@ pub unsafe fn expected_size_283() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3555,7 +3555,7 @@ pub unsafe fn expected_size_285() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3579,7 +3579,7 @@ pub unsafe fn expected_size_286() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3603,7 +3603,7 @@ pub unsafe fn expected_size_287() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3642,7 +3642,7 @@ pub unsafe fn expected_size_289() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3666,7 +3666,7 @@ pub unsafe fn expected_size_290() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3690,7 +3690,7 @@ pub unsafe fn expected_size_291() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -3738,7 +3738,7 @@ pub unsafe fn expected_size_293() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -3771,7 +3771,7 @@ pub unsafe fn expected_size_294() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -3804,7 +3804,7 @@ pub unsafe fn expected_size_295() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -3861,7 +3861,7 @@ pub unsafe fn expected_size_297() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -3894,7 +3894,7 @@ pub unsafe fn expected_size_298() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -3927,7 +3927,7 @@ pub unsafe fn expected_size_299() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -3984,7 +3984,7 @@ pub unsafe fn expected_size_301() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -4017,7 +4017,7 @@ pub unsafe fn expected_size_302() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -4050,7 +4050,7 @@ pub unsafe fn expected_size_303() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -4107,7 +4107,7 @@ pub unsafe fn expected_size_305() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -4140,7 +4140,7 @@ pub unsafe fn expected_size_306() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -4173,7 +4173,7 @@ pub unsafe fn expected_size_307() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_double_>();
@@ -4221,7 +4221,7 @@ pub unsafe fn expected_size_309() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4245,7 +4245,7 @@ pub unsafe fn expected_size_310() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4269,7 +4269,7 @@ pub unsafe fn expected_size_311() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4308,7 +4308,7 @@ pub unsafe fn expected_size_313() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4332,7 +4332,7 @@ pub unsafe fn expected_size_314() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4356,7 +4356,7 @@ pub unsafe fn expected_size_315() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4395,7 +4395,7 @@ pub unsafe fn expected_size_317() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4419,7 +4419,7 @@ pub unsafe fn expected_size_318() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4443,7 +4443,7 @@ pub unsafe fn expected_size_319() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4482,7 +4482,7 @@ pub unsafe fn expected_size_321() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4506,7 +4506,7 @@ pub unsafe fn expected_size_322() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4530,7 +4530,7 @@ pub unsafe fn expected_size_323() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -4578,7 +4578,7 @@ pub unsafe fn expected_size_325() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4611,7 +4611,7 @@ pub unsafe fn expected_size_326() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4644,7 +4644,7 @@ pub unsafe fn expected_size_327() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4701,7 +4701,7 @@ pub unsafe fn expected_size_329() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4734,7 +4734,7 @@ pub unsafe fn expected_size_330() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4767,7 +4767,7 @@ pub unsafe fn expected_size_331() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4824,7 +4824,7 @@ pub unsafe fn expected_size_333() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4857,7 +4857,7 @@ pub unsafe fn expected_size_334() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4890,7 +4890,7 @@ pub unsafe fn expected_size_335() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4947,7 +4947,7 @@ pub unsafe fn expected_size_337() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -4980,7 +4980,7 @@ pub unsafe fn expected_size_338() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -5013,7 +5013,7 @@ pub unsafe fn expected_size_339() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_const_double_>();
@@ -5061,7 +5061,7 @@ pub unsafe fn expected_size_341() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5085,7 +5085,7 @@ pub unsafe fn expected_size_342() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5109,7 +5109,7 @@ pub unsafe fn expected_size_343() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5148,7 +5148,7 @@ pub unsafe fn expected_size_345() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5172,7 +5172,7 @@ pub unsafe fn expected_size_346() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5196,7 +5196,7 @@ pub unsafe fn expected_size_347() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5235,7 +5235,7 @@ pub unsafe fn expected_size_349() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5259,7 +5259,7 @@ pub unsafe fn expected_size_350() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5283,7 +5283,7 @@ pub unsafe fn expected_size_351() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5322,7 +5322,7 @@ pub unsafe fn expected_size_353() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5346,7 +5346,7 @@ pub unsafe fn expected_size_354() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5370,7 +5370,7 @@ pub unsafe fn expected_size_355() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5418,7 +5418,7 @@ pub unsafe fn expected_size_357() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5451,7 +5451,7 @@ pub unsafe fn expected_size_358() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5484,7 +5484,7 @@ pub unsafe fn expected_size_359() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5541,7 +5541,7 @@ pub unsafe fn expected_size_361() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5574,7 +5574,7 @@ pub unsafe fn expected_size_362() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5607,7 +5607,7 @@ pub unsafe fn expected_size_363() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5664,7 +5664,7 @@ pub unsafe fn expected_size_365() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5697,7 +5697,7 @@ pub unsafe fn expected_size_366() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5730,7 +5730,7 @@ pub unsafe fn expected_size_367() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5787,7 +5787,7 @@ pub unsafe fn expected_size_369() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5820,7 +5820,7 @@ pub unsafe fn expected_size_370() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5853,7 +5853,7 @@ pub unsafe fn expected_size_371() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () = ::std::mem::align_of::<checked_accessor_MinimalElementType_>();
@@ -5901,7 +5901,7 @@ pub unsafe fn expected_size_373() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5925,7 +5925,7 @@ pub unsafe fn expected_size_374() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5949,7 +5949,7 @@ pub unsafe fn expected_size_375() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -5988,7 +5988,7 @@ pub unsafe fn expected_size_377() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6012,7 +6012,7 @@ pub unsafe fn expected_size_378() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6036,7 +6036,7 @@ pub unsafe fn expected_size_379() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6075,7 +6075,7 @@ pub unsafe fn expected_size_381() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6099,7 +6099,7 @@ pub unsafe fn expected_size_382() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6123,7 +6123,7 @@ pub unsafe fn expected_size_383() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6162,7 +6162,7 @@ pub unsafe fn expected_size_385() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6186,7 +6186,7 @@ pub unsafe fn expected_size_386() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6210,7 +6210,7 @@ pub unsafe fn expected_size_387() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {}
     result = (result).wrapping_add(
@@ -6260,7 +6260,7 @@ pub unsafe fn expected_size_389() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6295,7 +6295,7 @@ pub unsafe fn expected_size_390() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6330,7 +6330,7 @@ pub unsafe fn expected_size_391() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6391,7 +6391,7 @@ pub unsafe fn expected_size_393() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6426,7 +6426,7 @@ pub unsafe fn expected_size_394() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6461,7 +6461,7 @@ pub unsafe fn expected_size_395() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6522,7 +6522,7 @@ pub unsafe fn expected_size_397() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6557,7 +6557,7 @@ pub unsafe fn expected_size_398() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6592,7 +6592,7 @@ pub unsafe fn expected_size_399() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6653,7 +6653,7 @@ pub unsafe fn expected_size_401() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6688,7 +6688,7 @@ pub unsafe fn expected_size_402() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =
@@ -6723,7 +6723,7 @@ pub unsafe fn expected_size_403() -> () {
         } else {
             (alignof_idx).wrapping_sub(((sizeof_dht).wrapping_rem(alignof_idx)))
         });
-        result = ( result ) . wrapping_add ( ( ( ( unsafe { std_mdspan_const_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) ) ;
+        result = (result).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
     };
     {
         let mut alignof_acc: () =

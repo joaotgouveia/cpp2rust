@@ -12,7 +12,7 @@ pub fn test_0() -> () {
         unimplemented!();
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::same_as<decltype(*iter), const int&>");;
-        'loop_: for i in IterRange::new(({ (*rv.borrow()).begin() }), unimplemented!()) {
+        'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
             let i: Ptr<()> = unimplemented!();
             unimplemented!();
         }
@@ -28,10 +28,7 @@ pub fn test_0() -> () {
         let __tmp_0: Value<std_ranges_repeat_view_int__long_> =
             Rc::new(RefCell::new(unimplemented!()));
         let __range1: Ptr<()> = __tmp_0.as_pointer();
-        'loop_: for i in IterRange::new(
-            ({ (*__range1.upgrade().deref()).begin() }),
-            unimplemented!(),
-        ) {
+        'loop_: for i in IterRange::new(unimplemented!(), unimplemented!()) {
             let i: Ptr<()> = unimplemented!();
             unimplemented!();
         }

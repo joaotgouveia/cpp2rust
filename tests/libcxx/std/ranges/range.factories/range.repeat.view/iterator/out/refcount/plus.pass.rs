@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let iter: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).begin() })));
+    let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

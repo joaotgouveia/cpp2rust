@@ -18,18 +18,18 @@ pub fn test_1() {
     const _: () = assert!(true, "(BR::awk == std::regex_constants::awk)");;
     const _: () = assert!(true, "(BR::grep == std::regex_constants::grep)");;
     const _: () = assert!(true, "(BR::egrep == std::regex_constants::egrep)");;
-    ({ where_0(icase_2.with(|v| v.as_pointer())) });
-    ({ where_0(nosubs_3.with(|v| v.as_pointer())) });
-    ({ where_0(optimize_4.with(|v| v.as_pointer())) });
-    ({ where_0(collate_5.with(|v| v.as_pointer())) });
-    ({ where_0(ECMAScript_6.with(|v| v.as_pointer())) });
-    ({ where_0(basic_7.with(|v| v.as_pointer())) });
-    ({ where_0(extended_8.with(|v| v.as_pointer())) });
-    ({ where_0(awk_9.with(|v| v.as_pointer())) });
-    ({ where_0(grep_10.with(|v| v.as_pointer())) });
-    ({ where_0(egrep_11.with(|v| v.as_pointer())) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
 }
-pub fn test_12() {
+pub fn test_2() {
     const _: () = assert!(true, "(BR::icase == std::regex_constants::icase)");;
     const _: () = assert!(true, "(BR::nosubs == std::regex_constants::nosubs)");;
     const _: () = assert!(true, "(BR::optimize == std::regex_constants::optimize)");;
@@ -40,16 +40,16 @@ pub fn test_12() {
     const _: () = assert!(true, "(BR::awk == std::regex_constants::awk)");;
     const _: () = assert!(true, "(BR::grep == std::regex_constants::grep)");;
     const _: () = assert!(true, "(BR::egrep == std::regex_constants::egrep)");;
-    ({ where_0(icase_13.with(|v| v.as_pointer())) });
-    ({ where_0(nosubs_14.with(|v| v.as_pointer())) });
-    ({ where_0(optimize_15.with(|v| v.as_pointer())) });
-    ({ where_0(collate_16.with(|v| v.as_pointer())) });
-    ({ where_0(ECMAScript_17.with(|v| v.as_pointer())) });
-    ({ where_0(basic_18.with(|v| v.as_pointer())) });
-    ({ where_0(extended_19.with(|v| v.as_pointer())) });
-    ({ where_0(awk_20.with(|v| v.as_pointer())) });
-    ({ where_0(grep_21.with(|v| v.as_pointer())) });
-    ({ where_0(egrep_22.with(|v| v.as_pointer())) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
+    ({ where_0(unimplemented!()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -72,7 +72,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_1() });
-    ({ test_12() });
+    ({ test_2() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

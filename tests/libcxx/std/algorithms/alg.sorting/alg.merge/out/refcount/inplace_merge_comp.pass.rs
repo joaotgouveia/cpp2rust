@@ -767,10 +767,10 @@ thread_local!(
     static rp_log2_68: Value<()> = Rc::new(RefCell::new(value_64.with(|rc| *rc.borrow())));
 );
 thread_local!(
-    static w_digits_69: Value<()> = Rc::new(RefCell::new(digits_70.with(|rc| *rc.borrow())));
+    static w_digits_69: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    static e_digits_71: Value<()> = Rc::new(RefCell::new(digits_72.with(|rc| *rc.borrow())));
+    static e_digits_70: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(64)]
@@ -866,17 +866,17 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
         }
         field!(this, mask0_).write(if (this.with(|__s| __s.wid0_) > 0_()) {
             ((((!0_() as u16) as ())
-                >> ((e_digits_71.with(|rc| *rc.borrow())).wrapping_sub(this.with(|__s| __s.wid0_))))
+                >> ((e_digits_70.with(|rc| *rc.borrow())).wrapping_sub(this.with(|__s| __s.wid0_))))
                 as u16)
         } else {
             0_u16
         });
         field!(this, mask1_).write(
             if (this.with(|__s| __s.wid0_)
-                < (e_digits_71.with(|rc| *rc.borrow())).wrapping_sub(1_()))
+                < (e_digits_70.with(|rc| *rc.borrow())).wrapping_sub(1_()))
             {
                 ((((!0_() as u16) as ())
-                    >> ((e_digits_71.with(|rc| *rc.borrow()))
+                    >> ((e_digits_70.with(|rc| *rc.borrow()))
                         .wrapping_sub(((this.with(|__s| __s.wid0_)).wrapping_add(1_())))))
                     as u16)
             } else {
@@ -886,17 +886,17 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn operator_eq_73(
+pub fn operator_eq_71(
     _a0: Ptr<support_uniform_int_distribution_long_>,
     _a1: Ptr<support_uniform_int_distribution_long_>,
 ) -> () {
     return ({
         let _arg0: Ptr<support_uniform_int_distribution_long__param_type> = field_ptr!(_a0, param_);
         let _arg1: Ptr<support_uniform_int_distribution_long__param_type> = field_ptr!(_a1, param_);
-        operator_eq_74(_arg0, _arg1)
+        operator_eq_72(_arg0, _arg1)
     });
 }
-pub fn operator_eq_74(
+pub fn operator_eq_72(
     _a0: Ptr<support_uniform_int_distribution_long__param_type>,
     _a1: Ptr<support_uniform_int_distribution_long__param_type>,
 ) -> () {
@@ -916,14 +916,14 @@ impl support_uniform_int_distribution_long__param_type {
         support_uniform_int_distribution_long__param_type::new_2({ 0_() }, None)
     }
     pub fn new_2(mut ax: (), bx: Option<()>) -> Self {
-        let mut bx: () = bx.unwrap_or_else(|| ({ std_numeric_limits_long_::max() }));
+        let mut bx: () = bx.unwrap_or_else(|| unimplemented!());
         Self { a_: ax, b_: bx }
     }
 }
 impl std::cmp::PartialEq for support_uniform_int_distribution_long__param_type {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_74(
+            operator_eq_72(
                 Rc::new(RefCell::new(
                     support_uniform_int_distribution_long__param_type {
                         a_: self.a_.clone(),
@@ -959,7 +959,7 @@ impl support_uniform_int_distribution_long_ {}
 impl std::cmp::PartialEq for support_uniform_int_distribution_long_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_73(
+            operator_eq_71(
                 Rc::new(RefCell::new(support_uniform_int_distribution_long_ {
                     param_: support_uniform_int_distribution_long__param_type {
                         a_: self.param_.a_.clone(),
@@ -980,7 +980,7 @@ impl std::cmp::PartialEq for support_uniform_int_distribution_long_ {
 }
 impl std::cmp::Eq for support_uniform_int_distribution_long_ {}
 thread_local!(
-    pub static default_seed_75: Value<u16> = Rc::new(RefCell::new(19937_u16));
+    pub static default_seed_73: Value<u16> = Rc::new(RefCell::new(19937_u16));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
@@ -996,7 +996,7 @@ impl support_simple_random_generator {
         return (-1_() as u16);
     }
     pub fn new_1() -> Self {
-        support_simple_random_generator::new_2({ default_seed_75.with(|rc| *rc.borrow()) })
+        support_simple_random_generator::new_2({ default_seed_73.with(|rc| *rc.borrow()) })
     }
     pub fn new_2(mut s: u16) -> Self {
         Self {
@@ -1009,7 +1009,7 @@ impl Default for support_simple_random_generator {
         { support_simple_random_generator::new_1() }
     }
 }
-pub fn shuffle_76(
+pub fn shuffle_74(
     mut first: Ptr<()>,
     mut last: Ptr<()>,
     gen_: Ptr<support_simple_random_generator>,
@@ -1045,7 +1045,7 @@ pub fn shuffle_76(
         }
     }
 }
-pub fn shuffle_77(
+pub fn shuffle_75(
     mut first: Ptr<()>,
     mut last: Ptr<()>,
     gen_: Ptr<support_simple_random_generator>,
@@ -1075,7 +1075,7 @@ pub fn shuffle_77(
                 ({
                     let ___x: Ptr<()> = (first).clone();
                     let ___y: Ptr<()> = (first.offset((index) as isize));
-                    swap_78(___x, ___y)
+                    swap_76(___x, ___y)
                 });
             }
             {
@@ -1085,7 +1085,7 @@ pub fn shuffle_77(
         }
     }
 }
-pub fn shuffle_79(mut first: Ptr<S>, mut last: Ptr<S>, gen_: Ptr<support_simple_random_generator>) {
+pub fn shuffle_77(mut first: Ptr<S>, mut last: Ptr<S>, gen_: Ptr<support_simple_random_generator>) {
     let mut last_iter: Ptr<S> = (last).clone();
     let mut diff: () = (((last_iter).clone() - (first).clone()) as () as ());
     if (diff > 1_()) {
@@ -1111,7 +1111,7 @@ pub fn shuffle_79(mut first: Ptr<S>, mut last: Ptr<S>, gen_: Ptr<support_simple_
                 ({
                     let ___x: Ptr<S> = (first).clone();
                     let ___y: Ptr<S> = (first.offset((index) as isize));
-                    swap_80(___x, ___y)
+                    swap_78(___x, ___y)
                 });
             }
             {
@@ -1281,13 +1281,13 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub fn operator_eq_81(
+pub fn operator_eq_79(
     x: Ptr<bidirectional_iterator_int_ptr_>,
     y: Ptr<bidirectional_iterator_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_82(
+pub fn operator_ne_80(
     x: Ptr<bidirectional_iterator_int_ptr_>,
     y: Ptr<bidirectional_iterator_int_ptr_>,
 ) -> () {
@@ -1326,7 +1326,7 @@ impl bidirectional_iterator_int_ptr_ {
 impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_81(
+            operator_eq_79(
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ {
                     it_: self.it_.clone(),
                     tracker_: support_double_move_tracker {
@@ -1351,13 +1351,13 @@ impl Default for bidirectional_iterator_int_ptr_ {
         { bidirectional_iterator_int_ptr_::new_1() }
     }
 }
-pub fn operator_eq_83(
+pub fn operator_eq_81(
     x: Ptr<bidirectional_iterator_S_ptr_>,
     y: Ptr<bidirectional_iterator_S_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_84(
+pub fn operator_ne_82(
     x: Ptr<bidirectional_iterator_S_ptr_>,
     y: Ptr<bidirectional_iterator_S_ptr_>,
 ) -> () {
@@ -1396,7 +1396,7 @@ impl bidirectional_iterator_S_ptr_ {
 impl std::cmp::PartialEq for bidirectional_iterator_S_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_83(
+            operator_eq_81(
                 Rc::new(RefCell::new(bidirectional_iterator_S_ptr_ {
                     it_: self.it_.clone(),
                     tracker_: support_double_move_tracker {
@@ -1421,7 +1421,7 @@ impl Default for bidirectional_iterator_S_ptr_ {
         { bidirectional_iterator_S_ptr_::new_1() }
     }
 }
-pub fn operator_add_85(
+pub fn operator_add_83(
     x: random_access_iterator_int_ptr_,
     mut n: (),
 ) -> random_access_iterator_int_ptr_ {
@@ -1429,19 +1429,19 @@ pub fn operator_add_85(
     ({ random_access_iterator_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
     return random_access_iterator_int_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_sub_86(
+pub fn operator_sub_84(
     mut x: random_access_iterator_int_ptr_,
     mut y: random_access_iterator_int_ptr_,
 ) -> () {
     return (((x.it_).clone() - (y.it_).clone()) as () as ());
 }
-pub fn operator_eq_87(
+pub fn operator_eq_85(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_88(
+pub fn operator_ne_86(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
@@ -1480,7 +1480,7 @@ impl random_access_iterator_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_87(
+            operator_eq_85(
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_ {
                     it_: self.it_.clone(),
                     tracker_: support_double_move_tracker {
@@ -1505,7 +1505,7 @@ impl Default for random_access_iterator_int_ptr_ {
         { random_access_iterator_int_ptr_::new_1() }
     }
 }
-pub fn operator_add_89(
+pub fn operator_add_87(
     x: random_access_iterator_S_ptr_,
     mut n: (),
 ) -> random_access_iterator_S_ptr_ {
@@ -1513,19 +1513,19 @@ pub fn operator_add_89(
     ({ random_access_iterator_S_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
     return random_access_iterator_S_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_sub_90(
+pub fn operator_sub_88(
     mut x: random_access_iterator_S_ptr_,
     mut y: random_access_iterator_S_ptr_,
 ) -> () {
     return (((x.it_).clone() - (y.it_).clone()) as () as ());
 }
-pub fn operator_eq_91(
+pub fn operator_eq_89(
     x: Ptr<random_access_iterator_S_ptr_>,
     y: Ptr<random_access_iterator_S_ptr_>,
 ) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_92(
+pub fn operator_ne_90(
     x: Ptr<random_access_iterator_S_ptr_>,
     y: Ptr<random_access_iterator_S_ptr_>,
 ) -> () {
@@ -1564,7 +1564,7 @@ impl random_access_iterator_S_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_S_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_91(
+            operator_eq_89(
                 Rc::new(RefCell::new(random_access_iterator_S_ptr_ {
                     it_: self.it_.clone(),
                     tracker_: support_double_move_tracker {
@@ -1669,7 +1669,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub fn operator_eq_93(
+pub fn operator_eq_91(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -1686,7 +1686,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_93(
+            operator_eq_91(
                 Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
                     it_: self.it_.clone(),
                 }))
@@ -1714,42 +1714,42 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_94(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_92(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_95(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_93(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_94(_i, n)
+        operator_add_92(_i, n)
     });
 }
-pub fn iter_swap_96(a: adl_Iterator, b: adl_Iterator) {
+pub fn iter_swap_94(a: adl_Iterator, b: adl_Iterator) {
     let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
     let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
     ({
         let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
         let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_97(___x, ___y)
+        swap_95(___x, ___y)
     });
     if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
         { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_98(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_96(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_99(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_97(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_100(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_98(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -1795,7 +1795,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_100(
+            operator_cmp_98(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1820,7 +1820,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_99(
+            operator_eq_97(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1960,6 +1960,62 @@ impl Default for binary_counting_predicate_std_greater_S___S__S_ {
         }
     }
 }
+pub fn test_one_99(mut N: (), mut M: (), randomness: Ptr<support_simple_random_generator>) {
+    unimplemented!();
+    let mut ia: Ptr<()> = Ptr::alloc_array((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>());
+    let mut i: () = 0_();
+    'loop_: while (i < N) {
+        elem!(ia, i).write({ i });
+        i.prefix_inc();
+    }
+    ({
+        let _first: Ptr<()> = (ia).clone();
+        let _last: Ptr<()> = ia.offset((N) as isize);
+        let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
+        shuffle_75(_first, _last, _gen_)
+    });
+    unimplemented!();
+    unimplemented!();
+    let pred: Value<binary_counting_predicate_std_greater_int___int__int_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) }),
+    ));
+    unimplemented!();
+    if (N > 0_()) {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    ia.delete();
+}
+pub fn test_one_100(mut N: (), mut M: (), randomness: Ptr<support_simple_random_generator>) {
+    unimplemented!();
+    let mut ia: Ptr<()> = Ptr::alloc_array((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>());
+    let mut i: () = 0_();
+    'loop_: while (i < N) {
+        elem!(ia, i).write({ i });
+        i.prefix_inc();
+    }
+    ({
+        let _first: Ptr<()> = (ia).clone();
+        let _last: Ptr<()> = ia.offset((N) as isize);
+        let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
+        shuffle_75(_first, _last, _gen_)
+    });
+    unimplemented!();
+    unimplemented!();
+    let pred: Value<binary_counting_predicate_std_greater_int___int__int_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) }),
+    ));
+    unimplemented!();
+    if (N > 0_()) {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    ia.delete();
+}
 pub fn test_one_101(mut N: (), mut M: (), randomness: Ptr<support_simple_random_generator>) {
     unimplemented!();
     let mut ia: Ptr<()> = Ptr::alloc_array((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>());
@@ -1972,7 +2028,7 @@ pub fn test_one_101(mut N: (), mut M: (), randomness: Ptr<support_simple_random_
         let _first: Ptr<()> = (ia).clone();
         let _last: Ptr<()> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_77(_first, _last, _gen_)
+        shuffle_75(_first, _last, _gen_)
     });
     unimplemented!();
     unimplemented!();
@@ -1990,22 +2046,25 @@ pub fn test_one_101(mut N: (), mut M: (), randomness: Ptr<support_simple_random_
 }
 pub fn test_one_102(mut N: (), mut M: (), randomness: Ptr<support_simple_random_generator>) {
     unimplemented!();
-    let mut ia: Ptr<()> = Ptr::alloc_array((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>());
+    let mut ia: Ptr<S> = Ptr::alloc_array((0..N).map(|_| <S>::default()).collect::<Box<[S]>>());
     let mut i: () = 0_();
     'loop_: while (i < N) {
-        elem!(ia, i).write({ i });
+        ({
+            let _i: () = i;
+            SImpl::operator_assign_7(&ia.offset((i) as isize), _i)
+        });
         i.prefix_inc();
     }
     ({
-        let _first: Ptr<()> = (ia).clone();
-        let _last: Ptr<()> = ia.offset((N) as isize);
+        let _first: Ptr<S> = (ia).clone();
+        let _last: Ptr<S> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
         shuffle_77(_first, _last, _gen_)
     });
     unimplemented!();
     unimplemented!();
-    let pred: Value<binary_counting_predicate_std_greater_int___int__int_> = Rc::new(RefCell::new(
-        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) }),
+    let pred: Value<binary_counting_predicate_std_greater_S___S__S_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) }),
     ));
     unimplemented!();
     if (N > 0_()) {
@@ -2018,22 +2077,25 @@ pub fn test_one_102(mut N: (), mut M: (), randomness: Ptr<support_simple_random_
 }
 pub fn test_one_103(mut N: (), mut M: (), randomness: Ptr<support_simple_random_generator>) {
     unimplemented!();
-    let mut ia: Ptr<()> = Ptr::alloc_array((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>());
+    let mut ia: Ptr<S> = Ptr::alloc_array((0..N).map(|_| <S>::default()).collect::<Box<[S]>>());
     let mut i: () = 0_();
     'loop_: while (i < N) {
-        elem!(ia, i).write({ i });
+        ({
+            let _i: () = i;
+            SImpl::operator_assign_7(&ia.offset((i) as isize), _i)
+        });
         i.prefix_inc();
     }
     ({
-        let _first: Ptr<()> = (ia).clone();
-        let _last: Ptr<()> = ia.offset((N) as isize);
+        let _first: Ptr<S> = (ia).clone();
+        let _last: Ptr<S> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
         shuffle_77(_first, _last, _gen_)
     });
     unimplemented!();
     unimplemented!();
-    let pred: Value<binary_counting_predicate_std_greater_int___int__int_> = Rc::new(RefCell::new(
-        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) }),
+    let pred: Value<binary_counting_predicate_std_greater_S___S__S_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) }),
     ));
     unimplemented!();
     if (N > 0_()) {
@@ -2059,7 +2121,7 @@ pub fn test_one_104(mut N: (), mut M: (), randomness: Ptr<support_simple_random_
         let _first: Ptr<S> = (ia).clone();
         let _last: Ptr<S> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_79(_first, _last, _gen_)
+        shuffle_77(_first, _last, _gen_)
     });
     unimplemented!();
     unimplemented!();
@@ -2075,67 +2137,67 @@ pub fn test_one_104(mut N: (), mut M: (), randomness: Ptr<support_simple_random_
     }
     ia.delete();
 }
-pub fn test_one_105(mut N: (), mut M: (), randomness: Ptr<support_simple_random_generator>) {
-    unimplemented!();
-    let mut ia: Ptr<S> = Ptr::alloc_array((0..N).map(|_| <S>::default()).collect::<Box<[S]>>());
-    let mut i: () = 0_();
-    'loop_: while (i < N) {
-        ({
-            let _i: () = i;
-            SImpl::operator_assign_7(&ia.offset((i) as isize), _i)
-        });
-        i.prefix_inc();
-    }
+pub fn test_105(mut N: (), randomness: Ptr<support_simple_random_generator>) {
     ({
-        let _first: Ptr<S> = (ia).clone();
-        let _last: Ptr<S> = ia.offset((N) as isize);
-        let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_79(_first, _last, _gen_)
+        let _N: () = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_99(_N, 0_(), _randomness)
     });
-    unimplemented!();
-    unimplemented!();
-    let pred: Value<binary_counting_predicate_std_greater_S___S__S_> = Rc::new(RefCell::new(
-        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) }),
-    ));
-    unimplemented!();
-    if (N > 0_()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    ia.delete();
+    ({
+        let _N: () = N;
+        let _M: () = (N).wrapping_div(4_());
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_99(_N, _M, _randomness)
+    });
+    ({
+        let _N: () = N;
+        let _M: () = (N).wrapping_div(2_());
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_99(_N, _M, _randomness)
+    });
+    ({
+        let _N: () = N;
+        let _M: () = ((3_()).wrapping_mul(N)).wrapping_div(4_());
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_99(_N, _M, _randomness)
+    });
+    ({
+        let _N: () = N;
+        let _M: () = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_99(_N, _M, _randomness)
+    });
 }
-pub fn test_one_106(mut N: (), mut M: (), randomness: Ptr<support_simple_random_generator>) {
-    unimplemented!();
-    let mut ia: Ptr<S> = Ptr::alloc_array((0..N).map(|_| <S>::default()).collect::<Box<[S]>>());
-    let mut i: () = 0_();
-    'loop_: while (i < N) {
-        ({
-            let _i: () = i;
-            SImpl::operator_assign_7(&ia.offset((i) as isize), _i)
-        });
-        i.prefix_inc();
-    }
+pub fn test_106(mut N: (), randomness: Ptr<support_simple_random_generator>) {
     ({
-        let _first: Ptr<S> = (ia).clone();
-        let _last: Ptr<S> = ia.offset((N) as isize);
-        let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_79(_first, _last, _gen_)
+        let _N: () = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_100(_N, 0_(), _randomness)
     });
-    unimplemented!();
-    unimplemented!();
-    let pred: Value<binary_counting_predicate_std_greater_S___S__S_> = Rc::new(RefCell::new(
-        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) }),
-    ));
-    unimplemented!();
-    if (N > 0_()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    ia.delete();
+    ({
+        let _N: () = N;
+        let _M: () = (N).wrapping_div(4_());
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_100(_N, _M, _randomness)
+    });
+    ({
+        let _N: () = N;
+        let _M: () = (N).wrapping_div(2_());
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_100(_N, _M, _randomness)
+    });
+    ({
+        let _N: () = N;
+        let _M: () = ((3_()).wrapping_mul(N)).wrapping_div(4_());
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_100(_N, _M, _randomness)
+    });
+    ({
+        let _N: () = N;
+        let _M: () = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_100(_N, _M, _randomness)
+    });
 }
 pub fn test_107(mut N: (), randomness: Ptr<support_simple_random_generator>) {
     ({
@@ -2261,67 +2323,43 @@ pub fn test_110(mut N: (), randomness: Ptr<support_simple_random_generator>) {
         test_one_104(_N, _M, _randomness)
     });
 }
-pub fn test_111(mut N: (), randomness: Ptr<support_simple_random_generator>) {
-    ({
-        let _N: () = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_105(_N, 0_(), _randomness)
-    });
-    ({
-        let _N: () = N;
-        let _M: () = (N).wrapping_div(4_());
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_105(_N, _M, _randomness)
-    });
-    ({
-        let _N: () = N;
-        let _M: () = (N).wrapping_div(2_());
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_105(_N, _M, _randomness)
-    });
-    ({
-        let _N: () = N;
-        let _M: () = ((3_()).wrapping_mul(N)).wrapping_div(4_());
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_105(_N, _M, _randomness)
-    });
-    ({
-        let _N: () = N;
-        let _M: () = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_105(_N, _M, _randomness)
-    });
+pub fn test_111(randomness: Ptr<support_simple_random_generator>) {
+    ({ test_one_99(0_(), 0_(), (randomness).clone()) });
+    ({ test_one_99(1_(), 0_(), (randomness).clone()) });
+    ({ test_one_99(1_(), 1_(), (randomness).clone()) });
+    ({ test_one_99(2_(), 0_(), (randomness).clone()) });
+    ({ test_one_99(2_(), 1_(), (randomness).clone()) });
+    ({ test_one_99(2_(), 2_(), (randomness).clone()) });
+    ({ test_one_99(3_(), 0_(), (randomness).clone()) });
+    ({ test_one_99(3_(), 1_(), (randomness).clone()) });
+    ({ test_one_99(3_(), 2_(), (randomness).clone()) });
+    ({ test_one_99(3_(), 3_(), (randomness).clone()) });
+    ({ test_105(4_(), (randomness).clone()) });
+    ({ test_105(20_(), (randomness).clone()) });
+    ({ test_105(50_(), (randomness).clone()) });
+    {
+        ({ test_105(100_(), (randomness).clone()) });
+        ({ test_105(1000_(), (randomness).clone()) });
+    }
 }
-pub fn test_112(mut N: (), randomness: Ptr<support_simple_random_generator>) {
-    ({
-        let _N: () = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_106(_N, 0_(), _randomness)
-    });
-    ({
-        let _N: () = N;
-        let _M: () = (N).wrapping_div(4_());
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_106(_N, _M, _randomness)
-    });
-    ({
-        let _N: () = N;
-        let _M: () = (N).wrapping_div(2_());
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_106(_N, _M, _randomness)
-    });
-    ({
-        let _N: () = N;
-        let _M: () = ((3_()).wrapping_mul(N)).wrapping_div(4_());
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_106(_N, _M, _randomness)
-    });
-    ({
-        let _N: () = N;
-        let _M: () = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_106(_N, _M, _randomness)
-    });
+pub fn test_112(randomness: Ptr<support_simple_random_generator>) {
+    ({ test_one_100(0_(), 0_(), (randomness).clone()) });
+    ({ test_one_100(1_(), 0_(), (randomness).clone()) });
+    ({ test_one_100(1_(), 1_(), (randomness).clone()) });
+    ({ test_one_100(2_(), 0_(), (randomness).clone()) });
+    ({ test_one_100(2_(), 1_(), (randomness).clone()) });
+    ({ test_one_100(2_(), 2_(), (randomness).clone()) });
+    ({ test_one_100(3_(), 0_(), (randomness).clone()) });
+    ({ test_one_100(3_(), 1_(), (randomness).clone()) });
+    ({ test_one_100(3_(), 2_(), (randomness).clone()) });
+    ({ test_one_100(3_(), 3_(), (randomness).clone()) });
+    ({ test_106(4_(), (randomness).clone()) });
+    ({ test_106(20_(), (randomness).clone()) });
+    ({ test_106(50_(), (randomness).clone()) });
+    {
+        ({ test_106(100_(), (randomness).clone()) });
+        ({ test_106(1000_(), (randomness).clone()) });
+    }
 }
 pub fn test_113(randomness: Ptr<support_simple_random_generator>) {
     ({ test_one_101(0_(), 0_(), (randomness).clone()) });
@@ -2399,48 +2437,10 @@ pub fn test_116(randomness: Ptr<support_simple_random_generator>) {
         ({ test_110(1000_(), (randomness).clone()) });
     }
 }
-pub fn test_117(randomness: Ptr<support_simple_random_generator>) {
-    ({ test_one_105(0_(), 0_(), (randomness).clone()) });
-    ({ test_one_105(1_(), 0_(), (randomness).clone()) });
-    ({ test_one_105(1_(), 1_(), (randomness).clone()) });
-    ({ test_one_105(2_(), 0_(), (randomness).clone()) });
-    ({ test_one_105(2_(), 1_(), (randomness).clone()) });
-    ({ test_one_105(2_(), 2_(), (randomness).clone()) });
-    ({ test_one_105(3_(), 0_(), (randomness).clone()) });
-    ({ test_one_105(3_(), 1_(), (randomness).clone()) });
-    ({ test_one_105(3_(), 2_(), (randomness).clone()) });
-    ({ test_one_105(3_(), 3_(), (randomness).clone()) });
-    ({ test_111(4_(), (randomness).clone()) });
-    ({ test_111(20_(), (randomness).clone()) });
-    ({ test_111(50_(), (randomness).clone()) });
-    {
-        ({ test_111(100_(), (randomness).clone()) });
-        ({ test_111(1000_(), (randomness).clone()) });
-    }
-}
-pub fn test_118(randomness: Ptr<support_simple_random_generator>) {
-    ({ test_one_106(0_(), 0_(), (randomness).clone()) });
-    ({ test_one_106(1_(), 0_(), (randomness).clone()) });
-    ({ test_one_106(1_(), 1_(), (randomness).clone()) });
-    ({ test_one_106(2_(), 0_(), (randomness).clone()) });
-    ({ test_one_106(2_(), 1_(), (randomness).clone()) });
-    ({ test_one_106(2_(), 2_(), (randomness).clone()) });
-    ({ test_one_106(3_(), 0_(), (randomness).clone()) });
-    ({ test_one_106(3_(), 1_(), (randomness).clone()) });
-    ({ test_one_106(3_(), 2_(), (randomness).clone()) });
-    ({ test_one_106(3_(), 3_(), (randomness).clone()) });
-    ({ test_112(4_(), (randomness).clone()) });
-    ({ test_112(20_(), (randomness).clone()) });
-    ({ test_112(50_(), (randomness).clone()) });
-    {
-        ({ test_112(100_(), (randomness).clone()) });
-        ({ test_112(1000_(), (randomness).clone()) });
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct less_by_first {}
-pub fn test_PR31166_119() {
+pub fn test_PR31166_117() {
     let vec_: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
         unimplemented!(),
@@ -2457,15 +2457,15 @@ pub fn test_PR31166_119() {
         i.prefix_inc();
     }
 }
-pub fn test_120() -> () {
+pub fn test_118() -> () {
     let randomness: Value<support_simple_random_generator> =
         Rc::new(RefCell::new(support_simple_random_generator::new_1()));
+    ({ test_111(randomness.as_pointer()) });
+    ({ test_112(randomness.as_pointer()) });
     ({ test_113(randomness.as_pointer()) });
     ({ test_114(randomness.as_pointer()) });
     ({ test_115(randomness.as_pointer()) });
     ({ test_116(randomness.as_pointer()) });
-    ({ test_117(randomness.as_pointer()) });
-    ({ test_118(randomness.as_pointer()) });
     {
         let mut N: () = 100_();
         let mut M: () = 50_();
@@ -2479,7 +2479,7 @@ pub fn test_120() -> () {
         ({
             let _first: Ptr<()> = (ia).clone();
             let _last: Ptr<()> = ia.offset((N) as isize);
-            shuffle_76(_first, _last, randomness.as_pointer())
+            shuffle_74(_first, _last, randomness.as_pointer())
         });
         unimplemented!();
         unimplemented!();
@@ -2489,7 +2489,7 @@ pub fn test_120() -> () {
         unimplemented!();
         ia.delete();
     }
-    ({ test_PR31166_119() });
+    ({ test_PR31166_117() });
     return true;
 }
 pub fn main() {
@@ -2512,7 +2512,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_120() });
+    ({ test_118() });
     return 0_();
 }
 pub trait SImpl {
@@ -3060,7 +3060,7 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
     }
     fn generate_4(&self, _a0: ()) -> () {
         let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-        let mut r_digits: () = digits_70.with(|rc| *rc.borrow());
+        let mut r_digits: () = unimplemented!();
         let result: Value<()> = Rc::new(RefCell::new(0_()));
         let mut k: () = 0_();
         'loop_: while (k < (*self).with(|__s| __s.round_count_regular_)) {
@@ -3187,18 +3187,14 @@ impl support_uniform_int_distribution_long_Impl for Ptr<support_uniform_int_dist
         if (rp == 1_()) {
             return ({ support_uniform_int_distribution_long__param_typeImpl::a(&param) });
         }
-        let mut ur_digits: () = digits_70.with(|rc| *rc.borrow());
+        let mut ur_digits: () = unimplemented!();
         if (rp == 0_()) {
             return ({
                 support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_Impl :: operator_call ( &Rc::new(RefCell::new(support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ :: new ( { (gen_ ).clone() } , { ur_digits  } , )  )).as_pointer() , )
             });
         }
         let mut width: () = ((ur_digits).wrapping_sub(({ countl_zero_66(rp) }))).wrapping_sub(1_());
-        if ((rp
-            & (({ std_numeric_limits_unsigned_long_::max() })
-                >> ((ur_digits).wrapping_sub(width))))
-            != 0_())
-        {
+        if ((rp & (unimplemented!() >> ((ur_digits).wrapping_sub(width)))) != 0_()) {
             width.prefix_inc();
         }
         let eng : Value<support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ > = Rc::new(RefCell::new(support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ :: new ( { (gen_ ).clone() } , { width  } , )  )) ;
@@ -3297,6 +3293,6 @@ pub fn __cpp2rust_init_globals() {
     let _ = rp_67.with(|_| ());
     let _ = rp_log2_68.with(|_| ());
     let _ = w_digits_69.with(|_| ());
-    let _ = e_digits_71.with(|_| ());
-    let _ = default_seed_75.with(|_| ());
+    let _ = e_digits_70.with(|_| ());
+    let _ = default_seed_73.with(|_| ());
 }

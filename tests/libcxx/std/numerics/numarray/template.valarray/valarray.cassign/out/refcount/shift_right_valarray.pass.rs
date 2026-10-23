@@ -164,31 +164,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({ test_0(value.as_pointer()) });
         ({
             let _rhs: Value<std___val_expr_std___slice_expr_const_std_valarray_int__ref__> =
-                Rc::new(RefCell::new(
-                    elem!(value.as_pointer(), unimplemented!()).read(),
-                ));
+                Rc::new(RefCell::new(unimplemented!()));
             test_6(_rhs.as_pointer())
         });
         ({
             let _rhs: Value<std___val_expr_std___indirect_expr_const_std_valarray_int__ref__> =
-                Rc::new(RefCell::new(
-                    (*elem!(value.as_pointer(), unimplemented!())
-                        .upgrade()
-                        .deref())
-                    .clone(),
-                ));
+                Rc::new(RefCell::new(unimplemented!()));
             test_7(_rhs.as_pointer())
         });
         ({
             let _rhs: Value<std___val_expr_std___mask_expr_const_std_valarray_int__ref__> =
-                Rc::new(RefCell::new(((*value.borrow())[(*mask.borrow())]).clone()));
+                Rc::new(RefCell::new(unimplemented!()));
             test_8(_rhs.as_pointer())
         });
         ({
             let _rhs: Value<std___val_expr_std___indirect_expr_const_std_valarray_int__ref__> =
-                Rc::new(RefCell::new(
-                    ((*value.borrow())[(*indirect.borrow())]).clone(),
-                ));
+                Rc::new(RefCell::new(unimplemented!()));
             test_7(_rhs.as_pointer())
         });
         ({

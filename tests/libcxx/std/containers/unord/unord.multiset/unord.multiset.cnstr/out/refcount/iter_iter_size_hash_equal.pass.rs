@@ -1308,7 +1308,7 @@ pub trait test_hash_int_Impl {
 }
 impl test_hash_int_Impl for Ptr<test_hash_int_> {
     fn operator_call(&self, x: Ptr<()>) -> () {
-        return ({ (unimplemented!() as std___hash_impl_int__void_)((x.read())) });
+        return unimplemented!();
     }
     fn operator_eq(&self, c: Ptr<test_hash_int_>) -> () {
         return ({ (*self).with(|__s| __s.data_) } == { c.with(|__s| __s.data_) });

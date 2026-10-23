@@ -709,7 +709,7 @@ pub fn test_28() -> () {
         let mut outIter: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) });
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sent : Value<std_ranges_iota_view_random_access_iterator_int_ptr___IntSentinelWith_random_access_iterator_int_ptr______sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
         unimplemented!();
         unimplemented!();
@@ -718,7 +718,7 @@ pub fn test_28() -> () {
         let mut outIter: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) });
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sent : Value<std_ranges_iota_view_random_access_iterator_int_ptr___IntSentinelWith_random_access_iterator_int_ptr______sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
         unimplemented!();
         unimplemented!();

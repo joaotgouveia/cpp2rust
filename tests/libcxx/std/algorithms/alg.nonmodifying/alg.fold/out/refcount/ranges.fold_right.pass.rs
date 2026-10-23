@@ -1015,8 +1015,8 @@ pub fn check_iterator_47(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     {
         let mut result: () = ({
-            let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-            let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             let ___init: () = (init.read());
             let ___func: () = unimplemented!();
             (*fold_right_43.with(Value::clone).borrow_mut())(___first, ___last, ___init, ___func)
@@ -1033,8 +1033,8 @@ pub fn check_iterator_47(r: Ptr<()>, init: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         let mut result: () = ({
-            let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-            let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+            let ___first: () = unimplemented!();
+            let ___last: () = unimplemented!();
             let ___init: () = (init.read());
             let ___func: invocable_with_telemetry_std_plus_void__ =
                 invocable_with_telemetry_std_plus_void__::copy_from({ f2.as_pointer() });

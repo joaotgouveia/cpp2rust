@@ -887,17 +887,14 @@ impl TestOperatorPlusEquals_char16_t_Impl for Ptr<TestOperatorPlusEquals_char16_
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_char16_t_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_27(
                     (*plus_equals.borrow()).copy_from(),
@@ -927,17 +924,14 @@ impl TestOperatorPlusEquals_char32_t_Impl for Ptr<TestOperatorPlusEquals_char32_
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_char32_t_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_28(
                     (*plus_equals.borrow()).copy_from(),
@@ -967,17 +961,14 @@ impl TestOperatorPlusEquals_char8_t_Impl for Ptr<TestOperatorPlusEquals_char8_t_
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_char8_t_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_26(
                     (*plus_equals.borrow()).copy_from(),
@@ -1011,9 +1002,7 @@ impl TestOperatorPlusEquals_char_Impl for Ptr<TestOperatorPlusEquals_char_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_char_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1063,10 +1052,7 @@ impl TestOperatorPlusEquals_const_int_ptr_Impl for Ptr<TestOperatorPlusEquals_co
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> Ptr<()>>::new(
                     |x: Ptr<()>| -> Ptr<()> {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_const_int_ptr_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1103,9 +1089,7 @@ impl TestOperatorPlusEquals_double_Impl for Ptr<TestOperatorPlusEquals_double_> 
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_double_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1142,9 +1126,7 @@ impl TestOperatorPlusEquals_float_Impl for Ptr<TestOperatorPlusEquals_float_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_float_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1181,9 +1163,7 @@ impl TestOperatorPlusEquals_int_Impl for Ptr<TestOperatorPlusEquals_int_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_int_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1229,17 +1209,14 @@ impl TestOperatorPlusEquals_int_ptr_Impl for Ptr<TestOperatorPlusEquals_int_ptr_
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> Ptr<()>>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> Ptr<()>,
-            >::new(
-                |x: Ptr<()>| -> Ptr<()> {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_int_ptr_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> Ptr<()>>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> Ptr<()>>::new(
+                    |x: Ptr<()>| -> Ptr<()> {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_31(
                     (*plus_equals.borrow()).copy_from(),
@@ -1273,9 +1250,7 @@ impl TestOperatorPlusEquals_long_Impl for Ptr<TestOperatorPlusEquals_long_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_long_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1308,17 +1283,14 @@ impl TestOperatorPlusEquals_long_long_Impl for Ptr<TestOperatorPlusEquals_long_l
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_long_long_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_23(
                     (*plus_equals.borrow()).copy_from(),
@@ -1352,9 +1324,7 @@ impl TestOperatorPlusEquals_short_Impl for Ptr<TestOperatorPlusEquals_short_> {
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_short_).load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1391,10 +1361,7 @@ impl TestOperatorPlusEquals_signed_char_Impl for Ptr<TestOperatorPlusEquals_sign
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_signed_char_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1431,10 +1398,7 @@ impl TestOperatorPlusEquals_unsigned_char_Impl for Ptr<TestOperatorPlusEquals_un
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_char_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1471,10 +1435,7 @@ impl TestOperatorPlusEquals_unsigned_int_Impl for Ptr<TestOperatorPlusEquals_uns
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_int_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1511,10 +1472,7 @@ impl TestOperatorPlusEquals_unsigned_long_Impl for Ptr<TestOperatorPlusEquals_un
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_long_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1549,18 +1507,14 @@ impl TestOperatorPlusEquals_unsigned_long_long_Impl
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_long_long_)
-                                .load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_24(
                     (*plus_equals.borrow()).copy_from(),
@@ -1594,10 +1548,7 @@ impl TestOperatorPlusEquals_unsigned_short_Impl for Ptr<TestOperatorPlusEquals_u
                 Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                     |x: Ptr<()>| -> () {
                         {
-                            return ({
-                                ((*x.upgrade().deref()) as std___atomic_ref_base_unsigned_short_)
-                                    .load(None)
-                            });
+                            return unimplemented!();
                         }
                     },
                 )));
@@ -1630,17 +1581,14 @@ impl TestOperatorPlusEquals_wchar_t_Impl for Ptr<TestOperatorPlusEquals_wchar_t_
                         unimplemented!();
                     },
                 )));
-            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(FnPtr::<
-                fn(Ptr<()>) -> (),
-            >::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_ref_base_wchar_t_).load(None)
-                        });
-                    }
-                },
-            )));
+            let load: Value<FnPtr<fn(Ptr<()>) -> ()>> =
+                Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
+                    |x: Ptr<()>| -> () {
+                        {
+                            return unimplemented!();
+                        }
+                    },
+                )));
             ({
                 test_seq_cst_25(
                     (*plus_equals.borrow()).copy_from(),

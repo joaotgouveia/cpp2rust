@@ -922,9 +922,7 @@ pub fn check_iterator_36(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -964,9 +962,7 @@ pub fn check_iterator_36(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1011,9 +1007,7 @@ pub fn check_iterator_39(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1053,9 +1047,7 @@ pub fn check_iterator_39(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1100,9 +1092,7 @@ pub fn check_iterator_40(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1142,9 +1132,7 @@ pub fn check_iterator_40(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1188,10 +1176,7 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1230,10 +1215,7 @@ pub fn check_iterator_41(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1277,9 +1259,7 @@ pub fn check_iterator_42(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1318,9 +1298,7 @@ pub fn check_iterator_42(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1332,8 +1310,8 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
                 (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
@@ -1354,8 +1332,8 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
                 (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
@@ -1365,10 +1343,7 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1377,8 +1352,8 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
                 (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
@@ -1398,8 +1373,8 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
                 (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
@@ -1408,10 +1383,7 @@ pub fn check_iterator_43(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1423,8 +1395,8 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
                 (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
@@ -1445,8 +1417,8 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
                 (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
@@ -1456,10 +1428,7 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1468,8 +1437,8 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
     {
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
                 (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
@@ -1489,8 +1458,8 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
-                let ___first: () = ({ (*r.upgrade().deref()).begin_5() });
-                let ___last: () = ({ (*r.upgrade().deref()).end_8() });
+                let ___first: () = unimplemented!();
+                let ___last: () = unimplemented!();
                 (*fold_left_first_38.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
@@ -1499,10 +1468,7 @@ pub fn check_iterator_44(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1547,9 +1513,7 @@ pub fn check_iterator_45(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1589,9 +1553,7 @@ pub fn check_iterator_45(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1636,9 +1598,7 @@ pub fn check_iterator_46(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1678,9 +1638,7 @@ pub fn check_iterator_46(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1724,10 +1682,7 @@ pub fn check_iterator_47(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<(
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1766,10 +1721,7 @@ pub fn check_iterator_47(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: Ptr<(
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1814,9 +1766,7 @@ pub fn check_iterator_48(r: Ptr<()>, f: (), expected: Ptr<()>) {
         ));
         unimplemented!();
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1856,9 +1806,7 @@ pub fn check_iterator_48(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1897,9 +1845,7 @@ pub fn check_lvalue_range_49(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1934,9 +1880,7 @@ pub fn check_lvalue_range_49(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1975,9 +1919,7 @@ pub fn check_lvalue_range_50(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2012,9 +1954,7 @@ pub fn check_lvalue_range_50(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2053,9 +1993,7 @@ pub fn check_lvalue_range_51(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2090,9 +2028,7 @@ pub fn check_lvalue_range_51(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2126,10 +2062,7 @@ pub fn check_lvalue_range_52(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         ));
         let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2159,10 +2092,7 @@ pub fn check_lvalue_range_52(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         ));
         let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_208_29__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2196,9 +2126,7 @@ pub fn check_lvalue_range_53(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         ));
         let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2228,9 +2156,7 @@ pub fn check_lvalue_range_53(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
         ));
         let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_215_14__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2269,10 +2195,7 @@ pub fn check_lvalue_range_54(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2307,10 +2230,7 @@ pub fn check_lvalue_range_54(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2349,10 +2269,7 @@ pub fn check_lvalue_range_55(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2387,10 +2304,7 @@ pub fn check_lvalue_range_55(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2429,9 +2343,7 @@ pub fn check_lvalue_range_56(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2466,9 +2378,7 @@ pub fn check_lvalue_range_56(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2507,9 +2417,7 @@ pub fn check_lvalue_range_57(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2544,9 +2452,7 @@ pub fn check_lvalue_range_57(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2580,10 +2486,7 @@ pub fn check_lvalue_range_58(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
         ));
         let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_with_iter_37.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2613,10 +2516,7 @@ pub fn check_lvalue_range_58(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
         ));
         let result : Value<() > = Rc::new(RefCell::new((( { let ___range: Ptr< ()  >  = (r ).clone() ; let ___func: invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__   = invocable_with_telemetry__lambda_at_ranges_fold_left_first_pass_cpp_318_27__ :: copy_from ( { f2 .as_pointer()  } , )   ; (*fold_left_first_38.with(Value::clone).borrow_mut()) ( ___range , ___func , ) } ) ).clone())) ;
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2655,9 +2555,7 @@ pub fn check_lvalue_range_59(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2692,9 +2590,7 @@ pub fn check_lvalue_range_59(r: Ptr<()>, f: (), expected: Ptr<()>) {
             .clone(),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2733,9 +2629,7 @@ pub fn check_rvalue_range_60(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2771,9 +2665,7 @@ pub fn check_rvalue_range_60(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2812,9 +2704,7 @@ pub fn check_rvalue_range_61(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2850,9 +2740,7 @@ pub fn check_rvalue_range_61(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2891,9 +2779,7 @@ pub fn check_rvalue_range_62(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2929,9 +2815,7 @@ pub fn check_rvalue_range_62(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -2970,10 +2854,7 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3009,10 +2890,7 @@ pub fn check_rvalue_range_63(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_unsigned_long__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3051,9 +2929,7 @@ pub fn check_rvalue_range_64(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3089,9 +2965,7 @@ pub fn check_rvalue_range_64(r: Ptr<()>, f: FnPtr<Generic>, expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3130,10 +3004,7 @@ pub fn check_rvalue_range_65(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3169,10 +3040,7 @@ pub fn check_rvalue_range_65(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3211,10 +3079,7 @@ pub fn check_rvalue_range_66(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3250,10 +3115,7 @@ pub fn check_rvalue_range_66(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3292,9 +3154,7 @@ pub fn check_rvalue_range_67(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3330,9 +3190,7 @@ pub fn check_rvalue_range_67(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_int__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3371,9 +3229,7 @@ pub fn check_rvalue_range_68(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3409,9 +3265,7 @@ pub fn check_rvalue_range_68(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3450,10 +3304,7 @@ pub fn check_rvalue_range_69(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3489,10 +3340,7 @@ pub fn check_rvalue_range_69(r: Ptr<()>, f: FnPtr<fn((), ()) -> ()>, expected: P
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_double__false_)
-                .has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3531,9 +3379,7 @@ pub fn check_rvalue_range_70(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -3569,9 +3415,7 @@ pub fn check_rvalue_range_70(r: Ptr<()>, f: (), expected: Ptr<()>) {
             }),
         ));
         unimplemented!();
-        if ({
-            ((*expected.upgrade().deref()) as std___optional_storage_base_long__false_).has_value()
-        }) {
+        if unimplemented!() {
             unimplemented!();
             unimplemented!();
             unimplemented!();

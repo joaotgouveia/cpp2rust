@@ -458,9 +458,7 @@ pub fn test_signed_26() {
 pub fn test_unsigned_27() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = ((({ std_numeric_limits_char8_t_::max() })
-        - ({ std_numeric_limits_char8_t_::min() }))
-        / 2_());
+    let mut half_way: () = ((unimplemented!() - unimplemented!()) / 2_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -481,9 +479,7 @@ pub fn test_unsigned_27() {
 pub fn test_unsigned_28() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = ((({ std_numeric_limits_char16_t_::max() })
-        - ({ std_numeric_limits_char16_t_::min() }))
-        / 2_());
+    let mut half_way: () = ((unimplemented!() - unimplemented!()) / 2_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -504,10 +500,8 @@ pub fn test_unsigned_28() {
 pub fn test_unsigned_29() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = ((({ std_numeric_limits_char32_t_::max() })
-        .wrapping_sub(({ std_numeric_limits_char32_t_::min() })))
-        as ())
-        .wrapping_div(2_());
+    let mut half_way: () =
+        (((unimplemented!()).wrapping_sub(unimplemented!())) as ()).wrapping_div(2_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -528,9 +522,7 @@ pub fn test_unsigned_29() {
 pub fn test_unsigned_30() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = ((({ std_numeric_limits_unsigned_char_::max() })
-        - ({ std_numeric_limits_unsigned_char_::min() }))
-        / 2_());
+    let mut half_way: () = ((unimplemented!() - unimplemented!()) / 2_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -551,9 +543,7 @@ pub fn test_unsigned_30() {
 pub fn test_unsigned_31() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = ((({ std_numeric_limits_unsigned_short_::max() })
-        - ({ std_numeric_limits_unsigned_short_::min() }))
-        / 2_());
+    let mut half_way: () = ((unimplemented!() - unimplemented!()) / 2_());
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -574,8 +564,7 @@ pub fn test_unsigned_31() {
 pub fn test_unsigned_32() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = (((({ std_numeric_limits_unsigned_int_::max() }) as ())
-        .wrapping_sub((({ std_numeric_limits_unsigned_int_::min() }) as ())))
+    let mut half_way: () = (((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
         as ())
         .wrapping_div(2_());
     unimplemented!();
@@ -598,8 +587,7 @@ pub fn test_unsigned_32() {
 pub fn test_unsigned_33() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = (((({ std_numeric_limits_unsigned_long_::max() }) as ())
-        .wrapping_sub((({ std_numeric_limits_unsigned_long_::min() }) as ())))
+    let mut half_way: () = (((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
         as ())
         .wrapping_div(2_());
     unimplemented!();
@@ -622,8 +610,7 @@ pub fn test_unsigned_33() {
 pub fn test_unsigned_34() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = (((({ std_numeric_limits_unsigned_long_long_::max() }) as ())
-        .wrapping_sub((({ std_numeric_limits_unsigned_long_long_::min() }) as ())))
+    let mut half_way: () = (((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
         as ())
         .wrapping_div(2_());
     unimplemented!();
@@ -646,8 +633,7 @@ pub fn test_unsigned_34() {
 pub fn test_unsigned_35() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut half_way: () = (((({ std_numeric_limits_unsigned___int128_::max() }) as ())
-        .wrapping_sub((({ std_numeric_limits_unsigned___int128_::min() }) as ())))
+    let mut half_way: () = (((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
         as ())
         .wrapping_div(2_());
     unimplemented!();

@@ -209,7 +209,7 @@ pub unsafe fn test_string_12() {
     (unsafe {
         test_9(
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_13)),
+            unimplemented!(),
             ('a' as ()),
             unimplemented!(),
         )
@@ -224,7 +224,7 @@ pub unsafe fn test_string_12() {
     (unsafe { test_9(unimplemented!(), 32_(), ('a' as ()), unimplemented!()) });
     (unsafe { test_9(unimplemented!(), 33_(), ('a' as ()), unimplemented!()) });
 }
-pub unsafe fn test_string_14() {
+pub unsafe fn test_string_13() {
     (unsafe { test_10(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
     (unsafe { test_10(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
     (unsafe { test_10(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
@@ -240,7 +240,7 @@ pub unsafe fn test_string_14() {
     (unsafe {
         test_10(
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_15)),
+            unimplemented!(),
             ('a' as ()),
             unimplemented!(),
         )
@@ -255,7 +255,7 @@ pub unsafe fn test_string_14() {
     (unsafe { test_10(unimplemented!(), 32_(), ('a' as ()), unimplemented!()) });
     (unsafe { test_10(unimplemented!(), 33_(), ('a' as ()), unimplemented!()) });
 }
-pub unsafe fn test_string_16() {
+pub unsafe fn test_string_14() {
     (unsafe { test_11(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
     (unsafe { test_11(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
     (unsafe { test_11(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
@@ -271,7 +271,7 @@ pub unsafe fn test_string_16() {
     (unsafe {
         test_11(
             unimplemented!(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_17)),
+            unimplemented!(),
             ('a' as ()),
             unimplemented!(),
         )
@@ -286,10 +286,10 @@ pub unsafe fn test_string_16() {
     (unsafe { test_11(unimplemented!(), 32_(), ('a' as ()), unimplemented!()) });
     (unsafe { test_11(unimplemented!(), 33_(), ('a' as ()), unimplemented!()) });
 }
-pub unsafe fn test_18() -> () {
+pub unsafe fn test_15() -> () {
     (unsafe { test_string_12() });
+    (unsafe { test_string_13() });
     (unsafe { test_string_14() });
-    (unsafe { test_string_16() });
     return true;
 }
 pub fn main() {
@@ -308,7 +308,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
+    (unsafe { test_15() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

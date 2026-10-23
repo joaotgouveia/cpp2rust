@@ -170,8 +170,7 @@ pub const anon_1_inf: anon_1 = 2;
 pub const anon_1_NaN: anon_1 = 3;
 pub const anon_1_non_zero_nan: anon_1 = 4;
 pub fn test_isinf_2(mut v: ()) -> () {
-    return (v == ({ std_numeric_limits_double_::infinity() }))
-        || (v == -({ std_numeric_limits_double_::infinity() }));
+    return (v == unimplemented!()) || (v == -unimplemented!());
 }
 pub fn test_isnan_3(mut v: ()) -> () {
     return (v != v);

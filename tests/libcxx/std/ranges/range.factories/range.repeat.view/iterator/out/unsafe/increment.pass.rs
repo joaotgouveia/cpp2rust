@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0() -> () {
     let mut rv: () = unimplemented!();
-    let mut iter: () = (unsafe { rv.begin() });
+    let mut iter: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "std::same_as<decltype(iter++), Iter>");;

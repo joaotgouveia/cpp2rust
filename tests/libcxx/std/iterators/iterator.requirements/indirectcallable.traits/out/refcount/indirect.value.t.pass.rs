@@ -43,7 +43,7 @@ pub fn test_0() {
             )
         });
         ({
-            let ___first: () = ({ (*ints.borrow()).begin() });
+            let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             (*for_each_2.with(Value::clone).borrow_mut())(
                 ___first,
@@ -108,7 +108,7 @@ pub fn test_0() {
             )
         });
         &({
-            let ___first: () = ({ (*ints.borrow()).begin() });
+            let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             (*unique_copy_3.with(Value::clone).borrow_mut())(
                 ___first,

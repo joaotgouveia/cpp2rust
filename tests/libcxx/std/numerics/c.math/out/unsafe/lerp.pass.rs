@@ -36,8 +36,8 @@ pub unsafe fn constexpr_test_5() -> () {
 pub unsafe fn test_6() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let maxV: () = (unsafe { std_numeric_limits_float_::max() });
-    let inf: () = (unsafe { std_numeric_limits_float_::infinity() });
+    let maxV: () = unimplemented!();
+    let inf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -55,8 +55,8 @@ pub unsafe fn test_6() {
 pub unsafe fn test_7() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let maxV: () = (unsafe { std_numeric_limits_double_::max() });
-    let inf: () = (unsafe { std_numeric_limits_double_::infinity() });
+    let maxV: () = unimplemented!();
+    let inf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -74,8 +74,8 @@ pub unsafe fn test_7() {
 pub unsafe fn test_8() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let maxV: () = (unsafe { std_numeric_limits_long_double_::max() });
-    let inf: () = (unsafe { std_numeric_limits_long_double_::infinity() });
+    let maxV: () = unimplemented!();
+    let inf: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

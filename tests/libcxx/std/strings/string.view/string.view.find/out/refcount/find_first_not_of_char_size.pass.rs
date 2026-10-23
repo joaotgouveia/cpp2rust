@@ -17,14 +17,14 @@ impl constexpr_char_traits_char_ {
 pub fn test_0(s: Ptr<()>, mut c: (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_1.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         unimplemented!();
     }
 }
-pub fn test_2(s: Ptr<()>, mut c: (), mut x: ()) {
+pub fn test_1(s: Ptr<()>, mut c: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_1.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         unimplemented!();
     }
 }
@@ -51,21 +51,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(
-                _s.as_pointer(),
-                ('q' as ()),
-                0_(),
-                npos_1.with(|rc| *rc.borrow()),
-            )
+            test_0(_s.as_pointer(), ('q' as ()), 0_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(
-                _s.as_pointer(),
-                ('q' as ()),
-                1_(),
-                npos_1.with(|rc| *rc.borrow()),
-            )
+            test_0(_s.as_pointer(), ('q' as ()), 1_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -85,21 +75,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(
-                _s.as_pointer(),
-                ('q' as ()),
-                5_(),
-                npos_1.with(|rc| *rc.borrow()),
-            )
+            test_0(_s.as_pointer(), ('q' as ()), 5_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(
-                _s.as_pointer(),
-                ('q' as ()),
-                6_(),
-                npos_1.with(|rc| *rc.borrow()),
-            )
+            test_0(_s.as_pointer(), ('q' as ()), 6_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -119,21 +99,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(
-                _s.as_pointer(),
-                ('q' as ()),
-                10_(),
-                npos_1.with(|rc| *rc.borrow()),
-            )
+            test_0(_s.as_pointer(), ('q' as ()), 10_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(
-                _s.as_pointer(),
-                ('q' as ()),
-                11_(),
-                npos_1.with(|rc| *rc.borrow()),
-            )
+            test_0(_s.as_pointer(), ('q' as ()), 11_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -153,45 +123,35 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(
-                _s.as_pointer(),
-                ('q' as ()),
-                20_(),
-                npos_1.with(|rc| *rc.borrow()),
-            )
+            test_0(_s.as_pointer(), ('q' as ()), 20_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(
-                _s.as_pointer(),
-                ('q' as ()),
-                21_(),
-                npos_1.with(|rc| *rc.borrow()),
-            )
+            test_0(_s.as_pointer(), ('q' as ()), 21_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_2(_s.as_pointer(), ('q' as ()), npos_1.with(|rc| *rc.borrow()))
+            test_1(_s.as_pointer(), ('q' as ()), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_2(_s.as_pointer(), ('q' as ()), npos_1.with(|rc| *rc.borrow()))
+            test_1(_s.as_pointer(), ('q' as ()), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_2(_s.as_pointer(), ('q' as ()), npos_1.with(|rc| *rc.borrow()))
+            test_1(_s.as_pointer(), ('q' as ()), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_2(_s.as_pointer(), ('q' as ()), 0_())
+            test_1(_s.as_pointer(), ('q' as ()), 0_())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_2(_s.as_pointer(), ('q' as ()), 0_())
+            test_1(_s.as_pointer(), ('q' as ()), 0_())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_2(_s.as_pointer(), ('q' as ()), 0_())
+            test_1(_s.as_pointer(), ('q' as ()), 0_())
         });
     }
     {

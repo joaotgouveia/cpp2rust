@@ -712,7 +712,7 @@ pub unsafe fn test_28() -> () {
         let mut outIter: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() });
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut sent : std_ranges_iota_view_random_access_iterator_int_ptr___IntSentinelWith_random_access_iterator_int_ptr______sentinel = unimplemented!()  ;
         unimplemented!();
         unimplemented!();
@@ -721,7 +721,7 @@ pub unsafe fn test_28() -> () {
         let mut outIter: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() });
         let io: () = unimplemented!();
-        let iter: () = (unsafe { io.begin() });
+        let iter: () = unimplemented!();
         let sent : std_ranges_iota_view_random_access_iterator_int_ptr___IntSentinelWith_random_access_iterator_int_ptr______sentinel = unimplemented!()  ;
         unimplemented!();
         unimplemented!();

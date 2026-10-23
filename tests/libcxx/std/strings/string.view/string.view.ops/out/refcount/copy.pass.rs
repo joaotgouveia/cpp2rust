@@ -128,15 +128,15 @@ pub fn test_4(mut s: Ptr<()>) {
         let _n: () = unimplemented!();
         test1_0(_sv, _n, 0_())
     });
-    ({ test1_0(unimplemented!(), 20_(), npos_5.with(|rc| *rc.borrow())) });
+    ({ test1_0(unimplemented!(), 20_(), unimplemented!()) });
     ({ test1_0(unimplemented!(), 0_(), 3_()) });
     ({ test1_0(unimplemented!(), 2_(), 3_()) });
     ({ test1_0(unimplemented!(), 100_(), 3_()) });
-    ({ test1_0(unimplemented!(), 100_(), npos_5.with(|rc| *rc.borrow())) });
+    ({ test1_0(unimplemented!(), 100_(), unimplemented!()) });
     ({
         let _sv: () = unimplemented!();
         let _n: () = unimplemented!();
-        test1_0(_sv, _n, npos_5.with(|rc| *rc.borrow()))
+        test1_0(_sv, _n, unimplemented!())
     });
     ({
         let _sv: () = unimplemented!();
@@ -151,10 +151,10 @@ pub fn test_4(mut s: Ptr<()>) {
     ({
         let _sv: () = unimplemented!();
         let _n: () = (unimplemented!()).wrapping_add(1_());
-        test1_0(_sv, _n, npos_5.with(|rc| *rc.borrow()))
+        test1_0(_sv, _n, unimplemented!())
     });
 }
-pub fn test_6(mut s: Ptr<()>) {
+pub fn test_5(mut s: Ptr<()>) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ test1_1(unimplemented!(), 0_(), 0_()) });
     ({ test1_1(unimplemented!(), 1_(), 0_()) });
@@ -164,15 +164,15 @@ pub fn test_6(mut s: Ptr<()>) {
         let _n: () = unimplemented!();
         test1_1(_sv, _n, 0_())
     });
-    ({ test1_1(unimplemented!(), 20_(), npos_7.with(|rc| *rc.borrow())) });
+    ({ test1_1(unimplemented!(), 20_(), unimplemented!()) });
     ({ test1_1(unimplemented!(), 0_(), 3_()) });
     ({ test1_1(unimplemented!(), 2_(), 3_()) });
     ({ test1_1(unimplemented!(), 100_(), 3_()) });
-    ({ test1_1(unimplemented!(), 100_(), npos_7.with(|rc| *rc.borrow())) });
+    ({ test1_1(unimplemented!(), 100_(), unimplemented!()) });
     ({
         let _sv: () = unimplemented!();
         let _n: () = unimplemented!();
-        test1_1(_sv, _n, npos_7.with(|rc| *rc.borrow()))
+        test1_1(_sv, _n, unimplemented!())
     });
     ({
         let _sv: () = unimplemented!();
@@ -187,10 +187,10 @@ pub fn test_6(mut s: Ptr<()>) {
     ({
         let _sv: () = unimplemented!();
         let _n: () = (unimplemented!()).wrapping_add(1_());
-        test1_1(_sv, _n, npos_7.with(|rc| *rc.borrow()))
+        test1_1(_sv, _n, unimplemented!())
     });
 }
-pub fn test_8(mut s: Ptr<()>) {
+pub fn test_6(mut s: Ptr<()>) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ test1_2(unimplemented!(), 0_(), 0_()) });
     ({ test1_2(unimplemented!(), 1_(), 0_()) });
@@ -200,15 +200,15 @@ pub fn test_8(mut s: Ptr<()>) {
         let _n: () = unimplemented!();
         test1_2(_sv, _n, 0_())
     });
-    ({ test1_2(unimplemented!(), 20_(), npos_9.with(|rc| *rc.borrow())) });
+    ({ test1_2(unimplemented!(), 20_(), unimplemented!()) });
     ({ test1_2(unimplemented!(), 0_(), 3_()) });
     ({ test1_2(unimplemented!(), 2_(), 3_()) });
     ({ test1_2(unimplemented!(), 100_(), 3_()) });
-    ({ test1_2(unimplemented!(), 100_(), npos_9.with(|rc| *rc.borrow())) });
+    ({ test1_2(unimplemented!(), 100_(), unimplemented!()) });
     ({
         let _sv: () = unimplemented!();
         let _n: () = unimplemented!();
-        test1_2(_sv, _n, npos_9.with(|rc| *rc.borrow()))
+        test1_2(_sv, _n, unimplemented!())
     });
     ({
         let _sv: () = unimplemented!();
@@ -223,10 +223,10 @@ pub fn test_8(mut s: Ptr<()>) {
     ({
         let _sv: () = unimplemented!();
         let _n: () = (unimplemented!()).wrapping_add(1_());
-        test1_2(_sv, _n, npos_9.with(|rc| *rc.borrow()))
+        test1_2(_sv, _n, unimplemented!())
     });
 }
-pub fn test_10(mut s: Ptr<()>) {
+pub fn test_7(mut s: Ptr<()>) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ test1_3(unimplemented!(), 0_(), 0_()) });
     ({ test1_3(unimplemented!(), 1_(), 0_()) });
@@ -236,15 +236,15 @@ pub fn test_10(mut s: Ptr<()>) {
         let _n: () = unimplemented!();
         test1_3(_sv, _n, 0_())
     });
-    ({ test1_3(unimplemented!(), 20_(), npos_11.with(|rc| *rc.borrow())) });
+    ({ test1_3(unimplemented!(), 20_(), unimplemented!()) });
     ({ test1_3(unimplemented!(), 0_(), 3_()) });
     ({ test1_3(unimplemented!(), 2_(), 3_()) });
     ({ test1_3(unimplemented!(), 100_(), 3_()) });
-    ({ test1_3(unimplemented!(), 100_(), npos_11.with(|rc| *rc.borrow())) });
+    ({ test1_3(unimplemented!(), 100_(), unimplemented!()) });
     ({
         let _sv: () = unimplemented!();
         let _n: () = unimplemented!();
-        test1_3(_sv, _n, npos_11.with(|rc| *rc.borrow()))
+        test1_3(_sv, _n, unimplemented!())
     });
     ({
         let _sv: () = unimplemented!();
@@ -259,70 +259,70 @@ pub fn test_10(mut s: Ptr<()>) {
     ({
         let _sv: () = unimplemented!();
         let _n: () = (unimplemented!()).wrapping_add(1_());
-        test1_3(_sv, _n, npos_11.with(|rc| *rc.borrow()))
+        test1_3(_sv, _n, unimplemented!())
     });
 }
+pub fn test_constexpr_copy_8(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
+    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let lval: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub fn test_constexpr_copy_9(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
+    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let lval: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub fn test_constexpr_copy_10(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
+    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let lval: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub fn test_constexpr_copy_11(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
+    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    let lval: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
 pub fn test_constexpr_copy_12(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    let lval: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_constexpr_copy_13(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    let lval: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_constexpr_copy_14(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    let lval: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_constexpr_copy_15(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    let lval: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_constexpr_copy_16(mut abcde: Ptr<()>, mut ghijk: Ptr<()>, mut bcdjk: Ptr<()>) -> () {
     let buf: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
         unimplemented!(),
@@ -364,6 +364,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_4(Ptr::<()>::from_string_literal(b"a")) });
     ({ test_4(Ptr::<()>::from_string_literal(b"")) });
     ({
+        test_5(Ptr::<()>::from_string_literal(&[
+            65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
+            68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
+            66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
+            69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
+            67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
+            65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
+            68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
+            66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
+            69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
+            67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
+            65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
+            68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
+            66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
+            69 as (), 0 as (),
+        ]))
+    });
+    ({
+        test_5(Ptr::<()>::from_string_literal(&[
+            65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+        ]))
+    });
+    ({ test_5(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()])) });
+    ({ test_5(Ptr::<()>::from_string_literal(&[0 as ()])) });
+    ({
         test_6(Ptr::<()>::from_string_literal(&[
             65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
             68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
@@ -389,7 +414,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_6(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()])) });
     ({ test_6(Ptr::<()>::from_string_literal(&[0 as ()])) });
     ({
-        test_8(Ptr::<()>::from_string_literal(&[
+        test_7(Ptr::<()>::from_string_literal(&[
             65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
             68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
             66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
@@ -407,46 +432,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ]))
     });
     ({
-        test_8(Ptr::<()>::from_string_literal(&[
+        test_7(Ptr::<()>::from_string_literal(&[
             65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
         ]))
     });
-    ({ test_8(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()])) });
-    ({ test_8(Ptr::<()>::from_string_literal(&[0 as ()])) });
+    ({ test_7(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()])) });
+    ({ test_7(Ptr::<()>::from_string_literal(&[0 as ()])) });
     ({
-        test_10(Ptr::<()>::from_string_literal(&[
-            65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-            68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-            66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-            69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-            67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-            65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-            68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-            66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-            69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-            67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-            65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-            68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-            66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-            69 as (), 0 as (),
-        ]))
-    });
-    ({
-        test_10(Ptr::<()>::from_string_literal(&[
-            65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
-        ]))
-    });
-    ({ test_10(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()])) });
-    ({ test_10(Ptr::<()>::from_string_literal(&[0 as ()])) });
-    ({
-        test_constexpr_copy_12(
+        test_constexpr_copy_8(
             Ptr::<()>::from_string_literal(b"ABCDE"),
             Ptr::<()>::from_string_literal(b"GHIJK"),
             Ptr::<()>::from_string_literal(b"BCDJK"),
         )
     });
     ({
-        test_constexpr_copy_13(
+        test_constexpr_copy_9(
             Ptr::<()>::from_string_literal(&[
                 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
             ]),
@@ -459,7 +459,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_constexpr_copy_14(
+        test_constexpr_copy_10(
             Ptr::<()>::from_string_literal(&[
                 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
             ]),
@@ -472,7 +472,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_constexpr_copy_15(
+        test_constexpr_copy_11(
             Ptr::<()>::from_string_literal(&[
                 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
             ]),
@@ -485,7 +485,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_constexpr_copy_16(
+        test_constexpr_copy_12(
             Ptr::<()>::from_string_literal(&[
                 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
             ]),

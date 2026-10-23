@@ -204,31 +204,15 @@ pub unsafe fn test_4(mut s: *const ()) {
         let _n: () = unimplemented!();
         test1_0(_sv, _n, 0_())
     });
-    (unsafe {
-        test1_0(
-            unimplemented!(),
-            20_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_5)),
-        )
-    });
+    (unsafe { test1_0(unimplemented!(), 20_(), unimplemented!()) });
     (unsafe { test1_0(unimplemented!(), 0_(), 3_()) });
     (unsafe { test1_0(unimplemented!(), 2_(), 3_()) });
     (unsafe { test1_0(unimplemented!(), 100_(), 3_()) });
-    (unsafe {
-        test1_0(
-            unimplemented!(),
-            100_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_5)),
-        )
-    });
+    (unsafe { test1_0(unimplemented!(), 100_(), unimplemented!()) });
     (unsafe {
         let _sv: () = unimplemented!();
         let _n: () = unimplemented!();
-        test1_0(
-            _sv,
-            _n,
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_5)),
-        )
+        test1_0(_sv, _n, unimplemented!())
     });
     (unsafe {
         let _sv: () = unimplemented!();
@@ -243,14 +227,10 @@ pub unsafe fn test_4(mut s: *const ()) {
     (unsafe {
         let _sv: () = unimplemented!();
         let _n: () = (unimplemented!()).wrapping_add(1_());
-        test1_0(
-            _sv,
-            _n,
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_5)),
-        )
+        test1_0(_sv, _n, unimplemented!())
     });
 }
-pub unsafe fn test_6(mut s: *const ()) {
+pub unsafe fn test_5(mut s: *const ()) {
     let mut sv1: () = unimplemented!();
     (unsafe { test1_1(unimplemented!(), 0_(), 0_()) });
     (unsafe { test1_1(unimplemented!(), 1_(), 0_()) });
@@ -260,31 +240,15 @@ pub unsafe fn test_6(mut s: *const ()) {
         let _n: () = unimplemented!();
         test1_1(_sv, _n, 0_())
     });
-    (unsafe {
-        test1_1(
-            unimplemented!(),
-            20_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_7)),
-        )
-    });
+    (unsafe { test1_1(unimplemented!(), 20_(), unimplemented!()) });
     (unsafe { test1_1(unimplemented!(), 0_(), 3_()) });
     (unsafe { test1_1(unimplemented!(), 2_(), 3_()) });
     (unsafe { test1_1(unimplemented!(), 100_(), 3_()) });
-    (unsafe {
-        test1_1(
-            unimplemented!(),
-            100_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_7)),
-        )
-    });
+    (unsafe { test1_1(unimplemented!(), 100_(), unimplemented!()) });
     (unsafe {
         let _sv: () = unimplemented!();
         let _n: () = unimplemented!();
-        test1_1(
-            _sv,
-            _n,
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_7)),
-        )
+        test1_1(_sv, _n, unimplemented!())
     });
     (unsafe {
         let _sv: () = unimplemented!();
@@ -299,14 +263,10 @@ pub unsafe fn test_6(mut s: *const ()) {
     (unsafe {
         let _sv: () = unimplemented!();
         let _n: () = (unimplemented!()).wrapping_add(1_());
-        test1_1(
-            _sv,
-            _n,
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_7)),
-        )
+        test1_1(_sv, _n, unimplemented!())
     });
 }
-pub unsafe fn test_8(mut s: *const ()) {
+pub unsafe fn test_6(mut s: *const ()) {
     let mut sv1: () = unimplemented!();
     (unsafe { test1_2(unimplemented!(), 0_(), 0_()) });
     (unsafe { test1_2(unimplemented!(), 1_(), 0_()) });
@@ -316,31 +276,15 @@ pub unsafe fn test_8(mut s: *const ()) {
         let _n: () = unimplemented!();
         test1_2(_sv, _n, 0_())
     });
-    (unsafe {
-        test1_2(
-            unimplemented!(),
-            20_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_9)),
-        )
-    });
+    (unsafe { test1_2(unimplemented!(), 20_(), unimplemented!()) });
     (unsafe { test1_2(unimplemented!(), 0_(), 3_()) });
     (unsafe { test1_2(unimplemented!(), 2_(), 3_()) });
     (unsafe { test1_2(unimplemented!(), 100_(), 3_()) });
-    (unsafe {
-        test1_2(
-            unimplemented!(),
-            100_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_9)),
-        )
-    });
+    (unsafe { test1_2(unimplemented!(), 100_(), unimplemented!()) });
     (unsafe {
         let _sv: () = unimplemented!();
         let _n: () = unimplemented!();
-        test1_2(
-            _sv,
-            _n,
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_9)),
-        )
+        test1_2(_sv, _n, unimplemented!())
     });
     (unsafe {
         let _sv: () = unimplemented!();
@@ -355,14 +299,10 @@ pub unsafe fn test_8(mut s: *const ()) {
     (unsafe {
         let _sv: () = unimplemented!();
         let _n: () = (unimplemented!()).wrapping_add(1_());
-        test1_2(
-            _sv,
-            _n,
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_9)),
-        )
+        test1_2(_sv, _n, unimplemented!())
     });
 }
-pub unsafe fn test_10(mut s: *const ()) {
+pub unsafe fn test_7(mut s: *const ()) {
     let mut sv1: () = unimplemented!();
     (unsafe { test1_3(unimplemented!(), 0_(), 0_()) });
     (unsafe { test1_3(unimplemented!(), 1_(), 0_()) });
@@ -372,31 +312,15 @@ pub unsafe fn test_10(mut s: *const ()) {
         let _n: () = unimplemented!();
         test1_3(_sv, _n, 0_())
     });
-    (unsafe {
-        test1_3(
-            unimplemented!(),
-            20_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_11)),
-        )
-    });
+    (unsafe { test1_3(unimplemented!(), 20_(), unimplemented!()) });
     (unsafe { test1_3(unimplemented!(), 0_(), 3_()) });
     (unsafe { test1_3(unimplemented!(), 2_(), 3_()) });
     (unsafe { test1_3(unimplemented!(), 100_(), 3_()) });
-    (unsafe {
-        test1_3(
-            unimplemented!(),
-            100_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_11)),
-        )
-    });
+    (unsafe { test1_3(unimplemented!(), 100_(), unimplemented!()) });
     (unsafe {
         let _sv: () = unimplemented!();
         let _n: () = unimplemented!();
-        test1_3(
-            _sv,
-            _n,
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_11)),
-        )
+        test1_3(_sv, _n, unimplemented!())
     });
     (unsafe {
         let _sv: () = unimplemented!();
@@ -411,90 +335,86 @@ pub unsafe fn test_10(mut s: *const ()) {
     (unsafe {
         let _sv: () = unimplemented!();
         let _n: () = (unimplemented!()).wrapping_add(1_());
-        test1_3(
-            _sv,
-            _n,
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_11)),
-        )
+        test1_3(_sv, _n, unimplemented!())
     });
 }
+pub unsafe fn test_constexpr_copy_8(
+    mut abcde: *const (),
+    mut ghijk: *const (),
+    mut bcdjk: *const (),
+) -> () {
+    let mut buf: [(); 6] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut lval: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_constexpr_copy_9(
+    mut abcde: *const (),
+    mut ghijk: *const (),
+    mut bcdjk: *const (),
+) -> () {
+    let mut buf: [(); 6] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut lval: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_constexpr_copy_10(
+    mut abcde: *const (),
+    mut ghijk: *const (),
+    mut bcdjk: *const (),
+) -> () {
+    let mut buf: [(); 6] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut lval: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_constexpr_copy_11(
+    mut abcde: *const (),
+    mut ghijk: *const (),
+    mut bcdjk: *const (),
+) -> () {
+    let mut buf: [(); 6] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut lval: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
 pub unsafe fn test_constexpr_copy_12(
-    mut abcde: *const (),
-    mut ghijk: *const (),
-    mut bcdjk: *const (),
-) -> () {
-    let mut buf: [(); 6] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut lval: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_constexpr_copy_13(
-    mut abcde: *const (),
-    mut ghijk: *const (),
-    mut bcdjk: *const (),
-) -> () {
-    let mut buf: [(); 6] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut lval: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_constexpr_copy_14(
-    mut abcde: *const (),
-    mut ghijk: *const (),
-    mut bcdjk: *const (),
-) -> () {
-    let mut buf: [(); 6] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut lval: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_constexpr_copy_15(
-    mut abcde: *const (),
-    mut ghijk: *const (),
-    mut bcdjk: *const (),
-) -> () {
-    let mut buf: [(); 6] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut lval: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_constexpr_copy_16(
     mut abcde: *const (),
     mut ghijk: *const (),
     mut bcdjk: *const (),
@@ -536,6 +456,30 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_4(c"a".as_ptr()) });
     (unsafe { test_4(c"".as_ptr()) });
     (unsafe {
+        test_5(
+            [
+                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
+                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
+                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
+                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
+                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
+                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
+                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
+                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
+                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
+                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
+                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
+                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
+                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
+                69 as (), 0 as (),
+            ]
+            .as_ptr(),
+        )
+    });
+    (unsafe { test_5([65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr()) });
+    (unsafe { test_5([97 as (), 0 as ()].as_ptr()) });
+    (unsafe { test_5([0 as ()].as_ptr()) });
+    (unsafe {
         test_6(
             [
                 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
@@ -560,7 +504,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_6([97 as (), 0 as ()].as_ptr()) });
     (unsafe { test_6([0 as ()].as_ptr()) });
     (unsafe {
-        test_8(
+        test_7(
             [
                 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
                 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
@@ -580,57 +524,33 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             .as_ptr(),
         )
     });
-    (unsafe { test_8([65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr()) });
-    (unsafe { test_8([97 as (), 0 as ()].as_ptr()) });
-    (unsafe { test_8([0 as ()].as_ptr()) });
+    (unsafe { test_7([65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr()) });
+    (unsafe { test_7([97 as (), 0 as ()].as_ptr()) });
+    (unsafe { test_7([0 as ()].as_ptr()) });
+    (unsafe { test_constexpr_copy_8(c"ABCDE".as_ptr(), c"GHIJK".as_ptr(), c"BCDJK".as_ptr()) });
     (unsafe {
-        test_10(
-            [
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
-            ]
-            .as_ptr(),
-        )
-    });
-    (unsafe { test_10([65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr()) });
-    (unsafe { test_10([97 as (), 0 as ()].as_ptr()) });
-    (unsafe { test_10([0 as ()].as_ptr()) });
-    (unsafe { test_constexpr_copy_12(c"ABCDE".as_ptr(), c"GHIJK".as_ptr(), c"BCDJK".as_ptr()) });
-    (unsafe {
-        test_constexpr_copy_13(
+        test_constexpr_copy_9(
             [65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr(),
             [71 as (), 72 as (), 73 as (), 74 as (), 75 as (), 0 as ()].as_ptr(),
             [66 as (), 67 as (), 68 as (), 74 as (), 75 as (), 0 as ()].as_ptr(),
         )
     });
     (unsafe {
-        test_constexpr_copy_14(
+        test_constexpr_copy_10(
             [65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr(),
             [71 as (), 72 as (), 73 as (), 74 as (), 75 as (), 0 as ()].as_ptr(),
             [66 as (), 67 as (), 68 as (), 74 as (), 75 as (), 0 as ()].as_ptr(),
         )
     });
     (unsafe {
-        test_constexpr_copy_15(
+        test_constexpr_copy_11(
             [65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr(),
             [71 as (), 72 as (), 73 as (), 74 as (), 75 as (), 0 as ()].as_ptr(),
             [66 as (), 67 as (), 68 as (), 74 as (), 75 as (), 0 as ()].as_ptr(),
         )
     });
     (unsafe {
-        test_constexpr_copy_16(
+        test_constexpr_copy_12(
             [65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr(),
             [71 as (), 72 as (), 73 as (), 74 as (), 75 as (), 0 as ()].as_ptr(),
             [66 as (), 67 as (), 68 as (), 74 as (), 75 as (), 0 as ()].as_ptr(),

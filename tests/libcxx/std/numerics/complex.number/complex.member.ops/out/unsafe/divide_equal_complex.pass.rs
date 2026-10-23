@@ -7,16 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn is_close_0(mut v: (), mut comp: ()) -> () {
-    return ((v) <= ((comp) + (unsafe { std_numeric_limits_float_::epsilon() })))
-        && ((v) >= ((comp) - (unsafe { std_numeric_limits_float_::epsilon() })));
+    return ((v) <= ((comp) + (unimplemented!()))) && ((v) >= ((comp) - (unimplemented!())));
 }
 pub unsafe fn is_close_1(mut v: (), mut comp: ()) -> () {
-    return ((v) <= ((comp) + (unsafe { std_numeric_limits_double_::epsilon() })))
-        && ((v) >= ((comp) - (unsafe { std_numeric_limits_double_::epsilon() })));
+    return ((v) <= ((comp) + (unimplemented!()))) && ((v) >= ((comp) - (unimplemented!())));
 }
 pub unsafe fn is_close_2(mut v: (), mut comp: ()) -> () {
-    return ((v) <= ((comp) + (unsafe { std_numeric_limits_long_double_::epsilon() })))
-        && ((v) >= ((comp) - (unsafe { std_numeric_limits_long_double_::epsilon() })));
+    return ((v) <= ((comp) + (unimplemented!()))) && ((v) >= ((comp) - (unimplemented!())));
 }
 pub unsafe fn test_3() -> () {
     let mut c: () = unimplemented!();

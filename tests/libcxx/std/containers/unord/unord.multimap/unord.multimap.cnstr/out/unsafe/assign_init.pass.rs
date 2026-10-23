@@ -57,7 +57,7 @@ impl test_hash_int_ {
         this
     }
     pub unsafe fn operator_call(&self, x: *const ()) -> () {
-        return (unsafe { (unimplemented!() as std___hash_impl_int__void_)((*x)) });
+        return unimplemented!();
     }
 }
 impl Default for test_hash_int_ {

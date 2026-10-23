@@ -97,54 +97,42 @@ pub unsafe fn test_parse_0(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___formatter_container_adaptor_std_queue_int__std_deque_int__std_allocator_int_____char_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_1(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___formatter_container_adaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int____char_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_2(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___formatter_container_adaptor_std_stack_int__std_deque_int__std_allocator_int_____char_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_3(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___formatter_container_adaptor_std_queue_int__std_deque_int__std_allocator_int_____wchar_t_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_4(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___formatter_container_adaptor_std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int____wchar_t_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_5(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___formatter_container_adaptor_std_stack_int__std_deque_int__std_allocator_int_____wchar_t_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_6(mut fmt: (), mut offset: ()) {

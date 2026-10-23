@@ -1658,7 +1658,8 @@ pub fn expected_size_213() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1688,7 +1689,8 @@ pub fn expected_size_214() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1718,7 +1720,8 @@ pub fn expected_size_215() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1764,7 +1767,8 @@ pub fn expected_size_217() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1794,7 +1798,8 @@ pub fn expected_size_218() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1824,7 +1829,8 @@ pub fn expected_size_219() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1870,7 +1876,8 @@ pub fn expected_size_221() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1900,7 +1907,8 @@ pub fn expected_size_222() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1930,7 +1938,8 @@ pub fn expected_size_223() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -1976,7 +1985,8 @@ pub fn expected_size_225() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2006,7 +2016,8 @@ pub fn expected_size_226() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2036,7 +2047,8 @@ pub fn expected_size_227() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2095,7 +2107,8 @@ pub fn expected_size_229() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2138,7 +2151,8 @@ pub fn expected_size_230() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2181,7 +2195,8 @@ pub fn expected_size_231() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2253,7 +2268,8 @@ pub fn expected_size_233() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2296,7 +2312,8 @@ pub fn expected_size_234() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2339,7 +2356,8 @@ pub fn expected_size_235() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2411,7 +2429,8 @@ pub fn expected_size_237() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2454,7 +2473,8 @@ pub fn expected_size_238() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2497,7 +2517,8 @@ pub fn expected_size_239() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2569,7 +2590,8 @@ pub fn expected_size_241() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2612,7 +2634,8 @@ pub fn expected_size_242() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2655,7 +2678,8 @@ pub fn expected_size_243() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2714,7 +2738,8 @@ pub fn expected_size_245() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2744,7 +2769,8 @@ pub fn expected_size_246() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2774,7 +2800,8 @@ pub fn expected_size_247() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2820,7 +2847,8 @@ pub fn expected_size_249() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2850,7 +2878,8 @@ pub fn expected_size_250() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2880,7 +2909,8 @@ pub fn expected_size_251() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2926,7 +2956,8 @@ pub fn expected_size_253() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2956,7 +2987,8 @@ pub fn expected_size_254() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -2986,7 +3018,8 @@ pub fn expected_size_255() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3032,7 +3065,8 @@ pub fn expected_size_257() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3062,7 +3096,8 @@ pub fn expected_size_258() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3092,7 +3127,8 @@ pub fn expected_size_259() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3151,7 +3187,8 @@ pub fn expected_size_261() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3194,7 +3231,8 @@ pub fn expected_size_262() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3237,7 +3275,8 @@ pub fn expected_size_263() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3309,7 +3348,8 @@ pub fn expected_size_265() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3352,7 +3392,8 @@ pub fn expected_size_266() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3395,7 +3436,8 @@ pub fn expected_size_267() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3467,7 +3509,8 @@ pub fn expected_size_269() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3510,7 +3553,8 @@ pub fn expected_size_270() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3553,7 +3597,8 @@ pub fn expected_size_271() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3625,7 +3670,8 @@ pub fn expected_size_273() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3668,7 +3714,8 @@ pub fn expected_size_274() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3711,7 +3758,8 @@ pub fn expected_size_275() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_int__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_int__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3770,7 +3818,8 @@ pub fn expected_size_277() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3800,7 +3849,8 @@ pub fn expected_size_278() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3830,7 +3880,8 @@ pub fn expected_size_279() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3876,7 +3927,8 @@ pub fn expected_size_281() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3906,7 +3958,8 @@ pub fn expected_size_282() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3936,7 +3989,8 @@ pub fn expected_size_283() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -3982,7 +4036,8 @@ pub fn expected_size_285() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4012,7 +4067,8 @@ pub fn expected_size_286() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4042,7 +4098,8 @@ pub fn expected_size_287() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4088,7 +4145,8 @@ pub fn expected_size_289() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4118,7 +4176,8 @@ pub fn expected_size_290() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4148,7 +4207,8 @@ pub fn expected_size_291() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4207,7 +4267,8 @@ pub fn expected_size_293() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4250,7 +4311,8 @@ pub fn expected_size_294() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4293,7 +4355,8 @@ pub fn expected_size_295() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4365,7 +4428,8 @@ pub fn expected_size_297() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4408,7 +4472,8 @@ pub fn expected_size_298() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4451,7 +4516,8 @@ pub fn expected_size_299() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4523,7 +4589,8 @@ pub fn expected_size_301() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4566,7 +4633,8 @@ pub fn expected_size_302() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4609,7 +4677,8 @@ pub fn expected_size_303() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4681,7 +4750,8 @@ pub fn expected_size_305() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4724,7 +4794,8 @@ pub fn expected_size_306() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4767,7 +4838,8 @@ pub fn expected_size_307() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4826,7 +4898,8 @@ pub fn expected_size_309() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4856,7 +4929,8 @@ pub fn expected_size_310() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4886,7 +4960,8 @@ pub fn expected_size_311() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4932,7 +5007,8 @@ pub fn expected_size_313() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4962,7 +5038,8 @@ pub fn expected_size_314() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -4992,7 +5069,8 @@ pub fn expected_size_315() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5038,7 +5116,8 @@ pub fn expected_size_317() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5068,7 +5147,8 @@ pub fn expected_size_318() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5098,7 +5178,8 @@ pub fn expected_size_319() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5144,7 +5225,8 @@ pub fn expected_size_321() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5174,7 +5256,8 @@ pub fn expected_size_322() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5204,7 +5287,8 @@ pub fn expected_size_323() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5263,7 +5347,8 @@ pub fn expected_size_325() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5306,7 +5391,8 @@ pub fn expected_size_326() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5349,7 +5435,8 @@ pub fn expected_size_327() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5421,7 +5508,8 @@ pub fn expected_size_329() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5464,7 +5552,8 @@ pub fn expected_size_330() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5507,7 +5596,8 @@ pub fn expected_size_331() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5579,7 +5669,8 @@ pub fn expected_size_333() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5622,7 +5713,8 @@ pub fn expected_size_334() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5665,7 +5757,8 @@ pub fn expected_size_335() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5737,7 +5830,8 @@ pub fn expected_size_337() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5780,7 +5874,8 @@ pub fn expected_size_338() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5823,7 +5918,8 @@ pub fn expected_size_339() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_double__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_double__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5882,7 +5978,8 @@ pub fn expected_size_341() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5912,7 +6009,8 @@ pub fn expected_size_342() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5942,7 +6040,8 @@ pub fn expected_size_343() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -5988,7 +6087,8 @@ pub fn expected_size_345() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6018,7 +6118,8 @@ pub fn expected_size_346() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6048,7 +6149,8 @@ pub fn expected_size_347() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6094,7 +6196,8 @@ pub fn expected_size_349() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6124,7 +6227,8 @@ pub fn expected_size_350() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6154,7 +6258,8 @@ pub fn expected_size_351() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6200,7 +6305,8 @@ pub fn expected_size_353() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6230,7 +6336,8 @@ pub fn expected_size_354() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6260,7 +6367,8 @@ pub fn expected_size_355() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6319,7 +6427,8 @@ pub fn expected_size_357() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6362,7 +6471,8 @@ pub fn expected_size_358() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6405,7 +6515,8 @@ pub fn expected_size_359() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6477,7 +6588,8 @@ pub fn expected_size_361() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6520,7 +6632,8 @@ pub fn expected_size_362() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6563,7 +6676,8 @@ pub fn expected_size_363() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6635,7 +6749,8 @@ pub fn expected_size_365() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6678,7 +6793,8 @@ pub fn expected_size_366() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6721,7 +6837,8 @@ pub fn expected_size_367() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6793,7 +6910,8 @@ pub fn expected_size_369() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6836,7 +6954,8 @@ pub fn expected_size_370() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6879,7 +6998,8 @@ pub fn expected_size_371() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6938,7 +7058,8 @@ pub fn expected_size_373() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6968,7 +7089,8 @@ pub fn expected_size_374() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -6998,7 +7120,8 @@ pub fn expected_size_375() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7044,7 +7167,8 @@ pub fn expected_size_377() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7074,7 +7198,8 @@ pub fn expected_size_378() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7104,7 +7229,8 @@ pub fn expected_size_379() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7150,7 +7276,8 @@ pub fn expected_size_381() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7180,7 +7307,8 @@ pub fn expected_size_382() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7210,7 +7338,8 @@ pub fn expected_size_383() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7256,7 +7385,8 @@ pub fn expected_size_385() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7286,7 +7416,8 @@ pub fn expected_size_386() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7316,7 +7447,8 @@ pub fn expected_size_387() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__std_default_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7375,7 +7507,8 @@ pub fn expected_size_389() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7418,7 +7551,8 @@ pub fn expected_size_390() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7461,7 +7595,8 @@ pub fn expected_size_391() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7533,7 +7668,8 @@ pub fn expected_size_393() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7576,7 +7712,8 @@ pub fn expected_size_394() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7619,7 +7756,8 @@ pub fn expected_size_395() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_left__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7691,7 +7829,8 @@ pub fn expected_size_397() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7734,7 +7873,8 @@ pub fn expected_size_398() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7777,7 +7917,8 @@ pub fn expected_size_399() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_signed_char__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7849,7 +7990,8 @@ pub fn expected_size_401() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_unsigned_int__18446744073709551615__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7892,7 +8034,8 @@ pub fn expected_size_402() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_unsigned_long__18446744073709551615__7__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };
@@ -7935,7 +8078,8 @@ pub fn expected_size_403() -> () {
             })
         };
         {
-            let rhs_0 = ( (*result.borrow())  ) . wrapping_add ( ( ( ( { std_mdspan_const_MinimalElementType__std_extents_long__18446744073709551615__7__18446744073709551615__4__18446744073709551615__18446744073709551615___std_layout_right__checked_accessor_const_MinimalElementType__::rank_dynamic ( ) } )  as () ) ) . wrapping_mul ( sizeof_idx ) )  ;
+            let rhs_0 =
+                (*result.borrow()).wrapping_add((unimplemented!() as ()).wrapping_mul(sizeof_idx));
             (*result.borrow_mut()) = rhs_0
         };
     };

@@ -97,18 +97,14 @@ pub unsafe fn test_parse_0(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_map__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____char_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_parse_1(mut fmt: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_map__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int_____wchar_t_ ) . parse  ( & mut parse_ctx , )
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_fmt_2() {

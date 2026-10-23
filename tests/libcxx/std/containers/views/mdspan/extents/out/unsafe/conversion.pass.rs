@@ -569,8 +569,7 @@ pub unsafe fn test_conversion_74(mut src: ()) {
 }
 pub unsafe fn test_conversion_75() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_76));
-    let idx_convertible: () = ((unsafe { std_numeric_limits_int_::max() })
-        >= (unsafe { std_numeric_limits_int_::max() }));
+    let idx_convertible: () = ((unimplemented!()) >= (unimplemented!()));
     (unsafe { test_conversion_27(unimplemented!()) });
     (unsafe { test_conversion_28(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
     (unsafe { test_conversion_29(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
@@ -607,8 +606,7 @@ pub unsafe fn test_conversion_75() {
 }
 pub unsafe fn test_conversion_77() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_76));
-    let idx_convertible: () = ((unsafe { std_numeric_limits_int_::max() })
-        >= ((unsafe { std_numeric_limits_unsigned_long_::max() }) as ()));
+    let idx_convertible: () = ((unimplemented!()) >= (unimplemented!() as ()));
     (unsafe { test_conversion_39(unimplemented!()) });
     (unsafe {
         test_conversion_40(std_extents_unsigned_long__18446744073709551615_::new_3({
@@ -663,8 +661,7 @@ pub unsafe fn test_conversion_77() {
 }
 pub unsafe fn test_conversion_78() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_76));
-    let idx_convertible: () = (((unsafe { std_numeric_limits_unsigned_long_::max() }) as ())
-        >= (unsafe { std_numeric_limits_int_::max() }));
+    let idx_convertible: () = ((unimplemented!() as ()) >= (unimplemented!()));
     (unsafe { test_conversion_51(unimplemented!()) });
     (unsafe { test_conversion_52(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
     (unsafe { test_conversion_53(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
@@ -701,8 +698,7 @@ pub unsafe fn test_conversion_78() {
 }
 pub unsafe fn test_conversion_79() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_76));
-    let idx_convertible: () = (((unsafe { std_numeric_limits_unsigned_long_::max() }) as ())
-        >= (unsafe { std_numeric_limits_long_::max() }));
+    let idx_convertible: () = ((unimplemented!() as ()) >= (unimplemented!()));
     (unsafe { test_conversion_63(unimplemented!()) });
     (unsafe { test_conversion_64(std_extents_long__18446744073709551615_::new_1({ 5_() })) });
     (unsafe { test_conversion_65(std_extents_long__18446744073709551615_::new_1({ 5_() })) });

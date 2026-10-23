@@ -699,12 +699,10 @@ static mut rp_67: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
 static mut rp_log2_68: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut value_64))
 });
-static mut w_digits_69: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_70))
-});
-static mut e_digits_71: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_72))
-});
+static mut w_digits_69: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut e_digits_70: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ {
@@ -774,16 +772,16 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
         }
         this.mask0_ = if ((this.wid0_) > (0_())) {
             ((((!0_() as u16) as ())
-                >> ((*std::cell::LazyCell::force_mut(&mut *&raw mut e_digits_71))
+                >> ((*std::cell::LazyCell::force_mut(&mut *&raw mut e_digits_70))
                     .wrapping_sub(this.wid0_))) as u16)
         } else {
             0_u16
         };
         this.mask1_ = if ((this.wid0_)
-            < ((*std::cell::LazyCell::force_mut(&mut *&raw mut e_digits_71)).wrapping_sub(1_())))
+            < ((*std::cell::LazyCell::force_mut(&mut *&raw mut e_digits_70)).wrapping_sub(1_())))
         {
             ((((!0_() as u16) as ())
-                >> ((*std::cell::LazyCell::force_mut(&mut *&raw mut e_digits_71))
+                >> ((*std::cell::LazyCell::force_mut(&mut *&raw mut e_digits_70))
                     .wrapping_sub(((this.wid0_).wrapping_add(1_()))))) as u16)
         } else {
             (!0_() as u16)
@@ -796,7 +794,7 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
         });
     }
     unsafe fn generate_4(&mut self, mut _a0: ()) -> () {
-        let r_digits: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_70));
+        let r_digits: () = unimplemented!();
         let mut result: () = 0_();
         let mut k: () = 0_();
         'loop_: while ((k) < (self.round_count_regular_)) {
@@ -841,17 +839,17 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
         return result;
     }
 }
-pub unsafe fn operator_eq_73(
+pub unsafe fn operator_eq_71(
     _a0: *const support_uniform_int_distribution_long_,
     _a1: *const support_uniform_int_distribution_long_,
 ) -> () {
     return (unsafe {
         let _arg0: *const support_uniform_int_distribution_long__param_type = &(*_a0).param_;
         let _arg1: *const support_uniform_int_distribution_long__param_type = &(*_a1).param_;
-        operator_eq_74(_arg0, _arg1)
+        operator_eq_72(_arg0, _arg1)
     });
 }
-pub unsafe fn operator_eq_74(
+pub unsafe fn operator_eq_72(
     _a0: *const support_uniform_int_distribution_long__param_type,
     _a1: *const support_uniform_int_distribution_long__param_type,
 ) -> () {
@@ -869,8 +867,7 @@ impl support_uniform_int_distribution_long__param_type {
         this
     }
     pub unsafe fn new_2(mut ax: (), mut bx: Option<()>) -> Self {
-        let mut bx: () =
-            bx.unwrap_or_else(|| unsafe { (unsafe { std_numeric_limits_long_::max() }) });
+        let mut bx: () = bx.unwrap_or_else(|| unsafe { unimplemented!() });
         let mut this = Self { a_: ax, b_: bx };
         this
     }
@@ -884,7 +881,7 @@ impl support_uniform_int_distribution_long__param_type {
 impl std::cmp::PartialEq for support_uniform_int_distribution_long__param_type {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_74(
+            operator_eq_72(
                 self as *const support_uniform_int_distribution_long__param_type,
                 other as *const support_uniform_int_distribution_long__param_type,
             )
@@ -917,7 +914,7 @@ impl support_uniform_int_distribution_long_ {
         if ((rp) == (1_())) {
             return (unsafe { support_uniform_int_distribution_long__param_type::a(&(*param)) });
         }
-        let ur_digits: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut digits_70));
+        let ur_digits: () = unimplemented!();
         if ((rp) == (0_())) {
             return (unsafe {
                 support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ :: operator_call ( &mut support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ :: new ( { gen_ } , { ur_digits } , )   , )
@@ -925,11 +922,7 @@ impl support_uniform_int_distribution_long_ {
         }
         let mut width: () =
             ((ur_digits).wrapping_sub((unsafe { countl_zero_66(rp) }))).wrapping_sub(1_());
-        if (((rp)
-            & ((unsafe { std_numeric_limits_unsigned_long_::max() })
-                >> ((ur_digits).wrapping_sub(width))))
-            != (0_()))
-        {
+        if (((rp) & ((unimplemented!()) >> ((ur_digits).wrapping_sub(width)))) != (0_())) {
             width.prefix_inc();
         }
         let mut eng : support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ = support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ :: new ( { gen_ } , { width } , )  ;
@@ -949,7 +942,7 @@ impl support_uniform_int_distribution_long_ {
 impl std::cmp::PartialEq for support_uniform_int_distribution_long_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_73(
+            operator_eq_71(
                 self as *const support_uniform_int_distribution_long_,
                 other as *const support_uniform_int_distribution_long_,
             )
@@ -957,7 +950,7 @@ impl std::cmp::PartialEq for support_uniform_int_distribution_long_ {
     }
 }
 impl std::cmp::Eq for support_uniform_int_distribution_long_ {}
-pub static mut default_seed_75: std::cell::LazyCell<u16> =
+pub static mut default_seed_73: std::cell::LazyCell<u16> =
     std::cell::LazyCell::new(|| unsafe { 19937_u16 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
@@ -973,7 +966,7 @@ impl support_simple_random_generator {
     }
     pub unsafe fn new_1() -> Self {
         let mut this = support_simple_random_generator::new_2({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut default_seed_75))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut default_seed_73))
         });
         this
     }
@@ -994,7 +987,7 @@ impl Default for support_simple_random_generator {
         unsafe { support_simple_random_generator::new_1() }
     }
 }
-pub unsafe fn shuffle_76(
+pub unsafe fn shuffle_74(
     mut first: *mut (),
     mut last: *mut (),
     gen_: *mut support_simple_random_generator,
@@ -1028,7 +1021,7 @@ pub unsafe fn shuffle_76(
         }
     }
 }
-pub unsafe fn shuffle_77(
+pub unsafe fn shuffle_75(
     mut first: *mut (),
     mut last: *mut (),
     gen_: *mut support_simple_random_generator,
@@ -1056,7 +1049,7 @@ pub unsafe fn shuffle_77(
                 (unsafe {
                     let ___x: *mut () = &mut (*first);
                     let ___y: *mut () = &mut (*(first.offset((index) as isize)));
-                    swap_78(___x, ___y)
+                    swap_76(___x, ___y)
                 });
             }
             {
@@ -1066,7 +1059,7 @@ pub unsafe fn shuffle_77(
         }
     }
 }
-pub unsafe fn shuffle_79(
+pub unsafe fn shuffle_77(
     mut first: *mut S,
     mut last: *mut S,
     gen_: *mut support_simple_random_generator,
@@ -1094,7 +1087,7 @@ pub unsafe fn shuffle_79(
                 (unsafe {
                     let ___x: *mut S = &mut (*first);
                     let ___y: *mut S = &mut (*(first.offset((index) as isize)));
-                    swap_80(___x, ___y)
+                    swap_78(___x, ___y)
                 });
             }
             {
@@ -1269,13 +1262,13 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub unsafe fn operator_eq_81(
+pub unsafe fn operator_eq_79(
     x: *const bidirectional_iterator_int_ptr_,
     y: *const bidirectional_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_82(
+pub unsafe fn operator_ne_80(
     x: *const bidirectional_iterator_int_ptr_,
     y: *const bidirectional_iterator_int_ptr_,
 ) -> () {
@@ -1335,7 +1328,7 @@ impl bidirectional_iterator_int_ptr_ {
 impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_81(
+            operator_eq_79(
                 self as *const bidirectional_iterator_int_ptr_,
                 other as *const bidirectional_iterator_int_ptr_,
             )
@@ -1348,13 +1341,13 @@ impl Default for bidirectional_iterator_int_ptr_ {
         unsafe { bidirectional_iterator_int_ptr_::new_1() }
     }
 }
-pub unsafe fn operator_eq_83(
+pub unsafe fn operator_eq_81(
     x: *const bidirectional_iterator_S_ptr_,
     y: *const bidirectional_iterator_S_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_84(
+pub unsafe fn operator_ne_82(
     x: *const bidirectional_iterator_S_ptr_,
     y: *const bidirectional_iterator_S_ptr_,
 ) -> () {
@@ -1414,7 +1407,7 @@ impl bidirectional_iterator_S_ptr_ {
 impl std::cmp::PartialEq for bidirectional_iterator_S_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_83(
+            operator_eq_81(
                 self as *const bidirectional_iterator_S_ptr_,
                 other as *const bidirectional_iterator_S_ptr_,
             )
@@ -1427,26 +1420,26 @@ impl Default for bidirectional_iterator_S_ptr_ {
         unsafe { bidirectional_iterator_S_ptr_::new_1() }
     }
 }
-pub unsafe fn operator_add_85(
+pub unsafe fn operator_add_83(
     mut x: random_access_iterator_int_ptr_,
     mut n: (),
 ) -> random_access_iterator_int_ptr_ {
     (unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_int_ptr_::move_from({ &mut x });
 }
-pub unsafe fn operator_sub_86(
+pub unsafe fn operator_sub_84(
     mut x: random_access_iterator_int_ptr_,
     mut y: random_access_iterator_int_ptr_,
 ) -> () {
     return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_87(
+pub unsafe fn operator_eq_85(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_88(
+pub unsafe fn operator_ne_86(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
 ) -> () {
@@ -1513,7 +1506,7 @@ impl random_access_iterator_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_87(
+            operator_eq_85(
                 self as *const random_access_iterator_int_ptr_,
                 other as *const random_access_iterator_int_ptr_,
             )
@@ -1526,26 +1519,26 @@ impl Default for random_access_iterator_int_ptr_ {
         unsafe { random_access_iterator_int_ptr_::new_1() }
     }
 }
-pub unsafe fn operator_add_89(
+pub unsafe fn operator_add_87(
     mut x: random_access_iterator_S_ptr_,
     mut n: (),
 ) -> random_access_iterator_S_ptr_ {
     (unsafe { random_access_iterator_S_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_S_ptr_::move_from({ &mut x });
 }
-pub unsafe fn operator_sub_90(
+pub unsafe fn operator_sub_88(
     mut x: random_access_iterator_S_ptr_,
     mut y: random_access_iterator_S_ptr_,
 ) -> () {
     return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<S>()) as () as ());
 }
-pub unsafe fn operator_eq_91(
+pub unsafe fn operator_eq_89(
     x: *const random_access_iterator_S_ptr_,
     y: *const random_access_iterator_S_ptr_,
 ) -> () {
     return (((*x).it_) == ((*y).it_));
 }
-pub unsafe fn operator_ne_92(
+pub unsafe fn operator_ne_90(
     x: *const random_access_iterator_S_ptr_,
     y: *const random_access_iterator_S_ptr_,
 ) -> () {
@@ -1609,7 +1602,7 @@ impl random_access_iterator_S_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_S_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_91(
+            operator_eq_89(
                 self as *const random_access_iterator_S_ptr_,
                 other as *const random_access_iterator_S_ptr_,
             )
@@ -1723,7 +1716,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub unsafe fn operator_eq_93(
+pub unsafe fn operator_eq_91(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -1738,7 +1731,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_93(
+            operator_eq_91(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -1760,37 +1753,37 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_94(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_92(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_95(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_93(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_94(_i, n)
+        operator_add_92(_i, n)
     });
 }
-pub unsafe fn iter_swap_96(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_94(mut a: adl_Iterator, mut b: adl_Iterator) {
     (unsafe {
         let ___x: *mut *mut () = &mut a.ptr_;
         let ___y: *mut *mut () = &mut b.ptr_;
-        swap_97(___x, ___y)
+        swap_95(___x, ___y)
     });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_98(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_96(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_99(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_97(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_100(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_98(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1874,7 +1867,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_100(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_98(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1884,7 +1877,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_99(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_97(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -2016,6 +2009,80 @@ impl Default for binary_counting_predicate_std_greater_S___S__S_ {
         }
     }
 }
+pub unsafe fn test_one_99(mut N: (), mut M: (), randomness: *mut support_simple_random_generator) {
+    unimplemented!();
+    let mut ia: *mut () =
+        Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (N)) {
+        (*ia.offset((i) as isize)) = i;
+        i.prefix_inc();
+    }
+    (unsafe {
+        let _first: *mut () = ia;
+        let _last: *mut () = ia.offset((N) as isize);
+        let _gen_: *mut support_simple_random_generator = randomness;
+        shuffle_75(_first, _last, _gen_)
+    });
+    unimplemented!();
+    unimplemented!();
+    let mut pred: binary_counting_predicate_std_greater_int___int__int_ =
+        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) });
+    unimplemented!();
+    if ((N) > (0_())) {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let __p = ia;
+        if !__p.is_null() {
+            ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
+                __p,
+                libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
+                    / ::std::mem::size_of::<()>(),
+            )))
+        }
+    };
+}
+pub unsafe fn test_one_100(mut N: (), mut M: (), randomness: *mut support_simple_random_generator) {
+    unimplemented!();
+    let mut ia: *mut () =
+        Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (N)) {
+        (*ia.offset((i) as isize)) = i;
+        i.prefix_inc();
+    }
+    (unsafe {
+        let _first: *mut () = ia;
+        let _last: *mut () = ia.offset((N) as isize);
+        let _gen_: *mut support_simple_random_generator = randomness;
+        shuffle_75(_first, _last, _gen_)
+    });
+    unimplemented!();
+    unimplemented!();
+    let mut pred: binary_counting_predicate_std_greater_int___int__int_ =
+        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) });
+    unimplemented!();
+    if ((N) > (0_())) {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let __p = ia;
+        if !__p.is_null() {
+            ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
+                __p,
+                libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
+                    / ::std::mem::size_of::<()>(),
+            )))
+        }
+    };
+}
 pub unsafe fn test_one_101(mut N: (), mut M: (), randomness: *mut support_simple_random_generator) {
     unimplemented!();
     let mut ia: *mut () =
@@ -2029,7 +2096,7 @@ pub unsafe fn test_one_101(mut N: (), mut M: (), randomness: *mut support_simple
         let _first: *mut () = ia;
         let _last: *mut () = ia.offset((N) as isize);
         let _gen_: *mut support_simple_random_generator = randomness;
-        shuffle_77(_first, _last, _gen_)
+        shuffle_75(_first, _last, _gen_)
     });
     unimplemented!();
     unimplemented!();
@@ -2055,23 +2122,26 @@ pub unsafe fn test_one_101(mut N: (), mut M: (), randomness: *mut support_simple
 }
 pub unsafe fn test_one_102(mut N: (), mut M: (), randomness: *mut support_simple_random_generator) {
     unimplemented!();
-    let mut ia: *mut () =
-        Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
+    let mut ia: *mut S =
+        Box::leak((0..N).map(|_| <S>::default()).collect::<Box<[S]>>()).as_mut_ptr();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
-        (*ia.offset((i) as isize)) = i;
+        (unsafe {
+            let _i: () = i;
+            S::operator_assign_7(&mut (*ia.offset((i) as isize)), _i)
+        });
         i.prefix_inc();
     }
     (unsafe {
-        let _first: *mut () = ia;
-        let _last: *mut () = ia.offset((N) as isize);
+        let _first: *mut S = ia;
+        let _last: *mut S = ia.offset((N) as isize);
         let _gen_: *mut support_simple_random_generator = randomness;
         shuffle_77(_first, _last, _gen_)
     });
     unimplemented!();
     unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_int___int__int_ =
-        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) });
+    let mut pred: binary_counting_predicate_std_greater_S___S__S_ =
+        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) });
     unimplemented!();
     if ((N) > (0_())) {
         unimplemented!();
@@ -2085,30 +2155,33 @@ pub unsafe fn test_one_102(mut N: (), mut M: (), randomness: *mut support_simple
             ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                 __p,
                 libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                    / ::std::mem::size_of::<()>(),
+                    / ::std::mem::size_of::<S>(),
             )))
         }
     };
 }
 pub unsafe fn test_one_103(mut N: (), mut M: (), randomness: *mut support_simple_random_generator) {
     unimplemented!();
-    let mut ia: *mut () =
-        Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
+    let mut ia: *mut S =
+        Box::leak((0..N).map(|_| <S>::default()).collect::<Box<[S]>>()).as_mut_ptr();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
-        (*ia.offset((i) as isize)) = i;
+        (unsafe {
+            let _i: () = i;
+            S::operator_assign_7(&mut (*ia.offset((i) as isize)), _i)
+        });
         i.prefix_inc();
     }
     (unsafe {
-        let _first: *mut () = ia;
-        let _last: *mut () = ia.offset((N) as isize);
+        let _first: *mut S = ia;
+        let _last: *mut S = ia.offset((N) as isize);
         let _gen_: *mut support_simple_random_generator = randomness;
         shuffle_77(_first, _last, _gen_)
     });
     unimplemented!();
     unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_int___int__int_ =
-        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) });
+    let mut pred: binary_counting_predicate_std_greater_S___S__S_ =
+        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) });
     unimplemented!();
     if ((N) > (0_())) {
         unimplemented!();
@@ -2122,7 +2195,7 @@ pub unsafe fn test_one_103(mut N: (), mut M: (), randomness: *mut support_simple
             ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                 __p,
                 libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                    / ::std::mem::size_of::<()>(),
+                    / ::std::mem::size_of::<S>(),
             )))
         }
     };
@@ -2143,7 +2216,7 @@ pub unsafe fn test_one_104(mut N: (), mut M: (), randomness: *mut support_simple
         let _first: *mut S = ia;
         let _last: *mut S = ia.offset((N) as isize);
         let _gen_: *mut support_simple_random_generator = randomness;
-        shuffle_79(_first, _last, _gen_)
+        shuffle_77(_first, _last, _gen_)
     });
     unimplemented!();
     unimplemented!();
@@ -2167,85 +2240,67 @@ pub unsafe fn test_one_104(mut N: (), mut M: (), randomness: *mut support_simple
         }
     };
 }
-pub unsafe fn test_one_105(mut N: (), mut M: (), randomness: *mut support_simple_random_generator) {
-    unimplemented!();
-    let mut ia: *mut S =
-        Box::leak((0..N).map(|_| <S>::default()).collect::<Box<[S]>>()).as_mut_ptr();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (N)) {
-        (unsafe {
-            let _i: () = i;
-            S::operator_assign_7(&mut (*ia.offset((i) as isize)), _i)
-        });
-        i.prefix_inc();
-    }
+pub unsafe fn test_105(mut N: (), randomness: *mut support_simple_random_generator) {
     (unsafe {
-        let _first: *mut S = ia;
-        let _last: *mut S = ia.offset((N) as isize);
-        let _gen_: *mut support_simple_random_generator = randomness;
-        shuffle_79(_first, _last, _gen_)
+        let _N: () = N;
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_99(_N, 0_(), _randomness)
     });
-    unimplemented!();
-    unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_S___S__S_ =
-        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) });
-    unimplemented!();
-    if ((N) > (0_())) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let __p = ia;
-        if !__p.is_null() {
-            ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
-                __p,
-                libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                    / ::std::mem::size_of::<S>(),
-            )))
-        }
-    };
+    (unsafe {
+        let _N: () = N;
+        let _M: () = (N).wrapping_div(4_());
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_99(_N, _M, _randomness)
+    });
+    (unsafe {
+        let _N: () = N;
+        let _M: () = (N).wrapping_div(2_());
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_99(_N, _M, _randomness)
+    });
+    (unsafe {
+        let _N: () = N;
+        let _M: () = ((3_()).wrapping_mul(N)).wrapping_div(4_());
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_99(_N, _M, _randomness)
+    });
+    (unsafe {
+        let _N: () = N;
+        let _M: () = N;
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_99(_N, _M, _randomness)
+    });
 }
-pub unsafe fn test_one_106(mut N: (), mut M: (), randomness: *mut support_simple_random_generator) {
-    unimplemented!();
-    let mut ia: *mut S =
-        Box::leak((0..N).map(|_| <S>::default()).collect::<Box<[S]>>()).as_mut_ptr();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (N)) {
-        (unsafe {
-            let _i: () = i;
-            S::operator_assign_7(&mut (*ia.offset((i) as isize)), _i)
-        });
-        i.prefix_inc();
-    }
+pub unsafe fn test_106(mut N: (), randomness: *mut support_simple_random_generator) {
     (unsafe {
-        let _first: *mut S = ia;
-        let _last: *mut S = ia.offset((N) as isize);
-        let _gen_: *mut support_simple_random_generator = randomness;
-        shuffle_79(_first, _last, _gen_)
+        let _N: () = N;
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_100(_N, 0_(), _randomness)
     });
-    unimplemented!();
-    unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_S___S__S_ =
-        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) });
-    unimplemented!();
-    if ((N) > (0_())) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let __p = ia;
-        if !__p.is_null() {
-            ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
-                __p,
-                libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                    / ::std::mem::size_of::<S>(),
-            )))
-        }
-    };
+    (unsafe {
+        let _N: () = N;
+        let _M: () = (N).wrapping_div(4_());
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_100(_N, _M, _randomness)
+    });
+    (unsafe {
+        let _N: () = N;
+        let _M: () = (N).wrapping_div(2_());
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_100(_N, _M, _randomness)
+    });
+    (unsafe {
+        let _N: () = N;
+        let _M: () = ((3_()).wrapping_mul(N)).wrapping_div(4_());
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_100(_N, _M, _randomness)
+    });
+    (unsafe {
+        let _N: () = N;
+        let _M: () = N;
+        let _randomness: *mut support_simple_random_generator = randomness;
+        test_one_100(_N, _M, _randomness)
+    });
 }
 pub unsafe fn test_107(mut N: (), randomness: *mut support_simple_random_generator) {
     (unsafe {
@@ -2371,67 +2426,43 @@ pub unsafe fn test_110(mut N: (), randomness: *mut support_simple_random_generat
         test_one_104(_N, _M, _randomness)
     });
 }
-pub unsafe fn test_111(mut N: (), randomness: *mut support_simple_random_generator) {
-    (unsafe {
-        let _N: () = N;
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_105(_N, 0_(), _randomness)
-    });
-    (unsafe {
-        let _N: () = N;
-        let _M: () = (N).wrapping_div(4_());
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_105(_N, _M, _randomness)
-    });
-    (unsafe {
-        let _N: () = N;
-        let _M: () = (N).wrapping_div(2_());
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_105(_N, _M, _randomness)
-    });
-    (unsafe {
-        let _N: () = N;
-        let _M: () = ((3_()).wrapping_mul(N)).wrapping_div(4_());
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_105(_N, _M, _randomness)
-    });
-    (unsafe {
-        let _N: () = N;
-        let _M: () = N;
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_105(_N, _M, _randomness)
-    });
+pub unsafe fn test_111(randomness: *mut support_simple_random_generator) {
+    (unsafe { test_one_99(0_(), 0_(), randomness) });
+    (unsafe { test_one_99(1_(), 0_(), randomness) });
+    (unsafe { test_one_99(1_(), 1_(), randomness) });
+    (unsafe { test_one_99(2_(), 0_(), randomness) });
+    (unsafe { test_one_99(2_(), 1_(), randomness) });
+    (unsafe { test_one_99(2_(), 2_(), randomness) });
+    (unsafe { test_one_99(3_(), 0_(), randomness) });
+    (unsafe { test_one_99(3_(), 1_(), randomness) });
+    (unsafe { test_one_99(3_(), 2_(), randomness) });
+    (unsafe { test_one_99(3_(), 3_(), randomness) });
+    (unsafe { test_105(4_(), randomness) });
+    (unsafe { test_105(20_(), randomness) });
+    (unsafe { test_105(50_(), randomness) });
+    {
+        (unsafe { test_105(100_(), randomness) });
+        (unsafe { test_105(1000_(), randomness) });
+    }
 }
-pub unsafe fn test_112(mut N: (), randomness: *mut support_simple_random_generator) {
-    (unsafe {
-        let _N: () = N;
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_106(_N, 0_(), _randomness)
-    });
-    (unsafe {
-        let _N: () = N;
-        let _M: () = (N).wrapping_div(4_());
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_106(_N, _M, _randomness)
-    });
-    (unsafe {
-        let _N: () = N;
-        let _M: () = (N).wrapping_div(2_());
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_106(_N, _M, _randomness)
-    });
-    (unsafe {
-        let _N: () = N;
-        let _M: () = ((3_()).wrapping_mul(N)).wrapping_div(4_());
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_106(_N, _M, _randomness)
-    });
-    (unsafe {
-        let _N: () = N;
-        let _M: () = N;
-        let _randomness: *mut support_simple_random_generator = randomness;
-        test_one_106(_N, _M, _randomness)
-    });
+pub unsafe fn test_112(randomness: *mut support_simple_random_generator) {
+    (unsafe { test_one_100(0_(), 0_(), randomness) });
+    (unsafe { test_one_100(1_(), 0_(), randomness) });
+    (unsafe { test_one_100(1_(), 1_(), randomness) });
+    (unsafe { test_one_100(2_(), 0_(), randomness) });
+    (unsafe { test_one_100(2_(), 1_(), randomness) });
+    (unsafe { test_one_100(2_(), 2_(), randomness) });
+    (unsafe { test_one_100(3_(), 0_(), randomness) });
+    (unsafe { test_one_100(3_(), 1_(), randomness) });
+    (unsafe { test_one_100(3_(), 2_(), randomness) });
+    (unsafe { test_one_100(3_(), 3_(), randomness) });
+    (unsafe { test_106(4_(), randomness) });
+    (unsafe { test_106(20_(), randomness) });
+    (unsafe { test_106(50_(), randomness) });
+    {
+        (unsafe { test_106(100_(), randomness) });
+        (unsafe { test_106(1000_(), randomness) });
+    }
 }
 pub unsafe fn test_113(randomness: *mut support_simple_random_generator) {
     (unsafe { test_one_101(0_(), 0_(), randomness) });
@@ -2509,44 +2540,6 @@ pub unsafe fn test_116(randomness: *mut support_simple_random_generator) {
         (unsafe { test_110(1000_(), randomness) });
     }
 }
-pub unsafe fn test_117(randomness: *mut support_simple_random_generator) {
-    (unsafe { test_one_105(0_(), 0_(), randomness) });
-    (unsafe { test_one_105(1_(), 0_(), randomness) });
-    (unsafe { test_one_105(1_(), 1_(), randomness) });
-    (unsafe { test_one_105(2_(), 0_(), randomness) });
-    (unsafe { test_one_105(2_(), 1_(), randomness) });
-    (unsafe { test_one_105(2_(), 2_(), randomness) });
-    (unsafe { test_one_105(3_(), 0_(), randomness) });
-    (unsafe { test_one_105(3_(), 1_(), randomness) });
-    (unsafe { test_one_105(3_(), 2_(), randomness) });
-    (unsafe { test_one_105(3_(), 3_(), randomness) });
-    (unsafe { test_111(4_(), randomness) });
-    (unsafe { test_111(20_(), randomness) });
-    (unsafe { test_111(50_(), randomness) });
-    {
-        (unsafe { test_111(100_(), randomness) });
-        (unsafe { test_111(1000_(), randomness) });
-    }
-}
-pub unsafe fn test_118(randomness: *mut support_simple_random_generator) {
-    (unsafe { test_one_106(0_(), 0_(), randomness) });
-    (unsafe { test_one_106(1_(), 0_(), randomness) });
-    (unsafe { test_one_106(1_(), 1_(), randomness) });
-    (unsafe { test_one_106(2_(), 0_(), randomness) });
-    (unsafe { test_one_106(2_(), 1_(), randomness) });
-    (unsafe { test_one_106(2_(), 2_(), randomness) });
-    (unsafe { test_one_106(3_(), 0_(), randomness) });
-    (unsafe { test_one_106(3_(), 1_(), randomness) });
-    (unsafe { test_one_106(3_(), 2_(), randomness) });
-    (unsafe { test_one_106(3_(), 3_(), randomness) });
-    (unsafe { test_112(4_(), randomness) });
-    (unsafe { test_112(20_(), randomness) });
-    (unsafe { test_112(50_(), randomness) });
-    {
-        (unsafe { test_112(100_(), randomness) });
-        (unsafe { test_112(1000_(), randomness) });
-    }
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct less_by_first {}
@@ -2559,7 +2552,7 @@ impl less_by_first {
         return unimplemented!();
     }
 }
-pub unsafe fn test_PR31166_119() {
+pub unsafe fn test_PR31166_117() {
     let mut vec_: [(); 5] = [
         unimplemented!(),
         unimplemented!(),
@@ -2576,14 +2569,14 @@ pub unsafe fn test_PR31166_119() {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_120() -> () {
+pub unsafe fn test_118() -> () {
     let mut randomness: support_simple_random_generator = support_simple_random_generator::new_1();
+    (unsafe { test_111(&mut randomness) });
+    (unsafe { test_112(&mut randomness) });
     (unsafe { test_113(&mut randomness) });
     (unsafe { test_114(&mut randomness) });
     (unsafe { test_115(&mut randomness) });
     (unsafe { test_116(&mut randomness) });
-    (unsafe { test_117(&mut randomness) });
-    (unsafe { test_118(&mut randomness) });
     {
         let N: () = 100_();
         let M: () = 50_();
@@ -2597,7 +2590,7 @@ pub unsafe fn test_120() -> () {
         (unsafe {
             let _first: *mut () = ia;
             let _last: *mut () = ia.offset((N) as isize);
-            shuffle_76(_first, _last, &mut randomness)
+            shuffle_74(_first, _last, &mut randomness)
         });
         unimplemented!();
         unimplemented!();
@@ -2616,7 +2609,7 @@ pub unsafe fn test_120() -> () {
             }
         };
     }
-    (unsafe { test_PR31166_119() });
+    (unsafe { test_PR31166_117() });
     return true;
 }
 pub fn main() {
@@ -2635,7 +2628,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_120() });
+    (unsafe { test_118() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
@@ -2707,6 +2700,6 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const rp_67);
     std::cell::LazyCell::force(&*&raw const rp_log2_68);
     std::cell::LazyCell::force(&*&raw const w_digits_69);
-    std::cell::LazyCell::force(&*&raw const e_digits_71);
-    std::cell::LazyCell::force(&*&raw const default_seed_75);
+    std::cell::LazyCell::force(&*&raw const e_digits_70);
+    std::cell::LazyCell::force(&*&raw const default_seed_73);
 }

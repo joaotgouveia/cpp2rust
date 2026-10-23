@@ -12,16 +12,16 @@ pub unsafe fn test1_1() {
     const _: () = assert!(true, "(E::used_block == 23)");;
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFF)");;
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut block_size_2))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut used_block_3))) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
 }
-pub unsafe fn test2_4() {
+pub unsafe fn test2_2() {
     const _: () = assert!(true, "(E::block_size == 389)");;
     const _: () = assert!(true, "(E::used_block == 11)");;
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFFFFFFull)");;
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut block_size_5))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut used_block_6))) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -40,7 +40,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test1_1() });
-    (unsafe { test2_4() });
+    (unsafe { test2_2() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

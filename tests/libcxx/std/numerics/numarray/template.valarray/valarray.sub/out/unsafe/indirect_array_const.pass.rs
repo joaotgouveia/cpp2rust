@@ -99,7 +99,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             .wrapping_div((::std::mem::size_of::<()>() as ()));
         let v1: () = unimplemented!();
         let mut ia: () = unimplemented!();
-        let mut v: () = (unsafe { v1[(ia) as usize]() });
+        let mut v: () = (unsafe { unimplemented!()() });
         unimplemented!();
         unimplemented!();
         unimplemented!();

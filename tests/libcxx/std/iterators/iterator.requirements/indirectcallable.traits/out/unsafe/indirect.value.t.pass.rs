@@ -39,7 +39,7 @@ pub unsafe fn test_0() {
             )
         });
         (unsafe {
-            let ___first: () = (unsafe { ints.begin() });
+            let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut for_each_2))(
                 ___first,
@@ -99,7 +99,7 @@ pub unsafe fn test_0() {
             )
         });
         &(unsafe {
-            let ___first: () = (unsafe { ints.begin() });
+            let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             (*std::cell::LazyCell::force_mut(&mut *&raw mut unique_copy_3))(
                 ___first,

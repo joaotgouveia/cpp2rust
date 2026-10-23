@@ -267,7 +267,7 @@ pub const CtorKind_ValueCtor: CtorKind = 1;
 pub unsafe fn test_20() -> () {
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut sent: std_ranges_iota_view_int__IntComparableWith_int_____sentinel =
             unimplemented!();
         unimplemented!();
@@ -275,7 +275,7 @@ pub unsafe fn test_20() -> () {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut sent: std_ranges_iota_view_int__IntComparableWith_int_____sentinel =
             unimplemented!();
         unimplemented!();
@@ -283,7 +283,7 @@ pub unsafe fn test_20() -> () {
     }
     {
         let io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut sent: std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt_____sentinel =
             unimplemented!();
         unimplemented!();
@@ -291,7 +291,7 @@ pub unsafe fn test_20() -> () {
     }
     {
         let mut io: () = unimplemented!();
-        let mut iter: () = (unsafe { io.begin() });
+        let mut iter: () = unimplemented!();
         let mut sent: std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt_____sentinel =
             unimplemented!();
         unimplemented!();

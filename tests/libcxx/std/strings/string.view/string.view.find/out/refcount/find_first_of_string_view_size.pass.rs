@@ -9,107 +9,62 @@ use std::rc::{Rc, Weak};
 pub fn test_0(s: Ptr<()>, str: Ptr<()>, mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_1.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         unimplemented!();
     }
 }
-pub fn test_2(s: Ptr<()>, str: Ptr<()>, mut x: ()) {
+pub fn test_1(s: Ptr<()>, str: Ptr<()>, mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_1.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         unimplemented!();
     }
 }
-pub fn test0_3() {
+pub fn test0_2() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            0_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 0_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            0_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 0_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            0_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 0_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            0_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 0_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            1_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 1_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            1_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 1_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            1_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 1_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            1_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 1_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            0_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 0_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -129,22 +84,12 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            1_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 1_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            1_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 1_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -159,12 +104,7 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            2_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 2_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -184,32 +124,17 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            4_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 4_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            4_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 4_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            4_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 4_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -219,92 +144,47 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            5_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 5_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            5_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 5_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            5_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 5_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            5_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 5_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            6_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 6_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            6_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 6_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            6_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 6_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            6_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 6_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            0_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 0_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -324,12 +204,7 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            1_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 1_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -349,22 +224,12 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            5_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 5_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            5_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 5_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -379,12 +244,7 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            9_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 9_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -394,12 +254,7 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            9_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 9_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -409,92 +264,47 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            10_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 10_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            10_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 10_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            10_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 10_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            10_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 10_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            11_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 11_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            11_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 11_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            11_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 11_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            11_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 11_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            0_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 0_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -514,12 +324,7 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            1_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 1_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -539,12 +344,7 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            10_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 10_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -564,22 +364,12 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            19_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 19_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            19_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 19_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -594,192 +384,124 @@ pub fn test0_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            20_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 20_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            20_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 20_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            20_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 20_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            20_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 20_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            21_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 21_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            21_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 21_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            21_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 21_(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            21_(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_0(_s.as_pointer(), _str.as_pointer(), 21_(), unimplemented!())
     });
 }
-pub fn test1_4() {
+pub fn test1_3() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_1(_s.as_pointer(), _str.as_pointer(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_1(_s.as_pointer(), _str.as_pointer(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_1(_s.as_pointer(), _str.as_pointer(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_1(_s.as_pointer(), _str.as_pointer(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_1(_s.as_pointer(), _str.as_pointer(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 2_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 0_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 0_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_1(_s.as_pointer(), _str.as_pointer(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 0_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 0_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 0_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(
-            _s.as_pointer(),
-            _str.as_pointer(),
-            npos_1.with(|rc| *rc.borrow()),
-        )
+        test_1(_s.as_pointer(), _str.as_pointer(), unimplemented!())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 1_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 0_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_2(_s.as_pointer(), _str.as_pointer(), 0_())
+        test_1(_s.as_pointer(), _str.as_pointer(), 0_())
     });
 }
 pub fn main() {
@@ -803,8 +525,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        ({ test0_3() });
-        ({ test1_4() });
+        ({ test0_2() });
+        ({ test1_3() });
     }
     return 0_();
 }

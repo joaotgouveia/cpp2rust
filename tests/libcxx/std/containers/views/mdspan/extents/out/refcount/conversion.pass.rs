@@ -744,8 +744,7 @@ pub fn test_conversion_74(src: ()) {
 }
 pub fn test_conversion_75() {
     let mut D: () = dynamic_extent_76.with(|rc| *rc.borrow());
-    let mut idx_convertible: () =
-        (({ std_numeric_limits_int_::max() }) >= ({ std_numeric_limits_int_::max() }));
+    let mut idx_convertible: () = (unimplemented!() >= unimplemented!());
     ({ test_conversion_27(unimplemented!()) });
     ({ test_conversion_28(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
     ({ test_conversion_29(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
@@ -782,8 +781,7 @@ pub fn test_conversion_75() {
 }
 pub fn test_conversion_77() {
     let mut D: () = dynamic_extent_76.with(|rc| *rc.borrow());
-    let mut idx_convertible: () = (({ std_numeric_limits_int_::max() })
-        >= (({ std_numeric_limits_unsigned_long_::max() }) as ()));
+    let mut idx_convertible: () = (unimplemented!() >= (unimplemented!() as ()));
     ({ test_conversion_39(unimplemented!()) });
     ({
         test_conversion_40(std_extents_unsigned_long__18446744073709551615_::new_3({
@@ -838,8 +836,7 @@ pub fn test_conversion_77() {
 }
 pub fn test_conversion_78() {
     let mut D: () = dynamic_extent_76.with(|rc| *rc.borrow());
-    let mut idx_convertible: () = ((({ std_numeric_limits_unsigned_long_::max() }) as ())
-        >= ({ std_numeric_limits_int_::max() }));
+    let mut idx_convertible: () = ((unimplemented!() as ()) >= unimplemented!());
     ({ test_conversion_51(unimplemented!()) });
     ({ test_conversion_52(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
     ({ test_conversion_53(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
@@ -876,8 +873,7 @@ pub fn test_conversion_78() {
 }
 pub fn test_conversion_79() {
     let mut D: () = dynamic_extent_76.with(|rc| *rc.borrow());
-    let mut idx_convertible: () = ((({ std_numeric_limits_unsigned_long_::max() }) as ())
-        >= ({ std_numeric_limits_long_::max() }));
+    let mut idx_convertible: () = ((unimplemented!() as ()) >= unimplemented!());
     ({ test_conversion_63(unimplemented!()) });
     ({ test_conversion_64(std_extents_long__18446744073709551615_::new_1({ 5_() })) });
     ({ test_conversion_65(std_extents_long__18446744073709551615_::new_1({ 5_() })) });

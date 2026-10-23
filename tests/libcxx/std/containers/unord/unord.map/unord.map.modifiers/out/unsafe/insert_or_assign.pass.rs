@@ -51,10 +51,7 @@ impl Moveable {
             || (((self.int_) == ((*x).int_)) && ((self.double_) < ((*x).double_)));
     }
     pub unsafe fn hash(&self) -> () {
-        return (unsafe { (unimplemented!() as std___hash_impl_int__void_)(self.int_) })
-            .wrapping_add(
-                (unsafe { (unimplemented!() as std___hash_impl_double__void_)(self.double_) }),
-            );
+        return (unimplemented!()).wrapping_add(unimplemented!());
     }
     pub unsafe fn get(&self) -> () {
         return self.int_;

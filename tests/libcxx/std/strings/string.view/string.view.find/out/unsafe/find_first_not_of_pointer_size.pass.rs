@@ -43,43 +43,28 @@ impl constexpr_char_traits_char_ {
 pub unsafe fn test_0(s: *const (), mut str: *const (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if ((x) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1))) {
+    if ((x) != (unimplemented!())) {
         unimplemented!();
     }
 }
-pub unsafe fn test_2(s: *const (), mut str: *const (), mut x: ()) {
+pub unsafe fn test_1(s: *const (), mut str: *const (), mut x: ()) {
     unimplemented!();
-    if ((x) != (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1))) {
+    if ((x) != (unimplemented!())) {
         unimplemented!();
     }
 }
-pub unsafe fn test0_3() {
+pub unsafe fn test0_2() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"".as_ptr(),
-            0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"".as_ptr(), 0_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"laenf".as_ptr(),
-            0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"laenf".as_ptr(), 0_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"pqlnkmbdjo".as_ptr(),
-            0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"pqlnkmbdjo".as_ptr(), 0_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -87,35 +72,20 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"qkamfogpnljdcshbreti".as_ptr(),
             0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"".as_ptr(),
-            1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"".as_ptr(), 1_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"bjaht".as_ptr(),
-            1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"bjaht".as_ptr(), 1_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"hjlcmgpket".as_ptr(),
-            1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"hjlcmgpket".as_ptr(), 1_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -123,7 +93,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"htaobedqikfplcgjsmrn".as_ptr(),
             1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -144,7 +114,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"ngtjfcalbseiqrphmkdo".as_ptr(),
             0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -165,7 +135,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"oqftjhdmkgsblacenirp".as_ptr(),
             1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -178,12 +148,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"kojhpmbsfe".as_ptr(),
-            2_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"kojhpmbsfe".as_ptr(), 2_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -191,7 +156,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"acbsjqogpltdkhinfrem".as_ptr(),
             2_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -212,35 +177,20 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"fhepcrntkoagbmldqijs".as_ptr(),
             4_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"".as_ptr(),
-            5_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"".as_ptr(), 5_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"kocgb".as_ptr(),
-            5_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"kocgb".as_ptr(), 5_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"fbslrjiqkm".as_ptr(),
-            5_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"fbslrjiqkm".as_ptr(), 5_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -248,35 +198,20 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"jeidpcmalhfnqbgtrsko".as_ptr(),
             5_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"".as_ptr(),
-            6_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"".as_ptr(), 6_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"qngpd".as_ptr(),
-            6_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"qngpd".as_ptr(), 6_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"rodhqklgmb".as_ptr(),
-            6_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"rodhqklgmb".as_ptr(), 6_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -284,7 +219,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"thdjgafrlbkoiqcspmne".as_ptr(),
             6_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -305,7 +240,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"imqnaghkfrdtlopbjesc".as_ptr(),
             0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -326,7 +261,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"bdfjqgatlksriohemnpc".as_ptr(),
             1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -347,7 +282,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"odnqkgijrhabfmcestlp".as_ptr(),
             5_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -356,12 +291,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"rtjpa".as_ptr(),
-            9_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"rtjpa".as_ptr(), 9_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -373,35 +303,20 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"rtdhgcisbnmoaqkfpjle".as_ptr(),
             9_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"".as_ptr(),
-            10_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"".as_ptr(), 10_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"dplqa".as_ptr(),
-            10_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"dplqa".as_ptr(), 10_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"dkacjoptns".as_ptr(),
-            10_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"dkacjoptns".as_ptr(), 10_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -409,35 +324,20 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"hqfimtrgnbekpdcsjalo".as_ptr(),
             10_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"".as_ptr(),
-            11_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"".as_ptr(), 11_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"lofbc".as_ptr(),
-            11_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"lofbc".as_ptr(), 11_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"astoegbfpn".as_ptr(),
-            11_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"astoegbfpn".as_ptr(), 11_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -445,7 +345,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"pdgreqomsncafklhtibj".as_ptr(),
             11_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -466,7 +366,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"slcerthdaiqjfnobgkpm".as_ptr(),
             0_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -487,7 +387,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"mkqpbtdalgniorhfescj".as_ptr(),
             1_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -508,7 +408,7 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"blkhjeogicatqfnpdmsr".as_ptr(),
             10_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
@@ -521,12 +421,7 @@ pub unsafe fn test0_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"lgokshjtpb".as_ptr(),
-            19_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"lgokshjtpb".as_ptr(), 19_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -534,35 +429,20 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"bqjhtkfepimcnsgrlado".as_ptr(),
             19_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"".as_ptr(),
-            20_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"".as_ptr(), 20_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"nocfa".as_ptr(),
-            20_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"nocfa".as_ptr(), 20_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"bgtajmiedc".as_ptr(),
-            20_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"bgtajmiedc".as_ptr(), 20_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -570,35 +450,20 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"lsckfnqgdahejiopbtmr".as_ptr(),
             20_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"".as_ptr(),
-            21_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"".as_ptr(), 21_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"gfsrt".as_ptr(),
-            21_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"gfsrt".as_ptr(), 21_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"pfsocbhjtm".as_ptr(),
-            21_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_0(&mut _s, c"pfsocbhjtm".as_ptr(), 21_(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
@@ -606,102 +471,74 @@ pub unsafe fn test0_3() {
             &mut _s,
             c"tpflmdnoicjgkberhqsa".as_ptr(),
             21_(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
+            unimplemented!(),
         )
     });
 }
-pub unsafe fn test1_4() {
+pub unsafe fn test1_3() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"laenf".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"laenf".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"pqlnkmbdjo".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"pqlnkmbdjo".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"qkamfogpnljdcshbreti".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"qkamfogpnljdcshbreti".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"".as_ptr(), 0_())
+        test_1(&mut _s, c"".as_ptr(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"irkhs".as_ptr(), 0_())
+        test_1(&mut _s, c"irkhs".as_ptr(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"kantesmpgj".as_ptr(), 2_())
+        test_1(&mut _s, c"kantesmpgj".as_ptr(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"oknlrstdpiqmjbaghcfe".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"oknlrstdpiqmjbaghcfe".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"".as_ptr(), 0_())
+        test_1(&mut _s, c"".as_ptr(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"bnrpe".as_ptr(), 2_())
+        test_1(&mut _s, c"bnrpe".as_ptr(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"jtdaefblso".as_ptr(), 2_())
+        test_1(&mut _s, c"jtdaefblso".as_ptr(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"oselktgbcapndfjihrmq".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"oselktgbcapndfjihrmq".as_ptr(), unimplemented!())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"".as_ptr(), 0_())
+        test_1(&mut _s, c"".as_ptr(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"bjaht".as_ptr(), 0_())
+        test_1(&mut _s, c"bjaht".as_ptr(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(&mut _s, c"hjlcmgpket".as_ptr(), 1_())
+        test_1(&mut _s, c"hjlcmgpket".as_ptr(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_2(
-            &mut _s,
-            c"htaobedqikfplcgjsmrn".as_ptr(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut npos_1)),
-        )
+        test_1(&mut _s, c"htaobedqikfplcgjsmrn".as_ptr(), unimplemented!())
     });
 }
 pub fn main() {
@@ -721,8 +558,8 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        (unsafe { test0_3() });
-        (unsafe { test1_4() });
+        (unsafe { test0_2() });
+        (unsafe { test1_3() });
     }
     {
         let sv1: () = unimplemented!();

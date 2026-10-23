@@ -11,7 +11,7 @@ pub fn test1_1() {
     const _: () = assert!(true, "E::table_size == 256");;
     const _: () = assert!(true, "(E::min() == 1)");;
     const _: () = assert!(true, "(E::max() == 2147483646)");;
-    ({ where_0(table_size_2.with(|v| v.as_pointer())) });
+    ({ where_0(unimplemented!()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

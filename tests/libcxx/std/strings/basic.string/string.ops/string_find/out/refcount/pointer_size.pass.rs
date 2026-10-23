@@ -98,36 +98,36 @@ pub struct min_allocator_char_ {}
 pub fn test_4(s: Ptr<()>, mut str: Ptr<()>, mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_5.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         let mut n: () = unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_6(s: Ptr<()>, mut str: Ptr<()>, mut pos: (), mut x: ()) {
+pub fn test_5(s: Ptr<()>, mut str: Ptr<()>, mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_7.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         let mut n: () = unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_8(s: Ptr<()>, mut str: Ptr<()>, mut x: ()) {
+pub fn test_6(s: Ptr<()>, mut str: Ptr<()>, mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_5.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         let mut n: () = unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_9(s: Ptr<()>, mut str: Ptr<()>, mut x: ()) {
+pub fn test_7(s: Ptr<()>, mut str: Ptr<()>, mut x: ()) {
     const _: () = assert!(true, "");;
     unimplemented!();
-    if (x != npos_7.with(|rc| *rc.borrow())) {
+    if (x != unimplemented!()) {
         let mut n: () = unimplemented!();
         unimplemented!();
     }
 }
-pub fn test0_10() {
+pub fn test0_8() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_4(
@@ -143,7 +143,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -152,7 +152,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -161,7 +161,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -170,7 +170,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -179,7 +179,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -188,7 +188,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -197,7 +197,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -224,7 +224,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -233,7 +233,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -251,7 +251,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -260,7 +260,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -269,7 +269,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -287,7 +287,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             2_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -296,7 +296,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             2_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -305,7 +305,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             2_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -323,7 +323,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             4_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -332,7 +332,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             4_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -341,7 +341,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             4_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -359,7 +359,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             5_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -368,7 +368,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -377,7 +377,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -386,7 +386,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             6_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -395,7 +395,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             6_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -404,7 +404,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             6_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -413,7 +413,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             6_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -449,7 +449,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -476,7 +476,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -485,7 +485,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -512,7 +512,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -521,7 +521,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -539,7 +539,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             9_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -548,7 +548,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             9_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -557,7 +557,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             9_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -575,7 +575,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             10_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -584,7 +584,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             10_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -593,7 +593,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -602,7 +602,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             11_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -611,7 +611,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             11_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -620,7 +620,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             11_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -629,7 +629,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             11_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -701,7 +701,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -737,7 +737,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -755,7 +755,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             19_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -764,7 +764,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             19_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -773,7 +773,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             19_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -791,7 +791,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             20_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -800,7 +800,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             20_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -809,7 +809,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             20_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -818,7 +818,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             21_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -827,7 +827,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             21_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -836,7 +836,7 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             21_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
@@ -845,14 +845,14 @@ pub fn test0_10() {
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             21_(),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
 }
-pub fn test0_11() {
+pub fn test0_9() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
@@ -861,70 +861,70 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
@@ -933,7 +933,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
@@ -942,25 +942,25 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
@@ -969,34 +969,34 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             2_(),
@@ -1005,34 +1005,34 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             2_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             2_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             2_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             4_(),
@@ -1041,34 +1041,34 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             4_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             4_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             4_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             5_(),
@@ -1077,70 +1077,70 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             5_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             6_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             6_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             6_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             6_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
@@ -1149,7 +1149,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
@@ -1158,7 +1158,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
@@ -1167,16 +1167,16 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
@@ -1185,7 +1185,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
@@ -1194,25 +1194,25 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             5_(),
@@ -1221,7 +1221,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             5_(),
@@ -1230,25 +1230,25 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             5_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             5_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             9_(),
@@ -1257,34 +1257,34 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             9_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             9_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             9_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             10_(),
@@ -1293,70 +1293,70 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             10_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             10_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             11_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             11_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             11_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             11_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             0_(),
@@ -1365,7 +1365,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
@@ -1374,7 +1374,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
@@ -1383,7 +1383,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
@@ -1392,7 +1392,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             1_(),
@@ -1401,7 +1401,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             1_(),
@@ -1410,7 +1410,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             1_(),
@@ -1419,16 +1419,16 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             1_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             10_(),
@@ -1437,7 +1437,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             10_(),
@@ -1446,7 +1446,7 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             10_(),
@@ -1455,16 +1455,16 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             10_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             19_(),
@@ -1473,34 +1473,34 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             19_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             19_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             19_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             20_(),
@@ -1509,104 +1509,104 @@ pub fn test0_11() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             20_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             20_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             20_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b""),
             21_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             21_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             21_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(
+        test_5(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             21_(),
-            npos_7.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
 }
-pub fn test1_12() {
+pub fn test1_10() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
+        test_6(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
+        test_6(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
@@ -1614,27 +1614,27 @@ pub fn test1_12() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
+        test_6(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
@@ -1642,7 +1642,7 @@ pub fn test1_12() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
@@ -1650,19 +1650,19 @@ pub fn test1_12() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
-            npos_5.with(|rc| *rc.borrow()),
+            unimplemented!(),
         )
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
+        test_6(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcde"),
             0_(),
@@ -1670,7 +1670,7 @@ pub fn test1_12() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcde"),
             0_(),
@@ -1678,138 +1678,138 @@ pub fn test1_12() {
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
-            0_(),
-        )
-    });
-}
-pub fn test1_13() {
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcde"),
-            npos_7.with(|rc| *rc.borrow()),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcdeabcde"),
-            npos_7.with(|rc| *rc.borrow()),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
-            npos_7.with(|rc| *rc.borrow()),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcde"),
-            0_(),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcdeabcde"),
-            npos_7.with(|rc| *rc.borrow()),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
-            npos_7.with(|rc| *rc.borrow()),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcde"),
-            0_(),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcdeabcde"),
-            0_(),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
-            npos_7.with(|rc| *rc.borrow()),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcde"),
-            0_(),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abcdeabcde"),
-            0_(),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_9(
+        test_6(
             _s.as_pointer(),
             Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
             0_(),
         )
     });
 }
-pub fn test_string_14() {
-    ({ test0_10() });
-    ({ test1_12() });
+pub fn test1_11() {
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcde"),
+            unimplemented!(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcdeabcde"),
+            unimplemented!(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
+            unimplemented!(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcde"),
+            0_(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcdeabcde"),
+            unimplemented!(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
+            unimplemented!(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcde"),
+            0_(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcdeabcde"),
+            0_(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
+            unimplemented!(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(_s.as_pointer(), Ptr::<()>::from_string_literal(b""), 0_())
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcde"),
+            0_(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcdeabcde"),
+            0_(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_7(
+            _s.as_pointer(),
+            Ptr::<()>::from_string_literal(b"abcdeabcdeabcdeabcde"),
+            0_(),
+        )
+    });
 }
-pub fn test_string_15() {
-    ({ test0_11() });
-    ({ test1_13() });
+pub fn test_string_12() {
+    ({ test0_8() });
+    ({ test1_10() });
 }
-pub fn test_16() -> () {
-    ({ test_string_14() });
-    ({ test_string_15() });
+pub fn test_string_13() {
+    ({ test0_9() });
+    ({ test1_11() });
+}
+pub fn test_14() -> () {
+    ({ test_string_12() });
+    ({ test_string_13() });
     return true;
 }
 pub fn main() {
@@ -1832,7 +1832,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_16() });
+    ({ test_14() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

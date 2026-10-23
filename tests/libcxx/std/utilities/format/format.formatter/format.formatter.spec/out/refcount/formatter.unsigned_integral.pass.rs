@@ -90,9 +90,7 @@ pub fn test_4(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_char_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -116,9 +114,7 @@ pub fn test_6(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_char_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -142,9 +138,7 @@ pub fn test_8(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_char_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -168,9 +162,7 @@ pub fn test_10(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_char_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -194,9 +186,7 @@ pub fn test_12(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_char_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -220,9 +210,7 @@ pub fn test_14(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_char_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -246,9 +234,7 @@ pub fn test_16(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -272,9 +258,7 @@ pub fn test_18(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -298,9 +282,7 @@ pub fn test_20(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -324,9 +306,7 @@ pub fn test_22(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -350,9 +330,7 @@ pub fn test_24(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -376,9 +354,7 @@ pub fn test_26(mut expected: (), fmt: (), arg: (), mut offset: ()) {
     let parse_ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = ({
-        ((*formatter.borrow()) as std___formatter_integer_wchar_t_).parse(parse_ctx.as_pointer())
-    });
+    let mut it: () = unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -687,11 +663,7 @@ pub fn test_unsigned_integral_type_45() {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_33(
-                _expected,
-                _f,
-                ({ std_numeric_limits_unsigned___int128_::max() }),
-            )
+            test_termination_condition_33(_expected, _f, unimplemented!())
         });
     }
     ({
@@ -895,11 +867,7 @@ pub fn test_unsigned_integral_type_51() {
         ({
             let _expected: () = unimplemented!();
             let _f: () = unimplemented!();
-            test_termination_condition_39(
-                _expected,
-                _f,
-                ({ std_numeric_limits_unsigned___int128_::max() }),
-            )
+            test_termination_condition_39(_expected, _f, unimplemented!())
         });
     }
     ({

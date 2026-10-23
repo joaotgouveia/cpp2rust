@@ -234,8 +234,8 @@ pub const CtorKind_ValueCtor: CtorKind = 1;
 pub fn test_18() -> () {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
-        let iter2: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -243,8 +243,8 @@ pub fn test_18() -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
-        let iter2: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -252,8 +252,8 @@ pub fn test_18() -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
-        let iter2: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -261,15 +261,15 @@ pub fn test_18() -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
-        let iter2: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
-        let iter2: Value<()> = Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

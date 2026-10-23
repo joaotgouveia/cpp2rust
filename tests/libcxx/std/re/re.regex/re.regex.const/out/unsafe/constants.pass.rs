@@ -18,18 +18,18 @@ pub unsafe fn test_1() {
     const _: () = assert!(true, "(BR::awk == std::regex_constants::awk)");;
     const _: () = assert!(true, "(BR::grep == std::regex_constants::grep)");;
     const _: () = assert!(true, "(BR::egrep == std::regex_constants::egrep)");;
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut icase_2))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut nosubs_3))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut optimize_4))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut collate_5))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut ECMAScript_6))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut basic_7))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut extended_8))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut awk_9))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut grep_10))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut egrep_11))) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
 }
-pub unsafe fn test_12() {
+pub unsafe fn test_2() {
     const _: () = assert!(true, "(BR::icase == std::regex_constants::icase)");;
     const _: () = assert!(true, "(BR::nosubs == std::regex_constants::nosubs)");;
     const _: () = assert!(true, "(BR::optimize == std::regex_constants::optimize)");;
@@ -40,16 +40,16 @@ pub unsafe fn test_12() {
     const _: () = assert!(true, "(BR::awk == std::regex_constants::awk)");;
     const _: () = assert!(true, "(BR::grep == std::regex_constants::grep)");;
     const _: () = assert!(true, "(BR::egrep == std::regex_constants::egrep)");;
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut icase_13))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut nosubs_14))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut optimize_15))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut collate_16))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut ECMAScript_17))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut basic_18))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut extended_19))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut awk_20))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut grep_21))) });
-    (unsafe { where_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut egrep_22))) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&unimplemented!()) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -68,7 +68,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_1() });
-    (unsafe { test_12() });
+    (unsafe { test_2() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

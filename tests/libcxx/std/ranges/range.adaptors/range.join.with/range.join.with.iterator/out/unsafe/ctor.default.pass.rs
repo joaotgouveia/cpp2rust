@@ -1163,16 +1163,16 @@ pub struct RvalueVector_std_string_ {
 }
 impl RvalueVector_std_string_ {
     pub unsafe fn begin_4(&mut self) -> () {
-        return (unsafe { self.range_.begin_5() });
+        return unimplemented!();
     }
     pub unsafe fn end_5(&mut self) -> () {
-        return (unsafe { self.range_.end_8() });
+        return unimplemented!();
     }
     pub unsafe fn begin_6(&self) -> () {
-        return (unsafe { self.range_.begin_6() });
+        return unimplemented!();
     }
     pub unsafe fn end_7(&self) -> () {
-        return (unsafe { self.range_.end_10() });
+        return unimplemented!();
     }
     pub unsafe fn move_from(_a0: *mut RvalueVector_std_string_) -> Self {
         let mut this = Self {
@@ -1195,16 +1195,16 @@ pub struct RvalueVector_int_ {
 }
 impl RvalueVector_int_ {
     pub unsafe fn begin_4(&mut self) -> () {
-        return (unsafe { self.range_.begin_5() });
+        return unimplemented!();
     }
     pub unsafe fn end_5(&mut self) -> () {
-        return (unsafe { self.range_.end_8() });
+        return unimplemented!();
     }
     pub unsafe fn begin_6(&self) -> () {
-        return (unsafe { self.range_.begin_6() });
+        return unimplemented!();
     }
     pub unsafe fn end_7(&self) -> () {
-        return (unsafe { self.range_.end_10() });
+        return unimplemented!();
     }
     pub unsafe fn move_from(_a0: *mut RvalueVector_int_) -> Self {
         let mut this = Self {
@@ -1721,14 +1721,10 @@ impl std::cmp::PartialEq for WeakOrder {
 }
 impl std::cmp::Eq for WeakOrder {}
 pub unsafe fn operator_cmp_40(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if ((lhs.value) == (unsafe { std_numeric_limits_int_::min() }))
-        || ((rhs.value) == (unsafe { std_numeric_limits_int_::min() }))
-    {
+    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
         return unimplemented!();
     }
-    if ((lhs.value) == (unsafe { std_numeric_limits_int_::max() }))
-        || ((rhs.value) == (unsafe { std_numeric_limits_int_::max() }))
-    {
+    if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
         return unimplemented!();
     }
     return unimplemented!();

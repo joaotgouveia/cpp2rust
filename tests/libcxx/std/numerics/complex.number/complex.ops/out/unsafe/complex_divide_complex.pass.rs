@@ -7,16 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn is_close_0(mut v: (), mut comp: ()) -> () {
-    return ((v) <= ((comp) + (unsafe { std_numeric_limits_float_::epsilon() })))
-        && ((v) >= ((comp) - (unsafe { std_numeric_limits_float_::epsilon() })));
+    return ((v) <= ((comp) + (unimplemented!()))) && ((v) >= ((comp) - (unimplemented!())));
 }
 pub unsafe fn is_close_1(mut v: (), mut comp: ()) -> () {
-    return ((v) <= ((comp) + (unsafe { std_numeric_limits_double_::epsilon() })))
-        && ((v) >= ((comp) - (unsafe { std_numeric_limits_double_::epsilon() })));
+    return ((v) <= ((comp) + (unimplemented!()))) && ((v) >= ((comp) - (unimplemented!())));
 }
 pub unsafe fn is_close_2(mut v: (), mut comp: ()) -> () {
-    return ((v) <= ((comp) + (unsafe { std_numeric_limits_long_double_::epsilon() })))
-        && ((v) >= ((comp) - (unsafe { std_numeric_limits_long_double_::epsilon() })));
+    return ((v) <= ((comp) + (unimplemented!()))) && ((v) >= ((comp) - (unimplemented!())));
 }
 pub static mut testcases_3: std::cell::LazyCell<[(); 153]> = std::cell::LazyCell::new(|| unsafe {
     [
@@ -182,8 +179,7 @@ pub const anon_4_inf: anon_4 = 2;
 pub const anon_4_NaN: anon_4 = 3;
 pub const anon_4_non_zero_nan: anon_4 = 4;
 pub unsafe fn test_isinf_5(mut v: ()) -> () {
-    return ((v) == (unsafe { std_numeric_limits_double_::infinity() }))
-        || ((v) == (-(unsafe { std_numeric_limits_double_::infinity() })));
+    return ((v) == (unimplemented!())) || ((v) == (-unimplemented!()));
 }
 pub unsafe fn test_isnan_6(mut v: ()) -> () {
     return ((v) != (v));
