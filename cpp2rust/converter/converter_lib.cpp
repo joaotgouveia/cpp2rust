@@ -307,7 +307,7 @@ HasUnmappedLibraryArgument(clang::ASTContext &ctx,
                  : type->getPointeeType();
     }
     auto tag = type->getAsTagDecl();
-    return tag && !IsUserDefinedDecl(tag) &&
+    return tag && ctx.getSourceManager().isInSystemHeader(tag->getLocation()) &&
            !Mapper::Contains(ctx, type.getUnqualifiedType());
   });
 }
